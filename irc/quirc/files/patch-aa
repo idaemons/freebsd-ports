@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Aug 19 09:10:37 2000
++++ Makefile.in	Sat Aug 19 09:54:30 2000
+@@ -70,7 +70,7 @@
+ VERSION = @VERSION@
+ WISH = @WISH@
+ 
+-SUBDIRS = data doc
++SUBDIRS = data
+ 
+ # Main binary targets
+ bin_PROGRAMS = quirc

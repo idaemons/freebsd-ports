@@ -1,12 +1,14 @@
---- Imakefile.orig	Tue Jul 19 13:26:50 1994
-+++ Imakefile	Mon Jan 23 08:44:58 1995
-@@ -16,7 +16,8 @@
+--- ./Imakefile.org	Wed May 29 08:38:40 1996
++++ ./Imakefile	Mon Aug  5 22:46:04 1996
+@@ -38,9 +38,9 @@
  
         LINTLIBS = $(LINTXLIB) $(LINTXTOOL)
  
--#  EXTRA_DEFINES = -DARROW_SCROLLBAR
-+  EXTRA_DEFINES = -DARROW_SCROLLBAR
-+ EXTRA_INCLUDES = -I.
+-#  EXTRA_DEFINES = -DARROW_SCROLLBAR -DUSEGRAY
++  EXTRA_DEFINES = -DARROW_SCROLLBAR -DUSEGRAY
+ 
+-#  EXTRA_INCLUDES = -I.
++  EXTRA_INCLUDES = -I.
  
  HEADERS = \
  	AllWidgets.h \

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Aug  7 12:15:36 2000
++++ Makefile.in	Mon Aug  7 12:15:39 2000
+@@ -136,7 +136,7 @@
+ pixmapdir = $(gnomedatadir)/pixmaps
+ pixmap_DATA = dia_gnome_icon.png dia-diagram.png
+ 
+-Applicationsdir = $(gnomedatadir)/gnome/apps/Applications
++Applicationsdir = $(gnomedatadir)/apps/Applications
+ Applications_DATA = dia.desktop
+ 
+ mimedir = $(gnomedatadir)/mime-info

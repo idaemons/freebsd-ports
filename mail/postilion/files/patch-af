@@ -1,0 +1,21 @@
+--- postilion/options.tcl.orig	Wed Feb 23 14:27:28 2000
++++ postilion/options.tcl	Sun Feb 27 16:53:38 2000
+@@ -215,7 +215,7 @@
+ 
+     # Command to get default folder
+     if [info exists $env(MAIL)] {
+-	set option(default_folder) "INBOX file {} /var/spool/mail/$env(USER)"
++	set option(default_folder) "INBOX file {} /var/mail/$env(USER)"
+     } else {
+ 	set option(default_folder) "INBOX file {} $env(MAIL)"
+     }
+@@ -263,7 +263,7 @@
+     set option(sendprot) smtp
+ 
+     # Default sending program
+-    set option(sendprog) /usr/lib/sendmail
++    set option(sendprog) /usr/sbin/sendmail
+ 
+     # Can the sending program handle eightbit data
+     set option(sendprog_8bit) false
+

@@ -1,0 +1,17 @@
+#!/bin/sh
+home=/a/asami/portbuild/errorlogs
+scripts=/a/asami/portbuild/scripts
+
+for ver in full latest; do
+  for num in 3 4 5; do
+    cd $home/$num-$ver && ${scripts}/processlogs
+  done
+  for num in 3 4 5; do
+    cd $home/$num-$ver-logs && ${scripts}/processlogs2
+  done
+  for num in 3 5; do
+    cd $home && ${scripts}/comparelogs $num-$ver 4-$ver
+    cd $home && ${scripts}/comparelogs 4-$ver $num-$ver
+  done
+  cd $home && ${scripts}/bothlogs [3-5]-$ver
+done

@@ -1,0 +1,71 @@
+--- Makefile.orig	Mon Jan 24 16:15:50 2000
++++ Makefile	Wed Mar 15 02:23:16 2000
+@@ -50,11 +50,6 @@
+ UNZIPDEFINES=-DUNZIP_SUPPORT
+ endif
+ 
+-ifdef THREAD_SOUND
+-CPUDEFINES += -DUSE_THREADS
+-EXTRALIBS += -lpthread
+-endif
+-
+ ifdef GLIDE
+ GLIDEOBJS = unix/glide.o
+ GLIDEDEFINES = -DUSE_GLIDE -I/usr/include/glide
+@@ -66,24 +61,30 @@
+ GLIDENO_DEPENDS=use_glide
+ endif
+ 
+-CCC = gcc
+-CC = gcc
++CCC = $(CXX) -fno-rtti
++CC ?= gcc
+ NASM = nasm
+ 
+-INCLUDES=-I/usr/X11R6/include -I/usr/local/include
++ifdef THREAD_SOUND
++CPUDEFINES += -DUSE_THREADS
++CC += -pthread
++CCC += -pthread
++endif
++
++INCLUDES=-I${X11BASE}/include -I${LOCALBASE}/include
+ 
+-OPTIMISE=-O6 -mpentium -fomit-frame-pointer -fno-exceptions
++OPTIMISE= $(CXXFLAGS)
+ 
+ CCFLAGS = $(OPTIMISE) -DMITSHM \
+ -Ii386 \
+ -I. \
+ -Iunzip \
+--DJOYSTICK_SUPPORT \
+ -DZLIB \
+ -DNO_INLINE_SET_GET \
+ -DVAR_CYCLES \
+ -DCPU_SHUTDOWN \
+ -DSPC700_SHUTDOWN \
++-DSOUND \
+ $(LINUXDEFINES) \
+ $(FXDEFINES) \
+ $(CPUDEFINES) \
+@@ -108,7 +109,7 @@
+ # system using the egcs compiler get an undefined __register_frame_info
+ # symbol error when run on a Redhat box.
+ 
+-LDLIBS = -L/usr/X11R6/lib frame.o
++LDLIBS = -L${X11BASE}/lib
+ 
+ ifdef GLIDE
+ ifdef NETPLAY
+@@ -118,9 +119,9 @@
+ endif
+ else
+ ifdef NETPLAY
+-all: offsets snes9x ssnes9x s9xserver
++all: offsets snes9x s9xserver
+ else
+-all: offsets snes9x ssnes9x
++all: offsets snes9x
+ endif
+ endif
+ 

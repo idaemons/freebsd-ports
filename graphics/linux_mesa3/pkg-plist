@@ -1,0 +1,15 @@
+etc/mesa.conf
+usr/X11R6/lib/libGL.la
+usr/X11R6/lib/libGL.so
+usr/X11R6/lib/libGL.so.1
+usr/X11R6/lib/libGL.so.1.2.0
+usr/X11R6/lib/libGLU.la
+usr/X11R6/lib/libGLU.so
+usr/X11R6/lib/libGLU.so.1
+usr/X11R6/lib/libGLU.so.1.2.0
+usr/X11R6/lib/libglut.la
+usr/X11R6/lib/libglut.so
+usr/X11R6/lib/libglut.so.3
+usr/X11R6/lib/libglut.so.3.7.0
+usr/X11R6/lib/libMesaGL.so
+usr/X11R6/lib/libMesaGLU.so

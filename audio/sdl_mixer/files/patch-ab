@@ -1,0 +1,22 @@
+--- configure.orig	Sat Mar  4 05:36:35 2000
++++ configure	Sat Aug 12 16:43:06 2000
+@@ -1849,7 +1849,7 @@
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+ ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $host \
++$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Reload cache, that may have been modified by ltconfig
+@@ -2232,8 +2232,8 @@
+ fi
+ 
+ if test x$enable_music_mod = xyes; then
+-    CFLAGS="$CFLAGS -DMOD_MUSIC -I\$(top_srcdir)/mikmod"
+-    MUSIC_SUBDIRS="$MUSIC_SUBDIRS mikmod"
++    CFLAGS="$CFLAGS -DMOD_MUSIC"
++#    MUSIC_SUBDIRS="$MUSIC_SUBDIRS mikmod"
+ fi
+ # Check whether --enable-music-midi or --disable-music-midi was given.
+ if test "${enable_music_midi+set}" = set; then

@@ -1,0 +1,36 @@
+%%RUBY_DOCDIR%%/ruby-usersguide/README.txt
+%%RUBY_DOCDIR%%/ruby-usersguide/a2l.gif
+%%RUBY_DOCDIR%%/ruby-usersguide/a2r.gif
+%%RUBY_DOCDIR%%/ruby-usersguide/a2u.gif
+%%RUBY_DOCDIR%%/ruby-usersguide/eval.rb
+%%RUBY_DOCDIR%%/ruby-usersguide/index.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide.css
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide00.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide01.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide02.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide03.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide04.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide05.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide06.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide07.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide08.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide09.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide10.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide11.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide12.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide13.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide14.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide15.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide16.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide17.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide18.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide19.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide20.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide21.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide22.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide23.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide24.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide25.html
+%%RUBY_DOCDIR%%/ruby-usersguide/uguide26.html
+@dirrm %%RUBY_DOCDIR%%/ruby-usersguide
+@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true

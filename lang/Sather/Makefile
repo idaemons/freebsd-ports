@@ -1,21 +1,43 @@
-# New ports collection makefile for:    Sather
-# Version required:     1.0.1
-# Date created:         Mon Oct 31 22:04:12 PST 1994
-# Whom:                 hsu
+# ex:ts=8
+# Ports collection makefile for:  Sather
+# Date created:			  Mon Oct 31 22:04:12 PST 1994
+# Whom:				  hsu
 #
-# $Id: Makefile,v 1.2 1994/11/22 10:05:33 hsu Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       Sather-1.0.4
-MASTER_SITES=   ftp://ftp.icsi.berkeley.edu/pub/sather/
-DISTFILES=      Sather-1.0.4.tar.Z
-WRKSRC=		${WRKDIR}/Sather
-ALL_TARGET=	testall
+PORTNAME=	sather
+PORTVERSION=	1.2.1
+CATEGORIES=	lang
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	sather
 
-install:
-	@if [ ! -e ${PREFIX}/bin ]; then mkdir -p ${PREFIX}/bin; fi
-	@if [ ! -e ${PREFIX}/man/man1 ]; then mkdir -p ${PREFIX}/man/man1; fi
-	install -c -m 555 ${WRKSRC}/Compiler/cs ${PREFIX}/bin
-	install -c -m 555 ${WRKSRC}/Doc/man/man1/cs.1 ${PREFIX}/man/man1
+MAINTAINER=	obrien@FreeBSD.org
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
+
+USE_GMAKE=	yes
+ALL_TARGET=	full
+MAN1=		sacomp.1
+
+pre-configure:
+	@${PERL} -pi.in \
+		-e "s:%%CC%%:${CC}:g			;" \
+	        -e "s:%%CFLAGS%%:${CFLAGS}:g		;" \
+	        -e "s:%%LOCALBASE%%:${LOCALBASE}:g	;" \
+	        -e "s:%%GMAKE%%:${GMAKE}:g		;" \
+		${WRKSRC}/System/Common/CONFIG.proto
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/Bin/sacomp ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/Doc/man/man1/sacomp.1 ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/share/doc/sather
+	${INSTALL_DATA} ${WRKSRC}/Doc/License ${PREFIX}/share/doc/sather
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sather
+.for file in Bugs Changes Contributing FAQ programmer-manual.ps
+	${INSTALL_DATA} ${WRKSRC}/Doc/${file} ${PREFIX}/share/doc/sather
+.endfor
+.endif
 
 .include <bsd.port.mk>

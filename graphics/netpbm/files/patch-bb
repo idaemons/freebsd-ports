@@ -1,0 +1,99 @@
+--- Makefile.common.orig	Sat Sep  2 12:31:58 2000
++++ Makefile.common	Tue Sep  5 00:00:00 2000
+@@ -115,24 +115,20 @@
+ 
+ $(LIBOBJECTS): %.o: $(SRCSUBDIR)/%.c
+ # Note that the user may have configured -I options into CFLAGS.
++	$(CC) -c $(INCLUDE) $(CFLAGS) -o $@ $<
++
++$(SHLIBOBJECTS): %.lo: %.c
+ 	$(CC) -c $(INCLUDE) $(CFLAGS) $(CFLAGS_SHLIB) -o $@ $<
+ 
+-SONAME = lib$(LIBROOT).so.$(MAJ)
++SONAME = lib$(LIBROOT).so.$(SOVER)
+ 
+ # The libxxx.so link is needed to link the executables.
+ lib$(LIBROOT).so: $(SONAME)
+ 	rm -f $@
+ 	ln -s $< $@
+-# The $(SONAME) link is only needed to test the programs without
+-# installing the libraries (in that case, you also need to direct the 
+-# dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
+-$(SONAME): lib$(LIBROOT).so.$(MAJ).$(MIN)
+-	rm -f $@
+-	ln -s $< $@
+-lib$(LIBROOT).so.$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) \
+-                                $(LIBOPT)
+-	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
+-          `$(LIBOPT) $(LIBLIBS)` -lc
++$(SONAME): $(SHLIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT) lib$(LIBROOT).a
++	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(LIBOBJECTS_X) \
++          `$(LIBOPT) $(LIBLIBS)`
+ 
+ # Static library.  Unused by default, but with a small change to make files...
+ lib$(LIBROOT).a: $(LIBOBJECTS) $(LIBOBJECTS_X)
+@@ -162,7 +158,7 @@
+ install.merge.common: $(MERGENAME) $(NOMERGEBINARIES) install.script
+ 	cd $(INSTALLBINARIES) ; rm -f $(BINARIES) $(MERGE_ALIASES)
+ ifneq ($(MERGENAME)x,x)
+-	$(INSTALL) -c -s -m $(INSTALL_PERM_BIN) $(MERGENAME) $(INSTALLBINARIES)
++	${BSD_INSTALL_PROGRAM} $(MERGENAME) $(INSTALLBINARIES)
+ 	cd $(INSTALLBINARIES) ; \
+ 	   for i in $(MERGEBINARIES) $(MERGE_ALIASES) ; \
+              do ln -s $(MERGENAME)$(EXE) $$i ; \
+@@ -171,7 +167,7 @@
+ ifneq ($(NOMERGEBINARIES)x,x)
+ 	for x in $(NOMERGEBINARIES); \
+         do \
+-           $(INSTALL) -c -s -m $(INSTALL_PERM_BIN) $$x $(INSTALLBINARIES); \
++           ${BSD_INSTALL_PROGRAM} $$x $(INSTALLBINARIES); \
+ 	done
+ endif
+ 
+@@ -181,7 +177,7 @@
+ # Make and Install know that pbmmake.exe counts as pbmmake.
+ 	for x in $(BINARIES); \
+ 	do \
+-	   $(INSTALL) -c -s -m $(INSTALL_PERM_BIN) $$x $(INSTALLBINARIES); \
++	   ${BSD_INSTALL_PROGRAM} $$x $(INSTALLBINARIES); \
+ 	done
+ 
+ .PHONY: install.script
+@@ -189,7 +185,7 @@
+ ifneq ($(SCRIPTS)x,x)
+ 	for x in $(SCRIPTS); \
+ 	do \
+-	   $(INSTALL) -c -m $(INSTALL_PERM_BIN) $(SRCSUBDIR)/$$x \
++	   ${BSD_INSTALL_SCRIPT} $(SRCSUBDIR)/$$x \
+                $(INSTALLSCRIPTS); \
+ 	done
+ endif
+@@ -226,7 +222,7 @@
+ # directory when you compile your programs.
+ 	for x in $(INTERFACE_HEADERS); \
+ 	do \
+-	   $(INSTALL) -c -m $(INSTALL_PERM_HDR) $(SRCSUBDIR)/$$x \
++	   ${BSD_INSTALL_DATA} $(SRCSUBDIR)/$$x \
+                $(INSTALLHDRS); \
+ 	done
+ 
+@@ -240,15 +236,14 @@
+ # here causes the static library to be built at that time.
+ .PHONY: install.staticlib
+ install.staticlib: lib$(LIBROOT).a
+-	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) $< $(INSTALLLIBS)/$<
++	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)/$<
+ 
+ .PHONY: install.lib.common
+ # install a shared library
+-install.lib.common: lib$(LIBROOT).so.$(MAJ).$(MIN) 
+-	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so.$(MAJ).*
+-	$(INSTALL) -c -m $(INSTALL_PERM_LIBD) $< $(INSTALLLIBS)
++install.lib.common: $(SONAME)
++	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so.*
++	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)
+ 	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so; ln -s $< lib$(LIBROOT).so
+-	cd $(INSTALLLIBS) ; rm -f $(SONAME); ln -s $< $(SONAME)
+ 
+ .PHONY: clean.common
+ clean.common:

@@ -1,0 +1,41 @@
+--- configure.orig	Sun Aug 20 04:20:18 2000
++++ configure	Sun Aug 20 22:21:40 2000
+@@ -1906,6 +1906,19 @@
+       IEEE_CFLAGS="-ieee_with_no_inexact"
+     fi
+     ;;
++  *freebsd* )
++    if [ $PORTOBJFORMAT = elf ]; then
++      ELF_CC="\$(CC)"
++      ELF_CFLAGS="\$(CFLAGS) -fPIC"
++      ELF_LINK="\$(CC) -shared -Wl,-soname,\$(ELFLIB_MAJOR)"
++      ELF_LINK_CMD="\$(ELF_LINK)"
++    else
++      ELF_CC="\$(CC)"
++      ELF_CFLAGS="\$(CFLAGS) -fPIC"
++      ELF_LINK="ld -Bshareable -x"
++      ELF_LINK_CMD="\$(ELF_LINK)"
++    fi
++    ;;
+   * )
+     IEEE_CFLAGS=""
+ esac
+@@ -2231,16 +2244,8 @@
+ 
+ echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
+ echo "configure:2234: checking SLANG_VERSION" >&5
+-slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
+-               awk '{ print $3 }'`
+-slang_major_version=`echo $slang_version |
+- awk '{ print int($1/10000) }'`
+-slang_minor_version=`echo $slang_version $slang_major_version |
+- awk '{ print int(($1 - $2*10000)/100) }'`
+-slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
+- awk '{ print ($1 - $2*10000 - $3*100) }'`
+-
+-slang_minor_version="$slang_minor_version.$slang_mminor_version"
++slang_major_version=1
++slang_minor_version=4
+ slang_version="$slang_major_version.$slang_minor_version"
+ echo "$ac_t""$slang_version" 1>&6
+ 

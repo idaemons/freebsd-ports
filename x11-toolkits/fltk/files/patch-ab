@@ -1,0 +1,45 @@
+--- configure.orig	Mon Jul  3 17:10:35 2000
++++ configure	Mon Jul  3 17:12:16 2000
+@@ -837,13 +837,13 @@
+   CFLAGS="$ac_save_CFLAGS"
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="-g"
+   else
+     CFLAGS="-g"
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
+   else
+     CFLAGS=
+   fi
+@@ -980,13 +980,13 @@
+   CXXFLAGS="$ac_save_CXXFLAGS"
+ elif test $ac_cv_prog_cxx_g = yes; then
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
++    CXXFLAGS="-g"
+   else
+     CXXFLAGS="-g"
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS=""
+   else
+     CXXFLAGS=
+   fi
+@@ -2691,8 +2691,8 @@
+     CFLAGS="-Wall $CFLAGS"
+     CXXFLAGS="-Wall -Wno-return-type $CXXFLAGS"
+     if test -z "$DEBUGFLAG"; then
+-        CFLAGS="-O2 -fforce-mem -fforce-addr -fcaller-saves $CFLAGS"
+-        CXXFLAGS="-O2 -fforce-mem -fforce-addr -fcaller-saves $CXXFLAGS"
++        CFLAGS="-fforce-mem -fforce-addr -fcaller-saves $CFLAGS"
++        CXXFLAGS="-fforce-mem -fforce-addr -fcaller-saves $CXXFLAGS"
+     fi
+     if test $PICFLAG = 1; then
+     	CFLAGS="-fPIC $CFLAGS"

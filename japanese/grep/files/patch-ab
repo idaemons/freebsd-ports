@@ -1,0 +1,27 @@
+--- Makefile.in.orig	Fri Dec  3 21:46:09 1999
++++ Makefile.in	Fri Dec  3 21:47:39 1999
+@@ -53,10 +53,10 @@
+ LIBS=@LIBS@
+ ALLOCA=@ALLOCA@
+ 
+-CFLAGS=-O
++CFLAGS=@CFLAGS@
+ LDFLAGS=$(CFLAGS)
+ 
+-prefix=/usr/local
++prefix=@prefix@
+ exec_prefix=$(prefix)
+ 
+ # Prefix for installed program, normally empty or `g'.
+@@ -97,9 +97,9 @@
+ install: all
+ 	$(INSTALL_PROGRAM) grep $(bindir)/$(binprefix)grep
+ 	rm -f $(bindir)/$(binprefix)egrep
+-	$(LN) $(bindir)/$(binprefix)grep $(bindir)/$(binprefix)egrep
++	$(LN) -s $(binprefix)grep $(bindir)/$(binprefix)egrep
+ 	rm -f $(bindir)/$(binprefix)fgrep
+-	$(LN) $(bindir)/$(binprefix)grep $(bindir)/$(binprefix)fgrep	
++	$(LN) -s $(binprefix)grep $(bindir)/$(binprefix)fgrep	
+ 	$(INSTALL_DATA) $(srcdir)/grep.man $(mandir)/grep.$(manext)
+ 
+ check:

@@ -1,0 +1,32 @@
+--- Makefile.orig	Mon Apr  5 02:43:35 1999
++++ Makefile	Sun Apr 18 16:35:49 1999
+@@ -5,7 +5,7 @@
+ ### C Compiler
+ CC		= cc -c 
+ /*CC		= cc -c -Aa -D_HPUX_SOURCE*/
+-CFLAGS		= -I./pixmaps -I./Xpm -I./TextField-1.0 -I/usr/contrib/X11R6/include
++CFLAGS		= -I./pixmaps -I./TextField-1.0 -I$(X11BASE)/include
+ 
+ ### Fortran Compiler
+ FC		= xlf 
+@@ -199,17 +199,17 @@
+ ### Program Libraries #
+ #######################
+ 
+-LIBS		= -L /usr/lib  -L /lib/X11 -L /usr/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext -L./Xpm -lxpm ./TextField-1.0/*.o
++LIBS		= -L /usr/lib -L /usr/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext -lXpm ./TextField-1.0/*.o
+ 
+ 
+-SUBDIRS		= 	cd Xpm; make; cd ../TextField-1.0; make; cd ..
++SUBDIRS		= 	cd ./TextField-1.0; make; cd ..
+ 
+ ########################
+ ### Additional Targets #
+ ########################
+ 
+ all:		$(OBJS) 
+-		cd Xpm; make; cd ../TextField-1.0; make; cd ..
++		cd ./TextField-1.0; make; cd ..
+ 		@echo "Linking $(PROGRAM) ..."
+ 		@$(LD) $(LDFLAGS) $(OBJS) $(LIBS) -o $(PROGRAM)
+ 		@echo "done"

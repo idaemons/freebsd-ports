@@ -1,0 +1,35 @@
+--- Makefile	Sat Apr  5 21:08:26 1997
++++ /home/andy/tmp/wrk/Makefile	Sat May  1 14:30:37 1999
+@@ -1,10 +1,13 @@
+ ####### This section was automatically generated from
+ 
+-INCDIR = $(QTDIR)/include
++INCDIR = ${X11BASE}/include/X11/qt
+ CFLAGS =  -O2 -fno-strength-reduce -Wall -W
+ LIBCFLAGS = -fPIC
+ YACCCFLAGS = -Wno-unused -Wno-parentheses
+-LFLAGS = -L$(QTDIR)/lib -lqt
++LFLAGS = -L${X11BASE}/lib -lqt
++.if ${PORTOBJFORMAT} == "elf"
++LFLAGS+= -Wl,-rpath,${X11BASE}/lib
++.endif
+ CC = gcc
+ MOC = moc
+ SHELL =	/bin/sh
+@@ -30,14 +33,14 @@
+ .SUFFIXES: .cpp
+ 
+ .cpp.o:
+-	$(CC) -c $(CFLAGS) -I$(INCDIR) $<
++	$(CXX) -c $(CFLAGS) -I$(INCDIR) $<
+ 
+ ####### Build rules
+ 
+ all: $(TARGET)
+ 
+ $(TARGET): $(OBJECTS) $(OBJMETA)
+-	$(CC) $(OBJECTS) $(OBJMETA) -o $(TARGET) $(LFLAGS) -lm
++	$(CXX) $(OBJECTS) $(OBJMETA) -o $(TARGET) $(LFLAGS) -lm
+ 
+ depend:
+ 	@makedepend -I$(INCDIR) $(SOURCES) 2> /dev/null

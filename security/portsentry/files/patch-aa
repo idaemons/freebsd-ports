@@ -1,0 +1,18 @@
+--- Makefile.orig	Sun May 16 21:55:26 1999
++++ Makefile	Sun May 16 21:55:46 1999
+@@ -13,12 +13,13 @@
+ #
+ 
+ # Generic compiler
+-CC = cc
++CC ?= cc
+ # GNU..
+ #CC = gcc 
+ 
+ # Normal systems flags
+-CFLAGS = -O -Wall
++CFLAGS ?= -O -Wall
++CFLAGS += -DPREFIX=\"${PREFIX}\"
+ 
+ # Debug mode for portsentry
+ #CFLAGS = -Wall -g -DNODAEMON -DDEBUG

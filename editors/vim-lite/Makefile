@@ -1,0 +1,15 @@
+# ex:ts=8
+# Ports collection makefile for:  vim-lite
+# Date created:			  Fri Jun 25, 1999
+# Whom:				  David O'Brien (obrien@NUXI.com)
+#
+# $FreeBSD$
+#
+
+PORTNAME=	vim-lite
+
+LITE=		yes
+
+MASTERDIR=	${.CURDIR}/../vim5
+
+.include "${MASTERDIR}/Makefile"

@@ -1,0 +1,27 @@
+libexec/amanda/amandad
+libexec/amanda/calcsize
+libexec/amanda/chg-generic
+libexec/amanda/driver
+libexec/amanda/dumper
+libexec/amanda/getconf
+libexec/amanda/planner
+libexec/amanda/reporter
+libexec/amanda/runtar
+libexec/amanda/selfcheck
+libexec/amanda/sendbackup-dump
+libexec/amanda/sendbackup-gnutar
+libexec/amanda/sendsize
+libexec/amanda/taper
+sbin/amadmin
+sbin/amcheck
+sbin/amcleanup
+sbin/amdump
+sbin/amflush
+sbin/amlabel
+sbin/amrestore
+sbin/amtape
+share/examples/amanda/amanda.conf
+share/examples/amanda/chg-generic.conf
+share/examples/amanda/disklist
+@dirrm share/examples/amanda
+@dirrm libexec/amanda

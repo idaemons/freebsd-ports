@@ -1,0 +1,37 @@
+--- makefile.in.orig	Wed Jan 12 00:30:07 2000
++++ makefile.in	Wed Feb  2 21:37:48 2000
+@@ -35,6 +35,7 @@
+ INSTALL		= @INSTALL@
+ INSTALL_PROGRAM	= @INSTALL_PROGRAM@
+ INSTALL_DATA	= @INSTALL_DATA@
++INSTALL_SCRIPT	= @INSTALL_SCRIPT@
+ 
+ EXTRA_CFLAGS	= @EXTRA_CFLAGS@
+ CFLAGS		= @CFLAGS@ $(EXTRA_CFLAGS)
+@@ -50,7 +51,7 @@
+ 
+ PERL		= @PERL@
+ PERLLIB		= @perl_lib_path@
+-INSTALL_SCRIPT	= $(srcdir)/sinstall.sh $(PERL) $(INSTALL_PROGRAM)
++INSTALL_SCRIPTV	= $(srcdir)/sinstall.sh $(PERL) $(INSTALL_SCRIPT)
+ 
+ 
+ prefix		= @prefix@
+@@ -267,7 +268,7 @@
+ 
+ all ::	$(ALL)
+ 
+-$(TARGET): $(BUILTHDRS) $(OBJ)
++$(TARGET): $(BUILTHDRS) $(OBJ) vile-perl-api.doc
+ 	-mv $(TARGET) o$(TARGET)
+ 	@ECHO_LD@$(LINK) $(LDFLAGS) -o $@ $(OBJ) $(X_LIBS) $(LIBS)
+ 
+@@ -611,7 +612,7 @@
+ 	$(INSTALL_PROGRAM)	$(TARGET) $@
+ 
+ $(BINDIR)/xshell.sh:		$(srcdir)/xshell.sh
+-	$(INSTALL_PROGRAM)	$(srcdir)/xshell.sh $@
++	$(INSTALL_SCRIPT)	$(srcdir)/xshell.sh $@
+ $(BINDIR)/vileget:		$(srcdir)/perl/vileget
+ 	$(INSTALL_SCRIPT)	$(srcdir)/perl/vileget $@
+ 

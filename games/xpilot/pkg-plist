@@ -1,0 +1,34 @@
+bin/xpilot
+bin/xpilots
+bin/xp-replay
+bin/xp-mapedit
+lib/xpilot/sounds
+lib/xpilot/defaults
+lib/xpilot/robots
+lib/xpilot/maps/CAMD.xp
+lib/xpilot/maps/blood-music2.xp
+lib/xpilot/maps/cloudscape.xp
+lib/xpilot/maps/default.xp
+lib/xpilot/maps/doggy.xp
+lib/xpilot/maps/fireball.xp
+lib/xpilot/maps/fuzz.xp
+lib/xpilot/maps/fuzz2.xp
+lib/xpilot/maps/globe.xp
+lib/xpilot/maps/grandprix.xp
+lib/xpilot/maps/newdarkhell.xp
+lib/xpilot/maps/newdarkhell2.xp
+lib/xpilot/maps/pad.xp
+lib/xpilot/maps/pit.xp
+lib/xpilot/maps/planetx.xp
+lib/xpilot/maps/teamball.xp
+lib/xpilot/maps/tourmination.xp
+lib/xpilot/maps/tournament.xp
+lib/xpilot/maps/war.xp
+lib/xpilot/textures/ball.xpm
+lib/xpilot/textures/metalite.xpm
+lib/xpilot/textures/moon.xpm
+lib/xpilot/textures/rock4.xpm
+lib/xpilot/textures/volcanic.xpm
+@dirrm lib/xpilot/maps
+@dirrm lib/xpilot/textures
+@dirrm lib/xpilot

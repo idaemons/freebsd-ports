@@ -1,0 +1,5 @@
+bin/SqueakVM
+share/squeak/Squeak1.31.changes
+share/squeak/Squeak1.31.image
+share/squeak/SqueakV1.sources
+@dirrm share/squeak

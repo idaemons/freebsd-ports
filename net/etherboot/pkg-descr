@@ -1,0 +1,8 @@
+This code was originaly from FreeBSD and then the Linux folks greatly
+enhanced its functionality and capabilities.  It tftp's the kernel 
+and boots it.  It also has a menu capability.
+
+.rom images are built in work/etherboot/src/bin32.  Edit "Config"
+in work/etherboot/src directory for more features.  To make a floppy
+image cd in work/etherboot/src and type gmake bin32/<device type>.fd0 .
+.com images are made via  gmake bin32/<device type>.com .

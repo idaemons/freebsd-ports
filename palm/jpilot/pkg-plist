@@ -1,0 +1,30 @@
+bin/jpilot
+share/jpilot/jpilotrc.blue
+share/jpilot/jpilotrc.default
+share/jpilot/jpilotrc.green
+share/jpilot/jpilotrc.purple
+share/jpilot/jpilotrc.steel
+share/jpilot/DatebookDB.pdb
+share/jpilot/AddressDB.pdb
+share/jpilot/ToDoDB.pdb
+share/jpilot/MemoDB.pdb
+lib/libplugin.a
+share/doc/jpilot/plugin.html
+share/locale/da/LC_MESSAGES/jpilot.mo
+share/locale/de/LC_MESSAGES/jpilot.mo
+share/locale/fr/LC_MESSAGES/jpilot.mo
+share/locale/ja/LC_MESSAGES/jpilot.mo
+share/locale/sv/LC_MESSAGES/jpilot.mo
+@dirrm share/jpilot
+@dirrm share/doc/jpilot
+@unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/da 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true

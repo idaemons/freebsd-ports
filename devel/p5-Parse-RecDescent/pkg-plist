@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/Parse/RecDescent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Parse/RecDescent.pod
+lib/perl5/site_perl/%%PERL_VER%%/Text/Balanced.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Balanced.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/RecDescent/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/RecDescent

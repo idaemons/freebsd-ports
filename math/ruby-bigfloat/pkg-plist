@@ -1,0 +1,6 @@
+%%RUBY_SITEARCHLIBDIR%%/BigFloat.so
+%%RUBY_DOCDIR%%/bigfloat/ja/bigfloat.html
+%%RUBY_DOCDIR%%/bigfloat/README
+%%RUBY_DOCDIR%%/bigfloat/bigfloat_en.html
+@dirrm %%RUBY_DOCDIR%%/bigfloat/ja
+@dirrm %%RUBY_DOCDIR%%/bigfloat

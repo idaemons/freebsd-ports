@@ -1,0 +1,3 @@
+include/giconv.h
+lib/libgiconv.so
+lib/libgiconv.so.2

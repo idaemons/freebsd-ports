@@ -1,0 +1,9 @@
+FreeWnn is a Japanese/Chinese/Korean input method.  
+
+WWW: www.freewnn.org
+
+This port has only a server and dictionaries used the server for a
+Chinese imput method.
+
+-- S. Taoka
+<taoka@FreeBSD.org>

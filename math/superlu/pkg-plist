@@ -1,0 +1,4 @@
+include/supermatrix.h                                                          
+lib/libsuperlu.a
+share/doc/SuperLU/ug.ps
+@dirrm share/doc/SuperLU

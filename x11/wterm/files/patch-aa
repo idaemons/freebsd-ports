@@ -1,0 +1,11 @@
+--- configure.orig	Sat Apr  8 14:33:32 2000
++++ configure	Sat Apr  8 14:35:05 2000
+@@ -9,7 +9,7 @@
+ 
+ # Defaults:
+ ac_help=
+-ac_default_prefix=/usr/local
++ac_default_prefix=/usr/X11R6
+ # Any additions from configure.in:
+ ac_help="$ac_help
+   --enable-utmp           enable utmp/utmpx support"

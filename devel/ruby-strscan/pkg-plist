@@ -1,0 +1,13 @@
+%%RUBY_SITEARCHLIBDIR%%/strscan.so
+%%RUBY_SITELIBDIR%%/scanner.rb
+%%RUBY_DOCDIR%%/strscan/README.en
+%%RUBY_DOCDIR%%/strscan/changes.html
+%%RUBY_DOCDIR%%/strscan/index.html
+%%RUBY_DOCDIR%%/strscan/reference.html
+%%RUBY_DOCDIR%%/strscan/usage.html
+%%RUBY_DOCDIR%%/strscan/ja/changes.html
+%%RUBY_DOCDIR%%/strscan/ja/index.html
+%%RUBY_DOCDIR%%/strscan/ja/reference.html
+%%RUBY_DOCDIR%%/strscan/ja/usage.html
+@dirrm %%RUBY_DOCDIR%%/strscan/ja
+@dirrm %%RUBY_DOCDIR%%/strscan

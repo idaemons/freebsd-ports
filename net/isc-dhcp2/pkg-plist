@@ -1,0 +1,4 @@
+sbin/dhcpd
+sbin/dhcrelay
+@exec touch /var/db/dhcpd.leases
+@exec touch %D/etc/dhclient.conf

@@ -1,0 +1,7 @@
+bin/xwave
+lib/X11/app-defaults/XWave
+share/doc/xwave/README
+share/doc/xwave/README-XWAVE2
+share/doc/xwave/README.v06
+share/doc/xwave/INSTALL
+@dirrm share/doc/xwave

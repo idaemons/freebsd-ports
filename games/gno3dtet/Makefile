@@ -1,0 +1,34 @@
+# New ports collection makefile for:	gno3dtet
+# Date created:		21 Dec 1999
+# Whom:			Will Andrews <andrews@technologist.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gno3dtet
+PORTVERSION=	1.6.0
+CATEGORIES=	games gnome
+MASTER_SITES=	ftp://webdat.com/pub/seb/gno3dtet/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	will@FreeBSD.org
+
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
+
+GNOME_CONFIG?=	${X11BASE}/bin/gnome-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	GNOME_CONFIG=${GNOME_CONFIG} GTK_CONFIG=${GTK_CONFIG}
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+
+pre-configure:
+	@${RM} -f ${WRKSRC}/config.cache
+
+post-install:
+	${CHOWN} root:games ${PREFIX}/bin/gno3dtet
+	${CHMOD} 2555 ${PREFIX}/bin/gno3dtet
+	${CHOWN} root:games ${PREFIX}/var/games/gno3dtet.hof
+	${CHMOD} 664 ${PREFIX}/var/games/gno3dtet.hof
+
+.include <bsd.port.mk>

@@ -1,0 +1,29 @@
+--- configure.orig	Mon Apr  3 05:03:52 2000
++++ configure	Mon May  8 17:46:15 2000
+@@ -3174,7 +3174,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  X_PRE_LIBS="$X_PRE_LIBS -lSM -lICE"
++  X_PRE_LIBS="$X_PRE_LIBS -lSM -lICE -lXmu -lXt"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+@@ -5267,7 +5267,7 @@
+     PASSWD_LIBS="$PASSWD_LIBS -lkrb4 -ldes425 -lkrb5 -lk5crypto -lcrypt -lcom_err"
+   elif test "$have_kerberos" = yes ; then
+     # from Tim Showalter <tjs+@andrew.cmu.edu>
+-    PASSWD_LIBS="$PASSWD_LIBS -lkrb -ldes"
++    PASSWD_LIBS="$PASSWD_LIBS -lkrb -ldes -lcom_err"
+   fi
+ 
+   if test "$have_kerberos" = yes ; then
+@@ -6485,7 +6485,7 @@
+ if eval "test \"`echo '$''{'ac_cv_gtk_version_string'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+-  ac_cv_gtk_version_string=`$glib_config --version`
++  ac_cv_gtk_version_string=`$gtk_config --version`
+ fi
+ 
+ echo "$ac_t""$ac_cv_gtk_version_string" 1>&6

@@ -1,0 +1,6 @@
+bin/ftpcp
+bin/ftpcopy
+bin/ftpls
+share/ftpcopy/NEWS
+share/ftpcopy/README
+@dirrm share/ftpcopy

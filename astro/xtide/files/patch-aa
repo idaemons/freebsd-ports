@@ -1,0 +1,19 @@
+*** TideContext.cc.orig	Sun Dec  5 15:12:17 1999
+--- TideContext.cc	Mon Jun 19 22:51:03 2000
+***************
+*** 53,59 ****
+      }
+    }
+    if (hfile_path.isNull())
+!     hfile_path = "harmonics";
+    harmonicsPath = new HarmonicsPath (hfile_path);
+  
+    homedir = getenv ("HOME");
+--- 53,59 ----
+      }
+    }
+    if (hfile_path.isNull())
+!     hfile_path = "%%PREFIX%%/share/xtide/harmonics";
+    harmonicsPath = new HarmonicsPath (hfile_path);
+  
+    homedir = getenv ("HOME");

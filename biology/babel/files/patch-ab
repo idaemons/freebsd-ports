@@ -1,0 +1,39 @@
+--- menus.c.orig	Tue Jan 21 23:52:36 1997
++++ menus.c	Mon Dec 22 14:29:37 1997
+@@ -63,9 +63,9 @@
+     }
+   }
+   printf("Input file name : ");
+-  gets(InfileName);
++  fgets(InfileName, BUFF_SIZE - 1, stdin);
+   printf("Keywords : ");
+-  gets(InputKeywords);
++  fgets(InputKeywords, BUFF_SIZE - 1, stdin);
+ 
+   if (strlen(InputKeywords) < 1)
+     strcpy(InputKeywords,"KEYWORDS GO HERE");
+@@ -108,11 +108,11 @@
+     }
+   }
+   printf("Output file name : ");
+-  gets(OutfileName);
++  fgets(OutfileName, BUFF_SIZE - 1, stdin);
+   if (has_keywords)
+   {
+     printf("Keywords : ");
+-    gets(OutputKeywords);
++    fgets(OutputKeywords, BUFF_SIZE - 1, stdin);
+     if (strlen(OutputKeywords) < 1)
+       strcpy(OutputKeywords,"KEYWORDS GO HERE");
+   }
+@@ -167,8 +167,8 @@
+   while (done == FALSE)
+   {
+     printf("Choice : ");
+-    gets(choice_string);
+-    for (i = 0; i < (int) strlen(choice_string); i++)
++    fgets(choice_string, 99, stdin);
++    for (i = 0; i < ((int) strlen(choice_string) - 1) ; i++)
+     {
+       if (!isdigit(choice_string[i]))
+ 	choice = 0;

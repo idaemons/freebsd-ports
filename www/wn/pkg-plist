@@ -1,0 +1,12 @@
+@cwd /usr/local
+etc/wn_mime.types
+libexec/wn
+sbin/swn
+bin/wndex
+wn/bin/mkwnpasswd
+wn/bin/authwn
+wn/docs
+wn/index
+wn/wnlogs
+@cwd ./wn
+@exec ../sbin/wndex -r

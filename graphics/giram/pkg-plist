@@ -1,0 +1,34 @@
+bin/giram
+bin/povfront
+libexec/giram/plug-ins/Box
+libexec/giram/plug-ins/Rotate
+libexec/giram/plug-ins/Spheres
+share/doc/giram/SampleScenes/Cone.pov
+share/doc/giram/SampleScenes/Disc.pov
+share/doc/giram/SampleScenes/Giram.gsf
+share/doc/giram/SampleScenes/Giram.pov
+share/doc/giram/SampleScenes/IntSphereBox1.pov
+share/doc/giram/SampleScenes/IntSphereBox2.pov
+share/doc/giram/SampleScenes/IntSphereBox3.pov
+share/doc/giram/SampleScenes/IntSpherePlane1.pov
+share/doc/giram/SampleScenes/IntSpherePlane2.pov
+share/doc/giram/SampleScenes/IntSpherePlane3.pov
+share/doc/giram/SampleScenes/Triangle.pov
+share/doc/giram/SampleScenes/basicvue.pov
+share/doc/giram/SampleScenes/basicvue2.pov
+share/doc/giram/SampleScenes/basicvue3.pov
+share/doc/giram/SampleScenes/basicvue4.pov
+share/doc/giram/SampleScenes/box.pov
+share/doc/giram/SampleScenes/lollipop.pov
+share/doc/giram/SampleScenes/superel1.pov
+share/doc/giram/SampleScenes/superel2.pov
+share/doc/giram/SampleScenes/superel3.pov
+share/doc/giram/SampleScenes/test.pov
+share/doc/giram/SampleScenes/torus.pov
+share/doc/giram/Tutorial
+share/locale/es/LC_MESSAGES/Giram.mo
+share/locale/fr/LC_MESSAGES/Giram.mo
+@dirrm share/doc/giram/SampleScenes
+@dirrm share/doc/giram
+@dirrm libexec/giram/plug-ins
+@dirrm libexec/giram

@@ -1,0 +1,99 @@
+--- Makefile.orig	Sat Aug 26 10:16:05 2000
++++ Makefile	Mon Aug 28 20:07:43 2000
+@@ -1,39 +1,19 @@
+-CXXFLAGS=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
+-# -ggdb
+-# -DDEBUG_ALL
++CXXFLAGS += -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
+ 
+-export CXXFLAGS LOCALEDIR
+-
+-#CXX = c++
++CXX ?= c++
+ 
+ NLS=-DENABLE_NLS # Remove or comment this line to disable gettext
+-ifeq ($(DEST),)
+-DEST=/usr/local
+-endif
++DEST=${PREFIX}
+ 
+ LOCALEDIR=$(DEST)/share/locale
+-PTHREAD=-lpthread
+-GTKCONFIG=gtk-config
+-GLIBCONFIG=glib-config
+-MAKE=make
+-
+-#next strings were added for BSD support
+-ifeq ($(OSTYPE),BSD)
+-PTHREAD=-pthread
+-GTKCONFIG=gtk12-config
+-MAKE=gmake
+-endif
+-
+-ifeq ($(OSTYPE),FreeBSD)
+ PTHREAD=-pthread
+-GTKCONFIG=gtk12-config
+-MAKE=gmake
+-endif
++MSGFMT=${MSGFMT_CMD}
+ 
+-GTKLIBS=$(shell $(GTKCONFIG) --libs) $(shell $(GLIBCONFIG) --libs)
+-GTKFLAGS=$(shell $(GTKCONFIG) --cflags) $(shell $(GLIBCONFIG) --cflags)
++GTKLIBS=`${GTK_CONFIG} --libs`
++GTKFLAGS=`${GTK_CONFIG} --cflags`
+ LDFLAGS=$(PTHREAD) $(GTKLIBS)
+-CXXFLAGS += $(GTKFLAGS) $(NLS) -DLOCALE=\"${LOCALEDIR}\"
++
++EXECC=$(CXX) $(CXXFLAGS) $(GTKFLAGS) $(NLS) -DLOCALE=\"${LOCALEDIR}\"
+ 
+ FACE=face/lmenu.o face/list.o face/addd.o face/graph.o face/log.o \
+ 	face/prefs.o face/buttons.o face/about.o face/edit.o \
+@@ -47,40 +27,18 @@
+ 	pass.o eff.o
+ MODULES += $(FACE)
+ 
+-all:
+-	-rm -f nt
+-	$(MAKE) nt
+-	[ -z "$(NLS)" ] || $(MAKE) -C po
+-	$(MAKE) strip
++all: nt
++	[ -z "$(NLS)" ] || cd po && MSGFMT=$(MSGFMT) $(MAKE)
+ 
+ $(FACE):
+-	$(MAKE) -C face
++	cd face && EXECC="$(EXECC)" $(MAKE)
+ 
+ nt: $(MODULES)
+-	$(MAKE) -C face
+-	$(CXX) -lstdc++ $(MODULES) nt.cc -o nt $(CXXFLAGS) $(GTKLIBS) $(PTHREAD)
+-
+-strip: nt
+-	strip nt
+-
++	$(EXECC) $(MODULES) nt.cc -o nt $(LDFLAGS)
+ 
+ install: all
+-	install -c -m755 nt $(DEST)/bin
+-	[ -z "$(NLS)" ] || $(MAKE) install -C po
+-
+-clean: 
+-	-rm -f *.o nt TAGS *~
+-	$(MAKE) clean -C face
+-	$(MAKE) clean -C po
+-
+-tags:
+-	etags *.{cc,h} face/*.{cc,h}
+-
+-uninstall:
+-	-rm -f $(DEST)/bin/nt
+-	$(MAKE) uninstall -C po
+-
+-Makefile.dep:
+-	$(CXX) $(CXXFLAGS) -MM *.cc > Makefile.dep
++	$(BSD_INSTALL_PROGRAM) nt $(DEST)/bin
++	[ -z "$(NLS)" ] || cd po && LOCALEDIR=$(LOCALEDIR) $(MAKE) install
+ 
+--include Makefile.dep
++.cc.o:
++	$(EXECC) -c $<

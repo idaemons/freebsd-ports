@@ -1,0 +1,9 @@
+ICONV is 1) the library (libiconv.a and .so) for conversion between
+various charsets and 2) the command line utility (iconv).
+
+33 charsets are supported in this port: most Unicode encodings,
+all charsets for which locale exist in FreeBSD, few IBM-DOS ones.
+Other charsets are provided as standalone ports.
+
+	Konstantin Chuguev <Konstantin.Chuguev@dante.org.uk>
+	September 2000.

@@ -1,0 +1,40 @@
+# New ports collection makefile for:	eruby
+# Date created:			14 Aug 2000
+# Whom:				Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	eruby
+PORTVERSION=	0.1.1
+CATEGORIES=	textproc www ruby
+MASTER_SITES=	http://www.ruby-lang.org/~shugo/eruby/
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+
+USE_RUBY=	yes
+
+CONFIGURE_ARGS=	--enable-shared --default-charset="${DEFAULT_CHARSET}"
+INSTALLS_SHLIB=	yes
+
+DEFAULT_CHARSET?=	US-ASCII
+
+DOCS_EN=	ChangeLog README.en
+DOCS_JA=	README.ja
+
+do-configure:
+	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} Makefile.RB ${CONFIGURE_ARGS}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_DOCDIR}/eruby/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/eruby/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/eruby/ja/
+.endfor
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,8 @@
+include/lwp/lock.h
+include/lwp/lwp.h
+include/lwp/preempt.h
+include/lwp/timer.h
+lib/liblwp.a
+lib/liblwp.so
+lib/liblwp.so.1
+@dirrm include/lwp

@@ -1,0 +1,9 @@
+--- .bochsrc.orig	Sun Nov 14 16:01:27 1999
++++ .bochsrc	Mon Nov 22 17:44:06 1999
+@@ -84,4 +84,4 @@
+ 
+-#log: /dev/null
+-log: ./bochs.out
++log: /dev/null
++#log: ./bochs.out
+ keyboard_serial_delay: 200

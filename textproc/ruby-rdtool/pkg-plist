@@ -1,0 +1,33 @@
+bin/rd2
+bin/rdswap
+bin/rmi2html
+bin/rmi2html.rb
+%%RUBY_SITELIBDIR%%/rd/dot.rd2rc
+%%RUBY_SITELIBDIR%%/rd/filter.rb
+%%RUBY_SITELIBDIR%%/rd/rd2html-lib.rb
+%%RUBY_SITELIBDIR%%/rd/rd2html-opt.rb
+%%RUBY_SITELIBDIR%%/rd/rd2man-lib.rb
+%%RUBY_SITELIBDIR%%/rd/rd2rdo-lib.rb
+%%RUBY_SITELIBDIR%%/rd/rd2rmi-lib.rb
+%%RUBY_SITELIBDIR%%/rd/rdblockparser.tab.rb
+%%RUBY_SITELIBDIR%%/rd/rdfmt.rb
+%%RUBY_SITELIBDIR%%/rd/rdinlineparser.tab.rb
+%%RUBY_SITELIBDIR%%/rd/rdvisitor.rb
+@dirrm %%RUBY_SITELIBDIR%%/rd
+%%RUBY_EXAMPLESDIR%%/rd/dot.rd2rc
+@dirrm %%RUBY_EXAMPLESDIR%%/rd
+share/emacs/site-lisp/rd-mode.el
+lib/xemacs/site-lisp/rd-mode.el
+@unexec rmdir -p %D/share/emacs/site-lisp 2>/dev/null || true
+@unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
+%%RUBY_DOCDIR%%/optparse/ja/optparse.ja.html
+%%RUBY_DOCDIR%%/rd/README.html
+%%RUBY_DOCDIR%%/rd/rd-draft.html
+%%RUBY_DOCDIR%%/rd/rd-draft.rd
+%%RUBY_DOCDIR%%/rd/ja/README.ja.html
+%%RUBY_DOCDIR%%/rd/ja/dev-note.ja.html
+%%RUBY_DOCDIR%%/rd/ja/dev-note.rd.ja
+%%RUBY_DOCDIR%%/rd/ja/rd-draft.ja.html
+%%RUBY_DOCDIR%%/rd/ja/rd-draft.rd.ja
+@dirrm %%RUBY_DOCDIR%%/rd/ja
+@dirrm %%RUBY_DOCDIR%%/rd

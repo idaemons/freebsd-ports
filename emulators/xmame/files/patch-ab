@@ -1,0 +1,29 @@
+--- doc/xmamerc.dist.orig	Sat Apr  8 00:24:47 2000
++++ doc/xmamerc.dist	Wed May  3 21:00:00 2000
+@@ -60,7 +60,7 @@
+ samples                 1
+ samplefreq              22050
+ bufsize                 2.000000
+-volume                  -3
++volume                  -13
+ # audiodevice           <NULL> (not set)
+ # mixerdevice           <NULL> (not set)
+ 
+@@ -70,12 +70,12 @@
+ mouse                   1
+ 
+ ### Fileio Related ###
+-rompath                 /usr/games/lib/xmame
+-spooldir                /usr/games/lib/xmame
++rompath                 %%PREFIX%%/share/xmake/roms
++spooldir                %%PREFIX%%/share/xmake/hi
+ screenshotdir           .
+-cheatfile               /usr/games/lib/xmame/cheat.dat
+-historyfile             /usr/games/lib/xmame/history.dat
+-mameinfofile            /usr/games/lib/xmame/mameinfo.dat
++cheatfile               %%PREFIX%%/share/xmake/cheat.dat
++historyfile             %%PREFIX%%/share/xmake/history.dat
++mameinfofile            %%PREFIX%%/share/xmake/mameinfo.dat
+ 
+ ### Mame Related ###
+ defaultgame             pacman

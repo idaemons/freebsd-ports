@@ -1,0 +1,21 @@
+bin/xmame
+share/xmame/xmamerc
+share/doc/xmame/changes.mame
+share/doc/xmame/changes.unix
+share/doc/xmame/credits.unix
+share/doc/xmame/leeme.unix
+share/doc/xmame/liesmich.unix
+share/doc/xmame/maillist.txt
+share/doc/xmame/multiplayer-readme.txt
+share/doc/xmame/readme.fx
+share/doc/xmame/readme.mame
+share/doc/xmame/readme.unix
+share/doc/xmame/readme.xgl
+share/doc/xmame/todo
+@exec mkdir -p %D/share/xmame/hi
+@exec mkdir -p %D/share/xmame/roms
+@exec chmod 777 %D/share/xmame/hi
+@unexec rmdir %D/share/xmame/roms 2>/dev/null || true
+@unexec rmdir %D/share/xmame/hi 2>/dev/null || true
+@unexec rmdir %D/share/xmame 2>/dev/null || true
+@dirrm share/doc/xmame

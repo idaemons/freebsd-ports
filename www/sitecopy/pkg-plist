@@ -1,0 +1,8 @@
+bin/sitecopy
+share/sitecopy/examplerc
+share/sitecopy/changes.awk
+share/locale/ru/LC_MESSAGES/sitecopy.mo
+share/locale/fr/LC_MESSAGES/sitecopy.mo
+share/locale/cs/LC_MESSAGES/sitecopy.mo
+share/locale/ja/LC_MESSAGES/sitecopy.mo
+@unexec rmdir %D/share/sitecopy > /dev/null 2>&1
