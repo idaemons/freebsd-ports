@@ -1,0 +1,89 @@
+--- Makefile.linux.orig	Fri Aug 30 19:19:25 1996
++++ Makefile.linux	Thu Apr 16 20:30:53 1998
+@@ -34,8 +34,8 @@
+ # Set path where you want to install xaero and it's application-default
+ # resource file.
+ 
+-XAEROBIN  = /usr/local/bin                # or local: $HOME/bin
+-XAEROAPPL = /usr/local/lib/app-defaults   # or local: $HOME/app-defaults
++XAEROBIN  = ${PREFIX}/bin                    # or local: $HOME/bin
++XAEROAPPL = ${PREFIX}/lib/X11/app-defaults   # or local: $HOME/app-defaults
+ 
+ 
+ ###########################################################################
+@@ -43,17 +43,17 @@
+ # of X11 in parallel on their systems, e.g. X11R5 and X11R6. So here
+ # you can choose the one you want.
+ 
+-XINCLUDE   = /usr/local/X11R5/include      
+-XLIB       = /usr/local/X11R5/lib 
+-FWFINCLUDE = /usr/local/lib/FWF/include
+-FWFLIB	   = /usr/local/lib/FWF/lib.$(HOSTTYPE)
++XINCLUDE   = ${PREFIX}/include      
++XLIB       = ${PREFIX}/lib 
++FWFINCLUDE = $(XINCLUDE)
++FWFLIB	   = $(XLIB)
+ 
+ 
+ ###########################################################################
+ # Compiler and Linker definitions.
+ 
+ CC       = gcc
+-COPTS    = -ansi -Wall $(OPTIMIZE) 
++COPTS    = -ansi -Wall $(OPTIMIZE)
+ DEBUG    = 
+ OPTIMIZE = -O2 -DNODEBUG
+ 
+@@ -63,16 +63,16 @@
+ #libraries if needed; use -L and -l syntax, e.g.
+ # ADDFWFLIB = -L/usr/local/lib -lxpm
+ 
+-ADDFWFLIB =
++ADDFWFLIB = -lXpm
+ ADDXLIB   =
+-ADDSYSLIB = 
++ADDSYSLIB = # -lSM -lICE
+ 
+ 
+ ###########################################################################
+ # Tools
+ 
+ RM   = rm -f
+-CP   = cp -i
++CP   = cp
+ 
+ 
+ ###########################################################################
+@@ -134,7 +134,7 @@
+ # The default rule for compiling .o files from .c files
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -c $*.c
++	$(CC) $(CFLAGS) -c $<
+ 
+ 
+ ###########################################################################
+@@ -158,7 +158,23 @@
+ 
+ copyFilesToDestination::
+ 	$(CP) xaero $(XAEROBIN)
++	strip $(XAEROBIN)/xaero
++	[ -d $(XAEROAPPL) ] || mkdir -p $(XAEROAPPL)
++	[ -d ${PREFIX}/lib/X11/xaero ] || mkdir -p ${PREFIX}/lib/X11/xaero
+ 	$(CP) ../app-defaults/XAero $(XAEROAPPL)
++	$(CP) ../scripts/povsubst $(XAEROBIN)
++	$(CP) ../scripts/rayclear $(XAEROBIN)
++	$(CP) ../scripts/raystart $(XAEROBIN)
++	$(CP) ../scripts/raystat $(XAEROBIN)
++	sed 's:__XAERO_LIB_PATH__:${PREFIX}/lib/X11/xaero:' ../scripts/raymany > $(XAEROBIN)/raymany
++	chmod +x $(XAEROBIN)/raymany
++	$(CP) ../povray-include/FILELIST.povray-include ${PREFIX}/lib/X11/xaero
++	$(CP) ../povray-include/aeromat2.inc ${PREFIX}/lib/X11/xaero
++	$(CP) ../povray-include/aerop1materials.inc ${PREFIX}/lib/X11/xaero
++	$(CP) ../povray-include/aeropov1.inc ${PREFIX}/lib/X11/xaero
++	$(CP) ../povray-include/aeropov2.inc ${PREFIX}/lib/X11/xaero
++	mkdir -p ${PREFIX}/lib/X11/xaero/examples
++	$(CP) ../examples/* ${PREFIX}/lib/X11/xaero/examples
+ 
+ all:: xaero
+ 	strip xaero

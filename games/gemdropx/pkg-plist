@@ -1,0 +1,37 @@
+bin/gemdropx
+share/doc/gemdropx/README.txt
+share/gemdropx/gfx/author.ppm
+share/gemdropx/gfx/block.ppm
+share/gemdropx/gfx/bomb.ppm
+share/gemdropx/gfx/brick.ppm
+share/gemdropx/gfx/diamond.ppm
+share/gemdropx/gfx/disc.ppm
+share/gemdropx/gfx/dot.ppm
+share/gemdropx/gfx/explode0.ppm
+share/gemdropx/gfx/explode1.ppm
+share/gemdropx/gfx/explode2.ppm
+share/gemdropx/gfx/explode3.ppm
+share/gemdropx/gfx/face.ppm
+share/gemdropx/gfx/fuji.ppm
+share/gemdropx/gfx/happy.ppm
+share/gemdropx/gfx/sad.ppm
+share/gemdropx/gfx/star.ppm
+share/gemdropx/gfx/stopwatch.ppm
+share/gemdropx/gfx/title.ppm
+share/gemdropx/gfx/triangle.ppm
+share/gemdropx/gfx/warning.ppm
+share/gemdropx/gfx/wildcard.ppm
+share/gemdropx/gfx/win1.ppm
+share/gemdropx/gfx/win2.ppm
+share/gemdropx/sounds/begin.au
+share/gemdropx/sounds/bomb.au
+share/gemdropx/sounds/clock.au
+share/gemdropx/sounds/gameover.au
+share/gemdropx/sounds/got.au
+share/gemdropx/sounds/levelselect.au
+share/gemdropx/sounds/wildcard.au
+share/gemdropx/sounds/win.au
+@dirrm share/doc/gemdropx
+@dirrm share/gemdropx/gfx
+@dirrm share/gemdropx/sounds
+@dirrm share/gemdropx

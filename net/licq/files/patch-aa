@@ -1,0 +1,16 @@
+--- src/Makefile.in	Tue Jul 14 16:18:02 1998
++++ src/Makefile.in	Wed Aug  5 18:05:00 1998
+@@ -15,11 +15,11 @@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ 
+ CXX	= @CXX@
+-CXXFLAGS= @CXXFLAGS@
++CXXFLAGS= @CXXFLAGS@ -I.
+ CPPFLAGS= -DPACKAGE=\"@PACKAGE@\" -DVERSION=\"@VERSION@\" \
+ 	  @QT_INCLUDES@ @X_INCLUDES@
+ LDFLAGS	= @QT_LDFLAGS@ @X_LDFLAGS@
+-LDLIBS	= -lqt
++LDLIBS	= -lqt -lX11
+ MOC	= @MOC@
+ 
+ OBJECTS	= file.o message.o packet.o socket.o icqfunctions.o user.o \

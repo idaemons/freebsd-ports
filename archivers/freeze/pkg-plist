@@ -1,0 +1,5 @@
+bin/freeze
+bin/melt
+bin/unfreeze
+bin/fcat
+bin/statist

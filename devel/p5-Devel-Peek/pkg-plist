@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Devel/Peek.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/Peek/Peek.bs
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/Peek/Peek.so
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/Peek/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/Peek

@@ -1,41 +1,54 @@
-*** configure.orig	Wed Dec 14 15:17:42 1994
---- configure	Wed Dec 14 15:22:42 1994
-***************
-*** 183,187 ****
-  # -----------------------------------------------------------------------
-  if test -z "$prefix" ; then
-!     prefix=/usr/local/blt
-  fi
-  
---- 183,187 ----
-  # -----------------------------------------------------------------------
-  if test -z "$prefix" ; then
-!     prefix=/usr/local
-  fi
-  
-***************
-*** 1114,1117 ****
---- 1114,1123 ----
-          SHLIB_SUFFIX='.so.$(MAJOR_VERSION)'
-          ;;
-+       FreeBSD*)
-+ 	SHLIB_CCFLAGS="-fpic"
-+ 	SHLIB_LDFLAGS="-Bshareable"
-+ 	SHLIB_LOADER="ld"
-+ 	SHLIB_SUFFIX='.so.$(MAJOR_VERSION).$(MINOR_VERSION)'
-+ 	;;
-        *)
-  	echo "Don't know how to make shared libraries for $system"
-***************
-*** 1137,1141 ****
-  LIBDIR="$DESTDIR/lib"
-  MANDIR="$DESTDIR/man"
-! BLT_LIBRARY="$DESTDIR/library"
-  
-  
---- 1143,1147 ----
-  LIBDIR="$DESTDIR/lib"
-  MANDIR="$DESTDIR/man"
-! BLT_LIBRARY="$DESTDIR/lib/blt"
-  
-  
+--- configure.orig	Wed Aug 19 11:10:09 1998
++++ configure	Tue Sep 22 15:56:11 1998
+@@ -2298,6 +2298,9 @@
+  $blt_ckcmd_tcl_home \
+  $blt_ckcmd_tcl_home/lib \
+  $blt_cv_tcl_lib \
++ /usr/local/lib/tcl8.0 \
++ /usr/local/lib/tcl7.6 \
++ /usr/local/lib/tcl7.5 \
+  /usr/local/tcl/lib \
+  /usr/local/tcl/tcl8.0/lib \
+  /usr/local/tcl/tcl7.6/lib \
+@@ -2337,6 +2340,9 @@
+  $blt_ckcmd_tcl_home \
+  $blt_ckcmd_tcl_home/lib \
+  $blt_cv_tk_lib \
++ /usr/local/lib/tk8.0 \
++ /usr/local/lib/tk4.2 \
++ /usr/local/lib/tk4.1 \
+  /usr/local/tcl/lib \
+  /usr/local/tcl/tk8.0/lib \
+  /usr/local/tcl/tk4.2/lib \
+@@ -2432,6 +2438,13 @@
+ tclLibDir=${TCL_PREFIX}/lib
+ tkLibDir=${TK_PREFIX}/lib
+ 
++case $target in
++  *-freebsd*)
++    tclIncSpec="-I${TCL_PREFIX}/include/tcl${TCL_MAJOR_VERSION}.${TCL_MINOR_VERSION}"
++    tkIncSpec="-I${TK_PREFIX}/include/tk${TK_MAJOR_VERSION}.${TK_MINOR_VERSION}"
++    ;;
++esac
++
+ itclLibSpec=""
+ itclIncSpec=""
+ itclSuffix=""
+@@ -2448,7 +2461,7 @@
+ tkLibSpec=${TK_LIB_SPEC}
+ 
+ case $target in
+-  *-sunos4*|NetBSD-*|FreeBSD-*|OpenBSD-*)
++  *-freebsd*|*-sunos4*|NetBSD-*|FreeBSD-*|OpenBSD-*)
+     tclLib="-ltcl${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}${itclSuffix}"
+     tkLib="-ltk${TK_MAJOR_VERSION}${TK_MINOR_VERSION}${itclSuffix}"
+     ;;
+@@ -3170,7 +3183,7 @@
+       SHLIB_CFLAGS="-fpic"
+       SHLIB_LD="ld"
+       SHLIB_LD_FLAGS="-Bshareable -x"
+-      SHLIB_SUFFIX=".so"
++      SHLIB_SUFFIX=".so.${bltMajor}.${bltMinor}"
+     fi
+     ;;
+ 

@@ -1,14 +1,23 @@
-#This is pfe Version 0.9.9
-#By mr
-DISTNAME=	pfe099
-DISTFILES=	pfe-0.9.9.tar.gz
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/languages/forth/
+# New ports collection makefile for:    pfe
+# Version required:     0.9.9
+# Date created:         23 November 1994
+# Whom:                 mr
+#
+# $Id: Makefile,v 1.10 1998/06/11 02:39:02 mph Exp $
+#
+
+DISTNAME=	pfe-0.9.9
+CATEGORIES=	lang
+MASTER_SITES=	ftp://sunsite.unc.edu/pub/multimedia/.languages/forth/ \
+		ftp://ftp.lysator.liu.se/pub/languages/forth/ \
+		ftp://ftp.uni-potsdam.de/pub/lang/forth/
+
+MAINTAINER=	ports@FreeBSD.org
+
+MAN1=		pfe.1
+WRKSRC=		${WRKDIR}/pfe099
 
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/lib
-	@mkdir -p ${PREFIX}/man/man1
-	@cp ${WRKSRC}/pfe.1 ${PREFIX}/man/man1/pfe.1
+	@${CP} ${WRKSRC}/pfe.1 ${PREFIX}/man/man1/pfe.1
 
 .include <bsd.port.mk>
-

@@ -1,0 +1,12 @@
+bin/amiwm
+lib/amiwm/requestchoice
+lib/amiwm/executecmd
+lib/amiwm/Background
+lib/amiwm/Keyboard
+lib/amiwm/system.amiwmrc
+lib/amiwm/def_tool.info
+share/doc/amiwm/INSTALL
+share/doc/amiwm/README
+share/doc/amiwm/README.modules
+@dirrm lib/amiwm
+@dirrm share/doc/amiwm

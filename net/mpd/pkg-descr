@@ -1,0 +1,67 @@
+MPD MULTI-LINK PPP DAEMON FOR FREEBSD
+
+Release 1.0b5
+Written by Archie Cobbs <archie@whistle.com>
+Based on IIJ-PPP by Toshiharu OHNO <tony-o@iij.ad.jp>
+
+Please see the CHANGES file if you are updating from mpd-1.0b3.
+
+* WHAT IS IT?
+
+  A user-mode PPP daemon based on iij-ppp which supports multi-link PPP.
+  It is a complete re-write of the original iij-ppp code.
+
+* HOW STABLE IS IT?
+
+  Most of this code has been thoroughly tested. Some parts, such
+  as compression, have not been tested very much at all. However,
+  the core of the daemon is very solid.
+
+* HOW DO I BUILD AND INSTALL IT?
+
+  cd src
+  make depend all install
+
+* HOW DO I SET IT UP?
+
+  You will need to create your own versions of the four required
+  configuration files in /etc/ppp:
+
+    mpd.conf    - General configuration
+    mpd.links   - Description of available links
+    mpd.script  - Modem scripts
+    mpd.secret  - Login/password pairs
+
+  If you're familiar with iij-ppp, the configuration method is
+  similar: commands are read from a file.
+
+  Check the "conf" subdirectory for configuration file examples.
+
+  Then append the following lines to /etc/syslog.conf and create an
+  empty /var/log/mpd.log file to get proper logging:
+
+    !mpd
+    *.*                        /var/log/mpd.log
+
+  Add a corresponding line to /etc/newsyslog.conf as well to get
+  proper log rotation.
+
+  If you want to start it as a background daemon at boot time,
+  add the appropriate line to /etc/rc.local, e.g.:
+
+    echo -n " mpd" ; /usr/local/bin/mpd -b
+
+* WHAT'S THE COPYRIGHT STATUS?
+
+  Berkeley style: see ``COPYRIGHT.iij'' and ``COPYRIGHT.whistle''.
+
+* WHERE CAN I READ MORE ABOUT IT?
+
+  In the "docs" directory is a preliminary man page and some other
+  assorted stuff. In the "conf" directory are example configuration
+  files with descriptive comments.
+
+* WHERE CAN I GO FOR HELP?
+
+  Email me any questions <archie@whistle.com> and I'll do my best
+  to answer them.

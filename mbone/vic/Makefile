@@ -3,18 +3,24 @@
 # Date created:		14 December 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/14 23:01:26 wollman Exp $
+# $Id: Makefile,v 1.19 1998/10/13 03:05:40 jseger Exp $
 #
 
-DISTNAME=	vic-2.6
-DISTFILES=	vicsrc-2.6.tar.Z
+DISTNAME=	vic-2.8
+CATEGORIES=	mbone tk80
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vic/
-LIB_DEPENDS=	BLT\\.1\\.:${PORTSDIR}/x11/blt
-HAS_CONFIGURE=	yes
-INSTALL_TARGET=	MANDIR=${PREFIX}/man/manl install
+DISTFILES=	vicsrc-2.8.tar.gz
 
-pre-install:
-	mkdir -p ${PREFIX}/man/manl
+MAINTAINER=	fenner@FreeBSD.ORG
+
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+
+USE_AUTOCONF=	yes
+USE_X_PREFIX=	yes
+MAN1=		vic.1
+
+post-install:
+	strip ${PREFIX}/bin/vic
+	strip ${PREFIX}/bin/histtolut
 
 .include <bsd.port.mk>
-

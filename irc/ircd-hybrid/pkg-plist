@@ -1,0 +1,8 @@
+sbin/ircd
+etc/rc.d/ircd.sh
+etc/ircd/example.conf.trillian
+etc/ircd/ircd.conf
+etc/ircd/ircd.motd
+etc/ircd/kline.conf
+etc/ircd/opers.txt
+@dirrm etc/ircd

@@ -1,0 +1,7 @@
+bin/glimpseindex
+bin/agrep
+bin/glimpseserver
+bin/glimpse
+bin/wgconvert
+share/doc/glimpse/COPYRIGHT
+share/doc/glimpse/README

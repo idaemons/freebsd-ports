@@ -1,0 +1,12 @@
+--- Makefile.orig	Sun Oct  4 21:40:46 1998
++++ Makefile	Wed Oct  7 16:36:55 1998
+@@ -9,8 +9,7 @@
+               aesthetech aesthetech-big
+ 
+ all:
+-	cd src ; $(MAKE) LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR)
+-	cd doc ; $(MAKE)
++	cd src ; $(MAKE) LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR) PREFIX=$(PREFIX)
+ 
+ doc:
+ 	cd doc ; $(MAKE)

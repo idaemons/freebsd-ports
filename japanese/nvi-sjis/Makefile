@@ -1,0 +1,25 @@
+# New ports collection makefile for:	nvi-1.79 + multilingual patch(sjis)
+# Version required:	1.79
+# Date created:		6 Mar 1997
+# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
+#
+# $Id: Makefile,v 1.12 1998/06/26 09:16:33 obrien Exp $
+#
+
+# can't use PORTSDIR here, since we haven't included bsd.port.mk
+FILESDIR=	${.CURDIR}/../../editors/nvi-m17n/files
+PATCHDIR=	${.CURDIR}/../../editors/nvi-m17n/patches
+PKGDIR=		${.CURDIR}/../../editors/nvi-m17n/pkg
+COMMENT=	${.CURDIR}/pkg/COMMENT
+
+LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
+
+PKGNAME=	ja-nvi-sjis-1.79.19970820
+
+.include <${.CURDIR}/../../editors/nvi-m17n/Makefile>
+
+CATEGORIES=	japanese editors
+
+MAINTAINER=	itojun@itojun.org
+
+CONFIGURE_ARGS+=	--enable-multibyte=sjis --program-prefix=n --enable-canna

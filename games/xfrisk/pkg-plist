@@ -1,0 +1,8 @@
+bin/friskserver
+bin/risk
+bin/xfrisk
+lib/X11/app-defaults/XFrisk
+lib/X11/xfrisk/Help.risk
+lib/X11/xfrisk/Countries.risk
+lib/X11/xfrisk/World.risk
+@dirrm lib/X11/xfrisk

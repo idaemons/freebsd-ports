@@ -1,8 +1,75 @@
-# $Id: Makefile,v 1.37 1995/02/06 05:30:34 asami Exp $
+# $Id: Makefile,v 1.165 1998/10/09 00:27:15 kuriyama Exp $
 #
-# restricted: pgp.usa_only pgp.non-usa_only 
-#
-SUBDIR= cpm hfs iozone ispell less mshell mtools nkf rman screen top \
-	xdu xsysstats 
+
+    SUBDIR += acron
+    SUBDIR += amanda
+    SUBDIR += amanda24
+    SUBDIR += astrolog
+    SUBDIR += bb
+    SUBDIR += chord
+    SUBDIR += colorls
+    SUBDIR += ctk
+    SUBDIR += cwish
+    SUBDIR += deco
+    SUBDIR += dejagnu
+    SUBDIR += diction
+    SUBDIR += display
+    SUBDIR += dotfile
+    SUBDIR += estic
+    SUBDIR += ewipe
+    SUBDIR += fd
+    SUBDIR += fep
+    SUBDIR += figlet
+    SUBDIR += git
+    SUBDIR += gnomeutils
+    SUBDIR += gnuls
+    SUBDIR += gone
+    SUBDIR += gyvescm
+    SUBDIR += iselect
+    SUBDIR += jargon
+    SUBDIR += jive
+    SUBDIR += kdeutils
+    SUBDIR += kp
+    SUBDIR += kwatch
+    SUBDIR += less
+    SUBDIR += lile
+    SUBDIR += logsurfer
+    SUBDIR += magicpoint
+    SUBDIR += man.el
+    SUBDIR += mc
+    SUBDIR += mmv
+    SUBDIR += most
+    SUBDIR += mshell
+    SUBDIR += nwrite
+    SUBDIR += p5-Array-PrintCols
+    SUBDIR += p5-Business-CreditCard
+    SUBDIR += p5-Locale-Codes
+    SUBDIR += p5-Search
+    SUBDIR += qclock
+    SUBDIR += rpm
+    SUBDIR += screen
+    SUBDIR += scriptkit
+    SUBDIR += sls
+    SUBDIR += sma
+    SUBDIR += splitvt
+    SUBDIR += team
+    SUBDIR += tkcron
+    SUBDIR += tkinfo
+    SUBDIR += tkman
+    SUBDIR += uk-phone
+    SUBDIR += uk-postcodes
+    SUBDIR += unclutter
+    SUBDIR += us-zipcodes
+    SUBDIR += viz
+    SUBDIR += x-files
+    SUBDIR += xd
+    SUBDIR += xdelta
+    SUBDIR += xenmenu
+    SUBDIR += xgas
+    SUBDIR += xless
+    SUBDIR += xpns
+    SUBDIR += xtar
+    SUBDIR += xquote
+    SUBDIR += ytree
 
 .include <bsd.port.subdir.mk>

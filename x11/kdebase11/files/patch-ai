@@ -1,0 +1,23 @@
+*** kfm/kfmsu2.in~	Sun Jul  5 15:53:02 1998
+--- kfm/kfmsu2.in	Sun Jul  5 15:53:58 1998
+***************
+*** 2,10 ****
+  echo "--------------"
+  echo ""
+! echo "Allowing root user to use this display"
+! xhost +local:root
+  echo ""
+  echo "Logging in as super user"
+! su - root -c "export DISPLAY=$DISPLAY; @kde_bindir@/kfm -sw >/dev/null"
+! xhost -local:root
+  
+--- 2,10 ----
+  echo "--------------"
+  echo ""
+! echo "Allowing ALL (!) local users to use this display"
+! xhost +local:
+  echo ""
+  echo "Logging in as super user"
+! su root -c "echo DISPLAY=$DISPLAY @kde_bindir@/kfm -sw | /bin/sh > /dev/null"
+! xhost -local:
+  

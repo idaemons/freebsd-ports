@@ -1,0 +1,3 @@
+bin/cdrecord
+@unexec rm -f /dev/scgx
+@exec ln -sf /dev/rworm0.ctl /dev/scgx

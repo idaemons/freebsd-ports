@@ -1,0 +1,4 @@
+bin/blackbox
+lib/X11/app-defaults/Blackbox
+lib/X11/app-defaults/Blackbox-menu
+lib/X11/app-defaults/Blackbox-style

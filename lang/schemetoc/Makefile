@@ -3,13 +3,22 @@
 # Date created:         28 Dec 1994
 # Whom:                 jmacd@uclink.berkeley.edu
 #
-# $Id: Makefile,v 1.2 1994/10/06 07:52:04 swallace Exp $
+# $Id: Makefile,v 1.10 1997/07/17 15:12:49 max Exp $
 #
 
-DISTNAME=       Scheme-to-C
+DISTNAME= 	schemetoc-93.3.15
+PKGNAME=	schemetoc-93.3.15
+CATEGORIES=	lang
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/Scheme-to-C/
-EXTRACT_SUFX=	tar.Z
 DISTFILES=      15mar93.tar.Z
-NO_WRKSUBDIR=
+
+MAINTAINER=	jmacd@FreeBSD.ORG
+
+BROKEN_ELF=	yes
+
+NO_WRKSUBDIR=	yes
+
+post-install:
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

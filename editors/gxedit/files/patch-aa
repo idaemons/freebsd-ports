@@ -1,0 +1,13 @@
+--- config.h.orig	Sun Aug 30 08:16:29 1998
++++ config.h	Thu Sep 17 06:43:40 1998
+@@ -1,8 +1,8 @@
+ /* configuration file - precompile options */
+ 
+ #define USE_NET /* Use networking features */
+-#undef BG_ON_START /* Background on startup */
+-#undef GTK_1_1 /* Use GTK 1.1.x */
++#define BG_ON_START /* Background on startup */
++#define GTK_1_1 /* Use GTK 1.1.x */
+ #undef GTKEDITOR_PATCH /* Use the GtkEditor patch */
+ 
+ /* Highlighting styles */

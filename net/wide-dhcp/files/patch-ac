@@ -1,0 +1,111 @@
+--- client/dhcpc_subr.c.orig	Thu Jul  3 05:19:01 1997
++++ client/dhcpc_subr.c	Sat Jun 27 19:30:56 1998
+@@ -64,6 +64,12 @@
+ #ifdef __osf__
+ #include <net/pfilt.h>
+ #endif
++#ifdef __FreeBSD__
++#include <osreldate.h>
++#if (__FreeBSD_version == 199702) || (__FreeBSD_version >= 300000)
++#include <net/if_var.h>
++#endif
++#endif
+ #include <netinet/in.h>
+ #include <netinet/in_systm.h>
+ #include <netinet/if_ether.h>
+@@ -71,6 +77,8 @@
+ #include <netinet/ip.h>
+ #include <netinet/udp.h>
+ #include <arpa/inet.h>
++#include <arpa/nameser.h>
++#include <resolv.h>
+ #ifdef VIP
+ #include <netinet/vip.h>
+ #endif
+@@ -164,6 +172,8 @@
+ 
+ int config_if();
+ void set_route();
++void set_resolv();
++void set_hostname();
+ void make_decline();
+ void make_release();
+ Long generate_xid();
+@@ -1853,6 +1863,10 @@
+   register char *cp = m_rtmsg.m_space;
+   register int l;
+ 
++  if (!ISSET(param->got_option, ROUTER) ||
++      param->router == NULL || param->router->addr == NULL)
++    return;
++
+   bzero(&so_dst, sizeof(struct sockaddr));
+   bzero(&so_mask, sizeof(struct sockaddr));
+   bzero(&so_gate, sizeof(struct sockaddr));
+@@ -1895,6 +1909,45 @@
+ 
+ #endif
+ 
++void
++set_resolv(param)
++struct dhcp_param *param;
++{
++  FILE *fp;
++  int i;
++
++  if (param == NULL) {
++    return;
++  }
++
++  /*
++   * set resolv.conf
++   */
++  if (param->dns_server != NULL) {
++    if (param->dns_server->num && param->dns_server->addr != NULL) {
++      unlink(_PATH_RESCONF);
++      if ((fp = fopen(_PATH_RESCONF, "w")) == NULL) {
++        return;
++      }
++      if (param->dns_domain != NULL)
++        fprintf(fp, "domain %s\n", param->dns_domain);
++      for (i = 0; i < param->dns_server->num; i++) {
++        fprintf(fp,"nameserver %s\n",inet_ntoa(param->dns_server->addr[i]));
++      }
++      fclose(fp);
++    }
++  }
++}
++
++void
++set_hostname(param)
++struct dhcp_param *param;
++{
++  if (param->hostname != NULL) {
++    sethostname(param->hostname,strlen(param->hostname));
++  }
++  return;
++}
+ 
+ void
+ make_decline(lsbuf, reqspecp)
+@@ -2528,11 +2581,9 @@
+   struct msghdr msg;
+   struct iovec bufvec[1];
+   int bufsize = DFLTDHCPLEN;
+-#if 0
+ #if defined(__bsdi__) || defined(__FreeBSD__)
+   int on;
+ #endif
+-#endif
+ 
+   if (sockfd == -1) {
+     struct sockaddr_in myaddr;
+@@ -2556,7 +2607,7 @@
+       return(-1);
+     }
+ 
+-#if 0
++#if defined(__bsdi__) || defined(__FreeBSD__)
+     on = 1;
+     if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEPORT, &on, sizeof(on)) < 0) {
+       close(sockfd);

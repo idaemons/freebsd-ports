@@ -1,0 +1,6 @@
+bin/mikmod
+bin/mikcvt
+share/doc/mikmod/credits.txt
+share/doc/mikmod/mikmod.txt
+share/doc/mikmod/register.frm
+@dirrm share/doc/mikmod

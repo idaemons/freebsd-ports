@@ -1,0 +1,28 @@
+--- Makefile.in.orig	Fri Jul 24 10:53:37 1998
++++ Makefile.in	Tue Aug 25 14:17:09 1998
+@@ -29,7 +29,7 @@
+ LDFLAGS =
+ LIBS = @LIBS@
+ 
+-PREFIX = @prefix@
++PREFIX ?= @prefix@
+ exec_prefix = $(PREFIX)
+ sbindir = $(exec_prefix)/sbin
+ etcdir = $(exec_prefix)/etc
+@@ -135,9 +135,13 @@
+ 	autoconf
+ 
+ certificate::
+-	$(SSLTOP)/bin/req -new -x509 -out new.pem -nodes -days 365
+-	cat new.pem privkey.pem > $(etcdir)/bjorb.pem
+-	@rm new.pem privkey.pem
++	(\
++	[ -f $(PREFIX)/certs/bjorb.pem ] && exit 0; \
++	cd $(PREFIX)/certs; \
++	ssleay req -new -x509 -nodes -days 365 -out bjorb.pem -keyout bjorb.pem; \
++	ln -s bjorb.pem `ssleay x509 -noout -hash < bjorb.pem`.0 ;\
++	chmod 644 $(PREFIX)/certs/bjorb.pem; \
++	)
+ 
+ install-bsd::
+ 	@if test -f /etc/rc.bjorb ; then chmod +w /etc/rc.bjorb; fi

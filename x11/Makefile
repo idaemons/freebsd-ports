@@ -1,13 +1,78 @@
-# $Id: Makefile,v 1.44 1995/01/06 05:42:02 jkh Exp $
+# $Id: Makefile,v 1.234 1998/09/09 07:16:26 tg Exp $
 #
-SUBDIR= Xaw3d color_xterm ctwm emu fvwm kterm olvwm piewm rxvt tk \
-	tkhfs tkman tvtwm x3270 xearth xfed xlockmore xsnow \
-	xview-config xview-lib xview-clients
 
-#
-# These depend on tk, so might as well build tk first...
-# (And vic depends on blt.)
-#
-SUBDIR+= blt vic
+    SUBDIR += XFree86
+    SUBDIR += XFree86-contrib
+    SUBDIR += XttXF86srv-8514
+    SUBDIR += XttXF86srv-AGX
+    SUBDIR += XttXF86srv-I128
+    SUBDIR += XttXF86srv-Mach32
+    SUBDIR += XttXF86srv-Mach64
+    SUBDIR += XttXF86srv-Mach8
+    SUBDIR += XttXF86srv-Mono
+    SUBDIR += XttXF86srv-P9000
+    SUBDIR += XttXF86srv-S3
+    SUBDIR += XttXF86srv-S3V
+    SUBDIR += XttXF86srv-SVGA
+    SUBDIR += XttXF86srv-VGA16
+    SUBDIR += XttXF86srv-W32
+    SUBDIR += XttXF86srv-common
+    SUBDIR += XttXF86srv-xfs
+    SUBDIR += blast
+    SUBDIR += bricons
+    SUBDIR += camltk41
+    SUBDIR += dgs
+    SUBDIR += dxpc
+    SUBDIR += emu
+    SUBDIR += eterm
+    SUBDIR += fbsd-icons
+    SUBDIR += gnomecore
+    SUBDIR += gnomelibs
+    SUBDIR += kb2mb2
+    SUBDIR += kde
+    SUBDIR += kdebase
+    SUBDIR += kdelibs
+    SUBDIR += kworldwatch
+    SUBDIR += libdnd
+    SUBDIR += libhelp
+    SUBDIR += libsx
+    SUBDIR += lupe
+    SUBDIR += offix-clipboard
+    SUBDIR += offix-execute
+    SUBDIR += props
+    SUBDIR += rxvt
+    SUBDIR += sxpc
+    SUBDIR += tkgoodstuff
+    SUBDIR += tycoon
+    SUBDIR += wdm
+    SUBDIR += x3270
+    SUBDIR += xaniroc
+    SUBDIR += xantfarm
+    SUBDIR += xautolock
+    SUBDIR += xcb
+    SUBDIR += xco
+    SUBDIR += xcoloredit
+    SUBDIR += xcolors
+    SUBDIR += xdtm
+    SUBDIR += xfce
+    SUBDIR += xfedor
+    SUBDIR += xfishtank
+    SUBDIR += xgrab
+    SUBDIR += xkeycaps
+    SUBDIR += xloadimage
+    SUBDIR += xlockmore
+    SUBDIR += xmascot
+    SUBDIR += xmold
+    SUBDIR += xmove
+    SUBDIR += xprompt
+    SUBDIR += xscreensaver
+    SUBDIR += xskyroot
+    SUBDIR += xsnow
+    SUBDIR += xtacy
+    SUBDIR += xtattr
+    SUBDIR += xtestpicture
+    SUBDIR += xtoolwait
+    SUBDIR += xwit
+    SUBDIR += xzoom
 
 .include <bsd.port.subdir.mk>

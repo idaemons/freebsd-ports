@@ -1,0 +1,15 @@
+*** krn/Makefile.in.orig	Fri Jul 17 00:35:57 1998
+--- krn/Makefile.in	Fri Jul 17 00:36:04 1998
+***************
+*** 142,146 ****
+  
+  kdecode_LDADD = -lkfile -lkfm -lkdeui -lkdecore -lqt -lXext \
+! 	-lX11 -luulib $(KDE_RPATH) $(LIBCOMPAT) $(LIBSOCKET)
+  
+  ICONDIR = $(kde_icondir)
+--- 142,146 ----
+  
+  kdecode_LDADD = -lkfile -lkfm -lkdeui -lkdecore -lqt -lXext \
+! 	-lX11 -luu $(KDE_RPATH) $(LIBCOMPAT) $(LIBSOCKET)
+  
+  ICONDIR = $(kde_icondir)

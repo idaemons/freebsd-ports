@@ -1,0 +1,26 @@
+sbin/httpd_modperl
+share/doc/mod_perl/post-install-notes
+lib/perl5/site_perl/Apache.pm
+lib/perl5/site_perl/Apache/Constants.pm
+lib/perl5/site_perl/Apache/Debug.pm
+lib/perl5/site_perl/Apache/FakeRequest.pm
+lib/perl5/site_perl/Apache/Include.pm
+lib/perl5/site_perl/Apache/MyConfig.pm
+lib/perl5/site_perl/Apache/Options.pm
+lib/perl5/site_perl/Apache/PerlSections.pm
+lib/perl5/site_perl/Apache/Registry.pm
+lib/perl5/site_perl/Apache/RegistryLoader.pm
+lib/perl5/site_perl/Apache/Resource.pm
+lib/perl5/site_perl/Apache/SIG.pm
+lib/perl5/site_perl/Apache/StatINC.pm
+lib/perl5/site_perl/Apache/Status.pm
+lib/perl5/site_perl/Apache/test.pm
+lib/perl5/site_perl/Bundle/Apache.pm
+lib/perl5/site_perl/mod_perl.pm
+lib/perl5/site_perl/mod_perl.pod
+lib/perl5/site_perl/mod_perl_traps.pod
+lib/perl5/site_perl/mod_perl_tuning.pod
+lib/perl5/site_perl/cgi_to_mod_perl.pod
+lib/perl5/site_perl/i386-freebsd/auto/mod_perl/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/mod_perl
+@dirrm lib/perl5/site_perl/Apache

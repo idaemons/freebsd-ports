@@ -1,0 +1,22 @@
+--- configure.orig	Mon Apr 29 17:16:17 1996
++++ configure	Fri Sep 18 16:38:02 1998
+@@ -1140,6 +1140,19 @@
+ 	DSOOPTS='-shared'
+ 	DSO=OSF
+ 	;;
++    *-freebsd*)
++	DSOSUF=so
++	LIBCOPTS='-fpic -DPIC'
++	if [ $PORTOBJFORMAT = elf ]; then
++	    DSOSUF_VERSION=${DSOSUF}.1
++	    DSOOPTS='-shared'
++	    DSO=FREEBSD_ELF
++	else
++	    DSOSUF_VERSION=${DSOSUF}.1.0
++	    DSOOPTS='-Bshareable'
++	    DSO=FREEBSD_AOUT
++	fi
++	;;
+     *)  DSO=no;;
+     esac
+     test -z "$DSOSUF_VERSION" && DSOSUF_VERSION=${DSOSUF}

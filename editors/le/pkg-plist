@@ -1,0 +1,11 @@
+bin/le
+share/doc/le/FEATURES
+share/doc/le/HISTORY
+share/doc/le/NEWS
+share/doc/le/README
+share/le/colors1
+share/le/colors2
+share/le/colors3
+share/le/syntax
+@dirrm share/doc/le
+@dirrm share/le

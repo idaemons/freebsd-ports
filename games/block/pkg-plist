@@ -1,0 +1,7 @@
+bin/block
+bin/bed
+share/block/another.block
+share/block/complex.block
+share/block/default.block
+share/block/pyramid.block
+@dirrm share/block
