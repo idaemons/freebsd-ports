@@ -1,0 +1,23 @@
+--- Makefile.orig	Mon Mar 31 13:12:57 2003
++++ Makefile	Sun Jul 13 13:58:11 2003
+@@ -1,9 +1,9 @@
+ PKGNAME = gkrellweather
+ VERSION = 2.0.6
+-CFLAGS = -O2 -Wall -fPIC `pkg-config gtk+-2.0 --cflags`
++CFLAGS += -Wall -fPIC `pkg-config gtk+-2.0 --cflags`
+ LIBS = `pkg-config gtk+-2.0 --libs`
+ LFLAGS = -shared
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ 
+ LOCALEDIR := $(PREFIX)/share/locale
+ 
+@@ -20,7 +20,7 @@
+ 
+ gkrellweather.so: $(OBJS)
+ 	(cd po && ${MAKE} all )
+-	$(CC) $(OBJS) -DVERSION=\"$(VERSION)\" -o gkrellweather.so $(LFLAGS) $(LIBS) -lpthread
++	$(CC) $(OBJS) -DVERSION=\"$(VERSION)\" -o gkrellweather.so $(LFLAGS) $(LIBS) ${PTHREAD_LIBS}
+ 
+ clean:
+ 	(cd po && ${MAKE} clean )

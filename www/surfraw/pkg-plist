@@ -1,0 +1,50 @@
+@comment $FreeBSD$
+bin/W
+bin/altavista
+bin/amazon
+bin/appwatch
+bin/ask
+bin/austlii
+bin/britannica
+bin/cite
+bin/cnn
+bin/currency
+bin/debbugs
+bin/debcontents
+bin/debpackages
+bin/deja
+bin/excite
+bin/fast
+bin/filesearching
+bin/freebsd
+bin/freshmeat
+bin/ftpfind
+bin/ftpsearch
+bin/google
+bin/jake
+bin/netbsd
+bin/openbsd
+bin/pubmed
+bin/raging
+bin/rhyme
+bin/scaleplus
+bin/slashdot
+bin/slinuxdoc
+bin/sourceforge
+bin/stockquote
+bin/sundocs
+bin/sunsolve
+bin/surfraw
+bin/swhois
+bin/thesaurus
+bin/translate
+bin/webster
+bin/wetandwild
+bin/woffle
+bin/xxx
+bin/yahoo
+@unexec if cmp -s %D/etc/surfraw.conf %D/share/examples/surfraw/surfraw.conf; then rm -f %D/etc/surfraw.conf; fi
+share/examples/surfraw/surfraw.conf
+share/surfraw/surfraw_elvi.list
+@dirrm share/examples/surfraw
+@dirrm share/surfraw

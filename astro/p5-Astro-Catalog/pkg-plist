@@ -1,0 +1,16 @@
+bin/catalogs
+bin/finder
+bin/supercosmos
+%%SITE_PERL%%/Astro/Catalog.pm
+%%SITE_PERL%%/Astro/Catalog/GSC/Query.pm
+%%SITE_PERL%%/Astro/Catalog/Star.pm
+%%SITE_PERL%%/Astro/Catalog/SuperCOSMOS/Query.pm
+%%SITE_PERL%%/Astro/Catalog/USNOA2/Query.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Catalog/.packlist
+@dirrm %%SITE_PERL%%/Astro/Catalog/GSC
+@dirrm %%SITE_PERL%%/Astro/Catalog/SuperCOSMOS
+@dirrm %%SITE_PERL%%/Astro/Catalog/USNOA2
+@dirrm %%SITE_PERL%%/Astro/Catalog
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Catalog
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Astro 2>/dev/null || true

@@ -1,0 +1,16 @@
+--- Makefile.orig	Thu Feb  7 22:14:41 2002
++++ Makefile	Wed Apr 28 17:47:59 2004
+@@ -63,6 +64,7 @@
+ 	    -e 's/^        /	/' \
+ 	    -e '/^[ \f	]$$/d' \
+ 	    -e '/^[ \/]*[*]/d' | \
++	    unexpand | \
+ 	sed -n -e '/^..*$$/p' > ymakefile
+ 	rm -f MF.c
+ 
+@@ -97,3 +99,5 @@
+ man/nn.1.D: man/nn.1
+ 	sh SPLITNN1
+ 
++install:
++	./inst n

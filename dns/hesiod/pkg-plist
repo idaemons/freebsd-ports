@@ -1,0 +1,5 @@
+bin/hesinfo
+include/hesiod.h
+lib/libhesiod.a
+lib/libhesiod.so
+lib/libhesiod.so.3.0

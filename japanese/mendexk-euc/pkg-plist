@@ -1,0 +1,3 @@
+bin/mendex
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

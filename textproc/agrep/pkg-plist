@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/agrep
+%%DOCSDIR%%/agrep.algorithms
+@dirrm %%DOCSDIR%%

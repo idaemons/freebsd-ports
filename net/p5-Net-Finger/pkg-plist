@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Net/Finger.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Finger/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Finger
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true

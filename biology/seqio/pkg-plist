@@ -1,0 +1,39 @@
+bin/fmtseq
+bin/grepseq
+bin/idxseq
+bin/typeseq
+bin/wcseq
+%%PORTDOCS%%%%DOCSDIR%%/html/bigaln_example.html
+%%PORTDOCS%%%%DOCSDIR%%/html/examples_doc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fmtseq_doc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/idxseq_doc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/seqio.html
+%%PORTDOCS%%%%DOCSDIR%%/html/seqio_bioseq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/seqio_changes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/seqio_doc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/seqio_format.html
+%%PORTDOCS%%%%DOCSDIR%%/html/seqio_progr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/seqio_qref.html
+%%PORTDOCS%%%%DOCSDIR%%/html/seqio_readme.html
+%%PORTDOCS%%%%DOCSDIR%%/html/seqio_toc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/seqio_todo.html
+%%PORTDOCS%%%%DOCSDIR%%/html/seqio_user.html
+%%PORTDOCS%%%%DOCSDIR%%/bioseq.txt
+%%PORTDOCS%%%%DOCSDIR%%/examples.doc
+%%PORTDOCS%%%%DOCSDIR%%/fmtseq.doc
+%%PORTDOCS%%%%DOCSDIR%%/format.doc
+%%PORTDOCS%%%%DOCSDIR%%/idxseq.doc
+%%PORTDOCS%%%%DOCSDIR%%/programr.doc
+%%PORTDOCS%%%%DOCSDIR%%/quickref.doc
+%%PORTDOCS%%%%DOCSDIR%%/seqio.doc
+%%PORTDOCS%%%%DOCSDIR%%/user.doc
+%%PORTDOCS%%share/examples/seqio/example1.c
+%%PORTDOCS%%share/examples/seqio/example2.c
+%%PORTDOCS%%share/examples/seqio/example3.c
+%%PORTDOCS%%share/examples/seqio/example4.c
+%%PORTDOCS%%share/examples/seqio/seqio.c
+%%PORTDOCS%%share/examples/seqio/seqio.h
+%%PORTDOCS%%share/examples/seqio/Makefile
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm share/examples/seqio

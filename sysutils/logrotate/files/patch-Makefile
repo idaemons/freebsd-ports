@@ -1,0 +1,31 @@
+diff -ruN logrotate-3.7-orig/Makefile logrotate-3.7/Makefile
+--- logrotate-3.7-orig/Makefile	Mon Oct 27 10:36:37 2003
++++ logrotate-3.7/Makefile	Mon May 24 08:10:46 2004
+@@ -50,6 +50,12 @@
+     BASEDIR = /usr
+ endif
+ 
++ifeq ($(OS_NAME),FreeBSD)
++    LOADLIBES += -L${LOCALBASE}/lib
++    CFLAGS += -I${LOCALBASE}/include
++    PREFIX=
++endif
++
+ ifneq ($(POPT_DIR),)
+     CFLAGS += -I$(POPT_DIR)
+     LOADLIBES += -L$(POPT_DIR)
+@@ -102,10 +108,13 @@
+ 	if [ "$(OS_NAME)" = HP-UX ]; then \
+ 	$(INSTALL) $(PROG) $(PREFIX)/$(BINDIR) 0755 bin bin; \
+ 	$(INSTALL) $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"` 0644 bin bin; \
++	else if [ "$(OS_NAME)" = FreeBSD ]; then \
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(BINDIR); \
++	$(BSD_INSTALL_MAN) $(MAN) $(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN); \
+ 	else \
+ 	$(INSTALL) -m 755 $(PROG) $(PREFIX)/$(BINDIR); \
+ 	$(INSTALL) -m 644 $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN); \
+-	fi
++	fi; fi
+ 
+ co:
+ 	co RCS/*,v

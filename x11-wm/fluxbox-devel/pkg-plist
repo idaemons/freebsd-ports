@@ -1,0 +1,168 @@
+bin/fbrun
+bin/fbsetbg
+bin/fluxbox
+bin/fluxbox-generate_menu
+bin/startfluxbox
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DOCHTML:%%%%DOCSDIR%%/html/app-artwiz.html
+%%DOCHTML:%%%%DOCSDIR%%/html/app-debugging.html
+%%DOCHTML:%%%%DOCSDIR%%/html/app-setup.html
+%%DOCHTML:%%%%DOCSDIR%%/html/app-themeref.html
+%%DOCHTML:%%%%DOCSDIR%%/html/bsetroot-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c152.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c28.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c287.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c289.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c722.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c724.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c740.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c98.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-bg.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-slit.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-tabs.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-themes.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-toolbar.html
+%%DOCHTML:%%%%DOCSDIR%%/html/docbook.css
+%%DOCHTML:%%%%DOCSDIR%%/html/faq.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fbrun-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fbsetbg-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fluxbox-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fluxboxstyle-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fluxstyle-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/index.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-fbgm.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-fluxspace.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-pager.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-wmctrl.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x160.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x231.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x233.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x315.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x317.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x346.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x348.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x47.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x739.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x741.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x757.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x795.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x812.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x813.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x814.html
+%%DOCPDF:%%%%DOCSDIR%%/pdf/fluxbook.pdf
+share/fluxbox/init
+share/fluxbox/keys
+share/fluxbox/menu
+%%NLS:%%share/fluxbox/nls/C/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/bg_BG/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/da_DK/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/de_DE/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/es_ES/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/et_EE/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/fr_FR/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/it_IT/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/ja_JP/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/lv_LV/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/nl_NL/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/pl_PL/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/pt_BR/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/pt_PT/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/ru_RU/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/sl_SI/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/sv_SE/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/tr_TR/fluxbox.cat
+share/fluxbox/styles/Artwiz
+share/fluxbox/styles/BlueFlux/pixmaps/button_close_active.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_close_pressed.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_close_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_max_active.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_max_pressed.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_max_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_min_active.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_min_pressed.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_min_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_stick_active.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_stick_pressed.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_stick_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_stuck.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_stuck_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_toolbar.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_toolbar_pressed.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/menu_frame.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/title_bar.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/title_bar_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/toolbar.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/toolbar_label.xpm
+share/fluxbox/styles/BlueFlux/theme.cfg
+share/fluxbox/styles/BlueNight
+share/fluxbox/styles/Carbondioxide
+share/fluxbox/styles/Clean
+share/fluxbox/styles/Cthulhain
+share/fluxbox/styles/Emerge/pixmaps/bullet.xpm
+share/fluxbox/styles/Emerge/pixmaps/close-pressed.xpm
+share/fluxbox/styles/Emerge/pixmaps/close-unfocus.xpm
+share/fluxbox/styles/Emerge/pixmaps/close.xpm
+share/fluxbox/styles/Emerge/pixmaps/icon-pressed.xpm
+share/fluxbox/styles/Emerge/pixmaps/icon-unfocus.xpm
+share/fluxbox/styles/Emerge/pixmaps/icon.xpm
+share/fluxbox/styles/Emerge/pixmaps/max-pressed.xpm
+share/fluxbox/styles/Emerge/pixmaps/max-unfocus.xpm
+share/fluxbox/styles/Emerge/pixmaps/max.xpm
+share/fluxbox/styles/Emerge/pixmaps/selected.xpm
+share/fluxbox/styles/Emerge/pixmaps/stick-pressed.xpm
+share/fluxbox/styles/Emerge/pixmaps/stick-unfocus.xpm
+share/fluxbox/styles/Emerge/pixmaps/stick.xpm
+share/fluxbox/styles/Emerge/pixmaps/stuck-pressed.xpm
+share/fluxbox/styles/Emerge/pixmaps/stuck-unfocus.xpm
+share/fluxbox/styles/Emerge/pixmaps/stuck.xpm
+share/fluxbox/styles/Emerge/pixmaps/unselected.xpm
+share/fluxbox/styles/Emerge/theme.cfg
+share/fluxbox/styles/Flux
+share/fluxbox/styles/LemonSpace
+share/fluxbox/styles/Makro
+share/fluxbox/styles/MerleyKay
+share/fluxbox/styles/Meta
+share/fluxbox/styles/Minimal
+share/fluxbox/styles/Nyz
+share/fluxbox/styles/Operation
+share/fluxbox/styles/Outcomes
+share/fluxbox/styles/Rampage
+share/fluxbox/styles/Results
+share/fluxbox/styles/Shade
+share/fluxbox/styles/Spiff
+share/fluxbox/styles/Twice
+share/fluxbox/styles/qnx-photon
+@dirrm share/fluxbox/styles/Emerge/pixmaps
+@dirrm share/fluxbox/styles/Emerge
+@dirrm share/fluxbox/styles/BlueFlux/pixmaps
+@dirrm share/fluxbox/styles/BlueFlux
+@dirrm share/fluxbox/styles
+%%NLS:%%@dirrm share/fluxbox/nls/tr_TR
+%%NLS:%%@dirrm share/fluxbox/nls/sv_SE
+%%NLS:%%@dirrm share/fluxbox/nls/sl_SI
+%%NLS:%%@dirrm share/fluxbox/nls/ru_RU
+%%NLS:%%@dirrm share/fluxbox/nls/pt_PT
+%%NLS:%%@dirrm share/fluxbox/nls/pt_BR
+%%NLS:%%@dirrm share/fluxbox/nls/pl_PL
+%%NLS:%%@dirrm share/fluxbox/nls/nl_NL
+%%NLS:%%@dirrm share/fluxbox/nls/lv_LV
+%%NLS:%%@dirrm share/fluxbox/nls/ja_JP
+%%NLS:%%@dirrm share/fluxbox/nls/it_IT
+%%NLS:%%@dirrm share/fluxbox/nls/fr_FR
+%%NLS:%%@dirrm share/fluxbox/nls/et_EE
+%%NLS:%%@dirrm share/fluxbox/nls/es_ES
+%%NLS:%%@dirrm share/fluxbox/nls/de_DE
+%%NLS:%%@dirrm share/fluxbox/nls/da_DK
+%%NLS:%%@dirrm share/fluxbox/nls/bg_BG
+%%NLS:%%@dirrm share/fluxbox/nls/C
+%%NLS:%%@dirrm share/fluxbox/nls
+@dirrm share/fluxbox
+%%DOCPDF:%%@dirrm %%DOCSDIR%%/pdf
+%%DOCHTML:%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,60 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+echo ${WRKSRC}/components.conf
+if [ -f ${WRKSRC}/components.conf ]; then
+	exit
+fi
+
+tempfile=`/usr/bin/mktemp -t checklist`
+
+if [ -z "${BATCH}" ]; then
+
+/usr/bin/dialog --title "Netscape 7 component selection" --clear \
+	--checklist "\n\
+Choose components of Netscape 7 to download and install. \n\
+Press the space bar to toggle selections." -1 -1 12 \
+"browser"	"Web browser (10016 kB)"			ON \
+"deflenus"	"American English profile defaults (26 kB)"	ON \
+"flash"		"Flash plugin (576 kB)"				ON \
+"langenus"	"American English language pack (864 kB)"	ON \
+"mail"		"e-mail and news--requires browser (2064 kB)"	ON \
+"regca"		"regional settings for Canada (58 kB)"		ON \
+"regus"		"regional settings for the USA (60 kB)"		ON \
+"spellchecker"	"spell-checker (544 kB)"			ON \
+"talkback"	"sends bug reports to Netscape staff (832 kB)"	ON \
+"inspector"	"DOM inspector (154 kB)"			ON \
+"venkman"	"JavaScript debugger (224 kB)"			ON \
+2> /tmp/checklist.tmp.$$
+
+retval=$?
+
+choice=`cat /tmp/checklist.tmp.$$`
+rm -f /tmp/checklist.tmp.$$
+
+case $retval in
+	0)	if [ -z "$choice" ]; then
+			echo "Nothing selected"
+			exit 1;
+	fi
+	;;
+	1)	echo "Cancel pressed."
+		exit 1
+	;;
+esac
+
+echo "$choice" \
+	| sed -e "s/\"//g" \
+	| sed -e "s/mail/mail browser/g" \
+	| sed -e "s/browser/browser psm xpcom/g" \
+	| sort -u \
+	| sed -e "s/ /.xpi /g" \
+	| sed -e "s/$/.xpi/g" \
+	| perl -pi -e "s/ /\n/g" \
+	> ${WRKSRC}/components.conf
+fi
+
+echo "* Your choices are saved.  You must run the \"make\" command again to"
+echo "* complete the build.  Ignore the \"Error code 1\" below."
+exit 1

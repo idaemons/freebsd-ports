@@ -1,0 +1,34 @@
+# ex:ts=8
+# Ports collection makefile for:  hydra
+# Date created:			  Tue Oct 08, 2002
+# Whom:				  Laurent LEVIER (llevier@argosnet.com)
+#
+# $FreeBSD$
+#
+
+PORTNAME=	hydra
+PORTVERSION=	4.0
+CATEGORIES=	security
+MASTER_SITES=	http://www.thc.org/releases/ \
+		${MASTER_SITE_PACKETSTORM}
+EXTRACT_SUFX=	-src.tar.gz
+MASTER_SITE_SUBDIR=	groups/thc
+
+MAINTAINER=	llevier@argosnet.com
+COMMENT=	Brute force attack utility working on multiple network services
+
+NO_LATEST_LINK=	yes
+PLIST_FILES=	bin/hydra
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|CC = gcc||; \
+		s|-O2|${CFLAGS}|; s|md4\..||g' \
+		${WRKSRC}/Makefile.am
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/hydra ${PREFIX}/bin
+
+.include <bsd.port.mk>

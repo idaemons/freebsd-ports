@@ -1,0 +1,33 @@
+%%PYTHON_SITELIBDIR%%/erl_async_conn.py
+%%PYTHON_SITELIBDIR%%/erl_async_conn.pyc
+%%PYTHON_SITELIBDIR%%/erl_async_conn.pyo
+%%PYTHON_SITELIBDIR%%/erl_common.py
+%%PYTHON_SITELIBDIR%%/erl_common.pyc
+%%PYTHON_SITELIBDIR%%/erl_common.pyo
+%%PYTHON_SITELIBDIR%%/erl_epmd.py
+%%PYTHON_SITELIBDIR%%/erl_epmd.pyc
+%%PYTHON_SITELIBDIR%%/erl_epmd.pyo
+%%PYTHON_SITELIBDIR%%/erl_eventhandler.py
+%%PYTHON_SITELIBDIR%%/erl_eventhandler.pyc
+%%PYTHON_SITELIBDIR%%/erl_eventhandler.pyo
+%%PYTHON_SITELIBDIR%%/erl_node.py
+%%PYTHON_SITELIBDIR%%/erl_node.pyc
+%%PYTHON_SITELIBDIR%%/erl_node.pyo
+%%PYTHON_SITELIBDIR%%/erl_node_conn.py
+%%PYTHON_SITELIBDIR%%/erl_node_conn.pyc
+%%PYTHON_SITELIBDIR%%/erl_node_conn.pyo
+%%PYTHON_SITELIBDIR%%/erl_opts.py
+%%PYTHON_SITELIBDIR%%/erl_opts.pyc
+%%PYTHON_SITELIBDIR%%/erl_opts.pyo
+%%PYTHON_SITELIBDIR%%/erl_term.py
+%%PYTHON_SITELIBDIR%%/erl_term.pyc
+%%PYTHON_SITELIBDIR%%/erl_term.pyo
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/py_interface.pub
+%%EXAMPLESDIR%%/test_erl_epmd.py
+%%EXAMPLESDIR%%/test_erl_node.py
+%%EXAMPLESDIR%%/test_erl_node_conn.py
+%%EXAMPLESDIR%%/test_erl_node_tk_1.py
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

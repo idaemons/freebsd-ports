@@ -1,0 +1,3 @@
+bin/mdh
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

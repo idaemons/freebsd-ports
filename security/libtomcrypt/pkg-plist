@@ -1,0 +1,15 @@
+lib/libtomcrypt.a
+include/ltc_tommath.h
+include/mycrypt_cfg.h
+include/mycrypt_misc.h
+include/mycrypt_prng.h
+include/mycrypt_cipher.h
+include/mycrypt_hash.h
+include/mycrypt_macros.h
+include/mycrypt_pk.h
+include/mycrypt.h
+include/mycrypt_argchk.h
+include/mycrypt_custom.h
+include/mycrypt_pkcs.h
+%%PORTDOCS%%%%DOCSDIR%%/crypt.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

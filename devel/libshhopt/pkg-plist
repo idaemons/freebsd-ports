@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+include/shhopt.h
+lib/libshhopt.a
+lib/libshhopt.so
+lib/libshhopt.so.1
+%%PORTDOCS%%share/doc/libshhopt/CREDITS
+%%PORTDOCS%%share/doc/libshhopt/README
+%%PORTDOCS%%share/examples/libshhopt/Makefile
+%%PORTDOCS%%share/examples/libshhopt/example.c
+%%PORTDOCS%%@dirrm share/examples/libshhopt
+%%PORTDOCS%%@dirrm share/doc/libshhopt

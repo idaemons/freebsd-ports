@@ -1,0 +1,26 @@
+--- configure.orig	Mon Aug  2 20:29:37 2004
++++ configure	Mon Aug  2 20:32:46 2004
+@@ -1958,7 +1958,7 @@
+ 
+ 
+ 
+-LT_VERSION_INFO="400:1:400"
++LT_VERSION_INFO="399:1:399"
+ LT_CURRENT_MINUS_AGE=0
+ 
+ 
+@@ -23945,10 +23945,10 @@
+ s,@CYGPATH_W@,$CYGPATH_W,;t t
+ s,@PACKAGE@,$PACKAGE,;t t
+ s,@VERSION@,$VERSION,;t t
+-s,@ACLOCAL@,$ACLOCAL,;t t
+-s,@AUTOCONF@,$AUTOCONF,;t t
+-s,@AUTOMAKE@,$AUTOMAKE,;t t
+-s,@AUTOHEADER@,$AUTOHEADER,;t t
++s,@ACLOCAL@,/usr/bin/true,;t t
++s,@AUTOCONF@,/usr/bin/true,;t t
++s,@AUTOMAKE@,/usr/bin/true,;t t
++s,@AUTOHEADER@,/usr/bin/true,;t t
+ s,@MAKEINFO@,$MAKEINFO,;t t
+ s,@AMTAR@,$AMTAR,;t t
+ s,@install_sh@,$install_sh,;t t

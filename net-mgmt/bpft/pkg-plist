@@ -1,0 +1,15 @@
+sbin/trafd
+sbin/trafstatd
+bin/trafdump
+bin/traflog
+bin/trafsave
+bin/trafstart
+bin/trafstat
+bin/trafstop
+etc/rc.d/trafd.sh
+etc/traflog.format
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/WhatsNew
+@unexec rmdir %D/var/bpft 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

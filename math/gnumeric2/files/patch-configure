@@ -1,0 +1,19 @@
+--- configure.orig	Wed Dec 24 13:17:48 2003
++++ configure	Wed Dec 24 13:17:48 2003
+@@ -19590,6 +19590,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -25411,7 +25412,7 @@
+ }'
+ fi
+ 
+-DEFS=-DHAVE_CONFIG_H
++DEFS="$DEFS -DHAVE_CONFIG_H"
+ 
+ ac_libobjs=
+ ac_ltlibobjs=

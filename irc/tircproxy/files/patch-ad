@@ -1,0 +1,37 @@
+--- tircproxy.c.orig	Wed Sep 25 02:55:48 2002
++++ tircproxy.c	Wed Sep 25 02:56:17 2002
+@@ -131,6 +131,8 @@
+ #	include <netinet/ip_compat.h>
+ #  endif
+ #  include <netinet/ip_fil.h>
++#  include <netinet/ip_nat.h>
++#  include <netinet/ip_state.h>
+ #  include <netinet/ip_proxy.h>
+ #  include <netinet/ip_nat.h>
+ #  define TRANS 1
+@@ -1066,9 +1068,10 @@
+ 	struct sockaddr_in			to_addr;
+ 	int					to_len;
+ #if IPF
+-	struct sockaddr_in			socketin, sloc;
+-	natlookup_t     			natlook;
+-	int					fd;
++	struct sockaddr_in                      socketin, sloc;
++	natlookup_t				natlook;
++	natlookup_t                             *natlookp = &natlook;
++	int                                     fd;
+ #endif
+    
+    	/* Give this thing 10 minutes to get started (paranoia).
+@@ -1152,9 +1155,9 @@
+                 natlook.nl_inport = sloc.sin_port;
+ 
+                 fd = open(IPL_NAT, O_RDONLY);
+-                if (ioctl(fd, SIOCGNATL, &natlook) == -1)
++                if (ioctl(fd, SIOCGNATL, &natlookp) == -1)
+ 	     	{
+-                	perror("ioctl");
++                	perror("ioctl(SIOCGNATL)");
+                 	exit(-1);
+                 }
+                 close(fd);

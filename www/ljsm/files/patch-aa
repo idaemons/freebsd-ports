@@ -1,0 +1,11 @@
+--- ljsm.pl.orig	Sun Dec 21 23:15:16 2003
++++ ljsm.pl	Thu Aug 12 10:45:13 2004
+@@ -57,7 +57,7 @@
+ use constant PASSWORD		=> '';
+ use constant START_YEAR		=> 2001;	# fetch data back to this year
+ use constant UTF8_DECODE	=> 0;		# convert text to local charset
+-use constant LOCAL_CHARSET	=> 'CP1251'; # windows cyrillic
++use constant LOCAL_CHARSET      => 'KOI8-R'; # Unix cyrillic
+ use constant DEBUG_LEVEL	=> 3;		# 0 - quiet, 1 - essential, 2 - verbose
+ use constant LOCAL_DIR		=> '';		# local directory to put files into. Leave it empty to put in the current directory. Slash (/, if not empty) in the end required.
+ use constant HTTP_PROXY		=> '';		# set proxy URL if you use http proxy

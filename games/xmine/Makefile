@@ -1,14 +1,25 @@
-# New ports collection makefile for:	xmine(1)
-# Version required:	1.0.3 / Athena
+# New ports collection makefile for:	xmine
 # Date created:		25 December 1994
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.3 1995/01/21 17:27:39 ats Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	xmine-1.0.3-Xaw
-USE_IMAKE=      yes
+PORTNAME=	xmine
+PORTVERSION=	1.0.3
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.sw.ru/pub/x11/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	joerg
+DISTNAME=	${PKGNAME}-Xaw
 
-LIB_DEPENDS=        Xaw3d\\.:${PORTSDIR}/x11/Xaw3d
+MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	The `Athena' port of the xminesweeper game
+
+LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+
+USE_IMAKE=	yes
+MAN6=		xmine.6
+MANCOMPRESSED=	no
 
 .include <bsd.port.mk>

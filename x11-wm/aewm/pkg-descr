@@ -1,0 +1,13 @@
+This is a minimalist window manager, partly based on 9wm,  which
+implements the ICCCM.  It provides titlebars, and allows raising,
+lowering, resizing, moving, and hiding or un-hiding of windows.
+Placement of new windows depends on the position of the pointer.
+
+This port installs not only the window manager, but also the aemenu
+and aepanel applets.  These provide a list of windows by title
+(vertically for aemenu, horizontally for aepanel) and a menu from
+which programs may be run.
+
+WWW:  http://www.red-bean.com/~decklin/aewm/
+
+Trevor Johnson

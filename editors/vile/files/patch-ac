@@ -1,0 +1,11 @@
+--- makefile.in.orig	Mon May  5 11:16:17 2003
++++ makefile.in	Mon May  5 11:16:30 2003
+@@ -52,7 +52,7 @@
+ AWK		= @AWK@
+ PERL		= @PERL@
+ PERLLIB		= @perl_lib_path@
+-INSTALL_SCRIPT	= $(SHELL) $(srcdir)/sinstall.sh $(PERL) $(INSTALL_PROGRAM)
++INSTALL_SCRIPT	= $(INSTALL) -m 555
+ INSTALL_MODULE	= $(SHELL) $(srcdir)/sinstall.sh $(PERL) $(INSTALL_DATA)
+ 
+ prefix		= @prefix@

@@ -1,0 +1,25 @@
+bin/pmacct
+%%WITH_MYSQL%%bin/pmmyplay
+%%WITH_PGSQL%%bin/pmpgplay
+sbin/nfacctd
+sbin/pmacctd
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/EXAMPLES
+%%PORTDOCS%%%%DOCSDIR%%/FAQS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/allow-list.example
+%%EXAMPLESDIR%%/id_map.example
+%%EXAMPLESDIR%%/mrtg.conf.hosts.example
+%%EXAMPLESDIR%%/mrtg.conf.ports.example
+%%EXAMPLESDIR%%/networks.example
+%%EXAMPLESDIR%%/nfacctd-print.conf.example
+%%EXAMPLESDIR%%/nfacctd-sql.conf.example
+%%EXAMPLESDIR%%/nfacctd-sql_v1.conf.example
+%%EXAMPLESDIR%%/nfacctd-sql_v2.conf.example
+%%EXAMPLESDIR%%/pmacctd-imt.conf.example
+%%EXAMPLESDIR%%/pmacctd-names.conf.example
+%%EXAMPLESDIR%%/pmacctd-sql.conf.example
+%%EXAMPLESDIR%%/pmacctd-sql_v1.conf.example
+%%EXAMPLESDIR%%/pmacctd-sql_v2.conf.example
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

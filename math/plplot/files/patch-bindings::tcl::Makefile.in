@@ -1,0 +1,11 @@
+--- bindings/tcl/Makefile.in.orig	Mon Feb  2 20:40:59 2004
++++ bindings/tcl/Makefile.in	Tue Feb 10 01:10:30 2004
+@@ -932,7 +932,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-pkgincludeHEADERS install-tclDATA
++install-data-am: @enable_tcl_TRUE@install-pkgincludeHEADERS install-tclDATA
+ 
+ install-exec-am: install-libLTLIBRARIES
+ 

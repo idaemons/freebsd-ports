@@ -1,0 +1,5 @@
+bin/scanadf
+bin/xcam
+bin/xscanimage
+share/sane/sane-style.rc
+@unexec rmdir %D/share/sane 2>/dev/null || true

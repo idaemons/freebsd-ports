@@ -1,0 +1,3 @@
+bin/maplay
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

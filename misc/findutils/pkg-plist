@@ -1,0 +1,7 @@
+bin/gfind
+bin/gxargs
+bin/glocate
+bin/gupdatedb
+libexec/gfrcode
+libexec/gcode
+libexec/gbigram

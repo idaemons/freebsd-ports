@@ -1,0 +1,3 @@
+bin/gocr
+include/gocr.h
+lib/libPgm2asc.a

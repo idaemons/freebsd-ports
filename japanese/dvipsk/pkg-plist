@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+bin/afm2tfm
+bin/dvips
+bin/odvips
+bin/udvips
+%%TEXMF%%/dvips/base/tex.pro
+%%TEXMF%%/dvips/base/texps.pro
+%%TEXMF%%/dvips/base/texc.pro
+%%TEXMF%%/dvips/base/special.pro
+%%TEXMF%%/dvips/base/finclude.pro
+%%TEXMF%%/dvips/base/color.pro
+%%TEXMF%%/dvips/base/crop.pro
+%%TEXMF%%/dvips/base/hps.pro
+%%TEXMF%%/dvips/ptex/ptex-kanji.map
+%%TEXMF%%/dvips/config/config.ps.ptex-tetex

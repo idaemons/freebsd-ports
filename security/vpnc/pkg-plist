@@ -1,0 +1,8 @@
+sbin/vpnc
+etc/vpnc.conf.sample
+etc/rc.d/vpnc.sh.sample
+etc/rc.d/vpnc.sh.sample-fulltunnel
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,13 @@
+*****************************************************
+ The following ports are optional, but the suggested 
+ programs to compliment KDevelop.   
+ You may come to want these ports, If you've not
+ installed them yet.
+
+  - devel/c_c++_reference
+  - graphics/kdegraphics3
+  - textproc/glimpse
+  - print/a2ps-*
+  - print/enscript-*
+
+*****************************************************

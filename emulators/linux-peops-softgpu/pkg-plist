@@ -1,0 +1,12 @@
+lib/psemupro/plugins/libgpuPeopsSoftX.so.1.0.15
+libexec/psemupro/cfg/cfgPeopsSoft
+share/psemupro/cfg/gpuPeopsSoftX.cfg
+@dirrm lib/psemupro/plugins
+@dirrm lib/psemupro
+@dirrm libexec/psemupro/cfg
+@dirrm libexec/psemupro
+@dirrm share/psemupro/cfg
+@dirrm share/psemupro
+%%PORTDOCS%%%%DOCSDIR%%/peops_soft_readme_1_15.txt
+%%PORTDOCS%%%%DOCSDIR%%/peops_soft_version_1_15.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,19 +1,32 @@
 # New ports collection makefile for:	mpeg_play
-# Version required:	2.0
 # Date created:		17 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/17 11:54:26 asami Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	mpeg_play-2.0
+PORTNAME=	mpeg_play
+PORTVERSION=	2.4
+CATEGORIES=	multimedia
+MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/play/
+EXTRACT_SUFX=	-patched-src.tar.gz
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program to play mpeg movies on X displays
+
+WRKSRC=		${WRKDIR}/mpeg_play
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://s2k-ftp.cs.berkeley.edu/pub/multimedia/mpeg/
-EXTRACT_SUFX=	.tar.Z
-NO_WRKSUBDIR=	yes
+MAN1=		mpeg_play.1
+PLIST_FILES=	bin/mpeg_play
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ia64"
+.endif
 
 pre-patch:
-	cp ${WRKSRC}/Imakefile.proto ${WRKSRC}/Imakefile
-	cp ${WRKSRC}/mpeg_play.1 ${WRKSRC}/mpeg_play.man
+	${CP} ${WRKSRC}/Imakefile.proto ${WRKSRC}/Imakefile
+	${CP} ${WRKSRC}/mpeg_play.1 ${WRKSRC}/mpeg_play.man
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

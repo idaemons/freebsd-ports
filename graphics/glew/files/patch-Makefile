@@ -1,0 +1,46 @@
+--- Makefile.orig	Sun Dec 14 18:21:44 2003
++++ Makefile	Sun Jan 25 07:38:41 2004
+@@ -83,6 +83,26 @@
+ 
+ else
+ # ----------------------------------------------------------------------------
++# FreeBSD
++# ----------------------------------------------------------------------------
++ifeq ($(patsubst FreeBSD%,FreeBSD,$(SYSTEM)), FreeBSD)
++NAME = GLEW
++CC ?= gcc
++LD ?= ld
++CFLAGS.EXTRA = -fPIC -I${X11BASE}/include
++LDFLAGS.SO = -shared -soname $(LIB.SONAME)
++LDFLAGS.EXTRA = -L${X11BASE}/lib
++LDFLAGS.GL = -lXmu -lXi -lGLU -lGL -lXext -lX11
++GLEW_DEST = ${X11BASE}
++WARN = -Wall -W
++BIN.SUFFIX =
++LIB.SONAME = lib$(NAME).so.$(GLEW_MAJOR)
++LIB.DEVLNK = lib$(NAME).so
++LIB.SHARED = lib$(NAME).so.$(GLEW_VERSION)
++LIB.STATIC = lib$(NAME).a
++
++else
++# ----------------------------------------------------------------------------
+ # Irix
+ # ----------------------------------------------------------------------------
+ ifeq ($(patsubst IRIX%,IRIX,$(SYSTEM)), IRIX)
+@@ -158,6 +179,7 @@
+ endif
+ endif
+ endif
++endif
+ 
+ AR = ar
+ INSTALL = install
+@@ -171,7 +193,7 @@
+ STRIP = -s
+ endif
+ INCLUDE = -Iinclude
+-CFLAGS = $(OPT) $(WARN) $(INCLUDE) $(CFLAGS.EXTRA)
++CFLAGS += $(OPT) $(WARN) $(INCLUDE) $(CFLAGS.EXTRA)
+ 
+ LIB.SRCS = src/glew.c
+ LIB.OBJS = $(LIB.SRCS:.c=.o)

@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jul 24 11:16:25 2004
++++ configure	Sat Jul 24 11:16:34 2004
+@@ -26503,7 +26503,7 @@
+     ;;
+ esac
+ 
+-GETLIBTK=libtk$TK_MAJOR_VERSION.$TK_MINOR_VERSION.so
++GETLIBTK=libtk$TK_MAJOR_VERSION$TK_MINOR_VERSION.so
+ 
+ case "$host" in
+   *-*-darwin*)

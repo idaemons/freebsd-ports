@@ -1,0 +1,16 @@
+include/superlu/Cnames.h
+include/superlu/colamd.h
+include/superlu/csp_defs.h
+include/superlu/dcomplex.h
+include/superlu/dsp_defs.h
+include/superlu/scomplex.h
+include/superlu/ssp_defs.h
+include/superlu/supermatrix.h
+include/superlu/util.h
+include/superlu/zsp_defs.h
+lib/libsuperlu.a
+@dirrm include/superlu
+%%PORTDOCS%%%%DOCSDIR%%/SLU_general.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/simax95.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/superlu_ug.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,10 @@
+--- Makefile.bsd.orig	Fri Jul 30 16:35:54 2004
++++ Makefile.bsd	Fri Jul 30 16:36:04 2004
+@@ -127,6 +127,7 @@
+ CFLAGS ?= $(OPTFLAGS)
+ CFLAGS += $(WARN) $(INCS) $(DEFS)
+ #LDLIBS += -pg
++BUILD_DIR=	${WRKSRC}
+ 
+ all :: printconfig
+ 

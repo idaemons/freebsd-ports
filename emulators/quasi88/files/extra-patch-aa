@@ -1,0 +1,20 @@
+--- Makefile.orig	Fri Sep 26 13:09:01 2003
++++ Makefile	Tue Oct  7 21:15:28 2003
+@@ -142,7 +142,7 @@
+ #	動作確認が取れているのは、freebsd/linux のみです
+ 
+ #---------------------- FreeBSD
+-# ARCH = freebsd
++ARCH = freebsd
+ #---------------------- Linux
+ # ARCH = linux
+ #---------------------- NetBSD
+@@ -166,7 +166,7 @@
+ #---------------------- BeOS on Intel
+ # ARCH = beos
+ #---------------------- generic unix, no sound
+-ARCH = generic
++# ARCH = generic
+ 
+ 
+ 

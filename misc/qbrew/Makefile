@@ -1,0 +1,25 @@
+# New ports collection makefile for:	qbrew
+# Date created:				22 September 2000
+# Whom:					David Johnson <david@usermode.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	qbrew
+PORTVERSION=	0.3.3
+PORTREVISION=	1
+CATEGORIES=	misc
+MASTER_SITES=	http://www.usermode.org/code/
+PATCH_SITES=	http://www.usermode.org/code/
+PATCHFILES=	qbrew-0.3.3.1.patch
+
+MAINTAINER=	david@usermode.org
+COMMENT=	A homebrewer's recipe calculator
+
+GNU_CONFIGURE=	yes
+USE_QT_VER=	3
+
+post-install:
+	${STRIP_CMD} ${PREFIX}/bin/qbrew
+
+.include <bsd.port.mk>

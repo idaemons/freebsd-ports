@@ -1,0 +1,19 @@
+bin/yadex
+bin/yadex-%%PORTVERSION%%
+bin/ybsp
+bin/ybsp-%%PORTVERSION%%
+etc/yadex/%%PORTVERSION%%/yadex.cfg
+share/yadex/%%PORTVERSION%%/doom.ygd
+share/yadex/%%PORTVERSION%%/doom02.ygd
+share/yadex/%%PORTVERSION%%/doom04.ygd
+share/yadex/%%PORTVERSION%%/doom05.ygd
+share/yadex/%%PORTVERSION%%/doom2.ygd
+share/yadex/%%PORTVERSION%%/doompr.ygd
+share/yadex/%%PORTVERSION%%/heretic.ygd
+share/yadex/%%PORTVERSION%%/hexen.ygd
+share/yadex/%%PORTVERSION%%/strife.ygd
+share/yadex/%%PORTVERSION%%/strife10.ygd
+@dirrm share/yadex/%%PORTVERSION%%
+@dirrm share/yadex
+@dirrm etc/yadex/%%PORTVERSION%%
+@dirrm etc/yadex

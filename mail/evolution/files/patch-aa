@@ -1,0 +1,63 @@
+--- configure.orig	Fri Mar 12 02:06:47 2004
++++ configure	Fri Mar 12 02:28:50 2004
+@@ -10407,6 +10407,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/types.h>
+ #include <sys/socket.h>
+ socklen_t x;
+ 
+@@ -11519,7 +11520,7 @@
+ CPPFLAGS="$DB3_CFLAGS $CPPFLAGS"
+ 
+ 
+-for ac_header in db.h db3/db.h
++for ac_header in db3/db.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -11712,9 +11713,9 @@
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-{ { echo "$as_me:$LINENO: error: Found db.h is not version $evolution_db_version" >&5
+-echo "$as_me: error: Found db.h is not version $evolution_db_version" >&2;}
+-   { (exit 1); exit 1; }; }
++#{ { echo "$as_me:$LINENO: error: Found db.h is not version $evolution_db_version" >&5
++#echo "$as_me: error: Found db.h is not version $evolution_db_version" >&2;}
++#   { (exit 1); exit 1; }; }
+ fi
+ rm -f conftest.$ac_objext conftest.$ac_ext
+ 
+@@ -13075,7 +13076,7 @@
+ 	LDFLAGS_save="$LDFLAGS"
+ 
+ 	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
+-	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
++	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi -lcrypt"
+ 	echo "$as_me:$LINENO: checking for Kerberos 5" >&5
+ echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6
+ if test "${ac_cv_lib_kerberos5+set}" = set; then
+@@ -13860,10 +13861,10 @@
+ Example: --with-nspr-libs=/usr/lib" >&2;}
+    { (exit 1); exit 1; }; }
+        				else
+-	       				nsprlibs="-ldl $with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
++				    nsprlibs="$with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
+ 				fi
+ 			else
+-				nsprlibs="-ldl -lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
++			    nsprlibs="-lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
+ 			fi
+ 
+ 			echo "$as_me:$LINENO: checking for Mozilla nspr libraries" >&5
+@@ -17387,7 +17388,7 @@
+ idldir="$datadir/idl/evolution-$BASE_VERSION"
+ 
+ 
+-serverdir="$libdir/bonobo/servers"
++serverdir="$prefix/libdata/bonobo/servers"
+ 
+ 
+ evolutionuidir="$privdatadir/ui"

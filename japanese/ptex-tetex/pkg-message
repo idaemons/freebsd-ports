@@ -1,0 +1,9 @@
+*** NOTICE **********************************************************
+
+ - The default texmf.cnf for pTeX is installed in
+   texmf/web2c-ptex/texmf.cnf.
+
+ - Japanized versions of "pltotf" and "tftopl" are installed
+   as "pltotf-ptex" and "tftopl-ptex".
+
+*********************************************************************

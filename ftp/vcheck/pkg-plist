@@ -1,0 +1,3 @@
+bin/vcheck
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/vcheck/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/vcheck

@@ -1,0 +1,56 @@
+bin/knoda
+share/applnk/Office/knoda.desktop
+share/apps/hk_kdeclasses/hk_kdedbdesigner.rc
+share/apps/hk_kdeclasses/hk_kdedbdesignerpart.rc
+share/apps/hk_kdeclasses/hk_kdeform.rc
+share/apps/hk_kdeclasses/hk_kdegridpart.rc
+share/apps/hk_kdeclasses/hk_kdeinterpreterdialog.rc
+share/apps/hk_kdeclasses/hk_kdeqbepart.rc
+share/apps/hk_kdeclasses/hk_kdequery.rc
+share/apps/hk_kdeclasses/hk_kdereport.rc
+share/apps/hk_kdeclasses/hk_kdetable.rc
+share/apps/hk_kdeclasses/knodamaindockwindowbase.rc
+share/apps/hk_kdeclasses/pics/boolean22x22.png
+share/apps/hk_kdeclasses/pics/button.png
+share/apps/hk_kdeclasses/pics/combobox22x22.png
+share/apps/hk_kdeclasses/pics/dbdesigner.png
+share/apps/hk_kdeclasses/pics/designmode.png
+share/apps/hk_kdeclasses/pics/edit.png
+share/apps/hk_kdeclasses/pics/exit.png
+share/apps/hk_kdeclasses/pics/filter.png
+share/apps/hk_kdeclasses/pics/filterexec.png
+share/apps/hk_kdeclasses/pics/find.png
+share/apps/hk_kdeclasses/pics/grid22x22.png
+share/apps/hk_kdeclasses/pics/gridadd22x22.png
+share/apps/hk_kdeclasses/pics/gridcursor.png
+share/apps/hk_kdeclasses/pics/gridfilter.png
+share/apps/hk_kdeclasses/pics/label.png
+share/apps/hk_kdeclasses/pics/multiline.png
+share/apps/hk_kdeclasses/pics/pfeil.png
+share/apps/hk_kdeclasses/pics/propertyeditor.png
+share/apps/hk_kdeclasses/pics/reportsection.png
+share/apps/hk_kdeclasses/pics/rowselector22x22.png
+share/apps/hk_kdeclasses/pics/save.png
+share/apps/hk_kdeclasses/pics/saveas.png
+share/apps/hk_kdeclasses/pics/viewmode.png
+share/apps/knoda/hk_kdeworkspace.rc
+share/apps/knoda/knodaui.rc
+share/apps/knoda/pics/knodalogo.png
+share/doc/HTML/en/knoda/common
+share/doc/HTML/en/knoda/index.cache.bz2
+share/doc/HTML/en/knoda/index.docbook
+share/icons/hicolor/16x16/apps/knoda.png
+share/icons/hicolor/32x32/apps/knoda.png
+share/icons/locolor/16x16/apps/knoda.png
+share/icons/locolor/32x32/apps/knoda.png
+share/locale/de/LC_MESSAGES/knoda.mo
+share/locale/es/LC_MESSAGES/knoda.mo
+share/locale/hu/LC_MESSAGES/knoda.mo
+share/services/hk_kdedbdesignerpart.desktop
+share/services/hk_kdegridpart.desktop
+share/services/hk_kdeqbepart.desktop
+@dirrm share/apps/hk_kdeclasses/pics/
+@dirrm share/apps/hk_kdeclasses
+@dirrm share/apps/knoda/pics
+@dirrm share/apps/knoda
+@dirrm share/doc/HTML/en/knoda

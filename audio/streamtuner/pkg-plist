@@ -1,0 +1,40 @@
+bin/streamtuner
+include/streamtuner/st-action-api.h
+include/streamtuner/st-category-api.h
+include/streamtuner/st-dialog-api.h
+include/streamtuner/st-handler-api.h
+include/streamtuner/st-handler-field-api.h
+include/streamtuner/st-handlers-api.h
+include/streamtuner/st-m3u-api.h
+include/streamtuner/st-pls-api.h
+include/streamtuner/st-programs-api.h
+include/streamtuner/st-re-api.h
+include/streamtuner/st-settings-api.h
+include/streamtuner/st-sgml-ref-api.h
+include/streamtuner/st-state-api.h
+include/streamtuner/st-stream-api.h
+include/streamtuner/st-transfer-api.h
+include/streamtuner/st-version-api.h
+include/streamtuner/streamtuner.h
+lib/streamtuner/plugins/shoutcast.so
+libdata/pkgconfig/streamtuner.pc
+share/gnome/applications/streamtuner.desktop
+share/gnome/doc/streamtuner/C/documentation-license.xml
+share/gnome/doc/streamtuner/C/figures/main-window.png
+share/gnome/doc/streamtuner/C/software-license.xml
+share/gnome/doc/streamtuner/C/streamtuner.xml
+share/gnome/omf/streamtuner/streamtuner-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/streamtuner/streamtuner-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/pixmaps/streamtuner.png
+share/locale/de/LC_MESSAGES/streamtuner.mo
+share/locale/fr/LC_MESSAGES/streamtuner.mo
+share/locale/hu/LC_MESSAGES/streamtuner.mo
+share/locale/pt/LC_MESSAGES/streamtuner.mo
+@dirrm include/streamtuner
+@dirrm lib/streamtuner/plugins
+@dirrm lib/streamtuner
+@dirrm share/gnome/doc/streamtuner/C/figures
+@dirrm share/gnome/doc/streamtuner/C
+@dirrm share/gnome/doc/streamtuner
+@dirrm share/gnome/omf/streamtuner
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/streamtuner/streamtuner-C.omf 2>/dev/null || /usr/bin/true

@@ -1,0 +1,13 @@
+--- doc/Makefile.in.orig	Wed Sep 17 20:00:32 2003
++++ doc/Makefile.in	Mon May 31 01:33:13 2004
+@@ -154,8 +154,8 @@
+ SUBDIRS = examples stencils
+ 
+ # install these files
+-docdir = $(prefix)/doc
+-doc_DATA = blitz.ps 
++docdir = $(prefix)/share/doc/blitz
++doc_DATA = 
+ 
+ AM_MAKEINFOFLAGS = --no-split
+ TEXI2HTML = texi2html

@@ -1,33 +1,45 @@
 # New ports collection makefile for:	gofer
-# Version required:     2.30
 # Date created:         Wed Feb  1 01:51:59 PST 1995
 # Whom:                 hsu
 #
-# $Id$
+# $FreeBSD$
 #
 
-DISTNAME =	gofer230a
-MASTER_SITES =	ftp://cs.nott.ac.uk/nott-fp/languages/haskell/gofer/
-WRKSRC = ${WRKDIR}/src
-LIBDIR = ${PREFIX}/lib/Gofer
+PORTNAME=	gofer
+PORTVERSION=	2.30b
+CATEGORIES=	lang
+MASTER_SITES=	http://www.cse.ogi.edu/~mpj/goferarc/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-install:
-	-mkdir -p ${LIBDIR}
-	-mkdir -p ${PREFIX}/man/man1
-	-mkdir -p ${PREFIX}/bin
-	install -c -m 444 ${WRKDIR}/*.prelude ${LIBDIR}
-	install -c -m 444 ${WRKDIR}/src/prelude.h ${LIBDIR}
-	install -c -m 444 ${WRKDIR}/src/gofc.h ${LIBDIR}
-	perl -pi -e "s|#include \"prelude.h\"|#include \"${LIBDIR}/prelude.h\"|" ${LIBDIR}/gofc.h
-	install -c -m 444 ${WRKDIR}/src/runtime.o ${LIBDIR}
-	install -c -m 555 ${WRKDIR}/scripts/gofer ${PREFIX}/bin
-	install -c -m 555 ${WRKDIR}/scripts/goferc ${PREFIX}/bin
-	install -c -m 555 ${WRKDIR}/src/gofer ${LIBDIR}
-	install -c -m 555 ${WRKDIR}/src/gofc ${LIBDIR}
-	install -c -m 444 ${WRKDIR}/docs/gofer.1 ${PREFIX}/man/man1
-	-rm -f ${PREFIX}/man/man1/gofer.1.gz
-	gzip -9 ${PREFIX}/man/man1/gofer.1
-	-mkdir -p ${LIBDIR}/docs
-	install -c -m 444 ${WRKDIR}/docs/* ${LIBDIR}/docs
+MAINTAINER=	haskell@FreeBSD.org
+COMMENT=	A lazy functional language
+
+WRKSRC=		${WRKDIR}/src
+
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUSE_READLINE=1" \
+		LDFLAGS="${LDFLAGS} -lm -lreadline" OPTFLAGS=""
+
+DOCSDIR=	${PREFIX}/share/doc/Gofer
+LIBDIR=		${PREFIX}/lib/Gofer
+MAN1=		gofer.1
+
+USE_REINPLACE=	yes
+
+do-install:
+	@${MKDIR} ${LIBDIR}
+	${INSTALL_DATA} ${WRKDIR}/*.prelude ${LIBDIR}
+	${INSTALL_DATA} ${WRKDIR}/src/prelude.h ${LIBDIR}
+	${REINPLACE_CMD} -e "s|#include \"prelude.h\"|#include \"${LIBDIR}/prelude.h\"|" ${WRKDIR}/src/gofc.h
+	${INSTALL_DATA} ${WRKDIR}/src/gofc.h ${LIBDIR}
+	${INSTALL_DATA} ${WRKDIR}/src/runtime.o ${LIBDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/scripts/gofer ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/scripts/goferc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/src/gofer ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/src/gofc ${LIBDIR}
+	${INSTALL_MAN} ${WRKDIR}/docs/gofer.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/docs/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

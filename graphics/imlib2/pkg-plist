@@ -1,0 +1,30 @@
+bin/bumpmaptest
+bin/color_spaces
+bin/imconvert
+bin/imlib2
+bin/imlib2_test
+bin/imlib2_view
+bin/imlib2-config
+bin/polytest
+include/Imlib2.h
+lib/libImlib2.a
+lib/libImlib2.so
+lib/libImlib2.so.2
+lib/imlib2_loaders/filter/bump_map.so
+lib/imlib2_loaders/filter/colormod.so
+lib/imlib2_loaders/filter/testfilter.so
+lib/imlib2_loaders/image/argb.so
+lib/imlib2_loaders/image/bmp.so
+lib/imlib2_loaders/image/bz2.so
+lib/imlib2_loaders/image/gif.so
+lib/imlib2_loaders/image/jpeg.so
+lib/imlib2_loaders/image/png.so
+lib/imlib2_loaders/image/pnm.so
+lib/imlib2_loaders/image/tga.so
+lib/imlib2_loaders/image/tiff.so
+lib/imlib2_loaders/image/xpm.so
+lib/imlib2_loaders/image/zlib.so
+libdata/pkgconfig/imlib2.pc
+@dirrm lib/imlib2_loaders/image
+@dirrm lib/imlib2_loaders/filter
+@dirrm lib/imlib2_loaders

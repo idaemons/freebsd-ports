@@ -1,0 +1,13 @@
+bin/ozz
+include/ozz/zz.h
+include/ozz/zzbind.h
+lib/libozz.a
+lib/libozz.so
+lib/libozz.so.1
+lib/libozzi.a
+lib/libozzi.so
+lib/libozzi.so.1
+lib/libtagdtor.a
+lib/libtagdtor.so
+lib/libtagdtor.so.0
+@dirrm include/ozz

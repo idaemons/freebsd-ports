@@ -1,0 +1,5 @@
+bin/mailsync
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/mailsync
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+bin/t1mapper
+bin/xdvi
+bin/xdvi-xaw.bin
+bin/xdvi.bin
+bin/xdvizilla
+%%TEXMF%%/xdvi/xdvi.cfg
+%%TEXMF%%/xdvi/pixmaps/toolbar.xpm
+%%TEXMF%%/xdvi/pixmaps/toolbar2.xpm
+@dirrm %%TEXMF%%/xdvi/pixmaps
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.CVS
+%%PORTDOCS%%%%DOCSDIR%%/README_maintainer
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

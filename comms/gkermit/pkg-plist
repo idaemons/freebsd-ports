@@ -1,0 +1,3 @@
+bin/gkermit
+%%DOCSDIR%%/gkermit.txt
+@dirrm %%DOCSDIR%%

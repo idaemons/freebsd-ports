@@ -1,0 +1,287 @@
+@comment $FreeBSD$
+bin/MakeTeXPK
+bin/access
+%%DVIPSK%%bin/afm2tfm
+bin/allcm
+bin/allec
+bin/allneeded
+bin/bibtex
+bin/ctangle
+bin/cweave
+bin/dmp
+bin/dvi2fax
+bin/dvicopy
+bin/dvihp
+bin/dvilj
+bin/dvilj2p
+bin/dvilj4
+bin/dvilj4l
+bin/dvilj6
+bin/dvipdfm
+bin/dvipdft
+%%DVIPSK%%bin/dvips
+bin/dvired
+bin/dvitomp
+bin/dvitype
+bin/e2pall
+bin/ebb
+bin/einitex
+bin/elatex
+bin/epstopdf
+bin/etex
+bin/evirtex
+bin/fdf2tan
+bin/fmtutil
+bin/fontexport
+bin/fontimport
+bin/fontinst
+bin/gftodvi
+bin/gftopk
+bin/gftype
+bin/gsftopk
+bin/inimf
+bin/inimpost
+bin/iniomega
+bin/initex
+bin/kpsepath
+bin/kpsestat
+bin/kpsetool
+bin/kpsewhich
+bin/kpsexpand
+bin/lambda
+bin/latex
+bin/mag
+bin/makeindex
+bin/makempx
+bin/makempy
+bin/mf
+%%X11BITS%%bin/mf-nowin
+bin/mft
+%%X11BITS%%bin/mfw
+bin/mkfontdesc
+bin/mkindex
+bin/mkocp
+bin/mkofm
+bin/mktexfmt
+bin/mktexlsr
+bin/mktexmf
+bin/mktexpk
+bin/mktextfm
+bin/mpost
+bin/mpto
+bin/mptopdf
+bin/newer
+bin/odvicopy
+%%DVIPSK%%bin/odvips
+bin/odvitype
+bin/ofm2opl
+bin/omega
+bin/omfonts
+bin/opl2ofm
+bin/otangle
+bin/otp2ocp
+bin/outocp
+bin/ovf2ovp
+bin/ovp2ovf
+%%X11BITS%%%%XDVIK%%bin/oxdvi
+%%X11BITS%%%%XDVIK%%bin/oxdvi.bin
+bin/patgen
+bin/pdfeinitex
+bin/pdfelatex
+bin/pdfetex
+bin/pdfevirtex
+bin/pdfinitex
+bin/pdflatex
+bin/pdftex
+bin/pdftosrc
+bin/pdfvirtex
+bin/pfb2pfa
+bin/pk2bm
+bin/pktogf
+bin/pktype
+bin/pltotf
+bin/pooltype
+bin/ps2frag
+bin/ps2pk
+bin/pslatex
+bin/readlink
+bin/rubibtex
+bin/rumakeindex
+%%XDVIK%%bin/t1mapper
+bin/tangle
+bin/tex
+bin/texconfig
+bin/texdoc
+bin/texdoctk
+bin/texexec
+bin/texfind
+bin/texfont
+bin/texhash
+bin/texi2dvi
+bin/texi2html
+bin/texi2pdf
+bin/texlinks
+bin/texshow
+bin/texutil
+bin/tftopl
+bin/thumbpdf
+bin/tie
+bin/ttf2afm
+bin/updmap
+bin/vftovp
+bin/virmf
+bin/virmpost
+bin/viromega
+bin/virtex
+bin/vptovf
+%%XDVIK%%bin/xdvi
+%%XDVIK%%bin/xdvi.bin
+%%XDVIK%%bin/xdvizilla
+bin/weave
+include/kpathsea/absolute.h
+include/kpathsea/c-auto.h
+include/kpathsea/c-ctype.h
+include/kpathsea/c-dir.h
+include/kpathsea/c-errno.h
+include/kpathsea/c-fopen.h
+include/kpathsea/c-limits.h
+include/kpathsea/c-memstr.h
+include/kpathsea/c-minmax.h
+include/kpathsea/c-namemx.h
+include/kpathsea/c-pathch.h
+include/kpathsea/c-pathmx.h
+include/kpathsea/c-proto.h
+include/kpathsea/c-stat.h
+include/kpathsea/c-std.h
+include/kpathsea/c-unistd.h
+include/kpathsea/c-vararg.h
+include/kpathsea/cnf.h
+include/kpathsea/concatn.h
+include/kpathsea/config.h
+include/kpathsea/db.h
+include/kpathsea/debug.h
+include/kpathsea/default.h
+include/kpathsea/expand.h
+include/kpathsea/fn.h
+include/kpathsea/fontmap.h
+include/kpathsea/getopt.h
+include/kpathsea/hash.h
+include/kpathsea/kpathsea.h
+include/kpathsea/lib.h
+include/kpathsea/line.h
+include/kpathsea/magstep.h
+include/kpathsea/paths.h
+include/kpathsea/pathsearch.h
+include/kpathsea/proginit.h
+include/kpathsea/progname.h
+include/kpathsea/readable.h
+include/kpathsea/str-list.h
+include/kpathsea/str-llist.h
+include/kpathsea/systypes.h
+include/kpathsea/tex-file.h
+include/kpathsea/tex-glyph.h
+include/kpathsea/tex-hush.h
+include/kpathsea/tex-make.h
+include/kpathsea/tilde.h
+include/kpathsea/truncate.h
+include/kpathsea/types.h
+include/kpathsea/variable.h
+include/kpathsea/xopendir.h
+include/kpathsea/xstat.h
+lib/libkpathsea.a
+%%TEXMF_TREE%%/doc/tetex/TETEXDOC.dvi
+%%TEXMF_TREE%%/doc/tetex/TETEXDOC.pdf
+%%TEXMF_TREE%%/doc/tetex/TETEXDOC.ps
+%%TEXMF_TREE%%/doc/tetex/teTeX-FAQ
+%%TEXMF_TREE%%/dvips/gsftopk/render.ps
+%%TEXMF_TREE%%/texconfig/README
+%%TEXMF_TREE%%/texconfig/g/generic
+%%TEXMF_TREE%%/texconfig/generic
+%%TEXMF_TREE%%/texconfig/v/vt100
+%%TEXMF_TREE%%/texconfig/x/xterm
+%%TEXMF_TREE%%/web2c/etex-pl.pool
+%%TEXMF_TREE%%/web2c/etex.pool
+%%TEXMF_TREE%%/web2c/fmtutil.cnf
+%%TEXMF_TREE%%/web2c/mf.pool
+%%TEXMF_TREE%%/web2c/mktex.opt
+%%TEXMF_TREE%%/web2c/mktexdir
+%%TEXMF_TREE%%/web2c/mktexdir.opt
+%%TEXMF_TREE%%/web2c/mktexnam
+%%TEXMF_TREE%%/web2c/mktexnam.opt
+%%TEXMF_TREE%%/web2c/mktexupd
+%%TEXMF_TREE%%/web2c/mp.pool
+%%TEXMF_TREE%%/web2c/omega.pool
+%%TEXMF_TREE%%/web2c/pdfetex-pl.pool
+%%TEXMF_TREE%%/web2c/pdfetex.pool
+%%TEXMF_TREE%%/web2c/pdftex-pl.pool
+%%TEXMF_TREE%%/web2c/pdftex.pool
+%%TEXMF_TREE%%/web2c/tex-pl.pool
+%%TEXMF_TREE%%/web2c/tex.pool
+%%TEXMF_TREE%%/web2c/texmf.cnf
+%%TEXMFVAR%%/web2c/cont-en.log
+%%TEXMFVAR%%/web2c/cont-en.efmt
+%%TEXMFVAR%%/web2c/elatex.efmt
+%%TEXMFVAR%%/web2c/elatex.log
+%%TEXMFVAR%%/web2c/etex.efmt
+%%TEXMFVAR%%/web2c/etex.log
+%%TEXMFVAR%%/web2c/lambda.log
+%%TEXMFVAR%%/web2c/lambda.oft
+%%TEXMFVAR%%/web2c/latex.fmt
+%%TEXMFVAR%%/web2c/latex.log
+%%TEXMFVAR%%/web2c/metafun.log
+%%TEXMFVAR%%/web2c/metafun.mem
+%%TEXMFVAR%%/web2c/mf-nowin.base
+%%TEXMFVAR%%/web2c/mf.base
+%%TEXMFVAR%%/web2c/mf.log
+%%TEXMFVAR%%/web2c/mfw.base
+%%TEXMFVAR%%/web2c/mpost.log
+%%TEXMFVAR%%/web2c/mpost.mem
+%%TEXMFVAR%%/web2c/mptopdf.efmt
+%%TEXMFVAR%%/web2c/mptopdf.log
+%%TEXMFVAR%%/web2c/omega.log
+%%TEXMFVAR%%/web2c/omega.oft
+%%TEXMFVAR%%/web2c/pdfelatex.efmt
+%%TEXMFVAR%%/web2c/pdfelatex.log
+%%TEXMFVAR%%/web2c/pdfetex.efmt
+%%TEXMFVAR%%/web2c/pdfetex.log
+%%TEXMFVAR%%/web2c/pdflatex.fmt
+%%TEXMFVAR%%/web2c/pdflatex.log
+%%TEXMFVAR%%/web2c/pdftex.fmt
+%%TEXMFVAR%%/web2c/pdftex.log
+%%TEXMFVAR%%/web2c/plain.base
+%%TEXMFVAR%%/web2c/plain.fmt
+%%TEXMFVAR%%/web2c/plain.mem
+%%TEXMFVAR%%/web2c/tex.fmt
+%%TEXMFVAR%%/web2c/tex.log
+%%XDVIK%%%%TEXMF_TREE%%/xdvi/xdvi.cfg
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/afm/hoekwater
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/bh
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/bh/lucidabr
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/bh/lumath
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ofm/public/ommincho
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ofm/uhc
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ofm/uhc/gothic
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ofm/uhc/myoungjo
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ofm/uhc/taza
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovf/public/ommincho
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovf/uhc
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovf/uhc/gothic
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovf/uhc/myoungjo
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovf/uhc/taza
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovp/public/ommincho
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/pk
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/tfm/monotype
+@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/vf/monotype
+@exec mkdir -p %D/%%TEXMF_TREE%%/omega/generic
+@exec mkdir -p %D/%%TEXMF_TREE%%/omega/generic/config
+@exec mkdir -p %D/%%TEXMF_TREE%%/omega/ocp/omegajapanese
+@exec mkdir -p %D/%%TEXMF_TREE%%/omega/otp/omega-j
+@exec mkdir -p %D/%%TEXMF_TREE%%/omega/otp/omegajapanese
+@exec mkdir -p %D/%%TEXMF_TREE%%/xdvi
+@dirrm include/kpathsea
+@dirrm %%TEXMF_TREE%%/texconfig/x
+@dirrm %%TEXMF_TREE%%/texconfig/v
+@dirrm %%TEXMF_TREE%%/texconfig/g
+@dirrm %%TEXMF_TREE%%/texconfig
+@dirrm %%TEXMF_TREE%%/dvips/gsftopk
+@exec %%MKTEXLSR%%

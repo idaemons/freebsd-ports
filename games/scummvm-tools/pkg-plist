@@ -1,0 +1,8 @@
+bin/descumm
+bin/extract
+bin/md5table
+bin/mm_nes_extract
+bin/queenrebuild
+bin/rescumm
+%%PORTDOCS%%share/doc/scummvm-tools/README
+%%PORTDOCS%%@dirrm share/doc/scummvm-tools

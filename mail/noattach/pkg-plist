@@ -1,0 +1,15 @@
+libexec/noattach
+etc/rc.d/noattach.sh.sample
+etc/noattach.patterns-dist
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/noattach.patterns
+%%PORTDOCS%%%%EXAMPLESDIR%%/noattach.patterns.johncon
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

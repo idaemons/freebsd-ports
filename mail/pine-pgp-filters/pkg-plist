@@ -1,0 +1,11 @@
+libexec/ppf_decrypt
+libexec/ppf_encrypt
+libexec/ppf_mime
+libexec/ppf_sign
+libexec/ppf_verify
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

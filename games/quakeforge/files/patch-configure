@@ -1,0 +1,11 @@
+--- configure.orig	Fri Aug 20 12:01:33 2004
++++ configure	Fri Aug 20 12:02:10 2004
+@@ -22733,7 +22733,7 @@
+ int
+ main ()
+ {
+-void *(*foo)(size_t) = alloca;
++void *foo = alloca(sizeof(void));
+   ;
+   return 0;
+ }

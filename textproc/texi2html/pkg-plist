@@ -1,0 +1,3 @@
+bin/%%PROGRAM_PREFIX%%texi2html
+%%DOCSDIR%%/texi2html.html
+@dirrm %%DOCSDIR%%
