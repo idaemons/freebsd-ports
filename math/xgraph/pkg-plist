@@ -1,3 +1,7 @@
-@cwd /usr/X11R6
 bin/xgraph
-man/man1/xgraph.1.gz
+share/examples/xgraph/bar.xg
+share/examples/xgraph/surface.xg
+share/examples/xgraph/surface2.xg
+share/examples/xgraph/surface3.xg
+share/examples/xgraph/xgtest.xg
+@dirrm share/examples/xgraph

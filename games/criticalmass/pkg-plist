@@ -1,0 +1,5 @@
+bin/Packer
+bin/critter
+share/Critical_Mass/lg-criti.xm
+share/Critical_Mass/resource.dat
+@dirrm share/Critical_Mass

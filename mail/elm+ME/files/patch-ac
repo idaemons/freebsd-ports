@@ -1,0 +1,46 @@
+--- Configure.orig	Tue Jul 23 20:26:30 2002
++++ Configure	Tue Jul 23 20:26:31 2002
+@@ -94,10 +94,10 @@
+     yes)
+     ;;
+     *)
+-    if test ! -t 0; then
+-	echo "Say 'sh Configure', not 'sh <Configure'"
+-	exit 1
+-    fi
++#     if test ! -t 0; then
++# 	echo "Say 'sh Configure', not 'sh <Configure'"
++# 	exit 1
++#     fi
+     ;;
+ esac
+ 
+@@ -2251,7 +2251,7 @@
+ 	echo "Found shlib directory"
+     fi
+ 
+-    $echo "Trying create chared library"
++    $echo "Trying create shared library"
+ 
+     LibLoc=`cd ..; pwd`/shlib
+     
+@@ -2544,7 +2544,10 @@
+ 
+ : see if crypt exists
+ echo " "
+-if $contains '^crypt$' libc.list >/dev/null 2>&1; then
++if $test "$cryptlib" = -lcrypt; then
++    echo 'crypt() found.'
++    d_crypt="$define"
++elif $contains '^crypt$' libc.list >/dev/null 2>&1; then
+     echo 'crypt() found.'
+     d_crypt="$define"
+     cryptlib=''
+@@ -3048,6 +3051,7 @@
+ 
+     $echo $n "Testing if inet_aton can be used ... $c"
+     $cat > try.c <<'EOF'
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>

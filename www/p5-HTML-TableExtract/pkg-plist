@@ -1,0 +1,3 @@
+%%SITE_PERL%%/HTML/TableExtract.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-TableExtract/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-TableExtract

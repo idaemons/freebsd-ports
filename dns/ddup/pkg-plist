@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+sbin/ddup
+sbin/ddupcron.sh
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

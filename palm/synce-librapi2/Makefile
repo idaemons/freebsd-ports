@@ -1,0 +1,30 @@
+# New ports collection makefile for:   synce-librapi2
+# Date created:                14 June 2003
+# Whom:                        Sam Lawrance <boris@brooknet.com.au>
+#
+# $FreeBSD$
+
+PORTNAME=	synce-librapi2
+PORTVERSION=	0.8
+CATEGORIES=	palm
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	synce
+
+MAINTAINER=	boris@brooknet.com.au
+COMMENT=	Utilities/libraries to make RAPI calls on WinCE devices
+
+LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
+
+ONLY_FOR_ARCHS=	i386
+
+MAN1=		pcp.1 pls.1 pmkdir.1 pmv.1 prm.1 prmdir.1 prun.1 pstatus.1 synce-install-cab.1 synce-remove-program.1 synce-list-programs.1
+
+GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
+
+INSTALLS_SHLIB=	yes
+.include <bsd.port.mk>

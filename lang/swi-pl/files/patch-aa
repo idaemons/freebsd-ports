@@ -1,0 +1,34 @@
+--- src/Makefile.in.orig	Wed Apr 10 04:09:31 2002
++++ src/Makefile.in	Mon Nov 18 17:27:20 2002
+@@ -71,7 +71,7 @@
+ CWFLAGS=@CWFLAGS@
+ CIFLAGS=@CIFLAGS@
+ CMFLAGS=@CMFLAGS@
+-CFLAGS=	$(CWFLAGS) $(COFLAGS) $(CIFLAGS) $(CMFLAGS)
++CFLAGS=	@CFLAGS@ $(CWFLAGS) $(COFLAGS) $(CIFLAGS) $(CMFLAGS)
+ LDFLAGS=@LDFLAGS@
+ 
+ PLFOREIGN=@PLFOREIGN@
+@@ -344,16 +344,17 @@
+ 		-$(INSTALL_DATA) $(srcdir)/plld.1 $(smandir)/plld.$(mansec)
+ 
+ install_rlman:
+-		-if [ ! -d $(lmandir) ]; then $(MKDIR) $(lmandir); fi
+-		-if [ ! -r $(lmandir)/readline.$(lmansec) ]; then \
+-		  $(INSTALL_DATA) $(srcdir)/readline.3 $(lmandir)/readline.$(lmansec); \
+-		fi
++		-true
++#		-if [ ! -d $(lmandir) ]; then $(MKDIR) $(lmandir); fi
++#		-if [ ! -r $(lmandir)/readline.$(lmansec) ]; then \
++#		  $(INSTALL_DATA) $(srcdir)/readline.3 $(lmandir)/readline.$(lmansec); \
++#		fi
+ 
+ install-lman::
+ 		$(INSTALL_DATA) pl.1 $(plmandir)/$(PL).$(mansec)
+ 		$(INSTALL_DATA) $(srcdir)/plrc.1 $(plmandir)/plrc.$(mansec)
+ 		$(INSTALL_DATA) $(srcdir)/plld.1 $(plmandir)/plld.$(mansec)
+-		$(INSTALL_DATA) $(srcdir)/readline.3 $(plmandir)/readline.$(lmansec)
++#		$(INSTALL_DATA) $(srcdir)/readline.3 $(plmandir)/readline.$(lmansec)
+ 
+ #
+ # runtime-only environment installation

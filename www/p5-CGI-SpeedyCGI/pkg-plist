@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/SpeedyCGI/.packlist
+%%SITE_PERL%%/CGI/SpeedyCGI.pm
+bin/speedy
+bin/speedy_backend
+bin/speedy_suid
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/SpeedyCGI
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true

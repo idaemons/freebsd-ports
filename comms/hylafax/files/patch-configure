@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- configure.orig	Wed May 30 19:29:46 2001
++++ configure	Mon Apr  8 22:28:59 2002
+@@ -2584,7 +2584,7 @@
+     }
+     CheckFuncDecl unlink 'extern int unlink(const char*);' unistd.h
+     CheckFuncDecl read 'extern int read(int, const void*, unsigned int);' unistd.h
+-    CheckFuncDecl ioctl 'extern int ioctl(int, int, ...);' unistd.h sys/ioctl.h
++#    CheckFuncDecl ioctl 'extern int ioctl(int, int, ...);' unistd.h sys/ioctl.h
+     CheckForFunc fchown && {
+ 	echo '#define HAS_FCHOWN 1'
+ 	Note "... configure use of fchown"

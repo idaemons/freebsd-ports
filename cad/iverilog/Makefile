@@ -1,0 +1,26 @@
+# ex:ts=8
+# New ports collection makefile for:	iverilog
+# Date created:		Feb 13, 2001
+# Whom:			Ying-Chieh Liao <ijliao@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	iverilog
+PORTVERSION=	0.7.20031009
+CATEGORIES=	cad
+MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/snapshots/
+DISTNAME=	verilog-20031009
+
+MAINTAINER=	watchman@ludd.luth.se
+COMMENT=	A Verilog simulation and synthesis tool
+
+BROKEN=		"fails to compile - missing definition of TIME_FMT"
+
+USE_BISON=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
+MAN1=		iverilog-vpi.1 iverilog.1 vvp.1
+
+.include <bsd.port.mk>

@@ -1,0 +1,4 @@
+sbin/dlint
+sbin/digparse
+%%PORTDOCS%%share/doc/dlint/README
+%%PORTDOCS%%@dirrm share/doc/dlint

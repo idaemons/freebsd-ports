@@ -1,0 +1,15 @@
+--- helper-progs/configure.orig	Tue Nov 11 22:59:24 2003
++++ helper-progs/configure	Tue Nov 11 23:01:31 2003
+@@ -2040,12 +2040,3 @@
+ 
+ 
+ 
+-
+-if test "$SENDMAILPROG" != "no" ; then
+-        sendmailversion=`$SENDMAILPROG -bv -d0.1 | $AWK '/Version/ {print $2}'`
+-        echo ""
+-        echo "Note: sendmail version $sendmailversion detected"
+-        echo "check http://www.sendmail.org/~ca/email/sm-812.html for sendmail bugs and patches"
+-        echo "It's advised to run sendmail latest versions when using MILTER"
+-        echo ""
+-fi

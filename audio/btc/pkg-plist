@@ -1,0 +1,3 @@
+bin/btc
+%%DOCSDIR%%/btc.doc
+@dirrm %%DOCSDIR%%

@@ -1,0 +1,38 @@
+--- src/fte-unix.mak.orig	Sun Apr 13 14:42:30 2003
++++ src/fte-unix.mak	Sun Apr 13 14:40:54 2003
+@@ -5,8 +5,8 @@
+ 
+ #  vfte - for Linux console directly (with limitations, see con_linux.cpp)
+ 
+-TARGETS = xfte vfte sfte
+-#TARGETS = xfte
++#TARGETS = xfte vfte sfte
++TARGETS = xfte
+ 
+ PRIMARY = xfte
+ 
+@@ -48,8 +48,12 @@
+ 
+ #######################################################################
+ # Linux
+-UOS      = -DLINUX
+-XLIBDIR  = -L/usr/X11R6/lib -lstdc++
++#UOS      = -DLINUX
++#XLIBDIR  = -L/usr/X11R6/lib -lstdc++
++
++UOS = -DFREEBSD
++XLIBDIR = -L/usr/X11R6/lib
++XINCDIR = -I/usr/X11R6/include
+ 
+ #######################################################################
+ # HP/UX
+@@ -150,7 +154,8 @@
+ 
+ # Need -lXt below if USE_XTINIT is defined
+ XLIBS    = -lX11 $(SOCKETLIB)
+-VLIBS    = -lgpm -lncurses
++#VLIBS    = -lgpm -lncurses
++VLIBS = -lncurses
+ # -ltermcap outdated by ncurses
+ SLIBS    = -lslang
+ QLIBS    = -lqt

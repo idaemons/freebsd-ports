@@ -1,0 +1,12 @@
+etc/ifhp.conf.sample
+libexec/filters/ifhp
+libexec/filters/textps
+libexec/filters/wrapper
+%%PORTDOCS%%%%DOCSDIR%%/IFHP-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/IFHP-HOWTO.pdf
+%%PORTDOCS%%%%DOCSDIR%%/LPRng.jpg
+%%PORTDOCS%%%%DOCSDIR%%/LPRngT-L.jpg
+%%PORTDOCS%%%%DOCSDIR%%/LPRngT-S.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ifhp-S.jpg
+@dirrm libexec/filters
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

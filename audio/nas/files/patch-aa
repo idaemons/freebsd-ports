@@ -1,30 +1,19 @@
-*** lib/audio/wave.c.orig	Tue Sep  6 13:57:12 1994
---- lib/audio/wave.c	Thu Nov  3 11:31:42 1994
-***************
-*** 19,25 ****
-   * WHETHER IN AN ACTION IN CONTRACT, TORT OR NEGLIGENCE, ARISING OUT OF OR IN
-   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-   * 
-!  * $NCDId: @(#)wave.c,v 1.21 1994/09/06 20:57:12 greg Exp $
-   */
-  
-  /*
---- 19,25 ----
-   * WHETHER IN AN ACTION IN CONTRACT, TORT OR NEGLIGENCE, ARISING OUT OF OR IN
-   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-   * 
-!  * $NCDId: @(#)wave.c,v 1.22 1994/11/01 22:17:30 greg Exp $
-   */
-  
-  /*
-***************
-*** 161,166 ****
---- 161,168 ----
-  		fseek(wi->fp, 0, 2);
-  		wi->dataSize = ftell(wi->fp) - wi->dataOffset;
-  	    }
-+ 
-+ 	    wi->dataOffset -= sizeof(long);
-  	}
-  	else
-  	    /* skip unknown chunk */
+--- clients/audio/audial/audial.c.orig	Wed Nov  5 18:50:21 1997
++++ clients/audio/audial/audial.c	Wed Nov  5 18:56:33 1997
+@@ -133,6 +133,7 @@
+     signal(SIGALRM, SIG_DFL);
+ }
+ 
++#if !defined(__FreeBSD__) || (__FreeBSD__ < 3)
+ static void
+ usleep(usecs)
+ unsigned int    usecs;
+@@ -149,7 +150,7 @@
+     setitimer(ITIMER_REAL, &ntval, &otval);
+     pause();
+ }
+-
++#endif
+ #endif						/* SYSV else not */
+ #endif						/* VMS else not */
+ #endif						/* NEEDUSLEEP */

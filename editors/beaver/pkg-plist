@@ -1,0 +1,4 @@
+bin/beaver
+share/gnome/pixmaps/beaver.png
+share/gnome/applications/beaver.desktop
+@dirrm share/beaver

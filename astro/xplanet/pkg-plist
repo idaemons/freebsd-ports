@@ -1,0 +1,36 @@
+bin/xplanet
+%%DATADIR%%/arcs/README
+%%DATADIR%%/config/default
+%%DATADIR%%/config/earth_markers
+%%DATADIR%%/config/moon_orbit
+%%DATADIR%%/config/overlay_clouds
+%%DATADIR%%/fonts/FreeSans.ttf
+%%DATADIR%%/fonts/README
+%%DATADIR%%/images/README
+%%DATADIR%%/images/earth.jpg
+%%DATADIR%%/images/hubble.png
+%%DATADIR%%/images/iss.png
+%%DATADIR%%/images/night.jpg
+%%DATADIR%%/images/shuttle.png
+%%DATADIR%%/images/smile.png
+%%DATADIR%%/images/sublunar.png
+%%DATADIR%%/images/subsolar.png
+%%DATADIR%%/markers/earth
+%%DATADIR%%/markers/freebsd.committers.markers
+%%DATADIR%%/markers/freebsd.ftp.markers
+%%DATADIR%%/origin/README
+%%DATADIR%%/origin/cassini
+%%DATADIR%%/origin/galileo
+%%DATADIR%%/rgb.txt
+%%DATADIR%%/satellites/iss
+%%DATADIR%%/satellites/iss.tle
+%%DATADIR%%/stars/BSC
+@dirrm %%DATADIR%%/arcs
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/markers
+@dirrm %%DATADIR%%/origin
+@dirrm %%DATADIR%%/satellites
+@dirrm %%DATADIR%%/stars
+@dirrm %%DATADIR%%

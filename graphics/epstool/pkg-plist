@@ -1,0 +1,4 @@
+bin/epstool
+%%PORTDOCS%%%%DOCSDIR%%/epstool.htm
+%%PORTDOCS%%%%DOCSDIR%%/gsview.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

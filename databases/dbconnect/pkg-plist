@@ -1,0 +1,7 @@
+include/dbconn.h
+include/dbconnect_basedriver.h
+lib/libdbconn.a
+lib/libdyndbconn.so
+%%MYSQL%%include/dbconnect_MYSQL.h
+%%PGSQL%%include/dbconnect_PGSQL.h
+%%UNIXODBC%%include/dbconnect_ODBC.h

@@ -1,0 +1,13 @@
+Index: src/Makefile
+diff -u src/Makefile.orig src/Makefile
+--- src/Makefile.orig	Tue Sep 17 04:36:16 2002
++++ src/Makefile	Fri Sep 20 18:23:48 2002
+@@ -21,7 +21,7 @@
+ 
+ PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
+ 
+-FLAGS = -O2 -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
++FLAGS = -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
+ FLAGS+= $(PTHREAD_INC)
+ 
+ LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS)

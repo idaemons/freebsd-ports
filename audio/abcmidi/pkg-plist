@@ -1,0 +1,10 @@
+bin/abc2abc
+bin/abc2midi
+bin/mftext
+bin/midi2abc
+bin/yaps
+%%PORTDOCS%%%%DOCSDIR%%/abcguide.txt
+%%PORTDOCS%%%%DOCSDIR%%/demo.abc
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/yaps.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $Id$
+#
+cd /usr/local/libexec/uvscan/
+ftp http://download.nai.com/products/datfiles/4.x/nai/readme.txt >/dev/null
+AVVER=`grep DAT readme.txt | head -5 | grep '[^0-9]4[0-9][0-9][0-9][^0-9]' | head -1 | sed -e 's/^.*[^0-9]\(4[0-9]*\)[^0-9].*$/\1/'`
+if [ ! -f dat-$AVVER.tar ]; then
+	for i in *.tar ; do
+		mv $i $i.old
+	done
+	if ftp http://download.nai.com/products/datfiles/4.x/nai/dat-$AVVER.tar >/dev/null ; then
+		for i in *.dat ; do
+			cp -p $i $i.bak
+		done
+		if tar xf dat-$AVVER.tar ; then
+			rm -f *.old
+			echo `date` Successfully updated AntiVirus DAT files to $AVVER
+		fi
+	fi
+fi

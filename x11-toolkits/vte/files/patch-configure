@@ -1,0 +1,30 @@
+--- configure.orig	Mon Jun 16 17:50:24 2003
++++ configure	Tue Sep 30 01:22:24 2003
+@@ -19316,6 +19316,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -23732,10 +23733,6 @@
+ rm -f conftest*
+ 
+ 
+-cat >>confdefs.h <<\_ACEOF
+-#define _XOPEN_SOURCE_EXTENDED 1
+-_ACEOF
+-
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define _XOPEN_SOURCE 1
+@@ -25977,7 +25974,7 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define LOCALEDIR "$mydatadir/locale"
++#define LOCALEDIR "$prefix/share/locale"
+ _ACEOF
+ 
+ 

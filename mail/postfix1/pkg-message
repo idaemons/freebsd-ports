@@ -1,0 +1,36 @@
+If you have postfix configured in your /etc/mail/mailer.conf (answered yes to
+the previous question) and would like to enable postfix to start at boot time,
+please set these variables in your /etc/rc.conf file:
+
+sendmail_enable="YES"
+sendmail_flags="-bd"
+sendmail_outbound_enable="NO"
+sendmail_submit_enable="NO"
+sendmail_msp_queue_enable="NO"
+
+  **OR**
+
+sendmail_enable="NONE"
+
+then type this command as root:
+
+ln -s /usr/local/sbin/postfix /usr/local/etc/rc.d/postfix.sh
+
+Either of these will disable Sendmail completely.  The latter form is useful
+if you need to wait until other local package initialization (such as ldconfig
+for Postgres or MySQL) is done.  The former method will start postfix very
+early on in the boot process.
+
+
+Also, you will want to disable some Sendmail-specific daily maintenance
+routines in your /etc/periodic.conf file:
+
+daily_status_mail_rejects_enable="NO"                                      
+daily_status_include_submit_mailq="NO"
+daily_submit_queuerun="NO"
+
+
+If you are using SASL, you need to make sure that postfix has access to read
+the sasldb file.  This is accomplished by adding postfix to group mail and
+making the /usr/local/etc/sasldb* file(s) readable by group mail (this should
+be the default for new installs).

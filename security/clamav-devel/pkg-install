@@ -1,0 +1,51 @@
+#!/bin/sh
+
+if [ "$2" = "PRE-INSTALL" ]; then
+
+if [ -z "${CLAMAVUSER}" ]; then
+	CLAMAVUSER=clamav
+fi
+
+if [ -z "${CLAMAVGROUP}" ]; then
+	CLAMAVGROUP=clamav
+fi
+
+CLAMRUN=/var/run/clamav
+CLAMLOG=/var/log/clamav
+
+echo "===> Adding user \"${CLAMAVUSER}\" if necessary."
+if ! pw groupshow "${CLAMAVGROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${CLAMAVGROUP}; then
+		echo "===> Added group \"${CLAMAVGROUP}\"."
+	else
+                echo "===> Adding group \"${CLAMAVGROUP}\" failed..."
+                exit 1
+	fi
+fi
+
+if ! pw usershow "${CLAMAVUSER}" 2>/dev/null 1>&2; then
+	if pw useradd ${CLAMAVUSER} -g ${CLAMAVGROUP} -h - \
+		-s "/usr/sbin/nologin" -d "/nonexistent" \
+		-c "Clam Antivirus"; \
+        then
+                echo "===> Added user \"${CLAMAVUSER}\"."
+        else
+                echo "===> Adding user \"${CLAMAVUSER}\" failed..."
+                exit 1
+        fi
+fi
+
+echo "===> Setting permissions..."
+mkdir -p "${CLAMRUN}"
+chown "${CLAMAVUSER}:${CLAMAVGROUP}" "${CLAMRUN}"
+
+mkdir -p "${CLAMLOG}"
+chown "${CLAMAVUSER}:${CLAMAVGROUP}" "${CLAMLOG}"
+fi
+
+if [ "$2" = "POST-INSTALL" ]; then
+	echo "===> Updating virus definitions..."
+	$1/bin/freshclam -u $3 --datadir=$4
+fi
+
+exit 0

@@ -1,0 +1,3 @@
+bin/bbmail
+share/bbtools/bbmail.bb
+@dirrm share/bbtools

@@ -1,0 +1,12 @@
+bin/migrate
+bin/migrate-n
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO-PARALLEL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/graphics/librarian.gif
+%%PORTDOCS%%%%DOCSDIR%%/graphics/mail.gif
+%%PORTDOCS%%%%DOCSDIR%%/graphics/migrate.gif
+%%PORTDOCS%%%%DOCSDIR%%/graphics/packet.gif
+%%PORTDOCS%%%%DOCSDIR%%/migrate.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/graphics
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

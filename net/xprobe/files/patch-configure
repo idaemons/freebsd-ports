@@ -1,0 +1,11 @@
+--- configure.orig	Wed Oct 16 22:25:33 2002
++++ configure	Wed Oct 16 22:26:15 2002
+@@ -9,7 +9,7 @@
+ 
+ # Defaults:
+ ac_help=
+-ac_default_prefix=/usr/local
++ac_default_prefix=${LOCALBASE}
+ # Any additions from configure.in:
+ ac_help="$ac_help
+  --enable-debug       enable debugging )"

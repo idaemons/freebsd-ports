@@ -1,0 +1,23 @@
+sbin/suphp
+libexec/apache/mod_suphp.so
+@exec %D/sbin/apxs -e -a -n suphp %D/%f
+@unexec echo "===>  If you do not plan on reinstalling suphp, you must manually remove"; echo "===>  references to it in httpd.conf."
+%%PORTDOCS%%%%DOCSDIR%%/en/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/en/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/en/README
+%%PORTDOCS%%%%DOCSDIR%%/en/apache/CONFIG
+%%PORTDOCS%%%%DOCSDIR%%/en/apache/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/en/apache/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/en/apache/README
+%%PORTDOCS%%%%DOCSDIR%%/de/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/de/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/de/README
+%%PORTDOCS%%%%DOCSDIR%%/de/apache/CONFIG
+%%PORTDOCS%%%%DOCSDIR%%/de/apache/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/de/apache/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/de/apache/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/de/apache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/apache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

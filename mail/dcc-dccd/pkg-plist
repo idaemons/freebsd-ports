@@ -1,0 +1,48 @@
+bin/dccproc
+bin/cdcc
+dcc/libexec/dbclean
+dcc/libexec/dccd
+dcc/libexec/dccm
+dcc/libexec/dblist
+dcc/libexec/dccifd
+dcc/libexec/dccsight
+dcc/libexec/wlist
+dcc/libexec/cron-dccd
+dcc/libexec/hackmc
+dcc/libexec/logger
+dcc/libexec/na-spam
+dcc/libexec/ng-spam
+dcc/libexec/newwebuser
+dcc/libexec/rcDCC
+dcc/libexec/refeed
+dcc/libexec/start-dccd
+dcc/libexec/start-grey
+dcc/libexec/start-dccifd
+dcc/libexec/start-dccm
+dcc/libexec/stop-dccd
+dcc/libexec/dcc-stats-collect
+dcc/libexec/stats-get
+dcc/libexec/dcc-stats-graph
+dcc/libexec/dcc-stats-init
+dcc/dcc_conf
+dcc/flod
+dcc/grey_flod
+dcc/whitelist
+dcc/whiteclnt
+dcc/whitecommon
+dcc/map.txt
+dcc/map
+dcc/ids
+dcc/cgi-bin/chgpasswd
+dcc/cgi-bin/edit-whiteclnt
+dcc/cgi-bin/list-log
+dcc/cgi-bin/list-msg
+dcc/cgi-bin/http2https
+dcc/cgi-bin/README
+dcc/cgi-bin/common
+dcc/cgi-bin/webuser-notify
+
+@dirrm dcc/cgi-bin
+@dirrm dcc/libexec
+@dirrm dcc/log
+@dirrm dcc

@@ -1,0 +1,3 @@
+bin/wmusic
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,109 @@
+bin/gnofract4d
+lib/libfract4d.a
+lib/libfract4d.so
+lib/libfract4d.so.0
+share/gnome/apps/Graphics/gnofract4d.desktop
+share/gnome/gnofract4d/compiler_template.cpp
+share/gnome/gnofract4d/pointFunc.h
+share/gnome/gnofract4d/state.h
+share/gnome/help/gnofract4d/C/figures/hybrid.png
+share/gnome/help/gnofract4d/C/figures/julia_perturbed.png
+share/gnome/help/gnofract4d/C/figures/julia_standard.png
+share/gnome/help/gnofract4d/C/figures/mandelbrot_perturbed.png
+share/gnome/help/gnofract4d/C/figures/mandelbrot_standard.png
+share/gnome/help/gnofract4d/C/figures/xw_plane.png
+share/gnome/help/gnofract4d/C/figures/xz_plane.png
+share/gnome/help/gnofract4d/C/figures/yz_plane.png
+share/gnome/help/gnofract4d/C/gnofract4d-manual.xml
+share/gnome/maps/gnofract4d/4zebbowx.map
+share/gnome/maps/gnofract4d/Digiorg1.map
+share/gnome/maps/gnofract4d/Gallet02.map
+share/gnome/maps/gnofract4d/Gallet04.map
+share/gnome/maps/gnofract4d/Gallet12.map
+share/gnome/maps/gnofract4d/Gallet13.map
+share/gnome/maps/gnofract4d/Skydye03.map
+share/gnome/maps/gnofract4d/Skydye06.map
+share/gnome/maps/gnofract4d/Skydye07.map
+share/gnome/maps/gnofract4d/Wizzl011.map
+share/gnome/maps/gnofract4d/anenome.map
+share/gnome/maps/gnofract4d/basic.map
+share/gnome/maps/gnofract4d/bgold.map
+share/gnome/maps/gnofract4d/blend.map
+share/gnome/maps/gnofract4d/blend4.map
+share/gnome/maps/gnofract4d/blend8.map
+share/gnome/maps/gnofract4d/blengbyg.map
+share/gnome/maps/gnofract4d/blues.map
+share/gnome/maps/gnofract4d/bpg.map
+share/gnome/maps/gnofract4d/brass.map
+share/gnome/maps/gnofract4d/brite.map
+share/gnome/maps/gnofract4d/chroma.map
+share/gnome/maps/gnofract4d/chroma3.map
+share/gnome/maps/gnofract4d/chroma4.map
+share/gnome/maps/gnofract4d/coldfire.map
+share/gnome/maps/gnofract4d/copper.map
+share/gnome/maps/gnofract4d/crwn.map
+share/gnome/maps/gnofract4d/damien2.map
+share/gnome/maps/gnofract4d/egan1.map
+share/gnome/maps/gnofract4d/fadern1.map
+share/gnome/maps/gnofract4d/fadern2.map
+share/gnome/maps/gnofract4d/fish.map
+share/gnome/maps/gnofract4d/gamma1.map
+share/gnome/maps/gnofract4d/glass.map
+share/gnome/maps/gnofract4d/hawaii.map
+share/gnome/maps/gnofract4d/hls17.map
+share/gnome/maps/gnofract4d/hlsrain1.map
+share/gnome/maps/gnofract4d/hlsrain5.map
+share/gnome/maps/gnofract4d/horns.map
+share/gnome/maps/gnofract4d/hunk.map
+share/gnome/maps/gnofract4d/janine.map
+share/gnome/maps/gnofract4d/japan.map
+share/gnome/maps/gnofract4d/juteblue.map
+share/gnome/maps/gnofract4d/jutemap.map
+share/gnome/maps/gnofract4d/kahki.map
+share/gnome/maps/gnofract4d/lace.map
+share/gnome/maps/gnofract4d/lite.map
+share/gnome/maps/gnofract4d/litnin1.map
+share/gnome/maps/gnofract4d/lkmtch02.map
+share/gnome/maps/gnofract4d/longs.map
+share/gnome/maps/gnofract4d/lyapunov.map
+share/gnome/maps/gnofract4d/mandmap.map
+share/gnome/maps/gnofract4d/mist.map
+share/gnome/maps/gnofract4d/neon.map
+share/gnome/maps/gnofract4d/new.map
+share/gnome/maps/gnofract4d/new1.map
+share/gnome/maps/gnofract4d/new2.map
+share/gnome/maps/gnofract4d/nkohala.map
+share/gnome/maps/gnofract4d/osb.map
+share/gnome/maps/gnofract4d/pale.map
+share/gnome/maps/gnofract4d/pumpkin.map
+share/gnome/maps/gnofract4d/rain4x.map
+share/gnome/maps/gnofract4d/rainbow4.map
+share/gnome/maps/gnofract4d/rainbow7.map
+share/gnome/maps/gnofract4d/rgb.map
+share/gnome/maps/gnofract4d/ribbon20.map
+share/gnome/maps/gnofract4d/royal.map
+share/gnome/maps/gnofract4d/rw.map
+share/gnome/maps/gnofract4d/ryb1.map
+share/gnome/maps/gnofract4d/sea.map
+share/gnome/maps/gnofract4d/stripe.map
+share/gnome/maps/gnofract4d/topo.map
+share/gnome/maps/gnofract4d/unknown.map
+share/gnome/maps/gnofract4d/volcano.map
+share/gnome/maps/gnofract4d/vooon.map
+share/gnome/maps/gnofract4d/wild.map
+share/gnome/maps/gnofract4d/wine.map
+share/gnome/maps/gnofract4d/world.map
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnofract4d/gnofract4d-manual-C.omf 2>/dev/null || true
+share/gnome/omf/gnofract4d/gnofract4d-manual-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnofract4d/gnofract4d-manual-C.omf 2>/dev/null || true
+share/gnome/pixmaps/gnofract4d/deepen_now.png
+share/gnome/pixmaps/gnofract4d/explorer_mode.png
+share/gnome/pixmaps/gnofract4d/gnofract4d-logo.png
+@dirrm share/gnome/pixmaps/gnofract4d
+@dirrm share/gnome/omf/gnofract4d
+@dirrm share/gnome/maps/gnofract4d
+@dirrm share/gnome/maps
+@dirrm share/gnome/help/gnofract4d/C/figures
+@dirrm share/gnome/help/gnofract4d/C
+@dirrm share/gnome/help/gnofract4d
+@dirrm share/gnome/gnofract4d

@@ -1,0 +1,27 @@
+@unexec if [ -f %D/etc/rc.d/milter-sender.sh ] && cmp -s %D/etc/rc.d/milter-sender.sh %D/etc/rc.d/milter-sender.sh-dist; then rm -f %D/etc/rc.d/milter-sender.sh; fi
+etc/rc.d/milter-sender.sh-dist
+@exec if [ ! -f %D/etc/rc.d/milter-sender.sh ] ; then cp %D/%F %B/milter-sender.sh; chmod ug+x %B/milter-sender.sh; fi
+sbin/milter-sender
+@exec install -d -o smmsp -g smmsp -m 755 /var/milter-sender
+@unexec rm -rf /var/milter-sender
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.TXT
+%%PORTDOCS%%%%DOCSDIR%%/Img/bg.gif
+%%PORTDOCS%%%%DOCSDIR%%/Img/dilbert2003071742312.gif
+%%PORTDOCS%%%%DOCSDIR%%/Img/dilbert2003228690821.gif
+%%PORTDOCS%%%%DOCSDIR%%/Img/mrpixel.gif
+%%PORTDOCS%%%%DOCSDIR%%/Img/overview.png
+%%PORTDOCS%%%%DOCSDIR%%/Img/sendmail-bat-left-142x38.png
+%%PORTDOCS%%%%DOCSDIR%%/Img/sendmail-bat-right-142x38.png
+%%PORTDOCS%%%%DOCSDIR%%/Img/sun.gif
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
+%%PORTDOCS%%%%DOCSDIR%%/index.shtml
+%%PORTDOCS%%%%DOCSDIR%%/license-body.html
+%%PORTDOCS%%%%DOCSDIR%%/mailto.js
+%%PORTDOCS%%%%DOCSDIR%%/milter-sender.mc
+%%PORTDOCS%%%%DOCSDIR%%/responses.txt
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+@unexec echo "If permanently deleting this package, don't forget to delete the filter"
+@unexec echo "description of milter-sender from /etc/mail/YOUR-CONF.mc and to rebuild"
+@unexec echo "sendmail.cf file!"
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

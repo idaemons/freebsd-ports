@@ -1,0 +1,7 @@
+bin/super
+bin/setuid
+%%PORTDOCS%%share/examples/super/sample.tab
+%%PORTDOCS%%share/examples/super/sample.cdmount
+%%PORTDOCS%%share/doc/super/README
+%%PORTDOCS%%@dirrm share/examples/super
+%%PORTDOCS%%@dirrm share/doc/super

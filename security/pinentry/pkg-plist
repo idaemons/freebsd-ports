@@ -1,0 +1,3 @@
+bin/pinentry-curses
+%%WITH_GTK%%bin/pinentry-gtk
+%%WITH_QT%%bin/pinentry-qt

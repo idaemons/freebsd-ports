@@ -1,0 +1,20 @@
+--- configure.in.orig	Mon Jul 19 00:38:50 1999
++++ configure.in	Sun Sep 29 01:34:20 2002
+@@ -936,7 +936,7 @@
+ AC_SUBST(AUTHLIB)
+ AC_CHECK_HEADERS(security/pam_appl.h shadow.h)
+ if test "$ac_cv_header_security_pam_appl_h" = "yes"; then
+-    AUTHLIB="-lpam -ldl"
++    AUTHLIB="-lpam"
+ else
+     if test "$ac_cv_header_shadow_h" = "yes"; then
+ 	AUTHLIB="-lshadow"
+@@ -956,7 +956,7 @@
+     AC_MSG_RESULT([%%% AIEEE!  NO  <netinet/in.h>  HEADER ?!])
+ fi
+ 
+-AC_TRY_COMPILE([#include <sys/socket.h>],[socklen_t sl = 2;],
++AC_TRY_COMPILE([#include <sys/types.h> #include <sys/socket.h>],[socklen_t sl = 2;],
+ 	AC_DEFINE(HAVE_SOCKLEN_T))
+ 
+ AC_ARG_WITH(ipv6,[  --with-ipv6              Have IPv6 in system, and want to use it],

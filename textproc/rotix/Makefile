@@ -1,0 +1,31 @@
+# ex:ts=8
+# New ports collection makefile for:	rotix
+# Date created:			Dec 8, 2001
+# Whom:				lintux@debian.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	rotix
+PORTVERSION=	0.82
+PORTREVISION=	2
+CATEGORIES=	textproc
+MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/rotix_releases/${DISTNAME}/
+
+MAINTAINER=	lintux@debian.org
+COMMENT=	A program to generate rotational obfuscations
+
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+
+USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+USE_REINPLACE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --i18n=1
+
+MAN1=		rotix.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,%%CFLAGS%%,${CFLAGS},; s,%%LOCALBASE%%,${LOCALBASE},;' \
+		${WRKSRC}/Makefile
+
+.include <bsd.port.mk>

@@ -1,0 +1,4 @@
+bin/xmlppm
+bin/xmlunppm
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,7 +1,4 @@
-XFree86 is a added-value pack for X11R6 that supports several versions
-of Intel-based Unix and Unix-like operating systems.  XFree86-3.0 was
-part of the X11R6 core distribution.  This release of XFree86-3.1.1
-consists of many new features and performance improvements as well as
-many bug fixes.  The release is available as source patches against
-the X Consortium X11R6 code, as well as binary distributions for many
-architectures.
+This package contains X server and its related programs,
+such as xf86cfg, xf86config, kbd_mode, and so on.
+
+WWW: http://www.xfree86.org/

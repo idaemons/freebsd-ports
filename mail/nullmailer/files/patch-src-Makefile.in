@@ -1,0 +1,69 @@
+--- src/Makefile.in~	Sat Mar  1 17:13:21 2003
++++ src/Makefile.in	Sat Mar  1 17:18:54 2003
+@@ -68,14 +68,15 @@
+ VERSION = @VERSION@
+ 
+ bin_PROGRAMS = \
+-	mailq \
+ 	nullmailer-inject
+ 
++libexecdir = @libexecdir@/nullmailer
++
+ sbin_PROGRAMS = \
+ 	nullmailer-queue \
+ 	nullmailer-send \
+-	sendmail
+ 
++libexec_PROGRAMS = mailq sendmail
+ 
+ #noinst_PROGRAMS = address
+ 
+@@ -98,7 +99,7 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
+-PROGRAMS =  $(bin_PROGRAMS) $(sbin_PROGRAMS)
++PROGRAMS =  $(bin_PROGRAMS) $(sbin_PROGRAMS) $(libexec_PROGRAMS)
+ 
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+@@ -195,6 +196,30 @@
+ 	list='$(sbin_PROGRAMS)'; for p in $$list; do \
+ 	  rm -f $(DESTDIR)$(sbindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+ 	done
++mostlyclean-libexecPROGRAMS:
++
++clean-libexecPROGRAMS:
++	-test -z "$(libexec_PROGRAMS)" || rm -f $(libexec_PROGRAMS)
++
++distclean-libexecPROGRAMS:
++
++maintainer-clean-libexecPROGRAMS:
++
++install-libexecPROGRAMS: $(libexec_PROGRAMS)
++	@$(NORMAL_INSTALL)
++	$(mkinstalldirs) $(DESTDIR)$(libexecdir)
++	@list='$(libexec_PROGRAMS)'; for p in $$list; do \
++	  if test -f $$p; then \
++	    echo "  $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libexecdir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
++	     $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libexecdir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
++	  else :; fi; \
++	done
++
++uninstall-libexecPROGRAMS:
++	@$(NORMAL_UNINSTALL)
++	list='$(libexec_PROGRAMS)'; for p in $$list; do \
++	  rm -f $(DESTDIR)$(libexecdir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
++	done
+ 
+ .c.o:
+ 	$(COMPILE) -c $<
+@@ -313,7 +338,7 @@
+ check: check-am
+ installcheck-am:
+ installcheck: installcheck-am
+-install-exec-am: install-binPROGRAMS install-sbinPROGRAMS
++install-exec-am: install-binPROGRAMS install-sbinPROGRAMS install-libexecPROGRAMS
+ install-exec: install-exec-am
+ 
+ install-data-am:

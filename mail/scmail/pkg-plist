@@ -1,0 +1,10 @@
+bin/scmail-deliver
+bin/scmail-refile
+share/gauche/site/lib/scmail.scm
+%%EXAMPLESDIR%%/scmailrc-deliver.sample
+%%EXAMPLESDIR%%/scmailrc-refile.sample
+%%EXAMPLESDIR%%/scmailrc.sample
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/scmail-ja.html
+%%PORTDOCS%%%%DOCSDIR%%/scmail.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

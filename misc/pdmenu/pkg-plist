@@ -1,0 +1,5 @@
+bin/pdmenu
+etc/pdmenurc
+share/pdmenu/editdir.pl
+share/pdmenu/showdir.pl
+@dirrm share/pdmenu

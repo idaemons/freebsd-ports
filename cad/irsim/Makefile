@@ -1,14 +1,32 @@
-# New ports collection makefile for:    magic
-# Version required:     6.4.4
+# New ports collection makefile for:    irsim
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.2 1994/10/06 07:52:04 swallace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       irsim-9.2
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/magic/6.4/
-WRKSRC=		${.CURDIR}/work/irsim
+PORTNAME=	irsim
+PORTVERSION=	9.5
+CATEGORIES=	cad
+MASTER_SITES=	http://mos.stanford.edu/group/magic/
+EXTRACT_SUFX=	.tar.Z
 
-.include <bsd.port.mk>
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An event-driven logic-level simulator for MOS circuis
+
+USE_XLIB=	yes
+MAN1=		irsim.1
+MAN3=		irsim-analyzer.3
+MAN5=		netchange.5
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
+# othewise patch will complain
+post-extract:
+	@${FIND} ${WRKSRC} -name RCS | ${XARGS} ${RM} -rf
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+bin/gozer
+%%PORTDOCS%%share/doc/gozer/AUTHORS
+%%PORTDOCS%%share/doc/gozer/ChangeLog
+%%PORTDOCS%%share/doc/gozer/README
+%%PORTDOCS%%share/doc/gozer/TODO
+share/gozer/fonts/helmetr.ttf
+%%PORTDOCS%%@dirrm share/doc/gozer
+@dirrm share/gozer/fonts
+@dirrm share/gozer

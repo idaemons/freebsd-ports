@@ -1,0 +1,32 @@
+--- Buildit.orig	Sat Nov  2 10:08:06 2002
++++ Buildit	Tue Jan  7 10:56:12 2003
+@@ -78,20 +78,20 @@
+ 		fi
+ 		;;
+ 
+-	FreeBSD.i386)
++	FreeBSD.*)
+         echo "Configuring for the "$OSNAME" "$HARDWARENAME" platform"
+-		CPLUS=gcc
+-		CCOMP=gcc
+-		LINKER="gcc"
+- 		MAKE=make
++		CPLUS=${CXX}
++		CCOMP=${CC}
++		LINKER=${CXX}
++ 		MAKE=${MAKE}
+  		
+-		COMPILER_FLAGS=
+-        INCLUDE_FLAG="-include"
++		COMPILER_FLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
++	        INCLUDE_FLAG="-include"
+ 		
+-		CORE_LINK_LIBS="-pthread -lm -lcrypt"
++		CORE_LINK_LIBS="${PTHREAD_LIBS} -lcrypt -lm"
+ 
+ 		SHARED=-shared
+-		MODULE_LIBS="-lgcc -lstdc++"
++		MODULE_LIBS=""
+ 		;;
+ 	
+ #	SunOS.sun4m | \

@@ -1,0 +1,4 @@
+bin/hpijs
+%%PORTDOCS%%%%DOCSDIR%%/gs_hpijs.png
+%%PORTDOCS%%%%DOCSDIR%%/hpijs_readme.html
+%%PORTDOCS%%@dirrm share/doc/hpijs
