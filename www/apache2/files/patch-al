@@ -1,0 +1,50 @@
+*** src/support/log_server_status.orig	Thu Oct 23 00:30:46 1997
+--- src/support/log_server_status	Fri Nov 21 23:05:50 1997
+***************
+*** 63,72 ****
+  #
+  require 'sys/socket.ph';
+  
+! $wherelog = "/var/log/graph/";  # Logs will be like "/var/log/graph/960312"
+  $server = "localhost";          # Name of server, could be "www.foo.com"
+  $port = "80";                   # Port on server
+! $request = "/status/?auto";     # Request to send
+  
+  sub tcp_connect
+  {
+--- 63,72 ----
+  #
+  require 'sys/socket.ph';
+  
+! $wherelog = "/var/log/httpd-status-";  # Logs will be like "/var/log/graph/960312"
+  $server = "localhost";          # Name of server, could be "www.foo.com"
+  $port = "80";                   # Port on server
+! $request = "/server-status/?auto";     # Request to send
+  
+  sub tcp_connect
+  {
+***************
+*** 89,99 ****
+  ### Main
+  
+  {
+! 	$date=`date +%y%m%d:%H%M%S`;
+  	chop($date);
+  	($day,$time)=split(/:/,$date);
+  	$res=&tcp_connect($server,$port);
+! 	open(OUT,">>$wherelog$day");
+  	if ($res) {
+  		print OUT "$time:-1:-1:-1:-1:$res\n";
+  		exit 1;
+--- 89,99 ----
+  ### Main
+  
+  {
+! 	$date=`LC_TIME=C date +%y%m%d:%H%M%S`;
+  	chop($date);
+  	($day,$time)=split(/:/,$date);
+  	$res=&tcp_connect($server,$port);
+! 	open(OUT,">>$wherelog$day.log");
+  	if ($res) {
+  		print OUT "$time:-1:-1:-1:-1:$res\n";
+  		exit 1;

@@ -1,20 +1,27 @@
 # New ports collection makefile for:	PCB
-# Version required:	0.91
+# Version required:	1.5.5 beta
 # Date created:		19 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.3 1994/12/12 03:58:06 gpalmer Exp $
+# $Id: Makefile,v 1.16 1997/05/30 20:38:25 max Exp $
 #
 
-DISTNAME=	pcb-1.2.patch_02
-MASTER_SITES=	ftp://pluto.medizin.uni-ulm.de/pub/pcb-1.2/
-EXTRACT_SUFX=.tar.gz
-DEPENDS=        ${PORTSDIR}/devel/m4
-MAKE_FLAGS=	-f
-MAKEFILE=	makefile
-USE_IMAKE=
-NO_INSTALL_MANPAGES=	yes
-PREFIX=/usr/X11R6
-PKG_CMD=	pkg_create
+DISTNAME=	pcb-1.5.5.BETA
+PKGNAME=	pcb-1.5.5
+CATEGORIES=	cad
+MASTER_SITES=	ftp://ftp.uni-ulm.de/pub/pcb/1.5/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	jseger@FreeBSD.org
+
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		texindex:${PORTSDIR}/print/teTeX
+
+USE_IMAKE=	yes
+MAN1=		pcb.1
+MANCOMPRESSED=	yes
+
+pre-install:
+	@${CP} ${WRKSRC}/doc/pcb.man ${WRKSRC}/src
 
 .include <bsd.port.mk>

@@ -1,35 +1,30 @@
-@cwd /usr/local
-@exec mkdir -p %D/lib/mule/site-lisp
-@exec mkdir -p %D/lib/mule/lock
-@exec chmod 777 %D/lib/mule/lock
 bin/mule-19.28
-@exec ln -s %D/%F %B/mule
+@exec ln -sf %D/%F %B/mule
 @unexec rm %B/mule
-bin/m2ps
 bin/any2ps
 bin/b2m
 bin/coco
-lib/mule/19.28
-man/man1/mule.1
-man/man1/m2ps.1
-man/man1/coco.1
-info/CCL
-info/ISO2022
-info/R2L
-info/XFONT
-info/antenews-jp
-info/canna-jp
-info/egg
-info/egg-jp
-info/egg-jp-1
-info/egg-jp-2
-info/kbd-trans
-info/languages
-info/m2ps
-info/mule
-info/mule-jp
-info/mule-jp-1
-info/mule-jp-2
-info/mule-jp-3
-info/quail
-info/terminology
+bin/ctags
+bin/emacsclient
+bin/etags
+bin/m2ps
+bin/rcs-checkin
+lib/mule/19.28/etc/DOC
+lib/mule/19.28/etc/DOC-19.28.1
+lib/mule/19.28/i386--freebsd/cvtmail
+lib/mule/19.28/i386--freebsd/digest-doc
+lib/mule/19.28/i386--freebsd/emacsserver
+lib/mule/19.28/i386--freebsd/fakemail
+lib/mule/19.28/i386--freebsd/hexl
+lib/mule/19.28/i386--freebsd/make-docfile
+lib/mule/19.28/i386--freebsd/make-path
+lib/mule/19.28/i386--freebsd/movemail
+lib/mule/19.28/i386--freebsd/profile
+lib/mule/19.28/i386--freebsd/rcs2log
+lib/mule/19.28/i386--freebsd/sorted-doc
+lib/mule/19.28/i386--freebsd/test-distrib
+lib/mule/19.28/i386--freebsd/timer
+lib/mule/19.28/i386--freebsd/vcdiff
+lib/mule/19.28/i386--freebsd/wakeup
+lib/mule/19.28/i386--freebsd/yow
+lib/mule/site-lisp/site-start.el

@@ -1,0 +1,10 @@
+--- multi.c.orig	Mon Oct 13 04:46:46 1997
++++ multi.c	Fri Oct 17 14:49:16 1997
+@@ -437,6 +437,7 @@
+   if( tt_extent != 0 && tt_size != 0 )
+     {
+       tt_buf = (unsigned char *) e_malloc(tt_size);
++      memset(tt_buf, 0, tt_size);
+       readsecs(tt_extent, tt_buf, tt_size/SECTOR_SIZE);
+ 
+       /*

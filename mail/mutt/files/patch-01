@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Fri Nov  7 11:34:03 1997
++++ Makefile.in	Sat Nov  8 13:03:32 1997
+@@ -55,6 +55,9 @@
+ mutt: $(OBJS) $(REGEX)
+ 	$(CC) -o mutt $(OBJS) $(REGEX) $(LDFLAGS) $(LIBS)
+ 
++docs:
++	cd doc && make fbsd
++
+ install: mutt
+ 	$(srcdir)/mkinstalldirs $(bindir)
+ 	-mv -f $(bindir)/mutt $(bindir)/mutt.old

@@ -1,0 +1,44 @@
+--- Makefile.orig	Wed Oct  2 11:28:18 1996
++++ Makefile	Thu Nov  7 15:26:58 1996
+@@ -96,10 +96,10 @@
+ #
+ #CFLAGS=-g +Ns4000 $(DREAL)
+ 
+-CFLAGS=-O $(DREAL)
+-CFLAGS=-g -O -I/usr/openwin/include -DSUNOS $(DREAL)
+-CFLAGS=-g -O -I/usr/openwin/include $(DREAL)
+-CFLAGS=-g $(DREAL)
++CFLAGS=-O $(DREAL) -I/usr/X11R6/include
++#CFLAGS=-g -O -I/usr/openwin/include -DSUNOS $(DREAL)
++#CFLAGS=-g -O -I/usr/openwin/include $(DREAL)
++#CFLAGS=-g $(DREAL)
+ 
+ 
+ ##
+@@ -126,10 +126,10 @@
+ #
+ # SOLARIS: To link to openwin libraries, add -L/usr/openwin/lib
+ #
+-LIBS=-L/usr/openwin/lib -lXaw -lXmu -lXext -lXt -lX11 -lm /usr/lib/debug/malloc.o
+-LIBS=-L/usr/openwin/lib -lXaw -lXmu -lXext -lXt -lX11 -lm
+-LIBS=-lXaw -lXmu -lXext -lXt -lX11 -lm
+-LIBS=-L/usr/X11/lib -lXaw -lXmu -lXext -lXt -lX11 -lm
++#LIBS=-L/usr/openwin/lib -lXaw -lXmu -lXext -lXt -lX11 -lm /usr/lib/debug/malloc.o
++#LIBS=-L/usr/openwin/lib -lXaw -lXmu -lXext -lXt -lX11 -lm
++#LIBS=-lXaw -lXmu -lXext -lXt -lX11 -lm
++LIBS=-L/usr/X11R6/lib -lXaw -lXmu -lXext -lXt -lX11 -lm
+ 
+ 
+ #### ===========================
+@@ -180,6 +180,11 @@
+      *.[ch] *.xbm xmorph.man warp.param
+ 
+ all: xmorph
++
++install:
++	install -cs xmorph ${PREFIX}/bin
++	install -c -m 644 xmorph.man ${PREFIX}/man/man1/xmorph.1
++	gzip -9nf ${PREFIX}/man/man1/xmorph.1
+ 
+ xmorph:   $(OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS)

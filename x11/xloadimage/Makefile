@@ -1,8 +1,25 @@
+# New ports collection makefile for:    xloadimage
+# Version required:     3.03
+# Date created:         9 January 1994
+# Whom:                 jmz
+#
+# $Id: Makefile,v 1.6 1995/04/12 20:32:08 asami Exp $
+#
+
 DISTNAME=	xloadimage
+PKGNAME=	xloadimage-3.03
+CATEGORIES=	x11
+MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11-contrib/
 DISTFILES=	xloadimage.3.03.tar.Z
+
+MAINTAINER=	jmz@FreeBSD.org
+
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11-contrib/
+MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
+		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults -f
 
+pre-install:
+	@mkdir -p ${PREFIX}/lib/X11/app-defaults
 
 .include <bsd.port.mk>

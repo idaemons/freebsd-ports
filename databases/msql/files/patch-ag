@@ -1,0 +1,11 @@
+--- src/msql/config.c.orig	Wed Jan 29 12:18:00 1997
++++ src/msql/config.c	Tue Feb  4 17:30:15 1997
+@@ -284,7 +284,7 @@
+ 	}
+ 	else
+ 	{
+-		snprintf(buf,sizeof(buf),"%s/msql.conf", INST_DIR);
++		snprintf(buf,sizeof(buf),"%s/etc/msql2/msql.conf", INST_DIR);
+ 		fp = fopen(buf,"r");
+ 	}
+ 	if (!fp)

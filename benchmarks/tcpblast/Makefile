@@ -3,10 +3,13 @@
 # Date created:		22 August 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.5 1994/11/21 10:39:08 ats Exp $
+# $Id: Makefile,v 1.10 1995/11/22 11:37:02 asami Exp $
 #
 
 DISTNAME=	tcpblast
+PKGNAME=	tcpblast-1.0
+CATEGORIES=	net benchmarks
+
 NO_EXTRACT=	yes
 NO_WRKDIR=	yes
 
@@ -15,7 +18,7 @@ fetch:
 
 pre-clean:
 	@echo "===>  Pre-clean for ${DISTNAME}"
-	@(rm -f ${.CURDIR}/tcpblast)
+	@(${RM} -f ${.CURDIR}/tcpblast)
 	@(cd ${.CURDIR}/src; make clean)
 
 .include <bsd.port.mk>

@@ -1,14 +1,18 @@
 # New ports collection makefile for:	pdksh
-# Version required:	5.1.3
-# Date created:		23 December 1994
-# Whom:			thomas@ghpc8.ihf.rwth-aachen.de
+# Version required:	5.2.13
+# Date created:		23 May 1995
+# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1994/12/12 02:17:47 ache Exp $
+# $Id: Makefile,v 1.16 1996/11/18 11:39:51 asami Exp $
 #
 
-
-DISTNAME=	pdksh-5.1.3
+DISTNAME=	pdksh-5.2.13
+CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/
-GNU_CONFIGURE=  YES
+
+MAINTAINER=	tg@FreeBSD.ORG
+
+GNU_CONFIGURE=  yes
+MAN1=		ksh.1
 
 .include <bsd.port.mk>

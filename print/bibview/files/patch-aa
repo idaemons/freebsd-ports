@@ -1,0 +1,11 @@
+--- Imakefile.orig	Mon Feb 27 14:41:19 1995
++++ Imakefile	Mon Nov 24 09:30:53 1997
+@@ -9,7 +9,7 @@
+ 
+ 
+ /* nothing needs to be modified below this point */
+-CFLAGS = $(STD_CPP_DEFINES)
++CFLAGS = -I/usr/X11R6/include
+ #ifdef NeXTArchitecture
+ 
+ SYS_LIBRARIES = XawClientLibs -lm -lsys_s

@@ -3,14 +3,18 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $id:$
+# $Id: Makefile,v 1.6 1996/08/04 16:48:17 chuckr Exp $
 #
 
 DISTNAME=	xli.1.16
+PKGNAME=	xli-1.16
+CATEGORIES=	graphics x11
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
+
+MAINTAINER=	ports@FreeBSD.ORG
+
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/applications/
-EXTRACT_SUFX=	.tar.gz
 NO_WRKSUBDIR=	yes
-# PKG_CMD=	pkg_create -N
 
 .include <bsd.port.mk>

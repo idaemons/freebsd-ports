@@ -1,0 +1,5 @@
+Binaries of Sun's Java Developers Kit. Include bytecode machine,
+compiler, demos and sources for most Java runtime classes.
+
+For more information about the FreeBSD port see
+http://www.freebsd.org/java/

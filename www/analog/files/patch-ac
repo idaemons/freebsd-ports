@@ -1,0 +1,21 @@
+*** analhea2.h.orig	Fri Mar 14 20:36:49 1997
+--- analhea2.h	Sat May  3 01:28:08 1997
+***************
+*** 81,88 ****
+  #ifndef NODIRENT
+  #ifndef VMSDIRENT
+  #ifndef MACDIRENT
+- #include <dirent.h>          /* Normal dirent */
+  #include <sys/types.h>
+  #include <sys/stat.h>
+  #else
+  #include "macdir.h"          /* Mac dirent */
+--- 81,88 ----
+  #ifndef NODIRENT
+  #ifndef VMSDIRENT
+  #ifndef MACDIRENT
+  #include <sys/types.h>
++ #include <dirent.h>          /* Normal dirent */
+  #include <sys/stat.h>
+  #else
+  #include "macdir.h"          /* Mac dirent */

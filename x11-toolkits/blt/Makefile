@@ -1,17 +1,27 @@
 # New ports collection makefile for:	blt
-# Version required:	1.7
-# Date created:		14 December 1994
-# Whom:			wollman
+# Version required:	2.1
+# Date created:		3 August 1996
+# Whom:			lukin <lukin@okbmei.msk.su>
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/14 21:21:35 wollman Exp $
+# $Id: Makefile,v 1.15 1997/11/22 01:11:34 asami Exp $
 #
 
-DISTNAME=	blt-1.7
-DISTFILES=	BLT-1.7.tar.gz
-MASTER_SITES=	ftp://ftp.aud.alcatel.com/tcl/extensions/
-LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
+DISTNAME=	blt-2.1
+CATEGORIES=	x11 tk41
+MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/devel/
+DISTFILES=	BLT2.1.tar.gz
+
+MAINTAINER=	lukin@okbmei.msk.su
+
+LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
+
+WRKSRC=		${WRKDIR}/blt2.1
 GNU_CONFIGURE=	yes
-ALL_TARGET=	all sharedlib
+MANN=		BLT.n barchart.n bgexec.n bitmap.n bltdebug.n busy.n \
+		dragdrop.n graph.n htext.n spline.n table.n tile.n \
+		vector.n watch.n winop.n
+
+post-install:
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
-

@@ -1,0 +1,57 @@
+bin/convertstyle
+bin/geticonset
+bin/getstyle
+bin/mkmenu
+bin/savews
+bin/seticons
+bin/setstyle
+bin/wdwrite
+bin/wmaker
+bin/wmaker.inst
+bin/wxcopy
+bin/wxpaste
+lib/libwraster.a
+@exec ranlib %D/%F
+lib/libWMaker.a
+@exec ranlib %D/%F
+include/wraster.h
+include/WMaker.h
+share/WindowMaker/Defaults/WMRootMenu
+share/WindowMaker/Defaults/WMWindowAttributes
+share/WindowMaker/Defaults/WindowMaker
+share/WindowMaker/Style/Black.style
+share/WindowMaker/Style/Blue.style
+share/WindowMaker/Style/BlueAluminum.style
+share/WindowMaker/Style/Brown.style
+share/WindowMaker/Style/Chumbo.style
+share/WindowMaker/Style/Copper.style
+share/WindowMaker/Style/DarkBlue.style
+share/WindowMaker/Style/Food.style
+share/WindowMaker/Style/Golden.style
+share/WindowMaker/Style/Green.style
+share/WindowMaker/Style/LightBlue.style
+share/WindowMaker/Style/Pastel.style
+share/WindowMaker/Style/Pumpkin.style
+share/WindowMaker/Style/Purple.style
+share/WindowMaker/Style/Rainbow_.style
+share/WindowMaker/Style/Red.style
+share/WindowMaker/Style/RednBlue.style
+share/WindowMaker/Style/Traditional.style
+share/WindowMaker/Copyright
+share/WindowMaker/wmmacros
+share/WindowMaker/README
+share/WindowMaker/menu.cz
+share/WindowMaker/menu.de
+share/WindowMaker/menu.fr
+share/WindowMaker/menu.gl
+share/WindowMaker/menu.ja
+share/WindowMaker/menu.ko
+share/WindowMaker/menu.nl
+share/WindowMaker/menu.pt
+share/WindowMaker/menu.it
+share/WindowMaker/menu
+share/WindowMaker/autostart.sh
+share/WindowMaker/styles.menu
+@dirrm share/WindowMaker/Defaults
+@dirrm share/WindowMaker/Style
+@dirrm share/WindowMaker

@@ -1,0 +1,22 @@
+bin/ddtrans
+bin/mkcart
+bin/xzx
+lib/X11/app-defaults/Xzx
+lib/X11/xzx/128-0.rom
+lib/X11/xzx/128-1.rom
+lib/X11/xzx/COPYRIGHT
+lib/X11/xzx/FAQ
+lib/X11/xzx/README
+lib/X11/xzx/if1-v1.rom
+lib/X11/xzx/if1-v2.rom
+lib/X11/xzx/keyboard.scr
+lib/X11/xzx/mf128.rom
+lib/X11/xzx/pl2-0.rom
+lib/X11/xzx/pl2-1.rom
+lib/X11/xzx/pl3-0.rom
+lib/X11/xzx/pl3-1.rom
+lib/X11/xzx/pl3-2.rom
+lib/X11/xzx/pl3-3.rom
+lib/X11/xzx/spectrum.rom
+man/man1/xzx.1.gz
+@dirrm lib/X11/xzx

@@ -1,0 +1,9 @@
+bin/john
+bin/xtract
+bin/unshadow
+share/john/all.chr
+share/john/alpha.chr
+share/john/digits.chr
+share/john/john.ini
+share/john/password.lst
+share/doc/john/john.doc

@@ -1,0 +1,5 @@
+bin/cpmemu
+lib/cpm/cpm.sys
+lib/cpm/cd.com
+lib/cpm/link.com
+lib/cpm/xccp.com

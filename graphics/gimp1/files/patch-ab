@@ -1,0 +1,31 @@
+
+*****
+***** patches for plug-ins
+*****
+
+--- /a/gimp-0.99.6/plug-ins/url/url.c	Mon Mar 10 04:57:12 1997
++++ plug-ins/url/url.c	Wed Mar 12 21:56:39 1997
+@@ -146,8 +146,8 @@
+     }
+   else if (pid == 0)
+     {
+-      execlp ("wget", "wget", filename, "-O", tmpname, NULL);
+-      g_warning ("url: exec failed: wget: %s\n", g_strerror(errno));
++      execlp ("fetch", "fetch", filename, "-p -o", tmpname, NULL);
++      g_warning ("url: exec failed: fetch: %s\n", g_strerror(errno));
+       _exit(127);
+     }
+   else
+
+
+--- plug-ins/mail/mail.c.orig	Tue Nov 25 06:04:27 1997
++++ plug-ins/mail/mail.c	Thu Dec 18 00:40:23 1997
+@@ -89,7 +89,7 @@
+    *
+  */
+ #ifndef MAILER
+-#define MAILER "/usr/lib/sendmail"
++#define MAILER "/usr/sbin/sendmail"
+ #endif
+ 
+ #ifndef UUENCODE

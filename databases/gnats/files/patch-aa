@@ -1,0 +1,33 @@
+Use the FSF m4 instead of the BSD m4, because the BSD m4 is reporting problems
+processing config.c.in.
+Strip binaries at install.
+
+--- Makefile.in	Mon Aug 18 14:52:43 1997
++++ Makefile.in	Tue Aug 26 14:14:44 1997
+@@ -47,7 +47,7 @@
+ 
+ # INSTALL_PROGRAM_ARGS is changed by configure.in to use -x for a
+ # cygwin32 host.
+-INSTALL_PROGRAM_ARGS =
++INSTALL_PROGRAM_ARGS = -s
+ 
+ INSTALL = $(SHELL) $$s/install-sh -c
+ INSTALL_PROGRAM = $(INSTALL) $(INSTALL_PROGRAM_ARGS)
+@@ -68,7 +68,7 @@
+ HOST_PREFIX_1 = loser-
+ 
+ # These flag values are normally overridden by the configure script.
+-CFLAGS = -g
++CFLAGS+= -g
+ CXXFLAGS = -g -O2
+ 
+ LIBCFLAGS = $(CFLAGS)
+@@ -121,7 +121,7 @@
+ 
+ M4 = `if [ -f $$r/m4/m4 ] ; \
+ 	then echo $$r/m4/m4 ; \
+-	else echo m4 ; fi`
++	else echo gm4 ; fi`
+ 
+ MAKEINFO = `if [ -f $$r/texinfo/makeinfo/Makefile ] ; \
+ 	then echo $$r/texinfo/makeinfo/makeinfo ; \

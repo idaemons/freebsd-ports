@@ -1,0 +1,49 @@
+--- Makefile.orig	Thu Jan  8 03:29:04 1998
++++ Makefile	Thu Jan  8 14:52:32 1998
+@@ -5,11 +5,11 @@
+ ###########################################################################
+ 
+ # The base directory for all samba files
+-BASEDIR = /usr/local/samba
++BASEDIR = $(PREFIX)
+ 
+ # The base manpages directory to put the man pages in
+ # Note: $(MANDIR)/man1, $(MANDIR)/man5 and $(MANDIR)/man8 must exist.
+-MANDIR = /usr/local/man
++MANDIR = $(PREFIX)/man
+ 
+ # The directories to put things in. If you use multiple
+ # architectures or share the samba binaries across NFS then
+@@ -18,9 +18,9 @@
+ #       normally only applies to nmbd and smbd
+ #       SBINDIR implies a secure binary directory
+ BINDIR = $(BASEDIR)/bin
+-SBINDIR = $(BASEDIR)/bin
+-LIBDIR = $(BASEDIR)/lib
+-VARDIR = $(BASEDIR)/var
++SBINDIR = $(BASEDIR)/sbin
++LIBDIR = $(BASEDIR)/etc
++VARDIR = /var/log
+ 
+ # The permissions to give the executables
+ INSTALLPERMS = 0755
+@@ -55,7 +55,7 @@
+ WEB_ROOT = $(BASEDIR)
+ 
+ # the directory where lock files go
+-LOCKDIR = $(VARDIR)/locks
++LOCKDIR = /var/spool/lock
+ 
+ # The directory where code page definition files go
+ CODEPAGEDIR = $(LIBDIR)/codepages
+@@ -396,8 +396,8 @@
+ # This is for FreeBSD
+ # contributed by kuku@acds.physik.rwth-aachen.de
+ # NOTE: You may need to add -DBSD44 if you have password problems
+-# FLAGSM = -DFreeBSD -DFAST_SHARE_MODES
+-# LIBSM = -lcrypt 
++FLAGSM = -DFreeBSD -DFAST_SHARE_MODES
++LIBSM = -lcrypt 
+ 
+ # This is for OpenBSD
+ # contributed by todd@openbsd.org

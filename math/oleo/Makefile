@@ -1,14 +1,21 @@
-# New ports collection makefile for:	pine
-# Version required:	3.90
-# Date created:		03 September 1994
+# New ports collection makefile for:	oleo
+# Version required:	1.6
+# Date created:		3 September 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/11 18:17:00 jkh Exp $
+# $Id: Makefile,v 1.10 1996/11/18 10:24:49 asami Exp $
 #
 
 DISTNAME=	oleo-1.6
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
-EXTRACT_SUFX=.tar.gz
-HAS_CONFIGURE=yes
+CATEGORIES=	math
+MASTER_SITES=	${MASTER_SITE_GNU}
+
+MAINTAINER=	ports@FreeBSD.ORG
+
+HAS_CONFIGURE=	yes
+MAN1=		oleo.1
+
+post-install:
+	$(INSTALL_MAN) $(FILESDIR)/oleo.1 $(PREFIX)/man/man1
 
 .include <bsd.port.mk>

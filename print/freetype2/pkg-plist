@@ -1,0 +1,15 @@
+bin/ftview
+bin/fttimer
+bin/ftlint
+bin/ftdump
+bin/ftzoom
+bin/ftstring
+bin/ftstrpnm
+include/freetype.h
+include/ttcommon.h
+include/tterror.h
+lib/libttf.a
+lib/libttf.la
+lib/libttf.so
+lib/libttf.so.1.0
+@exec ldconfig -m %B

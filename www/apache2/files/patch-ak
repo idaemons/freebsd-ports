@@ -1,0 +1,36 @@
+*** src/support/apachectl.orig	Sun Oct 26 02:35:19 1997
+--- src/support/apachectl	Fri Nov 21 22:58:08 1997
+***************
+*** 21,30 ****
+  # --------------------                              --------------------
+  # 
+  # the path to your PID file
+! PIDFILE=/usr/local/apache/logs/httpd.pid
+  #
+  # the path to your httpd binary
+! HTTPD=/usr/local/apache/src/httpd
+  #
+  # a command that outputs a formatted text version of the HTML at the
+  # url given on the command line.  Designed for lynx, however other
+--- 21,30 ----
+  # --------------------                              --------------------
+  # 
+  # the path to your PID file
+! PIDFILE=/var/run/httpd.pid
+  #
+  # the path to your httpd binary
+! HTTPD=/usr/local/sbin/httpd
+  #
+  # a command that outputs a formatted text version of the HTML at the
+  # url given on the command line.  Designed for lynx, however other
+***************
+*** 37,42 ****
+--- 37,44 ----
+  #
+  # --------------------                              --------------------
+  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
++ 
++ eval `limits -e -C daemon` >/dev/null 2>&1
+  
+  ERROR=0
+  ARGV="$@"

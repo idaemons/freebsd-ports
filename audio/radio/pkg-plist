@@ -1,0 +1,4 @@
+bin/broadcast
+bin/radio
+man/man1/broadcast.1.gz
+man/man1/radio.1.gz

@@ -1,0 +1,63 @@
+*** configure.orig	Thu Nov 20 00:20:39 1997
+--- configure	Thu Nov 20 16:42:25 1997
+***************
+*** 832,838 ****
+  fi
+  
+  fi
+! if test "$GCC" = yes 
+  then
+  	CFLAGS="$CFLAGS -fstrength-reduce -fpcc-struct-return"
+  fi
+--- 832,838 ----
+  fi
+  
+  fi
+! if test "$GCC" = DISABLE_yes
+  then
+  	CFLAGS="$CFLAGS -fstrength-reduce -fpcc-struct-return"
+  fi
+***************
+*** 954,960 ****
+      AIX*) O_DEFS="$O_DEFS -DAIX" ;;
+      IRIX*) O_DEFS="-cckr $O_DEFS -DIRIX" ;;
+  	BSD*) O_DEFS="$O_DEFS -DBSD" ;;
+! 	FreeBSD*) O_DEFS="$O_DEFS -DBSD" ;;
+  	Linux*) O_DEFS="$O_DEFS -DLINUX" ;;
+  esac
+  TARGET="popper $TARGET"
+--- 954,960 ----
+      AIX*) O_DEFS="$O_DEFS -DAIX" ;;
+      IRIX*) O_DEFS="-cckr $O_DEFS -DIRIX" ;;
+  	BSD*) O_DEFS="$O_DEFS -DBSD" ;;
+! 	FreeBSD*) O_DEFS="$O_DEFS" ;;
+  	Linux*) O_DEFS="$O_DEFS -DLINUX" ;;
+  esac
+  TARGET="popper $TARGET"
+***************
+*** 1415,1421 ****
+  netinet/in.h \
+  maillock.h \
+  ndbm.h \
+- gdbm.h \
+  dbm.h \
+  
+  do
+--- 1415,1420 ----
+***************
+*** 1759,1765 ****
+  char gdbm_open();
+  
+  int main() {
+! gdbm_open()
+  ; return 0; }
+  EOF
+  if { (eval echo configure:1766: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+--- 1758,1764 ----
+  char gdbm_open();
+  
+  int main() {
+! DISABLE_gdbm_open()
+  ; return 0; }
+  EOF
+  if { (eval echo configure:1766: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then

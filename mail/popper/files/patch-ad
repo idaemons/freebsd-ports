@@ -1,0 +1,170 @@
+These paths translate From_ lines into Return-Path: in unix style mailboxes.
+If the mailbox is in MMDF format, it does nothing (since MMDF has already
+done the Return-Path: translation while writing the message out.
+
+WARNING: Do not merge these patches in with other patch files.
+	 Keep them separate (Andrey, I mean you).
+						-- Paul Traina
+						   17-Feb-1997
+
+With old variant of this patch message size was counted incorrectly,
+"rpath" variable can be referenced without initialization, second
+Return-Path not skipped, fixed now.
+						-- Andrey Chernov
+						   8-Oct-1997
+
+*** pop_dropcopy.c.orig	Fri Jul 25 21:42:07 1997
+--- pop_dropcopy.c	Wed Oct  8 10:36:34 1997
+***************
+*** 151,156 ****
+--- 151,187 ----
+      return(ti != 0);
+  }
+  
++ char *
++ return_path (const char *unixfrom)
++ {
++     static char tmpbuf[BUFSIZ];
++     int fromlen = sizeof("From ") - 1;
++     const char *fp, *hp, *cp, *ep;
++ 
++     /* if it doesn't start with a From_, it's not */
++     if (strncmp(unixfrom, "From ", fromlen))
++ 	return NULL;
++ 
++     fp = unixfrom + fromlen;
++     hp = cp = strchr(fp, ' ');
++     while (hp = strchr(++hp, 'r'))
++ 	if (!strncmp(hp, "remote from", sizeof("remote from") - 1)) {
++ 	    hp = strrchr(hp, ' ');
++ 	    break;
++         }
++ 
++     if (hp) {
++ 	ep = strrchr(++hp, '\n');
++ 	snprintf(tmpbuf, sizeof(tmpbuf), "Return-Path: %.*s!%.*s\n",
++ 		 ep - hp, hp,
++ 		 cp - fp, fp);
++     } else
++ 	snprintf(tmpbuf, sizeof(tmpbuf), "Return-Path: %.*s\n",
++ 		 cp - fp, fp);
++ 
++     return tmpbuf;
++ }
++ 
+  /* Hashing to a spool directory helps reduce the lookup time for sites
+   * with thousands of mail spool files.  Unix uses a linear list to
+   * save directory information and the following methods attempt to
+***************
+*** 275,280 ****
+--- 306,312 ----
+      char                    buffer[MAXLINELEN];		/*  Read buffer */
+      MD5_CTX		    mdContext;
+      unsigned char	    digest[16];
++     char                   *rpath = NULL;
+  
+  #ifdef DEBUG
+      if(p->debug)
+***************
+*** 340,345 ****
+--- 372,380 ----
+  	    (p->mmdf_separator ? !strcmp(p->mmdf_separator, buffer) :
+  	    isfromline(buffer))) {
+  
++ 	    if (!p->mmdf_separator)
++ 		rpath = return_path(buffer);
++ 
+  	    if (expecting_trailer) {
+  		/* skip over the MMDF trailer */
+  		expecting_trailer = 0;
+***************
+*** 385,390 ****
+--- 420,428 ----
+  	    mp->retr_flag = FALSE;
+  	    mp->orig_retr_state = FALSE;
+  	    mp->uidl_str = "\n";
++ 	    mp->return_path = rpath ? strdup(rpath) : NULL;
++ 	    if (rpath)
++ 		mp->length += strlen(rpath) + 1;
+  #ifdef DEBUG
+  	    if(p->debug)
+  		pop_log(p,POP_DEBUG, "Msg %d being added to list", mp->number);
+***************
+*** 463,468 ****
+--- 501,508 ----
+  		    mp->retr_flag = TRUE;
+  		    mp->orig_retr_state = TRUE;
+  		}
++ 	    } else if (rpath && (strncasecmp(buffer,"Return-Path:",12) == 0)) {
++ 		continue;
+  	    }
+  	} else {
+  	    content_nchar += nchar;
+***************
+*** 502,507 ****
+--- 542,548 ----
+      int			    content_length, content_nchar, cont_len;
+      MD5_CTX		    mdContext;
+      unsigned char	    digest[16];
++     char                   *rpath = NULL;
+  
+      FILE		    *mail_drop;		    /*  Streams for fids */
+  
+***************
+*** 574,579 ****
+--- 615,623 ----
+  	    (p->mmdf_separator ? !strcmp(p->mmdf_separator, buffer) :
+  	    isfromline(buffer))) {
+  
++ 	    if (!p->mmdf_separator)
++ 		rpath = return_path(buffer);
++ 
+  	    if (expecting_trailer) {
+  		expecting_trailer = 0;
+  		continue;
+***************
+*** 619,624 ****
+--- 663,671 ----
+              mp->retr_flag = FALSE;
+              mp->orig_retr_state = FALSE;
+  	    mp->uidl_str = "\n";
++ 	    mp->return_path = rpath ? strdup(rpath) : NULL;
++ 	    if (rpath)
++ 		mp->length += strlen(rpath) + 1;
+  
+  #ifdef DEBUG
+              if(p->debug)
+***************
+*** 701,706 ****
+--- 748,755 ----
+  		    mp->retr_flag = TRUE;
+  		    mp->orig_retr_state = TRUE;
+  		}
++ 	    } else if (rpath && (strncasecmp(buffer,"Return-Path:",12) == 0)) {
++ 		continue;
+  	    }
+  	} else {
+  	    content_nchar += nchar;
+--- pop_send.c	Mon Feb 17 13:14:25 1997
++++ pop_send.c	Mon Feb 17 13:15:28 1997
+@@ -84,6 +84,9 @@
+     /*  Skip the first line (the sendmail "From" or MMDF line) */
+     (void)fgets (buffer,MAXMSGLINELEN,p->drop);
+ 
++    if (mp->return_path)
++	pop_sendline(p, mp->return_path);
++
+     /*  Send the header of the message followed by a blank line */
+     while (fgets(buffer, MAXMSGLINELEN, p->drop)) {
+ 	if (!strncasecmp(buffer, "Content-Length:", 15) ||
+--- popper.h	Mon Feb 17 13:15:44 1997
++++ popper.h	Mon Feb 17 13:35:48 1997
+@@ -260,6 +263,8 @@
+ 						    Used for RSET cmd. */
+     char	*uidl_str;			/*  Cache of the UIDL str for
+ 						    faster access */
++    char	*return_path;			/*  Cache of the rpath str for
++						    faster access */
+ } MsgInfoList;
+ 
+ typedef struct  {                               /*  POP parameter block */

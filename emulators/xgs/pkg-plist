@@ -1,0 +1,14 @@
+bin/xgs
+bin/imgutil
+share/doc/xgs/CHANGES.TXT 
+share/doc/xgs/COMPAT.TXT 
+share/doc/xgs/INSTALL.TXT 
+share/doc/xgs/TODO.TXT
+share/doc/xgs/IWM-DOC.TXT
+share/doc/xgs/XGS-FAQ.TXT
+share/doc/xgs/README.FreeBSD
+lib/xgs/xgs40.fnt
+lib/xgs/xgs80.fnt
+lib/xgs/xgs.rom
+lib/xgs/xgs.ram
+

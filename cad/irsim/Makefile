@@ -1,14 +1,24 @@
-# New ports collection makefile for:    magic
-# Version required:     6.4.4
+# New ports collection makefile for:    irsim
+# Version required:     9.2
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.2 1994/10/06 07:52:04 swallace Exp $
+# $Id: Makefile,v 1.7 1996/12/06 08:19:54 swallace Exp $
 #
 
-DISTNAME=       irsim-9.2
+DISTNAME=       irsim-9.4.1
+CATEGORIES=	cad
+MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/WRL/projects/magic/6.5/
 EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/magic/6.4/
-WRKSRC=		${.CURDIR}/work/irsim
+
+MAINTAINER=	swallace@FreeBSD.org
+
+MAN1=		irsim.1
+MAN3=		irsim-analyzer.3
+MAN5=		netchange.5
+
+# othewise patch will complain
+post-extract:
+	@find ${WRKSRC} -name RCS | xargs ${RM} -rf
 
 .include <bsd.port.mk>
