@@ -3,13 +3,18 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/26 09:10:32 ache Exp $
+# $Id: Makefile,v 1.7 1998/01/23 00:43:40 jseger Exp $
 #
-DISTFILES=      unarj241.tar.Z
-DISTNAME=       unarj
-MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
 
-install:
-	cd ${WRKSRC}; install -cs -o bin -g bin -m755 ${DISTNAME} ${PREFIX}/bin
+DISTNAME=       unarj
+PKGNAME=	unarj-2.41
+CATEGORIES=	archivers
+MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
+DISTFILES=      unarj241.tar.Z
+
+MAINTAINER=     ache@FreeBSD.ORG
+
+do-install:
+	cd ${WRKSRC}; ${INSTALL_PROGRAM} ${DISTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>

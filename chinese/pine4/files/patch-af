@@ -1,0 +1,20 @@
+--- pico/osdep/os-bsf.h.orig	Thu Jul  9 00:37:28 1998
++++ pico/osdep/os-bsf.h	Wed Jul 15 17:02:31 1998
+@@ -23,7 +23,7 @@
+ 
+ #define  USE_DIRENT
+ #include <sys/types.h>
+-#include <sys/dir.h>
++#include <dirent.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 
+@@ -152,7 +152,7 @@
+ /*
+  * Place where mail gets delivered (for pico's new mail checking)
+  */
+-#define MAILDIR		"/usr/spool/mail"
++#define MAILDIR		"/var/mail"
+ 
+ /*
+  * What and where the tool that checks spelling is located.  If this is

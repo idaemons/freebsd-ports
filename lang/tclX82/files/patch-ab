@@ -1,0 +1,20 @@
+--- ../tcl/unix/Makefile.in.ORIG	Sun May  3 18:52:36 1998
++++ ../tcl/unix/Makefile.in	Sun May  3 18:53:16 1998
+@@ -124,7 +124,7 @@
+ # If a link fails, purge the executable, as some systems leave invalid
+ # executables around.
+ #
+-all: tcl checkup RUNTIME tclXtest
++all: tcl checkup RUNTIME
+ 
+ static:	tcl.static tclXtest.static
+ 
+@@ -173,7 +173,7 @@
+ # unless we don't have them.
+ #
+ RUNTIME: tcl.tlib tcl.tndx tclx.tcl buildidx.tcl autoload.tcl help.tmp \
+-         dltest.tmp checkup
++         checkup
+  
+ tcl.tlib: ${TLIB_SRCS} autoload.tcl
+ 	-rm -f tcl.tlib tcl.tndx

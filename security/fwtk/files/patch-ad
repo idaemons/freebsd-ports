@@ -1,0 +1,29 @@
+--- firewall.h.orig	Sun Mar  1 06:54:20 1998
++++ firewall.h	Sat Apr 18 00:33:53 1998
+@@ -47,7 +47,7 @@
+ system.
+ */
+ #ifndef	PERMFILE
+-#define	PERMFILE	"/usr/local/etc/netperm-table"
++#define	PERMFILE	"%%BSD_PREFIX%%/etc/netperm-table"
+ #endif
+ 
+ /*
+@@ -67,7 +67,7 @@
+ 
+ /* Choose a system logging facility for the firewall toolkit.  */
+ #ifndef	LFAC
+-#define	LFAC	LOG_DAEMON
++#define	LFAC	LOG_LOCAL2
+ #endif
+ 
+ 
+@@ -89,7 +89,7 @@
+ makes no difference. make sure that whichever your machine uses
+ is defined below.
+ */
+-#if defined(SYSV) || defined(SCO5) || defined(OSF1) || defined(AIX)
++#if defined(SYSV) || defined(SCO5) || defined(OSF1) || defined(AIX) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
+ #define DIRECT_STRUCT   struct dirent 
+ #else
+ #define DIRECT_STRUCT   struct direct

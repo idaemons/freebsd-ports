@@ -3,24 +3,38 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.1.1.1 1994/09/30 15:09:34 adam Exp $
+# $Id: Makefile,v 1.16 1996/12/07 01:30:12 adam Exp $
 #
 
 DISTNAME=	cnews
-EXTRACT_SUFFIX=	.tar.Z
-DISTFILES=	${DISTNAME}${EXTRACT_SUFFIX}
+PKGNAME=	cnews-cr.g
+CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
+EXTRACT_SUFX=	.tar.Z
+
 WRKSRC=		${WRKDIR}
 MAKEFILE=	makefile
-NEWSSPOOL=	/usr/local/newsspool
-NEWSBIN=	/usr/local/libexec/news
-NEWSLIB=	/usr/local/lib/news
-MANDIR=		/usr/local/man
+MAN1=		checknews.1cn inews.1cn postnews.1cn readnews.1cn
+MAN5=		controlperm.5 news.5 newsctl.5 newsdb.5 newsoverview.5 \
+		newssys.5
+MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
+		mkhistory.8cn newsaux.8cn newsbatch.8cn newsmail.8cn \
+		newsmaint.8cn newsoverview.8 relaynews.8cn report.8cn \
+		rnews.8cn
 
-install: all
-	@echo "===>  installing for ${DISTNAME}"
+BROKEN=		"Fails while installing bin/inews."
+
+NEWSSPOOL=	${PREFIX}/newsspool
+NEWSBIN=	${PREFIX}/news/cnewsbin
+NEWSLIB=	${PREFIX}/news/lib
+MANDIR=		${PREFIX}/man
+
+do-install:
+	rm -f ${PREFIX}/bin/inews
+	cp ${WRKSRC}/libdbz/dbz.h ${PREFIX}/include
+	cp ${WRKSRC}/libcnews.a ${PREFIX}/lib
 	mkdir -p ${NEWSSPOOL}
-	ln -s ${NEWSSPOOL} /var/news
+	-ln -s ${NEWSSPOOL} /var/news
 	mkdir -p ${NEWSBIN} ${NEWSLIB}
 	chown news.news ${NEWSSPOOL} ${NEWSLIB}
 	chown bin.bin ${NEWSBIN}
@@ -35,10 +49,9 @@ install: all
 		su -m bin
 	chown news.news ${NEWSBIN}/input/newsspool
 	chmod 6755 ${NEWSBIN}/input/newsspool
-	mkdir -p ${MANDIR}/man1 ${MANDIR}/man5 ${MANDIR}/man8
-	install -o bin -g bin -m 444 ${WRKSRC}/man/*.1* ${MANDIR}/man1
-	install -o bin -g bin -m 444 ${WRKSRC}/man/*.5* ${MANDIR}/man5
-	install -o bin -g bin -m 444 ${WRKSRC}/man/*.8* ${MANDIR}/man8
+	install -c -o bin -g bin -m 444 ${WRKSRC}/man/*.1* ${MANDIR}/man1
+	install -c -o bin -g bin -m 444 ${WRKSRC}/man/*.5* ${MANDIR}/man5
+	install -c -o bin -g bin -m 444 ${WRKSRC}/man/*.8* ${MANDIR}/man8
 	@echo ""
 	@echo "!!!!!!!!"
 	@echo "you MUST change the configuration of this news setup:"

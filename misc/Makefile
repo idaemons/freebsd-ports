@@ -1,8 +1,84 @@
-# $Id: Makefile,v 1.37 1995/02/06 05:30:34 asami Exp $
+# $Id: Makefile,v 1.149 1998/07/13 02:27:12 steve Exp $
 #
-# restricted: pgp.usa_only pgp.non-usa_only 
-#
-SUBDIR= cpm hfs iozone ispell less mshell mtools nkf rman screen top \
-	xdu xsysstats 
+
+    SUBDIR += acron
+    SUBDIR += amanda
+    SUBDIR += amanda24
+    SUBDIR += astrolog
+    SUBDIR += bb
+    SUBDIR += cal
+    SUBDIR += cbb
+    SUBDIR += chord
+    SUBDIR += colorls
+    SUBDIR += ctk
+    SUBDIR += deco
+    SUBDIR += dejagnu
+    SUBDIR += display
+    SUBDIR += dotfile
+    SUBDIR += estic
+    SUBDIR += ewipe
+    SUBDIR += fd
+    SUBDIR += fep
+    SUBDIR += figlet
+    SUBDIR += git
+    SUBDIR += gnuls
+    SUBDIR += gone
+    SUBDIR += gyvescm
+    SUBDIR += ical
+    SUBDIR += iselect
+    SUBDIR += jargon
+    SUBDIR += jive
+    SUBDIR += kdeutils
+    SUBDIR += korganizer
+    SUBDIR += kp
+    SUBDIR += kproject
+    SUBDIR += kwatch
+    SUBDIR += less
+    SUBDIR += lile
+    SUBDIR += logsurfer
+    SUBDIR += magicpoint
+    SUBDIR += mc
+    SUBDIR += mmv
+    SUBDIR += most
+    SUBDIR += mshell
+    SUBDIR += nwrite
+    SUBDIR += offix-trash
+    SUBDIR += p5-Array-PrintCols
+    SUBDIR += p5-Business-CreditCard
+    SUBDIR += p5-Locale-Codes
+    SUBDIR += p5-Search
+    SUBDIR += plan
+    SUBDIR += rpm
+    SUBDIR += screen
+    SUBDIR += scriptkit
+    SUBDIR += sls
+    SUBDIR += sma
+    SUBDIR += splitvt
+    SUBDIR += team
+    SUBDIR += teapot
+    SUBDIR += tkcron
+    SUBDIR += tkinfo
+    SUBDIR += tkman
+    SUBDIR += uk-phone
+    SUBDIR += uk-postcodes
+    SUBDIR += unclutter
+    SUBDIR += us-zipcodes
+    SUBDIR += viz
+    SUBDIR += x-files
+    SUBDIR += xcalendar
+    SUBDIR += xd
+    SUBDIR += xdelta
+    SUBDIR += xgas
+    SUBDIR += xinvest
+    SUBDIR += xless
+    SUBDIR += xmaddressbook
+    SUBDIR += xmdiary
+    SUBDIR += xopps
+    SUBDIR += xpns
+    SUBDIR += xtar
+    SUBDIR += xtimer
+    SUBDIR += xquote
+    SUBDIR += ytree
+    SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>

@@ -1,0 +1,28 @@
+--- ../../tcsh-6.07.06/sh.func.c	Sun Jun 21 10:45:27 1998
++++ sh.func.c	Sun Jun 21 11:27:31 1998
+@@ -1279,6 +1279,9 @@
+     struct command *c;
+ {
+     Char   *vp, *lp;
++#ifdef __FreeBSD__
++    static int catclosed = 0;
++#endif
+ 
+     USE(c);
+     if (*++v == 0) {
+@@ -1322,7 +1325,15 @@
+ #  ifdef LC_MESSAGES
+ 	(void) setlocale(LC_MESSAGES, "");
+ #  endif /* LC_MESSAGES */
++# ifdef __FreeBSD__  
++	/* This code is to avoid bug. */
++	if (catclosed)
++	    (void) catclose(catd);
++	else
++	    catclosed = 1;
++# else 
+ 	(void) catclose(catd);
++# endif /* __FreeBSD__ */
+ 	nlsinit();
+ # endif /* NLS_CATALOGS */
+ # ifdef LC_CTYPE

@@ -1,7 +1,22 @@
-# $Id: Makefile,v 1.8 1995/01/06 08:26:17 jkh Exp $
+# $Id: Makefile,v 1.30 1998/05/16 01:39:33 dburr Exp $
 #
-# restricted: rzsz kermit
-#
-SUBDIR= flexfax mgetty+sendfax seyon
+
+    SUBDIR += bpl+
+    SUBDIR += conserver
+    SUBDIR += ecu
+    SUBDIR += hylafax
+    SUBDIR += kermit
+    SUBDIR += kpilot
+    SUBDIR += lrzsz
+    SUBDIR += mgetty+sendfax
+    SUBDIR += minicom
+    SUBDIR += pilot-link
+    SUBDIR += qpage
+    SUBDIR += rzsz
+    SUBDIR += seyon
+    SUBDIR += snooper
+    SUBDIR += tkhylafax
+    SUBDIR += xcept
+    SUBDIR += zmtx-zmrx
 
 .include <bsd.port.subdir.mk>

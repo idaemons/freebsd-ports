@@ -1,6 +1,66 @@
+# $Id: Makefile,v 1.69 1998/07/18 20:00:19 hoek Exp $
 #
-# $Id: Makefile,v 1.5 1994/10/29 22:11:28 pst Exp $
-#
-SUBDIR= elm metamail mh pine pgpsendmail popper procmail smail
+
+    SUBDIR += adcomplain
+    SUBDIR += asmail
+    SUBDIR += bulk_mailer
+    SUBDIR += coolmail
+    SUBDIR += cucipop
+    SUBDIR += cyrus
+    SUBDIR += elm
+    SUBDIR += emil
+    SUBDIR += exim
+    SUBDIR += exmh
+    SUBDIR += exmh2
+    SUBDIR += faces
+    SUBDIR += fetchmail
+    SUBDIR += glbiff
+    SUBDIR += im
+    SUBDIR += imap-uw
+    SUBDIR += kbiff
+    SUBDIR += mailagent
+    SUBDIR += mailcrypt
+    SUBDIR += majorcool
+    SUBDIR += majordomo
+    SUBDIR += metamail
+    SUBDIR += mew
+    SUBDIR += mew-common
+    SUBDIR += mew-mule
+    SUBDIR += mew-xemacs
+    SUBDIR += mh
+    SUBDIR += mmr
+    SUBDIR += movemail
+    SUBDIR += mutt
+    SUBDIR += mutt.with_pgp
+    SUBDIR += nmh
+    SUBDIR += p5-MIME-Tools
+    SUBDIR += p5-Mail-Folder
+    SUBDIR += p5-Mail-POP3Client
+    SUBDIR += p5-Mail-Tools
+    SUBDIR += pgpsendmail
+    SUBDIR += pine3
+    SUBDIR += pine4
+    SUBDIR += popclient
+    SUBDIR += poppassd
+    SUBDIR += popper
+    SUBDIR += premail
+    SUBDIR += procmail
+    SUBDIR += qmail
+    SUBDIR += rblcheck
+    SUBDIR += rftp
+    SUBDIR += sigrot
+    SUBDIR += smail
+    SUBDIR += smtpd
+    SUBDIR += smtpfeed
+    SUBDIR += tkrat
+    SUBDIR += wmmail
+    SUBDIR += xfaces
+    SUBDIR += xfmail
+    SUBDIR += xlbiff
+    SUBDIR += xmail
+    SUBDIR += xmailbox
+    SUBDIR += xpbiff
+    SUBDIR += xpbiff-youbin
+    SUBDIR += youbin
 
 .include <bsd.port.subdir.mk>

@@ -1,0 +1,11 @@
+--- pine/osdep/os-bsf.h.orig	Fri Jun 26 14:19:54 1998
++++ pine/osdep/os-bsf.h	Wed Jul 15 17:02:35 1998
+@@ -268,7 +268,7 @@
+        8
+        9 logs gross details of command execution
+  ----*/
+-#define DEFAULT_DEBUG 2
++#define DEFAULT_DEBUG 0
+ 
+ 
+ 

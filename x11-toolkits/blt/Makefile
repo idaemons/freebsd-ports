@@ -1,17 +1,28 @@
 # New ports collection makefile for:	blt
-# Version required:	1.7
-# Date created:		14 December 1994
-# Whom:			wollman
+# Version required:	2.4c
+# Date created:		9 July 1998
+# Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/14 21:21:35 wollman Exp $
+# $Id: Makefile,v 1.16 1997/11/22 11:22:00 asami Exp $
 #
 
-DISTNAME=	blt-1.7
-DISTFILES=	BLT-1.7.tar.gz
-MASTER_SITES=	ftp://ftp.aud.alcatel.com/tcl/extensions/
-LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
+DISTNAME=	BLT2.4c
+PKGNAME=	blt-2.4c
+CATEGORIES=	x11 tk80
+MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/
+
+MAINTAINER=	kjc@csl.sony.co.jp
+
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
+
+WRKSRC=		${WRKDIR}/blt2.4c
 GNU_CONFIGURE=	yes
-ALL_TARGET=	all sharedlib
+MANN=		BLT.n barchart.n bgexec.n bitmap.n bltdebug.n busy.n \
+		dragdrop.n eps.n graph.n htext.n hierbox.n spline.n \
+		stripchart.n table.n tabset.n tile.n vector.n watch.n winop.n \
+		beep.n cutbuffer.n
+
+post-install:
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
-

@@ -1,25 +1,28 @@
 # New ports collection makefile for:	fvwm
-# Version required:	1.23b
-# Date created:		25 August 1994
-# Whom:			jkh
+# Version required:	1.24r
+# Date created:		12 May 1995
+# Whom:			me
 #
-# $Id: Makefile,v 1.11 1995/01/13 13:17:41 jkh Exp $
+# $Id: Makefile,v 1.22 1997/10/28 21:59:55 gj Exp $
 #
 
-DISTNAME=	fvwm
-NO_WRKSUBDIR=	yes
-DISTFILES=	fvwm-core.tar.gz fvwm-modules.tar.gz \
-		fvwm-icons.tar.gz
-MASTER_SITES=	ftp://spcot.sanders.com/pub/fvwm/
-USE_IMAKE=	yes
+DISTNAME=	fvwm-1.24r
+CATEGORIES=	x11
+MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/fvwm/version-1/ \
+		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/1.x/
+
+MAINTAINER=	me@FreeBSD.org
+
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-PKG_ARGS=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
-		-r ${PKGDIR}/REQUIRES -p ${PREFIX}
 
-pre-install:
-	@cp ${FILESDIR}/configure2.h ${WRKSRC}/configure.h
-	@(cd ${WRKSRC}; ${MAKE} Makefiles)
+NO_LATEST_LINK=	yes
+USE_IMAKE=	yes
+XMKMF=		xmkmf
+ALL_TARGET=	Makefiles all
 
-
+post-install:
+	@mkdir -p ${PREFIX}/include/X11/pixmaps
+	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 444 \
+	${WRKSRC}/fvwm_icons/*.xpm ${PREFIX}/include/X11/pixmaps
 
 .include <bsd.port.mk>

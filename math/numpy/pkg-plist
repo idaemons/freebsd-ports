@@ -1,0 +1,45 @@
+include/python1.5/arrayobject.h
+include/python1.5/ufuncobject.h
+lib/python1.5/site-packages/_numpymodule.so
+lib/python1.5/site-packages/fast_umathmodule.so
+lib/python1.5/site-packages/fftpack.so
+lib/python1.5/site-packages/lapack_lite.so
+lib/python1.5/site-packages/multiarraymodule.so
+lib/python1.5/site-packages/ranlib.so
+lib/python1.5/site-packages/umathmodule.so
+lib/python1.5/site-packages/ArrayPrinter.py
+lib/python1.5/site-packages/ArrayPrinter.pyc
+lib/python1.5/site-packages/ArrayPrinter.pyo
+lib/python1.5/site-packages/FFT.py
+lib/python1.5/site-packages/FFT.pyc
+lib/python1.5/site-packages/FFT.pyo
+lib/python1.5/site-packages/LinearAlgebra.py
+lib/python1.5/site-packages/LinearAlgebra.pyc
+lib/python1.5/site-packages/LinearAlgebra.pyo
+lib/python1.5/site-packages/MLab.py
+lib/python1.5/site-packages/MLab.pyc
+lib/python1.5/site-packages/MLab.pyo
+lib/python1.5/site-packages/Matrix.py
+lib/python1.5/site-packages/Matrix.pyc
+lib/python1.5/site-packages/Matrix.pyo
+lib/python1.5/site-packages/Numeric.py
+lib/python1.5/site-packages/Numeric.pyc
+lib/python1.5/site-packages/Numeric.pyo
+lib/python1.5/site-packages/Precision.py
+lib/python1.5/site-packages/Precision.pyc
+lib/python1.5/site-packages/Precision.pyo
+lib/python1.5/site-packages/RandomArray.py
+lib/python1.5/site-packages/RandomArray.pyc
+lib/python1.5/site-packages/RandomArray.pyo
+lib/python1.5/site-packages/UserArray.py
+lib/python1.5/site-packages/UserArray.pyc
+lib/python1.5/site-packages/UserArray.pyo
+@dirrm lib/python1.5/site-packages
+share/doc/NumPy/doc.html
+share/doc/NumPy/home.html
+@dirrm share/doc/NumPy
+share/examples/NumPy/mandelbrot.py
+share/examples/NumPy/mandelbrot.pyc
+share/examples/NumPy/sieve.py
+share/examples/NumPy/sieve.pyc
+@dirrm share/examples/NumPy

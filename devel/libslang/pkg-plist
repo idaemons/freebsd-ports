@@ -1,0 +1,7 @@
+lib/libslang.a
+lib/libslang.so
+lib/libslang.so.1.2.2
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+include/slcurses.h
+include/slang.h

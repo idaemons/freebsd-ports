@@ -1,0 +1,54 @@
+--- develop/install.orig	Fri Apr 17 13:47:44 1998
++++ develop/install	Fri May 22 19:51:13 1998
+@@ -162,13 +162,6 @@
+ 
+ EOD
+ echo 'If you are satisfied with these defaults, then type "ok" now:'
+-read answer
+-if [ "$answer" != ok ]; then
+-  echo
+-  echo "You can install sendfile manually, too. Please type: more doc/README"
+-  echo
+-  exit
+-fi
+ 
+ umask 022
+ 
+@@ -259,7 +252,6 @@
+     echo "saft	487/tcp		# simple asynchronous file transfer" | niload services .
+   else
+     echo "configuring $SERVICES"
+-    echo "#" >>$SERVICES
+     echo "saft	487/tcp		# simple asynchronous file transfer" >>$SERVICES
+   fi
+ fi
+@@ -272,8 +264,6 @@
+   fi
+   RESTART=true
+   echo "configuring $INETDCONF"
+-  echo "#" >>$INETDCONF
+-  echo "# simple asynchronous file transfer" >>$INETDCONF
+   echo "saft	stream	tcp	nowait	root	$SFD" >>$INETDCONF
+ fi
+ 
+@@ -337,15 +327,11 @@
+ EOD
+ fi
+ 
+-echo
+-echo "You may want to add the following line to your system bootup script:"
+-echo "    $SERVERDIR/sendfiled -Q"
+-echo "This will start an outgoing spooling sendfile daemon on boot time"
+-echo "which processes any old files in the outgoing spool."
+-echo
++echo "[ -x $SERVERDIR/sendfiled ] && $SERVERDIR/sendfiled -Q && echo -n ' sendfiled'">${PREFIX}/etc/rc.d/sendfiled.sh
++chmod a+x ${PREFIX}/etc/rc.d/sendfiled.sh
+ 
+ if [ "$RESTART" = true ]; then
+-  echo
+-  echo "please restart now your inetd ( or simply reboot :-) )"
+-  echo
++  kill -HUP `cat /var/run/inetd.pid`
++  [ -f $SERVERDIR/sendfiled.old ] && rm -f $SERVERDIR/sendfiled.old
+ fi
++echo done.

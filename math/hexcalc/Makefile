@@ -1,13 +1,19 @@
 # New ports collection makefile for:	hexcalc
-# Version required:	?
+# Version required:	1.11 (taken from sccsid in hexcalc.c)
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/06 11:55:00 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 11:32:18 asami Exp $
 #
 
 DISTNAME=	hexcalc
+PKGNAME=	hexcalc-1.11
+CATEGORIES=	math
+MASTER_SITES=	ftp://aixpdslib.seas.ucla.edu/pub/hexcalc/RISC/3.2/src/
+EXTRACT_SUFX=	..tar.Z
+
+MAINTAINER=	ports@FreeBSD.ORG
+
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://ftp.cs.columbia.edu/archives/X11R5/contrib/
 
 .include <bsd.port.mk>

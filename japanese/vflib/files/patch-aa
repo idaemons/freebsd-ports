@@ -1,0 +1,14 @@
+--- configure.in.ORIG	Sat Jun 27 21:12:41 1998
++++ configure.in	Sat Jun 27 21:18:23 1998
+@@ -12,8 +12,10 @@
+ 
+ ./ltconfig ltmain.sh
+ 
++AC_SUBST(freetype_dir)
++freetype_dir='$(prefix)/include'
+ AC_SUBST(freetype_objs)
+-freetype_objs='$(FREETYPE_DIR)/*.lo'
++freetype_objs='$(prefix)/lib/libttf.so'
+ AC_ARG_DISABLE(freetype,[  --disable-freetype     Disable FreeType], freetype_objs="", AC_DEFINE(WITH_FREETYPE))
+ 
+ AC_SUBST(sony_fslib)

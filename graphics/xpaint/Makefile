@@ -1,17 +1,23 @@
 # New ports collection makefile for:    xpaint
-# Version required:     2.1.1
+# Version required:     2.5.4
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.3 1995/01/13 13:14:24 jkh Exp $
+# $Id: Makefile,v 1.20 1998/04/17 00:54:06 jseger Exp $
 #
 
-DISTNAME=       xpaint-2.1.1
-MASTER_SITES=	ftp://romulus.ucs.uoknor.edu/X/R5contrib/
-LIB_DEPENDS=	jpeg\\.5\\.:${PORTSDIR}/graphics/jpeg \
-		tiff\\.3\\.:${PORTSDIR}/graphics/tiff \
-		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+DISTNAME=       xpaint-2.5.4
+CATEGORIES=	graphics x11
+MASTER_SITES=	http://www.danbbs.dk/~torsten/xpaint/
+
+MAINTAINER=	jseger@FreeBSD.org
+
+LIB_DEPENDS=    jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
+		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
+		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm   \
+		png\\.2\\.:${PORTSDIR}/graphics/png
+
+WRKSRC=		${WRKDIR}/xpaint
 USE_IMAKE=      yes
-WRKSRC=		${.CURDIR}/work/xpaint
 
 .include <bsd.port.mk>

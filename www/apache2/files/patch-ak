@@ -1,0 +1,13 @@
+*** src/support/apachectl.orig	Tue Mar 31 16:53:46 1998
+--- src/support/apachectl	Tue Apr 21 17:15:55 1998
+***************
+*** 37,42 ****
+--- 37,44 ----
+  #
+  # --------------------                              --------------------
+  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
++ 
++ eval `limits -e -C daemon` >/dev/null 2>&1
+  
+  ERROR=0
+  ARGV="$@"

@@ -1,0 +1,31 @@
+# New ports collection Makefile for: seaview
+# Version required:     1.0
+# Date created:         Dec 5 1997
+# Whom:                 frankch@waru.life.nthu.edu.tw
+#
+# $Id: Makefile,v 1.2 1997/12/26 11:49:39 asami Exp $
+#
+
+DISTNAME=       seaview
+PKGNAME=        seaview-1.0
+CATEGORIES=     biology x11
+MASTER_SITES=   ftp://biom3.univ-lyon1.fr/pub/mol_phylogeny/seaview/
+EXTRACT_SUFX=	.tar
+
+MAINTAINER=     frankch@waru.life.nthu.edu.tw
+
+LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11/xforms
+
+USE_X11=	YES
+NO_WRKSUBDIR=	YES
+EXTRACT_BEFORE_ARGS=	-xf
+
+do-install:
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
+	@ (${MKDIR} ${PREFIX}/lib/X11/seaview)
+	@ ${INSTALL_DATA} ${WRKSRC}/seaview.help ${PREFIX}/lib/X11/seaview
+
+post-install:
+	@ ${CAT} ${PKGDIR}/DESCR
+
+.include <bsd.port.mk>

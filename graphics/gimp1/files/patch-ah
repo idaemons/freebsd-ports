@@ -1,0 +1,22 @@
+--- configure.in.orig	Wed May 27 23:32:15 1998
++++ configure.in	Wed May 27 23:32:30 1998
+@@ -306,7 +306,7 @@
+ LIBS="$gimp_save_LIBS"
+ 
+ gimpdatadir=$datadir/gimp
+-gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
++gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
+ 
+ brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
+ gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`
+--- configure.orig	Wed May 27 23:32:17 1998
++++ configure	Wed May 27 23:32:38 1998
+@@ -4146,7 +4146,7 @@
+ LIBS="$gimp_save_LIBS"
+ 
+ gimpdatadir=$datadir/gimp
+-gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
++gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
+ 
+ brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
+ gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`

@@ -1,0 +1,11 @@
+--- Makefile	Wed Mar 18 01:02:29 1998
++++ /home/andy/tmp/wrk/Makefile	Sun Mar 22 11:00:29 1998
+@@ -45,7 +45,7 @@
+ #MANDIR=../../man
+ MANDIR=/usr/local/man
+ # Location of the word file
+-WORDDIR=/usr/local/lib
++WORDDIR=/usr/share/dict
+ # Name of the default wordfile
+ WORDFILE=-DWORDFILE=\"$(WORDDIR)/words\"
+ # C compiler

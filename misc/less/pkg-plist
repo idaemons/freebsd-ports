@@ -1,6 +1,5 @@
-@cwd /usr/local
 bin/less
 bin/lesskey
-lib/less.hlp
-man/man1/less.1
-man/man1/lesskey.1
+bin/lessecho
+man/man1/less.1.gz
+man/man1/lesskey.1.gz

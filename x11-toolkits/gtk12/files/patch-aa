@@ -1,0 +1,96 @@
+--- docs/Makefile.in.orig	Sat May 16 13:15:18 1998
++++ docs/Makefile.in	Sun May 17 02:25:40 1998
+@@ -121,7 +121,7 @@
+ 
+ TAR = tar
+ GZIP = --best
+-all: Makefile $(INFO_DEPS) $(MANS)
++all: Makefile clean $(INFO_DEPS) $(MANS)
+ 
+ .SUFFIXES:
+ .SUFFIXES: .dvi .info .ps .texi .texinfo .txi
+@@ -150,7 +150,7 @@
+ .texi.info:
+ 	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
+ 	cd $(srcdir) \
+-	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
++	  && $(MAKEINFO) --no-split `echo $< | sed 's,.*/,,'`
+ 
+ .texi.dvi:
+ 	TEXINPUTS=$(srcdir):$$TEXINPUTS \
+@@ -349,7 +349,7 @@
+ 	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
+ mostlyclean:  mostlyclean-aminfo mostlyclean-generic
+ 
+-clean:  clean-aminfo clean-generic mostlyclean
++clean:  clean-aminfo clean-generic mostlyclean maintainer-clean-aminfo
+ 
+ distclean:  distclean-aminfo distclean-generic clean
+ 	-rm -f config.status
+--- gtk/Makefile.in.orig	Tue Apr 14 11:22:14 1998
++++ gtk/Makefile.in	Fri Apr 24 03:59:06 1998
+@@ -397,7 +397,7 @@
+ SOURCES = $(libgtk_la_SOURCES) testgtk.c testinput.c testselection.c simple.c
+ OBJECTS = $(libgtk_la_OBJECTS) testgtk.o testinput.o testselection.o simple.o
+ 
+-all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
++all: Makefile $(LTLIBRARIES) $(HEADERS)
+ 
+ .SUFFIXES:
+ .SUFFIXES: .S .c .lo .o .s
+--- glib/Makefile.am.orig	Sat Mar 28 00:50:30 1998
++++ glib/Makefile.am	Sat Apr  4 16:18:47 1998
+@@ -1,7 +1,5 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-configincludedir = $(pkglibdir)/include
+-
+ lib_LTLIBRARIES = libglib.la
+ 
+ libglib_la_SOURCES = \
+@@ -20,10 +18,7 @@
+ 		gutils.c
+ 
+ include_HEADERS = \
+-		glib.h
+-
+-configinclude_DATA = \
+-		glibconfig.h
++		glib.h glibconfig.h
+ 
+ libglib_la_LDFLAGS = -version-info 1:0:0
+ 
+--- glib/Makefile.in.orig	Sat Mar 28 09:02:29 1998
++++ glib/Makefile.in	Sat Apr  4 16:19:26 1998
+@@ -68,8 +68,6 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-configincludedir = $(pkglibdir)/include
+-
+ lib_LTLIBRARIES = libglib.la
+ 
+ libglib_la_SOURCES = \
+@@ -88,10 +86,7 @@
+ 		gutils.c
+ 
+ include_HEADERS = \
+-		glib.h
+-
+-configinclude_DATA = \
+-		glibconfig.h
++		glib.h glibconfig.h
+ 
+ libglib_la_LDFLAGS = -version-info 1:0:0
+ 
+--- Makefile.in.orig	Sun May 17 04:54:59 1998
++++ Makefile.in	Sun May 17 04:56:17 1998
+@@ -149,7 +149,7 @@
+ 	examples/wheelbarrow/wheelbarrow.c  \
+ 	examples/find-examples.sh
+ 
+-m4datadir = $(datadir)/aclocal
++m4datadir = $(LOCALBASE)/share/aclocal
+ m4data_DATA = gtk.m4
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

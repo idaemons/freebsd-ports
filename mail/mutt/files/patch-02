@@ -1,0 +1,24 @@
+--- doc/Makefile.in.orig	Mon Jul 13 03:50:37 1998
++++ doc/Makefile.in	Fri Jul 17 11:23:21 1998
+@@ -21,6 +21,8 @@
+ 
+ all: manual.txt manual.html
+ 
++fbsd: manual.latin1 manual.html
++
+ install: mutt.man manual.txt
+ 	../mkinstalldirs $(mandir)/man1
+ 	$(INSTALL) -m 644 mutt.man $(mandir)/man1/mutt.1
+@@ -36,7 +38,11 @@
+ 	sgml2txt manual
+ 
+ manual.html: manual.sgml
+-	sgml2html manual
++	# sgml2html manual
++	sgmlfmt -f html manual
++
++manual.latin1: manual.sgml
++	sgmlfmt -f latin1 manual.sgml
+ 
+ clean: 
+ 	rm -f *~ *.html *.orig *.rej

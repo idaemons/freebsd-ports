@@ -1,0 +1,29 @@
+*** imap/Makefile.orig	Wed Apr 29 02:38:46 1998
+--- imap/Makefile	Sat Jul 11 01:58:29 1998
+***************
+*** 250,261 ****
+  	$(TOOLS)/$@ "$(LN)" src/charset c-client
+  	$(LN) `pwd`/src/kerberos/* c-client
+  	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
+! 	$(TOOLS)/$@ "$(LN)" src/mtest mtest
+! 	$(TOOLS)/$@ "$(LN)" src/ipopd ipopd
+! 	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+  	$(LN) $(TOOLS)/$@ .
+  
+! build:	OSTYPE rebuild rebuildclean bundled
+  
+  OSTYPE:
+  	@echo Building c-client for $(OS)...
+--- 250,261 ----
+  	$(TOOLS)/$@ "$(LN)" src/charset c-client
+  	$(LN) `pwd`/src/kerberos/* c-client
+  	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
+! #	$(TOOLS)/$@ "$(LN)" src/mtest mtest
+! #	$(TOOLS)/$@ "$(LN)" src/ipopd ipopd
+! #	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+  	$(LN) $(TOOLS)/$@ .
+  
+! build:	OSTYPE rebuild rebuildclean # bundled
+  
+  OSTYPE:
+  	@echo Building c-client for $(OS)...

@@ -1,0 +1,16 @@
+--- Makefile.conf.orig	Mon Dec  1 16:14:31 1997
++++ Makefile.conf	Mon Dec  1 16:19:04 1997
+@@ -143,6 +143,13 @@
+ ##--freebsd--
+ #CF = cf/freebsd.h
+ #SCRIPT=freebsd
++#PREFIX ?= /usr/local
++#BINDIR = ${PREFIX}/sbin
++#CLIENTBINDIR = ${PREFIX}/sbin
++#ADMMANDIR = ${PREFIX}/man/cat8
++#ADMMANEXT = .8
++#FFMANDIR = ${PREFIX}/man/cat5
++#FFMANEXT = .5
+ ##--freebsd--
+ 
+ ## NetBSD

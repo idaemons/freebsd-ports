@@ -1,0 +1,85 @@
+--- pine/reply.c.orig	Tue Jun 23 12:08:03 1998
++++ pine/reply.c	Wed Jul 15 17:02:37 1998
+@@ -411,7 +411,7 @@
+ #endif
+ 
+     /* partially formatted outgoing message */
+-    pine_send(outgoing, &body, "COMPOSE MESSAGE REPLY",
++    pine_send(outgoing, &body, "編輯信件回函",
+ 	      fcc.tptr, &reply, NULL, NULL, NULL, 0);
+   done:
+     pine_free_body(&body);
+@@ -485,7 +485,7 @@
+ 			 (ADDRESS *) NULL, env->from, 0);
+ 
+     if(ret == 'x') {
+-	cmd_cancelled("Reply");
++	cmd_cancelled("回覆");
+ 	return(0);
+     }
+ 
+@@ -534,7 +534,7 @@
+ 	       || (*saved_cc || *saved_resent))){
+ 	    *flags &= ~RSF_QUERY_REPLY_ALL;
+ 	    if((ret=want_to(ALL_PMT,'n','x',NO_HELP,WT_SEQ_SENSITIVE)) == 'x'){
+-		cmd_cancelled("Reply");
++		cmd_cancelled("回覆");
+ 		return(0);
+ 	    }
+ 	    else if(ret == 'y')
+@@ -1099,8 +1099,8 @@
+ {
+     int ret, edited = 0;
+     static ESCKEY_S rtq_opts[] = {
+-	{'y', 'y', "Y", "Yes"},
+-	{'n', 'n', "N", "No"},
++	{'y', 'y', "Y", "是"},
++	{'n', 'n', "N", "否"},
+ 	{-1, 0, NULL, NULL},	                  /* may be overridden below */
+ 	{-1, 0, NULL, NULL}
+     };
+@@ -1133,7 +1133,7 @@
+ 				   rtq_opts, edited ? 'y' : 'n',
+ 				   'x', NO_HELP, RB_SEQ_SENSITIVE)){
+ 	  case 'x':
+-	    cmd_cancelled("Reply");
++	    cmd_cancelled("回覆");
+ 	    return(-1);
+ 
+ 	  case 'r':
+@@ -1165,7 +1165,7 @@
+ 			break;
+ 
+ 		      case 1:
+-			cmd_cancelled("Reply");
++			cmd_cancelled("回覆");
+ 
+ 		      case -1:
+ 			return(-1);
+@@ -1542,7 +1542,7 @@
+ 
+ 	case 'x' :		/* cancel or unknown response */
+ 	default  :
+-	  cmd_cancelled("Reply");
++	  cmd_cancelled("回覆");
+ 	  ret = 0;
+ 	  break;
+       }
+@@ -1708,7 +1708,7 @@
+      * up...
+      */
+     if(ret == 'x'){
+-	q_status_message(SM_ORDER, 0, 3, "Forward message cancelled");
++	q_status_message(SM_ORDER, 0, 3, "取消信件轉寄");
+ 	goto clean_early;
+     }
+     else if(ret == 'y'){			/* attach message[s]!!! */
+@@ -1840,7 +1840,7 @@
+       pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
+     else			/* partially formatted outgoing message */
+       pine_send(outgoing, &body,
+-		ps->nr_mode ? "SEND MESSAGE" : "FORWARD MESSAGE",
++		ps->nr_mode ? "送出信件" : "轉寄信件",
+ 		NULL, NULL, NULL, NULL, NULL, FALSE);
+ 
+   clean:

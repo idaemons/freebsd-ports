@@ -1,0 +1,11 @@
+--- ../tk/unix/Makefile.in.ORIG	Sun May  3 18:54:47 1998
++++ ../tk/unix/Makefile.in	Sun May  3 18:55:31 1998
+@@ -85,7 +85,7 @@
+ # If a link fails, purge the executable, as some systems leave invalid
+ # executables around.
+ #
+-all: wishx RUNTIME tktest
++all: wishx RUNTIME
+ 
+ static: wishx.static tktest.static
+ 

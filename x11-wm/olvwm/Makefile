@@ -3,20 +3,22 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $id: Makefile,v 1.0 1994/10/21 00:00:00 smace Exp $
+# $Id: Makefile,v 1.0 1994/10/21 00:00:00 smace Exp $
 #
 
 DISTNAME=	olvwm4
-USE_IMAKE=	yes
+PKGNAME=	olvwm-4.1
+CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
-EXTRACT_SUFX=	.tar.Z
-DISTFILES=	olvwm4.tar.Z olvwm4.Patch01.Z
-EXTRACT_ONLY=	olvwm4.tar.Z
-NO_WRKSUBDIR=	yes
+DISTFILES=	olvwm4.tar.Z
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	olvwm4.Patch01.Z
+PATCH_DIST_STRIP=	-p1
+
 LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib
 
-pre-configure:
-	@echo "Applying olvwm4 Patch01"
-	@zcat ${DISTDIR}/olvwm4.Patch01.Z | patch -E -d ${WRKSRC} --quiet
+NO_WRKSUBDIR=	yes
+USE_IMAKE=	yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,7 @@
+
+ ============================================================
+ To reduce the number of term windows opened, use -n:
+   angband -- -n2
+ To use graphical tiles, use -g:
+   angband -g
+ ============================================================
