@@ -1,0 +1,3 @@
+etc/silc/silcd.conf.sample
+sbin/silcd
+@unexec rmdir %D/etc/silc 2>/dev/null || true

@@ -1,0 +1,18 @@
+--- config.mk.in.orig	Fri Aug 10 12:23:23 2001
++++ config.mk.in	Sat Sep 22 02:04:54 2001
+@@ -7,13 +7,13 @@
+ exec_prefix = @exec_prefix@
+ incdir = @includedir@
+ libdir = @libdir@
+-docdir = $(prefix)/doc/rudiments
++docdir = $(prefix)/share/doc/rudiments
+ 
+ # compiler to use
+ CXX = @CXX@
+ 
+ # debug and optimization flags (-g, -O2, etc.)
+-CXXFLAGS = -pedantic -w -O2 -fPIC @CXXFLAGS@
++CXXFLAGS = -pedantic -w -fPIC @CXXFLAGS@
+ 
+ # command to build a shared object library
+ DYNAMICAR = ld -G -o

@@ -1,0 +1,23 @@
+# New ports collection makefile for:	wmcalc
+# Date created:				28 March 2000
+# Whom:					Chris D. Faulhaber <jedgar@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	wmcalc
+PORTVERSION=	0.3
+CATEGORIES=	math windowmaker
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= jedgar
+
+MAINTAINER=	jedgar@FreeBSD.org
+
+ALL_TARGET=	clean wmcalc
+USE_X_PREFIX=   yes
+USE_XPM=	yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wmcalc ${PREFIX}/bin
+
+.include <bsd.port.mk>

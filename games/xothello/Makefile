@@ -1,0 +1,29 @@
+# New ports collection makefile for:	xothello
+# Date created:				31 March 1998
+# Whom:					Andrey Zakhvatov
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xothello
+PORTVERSION=	0.01
+CATEGORIES=	games
+MASTER_SITES=	http://makosteszta.sote.hu/linux/othello/
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
+
+NO_CDROM=	Possible trademark infringement
+
+USE_X_PREFIX=	yes
+
+pre-build:
+	@ ${RM} ${WRKSRC}/xothello
+
+do-install:
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/xothello ${PREFIX}/bin
+
+.include <bsd.port.mk>

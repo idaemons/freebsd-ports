@@ -1,0 +1,18 @@
+include/freetype/freetype.h
+include/freetype/fterrid.h
+include/freetype/ftnameid.h
+include/freetype/ftxcmap.h
+include/freetype/ftxerr18.h
+include/freetype/ftxgasp.h
+include/freetype/ftxgdef.h
+include/freetype/ftxgpos.h
+include/freetype/ftxgsub.h
+include/freetype/ftxkern.h
+include/freetype/ftxopen.h
+include/freetype/ftxpost.h
+include/freetype/ftxsbit.h
+include/freetype/ftxwidth.h
+lib/libttf.a
+lib/libttf.so
+lib/libttf.so.4
+@dirrm include/freetype

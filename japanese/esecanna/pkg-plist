@@ -1,0 +1,10 @@
+etc/esecannarc
+etc/rc.d/%%STARTER%%
+@exec mkdir -p %D/lib/esecanna
+@dirrm lib/esecanna
+sbin/esecannaserver
+%%PORTDOCS%%share/doc/esecanna/CREDITS
+%%PORTDOCS%%share/doc/esecanna/CHANGES.jp
+%%PORTDOCS%%share/doc/esecanna/README.First.jp
+%%PORTDOCS%%share/doc/esecanna/README.jp
+%%PORTDOCS%%@dirrm share/doc/esecanna

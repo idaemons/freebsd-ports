@@ -1,0 +1,6 @@
+lib/%%PYTHON_VERSION%%/site-packages/_pgmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/pg.py
+lib/%%PYTHON_VERSION%%/site-packages/pg.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pgdb.py
+lib/%%PYTHON_VERSION%%/site-packages/pgdb.pyc
+share/doc/README.PyGreSQL

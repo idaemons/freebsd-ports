@@ -1,0 +1,11 @@
+--- src/text/Makefile.in.orig	Thu Jan 10 16:15:43 2002
++++ src/text/Makefile.in	Thu Jan 10 16:17:37 2002
+@@ -104,7 +104,7 @@
+ EXTRA_PROGRAMS = gftp-text
+ gftp_text_SOURCES = gftp-text.c 
+ INCLUDES = @GLIB_CFLAGS@ -DSHARE_DIR=\"$(datadir)/gftp\" -DLOCALE_DIR=\"$(localedir)\" -I../../intl
+-LDADD = ../../lib/libgftp.a @INTLLIBS@ @GLIB_LIBS@ @EXTRA_LIBS@
++LDADD = -lintl ../../lib/libgftp.a @INTLLIBS@ @GLIB_LIBS@ @EXTRA_LIBS@
+ noinst_HEADERS = gftp-text.h
+ localedir = $(prefix)/share/locale
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

@@ -1,0 +1,30 @@
+diff -Nru ircd-hybrid-6.2.orig/configure ircd-hybrid-6.2/configure
+--- ircd-hybrid-6.2.orig/configure	Sun Oct  7 14:39:22 2001
++++ ircd-hybrid-6.2/configure	Sun Oct  7 15:33:36 2001
+@@ -544,7 +544,7 @@
+ 
+ 
+ PACKAGE=ircd-hybrid
+-VERSION=6.0
++VERSION=6.2
+ 
+ 
+ 
+@@ -2342,7 +2342,7 @@
+ ac_given_srcdir=$srcdir
+ ac_given_INSTALL="$INSTALL"
+ 
+-trap 'rm -fr `echo "Makefile src/Makefile tools/Makefile zlib/Makefile include/setup.h zlib/setup.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
++trap 'rm -fr `echo "Makefile src/Makefile tools/Makefile zlib/Makefile include/config.h include/setup.h tools/install_ircd zlib/setup.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
+ EOF
+ cat >> $CONFIG_STATUS <<EOF
+ 
+@@ -2440,7 +2440,7 @@
+ 
+ cat >> $CONFIG_STATUS <<EOF
+ 
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile tools/Makefile zlib/Makefile"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile tools/Makefile zlib/Makefile include/config.h tools/install_ircd"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then

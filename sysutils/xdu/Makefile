@@ -1,15 +1,21 @@
 # New ports collection makefile for:	xdu
-# Version required:	R6 contrib tape
 # Date created:		9 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.5 1995/01/13 12:49:18 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	xdu-3.0
+PORTNAME=	xdu
+PORTVERSION=	3.0
+PORTREVISION=	1
+CATEGORIES=	sysutils
+MASTER_SITES=	http://sd.wareonearth.com/~phil/xdu/
 EXTRACT_SUFX=	.tar.Z
-USE_IMAKE=	yes
-MASTER_SITES=	ftp://ftp.arl.mil/pub/
+
+MAINTAINER=	ports@FreeBSD.org
+
 NO_WRKSUBDIR=	yes
+USE_IMAKE=	yes
+MAN1=		xdu.1
 
 .include <bsd.port.mk>

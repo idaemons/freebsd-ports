@@ -1,0 +1,20 @@
+*** pico/osdep/term.cap.orig	Thu Jun 21 10:48:09 2001
+--- pico/osdep/term.cap	Fri Sep 28 00:19:46 2001
+***************
+*** 280,286 ****
+      _kppu		= tgetstr("kP", &p);
+      _kppd		= tgetstr("kN", &p);
+      _kphome		= tgetstr("kh", &p);
+!     _kpend		= tgetstr("kH", &p);
+      _kpdel		= tgetstr("kD", &p);
+      _kf1		= tgetstr("k1", &p);
+      _kf2		= tgetstr("k2", &p);
+--- 280,287 ----
+      _kppu		= tgetstr("kP", &p);
+      _kppd		= tgetstr("kN", &p);
+      _kphome		= tgetstr("kh", &p);
+!     if((_kpend		= tgetstr("@7", &p)) == NULL)
+!       _kpend		= tgetstr("kH",&p);
+      _kpdel		= tgetstr("kD", &p);
+      _kf1		= tgetstr("k1", &p);
+      _kf2		= tgetstr("k2", &p);

@@ -1,0 +1,7 @@
+@unexec kldunload ltmdm || true
+etc/rc.d/ltmdm.sh
+share/ltmdm/ltmdm.ko
+@dirrm share/ltmdm
+@exec rm -f /dev/cual0
+@exec mknod /dev/cual0 c 228 128 uucp:dialer
+@unexec rm -f /dev/cual0

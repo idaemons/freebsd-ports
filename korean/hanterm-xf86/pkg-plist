@@ -1,0 +1,11 @@
+bin/hanterm
+bin/resize
+lib/X11/app-defaults/Hanterm
+lib/X11/app-defaults/Hanterm-color
+share/hangul_keyboard/두벌식.kbd
+share/hangul_keyboard/드보락_두벌식.kbd
+share/hangul_keyboard/드보락_세벌식_390.kbd
+share/hangul_keyboard/드보락_세벌식_최종.kbd
+share/hangul_keyboard/세벌식_390.kbd
+share/hangul_keyboard/세벌식_최종.kbd
+@dirrm share/hangul_keyboard

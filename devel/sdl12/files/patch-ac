@@ -1,0 +1,37 @@
+
+$FreeBSD$
+
+--- configure.orig	Thu Nov  8 09:28:08 2001
++++ configure	Wed Dec 19 14:07:24 2001
+@@ -660,9 +660,9 @@
+ 
+ # libtool versioning
+ LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
+-LT_CURRENT=`expr $SDL_MICRO_VERSION - $SDL_INTERFACE_AGE`
++LT_CURRENT=$SDL_INTERFACE_AGE
+ LT_REVISION=$SDL_INTERFACE_AGE
+-LT_AGE=`expr $SDL_BINARY_AGE - $SDL_INTERFACE_AGE`
++LT_AGE=$SDL_INTERFACE_AGE
+ 
+ 
+ 
+@@ -2774,7 +2774,7 @@
+ 
+ 
+ SDL_CFLAGS=""
+-SDL_LIBS="-lSDL"
++SDL_LIBS="-lSDL-1.1"
+ 
+ 
+ case "$target" in
+@@ -5578,8 +5578,8 @@
+ #            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+             ;;
+         *-*-freebsd*)
+-            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+-            pthread_lib="-pthread"
++            pthread_cflags="-D_REENTRANT ${PTHREAD_CFLAGS}"
++            pthread_lib="${PTHREAD_LIBS}"
+             ;;
+         *-*-netbsd*)
+             pthread_cflags="-I/usr/pkg/include -D_REENTRANT"

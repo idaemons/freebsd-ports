@@ -1,0 +1,11 @@
+--- configure.in.orig	Mon Mar  5 18:37:33 2001
++++ configure.in	Tue Apr 17 15:11:11 2001
+@@ -102,7 +102,7 @@
+     CFLAGS="-g -DDEBUG"
+   fi
+ else
+-  CFLAGS="-O2"
++#  CFLAGS="-O2"
+ fi
+ 
+ if test "x$mail_announce" = "xyes" ; then

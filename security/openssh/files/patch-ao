@@ -1,0 +1,24 @@
+--- sshd_config.orig	Thu Sep 20 22:57:51 2001
++++ sshd_config	Wed Oct  3 12:37:28 2001
+@@ -25,8 +25,8 @@
+ 
+ # Authentication:
+ 
+-LoginGraceTime 600
+-PermitRootLogin yes
++LoginGraceTime 120
++PermitRootLogin no
+ StrictModes yes
+ 
+ RSAAuthentication yes
+@@ -66,8 +66,9 @@
+ #PrintLastLog no
+ KeepAlive yes
+ #UseLogin no
++UseLogin yes
+ 
+-#MaxStartups 10:30:60
++MaxStartups 10:30:60
+ #Banner /etc/issue.net
+ #ReverseMappingCheck yes
+ 

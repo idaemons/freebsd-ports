@@ -1,0 +1,12 @@
+bin/cattach
+bin/cdetach
+bin/cmkdir
+bin/cpasswd
+bin/cfssh
+etc/rc.d/cfsd.sh
+sbin/ccat
+sbin/cfsd
+sbin/cname
+share/doc/cfs/README.install
+share/doc/cfs/notes.ms
+@dirrm share/doc/cfs

@@ -1,0 +1,20 @@
+--- configure.orig	Wed Jan  2 00:15:22 2002
++++ configure	Sun Jan 13 15:52:38 2002
+@@ -5999,7 +5999,7 @@
+     PASSWD_LIBS="$PASSWD_LIBS -lkrb4 -ldes425 -lkrb5 -lk5crypto -lcrypt -lcom_err"
+   elif test "$have_kerberos" = yes ; then
+     # from Tim Showalter <tjs+@andrew.cmu.edu>
+-    PASSWD_LIBS="$PASSWD_LIBS -lkrb -ldes"
++    PASSWD_LIBS="$PASSWD_LIBS -lkrb -ldes -lcom_err"
+   fi
+ 
+   if test "$have_kerberos" = yes ; then
+@@ -9883,6 +9883,8 @@
+ if test -z "$HACK_CONF_DIR" ; then
+   if test -n "$GNOME_DATADIR" ; then
+     HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
++  elif test -n "$CONFIGDIR" ; then
++    HACK_CONF_DIR="$CONFIGDIR"
+   else
+     HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
+   fi

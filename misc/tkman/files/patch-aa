@@ -1,87 +1,96 @@
---- ./Makefile.org	Fri Dec 30 14:25:05 1994
-+++ ./Makefile	Wed Feb  8 04:11:04 1995
-@@ -36,23 +36,23 @@
- # (pathname should be less than 25 or so characters)
- #               1         2     |if name meets or passes vertical bar,
- #      1234567890123456789012345|the wish path is too long
--WISH = /usr/sww/X11/bin/wish
-+WISH = /usr/local/bin/wish
+--- Makefile.orig	Wed Mar  1 20:09:59 2000
++++ Makefile	Sat May 20 07:55:37 2000
+@@ -27,14 +27,14 @@
+ ### you need to localize the paths on these lines
+ 
+ #WISH = /usr/sww/tcl-8.3/bin/wish
+-WISH = /private/share/bin/wish
++#WISH = /private/share/bin/wish
+ #WISH = /private/share/bin/wish8.3
+-#WISH = /usr/local/bin/wish8.3
++WISH = ${LOCALBASE}/bin/wish8.3
  
  # the executable `tkman' is placed in BINDIR
  # this should be a directory that's in your bin PATH
--BINDIR = /home/auspex/h/bair/phelps/bin
-+BINDIR = /usr/local/bin
- 
- # directory in which to place the manual page.  The help information
- # is maintained in HTML, from which the [tn]roff version is automatically
- # generated using RosettaMan.
--MANDIR = /home/auspex/h/bair/phelps/man/man1
-+MANDIR = /usr/local/man/man1
+-BINDIR = /private/share/bin
+-#BINDIR = /usr/local/bin
++#BINDIR = /private/share/bin
++BINDIR = ${PREFIX}/bin
  
  
- # # # MACHINE DEPENDENCIES # # #
+ # OPTIONAL
+@@ -44,13 +44,13 @@
+ # This directory should not have any Texinfo source itself.
+ # More information is given in tkman-help.html
+ # if you don't have Texinfo files, leave this variable empty
+-texinfodir = ""
++#texinfodir = ""
+ #texinfodir = /home/orodruin/h/bair/phelps/spine/tkman/info
+-#texinfodir = /usr/local/info
++texinfodir = ${PREFIX}/info
+ # In order to search within Texinfo files you need a grep, such as GNU grep 2.1,
+ # that can report byte offsets (with the -b switch).  This needs to be
+ # gzgrep if you'll be searching in compressed Texinfo source.
+-gzgrep = ""
++#gzgrep = ""
+ #gzgrep = "gzgrep -E"
+ #gzgrep = "gzgrep -Ew"
+ # Linux calls it zgrep
+@@ -59,6 +59,7 @@
+ #gzgrep = grep
+ # if you don't compress your Texinfo source, this is fine
+ #gzgrep = grep
++gzgrep = "/usr/bin/zgrep -E"
  
--manformat = {tbl | neqn | nroff -man | col}
-+#manformat = {tbl | neqn | nroff -man | col}
- # alternatively
--#manformat = {groff -Tascii -te -mandoc -l}
-+manformat = {groff -Tascii -te -mandoc -l}
- # Ultrix users should uncomment the following line
- #manformat = {tbl | nroff -man | col}
- 
-@@ -111,9 +111,9 @@
- # so how can you lose?
- 
- # by default on
--glimpse = glimpse
-+#glimpse = glimpse
- # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, you can disable it
--#glimpse = ""
-+glimpse = ""
- # give the full path, if you'd like
- #glimpse = /usr/sww/bin/glimpse
- # variations (refer to the Glimpse manual page)
-@@ -163,9 +163,9 @@
- # (`-debug' option), obtain the problemmatic glimpseindex command,
- # and make sure it works when executed by hand.
- 
--glimpseindex = glimpseindex
-+#glimpseindex = glimpseindex
- # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, DISABLE IT HERE *ALSO*
--#glimpseindex = ""
-+glimpseindex = ""
- # produce a larger index (6-9% of source text) allowing faster search w/"-o"
- #glimpseindex = "glimpseindex -o"
- #glimpseindex = /usr/sww/bin/glimpseindex
-@@ -180,7 +180,7 @@
- 
- # default MANPATH to use if user doesn't have
- # a MANPATH environment variable set
--manpathdef = /usr/man:/usr/local/man
-+manpathdef = /usr/share/man:/usr/local/man
- #manpathdef = /usr/man:/usr/local/man:/usr/sww/man:/usr/sww/X11/man
+ # OPTIONAL
+ # directory root of hierarchy of RFC files, with "rfc-index.txt" at the root
+@@ -82,10 +83,12 @@
+ # will examine for matches if a search in the usual locations fails while searching
+ # for a man pages and displaying its associated binaries (if any).
+ # Use this feature carefully as a large number of directories can slow down startup.
+-mastermen = "/usr/man /usr/local/man"
++#mastermen = "/usr/man /usr/local/man"
+ #mastermen = "/usr/man /usr/local/man /usr/sww/man /usr/share/man /usr/kerberos/man"
+-masterbin = "/usr/bin /usr/local/bin"
++mastermen = "${PREFIX}/man /usr/share/man ${X11BASE}/man"
++#masterbin = "/usr/bin /usr/local/bin"
+ #masterbin = "/usr/bin /usr/local/bin /usr/sww/bin /usr/sww/share/bin /usr/sww/share/X11R5/bin"
++masterbin = "/usr/bin ${PREFIX}/bin ${X11BASE}/bin"
  
  
-@@ -216,12 +216,12 @@
- 
- # if you don't want to RosettaMan (rman) in your PATH, make the name fully qualified
- # (that's probably a good idea if tkman is installed on a central server)
--rman = rman
-+rman = /usr/local/bin/rman
- #rman = /home/orodruin/h/bair/phelps/bin/alpha/rman
- 
--manprint = {tbl | eqn | troff -man}
-+#manprint = {tbl | eqn | troff -man}
- # alternatives
--#manprint = {groff -man -Tps -te}
-+manprint = {groff -man -Tps -te}
+ # names of common printers, in addition to default printer (PRINTER or LPDEST)
+@@ -115,7 +118,7 @@
+ # Lines are cached in .../man/cat<n>@<line-length>; 
+ #   that is, the line length is appended to the usual cache directory names
+ #manformat = {groff -te -Tascii -man /tmp/ll -}
+-manformat = {groff -te -Tlatin1 -man /tmp/ll -}
++#manformat = {groff -te -Tlatin1 -man /tmp/ll -}
+ # Ultrix users should uncomment the following line (you don't have eqn)
+ #manformat = {tbl | nroff -man }
+ # HP-UX uses a number of macros that groff doesn't define, so use the builtin nroff
+@@ -123,7 +126,7 @@
+ #  space between the .de and the macro name, and groff doesn't like this.)
+ #manformat = {tbl | neqn | nroff -man }
+ # BSD macros (.Sh, .Ss, .PP, ...) need -mandoc
+-#manformat = {groff -Tascii -te -mandoc}
++manformat = {groff -Tascii -te -mandoc}
+ # BSDI
+ #manformat = {tbl | eqn -Tascii | nroff -man }
+ # It's actually legal to leave this empty if all the pages you'll ever
+@@ -174,7 +177,8 @@
  #manprint = {tbl | eqn | psroff -man}
- #manprint = {groff -Tascii -te}
+ #manprint = {tbl | eqn | gtroff -Tpsc | psdit | lpr}
+ # use an empty pipeline if you're environmentally conscious or have no printer
+-manprint = ""
++#manprint = ""
++manprint = {groff -mandoc -Tps -te -l}
  # printing string for preformatted pages without [tn]roff source
-@@ -322,7 +322,7 @@
- 	$(CP) tkman $(BINDIR)
- 	chmod +x $(BINDIR)/tkman
- 	$(CP) tkman.1 $(MANDIR)
+ #catprint = lpr
+ #catprint = "lpr -h"
+@@ -461,7 +465,7 @@
+ 	chmod +rx $(BINDIR)/tkman
+ 	$(CP) retkman $(BINDIR)
+ 	chmod +rx $(BINDIR)/retkman
 -	@echo 'You also need RosettaMan to run TkMan.'
 +#	@echo 'You also need RosettaMan to run TkMan.'
  

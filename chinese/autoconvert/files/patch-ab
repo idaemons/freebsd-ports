@@ -1,0 +1,20 @@
+--- hzconvert/Makefile.orig	Mon Jan  8 18:05:51 2001
++++ hzconvert/Makefile	Tue Jan  9 02:02:33 2001
+@@ -5,14 +5,14 @@
+ SHARED_LIB_MINOR=$(SHARED_LIB_MAJOR).0
+ OBJS=b2g.o b2u.o g2u.o hz2gb.o b2g_tables.o b2u_tables.o g2u_tables.o io.o unicode.o judge.o judge3.o gbpercent.o b5percent.o search.o 
+ 
++all: libhzconvert
++
+ %.o: %.c
+ 	$(CC) -fPIC $(CFLAGS) -c $<
+ 
+-all: libhzconvert
+-
+ libhzconvert: $(OBJS)
+ 	ar rs  ../lib/libhz.a $(OBJS)
+-	gcc -fPIC -shared -Wl,-soname,$(SHARED_LIB_MAJOR) -o ../lib/$(SHARED_LIB_MINOR)  $(OBJS) -ldl
++	gcc -fPIC -shared -Wl,-soname,$(SHARED_LIB_MAJOR) -o ../lib/$(SHARED_LIB_MINOR)  $(OBJS)
+ 	rm -f ../lib/$(SHARED_LIB_MAJOR)
+ 	rm -f ../lib/$(SHARED_LIB)
+ 	cd ../lib;ln -s $(SHARED_LIB_MINOR) $(SHARED_LIB_MAJOR)

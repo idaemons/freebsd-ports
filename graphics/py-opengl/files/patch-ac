@@ -1,0 +1,32 @@
+
+$FreeBSD$
+
+--- togl_setup.py.orig	Wed Jan 10 14:43:40 2001
++++ togl_setup.py	Mon Jan 22 13:28:56 2001
+@@ -52,14 +52,12 @@
+         library_dirs = config.togl_lib_dirs + [tk_dir]
+         runtime_library_dirs = None
+     else:
+-        tcl_include_dir = os.path.join( tk.getvar('tcl_library'),
+-                                        "../../include" )
+-        tk_include_dir = os.path.join(tk.getvar('tk_library'),
+-                                        "../../include" )
++        tcl_include_dir = tk.getvar('tcl_library').replace('/lib/', '/include/')
++        tk_include_dir = tk.getvar('tk_library').replace('/lib/', '/include/')
+         tcl_lib_dir = os.path.normpath(os.path.join(tk.getvar('tcl_library'),".."))
+         tk_lib_dir = os.path.normpath(os.path.join(tk.getvar('tk_library'),".."))
+-        tcl_lib = "tcl" + tk.getvar('tcl_version')
+-        tk_lib = "tk" + tk.getvar('tk_version')
++        tcl_lib = "tcl" + string.replace(tk.getvar('tcl_version'),".","")
++        tk_lib = "tk" + string.replace(tk.getvar('tk_version'),".","")
+ 
+         # Where to find tcl.h, tk.h, OpenGL/Mesa headers, etc:
+         include_dirs = [os.path.join("src",Togl),
+@@ -102,6 +100,7 @@
+                             extra_postargs=extra_compile_args)
+ 
+         # link all together
++        extra_link_args = ["-Wl,-E"]
+         build_ext.compiler.link_shared_object (
+                 objects, 
+                 output_filename,

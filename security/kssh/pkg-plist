@@ -1,0 +1,7 @@
+bin/kssh
+share/applnk/Internet/kssh.desktop
+share/icons/hicolor/32x32/apps/kssh.png
+share/icons/hicolor/48x48/apps/kssh.png
+share/icons/locolor/16x16/apps/kssh.png
+share/config/ksshrc
+share/locale/it/LC_MESSAGES/kssh.mo

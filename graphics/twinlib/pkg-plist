@@ -1,0 +1,3 @@
+include/TwinLib.h
+lib/libTwinlib.so
+lib/libTwinlib.so.%%VERSION%%

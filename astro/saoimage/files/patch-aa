@@ -1,0 +1,48 @@
+--- makefile.FreeBSD.orig	Sat Nov  6 06:57:30 1999
++++ makefile.FreeBSD	Sat Apr 22 02:58:08 2000
+@@ -36,9 +36,9 @@
+ # FBCONFIG_2, which is set to the value of IMTOOLRC in the definition of
+ # the CFLAGS macro below.)
+ 
+-SAOBINDIR = $(ROOT)/usr/local/bin/
+-SAOMANDIR = $(ROOT)/usr/local/man/manl/
+-IMTRCDIR  = $(ROOT)/usr/local/lib/
++SAOBINDIR = $(ROOT)$(PREFIX)/bin/
++SAOMANDIR = $(ROOT)$(PREFIX)/man/manl/
++IMTRCDIR  = $(ROOT)$(PREFIX)/etc/
+ 
+ IMTOOLRC  = $(IMTRCDIR)imtoolrc
+ FIFO_I    = $(ROOT)/dev/imt1i
+@@ -46,7 +46,7 @@
+ FIFO_LN   = $(ROOT)/dev/imt1
+ 
+ # Compiler specification.
+-CC = cc
++CC ?= cc
+ # Uncomment these two lines to compile with gcc (add any optimizers you wish).
+ #CC = gcc -finline-functions -fdelayed-branch -fstrength-reduce
+ #  Delayed branches could win big on RISC: many inner loops have branches
+@@ -76,12 +76,12 @@
+ # OFLAGS: compiler optimization/debug options.
+ 
+ #OFLAGS = -g -DDEBUG
+-OFLAGS = -O2 -m486 -pipe
++OFLAGS ?= -O2 -m486 -pipe
+ 
+ # ADFLAGS: architecture-dependent floating point flags, etc.
+ 
+ #ADFLAGS = -I/usr/openwin/share/include	# ATTENTION: OpenWindows users...
+-ADFLAGS = -I/usr/X11R6/include
++ADFLAGS = -I${X11BASE}/include
+ 
+ # Libraries that move about or may require special specification.
+ #
+@@ -89,7 +89,7 @@
+ # usual link search path, i.e., it is not in /usr/lib, it may be necessary
+ # to specify its path fully in XLIB.
+ 
+-XLIB = -L/usr/X11R6/lib -lX11
++XLIB = -L${X11BASE}/lib -lX11
+ #XLIB = -L/usr/X11R6/lib -lX11	# ATTENTION: OpenWindows users...
+ #F77LIB = -lF77 -lI77 -lU77
+ F77LIB = -lf2c

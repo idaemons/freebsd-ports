@@ -1,0 +1,11 @@
+--- ircd-hybrid-6.2/Makefile.orig	Sun Oct  7 17:58:34 2001
++++ ircd-hybrid-6.2/Makefile.in	Sun Oct  7 17:58:45 2001
+@@ -22,7 +22,7 @@
+ RM=@RM@
+ 
+ # Default CFLAGS
+-CFLAGS = -g -O2 -DNDEBUG
++CFLAGS += -DNDEBUG
+ 
+ # Default make flags - you may want to uncomment this on a multicpu machine
+ #MFLAGS = -j 4

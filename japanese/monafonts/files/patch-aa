@@ -1,0 +1,13 @@
+--- Makefile.orig	Sun Jun 17 22:05:12 2001
++++ Makefile	Mon Jun 18 01:22:27 2001
+@@ -15,8 +15,8 @@
+ #GZIP_CMD	= compress
+ #GZIP_SUFFIX	= Z
+ 
+-X11BINDIR	= /usr/X11R6/bin
+-X11FONTDIR	= /usr/X11R6/lib/X11/fonts/local
++X11BINDIR	= ${PREFIX}/bin
++X11FONTDIR	= ${PREFIX}/lib/X11/fonts/local
+ BDFTOPCF	= $(X11BINDIR)/bdftopcf
+ MKDIRHIER	= $(X11BINDIR)/mkdirhier
+ MKFONTDIR	= $(X11BINDIR)/mkfontdir

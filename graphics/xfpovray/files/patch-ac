@@ -1,0 +1,29 @@
+--- src/Imakefile.orig	Mon Feb 23 12:40:53 1998
++++ src/Imakefile	Wed Nov  1 10:01:38 2000
+@@ -9,8 +9,8 @@
+ XCOMM * * * No need to edit below here * * *
+ 
+ XCOMM Directories for xfpovray, help files, and icons
+-   BINDIR = $(XFROOTDIR)/bin
+- XFLIBDIR = $(XFROOTDIR)/lib/xfpovray
++XCOMM   BINDIR = $(XFROOTDIR)/bin
++ XFLIBDIR = $(LIBDIR)/xfpovray
+ XFHELPDIR = $(XFLIBDIR)/help
+ 
+ SRCS =  $(TOP)/build_pages.c \
+@@ -49,12 +49,12 @@
+ 	$(TOP)/../help/Config_File \
+ 	$(TOP)/../help/help_topics
+ 			
+-EXTRA_LIBRARIES = -L$(XFORMS_LIBDIR) ../flx/libflx.a -lforms -lm
+- EXTRA_INCLUDES = -I$(XFORMS_INCDIR) -I../flx
++EXTRA_LIBRARIES = ../flx/libflx.a -lxforms $(XPMLIB) -lm
++ EXTRA_INCLUDES = -I../flx
+   EXTRA_DEFINES = -DHELP_DIR=\"$(XFHELPDIR)\"
+          LDLIBS = $(EXTRA_LIBRARIES) $(XLIB)
+ 
+-ComplexProgramTarget(xfpovray)
++ComplexProgramTargetNoMan(xfpovray)
+ InstallMultipleDestFlags(install,$(XFHELP),$(XFHELPDIR),$(INSTDATFLAGS))
+ 
+ clean::

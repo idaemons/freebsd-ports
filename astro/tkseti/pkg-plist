@@ -1,0 +1,4 @@
+bin/tkseti
+%%PORTDOCS%%share/doc/tkseti/DOC
+%%PORTDOCS%%share/doc/tkseti/README
+%%PORTDOCS%%@dirrm share/doc/tkseti

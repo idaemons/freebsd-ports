@@ -1,0 +1,9 @@
+==================================================================
+
+Please take %%PREFIX%%/etc/nullmailer/remotes.sample
+as an example and edit your own 
+%%PREFIX%%/etc/nullmailer/remotes
+
+Also man nullmailer-send(8) for more details
+
+==================================================================

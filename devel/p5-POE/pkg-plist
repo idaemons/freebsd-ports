@@ -1,0 +1,77 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/POE.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Component.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client/TCP.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server/TCP.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Driver.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Driver/SysRW.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Block.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Grep.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/HTTPD.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Line.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Map.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/RecordBlock.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Reference.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Stackable.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Stream.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Event.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Gtk.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Select.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Tk.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/NFA.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe/OneWay.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe/TwoWay.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Preprocessor.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Session.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/Curses.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/FollowTail.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ListenAccept.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ReadLine.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ReadWrite.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/Run.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/SocketFactory.pm
+%%PORTDOCS%%share/examples/p5-POE/create.perl
+%%PORTDOCS%%share/examples/p5-POE/fakelogin.perl
+%%PORTDOCS%%share/examples/p5-POE/filterchange.perl
+%%PORTDOCS%%share/examples/p5-POE/followtail.perl
+%%PORTDOCS%%share/examples/p5-POE/forkbomb.perl
+%%PORTDOCS%%share/examples/p5-POE/httpd.perl
+%%PORTDOCS%%share/examples/p5-POE/names.perl
+%%PORTDOCS%%share/examples/p5-POE/neural-net.perl
+%%PORTDOCS%%share/examples/p5-POE/objmaps.perl
+%%PORTDOCS%%share/examples/p5-POE/objsessions.perl
+%%PORTDOCS%%share/examples/p5-POE/packagesessions.perl
+%%PORTDOCS%%share/examples/p5-POE/preforkedserver.perl
+%%PORTDOCS%%share/examples/p5-POE/proxy.perl
+%%PORTDOCS%%share/examples/p5-POE/queue.perl
+%%PORTDOCS%%share/examples/p5-POE/readline.perl
+%%PORTDOCS%%share/examples/p5-POE/ref-type.perl
+%%PORTDOCS%%share/examples/p5-POE/refsender.perl
+%%PORTDOCS%%share/examples/p5-POE/refserver.perl
+%%PORTDOCS%%share/examples/p5-POE/selects.perl
+%%PORTDOCS%%share/examples/p5-POE/sessions.perl
+%%PORTDOCS%%share/examples/p5-POE/signals.perl
+%%PORTDOCS%%share/examples/p5-POE/socketfactory.perl
+%%PORTDOCS%%share/examples/p5-POE/thrash.perl
+%%PORTDOCS%%share/examples/p5-POE/tk.perl
+%%PORTDOCS%%share/examples/p5-POE/tutorial-chat.perl
+%%PORTDOCS%%share/examples/p5-POE/udp.perl
+%%PORTDOCS%%share/examples/p5-POE/watermarks.perl
+%%PORTDOCS%%share/examples/p5-POE/wheels.perl
+%%PORTDOCS%%share/examples/p5-POE/wheels2.perl
+%%PORTDOCS%%@dirrm share/examples/p5-POE
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Driver
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Filter
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true

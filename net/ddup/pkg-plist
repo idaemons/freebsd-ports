@@ -1,0 +1,4 @@
+sbin/ddup
+sbin/ddupcron.sh
+share/doc/ddup/README
+@dirrm share/doc/ddup

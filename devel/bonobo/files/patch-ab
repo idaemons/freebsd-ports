@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Fri Jan 11 11:57:33 2002
++++ Makefile.in	Fri Jan 11 11:58:32 2002
+@@ -165,10 +165,10 @@
+ 	monikers			\
+ 	components samples	 	\
+ 	gshell				\
+-	tests doc po
++	doc po
+ 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = bonoboConf.sh bonoboxConf.sh bonobox_printConf.sh
+ 
+ bonoboincludedir = $(includedir)/gnome-1.0

@@ -1,0 +1,9 @@
+etc/boa.conf.sample
+sbin/boa
+%%PORTDOCS%%share/doc/boa/boa.sgml
+%%PORTDOCS%%share/doc/boa/boa_banner.png
+share/examples/boa/cgi-test.cgi
+share/examples/boa/nph-test.cgi
+share/examples/boa/resolver.pl
+@dirrm share/examples/boa
+%%PORTDOCS%%@dirrm share/doc/boa

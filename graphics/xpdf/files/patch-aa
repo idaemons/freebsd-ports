@@ -1,0 +1,19 @@
+--- configure.in.orig	Mon Dec  4 13:28:07 2000
++++ configure.in	Thu Jan 11 21:05:07 2001
+@@ -183,6 +183,16 @@
+ if test "$xpdf_cv_func_mkstemp" = yes; then
+   AC_DEFINE(HAVE_MKSTEMP)
+ fi
++dnl # Ditto mkstemps()
++AC_CACHE_CHECK([for mkstemps],
++xpdf_cv_func_mkstemps,
++[AC_TRY_LINK([#include <stdlib.h>
++#include <unistd.h>],     
++[mkstemps("foo", 0);],
++xpdf_cv_func_mkstemps=yes, xpdf_cv_func_mkstemps=no)])
++if test "$xpdf_cv_func_mkstemps" = yes; then
++  AC_DEFINE(HAVE_MKSTEMPS)
++fi
+ 
+ dnl ##### Check select argument type: on HP-UX before version 10, select
+ dnl ##### takes (int *) instead of (fd_set *).

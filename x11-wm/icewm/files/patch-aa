@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Jan 15 06:49:38 2001
++++ Makefile.in	Mon Jan 15 23:07:09 2001
+@@ -14,7 +14,7 @@
+ GUIEVENTSFILES = src/icesound
+ GNOMEFILES  = lib/IceWM.desktop
+ 
+-WMPROPDIR   = $(shell gnome-config --datadir)/gnome/wm-properties/
++WMPROPDIR   = $(shell gnome-config --datadir)/wm-properties/
+ 
+ all:		@TARGETS@
+ install:	@TARGETS_INSTALL@

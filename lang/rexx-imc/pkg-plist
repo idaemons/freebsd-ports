@@ -1,0 +1,27 @@
+bin/rexx
+bin/rxque
+bin/rxstack
+include/rexxsaa.h
+lib/librexx.so
+lib/librexx.so.2
+lib/rxmathfn.rxfn
+lib/rxmathfn.rxlib
+%%PORTDOCS%%share/doc/rexx-imc/README
+%%PORTDOCS%%share/doc/rexx-imc/README.Y2K
+%%PORTDOCS%%share/doc/rexx-imc/README.bugreport
+%%PORTDOCS%%share/doc/rexx-imc/README.docs
+%%PORTDOCS%%share/doc/rexx-imc/README.files
+%%PORTDOCS%%share/doc/rexx-imc/README.make
+%%PORTDOCS%%share/doc/rexx-imc/README.news
+%%PORTDOCS%%share/doc/rexx-imc/README.platforms
+%%PORTDOCS%%share/doc/rexx-imc/rexx.info
+%%PORTDOCS%%share/doc/rexx-imc/rexx.ref
+%%PORTDOCS%%share/doc/rexx-imc/rexx.summary
+%%PORTDOCS%%share/doc/rexx-imc/rexx.tech
+%%PORTDOCS%%share/examples/rexx-imc/box
+%%PORTDOCS%%share/examples/rexx-imc/rexxcps.rexx
+%%PORTDOCS%%share/examples/rexx-imc/rexxtest.rexx
+%%PORTDOCS%%share/examples/rexx-imc/rxmathfn.rexx
+%%PORTDOCS%%share/examples/rexx-imc/shell.rexx
+%%PORTDOCS%%@dirrm share/examples/rexx-imc
+%%PORTDOCS%%@dirrm share/doc/rexx-imc

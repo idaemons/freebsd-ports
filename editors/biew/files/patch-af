@@ -1,0 +1,14 @@
+--- biewlib/sysdep/generic/unix/keyboard.c.orig	Thu Mar  1 09:19:32 2001
++++ biewlib/sysdep/generic/unix/keyboard.c	Fri Nov  9 00:00:37 2001
+@@ -41,7 +41,11 @@
+ #endif
+ 
+ #ifdef	_CURSES_
++#if defined(__FreeBSD_version) && __FreeBSD_version < 400010
++#include <ncurses/curses.h>
++#else
+ #include <curses.h>
++#endif
+ #ifdef	NCURSES_MOUSE_VERSION
+ #define	HAVE_MOUSE
+ #endif

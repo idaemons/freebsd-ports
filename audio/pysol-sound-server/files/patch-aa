@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig	Thu Mar  1 01:36:41 2001
++++ configure	Tue May  8 10:33:36 2001
+@@ -15,7 +15,7 @@
+ fi
+ SDL_VERSION=`$SDL_CONFIG --version`
+ SDL_CFLAGS=`$SDL_CONFIG --cflags`
+-SDL_LIBS=`$SDL_CONFIG --libs`
++SDL_LIBS=`$SDL_CONFIG --libs | sed 's/-pthread//'`
+ 
+ SMPEG_CFLAGS=""
+ SMPEG_LIBS="-lsmpeg"

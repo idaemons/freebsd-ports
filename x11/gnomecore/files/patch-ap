@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- gsm/Makefile.in.orig	Tue Nov 20 12:20:56 2001
++++ gsm/Makefile.in	Tue Nov 20 14:56:33 2001
+@@ -157,9 +157,9 @@
+ 
+ SUBDIRS = help
+ 
+-defaultdir = $(datadir)/gnome
++defaultdir = $(datadir)
+ 
+-INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-DGNOMELOCALEDIR=\""$(prefix)/share/locale\"" 	-DDEFAULTDIR="\"$(defaultdir)\"" @CANVAS_PIXBUF_CFLAGS@ 
++INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-DGNOMELOCALEDIR=\""$(prefix)/share/locale\"" 	-DDEFAULTDIR="\"$(defaultdir)\"" @CANVAS_PIXBUF_CFLAGS@ -DX11BASE="\"$(X11BASE)\""
+ 
+ 
+ LDADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS)

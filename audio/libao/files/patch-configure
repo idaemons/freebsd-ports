@@ -1,0 +1,27 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Aug 13 13:39:05 2001
++++ configure	Tue Aug 14 17:40:12 2001
+@@ -1510,7 +1510,7 @@
+                 PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
+         *)
+                 DEBUG="-g"
+-                CFLAGS="-O"
++                CFLAGS=""
+                 PROFILE="-g -p" ;;
+         esac
+ else
+@@ -1525,9 +1525,9 @@
+                 CFLAGS="-O20 -ffast-math -D__NO_MATH_INLINES -fsigned-char -mv8"
+                 PROFILE="-pg -g -O20 -D__NO_MATH_INLINES -fsigned-char -mv8" ;;
+         *)
+-                DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
+-                CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char"
+-                PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
++                DEBUG="-g -Wall"
++                CFLAGS=""
++                PROFILE="-g -pg" ;;
+         esac
+ fi
+ CFLAGS="$CFLAGS $cflags_save"

@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+include/shhopt.h
+lib/libshhopt.so
+lib/libshhopt.so.1
+share/doc/libshhopt/CREDITS
+share/doc/libshhopt/README
+share/examples/libshhopt/Makefile
+share/examples/libshhopt/example.c
+@dirrm share/doc/libshhopt
+@dirrm share/examples/libshhopt

@@ -1,0 +1,34 @@
+--- config.mk.in.orig	Fri Aug 10 12:23:03 2001
++++ config.mk.in	Sat Jan 12 00:49:44 2002
+@@ -2,19 +2,20 @@
+ VPATH = @srcdir@
+ 
+ VERSION = @VERSION@
++SOVERSION = $(basename $(VERSION))
+ 
+ # installation directories
+ prefix = @prefix@
+ exec_prefix= @exec_prefix@
+ incdir = @includedir@
+ libdir = @libdir@
+-javadir = ${exec_prefix}/java
++javadir = ${exec_prefix}/share/java/classes
+ libexecdir = @libexecdir@
+ bindir = @bindir@
+ localstatedir = @localstatedir@
+ sysconfdir = @sysconfdir@
+ localstatedir = @localstatedir@
+-docdir = ${prefix}/doc/sqlrelay
++docdir = ${prefix}/share/doc/sqlrelay
+ tmpdir = ${localstatedir}/sqlrelay/tmp
+ cachedir = ${localstatedir}/sqlrelay/cache
+ 
+@@ -133,7 +134,7 @@
+ 
+ # FreeTDS stuff
+ FREETDSINCLUDES = @FREETDSINCLUDES@
+-FREETDSLIBS = @FREETDSLIBS@
++FREETDSLIBS = @FREETDSLIBS@ @ICONVLIBS@
+ FREETDSSTATIC = @FREETDSSTATIC@
+ 
+ # Sybase stuff
