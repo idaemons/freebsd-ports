@@ -1,0 +1,14 @@
+--- server.h.orig	Mon Jun 21 14:50:08 1999
++++ server.h	Tue Jun 29 14:22:57 1999
+@@ -21,10 +21,9 @@
+ 
+ #include <sys/types.h>
+ #include <sys/socket.h>
+-#include <sys/param.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
+-#include <netinet/in.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include <stdlib.h>

@@ -1,0 +1,5 @@
+bin/rasmol
+lib/X11/rasmol/1crn.pdb
+lib/X11/rasmol/3cro.pdb
+lib/X11/rasmol/rasmol.hlp
+@dirrm lib/X11/rasmol

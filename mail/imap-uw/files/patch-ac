@@ -1,0 +1,45 @@
+--- src/imapd/Makefile.orig	Sat Nov 21 05:26:03 1998
++++ src/imapd/Makefile	Sat Feb 27 17:19:33 1999
+@@ -31,9 +31,9 @@
+ # WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ 
+ 
+-ALERT=/etc/imapd.alert
++ALERT=$(PREFIX)/etc/imapd.alert
+ USERALERT=.imapalert
+-ANO=/etc/anonymous.newsgroups
++ANO=$(PREFIX)/etc/anonymous.newsgroups
+ SHELL= /bin/sh
+ 
+ #  The "Manage Mail" menu item of Netscape Messager puts up an error message
+@@ -56,7 +56,7 @@
+ CC = `cat $C/CCTYPE`
+ CFLAGS = -I$C `cat $C/CFLAGS` $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
+ 	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\"
+-LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++LDFLAGS = -L$C -l$(SHLIBBASE) `cat $C/LDFLAGS`
+ 
+ all:	imapd
+ 
+--- src/ipopd/Makefile.orig	Wed Apr 15 01:41:55 1998
++++ src/ipopd/Makefile	Sat Oct 10 21:48:00 1998
+@@ -39,7 +39,7 @@
+ 
+ CC = `cat $C/CCTYPE`
+ CFLAGS = -I$C `cat $C/CFLAGS`
+-LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++LDFLAGS = -L$C -l$(SHLIBBASE) `cat $C/LDFLAGS`
+ 
+ ipopd: ipop2d ipop3d
+ 
+--- src/mtest/Makefile.orig	Wed Apr 15 01:42:04 1998
++++ src/mtest/Makefile	Sat Oct 10 21:48:18 1998
+@@ -39,7 +39,7 @@
+ 
+ CC = `cat $C/CCTYPE`
+ CFLAGS = -I$C `cat $C/CFLAGS`
+-LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++LDFLAGS = -L$C -l$(SHLIBBASE) `cat $C/LDFLAGS`
+ 
+ all:	mtest
+ 

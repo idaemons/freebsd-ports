@@ -3,13 +3,20 @@
 # Date created:         15 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/07 17:29:02 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       tintin++v1.5pl6
+PKGNAME=	tintin-1.5.6
+CATEGORIES=     net games
+MASTER_SITES=   ftp://ftp.walrus.com/pub/avatar/clients/ \
+		ftp://ftp.cctpu.edu.ru/pub/comp/networking/mud/ \
+		ftp://iclub.nsu.ru/pub/mud/clients/tintin++/
 EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=   ftp://princeton.edu/pub/tintin++/dist/
+
+MAINTAINER=	ache@FreeBSD.org
+
 WRKSRC=         ${WRKDIR}/tintin++/src
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+etc/rc.d/rplayd.sh
+etc/rplay.hosts
+bin/rplay
+bin/rptp
+@comment requires XForms
+@comment bin/xrplay
+sbin/rplayd
+include/rplay.h
+lib/librplay.a
+info/librplay.info
+info/rplay.info
+info/RPLAY.info
+info/RPTP.info

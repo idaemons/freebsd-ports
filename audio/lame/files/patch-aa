@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Jun  2 15:59:37 1999
++++ Makefile	Wed Jun  9 01:19:47 1999
+@@ -10,7 +10,7 @@
+ # defaults:
+ PGM = lame
+ CC = gcc
+-CC_OPTS = -O 	
++CC_OPTS =  ${CFLAGS}	
+ GTK = 
+ GTKLIBS = 
+ LIBS = -lm

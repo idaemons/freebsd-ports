@@ -1,14 +1,21 @@
 # New ports collection makefile for:    xboard
-# Version required:     3.2 patchlevel 0
-# Date created:         2 Jan 1995
-# Whom:                 swallace
+# Version required:     4.0.3
+# Date created:         5 Jan 1997
+# Whom:                 xaa@stack.nl
 #
-# $Id: Makefile,v 1.3 1994/12/31 04:17:52 swallace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       xboard-3.2.pl0
-MASTER_SITES=	ftp://ftp.x.org/contrib/games/
-HAS_CONFIGURE=  yes
-CONFIGURE_ARGS= --prefix=${PREFIX}
+DISTNAME=       xboard-4.0.3
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.freechess.org/pub/chess/X/ \
+		http://www.research.digital.com/SRC/personal/Tim_Mann/xboard/
+
+MAINTAINER=	xaa@xaa.iae.nl
+
+USE_XLIB=	yes
+GNU_CONFIGURE=  yes
+STRIP=
+MAN6=		xboard.6 cmail.6 zic2xpm.6
 
 .include <bsd.port.mk>

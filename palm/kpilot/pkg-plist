@@ -1,0 +1,14 @@
+bin/kpilot
+bin/kpilotDaemon
+bin/pilotListener
+lib/libpisock.so.2.0
+share/applnk/Utilities/KPilotDaemon.kdelnk
+share/applnk/Utilities/kpilot.kdelnk
+share/doc/HTML/de/kpilot/index.html
+share/doc/HTML/de/kpilot/using-kpilot.html
+share/doc/HTML/en/kpilot/index.html
+share/doc/HTML/en/kpilot/using-kpilot.html
+share/icons/kpilot.xpm
+share/icons/mini/kpilot.xpm
+@dirrm share/doc/HTML/en/kpilot
+@dirrm share/doc/HTML/de/kpilot

@@ -1,0 +1,20 @@
+bin/gendiff
+bin/rpm
+bin/rpm2cpio
+include/rpm/rpmlib.h
+include/rpm/dbindex.h
+include/rpm/header.h
+lib/librpm.a
+@unexec rm %D/lib/rpmrc
+@unexec rm %D/lib/rpmpopt
+lib/rpm/mkinstalldirs
+lib/rpm/find-provides
+lib/rpm/find-requires
+lib/rpm/rpmrc
+lib/rpm/rpmpopt
+lib/rpm/freshen.sh
+lib/rpm/find-lang.sh
+@exec ln -sf %D/lib/rpm/rpmrc %D/lib/rpmrc
+@exec ln -sf %D/lib/rpm/rpmpopt %D/lib/rpmpopt
+@dirrm include/rpm
+@dirrm lib/rpm

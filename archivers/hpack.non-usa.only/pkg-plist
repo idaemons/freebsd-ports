@@ -1,0 +1,5 @@
+bin/hpack
+bin/keycvt
+etc/hpack.cfg
+lib/hpack/language.dat
+@dirrm lib/hpack

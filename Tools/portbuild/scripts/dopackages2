@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# configurable variables
+pb=/a/asami/portbuild
+mailto=asami@freebsd.org
+
+lock=${pb}/lock
+date=$(date '+%Y%m%d')
+
+if [ -e ${lock} ]; then
+  echo "Skipped package build since lock file exists" | sendmail $mailto
+  exit 1
+fi
+
+touch ${lock}
+mkdir -p ${pb}/buildlogs
+
+${pb}/scripts/dopackages 4 2>&1 \
+	| tee ${pb}/4/build.log \
+	| sendmail $mailto
+cp -p ${pb}/4/build.log ${pb}/buildlogs/4.log.${date}
+${pb}/scripts/dopackages -nocvsup 3 2>&1 \
+	| tee ${pb}/3/build.log \
+	| sendmail $mailto
+cp -p ${pb}/3/build.log ${pb}/buildlogs/3.log.${date}
+
+rm -f ${lock}

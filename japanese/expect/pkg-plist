@@ -1,0 +1,35 @@
+bin/expectjp
+bin/expectkjp
+bin/autoexpect-jp
+bin/autopasswd-jp
+bin/cryptdir-jp
+bin/decryptdir-jp
+bin/dislocate-jp
+bin/ftp-rfc-jp
+bin/kibitz-jp
+bin/lpunlock-jp
+bin/mkpasswd-jp
+bin/passmass-jp
+bin/rftp-jp
+bin/rlogin-cwd-jp
+bin/timed-read-jp
+bin/timed-run-jp
+bin/tknewsbiff-jp
+bin/tkpasswd-jp
+bin/unbuffer-jp
+bin/weather-jp
+bin/xkibitz-jp
+bin/xpstat-jp
+include/expect5.28jp/tclRegexp.h
+include/expect5.28jp/expect.h
+include/expect5.28jp/expect_comm.h
+include/expect5.28jp/expect_tcl.h
+include/expect5.28jp/tcldbg.h
+@dirrm include/expect5.28jp
+lib/expect5.28jp/pkgIndex.tcl
+@dirrm lib/expect5.28jp
+lib/libexpect528jp.a
+lib/libexpect528jp.so.1.2
+lib/libexpect528jp.so
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

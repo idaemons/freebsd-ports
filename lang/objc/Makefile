@@ -1,0 +1,49 @@
+# New ports collection makefile for:    objc compiler
+# Version required:     1.8.18
+# Date created:         16 May 1998
+# Whom:                 chuckr@freebsd.org
+#
+# $FreeBSD$
+#
+
+DISTNAME=       objc-2.2.15
+CATEGORIES=     lang
+MASTER_SITES=   http://metalab.unc.edu/pub/Linux/devel/lang/objc/ \
+		http://www.freebsd.org/~chuckr/
+DISTFILES=	objc-2.2.15-bootstrap.tar.gz objc-2.2.15.tar.gz
+
+MAINTAINER=     chuckr@freebsd.org
+
+BUILD_DEPENDS=	$(PREFIX)/lib/libgc.a:$(PORTSDIR)/devel/boehm-gc
+
+HAS_CONFIGURE=	yes
+MAN1=		cvtimport.1 objc.1 postlink.1
+MAN3=		Array.3 AsciiFiler.3 Bag.3 Block.3 CAObject.3 Cltn.3 \
+		Complex.3 Dictionary.3 Float.3 Fraction.3 IdArray.3 IntArray.3\
+		Integer.3 IntegerModp.3 Matrix.3 Message.3 Monomial.3 Object.3\
+		OrdCltn.3 Paragraph.3 Point.3 Polynomial.3 Rectangle.3 \
+		RunArray.3 Set.3 Sequence.3 SortCltn.3 Stack.3 String.3 \
+		Symbol.3 Term.3 Text.3 TextAttribute.3 TextStyle.3 Vector.3
+
+ALL_TARGET=	compiler
+MAKE_ENV=	PATH=$(WRKDIR)/bin:$(PATH)
+CONFIGURE_ENV=	PATH=$(WRKDIR)/bin:$(PATH)
+CONFIGURE_ARGS=	--prefix=$(PREFIX) --gcprefix=$(PREFIX)
+
+.include <bsd.port.pre.mk>
+
+pre-configure:
+	(cd $(WRKDIR)/$(DISTNAME)-bootstrap;./configure --prefix=$(WRKDIR);make;make install)
+
+post-build:
+	$(ECHO) "Building additional libraries (boehm-gc compatibility)"
+	(cd $(WRKSRC); ${SETENV} PATH=$(WRKDIR)/bin:$(PATH) ./makeLibs)
+
+pre-install:
+	$(MKDIR) $(PREFIX)/share/doc/objc
+	$(MKDIR) $(PREFIX)/share/doc/objc/examples
+	$(MKDIR) $(PREFIX)/share/doc/objc/html
+	tar -cf - -C $(WRKSRC)/examples . | tar xpf - -C $(PREFIX)/share/doc/objc/examples
+	tar -cf - -C $(WRKSRC)/html . | tar xpf - -C $(PREFIX)/share/doc/objc/html
+
+.include <bsd.port.post.mk>

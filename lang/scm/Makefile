@@ -3,24 +3,32 @@
 # Date created:         Sat Nov  5 17:11:01 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/06 09:59:26 hsu Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       scm
-MASTER_SITES=   ftp://swiss-ftp.ai.mit.edu/pub/scm/
-DISTFILES=      scm4e1.tar.gz \
-		slib.info.tar.gz slib2a1.tar.gz slib-psd1-3.tar.gz \
-		scmconfig4e1.tar.gz
-GNU_CONFIGURE=
-USE_GMAKE=
+PKGNAME=	scm-4e1
+CATEGORIES=	lang
+MASTER_SITES=	ftp://ftp.cs.oswego.edu/pub/Z/unix/scheme/ \
+		ftp://ftp.swiss.ai.mit.edu/pub/scm/ \
+		ftp://ftp.swiss.ai.mit.edu/pub/scm/OLD/
+DISTFILES=      scm4e1.tar.gz slib.info.tar.gz slib2a2.tar.gz \
+		slib-psd1-3.tar.gz scmconfig4e1.tar.gz
+
+MAINTAINER=	ports@FreeBSD.org
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 MAKE_FLAGS=	CFLAGS=-O2 LDFLAGS=-s defines="-DSICP -DHAVE_CONFIG_H -DFLOATS -DIO_EXTENSIONS -DMEMOIZE_LOCALS -DGC_FREE_SEGMENTS" -f
+MAN1=		scm.1
 
 pre-install:
-	@if [ ! -e ${PREFIX}/lib ]; then mkdir -p ${PREFIX}/lib; fi
-	cp -rp ${WRKDIR}/slib ${PREFIX}/lib
-	@if [ ! -e /usr/local/info ]; then mkdir -p /usr/local/info; fi
+	${MKDIR} ${PREFIX}/lib/slib/psd
+	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/lib/slib
+	${INSTALL_DATA} ${WRKDIR}/slib/psd/*.scm ${PREFIX}/lib/slib/psd
 	(cd ${WRKDIR}/slib; \
-		install -c -m 444 slib.info slib.info-1 slib.info-2 \
-				  slib.info-3 slib.info-4 /usr/local/info)
+		makeinfo slib.texi; \
+		${INSTALL_MAN} slib.info slib.info-1 slib.info-2 \
+			  slib.info-3 slib.info-4 ${PREFIX}/info)
 
 .include <bsd.port.mk>

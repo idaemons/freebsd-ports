@@ -1,0 +1,11 @@
+--- Imakefile.orig	Sun Aug  8 21:25:29 1999
++++ Imakefile	Sun Aug  8 21:25:53 1999
+@@ -9,7 +9,7 @@
+ CCOPTIONS	= $(MOREFLAGS)
+ SYS_LIBRARIES	= $(XLIB) -lXpm
+ 
+-LOCAL_LIBRARIES = -L../libworkman -lworkman -L/usr/local/lib
++LOCAL_LIBRARIES = -L../libworkman -lworkman -L/usr/X11R6/lib
+ 
+ SRCS_OPT1 =
+ SRCS_OPT2 =

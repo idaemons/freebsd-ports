@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Sat Feb 21 19:26:25 1998
+--- Makefile.in	Sat Jul  4 16:53:47 1998
+***************
+*** 44,50 ****
+  
+  CC = cc
+  
+! CFLAGS = -g
+  
+  RANLIB = ranlib
+  
+--- 44,50 ----
+  
+  CC = cc
+  
+! CFLAGS ?= 
+  
+  RANLIB = ranlib
+  

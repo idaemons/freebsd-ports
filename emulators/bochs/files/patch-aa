@@ -1,0 +1,31 @@
+--- .bochsrc.orig      Thu Jul  8 09:57:11 1999
++++ .bochsrc   Mon Jul 12 18:42:12 1999
+@@ -3,7 +3,7 @@
+ megs: 16
+ #megs: 8
+ boot: c
+-vgaromimage: bios/VGABIOS-elpin-2.20
++vgaromimage: /usr/local/lib/bochs/bios/VGABIOS-elpin-2.20
+ 
+ # You many now use double quotes around pathnames, in case
+ # your pathname includes spaces.
+@@ -60,7 +60,7 @@
+ #romimage: file=bios/rombios.bin, address=0xf0000
+ #romimage: file=../cbios961203
+ #romimage: file=../r980820.rom, address=0xe0000
+-romimage: file=bios/BIOS-bochs-990623a, address=0xf0000
++romimage: file=/usr/local/lib/bochs/bios/BIOS-bochs-990623a, address=0xf0000
+ 
+ #romimage: file=bios/BIOS-bochs-990218a, address=0xf0000
+ #romimage: file=../dttest.bin, address=0xf0000
+@@ -69,8 +69,8 @@
+ #vgaromimage: ../vgacbios961111
+ #romimage: ../cbios961203
+ 
+-#log: /dev/null
+-log: ./bochs.out
++log: /dev/null
++#log: ./bochs.out
+ keyboard_serial_delay: 200
+ floppy_command_delay: 500
+ #ips:  1500000

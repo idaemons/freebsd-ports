@@ -1,0 +1,5 @@
+bin/sted
+share/doc/sted/CHANGES
+share/doc/sted/COPYING
+share/doc/sted/README
+@dirrm share/doc/sted

@@ -1,0 +1,12 @@
+--- outgoing.cc	Fri Jul 17 04:10:02 1998
++++ /home/andy/tmp/wrk/outgoing.cc	Tue Apr 27 18:06:33 1999
+@@ -13,7 +13,9 @@
+ #include "terminal.h"
+ #include "rcfile.h"
+ 
++#ifndef MAILER
+ #define MAILER	"/usr/lib/sendmail -t"
++#endif
+ #define EDITOR	"vi +%d"
+ #define SIGFILE	".signature"
+ 

@@ -1,0 +1,21 @@
+--- ../pari-2.0.16.beta.orig/config/Makefile.SH	Mon Jun 28 19:23:29 1999
++++ ./config/Makefile.SH	Fri Aug 13 08:05:46 1999
+@@ -384,13 +384,13 @@
+ 
+ if test -n "$emacs"; then
+   cat >> $file << EOT
+-$pari_elc: $emx/pari.el
+-	@echo "Byte-Compiling pari.el..."
+-	-cd $emx; $emacs -batch -l compile
++#$pari_elc: $emx/pari.el
++#	@echo "Byte-Compiling pari.el..."
++#	-cd $emx; $emacs -batch -l compile
+ 
+-$install_emacs_files: $pari_elc
++$install_emacs_files: #$pari_elc
+ 	-mkdir -p \$(MISCDIR)
+-	-\$(INSTALL_DATA)   $pari_elc           \$(MISCDIR)
++#	-\$(INSTALL_DATA)   $pari_elc           \$(MISCDIR)
+ 	\$(INSTALL_DATA)    $emx/pari.el        \$(MISCDIR)
+ 	\$(INSTALL_DATA)    $emx/pariemacs.txt  \$(MISCDIR)
+ 	\$(INSTALL_DATA)    $emx/with-syntax.el     \$(MISCDIR)

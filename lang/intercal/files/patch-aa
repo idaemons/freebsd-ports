@@ -1,0 +1,73 @@
+--- Makefile.orig	Wed Apr 29 11:54:34 1998
++++ Makefile	Fri Dec 11 11:30:33 1998
+@@ -8,18 +8,19 @@
+ # all over creation behind your back.
+ # (/dev/null may be another good choice :-))
+ 
+-DVMT=~/WWW/intercal-0.18
++#DVMT=~/WWW/intercal-0.18
+ #DVMT=/usr/local
+-DVMT=/intercal-0.18
++#DVMT=/intercal-0.18
++DVMT=$(PREFIX)
+ 
+ BINDIR = $(DVMT)/bin
+-INCDIR = $(DVMT)/lib
+-LIBDIR = $(DVMT)/lib
++INCDIR = $(DVMT)/share/intercal
++LIBDIR = $(DVMT)/lib/intercal
+ #INCDIR = $(PWD)
+ #LIBDIR = $(PWD)
+ 
+ YDEBUG = -vlt
+-DEBUG	= -g -DDEBUG
++# DEBUG	= -g -DDEBUG
+ # DEBUG = -O
+ 
+ # This version (0.18) is POSIX-compliant.  You should only set the POSIX
+@@ -29,18 +30,18 @@
+ # POSIX = 
+ POSIX = -D_POSIX_SOURCE
+ 
+-CFLAGS = -I. $(DEBUG) -DICKINCLUDEDIR=\"$(INCDIR)\" \
++CFLAGS += -I. $(DEBUG) -DICKINCLUDEDIR=\"$(INCDIR)\" \
+ 	-DICKLIBDIR=\"$(LIBDIR)\" -DYYDEBUG $(POSIX)
+ LDFLAGS =
+ 
+-CC = gcc -Wall -W
++# CC = gcc -Wall -W
+ 
+ # You can use lex or flex
+-#LEX = lex
+-LEX = flex
++LEX = lex
++#LEX = flex
+ 
+ # You should use bison, because some yaccs won't work correctly
+-YACC = bison -y
++YACC = yacc
+ 
+ CSOURCES = ick.y lexer.l feh.c lose.c fiddle.c perpetrate.c
+ ISOURCES = cesspool.c arrgghh.c ick-wrap.c
+@@ -61,7 +62,7 @@
+ 	mv lex.yy.c lexer.c 
+ 
+ # Uncomment the following if using a stock lex
+-# LEXLIBS = -ll
++LEXLIBS = -ll
+ lextest: y.tab.h lexer.c ick.h lose.o
+ 	$(CC) -DMAIN lexer.c lose.o $(LEXLIBS) -o lextest
+ 
+@@ -78,9 +79,9 @@
+ 	-ranlib libick.a
+ 
+ install: all
+-	cp ick $(BINDIR)
+-	cp lose.h abcess.h fiddle.h ick-wrap.c $(INCDIR)
+-	cp libick.a ../pit/lib/syslib.i ../pit/lib/syslib.?i $(LIBDIR)
++	$(BSD_INSTALL_PROGRAM) ick $(BINDIR)
++	$(BSD_INSTALL_DATA) lose.h abcess.h fiddle.h ick-wrap.c $(INCDIR)
++	$(BSD_INSTALL_DATA) libick.a ../pit/lib/syslib.i ../pit/lib/syslib.?i $(LIBDIR)
+ 
+ clean:
+ 	rm -f yacc.* y.tab.* y.output *~ *.[oa] lexer.c ick.c lextest ick

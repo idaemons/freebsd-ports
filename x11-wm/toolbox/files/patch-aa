@@ -1,0 +1,15 @@
+--- Makefile.orig	Sat Sep  4 13:25:58 1999
++++ Makefile	Sat Sep  4 13:26:38 1999
+@@ -1,8 +1,8 @@
+ CXX?=		g++
+-QTDIR =		/usr/local/qt
+-MOC =		moc
+-LIBS =		-L$(QTDIR)/lib -lqt
+-CXXFLAGS =	-g -I$(QTDIR)/include -I/usr/X11R6/include
++QTDIR =		/usr/X11R6
++MOC =		moc2
++LIBS =		-L$(QTDIR)/lib -lqt2
++CXXFLAGS =	-g -I$(QTDIR)/include/X11/qt2 -I/usr/X11R6/include
+ 
+ TARGET =	toolbox
+ OBJECTS =	misc.o font.o color.o uibox.o menu.o tree.o style.o toolbox.o

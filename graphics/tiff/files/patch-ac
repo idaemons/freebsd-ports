@@ -1,0 +1,14 @@
+--- tools/Makefile.in.orig	Tue Sep  2 13:54:34 1997
++++ tools/Makefile.in	Sat Jan 23 10:44:45 1999
+@@ -46 +46 @@
+-OPTIMIZER=-O
++#OPTIMIZER=-O
+@@ -48 +48 @@
+-CFLAGS	= @ENVOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH}
++CFLAGS	= @ENVOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH} -L../libtiff
+@@ -50 +50 @@
+-TIFFLIB	= ${DEPTH}/libtiff/libtiff.@DSOSUF@
++TIFFLIB	= ${DEPTH}/libtiff/libtiff.@DSOSUF_VERSION@
+@@ -56 +56 @@
+-LIBS	= ${LIBTIFF} ${LIBJPEG} ${LIBGZ} ${LIBPORT} ${MACHLIBS}
++LIBS	= ${LIBJPEG} ${LIBGZ} ${LIBPORT} ${MACHLIBS} -ltiff

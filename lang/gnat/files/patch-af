@@ -1,0 +1,19 @@
+*** ./ada/gnatlink.adb.orig	Wed Jul 29 21:01:08 1998
+--- ./ada/gnatlink.adb	Tue Sep  1 00:26:17 1998
+***************
+*** 73,79 ****
+       Table_Increment      => 100,
+       Table_Name           => "Gnatlink.Binder_Options");
+  
+!    Gcc : String_Access := Program_Name ("gcc");
+  
+     Read_Mode  : constant String := "r" & Ascii.Nul;
+  
+--- 73,79 ----
+       Table_Increment      => 100,
+       Table_Name           => "Gnatlink.Binder_Options");
+  
+!    Gcc : String_Access := Program_Name ("adagcc");
+  
+     Read_Mode  : constant String := "r" & Ascii.Nul;
+  

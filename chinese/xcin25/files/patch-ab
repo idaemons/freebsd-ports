@@ -1,0 +1,8 @@
+--- src/lib/Makefile.in.orig	Sun Aug 15 00:23:04 1999
++++ src/lib/Makefile.in	Sun Aug 15 00:23:24 1999
+@@ -30,3 +30,5 @@
+ 	rm -f Makefile
+ 	for d in $(SUBSYS); do ( cd $$d; $(MAKE) distclean ); done
+ 	( cd IMdkit; $(MAKE) clean )
++
++install:

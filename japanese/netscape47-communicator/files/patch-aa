@@ -1,0 +1,176 @@
+--- Netscape.ad-ja_euc.orig	Fri Jul 23 19:14:48 1999
++++ Netscape.ad-ja_euc	Fri Jul 23 19:15:19 1999
+@@ -42,8 +42,11 @@
+ ! complaints from people who think they understand this stuff better than
+ ! I do.
+ 
++*international:		True
++*allowSendEvents:	True
++
+ ! Language localization:
+-*versionLocale: ja
++*versionLocale: @LANG@
+ 
+ ! SGI only: Here's how you turn on SGI's Motif hacks:
+ !!Netscape*sgiMode:		True
+@@ -60,7 +63,7 @@
+ ! code. The directory and file listings are always maintained
+ ! as equal size. We don't do this for SGI, as they have solved
+ ! the problem. See *useEnhancedFSB above.
+-*nsMotifFSBHacks: True
++*nsMotifFSBHacks: False
+ 
+ ! This resource enables the CDE mode of the File Selection Box.
+ ! You must be running a CDE enhanced Motif library for this
+@@ -89,7 +92,7 @@
+ !Solaris[EUC]   *appDir location:     /usr/openwin/lib/locale/ja/netscape
+ !Solaris[Sjis]  *appDir location:     /usr/openwin/lib/locale/ja_JP.PCK/netscape
+ 
+-*appDir:                        /usr/lib/X11/ja_JP/netscape
++*appDir:                        @NDIR@/@LANG@
+ 
+ ! This resource is the same as the -visual command line option, which selects
+ ! an X visual on which the windows should be created.  Legal options are:
+@@ -177,8 +180,8 @@
+ ! If you find a need to let one or both of them continue on to the actual
+ ! terminal of Netscape, you can do it by setting these resources to False.
+ !
+-*useStderrDialog:		True
+-*useStdoutDialog:		True
++*useStderrDialog:		False
++*useStdoutDialog:		False
+ 
+ ! For those MIME content-encodings which are not directly understood
+ ! internally, it is possible to specify another Unix program to use as
+@@ -310,7 +313,7 @@
+ ! These resources control the foreground and background colors of normal text.
+ !
+ *defaultForeground:			#000000
+-*defaultBackground:			#C0C0C0
++*defaultBackground:			#F0F0F0
+ 
+ ! This resource may be used to specify a default background image.  It should
+ ! be a file name or URL pointing to a GIF, JPEG, or XBM image.  If it is blank,
+@@ -827,7 +830,15 @@
+ 	<Btn2Motion>:			DisarmLinkIfMoved()		\n\
+ 	<Btn3Motion>:			DisarmLinkIfMoved()		\n\
+ 	<Motion>:			DescribeLink()			\n\
+-	<Btn3Down>:			xfeDoPopup()			\n
++	<Btn3Down>:			xfeDoPopup()			\n\
++	Ctrl<Btn4Down>:			PageUp()			\n\
++	Ctrl<Btn5Down>:			PageDown()			\n\
++	Shift<Btn4Down>:		LineUp()			\n\
++	Shift<Btn5Down>:		LineDown()			\n\
++	None<Btn4Down>: LineUp()LineUp()LineUp()LineUp()LineUp()LineUp() \n\
++	None<Btn5Down>: LineDown()LineDown()LineDown()LineDown()LineDown()LineDown() \n\
++	Alt<Btn4Down>:			xfeDoCommand(forward)		\n\
++	Alt<Btn5Down>:			xfeDoCommand(back)		\n
+ 
+ *drawingArea*XmList.highlightThickness:	2
+ 
+@@ -1107,6 +1118,12 @@
+ ! in which case they ought to apply to the text in that text field instead.
+ ! Doesn't all this crap just make you want to hurl?
+ *globalNonTextTranslations:		#override			\n\
++	Shift<Btn4Down>:		LineUp()			\n\
++	Shift<Btn5Down>:		LineDown()			\n\
++	None<Btn4Down>: LineUp()LineUp()LineUp()LineUp()LineUp()LineUp() \n\
++	None<Btn5Down>: LineDown()LineDown()LineDown()LineDown()LineDown()LineDown() \n\
++	Alt<Btn4Down>:			xfeDoCommand(forward)		\n\
++	Alt<Btn5Down>:			xfeDoCommand(back)		\n\
+ 	~Meta ~Alt ~Ctrl<Key>space:	xfeDoCommand(spacebar)		\n\
+ 									  \
+ 	~Meta ~Alt ~Ctrl<Key>Delete:	PageUp()			\n\
+@@ -2231,7 +2248,7 @@
+ *decreaseFont.documentationString:	\
+ このページの表示に使用するフォント サイズを小さくします。
+ 
+-*reload.labelString:				再読み込み(R)
++*reload.labelString:				再読込(R)
+ *reload.mnemonic:					R
+ *reload.acceleratorText:			Alt+R
+ ! In mail and news reply to sender uses this accelerator
+@@ -4526,7 +4543,7 @@
+ !                                       ------------------------
+ ! back
+ ! forward
+-*reloadNonFrameCmdString:				再読み込み(R)
++*reloadNonFrameCmdString:				再読込(R)
+ *reloadWithFrameCmdString:				フレームの再読み込み(R)
+ *popup.frameReload.mnemonic:			 R
+ *popup.showImage.labelString:			画像の表示(G)
+@@ -5047,6 +5064,8 @@
+ !*openURLDialog.width:				500
+ *openURLDialog*openInEditor.labelString: Composer で開く
+ *openURLDialog*openInBrowser.labelString: Navigator で開く
++*openURLDialog*XmTextField.fontList:\
++-adobe-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
+ 
+ *message_popup.title:			Netscape
+ *message_popup*OK.labelString:	OK
+@@ -6012,7 +6031,7 @@
+ 
+ 
+ *urlLocationLabel.netsiteLabelString:		Netsite:
+-*urlLocationLabel.uneditedLabelString:		場所:
++*urlLocationLabel.uneditedLabelString:		　　場所:
+ *urlLocationLabel.editedLabelString:		ジャンプ:
+ 
+ ! this must be the longer of the two...
+@@ -6423,10 +6442,10 @@
+ 
+ *prefs*cache*cacheLabel.labelString:		\
+ キャッシュは頻繁にアクセスされるドキュメントをコピーしておくことで、\n\
+-ネットワークに接続する時間を節約します。[再読み込み]ボタンを押すと、\n\
++ネットワークに接続する時間を節約します。[再読込]ボタンを押すと、\n\
+ キャッシュしたドキュメントとネットワーク上のものを比較して、\n\
+ 最新のドキュメントを表示します。ページや画像をキャッシュからではなく\n\
+-ネットワークから読み込むには、Shift キーを押しながら[再読み込み]\n\
++ネットワークから読み込むには、Shift キーを押しながら[再読込]\n\
+ ボタンをクリックします。
+ *prefs*cache*cacheDirLabel.labelString:		キャッシュフォルダ:
+ *prefs*cache*memoryLabel.labelString:		メモリ キャッシュ:
+@@ -6455,7 +6474,7 @@
+ *prefs*proxies*auto.labelString:			自動プロキシ設定
+ *prefs*proxies*config.labelString:			設定ファイルの場所 (URL)
+ *prefs*proxies*view.labelString:			表示...
+-*prefs*proxies*reload.labelString:			再読み込み
++*prefs*proxies*reload.labelString:			再読込
+ 
+ ! Preferences dialog - General - Proxies - View
+ 
+@@ -7410,7 +7429,7 @@
+ *print.tipString:                   このページを印刷
+ *MailThread*print.tipString:        選択したメッセージを印刷
+ *MailMsg*print.tipString:           選択したメッセージを印刷
+-*toolBar*reload.labelString:	再読み込み
++*toolBar*reload.labelString:	再読込
+ 
+ ! buttons specific to the compose frame.
+ *toolBar*sendMessageNow.labelString:	送信
+@@ -7464,7 +7483,7 @@
+ *bccBtn.documentationString:          メッセージを作成してブラインドカーボン コピーを選択した項目宛に送信します
+ !
+ ! buttons used everywhere (it seems.)
+-*toolBar*viewSecurity.labelString:	セキュリティ
++*toolBar*viewSecurity.labelString:	保護
+ *toolBar*stopLoading.labelString:	停止
+ 
+ *changeDocumentEncoding.documentationString: ドキュメントの文字コード セットを指定します。
+@@ -9000,7 +9019,7 @@
+ 
+ *strings.23715:新規/編集 ...
+ 
+-*strings.23716:再読み込み
++*strings.23716:再読込
+ 
+ *strings.23717:削除
+ 
+@@ -14545,3 +14564,7 @@
+ *textPropertiesDialog.ApplyLabelString:		フィルタ
+ *tableCreateDialog.ApplyLabelString:		フィルタ
+ *documentPropertiesDialog.ApplyLabelString:		フィルタ
++
++! kinput2 が Bus error を起こさないように
++*mainForm.toolBox.urlBarItem.urlBarMainForm.urlComboBox.Text.fontList:\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1

@@ -1,17 +1,25 @@
 # New ports collection makefile for:	ctwm
-# Version required:	3.2 patchlevel 1
+# Version required:	3.4
 # Date created:		13 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.4 1995/01/13 12:48:46 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	ctwm-3.2p1
-MASTER_SITES=	ftp://ftp.x.org/contrib/window_managers/
-USE_IMAKE=	YES
-EXTRACT_SUFX=	.tar.Z
-.if !exists(/usr/X11R6/lib/libXpm.a)
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
+DISTNAME=	ctwm-3.5
+PKGNAME=	ctwm-3.5.2
+CATEGORIES=	x11-wm
+MASTER_SITES=	ftp://slhp1.epfl.ch/pub/
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	ctwm-3.5-3.5.1.diffs.gz ctwm-3.5.1-3.5.2.diffs.gz
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	torstenb@FreeBSD.org
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
+USE_IMAKE=	yes
+MAN1=		ctwm.1
 
 .include <bsd.port.mk>

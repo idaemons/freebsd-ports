@@ -1,0 +1,35 @@
+# New ports collection makefile for:	sokoban
+# Version required:			1.0 
+# Date created:				2 July 1997
+# Whom:					Andrey Zakhvatov
+#
+# $FreeBSD$
+#
+
+DISTNAME=		sokoban-src
+PKGNAME=		sokoban-1.0
+CATEGORIES=		games
+MASTER_SITES=		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	games/strategy
+
+MAINTAINER=		andy@icc.surw.chel.su
+
+WRKSRC=			${WRKDIR}/sokoban
+ALL_TARGET=
+
+do-install:
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/sokoban ${PREFIX}/bin/sokoban
+	@ ${CHOWN} games:bin ${PREFIX}/bin/sokoban
+	@ ${CHMOD} 4555 ${PREFIX}/bin/sokoban
+	@ ${MKDIR} ${PREFIX}/share/sokoban
+	@ ${CHOWN} games:bin ${PREFIX}/share/sokoban
+	@ ${MKDIR} ${PREFIX}/share/sokoban/screens
+	@ ${CHOWN} games:bin ${PREFIX}/share/sokoban/screens
+	@ ${INSTALL_DATA} ${WRKSRC}/screens/* ${PREFIX}/share/sokoban/screens
+	@ if [ ! -f ${PREFIX}/share/sokoban/highscore ]; then \
+		dd if=/dev/zero of=${PREFIX}/share/sokoban/highscore bs=1 count=2; \
+	  fi
+	@ ${CHOWN} games:bin ${PREFIX}/share/sokoban/highscore
+	@ ${CHMOD} 0600 ${PREFIX}/share/sokoban/highscore
+
+.include <bsd.port.mk>

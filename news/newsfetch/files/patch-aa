@@ -1,0 +1,29 @@
+--- Makefile.orig	Mon Apr 13 18:09:54 1998
++++ Makefile	Fri May  8 02:09:12 1998
+@@ -1,14 +1,16 @@
+ CC = gcc
+-CFLAGS = 
++#CFLAGS = 
+ 
+ #Uncomment this if you do not want status meter
+ #CFLAGS = -DNO_STATUS_METER
+ 
+ objs = newsfetch.o nntp.o net.o opt.o util.o getopt.o
+  
++all: newsfetch
++
+ newsfetch: $(objs)
+ 	$(CC) -o newsfetch $(objs)
+-	strip newsfetch
++#	strip newsfetch
+ 
+ .c.o:
+ 	$(CC) -c $(CFLAGS) $< 
+@@ -17,5 +19,5 @@
+ 	rm -f *.o newsfetch
+ 
+ install:
+-	cp newsfetch /usr/local/bin
+-	cp newsfetch.1 /usr/man/man1
++	$(INSTALL_PROGRAM) newsfetch $(PREFIX)/bin
++	$(INSTALL_MAN) newsfetch.1 $(PREFIX)/man/man1

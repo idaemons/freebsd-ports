@@ -1,0 +1,28 @@
+Index: libaudio/Makefile.linux
+@@ -21,6 +21,7 @@
+ libaudio.a: $(OBJS)
+ 	rm -f $(LIBNAME)
+ 	ar ruv $(LIBNAME) $(OBJS)
++	ranlib $(LIBNAME)
+ 
+ clean:
+ 	-rm -f $(OBJS) core
+Index: libaudiofile/Makefile.linux
+@@ -21,6 +21,7 @@
+ libaudiofile.a: $(OBJS)
+ 	rm -f $(LIBNAME)
+ 	ar ruv $(LIBNAME) $(OBJS)
++	ranlib $(LIBNAME)
+ 
+ clean:
+ 	-rm -f $(OBJS) core
+Index: main/Makefile.linux
+@@ -14,7 +14,7 @@
+ CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall
+ DEBUG   = -g3
+ OPTIM   = -O1
+-LDFLAGS = $(LIBDIR) -ldsp -laudio -laudiofile -ltooltips -lforms -lXpm -lX11 -lm
++LDFLAGS = $(LIBDIR) -ldsp -laudio -laudiofile -ltooltips -lxforms -lXpm -lX11 -lm
+ 
+ PROGS =	DAP
+ OBJS  = DPTich.o DPTich_cb.o DPTich_DSP.o DPTich_edit_cb.o DPTich_macros.o \

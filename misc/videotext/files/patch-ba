@@ -1,0 +1,63 @@
+*** Makefile.orig	Thu Oct 23 00:55:44 1997
+--- Makefile	Thu Jun 10 02:51:02 1999
+***************
+*** 22,35 ****
+  
+  # Set the installation-directories & permissions here
+  
+! LIBDIR = /usr/local/lib/vtx
+! SPOOLDIR = /var/spool/vtx
+  
+! BINDIR = /usr/local/bin
+! XBINDIR = /usr/local/bin/X11
+! FONTDIR = /usr/lib/X11/fonts/local
+! MANDIR = /usr/local/man
+! XMANDIR = /usr/local/man
+  
+  DIRPERM = 755
+  SPOOLDIRPERM = 777
+--- 22,42 ----
+  
+  # Set the installation-directories & permissions here
+  
+! #LIBDIR = /usr/local/lib/vtx
+! #SPOOLDIR = /var/spool/vtx
+! #BINDIR = /usr/local/bin
+! #XBINDIR = /usr/local/bin/X11
+! #FONTDIR = /usr/lib/X11/fonts/local
+! #MANDIR = /usr/local/man
+! #XMANDIR = /usr/local/man
+  
+! SPOOLDIR = /var/spool/vtx
+! LIBDIR = ${X11BASE}/lib/X11/vtx
+! BINDIR = ${X11BASE}/bin
+! XBINDIR = ${X11BASE}/bin
+! FONTDIR = ${X11BASE}/lib/X11/fonts/local
+! MANDIR = ${X11BASE}/man
+! XMANDIR = ${X11BASE}/man
+  
+  DIRPERM = 755
+  SPOOLDIRPERM = 777
+*************** GIF_SUPPORT = -DGIF_SUPPORT
+*** 79,88 ****
+  # Uncomment the next lines if you want PNG support and have libpng and libz
+  # installed.
+  
+! #PNG_SUPPORT = -DPNG_SUPPORT
+! #PNG_LIBS = -lpng -lz -lm
+! #PNG_INCLUDEDIRS = -I/usr/local/include
+! #PNG_LIBDIRS = -L/usr/local/lib
+  
+  
+  # Uncomment the following line if you want to get coredumps when an
+--- 86,95 ----
+  # Uncomment the next lines if you want PNG support and have libpng and libz
+  # installed.
+  
+! PNG_SUPPORT = -DPNG_SUPPORT
+! PNG_LIBS = -lpng -lz -lm
+! PNG_INCLUDEDIRS = -I/usr/local/include
+! PNG_LIBDIRS = -L/usr/local/lib
+  
+  
+  # Uncomment the following line if you want to get coredumps when an

@@ -1,0 +1,179 @@
+--- lib/mc.ext.in.orig	Wed Jan 13 05:38:06 1999
++++ lib/mc.ext.in	Sat Jan 16 23:41:24 1999
+@@ -265,7 +265,7 @@
+ # ar library
+ regex/\.s?a$
+ 	Open=%cd %p#uar
+-	View=%view{ascii} nm %f
++	View=%view{ascii} nm '%d/%p'
+ 
+ # C
+ shell/.c
+@@ -327,8 +327,8 @@
+ 
+ # ar library
+ regex/\.s?a$
+-	Open=%view{ascii} ar tv %f
+-	View=%view{ascii} nm %f
++	Open=%view{ascii} ar tv '%d/%p'
++	View=%view{ascii} nm '%d/%p'
+ 	Icon=a.xpm
+ 
+ # .so libraries are not manual pages
+@@ -338,26 +338,26 @@
+ 
+ # Manual page
+ regex/(([^0-9]|^[^\.]*)\.([1-9][A-Za-z]*|n)|\.man)$
+-	Open=nroff @TROFFASCII@ @MANDOC@ %f | %var{PAGER:more}
+-	View=%view{ascii,nroff} nroff @TROFFASCII@ @MANDOC@ %f
++	Open=nroff @TROFFASCII@ @MANDOC@ '%d/%p' | %var{PAGER:more}
++	View=%view{ascii,nroff} nroff @TROFFASCII@ @MANDOC@ '%d/%p'
+ 	Icon=man.xpm
+ 
+ # Troff with me macros.
+ shell/.me
+-	Open=nroff @TROFFASCII@ -me %f | %var{PAGER:more}
+-	View=%view{ascii,nroff} nroff @TROFFASCII@ -me %f
++	Open=nroff @TROFFASCII@ -me '%d/%p' | %var{PAGER:more}
++	View=%view{ascii,nroff} nroff @TROFFASCII@ -me '%d/%p'
+ 	Icon=man.xpm
+ 
+ # Troff with ms macros.
+ shell/.ms
+-	Open=nroff @TROFFASCII@ -ms %f | %var{PAGER:more}
+-	View=%view{ascii,nroff} nroff @TROFFASCII@ -ms %f
++	Open=nroff @TROFFASCII@ -ms '%d/%p' | %var{PAGER:more}
++	View=%view{ascii,nroff} nroff @TROFFASCII@ -ms '%d/%p'
+ 	Icon=man.xpm
+ 
+ # Manual page - compressed
+ regex/([^0-9]|^[^\.]*)\.([1-9][a-z]?|n)\.g?[Zz]$
+-	Open=gunzip -dc %f | nroff @TROFFASCII@ @MANDOC@ | %var{PAGER:more}
+-	View=%view{ascii,nroff} gunzip -dc %f | nroff @TROFFASCII@ @MANDOC@
++	Open=gunzip -dc '%d/%p' | nroff @TROFFASCII@ @MANDOC@ | %var{PAGER:more}
++	View=%view{ascii,nroff} gunzip -dc '%d/%p' | nroff @TROFFASCII@ @MANDOC@
+ 	Icon=man.xpm
+ 
+ regex/(read\.?me$)|(README)
+@@ -372,52 +372,52 @@
+ 	View with GhostView=gv %f
+ 
+ type/GIF\ image
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=gif.xpm
+ 	Include=image-options
+ 	
+ type/GIF\ picture
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=gif.xpm
+ 	Include=image-options
+ 	
+ type/JPEG\ picture
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=jpeg.xpm
+ 	Include=image-options
+ 
+ type/PC\ bitmap
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=bitmap.xpm
+ 	Include=image-options
+ 
+ type/PNG\ image
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=gif.xpm
+ 	Include=image-options
+ 
+ type/JPEG\ image
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=jpeg.xpm
+ 	Include=image-options
+ 	
+ type/TIFF\ file
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=tiff.xpm
+ 	Include=image-options
+ 	
+ type/PBM
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=pbm.xpm
+ 	Include=image-options
+ 	
+ type/PGM
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=pgm.xpm
+ 	Include=image-options
+ 	
+ type/PPM
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=ppm.xpm
+ 	Include=image-options
+ 
+@@ -426,14 +426,14 @@
+ 	Icon=xbm.xpm
+ 
+ shell/.xpm
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	View=sxpm %f
+ 	Include=image-options
+ 	Icon=xpm.xpm
+ 
+ include/image-options
+ 	Set root window to this image=background-properties --setwallpaper %f &
+-	Display this file=ee %f &
++	Display this file=ElectricEyes %f &
+ 
+ # Sound files
+ shell/.mod
+@@ -448,9 +448,9 @@
+ 	Icon=framemaker.xpm
+ 
+ type/mail
+-	Open=elm -f %f
++	Open=mutt -f '%d/%p'
+ 	Icon=mail.xpm
+-	View=%view{ascii} mcmfmt < %f
++	View=%view{ascii} mcmfmt < '%d/%p'
+ 
+ # gzipped
+ type/gzip
+@@ -531,14 +531,14 @@
+        Icon=rexx.xpm
+ 
+ # Microsoft Word Document
+-regex/\.(doc|DOC)$
++#regex/\.(doc|DOC)$
+ #       View=%view{ascii} catdoc -w %f
+-       View=%view{ascii} word2x -f text %f -
+-       Icon=word.xpm
+-type/Microsoft Word Document
++#       View=%view{ascii} word2x -f text %f -
++#       Icon=word.xpm
++#type/Microsoft Word Document
+ #       View=%view{ascii} catdoc -w %f
+-       View=%view{ascii} word2x -f text %f -
+-       Icon=word.xpm
++#       View=%view{ascii} word2x -f text %f -
++#       Icon=word.xpm
+  
+ # cpio rules
+ 
+@@ -551,7 +551,7 @@
+ shell/.cpio.gz
+ 	Open=%cd %d/%p#ucpio/
+ 	View=%view{ascii} gzip -dc '%f' | cpio -ictv
+-	Extract=gzip -dc '%f' | cpio -ic
++	Extract=gzip -dc '%d/%p' | cpio -ic
+ 	Icon=compressed.xpm
+ 
+ shell/.cpio

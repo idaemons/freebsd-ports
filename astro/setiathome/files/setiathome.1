@@ -1,0 +1,213 @@
+.\" Copyright status unkown
+.\" $FreeBSD$
+.Dd May 19, 1999
+.Dt setiathome 1 LOCAL
+.Os FreeBSD
+.Sh NAME
+.Nm setiathome
+.Nd the SETI@home client program
+.Sh SYNOPSIS
+.Nm
+.Op Ar options
+.Sh DESCRIPTION
+.Nm
+is the 
+.Ux
+version of the 
+.Tn SETI@home
+client. It downloads radio telescope data from a network server, analyzes
+the data looking for signals of extraterrestrial origin, and uploads results
+to the server, repeating this cycle indefinitely. See
+http://setiahome.ssl.berkeley.edu/ for more information.
+.Pp
+The first time you run
+.Nm
+it will interactively ask you for email address, name, country etc. This
+info is stored in a file and no interaction is needed when you run the
+program subsequently.
+.Pp
+After this you can run
+.Nm
+in the background, and direct its output to
+.Pa /dev/null
+if you like.
+.Pp
+.Nm
+can be freely aborted and restarted. It saves its state in files,
+and will pick up where it left off.
+.Pp
+If you want to run multiple instances of setiathome
+(on a multiprocessor machine, or on multiple machines
+that share a filesystem) each one must be run
+in a different directory.
+.Pp
+.Nm
+requires about 0.5\ MBytes of disk space per working directory, and about
+12\ MBytes of memory per instance. If you have ample physical memory, it's work load
+should be almost undetectable. Additionally,
+.Nm
+requires a permanent or
+.Dq dial on demand
+Internet connection to upload results to and download new work units from the
+.Tn SETI@home
+server at any time.
+.Ss Starting setiathome
+This
+.Fx
+port includes a start-up script that starts
+.Nm
+at system start-up.
+.Ss Configuration File
+The optional configuration file
+.Pa /usr/local/etc/setiathome.conf
+can contain one or more of the following variable assignments to override
+their default values:
+.Bl -tag -width seti_wrkdir
+.It Pa seti_wrkdir=/var/db/setiathome
+The working directory where
+.Nm
+will store it's temporary files.
+.It Pa seti_user=nobody
+The user to run
+.Nm
+as.
+.It Pa seti_nice=1
+The
+.Xr nice 1
+value to run
+.Nm 
+at.
+.It Pa seti_maxprocs= Ns Va Number of CPUs
+The number of
+.Nm 
+processes to run concurrently. Defaults to the number of CPUs installed.
+Running more than one instance per CPU is not useful, as
+.Nm
+is almost completely CPU-bound.
+.El
+.Pp
+If you change values in the configuration file, you need to stop and start
+.Nm Ns ,
+and possibly reconfigure the working directory for the changes to take
+effect. Run
+.Dl /usr/local/etc/rc.d/setiathome.sh stop
+.Dl /usr/local/etc/rc.d/setiathome.sh register
+.Dl /usr/local/etc/rc.d/setiathome.sh start
+to do that.
+.Ss Setting up setiathome
+You can use the start-up script to set up a working directory
+and register with or log in to
+.Tn SETI@home
+by calling it with the argument
+.Ar register .
+If you'd like to configure and run it manually, you should first disable the
+start-up script. Then, for each
+.Nm
+instance you'd like to run, create a directory, make it owned by the user
+you'd like to run
+.Nm
+as, and run
+.Ic setiathome -login
+in that directory.
+.Pp
+Then, arrange for
+.Nm
+to be started automatically.  You can easily do so by adding a line similiar
+to
+.Bd -ragged -offset indent
+.Li */10 * * * * cd 
+.Va working directory 
+.Li && setiathome -email >/dev/null
+.Ed
+to the user's crontab.
+.Sh OPTIONS
+.Bl -tag -width countries
+.It Fl countries
+Show list of country codes (a numeric country code must be entered during
+registration).
+.It Fl email
+Send email (to the email address registered with
+.Tn SETI@home )
+on errors. Useful if you run 
+.Nm
+in the background with the output directed to
+.Pa /dev/null .
+.It Fl login
+Log in to or register with
+.Tn SETI@home .
+.It Fl nice Ar N
+Set 
+.Xr nice 1
+priority to 
+.Ar N
+(default 1).
+.It Fl proxy Va hostname Ns Xo
+.Op Li : Ns Va port
+.Xc
+Use the HTTP proxy server
+.Ar hostname
+at port
+.Ar port
+to download work units and upload results. Alternatively, you can set the
+environment variable
+.Ev HTTP_PROXY .
+.It Fl stop_after_process
+Process the current work unit and exit before uploading the result.
+.It Fl stop_after_xfer
+Process the current work unit and upload the result, then exit.
+.It Fl version
+Show software version.
+.El
+.Sh ENVIRONMENT
+.Bl -tag -width HTTP_PROXY
+.It Ev HTTP_PROXY
+The address (in the form
+.Do Va hostname Ns
+.Op Li : Ns Va port
+.Dc )
+of a HTTP proxy server to download work units and upload results via.
+.El
+.Sh FILES
+.Pp
+.Bl -tag -width /var/db -compact
+.It Pa /usr/local/etc/setiathome.conf
+Optional configuration file for the start-up script.
+.It Pa /usr/local/etc/rc.d/setiathome.sh
+Start-up script.
+.It Pa /var/db/setiathome/
+Primary working directory.
+.It Pa /var/db/setiathome/user_info.txt
+Registration data.
+.It Pa /var/db/setiathome/ Ns Va n Ns Pa /
+Working directories for additional process
+.Va n
+(when running more than one instance).
+.It Pa /var/db/setiathome/ Ns Xo
+.Op Ns Va n Ns Pa / Ns 
+.Pa lock.txt
+.Xc
+Lock file to prevent multiple instances to work on the same data.
+.It Pa /var/db/setiathome/ Ns Xo
+.Op Ns Va n Ns Pa / Ns 
+.Pa *.txt
+.Xc
+Working files.
+.El
+.Sh BUGS
+As of version 1.1, the proxy setting ignores the
+.Va port
+argument in both the option and the environment variable.
+.Pp
+There is currently no easy way to run
+.Nm
+continuosly if you don't have a permanent or
+.Dq dial on demand
+Internet connection.
+.Sh AUTHORS
+.Tn SETI@home
+was developed by David Anderson, Jeff Cobb, Charles Congdon, Charlie Fenton,
+David Gedye, Kyle Granger, Eric Korpela, Matt Lebofsky, Peter Leiser, Brad
+Silen, Woody Sullivan, and Dan Werthimer.
+.Pp
+.An Stefan Bethke <stb@freebsd.org>
+amended the original manual page for this FreeBSD port.

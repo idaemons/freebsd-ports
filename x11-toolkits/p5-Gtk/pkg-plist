@@ -1,0 +1,14 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Atoms.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/ColorSelectButton.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/LogHandler.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Types.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gtk.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gtk.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk

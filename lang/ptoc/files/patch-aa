@@ -1,0 +1,11 @@
+--- main.cxx	Fri Nov  6 11:19:54 1998
++++ /home/andy/tmp/wrk/main.cxx	Sun Feb 14 15:11:06 1999
+@@ -319,7 +319,7 @@
+ #ifdef PREFIX
+     token::input(turbo_pascal 
+ 		 ? PREFIX "/share/ptoc/tptoc.pas" 
+-		 : PREFIX "/share/ptoc/ptoc.pas")); 
++		 : PREFIX "/share/ptoc/ptoc.pas"); 
+ #else
+     token::input(dprintf("%s%s", prog_path, 
+  			 turbo_pascal ? "tptoc.pas" : "ptoc.pas")); 

@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Nov 22 06:03:52 1997
++++ src/Makefile.in	Wed Nov 26 03:12:30 1997
+@@ -20,7 +20,7 @@
+ LDFLAGS	= @LDFLAGS@
+ YACC	= @YACC@
+ 
+-LIBS	= -L../pcre -lpcre @LIBS@ @INN_NNTPLIB@
++LIBS	= ../pcre/libpcre.a  @LIBS@ @INN_NNTPLIB@  ../pcre/libpcre.a
+ 
+ # Where do you want the binary & manual page installed?
+ INSTALL_PREFIX	= @INSTALL_PREFIX@

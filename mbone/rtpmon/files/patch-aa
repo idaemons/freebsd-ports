@@ -1,0 +1,40 @@
+--- configure.in.orig	Wed Jan 15 14:44:04 1997
++++ configure.in	Wed Sep 24 17:09:03 1997
+@@ -109,6 +109,7 @@
+             /usr/src/tcl7.6/generic \
+             /usr/local/src/tcl7.6/generic \
+             /usr/src/local/tcl7.6/generic \
++	    /usr/local/include/tcl7.6 \
+             ../tcl7.5/generic \
+             /usr/src/tcl7.5/generic \
+             /usr/local/src/tcl7.5/generic \
+@@ -189,6 +190,10 @@
+                 AC_MSG_RESULT($place/libtcl7.6.a)
+                 LDFLAGS="$LDFLAGS -L$place"
+                 libtcl="-ltcl7.6"
++	    elif test -r $place/libtcl76.a ; then
++                AC_MSG_RESULT($place/libtcl7.6.a)
++                LDFLAGS="$LDFLAGS -L$place"
++                libtcl="-ltcl76"
+             elif test -r $place/libtcl7.5.a ; then
+                 AC_MSG_RESULT($place/libtcl7.5.a)
+                 LDFLAGS="$LDFLAGS -L$place"
+@@ -287,6 +292,7 @@
+ if test "$found_tk_h" = "no" ; then
+     AC_MSG_CHECKING(for tk.h)
+     places="$dir/include \
++	    /usr/local/include/tk4.2 \
+             ../tk4.1/generic \
+             /usr/src/tk4.1/generic \
+             /usr/local/src/tk4.1/generic \
+@@ -349,6 +355,10 @@
+                 AC_MSG_RESULT($place/libtk4.2.a)
+                 LDFLAGS="$LDFLAGS -L$place"
+                 libtk="-ltk4.2"
++            elif test -r $place/libtk42.a ; then
++                AC_MSG_RESULT($place/libtk42.a)
++                LDFLAGS="$LDFLAGS -L$place"
++                libtk="-ltk42"
+             elif test -r $place/libtk4.1.a ; then
+                 AC_MSG_RESULT($place/libtk4.1.a)
+                 LDFLAGS="$LDFLAGS -L$place"
