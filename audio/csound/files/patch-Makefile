@@ -1,0 +1,63 @@
+$FreeBSD$
+
+--- Makefile.orig	Sun Jul 14 16:03:01 2002
++++ Makefile	Sun Jul 14 16:49:45 2002
+@@ -1,17 +1,17 @@
+ #								Csound Makefile
+ # edit the following definitions according to need:
+ 
+-INCLUDE	= /usr/local/include
+-LIB	= /usr/local/lib
+-DEST	= /usr/local/bin
+-MAN	= /usr/local/man
++INCLUDE	= $(PREFIX)/include
++LIB	= $(PREFIX)/lib
++DEST	= $(PREFIX)/bin
++MAN	= $(PREFIX)/man
+ MAN1	= $(MAN)/man1
+ CAT1	= $(MAN)/cat1
+ # these directories must exist for stages beyond 'make csound'
+ 
+ CDEP =
+ COBS =	$(COBJS)
+-CC = cc
++CC ?= cc
+ # choose either -
+ #	CDEP =			for UNIX
+ #	COBS = $(COBJS)
+@@ -23,7 +23,7 @@
+ #	.c.o:
+ #		$(CC) $(CFLAGS) -c $*.c -o $@
+ 
+-DEFINES = -DWINDOWS -DRTAUDIO -DSFIRCAM -DSYS5 -DLINUX -DPIPES -DMACROS -DTCLTK -DIV_SCHED -DRWD_DBFS
++DEFINES = -DRTAUDIO -DSFIRCAM -DSYS5 -DLINUX -DPIPES -DMACROS -DTCLTK -DIV_SCHED -DRWD_DBFS -DFREE_BSD
+ # choose any of -
+ #	-DSYS5	    invoke System 5 headers (e.g. 'string.h' for 'strings.h')
+ #	-DWINDOWS   include window system calls (X11, SGI, or FG graphics)
+@@ -49,7 +49,7 @@
+ # (e.g., Linux on SPARC [not tested]), you should also define -
+ #       -DLINUX_BE      Linux audio device handler for big-endian samples
+ 
+-CFLAGS = -O2 -malign-loops=4 -malign-jumps=4 -ffast-math -fomit-frame-pointer -finline-functions -funroll-loops -DWITHx87 $(RPM_OPT_FLAGS) $(DEFINES)
++CFLAGS = $(CPPFLAGS) $(LDFLAGS) $(DEFINES)
+ #	-O		Simple optimisation
+ #	-O2		to be more specific about the optimization level
+ #	-f		compile single-precision floats (4.3,VAX,DEC-RISC)
+@@ -84,7 +84,7 @@
+ #	-I/usr/openwin/include		Solaris openwin interface
+ #	-I/usr/demo/SOUND/include	Solaris sound interface
+ #       -I/usr/X11R6/include            non-RedHat distributions of Linux
+-LIBS =	-L /usr/X11R6/lib -lX11 -ltcl -ltk -lm 
++LIBS =	-L$(X11BASE)/lib -L$(LOCALBASE)/lib -lX11 -ltcl83 -ltk83 -lm
+ #	-lefence
+ #	-lm		    		required
+ #	-lX11				for X window calls
+@@ -255,7 +255,7 @@
+ all:		$(PROGS) $(SUBDIRS)            	#must be run in this order
+ 
+ csound:		$(COBJS) $(CSUM) $(CDEP) csound.xmg
+-		$(CC) $(CFLAGS) -o csound $(COBJS) $(LIBS)
++		$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o csound $(COBJS) $(LIBS)
+ 
+ TAGS:	$(CSRCS) $(HDRS)
+ 		etags $(CSRCS) $(HDRS)

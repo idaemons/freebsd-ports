@@ -1,0 +1,73 @@
+--- makefile.orig	Mon Oct 28 19:50:00 2002
++++ makefile	Sun Nov  3 09:09:41 2002
+@@ -4,13 +4,13 @@
+ FAULT_TOLERANT=0
+ 
+ # Place where to copy GastDB header files
+-INCSPATH=/usr/local/include/fastdb
++INCSPATH=${PREFIX}/include/fastdb
+ 
+ #Place where to copy Fastdb library
+-LIBSPATH=/usr/local/lib
++LIBSPATH=${PREFIX}/lib
+ 
+ #Place where to copy Fastdb subsql utility
+-BINSPATH=/usr/local/bin
++BINSPATH=${PREFIX}/bin
+ 
+ OBJS = class.o compiler.o database.o hashtab.o file.o symtab.o ttree.o \
+ 	cursor.o query.o wwwapi.o unisock.o sync.o localcli.o
+@@ -29,8 +29,8 @@
+ SUFF=
+ else
+ ifneq (,$(findstring freebsd,$(OSTYPE)))
+-TFLAGS=-pthread
+-THRLIBS=
++TFLAGS=-D_REENTRANT ${PTHREAD_CFLAGS}
++THRLIBS=${PTHREAD_LIBS}
+ else 
+ TFLAGS=-D_REENTRANT -D_THREAD_SAFE
+ THRLIBS=-lpthread
+@@ -62,7 +62,6 @@
+ 
+ WEB_EXAMPLES = cgistub bugdb clidb
+ 
+-CC = g++
+ 
+ # Possible FastDB compile time parameters (-Dxxx should be added to DEFS macro):
+ # 1. USE_LOCALE_SETTING - use C locale for string comparison operations
+@@ -98,13 +97,13 @@
+ DEFS = -DUSE_QUEUE_MANAGER -DUSE_LOCALE_SETTINGS
+ 
+ #CFLAGS = $(TFLAGS) -c -Wall -O5 -g $(DEFS) 
+-CFLAGS = -c -Wall -O0 -g $(DEFS) $(TFLAGS)
++CFLAGS += -c $(DEFS) $(TFLAGS)
+ #CFLAGS = -c -Wall -O0 -DDEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
+-SHFLAGS=-shared
++SHFLAGS=-shared -Wl,-soname,$@
+ 
+ 
+ LD = $(CC)
+-LDFLAGS = -g $(TFLAGS)
++LDFLAGS = $(TFLAGS)
+ 
+ AR = ar
+ ARFLAGS = -cru
+@@ -314,14 +313,13 @@
+ 
+ install: subsql installlib
+ 	mkdir -p $(BINSPATH)
+-	cp subsql $(BINSPATH)
+-	strip $(BINSPATH)/subsql
++	${BSD_INSTALL_PROGRAM} subsql $(BINSPATH)
+ 
+ installlib: $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED)
+ 	mkdir -p $(INCSPATH)
+-	cp $(INCS) $(INCSPATH)
++	${BSD_INSTALL_DATA} $(INCS) $(INCSPATH)
+ 	mkdir -p $(LIBSPATH)
+-	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
++	${BSD_INSTALL_DATA} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
+ 	ln -f -s $(LIBSPATH)/$(FASTDB_SHARED) $(LIBSPATH)/libfastdb$(SUFF).so
+ 	ln -f -s $(LIBSPATH)/$(CLI_SHARED) $(LIBSPATH)/libcli$(SUFF).so
+ 

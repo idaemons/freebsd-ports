@@ -1,9 +1,18 @@
-cd ${WRKDIR}
-patch -s <2.4.5/diffs
-find . -name '*.orig' | xargs rm
-rm -r ACCESS.* OBJ_DUMP doc/previous_object *.log log 2.4.5/diff*
-mv 2.4.5/dgd .
-cp -pr 2.4.5/doc . && rm -r 2.4.5/doc
-mkdir -p lpmud.245/log
-mv [A-Za-km-z]* lpmud.245
-mv 2.4.5/hname.c 2.4.5/lpmud .
+#!/bin/sh
+#
+# $FreeBSD$
+
+cd ${WRKDIR}/mud
+mv 2.4.5 lpmud-2.4.5
+mv rundgd runlpmud
+ln -s ${PREFIX}/dgd/doc/kfun lpmud-2.4.5/doc
+mkdir -p tmp bin; mv hname.c bin
+cp ${FILESDIR}/oconv.c bin
+cp ${FILESDIR}/Makefile.bin bin/Makefile
+
+FILES_PREFIX="lpmud.dgd runlpmud"
+
+for f in $FILES_PREFIX; do
+	mv ${WRKSRC}/${f} ${WRKSRC}/$f.bak && sed <${WRKSRC}/${f}.bak \
+		s+%%PREFIX%%+${PREFIX}+g >${WRKSRC}/${f}
+done

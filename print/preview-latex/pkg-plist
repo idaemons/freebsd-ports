@@ -1,0 +1,37 @@
+share/texmf/tex/latex/preview/prauctex.cfg
+share/texmf/tex/latex/preview/prauctex.def
+share/texmf/tex/latex/preview/preview.sty
+share/texmf/tex/latex/preview/prlyx.def
+share/texmf/tex/latex/preview/prshowbox.def
+share/texmf/tex/latex/preview/prshowlabels.def
+share/texmf/tex/latex/preview/prtightpage.def
+share/texmf/tex/latex/preview/prtracingall.def
+@dirrm share/texmf/tex/latex/preview
+@exec %D/bin/mktexlsr
+@unexec %D/bin/mktexlsr
+share/texmf/doc/latex/styles/preview.dvi
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.el
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/preview-latex.el
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/prv-emacs.el
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/prv-emacs.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/preverr.xbm
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/preverr.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.xbm
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/prevwork.xbm
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/prevwork.xpm
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/preview
+@unexec install-info --delete %D/info/preview-latex.info %D/info/dir
+info/preview-latex.info
+info/preview-latex.info-1
+info/preview-latex.info-2
+@exec install-info %D/info/preview-latex.info %D/info/dir
+%%PORTDOCS%%share/doc/preview-latex/ChangeLog
+%%PORTDOCS%%share/doc/preview-latex/INSTALL
+%%PORTDOCS%%share/doc/preview-latex/PROBLEMS
+%%PORTDOCS%%share/doc/preview-latex/README
+%%PORTDOCS%%share/doc/preview-latex/README-preview
+%%PORTDOCS%%share/doc/preview-latex/RELEASE
+%%PORTDOCS%%share/doc/preview-latex/TODO
+%%PORTDOCS%%@dirrm share/doc/preview-latex

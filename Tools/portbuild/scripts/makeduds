@@ -1,0 +1,33 @@
+#!/bin/sh
+# usage: $0 branch
+
+# configurable variables
+pb=/var/portbuild
+
+. ${pb}/portbuild.conf
+
+. ${pb}/scripts/buildenv
+
+# -j# to make duds
+DUDSJOBS=4
+
+usage () {
+  echo "usage: makeduds branch"
+  exit 1
+}
+if [ $# != 1 ]; then
+  usage
+fi
+
+branch=$1
+
+buildenv ${pb} ${branch}
+
+duds=${pb}/${branch}/duds
+
+unset DISPLAY
+
+cd ${PORTSDIR}
+make -j${DUDSJOBS} ignorelist ECHO_MSG=true > ${duds} || exit 1
+sort ${duds} > ${duds}.tmp
+mv -f ${duds}.tmp ${duds}

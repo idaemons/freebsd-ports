@@ -1,0 +1,89 @@
+bin/biofetch
+bin/dbget
+@unexec if cmp -s %D/etc/bioinformatics/seqdatabase.ini %D/etc/bioinformatics/seqdatabase.ini.sample; then rm -f %D/etc/bioinformatics/seqdatabase.ini; fi
+etc/bioinformatics/seqdatabase.ini.sample
+@exec [ ! -f %B/etc/bioinformatics/seqdatabase.ini ] && cp %B/%f %B/etc/bioinformatics/seqdatabase.ini
+@dirrm etc/bioinformatics
+%%RUBY_SITELIBDIR%%/bio.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blast.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blast/format8.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blast/rexml.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blast/xmlparser.rb
+%%RUBY_SITELIBDIR%%/bio/appl/fasta.rb
+%%RUBY_SITELIBDIR%%/bio/appl/fasta/format10.rb
+%%RUBY_SITELIBDIR%%/bio/appl/fasta/format6.rb
+%%RUBY_SITELIBDIR%%/bio/data/aa.rb
+%%RUBY_SITELIBDIR%%/bio/data/codontable.rb
+%%RUBY_SITELIBDIR%%/bio/data/keggorg.rb
+%%RUBY_SITELIBDIR%%/bio/data/na.rb
+%%RUBY_SITELIBDIR%%/bio/db.rb
+%%RUBY_SITELIBDIR%%/bio/db/aaindex.rb
+%%RUBY_SITELIBDIR%%/bio/db/ddbj.rb
+%%RUBY_SITELIBDIR%%/bio/db/embl.rb
+%%RUBY_SITELIBDIR%%/bio/db/fasta.rb
+%%RUBY_SITELIBDIR%%/bio/db/genbank.rb
+%%RUBY_SITELIBDIR%%/bio/db/genpept.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/brite.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/cell.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/compound.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/enzyme.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/genes.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/genome.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/keggtab.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/microarray.rb
+%%RUBY_SITELIBDIR%%/bio/db/litdb.rb
+%%RUBY_SITELIBDIR%%/bio/db/medline.rb
+%%RUBY_SITELIBDIR%%/bio/db/prosite.rb
+%%RUBY_SITELIBDIR%%/bio/db/refseq.rb
+%%RUBY_SITELIBDIR%%/bio/db/sptr.rb
+%%RUBY_SITELIBDIR%%/bio/db/swissprot.rb
+%%RUBY_SITELIBDIR%%/bio/db/transfac.rb
+%%RUBY_SITELIBDIR%%/bio/db/trembl.rb
+%%RUBY_SITELIBDIR%%/bio/extend.rb
+%%RUBY_SITELIBDIR%%/bio/feature.rb
+%%RUBY_SITELIBDIR%%/bio/io/brdb.rb
+%%RUBY_SITELIBDIR%%/bio/io/dbget.rb
+%%RUBY_SITELIBDIR%%/bio/io/fetch.rb
+%%RUBY_SITELIBDIR%%/bio/io/flatfile.rb
+%%RUBY_SITELIBDIR%%/bio/io/pubmed.rb
+%%RUBY_SITELIBDIR%%/bio/io/registry.rb
+%%RUBY_SITELIBDIR%%/bio/io/sql.rb
+%%RUBY_SITELIBDIR%%/bio/location.rb
+%%RUBY_SITELIBDIR%%/bio/matrix.rb
+%%RUBY_SITELIBDIR%%/bio/pathway.rb
+%%RUBY_SITELIBDIR%%/bio/reference.rb
+%%RUBY_SITELIBDIR%%/bio/sequence.rb
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/blast
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/fasta
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl
+@dirrm %%RUBY_SITELIBDIR%%/bio/data
+@dirrm %%RUBY_SITELIBDIR%%/bio/db/kegg
+@dirrm %%RUBY_SITELIBDIR%%/bio/db
+@dirrm %%RUBY_SITELIBDIR%%/bio/io
+@dirrm %%RUBY_SITELIBDIR%%/bio
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/biofetch.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fasta2tab.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fsplit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gb2fasta.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gb2tab.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gbtab2mysql.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/genes2nuc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/genes2pep.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/genes2tab.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/genome2rb.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/genome2tab.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gt2fasta.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pmfetch.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pmsearch.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ssearch2tab.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tfastx2tab.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vs-genes.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/BioRuby.rd.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Design.rd.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TODO.rd.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Tutorial.rd.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

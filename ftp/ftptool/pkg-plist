@@ -1,0 +1,3 @@
+bin/ftptool
+lib/help/ftptool.info
+@dirrm lib/X11/ftptool

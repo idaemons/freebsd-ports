@@ -1,0 +1,37 @@
+# New ports collection makefile for:	xmms-fishmatic
+# Date created:				20 Jan 2002
+# Whom:					David Yeske <dyeske@yahoo.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xmms-fishmatic
+PORTVERSION=	0.0.1
+CATEGORIES=	graphics
+MASTER_SITES=	http://stukach.com/hosted/
+DISTNAME=	fishmatic
+
+MAINTAINER=	dyeske@yahoo.com
+
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+
+USE_X_PREFIX=   yes
+USE_GNOMENG=    yes
+USE_GNOME=      gtk12
+USE_GMAKE=	yes
+USE_MESA=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=  yes
+
+CONFIGURE_ENV=	LIBS="-lGL -lXext ${LIBS}"
+CFLAGS+=	-I${X11BASE}/include -L${X11BASE}/lib
+
+post-patch:
+	@${RM} -f ${WRKSRC}/config.cache
+	@${REINPLACE_CMD} -e 's|-O2||; \
+		s|-lpthreads|${PTHREAD_LIBS:S/"//g}|g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/Makefile.in
+
+.include <bsd.port.mk>

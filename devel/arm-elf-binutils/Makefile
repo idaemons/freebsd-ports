@@ -1,0 +1,48 @@
+# ex:ts=8
+# New ports collection makefile for:	binutils-arm
+# Date created:		3 November 2000
+# Whom:			Espen Skoglund <esk@ira.uka.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	binutils
+PORTVERSION=	2.12.1
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	binutils/releases
+PKGNAMEPREFIX=	arm-elf-
+
+MAINTAINER=	esk@ira.uka.de
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--target=${PKGNAMEPREFIX:S/-$//}
+CONFIGURE_ARGS=	--infodir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
+LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
+		gas/configure gprof/configure intl/configure ld/configure \
+		libiberty/configure opcodes/configure
+MAN1=		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}as.1 \
+		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}c++filt.1 \
+		${PKGNAMEPREFIX}dlltool.1 ${PKGNAMEPREFIX}ld.1 \
+		${PKGNAMEPREFIX}nlmconv.1 ${PKGNAMEPREFIX}nm.1 \
+		${PKGNAMEPREFIX}objcopy.1 ${PKGNAMEPREFIX}objdump.1 \
+		${PKGNAMEPREFIX}ranlib.1 ${PKGNAMEPREFIX}readelf.1 \
+		${PKGNAMEPREFIX}size.1 ${PKGNAMEPREFIX}strings.1 \
+		${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}windres.1
+
+post-install:
+.for F in addr2line c++filt gasp objcopy objdump readelf size strings
+	${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F  \
+		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
+.endfor
+	cd ${PREFIX}/lib ; ${MV} libbfd.a libiberty.a libopcodes.a \
+		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib
+	${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include
+	cd ${PREFIX}/include ; ${MV} ansidecl.h bfd.h bfdlink.h symcat.h \
+		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include
+	${RM} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info/*
+	${RMDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
+
+.include <bsd.port.mk>

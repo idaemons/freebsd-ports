@@ -1,0 +1,23 @@
+--- configure.orig	Fri May 31 20:43:47 2002
++++ configure	Wed Jun  5 00:58:27 2002
+@@ -17452,13 +17452,13 @@
+ # Now that we know whether we have Gnome, we can decide where the XML
+ # config files get installed.
+ #
+-if test -z "$HACK_CONF_DIR" ; then
+-  if test -n "$GNOME_DATADIR" ; then
+-    HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
+-  else
+-    HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
+-  fi
+-fi
++#if test -z "$HACK_CONF_DIR" ; then
++#  if test -n "$GNOME_DATADIR" ; then
++#    HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
++#  else
++#    HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
++#  fi
++#fi
+ 
+ 
+ 

@@ -1,0 +1,10 @@
+sbin/chkrootkit
+sbin/chklastlog
+sbin/chkproc
+sbin/chkwtmp
+sbin/ifpromisc
+%%PORTDOCS%%share/doc/chkrootkit/COPYRIGHT
+%%PORTDOCS%%share/doc/chkrootkit/README
+%%PORTDOCS%%share/doc/chkrootkit/README.chklastlog
+%%PORTDOCS%%share/doc/chkrootkit/README.chkwtmp
+%%PORTDOCS%%@dirrm share/doc/chkrootkit

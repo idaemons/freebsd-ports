@@ -1,19 +1,28 @@
 # New ports collection makefile for:	gopher
-# Version required:	2.1
 # Date created:		11 Dec 1994
-# Whom:			ats
+# Whom:			ats (original)
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/23 01:24:26 torstenb Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	gopher2.1
-MASTER_SITES=	ftp://boombox.micro.umn.edu/pub/gopher/Unix/
-EXTRACT_SUFX=	.tar.Z
-NCFTPFLAGS?=	-P -N
+PORTNAME=	gopher
+PORTVERSION=	3.0.5
+CATEGORIES=	net
+MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/ \
+		http://dl.droso.net/ports/
+
+MAINTAINER=	erwin@lansing.dk
+
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
-pre-install:
-	mkdir -p ${PREFIX}/bin
-	mkdir -p ${PREFIX}/man/man1
+MAN1=	gopher.1 gophfilt.1
+MAN5=	gopherd.conf.5 gopherrc.5
+MAN8=	gopherd.8 gopherindex.8
+
+pre-patch:
+	@${FIND} ${WRKSRC} -name '*.[ch]' | xargs ${REINPLACE_CMD} -e \
+		's,<malloc.h>,<stdlib.h>,'
 
 .include <bsd.port.mk>

@@ -1,0 +1,8 @@
+bin/ftpcp
+bin/ftpcopy
+bin/ftpls
+%%PORTDOCS%%share/doc/ftpcopy/ChangeLog
+%%PORTDOCS%%share/doc/ftpcopy/NEWS
+%%PORTDOCS%%share/doc/ftpcopy/README
+%%PORTDOCS%%share/doc/ftpcopy/THANKS
+%%PORTDOCS%%@dirrm share/doc/ftpcopy

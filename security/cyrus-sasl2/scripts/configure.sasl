@@ -1,0 +1,109 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc ]; then
+	exit
+fi
+
+tempfile=`mktemp -t checklist`
+
+if [ "${BATCH}" ]; then
+	if [ "${WITH_DB3}" ]; then
+		OPTIONS="\"DB3\""
+	else
+		OPTIONS="\"NDBM\""
+	fi
+	if [ "${OPTIONS}" != "x" ]; then
+		OPTIONS="${OPTIONS} \"SASLAUTHD\""
+		set ${OPTIONS}
+	fi
+else
+	if [ "${WITH_DB3}" -o -f ${PREFIX}/lib/libdb3.so ] ; then
+		SET_DB3="ON"
+		SET_NDBM="OFF"
+	else
+		SET_DB3="OFF"
+		SET_NDBM="ON"
+	fi
+
+	/usr/bin/dialog --title "Additional SASL options" --clear \
+		--checklist "\n\
+Please select desired options:" -1 -1 16 \
+NDBM		"ndbm DB" ${SET_NDBM} \
+DB3		"Berkeley DB, revision 3" ${SET_DB3} \
+SASLAUTHD       "Use saslauthd for password Authentication" ON \
+2> $tempfile
+
+	retval=$?
+
+	if [ -s $tempfile ]; then
+		set `cat $tempfile`
+	fi
+	rm -f $tempfile
+
+	case $retval in
+		0)	if [ -z "$*" ]; then
+				echo "Nothing selected"
+				OPTIONS="\"NDBM\""
+				set ${OPTIONS}
+			fi
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+
+${MKDIR} ${WRKDIRPREFIX}${REALCURDIR}
+exec > ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+
+echo "PREFIX=	${PREFIX}"
+
+while [ "$1" ]; do
+	case $1 in
+		\"NDBM\")
+			if [ "${DBLIB}" ]; then
+				echo "ndbm and db3 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "CONFIGURE_ARGS+=	--with-dblib=ndbm"
+			echo "SASLDB_NAME=	sasldb2.db"
+			DBLIB=1
+			;;
+		\"DB3\")
+			if [ "${DBLIB}" ]; then
+				echo "ndbm and db3 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	db3.3:\${PORTSDIR}/databases/db3"
+			echo "CONFIGURE_ARGS+=	--with-dblib=berkeley --with-bdb-incdir=${PREFIX}/include/db3  --with-bdb-libdir=${PREFIX}/lib"
+			echo "SASLDB_NAME=	sasldb2"
+			DBLIB=1
+			;;
+		\"SASLAUTHD\")
+			echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;saslauthd;g\""
+			PWCHECK=1
+			;;
+		*)
+			echo "Invalid option(s): $*" > /dev/stderr
+			rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			exit 1
+			;;
+	esac
+	shift
+done
+
+if [ "$PWCHECK" ]; then
+	echo "PWCHECK_SUB+=	-e \"s;%%ENABLEPWCHECK%%;yes;g\""
+	echo "PWCHECK_METHOD=	saslauthd"
+else
+	echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;saslauthd;g\" \\"
+	echo "			-e \"s;%%ENABLEPWCHECK%%;no;g\""
+	echo "PWCHECK_METHOD=	auxprop"
+fi
+if [ ! "${DBLIB}" ]; then
+	echo "CONFIGURE_ARGS+=	--with-dblib=ndbm"
+	echo "SASLDB_NAME=	sasldb2.db"
+fi

@@ -1,0 +1,13 @@
+--- muttprint.orig	Sat Feb 23 23:15:04 2002
++++ muttprint	Sat Feb 23 23:15:35 2002
+@@ -183,8 +183,8 @@
+ 
+ if ($Config{'PENGUIN'} eq "on") {
+ 	$Config{'PENGUIN'} = 
+-			-r "$share_dir/penguin.eps"
+-			? "$share_dir/penguin.eps" : "off";
++			-r "$share_dir/Beastie.eps"
++			? "$share_dir/Beastie.eps" : "off";
+ }
+ 
+ ReadConfig ($Config{RCFILE});

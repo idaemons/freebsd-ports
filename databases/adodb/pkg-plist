@@ -1,0 +1,80 @@
+@unexec if cmp -s %D/%%ADODB_DIR%%/adodb-cryptsession.php %D/%%ADODB_DIR%%/adodb-cryptsession.php.sample; then rm -f %D/%%ADODB_DIR%%/adodb-cryptsession.php; fi
+@unexec if cmp -s %D/%%ADODB_DIR%%/adodb-session.php %D/%%ADODB_DIR%%/adodb-session.php.sample; then rm -f %D/%%ADODB_DIR%%/adodb-session.php; fi
+@unexec if cmp -s %D/%%ADODB_DIR%%/server.php %D/%%ADODB_DIR%%/server.php.sample; then rm -f %D/%%ADODB_DIR%%/server.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/benchmark.php %D/%%ADODB_TESTS%%/benchmark.php.sample; then rm -f %D/%%ADODB_TESTS%%/benchmark.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/client.php %D/%%ADODB_TESTS%%/client.php.sample; then rm -f %D/%%ADODB_TESTS%%/client.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/test.php %D/%%ADODB_TESTS%%/test.php.sample; then rm -f %D/%%ADODB_TESTS%%/test.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/test2.php %D/%%ADODB_TESTS%%/test2.php.sample; then rm -f %D/%%ADODB_TESTS%%/test2.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/test3.php %D/%%ADODB_TESTS%%/test3.php.sample; then rm -f %D/%%ADODB_TESTS%%/test3.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/test4.php %D/%%ADODB_TESTS%%/test4.php.sample; then rm -f %D/%%ADODB_TESTS%%/test4.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/test5.php %D/%%ADODB_TESTS%%/test5.php.sample; then rm -f %D/%%ADODB_TESTS%%/test5.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testcache.php %D/%%ADODB_TESTS%%/testcache.php.sample; then rm -f %D/%%ADODB_TESTS%%/testcache.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testdatabases.inc.php %D/%%ADODB_TESTS%%/testdatabases.inc.php.sample; then rm -f %D/%%ADODB_TESTS%%/testdatabases.inc.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testoci8.php %D/%%ADODB_TESTS%%/testoci8.php.sample; then rm -f %D/%%ADODB_TESTS%%/testoci8.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testpaging.php %D/%%ADODB_TESTS%%/testpaging.php.sample; then rm -f %D/%%ADODB_TESTS%%/testpaging.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testpear.php %D/%%ADODB_TESTS%%/testpear.php.sample; then rm -f %D/%%ADODB_TESTS%%/testpear.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testsessions.php %D/%%ADODB_TESTS%%/testsessions.php.sample; then rm -f %D/%%ADODB_TESTS%%/testsessions.php; fi
+%%ADODB_DIR%%/adodb-cryptsession.php.sample
+%%ADODB_DIR%%/adodb-csvlib.inc.php
+%%ADODB_DIR%%/adodb-errorhandler.inc.php
+%%ADODB_DIR%%/adodb-errorpear.inc.php
+%%ADODB_DIR%%/adodb-lib.inc.php
+%%ADODB_DIR%%/adodb-pear.inc.php
+%%ADODB_DIR%%/adodb-session.php.sample
+%%ADODB_DIR%%/adodb.gif
+%%ADODB_DIR%%/adodb.inc.php
+%%ADODB_DIR%%/adodb.png
+%%ADODB_DIR%%/adodb2.gif
+%%ADODB_DIR%%/adodb2.png
+%%ADODB_DIR%%/crypt.inc.php
+%%ADODB_DIR%%/server.php.sample
+%%ADODB_DIR%%/tohtml.inc.php
+%%ADODB_DRIVERS%%/adodb-access.inc.php
+%%ADODB_DRIVERS%%/adodb-ado.inc.php
+%%ADODB_DRIVERS%%/adodb-ado_access.inc.php
+%%ADODB_DRIVERS%%/adodb-ado_mssql.inc.php
+%%ADODB_DRIVERS%%/adodb-borland_ibase.inc.php
+%%ADODB_DRIVERS%%/adodb-csv.inc.php
+%%ADODB_DRIVERS%%/adodb-db2.inc.php
+%%ADODB_DRIVERS%%/adodb-fbsql.inc.php
+%%ADODB_DRIVERS%%/adodb-firebird.inc.php
+%%ADODB_DRIVERS%%/adodb-ibase.inc.php
+%%ADODB_DRIVERS%%/adodb-informix.inc.php
+%%ADODB_DRIVERS%%/adodb-mssql.inc.php
+%%ADODB_DRIVERS%%/adodb-mysql.inc.php
+%%ADODB_DRIVERS%%/adodb-mysqlt.inc.php
+%%ADODB_DRIVERS%%/adodb-oci8.inc.php
+%%ADODB_DRIVERS%%/adodb-oci8po.inc.php
+%%ADODB_DRIVERS%%/adodb-odbc.inc.php
+%%ADODB_DRIVERS%%/adodb-odbc_mssql.inc.php
+%%ADODB_DRIVERS%%/adodb-odbc_oracle.inc.php
+%%ADODB_DRIVERS%%/adodb-oracle.inc.php
+%%ADODB_DRIVERS%%/adodb-postgres.inc.php
+%%ADODB_DRIVERS%%/adodb-postgres7.inc.php
+%%ADODB_DRIVERS%%/adodb-proxy.inc.php
+%%ADODB_DRIVERS%%/adodb-sqlanywhere.inc.php
+%%ADODB_DRIVERS%%/adodb-sybase.inc.php
+%%ADODB_DRIVERS%%/adodb-vfp.inc.php
+%%ADODB_TESTS%%/benchmark.php.sample
+%%ADODB_TESTS%%/client.php.sample
+%%ADODB_TESTS%%/test.php.sample
+%%ADODB_TESTS%%/test2.php.sample
+%%ADODB_TESTS%%/test3.php.sample
+%%ADODB_TESTS%%/test4.php.sample
+%%ADODB_TESTS%%/test5.php.sample
+%%ADODB_TESTS%%/testcache.php.sample
+%%ADODB_TESTS%%/testdatabases.inc.php.sample
+%%ADODB_TESTS%%/testoci8.php.sample
+%%ADODB_TESTS%%/testpaging.php.sample
+%%ADODB_TESTS%%/testpear.php.sample
+%%ADODB_TESTS%%/testsessions.php.sample
+%%PORTDOCS%%%%DOCSDIR%%/readme.htm
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/tute.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%ADODB_DRIVERS%%
+@dirrm %%ADODB_TESTS%%
+@dirrm %%ADODB_DIR%%
+@dirrm www/data.default/php
+@unexec rmdir %D/www/data.default 2> /dev/null || true
+@unexec rmdir %D/www 2> /dev/null || true

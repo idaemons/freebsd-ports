@@ -1,17 +1,31 @@
 # New ports collection makefile for:    hpack.with_encryption
-# Using this code inside USA you violate RSA copyright
-# Version required:     0.79a0
 # Date created:         7 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1995/01/07 16:27:54 ache Exp $
+# $FreeBSD$
 #
-DISTNAME=       hpack79src
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=   ftp://src.doc.ic.ac.uk/packages/hpack/
+
+PORTNAME=	hpack
+PORTVERSION=	0.79a
+CATEGORIES=	archivers
+MASTER_SITES=   ftp://src.doc.ic.ac.uk/Mirrors/sunsite.doc.ic.ac.uk/hpack/
+DISTNAME=	hpack79src
+
+MAINTAINER=	ache@FreeBSD.org
+
 NO_WRKSUBDIR=	yes
-MAKEFILE=       makefile
-ALL_TARGET=     freebsd
+MAKEFILE=	makefile
+ALL_TARGET=	freebsd
 INSTALL_TARGET= freebsd.install
+MAN1=		hpack.1
+USE_REINPLACE=	yes
+
+post-patch:
+.for f in language/language.c cli.c
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/${f}
+.endfor
+
+post-install:
+	@${CP} ${WRKSRC}/docs/hpack.cfg ${PREFIX}/etc/hpack.cfg.dist
 
 .include <bsd.port.mk>

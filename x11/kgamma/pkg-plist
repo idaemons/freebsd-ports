@@ -1,0 +1,36 @@
+bin/xf86gammacfg
+lib/kde3/libkcm_kgamma.la
+lib/kde3/libkcm_kgamma.so
+share/applnk/Settings/LookNFeel/kgamma.desktop
+share/apps/kgamma/pics/background.png
+share/apps/kgamma/pics/cmyscale.png
+share/apps/kgamma/pics/darkgrey.png
+share/apps/kgamma/pics/greyscale.png
+share/apps/kgamma/pics/lightgrey.png
+share/apps/kgamma/pics/midgrey.png
+share/apps/kgamma/pics/rgbscale.png
+share/doc/HTML/de/kgamma/common
+share/doc/HTML/de/kgamma/index.cache.bz2
+share/doc/HTML/de/kgamma/index.docbook
+share/doc/HTML/en/kgamma/common
+share/doc/HTML/en/kgamma/index.cache.bz2
+share/doc/HTML/en/kgamma/index.docbook
+share/doc/HTML/es/kgamma/common
+share/doc/HTML/es/kgamma/index.cache.bz2
+share/doc/HTML/es/kgamma/index.docbook
+share/doc/HTML/fr/kgamma/common
+share/doc/HTML/fr/kgamma/index.cache.bz2
+share/doc/HTML/fr/kgamma/index.docbook
+share/icons/hicolor/16x16/apps/kgamma.png
+share/icons/hicolor/32x32/apps/kgamma.png
+share/icons/hicolor/48x48/apps/kgamma.png
+share/locale/de/LC_MESSAGES/kgamma.mo
+share/locale/es/LC_MESSAGES/kgamma.mo
+share/locale/fr/LC_MESSAGES/kgamma.mo
+share/locale/it/LC_MESSAGES/kgamma.mo
+@dirrm share/doc/HTML/fr/kgamma
+@dirrm share/doc/HTML/es/kgamma
+@dirrm share/doc/HTML/en/kgamma
+@dirrm share/doc/HTML/de/kgamma
+@dirrm share/apps/kgamma/pics
+@dirrm share/apps/kgamma

@@ -1,0 +1,21 @@
+--- nfbtrans.c.orig	Sat Sep 23 20:45:38 2000
++++ nfbtrans.c	Thu Nov 30 04:15:53 2000
+@@ -2,7 +2,9 @@
+ #define LINT_ARGS
+ #define DOS
+ #else
++#ifndef UNIX_PATH
+ #define UNIX_PATH "/usr/local/lib/"
++#endif
+ #endif		   /* unix */
+ #ifndef lint
+ #endif		   /* lint */
+@@ -24,7 +26,7 @@
+ #include <fcntl.h>
+ #include <stdarg.h>
+ #define MAXARGS 7
+-#if defined(sunos) || defined(linux)
++#if defined(sunos) || defined(linux) || defined(freebsd)
+ #define max(a,b)  (((a) > (b)) ? (a) : (b))
+ #define min(a,b)  (((a) < (b)) ? (a) : (b))
+ #endif

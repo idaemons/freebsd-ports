@@ -1,0 +1,21 @@
+bin/socksify
+etc/sockd.conf.example
+etc/socks.conf.example
+include/socks.h
+lib/libdsocks.la
+lib/libdsocks.so
+lib/libdsocks.so.1
+lib/libsocks.a
+lib/libsocks.la
+lib/libsocks.so
+lib/libsocks.so.1
+sbin/sockd
+%%PORTDOCS%%share/doc/dante/README.msproxy
+%%PORTDOCS%%share/doc/dante/README.socksify
+%%PORTDOCS%%share/doc/dante/README.survey
+%%PORTDOCS%%share/doc/dante/README.usage
+%%PORTDOCS%%share/doc/dante/SOCKS4.protocol
+%%PORTDOCS%%share/doc/dante/rfc1928.txt
+%%PORTDOCS%%share/doc/dante/rfc1929.txt
+%%PORTDOCS%%share/doc/dante/faq.tex
+%%PORTDOCS%%@dirrm share/doc/dante

@@ -1,0 +1,3 @@
+bin/beav
+%%PORTDOCS%%share/doc/beav/beav.txt
+%%PORTDOCS%%@dirrm share/doc/beav

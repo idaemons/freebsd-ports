@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+bin/combinediff
+bin/editdiff
+bin/filterdiff
+bin/fixcvsdiff
+bin/grepdiff
+bin/interdiff
+bin/lsdiff
+bin/rediff
+bin/recountdiff
+bin/splitdiff
+bin/unwrapdiff

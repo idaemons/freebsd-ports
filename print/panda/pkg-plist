@@ -1,0 +1,34 @@
+include/panda/constants.h
+include/panda/functions.h
+include/panda/legacy.h
+include/panda/objects.h
+include/panda/panda_tdb.h
+include/panda/panda_spinlock.h
+lib/libpanda.a
+lib/libpanda.so
+lib/libpanda.so.0
+%%PORTDOCS%%share/doc/panda/AUTHORS
+%%PORTDOCS%%share/doc/panda/CONTRIBUTORS
+%%PORTDOCS%%share/doc/panda/ChangeLog
+%%PORTDOCS%%share/doc/panda/DEV-HINTS
+%%PORTDOCS%%share/doc/panda/README
+%%PORTDOCS%%share/doc/panda/TODO
+%%PORTDOCS%%share/doc/panda/UNDERWAY
+%%PORTDOCS%%share/examples/panda/IMAGES
+%%PORTDOCS%%share/examples/panda/RedbrushAlpha.png
+%%PORTDOCS%%share/examples/panda/circles.c
+%%PORTDOCS%%share/examples/panda/empty.c
+%%PORTDOCS%%share/examples/panda/exercise.c
+%%PORTDOCS%%share/examples/panda/gnu-head.jpg
+%%PORTDOCS%%share/examples/panda/gnu.png
+%%PORTDOCS%%share/examples/panda/gnu_box.jpg
+%%PORTDOCS%%share/examples/panda/input.tif
+%%PORTDOCS%%share/examples/panda/input2.tif
+%%PORTDOCS%%share/examples/panda/legacymain.c
+%%PORTDOCS%%share/examples/panda/libpng.png
+%%PORTDOCS%%share/examples/panda/main.c
+%%PORTDOCS%%share/examples/panda/morecircles.c
+%%PORTDOCS%%share/examples/panda/template.c
+%%PORTDOCS%%@dirrm share/examples/panda
+%%PORTDOCS%%@dirrm share/doc/panda
+@dirrm include/panda

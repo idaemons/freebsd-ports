@@ -1,0 +1,33 @@
+# New ports collection makefile for:	c-nocem
+# Date created:		19.May 1999
+# Whom:			dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+
+PORTNAME=	c-nocem
+PORTVERSION=	3.6
+CATEGORIES=	news security
+MASTER_SITES=	http://sites.inka.de/~bigred/sw/ \
+		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
+
+MAINTAINER=	dinoex@FreeBSD.org
+
+BUILD_DEPENDS=	${WRKDIRPREFIX}${CNEWSSRC}/conf/substitutions:${PORTSDIR}/news/cnews:configure
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews \
+		gpg:${PORTSDIR}/security/gnupg
+
+WRKSRC=		${WRKDIR}/c-nocem
+CNEWSSRC?=	${.CURDIR}/../cnews/work
+NEWSBIN?=	${PREFIX}/libexec/cnews
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-cnews=${WRKDIRPREFIX}${CNEWSSRC}
+PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+USE_PERL5=	yes
+.endif
+
+.include <bsd.port.post.mk>

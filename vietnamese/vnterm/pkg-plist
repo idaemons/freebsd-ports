@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+bin/vnterm
+bin/VNterm
+share/doc/vnterm/README
+@dirrm share/doc/vnterm

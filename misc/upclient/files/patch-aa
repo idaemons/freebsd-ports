@@ -1,0 +1,20 @@
+--- src/Makefile.orig	Thu Oct 10 04:36:35 2002
++++ src/Makefile	Sat Oct 19 23:21:49 2002
+@@ -44,7 +44,7 @@
+ 
+ 
+ # System directories
+-prefix = /usr/local
++prefix = %%PREFIX%%
+ #prefix = /sw
+ #prefix = /opt/${PROGRAMNAME}
+ 
+@@ -55,7 +55,7 @@
+ sbindir = ${exec_prefix}/sbin
+ datadir = ${prefix}/share
+ sysconfdir = ${prefix}/etc
+-localstatedir = ${prefix}/var
++localstatedir = /var
+ 
+ # Further Reading
+ # Filesystem Hierarchy Standard 2.2 May 24, 2001

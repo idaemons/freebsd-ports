@@ -1,0 +1,44 @@
+--- Makefile	20 Sep 2002 07:24:50 -0000	1.1.1.4
++++ Makefile	20 Sep 2002 07:27:21 -0000	1.6
+@@ -1,12 +1,12 @@
+ ##################################################################
+ # You can modify CC variable if you have compiler other than GCC
+ # But the code was designed and tested with GCC
+-CC = gcc
++CC ?= gcc
+ 
+ ##################################################################
+ # Compilation flags
+ # You should comment the line below for AIX+native cc
+-FLAGS = -Wall
++CFLAGS ?= -Wall
+ 
+ ##################################################################
+ # Libraries
+@@ -37,7 +37,8 @@
+ ##################################################################
+ # Directories
+ # Install dirs
+-INSTALL_PREFIX = /usr/local
++PREFIX ?= /usr/local
++INSTALL_PREFIX = ${PREFIX}
+ APG_BIN_DIR = /bin
+ APG_MAN_DIR = /man/man1
+ APGD_BIN_DIR = /sbin
+@@ -88,13 +89,13 @@
+ cygwin: standalone
+ 
+ apg:
+-	${CC} ${FLAGS} -D${CRYPTED_PASS} -D${USE_SHA} -o ${PROGNAME} ${SOURCES} ${LIBS} ${LIBM}
++	${CC} ${CFLAGS} -D${CRYPTED_PASS} -D${USE_SHA} -o ${PROGNAME} ${SOURCES} ${LIBS} ${LIBM}
+ 
+ apgd:
+-	${CC} ${FLAGS} -DCLISERV -D${USE_SHA} -o ${CS_PROGNAME} ${SOURCES} ${CS_LIBS} ${LIBM}
++	${CC} ${CFLAGS} -DCLISERV -D${USE_SHA} -o ${CS_PROGNAME} ${SOURCES} ${CS_LIBS} ${LIBM}
+ 
+ apgbfm:
+-	${CC} ${FLAGS} -o ${BFM_PROGNAME} ${BFM_SOURCES} ${LIBM}
++	${CC} ${CFLAGS} -o ${BFM_PROGNAME} ${BFM_SOURCES} ${LIBM}
+ 
+ strip:
+ 	strip ${PROGNAME}

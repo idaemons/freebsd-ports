@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- docs/images/Makefile.in.orig	Wed Jan  9 08:47:07 2002
++++ docs/images/Makefile.in	Wed Jan  9 12:11:41 2002
+@@ -117,7 +117,7 @@
+ 	    ferite_logo_black.png
+ 
+ 
+-imagesdir = $(prefix)/share/ferite/images
++imagesdir = $(prefix)/share/doc/ferite/images
+ 
+ EXTRA_DIST = $(images_DATA)
+ subdir = docs/images

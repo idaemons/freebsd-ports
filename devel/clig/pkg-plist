@@ -1,0 +1,37 @@
+bin/clig
+share/%%VERSION%%/bin/clig
+share/%%VERSION%%/tcl/genCheckMandatory.tcl
+share/%%VERSION%%/tcl/genStruct.tcl
+share/%%VERSION%%/tcl/genShowOptionValues.tcl
+share/%%VERSION%%/tcl/genParse.tcl
+share/%%VERSION%%/tcl/genMan.tcl
+share/%%VERSION%%/tcl/genDotH.tcl
+share/%%VERSION%%/tcl/genDotC.tcl
+share/%%VERSION%%/tcl/genDefault.tcl
+share/%%VERSION%%/tcl/genUsage.tcl
+share/%%VERSION%%/tcl/genGUI.tcl
+share/%%VERSION%%/tcl/globalpg.tcl
+share/%%VERSION%%/tcl/ober.tcl
+share/%%VERSION%%/c/catArgv.c
+share/%%VERSION%%/c/missingErr.c
+share/%%VERSION%%/c/getStringOpts.c
+share/%%VERSION%%/c/getStringOpt.c
+share/%%VERSION%%/c/getIntOpts.c
+share/%%VERSION%%/c/getIntOpt.c
+share/%%VERSION%%/c/getFloatOpts.c
+share/%%VERSION%%/c/getFloatOpt.c
+share/%%VERSION%%/c/checkIntLower.c
+share/%%VERSION%%/c/checkIntHigher.c
+share/%%VERSION%%/c/checkFloatLower.c
+share/%%VERSION%%/c/checkFloatHigher.c
+share/%%VERSION%%/c/template.man
+share/doc/clig/makefile
+share/doc/clig/cmdline.cli
+share/doc/clig/main.c
+share/doc/clig/CHANGES
+share/doc/clig/WISHLIST
+@dirrm share/%%VERSION%%/bin
+@dirrm share/doc/clig
+@dirrm share/%%VERSION%%/c
+@dirrm share/%%VERSION%%/tcl
+@dirrm share/%%VERSION%%

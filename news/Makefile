@@ -1,5 +1,69 @@
-# $Id: Makefile,v 1.5 1995/01/23 20:14:55 gpalmer Exp $
+# $FreeBSD$
 #
-SUBDIR=	cnews nn nntp trn inn
+
+    SUBDIR += PicMonger
+    SUBDIR += atp
+    SUBDIR += aub
+    SUBDIR += bgrab
+    SUBDIR += c-nocem
+    SUBDIR += cleanfeed
+    SUBDIR += cleanscore
+    SUBDIR += cnews
+    SUBDIR += diablo
+    SUBDIR += dnews
+    SUBDIR += fidogate
+    SUBDIR += glitter
+    SUBDIR += gnus-emacs20
+    SUBDIR += grn
+    SUBDIR += gup
+    SUBDIR += ifmail
+    SUBDIR += ija
+    SUBDIR += inn
+    SUBDIR += inn-stable
+    SUBDIR += knews
+    SUBDIR += leafnode
+    SUBDIR += leafnode+
+    SUBDIR += multisuck
+    SUBDIR += newscache
+    SUBDIR += newsfetch
+    SUBDIR += newsfish
+    SUBDIR += newsgrab
+    SUBDIR += newspost
+    SUBDIR += newsx
+    SUBDIR += nget
+    SUBDIR += nn
+    SUBDIR += nnap
+    SUBDIR += nntp
+    SUBDIR += nntpbtr
+    SUBDIR += nntpcache
+    SUBDIR += p5-Gateway
+    SUBDIR += p5-NNTPClient
+    SUBDIR += p5-News-Article
+    SUBDIR += p5-News-Newsrc
+    SUBDIR += pan
+    SUBDIR += pan2
+    SUBDIR += pgpmoose
+    SUBDIR += plor
+    SUBDIR += pyne
+    SUBDIR += rkive
+    SUBDIR += slnr
+    SUBDIR += slrn
+    SUBDIR += slrnface
+    SUBDIR += slurp
+    SUBDIR += suck
+    SUBDIR += suck-cnews
+    SUBDIR += t-gnus
+    SUBDIR += t-gnus-emacs20
+    SUBDIR += t-gnus-mule
+    SUBDIR += t-gnus-xemacs21-mule
+    SUBDIR += tin
+    SUBDIR += trn
+    SUBDIR += trn4
+    SUBDIR += ubh
+    SUBDIR += unpost
+    SUBDIR += xmitbin
+    SUBDIR += xrn
+    SUBDIR += xvnews
+    SUBDIR += yencode
 
 .include <bsd.port.subdir.mk>

@@ -1,0 +1,10 @@
+bin/kdrill
+bin/makedic
+bin/makeedict
+share/dict/kdrill/fullkatahira.edic
+share/dict/kdrill/hira.edic
+share/dict/kdrill/hiraplus.edic
+share/dict/kdrill/kata.edic
+share/dict/kdrill/kataplus.edic
+lib/X11/doc/html/kdrill.1.html
+@dirrm share/dict/kdrill

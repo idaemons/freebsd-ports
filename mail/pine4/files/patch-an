@@ -1,0 +1,19 @@
+*** pico/osdep/os-bsf.h.orig	Wed Feb  7 14:53:26 2001
+--- pico/osdep/os-bsf.h	Thu Sep 27 23:56:53 2001
+***************
+*** 153,159 ****
+  /*
+   * Place where mail gets delivered (for pico's new mail checking)
+   */
+! #define MAILDIR		"/usr/spool/mail"
+  
+  /*
+   * What and where the tool that checks spelling is located.  If this is
+--- 153,159 ----
+  /*
+   * Place where mail gets delivered (for pico's new mail checking)
+   */
+! #define MAILDIR		"/var/mail"
+  
+  /*
+   * What and where the tool that checks spelling is located.  If this is

@@ -1,15 +1,37 @@
-# New ports collection makefile for:    tracker
-# Version required:     4.12
-# Date created:         2 Oct 1994
-# Whom:                 swallace
+# New ports collection makefile for:	tracker
+# Date created:		2 Oct 1994
+# Whom:			swallace
 #
-# $Id: Makefile,v 1.4 1995/02/02 15:09:44 ache Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       tracker
-DISTFILES=      tracker-4.12.tar.Z
-MASTER_SITES=   ftp://ftp.ens.fr/pub/dmi/users/espie/
-USE_GMAKE=      YES
-INSTALL_TARGET= install install.man
+PORTNAME=	tracker
+PORTVERSION=	5.3
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_NETBSD}
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ports@FreeBSD.org
+
+RESTRICTED=	"Non-redistributable beta"
+
+WRKSRC=		${WRKDIR}/tracker
+INSTALL_TARGET=	install install.info
+
+post-patch:
+	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
+		${WRKSRC}/Arch/PCux/audio.c > ${WRKSRC}/Arch/PCux/audio.c.new
+	@${MV} ${WRKSRC}/Arch/PCux/audio.c.new ${WRKSRC}/Arch/PCux/audio.c
+
+post-install:
+	@install-info ${PREFIX}/info/tracker.info ${PREFIX}/info/dir
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/tracker
+.for file in FAQ readme tracker.doc
+	${INSTALL_DATA} ${WRKSRC}/Docs/${file} ${PREFIX}/share/doc/tracker
+.endfor
+	@${MKDIR} ${PREFIX}/share/doc/tracker/html
+	${INSTALL_DATA} ${WRKSRC}/Docs/Html/* ${PREFIX}/share/doc/tracker/html
+.endif
 
 .include <bsd.port.mk>

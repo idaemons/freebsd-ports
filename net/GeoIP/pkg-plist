@@ -1,0 +1,11 @@
+bin/geoiplookup
+bin/geoipupdate
+etc/GeoIP.conf.default
+include/GeoIP.h
+include/GeoIPUpdate.h
+lib/libGeoIP.a
+lib/libGeoIP.la
+lib/libGeoIP.so
+lib/libGeoIP.so.2
+share/GeoIP/GeoIP.dat
+@unexec rmdir %D/share/GeoIP 2>/dev/null || true

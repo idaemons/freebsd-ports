@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Mar 21 16:47:44 2002
++++ Makefile.in	Thu Mar 21 16:47:57 2002
+@@ -22,7 +22,7 @@
+ RM=@RM@
+ 
+ # Default CFLAGS
+-CFLAGS = -g -O2 -DNDEBUG
++CFLAGS += -DNDEBUG
+ 
+ # Default make flags - you may want to uncomment this on a multicpu machine
+ #MFLAGS = -j 4

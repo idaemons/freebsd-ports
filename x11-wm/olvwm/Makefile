@@ -1,22 +1,32 @@
 # New ports collection makefile for:	olvwm
-# Version required:	4.1
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $id: Makefile,v 1.0 1994/10/21 00:00:00 smace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	olvwm4
-USE_IMAKE=	yes
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
+PORTNAME=	olvwm
+PORTVERSION=	4.2
+CATEGORIES=	x11-wm
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
+		${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	window_managers
+DISTNAME=	${PORTNAME}4
 EXTRACT_SUFX=	.tar.Z
-DISTFILES=	olvwm4.tar.Z olvwm4.Patch01.Z
-EXTRACT_ONLY=	olvwm4.tar.Z
-NO_WRKSUBDIR=	yes
-LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib
 
-pre-configure:
-	@echo "Applying olvwm4 Patch01"
-	@zcat ${DISTDIR}/olvwm4.Patch01.Z | patch -E -d ${WRKSRC} --quiet
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	olvwm4.Patch01.Z \
+		olvwm4.Patch02.Z
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	green@FreeBSD.org
+
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
+
+NO_WRKSUBDIR=	yes
+USE_IMAKE=	yes
+USE_XPM=	yes
+MAN1=		olvwm.1 olvwmrc.1
+XFREE86_HTML_MAN=	no
 
 .include <bsd.port.mk>

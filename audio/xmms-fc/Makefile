@@ -1,0 +1,24 @@
+# New ports collection makefile for:	xmms-fc
+# Date created:				8 Jan 2002
+# Whom:					David Yeske <dyeske@yahoo.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xmms-fc
+PORTVERSION=	0.5.3
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	dyeske@yahoo.com
+
+BUILD_DEPENDS=  xmms-config:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=    xmms:${PORTSDIR}/multimedia/xmms
+
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+
+.include <bsd.port.mk>

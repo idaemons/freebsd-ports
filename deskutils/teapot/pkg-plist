@@ -1,0 +1,15 @@
+bin/teapot
+%%PORTDOCS%%share/doc/teapot/teapot.doc
+%%PORTDOCS%%share/doc/teapot/teapot.html
+%%PORTDOCS%%share/doc/teapot/teapot.ps
+%%PORTDOCS%%share/examples/teapot/asqrt
+%%PORTDOCS%%share/examples/teapot/asqrt.README
+%%PORTDOCS%%share/examples/teapot/blink
+%%PORTDOCS%%share/examples/teapot/counter
+%%PORTDOCS%%share/examples/teapot/counter.README
+%%PORTDOCS%%share/examples/teapot/life
+%%PORTDOCS%%share/examples/teapot/life.README
+%%PORTDOCS%%share/examples/teapot/sqrt
+%%PORTDOCS%%share/examples/teapot/sqrt.README
+%%PORTDOCS%%@dirrm share/examples/teapot
+%%PORTDOCS%%@dirrm share/doc/teapot

@@ -1,0 +1,26 @@
+# New ports collection makefile for:   gtkdps
+# Date created:        21 April 1998
+# Whom:                Yukihiro Nakai <Nakai@technologist.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gtkdps
+PORTVERSION=	0.3.2
+CATEGORIES=	graphics
+MASTER_SITES= 	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gtkDPS/
+DISTNAME=	gtkDPS-${PORTVERSION}
+
+MAINTAINER=	nakai@FreeBSD.org
+
+BUILD_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
+RUN_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
+
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
+		--with-dps-libraries=${X11BASE}/lib
+
+.include <bsd.port.mk>

@@ -1,0 +1,49 @@
+
+$FreeBSD$
+
+--- configure.orig	Sun Apr 14 02:57:31 2002
++++ configure	Fri May 10 01:04:55 2002
+@@ -670,9 +670,9 @@
+ 
+ # libtool versioning
+ LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
+-LT_CURRENT=`expr $SDL_MICRO_VERSION - $SDL_INTERFACE_AGE`
++LT_CURRENT=$SDL_INTERFACE_AGE
+ LT_REVISION=$SDL_INTERFACE_AGE
+-LT_AGE=`expr $SDL_BINARY_AGE - $SDL_INTERFACE_AGE`
++LT_AGE=$SDL_INTERFACE_AGE
+ 
+ 
+ 
+@@ -2786,7 +2786,7 @@
+ 
+ 
+ SDL_CFLAGS=""
+-SDL_LIBS="-lSDL"
++SDL_LIBS="-lSDL-1.1"
+ 
+ 
+ case "$target" in
+@@ -5737,8 +5737,8 @@
+ #            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+             ;;
+         *-*-freebsd*)
+-            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+-            pthread_lib="-pthread"
++            pthread_cflags="-D_REENTRANT ${PTHREAD_CFLAGS}"
++            pthread_lib="${PTHREAD_LIBS}"
+             ;;
+         *-*-netbsd*)
+             pthread_cflags="-I/usr/pkg/include -D_REENTRANT"
+@@ -6700,8 +6700,9 @@
+         #fi
+         # Set up files for the joystick library
+         if test x$enable_joystick = xyes; then
+-            JOYSTICK_SUBDIRS="$JOYSTICK_SUBDIRS bsd"
+-            JOYSTICK_DRIVERS="$JOYSTICK_DRIVERS bsd/libjoystick_bsd.la"
++            JOYSTICK_SUBDIRS="$JOYSTICK_SUBDIRS dummy"
++            JOYSTICK_DRIVERS="$JOYSTICK_DRIVERS dummy/libjoystick_dummy.la"
++            SYSTEM_LIBS="$SYSTEM_LIBS $USB_LIBS"
+         fi
+         # Set up files for the cdrom library
+         if test x$enable_cdrom = xyes; then

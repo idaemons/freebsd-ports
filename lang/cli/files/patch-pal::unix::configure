@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- pal/unix/configure.orig	Fri Jun 14 06:01:07 2002
++++ pal/unix/configure	Fri Jul 26 17:53:12 2002
+@@ -1037,14 +1037,14 @@
+ CFLAGS="$CFLAGS -Wall -fno-builtin -fno-exceptions -fno-rtti"
+ 
+ if test "$NTDEBUG" != "ntsdnodbg"; then
+-   CFLAGS="$CFLAGS -g"
++#   CFLAGS="$CFLAGS -g"
+ fi
+ 
+ if test "$BUILD_ALT_DIR" = "df"; then
+-   CFLAGS="$CFLAGS -O2"
++#   CFLAGS="$CFLAGS -O2"
+ fi
+ if test "$BUILD_ALT_DIR" = "r"; then
+-   CFLAGS="$CFLAGS -O2"
++#   CFLAGS="$CFLAGS -O2"
+ fi
+ CFLAGS_NO_PIC="$CFLAGS"
+ CFLAGS="$CFLAGS -fPIC -DPIC"

@@ -1,0 +1,196 @@
+@cwd /usr/local
+bin/faxalter
+bin/faxcover
+bin/faxmail
+bin/faxrm
+bin/faxstat
+bin/sendfax
+bin/sendpage
+etc/rc.d/hylafax.sh.sample
+lib/fax/faxcover.ps
+lib/fax/faxcover_example_sgi.ps
+lib/fax/faxmail.ps
+lib/fax/hfaxd.conf
+lib/fax/pagesizes
+lib/fax/typerules
+sbin/choptest
+sbin/cqtest
+sbin/dialtest
+sbin/faxabort
+sbin/faxaddmodem
+sbin/faxadduser
+sbin/faxanswer
+sbin/faxconfig
+sbin/faxcron
+sbin/faxdeluser
+sbin/faxgetty
+sbin/faxinfo
+sbin/faxmodem
+sbin/faxmsg
+sbin/faxq
+sbin/faxqclean
+sbin/faxquit
+sbin/faxsend
+sbin/faxsetup
+sbin/faxsetup.bsdi
+sbin/faxsetup.irix
+sbin/faxsetup.linux
+sbin/faxstate
+sbin/faxwatch
+sbin/hfaxd
+sbin/hylafax
+sbin/lockname
+sbin/ondelay
+sbin/pagesend
+sbin/probemodem
+sbin/recvstats
+sbin/tagtest
+sbin/textfmt
+sbin/tiffcheck
+sbin/tsitest
+sbin/typetest
+sbin/xferfaxstats
+@dirrm lib/fax
+@cwd /var/spool/hylafax
+COPYRIGHT
+bin/archive
+bin/faxrcvd
+bin/mkcover
+bin/notify
+bin/notify.awk
+bin/pdf2fax.gs
+bin/pcl2fax
+bin/pollrcvd
+bin/ps2fax.dps
+bin/ps2fax.gs
+bin/ps2fax.imp
+bin/tiff2fax
+bin/wedged
+config/att-dataport
+config/att-dataport-2
+config/att-dataport-2.0
+config/att-dpexpress-2
+config/cirrus
+config/class1
+config/class1.0
+config/class2
+config/class2.0
+config/class2.1
+config/digi
+config/digi-2
+config/digi-20
+config/davicom-2
+config/dsi-scout+
+config/e-tech
+config/eicon
+config/eicon-2
+config/elsa-microlink-56k-basic-2.0
+config/everex-2496d
+config/exar
+config/gvc-288
+config/gvc-288-2
+config/hayes
+config/intel-400e
+config/lucent
+config/lucent-isa
+config/lucent-mt-2
+config/lucent-mt-20
+config/lucent-mt-21
+config/moto-288
+config/mt-1432
+config/nuvo-voyager
+config/ppi-pm14400fxmt
+config/ppi-pm14400fxsa
+config/prometheus
+config/rc144ac
+config/rc144ac-1
+config/rc288dpi
+config/rc288dpi-1
+config/rc32acl
+config/rc32acl-1
+config/rockwell-k56
+config/rockwell-rc
+config/sierra
+config/skel
+config/telebit-qblazer
+config/telebit-t3000
+config/telebit-wb
+config/topic
+config/tricom2842
+config/uds-fastalk
+config/umc92144
+config/umc9624
+config/usr-2.0
+config/usr-rts
+config/usr-xon
+config/zyxel-1496e
+config/zyxel-1496e-1
+config/zyxel-1496e-2.0
+config/zyxel-2864
+etc/cover.templ
+etc/dialrules
+etc/dialrules.europe
+etc/dialrules.sf-ba
+etc/dpsprinter.ps
+etc/hosts.hfaxd
+etc/lutRS18.pcf
+etc/xferfaxlog
+@exec chown uucp:dialer %D/fax
+@comment pkg_* can't deal with fifos if specified as a file
+@exec mkfifo %D/FIFO
+@exec chown uucp:dialer %D/FIFO
+@exec chmod 600 %D/FIFO
+@unexec rm %D/FIFO
+@exec mkdir %D/archive
+@exec chown uucp:dialer %D/archive
+@exec chmod 700 %D/archive
+@exec mkdir %D/client
+@exec chown uucp:dialer %D/client
+@exec chmod 755 %D/client
+@exec mkdir %D/dev
+@exec chown uucp:dialer %D/dev
+@exec chmod 755 %D/dev
+@exec mkdir %D/docq
+@exec chown uucp:dialer %D/docq
+@exec chmod 700 %D/docq
+@exec mkdir %D/doneq
+@exec chown uucp:dialer %D/doneq
+@exec chmod 700 %D/doneq
+@exec mkdir %D/info
+@exec chown uucp:dialer %D/info
+@exec chmod 755 %D/info
+@exec mkdir %D/log
+@exec chown uucp:dialer %D/log
+@exec chmod 755 %D/log
+@exec mkdir %D/pollq
+@exec chown uucp:dialer %D/pollq
+@exec chmod 700 %D/pollq
+@exec mkdir %D/recvq
+@exec chown uucp:dialer %D/recvq
+@exec chmod 755 %D/recvq
+@exec mkdir %D/sendq
+@exec chown uucp:dialer %D/sendq
+@exec chmod 700 %D/sendq
+@exec mkdir %D/status
+@exec chown uucp:dialer %D/status
+@exec chmod 755 %D/status
+@exec mkdir %D/tmp
+@exec chown uucp:dialer %D/tmp
+@exec chmod 700 %D/tmp
+@dirrm archive
+@dirrm bin
+@dirrm client
+@dirrm config
+@dirrm dev
+@dirrm docq
+@dirrm doneq
+@dirrm etc
+@dirrm info
+@dirrm log
+@dirrm pollq
+@dirrm recvq
+@dirrm sendq
+@dirrm status
+@dirrm tmp
+@cwd /var/spool
+@dirrm hylafax

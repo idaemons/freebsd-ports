@@ -1,0 +1,9 @@
+@unexec sh %D/etc/rc.d/ltmdm.sh stop
+etc/rc.d/ltmdm.sh
+share/ltmdm/ltmdm.ko
+@dirrm share/ltmdm
+%%PORTDOCS%%share/doc/ltmdm/README.TXT
+%%PORTDOCS%%share/doc/ltmdm/README-en.TXT
+%%PORTDOCS%%share/doc/ltmdm/INSTALL.TXT
+%%PORTDOCS%%share/doc/ltmdm/INSTALL-en.TXT
+%%PORTDOCS%%@dirrm share/doc/ltmdm

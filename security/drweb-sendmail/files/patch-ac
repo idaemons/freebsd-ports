@@ -1,0 +1,25 @@
+--- doc/sendmail/configure.orig	Fri Sep 20 19:29:05 2002
++++ doc/sendmail/configure	Mon Oct  7 03:28:04 2002
+@@ -110,7 +110,7 @@
+ # Read transport
+ 
+ POS=`$GREP -i PidFile $DAEMON_INI | $GREP -v ";"`
+-if [ "x$POS" = "x" ] ; then
++if [ "x" = "x" ] ; then
+     echo
+     echo -n "Daemon pidfile not defined in ini-file ..."
+     POS=`$GREP -i SocketMode $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /[Tt][Cc][Pp]/ ) }'`
+@@ -266,8 +266,13 @@
+             echo "Edit one of configuration files and try again."
+             exit 1
+         fi 
++    else
++	echo "Press Enter"
++	read INPUT
+     fi
+ else 
++    echo "Press Enter"
++    read INPUT
+     FILTER_TIMEOUT=0
+ fi
+ 

@@ -1,0 +1,92 @@
+Some brief notes:
+
+1) This package is intended to run on FreeBSD 5.0-current or FreeBSD 4.X, i386
+processors only.
+
+Do not use libc_r with the linuxthreads port, and do not compile/link with the
+-pthread option (which pulls in libc_r).  Rather, link with libc (which you will
+get by default).
+
+Compile your applications that use the linuxthreads port with the following
+command line options:
+
+  -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -llthread -llgcc_r
+
+Note that the include (-I<path>) directive shown here should appear before any
+other include directive that would cause the compiler to find the FreeBSD file
+/usr/include/pthread.h.  Using the FreeBSD pthread.h instead of the linuxthreads
+pthread.h will result in an app that fails in many odd and maybe spectacular
+ways.
+
+In order to facilitate porting applications which expect a libpthread, you can
+create the following symlinks if you want:
+
+  ln -s /usr/local/lib/liblthread.a /usr/lib/libpthread.a
+  ln -s /usr/local/lib/liblthread_p.a /usr/lib/libpthread_p.a
+  ln -s /usr/local/lib/liblthread.so.2 /usr/lib/libpthread.so.2
+  ln -s /usr/local/lib/liblthread.so.2 /usr/lib/libpthread.so
+  /sbin/ldconfig -m /usr/lib
+
+If you do this, you can instead use:
+
+  -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -lpthread -llgcc_r
+
+Another option is to create a custom gcc specs file that tells the linker which
+version of libgcc to use.  To do this, create a file with the following in it:
+
+--- (/foo/specs) cut here ---
+*libgcc:
+/usr/local/lib/liblgcc_r.a
+--- (/foo/specs) cut here ---
+
+Then use the following command line options:
+
+  -B/foo/ -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -llthread
+
+or if you created symlinks:
+
+  -B/foo/ -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -lpthread
+
+2) If you plan on having lots of threads, check the sysctl value of
+kern.maxproc.  Each kernel thread counts against maxproc.  You can increase
+maxproc by changing the MAXUSERS value in your kernel config file.  maxproc is
+set at 20 + 16 * MAXUSERS.
+
+3) Be aware of the following libc issues:
+
+  a) Not all libc calls are thread safe.  In particular gmtime, localtime, etc
+  are not thread safe.  In general, where the pthreads spec calls for "_r"
+  functions, these are either not provided, or if provided are not thread safe
+  (in most cases) and the related libc calls are not thread safe.  This differs
+  somewhat from the FreeBSD libc_r library, where some, but not all, of these
+  functions are both thread safe and have "_r" versions.
+
+  b) Not all of the libc calls that are supposed to be cancellation points are
+  implemented as such.  While linux threads has the cancel functions
+  implemented, deferred cancellation will not work as required by POSIX
+  1003.1c-1995, since the co-operation needed from libc is not complete.
+
+  c) The mutex wrapper functions only provide standard linuxthreads mutexes
+  (i.e. non-recursive mutexes).  This might lead to deadlocks if libc
+  depends on recursive mutexes.
+
+4) Be aware of the following libgcc issue:
+
+   FreeBSD 4.* (gcc 2.*):
+
+   __register_frame_info() and __get_eh_info() from libgcc.a are linked
+   into shared libraries that use exceptions, e.g. libstdc++.  Those
+   functions are not compatible with linuxthreads due to pthread_mutex_t
+   and pthread_once_t having different sizes and static initializers.
+   Linking the shared linuxthreads library before any such library causes
+   the liblgcc_r.a version of those functions to be used.
+
+   FreeBSD 5.* (gcc 3.*):
+
+   __register_frame_info() and __frame_state_for() from libgcc.a are
+   linked into shared libraries that use exceptions, e.g. libstdc++.
+   Those functions are not compatible with linuxthreads due to
+   pthread_mutex_t and pthread_once_t having different sizes and static
+   initializers.  Linking the shared linuxthreads library before any such
+   library causes the liblgcc_r.a version of those functions to be used.
+   Use liblstdc++ and liblsupc++.

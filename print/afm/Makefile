@@ -1,11 +1,23 @@
+# New ports collection makefile for:    afm
+# Date created:         23 November 1994
+# Whom:                 ljo
+#
+# $FreeBSD$
+#
+
+PORTNAME=	afm
+PORTVERSION=	1.0
+CATEGORIES=	print
+MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
 DISTNAME=	afm
-DISTFILES=	afm-tar.Z
-MASTER_SITES=	ftp://sgi.com/sgi/fax/source/
 EXTRACT_SUFX=   -tar.Z
 
-pre-patch:
-	rm -rf ${WRKSRC}/RCS
+MAINTAINER=	ports@FreeBSD.org
 
-build:
+pre-patch:
+	@${RM} -rf ${WRKSRC}/RCS
+
+do-build:
+	@${TRUE}
 
 .include <bsd.port.mk>

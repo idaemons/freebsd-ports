@@ -1,0 +1,16 @@
+	ATTENTIONATTENTION:
+
+Please make sure that you read /var/qmail/doc/PORT_NOTES.
+It contains important information about testing and configuring
+qmail, and finally replacing sendmail with qmail.
+
+You should also add /var/qmail/man to your MANPATH (see manpath(1)
+or login.conf(5)).
+
+You can enable qmail as your default mailer:
+
+# this will disable the default MTA
+1) do "make disable-sendmail"
+
+# enable qmail as your default MTA
+2) do "make enable-qmail"

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Nov 22 01:08:50 2002
++++ Makefile.in	Fri Nov 22 01:10:29 2002
+@@ -123,7 +123,7 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+-SUBDIRS = po gmime pan docs tests
++SUBDIRS = po gmime pan docs
+ 
+ DESKTOP_IN_FILES = pan.desktop.in
+ DESKTOP_FILES = $(DESKTOP_IN_FILES:.desktop.in=.desktop)

@@ -1,0 +1,312 @@
+@unexec if cmp -s %D/%%MMDIR%%/Mailman/mm_cfg.py %D/%%MMDIR%%/Mailman/mm_cfg.py.dist; then rm -f %D/%%MMDIR%%/Mailman/mm_cfg.py; fi
+@unexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
+@exec mkdir -p %D/%%MMDIR%%/archives/private
+@exec mkdir -p %D/%%MMDIR%%/archives/public
+@exec mkdir -p %D/%%MMDIR%%/archives
+@exec mkdir -p %D/%%MMDIR%%/lists
+@exec mkdir -p %D/%%MMDIR%%/locks
+@exec mkdir -p %D/%%MMDIR%%/logs
+@exec mkdir -p %D/%%MMDIR%%/qfiles
+@exec mkdir -p %D/%%MMDIR%%/spam
+%%IMGDIR%%/PythonPowered.png
+%%IMGDIR%%/gnu-head-tiny.jpg
+%%IMGDIR%%/mailman.jpg
+%%IMGDIR%%/powerlogo.gif
+%%MMDIR%%/Mailman/Archiver/Archiver.py
+%%MMDIR%%/Mailman/Archiver/Archiver.pyc
+%%MMDIR%%/Mailman/Archiver/HyperArch.py
+%%MMDIR%%/Mailman/Archiver/HyperArch.pyc
+%%MMDIR%%/Mailman/Archiver/HyperDatabase.py
+%%MMDIR%%/Mailman/Archiver/HyperDatabase.pyc
+%%MMDIR%%/Mailman/Archiver/__init__.py
+%%MMDIR%%/Mailman/Archiver/__init__.pyc
+%%MMDIR%%/Mailman/Archiver/pipermail.py
+%%MMDIR%%/Mailman/Archiver/pipermail.pyc
+%%MMDIR%%/Mailman/Autoresponder.py
+%%MMDIR%%/Mailman/Autoresponder.pyc
+%%MMDIR%%/Mailman/Bouncer.py
+%%MMDIR%%/Mailman/Bouncer.pyc
+%%MMDIR%%/Mailman/Bouncers/BouncerAPI.py
+%%MMDIR%%/Mailman/Bouncers/BouncerAPI.pyc
+%%MMDIR%%/Mailman/Bouncers/Caiwireless.py
+%%MMDIR%%/Mailman/Bouncers/Caiwireless.pyc
+%%MMDIR%%/Mailman/Bouncers/Catchall.py
+%%MMDIR%%/Mailman/Bouncers/Catchall.pyc
+%%MMDIR%%/Mailman/Bouncers/Compuserve.py
+%%MMDIR%%/Mailman/Bouncers/Compuserve.pyc
+%%MMDIR%%/Mailman/Bouncers/DSN.py
+%%MMDIR%%/Mailman/Bouncers/DSN.pyc
+%%MMDIR%%/Mailman/Bouncers/Exim.py
+%%MMDIR%%/Mailman/Bouncers/Exim.pyc
+%%MMDIR%%/Mailman/Bouncers/GroupWise.py
+%%MMDIR%%/Mailman/Bouncers/GroupWise.pyc
+%%MMDIR%%/Mailman/Bouncers/Microsoft.py
+%%MMDIR%%/Mailman/Bouncers/Microsoft.pyc
+%%MMDIR%%/Mailman/Bouncers/Netscape.py
+%%MMDIR%%/Mailman/Bouncers/Netscape.pyc
+%%MMDIR%%/Mailman/Bouncers/Postfix.py
+%%MMDIR%%/Mailman/Bouncers/Postfix.pyc
+%%MMDIR%%/Mailman/Bouncers/Qmail.py
+%%MMDIR%%/Mailman/Bouncers/Qmail.pyc
+%%MMDIR%%/Mailman/Bouncers/SMTP32.py
+%%MMDIR%%/Mailman/Bouncers/SMTP32.pyc
+%%MMDIR%%/Mailman/Bouncers/SimpleMatch.py
+%%MMDIR%%/Mailman/Bouncers/SimpleMatch.pyc
+%%MMDIR%%/Mailman/Bouncers/Smail.py
+%%MMDIR%%/Mailman/Bouncers/Smail.pyc
+%%MMDIR%%/Mailman/Bouncers/Yahoo.py
+%%MMDIR%%/Mailman/Bouncers/Yahoo.pyc
+%%MMDIR%%/Mailman/Bouncers/__init__.py
+%%MMDIR%%/Mailman/Bouncers/__init__.pyc
+%%MMDIR%%/Mailman/Cgi/Auth.py
+%%MMDIR%%/Mailman/Cgi/Auth.pyc
+%%MMDIR%%/Mailman/Cgi/__init__.py
+%%MMDIR%%/Mailman/Cgi/__init__.pyc
+%%MMDIR%%/Mailman/Cgi/admin.py
+%%MMDIR%%/Mailman/Cgi/admin.pyc
+%%MMDIR%%/Mailman/Cgi/admindb.py
+%%MMDIR%%/Mailman/Cgi/admindb.pyc
+%%MMDIR%%/Mailman/Cgi/edithtml.py
+%%MMDIR%%/Mailman/Cgi/edithtml.pyc
+%%MMDIR%%/Mailman/Cgi/handle_opts.py
+%%MMDIR%%/Mailman/Cgi/handle_opts.pyc
+%%MMDIR%%/Mailman/Cgi/listinfo.py
+%%MMDIR%%/Mailman/Cgi/listinfo.pyc
+%%MMDIR%%/Mailman/Cgi/options.py
+%%MMDIR%%/Mailman/Cgi/options.pyc
+%%MMDIR%%/Mailman/Cgi/private.py
+%%MMDIR%%/Mailman/Cgi/private.pyc
+%%MMDIR%%/Mailman/Cgi/roster.py
+%%MMDIR%%/Mailman/Cgi/roster.pyc
+%%MMDIR%%/Mailman/Cgi/subscribe.py
+%%MMDIR%%/Mailman/Cgi/subscribe.pyc
+%%MMDIR%%/Mailman/Cookie.py
+%%MMDIR%%/Mailman/Cookie.pyc
+%%MMDIR%%/Mailman/Crypt.py
+%%MMDIR%%/Mailman/Crypt.pyc
+%%MMDIR%%/Mailman/Defaults.py
+%%MMDIR%%/Mailman/Defaults.pyc
+%%MMDIR%%/Mailman/Deliverer.py
+%%MMDIR%%/Mailman/Deliverer.pyc
+%%MMDIR%%/Mailman/Digester.py
+%%MMDIR%%/Mailman/Digester.pyc
+%%MMDIR%%/Mailman/EncWord.py
+%%MMDIR%%/Mailman/EncWord.pyc
+%%MMDIR%%/Mailman/Errors.py
+%%MMDIR%%/Mailman/Errors.pyc
+%%MMDIR%%/Mailman/GatewayManager.py
+%%MMDIR%%/Mailman/GatewayManager.pyc
+%%MMDIR%%/Mailman/HTMLFormatter.py
+%%MMDIR%%/Mailman/HTMLFormatter.pyc
+%%MMDIR%%/Mailman/Handlers/Acknowledge.py
+%%MMDIR%%/Mailman/Handlers/Acknowledge.pyc
+%%MMDIR%%/Mailman/Handlers/AfterDelivery.py
+%%MMDIR%%/Mailman/Handlers/AfterDelivery.pyc
+%%MMDIR%%/Mailman/Handlers/Approve.py
+%%MMDIR%%/Mailman/Handlers/Approve.pyc
+%%MMDIR%%/Mailman/Handlers/CalcRecips.py
+%%MMDIR%%/Mailman/Handlers/CalcRecips.pyc
+%%MMDIR%%/Mailman/Handlers/Cleanse.py
+%%MMDIR%%/Mailman/Handlers/Cleanse.pyc
+%%MMDIR%%/Mailman/Handlers/CookHeaders.py
+%%MMDIR%%/Mailman/Handlers/CookHeaders.pyc
+%%MMDIR%%/Mailman/Handlers/Decorate.py
+%%MMDIR%%/Mailman/Handlers/Decorate.pyc
+%%MMDIR%%/Mailman/Handlers/HandlerAPI.py
+%%MMDIR%%/Mailman/Handlers/HandlerAPI.pyc
+%%MMDIR%%/Mailman/Handlers/Hold.py
+%%MMDIR%%/Mailman/Handlers/Hold.pyc
+%%MMDIR%%/Mailman/Handlers/Replybot.py
+%%MMDIR%%/Mailman/Handlers/Replybot.pyc
+%%MMDIR%%/Mailman/Handlers/SMTPDirect.py
+%%MMDIR%%/Mailman/Handlers/SMTPDirect.pyc
+%%MMDIR%%/Mailman/Handlers/Sendmail.py
+%%MMDIR%%/Mailman/Handlers/Sendmail.pyc
+%%MMDIR%%/Mailman/Handlers/SpamDetect.py
+%%MMDIR%%/Mailman/Handlers/SpamDetect.pyc
+%%MMDIR%%/Mailman/Handlers/ToArchive.py
+%%MMDIR%%/Mailman/Handlers/ToArchive.pyc
+%%MMDIR%%/Mailman/Handlers/ToDigest.py
+%%MMDIR%%/Mailman/Handlers/ToDigest.pyc
+%%MMDIR%%/Mailman/Handlers/ToUsenet.py
+%%MMDIR%%/Mailman/Handlers/ToUsenet.pyc
+%%MMDIR%%/Mailman/Handlers/__init__.py
+%%MMDIR%%/Mailman/Handlers/__init__.pyc
+%%MMDIR%%/Mailman/ListAdmin.py
+%%MMDIR%%/Mailman/ListAdmin.pyc
+%%MMDIR%%/Mailman/LockFile.py
+%%MMDIR%%/Mailman/LockFile.pyc
+%%MMDIR%%/Mailman/Logging/Logger.py
+%%MMDIR%%/Mailman/Logging/Logger.pyc
+%%MMDIR%%/Mailman/Logging/MultiLogger.py
+%%MMDIR%%/Mailman/Logging/MultiLogger.pyc
+%%MMDIR%%/Mailman/Logging/StampedLogger.py
+%%MMDIR%%/Mailman/Logging/StampedLogger.pyc
+%%MMDIR%%/Mailman/Logging/Syslog.py
+%%MMDIR%%/Mailman/Logging/Syslog.pyc
+%%MMDIR%%/Mailman/Logging/Utils.py
+%%MMDIR%%/Mailman/Logging/Utils.pyc
+%%MMDIR%%/Mailman/Logging/__init__.py
+%%MMDIR%%/Mailman/Logging/__init__.pyc
+%%MMDIR%%/Mailman/MailCommandHandler.py
+%%MMDIR%%/Mailman/MailCommandHandler.pyc
+%%MMDIR%%/Mailman/MailList.py
+%%MMDIR%%/Mailman/MailList.pyc
+%%MMDIR%%/Mailman/Mailbox.py
+%%MMDIR%%/Mailman/Mailbox.pyc
+%%MMDIR%%/Mailman/Message.py
+%%MMDIR%%/Mailman/Message.pyc
+%%MMDIR%%/Mailman/Pending.py
+%%MMDIR%%/Mailman/Pending.pyc
+%%MMDIR%%/Mailman/SecurityManager.py
+%%MMDIR%%/Mailman/SecurityManager.pyc
+%%MMDIR%%/Mailman/Utils.py
+%%MMDIR%%/Mailman/Utils.pyc
+%%MMDIR%%/Mailman/Version.py
+%%MMDIR%%/Mailman/Version.pyc
+%%MMDIR%%/Mailman/__init__.py
+%%MMDIR%%/Mailman/__init__.pyc
+%%MMDIR%%/Mailman/aliases.py
+%%MMDIR%%/Mailman/aliases.pyc
+%%MMDIR%%/Mailman/htmlformat.py
+%%MMDIR%%/Mailman/htmlformat.pyc
+%%MMDIR%%/Mailman/mm_cfg.py.dist
+@exec [ -f %B/mm_cfg.py ] || cp %B/%f %B/mm_cfg.py
+%%MMDIR%%/Mailman/pythonlib/StringIO.py
+%%MMDIR%%/Mailman/pythonlib/StringIO.pyc
+%%MMDIR%%/Mailman/pythonlib/__init__.py
+%%MMDIR%%/Mailman/pythonlib/__init__.pyc
+%%MMDIR%%/Mailman/pythonlib/cgi.py
+%%MMDIR%%/Mailman/pythonlib/cgi.pyc
+%%MMDIR%%/Mailman/pythonlib/nntplib.py
+%%MMDIR%%/Mailman/pythonlib/nntplib.pyc
+%%MMDIR%%/Mailman/pythonlib/rfc822.py
+%%MMDIR%%/Mailman/pythonlib/rfc822.pyc
+%%MMDIR%%/Mailman/pythonlib/smtplib.py
+%%MMDIR%%/Mailman/pythonlib/smtplib.pyc
+%%MMDIR%%/Mailman/pythonlib/tempfile.py
+%%MMDIR%%/Mailman/pythonlib/tempfile.pyc
+%%MMDIR%%/Mailman/versions.py
+%%MMDIR%%/Mailman/versions.pyc
+%%MMDIR%%/bin/add_members
+%%MMDIR%%/bin/arch
+%%MMDIR%%/bin/check_db
+%%MMDIR%%/bin/check_perms
+%%MMDIR%%/bin/clone_member
+%%MMDIR%%/bin/config_list
+%%MMDIR%%/bin/digest_arch
+%%MMDIR%%/bin/dumpdb
+%%MMDIR%%/bin/find_member
+%%MMDIR%%/bin/list_lists
+%%MMDIR%%/bin/list_members
+%%MMDIR%%/bin/mmsitepass
+%%MMDIR%%/bin/move_list
+%%MMDIR%%/bin/newlist
+%%MMDIR%%/bin/paths.py
+%%MMDIR%%/bin/paths.pyc
+%%MMDIR%%/bin/remove_members
+%%MMDIR%%/bin/rmlist
+%%MMDIR%%/bin/sync_members
+%%MMDIR%%/bin/update
+%%MMDIR%%/bin/version
+%%MMDIR%%/bin/withlist
+%%MMDIR%%/cgi-bin/admin
+%%MMDIR%%/cgi-bin/admindb
+%%MMDIR%%/cgi-bin/edithtml
+%%MMDIR%%/cgi-bin/handle_opts
+%%MMDIR%%/cgi-bin/listinfo
+%%MMDIR%%/cgi-bin/options
+%%MMDIR%%/cgi-bin/private
+%%MMDIR%%/cgi-bin/roster
+%%MMDIR%%/cgi-bin/subscribe
+%%MMDIR%%/cron/bumpdigests
+%%MMDIR%%/cron/checkdbs
+%%MMDIR%%/cron/crontab.in
+%%MMDIR%%/cron/gate_news
+%%MMDIR%%/cron/mailpasswds
+%%MMDIR%%/cron/nightly_gzip
+%%MMDIR%%/cron/paths.py
+%%MMDIR%%/cron/paths.pyc
+%%MMDIR%%/cron/qrunner
+%%MMDIR%%/cron/senddigests
+%%MMDIR%%/data/last_mailman_version
+%%MMDIR%%/data/pending_subscriptions.db
+%%MMDIR%%/filters/bowa-strip
+%%MMDIR%%/icons/PythonPowered.png
+%%MMDIR%%/icons/gnu-head-tiny.jpg
+%%MMDIR%%/icons/mailman-large.jpg
+%%MMDIR%%/icons/mailman.jpg
+%%MMDIR%%/mail/wrapper
+%%MMDIR%%/scripts/answer_majordomo_mail
+%%MMDIR%%/scripts/driver
+%%MMDIR%%/scripts/mailcmd
+%%MMDIR%%/scripts/mailowner
+%%MMDIR%%/scripts/paths.py
+%%MMDIR%%/scripts/paths.pyc
+%%MMDIR%%/scripts/post
+%%MMDIR%%/templates/admindbpreamble.html
+%%MMDIR%%/templates/adminsubscribeack.txt
+%%MMDIR%%/templates/adminunsubscribeack.txt
+%%MMDIR%%/templates/admlogin.txt
+%%MMDIR%%/templates/approve.txt
+%%MMDIR%%/templates/bounce.txt
+%%MMDIR%%/templates/checkdbs.txt
+%%MMDIR%%/templates/convert.txt
+%%MMDIR%%/templates/cronpass.txt
+%%MMDIR%%/templates/handle_opts.html
+%%MMDIR%%/templates/headfoot.html
+%%MMDIR%%/templates/help.txt
+%%MMDIR%%/templates/listinfo.html
+%%MMDIR%%/templates/masthead.txt
+%%MMDIR%%/templates/newlist.txt
+%%MMDIR%%/templates/nopass.txt
+%%MMDIR%%/templates/options.html
+%%MMDIR%%/templates/postack.txt
+%%MMDIR%%/templates/postauth.txt
+%%MMDIR%%/templates/postheld.txt
+%%MMDIR%%/templates/reenable.txt
+%%MMDIR%%/templates/refuse.txt
+%%MMDIR%%/templates/roster.html
+%%MMDIR%%/templates/subauth.txt
+%%MMDIR%%/templates/subscribe.html
+%%MMDIR%%/templates/subscribeack.txt
+%%MMDIR%%/templates/userpass.txt
+%%MMDIR%%/templates/verify.txt
+%%PORTDOCS%%share/doc/mailman/BUGS
+%%PORTDOCS%%share/doc/mailman/FAQ
+%%PORTDOCS%%share/doc/mailman/INSTALL
+%%PORTDOCS%%share/doc/mailman/NEWS
+%%PORTDOCS%%share/doc/mailman/README
+%%PORTDOCS%%share/doc/mailman/README.BSD
+%%PORTDOCS%%share/doc/mailman/README.EXIM
+%%PORTDOCS%%share/doc/mailman/README.LINUX
+%%PORTDOCS%%share/doc/mailman/README.NETSCAPE
+%%PORTDOCS%%share/doc/mailman/README.QMAIL
+%%PORTDOCS%%share/doc/mailman/README.SENDMAIL
+%%PORTDOCS%%share/doc/mailman/UPGRADING
+@dirrm %%MMDIR%%/templates
+@dirrm %%MMDIR%%/scripts
+@dirrm %%MMDIR%%/mail
+@dirrm %%MMDIR%%/icons
+@dirrm %%MMDIR%%/filters
+@dirrm %%MMDIR%%/data
+@dirrm %%MMDIR%%/cron
+@dirrm %%MMDIR%%/cgi-bin
+@dirrm %%MMDIR%%/bin
+@dirrm %%MMDIR%%/Mailman/pythonlib
+@dirrm %%MMDIR%%/Mailman/Logging
+@dirrm %%MMDIR%%/Mailman/Handlers
+@dirrm %%MMDIR%%/Mailman/Cgi
+@dirrm %%MMDIR%%/Mailman/Bouncers
+@dirrm %%MMDIR%%/Mailman/Archiver
+%%PORTDOCS%%@dirrm share/doc/mailman
+@unexec rmdir %D/%%MMDIR%%/spam 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/qfiles 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/logs 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/locks 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/lists 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/archives/public 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/archives/private 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/archives 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/Mailman 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/ 2>/dev/null || true

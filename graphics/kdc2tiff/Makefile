@@ -1,0 +1,24 @@
+# New ports collection makefile for:	kdc2tiff
+# Date created:				Tue 04 Jul 2000
+# Whom:					will
+#
+# $FreeBSD$
+#
+
+PORTNAME=	kdc2tiff
+PORTVERSION=	0.32
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		tiff.4:${PORTSDIR}/graphics/tiff
+
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- grepmail.orig	Mon Sep  2 15:41:00 2002
++++ grepmail	Tue Oct  8 16:28:44 2002
+@@ -1,6 +1,6 @@
+-#!/usr/bin/perl -w
++#!_PERL_ -w
+ 
+-eval 'exec /usr/bin/perl -w -S $0 ${1+"$@"}'
++eval 'exec _PERL -w -S $0 ${1+"$@"}'
+     if 0; # not running under some shell
+ 
+ # grepmail

@@ -1,0 +1,29 @@
+# ex:ts=8
+# Ports collection makefile for:	psmark
+# Date created:			Aug 4, 2002
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	psmark
+PORTVERSION=	2.1
+PORTREVISION=	0
+CATEGORIES=	print
+MASTER_SITES=	http://www.antitachyon.com/download/
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+MAN1=	psmark.1
+
+do-build:
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/psmark ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/psmark.1 ${MANPREFIX}/man/man1
+
+.include <bsd.port.mk>

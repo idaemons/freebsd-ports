@@ -1,0 +1,124 @@
+--- src/EDITME.orig	Mon Jul 22 10:59:47 2002
++++ src/EDITME	Mon Sep 16 11:33:03 2002
+@@ -98,7 +98,7 @@
+ # /usr/local/sbin. The installation script will try to create this directory,
+ # and any superior directories, if they do not exist.
+ 
+-BIN_DIRECTORY=/usr/exim/bin
++BIN_DIRECTORY=XX_PREFIX_XX/sbin
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -113,7 +113,7 @@
+ # directories if they don't exist. It will also install a default run time
+ # configuration if this file does not exist.
+ 
+-CONFIGURE_FILE=/usr/exim/configure
++CONFIGURE_FILE=XX_PREFIX_XX/etc/exim/configure
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -126,14 +126,14 @@
+ # owner of a local mailbox.) Specifying these values as root is very strongly
+ # discouraged. These values are compiled into the binary.
+ 
+-EXIM_USER=
++EXIM_USER=mailnull
+ 
+ # If the setting of EXIM_USER is numeric (e.g. EXIM_USER=42), there must
+ # also be a setting of EXIM_GROUP. If, on the other hand, you use a name
+ # for EXIM_USER (e.g. EXIM_USER=exim), you don't need to set EXIM_GROUP unless
+ # you want to use a group other than the default group for the given user.
+ 
+-# EXIM_GROUP=
++EXIM_GROUP=mail
+ 
+ # Many sites define a user called "exim", with an appropriate default group,
+ # and use
+@@ -257,6 +257,7 @@
+ # LDAP_LIB_TYPE=OPENLDAP2
+ # LDAP_LIB_TYPE=NETSCAPE
+ # LDAP_LIB_TYPE=SOLARIS
++LDAP_LIB_TYPE=XX_LDAP_TYPE_XX
+ 
+ # If you don't set any of these, Exim assumes the original University of
+ # Michigan (OpenLDAP 1) library.
+@@ -269,8 +270,9 @@
+ # don't need to set LOOKUP_INCLUDE if the relevant directories are already
+ # specified in INCLUDE.
+ 
+-# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
+-# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq
++INCLUDE=-I XX_PREFIX_XX/include
++LOOKUP_INCLUDE=XX_MYSQL_INCLUDE_XX XX_PGSQL_INCLUDE_XX XX_LDAP_INCLUDE_XX
++LOOKUP_LIBS=XX_MYSQL_LIBS_XX XX_PGSQL_LIBS_XX XX_LDAP_LIBS_XX XX_DB_LIBS_XX
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -281,7 +283,7 @@
+ # files are defaulted in the OS/Makefile-Default file, but can be overridden in
+ # local OS-specific make files.
+ 
+-EXIM_MONITOR=eximon.bin
++#EXIM_MONITOR=eximon.bin
+ 
+ 
+ 
+@@ -316,7 +318,7 @@
+ # settings commented out.
+ 
+ # SUPPORT_TLS=yes
+-# TLS_LIBS=-lssl -lcrypto
++TLS_LIBS=-lssl -lcrypto
+ 
+ # If you are running Exim as a server, note that just building it with TLS
+ # support is not all you need to do. You also need to set up a suitable
+@@ -358,7 +360,7 @@
+ # Once you have done this, "make install" will build the info files and
+ # install them in the directory you have defined.
+ 
+-# INFO_DIRECTORY=/usr/share/info
++INFO_DIRECTORY=XX_PREFIX_XX/info
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -371,7 +373,7 @@
+ # %s. This will be replaced by one of the strings "main", "panic", or "reject"
+ # to form the final file names. Some installations may want something like this:
+ 
+-# LOG_FILE_PATH=/var/log/exim_%slog
++LOG_FILE_PATH=/var/log/exim/%slog
+ 
+ # which results in files with names /var/log/exim_mainlog, etc. The directory
+ # in which the log files are placed must exist; Exim does not try to create
+@@ -474,12 +476,20 @@
+ 
+ #  USE_TCP_WRAPPERS=yes
+ #  CFLAGS=-O -I/usr/local/include
+-#  EXTRALIBS_EXIM=-L/usr/local/lib -lwrap
++EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX
+ 
+ # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
+ # as well.
+ 
+ 
++# IPv6 is coming. Exim has experimental support that has been tried out on
++# one or two OS. See the file README.IPV6 for the current status of this
++# support. Do not set this option unless you are working on IPv6 and know
++# what you are doing.
++
++# HAVE_IPV6=YES
++
++
+ #------------------------------------------------------------------------------
+ # The default action of the exim_install script is to install the Exim binary
+ # with a unique name such as exim-4.00-1, and then set up a symbolic link
+@@ -695,7 +705,7 @@
+ # (process id) to a file so that it can easily be identified. The path of the
+ # file can be specified here. Some installations may want something like this:
+ 
+-# PID_FILE_PATH=/var/lock/exim.pid
++PID_FILE_PATH=/var/run/exim.pid
+ 
+ # If PID_FILE_PATH is not defined, Exim writes a file in its spool directory
+ # using the name "exim-daemon.pid".

@@ -1,0 +1,28 @@
+share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLEncoder.State.html
+share/doc/xmlenc/org/znerd/xmlenc/class-use/UnicodeXMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/class-use/SevenBitXMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/package-use.html
+share/doc/xmlenc/org/znerd/xmlenc/package-summary.html
+share/doc/xmlenc/org/znerd/xmlenc/package-tree.html
+share/doc/xmlenc/org/znerd/xmlenc/package-frame.html
+share/doc/xmlenc/org/znerd/xmlenc/SevenBitXMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/UnicodeXMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/XMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/XMLEncoder.State.html
+share/doc/xmlenc/serialized-form.html
+share/doc/xmlenc/packages.html
+share/doc/xmlenc/package-list
+share/doc/xmlenc/overview-tree.html
+share/doc/xmlenc/index.html
+share/doc/xmlenc/index-all.html
+share/doc/xmlenc/help-doc.html
+share/doc/xmlenc/deprecated-list.html
+share/doc/xmlenc/stylesheet.css
+share/doc/xmlenc/allclasses-frame.html
+share/java/classes/xmlenc.jar
+@dirrm share/doc/xmlenc/org/znerd/xmlenc/class-use
+@dirrm share/doc/xmlenc/org/znerd/xmlenc
+@dirrm share/doc/xmlenc/org/znerd
+@dirrm share/doc/xmlenc/org
+@dirrm share/doc/xmlenc

@@ -1,0 +1,21 @@
+lib/libsocket++.a
+lib/libsocket++.so.0
+lib/libsocket++.so
+include/socket++/fork.h
+include/socket++/echo.h
+include/socket++/ftp.h
+include/socket++/pipestream.h
+include/socket++/protocol.h
+include/socket++/sig.h
+include/socket++/smtp.h
+include/socket++/sockinet.h
+include/socket++/sockstream.h
+include/socket++/sockunix.h
+@unexec install-info --delete %D/info/socket++.info %D/info/dir
+info/socket++.info
+info/socket++.info-1
+info/socket++.info-2
+@exec install-info %D/info/socket++.info %D/info/dir
+%%PORTDOCS%%share/doc/libsocket++/README
+@dirrm share/doc/libsocket++
+@dirrm include/socket++
