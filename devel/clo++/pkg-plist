@@ -1,0 +1,3 @@
+bin/clo++
+%%PORTDOCS%%share/doc/clo++/manual.txt
+%%PORTDOCS%%@dirrm share/doc/clo++

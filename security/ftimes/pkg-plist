@@ -1,0 +1,5 @@
+bin/ftimes
+etc/dig.cfg.sample
+etc/get.cfg.sample
+etc/map.cfg.sample
+etc/put.cfg.sample

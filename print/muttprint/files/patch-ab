@@ -1,0 +1,13 @@
+--- muttprint.orig	Sat Apr 26 19:18:18 2003
++++ muttprint	Sat Apr 26 23:36:53 2003
+@@ -189,8 +189,8 @@
+ 
+ if ($Config{'PENGUIN'} eq "on") {
+ 	my $sharedir = findCommonDir("share");
+-	$Config{'PENGUIN'} = (-r "$sharedir/penguin.eps")
+-			? "$sharedir/penguin.eps" 
++	$Config{'PENGUIN'} = (-r "$sharedir/Beastie.eps")
++			? "$sharedir/Beastie.eps" 
+ 			: "off";
+ }
+ 

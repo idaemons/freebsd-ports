@@ -1,0 +1,18 @@
+LIB=	mng
+LDADD=	-lm -L${LIBDIR} -lz -llcms -ljpeg
+
+NOPROFILE=	yes
+SHLIB_MAJOR?=	1
+SHLIB_MINOR?=	0
+
+LOBJS!=		${MAKE} -f ${.CURDIR}/Makefile.in -V libmng_la_OBJECTS
+SRCS=		${LOBJS:.lo=.c}
+
+CFLAGS+=	-I${INCDIR} -DMNG_FULL_CMS
+
+INCS=		libmng.h libmng_conf.h libmng_types.h
+INCSDIR=	${LOCALBASE}/include
+INCDIR=		${INCSDIR}		# for pre-bsd.incs.mk API
+LIBDIR=		${LOCALBASE}/lib
+
+.include <bsd.lib.mk>

@@ -1,2 +1,4 @@
-@cwd /usr/local
 bin/unarj
+share/doc/unarj/unarj.doc
+share/doc/unarj/technote.doc
+@dirrm share/doc/unarj

@@ -1,0 +1,44 @@
+--- doc/sendmail/configure.orig	Wed Feb  5 19:04:53 2003
++++ doc/sendmail/configure	Tue Feb 18 07:10:13 2003
+@@ -34,18 +34,6 @@
+ FILTER_CFG_NOSTD="-- ERROR ---"
+ FILTER_TIMEOUT="-- ERROR ---"
+ 
+-# Test bash version
+-
+-if [ "x$BASH_VERSION" = "x" ] ; then
+-    echo "You should use bash (version 2.04 at least) as shell to use this script"
+-    exit
+-fi
+-echo "You current shell - bash $BASH_VERSION"
+-if [ ${BASH_VERSINFO[0]} -lt 2 -o ${BASH_VERSINFO[1]} -lt 4 ] ; then
+-    echo "You should use version 2.04 at least to use this script"
+-    exit
+-fi
+-
+ # Test echo properties
+ 
+ (echo "12345\c" ; echo " ") > echotmp
+@@ -124,7 +112,7 @@
+ # Read transport
+ 
+ POS=`$GREP -i PidFile $DAEMON_INI | $GREP -v ";"`
+-if [ "x$POS" = "x" ] ; then
++if [ "x" = "x" ] ; then
+     echo
+     echo -n "Daemon pidfile not defined in ini-file ..."
+     POS=`$GREP -i SocketMode $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /[Tt][Cc][Pp]/ ) }'`
+@@ -297,8 +285,13 @@
+             echo "Edit one of configuration files and try again."
+             exit 1
+         fi 
++    else
++	echo "Press Enter"
++	read INPUT
+     fi
+ else 
++    echo "Press Enter"
++    read INPUT
+     FILTER_TIMEOUT=0
+ fi
+ 

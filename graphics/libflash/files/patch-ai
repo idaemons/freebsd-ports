@@ -1,0 +1,15 @@
+--- sound.cc.orig	Thu Sep  2 00:10:03 1999
++++ sound.cc	Wed Jul 24 06:04:56 2002
+@@ -26,7 +26,12 @@
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+ #ifndef NOSOUND
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#include <sys/soundcard.h>
++#else
+ #include <linux/soundcard.h>
++#endif
+ #endif
+ 
+ #ifdef RCSID

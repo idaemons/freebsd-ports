@@ -1,0 +1,32 @@
+# New ports collection makefile for:    buildtool
+# Date created:         Tue Aug 27 22:11:08 PDT 2002
+# Whom:                 Jos Backus <jos@catnook.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	buildtool
+PORTVERSION=	0.11
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	jos@catnook.com
+COMMENT=	A set of portable software build utilities
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	-p ${PREFIX}
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	-n doc
+.endif
+
+MAN1=		buildtool.1
+DOCS=		CHANGES PEOPLE README TODO
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/libnovaconfig
+include/libnova.h
+lib/libnova-0.7.so.0
+lib/libnova.so
+lib/libnova.a
+share/aclocal/libnova-check.m4

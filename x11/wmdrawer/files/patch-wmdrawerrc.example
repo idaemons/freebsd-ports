@@ -1,0 +1,11 @@
+--- wmdrawerrc.example.orig	Thu Apr 10 16:36:58 2003
++++ wmdrawerrc.example	Thu Apr 10 16:38:54 2003
+@@ -1,7 +1,7 @@
+ # Config file example for wmdrawer
+ [general]
+ # Dock's icon [optional]
+-#dock_icon	panel-drawer.png
++dock_icon	daemon.xpm
+ 
+ # Drawer's opening direction [required]
+ # Top to bottom = 0

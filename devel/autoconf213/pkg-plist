@@ -1,0 +1,33 @@
+bin/autoconf213
+bin/autoheader213
+bin/autoreconf213
+bin/autoscan213
+bin/autoupdate213
+bin/ifnames213
+@unexec install-info --delete %D/info/autoconf213.info %D/info/dir
+info/autoconf213.info
+@exec install-info %D/info/autoconf213.info %D/info/dir
+libexec/autoconf213/autoconf
+libexec/autoconf213/autoheader
+libexec/autoconf213/autoreconf
+libexec/autoconf213/autoscan
+libexec/autoconf213/autoupdate
+libexec/autoconf213/ifnames
+share/autoconf213/acconfig.h
+share/autoconf213/acfunctions
+share/autoconf213/acgeneral.m4
+share/autoconf213/acheaders
+share/autoconf213/acidentifiers
+share/autoconf213/acmakevars
+share/autoconf213/acoldnames.m4
+share/autoconf213/acprograms
+share/autoconf213/acspecific.m4
+share/autoconf213/autoconf.m4
+share/autoconf213/autoconf.m4f
+share/autoconf213/autoheader.m4
+share/autoconf213/autoheader.m4f
+share/autoconf213/config.guess
+share/autoconf213/config.sub
+share/autoconf213/install-sh
+@dirrm libexec/autoconf213
+@dirrm share/autoconf213

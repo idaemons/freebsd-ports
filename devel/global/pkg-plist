@@ -1,0 +1,21 @@
+bin/gctags
+bin/global
+bin/gozilla
+bin/gtags
+bin/htags
+%%PORTDOCS%%info/global.info
+%%PORTDOCS%%info/global.info-1
+%%PORTDOCS%%info/global.info-2
+%%PORTDOCS%%info/global.info-3
+%%PORTDOCS%%@exec install-info %D/info/global.info %D/info/dir
+%%PORTDOCS%%@unexec install-info --delete %D/info/global.info %D/info/dir
+%%PORTDOCS%%share/doc/global/AUTHORS
+%%PORTDOCS%%share/doc/global/COPYING
+%%PORTDOCS%%share/doc/global/ChangeLog
+%%PORTDOCS%%share/doc/global/FAQ
+%%PORTDOCS%%share/doc/global/INSTALL
+%%PORTDOCS%%share/doc/global/LICENSE
+%%PORTDOCS%%share/doc/global/NEWS
+%%PORTDOCS%%share/doc/global/README
+%%PORTDOCS%%share/doc/global/THANKS
+%%PORTDOCS%%@dirrm share/doc/global

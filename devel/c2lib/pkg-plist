@@ -1,0 +1,15 @@
+include/c2lib/hash.h
+include/c2lib/matvec.h
+include/c2lib/pool.h
+include/c2lib/pre.h
+include/c2lib/pstring.h
+include/c2lib/tree.h
+include/c2lib/vector.h
+lib/libc2lib.a
+lib/libc2lib.so
+lib/libc2lib.so.1
+lib/libc2lib.so.1.4.1
+share/rws/symtabs/libc2lib.syms
+@dirrm share/rws/symtabs
+@dirrm share/rws
+@dirrm include/c2lib

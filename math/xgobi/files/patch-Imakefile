@@ -1,0 +1,11 @@
+--- Imakefile.orig	Sat Oct 12 12:26:37 2002
++++ Imakefile	Sat Oct 12 12:28:33 2002
+@@ -13,7 +13,7 @@
+          XGOBID = $(PWD)/..
+ 
+ /**/# Use the gnu C compiler
+-            CC = gcc
++            CC ?= gcc
+      CCOPTIONS = -ansi -w
+ 
+ /**/# Or use the C compiler on your system, and whatever options it requires.

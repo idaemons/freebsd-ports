@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Feb 22 06:41:55 2003
++++ Makefile.in	Sat Feb 22 17:51:22 2003
+@@ -134,7 +134,7 @@
+ install_sh = @install_sh@
+ plugin_support = @plugin_support@
+ 
+-SUBDIRS = intl Expense SyncTime KeyRing docs dialer po
++SUBDIRS = intl Expense SyncTime KeyRing dialer po
+ 
+ EXTRA_DIST = reconf autogen.sh ChangeLog docs empty icons \
+ 	config.rpath mkinstalldirs \

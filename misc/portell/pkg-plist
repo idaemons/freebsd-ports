@@ -1,0 +1,3 @@
+bin/portell
+%%PORTDOCS%%share/doc/portell/README
+%%PORTDOCS%%@dirrm share/doc/portell

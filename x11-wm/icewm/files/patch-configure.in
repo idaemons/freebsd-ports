@@ -1,0 +1,45 @@
+--- configure.in.orig	Sat Jan  4 01:25:44 2003
++++ configure.in	Mon Jan  6 19:03:51 2003
+@@ -130,10 +130,10 @@
+   [  --disable-i18n          Disable internationalization])
+ if test "$enable_i18n" != "no"; then
+       AC_CHECK_HEADERS(langinfo.h,,
+-      [ AC_MSG_ERROR([I18N support has been requested but langinfo.h wasn´t found.
++      [ AC_MSG_WARN([I18N support has been requested but langinfo.h wasn´t found.
+ *** Check your system configuration.])])
+       AC_CHECK_FUNC(nl_langinfo,,
+-      [ AC_MSG_ERROR([I18N support has been requested but nl_langinfo wasn´t found.
++      [ AC_MSG_WARN([I18N support has been requested but nl_langinfo wasn´t found.
+ *** Check your system configuration.])])
+ 
+       ice_nl_codesets=""
+@@ -146,7 +146,7 @@
+         [ ice_nl_codesets="${ice_nl_codesets} CODESET," ])
+ 
+       if test "${ice_nl_codesets}" = ""; then
+-        AC_MSG_ERROR([I18N support has been requested but nl_langinfo doesn't
++        AC_MSG_WARN([I18N support has been requested but nl_langinfo doesn't
+ *** return any information about the locale's codeset. Check your manuals.
+ *** Ask your vendor. Contact icewm-devel@lists.sourceforge.net when you know 
+ *** the name of the locale-dependent parameter for your platform.])
+@@ -277,7 +277,7 @@
+   AC_SUBST(NLS_POXFILES)
+   AC_SUBST(NLS_MOFILES)
+ 
+-  localedir='${datadir}/locale'
++  localedir='${prefix}/share/locale'
+ fi
+ 
+ dnl ================================================ Features of the XServer ===
+@@ -582,9 +582,9 @@
+ 	AC_DEFINE(CONFIG_GNOME_MENUS, 1, [Define to make IceWM more GNOME-friendly])
+ 
+ 	APPLICATIONS="${APPLICATIONS} icewm-menu-gnome1"
+-        GWMDIR="`${GNOME_CONFIG} --datadir`/gnome/wm-properties/"
++        GWMDIR="`${GNOME_CONFIG} --datadir`/wm-properties/"
+       else
+-	AC_MSG_ERROR([gnome-config can not be found.
++	AC_MSG_WARN([gnome-config can not be found.
+ *** Install the GNOME´s development packages or use the argument of the
+ *** --with-gnome-menus switch to pass gnome-config´s location.])
+       fi

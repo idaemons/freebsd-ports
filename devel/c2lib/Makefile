@@ -1,0 +1,42 @@
+# ex:ts=8	-*-mode: makefile-*-
+#
+# New ports collection makefile for:	c2lib
+# Date created:		2002-12-22
+# Whom:			Alan Eldridge <alane@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	c2lib
+PORTVERSION=	1.4.1
+PORTREVISION=	0
+PORTEPOCH=	0
+CATEGORIES=	devel
+MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
+
+MAINTAINER=	alane@FreeBSD.org
+COMMENT=	Library of basic structures and memory allocators for C
+
+BUILD_DEPENDS+=	cdoc:${.CURDIR}/../../devel/cdoc
+BUILD_DEPENDS+=	make+:${.CURDIR}/../../devel/makeplus
+LIB_DEPENDS+=	pcre.0:${.CURDIR}/../../devel/pcre
+
+USE_GMAKE=	yes
+PREFIX?=	${LOCALBASE}
+MAKE_ENV+=	CC="${CC}"
+.include <bsd.port.pre.mk>
+
+do-configure:
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} make+ configure
+
+do-build:
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} make+
+
+do-install:
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV}\
+		make+ install prefix=${PREFIX} manprefix=${PREFIX}
+
+.include "${FILESDIR}/manpages.mk"
+.include <bsd.port.post.mk>
+
+#EOF

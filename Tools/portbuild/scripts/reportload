@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# This is run on the clients to report their loads to the server.
+
+# configurable variables
+pb=/var/portbuild
+arch=$1
+
+. ${pb}/${arch}/portbuild.conf
+
+num=$(echo $(ls -1d ${scratchdir}/*/chroot/*/used 2>/dev/null| wc -l))
+echo -n "$num "
+uptime

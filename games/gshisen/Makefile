@@ -1,0 +1,32 @@
+# New ports collection makefile for:    GShisen
+# Date created:         12 Jun 2001
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gshisen
+PORTVERSION=	1.1
+CATEGORIES=	games
+# not up to date:	http://www.gnustep.it/enrico/gshisen/
+MASTER_SITES=	http://www.imago.ro/gshisen/
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Mahjongg-kind of game that uses the GNUstep toolkit
+
+PREFIX=		${LOCALBASE}/GNUstep
+NO_MTREE=	yes
+WRKSRC=		${WRKDIR}/GShisen
+USE_GMAKE=	yes
+MAKEFILE=
+MAKE_FLAGS=	GUI_BACKEND_LIB=back
+ALL_TARGET=
+
+.include <bsd.port.pre.mk>
+
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
+
+.include <bsd.port.post.mk>

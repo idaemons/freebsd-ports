@@ -1,0 +1,14 @@
+--- src/Makefile.FreeBSD.orig	Wed Jan  8 03:14:56 2003
++++ src/Makefile.FreeBSD	Wed Jan  8 03:14:59 2003
+@@ -15,9 +15,9 @@
+ 
+ CXX = g++
+ 
+-CXXOPTS = -pthread
++CXXOPTS =
+ 
+-LDLIBS = -lc_r
++LDLIBS =
+ 
+ SOEXT = so
+ 

@@ -1,0 +1,35 @@
+# New ports collection makefile for:   libbonobo
+# Date Created:			14 February 2002
+# Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libbonobo
+PORTVERSION=	2.2.2
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
+DIST_SUBDIR=	gnome2
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A component and compound document system for GNOME2
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_BISON=	yes
+USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL=	yes
+USE_GNOME=	gnomehack bonoboactivation
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
+		--disable-gtk-doc
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+MAKE_ENV=	gnomelocaledir=${PREFIX}/share/locale
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+
+.include <bsd.port.mk>

@@ -1,0 +1,22 @@
+--- docs/Makefile.in.orig	Wed Nov 27 19:57:25 2002
++++ docs/Makefile.in	Wed Nov 27 20:01:29 2002
+@@ -109,15 +109,19 @@
+ USE_NLS = @USE_NLS@
+ VERSION = @VERSION@
+ 
+ man_MANS = gftp.1
++.ifndef WITHOUT_X11
+ SUBDIRS = sample.gftp
++.endif
+ EXTRA_DIST = USERS-GUIDE gftp.1 gftp.desktop gftp.lsm gftp.png parse-netrc.pl
+ 
++.ifdef HAVE_GNOME
+ Utilitiesdir = $(datadir)/apps/Internet
+ Utilities_DATA = gftp.desktop
+ 
+ Iconsdir = $(datadir)/pixmaps
+ Icons_DATA = gftp.png
++.endif
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

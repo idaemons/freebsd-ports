@@ -1,0 +1,11 @@
+share/wmdrawer/daemon.xpm
+@dirrm share/wmdrawer
+bin/wmdrawer
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/wmdrawerrc.example
+@dirrm %%DOCSDIR%%

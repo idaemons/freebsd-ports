@@ -1,0 +1,21 @@
+bin/xmlwrapp-config
+include/xmlwrapp/_cbfo.h
+include/xmlwrapp/attributes.h
+include/xmlwrapp/document.h
+include/xmlwrapp/event_parser.h
+include/xmlwrapp/init.h
+include/xmlwrapp/node.h
+include/xmlwrapp/tree_parser.h
+include/xmlwrapp/xmlwrapp.h
+@dirrm include/xmlwrapp
+%%XSLT%%include/xsltwrapp/xsltwrapp.h
+%%XSLT%%include/xsltwrapp/stylesheet.h
+%%XSLT%%include/xsltwrapp/init.h
+%%XSLT%%@dirrm include/xsltwrapp
+lib/libxmlwrapp.a
+lib/libxmlwrapp.so
+lib/libxmlwrapp.so.4
+%%XSLT%%lib/libxsltwrapp.a
+%%XSLT%%lib/libxsltwrapp.so
+%%XSLT%%lib/libxsltwrapp.so.1
+libdata/pkgconfig/xmlwrapp.pc

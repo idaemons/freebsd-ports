@@ -1,0 +1,7 @@
+%%RUBY_SITEARCHLIBDIR%%/iconv.so
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/iconv.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/iconv.rlog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/iconv.rlog.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/iconv.rmi.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -1,0 +1,10 @@
+--- ParMETISLib/stdheaders.h.orig	Sun Jun  9 18:06:05 2002
++++ ParMETISLib/stdheaders.h	Sun Jun  9 18:08:02 2002
+@@ -14,7 +14,6 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <malloc.h>
+ #include <strings.h>
+ #include <string.h>
+ #include <ctype.h>

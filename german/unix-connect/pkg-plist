@@ -1,0 +1,72 @@
+libexec/uconnect/januslogin
+libexec/uconnect/receiver
+libexec/uconnect/zcall
+libexec/uconnect/uuwnews
+libexec/uconnect/uuwsmtp
+libexec/uconnect/uursmtp
+libexec/uconnect/zconsplit
+libexec/uconnect/anruf
+libexec/uconnect/auspack
+libexec/uconnect/einpack
+libexec/uconnect/import
+libexec/uconnect/list-systems
+libexec/uconnect/prearc
+libexec/uconnect/uumlist
+libexec/uconnect/bsmtp
+libexec/uconnect/rcsmtp
+libexec/uconnect/rgsmtp
+libexec/uconnect/rsmtp
+libexec/uconnect/cron.d.hourly
+libexec/uconnect/logrotate.d.entry
+libexec/uconnect/mail.uuconnect
+libexec/uconnect/uurnews
+libexec/uconnect/zbatchsmtp
+@dirrm libexec/uconnect
+etc/uconnect/alias
+etc/uconnect/approved
+etc/uconnect/autoeintrag.zconnect
+etc/uconnect/config
+etc/uconnect/myself.zconnect
+etc/uconnect/systems.sample
+etc/uconnect/xprogs
+etc/uconnect/zconnecthosts
+@dirrm etc/uconnect/systems
+@dirrm etc/uconnect
+@exec mkdir /var/spool/uconnect
+@exec mkdir /var/spool/uconnect/backin
+@exec mkdir /var/spool/uconnect/backout
+@exec mkdir /var/spool/uconnect/error
+@exec mkdir /var/spool/uconnect/locks
+@exec mkdir /var/spool/uconnect/logfiles
+@exec mkdir /var/spool/uconnect/netcall
+@exec mkdir /var/spool/uconnect/rsmtp
+@unexec rmdir /var/spool/uconnect/backin
+@unexec rmdir /var/spool/uconnect/backout
+@unexec rmdir /var/spool/uconnect/error
+@unexec rmdir /var/spool/uconnect/locks
+@unexec rmdir /var/spool/uconnect/logfiles
+@unexec rmdir /var/spool/uconnect/netcall
+@unexec rmdir /var/spool/uconnect/rsmtp
+@unexec rmdir /var/spool/uconnect
+%%PORTDOCS%%share/doc/unix-connect/ChangeLog
+%%PORTDOCS%%share/doc/unix-connect/ChangeLog.configure
+%%PORTDOCS%%share/doc/unix-connect/INSTALL
+%%PORTDOCS%%share/doc/unix-connect/INSTALL.OLD
+%%PORTDOCS%%share/doc/unix-connect/POLICY
+%%PORTDOCS%%share/doc/unix-connect/PROBLEMS
+%%PORTDOCS%%share/doc/unix-connect/README
+%%PORTDOCS%%share/doc/unix-connect/README.systeme
+%%PORTDOCS%%share/doc/unix-connect/THANX
+%%PORTDOCS%%share/doc/unix-connect/TODO
+%%PORTDOCS%%share/doc/unix-connect/bnews.patch
+%%PORTDOCS%%share/doc/unix-connect/changes.doc
+%%PORTDOCS%%share/doc/unix-connect/ger-texinfo.tex
+%%PORTDOCS%%share/doc/unix-connect/iso8859-1.tex
+%%PORTDOCS%%share/doc/unix-connect/lizenz.deutsch
+%%PORTDOCS%%share/doc/unix-connect/texinfo.tex
+%%PORTDOCS%%share/doc/unix-connect/unix-connect.dvi
+%%PORTDOCS%%share/doc/unix-connect/unix-connect.texinfo
+%%PORTDOCS%%share/doc/unix-connect/xpoint.dok
+%%PORTDOCS%%share/doc/unix-connect/zcon31.changes
+%%PORTDOCS%%share/doc/unix-connect/zconnect.doc
+%%PORTDOCS%%@dirrm share/doc/unix-connect

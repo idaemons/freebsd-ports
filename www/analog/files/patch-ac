@@ -1,0 +1,12 @@
+--- analog.cfg.orig	Wed Jan  9 21:21:05 2002
++++ analog.cfg	Wed Jan  9 21:21:22 2002
+@@ -10,7 +10,8 @@
+ #
+ # If you need a LOGFORMAT command (most people don't -- try it without first!),
+ # it must go here, above the LOGFILE commands.
+-LOGFILE logfile.log
++LOGFORMAT COMBINED
++LOGFILE /var/log/httpd-access.log
+ # LOGFILE /old/logs/access_log.*
+ # OUTFILE Report.html
+ # HOSTNAME "[my organisation]"

@@ -1,0 +1,111 @@
+--- etc/drweb_smf.conf.orig	Fri Feb 14 17:06:02 2003
++++ etc/drweb_smf.conf	Tue Feb 18 06:36:20 2003
+@@ -17,14 +17,14 @@
+ #   Address = local:/usr/local/drweb/run/drwebd.skt
+ #   Address = pid:/usr/local/drweb/run/drwebd.pid
+ #   Address = pid:/var/drweb/run/drwebd.pid, inet:3000@backup_server.example.com
+-Address = inet:3000@localhost
++Address = local:%PREFIX%/drweb/run/drwebd.sock
+ 
+ # Enable/disable caching resolved daemon host 
+ # (useful only if daemon uses TCP/IP communications)
+ Cache = yes
+ 
+ # Timeout for whole scanning session (in seconds)
+-Timeout = 120
++Timeout = 160
+ 
+ ########################
+ # Scan options section #
+@@ -72,10 +72,10 @@
+ DenyOnOne = yes
+ 
+ # List with rules for users or domains to block scanning 
+-DenyList = /etc/drweb/users.conf
++DenyList = %PREFIX%/etc/drweb/users.conf
+ 
+ # Directory used for story temporary files
+-Spool = /var/drweb/spool 
++Spool = /tmp
+ 
+ # Permissions for created spool files
+ SpoolFilesMode = 0600
+@@ -179,22 +179,22 @@
+ ProcessingErrors = reject
+ 
+ # Admin mail address (may be unix-local address)
+-AdminMail = av-master@example.com
++AdminMail = postmaster
+ 
+ # Filter address, that be used in From:
+-FilterMail = DrWEB-DAEMON@example.com
++FilterMail = DrWeb-DAEMON@%HOSTNAME%
+ 
+ # List of unnotificable viruses
+-UnnotificableVirusesList = /etc/drweb/viruses.conf
++UnnotificableVirusesList = %PREFIX%/etc/drweb/viruses.conf
+ 
+ # List of unnotificable addresses
+-UnnotificableAddressesList = /etc/drweb/addresses.conf
++UnnotificableAddressesList = %PREFIX%/etc/drweb/addresses.conf
+ 
+ # Quarantine directory. 
+ # The infected files could be moved in that dir 
+ # if you stay this field empty or commented then 
+ # infected messages would not been storied
+-Quarantine = /var/drweb/infected
++Quarantine = %PREFIX%/drweb/infected
+ 
+ # Permissions for quarantined files
+ QuarantineFilesMode = 0660
+@@ -223,9 +223,9 @@
+ RcptsNotify = yes
+ 
+ # Files with notification templates
+-AdminTemplate = /etc/drweb/templates/en-ru/sendmail/virus-admin.msg
+-RcptsTemplate = /etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg
+-SenderTemplate = /etc/drweb/templates/en-ru/sendmail/virus-sender.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-admin.msg
++RcptsTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-sender.msg
+ 
+ [SkipNotifications]
+ SenderNotify = yes
+@@ -233,23 +233,23 @@
+ RcptsNotify = no
+ AdminTemplate = 
+ RcptsTemplate = 
+-SenderTemplate = /etc/drweb/templates/en-ru/sendmail/skip-sender.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/skip-sender.msg
+ 
+ [ArchiveRestrictionNotifications]
+ SenderNotify = yes
+ AdminNotify = yes
+ RcptsNotify = no
+-AdminTemplate = /etc/drweb/templates/en-ru/sendmail/archive-admin.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/archive-admin.msg
+ RcptsTemplate = 
+-SenderTemplate = /etc/drweb/templates/en-ru/sendmail/archive-sender.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/archive-sender.msg
+ 
+ [ErrorNotifications]
+ SenderNotify = yes
+ AdminNotify = yes
+ RcptsNotify = no
+-AdminTemplate = /etc/drweb/templates/en-ru/sendmail/error-admin.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/error-admin.msg
+ RcptsTemplate = 
+-SenderTemplate = /etc/drweb/templates/en-ru/sendmail/error-sender.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/error-sender.msg
+ 
+ ###################
+ # Logging section #
+@@ -277,7 +277,7 @@
+ # Definition of Sendmail Milter Address according to sendmail.cf 
+ # Note: FAMILY pid is not valid
+ # MilterAddress = local:/usr/local/drweb/run/drweb-smf.skt
+-MilterAddress = inet:3001@localhost
++MilterAddress = local:%PREFIX%/drweb/run/drweb-smf.sock
+ 
+ # Timeout for drweb-smf to sendmail connection
+ # (Must be greater that any Timeout. parameter in sendmail.cf)

@@ -1,0 +1,20 @@
+# New ports collection makefile for:   nc6
+# Date created:                30 May 2002
+# Whom:                        Filippo Natali <filippo@widestore.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	nc6
+PORTVERSION=	0.4
+CATEGORIES=	net ipv6
+MASTER_SITES=	ftp://ftp.deepspace6.net/pub/sources/nc6/ \
+		http://ftp.deepspace6.net/pub/sources/nc6/
+
+MAINTAINER=	filippo@widestore.net
+COMMENT=	Netcat 6 is a netcat clone with IPv6 support
+
+MAN1=		nc6.1
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.mk>

@@ -1,0 +1,8 @@
+bin/dmail
+bin/mailutil
+bin/mboxtest
+bin/tmail
+libexec/imapd
+libexec/ipop2d
+libexec/ipop3d
+libexec/mlock

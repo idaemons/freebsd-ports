@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+bin/ircomm
+bin/irobex
+bin/irs
+bin/mkobexcard
+bin/mkobexdate
+bin/mkobexmemo
+bin/mkobexpdb
+bin/mkobextel
+bin/mkobextodo

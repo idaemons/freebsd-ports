@@ -1,0 +1,29 @@
+--- ConfigX.mk.orig	Mon May  4 14:05:52 1998
++++ ConfigX.mk	Sat Jul 18 23:02:36 1998
+@@ -28,7 +28,7 @@
+ #---------------------------------------------------------------------
+ # HOMEV info
+ #---------------------------------------------------------------------
+-HOMEV	=	$(HOME)/v
++#HOMEV	=	$(HOME)/v
+ 
+ 
+ #---------------------------------------------------------------------
+@@ -51,7 +51,7 @@
+ # User contributed definitions are available for:
+ # hpux, aix, solaris, bsd
+ #---------------------------------------------------------------------
+-ARCH	= linux
++#ARCH	= linux
+ #ARCH	= linuxelf
+ #ARCH	= sun4
+ #ARCH	= mips
+@@ -59,7 +59,7 @@
+ #ARCH	= hpux
+ #ARCH	= aix
+ #ARCH	= solaris
+-#ARCH	= bsd
++ARCH	= bsd
+ Arch = $(ARCH)
+ 
+ 

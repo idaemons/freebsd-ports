@@ -1,0 +1,8 @@
+bin/xgettext.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext/Lexicon/.packlist
+%%SITE_PERL%%/Locale/Maketext/Lexicon.pm
+%%SITE_PERL%%/Locale/Maketext/Lexicon/Gettext.pm
+%%SITE_PERL%%/Locale/Maketext/Lexicon/Auto.pm
+%%SITE_PERL%%/Locale/Maketext/Lexicon/Msgcat.pm
+%%SITE_PERL%%/Locale/Maketext/Lexicon/Tie.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext/Lexicon

@@ -1,0 +1,20 @@
+bin/filcon
+bin/rp2gen
+include/rpc2/errors.h
+include/rpc2/errorsdefs.h
+include/rpc2/fail.h
+include/rpc2/fcon.h
+include/rpc2/multi.h
+include/rpc2/rpc2.h
+include/rpc2/se.h
+include/rpc2/sftp.h
+lib/libfail.a
+lib/libfail.so
+lib/libfail.so.4
+lib/librpc2.a
+lib/librpc2.so
+lib/librpc2.so.4
+lib/libse.a
+lib/libse.so
+lib/libse.so.4
+@dirrm include/rpc2

@@ -1,0 +1,7 @@
+sbin/metalog
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/metalog.conf
+@dirrm %%EXAMPLESDIR%%

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon May 12 18:43:37 2003
++++ Makefile.in	Mon May 12 18:43:47 2003
+@@ -83,7 +83,7 @@
+ 
+ SUBDIRS = src
+ 
+-bomberclonedocdir = ${prefix}/doc/bomberclone
++bomberclonedocdir = ${prefix}/share/doc/bomberclone
+ bomberclonedoc_DATA = \
+ 	README\
+ 	COPYING\

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- source/unix/Makefile.in.orig	Sat Apr 27 23:06:16 2002
++++ source/unix/Makefile.in	Tue Oct  1 15:39:29 2002
+@@ -98,7 +98,7 @@
+ 
+ SUBDIRS = mapeditor
+ 
+-CXXFLAGS = @CXXFLAGS@ @SDL_CFLAGS@ @SDLMM_CXXFLAGS@ -Dsgmain -DFREEMAPZOOM -DNEWKEYB @PARAGUI_CFLAGS@
++CXXFLAGS = @CXXFLAGS@ @SDL_CFLAGS@ @SDLMM_CXXFLAGS@ -Dsgmain -DFREEMAPZOOM -DNEWKEYB @PARAGUI_CFLAGS@ -DPREFIX=\"$(prefix)\"
+ 
+ 
+ bin_PROGRAMS = asc

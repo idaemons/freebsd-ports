@@ -1,0 +1,86 @@
+--- gcc-3.2.1/gcc/Makefile.in.orig	Mon Oct 14 17:04:16 2002
++++ gcc-3.2.1/gcc/Makefile.in	Sun Feb  2 22:07:09 2003
+@@ -405,7 +405,7 @@
+ 
+ # It is convenient for configure to add the assignment at the beginning,
+ # so don't override it here.
+-USE_COLLECT2 = collect2$(exeext)
++USE_COLLECT2 = 
+ 
+ # List of extra C and assembler files to add to static and shared libgcc2.
+ # Assembler files should have names ending in `.asm'.
+@@ -445,7 +445,7 @@
+ 
+ # A list of all the language-specific executables.
+ # This is overridden by configure.
+-COMPILERS = cc1$(exeext) @all_compilers@
++COMPILERS = @all_compilers@
+ 
+ # List of things which should already be built whenever we try to use xgcc
+ # to compile anything (without linking).
+@@ -2530,9 +2530,8 @@
+ # Copy the compiler files into directories where they will be run.
+ # Install the driver last so that the window when things are
+ # broken is small.
+-install: install-common $(INSTALL_HEADERS) $(INSTALL_LIBGCC) \
+-    $(INSTALL_CPP) install-man install-info intl.install install-@POSUB@ \
+-    lang.install-normal install-driver
++install: install-common \
++    intl.install lang.install-normal
+ 
+ # Handle cpp installation.
+ install-cpp: cpp$(exeext)
+@@ -2593,53 +2592,6 @@
+ 	  else true; \
+ 	  fi; \
+ 	done
+-	for file in $(EXTRA_PASSES) $(EXTRA_PROGRAMS) $(USE_COLLECT2) ..; do \
+-	  if [ x"$$file" != x.. ]; then \
+-	    rm -f $(libsubdir)/$$file; \
+-	    $(INSTALL_PROGRAM) $$file $(libsubdir)/$$file; \
+-	  else true; fi; \
+-	done
+-	for file in $(EXTRA_PARTS) ..; do \
+-	  if [ x"$$file" != x.. ]; then \
+-	    rm -f $(libsubdir)/$$file; \
+-	    $(INSTALL_DATA) $$file $(libsubdir)/$$file; \
+-	    chmod a-x $(libsubdir)/$$file; \
+-	  else true; fi; \
+-	done
+-# Don't mess with specs if it doesn't exist yet.
+-	-if [ -f specs ] ; then \
+-	  rm -f $(libsubdir)/specs; \
+-	  $(INSTALL_DATA) specs $(libsubdir)/specs; \
+-	  chmod a-x $(libsubdir)/specs; \
+-	fi
+-# Install protoize if it was compiled.
+-	-if [ -f protoize$(exeext) ]; \
+-	then \
+-	    if [ -f gcc-cross$(exeext) ] ; then \
+-		rm -f $(bindir)/$(PROTOIZE_CROSS_NAME)$(exeext); \
+-		$(INSTALL_PROGRAM) protoize$(exeext) $(bindir)/$(PROTOIZE_CROSS_NAME)$(exeext); \
+-		rm -f $(bindir)/$(UNPROTOIZE_CROSS_NAME)$(exeext); \
+-		$(INSTALL_PROGRAM) unprotoize$(exeext) $(bindir)/$(UNPROTOIZE_CROSS_NAME)$(exeext); \
+-	    else \
+-		rm -f $(bindir)/$(PROTOIZE_INSTALL_NAME)$(exeext); \
+-		$(INSTALL_PROGRAM) protoize$(exeext) $(bindir)/$(PROTOIZE_INSTALL_NAME)$(exeext); \
+-		rm -f $(bindir)/$(UNPROTOIZE_INSTALL_NAME)$(exeext); \
+-		$(INSTALL_PROGRAM) unprotoize$(exeext) $(bindir)/$(UNPROTOIZE_INSTALL_NAME)$(exeext); \
+-	    fi ; \
+-	    rm -f $(libsubdir)/SYSCALLS.c.X; \
+-	    $(INSTALL_DATA) SYSCALLS.c.X $(libsubdir)/SYSCALLS.c.X; \
+-	    chmod a-x $(libsubdir)/SYSCALLS.c.X; \
+-	fi
+-	-rm -f $(libsubdir)/cpp0$(exeext)
+-	$(INSTALL_PROGRAM) cpp0$(exeext) $(libsubdir)/cpp0$(exeext)
+-	-rm -f $(libsubdir)/tradcpp0$(exeext)
+-	$(INSTALL_PROGRAM) tradcpp0$(exeext) $(libsubdir)/tradcpp0$(exeext)
+-# Install gcov if it was compiled.
+-	-if [ -f gcov$(exeext) ]; \
+-	then \
+-	    rm -f $(bindir)/gcov$(exeext); \
+-	    $(INSTALL_PROGRAM) gcov$(exeext) $(bindir)/$(GCOV_INSTALL_NAME)$(exeext); \
+-	fi
+ 	$(INSTALL_SCRIPT) gccbug $(bindir)/$(GCCBUG_INSTALL_NAME)
+ 
+ # Install the driver program as $(target_alias)-gcc

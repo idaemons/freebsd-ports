@@ -1,0 +1,29 @@
+--- Makefile.in.orig	Sun Apr 13 01:41:17 2003
++++ Makefile.in	Sun Apr 13 01:42:14 2003
+@@ -120,7 +120,7 @@
+ 
+ SUBDIRS = fontconfig fc-lang src fc-cache fc-list doc test
+ 
+-EXTRA_DIST =          fontconfig.pc.in         fonts.conf.in 	fonts.dtd 	local.conf         fontconfig.spec.in         fontconfig.spec 	fontconfig-zip.in
++EXTRA_DIST =          fontconfig.pc.in         fonts.conf.in 	fonts.dtd 	fontconfig.spec.in         fontconfig.spec 	fontconfig-zip.in
+ 
+ 
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
+@@ -465,16 +465,7 @@
+ 
+ 
+ install-data-local:
+-	if [ -f $(DESTDIR)$(configdir)/local.conf ]; then \
+-	  echo "not overwriting existing $(DESTDIR)$(configdir)/local.conf"; \
+-	else if [ -f $(srcdir)/local.conf ]; then \
+-	  echo " $(INSTALL_DATA) $(srcdir)/local.conf $(DESTDIR)$(configdir)/local.conf"; \
+-	  $(INSTALL_DATA) $(srcdir)/local.conf $(DESTDIR)$(configdir)/local.conf; \
+-	else if [ -f local.conf ]; then \
+-	  echo " $(INSTALL_DATA) local.conf $(DESTDIR)$(configdir)/local.conf"; \
+-	  $(INSTALL_DATA) local.conf $(DESTDIR)$(configdir)/local.conf; \
+-	fi; fi; fi
+-	if [ x$(DESTDIR) = x ]; then fc-cache/fc-cache -f -v; fi
++#	if [ x$(DESTDIR) = x ]; then fc-cache/fc-cache -f -v; fi
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

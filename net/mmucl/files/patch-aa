@@ -1,0 +1,29 @@
+--- Makefile.orig	Wed Aug  9 16:48:31 2000
++++ Makefile	Mon Apr 21 03:54:30 2003
+@@ -3,7 +3,7 @@
+ 
+ # Mmucl installs itself under BASE_DIR
+ 
+-BASE_DIR = /usr/local
++BASE_DIR = ${PREFIX}
+ 
+ # The startup script, mmucl, is put in BIN_DIR
+ # Everything else is put in LIB_DIR
+@@ -21,7 +21,7 @@
+ 
+ # Location of install-info
+ 
+-INSTALL_INFO = /sbin/install-info
++INSTALL_INFO = /usr/bin/install-info
+ 
+ # Location of install
+ 
+@@ -43,7 +43,7 @@
+ 	$(INSTALL) -cm 0644 images/*.gif $(LIB_DIR)/images
+ 	$(INSTALL) -cm 0644 interface/*.tcl $(LIB_DIR)/interface
+ 	$(INSTALL) -cm 0644 .tkconf $(LIB_DIR)
+-	$(INSTALL) -cm 0775 mmucl $(BIN_DIR)
++	$(INSTALL) -cm 0755 mmucl $(BIN_DIR)
+ 	$(INSTALL) -cm 0644 mmucl.info $(INFO_DIR)
+ 	$(INSTALL_INFO) $(INFO_DIR)/mmucl.info --info-dir=$(INFO_DIR)
+ 

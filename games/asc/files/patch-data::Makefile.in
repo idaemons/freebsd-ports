@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- data/Makefile.in.orig	Sat Apr 27 23:06:17 2002
++++ data/Makefile.in	Fri Oct 18 17:03:10 2002
+@@ -89,14 +89,14 @@
+ VERSION = @VERSION@
+ asc_version = @asc_version@
+ 
+-SUBDIRS = dialog @MUSICDIR@
++SUBDIRS = dialog
+ 
+ MAINTAINERCLEANFILES = Makefile.in
+ # main.con buildings.con mk1.con trrobj.con trrobj2.con
+ 
+ pkgdata_DATA = main.con buildings.con mk1.con trrobj.con trrobj2.con
+ 
+-pkgdatadir = $(datadir)/games/@PACKAGE@
++pkgdatadir = $(datadir)/@PACKAGE@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
