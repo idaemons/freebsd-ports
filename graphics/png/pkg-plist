@@ -1,0 +1,6 @@
+include/png.h
+include/pngconf.h
+lib/libpng.a
+lib/libpng.so.3
+@exec ln -sf %f %B/libpng.so
+@unexec rm -f %B/libpng.so

@@ -1,0 +1,8 @@
+--- cfssh.orig	Mon May 22 20:56:00 2000
++++ cfssh	Mon May 22 20:56:11 2000
+@@ -1,4 +1,4 @@
+-#!/bin/ksh
++#!/bin/sh
+ 
+ if [ -z "$1" ]; then
+ 	echo Usage: cfssh directory

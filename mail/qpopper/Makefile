@@ -1,14 +1,51 @@
-# New ports collection makefile for:	popper
-# Version required:	2.1.3
-# Date created:		06 October 1994
+# New ports collection makefile for:	popper 3.*
+# Date created:		1 April 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.3 1994/12/15 05:38:19 gpalmer Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	qpop2.1.3-r5
-MASTER_SITES=	ftp://ftp.qualcomm.com/quest/unix/servers/popper/
-EXTRACT_SUFX=	.tar.Z
-WRKSRC=		${WRKDIR}/qpopper2.1.3
+PORTNAME=	qpopper3
+PORTVERSION=	3.0.2
+CATEGORIES=	mail
+MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/
+DISTNAME=	qpopper${PORTVERSION}
+
+MAINTAINER=	jeff@isni.net
+
+# If APOP_ONLY variable present in the environment, popper builds
+# with APOP authentification only.
+#
+# If FULL_POPD_DEBUG variable present in the environment, popper builds
+# with more verbose debugging.
+
+OS_DEFS=	-DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM \
+		-DNONAUTHFILE='\"/etc/ftpusers\"'
+
+.if defined(APOP_ONLY)
+OS_DEFS+=	-DAPOP_ONLY
+.endif
+
+P_LIBS+=	-lmd -lutil
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-apop=${PREFIX}/etc/popper/pop.auth \
+		--with-apopuid=pop
+.if defined(FULL_POPD_DEBUG)
+CONFIGURE_ARGS+=--enable-debugging
+.endif
+CONFIGURE_ENV=	LIBS="${P_LIBS}" OS_DEFS="${OS_DEFS}"
+
+MAN8=		popauth3.8 popper3.8
+
+post-patch:
+	@$(RM) -f ${WRKSRC}/popper/md5.h
+
+do-install:
+	cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} popper/popauth ${PREFIX}/bin/popauth3 && \
+		${INSTALL_PROGRAM} popper/popper ${PREFIX}/libexec/popper3 && \
+		${INSTALL_MAN} man/popauth.8 ${PREFIX}/man/man8/popauth3.8 && \
+		${INSTALL_MAN} man/popper.8 ${PREFIX}/man/man8/popper3.8
 
 .include <bsd.port.mk>

@@ -1,0 +1,28 @@
+--- src/exec/dpexec/Makefile.in.orig	Thu Jan  6 21:17:53 2000
++++ src/exec/dpexec/Makefile.in	Sat Feb 12 15:22:32 2000
+@@ -90,7 +90,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../../../include -I../libdx -D@ARCH@
++INCLUDES = -I../../../include -I../libdx
+ 
+ noinst_LIBRARIES = libDPEXEC.a
+ 
+@@ -204,6 +204,7 @@
+ 	else :; fi
+ yuiif.h: yuiif.c
+ 
++lex.o:	yuiif.h
+ 
+ tags: TAGS
+ 
+@@ -302,7 +303,7 @@
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+ 
+-$(libDPEXEC_a_SOURCES): yuiif.c yuiif.h
++# $(libDPEXEC_a_SOURCES): yuiif.c yuiif.h
+ 
+ include local.mk
+ 

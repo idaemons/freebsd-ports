@@ -1,0 +1,19 @@
+bin/imapd
+bin/maildirmake
+etc/imapd.config.dist
+etc/imapd-ssl.config.dist
+libexec/makedatprog
+libexec/couriertcpd
+libexec/deliverquota
+libexec/logger
+libexec/imapd.rc
+libexec/imapd-ssl.rc
+libexec/authlib/authuserdb
+libexec/authlib/authpwd
+sbin/imaplogin
+sbin/makeuserdb
+sbin/pw2userdb
+sbin/userdb
+sbin/userdbpw
+sbin/vchkpw2userdb
+@unexec rmdir %D/libexec/authlib

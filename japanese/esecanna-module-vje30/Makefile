@@ -1,0 +1,40 @@
+# New ports collection Makefile for: esecanna module for VJE-Delta 3.0
+# Date created:		24 February 2000
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	esecanna-module-vje30
+PORTVERSION=	0.14.5
+CATEGORIES=	japanese
+MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
+		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/knu/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+
+MAINTAINER=	knu@FreeBSD.org
+
+RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
+
+USE_AUTOCONF=	yes
+USE_GMAKE=	yes
+# VJE-Delta 3.0 is installed under /usr/local fixedly
+CONFIGURE_ARGS=	--with-vjecfgfile="/usr/local/etc/vje30/vje.cfg"
+
+DIST_SUBDIR=    esecanna
+
+post-patch:
+	@cd ${WRKSRC} && perl -i -pe " \
+		s,!!PREFIX!!,${PREFIX},g; \
+		" \
+		README.jp
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/esecanna
+.for i in README CHANGES
+	${INSTALL_DATA} ${WRKSRC}/${i}.jp ${PREFIX}/share/doc/esecanna/${i}.vje30.jp
+.endfor
+.endif
+
+.include <bsd.port.mk>

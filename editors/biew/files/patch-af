@@ -1,0 +1,14 @@
+--- lib/sysdep/generic/unix/keyboard.c.orig	Fri Jun  2 21:01:12 2000
++++ lib/sysdep/generic/unix/keyboard.c	Fri Jun  9 08:08:46 2000
+@@ -30,7 +30,11 @@
+ #endif
+ 
+ #ifdef	_CURSES_
++#if defined(__FreeBSD_version) && __FreeBSD_version < 400010
++#include <ncurses/curses.h>
++#else
+ #include <curses.h>
++#endif
+ MEVENT me;
+ #endif
+ 

@@ -1,0 +1,7 @@
+bin/bluefish
+share/bluefish/php3_functions
+share/bluefish/ssi_functions
+share/bluefish/rxml_functions
+share/doc/bluefish/README
+@dirrm share/bluefish
+@dirrm share/doc/bluefish

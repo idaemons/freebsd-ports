@@ -1,9 +1,23 @@
-DISTNAME=	hfs0_37
-MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
-USE_GMAKE=	yes
+# New ports collection makefile for:    hfs
+# Date created:         17 November 1994
+# Whom:                 jmz
+#
+# $FreeBSD$
+#
 
-.include <bsd.port.mk>
+PORTNAME=	hfs
+PORTVERSION=	0.37
+CATEGORIES=	emulators
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jmz/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
+
+MAINTAINER=	jmz@FreeBSD.org
+
+USE_GMAKE=	yes
+MAN1=		hfs.1
 
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/man/man1
+
+.include <bsd.port.mk>

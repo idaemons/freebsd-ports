@@ -1,0 +1,14 @@
+--- lib/sysdep/generic/unix/kbd_code.h.orig	Fri Apr 14 15:02:31 2000
++++ lib/sysdep/generic/unix/kbd_code.h	Mon Apr 17 23:48:22 2000
+@@ -78,7 +78,11 @@
+ 
+ 
+ #ifdef	_CURSES_
++#if defined(__FreeBSD_version) && __FreeBSD_version < 400010
++#include <ncurses/curses.h>
++#else
+ #include <curses.h>
++#endif
+ #define _2B(x)	(((x) & 0xff) << 8)
+ /* #define KE_ENTER	_2B(KEY_ENTER) */
+ #define KE_BKSPACE	_2B(KEY_BACKSPACE)

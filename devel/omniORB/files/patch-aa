@@ -1,0 +1,11 @@
+--- ../config/config.mk.orig	Wed Sep 22 15:21:11 1999
++++ ../config/config.mk	Mon Sep 27 09:59:18 1999
+@@ -64,7 +64,7 @@
+ #platform = x86_ets
+ #platform = x86_sco5
+ #platform = x86_uw7
+-#platform = i386_freebsd_3.2
++platform = __PLATFORM__
+ 
+ # On Win32 platforms, uncomment the following line to build all the binaries
+ # with debugging information. Useful if you want to debug the binaries under

@@ -1,28 +1,23 @@
 # New ports collection makefile for:	IrcII Client
-# Version required:	2.6
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id:$
+# $FreeBSD$
 #
 
-DISTNAME=	ircII2.6
-GNU_CONFIGURE=	YES
-MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/clients/
-EXTRACT_SUFX=	.tar.Z
-WRKSRC=		${WRKDIR}/ircii-2.6
+PORTNAME=	ircii
+PORTVERSION=	4.4U
+CATEGORIES=	irc ipv6
+MASTER_SITES=	ftp://ircftp.au.eterna.com.au/pub/ircII/
 
-pre-install:
-	mkdir -p ${PREFIX}/bin
-	mkdir -p ${PREFIX}/lib/irc/script
-	mkdir -p ${PREFIX}/lib/irc/translation
-	@if [ ! -f ${DISTDIR}/${DISTNAME}help${EXTRACT_SUFX} ]; then \
-	   echo ">> Sorry, can't find: ${DISTDIR}/${DISTNAME}help${EXTRACT_SUFX}"; \
-	   echo ">> Please obtain this file from:"; \
-	   echo ">>     $(HOME_LOCATION)"; \
-	   echo ">> if you want local helpfiles."; \
-	   exit 1; \
-        fi
-	@tar xzf ${DISTDIR}/${DISTNAME}help${EXTRACT_SUFX} -C ${PREFIX}/lib/irc; \
+MAINTAINER=	anders@sanyusan.se
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc
+
+USE_BZIP2=	yes
+
+WRKSRC=		${WRKDIR}/${PKGNAME}
+MAN1=		ircII.1 ircbug.1
 
 .include <bsd.port.mk>

@@ -1,0 +1,34 @@
+--- Makefile.in.orig	Wed May 19 11:16:06 1999
++++ Makefile.in	Sun Feb 27 03:05:15 2000
+@@ -27,11 +27,11 @@
+ LIBS = @LIBS@ -lc
+ 
+ # SunOS 4 users might wish to add '-fpcc-struct-return' to CFLAGS. see INSTALL.
+-CFLAGS = -O
++#CFLAGS = -O
+ LDFLAGS =
+ 
+ # Common prefix for installation directories
+-prefix = /usr/local
++prefix = @prefix@
+ exec_prefix = $(prefix)
+ binprefix = $(exec_prefix)
+ manprefix = $(prefix)
+@@ -115,7 +115,7 @@
+ 
+ DISTFILES = $(SRCS) $(HDRS) $(MSCFILES)
+ 
+-all: libgdbm.la
++all: libgdbm.la info
+ 
+ progs: $(PROGS)
+ 
+@@ -187,7 +187,7 @@
+ 
+ info: gdbm.info
+ 
+-gdbm.info:
++gdbm.info: gdbm.texinfo
+ 	$(MAKEINFO) $(srcdir)/gdbm.texinfo
+ 
+ dvi: gdbm.dvi

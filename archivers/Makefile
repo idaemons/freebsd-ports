@@ -1,7 +1,34 @@
-# $Id: Makefile,v 1.4 1995/01/15 08:00:29 ache Exp $
+# $FreeBSD$
 #
-# restricted: hpack.non-usa_only unzip.with_encryption zip.with_encryption
-#
-SUBDIR= arc gshar+gunshar ha lha unarj unrar unzip zip zoo
+
+    SUBDIR += arc
+    SUBDIR += bzip
+    SUBDIR += bzip2
+    SUBDIR += deepforest
+    SUBDIR += fastjar
+    SUBDIR += freeze
+    SUBDIR += gshar+gunshar
+    SUBDIR += ha
+    SUBDIR += hpack.non-usa.only
+    SUBDIR += lha
+    SUBDIR += linux_rar
+    SUBDIR += lzo
+    SUBDIR += lzop
+    SUBDIR += macutils
+    SUBDIR += makeself
+    SUBDIR += mscompress
+    SUBDIR += nulib
+    SUBDIR += p5-Compress-Zlib
+    SUBDIR += pkzip
+    SUBDIR += ppunpack
+    SUBDIR += rar
+    SUBDIR += unace
+    SUBDIR += unarj
+    SUBDIR += undms
+    SUBDIR += unlzx
+    SUBDIR += unrar
+    SUBDIR += unzip
+    SUBDIR += zip
+    SUBDIR += zoo
 
 .include <bsd.port.subdir.mk>

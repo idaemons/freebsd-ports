@@ -1,0 +1,69 @@
+--- gnome-terminal/gnome-terminal.c.orig	Fri May 19 23:38:07 2000
++++ gnome-terminal/gnome-terminal.c	Fri May 26 15:15:38 2000
+@@ -507,7 +507,7 @@
+ 	else
+ 		cfg->color_type = PALETTE_LINUX;
+ 	
+-	cfg->keyboard_secured  = FALSE;
++	cfg->keyboard_secured  = gnome_config_get_bool ("keyboard_secured=0");
+ 	
+ 	cfg->bell              = gnome_config_get_bool ("bell_silenced=0");
+ 	cfg->blink             = gnome_config_get_bool ("blinking=0");
+@@ -1028,6 +1028,7 @@
+ 				 cfg->scrollbar_position == SCROLLBAR_LEFT ? "left" :
+ 				 cfg->scrollbar_position == SCROLLBAR_RIGHT ? "right" : "hidden");
+ 
++	gnome_config_set_bool	("keyboard_secured", cfg->keyboard_secured);
+ 	gnome_config_set_bool   ("bell_silenced", cfg->bell);
+ 	gnome_config_set_bool   ("blinking", cfg->blink);
+ 	gnome_config_set_bool   ("swap_del_and_backspace", cfg->swap_keys);
+@@ -2544,12 +2545,12 @@
+ 	DONOUTMP_KEY = -10,
+ 	DOWTMP_KEY   = -11,
+ 	DONOWTMP_KEY = -12,
+-        TITLE_KEY    = -13,
+-	TERM_KEY     = -14,
+-	START_FACTORY_KEY= -15,
+-	USE_FACTORY_KEY  = -16,
+-	DOLASTLOG_KEY   = -17,
+-	DONOLASTLOG_KEY = -18,
++        DOLASTLOG_KEY    = -13,
++	DONOLASTLOG_KEY     = -14,
++	TITLE_KEY    = -15,
++	TERM_KEY     = -16,
++	START_FACTORY_KEY= -17,
++	USE_FACTORY_KEY  = -18
+ };
+ 
+ static struct poptOption cb_options [] = {
+--- gnome-terminal/Makefile.in.orig	Tue May 23 04:25:29 2000
++++ gnome-terminal/Makefile.in	Fri May 26 15:46:43 2000
+@@ -143,7 +143,7 @@
+ 
+ SUBDIRS = C de da es it no
+ 
+-INCLUDES =  	-I$(includedir)			-I$(top_srcdir)/intl		-I$(top_builddir)/intl		$(GNOME_INCLUDEDIR)		-DGNOMELOCALEDIR=\""$(datadir)/locale\""
++INCLUDES =  	-I$(includedir)			-I$(top_srcdir)/intl		-I$(top_builddir)/intl		$(GNOME_INCLUDEDIR)		-DGNOMELOCALEDIR=\""$(prefix)/share/locale\""
+ 
+ 
+ LDADD =  	$(GNOME_LIBDIR)						$(GNORBA_LIBS)						$(ORB_LIBS)						$(GNOMEUI_LIBS)						$(ZVT_LIBS)						$(INTLLIBS)
+@@ -167,7 +167,7 @@
+ gnorbadir = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = gnome-terminal.gnorba
+ 
+-utildir = $(datadir)/gnome/apps/System
++utildir = $(datadir)/apps/System
+ util_DATA = gnome-terminal.desktop
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+--- gnome-terminal/de/Makefile.in.orig	Tue May 23 04:25:31 2000
++++ gnome-terminal/de/Makefile.in	Fri May 26 15:53:04 2000
+@@ -139,7 +139,7 @@
+ gnomelocaledir = @gnomelocaledir@
+ l = @l@
+ 
+-gnome_terminal_helpdir = $(datadir)/gnome/help/gnome-terminal/de
++gnome_terminal_helpdir = $(datadir)/help/gnome-terminal/de
+ 
+ gnome_terminal_help_DATA =  	index.html			topic.dat
+ 

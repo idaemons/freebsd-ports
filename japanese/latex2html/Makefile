@@ -1,0 +1,80 @@
+# New ports collection makefile for:	 ja-latex2html
+# Date created:		3 Apr 1999
+# Whom:			Sugimoto Sadahiro <ixtl@utmc.or.jp>
+#
+# $FreeBSD$
+#
+# Default image format is PNG.
+# If you prefer GIF to PNG, define WITH_GIF (`make -DWITH_GIF`).
+
+PORTNAME=	latex2html
+PORTVERSION=	${VERSION}j${JP_VERSION}
+CATEGORIES=	japanese textproc
+MASTER_SITES=	http://www.topstudio.co.jp/~kmuto/debian/private/dists/unstable/contrib/source/
+DISTNAME=	jlatex2html_${VERSION}+${JP_VERSION}.orig
+
+PATCH_SITES=	http://www.topstudio.co.jp/~kmuto/software/latex2html/patch/99-1/
+PATCHFILES= jlatex2html-${VERSION}+${JP_VERSION}.dif.gz
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	ixtl@utmc.or.jp
+
+RUN_DEPENDS=	platex:${PORTSDIR}/japanese/platex-euc \
+		dvips:${PORTSDIR}/japanese/dvipsk-vflib \
+		gs:${PORTSDIR}/japanese/vfghostscript55 \
+		anytopnm:${PORTSDIR}/graphics/netpbm
+
+.ifndef WITH_GIF
+RUN_DEPENDS+=	${X11BASE}/bin/pnmtopng:${PORTSDIR}/graphics/pnmtopng
+.endif
+
+VERSION=	99.1
+JP_VERSION=	3.01
+
+WRKSRC=		${WRKDIR}/latex2html
+USE_PERL5=	yes
+NO_BUILD=	yes
+
+L2HDIR=		${PREFIX}/share/latex2html
+
+post-patch:
+.for f in configure-pstoimg latex2html latex2html.config \
+	ps2img-n pstoimg pstoimg_nopipes
+		${PERL} -e "s:\\\$$ENV{'L2HMODULE'}/user:${L2HDIR}:" \
+			-pi ${WRKSRC}/$f
+.endfor
+.for f in configure-pstoimg install-test latex2html makemap \
+	ps2img-n pstoimg pstoimg_nopipes texexpand
+		${PERL} -e "s:^\#!/usr/local/bin/perl:\#!${PERL}:" \
+		-pi ${WRKSRC}/$f
+.endfor
+	${PERL} -e "s:^use lib \"/usr/local/share/latex2html\":use lib \'${L2HDIR}\':" \
+	${PERL} -e "s:/usr/local/share/latex2html:${L2HDIR}:" \
+	-pi ${WRKSRC}/texexpand
+.ifdef WITH_GIF
+	${PERL} -pi -e "s|IMAGE_TYPE=.*;|IMAGE_TYPE='gif';|" \
+		${WRKSRC}/latex2html.config
+.endif
+
+do-install:
+	${MKDIR} ${L2HDIR}
+	${INSTALL_DATA} ${FILESDIR}/local.pm ${FILESDIR}/DBM.tst.db \
+		${FILESDIR}/TEST2.TMP ${L2HDIR}
+.for dir in IndicTeX-HTML XyMTeX-HTML cweb2html docs/changebar \
+	docs/hthtml docs/psfiles docs example foilhtml icon-dos icons.gif \
+	icons.png makeseg styles tests texinputs versions
+		${CP} -R ${WRKSRC}/${dir} ${L2HDIR}
+.endfor
+.for prog in Override.pm configure-pstoimg install-test latex2html \
+	makemap ps2img-n pstoimg pstoimg_nopipes texexpand
+		${INSTALL_SCRIPT} ${WRKSRC}/${prog} ${L2HDIR}
+.endfor
+.for file in .dvipsrc Changes FAQ MANIFEST README README.dvips \
+	README.patch TODO dot.latex2html-init latex2html.config readme.hthtml
+		${INSTALL_DATA} ${WRKSRC}/${file} ${L2HDIR}
+.endfor
+	${MKDIR} ${PREFIX}/share/texmf/tex/latex/latex2html
+	${INSTALL_DATA} ${WRKSRC}/texinputs/* ${PREFIX}/share/texmf/tex/latex/latex2html
+	${INSTALL_SCRIPT} ${WRKSRC}/latex2html ${PREFIX}/bin
+
+.include <bsd.port.mk>

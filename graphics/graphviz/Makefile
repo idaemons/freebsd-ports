@@ -1,0 +1,35 @@
+# New ports collection makefile for:	graphviz
+# Date created:		03 Feb 1998
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	graphviz
+PORTVERSION=	1.5.1
+CATEGORIES=	graphics tk82
+MASTER_SITES=	http://www.research.att.com/sw/tools/graphviz/
+DISTNAME=	gviz15
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+
+FETCH_ARGS=	-b
+WRKSRC=		${WRKDIR}/gv1.5
+MAKEFILE=	makefile
+MAN1=		dot.1 dotty.1 lefty.1 neato.1
+MANN=		tcldot.n
+
+DOCDIR=		${PREFIX}/share/doc/graphviz
+
+post-install:
+	@${MKDIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.htm* ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCDIR}
+	@${GZIP_CMD} ${DOCDIR}/*.ps
+
+.include <bsd.port.mk>

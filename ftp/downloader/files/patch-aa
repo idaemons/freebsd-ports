@@ -1,0 +1,92 @@
+--- Makefile.orig	Thu May 11 05:49:46 2000
++++ Makefile	Tue May 16 17:36:48 2000
+@@ -1,40 +1,19 @@
+-CXXFLAGS=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
+-# -ggdb
+-#-lefence
++CXXFLAGS += -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
+ 
+-
+-export CXXFLAGS LOCALEDIR
+-
+-#CXX = c++
++CXX ?= c++
+ 
+ NLS=-DENABLE_NLS # Remove or comment this line to disable gettext
+-ifeq ($(DEST),)
+-DEST=/usr/local
+-endif
++DEST=${PREFIX}
+ 
+ LOCALEDIR=$(DEST)/share/locale
+-PTHREAD=-lpthread
+-GTKCONFIG=gtk-config
+-GLIBCONFIG=glib-config
+-MAKE=make
+-
+-#next strings were added for BSD support
+-ifeq ($(OSTYPE),BSD)
+ PTHREAD=-pthread
+-GTKCONFIG=gtk12-config
+-MAKE=gmake
+-endif
++MSGFMT=${MSGFMT_CMD}
+ 
+-ifeq ($(OSTYPE),FreeBSD)
+-PTHREAD=-pthread
+-GTKCONFIG=gtk12-config
+-MAKE=gmake
+-endif
+-
+-GTKLIBS=$(shell $(GTKCONFIG) --libs) $(shell $(GLIBCONFIG) --libs)
+-GTKFLAGS=$(shell $(GTKCONFIG) --cflags) $(shell $(GLIBCONFIG) --cflags)
++GTKLIBS=`${GTK_CONFIG} --libs`
++GTKFLAGS=`${GTK_CONFIG} --cflags`
+ LDFLAGS=$(PTHREAD) $(GTKLIBS)
+-CXXFLAGS += $(GTKFLAGS) $(NLS) -DLOCALE=\"${LOCALEDIR}\"
++
++EXECC=$(CXX) $(CXXFLAGS) $(GTKFLAGS) $(NLS) -DLOCALE=\"${LOCALEDIR}\"
+ 
+ FACE=face/lmenu.o face/list.o face/addd.o face/graph.o face/log.o \
+ 	face/prefs.o face/buttons.o face/about.o face/edit.o \
+@@ -51,23 +30,20 @@
+ all:
+ 	-rm -f nt
+ 	$(MAKE) nt
+-	[ -z "$(NLS)" ] || $(MAKE) -C po
+-	$(MAKE) strip
++	[ -z "$(NLS)" ] || cd po && MSGFMT=$(MSGFMT) $(MAKE)
+ 
+ $(FACE):
+-	$(MAKE) -C face
++	cd face && EXECC="$(EXECC)" $(MAKE)
+ 
+ nt: $(MODULES)
+-	$(MAKE) -C face
+-	$(CXX) -lstdc++ $(MODULES) nt.cc -o nt $(CXXFLAGS) $(GTKLIBS) $(PTHREAD)
+-
+-strip: nt
+-	strip nt
+-
++	$(EXECC) $(MODULES) nt.cc -o nt $(LDFLAGS)
+ 
+ install: all
+-	install -c -m755 nt $(DEST)/bin
+-	[ -z "$(NLS)" ] || $(MAKE) install -C po
++	${BSD_INSTALL_PROGRAM} nt $(DEST)/bin
++	[ -z "$(NLS)" ] || cd po && LOCALEDIR=$(LOCALEDIR) $(MAKE) install
++
++.cc.o:
++	$(EXECC) -c $<
+ 
+ clean: 
+ 	-rm -f *.o nt TAGS *~
+@@ -80,8 +56,3 @@
+ uninstall:
+ 	-rm -f $(DEST)/bin/nt
+ 	$(MAKE) uninstall -C po
+-
+-Makefile.dep:
+-	$(CXX) $(CXXFLAGS) -MM *.cc > Makefile.dep
+-
+--include Makefile.dep

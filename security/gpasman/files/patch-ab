@@ -1,0 +1,14 @@
+--- src/Makefile.in.orig	Sun Sep 19 13:56:52 1999
++++ src/Makefile.in	Sun Sep 19 13:57:20 1999
+@@ -26,9 +26,9 @@
+ 
+ 
+ CC = @CC@
+-CFLAGS = @DEFS@ @CFLAGS@ $(shell @GTKCONFIG@ --cflags)
++CFLAGS = @DEFS@ @CFLAGS@ `@GTKCONFIG@ --cflags`
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@ $(shell @GTKCONFIG@ --libs)
++LIBS = @LIBS@ `@GTKCONFIG@ --libs`
+ INSTALL = @INSTALL@
+ 
+ SRCS = librc2.c file.c gpasman.c

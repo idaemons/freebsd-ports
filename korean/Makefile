@@ -1,0 +1,56 @@
+# $FreeBSD$
+#
+
+    SUBDIR += Wnn
+    SUBDIR += acroread-korfont
+    SUBDIR += afterstep
+    SUBDIR += ami
+    SUBDIR += baekmukfonts-bdf
+    SUBDIR += baekmukfonts-ttf
+    SUBDIR += bitchx
+    SUBDIR += byeoroo
+    SUBDIR += elm
+    SUBDIR += engdic
+    SUBDIR += eterm
+    SUBDIR += ftghostscript5
+    SUBDIR += fvwm95
+    SUBDIR += gau
+    SUBDIR += gtk10
+    SUBDIR += gtkcomm
+    SUBDIR += h2ps
+    SUBDIR += han
+    SUBDIR += hanIM
+    SUBDIR += hanemacs
+    SUBDIR += hanterm
+    SUBDIR += hanterm-xf86
+    SUBDIR += hanyangfonts
+    SUBDIR += hcode
+    SUBDIR += helvis
+    SUBDIR += hlatex-wansungstd
+    SUBDIR += hlatexfonts-ocf
+    SUBDIR += hlatexpsfonts-wansungstd
+    SUBDIR += hmconv
+    SUBDIR += hpscat
+    SUBDIR += johabfonts
+    SUBDIR += kaistfonts
+    SUBDIR += linuxdoc-sgml
+    SUBDIR += linux_locale
+    SUBDIR += mizifont
+    SUBDIR += mule-wnn4
+    SUBDIR += munhwafonts-cid
+    SUBDIR += netscape3
+    SUBDIR += netscape4-communicator
+    SUBDIR += netscape4-navigator
+    SUBDIR += netscape47-communicator
+    SUBDIR += netscape47-navigator
+    SUBDIR += nh2ps
+    SUBDIR += nhpf
+    SUBDIR += nhppf
+    SUBDIR += nvi-euc-kr
+    SUBDIR += nvi-iso-2022-kr
+    SUBDIR += pgp.language
+    SUBDIR += pine
+    SUBDIR += pinetreefonts
+    SUBDIR += vim
+
+.include <bsd.port.subdir.mk>

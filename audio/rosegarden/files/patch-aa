@@ -1,0 +1,51 @@
+--- configure.in.orig	Wed Oct 15 13:42:59 1997
++++ configure.in	Sat Sep 18 16:15:13 1999
+@@ -4,6 +4,14 @@
+ 
+ AC_CONFIG_HEADER(config.h)
+ 
++AC_ARG_WITH(tcl,
++    [--with-tclincl        Set tcl iclude Path],     
++    [ with_tcl=$withval ],   
++    [ with_tcl=/usr/local/include ],   
++)
++
++CFLAGS="${CFLAGS} -I ${with_tcl}"
++
+ dnl Checks for programs.
+ AC_PROG_CC
+ AC_PROG_LN_S
+@@ -67,11 +75,11 @@
+ 
+ Petal=Petal
+ 
+-AC_CHECK_HEADER(tcl.h, TCL_CHECK=1, TCL_CHECK=0)
++TCL_CHECK=1
+ 
+ if test $TCL_CHECK -eq 1
+ then
+-     AC_PATH_PROG(TCLSH, tclsh)
++     AC_PATH_PROG(TCLSH, tclsh8.2)
+      if test -n "$TCLSH"
+      then
+ 	# Check Tcl version:
+@@ -88,7 +96,7 @@
+ 	then
+ 		# Check for TclMIDI
+ 		AC_CHECKING(if TclMIDI is installed)
+-		TCL_MIDI_CHECK=`echo "package require tclmidi" | $TCLSH 2>&1`
++		TCL_MIDI_CHECK=
+ 		if test -n "$TCL_MIDI_CHECK"
+ 		then
+ 			Petal=""
+@@ -153,8 +161,8 @@
+ 	*freebsd*)
+ 	defines="-DNO_SYS_ERRLIST"
+ 	AC_CHECK_HEADER(machine/soundcard.h, sound_system="-DSYSTEM_OSS")
+-	extra_libs="-lmalloc"
+-	# LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
++	# extra_libs="-lmalloc"
++	LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
+ 
+ 	PETAL_LD=ld
+ 	PETAL_CFLAGS="-fPIC"

@@ -1,30 +1,91 @@
 #!/bin/sh
 
-cd $WRKSRC/config/cf/ || exit 1;
-cat >> xf86site.def << EOF
-#define XF86SvgaDrivers		et4000 et3000 pvga1 gvga ati tvga8900 cirrus \
-				ncr77c22 compaq oak mx al2101 ali cl64xx \
-				video7 chips generic
+# This scripts work as following:
+# (1) cp current xf86site.def (it may be created by imake-4 ports) 
+#       to ${WRKDIR}/xc/config/cf.
+#     this means this ports use imake-4's config defaultly.
+# (2) Generate temporal config for compiling.
+#     Some configs, such as `ForceNormalLib', `FreeBSDBuildXprog', are
+#     used for compiling this ports localy. so these configs will be generated
+#     this scripts. these configs will be stored to `host.def' file.
+#     but this host.def will never install. use local only.
 
-#define XF86Vga16Drivers	et4000 ncr77c22 ati tvga8900 oak cl64xx generic
+ORIGDEF=$PREFIX/lib/X11/config/xf86site.def
+DESTDEF=$WRKDIR/xc/config/cf/xf86site.def
+ORIGHOSTDEF=$PREFIX/lib/X11/config/host.def
+LOCALDEF=$WRKDIR/.config
+HOSTDEF=$WRKDIR/xc/config/cf/host.def
 
-#define XF86Vga2Drivers		et4000 et3000 pvga1 gvga ati tvga8900 cirrus \
-				ncr77c22 compaq oak cl64xx generic
- 
-#define XF86MonoDrivers		hgc1280 sigma apollo hercules
+configure () {
+    # Use original host.def as initial config file
+    rm -f $LOCALDEF
+    grep -v '#define.*ProjectRoot' $ORIGHOSTDEF >> $LOCALDEF
+    echo "#define ProjectRoot $PREFIX" >> $LOCALDEF
 
-#define XF86W32Drivers		et4000w32
+    # setdefault values
+    if [ X$InstallXdmConfig = "X" ]; then
+	InstallXdmConfig=YES
+    fi
+    if [ X$InstallXinitConfig = "X" ]; then
+	InstallXinitConfig=YES
+    fi
+    if [ X$InstallAppDefFiles = "X" ]; then
+	InstallAppDefFiles=YES
+    fi
+    if [ X$BuildAoutLibraries = "X" ]; then
+	BuildAoutLibraries=NO
+    fi
 
-EOF
+    # disable some configs: there are not used this ports
+    for i in InstallFSConfig \
+	BuildServer \
+	BuildFontServer \
+	BuildFonts \
+	Build75DpiFonts \
+	Build100DpiFonts \
+	BuildSpeedoFonts \
+	BuildType1Fonts \
+	BuildCIDFonts \
+	BuildCyrillicFonts \
+	BuildLatin2Fonts \
+	LibHeaders \
+	ForceNormalLib
+    do \
+	echo "#define $i NO" >> $LOCALDEF
+    done
+    echo "#define FreeBSDBuildXlib NO" >> $LOCALDEF
+    echo "#define FreeBSDBuildXbin YES" >> $LOCALDEF
+    echo "#define InstallXdmConfig $InstallXdmConfig" >> $LOCALDEF
+    echo "#define InstallXinitConfig $InstallXinitConfig" >> $LOCALDEF
+    echo "#define InstallAppDefFiles $InstallAppDefFiles" >> $LOCALDEF
+    echo "#define BuildAoutLibraries $BuildAoutLibraries" >> $LOCALDEF
 
-version=`uname -r`
-set `echo $version|sed -e 's/\./ /g' -e 's/-/ /g'`
-mv FreeBSD.cf FreeBSD.cf.old
-sed -e "s/12.0/$version/"                       \
-    -e "s/OSMajorVersion *2/OSMajorVersion $1/"  \
-    -e "s/OSMinorVersion *0/OSMinorVersion $2/"  \
-    -e "s/OSTeenyVersion *0/OSTeenyVersion $3/"  \
-    <FreeBSD.cf.old >FreeBSD.cf
-#you may change ExtraLibraries too!
+    # Check Wraphelp.c
+    WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
+    cpwh=NO
+    if [ -f $WH ] ; then
+	cpwh=SOURCE
+    elif [ -f $DISTDIR/xc/Wraphelp.c ] ; then
+	cpwh=$DISTDIR/xc/Wraphelp.c
+    else
+	echo "==> Warnning: Wraphelp.c not found, DES support NOT enabled."
+    fi
+    if [ X$cpwh != XNO -a X$cpwh != XSOURCE ]; then
+	tr -d '\r' < $cpwh > $WH
+    fi
+
+    # Copy ORIGDEF to DESTDEF
+    rm -f $DESTDEF
+    if [ $cpwh = NO ] ; then
+	grep -v '#define.*HasXdmAuth' $ORIGDEF >> $DESTDEF
+	echo "#define HasXdmAuth NO" >> $DESTDEF
+    else
+	cp -f $ORIGDEF $DESTDEF
+    fi
+
+    # copy generated config to host.def
+    cp -f $LOCALDEF $HOSTDEF
+}
+
+configure
 exit 0
-

@@ -1,0 +1,48 @@
+*** Makefile.orig	Mon May 17 01:46:21 1993
+--- Makefile	Sat Jun 19 02:38:20 1999
+***************
+*** 26,38 ****
+  default:
+  		@echo 'You must use "make sun4.0", "make sun4.1",'
+  		@echo '"make next", "make sgi", "make hpux",'
+! 		@echo '"make lofi" or "make audiofile"'
+  		exit 1
+  
+  all:		radio broadcast
+  
+  # Platform-specific entries
+  
+  sun4.0:		# For SunOS 4.x
+  		make all LIBS=-lX11
+  
+--- 26,41 ----
+  default:
+  		@echo 'You must use "make sun4.0", "make sun4.1",'
+  		@echo '"make next", "make sgi", "make hpux",'
+! 		@echo '"make FreeBSD", "make lofi" or "make audiofile"'
+  		exit 1
+  
+  all:		radio broadcast
+  
+  # Platform-specific entries
+  
++ FreeBSD:	# For FreeBSD 2.0.5
++ 		make all CFLAGS='-DHAVE_MCAST -DDEFMCAST=\"radio.multicast\"'
++ 
+  sun4.0:		# For SunOS 4.x
+  		make all LIBS=-lX11
+  
+***************
+*** 82,87 ****
+--- 85,95 ----
+  		make all CFLAGS="-g -Daudiofile $(AFINCLUDE)" \
+  		LIBS="$(AFLIBDIRS) -lAF -lAFUtil -lm"
+  
++ install:	all
++ 		$(INSTALL) -c -s -o bin -g bin -m 755 broadcast ${PREFIX}/bin/broadcast
++ 		$(INSTALL) -c -s -o bin -g bin -m 755 radio ${PREFIX}/bin/radio
++ 		$(INSTALL) -c -o bin -g bin -m 644 broadcast.man ${PREFIX}/man/man1/broadcast.1
++ 		$(INSTALL) -c -o bin -g bin -m 644 radio.man ${PREFIX}/man/man1/radio.1
+  
+  # Common programs:
+  

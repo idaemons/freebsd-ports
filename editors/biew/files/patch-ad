@@ -1,0 +1,14 @@
+--- lib/sysdep/generic/unix/vio.c.orig	Fri Apr 14 15:02:21 2000
++++ lib/sysdep/generic/unix/vio.c	Mon Apr 17 23:49:05 2000
+@@ -71,7 +71,11 @@
+ #endif
+ 
+ #ifdef	_CURSES_
++#if defined(__FreeBSD_version) && __FreeBSD_version < 400010
++#include <ncurses/curses.h>
++#else
+ #include <curses.h>
++#endif
+ #define _bg(x)	(((x) >> 4) & 7)
+ #define _fg(x)	((x) & 7)
+ #define _2cpair(x) (_bg(x) * 010 + _fg(x))

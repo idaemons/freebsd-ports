@@ -1,0 +1,75 @@
+--- Makefile.in.orig	Fri Jul  9 14:24:13 1999
++++ Makefile.in	Fri Mar 31 02:31:17 2000
+@@ -32,19 +32,20 @@
+ # 
+ 
+ CDKLIB		= libcdk.a
++CDKSLIB		= libcdk.so.1
+ VERSION		= 4.9.9
+ CFLAGS		= -Iinclude @CFLAGS@ @DEFS@
+ CC		= @CC@
+ LDFLAGS		= @LDFLAGS@
+ LIBS		= @LIBS@
+ RANLIB		= @RANLIB@
+-INSTALL		= @INSTALL@
++INSTALL		= @INSTALL_DATA@
+ INSTALL_DIR	= @prefix@
+ INCLUDE_DIR	= $(INSTALL_DIR)/include/cdk
+ LIB_DIR		= $(INSTALL_DIR)/lib
+ MAN_DIR		= $(INSTALL_DIR)/man/man3
+ 
+-default:: cdklib
++default:: cdklib cdkslib
+ 
+ #
+ # Create the file lists.
+@@ -71,6 +72,7 @@
+ 			cdk_template.3 cdk_viewer.3
+ CDKREADME	= BUGS EXPANDING NOTES TODO COPYING INSTALL README
+ CDKOBJS		= $(CDKSRC:.c=.o)
++CDKSOBJS	= $(CDKSRC:.c=.so)
+ 
+ #
+ # Standard library directive.
+@@ -79,6 +81,9 @@
+ 	$(AR) -cr $(CDKLIB) $(CDKOBJS)
+ 	$(RANLIB) $(CDKLIB)
+ 
++cdkslib $(CDKSLIB): $(CDKSOBJS)
++	$(CC) -shared -Wl,-x -Wl,-soname,$(CDKSLIB) -o $(CDKSLIB) $(CDKSOBJS)
++
+ #
+ # Make the examples directory.
+ #
+@@ -94,7 +99,7 @@
+ #
+ # This installs all of the CDK library release.
+ #
+-install:: installCDKHeaderFiles installCDKReadme installCDKLibrary installCDKManPages
++install:: installCDKHeaderFiles installCDKLibrary installCDKManPages
+ 
+ #
+ # This installs the header files.
+@@ -129,6 +134,9 @@
+ 	fi
+ 	@echo "	$(INSTALL) $(CDKLIB) $(LIB_DIR)"
+ 	@$(INSTALL) $(CDKLIB) $(LIB_DIR)
++	@echo "	$(INSTALL) $(CDKSLIB) $(LIB_DIR)"
++	@$(INSTALL) $(CDKSLIB) $(LIB_DIR)
++	ln -sf $(CDKSLIB) $(LIB_DIR)/libcdk.so
+ 
+ #
+ # This installs the CDK man pages.
+@@ -165,8 +173,10 @@
+ #
+ # Standard .c to .o compile line.
+ #
+-.c.o:
+-	$(CC) $(CFLAGS) -c $<
++.SUFFIXES: .c .so .o
++
++.c.so:
++	$(CC) $(CFLAGS) -fpic -DPIC -o $@ -c $<
+ 
+ #
+ # Set up our PHONY tags.

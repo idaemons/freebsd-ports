@@ -1,0 +1,48 @@
+*** config.h.orig	Mon Apr 28 04:27:41 1997
+--- config.h	Wed Apr 22 05:55:53 1998
+***************
+*** 43,51 ****
+     >From_ field will be added in the header */
+  
+  #define TRUSTED_IDS	{"root","daemon","uucp","mail","x400","network",\
+! 			 "list","slist","lists","news",0}
+  
+! /*#define NO_fcntl_LOCK		/* uncomment any of these three if you	     */
+  /*#define NO_lockf_LOCK		/* definitely do not want procmail to make   */
+  /*#define NO_flock_LOCK		/* use of those kernel-locking methods	     */
+  
+--- 43,51 ----
+     >From_ field will be added in the header */
+  
+  #define TRUSTED_IDS	{"root","daemon","uucp","mail","x400","network",\
+! 			 "list","slist","lists","news","majordom","majordomo",0}
+  
+! #define NO_fcntl_LOCK         /* uncomment any of these three if you       */
+  /*#define NO_lockf_LOCK		/* definitely do not want procmail to make   */
+  /*#define NO_flock_LOCK		/* use of those kernel-locking methods	     */
+  
+***************
+*** 71,81 ****
+  	is not found, maildelivery will proceed as normal to the default
+  	system mailbox. */
+  
+! #define ETCRC	"/etc/procmailrc"	/* optional global procmailrc startup
+  					   file (will only be read if procmail
+  	is started with no rcfile on the command line). */
+  
+! #define ETCRCS	"/etc/procmailrcs/"	/* optional trusted path prefix for
+  					   rcfiles which will be executed with
+  	the uid of the owner of the rcfile (this only happens if procmail is
+  	called with the -m option, without variable assignments on the command
+--- 71,81 ----
+  	is not found, maildelivery will proceed as normal to the default
+  	system mailbox. */
+  
+! #define ETCRC   "/usr/local/etc/procmailrc"       /* optional global procmailrc startup
+  					   file (will only be read if procmail
+  	is started with no rcfile on the command line). */
+  
+! #define ETCRCS  "/usr/local/etc/procmailrcs/"     /* optional trusted path prefix for
+  					   rcfiles which will be executed with
+  	the uid of the owner of the rcfile (this only happens if procmail is
+  	called with the -m option, without variable assignments on the command

@@ -1,0 +1,11 @@
+bin/tyexport
+bin/tyimport
+bin/ddlp
+bin/dbdview
+include/environ.h
+include/typhoon.h
+lib/libtyphoon.a
+lib/libtyphoon.so
+lib/libtyphoon.so.1
+share/typhoon/manual.asc
+@dirrm share/typhoon

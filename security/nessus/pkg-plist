@@ -1,0 +1,16 @@
+bin/nessus
+include/nessus/config.h
+include/nessus/includes.h
+include/nessus/nessus-devel.h
+include/nessus/nessusicmp.h
+include/nessus/nessusip.h
+include/nessus/nessusraw.h
+include/nessus/nessustcp.h
+include/nessus/nessusudp.h
+include/nessus/ntcompat.h
+sbin/nessusd
+@dirrm var/nessus
+@dirrm etc/nessus
+@dirrm lib/nessus/plugins
+@dirrm lib/nessus/reports
+@dirrm lib/nessus

@@ -1,0 +1,23 @@
+# New ports collection makefile for:	gtkportscan
+# Date created:		11 March 1999
+# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gtkportscan
+PORTVERSION=	1.2
+CATEGORIES=	security
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/cpiazza/
+
+MAINTAINER=	cpiazza@FreeBSD.org
+
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+WRKSRC=		${WRKDIR}/gtkportscan
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/gtkportscan ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/portscan ${PREFIX}/bin
+
+.include <bsd.port.mk>

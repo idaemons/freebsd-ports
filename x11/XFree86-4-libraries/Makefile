@@ -1,52 +1,56 @@
-DISTNAME	=	xc
-PKGNAME		= 	XFree86-3.1.1
-WRKDIR?=                ${.CURDIR}/work
-BUILD_COOKIE?=		${WRKDIR}/.build_done
-PATCH_STRIP	=	-p1
+# New ports collection makefile for:	XFree86Xlibraries-4.0
+# Date created:		10 Oct 1999
+# Whom:			taguchi@tohoku.iij.ad.jp
+#
+# $FreeBSD$
+#
 
-# uncomment one of the 2 lines below!
-#X11_ON_CDROM	=	yes
-X11_VIA_FTP	=	yes
+PORTNAME=	libraries
+PORTVERSION=	4.0
+CATEGORIES=	x11
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/4.0/source/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/4.0/source/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-4.0/source/ \
+		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/4.0/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/4.0/source/
+PKGNAMEPREFIX=	XFree86-
+DISTFILES=	X400src-1.tgz
 
-#define this if you are short of space - save ~28 Mbytes
-#REMOVE_NOT_ESSENTIAL	=	yes
+MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 
-.if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
-build: configure ${BUILD_COOKIE}
-
-${BUILD_COOKIE}:
-	@echo "===>  Building for ${DISTNAME}"
-	@${MAKE} ${.MAKEFLAGS} pre-build
-.if defined(REMOVE_NOT_ESSENTIAL)
-	@rm -rf ${WRKSRC}/test ${WRKSRC}/doc/hardcopy ${WRKSRC}/doc/specs
-	@find ${WRKSRC}/ -name '*.orig' -exec rm -f {} ';'
-.endif
-	@(cd ${WRKSRC}; echo Good night...; make World)
-	@touch ${WRKDIR}/.build_done
-
-install:
-	@(cd ${WRKSRC}; make install; make install.man)
-	@touch ${WRKDIR}/.install_done
-.endif
-
-.if defined(X11_ON_CDROM)
-.include "Makefile.cdrom"
-.elif defined(X11_VIA_FTP)
-.include "Makefile.ftp"
+PREFIX?=	${X11BASE}
+INSTALLS_SHLIB=	yes
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
+DIST_SUBDIR=	xc
+WRKSRC=		${WRKDIR}/xc
+SCRIPTS_ENV+=	PREFIX=${PREFIX} X11BASE=${X11BASE} \
+		WRKDIR=${WRKDIR} DISTDIR=${DISTDIR}
+ALL_TARGET=	FreeBSDPortsBuild
+.if defined(NO_INSTALL_MANPAGES)
+INSTALL_TARGET= FreeBSDPortsInstall installXlib
 .else
-all:
-	@echo -n
-fetch:
-	@echo -n
-extract:
-	@echo -n
-configure:
-	@echo -n
-build:
-	@echo -n
-install:
-	@echo -n
+INSTALL_TARGET= FreeBSDPortsInstall FreeBSDPortsInstall.man installXlib
+MANCOMPRESSED=	yes
+MAN1=		bdftopcf.1 \
+		mkfontdir.1
+MAN3=		Xaw.3
 .endif
 
+.if defined(XDM_DES)
+.if ${USA_RESIDENT} == YES
+pre-fetch:
+	@${ECHO}
+	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
+.else
+MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
+		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
+EXTRACT_ONLY=	X400src-1.tgz
+DISTFILES+=	Wraphelp.c
+IGNOREFILES=	Wraphelp.c
+.endif
+.endif
 
+.include <bsd.port.mk>

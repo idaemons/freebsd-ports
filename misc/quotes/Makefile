@@ -1,0 +1,34 @@
+# New ports collection makefile for:	quotes
+# Date created:         9 February 1999
+# Whom:                 Dima Sivachenko
+#
+# $FreeBSD$
+#
+
+PORTNAME=	quotes
+PORTVERSION=	1.5.2
+CATEGORIES=	misc
+MASTER_SITES=	ftp://ftp.iae.nl/pub/users/grimaldo/
+DISTNAME=	quotes-1.5-2
+
+MAINTAINER=	dima@Chg.RU
+
+NO_BUILD=	yes
+USE_PERL5=	yes
+
+post-patch:
+	@ ${PERL} -pi -e "s:/usr/bin/perl:${PERL}:g" ${WRKSRC}/quotes
+	@ ${PERL} -pi -e "s:/usr/bin/perl:${PERL}:g" ${WRKSRC}/quotesmailer
+	@ ${PERL} -pi -e "s:/usr/bin/perl:${PERL}:g" ${WRKSRC}/QuExample.pm
+
+do-install:
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/quotes ${PREFIX}/bin
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/quotesmailer ${PREFIX}/bin
+	@ ${INSTALL_DATA} ${WRKSRC}/sample.quotesrc ${PREFIX}/etc/quotesrc.sample
+.if !defined(NOPORTDOCS)
+	@ ${MKDIR} ${PREFIX}/share/doc/quotes
+	@ ${INSTALL_DATA} ${WRKSRC}/quotes.txt ${PREFIX}/share/doc/quotes
+	@ ${INSTALL_DATA} ${WRKSRC}/QuExample.pm ${PREFIX}/share/doc/quotes
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,27 @@
+--- pgm/Makefile.orig	Sat May 27 04:14:36 2000
++++ pgm/Makefile	Sat Jun  3 00:00:00 2000
+@@ -3,14 +3,13 @@
+ 
+ LIBROOT = pgm
+ LIBPGM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
+-MAJ = 9
+-MIN = 3
++SOVER = 1
+ 
+ PBMDIR = $(SRCDIR)/pbm
+ INCLUDEPBM = -I$(PBMDIR)
+ LIBPBM = libpbm.$(NETPBMLIBSUFFIX)
+ 
+-INCLUDE = -I$(SRCDIR) $(INCLUDEPBM) -I$(SRCDIR)/shhopt
++INCLUDE = -I$(SRCDIR) $(INCLUDEPBM)
+ 
+ NETPBMLIBS = $(LIBPGM) $(PBMDIR)/$(LIBPBM)
+ LIBLIBS = $(PBMDIR)/$(LIBPBM)
+@@ -27,6 +26,7 @@
+ MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
+ 
+ LIBOBJECTS = libpgm1.o libpgm2.o
++LIBSOBJECTS = $(patsubst %.o, %.so, $(LIBOBJECTS))
+ 
+ MANUALS1 =	$(BINARIES)
+ MANUALS3 =	libpgm

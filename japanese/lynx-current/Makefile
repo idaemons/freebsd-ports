@@ -1,0 +1,54 @@
+# New ports collection makefile for:	ja-lynx-current
+# Date created:         10 August 1998
+# Whom:                 Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	lynx
+PORTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
+CATEGORIES=	japanese www
+MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
+		http://people.FreeBSD.org/~shige/ports/distfiles/ \
+		http://sol.slcc.edu/lynx/current/
+DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
+
+
+MAINTAINER=	shige@FreeBSD.org
+
+FORBIDDEN=  "Riddled with buffer overflows exploitable by a malicious server to execute code as the local user."
+
+WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}
+
+VERSION=	2.8.3
+MINOR_VERSION=	dev.16
+
+USE_BZIP2=	YES
+NO_LATEST_LINK=	YES
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib \
+		--libdir="${PREFIX}/${LYNX_LIB}" \
+		--disable-nls --enable-default-colors \
+		--enable-nsl-fork --enable-persistent-cookies \
+		--enable-cjk --enable-file-upload --enable-justify-elts \
+		--enable-libjs --enable-read-eta --enable-source-cache
+# experimental optional configure args
+#   --enable-prettysrc --enable-color-style
+#
+MAKEFILE=	makefile
+MAKE_ARGS=	helpdir=${PREFIX}/${LYNX_HELP} docdir=${PREFIX}/${LYNX_DOC}
+PLIST_SUB=	LYNX_LIB=${LYNX_LIB} LYNX_DOC=${LYNX_DOC} LYNX_HELP=${LYNX_HELP}
+
+INSTALL_TARGET=	install-full
+MAN1=		lynx.1
+
+LYNX_LIB=	etc
+LYNX_DOC=	share/doc/lynx
+LYNX_HELP=	share/lynx_help
+
+post-install:
+	@/usr/sbin/chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${LYNX_DOC}
+	@/usr/sbin/chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${LYNX_HELP}
+	@/usr/sbin/chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${LYNX_LIB}/lynx.cfg
+
+.include <bsd.port.mk>

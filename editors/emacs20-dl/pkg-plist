@@ -1,0 +1,2 @@
+bin/emacs-dl-%%EMACS_VER%%
+share/emacs/%%EMACS_VER%%/etc/%%DOC_FILE%%

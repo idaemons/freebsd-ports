@@ -1,26 +1,49 @@
-# New ports collection makefile for:    scm
-# Version required:     4e1
-# Date created:         Sat Nov  5 17:11:01 PST 1994
-# Whom:                 hsu
+# New ports collection makefile for:	scm
+# Date created:		Sat Nov  5 17:11:01 PST 1994
+# Whom:			hsu
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/06 09:59:26 hsu Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       scm
-MASTER_SITES=   ftp://swiss-ftp.ai.mit.edu/pub/scm/
-DISTFILES=      scm4e1.tar.gz \
-		slib.info.tar.gz slib2a1.tar.gz slib-psd1-3.tar.gz \
-		scmconfig4e1.tar.gz
-GNU_CONFIGURE=
-USE_GMAKE=
-MAKE_FLAGS=	CFLAGS=-O2 LDFLAGS=-s defines="-DSICP -DHAVE_CONFIG_H -DFLOATS -DIO_EXTENSIONS -DMEMOIZE_LOCALS -DGC_FREE_SEGMENTS" -f
+PORTNAME=	scm
+PORTVERSION=	5d2
+CATEGORIES=	lang
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		ftp://ftp.swiss.ai.mit.edu/pub/scm/OLD/
+MASTER_SITE_SUBDIR=	jacal
+DISTFILES=	scm5d2.zip slib2c7.zip slib-psd1-3.tar.gz scmconfig4e3.tar.gz
 
-pre-install:
-	@if [ ! -e ${PREFIX}/lib ]; then mkdir -p ${PREFIX}/lib; fi
-	cp -rp ${WRKDIR}/slib ${PREFIX}/lib
-	@if [ ! -e /usr/local/info ]; then mkdir -p /usr/local/info; fi
-	(cd ${WRKDIR}/slib; \
-		install -c -m 444 slib.info slib.info-1 slib.info-2 \
-				  slib.info-3 slib.info-4 /usr/local/info)
+MAINTAINER=	ports@FreeBSD.org
+
+EXTRACT_ONLY=	scm5d2.zip slib2c7.zip
+
+USE_ZIP=	yes
+GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/scm
+MAN1=		scm.1
+
+IMPLINIT=	${PREFIX}/libdata/scm/Init.scm
+
+post-extract:
+.for file in scmconfig4e3.tar.gz slib-psd1-3.tar.gz
+	@${TAR} -C ${WRKDIR} -zxf ${_DISTDIR}/${file}
+.endfor
+
+post-configure:
+	@${ECHO} '#ifndef IMPLINIT' > ${WRKSRC}/scmflags.h
+	@${ECHO} '#define IMPLINIT "${IMPLINIT}"' >> ${WRKSRC}/scmflags.h
+	@${ECHO} '#endif' >> ${WRKSRC}/scmflags.h
+
+post-install:
+	@touch ${PREFIX}/libdata/scm/implcat
+	@touch ${PREFIX}/libdata/scm/slibcat
+	@${MKDIR} ${PREFIX}/libdata/slib
+	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/libdata/slib
+	@${MKDIR} ${PREFIX}/libdata/slib/psd
+	${INSTALL_DATA} ${WRKDIR}/slib/psd/*.scm ${PREFIX}/libdata/slib/psd
+	${INSTALL_DATA} ${WRKDIR}/scm/scm.info ${PREFIX}/info
+	@install-info ${PREFIX}/info/scm.info ${PREFIX}/info/dir
+	${INSTALL_DATA} ${WRKDIR}/slib/slib.info ${PREFIX}/info
+	@install-info ${PREFIX}/info/slib.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

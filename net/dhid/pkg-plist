@@ -1,0 +1,3 @@
+etc/dhid.conf.sample
+etc/rc.d/dhid.sh
+sbin/dhid

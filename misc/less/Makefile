@@ -1,30 +1,32 @@
 # New ports collection makefile for:    less
-# Version required:     2.52
 # Date created:         8 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1994/12/28 06:22:33 ache Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       less-252
-MASTER_SITES=   ftp://prep.ai.mit.edu/pub/gnu/ ftp://ftp.uu.net/systems/gnu/
-GNU_CONFIGURE=	YES
-EXTRA_PATCH=	patch-ab
+PORTNAME=       less
+PORTVERSION=	352
+CATEGORIES=	misc
+MASTER_SITES=   http://home.flash.net/~marknu/less/ \
+		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	less
 
-color:
-	@echo "Okay, making a color version of less...."
-	@cp ${FILESDIR}/${EXTRA_PATCH} ${PATCHDIR}
-	@${MAKE} ${.MAKEFLAGS} all
+.include <bsd.port.pre.mk>
 
-pre-clean:
-	@rm -f ${PATCHDIR}/${EXTRA_PATCH}
+.if ${OSVERSION} >= 500003
+FORBIDDEN=      already is in the base system
+.endif
 
+MAINTAINER=     ports@FreeBSD.org
+
+GNU_CONFIGURE=	yes
+MAN1=		less.1 lesskey.1
+
+.if defined(COLOUR_LESS) || defined(COLOR_LESS)
 pre-patch:
-	@if [ ! -f ${PATCHDIR}/${EXTRA_PATCH} ]; then \
-	  echo '******************************************************' ; \
-	  echo '* Note that you can build a color version of less by *' ; \
-	  echo '* typing "make color" following a "make clean"       *' ; \
-	  echo '******************************************************' ; \
-	fi
+	@${ECHO_MSG} "Making a colour version of less."
+EXTRA_PATCHES=	${FILESDIR}/patch-ab
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
