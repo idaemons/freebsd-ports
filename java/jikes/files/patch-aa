@@ -1,0 +1,20 @@
+diff -ur jikes.orig/src/Makefile.in work/jikes/src/Makefile.in
+--- jikes.orig/src/Makefile.in	Mon Jan 25 12:00:32 1999
++++ work/jikes/src/Makefile.in	Sun Feb 28 15:34:52 1999
+@@ -36,9 +36,13 @@
+ 	$(ERASE) config.cache config.log config.status
+ 	$(ERASE) Makefile
+ 
+-install: all
+-	mkdir -p $(exec_prefix)/bin
+-	cp $(EXECUTABLE) $(exec_prefix)/bin
++install:
++	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
++	  ${EXECUTABLE} ${PREFIX}/bin/jikes
++	${INSTALL} -c -o ${MANOWN} -g ${MANGRP} -m ${MANMODE} \
++	  ${FILESDIR}/jikes.1 ${PREFIX}/man/man1
++
++.include <bsd.own.mk>
+ 
+ OBJECTS=jikes.@O@ scanner.@O@ code.@O@ zip.@O@ unzip.@O@ \
+         ast.@O@ diagnose.@O@ parser.@O@ lpginput.@O@ javaact.@O@ \

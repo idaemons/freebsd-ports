@@ -1,0 +1,11 @@
+--- pico/pilot.c.orig	Thu Jul 16 16:30:46 1998
++++ pico/pilot.c	Tue Aug  4 12:42:15 1998
+@@ -222,7 +222,7 @@
+ 	    sup_keyhelp = !sup_keyhelp;
+ 	    break;
+ 	  case 'q':			/* -q for termcap takes precedence */
+-	    gmode ^= MDTCAPWINS;
++	    gmode |= MDTCAPWINS;
+ 	    break;
+ 	  case 'z':			/* -z to suspend */
+ 	    gmode ^= MDSSPD;

@@ -1,0 +1,52 @@
+# New ports collection makefile for:	modula-3-socks
+# Version required:	A.B9.06
+# Date created:		31 Oct 1996
+# Whom:			John Polstra <jdp@polstra.com>
+#
+# $Id: Makefile,v 1.1.1.1 1996/11/01 02:37:33 jdp Exp $
+#
+
+DISTNAME=	modula-3-socks
+PKGNAME=	modula-3-socks-1.0
+CATEGORIES=	lang
+MASTER_SITES=	ftp://ftp.cup.hp.com/dist/socks/A.B9.06/
+DISTFILES=	socks.tar.gz
+
+MAINTAINER=	jdp@polstra.com
+
+NO_WRKSUBDIR=	yes
+
+libm3socks_files=	accept.c bind.c close.c connect.c dup.c dup2.c \
+			gethostbyaddr.c gethostbyname.c getpeername.c \
+			getsockname.c listen.c read.c recv.c recvfrom.c \
+			select.c send.c sendto.c shutdown.c socket.c \
+			socksconf.h wrap.h write.c
+
+m3socks_files=		m3socks.sh m3socks.1 m3socks.conf.5
+
+post-extract:
+	@${CP} -p ${FILESDIR}/Makefile.top ${WRKSRC}/Makefile
+	@test -d ${WRKSRC}/libm3socks || ${MKDIR} ${WRKSRC}/libm3socks
+	@cd ${FILESDIR}; \
+	    ${CP} -p Makefile.libm3socks ${WRKSRC}/libm3socks/Makefile; \
+	    ${CP} -p ${libm3socks_files} ${WRKSRC}/libm3socks
+	@test -d ${WRKSRC}/m3socks || ${MKDIR} ${WRKSRC}/m3socks
+	@cd ${FILESDIR}; \
+	    ${CP} -p Makefile.m3socks ${WRKSRC}/m3socks/Makefile; \
+	    ${CP} -p ${m3socks_files} ${WRKSRC}/m3socks
+
+pre-install:
+	@cd ${PREFIX}/lib; \
+	    test -d m3/FreeBSD2 || { \
+		${MKDIR} m3/FreeBSD2; \
+		chown ${BINOWN}.${BINGRP} m3 m3/FreeBSD2; \
+	    }
+
+post-install:
+	@if [ ! -f ${PREFIX}/etc/m3socks.conf ]; then \
+	    echo -n "Please create a configuration file in "; \
+	    echo "${PREFIX}/etc/m3socks.conf"; \
+	    echo "Read m3socks.conf(5) for details"; \
+	fi
+
+.include <bsd.port.mk>

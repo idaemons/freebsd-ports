@@ -1,0 +1,16 @@
+--- Makefile.in.orig	Tue May 11 01:06:13 1999
++++ Makefile.in	Tue May 11 01:06:36 1999
+@@ -39,11 +39,11 @@
+ 		INCLUDEDIR=-I$(LIB_INCLUDEDIR) \
+ 		"DEFS=$(PROG_DEFS)" \
+ 		"CC=$(CC)" \
+-		DEBUG=-O
++		"DEBUG=$(CFLAGS)"
+ 
+ makelibs:
+ 	for lib in $(MANDATORY_LIBS) ; do \
+-		( cd libs/src/$$lib ; make install LIBDIR=$(LIB_INSTALLDIR) INCLUDEDIR=$(LIB_INCLUDEDIR) MANDIR=$(LIB_MANDIR) "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=true "CC=$(CC)" DEBUG=-O ) \
++		( cd libs/src/$$lib ; make install LIBDIR=$(LIB_INSTALLDIR) INCLUDEDIR=$(LIB_INCLUDEDIR) MANDIR=$(LIB_MANDIR) "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=true "CC=$(CC)" "DEBUG=$(CFLAGS)" ) \
+ 	; done
+ 
+ install:

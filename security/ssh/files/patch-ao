@@ -1,0 +1,34 @@
+--- newchannels.c.orig	Wed Jul  8 17:40:36 1998
++++ newchannels.c	Mon May  3 23:45:06 1999
+@@ -271,6 +271,10 @@
+ #endif /* NEED_SYS_SYSLOG_H */
+ #endif /* LIBWRAP */
+ 
++#ifdef __FreeBSD__
++#include <utmp.h>
++#endif
++
+ /* Directory in which the fake unix-domain X11 displays reside. */
+ #ifndef X11_DIR
+ #define X11_DIR "/tmp/.X11-unix"
+@@ -1874,6 +1878,9 @@
+   if (gethostname(hostname, sizeof(hostname)) < 0)
+     fatal("gethostname: %.100s", strerror(errno));
+   sprintf(buf, "%.400s:%d.%d", hostname, display_number, screen_number);
++#ifdef __FreeBSD__
++  trimdomain(buf, UT_HOSTSIZE);
++#endif
+ #else /* HAVE_GETHOSTNAME */
+   if (uname(&uts) < 0)
+     fatal("uname: %s", strerror(errno));
+@@ -2388,6 +2395,10 @@
+      ssh-agent connections on your system */
+   old_umask = umask(S_IRUSR|S_IXUSR|S_IRGRP|S_IXGRP|S_IROTH|S_IXOTH);
+   
++  /* Make sure the socket doesn't already exist, left over from a system
++     crash perhaps. */
++  unlink(channel_forwarded_auth_socket_name);
++
+   if (bind(sock, (struct sockaddr *)&sunaddr, AF_UNIX_SIZE(sunaddr)) < 0)
+     packet_disconnect("Agent socket bind failed: %.100s", strerror(errno));
+   

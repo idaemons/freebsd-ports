@@ -1,0 +1,31 @@
+--- configure.orig	Wed Mar 31 16:37:29 1999
++++ configure	Thu Apr 15 12:46:24 1999
+@@ -809,11 +809,13 @@
+ echo "configure: warning: cant find gtk-config" 1>&2
+ echo "-------------------------------------------------"
+ echo " GTK+ doesnt seam to be installed on this system"
+-echo " or maybe gtk-config isnt in your PATH"
++echo " or maybe gtk-config isnt in your PATH. Set"
++echo " GTK_CONFIG in your environment to point to the"
++echo " location of the file if it does exist."
+ echo "-------------------------------------------------"
+ exit 0
+ else
+-GTK_PREFIX=`gtk-config --version`
++GTK_PREFIX=`$GTK_CONFIG --version`
+ x=`echo $GTK_PREFIX|cut -d. -f1`
+ y=`echo $GTK_PREFIX|cut -d. -f2`
+ z=`echo $GTK_PREFIX|cut -d. -f3`
+@@ -895,10 +897,10 @@
+ XWHOIS_SERVERS='$(prefix)/share/xwhois/xwhois.servers'
+ 
+ 
+-INCLUDES="-I. `gtk-config --cflags`"
++INCLUDES="-I. `$GTK_CONFIG --cflags`"
+ 
+ 
+-LIBS=`gtk-config --libs`
++LIBS=`$GTK_CONFIG --libs`
+ 
+ DEFINES='-DSTD -DHAVE_SNPRINTF -DXWHOIS_SERVERS=\"$(XWHOIS_SERVERS)\" -D$(GTK_TYPE)'
+ 

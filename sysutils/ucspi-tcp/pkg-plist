@@ -1,0 +1,20 @@
+bin/addcr
+bin/argv0
+bin/date@
+bin/delcr
+bin/finger@
+bin/fixcr
+bin/http@
+bin/mconnect
+bin/mconnect-io
+bin/recordio
+bin/tcpcat
+bin/tcpclient
+bin/tcprules
+bin/tcprulescheck
+bin/tcpserver
+bin/who@
+share/doc/ucspi-tcp/BLURB
+share/doc/ucspi-tcp/TCP
+share/doc/ucspi-tcp/UCSPI
+@dirrm share/doc/ucspi-tcp

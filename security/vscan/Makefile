@@ -1,0 +1,54 @@
+# New ports collection makefile for:    vscan
+# Version required:     1.0.2
+# Date created:         Thur Sept 25, 1996
+# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
+#
+# $Id: Makefile,v 1.7 1998/12/10 00:40:24 steve Exp $
+#
+
+DISTNAME=	nlxb318e
+PKGNAME=	vscan-3.1.8
+CATEGORIES=	security
+MASTER_SITES=   ftp://ftp.mcafee.com/pub/antivirus/unix/linux/
+EXTRACT_SUFX=	.tar
+
+MAINTAINER=     obrien@FreeBSD.org
+
+NO_WRKSUBDIR=	yes
+RESTRICTED=	"Commercial software"
+
+LIBDIR=	${PREFIX}/lib/neta
+MAN1=	uvscan.1
+
+pre-fetch:
+.if defined(PREFIX) && ${PREFIX} != "/usr/local"
+	@${ECHO} ""
+	@${ECHO} "This software has /usr/local hardcoded into it."
+	@${ECHO} "Sorry, but with PREFIX = ${PREFIX}, vscan will not work correctly."
+	@${ECHO} ""
+	@false
+.endif
+
+post-extract:
+	 (cd ${WRKSRC} && tar xzf linux-elf.e.tar.Z)
+
+do-build::
+
+# The binary executable file will be left unstripped as stripping the
+# file will cause attempt to validate this file to fail.
+do-install:
+	(cd ${WRKSRC}; ./install-vscan)
+
+post-install:
+	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/uvscan
+	@/usr/sbin/chown -R ${SHAREOWN}.${SHAREGRP} ${LIBDIR}
+	@/usr/sbin/chown ${MANOWN}.${MANGRP} ${PREFIX}/man/man1/uvscan.1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/vscan
+	${INSTALL_DATA} ${WRKSRC}/Whatsnew.txt ${PREFIX}/share/doc/vscan
+	${INSTALL_DATA} ${WRKSRC}/Readme.1st ${PREFIX}/share/doc/vscan/vscan.LICENCE
+.endif
+	@${ECHO} ""
+	@${CAT} ${PKGDIR}/DESCR
+
+.include <bsd.port.mk>

@@ -1,0 +1,28 @@
+# New ports collection makefile for:	psgml for mule
+# Version required:	1.1.6
+# Date created:		23 January 1999
+# Whom:			shige
+#
+# $Id: Makefile,v 1.1.1.1 1999/02/26 19:14:49 shige Exp $
+#
+
+MAINTAINER=	shige@FreeBSD.ORG
+
+# This is a slave port.
+PORTCLASS=	slave
+
+MASTERDIR=	${.CURDIR}/../../editors/psgml-emacs
+
+# emacs port setup
+EMACS_NAME=	mule
+EMACS_PORT=	mule
+EMACS_VER=	19.34
+EMACS_LIBDIR=	share/${EMACS_NAME}
+
+HAVE_COMMON_PORT=	YES
+REQUIRE_SETUPEL=	YES
+
+# pkg/* files are used in ${.CURDIR}
+PKGDIR=		${.CURDIR}/pkg
+
+.include <${MASTERDIR}/Makefile>

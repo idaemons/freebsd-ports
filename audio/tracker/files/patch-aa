@@ -1,65 +1,73 @@
-*** Makefile.orig	Thu Feb  9 17:36:13 1995
---- Makefile	Thu Feb  9 23:57:16 1995
+*** Makefile.orig	Tue May  7 19:20:50 1996
+--- Makefile	Tue Nov 12 06:56:18 1996
 ***************
-*** 11,21 ****
-  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix, next.
-  # gmake needed to handle this file in FreeBSD and NeXTStep
-! MACHINE = sparc
+*** 20,26 ****
   
-  # The name of your C compiler. For most machines this will be
-  # either 'cc' or 'gcc'.
-! CC = acc
+  OPTS=-c 
   
-  OPTS=-c
-  
---- 11,21 ----
-  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix, next.
-  # gmake needed to handle this file in FreeBSD and NeXTStep
-! MACHINE = freebsd
-  
-  # The name of your C compiler. For most machines this will be
-  # either 'cc' or 'gcc'.
-! CC = cc
-  
-  OPTS=-c
-  
-***************
-*** 31,37 ****
-  MAN_DIR = $(PREFIX)/man
-  
-  # Where to put the compression methods description
-! COMPRESSION_FILE=$(PREFIX)/lib/compression_methods
-  
-  # How to install the binaries and manpage. If you have a unix system,
-  # use the GNU install program if you have it, otherwise try 'cp'. For
---- 31,37 ----
-  MAN_DIR = $(PREFIX)/man
-  
-  # Where to put the compression methods description
-! COMPRESSION_FILE=$(PREFIX)/etc/compression_methods
-  
-  # How to install the binaries and manpage. If you have a unix system,
-  # use the GNU install program if you have it, otherwise try 'cp'. For
-***************
-*** 52,59 ****
+! PREFIX=/users/algo/espie/pub
+  # Destination directory for tracker binaries and manpage.
   #
   # If you don't wish to use the 'make install' and 'make install.man'
-  # commands, you can ignore these.
-! INST_BIN_OPT = -c -s -m 755 -o root -g root
-! INST_MAN_OPT = -c -m 644 -o root -g root
-  ###############################################################################
-  #
-  # C compiler flags and libraries for each machine.
---- 52,61 ----
+--- 20,26 ----
+  
+  OPTS=-c 
+  
+! PREFIX?=/users/algo/espie/pub
+  # Destination directory for tracker binaries and manpage.
   #
   # If you don't wish to use the 'make install' and 'make install.man'
-  # commands, you can ignore these.
-! #INST_BIN_OPT = -c -s -m 755 -o root -g root
-! #INST_MAN_OPT = -c -m 644 -o root -g root
-! INST_BIN_OPT = -c -s -m 555 -o bin -g bin
-! INST_MAN_OPT = -c -m 644 -o bin -g bin
-  ###############################################################################
-  #
-  # C compiler flags and libraries for each machine.
+***************
+*** 166,172 ****
+  UI_linux = Unix/
+  SHELL_linux = /bin/sh
+  
+! CFLAGS_freebsd = -O2 -funroll-loops -finline-functions -fno-strength-reduce
+  LIBS_freebsd = -lm
+  AUDIODIR_freebsd=PCux/
+  CONFIG_freebsd = PCux/freebsd_
+--- 166,172 ----
+  UI_linux = Unix/
+  SHELL_linux = /bin/sh
+  
+! CFLAGS_freebsd = -O2 -funroll-loops -finline-functions
+  LIBS_freebsd = -lm
+  AUDIODIR_freebsd=PCux/
+  CONFIG_freebsd = PCux/freebsd_
+***************
+*** 250,256 ****
+  display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
+  st_virt$O automaton$O
+  
+! all:    tracker${EXE} randomize${EXE} splitmod${EXE} Docs/tracker.text
+  
+  config.h: $(CONFIG)config.h 
+  	rm -f config.h
+--- 250,256 ----
+  display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
+  st_virt$O automaton$O
+  
+! all:    tracker${EXE} randomize${EXE}
+  
+  config.h: $(CONFIG)config.h 
+  	rm -f config.h
+***************
+*** 272,280 ****
+  install: 
+  	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
+  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
+- 	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
+  	[ -f ${COMPRESSION_FILE} ] || \
+! 		$(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
+  
+  # no manpage available, use the texinfo manual.
+  install.man:
+--- 272,279 ----
+  install: 
+  	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
+  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
+  	[ -f ${COMPRESSION_FILE} ] || \
+! 		$(INSTALL) $(INST_MAN_OPT) Lib/compression_methods ${COMPRESSION_FILE}
+  
+  # no manpage available, use the texinfo manual.
+  install.man:

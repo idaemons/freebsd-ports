@@ -1,0 +1,26 @@
+# New ports collection makefile for:	qtarch
+# Version required:			1.4-4
+# Date created:				17 Oct 1998
+# Whom:					Frank Gruender
+#
+# $Id: Makefile,v 1.2 1999/05/09 16:49:41 steve Exp $
+#
+
+DISTNAME=	qtarch-1.4-4
+PKGNAME=	qtarch-1.4.4
+CATEGORIES=	devel
+MASTER_SITES=	http://www.primenet.com/~jtharris/qtarch/
+
+MAINTAINER=	elwood@mc5sys.in-berlin.de
+
+LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11
+
+FETCH_BEFORE_ARGS=	-b
+USE_QT=		yes
+USE_GMAKE=	yes
+USE_XLIB=	yes
+WRKSRC=		${WRKDIR}/qtarch-1.4
+MAKE_ENV=	BUILD_RELEASE=yes
+
+.include <bsd.port.mk>

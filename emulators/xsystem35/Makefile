@@ -1,0 +1,43 @@
+# ports collection makefile for:	AliceSoft System 3.5 on X
+# Version required:	1.0.1
+# Date created:		24 Oct 1998
+# Whom:			Seiichirou Hiraoka
+#
+# $Id: Makefile,v 1.15 1999/04/26 02:33:57 mharo Exp $
+#
+
+DISTNAME=	xsystem35-1.0.7
+CATEGORIES=	emulators
+MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
+
+MAINTAINER=	k5@respo.or.jp
+
+LIB_DEPENDS+=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+
+USE_IMAKE=	YES
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+DOC_FILES=	BUGS ChangeLog FAQ GRFMT.TXT INSTALL README README.midi \
+		README.miko THANKS TODO MISCGAME.TXT
+EXAMPLES=	README.TXT atlach.inf dalk.inf diabo.inf drstop.inf \
+		katsumi.inf kichiku.inf miko.inf ningen.inf oudou.inf \
+		panyo.inf rance1.inf rance2.inf rance3.inf rance4.inf \
+		toushin.inf toushin2.inf zero.inf
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xsystem35 ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/../contrib/instgame ${PREFIX}/bin
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/ja/xsystem35
+	@(cd ${WRKSRC}/../doc;\
+		${INSTALL_MAN} ${DOC_FILES} ${PREFIX}/share/doc/ja/xsystem35)
+	${MKDIR} ${PREFIX}/share/examples/xsystem35
+	${INSTALL_DATA} ${WRKSRC}/xsys35rc.sample ${PREFIX}/share/examples/xsystem35
+	@(cd ${WRKSRC}/../contrib; \
+		${INSTALL_DATA} ${EXAMPLES} ${PREFIX}/share/examples/xsystem35)
+.endif
+	${CAT} ${PKGDIR}/MESSAGE
+
+.include <bsd.port.mk>

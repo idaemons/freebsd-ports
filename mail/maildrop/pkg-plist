@@ -1,0 +1,6 @@
+bin/dotlock
+bin/maildirmake
+bin/maildrop
+bin/maildrop.maildirmake
+bin/reformail
+bin/reformime

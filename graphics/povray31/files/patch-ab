@@ -1,0 +1,46 @@
+*** source/unix/makefile.orig	Tue Mar  9 12:03:02 1999
+--- source/unix/makefile	Tue May 11 03:42:15 1999
+***************
+*** 34,43 ****
+  # Use libXXX.a if you want to force static linking of the libraries.
+  #   Use -Llibdir -lXXX if you want to use shared libraries (if they are
+  #   available).  It doesn't matter if you only have libXXX.a libraries.
+! PNGDIR = $(SRCDIR)/libpng
+  LIBPNGINC = -I$(PNGDIR)
+  #LIBPNGLIB = $(PNGDIR)/libpng.a
+! LIBPNGLIB = -L$(PNGDIR) -lpng
+  #LIBPNGLIB = -L/usr/local/lib -lpng
+  
+  # The following options are added at the suggestion of Axel Hecht
+--- 34,43 ----
+  # Use libXXX.a if you want to force static linking of the libraries.
+  #   Use -Llibdir -lXXX if you want to use shared libraries (if they are
+  #   available).  It doesn't matter if you only have libXXX.a libraries.
+! PNGDIR = $(PREFIX)/include
+  LIBPNGINC = -I$(PNGDIR)
+  #LIBPNGLIB = $(PNGDIR)/libpng.a
+! LIBPNGLIB = -L$(PREFIX)/lib -lpng
+  #LIBPNGLIB = -L/usr/local/lib -lpng
+  
+  # The following options are added at the suggestion of Axel Hecht
+***************
+*** 48,56 ****
+  # LIBPNGLIB = -L$(PREFIX)/lib -lpng
+  
+  ZLIBDIR = $(SRCDIR)/zlib
+! ZLIBINC = -I$(ZLIBDIR)
+  #ZLIBLIB = $(ZLIBDIR)/libz.a
+! ZLIBLIB = -L$(ZLIBDIR) -lz
+  #ZLIBLIB = -L/usr/local/lib -lz
+  
+  # The following options are added at the suggestion of Axel Hecht
+--- 48,56 ----
+  # LIBPNGLIB = -L$(PREFIX)/lib -lpng
+  
+  ZLIBDIR = $(SRCDIR)/zlib
+! ZLIBINC = #-I$(ZLIBDIR)
+  #ZLIBLIB = $(ZLIBDIR)/libz.a
+! ZLIBLIB = -lz
+  #ZLIBLIB = -L/usr/local/lib -lz
+  
+  # The following options are added at the suggestion of Axel Hecht

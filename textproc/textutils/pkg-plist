@@ -1,0 +1,34 @@
+bin/gcat
+bin/gcksum
+bin/gcomm
+bin/gcsplit
+bin/gcut
+bin/gexpand
+bin/gfmt
+bin/gfold
+bin/ghead
+bin/gjoin
+bin/gmd5sum
+bin/gnl
+bin/god
+bin/gpaste
+bin/gpr
+bin/gsort
+bin/gsplit
+bin/gsum
+bin/gtac
+bin/gtail
+bin/gtr
+bin/gunexpand
+bin/guniq
+bin/gwc
+@unexec install-info --delete %D/info/textutils.info %D/info/dir
+info/textutils.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/textutils.info %D/info/dir
+share/locale/de/LC_MESSAGES/textutils.mo
+share/locale/es/LC_MESSAGES/textutils.mo
+share/locale/fr/LC_MESSAGES/textutils.mo
+share/locale/ko/LC_MESSAGES/textutils.mo
+share/locale/nl/LC_MESSAGES/textutils.mo
+share/locale/pl/LC_MESSAGES/textutils.mo

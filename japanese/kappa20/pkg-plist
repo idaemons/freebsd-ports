@@ -1,0 +1,11 @@
+%%FONTSDIR%%/10x20b.pcf.gz
+%%FONTSDIR%%/10x20m.pcf.gz
+%%FONTSDIR%%/10x20rkb.pcf.gz
+%%FONTSDIR%%/10x20rkm.pcf.gz
+%%FONTSDIR%%/k20b.pcf.gz
+%%FONTSDIR%%/k20m.pcf.gz
+share/doc/kappa20/README
+share/doc/kappa20/fonts.alias.kappa
+@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@dirrm share/doc/kappa20

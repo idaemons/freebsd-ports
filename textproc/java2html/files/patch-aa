@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Wed Apr 14 18:28:16 1999
++++ Makefile.in	Thu Apr 15 22:55:00 1999
+@@ -12,7 +12,7 @@
+ # for gzip because otherwise the load on the web server
+ # grows without having big benefits.
+ # COMPRESSION = -DCOMPRESSION=4
+-COMPRESSION = -DCOMPRESSION=1
++COMPRESSION ?= -DCOMPRESSION=1
+ 
+ # Dont change things beyond this line.
+ TARGET          = java2html
+@@ -43,7 +43,7 @@
+ srcdir          = @srcdir@
+ CPPFLAGS        = @CPPFLAGS@
+ 
+-CFLAGS += -O2 -Wall -pedantic
++CFLAGS ?= -O2 -Wall -pedantic
+ ALL_CFLAGS = $(CFLAGS) -I$(srcdir) $(COMPRESSION) 
+ 
+ all: $(TARGET)

@@ -1,0 +1,27 @@
+--- vfs/Make-mc.in.orig	Sat Apr 10 21:38:29 1999
++++ vfs/Make-mc.in	Thu May  6 08:42:43 1999
+@@ -184,21 +184,14 @@
+ 	-$(RMF) $(srcdir)/Makefile
+ 
+ install: @mcserv@ install.extfs
+-	-(if test x@mcserv@ != x; then \
+-	    $(INSTALL_PROGRAM) mcserv $(DESTDIR)$(bindir)/$(binprefix)mcserv; \
+-	fi)
+ 
+ install.extfs:
+ 	for I in $(EXTFS_MISC); do \
+-	    $(INSTALL_DATA) $(srcdir)/extfs/$$I \
++	    $(INSTALL_DATA) extfs/$$I \
+ 	          $(DESTDIR)$(extfsdir)/$$I; \
+ 	done
+-	for I in $(EXTFS_CONST) ; do \
+-	    $(INSTALL_PROGRAM) $(srcdir)/extfs/$$I \
+-	             $(DESTDIR)$(extfsdir)/$$I; \
+-	done
+-	for I in $(EXTFS_OUT) ; do \
+-	    $(INSTALL_PROGRAM) $(builddir)/vfs/extfs/$$I \
++	for I in $(EXTFS_CONST) $(EXTFS_OUT) ; do \
++	    install -c -o root -g wheel -m 555 -m 755 extfs/$$I \
+ 	             $(DESTDIR)$(extfsdir)/$$I; \
+ 	done
+ 

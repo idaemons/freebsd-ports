@@ -1,0 +1,45 @@
+#!/bin/sh
+ftp=0
+useworld=1
+chrootdir=/a/asami/chroot
+here=$(pwd)
+tmpdir=${here}/tmp
+rm -rf ${tmpdir}
+mkdir -p ${tmpdir}
+if [ "${ftp}" != 0 ]; then
+  cd bindist/ftp
+  /usr/bin/ftp -a 'ftp://ftp.freebsd.org/pub/FreeBSD/3.0-RELEASE/bin/bin.??'
+  /usr/bin/ftp -a 'ftp://ftp.freebsd.org/pub/FreeBSD/3.0-RELEASE/dict/dict.??'
+  /usr/bin/ftp -a 'ftp://ftp.freebsd.org/pub/FreeBSD/3.0-RELEASE/des/des.??'
+  #ssh -n ftp.freebsd.org cat 'w/3.0-RELEASE/bin/bin.??' | tar -xzpf -
+  cd ${here}
+fi
+cd ${tmpdir}
+if [ "${useworld}" = 1 ]; then
+  (cd ${chrootdir}; find -dx . | \
+    grep -v -E '^./usr/(X11R6|local|obj|opt|ports|src)' | \
+    grep -v '^./home' | \
+    grep -v '^./var/db/pkg' | \
+    cpio -dump ${tmpdir})
+else
+  cat ${here}/bindist/ftp/bin.?? | tar --unlink -xzpf -
+  cat ${here}/bindist/ftp/dict.?? | tar --unlink -xzpf -
+  cat ${here}/bindist/ftp/des.?? | tar --unlink -xzpf -
+fi
+rm -rf $(cat ${here}/bindist/delete)
+mkdir -p $(cat ${here}/bindist/dirlist)
+(cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir})
+echo "HAVE_MOTIF=t" >> etc/make.conf
+echo "MOTIF_STATIC=t" >> etc/make.conf
+if [ -f kernel.GENERIC -a ! -f kernel ]; then
+  mv kernel.GENERIC kernel
+fi
+rm -f /usr/lib/aout/lib*_p.a
+mkdir ${tmpdir}/var/run
+chroot $(pwd) /sbin/ldconfig /usr/lib
+chroot $(pwd) /sbin/ldconfig -aout /usr/lib/aout
+mkdir -p ${here}/tarballs
+tar cf ${here}/tarballs/bindist.tar.new .
+mv -f ${here}/tarballs/bindist.tar.new ${here}/tarballs/bindist.tar
+cd ${here}
+rm -rf ${tmpdir}

@@ -1,0 +1,91 @@
+*** doc/Makefile.in.orig	Sun Jan 10 18:46:43 1999
+--- doc/Makefile.in	Fri Jan 29 23:49:25 1999
+***************
+*** 38,44 ****
+  
+  #-------------------------------------------------------------------------
+  
+! all:
+  	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
+  
+  SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
+--- 38,44 ----
+  
+  #-------------------------------------------------------------------------
+  
+! all: alldoc
+  	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
+  
+  SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
+***************
+*** 54,60 ****
+  
+  tags allbin:
+  
+! alldoc:	$(basedir)/$(VERNAME).lsm rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
+  
+  yodl/versioninfo.yo: yodl/versioninfo.yo.in ../autoconf/Make.common.in
+  	$(SED) $(SEDREPLACE) < $(srcdir)/yodl/versioninfo.yo.in > $@
+--- 54,60 ----
+  
+  tags allbin:
+  
+! alldoc:	rxvt.1
+  
+  yodl/versioninfo.yo: yodl/versioninfo.yo.in ../autoconf/Make.common.in
+  	$(SED) $(SEDREPLACE) < $(srcdir)/yodl/versioninfo.yo.in > $@
+***************
+*** 65,81 ****
+  rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
+  	yodl2man -orxvt.tbl yodl/rxvt.yo
+  
+! rxvt.1: rxvt.tbl Makefile
+! 	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
+  
+! rxvt.html: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
+! 	yodl2html -o$@ yodl/rxvt.yo
+  
+! rxvtRef.html: $(YODL_RREF) yodl/rxvtRef.yo yodl/masonyodl.yo
+! 	yodl2html -o$@ yodl/rxvtRef.yo
+  
+! rxvtRef.txt: $(YODL_RREF) yodl/rxvtRef.yo yodl/masonyodl.yo
+! 	yodl2txt -o$@ yodl/rxvtRef.yo
+  
+  clean:
+  	$(RMF) rxvt.man *~ yodl/*~
+--- 65,77 ----
+  rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
+  	yodl2man -orxvt.tbl yodl/rxvt.yo
+  
+! rxvt.1:
+  
+! rxvt.html:
+  
+! rxvtRef.html:
+  
+! rxvtRef.txt:
+  
+  clean:
+  	$(RMF) rxvt.man *~ yodl/*~
+***************
+*** 85,92 ****
+  
+  distclean:
+  
+! install: rxvt.1
+! 	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)rxvt.$(manext)
+  
+  uninstall:
+  	-cd $(mandir); $(RMF) $(manprefix)rxvt.$(manext)
+--- 81,91 ----
+  
+  distclean:
+  
+! install: rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
+! 	$(INSTALL_DATA) rxvt.1 $(mandir)/$(manprefix)rxvt.$(manext)
+! 	$(INSTALL_DATA) rxvt.html $(prefix)/share/doc/ja/rxvt/rxvt.html
+! 	$(INSTALL_DATA) rxvtRef.html $(prefix)/share/doc/ja/rxvt/rxvtRef.html
+! 	$(INSTALL_DATA) rxvtRef.txt $(prefix)/share/doc/ja/rxvt/rxvtRef.txt
+  
+  uninstall:
+  	-cd $(mandir); $(RMF) $(manprefix)rxvt.$(manext)

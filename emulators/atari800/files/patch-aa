@@ -1,0 +1,10 @@
+--- Makefile.orig	Thu Jun 18 19:49:19 1998
++++ Makefile	Thu Jun 18 20:00:02 1998
+@@ -246,7 +246,6 @@
+ 			platform.h
+ 
+ config config.h	:	configure
+-	./configure
+ 
+ configure	:	configure.o prompts.o
+ 	$(LD) $(LDFLAGS) configure.o prompts.o $(LDLIBS) -o configure

@@ -1,0 +1,25 @@
+--- Makefile.conf.orig	Mon Apr 12 18:35:36 1999
++++ Makefile.conf	Sun May  2 07:14:10 1999
+@@ -43,7 +43,7 @@
+ CHMOD = chmod
+ CATMANPAGES =
+ MANCAT = cat
+-ETC = /etc
++ETC = ${PREFIX}/etc
+ VARRUN = /var/run
+ VARDB = /var/db
+ 
+@@ -155,6 +155,13 @@
+ ##--freebsd--
+ #CF = cf/freebsd.h
+ #SCRIPT=freebsd
++#PREFIX ?= /usr/local
++#BINDIR = ${PREFIX}/sbin
++#CLIENTBINDIR = ${PREFIX}/sbin
++#ADMMANDIR = ${PREFIX}/man/cat8
++#ADMMANEXT = .8
++#FFMANDIR = ${PREFIX}/man/cat5
++#FFMANEXT = .5
+ ##--freebsd--
+ 
+ ## Rhapsody

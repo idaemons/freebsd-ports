@@ -1,0 +1,39 @@
+--- Makefile.linux.orig	Sat Mar 27 15:19:07 1999
++++ Makefile.linux	Sat Mar 27 15:31:11 1999
+@@ -5,7 +5,7 @@
+ UNZIP=1
+ 
+ ifdef ZSNESFX
+-FXOBJ=i386/zsnes.o
++FXOBJ=i386/zsnes.o fxinst.o fxemu.o fxdbg.o
+ FXDEFINES=-DZSNES_FX -DEXECUTE_SUPERFX_PER_LINE
+ FXDEPENDS=zsnes_fx
+ FXNO_DEPENDS=c_fx
+@@ -16,7 +16,7 @@
+ FXNO_DEPENDS=zsnes_fx
+ endif
+ 
+-LINUXDEFINES=-DUSE_DGA_EXTENSION -DUSE_VIDMODE_EXTENSION
++LINUXDEFINES=-DUSE_DGA_EXTENSION -DUSE_VIDMODE_EXTENSION -D__linux
+ 
+ ifdef ASMCPU
+ ifdef SPC700ASM
+@@ -47,8 +47,8 @@
+ UNZIPDEFINES=-DUNZIP_SUPPORT
+ endif
+ 
+-CCC = gcc
+-CC = gcc
++CCC = egcc
++CC = egcc
+ NASM = nasm
+ 
+ INCLUDES=-I/usr/X11R6/include -I/usr/local/include
+@@ -59,7 +59,6 @@
+ -Ii386 \
+ -I. \
+ -Iunzip \
+--DJOYSTICK_SUPPORT \
+ -DZLIB \
+ -DNO_INLINE_SET_GET \
+ -DVAR_CYCLES \

@@ -1,0 +1,13 @@
+*** inews/version.c	Sun Jan 24 23:44:03 1999
+--- inews/version.c.new	Sun Jan 24 23:44:36 1999
+***************
+*** 2,5 ****
+   * Provide the version number of this release.
+   */
+  
+! char	nntp_version[] = "1.5.8 (11 March 90)";
+--- 2,5 ----
+   * Provide the version number of this release.
+   */
+  
+! char	nntp_version[] = "1.5.8.MINI (MINI-INEWS)";

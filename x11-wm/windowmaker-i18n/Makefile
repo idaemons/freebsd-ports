@@ -1,0 +1,67 @@
+# New ports collection makefile for:	WindowMaker with i18n extention
+# Version required:	0.53.0
+# Date created:		24 Nov 1998
+# Whom:			mac@jp.freebsd.org
+#
+# $Id: Makefile,v 1.56 1999/04/08 09:18:10 flathill Exp $
+
+DISTNAME=	WindowMaker-0.53.0
+PKGNAME=	windowmaker-i18n-0.53.0
+CATEGORIES=	x11-wm windowmaker
+MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
+		ftp://muse.brain.riken.go.jp/pub/ja.po/
+MASTER_SITE_SUBDIR=	beta/srcs
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=	mac@jp.freebsd.org
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		gif.3:${PORTSDIR}/graphics/giflib \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.3:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff34 \
+		PropList.1:${PORTSDIR}/devel/libPropList \
+		intl.1:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/Checker.themed/style:${PORTSDIR}/graphics/wmicons
+
+USE_BZIP2=	yes
+USE_PERL5=	yes
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	X11BASE=${X11BASE}  LOCALBASE=${LOCALBASE} \
+		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib" \
+		LINGUAS="de es fi fr hr it ja_JP.EUC ko nl no pl pt ru"
+CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
+	--with-nlsdir=${PREFIX}/share/locale \
+	--with-gfx-incs="-I${LOCALBASE}/include/giflib" \
+	--disable-debug --enable-kanji --disable-shared
+
+MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
+	wdwrite.1x wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
+
+JA_CATALOGFILE=	WindowMaker-0.53.0ja1
+
+.if defined(JA_CATALOGFILE) && ${JA_CATALOGFILE} != ""
+DISTFILES+=	${JA_CATALOGFILE}${EXTRACT_SUFX}
+.endif
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
+	@${PERL} -pi -e "s|%%PERL%%|${PERL}|g" ${WRKSRC}/util/wm-oldmenu2new
+.if defined(JA_CATALOGFILE) && ${JA_CATALOGFILE} != ""
+	@${CP} ${WRKDIR}/${JA_CATALOGFILE}/WindowMaker.ja.po \
+		${WRKSRC}/po/ja.po
+	@${CP} ${WRKDIR}/${JA_CATALOGFILE}/WPrefs.ja.po \
+		${WRKSRC}/WPrefs.app/po/ja.po
+.endif
+
+pre-build:
+	@cd ${WRKSRC}/WindowMaker/Defaults && ${MAKE} clean
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/WindowMaker/Sounds/
+
+.include <bsd.port.post.mk>

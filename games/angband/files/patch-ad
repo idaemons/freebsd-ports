@@ -1,0 +1,31 @@
+--- src/Makefile.orig	Mon Feb  9 09:38:23 1998
++++ src/Makefile	Mon Feb  9 09:38:24 1998
+@@ -94,7 +94,7 @@
+ #
+ # This is my compiler of choice, it seems to work most everywhere
+ #
+-CC = gcc
++#CC = gcc
+ 
+ 
+ #
+@@ -115,8 +115,8 @@
+ # including "USE_GETCH" and "USE_CURS_SET".  Note that "config.h" will
+ # attempt to "guess" at many of these flags based on your system.
+ #
+-CFLAGS = -Wall -O1 -pipe -g -D"USE_X11" -D"USE_GCU"
+-LIBS = -lX11 -lcurses -ltermcap
++#CFLAGS = -Wall -O1 -pipe -g -D"USE_X11" -D"USE_GCU"
++LIBS = -L/usr/X11R6/lib -lX11 -lcurses -ltermcap
+ 
+ 
+ ##
+@@ -137,7 +137,7 @@
+ ## Variation -- Use "main-xaw.c" instead of "main-x11.c"
+ ##
+ #CFLAGS = -Wall -O1 -pipe -g -D"USE_XAW" -D"USE_GCU"
+-#LIBS = -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap
++#LIBS = -L/usr/X11R6/lib -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap
+ 
+ 
+ ##

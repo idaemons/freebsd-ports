@@ -1,0 +1,40 @@
+--- configure.in.orig	Wed Oct 21 15:29:16 1998
++++ configure.in	Wed May 12 16:48:24 1999
+@@ -102,7 +102,7 @@
+ # extra dirs
+ #
+ 
+-wi_EXTRA_DIRS(no, /usr/local /local /user/local /usr/share /opt /opt/local $QTDIR $GTKDIR $TCLDIR $SSLDIR)
++wi_EXTRA_DIRS(no, /usr/local /local /user/local /usr/share /opt /opt/local /usr/X11R6 $QTDIR $GTKDIR $TCLDIR $SSLDIR, tcl8.0 X11/qt )
+ 
+ #
+ # misc
+@@ -234,7 +234,12 @@
+     CONF_OBJ_SIZE_LIMIT=yes
+     ;;
+   *bsd*)
+-    CONF_SOEXT=so.1.0
++    if test "X$PORTOBJFORMAT" = "Xelf"; then
++      CONF_SHARED_CC="$CXX -shared -Wl,-soname,\$@"
++      CONF_SOEXT=so.1
++    else
++      CONF_SOEXT=so.1.0
++    fi
+     ;;
+   *cygwin32*)
+     have_cdk=yes;
+@@ -486,14 +491,6 @@
+ if test X"$JAVAC" = Xno -o X"$JAVACUPDIR" = Xno; then
+   AC_MSG_WARN(you have not installed JDK 1.1 and JavaCUP. java parts disabled.)
+   HAVE_JDK=no
+-fi
+-
+-AC_PATH_PROG(GENERIC_CPP, cpp, none, `echo $PATH | tr : ' '` /lib /usr/lib /usr/ccs/lib)
+-if test X"$GENERIC_CPP" = Xnone; then
+-  AC_MSG_WARN(Cannot find a working cpp.)
+-  AC_MSG_WARN(please set the environment variable PATH to include)
+-  AC_MSG_WARN(the path where cpp is located and rerun configure.)
+-  exit 1
+ fi
+ 
+ AC_SUBST(HAVE_QT)

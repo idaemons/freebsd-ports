@@ -1,0 +1,15 @@
+--- makefile.in.orig	Wed Feb 17 23:29:33 1999
++++ makefile.in	Mon Feb 22 15:42:17 1999
+@@ -43,10 +43,10 @@
+ libdir= @libdir@
+ 
+ ## Where you want the doc-files installed
+-docdir= @libdir@/lynx_doc
++docdir= @datadir@/doc/lynx
+ 
+ ## Where you want the help-files installed
+-helpdir= @libdir@/lynx_help
++helpdir= $(prefix)/lib/lynx_help
+ 
+ ## Where your locale data is
+ # datadir = @datadir@

@@ -1,0 +1,20 @@
+--- Configure.orig	Mon Sep  7 18:49:05 1998
++++ Configure	Mon Sep  7 18:56:33 1998
+@@ -306,7 +306,7 @@
+ ldflags=''
+ lkflags=''
+ locincpth=''
+-optimize=''
++optimize=${CFLAGS:-''}
+ cf_email=''
+ cf_by=''
+ cf_time=''
+@@ -862,7 +864,7 @@
+ : If anyone needs -lnet, put it in a hint file.
+ libswanted='sfio socket inet nsl nm ndbm gdbm dbm db malloc dl'
+ libswanted="$libswanted dld ld sun m c cposix posix ndir dir crypt"
+-libswanted="$libswanted ucb bsd BSD PW x"
++libswanted="xpg4 $libswanted ucb bsd BSD PW x"
+ : We probably want to search /usr/shlib before most other libraries.
+ : This is only used by the lib/ExtUtils/MakeMaker.pm routine extliblist.
+ glibpth=`echo " $glibpth " | sed -e 's! /usr/shlib ! !'`

@@ -1,0 +1,43 @@
+# New ports collection makefile for:   mico
+# Version required:    2.2.3
+# Date created:        11 July 1998
+# Whom:                Marc G. Fournier <scrappy@freebsd.org>
+#
+# $Id: Makefile,v 1.31 1999/05/02 21:21:57 mharo Exp $
+#
+
+DISTNAME=	mico-2.2.3
+CATEGORIES=	devel
+MASTER_SITES=	http://diamant-atm.vsb.cs.uni-frankfurt.de/~mico/
+
+MAINTAINER=	scrappy@freebsd.org
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400004
+CC=		egcc
+CXX=		eg++
+BUILD_DEPENDS=	egcc:${PORTSDIR}/lang/egcs
+.endif
+
+LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
+		tcl80.1:${PORTSDIR}/lang/tcl80
+
+USE_QT=		yes
+USE_AUTOCONF=	yes
+USE_GMAKE=	yes
+
+WRKSRC=		${WRKDIR}/mico
+
+CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl \
+		--disable-optimize --disable-mini-stl
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+
+MAN1=		idl.1 imr.1 nsadmin.1
+MAN5=		micorc.5
+MAN8=		ird.8 micod.8 nsd.8
+
+post-install:
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,40 @@
+*** src/Makefile.in.orig	Wed Nov 25 23:02:20 1998
+--- src/Makefile.in	Thu Apr 22 03:04:38 1999
+***************
+*** 68,74 ****
+--- 68,78 ----
+  
+  ELFLIB = lib$(THIS_LIB).so#
+  ELFLIB_MAJOR = $(ELFLIB).$(ELF_MAJOR_VERSION)#
++ .if ( ${PORTOBJFORMAT} == "aout" )
+  ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MAJOR_VERSION).$(ELF_MINOR_VERSION)#
++ .else
++ ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MAJOR_VERSION)#
++ .endif
+  
+  ELFDIR_ELF_LIB = $(ELFDIR)/$(ELFLIB_MAJOR_MINOR)#
+  
+***************
+*** 126,136 ****
+  	$(MKINSDIR) $(install_include_dir)
+  $(install_lib_dir):
+  	$(MKINSDIR) $(install_lib_dir)
+! install-elf: install elf $(install_lib_dir) $(install_include_dir) $(ELFDIR_ELF_LIB)
+  	$(INSTALL_DATA) $(SRCDIR)/slang.h $(install_include_dir)
+  	$(INSTALL_DATA) $(SRCDIR)/slcurses.h $(install_include_dir)
+! 	-$(RM) $(install_lib_dir)/$(ELFLIB)
+! 	-$(RM) $(install_lib_dir)/$(ELFLIB_MAJOR)
+  	@echo installing $(ELFLIB_MAJOR_MINOR) in $(install_lib_dir)
+  	$(INSTALL_DATA) $(ELFDIR_ELF_LIB) $(install_lib_dir)
+  	@echo creating symbolic links to $(ELFLIB_MAJOR_MINOR)
+--- 130,139 ----
+  	$(MKINSDIR) $(install_include_dir)
+  $(install_lib_dir):
+  	$(MKINSDIR) $(install_lib_dir)
+! install-elf: elf $(install_lib_dir) $(install_include_dir) $(ELFDIR_ELF_LIB)
+  	$(INSTALL_DATA) $(SRCDIR)/slang.h $(install_include_dir)
+  	$(INSTALL_DATA) $(SRCDIR)/slcurses.h $(install_include_dir)
+! 	$(INSTALL_DATA) $(SRCDIR)/slkanji.h $(install_include_dir)
+  	@echo installing $(ELFLIB_MAJOR_MINOR) in $(install_lib_dir)
+  	$(INSTALL_DATA) $(ELFDIR_ELF_LIB) $(install_lib_dir)
+  	@echo creating symbolic links to $(ELFLIB_MAJOR_MINOR)

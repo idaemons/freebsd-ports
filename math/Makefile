@@ -1,6 +1,59 @@
-
-# $Id: Makefile,v 1.6 1994/12/06 11:57:27 asami Exp $
+# $Id: Makefile,v 1.59 1999/04/03 01:05:11 steve Exp $
 #
-SUBDIR=	blas calc eispack fudgit gnuplot hexcalc linpack oleo xgraph
+
+    SUBDIR += PDL
+    SUBDIR += R-a4
+    SUBDIR += R-letter
+    SUBDIR += Scilab
+    SUBDIR += abs
+    SUBDIR += add
+    SUBDIR += apc
+    SUBDIR += blas
+    SUBDIR += calc
+    SUBDIR += calctool
+    SUBDIR += dcdflib
+    SUBDIR += eispack
+    SUBDIR += eval
+    SUBDIR += femlab
+    SUBDIR += fftpack
+    SUBDIR += fftw
+    SUBDIR += freefem
+    SUBDIR += fudgit
+    SUBDIR += geg
+    SUBDIR += gnumeric
+    SUBDIR += gnuplot
+    SUBDIR += grace
+    SUBDIR += hexcalc
+    SUBDIR += lapack
+    SUBDIR += libranlib
+    SUBDIR += linpack
+    SUBDIR += metis
+    SUBDIR += numpy
+    SUBDIR += octave
+    SUBDIR += oleo
+    SUBDIR += p5-MatrixReal
+    SUBDIR += p5-Set-IntSpan
+    SUBDIR += pari
+    SUBDIR += plplot
+    SUBDIR += pygist
+    SUBDIR += rng
+    SUBDIR += sc
+    SUBDIR += siag
+    SUBDIR += simpack
+    SUBDIR += snns
+    SUBDIR += spin
+    SUBDIR += ss
+    SUBDIR += superlu
+    SUBDIR += umatrix
+    SUBDIR += umfpack
+    SUBDIR += wingz
+    SUBDIR += xgfe
+    SUBDIR += xgraph
+    SUBDIR += xldlas
+    SUBDIR += xlispstat
+    SUBDIR += xmgr
+    SUBDIR += xplot
+    SUBDIR += xspread
+    SUBDIR += xwpl
 
 .include <bsd.port.subdir.mk>

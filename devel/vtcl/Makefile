@@ -1,0 +1,37 @@
+# New ports collection makefile for:	vtcl
+# Version required:	1.2.0
+# Date Created:		29 May 1997
+# Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
+#
+# $Id: Makefile,v 1.16 1999/05/09 04:00:12 kris Exp $
+#
+
+DISTNAME=	vtcl-1.2.0
+CATEGORIES=	devel tk80
+MASTER_SITES=	ftp://ftp.neuron.com/pub/vtcl/development/1.2/
+
+MAINTAINER=	vanilla@FreeBSD.ORG
+
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+
+NO_BUILD=	yes
+
+do-install:
+	@ ${MKDIR} ${PREFIX}/lib/vtcl/images
+	@ ${MKDIR} ${PREFIX}/lib/vtcl/images/edit
+	@ ${MKDIR} ${PREFIX}/lib/vtcl/lib
+	@ ${MKDIR} ${PREFIX}/share/doc/vtcl
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/vtcl ${PREFIX}/bin
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/tutorial.txt ${PREFIX}/share/doc/vtcl
+.for data in Announce ChangeLog README vt.tcl
+	@ ${INSTALL_DATA} ${WRKSRC}/${data} ${PREFIX}/lib/vtcl
+.endfor
+.for sufx in gif ppm xbm xpm
+	@ ${INSTALL_DATA} ${WRKSRC}/images/*.${sufx} ${PREFIX}/lib/vtcl/images
+.endfor
+	@ ${INSTALL_DATA} ${WRKSRC}/images/edit/*.gif ${PREFIX}/lib/vtcl/images/edit
+.for sufx in sh tcl
+	@ ${INSTALL_DATA} ${WRKSRC}/lib/*.${sufx} ${PREFIX}/lib/vtcl/lib
+.endfor
+
+.include <bsd.port.mk>

@@ -1,0 +1,6 @@
+bin/pdfimages
+bin/pdfinfo
+bin/pdftopbm
+bin/pdftops
+bin/pdftotext
+bin/xpdf

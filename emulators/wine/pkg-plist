@@ -1,0 +1,3 @@
+bin/wine
+etc/wine.conf
+etc/wine.sym

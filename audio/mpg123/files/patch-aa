@@ -1,0 +1,52 @@
+--- Makefile.orig	Wed Jan 27 01:05:18 1999
++++ Makefile	Mon Mar 22 22:42:04 1999
+@@ -247,24 +247,27 @@
+ #CFLAGS='-DI386_ASSEM -O2 -DREAL_IS_FLOAT -DLINUX -Wall -g'
+ #CFLAGS='-DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
+ 
++.if $(PORTOBJFORMAT) == "elf"
++GETBITS=getbits.o
++.else
++GETBITS=getbits_.o
++.endif
++
++CC ?= cc
++LDFLAGS =
++CFLAGS ?=-O4 -m486
++CFLAGS +=-Wall -ansi -pedantic -fomit-frame-pointer \
++	-funroll-all-loops -ffast-math -DROT_I386 \
++	-DREAD_MMAP \
++	-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS
++
+ freebsd:
+-	$(MAKE) CC=cc LDFLAGS= \
+-		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_oss.o' \
+-		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+-			-funroll-all-loops -ffast-math -DROT_I386 \
+-			-DREAD_MMAP \
+-			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
++	${MAKE}	OBJECTS='decode_i386.o dct64_i386.o $(GETBITS) audio_oss.o' \
+ 		mpg123-make
+ 
+-
+ freebsd-frontend:
+-	$(MAKE) CC=cc LDFLAGS= \
+-		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_oss.o \
++	$(MAKE) OBJECTS='decode_i386.o dct64_i386.o $(GETBITS) audio_oss.o \
+ 			control_sajber.o control_tk3play.o' \
+-		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+-			-funroll-all-loops -ffast-math -DROT_I386 \
+-			-DFRONTEND \
+-			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
+ 		$(FRONTEND)
+  
+ 
+@@ -414,7 +417,7 @@
+ 	@ $(MAKE) BINNAME=mpg123m mpg123
+ 
+ mpg123-make:
+-	@ $(MAKE) BINNAME=mpg123 mpg123
++	@ $(MAKE) CFLAGS="$(CFLAGS)" BINNAME=mpg123 mpg123
+ 
+ mpg123: mpg123.o common.o $(OBJECTS) decode_2to1.o decode_4to1.o \
+ 		tabinit.o audio.o layer1.o layer2.o layer3.o buffer.o \

@@ -1,0 +1,31 @@
+--- lib/Makefile.in.orig	Fri Jan 29 14:30:20 1999
++++ lib/Makefile.in	Fri Feb  5 08:38:26 1999
+@@ -98,14 +98,14 @@
+ 
+ AUTOMAKE_OPTIONS = 1.0 foreign dist-zip no-dependencies
+ 
+-SUBDIRS = zlib sshmath sshreadline sshutil sshapputil sshcrypt sshproto sshsession
++SUBDIRS = sshmath sshreadline sshutil sshapputil sshcrypt sshproto sshsession
+ 
+ # sshtest testsuite
+ 
+ lib_LIBRARIES = libssh.a
+ # libsshcrypt.kpure.a
+ 
+-SUBLIBRARIES = sshmath/libsshmath.a zlib/libz.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a
++SUBLIBRARIES = sshmath/libsshmath.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../sshconf.h
+ CONFIG_CLEAN_FILES = 
+@@ -368,11 +368,6 @@
+ all-local: includes
+ includes:
+ 	-if test '!' -d ../include; then mkdir ../include; fi
+-	for i in zlib/zlib.h zlib/zconf.h; do   \
+-	  if test -f $(srcdir)/$$i; then		  \
+-	    $(COPY_INCLUDE) $(srcdir)/$$i ../include;	  \
+-	  fi;						  \
+-	done
+ 	-for dir in $(SUBDIRS); do \
+ 		if test "$$dir" != "zlib" && test "$$dir" != "gmp"; then \
+ 		  ( cd $$dir && $(MAKE) includes) ; \

@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Thu Feb 18 05:50:52 1999
++++ Makefile.in	Sat Feb 27 23:12:18 1999
+@@ -9,13 +9,15 @@
+ #Destination Directory
+ prefix=@prefix@
+ DESTDIR=	$(prefix)/bin
+-LIBDIR=		$(prefix)/lib
++LIBDIR=		$(prefix)/share
+ XWPELIBDIR=	$(LIBDIR)/xwpe
+ MANDIR=		$(prefix)/man
++#INFODIR=	$(prefix)/info
+ 
+ LIBS=@LIBS@
+ XLIBS=@X_LIBS@ @X_PRE_LIBS@ @X_EXTRA_LIBS@
+-DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\"
++DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\" -DX_INC=\"@X_INC@\"
++#DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\" -DINFO_DIR=\"$(INFODIR)\" -DX_INC=\"@X_INC@\"
+ INSTALL=	cp
+ LN_S=	@LN_S@
+ 

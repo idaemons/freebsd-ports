@@ -1,0 +1,4 @@
+bin/tclCheck
+share/doc/tclCheck/COPYRIGHT
+share/doc/tclCheck/README
+@dirrm share/doc/tclCheck

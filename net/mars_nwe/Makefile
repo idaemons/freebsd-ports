@@ -1,0 +1,37 @@
+# New ports collection makefile for:	mars_nwe
+# Version required:     0.99.pl15
+# Date created:		29 Dec 1998
+# Whom:			Boris Popov <bp@butya.kz>
+#
+# $Id: Makefile,v 1.3 1999/01/27 01:33:13 foxfair Exp $
+#
+
+DISTNAME=       mars_nwe-0.99.pl15
+PKGNAME=	mars_nwe-0.99b15
+CATEGORIES=	net
+MASTER_SITES=	http://www.compu-art.de/download/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/ncpfs/mars_nwe/ \
+		ftp://ftp.butya.kz/pub/mars_nwe/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	bp@butya.kz
+
+WRKSRC=		${WRKDIR}/mars_nwe
+
+NO_PACKAGE=	ignores cflags
+
+do-build:
+	@(cd ${WRKSRC} && ${MAKE} all)
+
+do-install:
+	@(cd ${WRKSRC} && ./mk.li install)
+	@${ECHO} "You'll need to create a startup file to load MARS_NWE Server when booting."
+	@${ECHO}  "Create a nwserv.sh in ${PREFIX}/etc/rc.d directory and modify"
+	@${ECHO}  "${PREFIX}/etc/nwserv.conf manually before you loading server."
+	@${ECHO} "Kernel should be compiled with IPX support and IPXrouted should be"
+	@${ECHO} "started before server."
+	@${ECHO}  ""
+	@${ECHO} "Please read details in ${WORKDIR}/mars_nwe/doc directory."
+	@${ECHO} "Especially README.FREEBSD file."
+
+.include <bsd.port.mk>

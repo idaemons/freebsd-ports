@@ -1,0 +1,120 @@
+.\" Copyright status unkown
+.Dd April 19, 1999
+.Dt setiathome 1 LOCAL
+.Os FreeBSD
+.Sh NAME
+.Nm setiathome
+.Nd the SETI@home client program
+.Sh SYNOPSIS
+.Nm
+.Op Ar options
+.Sh DESCRIPTION
+.Nm
+is the UNIX version of the 
+.Tn SETI@home
+client. It downloads radio telescope data from a network server, analyzes
+the data looking for signals of extraterrestrial origin, and uploads results
+to the server, repeating this cycle indefinitely. See
+http://setiahome.ssl.berkeley.edu for more information.
+.Pp
+The first time you run
+.Nm
+it will interactively ask you for email address, name, country etc. This
+info is stored in a file and no interaction is needed when you run the
+program subsequently.
+.Pp
+After this you can run
+.Nm
+in the background, and direct its output to
+.Pa /dev/null
+if you like.
+.Pp
+.Nm
+can be freely aborted and restarted. It saves its state in files,
+and will pick up where it left off.
+.Pp
+.Nm
+requires about 0.5\ MBytes of disk space in it's working directory, and about
+12\ MBytes of memory. If you have ample physical memory, it's work load
+should be almost undetectable.
+.Ss Starting setiathome
+This port to FreeBSD includes a start-up script (usually found in
+.Pa /usr/local/etc/rc.d/setiathome.sh )
+that starts
+.Nm
+at system start-up. You can also use this script to set up a working
+directory
+.Pa ( /var/db/setiathome ) ,
+and lets you register with or log in to
+.Tn SETI@home
+by calling it with the argument
+.Ar register .
+.Ss Setting up setiathome manually
+If you'd like to run
+.Nm
+on a SMP system, and therefor would like to run multiple
+.Nm
+processes at once, or would like it to run under a different user ID than
+.Sq nobody ,
+you have to set up one or more suitable working directories yourself.
+.Pp
+For each
+.Nm
+instance you'd like to run, create a directory, make it owned by the user
+you'd like to run
+.Nm
+as, and run
+.Ic setiathome -login
+in that directory.
+.Pp
+Then, arrange for
+.Nm
+to be started automatically.  You can easily do so by adding a line similiar
+to
+.Bd -ragged -offset indent
+.Li */10 * * * * cd 
+.Va working directory 
+.Li && Nm -email >/dev/null
+.Ed
+to the user's crontab.
+.Sh OPTIONS
+.Bl -tag -width indent
+.It Fl login
+Login or create new account.
+.It Fl countries
+Show list of country codes.
+.It Fl version
+Show software version
+.It Fl nice Ar N
+Set "nice" priority to 
+.Ar N
+(default 1);
+.It Fl email
+Send email (to login email address) on errors. Useful if you run in
+background directed to
+.Pa /dev/null .
+.El
+.Pp
+.Sh FILES
+The program generates several files with 
+.Pa .txt
+extension in the directory from which it's run. These should not be
+modified.
+.Pp
+If you want to run multiple instances of setiathome
+(on a multiprocessor machine, or on multiple machines
+that share a filesystem) each one must be run
+in a different directory.
+.Pp
+setiathome uses a lock file 
+.Pa ( lock.txt )
+to prevent multiple instances from running in the same directory.
+.Sh AUTHORS
+.Tn SETI@home
+was developed by
+.An David Anderson , Jeff Cobb , Charlie Fenton , David Gedye ,
+.An Kyle Granger , Eric Korpela , Matt Lebofsky , Peter Leiser , 
+.An Brad Silen , Woody Sullivan , 
+and
+.An Dan Werthimer .
+.Pp

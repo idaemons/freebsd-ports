@@ -1,0 +1,22 @@
+--- lib/libtelnet/sslapp.h.orig	Fri Oct 16 21:14:59 1998
++++ lib/libtelnet/sslapp.h	Fri Oct 16 21:15:07 1998
+@@ -53,6 +53,7 @@
+ extern int ssl_disabled_flag;
+ extern int ssl_cert_required;
+ extern int ssl_certsok_flag;
++extern int ssl_quiet_flag;
+ 
+ extern char *ssl_log_file; 
+ extern char *ssl_cert_file; 
+--- lib/libtelnet/Makefile.orig	Sat Aug  2 13:31:37 1997
++++ lib/libtelnet/Makefile	Wed Sep  2 13:16:15 1998
+@@ -12,8 +12,7 @@
+ #CFLAGS= -DENCRYPT -DAUTHENTICATE -DSRA -DUSE_SSL -DDES_ENCRYPTION \
+ #-I../libbsd/include -I../libpk
+ 
+-CFLAGS= -DAUTHENTICATE -DUSE_SSL \
+--I../libbsd/include -I$(SSLTOP)/include -I../libpk -g
++CFLAGS+= -DAUTHENTICATE -DUSE_SSL -I$(SSLTOP)/include -I../libbsd/include
+ 
+ lib${LIB}.a: ${OBJS}
+ 	echo building standard ${LIB} library 

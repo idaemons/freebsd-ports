@@ -1,0 +1,5 @@
+bin/yagirc
+etc/yagirc.conf
+share/yagirc/irc.pl
+share/yagirc/startup.pm
+@dirrm share/yagirc

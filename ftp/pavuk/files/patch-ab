@@ -1,0 +1,26 @@
+--- src/net.c.orig	Tue May  4 13:20:43 1999
++++ src/net.c	Tue May  4 13:22:13 1999
+@@ -101,9 +101,9 @@
+ 	{
+ 		return -1;
+ 	}
+-
++#ifndef __FreeBSD__
+ 	fcntl(sock , F_SETFL , O_NONBLOCK);
+-
++#endif
+ 	rv = connect(sock, (struct sockaddr*)&addr, sizeof(addr));
+ 	if (rv && (errno != EINPROGRESS) && (errno != EISCONN))
+ 	{
+@@ -267,9 +267,9 @@
+ 	int rv;
+ 
+ 	p = sizeof(caller);
+-
++#ifdef __FreeBSD__
+ 	fcntl(sock , F_SETFL , O_NONBLOCK);
+-
++#endif
+ 	rsock = accept(sock, (struct sockaddr*)&caller, &p);
+ 	if ((rsock < 0) && (errno != EWOULDBLOCK))
+ 	{
