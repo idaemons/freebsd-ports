@@ -1,0 +1,118 @@
+mpich/bin/execer
+mpich/bin/mpicc
+mpich/bin/mpif77
+mpich/bin/mpif90
+mpich/bin/mpiman
+mpich/bin/mpireconfig
+mpich/bin/mpirun
+mpich/bin/mpirun.args
+mpich/bin/mpirun.ch_p4
+mpich/bin/mpirun.pg
+mpich/bin/serv_p4
+mpich/bin/server
+mpich/bin/tarch
+mpich/bin/tdevice
+mpich/bin/tstmachines
+mpich/bin/upshot
+mpich/examples/Makefile
+mpich/examples/Makefile.in
+mpich/examples/README
+mpich/examples/cpi
+mpich/examples/cpi.c
+mpich/examples/cpi.o
+mpich/examples/cpilog
+mpich/examples/cpilog.c
+mpich/examples/cpilog.o
+mpich/examples/hello++.cc
+mpich/examples/mpif.h
+mpich/examples/mpirun
+mpich/examples/pi3
+mpich/examples/pi3.f
+mpich/examples/pi3.o
+mpich/examples/simpleio
+mpich/examples/simpleio.c
+mpich/examples/simpleio.o
+mpich/include/basex11.h
+mpich/include/binding.h
+mpich/include/mpe.h
+mpich/include/mpe_graphics.h
+mpich/include/mpe_log.h
+mpich/include/mpeexten.h
+mpich/include/mpetools.h
+mpich/include/mpi.h
+mpich/include/mpi_errno.h
+mpich/include/mpif.h
+mpich/include/patchlevel.h
+mpich/include/protofix.h
+mpich/lib/bitmaps/2x2
+mpich/lib/bitmaps/black
+mpich/lib/bitmaps/boxes
+mpich/lib/bitmaps/dimple3
+mpich/lib/bitmaps/dllines3
+mpich/lib/bitmaps/dllines4
+mpich/lib/bitmaps/drlines3
+mpich/lib/bitmaps/drlines4
+mpich/lib/bitmaps/gray
+mpich/lib/bitmaps/gray2
+mpich/lib/bitmaps/gray3
+mpich/lib/bitmaps/hlines2
+mpich/lib/bitmaps/hlines3
+mpich/lib/bitmaps/hlines4
+mpich/lib/bitmaps/light_gray
+mpich/lib/bitmaps/vlines2
+mpich/lib/bitmaps/vlines3
+mpich/lib/bitmaps/vlines4
+mpich/lib/bitmaps/white
+mpich/lib/freebsd/ch_p4/Makefile.sample
+mpich/lib/freebsd/ch_p4/chkserv
+mpich/lib/freebsd/ch_p4/chp4_servs
+mpich/lib/freebsd/ch_p4/config.status
+mpich/lib/freebsd/ch_p4/libampi.a
+mpich/lib/freebsd/ch_p4/libfmpich.a
+mpich/lib/freebsd/ch_p4/liblmpi.a
+mpich/lib/freebsd/ch_p4/libmpe.a
+mpich/lib/freebsd/ch_p4/libmpe_nompi.a
+mpich/lib/freebsd/ch_p4/libmpich.a
+mpich/lib/freebsd/ch_p4/libpmpich.a
+mpich/lib/freebsd/ch_p4/libtmpi.a
+mpich/lib/freebsd/ch_p4/mpicc
+mpich/lib/freebsd/ch_p4/mpichconf.h
+mpich/lib/freebsd/ch_p4/mpidefs.h
+mpich/lib/freebsd/ch_p4/mpif77
+mpich/lib/freebsd/ch_p4/mpif90
+mpich/lib/freebsd/ch_p4/mpiman
+mpich/lib/freebsd/ch_p4/mpio.h
+mpich/lib/freebsd/ch_p4/mpiof.h
+mpich/lib/freebsd/ch_p4/mpireconfig
+mpich/lib/freebsd/ch_p4/mpirun
+mpich/lib/freebsd/ch_p4/mpirun.args
+mpich/lib/freebsd/ch_p4/mpirun.ch_p4
+mpich/lib/freebsd/ch_p4/mpirun.pg
+mpich/lib/freebsd/ch_p4/serv_p4
+mpich/lib/freebsd/ch_p4/server
+mpich/lib/freebsd/ch_p4/tarch
+mpich/lib/freebsd/ch_p4/tstmachines
+mpich/lib/freebsd/mpich.En_US.cat
+mpich/lib/freebsd/mpich.cat
+mpich/man/mandesc
+mpich/mpiuninstall
+mpich/util/chkserv
+mpich/util/chp4_servs
+mpich/util/machines/machines.freebsd
+mpich/util/machines/machines.sample
+@dirrm mpich/bin
+@dirrm mpich/doc
+@dirrm mpich/examples
+@dirrm mpich/include
+@dirrm mpich/lib/bitmaps
+@dirrm mpich/lib/freebsd/ch_p4
+@dirrm mpich/lib/freebsd
+@dirrm mpich/lib
+@dirrm mpich/man/man1
+@dirrm mpich/man/man3
+@dirrm mpich/man/man4
+@dirrm mpich/man/man5
+@dirrm mpich/man
+@dirrm mpich/util/machines
+@dirrm mpich/util
+@dirrm mpich

@@ -1,0 +1,11 @@
+bin/mikmod
+lib/libmikmod.a
+lib/libmmio.a
+share/doc/mikmod/AUTHORS
+share/doc/mikmod/COPYING.LIB
+share/doc/mikmod/ChangeLog
+share/doc/mikmod/README
+share/doc/mikmod/README.EsounD
+share/doc/mikmod/README.SGI
+share/doc/mikmod/README.SUN
+@dirrm share/doc/mikmod

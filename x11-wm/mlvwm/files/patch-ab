@@ -1,0 +1,19 @@
+*** sample_rc/Mlvwmrc-j.orig	Fri Dec  5 23:34:21 1997
+--- sample_rc/Mlvwmrc-j	Fri Dec  5 23:34:54 1997
+***************
+*** 39,45 ****
+  Compatible
+  
+  # IconPath の指定。Style の指定の前に必要
+! IconPath /usr/local/include/X11/pixmaps:/home2/tak/bin/pixmap
+  IconMenuIcon label2.xpm
+  
+  # Balloon help Settings
+--- 39,45 ----
+  Compatible
+  
+  # IconPath の指定。Style の指定の前に必要
+! IconPath /usr/X11R6/lib/X11/mlvwm/pixmaps:/home2/tak/bin/pixmap
+  IconMenuIcon label2.xpm
+  
+  # Balloon help Settings

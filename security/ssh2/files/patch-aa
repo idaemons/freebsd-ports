@@ -1,0 +1,10 @@
+--- apps/ssh/Makefile.in.old	Mon Oct  5 22:18:17 1998
++++ apps/ssh/Makefile.in	Mon Oct  5 22:25:16 1998
+@@ -167,6 +167,7 @@
+ # defines
+ 
+ SSH_DEFS = -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DSSH_BINDIR=\"$(bindir)\" -DTIS_MAP_FILE=\"$(TIS_MAP_FILE)\"
++SSH_DEFS+= -DSSH_SERVER_DIR=\"$(SSH_SERVER_DIR)\" -DSSH_CLIENT_GLOBAL_CONFIG_FILE=\"$(SSH_CLIENT_GLOBAL_CONFIG_FILE)\"
+ 
+ COMPILE = $(CC) $(KERBEROS_INCS) $(INCLUDES) $(SSH_DEFS) $(DEFS) $(CPPFLAGS) $(CFLAGS) $(X_CFLAGS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

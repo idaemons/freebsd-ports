@@ -1,0 +1,15 @@
+When you compile *.s with 'cc -pipe' on ELFed FreeBSD, it never ends.
+This patch is ugly hack to avoid the problem.
+
+--- lib/sshmath/Makefile.in.old	Thu Oct  8 03:48:38 1998
++++ lib/sshmath/Makefile.in	Thu Oct  8 03:49:32 1998
+@@ -383,8 +383,7 @@
+ 
+ .S.o:
+ 	$(CPP) $(CPPFLAGS) $(INCLUDES) $(DEFS) $< | grep -v '^#' >tmp-$*.s
+-	$(CC) $(CFLAGS) $(SFLAGS) -c tmp-$*.s
+-	mv tmp-$*.o $@
++	$(AS) $(SFLAGS) -o $@ tmp-$*.s
+ 	rm -f tmp-$*.s
+ 
+ includes:

@@ -1,0 +1,8 @@
+bin/prez
+bin/aprez
+share/doc/tvp/aprez.txt
+share/doc/tvp/libass.txt
+share/doc/tvp/president.txt
+share/doc/tvp/prez.txt
+share/doc/tvp/xprez.txt
+@dirrm share/doc/tvp

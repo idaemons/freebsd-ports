@@ -1,0 +1,6 @@
+bin/uvscan
+lib/mcafee/scan.dat
+lib/mcafee/names.dat
+lib/mcafee/clean.dat
+share/doc/vscan/vscan.LICENCE
+share/doc/vscan/Whatsnew.txt

@@ -1,0 +1,9 @@
+bin/hmmalign
+bin/hmmbuild
+bin/hmmcalibrate
+bin/hmmconvert
+bin/hmmemit
+bin/hmmpfam
+bin/hmmsearch
+share/doc/hmmer/Userguide.ps
+@dirrm share/doc/hmmer

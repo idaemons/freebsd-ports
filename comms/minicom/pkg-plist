@@ -1,0 +1,12 @@
+@comment $Id: PLIST,v 1.4 1998/08/11 10:29:56 obrien Exp $
+bin/minicom
+bin/xminicom
+bin/runscript
+bin/ascii-xfr
+etc/minicom/minicom.users
+etc/minicom/demos/htsalogin
+etc/minicom/demos/saralogin
+etc/minicom/demos/scriptdemo
+etc/minicom/demos/unixlogin
+@exec /usr/sbin/chown uucp %D/etc/minicom
+@dirrm etc/minicom/demos

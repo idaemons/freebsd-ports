@@ -1,13 +1,11 @@
-@cwd /usr/local
 bin/toast
-@exec ln -s %f %B/untoast
-@exec ln -s %f %B/untoastt
-man/man1/toast.1
-@exec ln -s %f %B/untoast.1
-@exec ln -s %f %B/tcat.1
-man/man3/gsm.3
-man/man3/gsm_explode.3
-man/man3/gsm_option.3
-man/man3/gsm_print.3
+@exec ln -f %D/%F %B/untoast
+@exec ln -f %D/%F %B/tcat
+@unexec rm %D/bin/untoast
+@unexec rm %D/bin/tcat
+lib/libgsm.so.1.1
+lib/libgsm.so
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/libgsm.a
 include/gsm.h

@@ -1,0 +1,6 @@
+bin/lisp
+lib/cmucl/lib/lisp.core
+lib/cmucl/lib/site-init.lisp
+lib/cmucl/lib/load-foreign.csh
+@dirrm lib/cmucl/lib
+@dirrm lib/cmucl

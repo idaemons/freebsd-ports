@@ -1,0 +1,100 @@
+*** pine/init.c.orig	Wed Sep  2 20:39:42 1998
+--- pine/init.c	Wed Sep 16 21:08:19 1998
+***************
+*** 319,325 ****
+  
+  /*----------------------------------------------------------------------
+  These are the variables that control a number of pine functions.  They
+! come out of the .pinerc and the /usr/local/lib/pine.conf files.  Some can
+  be set by the user while in Pine.  Eventually all the local ones should
+  be so and maybe the global ones too.
+  
+--- 319,325 ----
+  
+  /*----------------------------------------------------------------------
+  These are the variables that control a number of pine functions.  They
+! come out of the .pinerc and the @@PREFIX@@/etc/pine.conf files.  Some can
+  be set by the user while in Pine.  Eventually all the local ones should
+  be so and maybe the global ones too.
+  
+***************
+*** 578,583 ****
+--- 578,586 ----
+  #ifdef	DF_SMTP_SERVER
+      GLO_SMTP_SERVER		= parse_list(DF_SMTP_SERVER, 1, NULL);
+  #endif
++ 
++     F_TURN_ON(F_TCAP_WINS,ps);
++     F_TURN_ON(F_QUELL_INTERNAL_MSG,ps);
+  
+      /* Set the default mail directory */
+      build_path(buf, GLO_MAIL_DIRECTORY, "[]");
+*** pine/other.c.orig	Thu Jul 16 04:09:27 1998
+--- pine/other.c	Tue Jul 21 15:03:18 1998
+***************
+*** 696,702 ****
+  			 || (F) == F_DISABLE_DFLT_IN_BUG_RPT	\
+  			 || (F) == F_DISABLE_ALARM		\
+  			 || (F) == F_ALLOW_CHANGING_FROM	\
+- 			 || (F) == F_TCAP_WINS			\
+  			 || (F) == F_QUELL_PARTIAL_FETCH	\
+  			 || (F) == F_AGG_SEQ_COPY)
+  
+--- 696,701 ----
+*** pico/edef.h.orig	Thu Apr 23 02:53:44 1998
+--- pico/edef.h	Tue Jul 21 14:33:38 1998
+***************
+*** 59,65 ****
+  int	ComposerEditing = FALSE;	/* TRUE if message line is open */
+  int	revexist = FALSE;		/* does reverse video exist?	*/
+  char	modecode[] = "WCSEVO";		/* letters to represent modes	*/
+! long	gmode = MDWRAP;			/* global editor mode		*/
+  int     sgarbf  = TRUE;                 /* TRUE if screen is garbage	*/
+  int     mpresf  = FALSE;                /* TRUE if message in last line */
+  int	clexec	= FALSE;		/* command line execution flag	*/
+--- 59,65 ----
+  int	ComposerEditing = FALSE;	/* TRUE if message line is open */
+  int	revexist = FALSE;		/* does reverse video exist?	*/
+  char	modecode[] = "WCSEVO";		/* letters to represent modes	*/
+! long	gmode = MDWRAP | MDTCAPWINS;	/* global editor mode		*/
+  int     sgarbf  = TRUE;                 /* TRUE if screen is garbage	*/
+  int     mpresf  = FALSE;                /* TRUE if message in last line */
+  int	clexec	= FALSE;		/* command line execution flag	*/
+*** pico/main.c.orig	Thu Jul 16 11:30:47 1998
+--- pico/main.c	Tue Jul 21 14:33:38 1998
+***************
+*** 424,430 ****
+  	    gmode ^= MDSSPD;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode ^= MDTCAPWINS;
+  	    break;
+  	  case 'w':			/* -w turn off word wrap */
+  	    gmode ^= MDWRAP;
+--- 424,430 ----
+  	    gmode ^= MDSSPD;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode |= MDTCAPWINS;
+  	    break;
+  	  case 'w':			/* -w turn off word wrap */
+  	    gmode ^= MDWRAP;
+*** pico/pilot.c.orig	Thu Jul 16 11:30:46 1998
+--- pico/pilot.c	Tue Jul 21 14:33:38 1998
+***************
+*** 222,228 ****
+  	    sup_keyhelp = !sup_keyhelp;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode ^= MDTCAPWINS;
+  	    break;
+  	  case 'z':			/* -z to suspend */
+  	    gmode ^= MDSSPD;
+--- 222,228 ----
+  	    sup_keyhelp = !sup_keyhelp;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode |= MDTCAPWINS;
+  	    break;
+  	  case 'z':			/* -z to suspend */
+  	    gmode ^= MDSSPD;

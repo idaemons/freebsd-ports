@@ -1,5 +1,51 @@
-# $Id: Makefile,v 1.8 1995/01/09 01:59:24 pst Exp $
+# $Id: Makefile,v 1.54 1998/10/28 16:01:42 vanilla Exp $
 #
-SUBDIR=	gmod gsm nas sox tracker xcd xcdplayer
+
+    SUBDIR += 8hz-mp3
+    SUBDIR += amp
+    SUBDIR += cam
+    SUBDIR += cddbd
+    SUBDIR += cdplay
+    SUBDIR += dap
+    SUBDIR += esound
+    SUBDIR += gmod
+    SUBDIR += gqmpeg
+    SUBDIR += gsm
+    SUBDIR += kdemultimedia
+    SUBDIR += kmpg
+    SUBDIR += maplay
+    SUBDIR += mikmod
+    SUBDIR += mp3info
+    SUBDIR += mpegaudio
+    SUBDIR += mpg123
+    SUBDIR += mxv
+    SUBDIR += nas
+    SUBDIR += nspmod
+    SUBDIR += play
+    SUBDIR += playmidi
+    SUBDIR += radio
+    SUBDIR += rosegarden
+    SUBDIR += replay
+    SUBDIR += rplay
+    SUBDIR += rsynth
+    SUBDIR += s3mod
+    SUBDIR += sidplay
+    SUBDIR += sox
+    SUBDIR += splay
+    SUBDIR += splaytk
+    SUBDIR += timidity
+    SUBDIR += tosha
+    SUBDIR += tracker
+    SUBDIR += wmmixer
+    SUBDIR += workman
+    SUBDIR += x11amp
+    SUBDIR += xamp
+    SUBDIR += xcd
+    SUBDIR += xcdplayer
+    SUBDIR += xmcd
+    SUBDIR += xmix
+    SUBDIR += xmmix
+    SUBDIR += xmpeg3
+    SUBDIR += xtuner
 
 .include <bsd.port.subdir.mk>

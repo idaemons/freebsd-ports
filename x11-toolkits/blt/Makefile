@@ -1,17 +1,37 @@
 # New ports collection makefile for:	blt
-# Version required:	1.7
-# Date created:		14 December 1994
-# Whom:			wollman
+# Version required:	2.4f
+# Date created:		22 September 1998
+# Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/14 21:21:35 wollman Exp $
+# $Id: Makefile,v 1.23 1998/10/20 01:24:32 steve Exp $
 #
 
-DISTNAME=	blt-1.7
-DISTFILES=	BLT-1.7.tar.gz
-MASTER_SITES=	ftp://ftp.aud.alcatel.com/tcl/extensions/
-LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
+DISTNAME=	BLT2.4f
+PKGNAME=	blt-2.4f
+CATEGORIES=	x11-toolkits tk80
+MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/
+
+MAINTAINER=	kjc@csl.sony.co.jp
+
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+
+WRKSRC=		${WRKDIR}/blt2.4f
 GNU_CONFIGURE=	yes
-ALL_TARGET=	all sharedlib
+MANN=		BLT.n barchart.n bgexec.n bitmap.n bltdebug.n busy.n \
+		dragdrop.n eps.n graph.n htext.n hierbox.n spline.n \
+		stripchart.n table.n tabset.n tile.n vector.n watch.n winop.n \
+		beep.n cutbuffer.n
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
 
+.if ${PORTOBJFORMAT} == "elf"
+SO_VERSION=	2
+.else
+SO_VERSION=	2.4
+.endif
+
+post-install:
+	${LN} -sf libBLT.so.${SO_VERSION} ${PREFIX}/lib/libBLT.so
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,10 @@
+bin/tcpclient
+bin/tcpserver
+bin/tcprules
+bin/addcr
+bin/delcr
+bin/who@
+bin/date@
+bin/finger@
+bin/tcpcat
+bin/mconnect

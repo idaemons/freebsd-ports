@@ -1,7 +1,7 @@
-@cwd /usr/local
 lib/nn
+news/lib/inews
 bin/nn
-bin/nnusages
+bin/nnusage
 bin/nngrab
 bin/nnstats
 bin/nncheck
@@ -11,16 +11,4 @@ bin/nngoback
 bin/nngrep
 bin/nnpost
 bin/nnbatch
-man/man1/nn.1
-man/man1/nncheck.1
-man/man1/nngoback.1
-man/man1/nngrab.1
-man/man1/nngrep.1
-man/man1/nnpost.1
-man/man1/nntidy.1
-man/man1/nnacct.1m
-man/man1/nnadmin.1m
-man/man1/nnstats.1m
-man/man1/nnusages.1m
-man/man8/nnmaster.8
-man/man8/nnspew.8
+bin/nnview

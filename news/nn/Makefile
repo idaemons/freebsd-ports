@@ -3,20 +3,35 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.2 1994/11/10 17:28:47 ache Exp $
+# $Id: Makefile,v 1.15 1998/07/20 20:58:13 adam Exp $
 #
 
-DISTNAME=	nn-6.5.0.b3
-MASTER_SITES=	ftp://uniwa.uwa.edu.au/pub/nn/beta/
+DISTNAME=	nn-6.5.3
+CATEGORIES=	news
+#MASTER_SITES=	ftp://ftp.isca.uiowa.edu/unix/nn/
+MASTER_SITES=	ftp://ftp.visi.com/users/mtpins/
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=     ports@FreeBSD.ORG
+
+BROKEN=		checksum
+
+MAN1=		nn.1 nncheck.1 nngoback.1 nngrab.1  nngrep.1 nnpost.1 \
+		nntidy.1 nnview.1 nnacct.1m nnadmin.1m nnstats.1m nnusage.1m
+MAN8=		nnmaster.8 nnspew.8
 
 pre-patch:
-	@cp ${WRKSRC}/config.h-dist ${WRKSRC}/config.h
-	@cp ${WRKSRC}/conf/s-386bsd.h ${WRKSRC}/conf/s-freebsd.h
+	@${CP} ${WRKSRC}/config.h-dist ${WRKSRC}/config.h
 
 pre-build:
-	[ -r /usr/local/lib/news/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} all )
+	@${CP} ${FILESDIR}/s-freebsd.h ${WRKSRC}/conf
 
 pre-install:
-	[ -r /usr/local/lib/news/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} install )
+	${MKDIR} ${PREFIX}/news
+	[ -r ${PREFIX}/news/lib/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} all )
+	[ -r ${PREFIX}/news/lib/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} install )
+
+post-install:
+	@${ECHO} Put your NNTP host into ${PREFIX}/etc/nntpserver file
 
 .include <bsd.port.mk>
