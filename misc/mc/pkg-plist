@@ -1,0 +1,46 @@
+bin/midc
+bin/mcmfmt
+sbin/mcserv
+share/locale/de/LC_MESSAGES/mc.mo
+share/locale/es/LC_MESSAGES/mc.mo
+share/locale/fr/LC_MESSAGES/mc.mo
+share/locale/it/LC_MESSAGES/mc.mo
+share/locale/ko/LC_MESSAGES/mc.mo
+share/locale/no/LC_MESSAGES/mc.mo
+share/locale/pl/LC_MESSAGES/mc.mo
+share/locale/ru/LC_MESSAGES/mc.mo
+share/mc/FAQ
+share/mc/bin/mcfn_install
+share/mc/extfs/README
+share/mc/extfs/a
+share/mc/extfs/deb
+share/mc/extfs/extfs.ini
+share/mc/extfs/ftplist
+share/mc/extfs/hp48
+share/mc/extfs/lslR
+share/mc/extfs/mailfs
+share/mc/extfs/patchfs
+share/mc/extfs/rpm
+share/mc/extfs/sfs.ini
+share/mc/extfs/uar
+share/mc/extfs/ucpio
+share/mc/extfs/ulha
+share/mc/extfs/urar
+share/mc/extfs/uzip
+share/mc/extfs/uzoo
+share/mc/mc.ext
+share/mc/mc.hint
+share/mc/mc.hlp
+share/mc/mc.lib
+share/mc/mc.menu
+share/mc/term/README.xterm
+share/mc/term/ansi.ti
+share/mc/term/linux.ti
+share/mc/term/vt100.ti
+share/mc/term/xterm.ad
+share/mc/term/xterm.tcap
+share/mc/term/xterm.ti
+@dirrm share/mc/bin
+@dirrm share/mc/extfs
+@dirrm share/mc/term
+@dirrm share/mc

@@ -1,0 +1,11 @@
+--- lib/sshapputil/Makefile.in.old	Tue Nov 24 18:24:57 1998
++++ lib/sshapputil/Makefile.in	Tue Nov 24 18:25:12 1998
+@@ -105,7 +105,7 @@
+ INCLUDES = -I../.. -I. -I$(srcdir) \
+ 	-I$(top_builddir) -I$(top_srcdir) \
+ 	-I../sshutil -I$(srcdir)/../sshutil -I../sshmath \
+-	-I$(srcdir)/../sshmath -I../zlib -I$(srcdir)/../zlib
++	-I$(srcdir)/../sshmath
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../sshconf.h
+ CONFIG_CLEAN_FILES = 

@@ -1,0 +1,21 @@
+--- makefile.orig	Sun Nov 15 03:37:57 1998
++++ makefile	Fri Jan 22 15:10:46 1999
+@@ -6,15 +6,15 @@
+ #
+ # Installation prefix
+ #
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ 
+ #
+ # C options
+ #
+ CFLAGS?= -Wall -ansi -pedantic -g
+ CFLAGS+= -DPREFIX=\"$(PREFIX)\"
+-CFLAGS+= `gtk-config --cflags`
+-CLIBS= `gtk-config --libs`
++CFLAGS+= `gtk10-config --cflags`
++CLIBS= `gtk10-config --libs`
+ 
+ all: gtkballs TAGS
+ 

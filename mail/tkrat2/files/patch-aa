@@ -1,0 +1,11 @@
+--- configure.back	Sat May 16 13:48:48 1998
++++ configure	Sat May 16 14:27:13 1998
+@@ -1994,7 +1994,7 @@
+ for i in $tcl_dirs ; do
+     tcl_include_dirs="$tcl_include_dirs $i/include"
+ done
+-tcl_include_dirs="$tcl_include_dirs /usr/include/tcl /usr/include"
++tcl_include_dirs="$tcl_include_dirs /usr/local/include/tcl8.0 /usr/local/include/tk8.0 /usr/include"
+ tcl_dir=0
+ for i in $tcl_include_dirs ; do
+     if test -r $i/tcl.h ; then

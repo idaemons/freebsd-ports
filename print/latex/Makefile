@@ -1,52 +1,54 @@
-DISTFILES=	latex_mf.tar.gz latex_tfm.tar.gz latex_base.tar.gz \
-		latex_tools.tar.gz
+# New ports collection makefile for:    latex
+# Version required:     ?
+# Date created:         29 September 1994
+# Whom:                 jmz
+#
+# $Id: Makefile,v 1.34 1998/01/26 00:59:43 jmz Exp $
+#
+
+VERSION=	98.01
 DISTNAME=	latex
+PKGNAME=	latex2e-${VERSION}
+CATEGORIES=     print
+MASTER_SITES=   ftp://ftp.cdrom.com/pub/tex/package/
+DISTFILES=	latex_mf-${VERSION}.tar.gz latex_tfm-${VERSION}.tar.gz \
+		latex_base-${VERSION}.tar.gz latex_tools-${VERSION}.tar.gz
 
-FTPGET=		${FILESDIR}/ftpget
-BUILD_COOKIE=	${WRKDIR}/.build_done
+MAINTAINER=	jmz@FreeBSD.org
 
-#other equivalent sites: ftp.shsu.edu ftp.dante.de
-CTAN=		ftp.tex.ac.uk
+BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
+RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
+MANUAL_PACKAGE_BUILD=	has to be built with tex port
 
-latex_base.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/macros latex/base.tar.gz ${DISTDIR}/$@
-latex_mf.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/fonts latex/mf.tar.gz ${DISTDIR}/$@
-latex_tfm.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/fonts latex/tfm.tar.gz ${DISTDIR}/$@
-latex_tools.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/macros latex/packages/tools.tar.gz ${DISTDIR}/$@
-
-
-build: ${BUILD_COOKIE}
-
-${BUILD_COOKIE}:
-	@echo "===>  Building for ${DISTNAME}"
-	@(cd ${WRKSRC}/base; initex unpack.ins)
-	@(cd ${WRKSRC}/base; TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS; \
-		initex latex.ltx)
-	@(cd ${WRKSRC}/packages/tools; TEXFORMATS=${WRKSRC}/base:; \
+do-build:
+	(cd ${WRKSRC}/base; tex --ini unpack.ins)
+	(cd ${WRKSRC}/base; TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS; \
+		tex --ini latex.ltx </dev/null)
+	(cd ${WRKSRC}/packages/tools; TEXFORMATS=${WRKSRC}/base:; \
 		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
-		 ln -s /usr/local/bin/virtex latex; ./latex tools.ins)
-	@touch -f ${BUILD_COOKIE}
+		 ln -sf ${PREFIX}/bin/tex latex; ./latex tools.ins)
 
-install:
-	@echo "===>  Installing for ${DISTNAME}"
+do-install: 
 	@(/usr/bin/install -c -m 644 ${WRKSRC}/base/latex.fmt \
-				${PREFIX}/lib/texmf/ini/)
-	@(cd ${WRKSRC}/tfm; install -c -m 644 *.tfm ${PREFIX}/lib/texmf/fonts/tfm)
-	@(cd ${WRKSRC}/mf; install -c -m 644 *.mf ${PREFIX}/lib/texmf/mf)
+				${PREFIX}/share/texmf/web2c/)
+	@(cd ${WRKSRC}/tfm; install -c -m 644 *.tfm ${PREFIX}/share/texmf/fonts/tfm)
+	@(cd ${WRKSRC}/mf; install -c -m 644 *.mf ${PREFIX}/share/texmf/metafont)
+	@mkdir -p ${PREFIX}/share/texmf/tex/latex
 	@(cd ${WRKSRC}/base; for f in latexbug.tex testpage.tex \
 	   lablst.tex idx.tex nfssfont.tex small2e.tex sample2e.tex docstrip.tex \
 	   *.cls *.clo *.sty *.fd *.def *.cfg ; do \
-	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/tex; fi; done)
-	@mkdir -p ${PREFIX}/lib/texmf/makeindx;
-	@(cd ${WRKSRC}/base; install -c -m 644 *.ist ${PREFIX}/lib/texmf/makeindx)
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
+	@mkdir -p ${PREFIX}/share/texmf/makeindx;
+	@(cd ${WRKSRC}/base; install -c -m 644 *.ist ${PREFIX}/share/texmf/makeindx)
 	@(cd ${WRKSRC}/packages/tools; for f in *.sty *.tex; do \
-	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/tex; fi; done)
-	@(cd ${PREFIX}/bin; rm -f latex; ln -s virtex latex)
-
-.include "Makefile.inc"
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
+	@(cd ${PREFIX}/bin; rm -f latex; ln -s tex latex)
+	@(mkdir -p ${PREFIX}/share/texmf/documentation)
+	@(cd ${WRKSRC}/base; for f in *.dtx ltx3info.tex source2e.tex *.fdd ltnews*.tex *guide.tex; do \
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/documentation; fi; done)
+	@(cd ${WRKSRC}/packages/tools; for f in *.dtx; do \
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/documentation; fi; done)
+	@(cd ${PREFIX}/bin; rm -f latex; ln -s tex latex)
 
 .include <bsd.port.mk>

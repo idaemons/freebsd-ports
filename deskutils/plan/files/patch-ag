@@ -1,0 +1,11 @@
+--- sublist.c.orig	Sat Oct 19 06:00:32 1996
++++ sublist.c	Sat Jan 31 10:55:57 1998
+@@ -23,7 +23,7 @@
+ #define regcmp re_comp
+ #define regex re_exec
+ #endif
+-#ifdef linux
++#if defined(linux) || defined(POSIX_REGEX)
+ #define regcmp regcomp
+ #define regex regexec
+ #endif

@@ -1,0 +1,22 @@
+# New ports collection makefile for:	Xserver for I8514 with X True Type
+# Version required:	1.1
+# Date created:		15 April 1998
+# Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
+#
+# $Id: Makefile,v 1.5 1999/01/02 19:11:08 sada Exp $
+#
+
+DISTNAME=	xc
+PKGNAME=	xtt-8514-1.1
+CATEGORIES=	x11
+
+MAINTAINER=	taguchi@tohoku.iij.ad.jp
+
+LIB_DEPENDS=	font.1:${.CURDIR}/../XttXF86srv-common
+
+SERVER=		XF86_8514
+
+MASTERDIR=	${.CURDIR}/../XttXF86srv-common
+PKGDIR=		${.CURDIR}/pkg
+
+.include	"${MASTERDIR}/Makefile"

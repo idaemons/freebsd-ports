@@ -1,7 +1,91 @@
-# $Id: Makefile,v 1.17 1995/02/10 07:47:27 gpalmer Exp $
+# $Id: Makefile,v 1.123 1999/01/21 18:22:23 ejc Exp $
+#
 
-#Broken - expect
-
-SUBDIR=	Gofer STk Sather forth logo p2c schemetoc scm smalltalk tcl tclX
+    SUBDIR += ETHOberonV4
+    SUBDIR += Gofer
+    SUBDIR += STk
+    SUBDIR += Sather
+    SUBDIR += TenDRA
+    SUBDIR += atlast
+    SUBDIR += bc-gcc
+    SUBDIR += bwbasic
+    SUBDIR += caml-light
+    SUBDIR += cim
+    SUBDIR += cmucl
+    SUBDIR += dylan
+    SUBDIR += egcs
+    SUBDIR += eiffel
+    SUBDIR += elisp-manual
+    SUBDIR += elk
+    SUBDIR += emacs-lisp-intro
+    SUBDIR += eperl
+    SUBDIR += erlang
+    SUBDIR += expect
+    SUBDIR += forth
+    SUBDIR += g77
+    SUBDIR += gawk
+    SUBDIR += gcc28
+    SUBDIR += gcl
+    SUBDIR += glibstdc++28
+    SUBDIR += gnat
+    SUBDIR += gnomeobjc
+    SUBDIR += guavac
+    SUBDIR += guile
+    SUBDIR += guileobjc
+    SUBDIR += hugs
+    SUBDIR += ici
+    SUBDIR += icon
+    SUBDIR += intercal
+    SUBDIR += itcl
+    SUBDIR += javac_netscape
+    SUBDIR += jdk
+    SUBDIR += jikes
+    SUBDIR += kaffe
+    SUBDIR += lcc
+    SUBDIR += libobjects
+    SUBDIR += logo
+    SUBDIR += mawk
+    SUBDIR += mit-scheme
+    SUBDIR += mixal
+    SUBDIR += mocka
+    SUBDIR += modula-3
+    SUBDIR += modula-3-lib
+    SUBDIR += modula-3-socks
+    SUBDIR += moscow_ml
+    SUBDIR += nawk
+    SUBDIR += o2c
+    SUBDIR += objc
+    SUBDIR += ocaml
+    SUBDIR += p2c
+    SUBDIR += p5-Tcl
+    SUBDIR += p5-ePerl
+    SUBDIR += pbasic
+    SUBDIR += perl5
+    SUBDIR += pgcc
+    SUBDIR += ptoc
+    SUBDIR += python
+    SUBDIR += python-beta
+    SUBDIR += rexx-imc
+    SUBDIR += ruby
+    SUBDIR += scheme48
+    SUBDIR += schemetoc
+    SUBDIR += scm
+    SUBDIR += slib
+    SUBDIR += smalltalk
+    SUBDIR += sml-nj
+    SUBDIR += squeak1
+    SUBDIR += squeak2
+    SUBDIR += sr
+    SUBDIR += swi-pl
+    SUBDIR += tcl75
+    SUBDIR += tcl76
+    SUBDIR += tcl80
+    SUBDIR += tcl81
+    SUBDIR += tcl81-thread
+    SUBDIR += tclX75
+    SUBDIR += tclX80
+    SUBDIR += tclplugin
+    SUBDIR += xpl
+    SUBDIR += yorick
 
 .include <bsd.port.subdir.mk>

@@ -1,0 +1,19 @@
+--- lib/Makefile.in.orig	Fri Nov 28 22:28:12 1997
++++ lib/Makefile.in	Fri Nov 28 23:19:37 1997
+@@ -73,7 +73,7 @@
+ LIB=@LIB_EXTENSION@
+ 
+ # optimization flag -- may become host dependent
+-OPT_FLAG = -O
++#OPT_FLAG = -O
+ CDEBUG = @CDEBUG@
+ USER_OBJECTS = @USER_OBJECTS@
+ 
+@@ -195,7 +195,6 @@
+ 	$(INSTALL_DATA) libgst.$(LIB) $(smlibdir)/libgst.$(LIB)
+ 	$(INSTALL_DATA) gst.h $(includedir)/gst.h
+ 	$(INSTALL_DATA) gstpub.h $(includedir)/gstpub.h
+-	$(INSTALL_DATA) config.h $(includedir)/config.h
+ 
+ uninstall:
+ 

@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Fri Jan 29 22:10:45 1999
+--- Makefile.in	Fri Jan 29 22:11:13 1999
+***************
+*** 9,15 ****
+  first_rule: all
+  dummy:
+  
+! subdirs = src doc rclock src/graphics
+  
+  DIST =	INSTALL README.configure configure Makefile Makefile.in
+  
+--- 9,15 ----
+  first_rule: all
+  dummy:
+  
+! subdirs = src doc
+  
+  DIST =	INSTALL README.configure configure Makefile Makefile.in
+  

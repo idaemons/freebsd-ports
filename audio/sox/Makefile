@@ -1,17 +1,24 @@
 # New ports collection makefile for:	sox - Sound Exchange
-# Version required:	10p11
+# Version required:	12p12
 # Date created:		17 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/23 01:16:14 torstenb Exp $
+# $Id: Makefile,v 1.8 1996/11/18 11:21:36 asami Exp $
 #
 
-DISTNAME=	sox10p11
-MASTER_SITES=	ftp://nic.switch.ch/software/sources/audio/
-EXTRACT_SUFX=	.tar.Z
+DISTNAME=	soxgamma
+PKGNAME=	sox-12.12
+CATEGORIES=	audio
+MASTER_SITES=	http://www.spies.com/Sox/Archive/
 
-pre-install:
-	mkdir -p ${PREFIX}/bin
-	mkdir -p ${PREFIX}/man
+MAINTAINER=	torstenb@FreeBSD.ORG
+
+NO_WRKSUBDIR=		yes
+MAKEFILE=	Makefile.unx
+MAN1=		sox.1
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/sox ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/sox.man ${PREFIX}/man/man1/sox.1
 
 .include <bsd.port.mk>

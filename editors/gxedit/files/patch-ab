@@ -1,0 +1,40 @@
+--- Makefile.orig	Tue Jan 26 02:57:31 1999
++++ Makefile	Tue Feb  2 22:57:33 1999
+@@ -1,8 +1,8 @@
+ BIN_DIR =
+ INSTALL_DIR = /usr/X11R6/bin/
+-CFLAGS = `gtk-config --cflags` -I/usr/local/include -I. -O -Wall -DVERSION=\"1.20\"
++CFLAGS += `gtk11d-config --cflags` -I/usr/local/include -I. -DVERSION=\"1.20\"
+ GTKEDITOR_CFLAGS = -I../gtkeditor-0.0.6
+-LIBS = `gtk-config --libs`
++LIBS = `gtk11d-config --libs`
+ OBJS = gxedit.o net.o utils.o
+ GTKEDITOR_OBJS = ../gtkeditor-0.0.6/gtkeditor/gtkeditor.o ../gtkeditor-0.0.6/regex/regex.o -L../gtkeditor-0.0.6 -lgtkeditor -lregex -lguile -ldl -ltermcap
+ CC = gcc
+@@ -20,7 +20,6 @@
+ 	$(CC) $(CFLAGS) -c utils.c
+ 	$(CC) $(CFLAGS) -o $(BIN_DIR)gxedit $(OBJS) $(LIBS)
+ 	@(rm -f ./.chk_config)
+-	(cd xproc-src; make BIN_DIR=../; cd ..)
+ 	(cd gtk-shell-src; make BIN_DIR=../; cd ..)
+ 
+ gxe-with-gtkeditor:
+@@ -29,7 +28,6 @@
+ 	$(CC) $(CFLAGS) $(GTKEDITOR_CFLAGS) -c utils.c
+ 	$(CC) $(CFLAGS) $(GTKEDITOR_CFLAGS) -o $(BIN_DIR)gxedit $(OBJS) $(GTKEDITOR_OBJS) $(LIBS)
+ 	@(rm -f ./.chk_config)
+-	(cd xproc-src; make BIN_DIR=../; cd ..)
+ 	(cd gtk-shell-src; make BIN_DIR=../; cd ..)
+ 
+ say:
+--- gtk-shell-src/Makefile.orig	Sun Jan 24 05:06:25 1999
++++ gtk-shell-src/Makefile	Tue Feb  2 22:53:06 1999
+@@ -1,6 +1,6 @@
+ BIN_DIR = 
+-CFLAGS = `gtk-config --cflags` -O -I. -Wall
+-LIBS = `gtk-config --libs`
++CFLAGS += `gtk11d-config --cflags` -I.
++LIBS = `gtk11d-config --libs`
+ CC = gcc
+ 
+ all:

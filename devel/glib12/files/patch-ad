@@ -1,0 +1,40 @@
+--- configure.in.orig	Thu Jan 28 09:59:01 1999
++++ configure.in	Thu Jan 28 23:13:01 1999
+@@ -250,7 +250,7 @@
+ AC_CHECK_HEADERS(values.h, AC_DEFINE(HAVE_VALUES_H))
+ 
+ # Check for some functions
+-AC_CHECK_FUNCS(lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp poll)
++AC_CHECK_FUNCS(lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp)
+ 
+ # Check for sys_errlist
+ AC_MSG_CHECKING(for sys_errlist)
+@@ -732,11 +732,13 @@
+             	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
+ 		fi
+ 		;;
+-	*-freebsd2.2*)
+-		G_THREAD_CFLAGS="$G_THREAD_CFLAGS -D_THREAD_SAFE"
+-
+-		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
+-		# -mthreads flag.
++	*-*-freebsd2.2* | *-*-freebsd3* | *-*-freebsd4*)
++		if test x"$G_THREAD_LIBS" = x"-lc_r"; then
++			G_THREAD_CFLAGS="-D_THREAD_SAFE -pthread"
++			have_poll=no
++		else
++			G_THREAD_CFLAGS="-D_THREAD_SAFE"
++		fi
+ 		;;
+     esac
+ 
+@@ -785,6 +788,9 @@
+ dnl ****************************************
+ dnl *** GLib POLL* compatibility defines ***
+ dnl ****************************************
++if test x"$have_poll" != xno; then
++	AC_CHECK_FUNCS(poll)
++fi
+ GLIB_SYSDEFS(
+ [#include <sys/types.h>
+ #include <sys/poll.h>],

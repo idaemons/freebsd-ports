@@ -1,0 +1,90 @@
+--- hints/freebsd.sh.orig	Fri Jul 24 13:00:19 1998
++++ hints/freebsd.sh	Wed Feb 10 15:22:47 1999
+@@ -68,6 +68,7 @@
+ 	d_setreuid='define'
+ 	d_setegid='undef'
+ 	d_seteuid='undef'
++	d_dosuid='define'
+ 	test -r ./broken-db.msg && . ./broken-db.msg
+ 	;;
+ #
+@@ -81,12 +82,18 @@
+ 	d_setreuid='define'
+ 	d_setegid='undef'
+ 	d_seteuid='undef'
++	d_dosuid='define'
+ 	;;
+ #
+ # Guesses at what will be needed after 2.2
+ *)	usevfork='true'
+ 	usemymalloc='n'
+ 	libswanted=`echo $libswanted | sed 's/ malloc / /'`
++	d_setregid='define'
++	d_setreuid='define'
++	d_setegid='undef'
++	d_seteuid='undef'
++	d_dosuid='define'
+ 	;;
+ esac
+ 
+@@ -95,17 +102,25 @@
+ case "$osvers" in
+ 0.*|1.0*) ;;
+ 
+-3.0*)   if [ -e /usr/lib/aout ]; then
+-            libpth="/usr/lib/aout /usr/local/lib /usr/lib"
+-            glibpth="/usr/lib/aout /usr/local/lib /usr/lib"
+-        fi
+-        cccdlflags='-DPIC -fpic'
+-        lddlflags='-Bshareable'
+-        ;;
+-
+-*)	cccdlflags='-DPIC -fpic'
++2.*)	cccdlflags='-DPIC -fpic'
+ 	lddlflags="-Bshareable $lddlflags"
+ 	;;
++
++*)	objformat=`objformat`
++	if [ x$objformat = xelf ]; then
++	    libpth="/usr/lib /usr/local/lib"
++	    glibpth="/usr/lib /usr/local/lib"
++	    ldflags="-Wl,-E "
++	    lddlflags="-shared "
++	else
++	    if [ -e /usr/lib/aout ]; then
++	        libpth="/usr/lib/aout /usr/local/lib /usr/lib"
++	        glibpth="/usr/lib/aout /usr/local/lib /usr/lib"
++	    fi
++	    lddlflags='-Bshareable'
++	fi
++	cccdlflags='-DPIC -fpic'
++        ;;
+ esac
+ 
+ cat <<'EOM' >&4
+@@ -125,7 +140,11 @@
+ case "$usethreads" in
+ $define)
+     case "$osvers" in  
+-        3.0*) ldflags="-pthread $ldflags"
++         0.*|1.*|2.0*|2.1*)   cat <<'EOM' >&4
++It is not known if FreeBSD $uname_r supports POSIX threads or not.  Consider
++upgrading to the latest STABLE release.
++EOM
++              exit 1
+               ;;
+         2.2*) if [ ! -r /usr/lib/libc_r ]; then
+                 cat <<'EOM' >&4
+@@ -142,11 +161,7 @@
+               # The safest quick-fix is just to not use nm at all.
+               usenm=false
+               ;;
+-         *)   cat <<'EOM' >&4
+-It is not known if FreeBSD $uname_r supports POSIX threads or not.  Consider
+-upgrading to the latest STABLE release.
+-EOM
+-              exit 1
++        *) ldflags="-pthread $ldflags"
+               ;;
+     esac
+     ;;

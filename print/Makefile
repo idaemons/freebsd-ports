@@ -1,7 +1,79 @@
-# $Id: Makefile,v 1.8 1994/12/25 13:27:32 ats Exp $
+# $Id: Makefile,v 1.82 1999/01/20 14:51:16 dirk Exp $
 #
-SUBDIR=	ImageMagick a2ps afm dvi2xx dvips dviselect ghostscript ghostview \
-	psutils tex latex latex209 makeindex mltex texinfo transfig xdvi \
-	xtexshell
+
+    SUBDIR += a2ps-a4
+    SUBDIR += a2ps-letter
+    SUBDIR += a2ps-letterdj
+    SUBDIR += a2ps43-a4
+    SUBDIR += a2ps43-letter
+    SUBDIR += acroread
+    SUBDIR += afm
+    SUBDIR += apsfilter
+    SUBDIR += asprint
+    SUBDIR += bibcard
+    SUBDIR += bibview
+    SUBDIR += c2ps-a4
+    SUBDIR += c2ps-letter
+    SUBDIR += detex
+    SUBDIR += dvi2tty
+    SUBDIR += dvi2xx
+    SUBDIR += dvips
+    SUBDIR += dvips2ascii
+    SUBDIR += dviselect
+    SUBDIR += enscript-a4
+    SUBDIR += enscript-letter
+    SUBDIR += enscript-letterdj
+    SUBDIR += enscriptfonts
+    SUBDIR += freetype
+    SUBDIR += ggv
+    SUBDIR += ghostscript5
+    SUBDIR += ghostscript55
+    SUBDIR += ghostview
+    SUBDIR += gnomeprint
+    SUBDIR += gp
+    SUBDIR += gsfonts
+    SUBDIR += gv
+    SUBDIR += hp2xx
+    SUBDIR += html2latex
+    SUBDIR += html2ps
+    SUBDIR += jadetex
+    SUBDIR += klyx
+    SUBDIR += latex
+    SUBDIR += lout
+    SUBDIR += lprps-a4
+    SUBDIR += lprps-letter
+    SUBDIR += lyx
+    SUBDIR += makeindex
+    SUBDIR += mgv
+    SUBDIR += mp-a4
+    SUBDIR += mp-letter
+    SUBDIR += mpage
+    SUBDIR += musixtex
+    SUBDIR += offix-printer
+    SUBDIR += pbm2ppa
+    SUBDIR += pdflib
+    SUBDIR += perlftlib
+    SUBDIR += pkfonts118
+    SUBDIR += pkfonts240
+    SUBDIR += pkfonts300
+    SUBDIR += pkfonts360
+    SUBDIR += pkfonts400
+    SUBDIR += pkfonts600
+    SUBDIR += psutils-a4
+    SUBDIR += psutils-letter
+    SUBDIR += rtf2latex
+    SUBDIR += teTeX
+    SUBDIR += teTeX-beta
+    SUBDIR += tex
+    SUBDIR += texinfo
+    SUBDIR += tgif2tex
+    SUBDIR += tr2latex
+    SUBDIR += transfig
+    SUBDIR += virtualpaper
+    SUBDIR += xdvi
+    SUBDIR += xdvik
+    SUBDIR += xmbibtex
+    SUBDIR += xtem
+    SUBDIR += yatex
 
 .include <bsd.port.subdir.mk>

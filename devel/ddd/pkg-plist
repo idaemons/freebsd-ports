@@ -1,0 +1,7 @@
+bin/ddd
+share/doc/ddd/PROBLEMS
+share/doc/ddd/README
+share/doc/ddd/ddd-paper.ps.gz
+share/doc/ddd/ddd.man.ps.gz
+share/doc/ddd/sample.dddinit
+@dirrm share/doc/ddd

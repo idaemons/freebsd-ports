@@ -1,0 +1,13 @@
+*** kfm/kfmsu2.in~	Sat Dec 19 22:05:05 1998
+--- kfm/kfmsu2.in	Tue Dec 29 00:47:31 1998
+***************
+*** 7,10 ****
+  echo ""
+  echo "Logging in as super user"
+! su - root -c "DISPLAY=$DISPLAY; export DISPLAY; @kde_bindir@/kfm -sw >/dev/null"
+  xhost -local:
+--- 7,10 ----
+  echo ""
+  echo "Logging in as super user"
+! su root -c "echo DISPLAY=$DISPLAY @kde_bindir@/kfm -sw | /bin/sh > /dev/null"
+  xhost -local:

@@ -1,0 +1,49 @@
+# $Id: Makefile,v 1.42 1999/01/18 04:29:56 steve Exp $
+#
+
+    SUBDIR += SSLeay
+    SUBDIR += bjorb
+    SUBDIR += bro
+    SUBDIR += bugs
+    SUBDIR += cfs
+    SUBDIR += checkpassword
+    SUBDIR += cops
+    SUBDIR += crack
+    SUBDIR += donkey
+    SUBDIR += fwtk
+    SUBDIR += gnupg
+    SUBDIR += john
+    SUBDIR += krb5
+    SUBDIR += l0pht-watch
+    SUBDIR += libident
+    SUBDIR += nbaudit
+    SUBDIR += nmap
+    SUBDIR += openssl
+    SUBDIR += p5-Authen-Radius
+    SUBDIR += p5-Crypt-DES
+    SUBDIR += p5-Crypt-IDEA
+    SUBDIR += p5-MD5
+    SUBDIR += p5-PGP
+    SUBDIR += p5-PGP-Sign
+    SUBDIR += pgp
+    SUBDIR += pgp5
+    SUBDIR += pidentd
+    SUBDIR += portscanner
+    SUBDIR += rsaref
+    SUBDIR += sentry
+    SUBDIR += skip
+    SUBDIR += smurflog
+    SUBDIR += sniff
+    SUBDIR += ssh
+    SUBDIR += ssh2
+    SUBDIR += strobe
+    SUBDIR += stunnel
+    SUBDIR += sudo
+    SUBDIR += super
+    SUBDIR += swatch
+    SUBDIR += tcp_wrapper
+    SUBDIR += tripwire
+    SUBDIR += vscan
+    SUBDIR += xinetd
+
+.include <bsd.port.subdir.mk>

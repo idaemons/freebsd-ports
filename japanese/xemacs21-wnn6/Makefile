@@ -1,0 +1,16 @@
+# New ports collection makefile for:	XEmacs with Wnn6
+# Version required:	20.4
+# Date created:		25 January 1998
+# Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
+#
+# $Id: Makefile,v 1.3 1998/12/01 03:06:24 asami Exp $
+#
+
+PKGNAME=	ja-xemacs-wnn6-20.4
+
+WNN6=		yes
+
+MASTERDIR=	${.CURDIR}/../../japanese/xemacs
+PKGDIR=		${.CURDIR}/pkg
+
+.include	"${MASTERDIR}/Makefile"

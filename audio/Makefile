@@ -1,5 +1,64 @@
-# $Id: Makefile,v 1.8 1995/01/09 01:59:24 pst Exp $
+# $Id: Makefile,v 1.68 1999/01/26 03:11:58 steve Exp $
 #
-SUBDIR=	gmod gsm nas sox tracker xcd xcdplayer
+
+    SUBDIR += 8hz-mp3
+    SUBDIR += amp
+    SUBDIR += ascd
+    SUBDIR += bladeenc
+    SUBDIR += cam
+    SUBDIR += cdd
+    SUBDIR += cddbd
+    SUBDIR += cdplay
+    SUBDIR += dap
+    SUBDIR += dagrab
+    SUBDIR += esound
+    SUBDIR += gmod
+    SUBDIR += gnomeaudio
+    SUBDIR += gqmpeg
+    SUBDIR += gsm
+    SUBDIR += kdemultimedia
+    SUBDIR += kdemultimedia11
+    SUBDIR += kmpg
+    SUBDIR += lamer
+    SUBDIR += libaudiofile
+    SUBDIR += linux-realplayer
+    SUBDIR += maplay
+    SUBDIR += mikmod
+    SUBDIR += mp3encode
+    SUBDIR += mp3info
+    SUBDIR += mpegaudio
+    SUBDIR += mpg123
+    SUBDIR += mxv
+    SUBDIR += nas
+    SUBDIR += nspmod
+    SUBDIR += play
+    SUBDIR += playmidi
+    SUBDIR += radio
+    SUBDIR += replay
+    SUBDIR += rosegarden
+    SUBDIR += rplay
+    SUBDIR += rsynth
+    SUBDIR += s3mod
+    SUBDIR += sidplay
+    SUBDIR += sox
+    SUBDIR += splay
+    SUBDIR += splaytk
+    SUBDIR += timidity
+    SUBDIR += tosha
+    SUBDIR += tracker
+    SUBDIR += wmcdplay
+    SUBDIR += wmmixer
+    SUBDIR += wmsound
+    SUBDIR += workman
+    SUBDIR += wsoundprefs
+    SUBDIR += x11amp
+    SUBDIR += xamp
+    SUBDIR += xcd
+    SUBDIR += xcdplayer
+    SUBDIR += xmcd
+    SUBDIR += xmix
+    SUBDIR += xmmix
+    SUBDIR += xmpeg3
+    SUBDIR += xtuner
 
 .include <bsd.port.subdir.mk>
