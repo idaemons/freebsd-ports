@@ -1,0 +1,15 @@
+*** config.h.bak	Mon Mar  3 12:39:34 1997
+--- config.h	Sun Apr 27 21:03:14 1997
+***************
+*** 72,76 ****
+   * See README-2.4-HOBBIT for more information on this option.
+   */
+  
+! #undef SKEY
+  
+--- 72,76 ----
+   * See README-2.4-HOBBIT for more information on this option.
+   */
+  
+! #define SKEY
+  

@@ -1,0 +1,12 @@
+This is the netscape web-surfboard.  Please read the file
+"/usr/local/lib/netscape/LICENSE" for the licensing terms.
+
+Note: If Java fails to start, set your LANG environment variable to C
+
+Note: Java does not work in 8bpp mode; run `X -bpp 16' if you need it
+
+Note: If Java applets fail to display.  Type this as root:
+		cd /usr/X11R6/lib/X11/fonts/misc
+		/usr/X11R6/bin/mkfontdir
+		chmod 444 fonts.dir
+      And then exit and restart your X server.

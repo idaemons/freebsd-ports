@@ -1,0 +1,11 @@
+SKK (Simple Kana Kanji Convertor) is a very fast and efficient Japanese input
+method system, written in emacs-lisp. SKK runs on NEmacs (Japanized Emacs18),
+Mule (MULtilingual Emacs), and Demacs (DOS version of Emacs18/NEmacs).
+
+Check <URL:http://skk.kuis.kyoto-u.ac.jp/skk/> also, Home Page of SKK.
+
+When you select 'skkserv' as a conversion server, add
+
+	skkserv		1178/tcp
+
+to your /etc/services (or 'services' NIS database).

@@ -3,27 +3,27 @@
 # Date created:		22 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.4 1994/11/25 18:20:48 asami Exp $
+# $Id: Makefile,v 1.14 1996/11/13 11:19:45 asami Exp $
 #
 
 DISTNAME=	Wnn4.2
-MASTER_SITES=	ftp://utsun.s.u-tokyo.ac.jp/fj/
-IS_INTERACTIVE=	yes
+PKGNAME=	jp-Wnn-4.2
+CATEGORIES=	japanese
+MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/
+
+MAINTAINER=	asami@FreeBSD.ORG
+
 WRKSRC=		${WRKDIR}/Xsi
-PKG_ARGS?=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
-			-r ${PKGDIR}/REQ -i ${PKGDIR}/INSTALL -p ${PREFIX}
+IS_INTERACTIVE=	yes	# needs "wnn" user
 
 # These are necesary because this package uses a different Makefile for
 #  building and installing etc.
-pre-build:
+do-build:
 	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} Makefile.inst World)
 
-pre-install:
-	@PREFIX=${PREFIX} ${SCRIPTDIR}/pre-install
+post-install:
 # This package uses imake's "install.man" target to install man pages but
 #  I can't define USE_IMAKE because it doesn't involve xmkmf
 	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
-
-pre-reinstall: pre-install
 
 .include <bsd.port.mk>

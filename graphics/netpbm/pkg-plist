@@ -1,5 +1,7 @@
-@owner bin
-@mode 755
+bin/pbmmerge
+bin/pgmmerge
+bin/ppmmerge
+bin/pnmmerge
 bin/anytopnm
 bin/asciitopgm
 bin/atktopbm
@@ -172,7 +174,6 @@ bin/ybmtopbm
 bin/yuvsplittoppm
 bin/yuvtoppm
 bin/zeisstopnm
-@mode 444
 include/pbm.h
 include/pbmplus.h
 include/pgm.h
@@ -353,11 +354,11 @@ man/man1/ybmtopbm.1.gz
 man/man1/yuvsplittoppm.1.gz
 man/man1/yuvtoppm.1.gz
 man/man1/zeisstopnm.1.gz
-man/man3/libpbm.1.gz
-man/man3/libpgm.1.gz
-man/man3/libpnm.1.gz
-man/man3/libppm.1.gz
-man/man5/pbm.1.gz
-man/man5/pgm.1.gz
-man/man5/pnm.1.gz
-man/man5/ppm.1.gz
+man/man3/libpbm.3.gz
+man/man3/libpgm.3.gz
+man/man3/libpnm.3.gz
+man/man3/libppm.3.gz
+man/man5/pbm.5.gz
+man/man5/pgm.5.gz
+man/man5/pnm.5.gz
+man/man5/ppm.5.gz

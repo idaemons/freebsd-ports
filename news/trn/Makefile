@@ -3,15 +3,18 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $id: Makefile,v 1.0 1994/10/21 00:00:00 smace Exp $
+# $Id: Makefile,v 1.12 1996/12/08 01:45:12 max Exp $
 #
 
 DISTNAME=	trn-3.6
+CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
-EXTRACT_SUFX=	.tar.gz
-DISTFILES=	trn-3.6.tar.gz
 
+RUN_DEPENDS=  munpack:${PORTSDIR}/converters/mpack
+
+NO_PACKAGE=	"Too many questions"
 IS_INTERACTIVE=	yes
+MAN1=		trn.1 Pnews.1 Rnmail.1 newsetup.1 newsgroups.1
 
 pre-configure:
 	@echo "===> Running pre-configure target for ${DISTNAME}"

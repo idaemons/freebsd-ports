@@ -1,15 +1,36 @@
 # New ports collection makefile for:	imm
-# Version required:	3.3
+# Version required:	3.5a1
 # Date created:		13 October 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/14 01:37:11 wollman Exp $
+# $Id: Makefile,v 1.10 1996/11/19 21:42:08 fenner Exp $
 #
 
-DISTNAME=	imm-3.3
-DISTFILES=	imm-3.3-src.tar.Z
-MASTER_SITES=	ftp://ftp.ucs.ed.ac.uk/pub/videoconference/imm/
-WRKSRC=		${WRKDIR}/src
-LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
+DISTNAME=	imm-3.5a1
+CATEGORIES=	mbone tk41
+MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
+DISTFILES=	imm.source.tar.Z
+WRKSRC=		${WRKDIR}/mnm
+
+MAINTAINER=	fenner@freebsd.org
+
+LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
+
+USE_X11=	yes
+
+# The included makefile doesn't have an "install" target.
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/freebsd/imm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/freebsd/immserv ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/freebsd/lscomp ${PREFIX}/bin
+# and no man pages at all yet.
+# But include the very limited documentation
+	${MKDIR} ${PREFIX}/share/doc/imm
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/imm
+	${INSTALL_DATA} ${WRKSRC}/imm_readme.txt ${PREFIX}/share/doc/imm
+.endif
+# The sdr plugin is pretty much required.
+	${INSTALL_DATA} ${WRKSRC}/sdr2.plugin.S53.image.imm ${PREFIX}/share/doc/imm
 
 .include <bsd.port.mk>

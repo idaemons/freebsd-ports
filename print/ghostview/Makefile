@@ -3,12 +3,18 @@
 # Date created:		21 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/22 05:42:22 jkh Exp $
+# $Id: Makefile,v 1.8 1996/11/18 10:25:35 asami Exp $
 #
 
 DISTNAME=	ghostview-1.5
+CATEGORIES=	print
+MASTER_SITES=	${MASTER_SITE_GNU}
+
+MAINTAINER=	ports@FreeBSD.org
+
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
-EXEC_DEPENDS=	gs:${PORTSDIR}/print/ghostscript
+
+post-install:
+	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

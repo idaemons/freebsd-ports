@@ -1,0 +1,71 @@
+*** ./xmcd_d/Imakefile.orig	Thu Apr  4 21:42:31 1996
+--- ./xmcd_d/Imakefile	Thu Apr  4 23:31:17 1996
+***************
+*** 43,49 ****
+   * #include "Motif.tmpl"
+   * #include "Motif.rules"
+   */
+! LOCAL_LIBRARIES= XmClientLibs
+  
+  
+  /**** Optional defines:  Change as you see fit. *****************************
+--- 43,49 ----
+   * #include "Motif.tmpl"
+   * #include "Motif.rules"
+   */
+! LOCAL_LIBRARIES= ${MOTIFLIB} XawClientLibs
+  
+  
+  /**** Optional defines:  Change as you see fit. *****************************
+***************
+*** 67,78 ****
+  DEFINES=
+  #endif
+  
+  
+  /*
+   * Add local include path
+   */
+  INCLUDES=-I..
+- 
+  
+  /*
+   * C Source files
+--- 67,78 ----
+  DEFINES=
+  #endif
+  
++ MANSUFFIX = 1
+  
+  /*
+   * Add local include path
+   */
+  INCLUDES=-I..
+  
+  /*
+   * C Source files
+*** cda_d/Imakefile.orig	Mon Jan 20 10:13:51 1997
+--- cda_d/Imakefile	Sat Apr 26 07:12:09 1997
+***************
+*** 102,107 ****
+--- 102,108 ----
+  #endif	/* LinuxArchitecture */
+  #endif	/* SunArchitecture */
+  
++ MANSUFFIX = 1
+  
+  /*
+   * C Source files
+*** ./dbconv_d/Imakefile.orig	Thu Apr  4 23:33:09 1996
+--- ./dbconv_d/Imakefile	Thu Apr  4 23:33:53 1996
+***************
+*** 24,29 ****
+--- 24,31 ----
+   *
+   */
+  
++ MANSUFFIX = 1
++ 
+  
+  /*
+   * Add local include path

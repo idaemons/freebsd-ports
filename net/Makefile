@@ -1,9 +1,74 @@
-# $Id: Makefile,v 1.28 1995/02/10 06:02:42 gpalmer Exp $
+# $Id: Makefile,v 1.101 1997/05/05 10:46:43 jfitz Exp $
 #
-# Broken - gn, ircII
 
-SUBDIR= archie cern_httpd chimera dgd dgd-lpmud fspclient gated gopher imm irc \
-	ivs lynx ncftp2 nv pcnfsd pidentd pmf sup tclDP tcp_wrapper \
-	tcpblast tkWWW tintin++ wais wu-ftpd xarchie yale-tftpd
+    SUBDIR += archie
+    SUBDIR += arpwatch
+    SUBDIR += ascend-radius
+    SUBDIR += bb
+    SUBDIR += bing
+    SUBDIR += cap
+    SUBDIR += cvsup
+    SUBDIR += cvsup-mirror
+    SUBDIR += delegate
+    SUBDIR += dgd
+    SUBDIR += dgd-lpmud
+    SUBDIR += dgd-net
+    SUBDIR += dip
+    SUBDIR += echoping
+    SUBDIR += fping
+    SUBDIR += freewais-sf
+    SUBDIR += fspclient
+    SUBDIR += ftpsearch
+    SUBDIR += ftptool
+    SUBDIR += gated
+    SUBDIR += gnu-finger
+    SUBDIR += gopher
+    SUBDIR += irc
+    SUBDIR += ircII
+    SUBDIR += isc-dhcp
+    SUBDIR += ivs
+    SUBDIR += ldap
+    SUBDIR += libsocket++
+    SUBDIR += mirror
+    SUBDIR += mrtg
+    SUBDIR += moxftp
+    SUBDIR += natd
+    SUBDIR += ncftp
+    SUBDIR += ncftp2
+    SUBDIR += netcat
+    SUBDIR += p5-Archie
+    SUBDIR += p5-IO
+    SUBDIR += p5-Net
+    SUBDIR += p5-Net-DNS
+    SUBDIR += pcnfsd
+    SUBDIR += pmf
+    SUBDIR += radius
+    SUBDIR += ratoolset
+    SUBDIR += rdist6
+    SUBDIR += rmsg
+    SUBDIR += rsync
+    SUBDIR += samba
+    SUBDIR += scotty
+    SUBDIR += slirp
+    SUBDIR += socks5
+    SUBDIR += strobe
+    SUBDIR += sup
+    SUBDIR += tcptrace
+    SUBDIR += telnetx
+    SUBDIR += tintin++
+    SUBDIR += tinyfugue
+    SUBDIR += traceroute
+    SUBDIR += trafshow
+    SUBDIR += ucd-snmp
+    SUBDIR += wais
+    SUBDIR += wide-dhcp
+    SUBDIR += wget
+    SUBDIR += wu-ftpd
+    SUBDIR += xarchie
+    SUBDIR += xgopher
+    SUBDIR += yale-tftpd
+    SUBDIR += ytalk
+    SUBDIR += zircon
+    SUBDIR += zephyr
 
 .include <bsd.port.subdir.mk>

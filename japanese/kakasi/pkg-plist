@@ -1,0 +1,11 @@
+bin/kakasi
+lib/kakasi/rdic-conv
+lib/kakasi/atoc-conv
+lib/kakasi/mkkanwa
+lib/kakasi/itaijidict
+lib/kakasi/kanwadict
+man/ja_JP.EUC/man1/kakasi.1.gz
+share/doc/kakasi/README
+share/doc/kakasi/README.jpn
+@dirrm share/doc/kakasi
+@dirrm lib/kakasi

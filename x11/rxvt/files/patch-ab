@@ -1,23 +1,19 @@
-*** command.c.old	Mon Dec  5 01:07:33 1994
---- command.c	Mon Dec  5 01:07:49 1994
-***************
-*** 373,381 ****
-        {
-  	int pgrp = getpid();
-  	ioctl(0, TIOCSPGRP, (char *)&pgrp);
-! 	setpgrp();
-  	close(open(ttynam, O_WRONLY, 0));
-! 	setpgrp ();
-        }
-  
-        /* init of termios structure		*/
---- 373,381 ----
-        {
-  	int pgrp = getpid();
-  	ioctl(0, TIOCSPGRP, (char *)&pgrp);
-! 	setpgrp(0,pgrp);
-  	close(open(ttynam, O_WRONLY, 0));
-! 	setpgrp (0,pgrp);
-        }
-  
-        /* init of termios structure		*/
+--- ./src/utmp.c.org	Thu Jan 23 10:46:02 1997
++++ ./src/utmp.c	Thu Apr 24 15:20:49 1997
+@@ -80,6 +80,8 @@
+ #include <stdio.h>
+ #include <string.h>
+ 
++#include <sys/types.h>
++
+ #ifdef HAVE_UTMPX_H
+ # include <utmpx.h>
+ # define USE_SYSV_UTMP
+@@ -90,7 +92,6 @@
+ # endif
+ #endif
+ 
+-#include <sys/types.h>
+ #include <sys/stat.h>
+ 
+ #ifdef TIME_WITH_SYS_TIME

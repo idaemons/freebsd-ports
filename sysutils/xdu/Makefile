@@ -3,13 +3,17 @@
 # Date created:		9 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.5 1995/01/13 12:49:18 jkh Exp $
+# $Id: Makefile,v 1.5 1995/07/13 01:21:33 asami Exp $
 #
 
 DISTNAME=	xdu-3.0
-EXTRACT_SUFX=	.tar.Z
-USE_IMAKE=	yes
+CATEGORIES=	sysutils x11
 MASTER_SITES=	ftp://ftp.arl.mil/pub/
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	asami@FreeBSD.ORG
+
 NO_WRKSUBDIR=	yes
+USE_IMAKE=	yes
 
 .include <bsd.port.mk>

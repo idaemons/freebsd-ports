@@ -1,0 +1,83 @@
+--- Makefile.in.orig	Sun Feb 16 06:12:37 1997
++++ Makefile.in	Sun Apr 20 01:37:54 1997
+@@ -29,7 +29,7 @@
+ # Directory in which to install the library of Tix scripts and demos
+ # (note: you can set the TIX_LIBRARY environment variable at run-time to
+ # override the compiled-in location):
+-TIX_LIBRARY =	$(prefix)/lib/tix$(TIX_VERSION)
++TIX_LIBRARY =	$(prefix)/share/tix$(TIX_VERSION)
+ 
+ # Directory in which to install the archive libtix.a:
+ LIB_DIR =	$(exec_prefix)/lib
+@@ -70,16 +70,16 @@
+ TK_GENERIC_DIR  = $(TK_SRC_DIR)/generic
+ 
+ # Libraries to use when linking:
+-LIBS = @ITK_BUILD_LIB_SPEC@ @ITCL_BUILD_LIB_SPEC@ \
+-    @TK_BUILD_LIB_SPEC@ @TCL_BUILD_LIB_SPEC@ @TK_LIBS@
++LIBS = @ITK_LIB_SPEC@ @ITCL_LIB_SPEC@ \
++    @TK_LIB_SPEC@ @TCL_LIB_SPEC@ @TK_LIBS@
+ 
+ # Libraries for building a stand-alone Tclsh.
+ #
+-LIBS_TCLONLY = @TCL_BUILD_LIB_SPEC@ @TCL_LIBS@
++LIBS_TCLONLY = @TCL_LIB_SPEC@ @TCL_LIBS@
+ 
+-RUN_TCLSH	= TCL_LIBRARY=$(TCL_SRC_DIR)/library \
++RUN_TCLSH	= TCL_LIBRARY=/usr/libdata/tcl \
+ 		  TK_LIBRARY=$(TK_SRC_DIR)/library \
+-	          $(TCL_SRC_DIR)/unix/tclsh
++	          /usr/bin/tclsh
+ 
+ 
+ #----------------------------------------------------------------
+@@ -131,7 +131,8 @@
+ CC_SWITCHES = $(CFLAGS) $(AC_FLAGS) -I$(TCL_GENERIC_DIR) \
+     -I$(TCL_SRC_DIR)/unix -I$(TK_GENERIC_DIR) -I$(TK_SRC_DIR)/unix \
+     $(ITCL_CFLAGS) \
+-    -I$(GENERIC_DIR) -I$(UNIX_DIR) $(TK_XINCLUDES) $(TIX_SHLIB_CFLAGS)
++    -I$(GENERIC_DIR) -I$(UNIX_DIR) $(TK_XINCLUDES) $(TIX_SHLIB_CFLAGS) \
++    -DTIX_LIBRARY=\"${TIX_LIBRARY}\"
+ 
+ #----------------------------------------------------------------
+ # The information below should be usable as is. You shouldn't need
+@@ -210,24 +211,24 @@
+ # scripts of TK must be included in the fixed order.
+ #----------------------------------------------------------------------
+ 
+-TCL_SCRIPTS = $(TCL_SRC_DIR)/library/*.tcl
++TCL_SCRIPTS = /usr/libdata/tcl/*.tcl
+ 
+ TK_SCRIPTS = \
+-    $(TK_SRC_DIR)/library/bgerror.tcl \
+-    $(TK_SRC_DIR)/library/dialog.tcl \
+-    $(TK_SRC_DIR)/library/focus.tcl \
+-    $(TK_SRC_DIR)/library/obsolete.tcl \
+-    $(TK_SRC_DIR)/library/optMenu.tcl \
+-    $(TK_SRC_DIR)/library/palette.tcl \
+-    $(TK_SRC_DIR)/library/tearoff.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/bgerror.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/dialog.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/focus.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/obsolete.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/optMenu.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/palette.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/tearoff.tcl \
+     $(SRC_DIR)/generic/tk4.1/tk.tcl \
+-    $(TK_SRC_DIR)/library/button.tcl \
+-    $(TK_SRC_DIR)/library/entry.tcl \
+-    $(TK_SRC_DIR)/library/listbox.tcl \
+-    $(TK_SRC_DIR)/library/menu.tcl \
+-    $(TK_SRC_DIR)/library/scale.tcl \
+-    $(TK_SRC_DIR)/library/scrlbar.tcl \
+-    $(TK_SRC_DIR)/library/text.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/button.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/entry.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/listbox.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/menu.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/scale.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/scrlbar.tcl \
++    $(TK_SRC_DIR)/../../lib/tk4.1/text.tcl \
+     $(SRC_DIR)/generic/tk4.1/console.tcl
+ 
+ TIX_SCRIPTS = \

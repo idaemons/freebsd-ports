@@ -1,7 +1,40 @@
-# $Id: Makefile,v 1.8 1994/12/25 13:27:32 ats Exp $
+# $Id: Makefile,v 1.43 1997/04/11 10:06:34 obrien Exp $
 #
-SUBDIR=	ImageMagick a2ps afm dvi2xx dvips dviselect ghostscript ghostview \
-	psutils tex latex latex209 makeindex mltex texinfo transfig xdvi \
-	xtexshell
+
+    SUBDIR += a2ps
+    SUBDIR += acroread
+    SUBDIR += afm
+    SUBDIR += apsfilter
+    SUBDIR += bibcard
+    SUBDIR += c2ps
+    SUBDIR += detex
+    SUBDIR += dvi2tty
+    SUBDIR += dvi2xx
+    SUBDIR += dvips
+    SUBDIR += dviselect
+    SUBDIR += ghostscript
+    SUBDIR += ghostscript3
+    SUBDIR += ghostscript4
+    SUBDIR += ghostview
+    SUBDIR += gv
+    SUBDIR += html2latex
+    SUBDIR += latex
+    SUBDIR += lout
+    SUBDIR += lprps
+    SUBDIR += lyx
+    SUBDIR += makeindex
+    SUBDIR += mp
+    SUBDIR += musixtex
+    SUBDIR += pkfonts
+    SUBDIR += psutils
+    SUBDIR += rtf2latex
+    SUBDIR += teTeX
+    SUBDIR += tex
+    SUBDIR += texinfo
+    SUBDIR += tr2latex
+    SUBDIR += transfig
+    SUBDIR += virtualpaper
+    SUBDIR += xdvi
+    SUBDIR += xmgr
 
 .include <bsd.port.subdir.mk>

@@ -1,14 +1,33 @@
+# New ports collection makefile for:    blas
+# Version required:     ?
+# Date created:         27 October 1994
+# Whom:                 ljo
+#
+# $Id: Makefile,v 1.10 1996/11/18 11:31:51 asami Exp $
+#
+
 DISTNAME=	blas
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
-MASTER_SITES=	ftp://netlib.att.com/netlib/blas/
-.if defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/blas/
-.undef MASTER_SITE_OVERRIDE
-.endif
-EXTRACT_CMD=scripts/uncomp
-EXTRACT_SUFX=.Z
-EXTRACT_ARGS= ${WRKDIR}
-WRKSRC=${WRKDIR}
+PKGNAME=	blas-1.0
+CATEGORIES=	math
+MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/blas/ \
+		ftp://ftp.netlib.org/blas/
+
+# NOTE:
+# The files [dir]1mach.f were updated on the master site but
+# FreeBSD's f77 can't handle them.  patches/patch-aa reverts
+# these files to a previous revision but should be removed when
+# FreeBSD's f77 gets fixed.
+#
+# The alternative is:
+#BROKEN=		"Our f77 cannot compile d1mach.f"
+
+DIST_SUBDIR=	${DISTNAME}
+
+EXTRACT_CMD=	${SCRIPTDIR}/uncomp
+EXTRACT_SUFX=	.Z
+EXTRACT_ARGS=	${WRKDIR}
+
+NO_WRKSUBDIR=	yes
 
 SRCS =	caxpy.f cblas1.f cblas2.f ccopy.f cdotc.f cdotu.f cgbmv.f cgemv.f \
 	cgerc.f cgeru.f chbmv.f chemv.f cher.f cher2.f chpmv.f chpr.f \
@@ -35,7 +54,9 @@ pre-build:
 	cp Makefile.lib ${WRKDIR}/Makefile
 
 pre-extract:
-	chmod +x scripts/uncomp
+	chmod +x ${SCRIPTDIR}/uncomp
+
+post-install:
+	ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
-

@@ -1,0 +1,71 @@
+*** pop_dropcopy.c.orig	Sat Mar 29 07:30:36 1997
+--- pop_dropcopy.c	Wed Apr 23 07:34:06 1997
+***************
+*** 54,60 ****
+  # define L_XTND SEEK_END
+  #endif
+  
+! #include "md5.h"
+  
+  /* This macro comes from Mark Crispin's c-client code */
+  
+--- 54,60 ----
+  # define L_XTND SEEK_END
+  #endif
+  
+! #include <md5.h>
+  
+  /* This macro comes from Mark Crispin's c-client code */
+  
+***************
+*** 755,760 ****
+--- 755,761 ----
+                                                          the SERVER maildrop */
+      FILE		    *tf;		    /*  The temp file */
+      int			    tfn;		    
++     char		    template[POP_TMPSIZE];  /*  Temp name holder */
+      char                    buffer[MAXLINELEN];     /*  Read buffer */
+      long                    offset;                 /*  Old/New boundary */
+      int                     nchar;                  /*  Bytes written/read */
+***************
+*** 794,799 ****
+--- 795,811 ----
+      }
+  #endif
+  
++     /* First create a unique file.  Would prefer mkstemp, but Ultrix...*/
++     strcpy(template,POP_TMPDROP);
++     if (((tfn=mkstemp(template)) == -1) ||
++ 	((tf=fdopen(tfn, "w+")) == NULL)) {	/* failure, bail out	*/
++         pop_log(p,POP_PRIORITY,
++             "Unable to create temporary temporary maildrop '%s': %s",template,
++                 (errno < sys_nerr) ? sys_errlist[errno] : "") ;
++         return pop_msg(p,POP_FAILURE,
++ 		"System error, can't create temporary file.");
++     }
++ 
+      /* Here we work to make sure the user doesn't cause us to remove or
+       * write over existing files by limiting how much work we do while
+       * running as root.
+***************
+*** 807,812 ****
+--- 819,837 ----
+  	pwp->pw_gid = mybuf.st_gid;
+  # endif
+  #endif
++ 
++     /* Now give this file to the user	*/
++     (void) chown(template, (UID_T)pwp->pw_uid, (GID_T)pwp->pw_gid);
++     /* (void) chmod(template,0600); umask now handles this */
++ 
++     /* Now link this file to the temporary maildrop.  If this fails it
++      * is probably because the temporary maildrop already exists.  If so,
++      * this is ok.  We can just go on our way, because by the time we try
++      * to write into the file we will be running as the user.
++      */
++     (void) link(template,p->temp_drop);
++     (void) fclose(tf);
++     (void) unlink(template);
+  
+      /* Now we run as the user. */
+      (void) setgid((GID_T)pwp->pw_gid);

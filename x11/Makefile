@@ -1,13 +1,82 @@
-# $Id: Makefile,v 1.44 1995/01/06 05:42:02 jkh Exp $
+# $Id: Makefile,v 1.132 1997/04/21 02:28:34 jfitz Exp $
 #
-SUBDIR= Xaw3d color_xterm ctwm emu fvwm kterm olvwm piewm rxvt tk \
-	tkhfs tkman tvtwm x3270 xearth xfed xlockmore xsnow \
-	xview-config xview-lib xview-clients
 
-#
-# These depend on tk, so might as well build tk first...
-# (And vic depends on blt.)
-#
-SUBDIR+= blt vic
+    SUBDIR += FWF
+    SUBDIR += XFree86
+    SUBDIR += XFree86-contrib
+    SUBDIR += Xaw3d
+    SUBDIR += afterstep
+    SUBDIR += auis
+    SUBDIR += blast
+    SUBDIR += blt
+    SUBDIR += bricons
+    SUBDIR += camltk41
+    SUBDIR += ctwm
+    SUBDIR += dclock
+    SUBDIR += etlfonts
+    SUBDIR += emiclock
+    SUBDIR += emu
+    SUBDIR += filerunner
+    SUBDIR += freefonts
+    SUBDIR += fvwm
+    SUBDIR += fvwm2
+    SUBDIR += fvwm2-english
+    SUBDIR += fvwm95
+    SUBDIR += getbdf
+    SUBDIR += gwm
+    SUBDIR += iv
+    SUBDIR += lesstif
+    SUBDIR += libsx
+    SUBDIR += lupe
+    SUBDIR += mlvwm
+    SUBDIR += neXtaw
+    SUBDIR += olvwm
+    SUBDIR += p5-Tk
+    SUBDIR += piewm
+    SUBDIR += pythonqt
+    SUBDIR += qt
+    SUBDIR += qvwm
+    SUBDIR += rclock
+    SUBDIR += rxvt
+    SUBDIR += specJava
+    SUBDIR += swisswatch
+    SUBDIR += sxpc
+    SUBDIR += tix
+    SUBDIR += tk
+    SUBDIR += tk4
+    SUBDIR += tk41
+    SUBDIR += tk42
+    SUBDIR += tkdesk
+    SUBDIR += tkgoodstuff
+    SUBDIR += tvtwm
+    SUBDIR += viewfax
+    SUBDIR += x3270
+    SUBDIR += xalarm
+    SUBDIR += xantfarm
+    SUBDIR += xautolock
+    SUBDIR += xbuffy
+    SUBDIR += xcb
+    SUBDIR += xcolors
+    SUBDIR += xdaliclock
+    SUBDIR += xdtm
+    SUBDIR += xfed
+    SUBDIR += xfedor
+    SUBDIR += xfm
+    SUBDIR += xforms
+    SUBDIR += xgrab
+    SUBDIR += xkeycaps
+    SUBDIR += xloadimage
+    SUBDIR += xlockmore
+    SUBDIR += xmascot
+    SUBDIR += xmold
+    SUBDIR += xpostit
+    SUBDIR += xprompt
+    SUBDIR += xscreensaver
+    SUBDIR += xsnow
+    SUBDIR += xtacy
+    SUBDIR += xtestpicture
+    SUBDIR += xview-clients
+    SUBDIR += xview-config
+    SUBDIR += xview-lib
 
 .include <bsd.port.subdir.mk>

@@ -1,16 +1,20 @@
 # New ports collection makefile for:	xlockmore
-# Version required:	1.14
+# Version required:     4.02
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $id: Makefile,v 1.0 1994/11/09 00:00:00 smace Exp $
+# $Id: Makefile,v 1.17 1997/04/03 07:18:07 tg Exp $
 #
 
-DISTNAME=	xlockmore-1.14
-XMKMF=		xmkmf -a
+DISTNAME=       xlockmore-4.02
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
+
+MAINTAINER=	ports@freebsd.org
+
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+
 USE_IMAKE=	yes
-PATCH_STRIP=	-p1
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
-WRKSRC=		${WRKDIR}/xlockmore
 
 .include <bsd.port.mk>

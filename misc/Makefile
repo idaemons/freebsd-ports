@@ -1,8 +1,47 @@
-# $Id: Makefile,v 1.37 1995/02/06 05:30:34 asami Exp $
+# $Id: Makefile,v 1.104 1997/04/27 00:03:07 asami Exp $
 #
-# restricted: pgp.usa_only pgp.non-usa_only 
-#
-SUBDIR= cpm hfs iozone ispell less mshell mtools nkf rman screen top \
-	xdu xsysstats 
+
+    SUBDIR += amanda
+    SUBDIR += astrolog
+    SUBDIR += buffer
+    SUBDIR += cal
+    SUBDIR += chord
+    SUBDIR += colorls
+    SUBDIR += ctk
+    SUBDIR += dejagnu
+    SUBDIR += dotfile
+    SUBDIR += ecc
+    SUBDIR += estic
+    SUBDIR += fd
+    SUBDIR += fep
+    SUBDIR += figlet
+    SUBDIR += git
+    SUBDIR += ical
+    SUBDIR += jive
+    SUBDIR += kp
+    SUBDIR += less
+    SUBDIR += linuxls
+    SUBDIR += logsurfer
+    SUBDIR += mc
+    SUBDIR += mmv
+    SUBDIR += mshell
+    SUBDIR += p5-Array-PrintCols
+    SUBDIR += p5-Business-CreditCard
+    SUBDIR += p5-Search
+    SUBDIR += plan
+    SUBDIR += rpm
+    SUBDIR += screen
+    SUBDIR += splitvt
+    SUBDIR += team
+    SUBDIR += tkcron
+    SUBDIR += tkinfo
+    SUBDIR += tkman
+    SUBDIR += unclutter
+    SUBDIR += xcalendar
+    SUBDIR += xgas
+    SUBDIR += xless
+    SUBDIR += xmaddressbook
+    SUBDIR += xtar
+    SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>

@@ -1,7 +1,54 @@
-# $Id: Makefile,v 1.17 1995/02/10 07:47:27 gpalmer Exp $
+# $Id: Makefile,v 1.68 1997/03/12 09:20:36 asami Exp $
+#
 
-#Broken - expect
-
-SUBDIR=	Gofer STk Sather forth logo p2c schemetoc scm smalltalk tcl tclX
+    SUBDIR += Gofer
+    SUBDIR += STk
+    SUBDIR += Sather
+    SUBDIR += bwbasic
+    SUBDIR += cim
+    SUBDIR += eiffel
+    SUBDIR += elk
+    SUBDIR += eperl
+    SUBDIR += expect
+    SUBDIR += forth
+    SUBDIR += g77
+    SUBDIR += gcl
+    SUBDIR += gnat
+    SUBDIR += guavac
+    SUBDIR += guile-iii
+    SUBDIR += icon
+    SUBDIR += idl4
+    SUBDIR += itcl
+    SUBDIR += javac_netscape
+    SUBDIR += jdk
+    SUBDIR += kaffe
+    SUBDIR += lcc
+    SUBDIR += logo
+    SUBDIR += mit-scheme
+    SUBDIR += mixal
+    SUBDIR += modula-3
+    SUBDIR += modula-3-lib
+    SUBDIR += modula-3-socks
+    SUBDIR += moscow_ml
+    SUBDIR += ocaml
+    SUBDIR += p2c
+    SUBDIR += pbasic
+    SUBDIR += perl5
+    SUBDIR += pgcc
+    SUBDIR += pgcc-current
+    SUBDIR += python
+    SUBDIR += rexx-imc
+    SUBDIR += scheme48
+    SUBDIR += schemetoc
+    SUBDIR += scm
+    SUBDIR += smalltalk
+    SUBDIR += swi-pl
+    SUBDIR += tcl
+    SUBDIR += tcl74
+    SUBDIR += tcl76
+    SUBDIR += tclX
+    SUBDIR += tclX74
+    SUBDIR += tclX75
+    SUBDIR += xpl
 
 .include <bsd.port.subdir.mk>

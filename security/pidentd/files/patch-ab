@@ -1,38 +1,56 @@
-*** Makefile.orig	Thu Oct 20 17:08:27 1994
---- Makefile	Wed Nov  9 21:16:56 1994
-***************
-*** 14,20 ****
-  # on the command line (like "make DESTROOT=/usr/wheel sunos4")
-  #
-  MAKE=make
-! DESTROOT=/usr/local
-  DESTDIR=$(DESTROOT)/sbin
-  MANROOT=$(DESTROOT)/man
-  MANDIR=$(MANROOT)/man8
---- 14,20 ----
-  # on the command line (like "make DESTROOT=/usr/wheel sunos4")
-  #
-  MAKE=make
-! DESTROOT=${PREFIX}
-  DESTDIR=$(DESTROOT)/sbin
-  MANROOT=$(DESTROOT)/man
-  MANDIR=$(MANROOT)/man8
-***************
-*** 43,49 ****
+--- Makefile.orig	Wed Jan 22 06:58:54 1997
++++ Makefile	Sun Mar  2 11:03:42 1997
+@@ -16,9 +16,9 @@
+ MAKE=make
+ 
+ # set this to 'in.' if you like Sun's prefix on internet daemons
+-PREFIX=in.
++PREFIX=
   
-  CFLAGS=-O
-  
-! all:
-  	@echo "Please specify the type of system you wish to build for."
-  	@echo "Valid systems are:"
-  	@echo ""
---- 43,51 ----
-  
-  CFLAGS=-O
-  
-! all:	freebsd
-! 
-! fake:
-  	@echo "Please specify the type of system you wish to build for."
-  	@echo "Valid systems are:"
-  	@echo ""
+-DESTROOT=/usr/local
++DESTROOT=${REALPREFIX}
+ 
+ # set this to '/share' if your man pages are in /usr/share
+ #SHARE=/share
+@@ -57,14 +57,14 @@
+ # GDEFS=-DINCLUDE_EXTENSIONS -DINCLUDE_PROXY -DINCLUDE_CRYPT \
+ #	-DSTRONG_LOG -DALLOW_FORMAT \
+ #
+-GDEFS=-DINCLUDE_EXTENSIONS -DSTRONG_LOG -DALLOW_FORMAT \
+-	-DDPATH_CONFIG='\"$(CONFDIR)/identd.conf\"' \
++GDEFS=-DINCLUDE_EXTENSIONS -DSTRONG_LOG -DALLOW_FORMAT $(ADD_GDEFS) \
++	-DPATH_CONFIG='\"$(CONFDIR)/identd.conf\"' \
+ 	-DPATH_DESKEY='\"$(CONFDIR)/identd.key\"'
+ 
+ # GLIBS=-lident -ldes
+-GLIBS=
++GLIBS= $(ADD_GLIBS)
+ 
+-CFLAGS=-O
++#CFLAGS=-O
+ #LDFLAGS=-L$(DESTROOT)/lib
+ 
+ all:
+@@ -556,18 +556,18 @@
+ 	mv $@-t $@
+ 	chmod 755 $@
+ 
+-install: $(PREFIX)identd identd.$(MANSECT) identconn itest idecrypt
++install: $(PREFIX)identd identd.$(MANSECT) idecrypt # identconn itest
+ 	$(INSTALL) -m 644 identd.$(MANSECT) $(MANDIR)
+ 	if [ -n "$(PREFIX)" ] ; then \
+ 		rm -f $(MANDIR)/$(PREFIX)identd.$(MANSECT) ; \
+ 		echo ".so `basename $(MANDIR)`/identd.$(MANSECT)" > $(MANDIR)/$(PREFIX)identd.$(MANSECT) ; \
+ 	fi
+ 	$(INSTALL) -m 755 $(PREFIX)identd $(DESTDIR)
+-	$(INSTALL) -m 755 identconn $(DESTROOT)/bin
++#	$(INSTALL) -m 755 identconn $(DESTROOT)/bin
+ 	$(INSTALL) -m 644 idecrypt.man  $(MANDIR)/idecrypt.$(MANSECT)
+ 	$(INSTALL) -m 755 idecrypt $(DESTDIR)/idecrypt
+-	@echo "The following command will fail it you are not Root."
+-	-$(INSTALL) -o root -g kmem -m 2555 itest $(DESTROOT)/bin
++#	@echo "The following command will fail it you are not Root."
++#	-$(INSTALL) -o root -g kmem -m 2555 itest $(DESTROOT)/bin
+ 
+ 
+ tests:

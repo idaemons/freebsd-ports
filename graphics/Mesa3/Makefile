@@ -1,23 +1,18 @@
 # New ports collection makefile for:    Mesa
-# Version required:     1.0beta
-# Date created:         Tue Feb  7 12:02:49  1995
-# Whom:                 hsu
+# Version required:     2.1
+# Date created:         3 Feb 1997
+# Whom:                 paulo@isr.uc.pt
 #
-# $Id$
+# $Id: Makefile,v 1.16 1997/02/13 14:57:10 tg Exp $
 #
 
-DISTNAME=       Mesa-1.0beta
-EXTRACT_SUFX=	.tar.Z
-MASTER_SITES=   ftp://iris.ssec.wisc.edu/pub/misc/
-WRKSRC=		${WRKDIR}/Mesa
+DISTNAME=       Mesa-2.1
+CATEGORIES=	graphics
+MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/
+
+MAINTAINER=	ports@freebsd.org
+
 ALL_TARGET=	freebsd
-# won't install until I convert the Makefiles to Imakefiles
-NO_INSTALL=	yes
-
-# won't need this after I convert the Makefiles to Imakefiles
-pre-build:
-	if [ ! -e /usr/include/X11 ]; then \
-	  ln -s /usr/X11R6/include/X11 /usr/include; \
-	fi
+USE_X11=	yes
 
 .include <bsd.port.mk>

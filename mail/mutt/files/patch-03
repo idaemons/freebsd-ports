@@ -1,0 +1,11 @@
+--- doc/manual.sgml.orig	Fri Jan 10 15:34:34 1997
++++ doc/manual.sgml	Mon Jan 13 01:30:28 1997
+@@ -1,4 +1,7 @@
+-<!doctype linuxdoc system>
++<!DOCTYPE linuxdoc PUBLIC "-//FreeBSD//DTD linuxdoc//EN" [
++<!ENTITY dquot "&#34;">
++]>
++<linuxdoc>
+ 
+ <article>
+ 
