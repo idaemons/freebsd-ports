@@ -1,23 +1,38 @@
 # New ports collection makefile for:	smalltalk
-# Version required:	1.1.1
 # Date created:		09 Feb 1995
 # Whom:			gpalmer
 #
-# $Id$
+# $FreeBSD$
 #
 
-DISTNAME=	smalltalk-1.1.1
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
-MAINTAINER=	gpalmer@FreeBSD.ORG
+PORTNAME=	smalltalk
+PORTVERSION=	1.95.4
+CATEGORIES=	lang
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-pre-configure:
-	@cp ${FILESDIR}/m-fbsd-2.h ${WRKSRC}/config/m-fbsd-2.h
-	@(cd ${WRKSRC} ; ./config.mst fbsd-2)
-	@${TOUCH} ${TOUCH_FLAGS} ${CONFIGURE_COOKIE}
+MAINTAINER=	ports@FreeBSD.org
 
-install:
-	@echo ">> The install target for smalltalk-1.1.1 is interactive."
-	@echo ">> Please read the file mst.texinfo for more information."
-	@${DO_NADA}
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+ALL_TARGET=	all optimize
+
+MAN1=		gst.1
+
+PLIST_SUB=	VERSION=${PORTVERSION}
+
+post-extract:
+	@${RM} ${WRKSRC}/doc/gst.info*
+
+pre-patch:
+	@${PERL} -pi -e 's|-lregex|-lgnuregex|g ; \
+		 s|\$$\OPT_CFLAGS||g' ${WRKSRC}/configure
+
+	@find ${WRKSRC} -name 'Makefile.in' | xargs ${PERL} -pi -e \
+		's|make mostlyclean|\$$\(MAKE\) mostlyclean|g ; \
+		 s|\@MAKEINFO\@|\@MAKEINFO\@ --no-split|g'
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/libgst/.libs/libgst.a ${PREFIX}/lib
 
 .include <bsd.port.mk>

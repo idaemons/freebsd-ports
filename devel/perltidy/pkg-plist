@@ -1,0 +1,12 @@
+bin/perltidy
+%%PORTDOCS%%share/doc/perltidy/BUGS.html
+%%PORTDOCS%%share/doc/perltidy/BUGS.txt
+%%PORTDOCS%%share/doc/perltidy/ChangeLog.html
+%%PORTDOCS%%share/doc/perltidy/ChangeLog.txt
+%%PORTDOCS%%share/doc/perltidy/perl2web.html
+%%PORTDOCS%%share/doc/perltidy/perl2web.txt
+%%PORTDOCS%%share/doc/perltidy/perltidy.html
+%%PORTDOCS%%share/doc/perltidy/perltidy.txt
+%%PORTDOCS%%share/doc/perltidy/tutorial.html
+%%PORTDOCS%%share/doc/perltidy/tutorial.txt
+%%PORTDOCS%%@dirrm share/doc/perltidy

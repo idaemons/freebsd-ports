@@ -1,0 +1,71 @@
+--- Makefile.in.orig	Wed Jul 18 01:09:52 2001
++++ Makefile.in	Wed Jul 18 01:12:28 2001
+@@ -70,7 +70,6 @@
+ SUBDIRS		= elvi
+ 
+ bin_SCRIPTS	= surfraw surfraw-netscape-remote
+-sysconf_DATA	= surfraw.conf
+ devel_extra	= banner prebuild
+ EXTRA_DIST	= surfraw.lsm.in surfraw.in surfraw.spec.in \
+                   aclocal.m4 HACKING \
+@@ -81,8 +80,6 @@
+ surfraw-netscape-remote
+ SCRIPTS =  $(bin_SCRIPTS)
+ 
+-DATA =  $(sysconf_DATA)
+-
+ DIST_COMMON =  README AUTHORS COPYING ChangeLog INSTALL Makefile.am \
+ Makefile.in NEWS TODO aclocal.m4 config.guess config.sub configure \
+ configure.in install-sh missing mkinstalldirs \
+@@ -141,25 +138,6 @@
+ 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	done
+ 
+-install-sysconfDATA: $(sysconf_DATA)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
+-	@list='$(sysconf_DATA)'; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p; \
+-	  fi; fi; \
+-	done
+-
+-uninstall-sysconfDATA:
+-	@$(NORMAL_UNINSTALL)
+-	list='$(sysconf_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(sysconfdir)/$$p; \
+-	done
+-
+ # This directory's subdirectories are mostly independent; you can cd
+ # into them and run `make' without going through this Makefile.
+ # To change the values of `make' variables: instead of editing Makefiles,
+@@ -280,11 +258,11 @@
+ check: all-am
+ 	$(MAKE) check-recursive
+ installcheck: installcheck-recursive
+-all-am: Makefile $(SCRIPTS) $(DATA)
++all-am: Makefile $(SCRIPTS)
+ 
+-install-exec-am: install-binSCRIPTS install-sysconfDATA
++install-exec-am: install-binSCRIPTS
+ 
+-uninstall-am: uninstall-binSCRIPTS uninstall-sysconfDATA
++uninstall-am: uninstall-binSCRIPTS
+ 
+ install-exec: install-exec-recursive install-exec-am
+ 	@$(NORMAL_INSTALL)
+@@ -338,8 +316,8 @@
+ 	@echo "it deletes files that may require special tools to rebuild."
+ 	-rm -f config.status
+ 
+-.PHONY: uninstall-binSCRIPTS install-binSCRIPTS uninstall-sysconfDATA \
+-install-sysconfDATA install-data-recursive uninstall-data-recursive \
++.PHONY: uninstall-binSCRIPTS install-binSCRIPTS \
++install-data-recursive uninstall-data-recursive \
+ install-exec-recursive uninstall-exec-recursive installdirs-recursive \
+ uninstalldirs-recursive all-recursive check-recursive \
+ installcheck-recursive info-recursive dvi-recursive \

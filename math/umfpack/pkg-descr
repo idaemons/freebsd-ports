@@ -1,0 +1,12 @@
+UMFPACK Version 2.2 is a package for solving systems of sparse linear systems,
+Ax=b, where A is sparse and can be unsymmetric.  It is written in ANSI Fortran
+77.  There are options for choosing a good pivot order, factorizing a
+subsequent matrix with the same pivot order and nonzero pattern as a
+previously factorized matrix, and solving systems of linear equations with
+the factors (with A, L, or U; or with their transposes in the single/double
+precision versions).  Iterative refinement, with sparse backward error
+estimates, can be performed.  Single and double precision, complex, and
+complex double precision (complex*16) routines are available.  (Note that
+complex*16 is not ANSI Fortran-77, but is a common extension to it).
+
+WWW: http://www.cise.ufl.edu/~davis/umfpack.html

@@ -1,0 +1,48 @@
+--- source/Makefile.orig	Thu Feb 22 16:01:18 1996
++++ source/Makefile	Mon May 31 16:46:38 1999
+@@ -111,13 +111,34 @@
+ 	  all
+ 
+ freebsd:
++.if defined(FORCE_MOTIF) && ${FORCE_MOTIF} == "yes"
+ 	$(MAKE) \
+-	  OPENWINHOME='/usr/X11R6' \
++	  GRAF=MOTIF \
++	  GRAFLIBS='$$(MOTIFLIB) $$(MOTIFLIBS)' \
++	  GRAFINCLUDES='-I$$(X11BASE)/include' \
++	  GRAFOBJS='$$(MOTIFOBJS)' \
++	  SYSDEFS='-DDONT_DECLARE_ERRLIST -DJOYSTICK' \
++	  all
++.else
++.if $(MACHINE_ARCH) == "i386"
++	$(MAKE) \
++	  OPENWINHOME='$$(X11BASE)' \
++	  GRAFLIBS='$$(XVLIBS)' \
++	  GRAFINCLUDES='$$(XVINCLUDES)' \
++	  GRAFOBJS='$$(XVOBJS)' \
++	  SYSDEFS='-DDONT_DECLARE_ERRLIST -DSOUND \
++		-DDEFAULT_SOUND_DIR=\"$(SOUNDDIR)\" -DJOYSTICK' \
++	  all
++.else
++	$(MAKE) \
++	  OPENWINHOME='$$(X11BASE)' \
+ 	  GRAFLIBS='$$(XVLIBS)' \
+ 	  GRAFINCLUDES='$$(XVINCLUDES)' \
+ 	  GRAFOBJS='$$(XVOBJS)' \
+-	  SYSDEFS='-DDONT_DECLARE_ERRLIST -DSOUND -DJOYSTICK' \
++	  SYSDEFS='-DDONT_DECLARE_ERRLIST -DDEFAULT_SOUND_DIR=\"$(SOUNDDIR)\"' \
+ 	  all
++.endif
++.endif
+ 
+ irix:
+ 	$(MAKE) \
+@@ -143,7 +164,7 @@
+ XVLIBS=-L$(OPENWINHOME)/lib -lxview -lolgx -lX11
+ XVINCLUDES=-I$(OPENWINHOME)/include
+ 
+-MOTIFLIBS=-lXm -lXt -lX11
++MOTIFLIBS=-lXt -lX11
+ MOTIFINCLUDES=
+ 
+ GRAFLIBS=$($(GRAF)LIBS)

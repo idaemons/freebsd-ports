@@ -1,0 +1,19 @@
+etc/rc.d/msyslog.sh.sample
+lib/libmsyslog.so.4
+sbin/peochk
+sbin/syslogd
+%%PORTDOCS%%share/doc/msyslog/AUTHORS
+%%PORTDOCS%%share/doc/msyslog/HOW-TO-UPGRADE
+%%PORTDOCS%%share/doc/msyslog/HOW_TO_WRITE_A_MODULE
+%%PORTDOCS%%share/doc/msyslog/NEWS
+%%PORTDOCS%%share/doc/msyslog/README
+%%PORTDOCS%%share/doc/msyslog/TODO
+share/examples/msyslog/im_mymodule.c
+share/examples/msyslog/om_mymodule.c
+share/examples/msyslog/syslog.conf.classic
+share/examples/msyslog/syslog.conf.mysql
+share/examples/msyslog/syslog.conf.peo
+share/examples/msyslog/syslog.conf.pgsql
+share/examples/msyslog/syslog.conf.regex
+@dirrm share/examples/msyslog
+%%PORTDOCS%%@dirrm share/doc/msyslog

@@ -1,0 +1,71 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Jul 23 22:54:08 2001
++++ configure	Wed Jul 25 11:10:28 2001
+@@ -641,7 +641,7 @@
+ SDL_MAJOR_VERSION=1
+ SDL_MINOR_VERSION=2
+ SDL_MICRO_VERSION=2
+-SDL_INTERFACE_AGE=2
++SDL_INTERFACE_AGE=3
+ SDL_BINARY_AGE=2
+ SDL_VERSION=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION.$SDL_MICRO_VERSION
+ 
+@@ -654,9 +654,9 @@
+ 
+ # libtool versioning
+ LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
+-LT_CURRENT=`expr $SDL_MICRO_VERSION - $SDL_INTERFACE_AGE`
++LT_CURRENT=$SDL_INTERFACE_AGE
+ LT_REVISION=$SDL_INTERFACE_AGE
+-LT_AGE=`expr $SDL_BINARY_AGE - $SDL_INTERFACE_AGE`
++LT_AGE=$SDL_INTERFACE_AGE
+ 
+ 
+ 
+@@ -3068,7 +3068,7 @@
+ 
+ 
+ SDL_CFLAGS=""
+-SDL_LIBS="-lSDL"
++SDL_LIBS="-lSDL-1.1"
+ 
+ 
+ case "$target" in
+@@ -5445,7 +5445,7 @@
+ int main() {
+ 
+          VGLBitmap bitmap;
+-         exit(bitmap.PyxelBytes);
++         exit(bitmap.PixelBytes);
+         
+ ; return 0; }
+ EOF
+@@ -5712,8 +5712,8 @@
+ #            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+             ;;
+         *-*-freebsd*)
+-            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+-            pthread_lib="-pthread"
++            pthread_cflags="-D_REENTRANT ${PTHREAD_CFLAGS}"
++            pthread_lib="${PTHREAD_LIBS}"
+             ;;
+         *-*-netbsd*)
+             pthread_cflags="-I/usr/pkg/include -D_REENTRANT"
+@@ -6344,7 +6344,6 @@
+         CheckX11
+         CheckDGA
+         CheckSVGA
+-        CheckVGL
+         CheckAAlib
+         CheckOpenGL
+         CheckPTHREAD
+@@ -6491,6 +6490,7 @@
+         ARCH=freebsd
+         CheckDummyVideo
+         CheckDiskAudio
++        CheckVGL
+         CheckNASM
+         CheckOSS
+         CheckARTSC

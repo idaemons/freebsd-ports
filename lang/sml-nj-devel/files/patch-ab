@@ -1,0 +1,49 @@
+--- config/install.sh.orig	Wed Jun 20 22:39:12 2001
++++ config/install.sh	Wed Aug 15 19:16:18 2001
+@@ -408,6 +408,28 @@
+ }
+ 
+ #
++# do_patch patch-file
++# apply a patch file
++do_patch() {
++	patchfile=$FILESDIR/$1
++
++	if [ ! -r $patchfile ]; then
++		echo "$this: !!! patch file $patchfile not found."
++		exit 1;
++	fi
++
++	if [ ! -f $CONFIGDIR/.patch_$1 ]; then 
++		$PATCH $PATCH_ARGS < $patchfile || {\
++			echo "$this: !!! patch file $patchfile failed to patch."
++			exit 1;
++		}
++		echo > $CONFIGDIR/.patch_$1
++	else
++		echo "$this: patch $patchfile already installed."
++	fi
++}
++
++#
+ # create the various sub directories
+ #
+ for dir in $BINDIR $HEAPDIR $RUNDIR $LIBDIR $SRCDIR ; do
+@@ -527,7 +549,7 @@
+     $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS
+     if [ -x run.$ARCH-$OPSYS ]; then
+ 	mv run.$ARCH-$OPSYS $RUNDIR
+-	$MAKE MAKE=$MAKE clean
++	[ "$MLNORUNTIMECLEAN" ] || $MAKE MAKE=$MAKE clean
+     else
+ 	echo "$this: !!! Run-time system build failed for some reason."
+ 	exit 1
+@@ -594,6 +616,8 @@
+ 	do
+ 	    unpack $src $ROOT/src $src $src
+         done
++	do_patch do-patch-src-makeml
++	do_patch do-patch-src-installml
+ 	;;
+       ml-yacc)
+ 	standalone ml-yacc ML-Yacc src

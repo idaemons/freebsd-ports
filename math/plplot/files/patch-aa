@@ -1,0 +1,69 @@
+--- configure.orig	Fri Mar 30 04:55:57 2001
++++ configure	Sat Apr 28 11:41:53 2001
+@@ -1262,7 +1262,9 @@
+ 
+ # Defaults
+ 
+-M4=m4
++if test -z "$M4"; then
++    M4=m4
++fi
+ 
+ # Double precision
+ # Note that because there is no standard way to invoke double
+@@ -1530,9 +1532,9 @@
+ # Optimization
+ 
+ if test "$with_opt" = "yes"; then
+-    OPT_FLAG_C=-O
+-    OPT_FLAG_CXX=-O
+-    OPT_FLAG_F=-O
++    OPT_FLAG_C="$CFLAGS"
++    OPT_FLAG_CXX="$CXXFLAGS"
++    OPT_FLAG_F="$FFLAGS"
+ fi
+ 
+ # ----------------------------------------------------------------------------
+@@ -4628,6 +4630,13 @@
+ 		EXTRA_LIBS="-ldl -lm"
+ 	    fi
+ 	;;
++	FreeBSD* )
++	    if test "$enable_f77" = "yes"; then
++		EXTRA_LIBS="$EXTRA_LIBS -lm -lg2c"
++	    else
++		EXTRA_LIBS="$EXTRA_LIBS -lm"
++	    fi
++	;;
+ 	* ) 	
+ 	    echo $ac_n "checking for main in -lXbsd""... $ac_c" 1>&6
+ echo "configure:4634: checking for main in -lXbsd" >&5
+@@ -4909,6 +4918,20 @@
+             # for Linux.)
+ 	    SHLIB_F77FLAGS=-fPIC
+ 	;;
++	FreeBSD* )
++	    SHLIB_CCFLAGS="-fpic -DPIC"
++	    SHLIB_CXXFLAGS="-fpic -DPIC"
++	    echo "$ac_t""okay" 1>&6
++	    if [ "${PORTOBJFORMAT}" = "elf" ]; then
++		SO='.so.$(MAJOR_VERSION)'
++		SHLIB_BUILD="$CC -shared -Wl,-soname -Wl,\$@ -o"
++		SOVERSION='$(MAJOR_VERSION)'
++	    else
++		SO='.so.$(MAJOR_VERSION).$(MINOR_VERSION)'
++		SHLIB_BUILD="ld -Bshareable -o"
++		SOVERSION='$(MAJOR_VERSION).$(MINOR_VERSION)'
++	    fi
++	;;
+ 	HP-UX-* )
+ 	    SO=".sl"
+ 	    SHLIB_F77FLAGS="+z"
+@@ -6600,6 +6623,7 @@
+ s%@LDCXX_FLAGS@%$LDCXX_FLAGS%g
+ s%@F77_FLAGS@%$F77_FLAGS%g
+ s%@LDF_FLAGS@%$LDF_FLAGS%g
++s%@M4@%$M4%g
+ s%@M4_FLAGS@%$M4_FLAGS%g
+ s%@CPP@%$CPP%g
+ s%@STUPIDTK_OBJ@%$STUPIDTK_OBJ%g

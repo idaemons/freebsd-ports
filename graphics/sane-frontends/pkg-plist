@@ -1,0 +1,4 @@
+bin/xcam
+bin/xscanimage
+share/sane/sane-style.rc
+@dirrm share/sane

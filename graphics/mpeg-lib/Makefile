@@ -1,17 +1,20 @@
 # New ports collection makefile for:	mpeg_lib
-# Version required:	1.1
 # Date created:		16 November 1994
 # Whom:			torstenb
 #
-# $Id:$
+# $FreeBSD$
 #
 
-DISTNAME=	mpeg_lib-1.1
-MASTER_SITES=	ftp://ftp.mni.mcgill.ca/pub/mpeg/
-WRKSRC=		${WRKDIR}/mpeg_lib
+PORTNAME=	mpeg_lib
+PORTVERSION=	1.3.1
+CATEGORIES=	graphics
+MASTER_SITES=	ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/ \
+		http://starship.python.net/~gward/mpeglib/
 
-pre-install:
-	@mkdir -p ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/include
-	@mkdir -p ${PREFIX}/man/man1 ${PREFIX}/man/man3
+MAINTAINER=	ports@FreeBSD.org
+
+INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	OPTIMIZE="${CFLAGS}"
 
 .include <bsd.port.mk>

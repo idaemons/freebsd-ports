@@ -1,0 +1,19 @@
+--- sftp/Makefile.orig	Mon Apr 16 11:31:52 2001
++++ sftp/Makefile	Thu Jul 12 18:59:02 2001
+@@ -7,13 +7,13 @@
+ 
+ BINMODE?=555
+ 
+-BINDIR=	/usr/bin
+-MAN=	sftp.1
++BINDIR=	/bin
++MAN1=	sftp.1
+ 
+ SRCS=	sftp.c sftp-client.c sftp-int.c sftp-common.c sftp-glob.c scp-common.c
+ 
+ .include <bsd.prog.mk>
+ 
+-LDADD+=	-lcrypto
++LDADD+=	${CRYPTOLIBS}
+ DPADD+=	${LIBCRYPTO}
+ 

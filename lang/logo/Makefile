@@ -1,16 +1,21 @@
 # New ports collection makefile for:	logo
-# Version required:	7.3
 # Date created:		22 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/22 23:05:48 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	ucblogo
-EXTRACT_SUFX=	.tar.Z
-MASTER_SITES=	ftp://anarres.cs.berkeley.edu/pub/ucblogo/
+PORTNAME=	ucblogo
+PORTVERSION=	4.6
+CATEGORIES=	lang
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		ftp://anarres.cs.berkeley.edu/pub/ucblogo/
+MASTER_SITE_SUBDIR=	ucblogo
+
+MAINTAINER=	jmacd@FreeBSD.org
+
+USE_XLIB=	yes
 MAKEFILE=	makefile
-WRKSRC=	${WRKDIR}
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.mk>

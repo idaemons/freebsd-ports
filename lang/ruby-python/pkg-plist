@@ -1,0 +1,26 @@
+%%RUBY_SITEARCHLIBDIR%%/python.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/Lib/BaseHTTPServer.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/Lib/README
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/Lib/base64.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/Lib/rfc822.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/Lib/urllib.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/hello.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/html.py
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/html.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/README.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/Mapping.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/Object.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/Py.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/Sequence.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/Mapping.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/Object.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/Py.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/Sequence.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/index.html
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/python/Lib
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/python
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/python/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/python

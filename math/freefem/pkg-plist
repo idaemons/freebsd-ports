@@ -1,0 +1,31 @@
+bin/freefem
+share/doc/freefem/ChangeLog
+share/doc/freefem/NEWS
+share/doc/freefem/README
+share/examples/freefem/accous.pde
+share/examples/freefem/adj.pde
+share/examples/freefem/brachet.pde
+share/examples/freefem/condens.pde
+share/examples/freefem/convectn.pde
+share/examples/freefem/convhill.pde
+share/examples/freefem/crack.pde
+share/examples/freefem/heat.pde
+share/examples/freefem/holbeam.pde
+share/examples/freefem/integ.pde
+share/examples/freefem/lame.pde
+share/examples/freefem/lamevar.pde
+share/examples/freefem/multib.pde
+share/examples/freefem/muonde.pde
+share/examples/freefem/nacabig.pde
+share/examples/freefem/nsstep.pde
+share/examples/freefem/nsstepad.pde
+share/examples/freefem/shock.pde
+share/examples/freefem/stokespo.pde
+share/examples/freefem/timedfm.pde
+share/examples/freefem/valicplx.pde
+share/examples/freefem/validate.pde
+share/examples/freefem/validcplx.pde
+share/examples/freefem/validsys.pde
+share/examples/freefem/varvect.pde
+@dirrm share/examples/freefem
+@dirrm share/doc/freefem

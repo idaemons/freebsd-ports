@@ -1,0 +1,8 @@
+bin/bjf850ps
+libexec/bjfilter850ug/filter850ug
+libexec/bjfilter850ug/filter850ug_gui
+@dirrm libexec/bjfilter850ug
+@cwd /compat/linux
+usr/lib/bjlib/cnb_0740.tbl
+usr/lib/libcnbpo074.so.1.0.0
+@dirrm usr/lib/bjlib

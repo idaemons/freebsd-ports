@@ -1,0 +1,13 @@
+--- Makefile.settings.orig	Thu Aug  9 01:41:45 2001
++++ Makefile.settings	Wed Aug 15 14:22:02 2001
+@@ -11,8 +11,8 @@
+ PREFIX=/usr/local
+ endif
+ BINDIR=$(PREFIX)/bin
+-ETCDIR=/etc
+-MANDIR=$(PREFIX)/share/man
++ETCDIR=${PREFIX}/etc
++MANDIR=$(PREFIX)/man
+ LOCALE=$(PREFIX)/share/locale
+ 
+ # NOTE: Disabling an option means commenting out the specific line. Changing

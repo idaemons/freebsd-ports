@@ -1,0 +1,140 @@
+#!/bin/sh
+
+of=index.html.new
+
+# delete .new file if it is more than a day old
+find $of -mtime 2 -delete 2>/dev/null
+
+if [ -f $of ]; then exit; fi
+
+if [ -e .stamp -a $(echo $(find . -newer .stamp -type f -name '*.log' 2>/dev/null | wc -l)) = "0" ]; then exit; fi
+
+echo "<html><head><title>Package building errors</title>" >$of
+echo "<h1>Package building errors</h1>" >>$of
+echo "</head><body>" >>$of
+
+touch .stamp
+
+set *.log
+
+if [ $# = 1 -a "x$1" = "x*.log" ]; then
+  echo "No errors (yet)" >>$of
+else
+  num=$#
+  if [ -s cvsdone ]; then
+    echo "(cvs update finished at: $(cat cvsdone))<br>" >> $of
+  fi
+  echo "(timestamp of newest log: $(ls -rtTl *.log | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}'))<br><br>" >> $of
+  echo "\"Aff.\" is number of ports that depend on this one<br>" >> $of
+  echo "\"<font color=\"red\">[B]</font>\" indicates port is marked BROKEN<br><br>" >> $of
+  echo "<table border=1>" >>$of
+  echo "<tr><th>Log</th><th>Aff.</th><th>Size</th><th>Repository</th><th>Maintainer</th><th>Reason</th></tr>" >>$of
+  while [ $# -gt 0 ]; do
+    echo -n "<tr><td>" >>$of
+    echo -n "<a name=\"$1\"></a>" >> $of
+    echo -n "<a href=\"$1\">" >>$of
+    echo -n $(basename $1 .log) >>$of
+    echo -n "</a>" >>$of
+    echo -n "</td><td align=right>" >>$of
+    affected=$(($(grep -cF $(basename $1 .log) < INDEX) - 1))
+    if [ $affected != 0 ]; then echo -n $affected >>$of; fi
+    echo -n "</td><td align=right>" >>$of
+    size=$(/bin/ls -sk $1 | awk '{print $1}')
+    echo -n "$size KB" >>$of
+    echo -n "</td><td>" >>$of
+    dir=$(sed -n -e '3p' $1 | awk '{print $4}' | sed -e 's,^/[^/]*/[^/]*/,,')
+    echo -n "<a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$dir\">$dir</a>" >>$of
+    echo -n "</td><td>" >>$of
+    maint=$(sed -n -e '4p' $1 | awk '{print $3}')
+    maints="$maints $maint"
+    echo -n "<a href=\"mailto:$maint\">$maint</a>" >>$of
+    echo -n "</td><td>" >>$of
+    if grep -q 'list of extra files and directories' $1; then
+      reason="extra"; tag="extra"
+    elif grep -q 'Checksum mismatch' $1; then
+      reason="checksum"; tag="checksum"
+    elif grep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
+      reason="distinfo update"; tag="distinfo"
+    elif grep -qE '(configure: error:|script.*failed: here are the contents of)' $1; then
+      reason="configure error"; tag="configure"
+    elif grep -qE '(bison:.*(No such file|not found)|multiple definition of `yy)' $1; then
+      reason="bison"; tag="bison"
+    elif grep -q "Couldn't fetch it - please try" $1; then
+      reason="fetch"; tag="fetch"
+    elif grep -q "out of .* hunks .*--saving rejects to" $1; then
+      reason="patch"; tag="patch"
+    elif grep -q 'Error: category .* not in list of valid categories' $1; then
+      reason="CATEGORIES"; tag="categories"
+    elif grep -q 'make: don.t know how to make .*\.man. Stop' $1; then
+      reason="X manpage"; tag="xfree4man"
+    elif grep -q 'Xm/Xm\.h: No such file' $1; then
+      reason="MOTIF"; tag="motif"
+    elif grep -q 'undefined reference to `Xp' $1; then
+      reason="MOTIFLIB"; tag="motiflib"
+    elif grep -qi 'read-only file system' $1; then
+      reason="WRKDIR"; tag="wrkdir"
+    elif grep -q 'makeinfo: .* use --force' $1; then
+      reason="texinfo"; tag="texinfo"
+    elif grep -q 'means that you did not run the h2ph script' $1; then
+      reason="perl5"; tag="perl5"
+    elif grep -q "Error: shared library \".*\" does not exist" $1; then
+      reason="LIB_DEPENDS"; tag="libdepends"
+    elif grep -qE "(crt0|c\+\+rt0)\.o: No such file" $1; then
+      reason="ELF"; tag="elf"
+    elif grep -q ".*\.h: No such file" $1; then
+      if grep -qE "(X11/.*|Xosdefs)\.h: No such file" $1; then
+	if grep -q "XFree86-.*\.tgz" $1; then
+	  reason="missing header"; tag="header"
+	else
+	  reason="USE_XLIB"; tag="usexlib"
+	fi
+      else
+	reason="missing header"; tag="header"
+      fi
+    elif grep -q "pnohang: killing make checksum" $1; then
+      reason="fetch timeout"; tag="fetch-timeout"
+    elif grep -q "pnohang: killing make package" $1; then
+      reason="runaway process"; tag="runaway"
+    elif grep -q "cd: can't cd to" $1; then
+      reason="NFS"; tag="nfs"
+    elif grep -qE "pkg_add: (can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
+      reason="disk full"; tag="df"
+    elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized)' $1; then
+      reason="compiler error"; tag="cc"
+    elif grep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|discards qualifiers|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: implicit declaration of function|[0-9]: size of array .* is too large|fixed or forbidden register .* for class)' $1; then
+      reason="new compiler error"; tag="newgcc"
+    elif grep -qE '(undefined reference to|cannot open -l.*: No such file)' $1; then
+      reason="linker error"; tag="ld"
+    elif grep -q 'install: .*: No such file' $1; then
+      reason="install error"; tag="install"
+    elif grep -q "/usr/.*/man/.*: No such file or directory" $1; then
+      reason="manpage"; tag="manpage"
+    elif grep -q "tar: can't add file" $1; then
+      reason="PLIST"; tag="plist"
+    elif grep -q "Can't open display" $1; then
+      reason="DISPLAY"; tag="display"
+    elif grep -q "error in dependency .*, exiting" $1; then
+      reason="dependency"; tag="dependency"
+    else
+      reason="???"; tag="unknown"
+    fi
+    if grep -q "Trying build of .* even though it is marked BROKEN" $1; then
+       echo -n "<font color=\"red\">[B]</font>" >> $of
+    fi
+    echo -n "<a href=\"../../index.html#$tag\">$reason</a>" >>$of
+    echo "</td></tr>" >>$of
+    shift
+  done
+  echo "</table><br>" >> $of
+  echo "$num errors<br>" >> $of
+fi
+
+echo "<hr>" >> $of
+echo "<a href=\"../\">back to top</a>" >> $of
+
+echo "</body></html>" >>$of
+
+mv -f $of index.html
+
+echo $maints | sed -e 's/ /\
+/g' | sort -fu > maintainers

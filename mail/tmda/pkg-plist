@@ -1,0 +1,36 @@
+bin/tmda-check-address
+bin/tmda-clean
+bin/tmda-dated-address
+bin/tmda-filter
+bin/tmda-inject
+bin/tmda-keygen
+bin/tmda-sender-address
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.py
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.py
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.py
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.py
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
+share/tmda/confirm_accept.txt
+share/tmda/confirm_request.txt
+%%PORTDOCS%%share/doc/tmda/COPYRIGHT
+%%PORTDOCS%%share/doc/tmda/CRYPTO
+%%PORTDOCS%%share/doc/tmda/ChangeLog
+%%PORTDOCS%%share/doc/tmda/FAQ
+%%PORTDOCS%%share/doc/tmda/INSTALL
+%%PORTDOCS%%share/doc/tmda/README
+%%PORTDOCS%%share/doc/tmda/README.RELAY
+%%PORTDOCS%%share/doc/tmda/THANKS
+%%PORTDOCS%%share/doc/tmda/TODO
+%%PORTDOCS%%share/doc/tmda/UPGRADE
+%%PORTDOCS%%share/doc/tmda/qmail-smtpd_auth.patch
+%%PORTDOCS%%share/doc/tmda/sample.tmdarc
+%%PORTDOCS%%share/doc/tmda/tmda.spec
+%%PORTDOCS%%share/doc/tmda/tmda.html
+@dirrm share/tmda
+%%PORTDOCS%%@dirrm share/doc/tmda
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/TMDA

@@ -1,0 +1,40 @@
+# New ports collection makefile for:	pptpclient
+# Date created:		19 June 1999
+# Whom:			John Polstra <jdp@freebsd.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pptpclient
+PORTVERSION=	1.0.3
+CATEGORIES=	net
+MASTER_SITES=	http://www.linuxalpha.compaq.com/pptpclient/files/
+DISTNAME=	pptp-linux-1.0.3
+DISTFILES=	pptp-linux-1.0.3-1.tar.gz
+
+MAINTAINER=	thomas@cuivre.fr.eu.org
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgnugetopt.a:${PORTSDIR}/devel/libgnugetopt
+
+MAKE_ARGS=	DEBUG="" \
+		INCLUDE="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lgnugetopt" \
+		pptp
+
+GUNZIP_CMD=		${GZIP_CMD} ${EXTRACT_BEFORE_ARGS}
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@(cd ${WRKDIR} && \
+	${GUNZIP_CMD} ${_DISTDIR}/${DISTFILES} | tar -xf - && \
+	${GUNZIP_CMD} `basename ${DISTFILES} .tar.gz`/${DISTNAME}.tar.gz | \
+	tar -xf -)
+
+do-install:
+	cd ${WRKSRC} ; ${INSTALL_PROGRAM} pptp ${PREFIX}/sbin
+	${MKDIR} ${PREFIX}/share/examples/pptpclient
+	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/examples/pptpclient
+	${INSTALL_DATA} ${FILESDIR}/ppp.conf ${PREFIX}/share/examples/pptpclient
+
+.include <bsd.port.mk>

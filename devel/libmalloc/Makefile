@@ -1,12 +1,33 @@
-# New ports collection makefile for:	Mark Moraes malloc library
-# Version required:	1.13??
-# Date created:		11 January 1995
-# Whom:			jkh
+# ex:ts=8
+# Ports collection makefile for:  Mark Moraes malloc library
+# Date created:			  11 January 1995
+# Whom:				  jkh
 #
-# $Id: Makefile,v 1.5 1994/11/28 23:33:53 torstenb Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	malloc
-MASTER_SITES= ftp.cs.toronto.edu:/pub/moraes/
+PORTNAME=	libmalloc
+PORTVERSION=	1.18
+CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/
+DISTNAME=	malloc-${PORTVERSION}
 
-.include <bsd.port.mk>
+MAINTAINER=	obrien@FreeBSD.org
+
+BROKEN=		"Installs malloc.h, masking system version"
+
+INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
+
+MANUAL_PACKAGE_BUILD=	installs malloc.h
+
+post-install:
+	@cd ${PREFIX}/include ; ${LN} -sf malloc.h libmalloc.h
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/libmalloc
+	${INSTALL_DATA} ${WRKSRC}/malloc.doc ${PREFIX}/share/doc/libmalloc
+	${INSTALL_DATA} ${WRKSRC}/NOTE ${PREFIX}/share/doc/libmalloc
+.endif
+
+.include <bsd.port.post.mk>

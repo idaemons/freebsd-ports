@@ -1,0 +1,6 @@
+bin/youbin
+bin/xyoubin
+bin/sendto
+sbin/youbind
+etc/rc.d/youbind.sh.sample
+@dirrm sbin

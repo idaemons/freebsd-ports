@@ -1,0 +1,12 @@
+bin/slrn
+bin/slrnpull
+share/examples/slrn/slrn.rc
+share/examples/slrn/slrnpull/FAQ
+share/examples/slrn/slrnpull/README
+share/examples/slrn/slrnpull/SETUP
+share/examples/slrn/slrnpull/score
+share/examples/slrn/slrnpull/slrn.rc
+share/examples/slrn/slrnpull/slrnpull.conf
+share/examples/slrn/slrnpull/slrnpull.sh
+@dirrm share/examples/slrn/slrnpull
+@dirrm share/examples/slrn

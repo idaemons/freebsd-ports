@@ -1,0 +1,21 @@
+bin/rexx
+bin/rxmathfn.rxfn
+bin/rxmathfn.rxlib
+bin/rxque
+bin/rxstack
+include/rexxsaa.h
+lib/librexx.a
+lib/librexx.so
+lib/librexx.so.2
+share/doc/rexx-imc/README
+share/doc/rexx-imc/README.bugreport
+share/doc/rexx-imc/README.docs
+share/doc/rexx-imc/README.files
+share/doc/rexx-imc/README.make
+share/doc/rexx-imc/README.news
+share/doc/rexx-imc/README.platforms
+share/doc/rexx-imc/rexx.info
+share/doc/rexx-imc/rexx.ref
+share/doc/rexx-imc/rexx.summary
+share/doc/rexx-imc/rexx.tech
+@dirrm share/doc/rexx-imc

@@ -1,0 +1,15 @@
+bin/cdecl
+bin/cundecl
+bin/chilight
+bin/cinfo
+bin/cinfoc
+bin/cinfodc
+bin/cobfusc
+bin/cunloop
+bin/yyextract
+bin/yyref
+share/cutils/cinfo/stdc.cinfo.db
+share/cutils/cinfo/stdclib.cinfo.db
+share/cutils/cinfo/unix.cinfo.db
+@dirrm share/cutils/cinfo
+@dirrm share/cutils

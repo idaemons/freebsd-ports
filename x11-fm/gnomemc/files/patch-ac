@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- Make.common.in.orig	Fri Jul 20 18:22:50 2001
++++ Make.common.in	Tue Sep 11 18:23:08 2001
+@@ -13,10 +13,10 @@
+ datadir    = @datadir@
+ libdir	   = @libdir@
+ mandir     = @mandir@
+-mclibdir   = $(libdir)/mc
++mclibdir   = $(datadir)/mc
+ suppbindir = $(mclibdir)/bin
+ confdir    = $(sysconfdir)
+-localedir  = $(datadir)/locale
++localedir  = $(prefix)/share/locale
+ man1dir    = $(mandir)/man1
+ manext     = 1
+ man8dir    = $(mandir)/man8

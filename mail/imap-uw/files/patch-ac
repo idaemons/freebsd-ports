@@ -1,0 +1,61 @@
+--- src/imapd/Makefile.orig	Thu May 10 07:31:46 2001
++++ src/imapd/Makefile	Wed Jun 20 02:29:42 2001
+@@ -18,10 +18,10 @@
+ # CPYRIGHT, included with this Distribution.
+ 
+ 
+-ALERT=/etc/imapd.alert
++ALERT=$(PREFIX)/etc/imapd.alert
+ USERALERT=.imapalert
+ SHUTDOWN=/etc/nologin
+-ANO=/etc/anonymous.newsgroups
++ANO=$(PREFIX)/etc/anonymous.newsgroups
+ SHELL= /bin/sh
+ 
+ 
+@@ -37,7 +37,9 @@
+ #    NULs in the message text are technically a violation of both the message
+ #    format and the IMAP specification, they can happen.  Fortunately, most
+ #    IMAP clients don't care.  Netscape hangs.
+-#NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://www.washington.edu/pine\"
++.if defined(WITH_NETSCAPE_BRAIN_DAMAGE)
++NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://www.washington.edu/pine\"
++.endif
+ 
+ 
+ # Un-comment this to get somewhat better interoperability with Microsoft
+@@ -52,22 +54,25 @@
+ # Get local definitions from c-client directory
+ 
+ C = ../c-client
+-CCLIENTLIB = $C/c-client.a
++#CCLIENTLIB = $C/c-client.a
+ CC = `cat $C/CCTYPE`
+-CFLAGS = -I$C `cat $C/CFLAGS` $(RFC1730) $(NSBD) $(MSBD) -DANOFILE=\"$(ANO)\" \
++.if defined(WITH_DRAC)
++CFLAGS = `cat $C/CFLAGS` -DANOFILE=\"$(ANO)\" -DETC_DIR=\"$(PREFIX)/etc\" \
++	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\" -DDRAC_AUTH \
++	-DSHUTDOWNFILE=\"$(SHUTDOWN)\"
++LDFLAGS = $(EXTRALDFLAGS) `cat $C/LDFLAGS` -ldrac
++.else
++CFLAGS = `cat $C/CFLAGS` -DANOFILE=\"$(ANO)\" \
+ 	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\" \
+ 	-DSHUTDOWNFILE=\"$(SHUTDOWN)\"
+-LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++LDFLAGS = $(EXTRALDFLAGS) `cat $C/LDFLAGS`
++.endif
++CFLAGS+= $(RFC1730) $(NSBD) $(MSBD)
+ 
+ all:	imapd
+ 
+-imapd: $(CCLIENTLIB) imapd.o
++imapd: imapd.o
+ 	$(CC) $(CFLAGS) -o imapd imapd.o $(LDFLAGS)
+-
+-imapd.o: $C/mail.h $C/misc.h $C/osdep.h
+-
+-$(CCLIENTLIB):
+-	cd $C;make
+ 
+ clean:
+ 	rm -f *.o imapd || true

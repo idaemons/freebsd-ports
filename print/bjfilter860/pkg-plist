@@ -1,0 +1,8 @@
+bin/bjf860ps
+libexec/bjfilter860/filter860
+libexec/bjfilter860/filter860_gui
+@dirrm libexec/bjfilter860
+@cwd /compat/linux
+usr/lib/bjlib/cnb_1050.tbl
+usr/lib/libcnbpo105.so.1.0.0
+@dirrm usr/lib/bjlib

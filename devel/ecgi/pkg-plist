@@ -1,0 +1,5 @@
+bin/html2h
+lib/libecgi.a
+lib/libecgi.so
+%%PORTDOCS%%share/doc/ecgi/ecgitut.txt
+%%PORTDOCS%%@dirrm share/doc/ecgi

@@ -1,0 +1,23 @@
+Apsfilter is a magic printfilter, that allows you to print different document
+types "automagically" without having to convert them manually into something
+which is understood by your lineprinter. Apsfilter development started in 1993,
+so apsfilter is now a mature and powerful printing solution for any flavour of
+Unix running lpd or LPRng as line printer scheduler.
+
+Apsfilter supports lots of file and compression types. Its even possible to
+print compressed documents. Apsfilter supports printing on local as well as
+on Appletalk-, Unix- and Windows remote printers.
+
+General and "per printer-queue" based config files allow you to configure
+the printer for your needs. Additionally lpr commandline options, -C for
+lpd and -Z for LPRng, allow you to change printing parameters like print
+quality, orientation, duplex mode, etc... "on the fly" without having to
+reconfigure any config file.
+
+A SETUP script helps you to test various supported ghostscript drivers prior
+installation. SETUP finally makes the necessary entries in /etc/printcap,
+creates spool directories and apsfilter default config files as needed.
+A handbook in HTML is now available. Support only via apsfilter mailinglists,
+see homepage !
+
+WWW:	http://www.apsfilter.org/

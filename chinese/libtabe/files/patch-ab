@@ -1,0 +1,21 @@
+--- src/supports/bims/Makefile.in.orig	Thu Jun  7 00:26:26 2001
++++ src/supports/bims/Makefile.in	Sun Jun 17 09:48:49 2001
+@@ -45,8 +45,7 @@
+ 
+ $(LIBNAME): $(LIBOBJS)
+ 	$(LIBTOOL) --mode=link $(CC) -o $@ $(LIBOBJS) -rpath $(libdir) \
+-		-version-info $(CURRENT_VER):$(REVISION_VER):$(AGE_VER) \
+-		-release $(RELEASE_VER)
++		-version-info $(CURRENT_VER):$(REVISION_VER):$(AGE_VER)
+ 
+ bims.lo: bims.c bims.h
+ 	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(DEFS) $(INC) -o $@ bims.c
+@@ -59,7 +58,7 @@
+ 	if [ -d obj-s ]; then rmdir obj-s; fi
+ 	$(RM) Makefile
+ 
+-install: all
++install:
+ 	if [ ! -d $(libdir) ]; then $(INSTALL) -d $(libdir); fi
+ 	if [ ! -d $(includedir) ]; then $(INSTALL) -d $(includedir); fi
+ 	$(LIBTOOL) --mode=install $(INSTALL_DATA) $(LIBNAME) $(libdir)

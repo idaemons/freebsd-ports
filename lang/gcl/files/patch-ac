@@ -1,0 +1,63 @@
+--- info/makefile.orig	Wed Nov 10 18:47:19 1999
++++ info/makefile	Tue Nov 16 11:16:48 1999
+@@ -16,10 +16,11 @@
+ # root for the installation, eg /usr/local
+ # This would cause make install to create /usr/local/bin/gcl and
+ # /usr/local/lib/gcl-2-??/* with some basic files.
+-prefix=/usr/local
++prefix=${PREFIX}
++prefix?=/usr/local
+ 
+ # where to place the info files
+-INFO_DIR=/usr/local/info/
++INFO_DIR=${prefix}/info/
+ 
+ # where to put emacs lisp files.
+ EMACS_SITE_LISP=/usr/share/emacs/20.3/site-lisp
+@@ -49,9 +50,9 @@
+ 
+ 
+ 
+-GCLDIR=/home/wfs/gcl-2.3
++GCLDIR=/tmp/FreeBSD/gcl-2.3
+ SHELL=/bin/sh
+-MACHINE=386-linux
++MACHINE=FreeBSD
+ 
+ # notes for redhat 6.0
+ #  the configure should select the compiler GCC=/usr/bin/i386-glibc20-linux-gcc
+@@ -62,7 +63,7 @@
+ 
+ # Machine dependent makefile definitions for intel 386,486 running linux
+ 
+-LBINDIR=/usr/local/bin
++LBINDIR=${prefix}/bin
+ 
+ OFLAG	=  -O 
+ LIBS	= -lm 
+@@ -109,8 +110,8 @@
+ 
+ .texi.info:
+ 	rm -f $*.*gz
+-	makeinfo $*.texi
+-	- gzip $*.info-*
++	makeinfo --no-split $*.texi
++#	- gzip $*.info
+ 
+ GCL_SI= number.texi sequence.texi character.texi list.texi io.texi \
+ 	form.texi compile.texi symbol.texi system.texi structure.texi \
+@@ -124,14 +125,6 @@
+ 
+ 
+ install:
+-	if [  -d "${INFO_DIR}" ] ; then true ; else exit 0; fi
+-	-if fgrep gcl-si ${INFO_DIR}/dir > /dev/null ; then true ; else \
+-	echo "* GCL Doc: (gcl-si.info).	GNU Common Lisp specific Documentation." >> ${INFO_DIR}/dir ; fi
+-	-if fgrep gcl-tk ${INFO_DIR}/dir > /dev/null ; then true ; else \
+-	echo "* GCL TK Doc: (gcl-tk.info).	TK window GCL interface." >> ${INFO_DIR}/dir ; fi
+-	-if fgrep gcl.info ${INFO_DIR}/dir > /dev/null ; then true ; else \
+-	echo "* GCL Ansi Doc: (gcl.info).  Ansi Common Lisp Specification." >> ${INFO_DIR}/dir ; fi
+-	-if [  -d "${INFO_DIR}" ] ; then 	cp *.info* ${INFO_DIR} ; fi
+ 
+ 
+ 

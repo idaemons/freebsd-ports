@@ -1,15 +1,33 @@
 # New ports collection makefile for:	jpeg
-# Version required:	5a
 # Date created:		6 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.3 1994/12/29 20:16:17 jkh Exp $
+# $FreeBSD$
 #
+# PLEASE update print/ghostscript5 (there's a symlink that uses a hardwired
+# version number) when updating this port.  Thank you.
 
-DISTNAME=	jpegsrc.v5a
-PKGNAME=	jpeg-5a
-GNU_CONFIGURE=	yes
-MASTER_SITES=	ftp://ftp.uu.net/graphics/jpeg/ ftp://ftp.netcom.com/pub/tgl/uunet/
-WRKSRC=		${WRKDIR}/jpeg-5a
+PORTNAME=	jpeg
+PORTVERSION=	6b
+CATEGORIES=	graphics
+MASTER_SITES=	ftp://ftp.uu.net/graphics/jpeg/
+DISTNAME=	jpegsrc.v${PORTVERSION}
+
+MAINTAINER=	jseger@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/jpeg-6b
+
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--enable-shared --enable-static
+
+MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/jpeg
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jpeg
+	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/jpeg
+.endif
 
 .include <bsd.port.mk>

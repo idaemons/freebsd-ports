@@ -1,0 +1,8 @@
+bin/newsq
+lib/leafnode/config.example
+sbin/leafnode
+sbin/fetchnews
+sbin/texpire
+sbin/checkgroups
+sbin/applyfilter
+@dirrm lib/leafnode

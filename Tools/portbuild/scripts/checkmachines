@@ -1,0 +1,37 @@
+#!/bin/sh
+
+buildroot=/var/portbuild
+mlist=${buildroot}/mlist
+stamp=${buildroot}/loads/.stamp
+
+unset DISPLAY
+
+while true; do
+  touch ${stamp}
+  sleep 15
+  min=99
+  set $(cat $mlist)
+  while [ $# -gt 1 ]; do
+    m=$1
+    l=$2
+    if [ -f ${buildroot}/loads/$m -a \
+      ! -z "$(find ${buildroot}/loads/$m -newer ${stamp})" ]; then
+      num=$(awk '{print $1}' ${buildroot}/loads/$m)
+      if [ "x$num" = "x" ]; then
+#	logger "checkmachines: file ${buildroot}/loads/$m is empty"
+	num=99
+      fi
+    else
+      num=99
+    fi
+    num=$(($num / $l))
+    if [ $num -lt $min ]; then
+      mach=$m
+      min=$num
+    elif [ $num = $min ]; then
+      mach="$mach $m"
+    fi
+    shift 2
+  done
+  echo "$mach" > ${buildroot}/ulist
+done

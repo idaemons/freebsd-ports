@@ -1,0 +1,6 @@
+drweb/drwebdc
+etc/rc.d/drwebsmf.sh-dist
+sbin/drweb-smf
+share/doc/drweb-sendmail/readme.sendmail
+share/doc/drweb-sendmail/readme.sendmail.rus
+@dirrm share/doc/drweb-sendmail

@@ -1,0 +1,12 @@
+This is the Python XML package.  The distribution contains a
+validating XML parser, an implementation of the SAX and DOM
+programming interfaces, an interface to the Expat parser (and the
+Expat parser itself), and a C helper module that can speed up
+xmllib.py by a factor of 5.  There's even documentation!
+
+The current version is still to be considered a beta release.
+
+WWW: http://www.python.org/sigs/xml-sig/
+
+-- Jacques Vidrine <nectar@FreeBSD.ORG> (original port)
+-- Johann Visagie  <wjv@FreeBSD.org>    (current maintainer)

@@ -1,0 +1,12 @@
+ADODB stands for Active Data Objects Data Base.
+
+ADODB provides a common API to communicate with any supported database.
+
+Supported databases:
+	MySQL, PostgreSQL, Interbase, Oracle, MS SQL 7
+	Foxpro, Access, ADO, Sybase and generic ODBC.
+
+WWW: http://php.weblogs.com/ADODB
+
+- Ago
+abgoeree@uwnet.nl

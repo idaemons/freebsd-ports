@@ -1,0 +1,29 @@
+--- configure.in.orig	Fri Apr 27 09:32:21 2001
++++ configure.in	Tue May  1 06:18:24 2001
+@@ -75,7 +75,7 @@
+ AC_FUNC_SELECT_ARGTYPES
+ 
+ dnl Configuring features
+-TARGETS='base docs'
++TARGETS='base'
+ 
+ dnl Checking for X11
+ AC_PATH_XTRA
+@@ -116,7 +116,7 @@
+   AC_DEFINE(ENABLE_NLS, 1, [Define to enable internationalized message])
+   TARGETS=$TARGETS' nls'
+ 
+-  localedir='${datadir}/locale'
++  localedir='${prefix}/share/locale'
+ fi
+ 
+ dnl ============================================================= GUI Events ===
+@@ -284,7 +284,7 @@
+ 
+ 	AC_DEFINE(GNOME, 1, [Define to make IceWM more GNOME-friendly])
+       else
+-	AC_MSG_ERROR([gnome-config can not be found.
++	AC_MSG_WARN([gnome-config can not be found.
+ *** Install the GNOME´s development packages or use the argument of the
+ *** --with-gnome-menus switch to pass gnome-config´s location.])
+       fi

@@ -1,0 +1,42 @@
+# New ports collection makefile for:	numpy
+# Date created:		20 April 1997
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	numeric
+PORTVERSION=	19.0.0
+CATEGORIES=	math python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	numpy
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Numeric-${PORTVERSION}
+
+MAINTAINER=	tg@FreeBSD.org
+
+BUILD_DEPENDS=	${PYDISTUTILS}
+
+USE_PYTHON=	yes
+PYTHON_VERSION=	python2.1
+
+DOCDIR=		${PREFIX}/share/doc/py-numeric
+EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
+
+do-build:
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup_all.py build)
+
+do-install:
+	@(cd ${WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup_all.py install)
+
+	@${MKDIR} ${EXAMPLEDIR}
+	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${EXAMPLEDIR}
+	@${MKDIR} ${EXAMPLEDIR}/NumTut
+	${INSTALL_DATA} ${WRKSRC}/Demo/NumTut/* ${EXAMPLEDIR}/NumTut
+.if !defined(NOPORTDOCS)
+#	@${MKDIR} ${DOCDIR}
+#	${INSTALL_DATA} ${WRKSRC}/Doc/numpy.pdf ${DOCDIR}
+.endif
+
+.include <bsd.port.mk>

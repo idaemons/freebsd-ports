@@ -1,14 +1,30 @@
 # New ports collection makefile for:	pdksh
-# Version required:	5.1.3
-# Date created:		23 December 1994
-# Whom:			thomas@ghpc8.ihf.rwth-aachen.de
+# Date created:		23 May 1995
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1994/12/12 02:17:47 ache Exp $
+# $FreeBSD$
 #
 
+PORTNAME=	pdksh
+PORTVERSION=	5.2.14
+CATEGORIES=	shells
+MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/ \
+		http://gd.tuwien.ac.at/utils/shells/pdksh/ \
+		ftp://ftp.lip6.fr/pub/unix/shells/pdksh/ \
+		ftp://ftp.demon.net/pub/mirrors/pdksh/ \
+		ftp://ftp.rge.com/pub/shells/pdksh/
 
-DISTNAME=	pdksh-5.1.3
-MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/
-GNU_CONFIGURE=  YES
+MAINTAINER=	tg@FreeBSD.org
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDSTATIC=-static
+MAN1=		ksh.1
+
+post-install:
+	@${ECHO} "Updating /etc/shells"
+	@${CP} /etc/shells /etc/shells.bak
+	@(${GREP} -v ${PREFIX}/bin/ksh /etc/shells.bak; \
+		${ECHO} ${PREFIX}/bin/ksh) > /etc/shells
+	@${RM} /etc/shells.bak
 
 .include <bsd.port.mk>

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+case "$2" in
+  ""|POST-INSTALL) cat <<EOF
+=============================================================
+
+Some files you might need to customize include the following:
+
+    ${PKG_PREFIX}/etc/nmh/mhn.defaults - For example, you may
+        want to adjust the programs used to handle various MIME
+        content types.
+
+    ${PKG_PREFIX}/etc/nmh/mts.conf - For example, you may need
+        to adjust the "servers" setting if you don't have a
+        locally installed sendmail (or other MTA).
+
+=============================================================
+EOF
+  ;;
+esac

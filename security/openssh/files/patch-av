@@ -1,0 +1,19 @@
+--- auth.c.orig	Sat Nov  4 17:30:17 2000
++++ auth.c	Sat Nov  4 17:29:00 2000
+@@ -111,6 +111,16 @@
+ 				return 0;
+ 		}
+ 	}
++#ifdef __FreeBSD__  
++	/* Fail if the account's expiration time has passed. */
++	if (pw->pw_expire != 0) {
++		struct timeval tv;
++
++		(void)gettimeofday(&tv, NULL);
++		if (tv.tv_sec >= pw->pw_expire)
++			return 0;
++	}
++#endif /* __FreeBSD__ */
+ 	/* We found no reason not to let this user try to log on... */
+ 	return 1;
+ }

@@ -1,0 +1,27 @@
+--- Makefile	Wed Jan  3 14:19:05 2001
++++ Makefile.new	Wed Jan  3 14:20:50 2001
+@@ -8,7 +8,7 @@
+ 
+ # 2. edit dest dir prefix if you want....
+ 
+-PREFIX='/usr/local'
++PREFIX?='/usr/local'
+ #PREFIX=/boot/home
+ 
+ 
+@@ -60,13 +60,13 @@
+ 
+ install:	e3
+ 	install -d $(PREFIX) $(BINDIR) $(MANDIR)
+-	install -m 755 e3 $(BINDIR)
++	${BSD_INSTALL_PROGRAM} e3 $(BINDIR)
+ 	ln -sf $(BINDIR)/e3 $(BINDIR)/e3ws
+ 	ln -sf $(BINDIR)/e3 $(BINDIR)/e3em
+ 	ln -sf $(BINDIR)/e3 $(BINDIR)/e3pi
+ 	ln -sf $(BINDIR)/e3 $(BINDIR)/e3vi
+ 	ln -sf $(BINDIR)/e3 $(BINDIR)/e3ne
+-	install -m 644 e3.man $(MANDIR)/e3.$(MANSEC)
++	${BSD_INSTALL_MAN} e3.man $(MANDIR)/e3.$(MANSEC)
+ 
+ clean:
+ 	rm -f e3*.o e3*.lst e3 e3em e3pi e3vi e3ws e3ne

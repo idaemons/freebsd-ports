@@ -1,0 +1,4 @@
+bin/keynote
+lib/libkeynote.a
+share/doc/keynote/rfc2704.txt
+@dirrm share/doc/keynote/
