@@ -1,0 +1,8 @@
+GPL Flash (TM) Library is a set of source codes that allow to play
+Flash (TM) movies.
+
+The core of the library is a graphic renderer that is portable is to
+be reused in applications that need to play Flash (TM) movies.
+
+Author:	Olivier Debon <odebon@club-internet.fr>
+WWW:	http://www.swift-tools.com/Flash/

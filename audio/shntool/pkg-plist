@@ -1,0 +1,9 @@
+bin/shncat
+bin/shncmp
+bin/shnfix
+bin/shninfo
+bin/shnjoin
+bin/shnlen
+bin/shnsplit
+bin/shnstrip
+bin/shntool

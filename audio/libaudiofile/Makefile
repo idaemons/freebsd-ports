@@ -1,0 +1,30 @@
+# New ports collection makefile for:	libaudiofile
+# Date created:				22 Dec 1998
+# Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libaudiofile
+PORTVERSION=	0.2.3
+CATEGORIES=	audio
+MASTER_SITES=	ftp://ftp.68k.org./pub/michael/ \
+		ftp://oss.sgi.com/projects/audiofile/download/ \
+		${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-alpha2
+DISTNAME=	audiofile-${PORTVERSION}
+
+MAINTAINER=	gnome@FreeBSD.org
+
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+
+INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+
+pre-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
+
+.include <bsd.port.mk>

@@ -1,0 +1,36 @@
+--- courier/perms.sh.in.orig	Fri Dec  7 08:37:35 2001
++++ courier/perms.sh.in	Sun Jan 27 23:12:48 2002
+@@ -10,9 +10,6 @@
+ exec_prefix="@exec_prefix@"
+ 
+ PERMS="
+-.			755
+-
+-@localstatedir@		755	x	bin	bin
+ @localstatedir@/tmp	770
+ @localstatedir@/msgs	750
+ @localstatedir@/msgq	750
+@@ -41,7 +38,6 @@
+ @sysconfdir@/rfcerr2046.txt	444	config
+ @sysconfdir@/rfcerr2047.txt	444	config
+ 
+-@libexecdir@		755	x	bin	bin
+ @libexecdir@/authlib	755	x	bin	bin
+ @libexecdir@/courier	755	x	bin	bin
+ @libexecdir@/courier/modules	755	x	bin	bin
+@@ -61,7 +57,6 @@
+ @libexecdir@/courier/webmail/webmail	4555	x	root	bin
+ @libexecdir@/courier/webmail/webadmin	4555	x	root	bin
+ 
+-@sbindir@			755	x	bin	bin
+ @sbindir@/courier		555
+ @sbindir@/showconfig		555
+ @sbindir@/showmodules		550
+@@ -73,7 +68,6 @@
+ @datadir@/imapd			555	x	bin	bin
+ @datadir@/imapd-ssl		555	x	bin	bin
+ 
+-@bindir@			755	x	bin	bin
+ @bindir@/cancelmsg		6555
+ @bindir@/courier-config		555
+ @bindir@/mailq			2555

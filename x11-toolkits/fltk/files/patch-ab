@@ -1,0 +1,45 @@
+--- configure.orig	Sat Dec  9 07:00:06 2000
++++ configure	Sat Feb 24 16:02:38 2001
+@@ -837,13 +837,13 @@
+   CFLAGS="$ac_save_CFLAGS"
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="-g"
+   else
+     CFLAGS="-g"
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
+   else
+     CFLAGS=
+   fi
+@@ -980,13 +980,13 @@
+   CXXFLAGS="$ac_save_CXXFLAGS"
+ elif test $ac_cv_prog_cxx_g = yes; then
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
++    CXXFLAGS="-g"
+   else
+     CXXFLAGS="-g"
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS=""
+   else
+     CXXFLAGS=
+   fi
+@@ -2750,8 +2750,8 @@
+ 	# WAS: I removed the -fforce-mem, -fforce-addr, -fcaller-saves
+ 	#      They all seemed to make either no difference or enlarged
+ 	#      the code by a few hundred bytes.
+-        CFLAGS="-O2 $CFLAGS"
+-        CXXFLAGS="-O2 $CXXFLAGS"
++#        CFLAGS="-O2 $CFLAGS"
++#        CXXFLAGS="-O2 $CXXFLAGS"
+     fi
+     if test $PICFLAG = 1; then
+     	CFLAGS="-fPIC $CFLAGS"

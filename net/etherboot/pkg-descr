@@ -1,0 +1,14 @@
+This code produce bootloaders for a number of cards that can be
+loaded from from raw or DOS-formatted floppy/hard disks and ROMs
+to boot ELF/aout kernels over NFS or TFTP.
+Edit work/etherboot/src/Config to see/set the desired features.
+
+The defaults used here are suited to boot FreeBSD ELF kernels over NFS.
+
+To produce an etherboot floppy (or HD partition) do
+
+	cd work/etherboot/src 
+	cat bin/boot1a.bin bin32/<device>.lzrom > /dev/fd0
+
+Replace <device> with the specific code for your card, and /dev/fd0
+with your hard disk partition.

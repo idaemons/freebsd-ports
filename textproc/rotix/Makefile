@@ -1,0 +1,29 @@
+# ex:ts=8
+# New ports collection makefile for:	rotix
+# Date created:			Dec 8, 2001
+# Whom:				lintux@debian.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	rotix
+PORTVERSION=	0.82
+PORTREVISION=	1
+CATEGORIES=	textproc
+MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/rotix_releases/${DISTNAME}/
+
+MAINTAINER=	lintux@debian.org
+
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+
+USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --i18n=1
+
+MAN1=		rotix.1
+
+post-patch:
+	@${PERL} -pi -e 's,%%CFLAGS%%,${CFLAGS},; s,%%LOCALBASE%%,${LOCALBASE},;' \
+		${WRKSRC}/Makefile
+
+.include <bsd.port.mk>

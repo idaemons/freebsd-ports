@@ -1,0 +1,81 @@
+--- configure.orig	Tue May 21 14:59:19 2002
++++ configure	Tue May 21 19:19:28 2002
+@@ -104,7 +104,7 @@
+     if [ "$INPUT" != "y" -a "x$INPUT" != "x" ] ; then
+         MILTER_VER="FFR"
+     fi    
+-    if [ $MILTER_VER = "STD" ] ; then
++    if [ $MILTER_VER = "xSTD" ] ; then
+         SM_LIB="libsm"
+         SM_LIB_CMD="-lsm"
+     elif [ $OS = "Linux" ] ; then
+@@ -114,60 +114,6 @@
+         SM_LIB=""
+         SM_LIB_CMD=""
+     fi
+-    if [ ! -f include/libmilter/mfapi.h ] ; then
+-        echo "no include/libmilter/mfapi.h"
+-    fi
+-    if [ $MILTER_VER = "STD" -a ! -f include/libmilter/mfdef.h ] ; then
+-        echo "no include/libmilter/mfdef.h"
+-        FAIL_MFDEF="yes"
+-    else
+-        FAIL_MFDEF="no"
+-    fi
+-    if [ "x$SM_LIB" != "x" -a ! -f "lib/$SM_LIB.a" ] ; then
+-        NO_ADD="yes"        
+-        echo "no lib/$SM_LIB.a"        
+-    else
+-        NO_ADD="no"
+-    fi
+-    if [ ! -f lib/libmilter.a ] ; then
+-        echo "no lib/libmilter.a"
+-    fi
+-    if [ ! -f include/libmilter/mfapi.h\
+-         -o\
+-         $FAIL_MFDEF = "yes"\
+-         -o\
+-         ! -f lib/libmilter.a\
+-         -o $NO_ADD = "yes" ] ; then
+-        echo 
+-        echo "Please copy (or make symlinks) for next files:"
+-        echo $n "in ./include/libmilter directory mfapi.h"
+-        if [ $MILTER_VER = "STD" ] ; then
+-            echo " and mfdef.h"
+-        fi
+-        echo $n "in ./lib directory libmilter.a"
+-        if [ $SM_LIB = "libsm" -a $OS = "Linux" ] ; then
+-            echo " and libsm.a" 
+-        elif [ $SM_LIB = "libsmutil" ] ; then
+-            echo " and libsmutil.a" 
+-        else
+-            echo
+-        fi
+-        echo
+-        echo "So you should have next tree:"
+-        echo "include/libmilter/mfapi.h"
+-        if [ $MILTER_VER = "STD" ] ; then
+-            echo "                  mfdef.h"
+-        fi
+-        echo "lib/libmilter.a"
+-        if [ $SM_LIB = "libsm" -a $OS = "Linux" ] ; then
+-            echo "    libsm.a" 
+-        elif [ $SM_LIB = "libsmutil" ] ; then
+-            echo "    libsmutil.a" 
+-        fi
+-        echo 
+-        echo "Do it and try again"
+-        exit 1
+-    fi
+ else
+     DRWEB_SM=""
+ fi 
+@@ -269,7 +215,7 @@
+ if [ "x$BSD_MAKE" = "xyes" ] ; then
+     COMPILE_RULE_1=".c.o:"
+     COMPILE_RULE_2="	\$(CC) -c \$(ADD_CFLAGS) -D__SIGNAL_BASED_DW \${.ALLSRC}"
+-    COMPILE_RULE_3="	\$(CC) -c \$(ADD_CFLAGS) -D__THREAD_BASED_DW \${.ALLSRC} -o \${.PREFIX}_r.o"
++    COMPILE_RULE_3="	\$(CC) -c \$(ADD_CFLAGS) -D_THREAD_SAFE -D__THREAD_BASED_DW \${.ALLSRC} -o \${.PREFIX}_r.o"
+     COMPILE_RULE_4=""
+ else
+     COMPILE_RULE_1="%.o: %.c"

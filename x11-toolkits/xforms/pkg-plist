@@ -1,0 +1,9 @@
+bin/fd2ps
+bin/fdesign
+include/forms.h
+lib/libforms.a
+lib/libforms.so
+lib/libforms.so.0
+lib/libforms.so.0.88
+lib/libxforms.a
+lib/libxforms.so.0

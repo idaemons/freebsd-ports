@@ -1,0 +1,49 @@
+%%RUBY_SITEARCHLIBDIR%%/rubyfltk.so
+%%RUBY_SITELIBDIR%%/fltk.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas.rb
+%%RUBY_SITELIBDIR%%/fltk/drawable.rb
+%%RUBY_SITELIBDIR%%/fltk/image.rb
+%%RUBY_SITELIBDIR%%/fltk/listbox.rb
+%%RUBY_SITELIBDIR%%/fltk/thread.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/circle.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/ellipse.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/label.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/line.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/polygon.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/rect.rb
+@dirrm %%RUBY_SITELIBDIR%%/fltk/canvas
+@dirrm %%RUBY_SITELIBDIR%%/fltk
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/clock.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/demo-j.html
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/demo-j.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/demo.html
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/demo.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/editor.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/image.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/othello.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/ruby.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/ruby.gif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/ruby.jpg
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/ruby.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/ruby.xbm
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/ruby.xpm
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample10.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample3.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample4.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample5.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample6.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample7.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample8.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample9.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/wizard.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/fltk
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/Changes
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/faq.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/guide.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/reference.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/ja/guide.txt
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fltk/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fltk

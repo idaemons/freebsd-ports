@@ -1,0 +1,11 @@
+--- cvsunix/src/Makefile.in.orig	Tue Mar  6 17:36:21 2001
++++ cvsunix/src/Makefile.in	Thu Mar 29 00:44:20 2001
+@@ -88,7 +88,7 @@
+ install: installdirs
+ 	@for prog in $(PROGS); do \
+ 	  echo Installing $$prog in $(bindir); \
+-	  $(INSTALL) $$prog $(bindir)/$$prog ; \
++	  $(INSTALL_SCRIPT) $$prog $(bindir)/$$prog ; \
+ 	done
+ 
+ installdirs:

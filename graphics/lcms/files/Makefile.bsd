@@ -1,0 +1,16 @@
+LIB=lcms
+SHLIB_MAJOR=	1
+SHLIB_MINOR=	8
+
+SRCS!=	make -f ${.CURDIR}/Makefile -V SRCS
+
+NOPROFILE=YES
+
+INCS=	${.CURDIR}/../include/lcms.h ${.CURDIR}/../include/icc34.h
+
+CFLAGS+=	-I${.CURDIR}/../include
+
+INCDIR=	${LOCALBASE}/include
+LIBDIR=	${LOCALBASE}/lib
+
+.include <bsd.lib.mk>

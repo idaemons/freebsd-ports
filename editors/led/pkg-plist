@@ -1,0 +1,9 @@
+bin/led
+lib/led/c.so
+lib/led/html.so
+lib/led/mbox.so
+lib/led/python.so
+lib/led/sh.so
+@dirrm lib/led
+%%PORTDOCS%%share/doc/led/sample.ledrc
+%%PORTDOCS%%@dirrm share/doc/led

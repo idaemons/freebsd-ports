@@ -1,6 +1,2 @@
-@cwd /usr/X11R6
-@mode 555
-bin/xftp
-@mode 444
-lib/X11/app-defaults/Xftp
-man/man1/xftp.1.gz
+bin/%%PROGRAM_NAME%%
+lib/X11/app-defaults/%%RESOURCE_NAME%%

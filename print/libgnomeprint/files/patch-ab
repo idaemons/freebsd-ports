@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Mon Feb 11 12:42:17 2002
++++ Makefile.in	Tue Mar 19 18:17:21 2002
+@@ -116,7 +116,7 @@
+ WARN_CFLAGS = @WARN_CFLAGS@
+ cxxflags_set = @cxxflags_set@
+ 
+-SUBDIRS = libgnomeprint fonts installer tests data po
++SUBDIRS = libgnomeprint fonts installer data po
+ 
+ EXTRA_DIST = message-of-doom ChangeLog ChangeLog.old ChangeLog.old.2
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

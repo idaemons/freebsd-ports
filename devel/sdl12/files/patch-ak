@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- sdl-config.in	2002/04/17 10:56:17	1.1
++++ sdl-config.in	2002/04/17 10:57:31
+@@ -5,7 +5,7 @@
+ exec_prefix_set=no
+ 
+ usage="\
+-Usage: sdl-config [--prefix[=DIR]] [--exec-prefix[=DIR]] [--version] [--cflags] [--libs] [--static-libs]"
++Usage: sdl11-config [--prefix[=DIR]] [--exec-prefix[=DIR]] [--version] [--cflags] [--libs] [--static-libs]"
+ 
+ if test $# -eq 0; then
+       echo "${usage}" 1>&2
+@@ -45,7 +45,7 @@
+ 
+           includes=-I@includedir@
+       fi
+-      echo $includes -I@includedir@/SDL @SDL_CFLAGS@
++      echo $includes -I@includedir@/SDL11 @SDL_CFLAGS@
+       ;;
+ @ENABLE_SHARED_TRUE@    --libs)
+ @ENABLE_SHARED_TRUE@      libdirs="-L@libdir@ @SDL_RLD_FLAGS@"

@@ -1,12 +1,20 @@
 # New ports collection makefile for:	sup
-# Version required:	<own lineage>
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1994/08/22 11:31:58 jkh Exp $
+# $FreeBSD$
 #
 
+PORTNAME=	sup
+PORTVERSION=	2.0
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	sup
-MASTER_SITES=	ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
+
+MAINTAINER=	ports@FreeBSD.org
+
+MAN1=		sup.1
+MAN8=		supservers.8
 
 .include <bsd.port.mk>

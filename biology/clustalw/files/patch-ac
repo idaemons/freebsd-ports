@@ -1,0 +1,11 @@
+--- interface.c.orig	Wed Jun  7 16:50:07 2000
++++ interface.c	Tue Aug  8 03:11:33 2000
+@@ -1078,7 +1078,7 @@
+ 	/* added for File System Standards  - Francois */
+ 	path1=(char *)ckalloc((strlen(path)+64)*sizeof(char));
+ 	strcpy(path1,path);
+-	strcat(path1,"/usr/share/clustalx:/usr/local/share/clustalx"); 
++	strcat(path1,DATADIR); 
+ 
+         lf=(sint)strlen(fname);
+         deb=path1;

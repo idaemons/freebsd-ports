@@ -1,15 +1,29 @@
+# New ports collection makefile for:    xearth
+# Date created:         29 October 1994
+# Whom:                 piero
 #
-# Makefile for x11/xearth (FreeBSD) - piero Sat Oct 29 12:37:15 PDT 1994
-# $Id: $
+# $FreeBSD$
 #
 
-# Distribution stuff
-DISTNAME=	xearth-0.92
-MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/
+PORTNAME=	xearth
+PORTVERSION=	1.1
+CATEGORIES=	astro x11
+MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/ \
+		ftp://ftp.cs.colorado.edu/users/tuna/ \
+		${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR= applications
 
-# working directory
-WRKDIR=		work
+MAINTAINER=	ports@FreeBSD.org
 
-USE_IMAKE=	is_set
+USE_IMAKE=	yes
+
+MAN1=		xearth.1
+
+# Copy the list of FreeBSD sites & committers locations
+post-install:
+	@${MKDIR} ${PREFIX}/lib/X11/xearth
+.for file in freebsd.committers.markers freebsd.ftp.markers
+	@${INSTALL_DATA} ${FILESDIR}/${file} ${PREFIX}/lib/X11/xearth
+.endfor
 
 .include <bsd.port.mk>

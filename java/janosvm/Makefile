@@ -1,0 +1,32 @@
+# ex:ts=8
+# New ports collection makefile for:	janosvm
+# Date created:			Jun 19, 2001
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	janosvm
+PORTVERSION=	0.6.0
+PORTREVISION=	1
+CATEGORIES=	java
+MASTER_SITES=	http://www.cs.utah.edu/flux/janos/${DISTNAME}/
+
+MAINTAINER=	znerd@FreeBSD.org
+
+USE_XLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-x
+USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
+
+MAN1=	janosvm.1 jsihey.1 jsiregister.1 jsiunregister.1
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/FAQ ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

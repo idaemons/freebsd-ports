@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd ${WRKSRC}
+
+${MV} Makefile Makefile.bak
+${SED} -e 's@^PREFIX[ 	]*=.*$@#&@' < Makefile.bak > Makefile

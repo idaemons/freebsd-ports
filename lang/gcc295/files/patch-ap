@@ -1,0 +1,34 @@
+--- gcc/ginclude/stddef.h.orig.orig	Sun Mar 24 03:12:41 2002
++++ gcc/ginclude/stddef.h	Sun Mar 24 03:12:47 2002
+@@ -25,6 +25,7 @@
+ /* On 4.3bsd-net2, make sure ansi.h is included, so we have
+    one less case to deal with in the following.  */
+ #if defined (__BSD_NET2__) || defined (____386BSD____) || defined (__FreeBSD__) || defined(__NetBSD__)
++#define __NO_GNUC_VA_LIST	/* <machine/ansi.h> defines __gnuc_va_list */
+ #include <machine/ansi.h>
+ #endif
+ 
+@@ -109,7 +110,6 @@
+ #define _T_PTRDIFF
+ #define __PTRDIFF_T
+ #define _PTRDIFF_T_
+-#define _BSD_PTRDIFF_T_
+ #define ___int_ptrdiff_t_h
+ #define _GCC_PTRDIFF_T
+ #ifndef __PTRDIFF_TYPE__
+@@ -156,7 +156,6 @@
+ #define _T_SIZE
+ #define __SIZE_T
+ #define _SIZE_T_
+-#define _BSD_SIZE_T_
+ #define _SIZE_T_DEFINED_
+ #define _SIZE_T_DEFINED
+ #define ___int_size_t_h
+@@ -217,7 +216,6 @@
+ #define _T_WCHAR
+ #define __WCHAR_T
+ #define _WCHAR_T_
+-#define _BSD_WCHAR_T_
+ #define _WCHAR_T_DEFINED_
+ #define _WCHAR_T_DEFINED
+ #define _WCHAR_T_H

@@ -1,0 +1,4 @@
+include/shmap.h
+lib/libshmap.a
+lib/libshmap.so
+lib/libshmap.so.0

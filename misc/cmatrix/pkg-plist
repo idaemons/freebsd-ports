@@ -1,0 +1,5 @@
+bin/cmatrix
+share/doc/cmatrix/ChangeLog
+share/doc/cmatrix/README
+share/doc/cmatrix/TODO
+@dirrm share/doc/cmatrix

@@ -1,0 +1,4 @@
+bin/wminet
+etc/wminetrc
+%%PORTDOCS%%share/doc/wminet/HINTS
+%%PORTDOCS%%@dirrm share/doc/wminet

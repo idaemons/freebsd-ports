@@ -1,0 +1,4 @@
+sbin/pptp
+share/examples/pptpclient/README
+share/examples/pptpclient/ppp.conf
+@dirrm share/examples/pptpclient

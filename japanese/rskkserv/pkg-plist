@@ -1,0 +1,16 @@
+etc/rc.d/rskkserv.sh
+etc/rskkserv.conf
+etc/rskkserv.conf.sample
+%%RUBY_SITEARCHLIBDIR%%/skkserv/skkdic.so
+@dirrm %%RUBY_SITEARCHLIBDIR%%/skkserv
+%%RUBY_SITELIBDIR%%/skkserv/skkdic.rb
+%%RUBY_SITELIBDIR%%/skkserv/logger.rb
+%%RUBY_SITELIBDIR%%/skkserv/ebdic.rb
+@dirrm %%RUBY_SITELIBDIR%%/skkserv
+libexec/rskkserv
+@unexec rm -f %D/share/skk/SKK-JISYO.[LMS].[an] 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rskkserv/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rskkserv/ja/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rskkserv/ja/TODO
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rskkserv/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rskkserv

@@ -1,15 +1,25 @@
 # New ports collection makefile for:	xdaliclock
-# Version required:			2.05
 # Date created:				10th February 1995
 # Whom:					gpalmer
 #
-# $Id$
+# $FreeBSD$
 #
 
-DISTNAME=	xdaliclock-2.05
-USE_IMAKE=	yes
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
-EXTRACT_SUFX=	.tar.Z
-MAINTAINER=	gpalmer@FreeBSD.ORG
+PORTNAME=	xdaliclock
+PORTVERSION=	2.18
+CATEGORIES=	x11-clocks
+MASTER_SITES=	http://www.jwz.org/xdaliclock/ \
+		${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
+
+MAINTAINER=	gpalmer@FreeBSD.org
+
+MAN1=		xdaliclock.1
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/X11
+
+CONFIGURE_ARGS+=	--prefix=${X11BASE}
+HAS_CONFIGURE=	YES
+USE_X_PREFIX=	YES
 
 .include <bsd.port.mk>

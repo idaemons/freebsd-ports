@@ -1,0 +1,50 @@
+bin/mangband
+bin/mangclient
+bin/mangconsole
+@exec install -d -o games -g games -m 750 %D/lib/mangband/data
+@exec install -d -o games -g games -m 750 %D/lib/mangband/file
+@exec install -d -o games -g games -m 750 %D/lib/mangband/game
+@exec install -d -o games -g games -m 750 %D/lib/mangband/text
+@exec install -d -o games -g games -m 750 %D/lib/mangband/save
+@exec install -d -o games -g games -m 755 %D/lib/mangband/user
+lib/mangband/file/wizards.txt
+lib/mangband/game/a_info.txt
+lib/mangband/game/e_info.txt
+lib/mangband/game/f_info.txt
+lib/mangband/game/k_info.txt
+lib/mangband/game/r_info.txt
+lib/mangband/game/v_info.txt
+lib/mangband/text/attack.txt
+lib/mangband/text/birth.txt
+lib/mangband/text/command.txt
+lib/mangband/text/dead.txt
+lib/mangband/text/dungeon.txt
+lib/mangband/text/general.txt
+lib/mangband/text/help.hlp
+lib/mangband/text/mangband.hlp
+lib/mangband/text/news.txt
+lib/mangband/text/option.txt
+lib/mangband/text/version.txt
+lib/mangband/user/font-ami.prf
+lib/mangband/user/font-ibm.prf
+lib/mangband/user/font-win.prf
+lib/mangband/user/graf-ami.prf
+lib/mangband/user/graf-win.prf
+lib/mangband/user/options.prf
+lib/mangband/user/pref-acn.prf
+lib/mangband/user/pref-emx.prf
+lib/mangband/user/pref-ibm.prf
+lib/mangband/user/pref-lsl.prf
+lib/mangband/user/pref-mac.prf
+lib/mangband/user/pref-win.prf
+lib/mangband/user/pref-x11.prf
+lib/mangband/user/pref-xaw.prf
+lib/mangband/user/pref.prf
+lib/mangband/user/window.prf
+@dirrm lib/mangband/user
+@dirrm lib/mangband/save
+@dirrm lib/mangband/text
+@dirrm lib/mangband/game
+@dirrm lib/mangband/file
+@dirrm lib/mangband/data
+@dirrm lib/mangband

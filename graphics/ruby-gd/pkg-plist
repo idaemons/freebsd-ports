@@ -1,0 +1,16 @@
+%%RUBY_SITEARCHLIBDIR%%/GD.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gd/example.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gd/gdtestttf.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gd/webpng.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gd/Changes
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gd/INSTALL.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gd/TODO
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gd/manual.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gd/manual.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gd/manual_index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gd/readme.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gd/ja/INSTALL.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gd/ja/readme.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gd/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gd

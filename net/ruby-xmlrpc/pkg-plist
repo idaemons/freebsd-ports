@@ -1,0 +1,62 @@
+%%RUBY_SITELIBDIR%%/xmlrpc/base64.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/client.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/config.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/create.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/datetime.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/httpserver.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/marshal.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/parser.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/server.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/utils.rb
+@dirrm %%RUBY_SITELIBDIR%%/xmlrpc
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/call.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/chat/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/chat/client.rb.tk
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/chat/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/multicall.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml.fcgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml2.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/introspection/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/introspection/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/person.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/monitor
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/perf_async.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_fox.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_tk.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/responder.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/sandstorm/active.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/tcptunnel/README
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/validator/validator1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/webrick/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/webrick/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/wwwsrv/srv.conf
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/wwwsrv/srv.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/chat
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/introspection
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/raa
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/sandstorm
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/tcptunnel
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/validator
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/webrick
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/wwwsrv
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/ToDo
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/ChangeLog.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/base64.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/client.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/datetime.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/howto.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/howto.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/index.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/rubyStyle.css
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/server.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/xmlrpc

@@ -1,0 +1,26 @@
+--- Makefile.orig	Sat Jan 26 18:10:22 2002
++++ Makefile	Sat Jan 26 18:11:38 2002
+@@ -16,11 +16,11 @@
+ CONFIG_CED = 1
+ 
+ # i18n (internationalization)
+-CONFIG_I18N = 0
+-CONFIG_I18N_PATH = \"/usr/share/locale\"
++CONFIG_I18N = 1
++CONFIG_I18N_PATH = \"%%LOCALBASE%%/share/locale\"
+ 
+ # path for "make install"; don't forget the trailing "/"!
+-INSTALL_BINPREFIX = /usr/bin/
++INSTALL_BINPREFIX = %%PREFIX%%/bin/
+ 
+ # put your favourite C compiler here; mine is "gcc"
+ CC = gcc
+@@ -145,7 +145,7 @@
+ 	@echo "#define HAVE_MMAP 1" >> .config
+ 
+ retawq: $(OBJS)
+-	$(CC) $(OBJS) $(LCLT) $(LCLC) $(LCLM) -o retawq
++	$(CC) $(OBJS) $(LCLT) $(LCLC) $(LCLM) -o retawq ${LDFLAGS}
+ 
+ stripsyms:
+ 	-strip --strip-unneeded retawq

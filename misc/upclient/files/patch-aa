@@ -1,0 +1,20 @@
+--- src/Makefile.orig	Sun Jun 17 00:48:35 2001
++++ src/Makefile	Sun Nov 18 15:58:37 2001
+@@ -9,7 +9,7 @@
+ ####
+ # Location of config file (for example /etc/upclient.conf)
+ #
+-CONFIGFILE = upclient.conf
++CONFIGFILE = $(PREFIX)/etc/upclient.conf
+ 
+ 
+ ####
+@@ -113,7 +113,7 @@
+ 		CFLAGS='-DPLATFORM_WINNT -DCONFIGFILE=\"$(CONFIGFILE)\"' \
+ 		upclient
+ 
+-upclient: upclient.h
++upclient: upclient.h $(OBJECTS)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJECTS) upclient.c -o $(BINNAME)
+ 
+ clean:

@@ -1,0 +1,20 @@
+*** Makefile.in.orig	Fri Feb 19 19:24:40 1999
+--- Makefile.in	Fri Feb 19 19:27:05 1999
+***************
+*** 92,98 ****
+  
+  AUTOMAKE_OPTIONS = gnits 1.2h
+  
+! SUBDIRS = lib intl src doc man m4 po tests
+  
+  # Remove this file here (it is created via configure), not from within intl.
+  DISTCLEANFILES = intl/libintl.h
+--- 92,99 ----
+  
+  AUTOMAKE_OPTIONS = gnits 1.2h
+  
+! #SUBDIRS = lib intl src doc man m4 po tests
+! SUBDIRS = lib intl src man 
+  
+  # Remove this file here (it is created via configure), not from within intl.
+  DISTCLEANFILES = intl/libintl.h

@@ -1,15 +1,26 @@
 # New ports collection makefile for:    xmille
-# Version required:     2.0
 # Date created:         30 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/31 05:34:26 swallace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       xmille
-MASTER_SITES=	ftp://gatekeeper.dec.com/.b/X11-contrib/
-USE_IMAKE=      yes
-EXTRACT_SUFX=   .tar.Z
-NO_WRKSUBDIR=	yes
+PORTNAME=	xmille
+PORTVERSION=	2.0
+PORTREVISION=	1
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	games
+DISTNAME=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/Mille
+
+USE_IMAKE=	yes
+MAN1=		xmille.1
+
+post-extract:
+	@find ${WRKSRC} -name '*.[ao]' -delete
 
 .include <bsd.port.mk>

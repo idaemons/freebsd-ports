@@ -1,4 +1,2 @@
-@cwd /usr/X11R6
 bin/xmine
 lib/X11/app-defaults/Xmine
-man/man1/xmine.1

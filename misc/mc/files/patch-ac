@@ -1,0 +1,14 @@
+--- Make.common.in.orig	Sun Oct  8 18:58:39 2000
++++ Make.common.in	Fri Apr 20 12:26:51 2001
+@@ -18,5 +18,6 @@
+ bindir     = @bindir@
++sbindir    = $(exec_prefix)/sbin
+ sysconfdir = @sysconfdir@
+ datadir    = @datadir@
+-libdir	   = @libdir@
++libdir	   = @datadir@
+ mandir     = @mandir@
+@@ -60,2 +61,3 @@
+ XCPPFLAGS = @CPPFLAGS@ @MCCPPFLAGS@ -I.. \
++	-DSBINDIR=\""$(sbindir)/"\" \
+ 	-DBINDIR=\""$(bindir)/"\" \

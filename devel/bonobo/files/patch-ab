@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Wed Jan 23 17:40:22 2002
++++ Makefile.in	Wed Jan 23 17:40:55 2002
+@@ -166,10 +166,10 @@
+ 
+ NULL = 
+ 
+-SUBDIRS =  	macros intl 				idl 					libefs 					bonobo storage-modules 			monikers				components samples	 		gshell					tests doc po
++SUBDIRS =  	macros intl 				idl 					libefs 					bonobo storage-modules 			monikers				components samples	 		gshell					doc po
+ 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = bonoboConf.sh bonoboxConf.sh bonobox_printConf.sh
+ 
+ bonoboincludedir = $(includedir)/gnome-1.0

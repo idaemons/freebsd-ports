@@ -1,0 +1,25 @@
+--- vncviewer/Imakefile.orig	Tue Apr 30 09:07:31 2002
++++ vncviewer/Imakefile	Wed May 22 21:48:12 2002
+@@ -10,12 +10,12 @@
+ DEFINES = -DMITSHM
+ #endif
+ 
+-ZLIB_INC = -I/usr/local/include
+-JPEG_INC = -I/usr/local/include
++ZLIB_INC = -I%%LOCALBASE%%/include
++JPEG_INC = -I%%LOCALBASE%%/include
+ INCLUDES = -I../include -I. $(ZLIB_INC) $(JPEG_INC) -I/usr/include
+ VNCAUTH_LIB = ../libvncauth/libvncauth.a
+-ZLIB_LIB = -L/usr/local/lib -lz
+-JPEG_LIB = -L/usr/local/lib -ljpeg
++ZLIB_LIB = -L%%LOCALBASE%%/lib -lz
++JPEG_LIB = -L%%LOCALBASE%%/lib -ljpeg
+ 
+ DEPLIBS = XawClientDepLibs $(VNCAUTH_LIB)
+ LOCAL_LIBRARIES = XawClientLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB)
+@@ -39,4 +39,4 @@
+ 
+ OBJS = $(SRCS:.c=.o)
+ 
+-ComplexProgramTarget(vncviewer)
++ComplexProgramTargetNoMan(vncviewer)

@@ -1,16 +1,49 @@
-*** server/dda/voxware/auvoxware.c.orig	Thu Nov  3 11:24:11 1994
---- server/dda/voxware/auvoxware.c	Thu Nov  3 11:24:50 1994
-***************
-*** 755,760 ****
---- 755,765 ----
-  /*
-   * Setup soundcard at maximum audio quality.
-   */
-+ 
-+ #ifdef __FreeBSD__
-+ #define NO_16_BIT_SAMPLING
-+ #endif
-+ 
-  static void setupSoundcard(sndStat)
-  SndStat* sndStat;
-  {
+--- server/dda/voxware/auvoxware.c.orig	Fri Dec 28 16:33:46 2001
++++ server/dda/voxware/auvoxware.c	Fri Dec 28 16:58:50 2001
+@@ -156,7 +156,9 @@
+ 
+ #ifdef __FreeBSD__
+ # include <machine/soundcard.h>
+-# include <machine/pcaudioio.h>
++# ifdef __i386__
++#  include <machine/pcaudioio.h>
++# endif
+ #else
+ # ifdef __NetBSD__
+ #  include <sys/ioctl.h>
+@@ -624,7 +626,11 @@
+ 
+     if(sndStatOut.fd == -1)
+     {
++#ifdef __FreeBSD__
++       while ((sndStatOut.fd = open(sndStatOut.device, sndStatOut.howToOpen, 0666)) == -1 && wait)
++#else
+        while ((sndStatOut.fd = open(sndStatOut.device, sndStatOut.howToOpen|O_SYNC, 0666)) == -1 && wait)
++#endif
+        {
+            osLogMsg("openDevice: waiting on output device\n");
+            sleep(1);
+@@ -1269,6 +1275,11 @@
+ /*
+  * Setup soundcard at maximum audio quality.
+  */
++
++#ifdef __FreeBSD__
++#define NO_16_BIT_SAMPLING
++#endif
++
+ static void setupSoundcard(sndStatPtr)
+ SndStat* sndStatPtr;
+ {
+@@ -1425,7 +1436,11 @@
+ 	  osLogMsg("openDevice OUT %s mode %d\n", 
+ 		   sndStatOut.device, sndStatOut.howToOpen);
+ 	
++#ifdef __FreeBSD__
++	if ((fd = open(sndStatOut.device, sndStatOut.howToOpen, 0)) == -1)
++#else
+ 	if ((fd = open(sndStatOut.device, sndStatOut.howToOpen|O_SYNC, 0)) == -1)
++#endif
+ 	  {
+ 	    UNIDENTMSG;
+ 	    return AuFalse;

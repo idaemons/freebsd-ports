@@ -1,0 +1,34 @@
+# ex:ts=8
+# Ports collection makefile for:	mp3stat
+# Date created:			Mar 20, 2002
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mp3stat
+PORTVERSION=	2.5.6
+CATEGORIES=	audio
+MASTER_SITES=	http://safemode.homeip.net/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_GTK=	yes
+USE_GMAKE=	yes
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+
+.if defined(WITH_VORBIS)
+LIB_DEPENDS=	vorbis.1:${PORTSDIR}/audio/libvorbis
+MAKE_ENV+=	WITH_VORBIS="${WITH_VORBIS}"
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with Ogg/Vorbis support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_VORBIS=yes\""
+	@${ECHO_MSG}
+.endif
+
+.include <bsd.port.mk>

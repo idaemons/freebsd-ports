@@ -1,0 +1,23 @@
+etc/rc.d/rplayd.sh.sample
+@unexec if cmp %D/etc/rplay.hosts.sample %D/etc/rplay.hosts 2>/dev/null; then rm -f %D/etc/rplay.hosts; fi
+etc/rplay.hosts.sample
+@exec if test ! -f %D/etc/rplay.hosts; then cp -p %D/etc/rplay.hosts.sample %D/etc/rplay.hosts; fi
+bin/rplay
+bin/rptp
+sbin/rplayd
+include/rplay.h
+lib/librplay.a
+lib/librplay.so
+lib/librplay.so.1
+@unexec install-info --delete %D/info/RPLAY.info %D/info/dir
+@unexec install-info --delete %D/info/RPTP.info %D/info/dir
+@unexec install-info --delete %D/info/librplay.info %D/info/dir
+@unexec install-info --delete %D/info/rplayd.info %D/info/dir
+info/RPLAY.info
+info/RPTP.info
+info/librplay.info
+info/rplayd.info
+@exec install-info %D/info/RPLAY.info %D/info/dir
+@exec install-info %D/info/RPTP.info %D/info/dir
+@exec install-info %D/info/librplay.info %D/info/dir
+@exec install-info %D/info/rplayd.info %D/info/dir

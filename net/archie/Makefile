@@ -1,18 +1,20 @@
 # New ports collection makefile for:	archie
-# Version required:	1.4.1
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id:$
+# $FreeBSD$
 #
 
+PORTNAME=	archie
+PORTVERSION=	1.4.1
+CATEGORIES=	net
+MASTER_SITES=	ftp://ftp.uu.net/networking/info-service/archie/clients/
 DISTNAME=	c-archie-1.4.1-FIXED
-MASTER_SITES=	ftp://nic.sura.net/pub/archie/clients/
-WRKSRC=		${WRKDIR}/archie-1.4.1-FIX
 EXTRACT_SUFX=	.tar.Z
 
-pre-install:
-	mkdir -p ${PREFIX}/bin
-	mkdir -p ${PREFIX}/man/man1
+MAINTAINER=	ports@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/archie-1.4.1-FIX
+MAN1=		archie.1
 
 .include <bsd.port.mk>

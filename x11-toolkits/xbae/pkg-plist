@@ -1,0 +1,15 @@
+lib/libXbae-4.8.a
+lib/libXbae.a
+lib/libXbae.so
+lib/libXbae.so.8
+include/Xbae-4.8/Caption.h
+include/Xbae-4.8/CaptionP.h
+include/Xbae-4.8/Input.h
+include/Xbae-4.8/InputP.h
+include/Xbae-4.8/Clip.h
+include/Xbae-4.8/ClipP.h
+include/Xbae-4.8/Matrix.h
+include/Xbae-4.8/MatrixP.h
+include/Xbae-4.8/patchlevel.h
+@dirrm include/Xbae-4.8
+include/Xbae

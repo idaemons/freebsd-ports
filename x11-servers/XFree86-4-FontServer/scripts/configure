@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# This scripts work as following:
+# (1) cp current xf86site.def (it may be created by imake-4 ports) 
+#       to ${WRKDIR}/xc/config/cf.
+#     this means this ports use imake-4's config defaultly.
+# (2) Generate temporal config for compiling.
+#     Some configs, such as `ForceNormalLib', `FreeBSDBuildXprog', are
+#     used for compiling this ports localy. so these configs will be generated
+#     this scripts. these configs will be stored to `host.def' file.
+#     but this host.def will never install. use local only.
+
+ORIGDEF=$PREFIX/lib/X11/config/xf86site.def
+DESTDEF=$WRKDIR/xc/config/cf/xf86site.def
+ORIGHOSTDEF=$PREFIX/lib/X11/config/host.def
+LOCALDEF=$WRKDIR/.config
+HOSTDEF=$WRKDIR/xc/config/cf/host.def
+
+configure () {
+    # Use original host.def as initial config file
+    rm -f $LOCALDEF
+    grep -v '#define.*ProjectRoot' $ORIGHOSTDEF >> $LOCALDEF
+    echo "#define ProjectRoot $PREFIX" >> $LOCALDEF
+
+    if [ X$InstallFSConfig = "X" ]; then
+	InstallFSConfig=YES
+    fi
+
+    # It's good for FreeBSD ports/packages system.
+    echo "#define NothingOutsideProjectRoot YES" >> $LOCALDEF
+
+    # I want to set this line.
+    # but the probrem is too deep. not yet done.
+    # echo "#define InstallXserverSetUID NO" >> $LOCALDEF
+
+    # disable some configs: there are not used this ports
+    for i in BuildFonts \
+	Build75DpiFonts \
+	Build100DpiFonts \
+	BuildSpeedoFonts \
+	BuildType1Fonts \
+	BuildCIDFonts \
+	BuildCyrillicFonts \
+	BuildLatin2Fonts \
+	XF86Server \
+	XnestServer \
+	XVirtualFramebufferServer \
+	XprtServer \
+	LibHeaders \
+	ForceNormalLib \
+	XTrueTypeInstallCConvHeaders
+    do \
+	echo "#define $i NO" >> $LOCALDEF
+    done
+    echo "#define BuildServer YES" >> $LOCALDEF
+    echo "#define BuildFontServer YES" >> $LOCALDEF
+    echo "#define BuildServersOnly YES" >> $LOCALDEF
+    echo "#define InstallFSConfig $InstallFSConfig" >> $LOCALDEF
+    echo "#define FreeBSDBuildXfs YES" >> $LOCALDEF
+
+    cp -f $ORIGDEF $DESTDEF
+
+    # copy generated config to host.def
+    cp -f $LOCALDEF $HOSTDEF
+}
+
+cp ${X11BASE}/lib/X11/config/version.def ${WRKSRC}/config/cf
+configure
+exit 0

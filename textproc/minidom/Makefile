@@ -1,0 +1,31 @@
+# ex:ts=8
+# New ports collection makefile for:	minidom
+# Date created:			Aug 13, 2001
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	minidom
+PORTVERSION=	0.1.2
+PORTREVISION=	1
+CATEGORIES=	textproc
+MASTER_SITES=	http://www.cs.unibo.it/helm/mml-widget/sources/
+
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
+		iconv.3:${PORTSDIR}/converters/libiconv
+
+USE_GLIB=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-libxml2=yes
+INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${PERL} -pi -e 's|-lglib|-lglib12|g ; \
+		 s|glib-config|${GLIB_CONFIG}|g' ${WRKSRC}/configure
+
+.include <bsd.port.mk>
