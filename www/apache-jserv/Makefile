@@ -1,0 +1,42 @@
+# New ports collection makefile for:	apache mod_jserv
+# Version required:	1.1
+# Date created:         1999/05/29
+# Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
+#
+# $FreeBSD$
+
+DISTNAME=	ApacheJServ-1.1
+PKGNAME=	apache-jserv-1.1
+CATEGORIES=	www java
+MASTER_SITES=	http://java.apache.org/jserv/dist/
+
+MAINTAINER=	greg@greg.rim.or.jp
+
+BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk\
+		${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13\
+		${LOCALBASE}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
+RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk\
+		${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13\
+		${LOCALBASE}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
+
+USE_LIBTOOL=	yes
+USE_GMAKE=	yes
+CONFIGURE_ENV=	MAKE=${LOCALBASE}/bin/${GMAKE}
+CONFIGURE_ARGS=	--prefix=${PREFIX}\
+		--libexecdir=${LOCALBASE}/libexec/apache\
+		--libdir=${LOCALBASE}/libexec/apache\
+		--with-logdir=/var/log\
+		--sysconfdir=${PREFIX}/etc/apache\
+		--with-jdk-home=${LOCALBASE}/jdk1.1.8\
+		--with-JSDK=${LOCALBASE}/share/java/classes/jsdk.jar\
+		--with-java=${LOCALBASE}/jdk1.1.8/bin/java\
+		--with-javac=${LOCALBASE}/jdk1.1.8/bin/javac\
+		--with-servlets=${PREFIX}/share/java/servlets\
+		--with-gnu-ld\
+		--enable-compressed-jar\
+		--enable-EAPI
+
+post-install:
+	@${CAT} ${PKGDIR}/MESSAGE
+
+.include <bsd.port.mk>

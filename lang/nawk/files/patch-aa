@@ -1,0 +1,25 @@
+--- makefile.orig	Fri Jul 16 16:47:54 1999
++++ makefile	Wed Mar  1 02:11:09 2000
+@@ -22,16 +22,15 @@
+ # THIS SOFTWARE.
+ # ****************************************************************/
+ 
+-CFLAGS = -g
+-CFLAGS = -O2
+-CFLAGS =
++#CFLAGS = -g
++CFLAGS ?= -O2
++#CFLAGS =
+ 
+-CC = gcc -Wall -g
+-CC = /opt/pure/purify/purify cc
+-CC = cc
++CC ?= gcc -Wall -g
++#CC = /opt/pure/purify/purify cc
++#CC = cc
+ 
+ YACC = bison -y
+-YACC = yacc
+ YFLAGS = -d
+ 
+ OFILES = b.o main.o parse.o proctab.o tran.o lib.o run.o lex.o

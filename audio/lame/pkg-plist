@@ -1,0 +1,10 @@
+bin/lame
+share/doc/lame/contributors.html
+share/doc/lame/history.html
+share/doc/lame/index.html
+share/doc/lame/lame.css
+share/doc/lame/node5.html
+share/doc/lame/node6.html
+share/doc/lame/node7.html
+share/doc/lame/switchs.html
+@dirrm share/doc/lame

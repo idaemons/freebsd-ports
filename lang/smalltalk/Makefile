@@ -1,23 +1,26 @@
 # New ports collection makefile for:	smalltalk
-# Version required:	1.1.1
+# Version required:	1.6.2
 # Date created:		09 Feb 1995
 # Whom:			gpalmer
 #
-# $Id$
+# $FreeBSD$
 #
 
-DISTNAME=	smalltalk-1.1.1
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
-MAINTAINER=	gpalmer@FreeBSD.ORG
+DISTNAME=	smalltalk-1.6.2
+CATEGORIES=	lang
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	smalltalk
 
-pre-configure:
-	@cp ${FILESDIR}/m-fbsd-2.h ${WRKSRC}/config/m-fbsd-2.h
-	@(cd ${WRKSRC} ; ./config.mst fbsd-2)
-	@${TOUCH} ${TOUCH_FLAGS} ${CONFIGURE_COOKIE}
+MAINTAINER=	alex@big.endian.de
 
-install:
-	@echo ">> The install target for smalltalk-1.1.1 is interactive."
-	@echo ">> Please read the file mst.texinfo for more information."
-	@${DO_NADA}
+BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-optimize --with-readline
+
+MAN1=		gst.1
+
+# Set all-target to test the stuff
+ALL_TARGET=	all check
 
 .include <bsd.port.mk>

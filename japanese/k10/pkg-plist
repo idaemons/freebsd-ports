@@ -1,0 +1,9 @@
+%%FONTSDIR%%/5x10B.pcf.gz
+%%FONTSDIR%%/5x10a.pcf.gz
+%%FONTSDIR%%/5x10rk.pcf.gz
+%%FONTSDIR%%/knj10.pcf.gz
+%%FONTSDIR%%/knj10B.pcf.gz
+share/doc/naga10/README
+@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@dirrm share/doc/naga10

@@ -1,0 +1,36 @@
+--- Makefile.in.orig	Fri Dec 31 03:13:50 1999
++++ Makefile.in	Mon Jan  3 23:54:14 2000
+@@ -5,13 +5,13 @@
+ sbindir = @sbindir@
+ mandir = @mandir@
+ srcdir = @srcdir@
+-libdir = @libdir@/nmap
++libdir = @libdir@
+ deskdir = $(prefix)/share/gnome/apps/Utilities
+ 
+ CC = @CC@
+ CCOPT = 
+ LIBPCAPDIR = @libpcapdir@
+-INCLS = -I. -I$(LIBPCAPDIR)
++INCLS = -I. # -I$(LIBPCAPDIR)
+ DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DLIBDIR=\"$(libdir)\"
+ CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
+ # CFLAGS = -g -Wall $(DEFS) $(INCLS)
+@@ -36,7 +36,7 @@
+ 
+ all: $(TARGET)
+ 
+-$(TARGET): $(DEPS) @PCAP_DEPENDS@ $(OBJS) nmapfe/nmapfe
++$(TARGET): $(DEPS) $(OBJS) nmapfe/nmapfe # @PCAP_DEPENDS@
+ 	@echo Compiling nmap
+ 	rm -f $@
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+@@ -128,7 +128,7 @@
+ 	$(MAKEDEPEND) $(INCLS) -s "# DO NOT DELETE" -- $(DEFS) -- $(SRCS)
+ 
+ install: all
+-	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(libdir) $(deskdir)
++	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(libdir)
+ 	$(INSTALL) -c -m 755 nmap $(bindir)/nmap
+ 	@echo "If the next command failes -- you cannot use the X front end"
+ 	-test -f nmapfe/nmapfe && $(INSTALL) -c -m 755 nmapfe/nmapfe $(bindir)/nmapfe && $(SHTOOL) mkln -f -s $(bindir)/nmapfe $(bindir)/xnmap && $(INSTALL) -c -m 644 nmapfe.desktop $(deskdir)/nmapfe.desktop

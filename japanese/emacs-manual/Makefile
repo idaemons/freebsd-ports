@@ -1,0 +1,61 @@
+# New ports collection makefile for:    ja-emacs-manual
+# Version required:     13
+# Date created:         14 April 1999
+# Whom:                 OKAZAKI Tetsurou
+#
+# $FreeBSD$
+#
+
+DISTNAME=	emacs-20.5-man-jp
+PKGNAME=	ja-emacs-manual-13.2000.01.13
+CATEGORIES=	japanese
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/emacs-20.x/ \
+		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	emacs
+DISTFILES=	${DISTNAME}.tgz ${EMACS_ARC}
+
+MAINTAINER=	okazaki@be.to
+
+BUILD_DEPENDS=	${EMACS}:${PORTSDIR}/editors/emacs20
+
+ERRATA_FILE=	Errata-2000-01-13
+
+EXTRACT_ONLY=	${DISTNAME}.tgz
+EMACS_DISTNAME= emacs-20.6
+EMACS_ARC=	${EMACS_DISTNAME}.tar.gz
+EMACS_SRCDIR=	${WRKDIR}/${EMACS_DISTNAME}
+EXTRACT_FILES=	${EMACS_DISTNAME}/man/ack.texi \
+		${EMACS_DISTNAME}/lisp/textmodes/texinfmt.el
+
+# We must apply this patch at first.
+EXTRA_PATCHES=	${WRKSRC}/patch-texinfmt.el
+
+.if defined(ERRATA_FILE) && !empty(ERRATA_FILE)
+DISTFILES+=	${ERRATA_FILE}.tgz
+EXTRACT_ONLY+=	${ERRATA_FILE}.tgz
+EXTRA_PATCHES+=	${WRKDIR}/${ERRATA_FILE}
+.endif
+
+# We use emacs20 to format texinfo files.
+EMACS=		emacs-20.6
+
+MAKE_ENV=	EMACS="${EMACS}"
+
+post-extract:
+	@${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
+	@${CP} ${FILESDIR}/PORT_TEXIFMT.MK ${WRKSRC}
+	@(cd ${WRKDIR} && \
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${EMACS_ARC} ${EXTRACT_AFTER_ARGS} ${EXTRACT_FILES} ; \
+	${CP} ${EXTRACT_FILES} ${WRKSRC})
+	@${MKDIR} ${WRKDIR}/info
+
+pre-build:
+	@${ECHO_MSG} "===>   Now start formatting texinfo. Please wait."
+
+post-build:
+	@${ECHO_MSG} "===>   Done."
+
+post-install:
+	install-info ${PREFIX}/info/emacs-ja ${PREFIX}/info/dir
+
+.include <bsd.port.mk>

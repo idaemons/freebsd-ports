@@ -1,0 +1,30 @@
+--- Tgif.tmpl.orig	Thu Jan 20 12:56:09 2000
++++ Tgif.tmpl	Thu Jan 20 12:59:33 2000
+@@ -48,7 +48,7 @@
+ XCOMM BINDIR	= /u/halfmoon/bin
+ XCOMM MANPATH	= /u/halfmoon/man
+ XCOMM TGIFDIR	= /u/halfmoon/lib/X11/tgif
+-LOCALEDIR	= /usr/share/locale
++LOCALEDIR	= $(PREFIX)/share/locale
+ DIRDEFINES	= -DTGIF_PATH=\"$(TGIFDIR)\" -DPSFILE_MOD=0664 \@@\
+                   -DLOCALEDIR=\"$(LOCALEDIR)\" \@@\
+                   -DTELEPORT_ATTR=\"warp_to=\" -DTMP_DIR=\"/tmp/\" \@@\
+@@ -59,14 +59,16 @@
+                   -DTEXT_FILE_EXT=\"txt\" -DPIN_FILE_EXT=\"pin\"
+ MISCDEFINES	= -D_BACKGROUND_DONT_FORK -D_USE_XDRAWPOINT_TO_PUT_A_POINT \@@\
+                   -D_USE_PS_ADOBE_STRING=\"3.0/3.0\"
+-MOREDEFINES	=
++MOREDEFINES	= -DUSE_XT_INITIALIZE -D_ENABLE_NLS
+ 
+ XCOMM ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ XCOMM Please see Imakefile for more defines to be added to MOREDEFINES above
+ XCOMM ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
+ DEPLIBS		= $(DEPXLIB)
+-LOCAL_LIBRARIES	= $(XLIB)
++LOCAL_LIBRARIES	= $(XLIB) $(XTOOLLIB) $(XLIB)
+ XCOMM LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
+ XCOMM SYS_LIBRARIES	= -ldl -lm
+ SYS_LIBRARIES	= -lm
++EXTRA_INCLUDES	+= -I$(LOCALBASE)/include
++EXTRA_LIBRARIES	+= -L$(LOCALBASE)/lib -lintl

@@ -1,11 +1,5 @@
-@cd /usr/X11R6
-@owner games
-@mode 555
 bin/xboing
-@mode 666
-lib/X11/xboing/xboing.scr
-@mode 444
-lib/X11/xboing/problems.doc
+lib/X11/xboing/.xboing.scr
 lib/X11/xboing/levels/demo.data
 lib/X11/xboing/levels/editor.data
 lib/X11/xboing/levels/level01.data
@@ -63,5 +57,79 @@ lib/X11/xboing/levels/level52.data
 lib/X11/xboing/levels/level53.data
 lib/X11/xboing/levels/level54.data
 lib/X11/xboing/levels/level55.data
+lib/X11/xboing/levels/level56.data
+lib/X11/xboing/levels/level57.data
+lib/X11/xboing/levels/level58.data
+lib/X11/xboing/levels/level59.data
+lib/X11/xboing/levels/level60.data
+lib/X11/xboing/levels/level61.data
+lib/X11/xboing/levels/level62.data
+lib/X11/xboing/levels/level63.data
+lib/X11/xboing/levels/level64.data
+lib/X11/xboing/levels/level65.data
+lib/X11/xboing/levels/level66.data
+lib/X11/xboing/levels/level67.data
+lib/X11/xboing/levels/level68.data
+lib/X11/xboing/levels/level69.data
+lib/X11/xboing/levels/level70.data
+lib/X11/xboing/levels/level71.data
+lib/X11/xboing/levels/level72.data
+lib/X11/xboing/levels/level73.data
+lib/X11/xboing/levels/level74.data
+lib/X11/xboing/levels/level75.data
+lib/X11/xboing/levels/level76.data
+lib/X11/xboing/levels/level77.data
+lib/X11/xboing/levels/level78.data
+lib/X11/xboing/levels/level79.data
+lib/X11/xboing/levels/level80.data
 lib/X11/xboing/levels/new.data
-man/man1/xboing.1.gz
+lib/X11/xboing/sounds/Doh1.au
+lib/X11/xboing/sounds/Doh2.au
+lib/X11/xboing/sounds/Doh3.au
+lib/X11/xboing/sounds/Doh4.au
+lib/X11/xboing/sounds/ammo.au
+lib/X11/xboing/sounds/applause.au
+lib/X11/xboing/sounds/ball2ball.au
+lib/X11/xboing/sounds/balllost.au
+lib/X11/xboing/sounds/ballshot.au
+lib/X11/xboing/sounds/boing.au
+lib/X11/xboing/sounds/bomb.au
+lib/X11/xboing/sounds/bonus.au
+lib/X11/xboing/sounds/buzzer.au
+lib/X11/xboing/sounds/click.au
+lib/X11/xboing/sounds/ddloo.au
+lib/X11/xboing/sounds/evillaugh.au
+lib/X11/xboing/sounds/game_over.au
+lib/X11/xboing/sounds/gate.au
+lib/X11/xboing/sounds/hithere.au
+lib/X11/xboing/sounds/hypspc.au
+lib/X11/xboing/sounds/intro.au
+lib/X11/xboing/sounds/key.au
+lib/X11/xboing/sounds/looksbad.au
+lib/X11/xboing/sounds/metal.au
+lib/X11/xboing/sounds/mgun.au
+lib/X11/xboing/sounds/ouch.au
+lib/X11/xboing/sounds/paddle.au
+lib/X11/xboing/sounds/ping.au
+lib/X11/xboing/sounds/shark.au
+lib/X11/xboing/sounds/shoot.au
+lib/X11/xboing/sounds/shotgun.au
+lib/X11/xboing/sounds/spring.au
+lib/X11/xboing/sounds/stamp.au
+lib/X11/xboing/sounds/sticky.au
+lib/X11/xboing/sounds/supbons.au
+lib/X11/xboing/sounds/toggle.au
+lib/X11/xboing/sounds/tone.au
+lib/X11/xboing/sounds/touch.au
+lib/X11/xboing/sounds/wallsoff.au
+lib/X11/xboing/sounds/warp.au
+lib/X11/xboing/sounds/weeek.au
+lib/X11/xboing/sounds/whizzo.au
+lib/X11/xboing/sounds/whoosh.au
+lib/X11/xboing/sounds/wzzz.au
+lib/X11/xboing/sounds/wzzz2.au
+lib/X11/xboing/sounds/youagod.au
+lib/X11/xboing/problems.doc
+@dirrm lib/X11/xboing/sounds
+@dirrm lib/X11/xboing/levels
+@dirrm lib/X11/xboing

@@ -1,0 +1,47 @@
+--- ../php/configure.orig	Fri Feb 25 21:49:48 2000
++++ ../php/configure	Tue Feb 29 22:29:05 2000
+@@ -5214,26 +5214,10 @@
+   if test -n "$unique" && test "`eval $cmd`" = "" ; then
+     eval "LIBPATH$unique=set"
+     
+-      EXTRA_LIBS="$EXTRA_LIBS -L$ai_p"
+-      if test -n "$APXS" ; then
+-        RPATHS="$RPATHS ${apxs_runpath_switch}$ai_p'"
+-      else
+-        RPATHS="$RPATHS ${ld_runpath_switch}$ai_p"
+-      fi
+-    
+-  fi
++    EXTRA_LIBS="$EXTRA_LIBS $ai_p/libc-client4.a"
+ 
+   fi
+ 
+-  
+-  
+-  unique=`echo $ac_n "c-client4$ac_c" | tr -c -d a-zA-Z0-9`
+-  cmd="echo $ac_n \"\$LIBRARY$unique$ac_c\""
+-  if test -n "$unique" && test "`eval $cmd`" = "" ; then
+-    eval "LIBRARY$unique=set"
+-    
+-    EXTRA_LIBS="$EXTRA_LIBS -lc-client4"
+-  
+   fi
+ 
+ 
+@@ -8961,7 +8945,7 @@
+    	fi
+     SYBASE_CT_INCLUDE=-I$SYBASE_CT_INCDIR
+     SYBASE_CT_LFLAGS="-L$SYBASE_CT_LIBDIR"
+-    SYBASE_CT_LIBS="-lcs -lct -lcomn -lintl"
++    SYBASE_CT_LIBS="-lct"
+     old_LDFLAGS=$LDFLAGS
+     LDFLAGS="$LDFLAGS -L$SYBASE_CT_LIBDIR"
+     echo $ac_n "checking for netg_errstr in -ltcl""... $ac_c" 1>&6
+@@ -9002,7 +8986,6 @@
+    SYBASE_CT_LIBS="$SYBASE_CT_LIBS -ltcl" 
+ else
+   echo "$ac_t""no" 1>&6
+- SYBASE_CT_LIBS="$SYBASE_CT_LIBS -lsybtcl" 
+ fi
+ 
+     echo $ac_n "checking for insck__getVdate in -linsck""... $ac_c" 1>&6

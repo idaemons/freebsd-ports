@@ -1,0 +1,43 @@
+--- ripit.pl.orig	Wed Sep  1 13:51:06 1999
++++ ripit.pl	Wed Sep  1 13:53:12 1999
+@@ -26,10 +26,10 @@
+ # User configurable variables
+ #
+ 
+-$cddev 		= "/dev/cdrom";		# CD Audio device
+-$outputdir 	= "/dosc/cdrip/";	# Where the MP3s should go
++$cddev 		= "/dev/rcd0c";		# CD Audio device
++$outputdir 	= "/home/mp3/";		# Where the MP3s should go
+ $bitrate	= 160;			# Bitrate for MP3s
+-$encoder	= 1; 			# 0 - Bladeenc, 1 - Lame
++$encoder	= 0; 			# 0 - Bladeenc, 1 - Lame
+ 
+ $use_underscore = 0;	# Use _ instead of spaces in filenames (1 yes, 0 no)
+ 
+@@ -329,14 +329,11 @@
+ 
+     &printflush(RIPLOG,"Ripping $tracklist[$_ - 1]...\n");
+ 
+-    if (system("cdparanoia -d $cddev $riptrackno \"$riptrackname.rip\"")) {
+-       &printflush(RIPLOG,"cdparanoia failed on $tracklist[$_ - 1]\n");
+-       die "cdparanoia failed on $tracklist[$_ - 1]";
++    if (system("tosha -d $cddev -f wav -t $riptrackno -o \"$riptrackname.wav\"")) {
++       &printflush(RIPLOG,"tosha failed on $tracklist[$_ - 1]\n");
++       die "tosha failed on $tracklist[$_ - 1]";
+     }
+ 
+-    # Rename rip file to a wav for encoder
+-    rename "$riptrackname.rip","$riptrackname.wav";
+-
+     &printflush(RIPLOG,"Rip complete $tracklist[$_ - 1]\n");
+ 
+     # Start the Encoder in the background. but only once
+@@ -367,7 +364,7 @@
+     print "\nMP3 Encoding track ".$ncount." of ".($#seltrack + 1)."\n";
+     &printflush(RIPLOG,"Encoding $tracklist[$_ - 1]...\n");
+ 
+-    # Keep looping until the file appears, ie wait for cdparanoia
++    # Keep looping until the file appears, ie wait for tosha
+     # timeout after 30 minutes
+     $x=0;
+     while( ! -r "$riptrackname.wav" ){ 

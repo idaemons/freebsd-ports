@@ -1,0 +1,4 @@
+bin/heyu
+share/examples/heyu/x10config.sample
+share/examples/heyu/x10sched.conf.sample
+@dirrm share/examples/heyu

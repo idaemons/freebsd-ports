@@ -1,0 +1,13 @@
+--- Makefile.orig	Tue Jul  6 15:38:07 1999
++++ Makefile	Tue Aug 10 00:24:52 1999
+@@ -1,7 +1,8 @@
+ 
+ SHELL=/bin/sh
+-CC=gcc
+-CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce
++CC?=gcc
++CFLAGS?=-O2
++CFLAGS+=-Wall -Winline -fomit-frame-pointer -fno-strength-reduce
+ 
+ OBJS= blocksort.o  \
+       huffman.o    \

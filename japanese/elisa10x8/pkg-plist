@@ -1,0 +1,8 @@
+%%FONTSDIR%%/elisau10.pcf.gz
+%%FONTSDIR%%/clR5x8.pcf.gz
+share/doc/elisa8/elisa100.doc
+share/doc/elisa8/elisau10.doc
+share/doc/elisa8/hosoku.txt
+@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@dirrm share/doc/elisa8

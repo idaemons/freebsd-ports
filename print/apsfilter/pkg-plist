@@ -1,0 +1,35 @@
+apsfilter/SETUP
+apsfilter/bin/apsfilter
+apsfilter/bin/setup_dvips.sh
+apsfilter/filter/.keep_me
+apsfilter/global/GLOBAL.sh
+apsfilter/lib/redir_gs_msg.ps
+apsfilter/setup/README
+apsfilter/setup/compile
+apsfilter/setup/devices.txt
+apsfilter/setup/filtersetup
+apsfilter/setup/mksymlinks
+apsfilter/setup/test.ps
+apsfilter/template/README
+apsfilter/template/apsfilterrc
+share/doc/apsfilter/FAQ
+share/doc/apsfilter/HOWTO-BUGREPORTS
+share/doc/apsfilter/README.TeX
+share/doc/apsfilter/TROUBLESHOOTING
+share/doc/apsfilter/WHAT_AM_I
+share/doc/apsfilter/color
+share/doc/apsfilter/deskjets
+share/doc/apsfilter/deskjets.features
+share/doc/apsfilter/features
+share/doc/apsfilter/methods
+share/doc/apsfilter/paper
+share/doc/apsfilter/printer
+share/doc/apsfilter/readme.hp8
+@dirrm apsfilter/bin
+@dirrm apsfilter/filter
+@dirrm apsfilter/global
+@dirrm apsfilter/lib
+@dirrm apsfilter/setup
+@dirrm apsfilter/template
+@dirrm apsfilter
+@dirrm share/doc/apsfilter

@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# usage: $0 DIRNAME
+
+dir=$1
+
+cd /tmp/depends
+if [ "$(echo $(/bin/ls | wc -c))" != 0 ]; then
+  for i in *.tgz; do
+    pkg_add -f $i >/dev/null 2>&1 || exit 1
+  done
+fi
+
+cd $dir || exit 1
+echo "maintained by: $(make maintainer)"
+echo "build started at $(date)"
+echo "================================================================"
+
+xvfb=0
+if which -s Xvfb; then
+  xvfb=1
+  pid=$$
+  X11BASE=$(which Xvfb | sed -e 's./bin/Xvfb..')
+  Xvfb :${pid} -fp ${X11BASE}/lib/X11/fonts/misc &
+  DISPLAY=:${pid}
+  export DISPLAY
+fi
+
+if make package; then
+  echo "0" > /tmp/status
+else
+  echo "1" > /tmp/status
+fi
+
+if [ ${xvfb} = 1 ]; then
+  kill $(jobid %1)
+fi
+
+echo "================================================================"
+echo -n "build ended at "
+date
+
+exit 0

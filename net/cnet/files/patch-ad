@@ -1,0 +1,31 @@
+--- src/compile.c.orig	Wed Apr 21 23:26:23 1999
++++ src/compile.c	Fri Mar  3 07:16:22 2000
+@@ -2,6 +2,7 @@
+ 
+ #include <fcntl.h>
+ #include <sys/stat.h>
++#include <dlfcn.h>
+ 
+ #if	!defined(MAXPATHLEN)
+ #define	MAXPATHLEN	1024
+@@ -26,6 +27,9 @@
+ #elif	defined(USE_IRIX5)
+ #include "irix5/compile.c"
+ 
++#elif	defined(USE_FREEBSD)
++#include "freebsd/compile.c"
++
+ #endif
+ 
+ 
+@@ -141,6 +145,10 @@
+ {
+ 
+ #define	RECIEVE		"[Rr][Ee][Cc][IiEe][Ee][Vv]"
++
++#if	defined(USE_FREEBSD)
++#include	<unistd.h>
++#endif
+ 
+ #if	defined(SVR4) || defined(__svr4__)
+ #include <regexpr.h>

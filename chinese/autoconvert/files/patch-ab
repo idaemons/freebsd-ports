@@ -1,0 +1,14 @@
+--- hzconvert/Makefile.orig	Wed Jan  5 14:33:47 2000
++++ hzconvert/Makefile	Wed Jan  5 14:34:35 2000
+@@ -2,10 +2,10 @@
+ CFLAGS+=-O2
+ #OBJS=b2g.o b2u.o g2u.o hztogb.o b2g_tables.o b2u_tables.o g2u_tables.o io.o unicode.o
+ OBJS=b2g.o b2u.o g2u.o hz2gb.o b2g_tables.o b2u_tables.o g2u_tables.o io.o unicode.o
++all:libhzconvert.a
+ %.o:%c
+ 	$(CC) $(CFLAGS) -c $<
+ 
+-all:libhzconvert.a
+ libhzconvert.a:$(OBJS)
+ 	ar rs  libhzconvert.a $(OBJS)
+ clean:

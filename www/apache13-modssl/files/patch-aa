@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jan 22 21:55:19 2000
++++ configure	Sat Jan 22 21:59:01 2000
+@@ -1198,7 +1198,7 @@
+     conf_user="nobody"
+ fi
+ if [ "x$conf_group" = "x" ]; then
+-    conf_group="\\\\#-1"
++    conf_group="nobody"
+ fi
+ 
+ ##

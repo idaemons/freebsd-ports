@@ -1,0 +1,17 @@
+bin/afio
+share/doc/afio/README
+share/doc/afio/SCRIPTS
+share/examples/afio/DONTDUMP
+share/examples/afio/README
+share/examples/afio/afiodump.example
+share/examples/afio/backup
+share/examples/afio/gnupg_read
+share/examples/afio/gnupg_write
+share/examples/afio/pgp_read
+share/examples/afio/pgp_write
+share/examples/afio/restore
+share/examples/afio/tapechange
+share/examples/afio/x.dot
+share/examples/afio/x.home
+@dirrm share/doc/afio
+@dirrm share/examples/afio

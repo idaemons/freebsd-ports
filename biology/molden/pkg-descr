@@ -1,0 +1,17 @@
+If you want to re-build with your own customization, 
+define `DONOTUSE_ORIGINALBINARY', such as:
+  % make DONOTUSE_ORIGINALBINARY=yes
+
+Visualizing the results of molecular orbital calculations
+  MO program:  gaussian, gamess, mopac
+  display molecule in 3D:  geo-opt, single-point, 
+      nomal mode ... animation
+  density:  contour plot, 3D view
+      electron density, MO coefficient
+
+Everything what you want about MO calculation can be seen.
+
+WWW: http://www.caos.kun.nl/~schaft/molden/molden.html
+
+--
+rmiya

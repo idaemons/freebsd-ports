@@ -1,35 +1,156 @@
-@cwd /usr/local
-lib/news
-libexec/news
 @comment Package is not complete without minimal /var/news installation :-(
 @comment Basically just in.* and out.*    /var/news might be a symbolic link
 @comment and it might not exist yet :-(
-@exec ln -s /usr/local/newsspool /var/news
+@exec ln -sf /usr/local/newsspool /var/news
 @exec mkdir -p /usr/local/newsspool/in.coming/bad
 @exec cd /usr/local/newsspool; mkdir -p out.going out.master out.nntp
-@cwd man/man1
-checknews.1cn
-inews.1cn
-postnews.1cn
-readnews.1cn
-@cwd ../man5
-controlperm.5
-news.5
-newsctl.5
-newsdb.5
-newsoverview.5
-newssys.5
-@cwd ../man8
-cnewsdo.8cn
-expire.8cn
-explode.8cn
-mergeactive.8
-mkhistory.8cn
-newsaux.8cn
-newsbatch.8cn
-newsmail.8cn
-newsmaint.8cn
-newsoverview.8
-relaynews.8cn
-report.8cn
-rnews.8cn
+bin/checknews
+bin/cnewsdo
+bin/inews
+bin/injnews
+bin/postnews
+bin/readnews
+include/dbz.h
+lib/libcnews.a
+@exec ranlib %D/%F
+news/cnewsbin/batch/batchcheck
+news/cnewsbin/batch/batcher
+news/cnewsbin/batch/batchih
+news/cnewsbin/batch/batchra
+news/cnewsbin/batch/batchsm
+news/cnewsbin/batch/batchsplit
+news/cnewsbin/batch/batchsplitter
+news/cnewsbin/batch/bencode
+news/cnewsbin/batch/bpfind
+news/cnewsbin/batch/c7encode
+news/cnewsbin/batch/compcun
+news/cnewsbin/batch/nencode
+news/cnewsbin/batch/sendbatches
+news/cnewsbin/batch/usenntpxmit
+news/cnewsbin/batch/viainews
+news/cnewsbin/batch/viamail
+news/cnewsbin/batch/viarsh
+news/cnewsbin/batch/viauux
+news/cnewsbin/canonhdr
+news/cnewsbin/canonsys.awk
+news/cnewsbin/ctime
+news/cnewsbin/ctl/checkgroups
+news/cnewsbin/ctl/newgroup
+news/cnewsbin/ctl/rmgroup
+news/cnewsbin/ctl/sendsys
+news/cnewsbin/ctl/version
+news/cnewsbin/dbz
+news/cnewsbin/dbzinfo
+news/cnewsbin/decompressors/bdecode
+news/cnewsbin/decompressors/bunzip2
+news/cnewsbin/decompressors/c7decode
+news/cnewsbin/decompressors/gunzip
+news/cnewsbin/dospacefor
+news/cnewsbin/expire/doexpire
+news/cnewsbin/expire/expire
+news/cnewsbin/expire/expireiflow
+news/cnewsbin/expire/upact
+news/cnewsbin/getabsdate
+news/cnewsbin/gngp
+news/cnewsbin/inject/actflag
+news/cnewsbin/inject/defaults
+news/cnewsbin/inject/defhdrs.awk
+news/cnewsbin/inject/inews
+news/cnewsbin/inject/injnews
+news/cnewsbin/inject/lines
+news/cnewsbin/inject/modroute
+news/cnewsbin/inject/pnews
+news/cnewsbin/inject/postnews
+news/cnewsbin/inject/tear
+news/cnewsbin/input/bdecode
+news/cnewsbin/input/bunzip2
+news/cnewsbin/input/c7decode
+news/cnewsbin/input/cunbatch
+news/cnewsbin/input/newsrun
+news/cnewsbin/input/newsrunning
+news/cnewsbin/input/newsspool
+news/cnewsbin/input/recenews
+news/cnewsbin/input/recpnews
+news/cnewsbin/input/rnews
+news/cnewsbin/lock
+news/cnewsbin/maint/act.to.times
+news/cnewsbin/maint/adddirs
+news/cnewsbin/maint/addgroup
+news/cnewsbin/maint/addmissing
+news/cnewsbin/maint/badexpiry
+news/cnewsbin/maint/checkactive
+news/cnewsbin/maint/delgroup
+news/cnewsbin/maint/histdups
+news/cnewsbin/maint/histfrom
+news/cnewsbin/maint/histinfo
+news/cnewsbin/maint/locknews
+news/cnewsbin/maint/logroll
+news/cnewsbin/maint/mergeactive
+news/cnewsbin/maint/mkhistory
+news/cnewsbin/maint/newsboot
+news/cnewsbin/maint/newsdaily
+news/cnewsbin/maint/newsflag
+news/cnewsbin/maint/newsfrom
+news/cnewsbin/maint/newshist
+news/cnewsbin/maint/newswatch
+news/cnewsbin/maint/spaceshort
+news/cnewsbin/mkpdir
+news/cnewsbin/namecheck.awk
+news/cnewsbin/newshostname
+news/cnewsbin/newslock
+news/cnewsbin/nov/domkov
+news/cnewsbin/nov/expov
+news/cnewsbin/nov/expovguts
+news/cnewsbin/nov/initov
+news/cnewsbin/nov/mkov
+news/cnewsbin/nov/ovsplit
+news/cnewsbin/now
+news/cnewsbin/queuelen
+news/cnewsbin/relay/delsendsys
+news/cnewsbin/relay/delversion
+news/cnewsbin/relay/dodelayed
+news/cnewsbin/relay/doexplode
+news/cnewsbin/relay/explode
+news/cnewsbin/relay/newsreply
+news/cnewsbin/relay/relaynews
+news/cnewsbin/relay/relayrun
+news/cnewsbin/report
+news/cnewsbin/sizeof
+news/cnewsbin/spacefor
+news/cnewsbin/staleness
+news/cnewsbin/touchlock
+news/cnewsbin/unlock
+news/cnewsbin/pgpverify
+news/cnewsbin/config
+news/lib/active
+news/lib/active.times
+news/lib/batchparms
+news/lib/controlperm
+news/lib/explist
+news/lib/history
+news/lib/history.dir
+news/lib/history.pag
+news/lib/inews
+news/lib/mailname
+news/lib/mailpaths
+news/lib/organization
+news/lib/postdefltgroup
+news/lib/readnews.ctl
+news/lib/readnews.help
+news/lib/report.ctl
+news/lib/sys
+news/lib/versionname
+news/lib/whoami
+@dirrm news/cnewsbin/batch
+@dirrm news/cnewsbin/ctl
+@dirrm news/cnewsbin/decompressors
+@dirrm news/cnewsbin/expire
+@dirrm news/cnewsbin/inject
+@dirrm news/cnewsbin/input
+@dirrm news/cnewsbin/maint
+@dirrm news/cnewsbin/nov
+@dirrm news/cnewsbin/relay
+@dirrm news/cnewsbin
+@dirrm news/lib/bin
+@dirrm news/lib
+@dirrm news

@@ -1,0 +1,139 @@
+--- src/main.c.orig	Wed Feb  9 11:57:04 2000
++++ src/main.c	Wed Feb  9 12:02:43 2000
+@@ -460,6 +460,16 @@
+ 			       GCForeground | GCBackground |
+ 			       GCFont | GCGraphicsExposures,
+ 			       &gcvalue);
++#ifdef FIX_ALIGNMENT
++	TermWin.ngc = TermWin.gc;
++#ifdef MULTICHAR_SET
++	gcvalue.font = TermWin.mfont->fid;
++	TermWin.mgc = XCreateGC(Xdisplay, TermWin.vt,
++			       GCForeground | GCBackground |
++			       GCFont | GCGraphicsExposures,
++			       &gcvalue);
++#endif
++#endif
+     }
+ }
+ /* window resizing - assuming the parent window is the correct size */
+@@ -969,7 +979,11 @@
+ 
+ /* alter existing GC */
+     if (!init) {
++#ifdef FIX_ALIGNMENT
++	XSetFont(Xdisplay, TermWin.ngc, TermWin.font->fid);
++#else
+ 	XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
++#endif
+ 	menubar_expose();
+     }
+ 
+--- src/rxvt.h.orig	Wed Feb  9 12:01:07 2000
++++ src/rxvt.h	Wed Feb  9 12:04:17 2000
+@@ -7,6 +7,8 @@
+ 
+ #include "feature.h"
+ 
++#define FIX_ALIGNMENT
++
+ /*
+  *****************************************************************************
+  * SYSTEM HACKS
+@@ -170,12 +172,19 @@
+     Window          parent[KNOW_PARENTS], /* parent[0] is our window        */
+ 		    vt;		/* vt100 window                             */
+     GC              gc;		/* GC for drawing text                      */
++#ifdef FIX_ALIGNMENT
++    GC              ngc;
++    int             vascent;
++#endif
+     XFontStruct    *font;	/* main font structure                      */
+ #ifndef NO_BOLDFONT
+     XFontStruct    *boldFont;	/* bold font                                */
+ #endif
+ #ifdef MULTICHAR_SET
+     XFontStruct    *mfont;	/* Multichar font structure                 */
++#endif
++#ifdef FIX_ALIGNMENT
++    GC              mgc;
+ #endif
+     XFontSet        fontset;
+ #ifdef XPM_BACKGROUND
+--- src/screen.c.orig	Wed Feb  9 12:04:29 2000
++++ src/screen.c	Wed Feb  9 12:23:07 2000
+@@ -2169,7 +2169,12 @@
+  * always go back to the base font - it's much safer
+  */
+     wbyte = 0;
++#ifdef FIX_ALIGNMENT
++    TermWin.gc = TermWin.ngc;
++    TermWin.vascent = TermWin.font->ascent;
++#else
+     XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
++#endif
+     draw_string = XDrawString;
+     draw_image_string = XDrawImageString;
+     clearfirst = clearlast = 0;
+@@ -2378,7 +2383,11 @@
+ 	    len = 0;
+ 	    buffer[len++] = stp[col];
+ 	    ypixelc = Row2Pixel(row);
++#ifdef FIX_ALIGNMENT
++	    ypixel = ypixelc + TermWin.vascent;
++#else
+ 	    ypixel = ypixelc + TermWin.font->ascent;
++#endif
+ 	    xpixel = Col2Pixel(col);
+ 	    fontdiff = 0;
+ 	    wlen = 1;
+@@ -2399,7 +2408,13 @@
+ 		fprop = TermWin.mprop;
+ 		if (!wbyte && TermWin.mfont) {
+ 		    wbyte = 1;
++#ifdef FIX_ALIGNMENT
++		    TermWin.gc = TermWin.mgc;
++		    ypixel += TermWin.mfont->ascent - TermWin.vascent;
++		    TermWin.vascent = TermWin.mfont->ascent;
++#else
+ 		    XSetFont(Xdisplay, TermWin.gc, TermWin.mfont->fid);
++#endif
+ 		    fontdiff = TermWin.mprop;
+ 		    draw_string = XDrawString16;
+ 		    draw_image_string = XDrawImageString16;
+@@ -2446,7 +2461,13 @@
+ 		}
+ 		if (wbyte) {
+ 		    wbyte = 0;
++#ifdef FIX_ALIGNMENT
++		    TermWin.gc = TermWin.ngc;
++		    ypixel += TermWin.font->ascent - TermWin.vascent;
++		    TermWin.vascent = TermWin.font->ascent;
++#else
+ 		    XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
++#endif
+ 		    draw_string = XDrawString;
+ 		    draw_image_string = XDrawImageString;
+ 		}
+@@ -2544,7 +2565,11 @@
+ 		rend &= ~RS_Bold;	/* we've taken care of it */
+ 	    } else if (bfont) {
+ 		bfont = 0;
++#ifdef FIX_ALIGNMENT
++		XSetFont(Xdisplay, TermWin.ngc, TermWin.font->fid);
++#else
+ 		XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
++#endif
+ 	    }
+ #endif
+ /*
+@@ -2679,6 +2704,9 @@
+     end_row = TermWin.saveLines - TermWin.view_start;
+     if (selection.op && current_screen == selection.screen) {
+ 	i = selection.beg.row + TermWin.saveLines;
++#ifdef FIX_ALIGNMENT
++	TermWin.gc = TermWin.ngc;
++#endif
+ 	row = selection.end.row + TermWin.saveLines;
+ 	if (i >= end_row)
+ 	    col = selection.beg.col;

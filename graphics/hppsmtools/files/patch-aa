@@ -1,0 +1,28 @@
+--- Makefile.orig	Sun Jan 30 17:23:28 2000
++++ Makefile	Sun Jan 30 17:24:52 2000
+@@ -7,21 +7,20 @@
+ 
+ 
+ COPTS=-g $(ADDIT_DEFS) -Wall
+-CC=gcc $(COPTS)
+ 
+ .c.o:
+-	$(CC) -c $<
++	$(CC) $(COPTS) -c $<
+ 
+ DESTDIR=hppsmtools-$(PSM_VERSION)
+ 
+ psmget: psmget.o 
+-	$(CC) psmget.o -o psmget
++	$(CC) $(COPTS) psmget.o -o psmget
+ 
+ psmget.o: psmget.c psmget.h
+-	$(CC) -c psmget.c -DPSM_VERSION=\"$(PSM_VERSION)\"
++	$(CC) $(COPTS) -c psmget.c -DPSM_VERSION=\"$(PSM_VERSION)\"
+ 
+ crcguess: crcguess.o crc32.o
+-	gcc crcguess.o crc32.o -o crcguess
++	$(CC) crcguess.o crc32.o -o crcguess
+ 
+ distri:
+ 	-mkdir $(DESTDIR)

@@ -1,0 +1,3 @@
+bin/sudo
+etc/sudoers.sample
+sbin/visudo

@@ -3,11 +3,18 @@
 # Date created:         30 Sep 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.3 1994/12/31 04:17:52 swallace Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xcdplayer-2.2
-MASTER_SITES=	ftp://dutepp0.et.tudelft.nl/pub/Unix/Sun/
+CATEGORIES=	audio
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
+		ftp://ftp.cdrom.com/pub/X11/R5contrib/
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	swallace@FreeBSD.org
+
 USE_IMAKE=      yes
+MAN1=		xcdplayer.1
 
 .include <bsd.port.mk>

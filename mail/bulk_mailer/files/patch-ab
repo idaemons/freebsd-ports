@@ -1,0 +1,136 @@
+--- bulk_mailer.c.ORIG	Tue Apr 14 19:38:46 1998
++++ bulk_mailer.c	Fri Aug 14 22:02:19 1998
+@@ -91,11 +91,16 @@
+ #include <sysexits.h>
+ #include <errno.h>
+ #include <time.h>
++#include <unistd.h>
++#include <stdlib.h>
+ #ifdef HAVE_STRING_H
+ #include <string.h>
+ #endif
+ #include "patchlevel.h"
+ 
++#define COMMAND_BUF_SIZE (32*1024)
++#define DATEBUF_SIZE (100)
++
+ #ifndef PIPECOMMAND
+ #define PIPECOMMAND "/usr/lib/sendmail -bs %s"
+ #endif
+@@ -271,6 +276,7 @@
+  * memory, appending a NUL to the copy.
+  */
+ 
++/*
+ static char *
+ strndup (str, len)
+ char *str;
+@@ -282,6 +288,7 @@
+     result[len] = '\0';
+     return result;
+ }
++*/
+ 
+ /*
+  * sort by case-folded reversed domain
+@@ -312,15 +319,15 @@
+ {
+     char *at;
+     char *ptr;
+-    char *domain;
++/*    char *domain; */
+     char tempbuf[1024];
+-    char c;
++/*    char c; */
+ 
+     /*
+      * make sure there's room in the buffer.
+      */
+     if (num_addrs >= num_addr_slots) {
+-	struct address *new;
++/*	struct address *new; */
+ 	
+ 	num_addr_slots += 1000;
+ 	if (address_list == NULL)
+@@ -544,12 +551,12 @@
+ open_envelope ()
+ {
+     FILE *fp;
+-    char command_buf[32*1024];
++    char command_buf[COMMAND_BUF_SIZE];
+ 
+     if (debug_flag)
+ 	fp = stderr;
+     else {
+-	sprintf (command_buf, PIPECOMMAND, sendmail_flags);
++	snprintf (command_buf, COMMAND_BUF_SIZE, PIPECOMMAND, sendmail_flags);
+ 
+ 	if ((fp = popen (command_buf, "w")) == NULL) {
+ 	    fprintf (stderr, "can't open pipe to sendmail: %s\n",
+@@ -867,7 +874,7 @@
+ {
+     struct tm gmt;
+     struct tm *lt;
+-    static char datebuf[100];
++    static char datebuf[DATEBUF_SIZE];
+     int gmtoff;
+     char sign;
+     static char *months[] = {
+@@ -900,7 +907,7 @@
+ 	sign = '-';
+ 	gmtoff = -gmtoff;
+     }
+-    sprintf (datebuf, "%s, %d %s %04d %02d:%02d:%02d %c%02d%02d",
++    snprintf (datebuf, DATEBUF_SIZE, "%s, %d %s %04d %02d:%02d:%02d %c%02d%02d",
+ 	     wdays[lt->tm_wday], lt->tm_mday, months[lt->tm_mon], lt->tm_year + 1900,
+ 	     lt->tm_hour, lt->tm_min, lt->tm_sec,
+ 	     sign,
+@@ -925,7 +932,7 @@
+ copy_message (out, in)
+ FILE *out, *in;
+ {
+-    int c;
++/*    int c; */
+     char linebuf[32*1024];
+     int has_valid_approved_hdr = 0;
+     int has_resent_to_hdr = 0;
+@@ -1114,14 +1121,14 @@
+      */
+     lines = 0;
+     while (fgets (linebuf, sizeof (linebuf), in) != NULL) {
+-	if (lines < 5 && 
++	if (lines < 5 && (
+ 	    /*
+ 	     * these often occur in English-text unsubscribe requests
+ 	     */
+ 	    contains (linebuf, "delete me") ||
+ 	    contains (linebuf, "remove me") ||
+ 	    contains (linebuf, "subscribe") ||
+-	    contains (linebuf, "unsubscribe"))
++	    contains (linebuf, "unsubscribe")))
+ 	    saw_command = 1;
+ 	++lines;
+ 	fputs (linebuf, out);
+@@ -1222,13 +1229,13 @@
+ int argc;
+ char *argv[];
+ {
+-    int i;
++/*    int i; */
+     FILE *fp;
+     FILE *tmp;
+     static char template[] = "/tmp/blkXXXXXX";
+     char *tempname;
+-    int c;
+-    char buf[1024];
++/*    int c; */
++/*    char buf[1024]; */
+ 
+     while (argc > 1 && (*argv[1] == '-' || *argv[1] == '+')) {
+ 	if (strcmp (argv[1], "-comment") == 0 && argc > 2) {
+@@ -1396,4 +1403,5 @@
+ 	
+ 	exit (EX_OK);
+     }
++    exit (EX_OK);
+ }

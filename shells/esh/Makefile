@@ -1,0 +1,30 @@
+# Ports collection Makefile for:	esh
+# Version required:			0.8
+# Date created:				05/20/1999
+# Whom:					nectar@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+DISTNAME=		esh-0.8
+CATEGORIES=		shells
+MASTER_SITES=		http://esh.netpedia.net/                       \
+			http://www.nectar.cc/distfiles/
+
+MAINTAINER=		nectar@FreeBSD.org
+
+WRKSRC=			${WRKDIR}/esh
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/esh ${PREFIX}/bin/esh
+	@${ECHO} "updating /etc/shells"
+	@${CP} /etc/shells /etc/shells.bak
+	@(${GREP} -v ${PREFIX}/bin/esh /etc/shells.bak;                \
+	  ${ECHO} ${PREFIX}/bin/esh) > /etc/shells
+	@${RM} /etc/shells.bak
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/doc/esh.info ${PREFIX}/info/esh.info
+	install-info ${PREFIX}/info/esh.info ${PREFIX}/info/dir
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,19 @@
+*** Imakefile.orig	Thu Oct 15 19:24:34 1998
+--- Imakefile	Thu Jan 15 00:00:00 2000
+***************
+*** 7,13 ****
+  OBJS = $(SRCS:.c=.o)
+  
+  #SCOREFILE = /opt/X11R6/lib/X11/tama_score
+! SCOREFILE = ./.tama_score
+  
+  # もしネットワーク対戦をサポートしないなら下の -DNET を削ってください。
+  # スコアファイルにロック機構が必要ないなら -DFILELOCK を付けてください。
+--- 7,13 ----
+  OBJS = $(SRCS:.c=.o)
+  
+  #SCOREFILE = /opt/X11R6/lib/X11/tama_score
+! SCOREFILE = $(LIBDIR)/xpuzzletama/tama_score
+  
+  # もしネットワーク対戦をサポートしないなら下の -DNET を削ってください。
+  # スコアファイルにロック機構が必要ないなら -DFILELOCK を付けてください。

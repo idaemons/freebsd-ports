@@ -1,0 +1,26 @@
+# New ports collection makefile for:	p5-File-Sync
+# Version required:	0.08
+# Date created:		6 March 1998
+# Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	File-Sync-0.08
+PKGNAME=	p5-File-Sync-0.08
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	File
+
+MAINTAINER=	kuriyama@FreeBSD.org
+
+USE_PERL5=	YES
+
+MAN3=		File::Sync.3
+
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+do-configure:
+	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+
+.include <bsd.port.mk>

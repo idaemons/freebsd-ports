@@ -1,0 +1,12 @@
+--- ssh.c.orig	Sat Feb 19 23:57:54 2000
++++ ssh.c	Mon Feb 28 04:49:22 2000
+@@ -131,6 +131,9 @@
+ 	log("Using rsh.  WARNING: Connection will not be encrypted.");
+ 	/* Build argument list for rsh. */
+ 	i = 0;
++#ifndef	_PATH_RSH
++#define	_PATH_RSH	"/usr/bin/rsh"
++#endif
+ 	args[i++] = _PATH_RSH;
+ 	/* host may have to come after user on some systems */
+ 	args[i++] = host;

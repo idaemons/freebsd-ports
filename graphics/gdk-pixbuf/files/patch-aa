@@ -1,0 +1,13 @@
+--- configure.orig	Tue Nov  9 15:22:08 1999
++++ configure	Mon Nov 15 14:07:02 1999
+@@ -3078,8 +3078,8 @@
+ #define USE_GMODULE 1
+ EOF
+ 
+-   GMODULE_LIBS="`glib-config --libs gmodule`"
+-   GMODULE_FLAGS="`glib-config --cflags gmodule`"
++   GMODULE_LIBS="`$GLIB_CONFIG --libs gmodule`"
++   GMODULE_FLAGS="`$GLIB_CONFIG --cflags gmodule`"
+    
+    
+    echo "$ac_t""yes" 1>&6

@@ -1,0 +1,46 @@
+--- Makefile.real.orig	Wed Mar 11 10:23:51 1998
++++ Makefile.real	Tue Jun 29 15:21:37 1999
+@@ -1,31 +1,31 @@
+ # Makefile for Squirm
+ #
+ 
+-OFILES = squirm.o main.o config.o log.o lists.o regex.o
++OFILES = squirm.o main.o config.o log.o lists.o #regex.o
+ 
+-HFILES = squirm.h paths.h lists.h log.h regex.h
++HFILES = squirm.h paths.h lists.h log.h #regex.h
+ 
+-CC=gcc
++PREFIX?=	/usr/local
++CC?=		cc
+ #CC=checkergcc
+ 
+ #EXTRALIBS=-lregex
+-#EXTRALIBS=
++EXTRALIBS=	-lgnuregex
+ 
+ BINARIES = squirm
+ 
+-CFLAGS = -O3 -Wall -funroll-loops
++CFLAGS?=	-O3 -Wall -funroll-loops
+ #CFLAGS = -Wall -g
+ 
+ all:	$(BINARIES)
+ 
+ install:	all
+-			install -m 755 -o root -g root -d /usr/local/squirm \
+-			/usr/local/squirm/bin
+-			install -m 770 -o root -g squid -d /usr/local/squirm/etc
+-			install -m 750 -o squid -g squid -d /usr/local/squirm/logs
+-			install -m 660 -o root -g squid squirm.local.dist squirm.patterns.dist \
+-			/usr/local/squirm/etc
+-			install -m 755 -o root -g root --strip squirm /usr/local/squirm/bin
++	install -c -m 755 -o root -g wheel -d $(PREFIX)/squirm
++	install -c -m 750 -o root -g $(SQUID_GID) -d $(PREFIX)/etc/squirm
++	install -c -m 750 -o $(SQUID_UID) -g $(SQUID_GID) -d $(PREFIX)/squirm/logs
++	install -c -m 640 -o root -g $(SQUID_GID) squirm.local.dist squirm.patterns.dist \
++		$(PREFIX)/etc/squirm
++	install -c -m 755 -o root -g wheel --strip squirm $(PREFIX)/bin
+ 			
+ squirm.o:	squirm.c $(HFILES)
+ 			$(CC) -c squirm.c 		$(CFLAGS)

@@ -1,0 +1,34 @@
+--- Makefile.orig	Mon Jul 26 19:30:44 1999
++++ Makefile	Mon Jul 26 19:41:39 1999
+@@ -4,14 +4,14 @@
+ 
+ # Comment out the variables for the databases that you do not want
+ # Here, what you need for PostgreSQL
+-PGSQLIBS    = -L/usr/local/pgsql/lib -lpq
+-PGSQLCFLAGS = -I/usr/local/pgsql/include -DUSE_POSTGRESQL
+-PGSQLOBJS   = postgres.o
++#PGSQLIBS    = -L/usr/local/pgsql/lib -lpq
++#PGSQLCFLAGS = -I/usr/local/pgsql/include -DUSE_POSTGRESQL
++#PGSQLOBJS   = postgres.o
+ 
+ # Here, what you need for MySQL
+-MYSQLIBS    = -L/usr/lib/mysql -lmysqlclient
+-MYSQLCFLAGS = -I/usr/include/mysql -DUSE_MYSQL
+-MYSQLOBJS   = mysql.o
++#MYSQLIBS    = -L/usr/local/lib/mysql -lmysqlclient
++#MYSQLCFLAGS = -I/usr/local/include/mysql -DUSE_MYSQL
++#MYSQLOBJS   = mysql.o
+ 
+ # Nothing to change below this point...
+ DBSQLIBS = $(PGSQLIBS) $(MYSQLIBS)
+@@ -24,8 +24,8 @@
+ OBJS    = $(MOBJS) $(DBSQLOBJS)
+ CFLAGS  = $(MCFLAGS) $(DBSQLFLAGS)
+ 
+-GTKLIBS     = `gtk-config --libs`
+-GTKCFLAGS   = `gtk-config --cflags`
++GTKLIBS     = `gtk12-config --libs`
++GTKCFLAGS   = `gtk12-config --cflags`
+ 
+ all: $(OBJS)
+ 	gcc -o gtksql $(OBJS) $(DBSQLIBS) $(GTKLIBS) $(CFLAGS) $(LDFLAGS)
