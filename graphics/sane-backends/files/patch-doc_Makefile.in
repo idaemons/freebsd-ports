@@ -1,0 +1,45 @@
+--- doc/Makefile.in.orig	Sat May 25 00:36:52 2002
++++ doc/Makefile.in	Sat May 25 00:40:15 2002
+@@ -24,7 +24,7 @@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ configdir = ${sysconfdir}/sane.d
+-docdir=$(prefix)/doc/sane-@VERSION@
++docdir=$(datadir)/doc/sane
+ 
+ MKDIR = $(top_srcdir)/mkinstalldirs
+ INSTALL = @INSTALL@
+@@ -51,7 +51,7 @@
+           sane-teco1.5 sane-test.5 sane-sp15c.5 sane-coolscan2.5
+ SECT7   = sane.7
+ MANPAGES = $(SECT1) $(SECT5) $(SECT7)
+-READMES = README AUTHORS COPYING ChangeLog LEVEL2 LICENSE NEWS PROBLEMS \
++READMES = README AUTHORS ChangeLog LEVEL2 LICENSE NEWS PROBLEMS \
+           PROJECTS README README.aix README.hp-ux README.linux README.os2 \
+           README.solaris README.unixware2 README.unixware7 TODO
+ DOCS    = backend-writing.txt sane.ps sane.dvi
+@@ -89,7 +89,7 @@
+ .PHONY: all clean depend dist distclean html html-man install \
+   install-mostang sane-html uninstall
+ 
+-all: sane.ps $(MANPAGES) 
++all: $(MANPAGES) 
+ 
+ %.1 %.5 %.7: %.man
+ 	@sed -e 's|@DATADIR@|$(datadir)|g' \
+@@ -115,6 +115,7 @@
+ 	  echo installing $${page} in $(mandir)/man7/$${page}...; \
+ 	  $(INSTALL_DATA) $${page} $(DESTDIR)$(mandir)/man7/$${page} || exit 1; \
+ 	done
++ifndef NOPORTDOCS
+ 	$(MKDIR) $(DESTDIR)$(docdir)
+ 	@for readme in $(READMES); do \
+ 	  echo installing $${readme} in $(docdir)/$${readme}...; \
+@@ -135,6 +136,7 @@
+ 	    echo installing $${doc} in $(docdir)/$${doc}...; \
+ 	    $(INSTALL_DATA) $${doc} $(DESTDIR)$(docdir)/$${doc}; \
+ 	  done
++endif
+ 
+ uninstall:
+ 	@for page in $(SECT1); do \

@@ -1,0 +1,65 @@
+
+$FreeBSD$
+
+--- makefile.orig	Fri Jan 25 02:52:32 2002
++++ makefile	Mon Feb 11 11:40:38 2002
+@@ -5,8 +5,8 @@
+ # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
+ 
+ .SUFFIXES: .cxx .o .h .a
+-CC = g++
+-AR = ar
++CC ?= g++
++AR = $(CC) -shared
+ RANLIB = touch
+ 
+ ifeq ($(OSTYPE),darwin)
+@@ -15,7 +15,8 @@
+ RANLIB = ranlib
+ endif
+ 
+-COMPLIB=../bin/scintilla.a
++COMPLIB=../bin/libscintilla.so.1
++LEXRLIB=../bin/libscintilla_lexers.so.1
+ 
+ vpath %.h ../src ../include
+ vpath %.cxx ../src
+@@ -24,13 +25,13 @@
+ CXXBASEFLAGS=-W -Wall -DGTK -DSCI_LEXER $(INCLUDEDIRS)
+ 
+ ifdef DEBUG
+-CXXFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
++CXXFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
+ else
+-CXXFLAGS=-DNDEBUG $(CXXBASEFLAGS)
++CXXFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
+ endif
+ 
+ .cxx.o:
+-	$(CC) `gtk-config --cflags` $(CXXFLAGS) -c $<
++	$(CC) -DPIC -fpic $(shell $(GTK_CONFIG) --cflags) $(CXXFLAGS) -c $<
+ 
+ LEXOBJS=LexAda.o LexAVE.o LexBaan.o LexBullant.o LexConf.o LexCPP.o \
+ 	LexCrontab.o LexEiffel.o LexHTML.o LexLisp.o LexLua.o LexOthers.o \
+@@ -38,7 +39,7 @@
+ 
+ # The LEXOBJS have to be treated specially as the functions in them are not called from external code
+ 
+-all: $(COMPLIB) $(LEXOBJS)
++all: $(COMPLIB) $(LEXRLIB)
+ 
+ clean:
+ 	rm -f *.o $(COMPLIB)
+@@ -50,8 +51,10 @@
+ 	ScintillaBase.o ContractionState.o Editor.o PropSet.o PlatGTK.o \
+ 	KeyMap.o LineMarker.o ScintillaGTK.o CellBuffer.o ViewStyle.o \
+ 	RESearch.o Style.o Indicator.o AutoComplete.o
+-	$(AR) rc $@ $^
+-	$(RANLIB) $@
++	$(AR) -o $@ $^
++
++$(LEXRLIB): $(LEXOBJS)
++	$(AR) -o $@ $^
+ 
+ # Automatically generate header dependencies with "make deps"
+ include deps.mak

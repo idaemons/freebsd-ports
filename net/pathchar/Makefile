@@ -1,0 +1,51 @@
+# ex:ts=8
+# Ports collection makefile for:  pathchar
+# Date created:			  7 November 1998
+# Whom:				  Josh Gilliam <josh@quick.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pathchar
+PORTVERSION=	a1
+CATEGORIES=	net
+MASTER_SITES=	ftp://ftp.ee.lbl.gov/pathchar/  \
+		http://www.caida.org/tools/utilities/others/pathchar/ \
+		http://sitka.triumf.ca/net/  \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
+DISTNAME=	pathchar-a1-freebsd-3.0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pathcharnotes.html pathchar.8 \
+		pathchar.mantxt
+
+MAINTAINER=	ports@FreeBSD.org
+
+ONLY_FOR_ARCHS=	i386
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MAN8=		pathchar.8
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "aout"
+DISTNAME=	pathchar-a0-freebsd-2.2
+PORTVERSION=	a0
+.endif
+
+NO_BUILD=	yes
+NO_WRKSUBDIR=   yes
+
+pre-patch:
+	@${CP} ${DISTDIR}/pathchar.8 ${WRKSRC}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pathchar ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pathchar.8 ${PREFIX}/man/man8
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/pathchar
+	${INSTALL_MAN} ${FILESDIR}/README.pathchar \
+		${DISTDIR}/pathcharnotes.html \
+		${DISTDIR}/pathchar.mantxt \
+		${PREFIX}/share/doc/pathchar
+.endif
+
+.include <bsd.port.post.mk>

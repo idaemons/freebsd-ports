@@ -1,0 +1,63 @@
+--- Makefile.orig	Mon Nov 20 16:35:16 2000
++++ Makefile	Wed Jan  2 22:39:40 2002
+@@ -5,9 +5,10 @@
+ 
+ # Paths
+ 
+-INSTALL = /usr/ucb/install
+-EBIN = /usr/local/sbin
+-MAN = /usr/local/man/man
++INSTALL = install
++EBIN = ${PREFIX}/sbin
++MAN = ${PREFIX}/man/man
++ETC_DIR = ${PREFIX}/etc
+ 
+ # OS-Dependant settings
+ 
+@@ -33,20 +34,40 @@
+ # -DCIDR_KEY	# keys in CIDR format
+ # -DTERM_KD	# keys and data nul-terminated
+ 
+-DEFS = -DTI_RPC -DFCNTL_LOCK -DSYSINFO
++.if defined(WITH_TI_RPC)
++RPCFLAGS=	-DTI_RPC
++.else
++RPCFLAGS=	-DSOCK_RPC
++.endif
++
++.if defined(WITH_POSTFIX) || defined(WITH_POSTFIX_DB3)
++DEFS=	$(RPCFLAGS) -DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD
++.elif defined(WITH_EXIM)
++DEFS=	$(RPCFLAGS) -DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD -DREQ_HASH -DCIDR_KEY
++.else
++DEFS=	$(RPCFLAGS) -DFLOCK_LOCK -DGETHOST -DDASH_C 
++.endif
++.if defined(WITH_FOREGROUND)
++DEFS+=	-DRPC_SVC_FG
++.endif
+ 
+ # Compiler flags 
+ CC = cc
+ RANLIB = :
+-CFLAGS = $(DEFS) -g -I/usr/local/src/db/db-3.1.17/build_unix
++CFLAGS = $(DEFS) -g -I${PREFIX}/include -DDBFILE=\"$(ETC_DIR)/dracd.db\" -DALFILE=\"$(ETC_DIR)/dracd.allow\"
+ #CFLAGS = $(DEFS) -g -I/usr/local/src/db/db-2.4.14/Unix
+ #CFLAGS = $(DEFS) -g -I/usr/local/src/db/db.1.85/PORT/sunos.5.2/include
+-LDLIBS = -L/usr/local/src/db/db-3.1.17/build_unix -lnsl -ldb
++LDLIBS =
+ #LDLIBS = -L/usr/local/src/db/db-2.4.14/Unix -lnsl -ldb
+ #LDLIBS = -L/usr/local/src/db/db.1.85/PORT/sunos.5.2 -lnsl -ldb
+-TSTLIBS = -L. -ldrac -lnsl
+-RPCGENFLAGS = 
+-#RPCGENFLAGS = -C
++TSTLIBS = -L. -ldrac
++#RPCGENFLAGS = 
++RPCGENFLAGS = -C -I
++
++.if defined(WITH_POSTFIX_DB3)
++CFLAGS+=	-I${LOCALBASE}/include/db3
++LDLIBS+=	-L${LOCALBASE}/lib -ldb3
++.endif
+ 
+ # Man sections
+ MANLIB = 3

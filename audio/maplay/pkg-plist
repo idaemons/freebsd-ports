@@ -1,0 +1,3 @@
+bin/maplay
+%%PORTDOCS%%share/doc/maplay/README
+%%PORTDOCS%%@dirrm share/doc/maplay

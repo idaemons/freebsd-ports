@@ -1,20 +1,42 @@
 # New ports collection makefile for:	dgd-lpmud
-# Version required:	2.4.5
 # Date created:		10 November 1994
 # Whom:			adam
 #
+# $FreeBSD$
+#
 
-DISTNAME=	dgd-lpmud
-DISTFILES=	sim-2.4.5.tar.gz 2.4.5.tar.gz
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
-		ftp://ftp.lysator.liu.se/pub/lpmud/mudlibs/other/
-NCFTPFLAGS=	-P
+PORTNAME=	dgd-lpmud
+PORTVERSION=	2.4.5
+CATEGORIES=	net devel games
+MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/lpc/ \
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|}
+DISTFILES=	2.4.5-for-1.1.tgz
 
-NO_WRKSUBDIR=
+MAINTAINER=	glewis@FreeBSD.org
 
-DEPENDS=	${PORTSDIR}/net/dgd
+NO_PACKAGE=	"depends on DGD, which is NO_CDROM"
+RESTRICTED=	"no monetary gain, tarball OK for CDROM"
 
-PKG_ARGS=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
-		-r ${PKGDIR}/REQ
+RUN_DEPENDS=	${PREFIX}/dgd/bin/driver:${PORTSDIR}/net/dgd
+
+DIST_SUBDIR=	dgd
+WRKSRC=		${WRKDIR}/mud
+PLIST_SUB+=	EXTRA:=""
+
+do-build:
+	@cd ${WRKDIR}/mud/bin; make
+
+do-install:
+	@${TAR} -C ${WRKSRC} -cf - `${GREP} '^[a-z]' ${PLIST} | ${CUT} -f2- -d'/'` \
+		| ${TAR} -C ${PREFIX}/dgd -xpf -
+	@${INSTALL_DATA} ${WRKSRC}/lpmud-2.4.5/ACCESS.ALLOW \
+		${PREFIX}/dgd/lpmud-2.4.5/ACCESS.ALLOW.example
+	@${INSTALL_DATA} ${WRKSRC}/lpmud-2.4.5/ACCESS.DENY \
+		${PREFIX}/dgd/lpmud-2.4.5/ACCESS.DENY.example
+	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/log
+	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/open
+	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/players/lars/lars
+	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/room/post_dir
+	@${MKDIR} ${PREFIX}/dgd/tmp
 
 .include <bsd.port.mk>

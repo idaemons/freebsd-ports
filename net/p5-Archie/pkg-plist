@@ -1,0 +1,2 @@
+lib/perl5/site_perl/%%PERL_VER%%/Archie.pm
+bin/archie_gateway

@@ -1,0 +1,11 @@
+--- Makefile-plugins.in.orig	Sat Aug  3 22:53:07 2002
++++ Makefile-plugins.in	Sat Aug  3 22:54:02 2002
+@@ -200,7 +200,7 @@
+ UNIXZINFUIOBJ += ui/zinf/unix/src/GTKPreferenceWindow.o 
+ UNIXZINFUIOBJ += ui/zinf/unix/src/GTKFileSelector.o  
+ UNIXZINFUIOBJ += ui/musicbrowser/unix/src/gtkmessagedialog.o
+-UNIXZINFUILIBS = $(TTF_LIBS) $(GDK_PIXBUF_LIBS)
++UNIXZINFUILIBS = $(TTF_LIBS) $(GDK_PIXBUF_LIBS) $(GTK_LIBS)
+ 
+ plugins/zinf.ui: $(ZINFUIOBJ)
+ 	$(LINKMOD) -o $@ $(ZINFUIOBJ) $(ZINFUILIBS)

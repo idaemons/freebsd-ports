@@ -1,0 +1,18 @@
+# New ports collection makefile for:    xwit
+# Date created:         15 June 1998
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xwit
+PORTVERSION=	3.4
+CATEGORIES=	x11
+MASTER_SITES=	http://www.x.org/contrib/utilities/
+
+MAINTAINER=	tg@FreeBSD.org
+
+USE_IMAKE=	yes
+MAN1=		xwit.1
+
+.include <bsd.port.mk>

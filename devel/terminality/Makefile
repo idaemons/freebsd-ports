@@ -1,0 +1,26 @@
+# ex:ts=8
+# New ports collection makefile for:	terminality
+# Date created:			Apr 28, 2001
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	terminality
+PORTVERSION=	2.1
+CATEGORIES=	devel
+MASTER_SITES= 	http://members.optushome.com.au/emikulic/code/tn/
+DISTNAME=	tn-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+
+do-install:
+	@${MKDIR} ${PREFIX}/include/tn
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tn
+	${INSTALL_DATA} ${WRKSRC}/libtn.a ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/screenshot
+	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

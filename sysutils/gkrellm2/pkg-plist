@@ -1,0 +1,31 @@
+sbin/gkrellmd
+%%PORTDOCS%%share/doc/gkrellm/COPYRIGHT
+%%PORTDOCS%%share/doc/gkrellm/CREDITS
+%%PORTDOCS%%share/doc/gkrellm/README
+%%PORTDOCS%%share/doc/gkrellm/Themes.html
+%%PORTDOCS%%@dirrm share/doc/gkrellm
+@unexec if cmp -s %D/etc/gkrellmd.conf %D/etc/gkrellmd.conf.sample; then rm -f %D/etc/gkrellmd.conf; fi
+etc/gkrellmd.conf.sample
+@exec [ -f %B/gkrellmd.conf ] || cp %B/%f %B/gkrellmd.conf
+etc/rc.d/gkrellmd.sh.sample
+%%CLIENT%%@cwd %%X11BASE%%
+%%CLIENT%%man/man1/gkrellm.1.gz
+%%CLIENT%%bin/gkrellm
+%%CLIENT%%include/gkrellm2/gkrellm.h
+%%CLIENT%%include/gkrellm2/gkrellm-public-proto.h
+%%CLIENT%%share/locale/de/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%share/locale/es/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%share/locale/fr/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%share/locale/ja/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%share/locale/pl/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%share/locale/ru/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%share/locale/sl/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%share/locale/sv/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%@dirrm include/gkrellm2
+%%CLIENT%%@exec mkdir -p %D/libexec/gkrellm2/plugins
+%%CLIENT%%@exec mkdir -p %D/share/gkrellm2/themes
+%%CLIENT%%@unexec rmdir %D/libexec/gkrellm2/plugins 2>/dev/null || true
+%%CLIENT%%@unexec rmdir %D/libexec/gkrellm2 2>/dev/null || true
+%%CLIENT%%@unexec rmdir %D/share/gkrellm2/themes 2>/dev/null || true
+%%CLIENT%%@unexec rmdir %D/share/gkrellm2 2>/dev/null || true
+%%CLIENT%%@cwd %%PREFIX%%

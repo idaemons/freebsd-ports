@@ -1,16 +1,36 @@
 # New ports collection makefile for:	GNU make
-# Version required:	3.71
 # Date created:		11 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.4 1994/10/04 15:47:32 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	make-3.72.1
+PORTNAME=	gmake
+PORTVERSION=	3.79.1
+PORTREVISION=	3
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	make
+DISTNAME=	make-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+
 GNU_CONFIGURE=	yes
-# Commented out, often busy
-# MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
-# Mirror:
-MASTER_SITES= ftp://ftp.uu.net/systems/gnu/
+CONFIGURE_ARGS=	--program-prefix=g \
+		--with-included-gettext
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LOCALE_H -DHAVE_LC_MESSAGES" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN1=		gmake.1
+
+.ifdef USE_GMAKE
+.error You have `USE_GMAKE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
+# joerg@freebsd.org says our getloadavg() no longer requires setgid kmem
+
+post-install:
+	${CHMOD} g-s ${PREFIX}/bin/gmake
+	chgrp ${BINGRP} ${PREFIX}/bin/gmake
 
 .include <bsd.port.mk>

@@ -1,26 +1,84 @@
-# New ports collection makefile for:    scm
-# Version required:     4e1
-# Date created:         Sat Nov  5 17:11:01 PST 1994
-# Whom:                 hsu
+# New ports collection makefile for:	scm
+# Date created:		Sat Nov  5 17:11:01 PST 1994
+# Whom:			hsu
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/06 09:59:26 hsu Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       scm
-MASTER_SITES=   ftp://swiss-ftp.ai.mit.edu/pub/scm/
-DISTFILES=      scm4e1.tar.gz \
-		slib.info.tar.gz slib2a1.tar.gz slib-psd1-3.tar.gz \
-		scmconfig4e1.tar.gz
-GNU_CONFIGURE=
-USE_GMAKE=
-MAKE_FLAGS=	CFLAGS=-O2 LDFLAGS=-s defines="-DSICP -DHAVE_CONFIG_H -DFLOATS -DIO_EXTENSIONS -DMEMOIZE_LOCALS -DGC_FREE_SEGMENTS" -f
+PORTNAME=	scm
+PORTVERSION=	5d6
+PORTREVISION=	1
+CATEGORIES=	lang
+MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
+DISTFILES=	scm5d6.zip slib2d4.zip slib-psd1-3.tar.gz
+EXTRACT_ONLY=	scm5d6.zip slib2d4.zip
 
-pre-install:
-	@if [ ! -e ${PREFIX}/lib ]; then mkdir -p ${PREFIX}/lib; fi
-	cp -rp ${WRKDIR}/slib ${PREFIX}/lib
-	@if [ ! -e /usr/local/info ]; then mkdir -p /usr/local/info; fi
-	(cd ${WRKDIR}/slib; \
-		install -c -m 444 slib.info slib.info-1 slib.info-2 \
-				  slib.info-3 slib.info-4 /usr/local/info)
+MAINTAINER=	ports@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_REINPLACE=	yes
+USE_ZIP=	yes
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+ALL_TARGET=	scmlit
+MAN1=		scm.1
+
+PLIST_SUB=	VERSION=${PORTVERSION}
+
+SCM_DATA=	COPYING Iedline.scm Init${PORTVERSION}.scm Link.scm \
+		Macexp.scm Macro.scm Transcen.scm Tscript.scm mkimpcat.scm \
+		r4rstest.scm
+SCM_MODULES=	crs.so edline.so gsubr.so ioext.so posix.so ramap.so \
+		record.so rgx.so sc2.so socket.so unix.so
+
+post-extract:
+	@${TAR} -C ${WRKDIR} -zxf ${DISTDIR}/slib-psd1-3.tar.gz
+	@${CP} ${FILESDIR}/require.scm.in ${WRKDIR}/require.scm
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/require.scm
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
+		 s|%%CFLAGS%%|${CFLAGS}|g' ${WRKSRC}/build.scm
+
+post-build:
+	@cd ${WRKSRC} \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -F "arrays bignums cautious inexact macro dynamic-linking" \
+		 -h system \
+		 -o scm \
+		 -s "${PREFIX}/lib/scm/" \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -F edit-line \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -F curses \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -c "sc2.c rgx.c record.c gsubr.c ioext.c posix.c unix.c \
+		     socket.c ramap.c" \
+		 -h system \
+		 -t dll
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/scm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/scmlit ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/scm.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/lib/scm
+	${INSTALL_DATA} ${WRKDIR}/require.scm ${PREFIX}/lib/scm
+.for file in ${SCM_DATA} ${SCM_MODULES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/scm
+.endfor
+	@${MKDIR} ${PREFIX}/lib/scm/slib
+	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/lib/scm/slib
+	@${MKDIR} ${PREFIX}/lib/scm/slib/psd
+	${INSTALL_DATA} ${WRKDIR}/slib/psd/*.scm ${PREFIX}/lib/scm/slib/psd
+	${INSTALL_DATA} ${WRKDIR}/scm/scm.info ${PREFIX}/info
+	@install-info ${PREFIX}/info/scm.info ${PREFIX}/info/dir
+	${INSTALL_DATA} ${WRKDIR}/slib/slib.info ${PREFIX}/info
+	@install-info ${PREFIX}/info/slib.info ${PREFIX}/info/dir
+	cd ${PREFIX}/lib/scm && ${PREFIX}/bin/scm -lmkimpcat.scm
 
 .include <bsd.port.mk>

@@ -1,0 +1,6 @@
+MD5 (gcc-core-20020902.tar.bz2) = 15477fbd165cf9bdd6cd1734f6fcd04d
+MD5 (gcc-g++-20020902.tar.bz2) = ab6dd2245efb4cd18b67afdd992365bf
+MD5 (gcc-g77-20020902.tar.bz2) = fecb733d70cc945fa11a6f4649aadc79
+MD5 (gcc-java-20020902.tar.bz2) = 46febeac9257bac79c10ee494dfee7a3
+MD5 (gcc-objc-20020902.tar.bz2) = 6793803176f7f915f3382f0f75a82bdf
+MD5 (port_gcc32_2002-09-02.diff) = f81458356519cdeb80ad7483d81e63f5

@@ -1,34 +1,54 @@
 # New ports collection makefile for:    gn
-# Version required:     2.17
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.4 1994/10/20 12:56:17 adam Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       gn-2.17
-MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
-INETD_CONF=	/etc/inetd.conf
-CONF=	'	stream	tcp	nowait	nobody	/usr/local/etc/gn	gn'
-DEPENDS=	${PORTSDIR}/net/wais
+PORTNAME=	gn
+PORTVERSION=	2.24
+CATEGORIES=	www
+MASTER_SITES=	${MASTER_SITE_LOCAL}	#ftp://ftp.acns.nwu.edu/pub/gn/
+MASTER_SITE_SUBDIR=	trevor
+
+MAINTAINER=	ports@FreeBSD.org
+
+BUILD_DEPENDS=	${WAISDIR}/bin/waisindex:${PORTSDIR}/net/wais
+
 IS_INTERACTIVE=	yes
+NO_PACKAGE=	"Compiled-in hostnames"
+WAISDIR=	${PORTSDIR}/net/wais/work/freeWAIS-0.5
+
+INETD_CONF=	/etc/inetd.conf
+CONF=	'	stream	tcp	nowait	nobody	${PREFIX}/libexec/gn	gn'
 
 pre-build:
-	@ln -s ../../../../wais/work/freeWAIS-0.3/ir work/${DISTNAME}/waisgn
-	@ln -s ../../../../wais/work/freeWAIS-0.3/bin work/${DISTNAME}/waisgn
+	@${LN} -fs ${WAISDIR}/include ${WRKSRC}/waisgn/ir
+	@${LN} -fs ${WAISDIR}/bin ${WRKSRC}/waisgn
 
 pre-install:
-	@grep -q '^gopher' ${INETD_CONF} || { \
-		echo gopher${CONF} >>${INETD_CONF}; \
-		kill -HUP \
-		`ps ax | grep inetd | grep -v grep | awk '{ print $$1 }'`; \
-	}
-	@if [ ! -d /usr/local/gnroot ]; then \
-		mkdir -p /usr/local/gnroot; \
-		cd /usr/local/gnroot; \
-		tar -C ${WRKSRC} -cf - docs | tar xpf -; \
-		mv docs/sample.root.menu menu; \
-		${WRKSRC}/mkcache/mkcache -r; \
-	fi
+	@${MKDIR} ${WRKSRC}/etc ${WRKSRC}/libexec ${WRKSRC}/gnroot
+	@cd ${WRKSRC}/gnroot; \
+		tar -cf - -C ${WRKSRC} docs | tar xpf - && \
+			${MV} docs/sample.root.menu menu
+
+post-install:
+	@cd ${PREFIX}; \
+	  [ -s etc/gn_mime.types ] && \
+	  if ! cmp -s etc/gn_mime.types ${WRKSRC}/etc/gn_mime.types; then \
+		${ECHO} ${MV} etc/gn_mime.types etc/gn_mime.types.old; \
+		${MV} etc/gn_mime.types etc/gn_mime.types.old; \
+	  fi; \
+	  [ -s gnroot/menu ] && \
+	  if ! cmp -s gnroot/menu ${WRKSRC}/gnroot/menu; then \
+		${ECHO} ${MV} gnroot/menu gnroot/menu.old; \
+		${MV} gnroot/menu gnroot/menu.old; \
+	  fi; \
+	  tar -cf - -C ${WRKSRC} gnroot libexec bin etc | tar xpf - && \
+		(cd gnroot; ${WRKSRC}/bin/mkcache -r); \
+	  ${AWK} '$$1 ~ /#*gopher/ && $$6 == "${PREFIX}/libexec/gn" { exit 1 }' \
+		${INETD_CONF} || { \
+		${ECHO_CMD} '#'gopher${CONF} >>${INETD_CONF}; \
+	  }
 
 .include <bsd.port.mk>

@@ -1,0 +1,46 @@
+@comment $FreeBSD$
+bin/flac
+bin/metaflac
+include/FLAC++/all.h
+include/FLAC++/decoder.h
+include/FLAC++/encoder.h
+include/FLAC++/metadata.h
+include/FLAC/all.h
+include/FLAC/assert.h
+include/FLAC/file_decoder.h
+include/FLAC/format.h
+include/FLAC/metadata.h
+include/FLAC/ordinals.h
+include/FLAC/seekable_stream_decoder.h
+include/FLAC/stream_decoder.h
+include/FLAC/stream_encoder.h
+lib/libFLAC++.a
+lib/libFLAC++.la
+lib/libFLAC++.so
+lib/libFLAC++.so.1
+lib/libFLAC.a
+lib/libFLAC.la
+lib/libFLAC.so
+lib/libFLAC.so.3
+share/aclocal/libFLAC++.m4
+share/aclocal/libFLAC.m4
+@unexec /bin/rmdir %D/share/aclocal 2>/dev/null || true
+%%PORTDOCS%%share/doc/flac/comparison.html
+%%PORTDOCS%%share/doc/flac/developers.html
+%%PORTDOCS%%share/doc/flac/documentation.html
+%%PORTDOCS%%share/doc/flac/download.html
+%%PORTDOCS%%share/doc/flac/features.html
+%%PORTDOCS%%share/doc/flac/format.html
+%%PORTDOCS%%share/doc/flac/goals.html
+%%PORTDOCS%%share/doc/flac/id.html
+%%PORTDOCS%%share/doc/flac/images/1x1.gif
+%%PORTDOCS%%share/doc/flac/images/cafebug.gif
+%%PORTDOCS%%share/doc/flac/images/logo.jpg
+%%PORTDOCS%%share/doc/flac/index.html
+%%PORTDOCS%%share/doc/flac/news.html
+@dirrm include/FLAC++
+@dirrm include/FLAC
+%%PORTDOCS%%@dirrm share/doc/flac/images
+%%PORTDOCS%%@dirrm share/doc/flac
+%%XMMS%%@cwd %%X11BASE%%
+%%XMMS%%lib/xmms/Input/libxmms-flac.so

@@ -1,10 +1,11 @@
-@cwd /usr/local
-info/sharutils.info
+bin/gmail-files
+bin/gmailshar
+bin/gremsync
 bin/gshar
 bin/gunshar
-man/man1/gshar.1
-man/man1/gunshar.1
-man/man1/guuencode.1
-share/locale/de/sharutils.msg
-share/locale/fr/sharutils.msg
-share/locale/sv/sharutils.msg
+@unexec install-info --delete %D/info/sharutils.info %D/info/dir
+@unexec install-info --delete %D/info/remsync.info %D/info/dir
+info/sharutils.info
+info/remsync.info
+@exec install-info %D/info/sharutils.info %D/info/dir
+@exec install-info %D/info/remsync.info %D/info/dir

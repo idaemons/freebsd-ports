@@ -1,0 +1,4 @@
+bin/flexbackup
+%%PORTDOCS%%share/doc/flexbackup/flexbackup.conf.sample
+%%PORTDOCS%%share/doc/flexbackup/flexbackup.README
+%%PORTDOCS%%@dirrm share/doc/flexbackup

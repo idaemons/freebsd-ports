@@ -1,0 +1,6 @@
+bin/phalanx
+%%PORTDOCS%%share/doc/phalanx/README
+share/phalanx/pbook.phalanx
+share/phalanx/sbook.phalanx
+%%PORTDOCS%%@dirrm share/doc/phalanx
+@dirrm share/phalanx

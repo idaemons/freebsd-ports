@@ -1,0 +1,75 @@
+--- Makefile.orig	Fri Jun 14 21:58:53 2002
++++ Makefile	Mon Jun 17 00:12:22 2002
+@@ -23,14 +23,14 @@
+ ######## Choose one of the following.   All others should be commented out.
+ 
+ #### For Solaris 2.x uncomment the following..
+-XLIBS = -L/usr/openwin/lib -lX11
+-XINCLUDEDIR = -I/usr/openwin/include
++#XLIBS = -L/usr/openwin/lib -lX11
++#XINCLUDEDIR = -I/usr/openwin/include
+ 
+ #### For Linux and FreeBSD uncomment the following..
+-# XLIBS = -L/usr/X11R6/lib -lX11
+-# XINCLUDEDIR = -I/usr/X11R6/include
++XLIBS = -L${X11BASE}/lib -lX11
++XINCLUDEDIR = -I${X11BASE}/include
+ #### For FreeBSD uncomment the following and find GD16H or GD18H below and set to -I/usr/local/include
+-# ADDLIBS = -L/usr/local/lib
++ADDLIBS = -L${LOCALBASE}/lib
+ 
+ #### For Cygwin uncomment the following..
+ # PLATFORM = WIN32
+@@ -78,7 +78,7 @@
+ ######## Choose ONE of the following.  All others should be commented out.
+ 
+ #### For pseudo-GIF uncomment the following..  (no libs required)
+-ploticus: pl 
++#ploticus: pl 
+ 
+ #### For PNG uncomment the following.. (you must have libpng and zlib)
+ # ploticus: plpng 
+@@ -103,11 +103,11 @@
+ #### For JPEG, WBMP, and PNG & FreeType2 using your copy of GD 1.84+ uncomment the following..
+ #### (you must have gd 1.84+, libpng, zlib, libjpeg, libfreetype)
+ #### Before using set environment var GDFONTPATH to directory containing .ttf files
+-# ploticus: plgd18 
+-# GD18LIBS = -lgd -lpng -lz -ljpeg -lfreetype
+-# GD18H = 
+-# GDFREETYPE = -DGDFREETYPE
+-# ZFLAG = -DWZ
++ploticus: plgd18 
++GD18LIBS = -lgd -lpng -lz -ljpeg -lfreetype
++GD18H = -I${LOCALBASE}/include/gd
++GDFREETYPE = -DGDFREETYPE
++ZFLAG = -DWZ
+ 
+ #### To disable GD image support (no GIF, PNG, JPEG, etc) uncomment the following..
+ # ploticus: plnogd 
+@@ -125,11 +125,11 @@
+ #### To set a hard-coded directory for prefabs files, uncomment & edit the following.. 
+ #### If done, users won't be required to have PLOTICUS_PREFABS environment variable defined.
+ #### This option not available for win32
+-# PREFABS_DIR = "/usr/lib/ploticus"
++PREFABS_DIR = "${LOCALBASE}/share/ploticus"
+ 
+ #### For LOCALE support (non-roman alphabets & collation), uncomment the following..
+-# LOCALEOBJ = localef.o
+-# LOCALE_FLAG = -DLOCALE
++LOCALEOBJ = localef.o
++LOCALE_FLAG = -DLOCALE
+ 
+ #### If you want compressed svg (.svgz), and you selected "GIF only", "GIF & PNG", or "disable GD" above, 
+ #### uncomment the following.  You need to have zlib.  If necessary change -lz to location of zlib.
+@@ -156,9 +156,9 @@
+ GD = gdfontg.o gdfontl.o gdfontmb.o gdfonts.o gdfontt.o
+ 
+ 
+-LIBS = $(XLIBS) -lm $(ADDLIBS) 
++LIBS += $(XLIBS) -lm $(ADDLIBS) 
+ 
+-CFLAGS = -DPLOTICUS -D$(PLATFORM) -DTDH_NOREC $(ZFLAG) $(FLAGS) $(LOCALE_FLAG) \
++CFLAGS += -DPLOTICUS -D$(PLATFORM) -DTDH_NOREC $(ZFLAG) $(FLAGS) $(LOCALE_FLAG) \
+   $(NOGDFLAG) $(NOXFLAG) $(XINCLUDEDIR) $(NORLIMFLAG) -DPREFABS_DIR=\"$(PREFABS_DIR)\"
+ 
+ OBJ = 	proc_annotate.o proc_areadef.o proc_axis.o proc_bars.o proc_rect.o proc_breakaxis.o \

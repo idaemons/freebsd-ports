@@ -1,0 +1,30 @@
+--- Makefile.orig	Sat Feb  2 00:21:14 2002
++++ Makefile	Sat Feb  2 00:23:47 2002
+@@ -6,14 +6,9 @@
+ 
+ # Configuration defaults
+ 
+-CC       = gcc
+-CFLAGS   = -O2 -Wall
+-INCLUDES = -I$(shell pwd)
+-LDLIBS   =
++INCLUDES = -I.
+ 
+-PREFIX   = /usr/local
+-EPREFIX  = $(PREFIX)
+-BINDIR   = $(EPREFIX)/bin
++BINDIR   = $(PREFIX)/bin
+ MANDIR   = $(PREFIX)/man
+ 
+ RDPOBJ   = rdesktop.o tcp.o iso.o mcs.o secure.o licence.o rdp.o orders.o bitmap.o cache.o decompress.o
+@@ -26,8 +21,8 @@
+ SSL_LIBS =
+ 
+ #the xlib layer ( default )
+-GUI_XWIN_INC = -I/usr/X11R6/include
+-GUI_XWIN_LIB = -L/usr/X11R6/lib -lX11
++GUI_XWIN_INC = -I${X11BASE}/include
++GUI_XWIN_LIB = -L${X11BASE}/lib -lX11
+ GUI_XWIN_OBJ = gl/xwin.o
+ 
+ #the nt layer

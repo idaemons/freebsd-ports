@@ -1,0 +1,9 @@
+bin/steghide
+%%PORTDOCS%%share/doc/steghide/BUGS
+%%PORTDOCS%%share/doc/steghide/CREDITS
+%%PORTDOCS%%share/doc/steghide/HISTORY
+%%PORTDOCS%%share/doc/steghide/README
+%%PORTDOCS%%share/doc/steghide/TODO
+share/locale/de/LC_MESSAGES/steghide.mo
+share/locale/fr/LC_MESSAGES/steghide.mo
+%%PORTDOCS%%@dirrm share/doc/steghide

@@ -1,0 +1,6 @@
+bin/ccat
+bin/ccdecrypt
+bin/ccencrypt
+bin/ccrypt
+%%PORTDOCS%%share/doc/ccrypt/ccrypt.html
+%%PORTDOCS%%@dirrm share/doc/ccrypt

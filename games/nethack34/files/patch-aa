@@ -1,0 +1,36 @@
+--- include/config.h.orig	Thu Mar 21 08:42:43 2002
++++ include/config.h	Tue Aug 13 05:41:47 2002
+@@ -122,7 +122,7 @@
+  * would allow:
+  *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | ppmquant 90 >x11tiles_big.xpm
+  */
+-/* # define USE_XPM */		/* Disable if you do not have the XPM library */
++# define USE_XPM		/* Disable if you do not have the XPM library */
+ # ifdef USE_XPM
+ #  define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.xpm) */
+ # endif
+@@ -163,11 +163,11 @@
+ 
+ #ifdef UNIX
+ /* path and file name extension for compression program */
+-#define COMPRESS "/usr/bin/compress"	/* Lempel-Ziv compression */
+-#define COMPRESS_EXTENSION ".Z"		/* compress's extension */
++/* #define COMPRESS "/usr/bin/compress"*/	/* Lempel-Ziv compression */
++/* #define COMPRESS_EXTENSION ".Z"	*/	/* compress's extension */
+ /* An example of one alternative you might want to use: */
+-/* #define COMPRESS "/usr/local/bin/gzip" */	/* FSF gzip compression */
+-/* #define COMPRESS_EXTENSION ".gz" */		/* normal gzip extension */
++#define COMPRESS "/usr/bin/gzip"	 	/* FSF gzip compression */
++#define COMPRESS_EXTENSION ".gz" 		/* normal gzip extension */
+ #endif
+ 
+ #ifndef COMPRESS
+@@ -201,7 +201,7 @@
+ #  ifdef __APPLE__
+ #    define HACKDIR "nethackdir"	/* nethack directory */
+ #  else
+-#    define HACKDIR "/usr/games/lib/nethackdir"
++#    define HACKDIR "%%HACKDIR%%"
+ #  endif
+ # endif
+ 

@@ -1,0 +1,17 @@
+--- configure.orig	Thu Jul 25 17:31:39 2002
++++ configure	Sat Aug 24 20:10:04 2002
+@@ -148,14 +148,6 @@
+          -o\
+          $NO_ADD = "yes" ] ; then
+         echo
+-        echo "So you should to have next files:"
+-        echo "$SM_HDR"
+-        echo "include/libmilter/mfapi.h"
+-        echo "lib/libmilter.a"
+-        echo "$SM_LIB" 
+-        echo 
+-        echo "Do it and try again"
+-        exit 1
+     fi
+ else
+     DRWEB_SM=""

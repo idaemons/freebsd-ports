@@ -1,0 +1,26 @@
+--- sshd_config.orig	Sun Jun 30 21:25:40 2002
++++ sshd_config	Wed Jul  3 06:22:22 2002
+@@ -32,6 +32,7 @@
+ 
+ #LoginGraceTime 600
+ #PermitRootLogin yes
++PermitRootLogin no
+ #StrictModes yes
+ 
+ #RSAAuthentication yes
+@@ -56,6 +57,7 @@
+ 
+ # Change to no to disable s/key passwords
+ #ChallengeResponseAuthentication yes
++ChallengeResponseAuthentication no
+ 
+ # Kerberos options
+ #KerberosAuthentication no
+@@ -75,6 +77,7 @@
+ #KeepAlive yes
+ #UseLogin no
+ #UsePrivilegeSeparation yes
++UsePrivilegeSeparation yes
+ #Compression yes
+ 
+ #MaxStartups 10

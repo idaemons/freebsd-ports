@@ -1,0 +1,107 @@
+--- Makefile.orig	Sun Mar 24 02:41:30 2002
++++ Makefile	Mon Jun 10 17:18:07 2002
+@@ -282,2 +282,3 @@
+ # CONFIGURE - configure arguments {{{1
++CONF_ARGS = --prefix=$(PREFIX)
+ # You can give a lot of options to configure.
+@@ -1651,3 +1652,3 @@
+ 	if test -d $(LANGSOURCE); then \
+-	   $(INSTALL_DATA) $(LANGSOURCE)/README.txt $(LANGSOURCE)/*.vim $(DEST_LANG); \
++	   $(INSTALL_DATA)                          $(LANGSOURCE)/*.vim $(DEST_LANG); \
+ 	   chmod $(FILEMOD) $(DEST_LANG)/*.vim; \
+@@ -1712,36 +1713,36 @@
+ $(DEST_BIN)/$(EXTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(EXTARGET)
++	#cd $(DEST_BIN); ln -sf $(VIMTARGET) $(EXTARGET)
+ 
+ $(DEST_BIN)/$(VIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(VIEWTARGET)
++	#cd $(DEST_BIN); ln -sf $(VIMTARGET) $(VIEWTARGET)
+ 
+ $(DEST_BIN)/$(GVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(GVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(GVIMTARGET)
+ 
+ $(DEST_BIN)/$(GVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(GVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(GVIEWTARGET)
+ 
+ $(DEST_BIN)/$(RVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RVIMTARGET)
+ 
+ $(DEST_BIN)/$(RVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RVIEWTARGET)
+ 
+ $(DEST_BIN)/$(RGVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RGVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RGVIMTARGET)
+ 
+ $(DEST_BIN)/$(RGVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RGVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RGVIEWTARGET)
+ 
+ $(DEST_BIN)/$(VIMDIFFTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(VIMDIFFTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(VIMDIFFTARGET)
+ 
+ $(DEST_BIN)/$(GVIMDIFFTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(GVIMDIFFTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(GVIMDIFFTARGET)
+ 
+ $(DEST_BIN)/$(EVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(EVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(EVIMTARGET)
+ 
+ $(DEST_BIN)/$(EVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(EVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(EVIEWTARGET)
+ 
+@@ -1763,30 +1764,30 @@
+ $(DEST_MAN)/$(EXNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(EXNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(EXNAME).1
+ 
+ $(DEST_MAN)/$(VIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(VIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(VIEWNAME).1
+ 
+ $(DEST_MAN)/$(GVIMNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(GVIMNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(GVIMNAME).1
+ 
+ $(DEST_MAN)/$(GVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(GVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(GVIEWNAME).1
+ 
+ $(DEST_MAN)/$(RVIMNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RVIMNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RVIMNAME).1
+ 
+ $(DEST_MAN)/$(RVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RVIEWNAME).1
+ 
+ $(DEST_MAN)/$(RGVIMNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RGVIMNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RGVIMNAME).1
+ 
+ $(DEST_MAN)/$(RGVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RGVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RGVIEWNAME).1
+ 
+ $(DEST_MAN)/$(GVIMDIFFNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMDIFFNAME).1 $(GVIMDIFFNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMDIFFNAME).1 $(GVIMDIFFNAME).1
+ 
+ $(DEST_MAN)/$(EVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(EVIMNAME).1 $(EVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(EVIMNAME).1 $(EVIEWNAME).1
+ 
+@@ -1951,3 +1952,4 @@
+ 	-@echo 'char_u *default_vimruntime_dir = (char_u *)"$(VIMRUNTIMEDIR)";' >> $@
+-	-@echo 'char_u *all_cflags = (char_u *)"$(CC) -c -I$(srcdir) $(ALL_CFLAGS)";' >>  $@
++	-@echo 'char_u *all_cflags = (char_u *)' >> $@
++	-@echo '$(CC) -c -I$(srcdir) $(ALL_CFLAGS)' | sed -e 's/\"/\\"/g' -e 's/\(^.*\)/	"\1";/' >> $@
+ 	-@echo 'char_u *all_lflags = (char_u *)"$(CC) $(ALL_LIB_DIRS) $(LDFLAGS) -o $(VIMTARGET) $(ALL_LIBS) ";' >>  $@

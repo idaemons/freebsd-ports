@@ -1,0 +1,11 @@
+bin/wdcnt
+%%RUBY_SITEARCHLIBDIR%%/kakasi.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/kakasi/ja/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/kakasi/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/kakasi
+%%PORTDOCS%%%%RUBY_DOCDIR%%/kakasi/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/kakasi/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/kakasi/wdcnt.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/kakasi/ja/README.jp
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/kakasi/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/kakasi

@@ -1,0 +1,7 @@
+bin/colortail
+share/colortail/conf.daemon
+share/colortail/conf.kernel
+share/colortail/conf.messages
+share/colortail/conf.secure
+share/colortail/conf.xferlog
+@dirrm share/colortail

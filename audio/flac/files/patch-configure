@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig	Sat Jul  6 15:49:41 2002
++++ configure	Sat Jul  6 15:49:54 2002
+@@ -9995,7 +9995,7 @@
+ if test x$debug = xtrue; then
+ 	OUR_CFLAGS_TAIL="-g -O0 -DDEBUG"
+ else
+-	OUR_CFLAGS_TAIL="-O3 -DNDEBUG"
++	OUR_CFLAGS_TAIL="-DNDEBUG"
+ 	if test x$GCC = xyes; then
+ 		OUR_CFLAGS_TAIL="$OUR_CFLAGS_TAIL -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
+ 	fi

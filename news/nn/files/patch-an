@@ -1,0 +1,113 @@
+--- nntp.c.orig	Tue Oct  9 11:39:11 2001
++++ nntp.c	Mon Jun 10 10:15:02 2002
+@@ -37,6 +37,7 @@
+ #include <errno.h>
+ #include <pwd.h>
+ #include <ctype.h>
++#include <sys/param.h>
+ 
+ #ifdef NOV
+ #include "hash.h"
+@@ -88,6 +89,7 @@
+ static void debug_msg __APROTO((char *prefix, char *str));
+ static void io_error __APROTO((void));
+ static void find_server __APROTO((void));
++char * find_domain(char *domainFile);
+ static int get_server_line __APROTO((char *string, int size));
+ static int get_server __APROTO((char *string, int size));
+ static int get_socket __APROTO((void));
+@@ -319,6 +321,49 @@
+ }
+ 
+ /*
++ * find_domain		Get the domain name for posting from a named file.
++ *			Handle blank lines and comments.
++ *
++ *	Parameters:	"file" is the name of the file to read.
++ *
++ *	Returns:	Pointer to static data area containing the
++ *			first non-blank/comment line in the file.
++ *			NULL on error (or lack of entry in file).
++ *
++ *	Side effects:	None.
++ */
++
++char *
++find_domain(domainFile)
++char	*domainFile;
++{
++	register FILE	*fp;
++	register char	*cp;
++	static char	buf[MAXHOSTNAMELEN];
++	char		*index();
++
++	if (domainFile == NULL)
++		return (NULL);
++
++	fp = fopen(domainFile, "r");
++	if (fp == NULL)
++		return (NULL);
++
++	while (fgets(buf, sizeof (buf), fp) != NULL) {
++		if (*buf == '\n' || *buf == '#')
++			continue;
++		cp = index(buf, '\n');
++		if (cp)
++			*cp = '\0';
++		(void) fclose(fp);
++		return (buf);
++	}
++
++	(void) fclose(fp);
++	return (NULL);
++}
++
++/*
+  * get_server_line: get a line from the server.
+  *
+  *	Expects to be connected to the server.
+@@ -634,7 +679,7 @@
+ 	    can_post = 0;
+ 	    break;
+ 	default:
+-	    nn_exitmsg(1, line);
++	    nn_exitmsg(1, "%s", line);
+ 	    /* NOTREACHED */
+ 	}
+     }
+@@ -1726,7 +1771,7 @@
+  * Phil Lapsley <phil@ucbvax.berkeley.edu>
+  */
+ 
+-static char    host_name[256];
++static char    host_name[MAXHOSTNAMELEN];
+ 
+ /*
+  * gen_frompath -- generate From: and Path: lines, in the form
+@@ -1745,6 +1790,7 @@
+ #ifndef HIDDENNET
+ 	char	*cp;
+ #endif
++	char	*domain;
+ 
+ 	fprintf(nntp_out, "From: ");
+ 	passwd = getpwuid(getuid());
+@@ -1772,9 +1818,15 @@
+ 			DOMAIN);
+ #endif /* HIDDENNET */
+ #else
+-	fprintf(nntp_out, "<%s@%s>\r\n",
+-		passwd->pw_name,
+-		host_name);
++	domain = find_domain(DOMAIN_FILE);
++	if (domain == NULL)
++		fprintf(nntp_out, "From: <%s@%s>\r\n",
++			passwd->pw_name,
++			host_name);
++	else
++		fprintf(nntp_out, "From: <%s@%s>\r\n",
++			passwd->pw_name,
++			domain);
+ #endif
+ 
+ #ifdef HIDDENNET

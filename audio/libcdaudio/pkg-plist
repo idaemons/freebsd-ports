@@ -1,0 +1,6 @@
+bin/libcdaudio-config
+include/cdaudio.h
+lib/libcdaudio.a
+lib/libcdaudio.so
+lib/libcdaudio.so.1
+share/aclocal/libcdaudio.m4

@@ -1,0 +1,9 @@
+--- misc/Makefile.in.orig	Tue Mar 12 13:04:40 2002
++++ misc/Makefile.in	Fri Mar 15 17:33:23 2002
+@@ -223,6 +223,4 @@
+ 	    echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$f"; \
+-	    $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$f; \
+ 	    if test -f $${p}c; then \
+ 	      echo " $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${f}c"; \
+-	      $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${f}c; \
+ 	    else : ; fi; \

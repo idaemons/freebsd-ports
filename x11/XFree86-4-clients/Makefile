@@ -1,52 +1,83 @@
-DISTNAME	=	xc
-PKGNAME		= 	XFree86-3.1.1
-WRKDIR?=                ${.CURDIR}/work
-BUILD_COOKIE?=		${WRKDIR}/.build_done
-PATCH_STRIP	=	-p1
+# New ports collection makefile for:	XFree86-clients
+# Date created:		10 Oct 1999
+# Whom:			taguchi@tohoku.iij.ad.jp
+#
+# $FreeBSD$
+#
 
-# uncomment one of the 2 lines below!
-#X11_ON_CDROM	=	yes
-X11_VIA_FTP	=	yes
+PORTNAME=	clients
+PORTVERSION=	4.2.1
+PORTREVISION=	1
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
+		${MASTER_SITE_XFREE:S/source//g:S/$/:x421patch/}
+MASTER_SITE_SUBDIR=	4.2.0/:x \
+			${PORTVERSION}/patches/:x421patch \
+			anholt/:local
+PKGNAMEPREFIX=	XFree86-
+DISTFILES=	X420src-1.tgz:x \
+		X420src-2.tgz:x \
+		4.2.0-4.2.1.diff.gz:x421patch
+EXTRACT_ONLY=	X420src-1.tgz
 
-#define this if you are short of space - save ~28 Mbytes
-#REMOVE_NOT_ESSENTIAL	=	yes
+PATCH_DIST_STRIP=	-p1
 
+MAINTAINER=	anholt@freebsd.org
 
-.if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
-build: configure ${BUILD_COOKIE}
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		GLU.1:${PORTSDIR}/x11/XFree86-4-libraries
 
-${BUILD_COOKIE}:
-	@echo "===>  Building for ${DISTNAME}"
-	@${MAKE} ${.MAKEFLAGS} pre-build
-.if defined(REMOVE_NOT_ESSENTIAL)
-	@rm -rf ${WRKSRC}/test ${WRKSRC}/doc/hardcopy ${WRKSRC}/doc/specs
-	@find ${WRKSRC}/ -name '*.orig' -exec rm -f {} ';'
-.endif
-	@(cd ${WRKSRC}; echo Good night...; make World)
-	@touch ${WRKDIR}/.build_done
+XFREE86_VERSION=	4
+USE_IMAKE=		YES
+DIST_SUBDIR=		xc
+WRKSRC=			${WRKDIR}/xc
+PATCHDIR=		${.CURDIR}/../XFree86-4-libraries/files
+SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
+			InstallXinitConfig=${InstallXinitConfig} \
+			InstallAppDefFiles=${InstallAppDefFiles} \
+			HasSecureRPC=${HasSecureRPC} \
+			HasPam=${HasPam}
+MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
+			PORTNAME=${PORTNAME} \
+			PORTVERSION=${PORTVERSION}
+XBUILD_DIRS=		lib/xtrans lib/lbxutil programs fonts/util
+XINSTALL_DIRS=		programs fonts/util
+XINSTALL_MAN_DIRS=	programs
 
-install:
-	@(cd ${WRKSRC}; make install; make install.man)
-	@touch ${WRKDIR}/.install_done
-.endif
+# ---
+# XFree86 User Config:
+# Name          Default		Meaning
+# ----------------------------------------------------------------------------
+# HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
+# HasPam	YES		support PAM (require FreeBSD-3.1 or later)
+# InstallXdmConfig      YES     install config files for xdm.
+# InstallXinitConfig    YES     install config files for xinit.
+# InstallAppDefFiles    YES	install resource files.
+# ----------------------------------------------------------------------------
+# DEFAULT means ports will use values which set by ${PORTSDIR}/devel/imake-4
+#
+InstallXdmConfig?=	DEFAULT
+InstallXinitConfig?=	DEFAULT
+InstallAppDefFiles?=	DEFAULT
+HasSecureRPC?=		DEFAULT
+HasPam?=		DEFAULT
 
-.if defined(X11_ON_CDROM)
-.include "Makefile.cdrom"
-.elif defined(X11_VIA_FTP)
-.include "Makefile.ftp"
-.else
-all:
-	@echo -n
-fetch:
-	@echo -n
-extract:
-	@echo -n
-configure:
-	@echo -n
-build:
-	@echo -n
-install:
-	@echo -n
-.endif
+post-extract:
+	( cd ${WRKDIR} && \
+	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	   ${DISTDIR}/${DIST_SUBDIR}/X420src-2.tgz \
+	    | ${TAR} -xf - xc/fonts/util )
+pre-patch:
+	-@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/4.2.0-4.2.1.diff.gz \
+		| ${PATCH} ${PATCH_DIST_ARGS} --batch
 
+post-patch:
+	cd ${WRKSRC}/nls; \
+	for i in Compose XI18N_OBJS XLC_LOCALE; do \
+		${LN} -s zh_TW.big5 $$i/zh_TW.Big5; \
+	done
 
+.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/manpages"
+.include <bsd.port.post.mk>

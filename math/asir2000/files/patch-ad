@@ -1,0 +1,48 @@
+--- configure.orig	Thu Jul 25 17:53:13 2002
++++ configure	Fri Jul 26 14:44:17 2002
+@@ -4,6 +4,7 @@
+ use_plot=0
+ use_pari=0
+ use_interval=0
++use_lapack=0
+ use_fep=0
+ oxhome=/usr/local
+ 
+@@ -24,6 +25,8 @@
+ 		use_pari=2 ;;
+ 	-interval)
+ 		use_interval=1 ;;
++	-lapack)
++		use_lapack=1 ;;
+ 	-fep)
+ 		use_fep=1 ;;
+ 	esac
+@@ -43,12 +46,16 @@
+ libname=$libname"_pari"
+ libpari=pari
+ echo "#define USE_PARI" >> include/config.h
++echo "#define PARI_VERSION \"PARI ${OLD_PARI_VERSION}, copyright (C) 2000,
++     C. Batut, K. Belabas, D. Bernardi, H. Cohen and M. Olivier\"" >> include/version.h
+ fi
+ 
+ if [ $use_pari = 2 ]; then
+ libname=$libname"_pari"
+ libpari=pari-2.2
+ echo "#define USE_PARI" >> include/config.h
++echo "#define PARI_VERSION \"PARI ${PARI_VERSION}, copyright (C) 2000,
++     C. Batut, K. Belabas, D. Bernardi, H. Cohen and M. Olivier\"" >> include/version.h
+ fi
+ 
+ if [ $use_plot != 0 ]; then
+@@ -59,6 +66,11 @@
+ if [ $use_interval != 0 ]; then
+ libname=$libname"_itv"
+ echo "#define USE_INTERVAL" >> include/config.h
++fi
++
++if [ $use_lapack != 0 ]; then
++echo "#define USE_LAPACK" >> include/config.h
++echo "#define LAPACK_VERSION \"LAPACK Project Version ${LAPACK_VERSION}\"" >> include/version.h
+ fi
+ 
+ if [ $use_fep != 0 ]; then

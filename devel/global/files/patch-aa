@@ -1,0 +1,16 @@
+--- doc/Makefile.in.orig	Wed Aug 14 21:33:54 2002
++++ doc/Makefile.in	Wed Aug 14 21:36:13 2002
+@@ -203,13 +203,6 @@
+ 	  done; \
+ 	done
+ 	@$(POST_INSTALL)
+-	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
+-	  list='$(INFO_DEPS)'; \
+-	  for file in $$list; do \
+-	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file";\
+-	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file || :;\
+-	  done; \
+-	else : ; fi
+ 
+ uninstall-info:
+ 	$(PRE_UNINSTALL)

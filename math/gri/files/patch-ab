@@ -1,0 +1,10 @@
+--- doc/Makefile.orig	Sat Jun  1 13:37:59 2002
++++ doc/Makefile	Tue Jul 16 11:55:44 2002
+@@ -17,7 +17,6 @@
+ 	make html
+ 
+ install:
+-	make info-install
+ 	make html-install
+ 
+ read:

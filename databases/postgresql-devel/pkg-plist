@@ -1,0 +1,133 @@
+%%SERVER%%bin/postmaster
+%%SERVER%%bin/postgres
+bin/clusterdb
+bin/ecpg
+bin/initdb
+bin/initlocation
+bin/ipcclean
+bin/pg_ctl
+bin/pg_dump
+bin/pg_restore
+bin/pg_dumpall
+bin/pg_id
+bin/psql
+bin/createdb
+bin/dropdb
+bin/createuser
+bin/dropuser
+bin/droplang
+bin/vacuumdb
+bin/createlang
+bin/pg_config
+bin/pg_controldata
+bin/pg_resetxlog
+bin/pg_encoding
+include/libpq/libpq-fs.h
+@dirrm include/libpq
+include/postgresql/internal/libpq/pqcomm.h
+@dirrm include/postgresql/internal/libpq
+include/postgresql/internal/lib/dllist.h
+@dirrm include/postgresql/internal/lib
+include/postgresql/internal/c.h
+include/postgresql/internal/postgres_fe.h
+include/postgresql/internal/libpq-int.h
+include/postgresql/internal/pqexpbuffer.h
+@dirrm include/postgresql/internal
+@dirrm include/postgresql
+include/postgres_ext.h
+include/pg_config.h
+include/pg_config_os.h
+include/libpq-fe.h
+include/ecpgerrno.h
+include/ecpglib.h
+include/ecpgtype.h
+include/sqlca.h
+include/sql3types.h
+lib/libpq.so
+lib/libpq.a
+lib/libpq.so.2
+lib/libecpg.so
+lib/libecpg.a
+lib/libecpg.so.3
+%%SERVER%%lib/postgresql/plpgsql.so
+%%SERVER%%lib/postgresql/ascii_and_mic.so
+%%SERVER%%lib/postgresql/cyrillic_and_mic.so
+%%SERVER%%lib/postgresql/euc_cn_and_mic.so
+%%SERVER%%lib/postgresql/euc_jp_and_sjis.so
+%%SERVER%%lib/postgresql/euc_kr_and_mic.so
+%%SERVER%%lib/postgresql/euc_tw_and_big5.so
+%%SERVER%%lib/postgresql/latin2_and_win1250.so
+%%SERVER%%lib/postgresql/latin_and_mic.so
+%%SERVER%%lib/postgresql/utf8_and_ascii.so
+%%SERVER%%lib/postgresql/utf8_and_big5.so
+%%SERVER%%lib/postgresql/utf8_and_cyrillic.so
+%%SERVER%%lib/postgresql/utf8_and_euc_cn.so
+%%SERVER%%lib/postgresql/utf8_and_euc_jp.so
+%%SERVER%%lib/postgresql/utf8_and_euc_kr.so
+%%SERVER%%lib/postgresql/utf8_and_euc_tw.so
+%%SERVER%%lib/postgresql/utf8_and_gb18030.so
+%%SERVER%%lib/postgresql/utf8_and_gbk.so
+%%SERVER%%lib/postgresql/utf8_and_iso8859.so
+%%SERVER%%lib/postgresql/utf8_and_iso8859_1.so
+%%SERVER%%lib/postgresql/utf8_and_johab.so
+%%SERVER%%lib/postgresql/utf8_and_sjis.so
+%%SERVER%%lib/postgresql/utf8_and_tcvn.so
+%%SERVER%%lib/postgresql/utf8_and_uhc.so
+%%SERVER%%lib/postgresql/utf8_and_win1250.so
+%%SERVER%%lib/postgresql/utf8_and_win1256.so
+%%SERVER%%lib/postgresql/utf8_and_win874.so
+@unexec rmdir %D/lib/postgresql 2>/dev/null || true
+%%SERVER%%share/postgresql/502.pgsql
+%%SERVER%%share/postgresql/conversion_create.sql
+%%SERVER%%share/postgresql/postgres.bki
+%%SERVER%%share/postgresql/postgres.description
+%%SERVER%%share/postgresql/pg_hba.conf.sample
+%%SERVER%%share/postgresql/pg_ident.conf.sample
+%%SERVER%%share/postgresql/postgresql.conf.sample
+share/postgresql/post-install-notes
+@unexec rmdir %D/share/postgresql 2>/dev/null || true
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/de/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/de/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/de/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/de/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/hu/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/ru/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/ru/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/ru/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/fr/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/fr/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/sv/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/sv/LC_MESSAGES/psql.mo
+%%GETTEXT%%@unexec rmdir share/locale/*/LC_MESSAGES 2>/dev/null || true
+%%GETTEXT%%@unexec rmdir share/locale/* 2>/dev/null || true
+%%GETTEXT%%@unexec rmdir share/locale 2>/dev/null || true
+%%SERVER%%@unexec if cmp -s ~pgsql/.profile %D/share/postgresql/dot.profile.dist; then rm -f ~pgsql/.profile; fi
+%%SERVER%%@unexec if cmp -s ~pgsql/.cshrc %D/share/postgresql/dot.cshrc.dist; then rm -f ~pgsql/.cshrc; fi
+%%SERVER%%@unexec [ -f ~pgsql/dot.profile.dist ] && rm ~pgsql/dot.profile.dist
+%%SERVER%%@unexec [ -f ~pgsql/dot.cshrc.dist ] && rm ~pgsql/dot.cshrc.dist
+%%SERVER%%@exec [ -f %D/share/postgresql/post-install-notes ] && cp %D/share/postgresql/post-install-notes ~pgsql && chown pgsql:pgsql ~pgsql/post-install-notes
+%%SERVER%%@unexec [ -f ~pgsql/post-install-notes ] && rm ~pgsql/post-install-notes
+%%SERVER%%share/postgresql/dot.profile.dist
+%%SERVER%%share/postgresql/dot.cshrc.dist
+%%SERVER%%@exec [ -f %D/share/postgresql/dot.profile.dist ] && cp %D/share/postgresql/dot.profile.dist ~pgsql/.
+%%SERVER%%@exec [ -f %D/share/postgresql/dot.cshrc.dist ] && cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.
+%%SERVER%%@exec [ -f ~pgsql/.profile ] || (cp %D/share/postgresql/dot.profile.dist ~pgsql/.profile && chown pgsql:pgsql ~pgsql/.profile)
+%%SERVER%%@exec [ -f ~pgsql/.cshrc ] || (cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.cshrc && chown pgsql:pgsql ~pgsql/.cshrc)
+%%SERVER%%@unexec rmdir ~pgsql 2> /dev/null || true
+%%SERVER%%@unexec echo "Warning: If you will *NOT* use this package anymore, please remove %D/pgsql and the pgsql user manually."
+%%SERVER%%@unexec rmdir %D/share/postgresql 2>/dev/null || true
+%%SERVER%%etc/rc.d/010.pgsql.sh

@@ -1,0 +1,31 @@
+# New ports collection makefile for:	p4.el for Emacsen
+# Date created:		2 September 2001
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	p4.el
+PORTVERSION=	10.1
+CATEGORIES=	devel elisp
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	p4el
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	knu@FreeBSD.org
+
+RUN_DEPENDS=	p4:${.CURDIR}/../perforce
+
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
+XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
+
+do-install:
+	${MKDIR} ${EMACSLISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/p4.el ${EMACSLISPDIR}/
+	${MKDIR} ${XEMACSLISPDIR}
+	${LN} -sf ${EMACSLISPDIR}/p4.el ${XEMACSLISPDIR}
+
+.include <bsd.port.mk>

@@ -1,0 +1,36 @@
+bin/cancel
+bin/lp
+bin/lpq
+bin/lpr
+bin/lprm
+bin/lpstat
+@unexec if [ -f %D/etc/lpd.conf ]; then cmp -s %D/etc/lpd.conf.sample %D/etc/lpd.conf && rm -f %D/etc/lpd.conf || echo "If you are permanently removing this port, you should do a ``rm ${PKG_PREFIX}/etc/lpd.conf`` to remove config files left." | fmt ; fi
+etc/lpd.conf.sample
+@unexec if [ -f %D/etc/lpd.perms ]; then cmp -s %D/etc/lpd.perms.sample %D/etc/lpd.perms && rm -f %D/etc/lpd.perms || echo "If you are permanently removing this port, you should do a ``rm ${PKG_PREFIX}/etc/lpd.perms`` to remove config files left." | fmt ; fi
+etc/lpd.perms.sample
+etc/lprng.sh
+etc/printcap.sample
+etc/rc.d/lprng.sh
+lib/liblpr.a
+lib/liblpr.la
+lib/liblpr.so
+lib/liblpr.so.0
+libexec/filters/lpbanner
+libexec/filters/lpf
+libexec/filters/pclbanner
+libexec/filters/psbanner
+sbin/checkpc
+sbin/lpc
+sbin/lpd
+share/doc/LPRng/CHANGES
+share/doc/LPRng/LISA98.ppt
+share/doc/LPRng/LPRng-HOWTO.dsl
+share/doc/LPRng/LPRng-HOWTO.dtd
+share/doc/LPRng/LPRng-HOWTO.html
+share/doc/LPRng/LPRng-HOWTO.pdf
+share/doc/LPRng/LPRng-HOWTO.sgml
+share/doc/LPRng/LPRng.jpg
+share/doc/LPRng/LPRngT-L.jpg
+share/doc/LPRng/LPRngT-S.jpg
+@dirrm libexec/filters
+@dirrm share/doc/LPRng

@@ -1,0 +1,43 @@
+--- tircproxy.c.orig	Wed Jun  5 19:13:00 2002
++++ tircproxy.c	Wed Jun  5 19:14:46 2002
+@@ -131,6 +131,8 @@
+ #	include <netinet/ip_compat.h>
+ #  endif
+ #  include <netinet/ip_fil.h>
++#  include <netinet/ip_nat.h>
++#  include <netinet/ip_state.h>
+ #  include <netinet/ip_proxy.h>
+ #  include <netinet/ip_nat.h>
+ #  define TRANS 1
+@@ -1066,9 +1068,10 @@
+ 	struct sockaddr_in			to_addr;
+ 	int					to_len;
+ #if IPF
+-	struct sockaddr_in			socketin, sloc;
+-	natlookup_t     			natlook;
+-	int					fd;
++	struct sockaddr_in                      socketin, sloc;
++	natlookup_t				natlook;
++	natlookup_t                             *natlookp = &natlook;
++	int                                     fd;
+ #endif
+    
+    	/* Give this thing 10 minutes to get started (paranoia).
+@@ -1148,13 +1151,13 @@
+                 natlook.nl_outip = socketin.sin_addr;
+                 natlook.nl_inip = sloc.sin_addr;
+                 natlook.nl_flags = IPN_TCP;
+-                natlook.nl_outport = socketin.sin_port;
+-                natlook.nl_inport = sloc.sin_port;
++                natlook.nl_outport = ntohs(socketin.sin_port);
++                natlook.nl_inport = ntohs(sloc.sin_port);
+ 
+                 fd = open(IPL_NAT, O_RDONLY);
+-                if (ioctl(fd, SIOCGNATL, &natlook) == -1)
++                if (ioctl(fd, SIOCGNATL, &natlookp) == -1)
+ 	     	{
+-                	perror("ioctl");
++                	perror("ioctl(SIOCGNATL)");
+                 	exit(-1);
+                 }
+                 close(fd);

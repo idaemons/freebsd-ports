@@ -1,0 +1,15 @@
+--- doc/manual/Makefile.orig	Sat Feb 23 23:16:35 2002
++++ doc/manual/Makefile	Sat Feb 23 23:17:10 2002
+@@ -1,11 +1,7 @@
+ #
+ # This is the main makefile for documentation
+ 
+-prefix = /usr
+-docdir = $(prefix)/share/doc/packages
+-INSTALL = install -m 0644
+-INSTALLDIR = install -d 
+-MAKE = make
++docdir = ${PREFIX}/share/doc
+ 
+ 
+ 

@@ -1,0 +1,8 @@
+--- version.c.orig	Wed Dec  6 10:34:12 2000
++++ version.c	Wed Dec  6 10:34:58 2000
+@@ -685,4 +685,4 @@
+ 		in search.c.
+ */
+ 
+-char version[] = "358+iso254";
++char version[] = "358+iso254+regex_cs-lwp9k+gtags";

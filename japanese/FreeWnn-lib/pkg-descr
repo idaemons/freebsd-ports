@@ -1,16 +1,13 @@
-This is Wnn4.2, a Japanese/Chinese/Korean input method.  It is
-included primarily so that we can compile mule-2.1, a multilingual
-emacs.
+FreeWnn is a Japanese/Chinese/Korean input method.  
 
-Since I don't have time to test anything else, only Japanese is built
-at this time.  (Or I won't get it on the 2.0 CDROM!)  Also, jserver
-doesn't seem to work well so it's temporarily disabled too.  Take a
-look at the file patches/patch-aa and change them back if you want to
-try others.
+WWW: http://www.freewnn.org/
 
-Note that binaries and libraries go to /usr/local, while man pages and 
-includes go to /usr/X11R6.  That's the way it was designed, I don't
-know why.
+This port has only libraries for a Japanese imput method. The
+libraries containes a archive file (libwnn.a), header files and files
+which are used to a client.
 
-- Satoshi
-(asami@cs.berkeley.edu)
+Note that you must set a environment variable JSERVER if you use a
+client of Wnn.
+
+-- S. Taoka
+<taoka@FreeBSD.org>

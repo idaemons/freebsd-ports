@@ -1,0 +1,46 @@
+# New ports collection makefile for:	wsoundserver
+# Date created:		9 December 1998
+# Whom:			gljohns@bellsouth.net
+#
+# $FreeBSD$
+#
+
+PORTNAME=	wsoundserver
+PORTVERSION=	0.4.0
+CATEGORIES=	audio windowmaker
+MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
+DISTNAME=	WSoundServer-${PORTVERSION}
+
+MAINTAINER=	sobomax@FreeBSD.org
+
+BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
+LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
+		audiofile.0:${PORTSDIR}/audio/libaudiofile \
+		dockapp.1:${PORTSDIR}/x11-wm/libdockapp
+RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
+
+USE_X_PREFIX=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/WINGs"
+
+MAN1=		get-wsound-flags.1x getsoundset.1x setsoundset.1x \
+			wsoundplay.1x wsoundserver.1x
+
+post-install:
+	${SH} ${FILESDIR}/configure > ${WRKDIR}/WMSound
+	${MKDIR} ${PREFIX}/etc/WindowMaker
+	${INSTALL_DATA} ${WRKDIR}/WMSound \
+		${PREFIX}/etc/WindowMaker/WMSound
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mesound}
+USE_GNOME+=	esound
+CONFIGURE_ARGS+=--enable-esd
+PKGNAMESUFFIX=	-esound
+.endif
+
+.include <bsd.port.post.mk>

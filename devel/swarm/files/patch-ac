@@ -1,0 +1,30 @@
+--- configure.orig	Sat May 18 16:08:11 2002
++++ configure	Sun May 19 06:09:30 2002
+@@ -1691,8 +1691,8 @@
+ LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
++${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig --no-reexec \
++$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Reload cache, that may have been modified by ltconfig
+@@ -1706,7 +1706,7 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="/usr/local/share/libtool/ltconfig /usr/local/share/libtool/ltmain.sh"
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -5049,6 +5049,7 @@
+       JAVAINCLUDES="$JAVAINCLUDES -I$jdkincludedir/freebsd"
+       threads=green
+       proc=i386
++      JAVACMD="\${jdkdir}/bin/java"
+     elif test -f $expand_jdkincludedir/irix/jni_md.h; then
+       JAVAINCLUDES="$JAVAINCLUDES -I$jdkincludedir/irix"
+       threads=green

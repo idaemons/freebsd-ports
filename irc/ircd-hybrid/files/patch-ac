@@ -1,0 +1,25 @@
+--- include/config.h.in.orig	Thu Mar 21 16:37:57 2002
++++ include/config.h.in	Thu Mar 21 16:41:01 2002
+@@ -100,8 +100,9 @@
+  *
+  */
+ 
+-#define DPATH   "/usr/local/ircd/"
+-#define SPATH   "/usr/local/ircd/ircd"
++#define BPATH   "@prefix@/bin/"
++#define DPATH   "@prefix@/etc/ircd/"
++#define SPATH   "@prefix@/bin/ircd"
+ #define CPATH   "ircd.conf"
+ #define KPATH   "kline.conf"
+ #define DLPATH  "kline.conf"
+@@ -208,8 +209,8 @@
+  *
+  * These need to be defined if you want to use SYSLOG logging, too.
+  */
+-#define FNAME_USERLOG "/usr/local/ircd/users"
+-#define FNAME_OPERLOG "/usr/local/ircd/opers"
++#define FNAME_USERLOG "@prefix@/share/ircd/users"
++#define FNAME_OPERLOG "@prefix@/share/ircd/opers"
+ 
+ /* RFC1035_ANAL
+  * Defining this causes ircd to reject hostnames with non-compliant chars.

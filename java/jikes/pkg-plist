@@ -1,0 +1,3 @@
+bin/jikes
+share/doc/jikes-%%PORTVERSION%%/license.htm
+@dirrm share/doc/jikes-%%PORTVERSION%%

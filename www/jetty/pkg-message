@@ -1,0 +1,23 @@
+
+- The environment variable JETTY_HOME should be set to the 
+  installation directory. Typically :
+
+	JETTY_HOME=%%PREFIX%%/share/java/jetty-%%PORTVERSION%%
+        export JETTY_HOME
+
+- The environment variable JAVA_HOME should be set to the 
+  Java installation directory. For instance :
+
+	JAVA_HOME=%%PREFIX%%/jdk1.3.1
+        export JAVA_HOME
+
+- Running the Demo :
+
+	$JETTY_HOME/bin/jetty.sh demo
+  	
+  Use a browser to access the Jetty demo site at :
+
+	http://hostname:8080
+  or
+	http://localhost:8080  (if the browser is running 
+				on the same machine)

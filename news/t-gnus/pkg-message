@@ -1,0 +1,6 @@
+************************************************************
+* Before using T-gnus, you must add the following line to  *
+* your own .emacs file.                                    *
+*                                                          *
+* (require 't-gnus-startup)                                *
+************************************************************

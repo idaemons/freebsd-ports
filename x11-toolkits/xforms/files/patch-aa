@@ -1,0 +1,11 @@
+--- Imakefile.orig	Thu Jun  6 10:45:33 2002
++++ Imakefile	Tue Jul 16 02:25:45 2002
+@@ -3,7 +3,7 @@
+ /* Fairly important stuff */
+ 
+ #define DoOptimize YES
+-#define OptimizationLevel -O4
++#define OptimizationLevel -O
+ #define DoWall NO
+ 
+ #define BuildShared YES

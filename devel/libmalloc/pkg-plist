@@ -1,7 +1,10 @@
-@cd /usr/local
+@comment $FreeBSD$
 lib/libmalloc.a
-@exec ranlib %D/%F
 lib/libmalloc_d.a
-@exec ranlib %D/%F
 include/malloc.h
-lib/libmalloc_d.so.1.13
+include/libmalloc.h
+lib/libmalloc_d.so
+lib/libmalloc_d.so.1.18
+share/doc/libmalloc/malloc.doc
+share/doc/libmalloc/NOTE
+@dirrm share/doc/libmalloc

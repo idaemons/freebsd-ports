@@ -1,0 +1,24 @@
+# New ports collection makefile for:	gkrellshoot
+# Date Created:			7 Mar 2002
+# Whom:				Andrew Stuart <elitetek@tekrealm.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gkrellshoot
+PORTVERSION=	0.2
+CATEGORIES=	misc
+MASTER_SITES=	http://www.geocities.com/m_muthukumar/
+
+MAINTAINER=	elitetek@tekrealm.net
+
+BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
+RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
+		import:${PORTSDIR}/graphics/ImageMagick
+
+WRKSRC=		${WRKDIR}/gkrellShoot-${PORTVERSION}
+USE_X_PREFIX=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
+
+.include <bsd.port.mk>

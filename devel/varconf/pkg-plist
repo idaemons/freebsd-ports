@@ -1,0 +1,15 @@
+bin/varconf-config
+include/varconf/Config.h
+include/varconf/dynbase.h
+include/varconf/dyncmp.h
+include/varconf/dyntypes.h
+include/varconf/dynvar.h
+include/varconf/parse_error.h
+include/varconf/varconf.h
+include/varconf/variable.h
+lib/libvarconf.a
+lib/libvarconf.la
+lib/libvarconf.so
+lib/libvarconf.so.5
+share/aclocal/varconf.m4
+@dirrm include/varconf
