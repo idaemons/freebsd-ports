@@ -1,0 +1,11 @@
+--- lib/sshreadline/Makefile.in.orig	Thu Mar 30 21:41:55 2000
++++ lib/sshreadline/Makefile.in	Wed May 17 18:06:26 2000
+@@ -120,7 +120,7 @@
+ include_HEADERS = sshreadline.h
+ # noinst_HEADERS =
+ 
+-ADD_INCLUDES = -I$(srcdir) -I. -I../.. 	-I$(top_builddir) -I$(top_srcdir) 	-I../sshmath -I$(srcdir)/../sshmath 	-I../zlib -I$(srcdir)/../zlib 	-I../sshutil -I$(srcdir)/../sshutil
++ADD_INCLUDES = -I$(srcdir) -I. -I../.. 	-I$(top_builddir) -I$(top_srcdir) 	-I../sshmath -I$(srcdir)/../sshmath 	-I../sshutil -I$(srcdir)/../sshutil
+ 
+ 
+ INCLUDES = $(ADD_INCLUDES) -I$(srcdir) -I. -I$(top_srcdir) -I$(top_builddir) -I$(top_builddir)/include -I$(top_srcdir)/lib/sshutil

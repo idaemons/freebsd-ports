@@ -1,0 +1,13 @@
+--- x11/xconq.c.orig	Mon Apr 24 07:56:58 2000
++++ x11/xconq.c	Wed Jun 28 21:45:49 2000
+@@ -46,8 +46,8 @@
+     if (argc == -1)
+       cmd_error(NULL, NULL);
+     /* Shift to being the user that started the game. */
+-    games_uid = geteuid();
+-    setuid(getuid());
++    games_uid = getegid();
++    setgid(getgid());
+     init_library_path(NULL);
+     /* Fiddle with game module structures. */
+     clear_game_modules();

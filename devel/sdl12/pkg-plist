@@ -1,0 +1,116 @@
+bin/sdl11-config
+include/SDL11/SDL.h
+include/SDL11/SDL_active.h
+include/SDL11/SDL_audio.h
+include/SDL11/SDL_byteorder.h
+include/SDL11/SDL_cdrom.h
+include/SDL11/SDL_copying.h
+include/SDL11/SDL_endian.h
+include/SDL11/SDL_error.h
+include/SDL11/SDL_events.h
+include/SDL11/SDL_joystick.h
+include/SDL11/SDL_keyboard.h
+include/SDL11/SDL_keysym.h
+include/SDL11/SDL_main.h
+include/SDL11/SDL_mouse.h
+include/SDL11/SDL_mutex.h
+include/SDL11/SDL_quit.h
+include/SDL11/SDL_rwops.h
+include/SDL11/SDL_syswm.h
+include/SDL11/SDL_thread.h
+include/SDL11/SDL_timer.h
+include/SDL11/SDL_types.h
+include/SDL11/SDL_version.h
+include/SDL11/SDL_video.h
+include/SDL11/begin_code.h
+include/SDL11/close_code.h
+lib/libSDL-1.1.so.2
+lib/libSDL-1.1.a
+lib/libSDL-1.1.la
+lib/libSDL-1.1.so
+lib/libSDLmain-1.1.a
+share/aclocal/sdl11.m4
+share/doc/SDL11/BUGS
+share/doc/SDL11/COPYING
+share/doc/SDL11/CREDITS
+share/doc/SDL11/README
+share/doc/SDL11/WhatsNew
+share/doc/SDL11/audio/examples.html
+share/doc/SDL11/audio/funclist.html
+share/doc/SDL11/audio/functions.html
+share/doc/SDL11/audio/index.html
+share/doc/SDL11/cdrom/examples.html
+share/doc/SDL11/cdrom/funclist.html
+share/doc/SDL11/cdrom/functions.html
+share/doc/SDL11/cdrom/index.html
+share/doc/SDL11/docs.html
+share/doc/SDL11/events/examples.html
+share/doc/SDL11/events/functions.html
+share/doc/SDL11/events/index.html
+share/doc/SDL11/events/keysym.html
+share/doc/SDL11/images/rainbow.gif
+share/doc/SDL11/index.html
+share/doc/SDL11/opengl/examples.html
+share/doc/SDL11/opengl/funclist.html
+share/doc/SDL11/opengl/functions.html
+share/doc/SDL11/opengl/index.html
+share/doc/SDL11/threads/index.html
+share/doc/SDL11/time/examples.html
+share/doc/SDL11/time/funclist.html
+share/doc/SDL11/time/functions.html
+share/doc/SDL11/time/index.html
+share/doc/SDL11/video/examples.html
+share/doc/SDL11/video/funclist.html
+share/doc/SDL11/video/functions.html
+share/doc/SDL11/video/index.html
+share/examples/SDL11/COPYING
+share/examples/SDL11/Makefile.am
+share/examples/SDL11/Makefile.in
+share/examples/SDL11/README
+share/examples/SDL11/acinclude.m4
+share/examples/SDL11/aclocal.m4
+share/examples/SDL11/autogen.sh
+share/examples/SDL11/checkkeys.c
+share/examples/SDL11/config.guess
+share/examples/SDL11/config.sub
+share/examples/SDL11/configure
+share/examples/SDL11/configure.in
+share/examples/SDL11/graywin.c
+share/examples/SDL11/icon.bmp
+share/examples/SDL11/install-sh
+share/examples/SDL11/loopwave.c
+share/examples/SDL11/missing
+share/examples/SDL11/mkinstalldirs
+share/examples/SDL11/picture.xbm
+share/examples/SDL11/sample.bmp
+share/examples/SDL11/sample.wav
+share/examples/SDL11/testalpha.c
+share/examples/SDL11/testbitmap.c
+share/examples/SDL11/testcdrom.c
+share/examples/SDL11/testerror.c
+share/examples/SDL11/testgl.c
+share/examples/SDL11/testhread.c
+share/examples/SDL11/testjoystick.c
+share/examples/SDL11/testkeys.c
+share/examples/SDL11/testlock.c
+share/examples/SDL11/testsem.c
+share/examples/SDL11/testsprite.c
+share/examples/SDL11/testtimer.c
+share/examples/SDL11/testtypes.c
+share/examples/SDL11/testver.c
+share/examples/SDL11/testvidinfo.c
+share/examples/SDL11/testwin.c
+share/examples/SDL11/testwm.c
+share/examples/SDL11/torturethread.c
+share/examples/SDL11/threadwin.c
+@dirrm share/examples/SDL11
+@dirrm share/doc/SDL11/video
+@dirrm share/doc/SDL11/time
+@dirrm share/doc/SDL11/threads
+@dirrm share/doc/SDL11/opengl
+@dirrm share/doc/SDL11/images
+@dirrm share/doc/SDL11/events
+@dirrm share/doc/SDL11/cdrom
+@dirrm share/doc/SDL11/audio
+@dirrm share/doc/SDL11
+@dirrm include/SDL11

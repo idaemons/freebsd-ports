@@ -1,0 +1,26 @@
+*** main.c.orig	Tue Jan  9 13:00:03 1996
+--- main.c	Sun Jan  9 06:47:30 2000
+***************
+*** 9,16 ****
+  
+  #include "apple.h"
+  #include <curses.h>
+  #define REF_DELAY 2000
+! #define ROMFILE "apple.rom"
+  
+  extern char prodosroot[];
+  
+--- 9,21 ----
+  
+  #include "apple.h"
+  #include <curses.h>
++ 
+  #define REF_DELAY 2000
+! 
+! /* Where is the default rom file?? */
+! #ifndef ROMFILE
+! #define ROMFILE "%%PREFIX%%/libdata/apple2/prodos-2e.rom"
+! #endif
+  
+  extern char prodosroot[];
+  

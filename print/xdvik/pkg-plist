@@ -1,0 +1,7 @@
+bin/xdvi
+bin/gsftopk
+share/texmf/dvips/render.ps
+share/doc/xdvi/ChangeLog
+share/doc/xdvi/README
+share/doc/xdvi/xdvi.FAQ
+@dirrm share/doc/xdvi

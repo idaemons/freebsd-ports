@@ -1,0 +1,213 @@
+lib/xemacs/xemacs-packages/etc/ediff/ediff-A-up.xbm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-A-up.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-A-xx.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-B-up.xbm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-B-up.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-B-xx.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-help.xbm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-help.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-next.xbm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-next.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-prev.xbm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-prev.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-quit.xbm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-quit.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-refine.xbm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-refine.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-save-xx.xbm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-save-xx.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-save.xbm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-save.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-toggle-split-up.xbm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-toggle-split-up.xpm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-update.xbm
+lib/xemacs/xemacs-packages/etc/ediff/ediff-update.xpm
+lib/xemacs/xemacs-packages/etc/emerge.txt
+lib/xemacs/xemacs-packages/etc/idlwave/CHANGES
+lib/xemacs/xemacs-packages/etc/jde/BeanShellBuffer.gif
+lib/xemacs/xemacs-packages/etc/jde/BshMultiLineEx.gif
+lib/xemacs/xemacs-packages/etc/jde/JdeMenu.gif
+lib/xemacs/xemacs-packages/etc/jde/KeyBindings.gif
+lib/xemacs/xemacs-packages/etc/jde/OverrideMeth1.gif
+lib/xemacs/xemacs-packages/etc/jde/OverrideMeth2.gif
+lib/xemacs/xemacs-packages/etc/jde/OverrideMeth3.gif
+lib/xemacs/xemacs-packages/etc/jde/OverrideMeth4.gif
+lib/xemacs/xemacs-packages/etc/jde/OverrideMeth5.gif
+lib/xemacs/xemacs-packages/etc/jde/RegisterTemplate.gif
+lib/xemacs/xemacs-packages/etc/jde/TemplateList.gif
+lib/xemacs/xemacs-packages/etc/jde/WorkingDirectory.gif
+lib/xemacs/xemacs-packages/etc/jde/bsh-ug-content.html
+lib/xemacs/xemacs-packages/etc/jde/bsh-ug-toc.html
+lib/xemacs/xemacs-packages/etc/jde/bsh-ug.html
+lib/xemacs/xemacs-packages/etc/jde/debug1.gif
+lib/xemacs/xemacs-packages/etc/jde/debug2.gif
+lib/xemacs/xemacs-packages/etc/jde/debug3.gif
+lib/xemacs/xemacs-packages/etc/jde/fig1.gif
+lib/xemacs/xemacs-packages/etc/jde/fig2.gif
+lib/xemacs/xemacs-packages/etc/jde/fig3.gif
+lib/xemacs/xemacs-packages/etc/jde/java/lib/bsh.jar
+lib/xemacs/xemacs-packages/etc/jde/java/lib/jde.jar
+lib/xemacs/xemacs-packages/etc/jde/java/src/jde/util/JdeUtilities.java
+lib/xemacs/xemacs-packages/etc/jde/java/src/jde/wizards/ClassRegistry.java
+lib/xemacs/xemacs-packages/etc/jde/java/src/jde/wizards/DefaultNameFactory.java
+lib/xemacs/xemacs-packages/etc/jde/java/src/jde/wizards/InterfaceFactory.java
+lib/xemacs/xemacs-packages/etc/jde/java/src/jde/wizards/MethodFactory.java
+lib/xemacs/xemacs-packages/etc/jde/java/src/jde/wizards/MethodOverrideFactory.java
+lib/xemacs/xemacs-packages/etc/jde/java/src/jde/wizards/NameFactory.java
+lib/xemacs/xemacs-packages/etc/jde/java/src/jde/wizards/Signature.java
+lib/xemacs/xemacs-packages/etc/jde/jde-ug-content.html
+lib/xemacs/xemacs-packages/etc/jde/jde-ug-toc.html
+lib/xemacs/xemacs-packages/etc/jde/jde-ug.html
+lib/xemacs/xemacs-packages/etc/jde/jde.htm
+lib/xemacs/xemacs-packages/info/ediff.info
+lib/xemacs/xemacs-packages/info/ediff.info-1
+lib/xemacs/xemacs-packages/info/ediff.info-2
+lib/xemacs/xemacs-packages/info/ediff.info-3
+lib/xemacs/xemacs-packages/info/idlwave.info
+lib/xemacs/xemacs-packages/info/idlwave.info-1
+lib/xemacs/xemacs-packages/info/idlwave.info-2
+lib/xemacs/xemacs-packages/info/vhdl-mode.info
+lib/xemacs/xemacs-packages/lisp/ada/ChangeLog
+lib/xemacs/xemacs-packages/lisp/ada/_pkg.el
+lib/xemacs/xemacs-packages/lisp/ada/ada-mode.el
+lib/xemacs/xemacs-packages/lisp/ada/ada-mode.elc
+lib/xemacs/xemacs-packages/lisp/ada/ada-stmt.el
+lib/xemacs/xemacs-packages/lisp/ada/ada-stmt.elc
+lib/xemacs/xemacs-packages/lisp/ada/auto-autoloads.el
+lib/xemacs/xemacs-packages/lisp/ada/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/ada/custom-load.el
+lib/xemacs/xemacs-packages/lisp/ada/custom-load.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ChangeLog
+lib/xemacs/xemacs-packages/lisp/ediff/README
+lib/xemacs/xemacs-packages/lisp/ediff/_pkg.el
+lib/xemacs/xemacs-packages/lisp/ediff/auto-autoloads.el
+lib/xemacs/xemacs-packages/lisp/ediff/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/ediff/custom-load.el
+lib/xemacs/xemacs-packages/lisp/ediff/custom-load.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-diff.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-diff.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-help.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-help.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-hook.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-hook.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-init.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-init.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-merg.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-merg.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-mult.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-mult.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-ptch.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-ptch.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-tbar.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-tbar.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-util.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-util.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-vers.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-vers.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-wind.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff-wind.elc
+lib/xemacs/xemacs-packages/lisp/ediff/ediff.el
+lib/xemacs/xemacs-packages/lisp/ediff/ediff.elc
+lib/xemacs/xemacs-packages/lisp/emerge/ChangeLog
+lib/xemacs/xemacs-packages/lisp/emerge/_pkg.el
+lib/xemacs/xemacs-packages/lisp/emerge/auto-autoloads.el
+lib/xemacs/xemacs-packages/lisp/emerge/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/emerge/emerge.el
+lib/xemacs/xemacs-packages/lisp/emerge/emerge.elc
+lib/xemacs/xemacs-packages/lisp/idlwave/ChangeLog
+lib/xemacs/xemacs-packages/lisp/idlwave/_pkg.el
+lib/xemacs/xemacs-packages/lisp/idlwave/auto-autoloads.el
+lib/xemacs/xemacs-packages/lisp/idlwave/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/idlwave/idlw-rinfo.el
+lib/xemacs/xemacs-packages/lisp/idlwave/idlw-rinfo.elc
+lib/xemacs/xemacs-packages/lisp/idlwave/idlw-shell.el
+lib/xemacs/xemacs-packages/lisp/idlwave/idlw-shell.elc
+lib/xemacs/xemacs-packages/lisp/idlwave/idlw-toolbar.el
+lib/xemacs/xemacs-packages/lisp/idlwave/idlw-toolbar.elc
+lib/xemacs/xemacs-packages/lisp/idlwave/idlwave.el
+lib/xemacs/xemacs-packages/lisp/idlwave/idlwave.elc
+lib/xemacs/xemacs-packages/lisp/jde/ChangeLog
+lib/xemacs/xemacs-packages/lisp/jde/_pkg.el
+lib/xemacs/xemacs-packages/lisp/jde/auto-autoloads.el
+lib/xemacs/xemacs-packages/lisp/jde/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/jde/beanshell.el
+lib/xemacs/xemacs-packages/lisp/jde/beanshell.elc
+lib/xemacs/xemacs-packages/lisp/jde/custom-load.el
+lib/xemacs/xemacs-packages/lisp/jde/custom-load.elc
+lib/xemacs/xemacs-packages/lisp/jde/jde-compile.el
+lib/xemacs/xemacs-packages/lisp/jde/jde-compile.elc
+lib/xemacs/xemacs-packages/lisp/jde/jde-db.el
+lib/xemacs/xemacs-packages/lisp/jde/jde-db.elc
+lib/xemacs/xemacs-packages/lisp/jde/jde-gen.el
+lib/xemacs/xemacs-packages/lisp/jde/jde-gen.elc
+lib/xemacs/xemacs-packages/lisp/jde/jde-make.el
+lib/xemacs/xemacs-packages/lisp/jde/jde-make.elc
+lib/xemacs/xemacs-packages/lisp/jde/jde-run.el
+lib/xemacs/xemacs-packages/lisp/jde/jde-run.elc
+lib/xemacs/xemacs-packages/lisp/jde/jde-wiz.el
+lib/xemacs/xemacs-packages/lisp/jde/jde-wiz.elc
+lib/xemacs/xemacs-packages/lisp/jde/jde.el
+lib/xemacs/xemacs-packages/lisp/jde/jde.elc
+lib/xemacs/xemacs-packages/lisp/scheme/ChangeLog
+lib/xemacs/xemacs-packages/lisp/scheme/_pkg.el
+lib/xemacs/xemacs-packages/lisp/scheme/auto-autoloads.el
+lib/xemacs/xemacs-packages/lisp/scheme/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/scheme/cmuscheme.el
+lib/xemacs/xemacs-packages/lisp/scheme/cmuscheme.elc
+lib/xemacs/xemacs-packages/lisp/scheme/cmuscheme48.el
+lib/xemacs/xemacs-packages/lisp/scheme/cmuscheme48.elc
+lib/xemacs/xemacs-packages/lisp/scheme/custom-load.el
+lib/xemacs/xemacs-packages/lisp/scheme/custom-load.elc
+lib/xemacs/xemacs-packages/lisp/scheme/scheme.el
+lib/xemacs/xemacs-packages/lisp/scheme/scheme.elc
+lib/xemacs/xemacs-packages/lisp/scheme/xscheme.el
+lib/xemacs/xemacs-packages/lisp/scheme/xscheme.elc
+lib/xemacs/xemacs-packages/lisp/vc-cc/ChangeLog
+lib/xemacs/xemacs-packages/lisp/vc-cc/_pkg.el
+lib/xemacs/xemacs-packages/lisp/vc-cc/auto-autoloads.el
+lib/xemacs/xemacs-packages/lisp/vc-cc/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/vc-cc/tq.el
+lib/xemacs/xemacs-packages/lisp/vc-cc/tq.elc
+lib/xemacs/xemacs-packages/lisp/vc-cc/vc-hooks.el
+lib/xemacs/xemacs-packages/lisp/vc-cc/vc-hooks.elc
+lib/xemacs/xemacs-packages/lisp/vc-cc/vc.el
+lib/xemacs/xemacs-packages/lisp/vc-cc/vc.elc
+lib/xemacs/xemacs-packages/lisp/vhdl/ChangeLog
+lib/xemacs/xemacs-packages/lisp/vhdl/_pkg.el
+lib/xemacs/xemacs-packages/lisp/vhdl/auto-autoloads.el
+lib/xemacs/xemacs-packages/lisp/vhdl/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/vhdl/custom-load.el
+lib/xemacs/xemacs-packages/lisp/vhdl/custom-load.elc
+lib/xemacs/xemacs-packages/lisp/vhdl/vhdl-mode.el
+lib/xemacs/xemacs-packages/lisp/vhdl/vhdl-mode.elc
+lib/xemacs/xemacs-packages/man/ediff/ediff.texi
+lib/xemacs/xemacs-packages/man/idlwave/idlwave.texi
+lib/xemacs/xemacs-packages/man/vhdl/vhdl-mode.texi
+lib/xemacs/xemacs-packages/pkginfo/MANIFEST.ada
+lib/xemacs/xemacs-packages/pkginfo/MANIFEST.ediff
+lib/xemacs/xemacs-packages/pkginfo/MANIFEST.emerge
+lib/xemacs/xemacs-packages/pkginfo/MANIFEST.idlwave
+lib/xemacs/xemacs-packages/pkginfo/MANIFEST.jde
+lib/xemacs/xemacs-packages/pkginfo/MANIFEST.scheme
+lib/xemacs/xemacs-packages/pkginfo/MANIFEST.vc-cc
+lib/xemacs/xemacs-packages/pkginfo/MANIFEST.vhdl
+@dirrm lib/xemacs/xemacs-packages/man/vhdl
+@dirrm lib/xemacs/xemacs-packages/man/idlwave
+@dirrm lib/xemacs/xemacs-packages/man/ediff
+@dirrm lib/xemacs/xemacs-packages/lisp/vhdl
+@dirrm lib/xemacs/xemacs-packages/lisp/vc-cc
+@dirrm lib/xemacs/xemacs-packages/lisp/scheme
+@dirrm lib/xemacs/xemacs-packages/lisp/jde
+@dirrm lib/xemacs/xemacs-packages/lisp/idlwave
+@dirrm lib/xemacs/xemacs-packages/lisp/emerge
+@dirrm lib/xemacs/xemacs-packages/lisp/ediff
+@dirrm lib/xemacs/xemacs-packages/lisp/ada
+@dirrm lib/xemacs/xemacs-packages/etc/jde/java/src/jde/wizards
+@dirrm lib/xemacs/xemacs-packages/etc/jde/java/src/jde/util
+@dirrm lib/xemacs/xemacs-packages/etc/jde/java/src/jde
+@dirrm lib/xemacs/xemacs-packages/etc/jde/java/src
+@dirrm lib/xemacs/xemacs-packages/etc/jde/java/lib
+@dirrm lib/xemacs/xemacs-packages/etc/jde/java
+@dirrm lib/xemacs/xemacs-packages/etc/jde
+@dirrm lib/xemacs/xemacs-packages/etc/idlwave
+@dirrm lib/xemacs/xemacs-packages/etc/ediff

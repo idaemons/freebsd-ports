@@ -1,0 +1,21 @@
+--- configure.in.orig	Sat Aug 21 21:46:55 1999
++++ configure.in	Sat Jul  1 15:47:39 2000
+@@ -23,15 +23,15 @@
+ AC_CHECK_LIB(Xaw, XawPanedGetNumSub)
+ 
+ __cflags=$CFLAGS
+-CFLAGS="$CFLAGS `gtk-config --cflags`"
++CFLAGS="$CFLAGS `$GTK_CONFIG --cflags`"
+ __libs=$LIBS
+-LIBS="$LIBS `gtk-config --libs`"
++LIBS="$LIBS `$GTK_CONFIG --libs`"
+ AC_CHECK_LIB(gdk, gdk_init)
+ AC_CHECK_LIB(gtk, gtk_main)
+ CFLAGS=$__cflags
+ LIBS=$__libs
+ 
+-__gtk=`gtk-config --version`
++__gtk=`$GTK_CONFIG --version`
+ case "$__gtk" in
+ 	1.2*)
+ 	x_progs="xmixer gmixer"

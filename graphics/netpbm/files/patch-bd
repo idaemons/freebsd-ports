@@ -1,0 +1,72 @@
+--- pbm/Makefile.orig	Thu Jun 29 01:06:06 2000
++++ pbm/Makefile	Sat Jul 15 00:00:00 2000
+@@ -4,13 +4,12 @@
+ include $(SRCDIR)/Makefile.config
+ 
+ 
+-INCLUDE = -I$(SRCDIR) -I$(SRCDIR)/shhopt
++INCLUDE = -I$(SRCDIR)
+ 
+ # Shared library naming
+ LIBROOT = pbm
+ LIBPBM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
+-MAJ = 9
+-MIN = 5
++SOVER = 1
+ 
+ LIBLIBS = 
+ NETPBMLIBS = $(LIBPBM)
+@@ -37,11 +36,10 @@
+ 
+ # Library objects to be built and linked by Makefile.common:
+ LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
++SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
+ ifneq (${VMS}x,x)
+ LIBOBJECTS += libpbmvms.o
+ endif
+-# Library objects to be linked but not built by Makefile.common:
+-LIBOBJECTS_X = $(SRCDIR)/shhopt/shhopt.o
+ 
+ MANUALS1 =	$(BINARIES)
+ MANUALS3 =	libpbm
+@@ -53,26 +51,21 @@
+ 
+ .PHONY: all
+ all:		$(BINARIES)
+-	$(MAKE) -C pbmtoppa all
+ 
+ .PHONY: merge
+ merge: $(MERGENAME)
+-	$(MAKE) -C pbmtoppa all
+ 
+ .PHONY: install.bin
+ install.bin: install.bin.common
+-	$(MAKE) -C pbmtoppa install.bin
+ 
+ .PHONY: install.merge
+ install.merge: install.merge.common
+-	$(MAKE) -C pbmtoppa install.bin
+ 
+ .PHONY: install.lib
+ install.lib: install.lib.common
+ 
+ .PHONY: install.man
+ install.man: install.man.common
+-	$(MAKE) -C pbmtoppa install.man
+ 
+ include $(SRCDIR)/Makefile.common
+ 
+@@ -80,13 +73,7 @@
+ ../compile.h: 
+ 	$(MAKE) -C $(SRCDIR) compile.h
+ 
+-$(SRCDIR)/shhopt/shhopt.o:
+-	cd ../shhopt; $(MAKE) shhopt.o
+-$(SRCDIR)/shhopt/libshhopt.a:
+-	cd ../shhopt; $(MAKE) libshhopt.a
+-
+ .PHONY: clean
+ clean: clean.common
+-	$(MAKE) -C pbmtoppa clean
+ 
+ FORCE:

@@ -1,0 +1,19 @@
+--- Makefile~	Wed Nov 10 02:09:52 1999
++++ Makefile	Sun May 21 23:52:36 2000
+@@ -1,12 +1,12 @@
+ # Where is your Plugin Source Development Kit from Netscape?
+-SDK=/home/hubbe/src/PluginSDK30b5
++SDK=../PluginSDK30b5
+ 
+ # Where is your Xwindows located?
+-X11=/usr/X11/
++X11=${X11BASE}
+ 
+ # Choose compiler
+-CC=gcc
+-LD=gcc
++#CC=gcc
++#LD=gcc
+ BINFORMAT=bin
+ 
+ any:

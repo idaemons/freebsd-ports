@@ -1,0 +1,7 @@
+bin/pgp
+lib/pgp/pgp.hlp
+lib/pgp/pgpdoc1.txt
+lib/pgp/pgpdoc2.txt
+lib/pgp/language.txt
+lib/pgp/config.txt
+@dirrm lib/pgp

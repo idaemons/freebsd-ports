@@ -1,0 +1,16 @@
+bin/ftp-ls.sh
+bin/ftp-put.sh
+bin/ftp.sh
+bin/gtk-shell
+bin/gxedit
+share/gxedit/popmail.scr
+share/gxedit/traceroute.scr
+share/gxedit/userinfo.scr
+share/gxedit/www.scr
+share/doc/gxedit/charmap.txt
+share/doc/gxedit/manual.ps
+share/doc/gxedit/manual.txt
+share/doc/gxedit/quickref.ps
+share/doc/gxedit/quickref.txt
+@dirrm share/gxedit/
+@dirrm share/doc/gxedit/

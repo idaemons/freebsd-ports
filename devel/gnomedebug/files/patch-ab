@@ -1,0 +1,7 @@
+--- src/lib/Makefile.in.orig	Sun Jul  2 16:44:58 2000
++++ src/lib/Makefile.in	Wed Jul  5 14:17:25 2000
+@@ -122,3 +122,3 @@
+ 
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datatdir)/locals"\"         -DGDF_COMMANDER_PATH=\""$(sysconfdir)/gdf/commanders"\"         -I$(includedir) $(GNOME_INCLUDEDIR) $(XML_CFLAGS) $(BONOBO_CFLAGS)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"         -DGDF_COMMANDER_PATH=\""$(sysconfdir)/gdf/commanders"\"         -I$(includedir) $(GNOME_INCLUDEDIR) $(XML_CFLAGS) $(BONOBO_CFLAGS)
+ 

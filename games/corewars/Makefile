@@ -1,0 +1,39 @@
+# New ports collection makefile for:	corewars
+# Date created:			29 February 2000
+# Whom:				Jim Mock <jim@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	corewars
+PORTVERSION=	0.9.11
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	jim@FreeBSD.org
+
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
+		GLIB_CONFIG="${GLIB_CONFIG}"
+MAKE_ENV=	FREEBSD_CFLAGS="${CFLAGS}"
+
+MAN6=		corewars.6
+
+post-install:
+	@strip ${PREFIX}/bin/corewars
+.if !defined(NOPORTDOCS)
+	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/corewars."
+	@${ECHO} "===>   Please read it before playing."
+	@${MKDIR} ${PREFIX}/share/doc/corewars && ${CHMOD} a+rx ${PREFIX}/share/doc/corewars
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/corewars
+.endif
+
+.include <bsd.port.mk>

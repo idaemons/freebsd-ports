@@ -1,0 +1,8 @@
+bin/whiptail
+lib/python1.5/lib-dynload/_snackmodule.so
+lib/python1.5/snack.py
+lib/whiptcl.so
+lib/libnewt.a
+lib/libnewt.so
+lib/libnewt.so.%%VERSION%%
+include/newt.h

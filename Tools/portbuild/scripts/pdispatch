@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# wait 5 hours maximum
+timeout=18000
+
+command=$1
+shift
+
+if pwd | grep -qF 2.2; then
+  branch=2.2
+elif pwd | grep -qF 3; then
+  branch=3
+else
+  branch=4
+fi
+
+# ssh -x doesn't work on some machines
+unset DISPLAY
+
+pkgname=$(basename $1 .tgz)
+buildroot=$(dirname $(dirname $0))
+
+if grep -qxF $pkgname ${buildroot}/${branch}/duds; then
+  echo "skipping $pkgname"
+  exit 1
+fi
+
+args=${1+"$@"}
+mach=$(cat ${buildroot}/ulist)
+num=$(echo $(echo $mach | wc -w))
+set $mach
+shift $(echo "$$ $num" | awk '{srand($1); print(int(rand()*$2))}')
+if [ "x$NOCLEAN" != "x" ]; then
+  echo "dispatching: ssh -a $1 ${command} ${branch} -noclean $args"
+  ${buildroot}/scripts/ptimeout $timeout ssh -a $1 ${command} ${branch} -noclean $args
+else
+  echo "dispatching: ssh -a $1 ${command} ${branch} $args"
+  ${buildroot}/scripts/ptimeout $timeout ssh -a $1 ${command} ${branch} $args
+fi

@@ -1,0 +1,21 @@
+************************************************************
+Quick Setup:
+  Take the following step all as root.
+    1) Install one of the esecanna-module ports
+    2) Edit `${PREFIX}/etc/esecannarc'
+    3) Run `${PREFIX}/etc/rc.d/esecanna.sh'
+
+  Each user may want to configure the behavior by editing
+`~/.esecannarc', copied after `${PREFIX}/etc/esecannarc'.
+  
+  If you find something strange with esecanna, please consult
+the log file `/var/log/esecanna.log'.
+
+
+  Read the documents under ${PREFIX}/share/doc/esecanna/
+for details.
+
+Note:
+  Using VJE-Delta 3.0 trial, esecannaserver will fail to
+connect to vjed before once you run vje.
+************************************************************

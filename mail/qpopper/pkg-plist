@@ -1,3 +1,4 @@
-@cwd /usr/local
-libexec/popper
-man/man8/popper.8.gz
+bin/qpopauth
+libexec/qpopper
+@dirrm etc/qpopper
+@exec mkdir -p %D/etc/qpopper && chown pop.daemon %D/etc/qpopper && chmod 700 %D/etc/qpopper

@@ -1,15 +1,34 @@
+# New ports collection makefile for:    xearth
+# Date created:         29 October 1995
+# Whom:                 piero
 #
-# Makefile for x11/xearth (FreeBSD) - piero Sat Oct 29 12:37:15 PDT 1994
-# $Id: $
+# $FreeBSD$
 #
 
-# Distribution stuff
-DISTNAME=	xearth-0.92
-MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/
+PORTNAME=	xearth
+PORTVERSION=	1.1
+CATEGORIES=	astro x11
+MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/ \
+		ftp://ftp.cs.colorado.edu/users/tuna/ \
+		${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR= applications
 
-# working directory
-WRKDIR=		work
+MAINTAINER=	ports@FreeBSD.org
 
-USE_IMAKE=	is_set
+USE_IMAKE=	yes
+
+MAN1=		xearth.1
+
+# Copy the list of FreeBSD sites
+post-install:
+	${MKDIR} ${PREFIX}/lib/X11/xearth
+	${CP} ${FILESDIR}/freebsd.core.markers ${PREFIX}/lib/X11/xearth
+	${CP} ${FILESDIR}/freebsd.committers.markers ${PREFIX}/lib/X11/xearth
+	${CP} ${FILESDIR}/freebsd.ftp.markers ${PREFIX}/lib/X11/xearth
+	${ECHO} "# All of FreeBSD's committers, including core :)" > \
+	    ${PREFIX}/lib/X11/xearth/freebsd.core_and_committers.markers
+	${GREP} -hv '^[[:space:]]*#' ${FILESDIR}/freebsd.core.markers \
+	    ${FILESDIR}/freebsd.committers.markers >> \
+	    ${PREFIX}/lib/X11/xearth/freebsd.core_and_committers.markers
 
 .include <bsd.port.mk>

@@ -1,0 +1,31 @@
+diff -ur ../../nmh-1.0.2-DIST/Makefile.in ./Makefile.in
+--- ../../nmh-1.0.2-DIST/Makefile.in	Sun Sep 26 12:43:15 1999
++++ ./Makefile.in	Sat Dec 11 11:54:28 1999
+@@ -65,6 +65,7 @@
+ 
+ INSTALL         = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT  = @INSTALL_SCRIPT@
+ INSTALL_DATA    = @INSTALL_DATA@
+ 
+ .SUFFIXES:
+diff -ur ../../../nmh-1.0.3-DIST/etc/Makefile.in ./etc/Makefile.in
+--- ../../../nmh-1.0.3-DIST/etc/Makefile.in	Thu Jan  6 13:30:07 2000
++++ ./etc/Makefile.in	Mon Feb 28 10:20:34 2000
+@@ -20,6 +20,7 @@
+ 
+ INSTALL         = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT  = @INSTALL_SCRIPT@
+ INSTALL_DATA    = @INSTALL_DATA@
+ 
+ # Path to search for programs to handle MIME
+@@ -89,7 +90,7 @@
+ install-scripts:
+ 	$(top_srcdir)/mkinstalldirs $(bindir)
+ 	for script in $(SCRIPTS); do \
+-	  $(INSTALL_PROGRAM) $(srcdir)/$$script $(bindir)/$$script; \
++	  $(INSTALL_SCRIPT) $(srcdir)/$$script $(bindir)/$$script; \
+ 	done
+ 
+ uninstall: uninstall-files uninstall-scripts

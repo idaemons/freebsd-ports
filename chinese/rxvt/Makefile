@@ -1,0 +1,29 @@
+# New ports collection Makefile for: rxvt
+# Date created:         Nov 16 1997
+# Whom:                 frankch@waru.life.nthu.edu.tw
+#
+# $FreeBSD$
+#
+
+PORTNAME=	rxvt
+PORTVERSION=	2.7.3
+CATEGORIES=	chinese x11
+MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
+		ftp://mason.primenet.com.au/pub/rxvt/ \
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= X11/terms
+
+MAINTAINER=	frankch@waru.life.nthu.edu.tw
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+MAN1=		crxvt.1
+
+CONFIGURE_ARGS+=--enable-xpm-background --enable-transparency \
+		--enable-menubar --enable-graphics --enable-xim \
+		--enable-languages --with-encoding=big5
+
+.include <bsd.port.mk>

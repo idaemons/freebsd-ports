@@ -1,0 +1,16 @@
+The 'Nessus' Project was started in early 1998, and first released in
+April 1998. At this time, the most complete free security scanner was
+SATAN, which is clearly outdated, and you could see the emergence of
+several commercial ones, that were clearly too expensive.
+
+The Nessus Security Scanner is not only another security auditing tool. It
+is a security auditing as I think it should be - never trust the version
+number, never trust that a given service is listenning on the good port
+(do all the web servers on earth listen on port 80 ?).
+
+The Nessus Security Scanner is free, open-sourced and wants to be easy to
+use. 
+
+WWW: http://www.nessus.org/
+
+PS: To install the lot in one operation, do nessus-plugins first.

@@ -1,0 +1,42 @@
+--- mpg123.c.orig	Fri Jun 18 14:18:11 1999
++++ mpg123.c	Fri May  5 00:07:02 2000
+@@ -27,6 +27,10 @@
+ #include <sched.h>
+ #endif
+ 
++#ifdef __FreeBSD__
++#include <ieeefp.h>
++#endif
++
+ #include "mpg123.h"
+ #include "getlopt.h"
+ #include "buffer.h"
+@@ -784,6 +788,10 @@
+         _wildcard(&argc,&argv);
+ #endif
+ 
++#ifdef __FreeBSD__
++	fpsetmask(0);
++#endif
++
+ 	if(sizeof(short) != 2) {
+ 		fprintf(stderr,"Ouch SHORT has size of %d bytes (required: '2')\n",(int)sizeof(short));
+ 		exit(1);
+@@ -917,17 +925,6 @@
+ 				&dirname, &filename))
+ 				fprintf(stderr, "\nDirectory: %s", dirname);
+ 			fprintf(stderr, "\nPlaying MPEG stream from %s ...\n", filename);
+-
+-#if !defined(GENERIC)
+-{
+-     const char *term_type;
+-         term_type = getenv("TERM");
+-         if (!strcmp(term_type,"xterm"))
+-         {
+-           fprintf(stderr, "\033]0;%s\007", filename);
+-         }
+-}
+-#endif
+ 
+ 		}
+ 

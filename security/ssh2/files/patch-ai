@@ -1,0 +1,46 @@
+--- lib/sshsession/sshunixuser.c.orig	Thu Mar 30 21:41:05 2000
++++ lib/sshsession/sshunixuser.c	Wed May 17 18:15:10 2000
+@@ -55,6 +55,10 @@
+ 
+ #define SSH_DEBUG_MODULE "SshUnixUser"
+ 
++#ifdef HAVE_LOGIN_CAP_H
++#include <login_cap.h>
++#endif /* HAVE_LOGIN_CAP_H */
++
+ extern char *crypt(const char *key, const char *salt);
+ 
+ /* Data type to hold machine-specific user data. */
+@@ -736,6 +740,24 @@
+   /* Set uid, gid, and groups. */
+   if (getuid() == UID_ROOT || geteuid() == UID_ROOT)
+     { 
++#ifdef HAVE_LOGIN_CAP_H
++    struct passwd *pwd;
++
++    pwd = getpwnam(ssh_user_name(uc));
++    if (!pwd)
++      {
++	ssh_debug("ssh_user_become: getpwnam: %s", strerror(errno));
++	return FALSE;
++      }
++    if (setusercontext(NULL, pwd, ssh_user_uid(uc),
++	LOGIN_SETALL & ~(LOGIN_SETLOGIN|LOGIN_SETPATH|LOGIN_SETENV)) != 0)
++      {
++	    ssh_debug("ssh_user_become: setusercontext: %s", strerror(errno));
++	    return FALSE;
++      }
++    endpwent();
++    endgrent();
++#else
+       if (setgid(ssh_user_gid(uc)) < 0)
+         {
+           SSH_DEBUG(2, ("ssh_user_become: setgid: %s", strerror(errno)));
+@@ -773,6 +795,7 @@
+                         (int)ssh_user_uid(uc)));
+           return FALSE;
+         }
++#endif /* HAVE_LOGIN_CAP_H */
+     }
+   
+   /* We are now running with the user's privileges. */

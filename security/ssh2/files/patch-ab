@@ -1,0 +1,11 @@
+--- lib/sshapputil/Makefile.in.orig	Thu Mar 30 21:41:53 2000
++++ lib/sshapputil/Makefile.in	Wed May 17 18:04:39 2000
+@@ -120,7 +120,7 @@
+ include_HEADERS = sshuserfile.h 		  sshuserfilebuf.h
+ 
+ 
+-ADD_INCLUDES = -I../.. -I. -I$(srcdir) 	-I$(top_builddir) -I$(top_srcdir) 	-I../sshutil -I$(srcdir)/../sshutil -I../sshmath 	-I$(srcdir)/../sshmath -I../zlib -I$(srcdir)/../zlib
++ADD_INCLUDES = -I../.. -I. -I$(srcdir) 	-I$(top_builddir) -I$(top_srcdir) 	-I../sshutil -I$(srcdir)/../sshutil -I../sshmath 	-I$(srcdir)/../sshmath
+ 
+ 
+ INCLUDES = $(ADD_INCLUDES) -I$(srcdir) -I. -I$(top_srcdir) -I$(top_builddir) -I$(top_builddir)/include -I$(top_srcdir)/lib/sshutil

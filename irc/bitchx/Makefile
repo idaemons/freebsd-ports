@@ -1,0 +1,97 @@
+# New ports collection makefile for:	BitchX ircII client
+# Date created:		26 Jan 1998
+# Whom:			griffin
+#
+# $FreeBSD$
+#
+
+PORTNAME=	BitchX
+PORTVERSION=	1.0c16
+CATEGORIES=	irc gnome
+MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
+		ftp://ftp.bitchx.org/pub/BitchX/source/ \
+		ftp://ukug.uk.freebsd.org/pub/lord_cj/
+PATCH_SITES=	ftp://ftp.bitchx.org/pub/BitchX/source/
+PATCHFILES=	1.0c16-format.patch
+
+MAINTAINER=	cj@vallcom.net
+
+.if defined(WITH_GNOME)
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
+.endif
+
+PATCH_DIST_ARGS=       -d ${WRKSRC}/source --forward --quiet -E ${PATCH_DIST_STRIP}
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+WRKSRC=		${WRKDIR}/BitchX
+USE_AUTOCONF=	yes
+USE_GMAKE=	yes
+.if defined(WITH_GNOME)
+CONFIGURE_ARGS+=	--with-gtk --enable-sound
+.else
+CONFIGURE_ARGS+=	--without-gtk
+.endif
+.if defined(WITH_PLUGINS)
+CONFIGURE_ARGS+=	--with-plugins
+.else
+CONFIGURE_ARGS+=	--without-plugins
+.endif
+CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}/share"	\
+			--bindir="${PREFIX}/bin" \
+			--datadir="${PREFIX}/share" \
+			--libdir="${PREFIX}/share"
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GLIB_CONFIG="${GLIB_CONFIG}" \
+		GTK_CONFIG="${GTK_CONFIG}"
+
+MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
+
+.if !defined(WITH_GNOME)
+pre-extract:
+	@${ECHO} "You can add hooks for GNOME by defining WITH_GNOME"
+	@${ECHO} "If you want to build the plugins define WITH_PLUGINS"
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/bx/help
+	${MKDIR} ${PREFIX}/share/doc/bitchx
+	${CP} -r ${WRKSRC}/bitchx-docs/* ${PREFIX}/share/bx/help
+	${INSTALL_DATA} ${WRKSRC}/doc/bxfaq.html ${PREFIX}/share/doc/bitchx
+.endif
+.if defined(WITH_GNOME)
+	@${ECHO} bin/gtkBitchX >> ${TMPPLIST}
+	@${ECHO} bin/gtkBitchX-1.0c16 >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/nicklist.so >> ${TMPPLIST}
+.if defined(WITH_PLUGINS)
+	@${ECHO} share/bx/plugins/BitchX.hints >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/acro.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/amp.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/autobot.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/blowfish.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/encrypt.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/fserv.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/hint.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/nap.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/pkga.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/possum.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/qmail.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/scan.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/wavplay.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/qbx.so >> ${TMPPLIST}
+	@${ECHO} share/bx/plugins/plugins >> ${TMPPLIST}
+.endif
+.else
+	@${ECHO} bin/BitchX >> ${TMPPLIST}
+	@${ECHO} bin/BitchX-1.0c16 >> ${TMPPLIST}
+	@${ECHO} bin/scr-bx >> ${TMPPLIST}
+	@${ECHO} share/bx/wserv >> ${TMPPLIST}
+.endif
+	@${ECHO} @dirrm share/bx/help >> ${TMPPLIST}
+	@${ECHO} @dirrm share/bx/script >> ${TMPPLIST}
+	@${ECHO} @dirrm share/bx/translation >> ${TMPPLIST}
+	@${ECHO} @dirrm share/bx >> ${TMPPLIST}
+
+.include <bsd.port.mk>

@@ -1,0 +1,20 @@
+--- /tmp/rosegarden-2.1/petal/Makefile.in	Sat Oct 18 11:43:27 1997
++++ ./petal/Makefile.in	Fri May 14 17:29:54 1999
+@@ -7,7 +7,7 @@
+ 
+ pkgIndex.tcl : Petal.so Petal.tcl
+ 	@echo "The error message for Petal.tcl is normal"
+-	echo "pkg_mkIndex . Petal.so Petal.tcl" | tclsh
++	echo "pkg_mkIndex . Petal.so Petal.tcl" | tclsh8.2
+ 
+ petaleditor/pkgIndex.tcl : petaleditor/PetalEditor.tcl
+ 	cd petaleditor; make
+@@ -19,7 +19,7 @@
+ 	$(LD) $(LDFLAGS) Petal.o -o Petal.so
+ 
+ Petal.o : Petal.c
+-	$(CC) $(CFLAGS) -c -o Petal.o Petal.c
++	$(CC) $(CFLAGS) -I/usr/local/include -c -o Petal.o Petal.c
+ 
+ clean :
+ 	rm -f Petal.o Petal.so

@@ -1,4 +1,55 @@
-# $Id: Makefile,v 1.3 1995/01/15 07:35:41 ache Exp $
-SUBDIR= msql
+# $FreeBSD$
+#
+    SUBDIR += cdb
+    SUBDIR += db
+    SUBDIR += dbview
+    SUBDIR += dbf2mysql
+    SUBDIR += freetds
+    SUBDIR += gadfly
+    SUBDIR += gdbm
+    SUBDIR += gmysql
+    SUBDIR += gnats
+    SUBDIR += grass
+    SUBDIR += gtksql
+    SUBDIR += interbase4
+    SUBDIR += libiodbc
+    SUBDIR += metakit
+    SUBDIR += msql
+    SUBDIR += myodbc
+    SUBDIR += mysql-editor
+    SUBDIR += mysql-jdbc-mm
+    SUBDIR += mysql-navigator
+    SUBDIR += mysql322-client
+    SUBDIR += mysql322-server
+    SUBDIR += mysqltcl
+    SUBDIR += p5-DBD-CSV
+    SUBDIR += p5-DBD-Pg
+    SUBDIR += p5-DBI
+    SUBDIR += p5-DBZ_File
+    SUBDIR += p5-GDBM
+    SUBDIR += p5-MLDBM
+    SUBDIR += p5-Msql
+    SUBDIR += p5-MyObject
+    SUBDIR += p5-Mysql
+    SUBDIR += p5-Pg
+    SUBDIR += p5-SQL-Statement
+    SUBDIR += p5-hp200lx-db
+    SUBDIR += pgaccess
+    SUBDIR += postgresql
+    SUBDIR += postgresql7
+    SUBDIR += pxtools
+    SUBDIR += py-MySQL
+    SUBDIR += py-MySQLdb
+    SUBDIR += py-PyGreSQL
+    SUBDIR += rdb
+    SUBDIR += ruby-postgres
+    SUBDIR += sqsh
+    SUBDIR += tcl-Mysql
+    SUBDIR += tkgnats
+    SUBDIR += typhoon
+    SUBDIR += unixODBC
+    SUBDIR += xmbase-grok
+    SUBDIR += xmysql
+    SUBDIR += xmysqladmin
 
 .include <bsd.port.subdir.mk>
