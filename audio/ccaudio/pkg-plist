@@ -1,0 +1,5 @@
+include/cc++/audio.h
+lib/libccaudio.a
+lib/libccaudio.so
+lib/libccaudio.so.0
+@dirrm include/cc++

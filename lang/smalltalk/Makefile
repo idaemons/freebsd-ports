@@ -1,23 +1,41 @@
 # New ports collection makefile for:	smalltalk
-# Version required:	1.1.1
 # Date created:		09 Feb 1995
 # Whom:			gpalmer
 #
-# $Id$
+# $FreeBSD$
 #
 
-DISTNAME=	smalltalk-1.1.1
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
-MAINTAINER=	gpalmer@FreeBSD.ORG
+PORTNAME=	smalltalk
+PORTVERSION=	1.95.11
+CATEGORIES=	lang
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-pre-configure:
-	@cp ${FILESDIR}/m-fbsd-2.h ${WRKSRC}/config/m-fbsd-2.h
-	@(cd ${WRKSRC} ; ./config.mst fbsd-2)
-	@${TOUCH} ${TOUCH_FLAGS} ${CONFIGURE_COOKIE}
+MAINTAINER=	ports@FreeBSD.org
 
-install:
-	@echo ">> The install target for smalltalk-1.1.1 is interactive."
-	@echo ">> Please read the file mst.texinfo for more information."
-	@${DO_NADA}
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	MAKEINFO='makeinfo --no-split'
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+MAN1=		gst.1
+
+.if defined(WITH_TCLTK)
+LIB_DEPENDS+=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.3 \
+			--with-tk=${LOCALBASE}/lib/tk8.3
+PLIST_SUB+=		TCLTK=""
+.else
+CONFIGURE_ARGS+=	--with-tcl=no
+PLIST_SUB+=		TCLTK="@comment "
+.endif
+
+post-extract:
+	@${RM} -f ${WRKSRC}/doc/gst.info*
+
+pre-patch:
+	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${PERL} -pi -e \
+		's| -release \$$\(VERSION\)| -avoid-version|g'
+	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/libltdl/ltdl.c
 
 .include <bsd.port.mk>

@@ -1,0 +1,46 @@
+# New ports collection makefile for:	gnomeapplets
+# Date created:				26th May 2000
+# Whom:					Ade Lovett <ade@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnomeapplets
+PORTVERSION=	1.4.0.5
+CATEGORIES=	x11 gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	stable/sources/gnome-applets
+DISTNAME=	gnome-applets-${PORTVERSION}
+
+MAINTAINER=	gnome@FreeBSD.org
+
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
+
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_GNOME=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib" \
+		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
+		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+
+MAN1=		another_clock_applet.1 asclock_applet.1 battery_applet.1 \
+		cdplayer_applet.1 charpick_applet.1 clockmail_applet.1 \
+		cpumemusage_applet.1 diskusage_applet.1 drivemount_applet.1 \
+		esdpvd.1 fifteen_applet.1 geyes_applet.1 gkb_applet.1 \
+		gnotes_applet.1 gtik2_applet.1 gweather_applet.1 jbc_applet.1 \
+		life_applet.1 mini-commander_applet.1 mixer_applet.1 \
+		modemlights_applet.1 multiload_applet.1 odometer_applet.1 \
+		quicklaunch_applet.1 slash_applet.1 sound-monitor_applet.1 \
+		tickastat_applet.1 webcontrol_applet.1 whereami_applet.1
+
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+
+.include <bsd.port.mk>

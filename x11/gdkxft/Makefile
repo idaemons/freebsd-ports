@@ -1,0 +1,64 @@
+# New ports collection makefile for:	gdkxft
+# Date created:				3 September 2001
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gdkxft
+PORTVERSION=	1.5
+PORTREVISION=	1
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	anders@hack.org
+
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+
+USE_X_PREFIX=	yes
+USE_GTK=	yes
+WANT_GNOME=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnuregex -liconv"
+CONFIGURE_ARGS=	--sbindir=${PREFIX}/bin
+INSTALLS_SHLIB=	yes
+
+MAN8=		gdkxft_sysinstall.8
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} < 4
+IGNORE=		"requires XFree86-4.x or later to run"
+.endif
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+.else
+CONFIGURE_ARGS+=	--without-gnome
+.endif
+
+post-patch:
+	@${PERL} -pi -e 's|gtk-config --prefix|\$$GTK_CONFIG --prefix|g ; \
+		 s|libgdk.la|libgdk12.so|g ; \
+		 s|libgdk.so|libgdk12.so|g ; \
+		 s|GDK_DLOPEN_NAME=.*$$|GDK_DLOPEN_NAME="libgdk12.so"|g' \
+			${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|src capplet|src \@BUILD_CAPPLET_TRUE\@capplet|g ; \
+		 s|DESTDIR\)\$$\(datadir|DESTDIR\)\$$\(pkgdatadir|g ; \
+		 s|/gnome/apps/|/apps/|g ; \
+		 s|la_LDFLAGS =.*$$|la_LDFLAGS = -module -avoid-version|g'
+.for file in gdkxft_sysinstall.in gdkxft.c generate.pl
+	@${PERL} -pi -e 's|<regex.h>|<gnuregex.h>|g ; \
+		 s|gtk-config |${GTK_CONFIG:T} |g' ${WRKSRC}/src/${file}
+.endfor
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>

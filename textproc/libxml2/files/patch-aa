@@ -1,0 +1,50 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Tue Feb 26 20:08:54 2002
++++ Makefile.in	Tue Feb 26 20:36:25 2002
+@@ -130,7 +130,7 @@
+ 
+ AUTOMAKE_OPTIONS = no-dependencies
+ 
+-SUBDIRS = include . doc example python
++SUBDIRS = include . doc example @WITH_PYTHON_TRUE@ python
+ 
+ INCLUDES = -I@srcdir@/include -I$(top_builddir)/include @THREAD_CFLAGS@ @Z_CFLAGS@ 
+ 
+@@ -143,7 +143,7 @@
+ lib_LTLIBRARIES = libxml2.la
+ libxml2_la_LIBADD = @Z_LIBS@ $(ICONV_LIBS) -lm
+ 
+-libxml2_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@
++libxml2_la_LDFLAGS = -version-info 5:0:0
+ 
+ @WITH_TRIO_SOURCES_TRUE@libxml2_la_SOURCES = @WITH_TRIO_SOURCES_TRUE@SAX.c entities.c encoding.c error.c parserInternals.c  \
+ @WITH_TRIO_SOURCES_TRUE@		parser.c tree.c hash.c list.c xmlIO.c xmlmemory.c uri.c  \
+@@ -206,7 +206,7 @@
+ 
+ CLEANFILES = xml2Conf.sh
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = xml2Conf.sh
+ EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml.spec \
+              libxml.m4 Copyright check-xml-test-suite.py \
+@@ -224,7 +224,7 @@
+ # Instll the tests program sources as examples 
+ #
+ BASE_DIR = @HTML_DIR@
+-DOC_MODULE = libxml2-$(VERSION)
++DOC_MODULE = libxml2
+ EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -809,7 +809,7 @@
+ 		uninstall-confexecDATA uninstall-m4dataDATA \
+ 		uninstall-pkgconfigDATA
+ uninstall: uninstall-recursive
+-all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
++all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(MANS) $(DATA) \
+ 		config.h
+ all-redirect: all-recursive-am
+ install-strip:

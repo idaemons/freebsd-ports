@@ -1,0 +1,11 @@
+--- ../sendmail/configure.orig	Tue Oct 16 19:28:24 2001
++++ ../sendmail/configure	Sun Oct 21 00:09:16 2001
+@@ -117,7 +117,7 @@
+ 
+ CACHE_ADDR="n"
+ POS=`$GREP PidFile $DAEMON_INI | $GREP -v ";"`
+-if [ "x$POS" = "x" ] ; then
++if [ "x" = "x" ] ; then
+     echo
+     echo -n "Daemon pidfile not defined in ini-file ..."
+     POS=`$GREP SocketMode $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /[Tt][Cc][Pp]/ ) }'`

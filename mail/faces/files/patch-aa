@@ -1,0 +1,16 @@
+diff -c -N ../faces/Faces.ad ./Faces.ad
+*** ../faces/Faces.ad	Mon Jul  1 03:25:46 1991
+--- ./Faces.ad	Tue Dec 10 19:07:26 1996
+***************
+*** 13,17 ****
+  faces.displayHostname:		false
+  
+  faces.audioSupport:		false
+! faces.audioCommand:		play
+  faces.bellAudioFile:
+--- 13,17 ----
+  faces.displayHostname:		false
+  
+  faces.audioSupport:		false
+! faces.audioCommand:		rplay
+  faces.bellAudioFile:

@@ -1,0 +1,7 @@
+--- configure.orig	Mon Feb 11 15:20:43 2002
++++ configure	Mon Feb 11 15:22:24 2002
+@@ -8516,3 +8516,3 @@
+ 
+-for dblib in db-3.3 db-3.2 db-3.1 db-3; do
++for dblib in db-3.3 db-3.2 db-3.1 db-3 db3; do
+   as_ac_Lib=`echo "ac_cv_lib_$dblib''_db_env_create" | $as_tr_sh`

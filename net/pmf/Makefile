@@ -1,22 +1,41 @@
-# New ports collection makefile for:    pmf
-# Version required:     1.13.1
-# Date created:         24 Sep 1994
-# Whom:                 adam
+# New ports collection makefile for:	pmf
+# Date created:		24 Sep 1994
+# Whom:			adam
 #
-# $Id: Makefile,v 1.2 1994/09/25 19:12:02 adam Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       pmf-1.13.1
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/clients/
+PORTNAME=	pmf
+PORTVERSION=	1.13.1
+CATEGORIES=	net
+MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/clients/pmf/
+
+MAINTAINER=	ports@FreeBSD.org
+
 WRKSRC=		${WRKDIR}/pmfdir/src
 
-pre-install:
-	@mkdir -p /usr/local/lib/pmf
-	@find ${WRKSRC}/../system_dir -name '*.orig' -exec rm {} \;
-	@-mv ${WRKSRC}/../doc/pmf.doc ${WRKSRC}/../system_dir
-	@tar -C ${WRKSRC}/../system_dir -cf - . \
-		| tar -C /usr/local/lib/pmf -xf -
-	@chown -R bin.bin /usr/local/lib/pmf
-	@chmod -R a-w /usr/local/lib/pmf
+SYSSRC=		${WRKSRC}/../system_dir
+DOCSRC=		${WRKSRC}/../doc
+XMPSRC=		${WRKSRC}/../examples
+
+post-patch:
+	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' ${FILESDIR}/pmfrc.default.in \
+		> ${SYSSRC}/pmfrc.default
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pmf ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/pmf
+	${INSTALL_DATA} ${SYSSRC}/NEWS ${PREFIX}/share/pmf
+	${INSTALL_DATA} ${SYSSRC}/pmfrc.default ${PREFIX}/share/pmf
+	@${MKDIR} ${PREFIX}/share/pmf/helpfiles
+	${INSTALL_DATA} ${SYSSRC}/helpfiles/.pmfrc ${PREFIX}/share/pmf/helpfiles
+	${INSTALL_DATA} ${SYSSRC}/helpfiles/* ${PREFIX}/share/pmf/helpfiles
+	@${MKDIR} ${PREFIX}/share/examples/pmf
+	${INSTALL_DATA} ${XMPSRC}/.pmfrc ${PREFIX}/share/examples/pmf/dot.pmfrc
+	${INSTALL_DATA} ${XMPSRC}/* ${PREFIX}/share/examples/pmf
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/pmf
+	${INSTALL_DATA} ${DOCSRC}/* ${PREFIX}/share/doc/pmf
+.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,4 @@
+bin/flexbackup
+share/doc/flexbackup/flexbackup.conf.sample
+share/doc/flexbackup/flexbackup.README
+@dirrm share/doc/flexbackup

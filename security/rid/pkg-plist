@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+sbin/rid
+etc/rid.conf
+share/doc/rid/README
+@dirrm share/doc/rid

@@ -1,0 +1,63 @@
+# New ports collection makefile for:	cli
+# Date Created:				28 March 2002
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cli
+PORTVERSION=	20020326
+CATEGORIES=	lang
+MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/CLI/Beta1/WXP/EN-US/ \
+		http://download.microsoft.com/download/.netframesdk/Beta1/WXP/EN-US/ \
+		http://www.corel.com/6763/downloads/mirror/microsoft/rotor/ \
+		ftp://ftp.corel.com/pub/mirror/Microsoft/rotor/
+DISTNAME=	sscli${PORTVERSION}
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	sobomax@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/sscli
+
+RESTRICTED=	"license terms need to be reviewed"
+NO_CDROM=	${RESTRICTED}
+NO_PACKAGE=	${RESTRICTED}
+
+GNU_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	env.sh ./configure
+MAKE_ENV=	CC_NAME="${CC}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES!=	${ECHO_CMD} ${PKGDIR}/files.5/patch-*
+.endif
+
+post-extract:
+	@${CHMOD} 755 ${WRKSRC}/env.sh
+
+post-configure:
+	@for file in `/usr/bin/find ${WRKSRC} -type f -name "makefile*"`; do \
+		${LN} -sf $${file} `${ECHO_CMD} $${file} | ${SED} 's|makefile|Makefile|'` ; \
+	done
+
+do-build:
+	@${CHMOD} 700 ${WRKSRC} # <- we need this because build system creates world-writeable dirs
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${SH} env.sh ./buildall)
+
+.if !defined(I_AGREE_TO_A_LICENSE_TERMS)
+pre-install:
+	@${ECHO_MSG} "Please make sure that you have read and understood license terms contained in"
+	@${ECHO_MSG} "the ${WRKSRC}/license.txt file and if you"
+	@${ECHO_MSG} "agree with them then add -DI_AGREE_TO_A_LICENSE_TERMS to command line to"
+	@${ECHO_MSG} "install the software (i.e. 'make -DI_AGREE_TO_A_LICENSE_TERMS install')."
+	@${FALSE}
+.endif
+
+do-install:
+	@${MKDIR} ${PREFIX}/cli-${PORTVERSION}
+	@${INSTALL_DATA} ${WRKSRC}/license.txt ${PREFIX}/cli-${PORTVERSION}
+	@${TAR} -C ${WRKSRC}/build/v1.x86fre.rotor -c -f - . | \
+		${TAR} -C ${PREFIX}/cli-${PORTVERSION} --unlink -x -f -
+
+.include <bsd.port.post.mk>

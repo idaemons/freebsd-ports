@@ -1,0 +1,33 @@
+
+$FreeBSD$
+
+--- configure.orig	Thu Mar  7 07:56:55 2002
++++ configure	Tue Mar 12 17:15:06 2002
+@@ -6279,6 +6279,9 @@
+ # for stuff like -lXshm
+     CPPFLAGS="${CPPFLAGS} ${X_CFLAGS}"
+     ;;
++freebsd*)
++    CPPFLAGS="${CPPFLAGS} ${X_CFLAGS}"
++    ;;
+ esac
+ for ac_hdr in sys/byteorder.h compat.h getopt.h
+ do
+@@ -7512,7 +7515,7 @@
+ EOF
+ 
+ 						if test "$ac_cv_have_dash_pthread" = "yes"; then
+-				_PTHREAD_LDFLAGS=""
++				_PTHREAD_LDFLAGS="-pthread"
+ 			else
+ 				_PTHREAD_LDFLAGS="-lc_r"
+ 			fi
+@@ -9954,7 +9957,7 @@
+     fi
+     MOC=$HOST_MOC
+ 
+-    QT_CFLAGS="-I${QTDIR}${QTINCDIR} -DQT_GENUINE_STR"
++    QT_CFLAGS="-I${QTDIR}/include/X11/qt -DQT_GENUINE_STR"
+     QT_LIBS="-L/usr/X11R6/lib -L${QTDIR}/lib -lqt -lXext -lX11"
+ 
+     # Check whether --with-static-qt or --without-static-qt was given.

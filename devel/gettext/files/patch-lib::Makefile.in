@@ -1,0 +1,19 @@
+--- lib/Makefile.in.orig	Tue Mar 12 13:04:16 2002
++++ lib/Makefile.in	Fri Mar 15 17:41:01 2002
+@@ -240,3 +240,3 @@
+ 
+-DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@
++DEFS = -DLIBDIR=\"$(prefix)/libdata\" @DEFS@
+ INCLUDES = -I. -I$(srcdir) -I.. -I../intl -I$(top_srcdir)/intl
+@@ -246,4 +246,4 @@
+ 
+-charset_alias = $(DESTDIR)$(libdir)/charset.alias
+-charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
++charset_alias = $(DESTDIR)$(prefix)/libdata/charset.alias
++charset_tmp = $(DESTDIR)$(prefix)/libdata/charset.tmp
+ 
+@@ -524,3 +524,3 @@
+ install-exec-local: all-local
+-	$(mkinstalldirs) $(DESTDIR)$(libdir)
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/libdata
+ 	if test -f $(charset_alias); then \

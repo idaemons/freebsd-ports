@@ -1,0 +1,63 @@
+# New ports collection makefile for:	KDE PIM
+# Date created:				2 March 2001
+# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	kdepim
+PORTVERSION=	2.2.2
+CATEGORIES=	deskutils kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+DIST_SUBDIR=	KDE
+
+MAINTAINER=	kde@FreeBSD.org
+
+BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
+		automake14:${PORTSDIR}/devel/automake14
+LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link
+
+USE_KDELIBS_VER=2
+USE_BISON=	yes
+USE_BZIP2=	yes
+INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 500029
+_NO_KDE_OBJPRELINK=yes
+.endif
+
+.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
+
+QTCPPFLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+QTLDFLAGS=	${QTCPPFLAGS}
+CONFIGURE_ENV+=	LIBS="${QTLDFLAGS}"
+MAKE_ENV=	${CONFIGURE_ENV}
+USE_GMAKE=	yes
+
+post-patch:
+	@${PERL} -pi -e 's,malloc.h,stdlib.h,' \
+		${WRKSRC}/libical/src/libical/icallangbind.c \
+		${WRKSRC}/libical/src/libicalvcal/vcc.y \
+		${WRKSRC}/libical/src/libicalvcal/vobject.c \
+		${WRKSRC}/libkcal/parseholiday.c
+
+pre-configure:
+	${MKDIR} ${WRKSRC}/auto-bin
+.for AC in autoconf autoheader
+	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
+.endfor
+.for AM in automake aclocal
+	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
+.endfor
+	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
+		${GMAKE} -f Makefile.cvs
+	find ${WRKSRC}/kpilot \( -name Makefile.in -o -name Makefile.am \) | \
+		xargs ${PERL} -pi -e \
+		"s@LDFLAGS =@LDFLAGS=-L${LOCALBASE}/pilot/lib@g"
+	find ${WRKSRC}/libical -name Makefile.in | xargs ${PERL} -pi -e \
+		"s|INSTALL = \@INSTALL\@|INSTALL=${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP}|g"
+
+.include <bsd.port.post.mk>

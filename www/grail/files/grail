@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python %%GRAILDIR%%/grail.py ${1+"$@"}

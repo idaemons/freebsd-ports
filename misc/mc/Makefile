@@ -1,0 +1,51 @@
+# New ports collection makefile for:	mc
+# Date created:		15 Jul 1995
+# Whom:			torstenb@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mc
+PORTVERSION=	4.5.54
+PORTREVISION=	2
+CATEGORIES=	misc
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	stable/sources/mc
+
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+.if defined(WITH_NCURSES_PORT)
+LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+.elif defined(WITH_SLANG)
+LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
+BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+.endif
+
+USE_GMAKE=	yes
+USE_GLIB=	yes
+GNU_CONFIGURE=	yes
+.if defined(WITH_SLANG)
+CONFIGURE_ARGS=	--with-slang --without-gnome --with-edit
+.else
+CONFIGURE_ARGS=	--with-ncurses --without-gnome --without-edit
+.endif
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lintl"
+
+MAN1=		midc.1 mcedit.1
+MAN8=		mcserv.8
+
+pre-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(libdir\)/mc|\$\(datadir\)/mc|g'
+
+.if defined(WITH_SLANG)
+PLIST=		${WRKDIR}/PLIST
+pre-install:
+	@${CAT} ${PKGDIR}/pkg-plist > ${PLIST}
+	@${ECHO_CMD} bin/mcedit >> ${PLIST}
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Jan 22 18:45:51 2002
++++ Makefile	Tue Jan 22 18:46:40 2002
+@@ -58,6 +58,8 @@
+ #      this Makefile. If you can read Makefiles, feel free
+ #      to do whatever you like.
+ 
++all: smm
++
+ smm: Makefile
+ 	@echo "--- Building startup file."
+ 	@if [ -z ${ITKWISH} ] ; then \

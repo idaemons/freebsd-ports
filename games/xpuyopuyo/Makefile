@@ -1,0 +1,46 @@
+# New ports collection makefile for:	xpuyopuyo
+# Date created:		19 Sep 1999
+# Whom:			Yin-Jieh Chen <yinjieh@csie.nctu.edu.tw>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xpuyopuyo
+PORTVERSION=	0.9.3
+CATEGORIES=	games
+MASTER_SITES=	http://chaos2.org/xpuyopuyo/ \
+		http://lenin.dabney.caltech.edu/~justins/xpuyopuyo/
+
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
+
+USE_GMAKE=	yes
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_GTK=	yes
+USE_AUTOCONF=	yes
+WANT_GNOME=	yes
+
+MAN6=		xpuyopuyo.6
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MIKMOD) || (exists(${LOCALBASE}/lib/libmikmod.a) && \
+	!defined(WITHOUT_MIKMOD))
+LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
+CONFIGURE_ARGS+=--with-libmikmod-prefix=${LOCALBASE}
+.endif
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+.else
+CONFIGURE_ARGS+=--without-gnome
+.endif
+
+.if defined(WITH_ROTATE_FIXED)
+CONFIGURE_ARGS+=--enable-rotate-fixed
+.endif
+.if defined(WITH_AIBREED)
+CONFIGURE_ARGS+=--enable-aibreed
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,136 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
+	exit
+fi
+
+tempfile=`mktemp -t checklist`
+
+if [ "${BATCH}" = "yes" ]; then
+	set \"PCRE\"
+else
+	/usr/bin/dialog --title "Postfix configuration options" --clear \
+		--checklist "\n\
+Please select desired options:" -1 -1 16 \
+PCRE		"Perl Compatible Regular Expressions" OFF \
+SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" OFF \
+DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
+MySQL		"MySQL map lookups" OFF \
+OpenLDAP	"OpenLDAP map lookups" OFF \
+Test		"SMTP/LMTP test server and generator" OFF \
+TLS		"SSL and Transport Layer Security (CURRENTLY BROKEN)" OFF \
+IPv6		"IPv6 support (CURRENTLY BROKEN)" OFF \
+2> $tempfile
+
+	retval=$?
+
+	if [ -s $tempfile ]; then
+		set `cat $tempfile`
+	fi
+	rm -f $tempfile
+
+	case $retval in
+		0)	if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+
+${MKDIR} ${WRKDIRPREFIX}${CURDIR}
+exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+
+echo "PREFIX=	${PREFIX}"
+
+SUB_TLS="@comment "
+SUB_TEST="@comment "
+
+while [ "$1" ]; do
+	case $1 in
+		\"PCRE\")
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libpcre.a:\${PORTSDIR}/devel/pcre"
+			echo "POSTFIX_CCARGS+=	-DHAS_PCRE -I\${LOCALBASE}/include"
+			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libpcre.a"
+			SUB_PCRE=""
+			;;
+		\"SASL\")
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libsasl.a:\${PORTSDIR}/security/cyrus-sasl"
+			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include"
+			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libsasl.a -lpam -lcrypt"
+			if [ -f ${PREFIX}/lib/libsasl.a ]; then 
+				if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
+					echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+					echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+				fi
+			else
+				echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+				echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+			fi
+			echo ".if exists(/usr/lib/libkrb.a)"
+			echo "POSTFIX_AUXLIBS+=	-lkrb -ldes -lcom_err"
+			echo ".endif"
+			SUB_SASL=""
+			;;
+		\"TLS\")
+			echo "MAN8+=		tlsmgr.8"
+			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
+			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.7-1.1.6-0.9.6c.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.7-1.1.6-0.9.6c/pfixtls.diff"
+			echo "PATCH_STRIP=	-p1"
+			SUB_TLS=""
+			;;
+		\"DB3\")
+			echo "LIB_DEPENDS+=	db3.2:\${PORTSDIR}/databases/db3"
+			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db3"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb3"
+			;;
+		\"MySQL\")
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a:\${PORTSDIR}/databases/mysql323-client"
+			echo "POSTFIX_CCARGS+=	-DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+			;;
+		\"OpenLDAP\")
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap"
+			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
+			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libldap.a \${PREFIX}/lib/liblber.a"
+			;;
+		\"Test\")
+			echo "BIN1=		smtp-sink smtp-source"
+			SUB_TEST=""
+			;;
+		\"IPv6\")
+			/usr/bin/dialog --msgbox "IPv6 is currently broken until kame updates patches" 5 60 > /dev/stderr
+			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			exit 1
+			if [ `uname -m` != "i386" ]; then
+				/usr/bin/dialog --msgbox "IPv6 patch currently only supported on i386!" 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			exit 1
+			fi
+			if [ X$SUB_TLS = "X" ]; then
+				/usr/bin/dialog --msgbox "IPv6 and TLS patch cannot be used simultaneously!" 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "PATCH_SITES+=	ftp://ftp.kame.net/pub/kame/misc/"
+			echo "PATCH_SITES+=	\${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}"
+			echo "PATCHFILES+=	postfix-20010225snap-v6-20010228a.diff.gz"
+			echo "PATCH_DIST_STRIP= -p1"
+			echo ""
+			;;
+		*)
+			echo "Invalid option(s): $*" > /dev/stderr
+			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			exit 1
+			;;
+	esac
+	shift
+done
+
+echo "PLIST_SUB+=	SUB_TLS=\"${SUB_TLS}\""
+echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""

@@ -1,20 +1,41 @@
 # New ports collection makefile for:	vic
-# Version required:	2.6
 # Date created:		14 December 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/14 23:01:26 wollman Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	vic-2.6
-DISTFILES=	vicsrc-2.6.tar.Z
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vic/
-LIB_DEPENDS=	BLT\\.1\\.:${PORTSDIR}/x11/blt
-HAS_CONFIGURE=	yes
-INSTALL_TARGET=	MANDIR=${PREFIX}/man/manl install
+PORTNAME=	vic
+PORTVERSION=	2.8.1.1.3
+PORTREVISION=	1
+CATEGORIES=	mbone tk83 ipv6
+MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl-1.1.3/
+DISTNAME=	${PORTNAME}-2.8ucl-1.1.3
 
-pre-install:
-	mkdir -p ${PREFIX}/man/manl
+MAINTAINER=	fenner@FreeBSD.org
+
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+BUILD_DEPENDS=  ${LOCALBASE}/lib/libuclmmbase.a:${PORTSDIR}/devel/uclmmbase
+
+WRKSRC=		${WRKDIR}/vic-2.8ucl-1.1.3/vic
+
+USE_AUTOCONF=	yes
+USE_X_PREFIX=	yes
+CONFIGURE_ARGS= -x-libraries=${PREFIX}/lib \
+		-x-includes=${PREFIX}/include \
+		-without-ucltcl \
+		-with-tcl=${LOCALBASE} \
+		-without-ucltk \
+		-with-tk=${LOCALBASE} \
+		-enable-ipv6
+MAN1=		vic.1
+
+pre-patch:
+	@${FIND} ${WRKSRC} -name "*.[c,h]" | ${XARGS} ${PERL} -pi -e \
+		's|malloc.h|stdlib.h|'
+
+post-install:
+	strip ${PREFIX}/bin/vic
+	strip ${PREFIX}/bin/histtolut
 
 .include <bsd.port.mk>
-

@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+bin/ogg123
+bin/oggenc
+bin/ogginfo
+bin/vcut
+bin/vorbiscomment

@@ -1,13 +1,27 @@
 # New ports collection makefile for:    arc
-# Version required:     5.21e
 # Date created:         31 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/26 09:10:32 ache Exp $
+# $FreeBSD$
 #
-DISTNAME=       arc521e.pl8
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=   ftp://ftp.kiae.su/unix/arcers/
+
+PORTNAME=	arc
+PORTVERSION=	5.21e.8
+PORTREVISION=   1
+CATEGORIES=	archivers
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
+DISTNAME=	arc521e.pl8
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	ache@FreeBSD.org
+
 NO_WRKSUBDIR=	yes
+MAN1=		arc.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/arc ${WRKSRC}/marc ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/arc.1 ${PREFIX}/man/man1
+	${MKDIR} ${PREFIX}/share/doc/arc
+	${INSTALL_DATA} ${WRKSRC}/Arc521.doc ${PREFIX}/share/doc/arc
 
 .include <bsd.port.mk>

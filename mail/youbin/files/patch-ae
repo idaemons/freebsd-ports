@@ -1,0 +1,28 @@
+--- server.c.orig	Sun Apr 15 23:17:13 2001
++++ server.c	Tue May 15 12:26:12 2001
+@@ -48,6 +48,9 @@
+ #include <pwd.h>                /* For getpwuid(). */
+ #include <signal.h>
+ #include <stdio.h>
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#endif
+ 
+ #include "youbin.h"
+ #include "server.h"
+@@ -148,6 +151,15 @@
+     signal(SIGTERM, sig_quit);
+     signal(SIGHUP, sig_hup);
+     signal(SIGALRM, sig_alarm);
++
++    /*Go to background.  This part was modified locally by Masafumi NAKANE
++        <max@FreeBSD.org>, and is used only on FreeBSD.*/
++#ifdef __FreeBSD__
++    if (daemon(1, 1) == -1) {
++	    perror("daemon");
++	    kill(getpid(), SIGTERM);
++    }
++#endif
+ 
+     /* Dive into main loop. Don't use setjmp() and longjmp(),
+        because list maintenance routines are in critical section. */

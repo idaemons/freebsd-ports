@@ -1,0 +1,18 @@
+*** examples/Makefile.orig	Mon May 22 19:58:45 2000
+--- examples/Makefile	Mon May 22 19:59:07 2000
+***************
+*** 33,39 ****
+  install : $(EXAMPLES) $(DOTEST)
+  	$(MKINSTALLDIRS) $(GRACE_HOME)/examples
+  	for i in $(EXAMPLES); do $(INSTALL_DATA) $$i $(GRACE_HOME)/examples; done
+! 	$(INSTALL_PROGRAM) $(DOTEST) $(GRACE_HOME)/examples/$(DOTEST)
+
+  links : dummy
+
+--- 33,39 ----
+  install : $(EXAMPLES) $(DOTEST)
+  	$(MKINSTALLDIRS) $(GRACE_HOME)/examples
+  	for i in $(EXAMPLES); do $(INSTALL_DATA) $$i $(GRACE_HOME)/examples; done
+! 	$(INSTALL_SCRIPT) $(DOTEST) $(GRACE_HOME)/examples/$(DOTEST)
+
+  links : dummy

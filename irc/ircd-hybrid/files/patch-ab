@@ -1,0 +1,20 @@
+--- configure.orig	Thu Mar 21 16:58:58 2002
++++ configure	Thu Mar 21 17:00:54 2002
+@@ -2517,7 +2517,7 @@
+ ac_given_srcdir=$srcdir
+ ac_given_INSTALL="$INSTALL"
+ 
+-trap 'rm -fr `echo "Makefile adns/Makefile src/Makefile tools/Makefile include/setup.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
++trap 'rm -fr `echo "Makefile adns/Makefile src/Makefile tools/Makefile include/setup.h include/config.h tools/install_ircd" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
+ EOF
+ cat >> $CONFIG_STATUS <<EOF
+ 
+@@ -2615,7 +2615,7 @@
+ 
+ cat >> $CONFIG_STATUS <<EOF
+ 
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile adns/Makefile src/Makefile tools/Makefile"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile adns/Makefile src/Makefile tools/Makefile include/config.h tools/install_ircd"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then

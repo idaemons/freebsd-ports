@@ -1,0 +1,14 @@
+--- main.cc.orig	Sat Jan 20 20:04:03 2001
++++ main.cc	Sat Jan 20 20:04:19 2001
+@@ -16,10 +16,7 @@
+ #include "screen.h"
+ #include "MessageIdStore.h"
+ #include <strings.h>
+-
+-extern "C" {
+-#include <rxposix.h>
+-}
++#include <regex.h>
+ 
+ /* Prototype for signal handler */
+ void cleanUp(int);

@@ -8,4 +8,4 @@ This release provides an efficient object oriented system called STklos.
 STklos is a full OO system with multi-inheritance, generic functions,
 multi-methods and a true meta object protocol).
 
-Ported to FreeBSD by Josh MacDonald, <jmacd@uclink.berkeley.edu>
+WWW: http://kaolin.unice.fr/STk/

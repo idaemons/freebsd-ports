@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- configure.orig	Fri Mar  8 17:54:21 2002
++++ configure	Mon Mar 11 10:21:32 2002
+@@ -16768,8 +16768,8 @@
+ rm -f conftest.$ac_objext conftest.$ac_ext
+ 		fi
+ 		;;
+-	*-freebsd2.2*)
+-		G_THREAD_CFLAGS="$G_THREAD_CFLAGS -D_THREAD_SAFE"
++	*-freebsd*)
++		G_THREAD_CFLAGS="$G_THREAD_CFLAGS $PTHREAD_CFLAGS"
+ 
+ 		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
+ 		# -mthreads flag.
+@@ -16849,7 +16849,7 @@
+ 	     *-*-openbsd* | *-*-freebsd*)
+ 	        # FreeBSD and OpenBSD want us to use the -pthread flag
+                 # instead of linking to -lc_r and libtool enforces that.
+-		G_THREAD_LIBS="-pthread"
++		G_THREAD_LIBS="$PTHREAD_LIBS"
+ 		;;
+              *)
+ 		for thread_lib in "" pthread pthread32 pthreads thread dce; do

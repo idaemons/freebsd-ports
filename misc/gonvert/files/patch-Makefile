@@ -1,0 +1,22 @@
+--- Makefile.orig	Wed Jul  4 10:46:41 2001
++++ Makefile	Thu Jul  5 20:13:34 2001
+@@ -11,7 +11,7 @@
+ all:
+ 
+ install:
+-	install -D --mode=755 $(PROGRAMNAME) $(DESTDIR)/$(BINDIR)/$(PROGRAMNAME)	#put the main program into the bin directory
++	install --mode=755 $(PROGRAMNAME) $(DESTDIR)/$(BINDIR)/$(PROGRAMNAME)	#put the main program into the bin directory
+ 	install --directory $(DESTDIR)/$(MYDATADIR)					#create directory to hold project files
+ 	install --mode=644 gonvert.glade $(DESTDIR)/$(MYDATADIR)			#copy glade file over
+ 	install --directory $(DESTDIR)/$(MYDATADIR)/pixmaps				#create pixmap directory to hold project pictures
+@@ -20,8 +20,8 @@
+ 	install --mode=644 pixmaps/gonvert_icon.png $(DESTDIR)/$(DATADIR)/pixmaps	#copy gnome pictures over
+ 	install --directory $(DESTDIR)/$(DATADIR)/gnome/apps/Utilities			#create a directory for gnome menu description
+ 	install --mode=644 gonvert.desktop $(DESTDIR)/$(DATADIR)/gnome/apps/Utilities	#copy the gnome menu description
+-	install --directory $(MYDOCDIR) 						#create a directory that holds project documentation
+-	install --mode=644 doc/* $(MYDOCDIR)						#copy project documentation
++#	install --directory $(MYDOCDIR) 						#create a directory that holds project documentation
++#	install --mode=644 doc/* $(MYDOCDIR)						#copy project documentation
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)/$(BINDIR)/$(PROGRAMNAME)

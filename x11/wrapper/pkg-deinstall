@@ -1,0 +1,2 @@
+#!/bin/sh
+mv -f ${PKG_PREFIX}/bin/X.bck ${PKG_PREFIX}/bin/X

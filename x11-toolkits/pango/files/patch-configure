@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Dec 24 02:40:36 2001
++++ configure	Fri Jan 18 10:29:57 2002
+@@ -11190,10 +11190,10 @@
+ s,@INSTALL_DATA@,$INSTALL_DATA,;t t
+ s,@PACKAGE@,$PACKAGE,;t t
+ s,@VERSION@,$VERSION,;t t
+-s,@ACLOCAL@,$ACLOCAL,;t t
+-s,@AUTOCONF@,$AUTOCONF,;t t
+-s,@AUTOMAKE@,$AUTOMAKE,;t t
+-s,@AUTOHEADER@,$AUTOHEADER,;t t
++s,@ACLOCAL@,/usr/bin/true,;t t
++s,@AUTOCONF@,/usr/bin/true,;t t
++s,@AUTOMAKE@,/usr/bin/true,;t t
++s,@AUTOHEADER@,/usr/bin/true,;t t
+ s,@MAKEINFO@,$MAKEINFO,;t t
+ s,@SET_MAKE@,$SET_MAKE,;t t
+ s,@CC@,$CC,;t t

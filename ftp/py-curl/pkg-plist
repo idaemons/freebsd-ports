@@ -1,0 +1,11 @@
+%%PYTHON_SITELIBDIR%%/pycurl.so
+%%PORTDOCS%%share/examples/py-curl/basicfirst.py
+%%PORTDOCS%%share/examples/py-curl/basicfirst2.py
+%%PORTDOCS%%share/examples/py-curl/test.py
+%%PORTDOCS%%share/examples/py-curl/test_cb.py
+%%PORTDOCS%%share/examples/py-curl/test_getinfo.py
+%%PORTDOCS%%share/examples/py-curl/test_gtk.py
+%%PORTDOCS%%share/examples/py-curl/test_stringio.py
+%%PORTDOCS%%share/examples/py-curl/test_xmlrpc.py
+%%PORTDOCS%%share/examples/py-curl/test_xmlrpc2.py
+%%PORTDOCS%%@dirrm share/examples/py-curl

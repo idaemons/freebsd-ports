@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/aub
+share/doc/aub/BUG_FIXES
+@dirrm share/doc/aub

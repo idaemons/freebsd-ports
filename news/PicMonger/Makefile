@@ -1,0 +1,23 @@
+# New ports collection makefile for:	PicMonger
+# Date created:			23 July 2000
+# Whom:				Donald Burr <dburr@FreeBSD.ORG>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	PicMonger
+PORTVERSION=	0.9.6
+CATEGORIES=	news graphics
+MASTER_SITES=	http://download.sourceforge.net/PicMonger/
+
+MAINTAINER=	dburr@FreeBSD.ORG
+
+LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
+RUN_DEPENDS=	mpack:${PORTSDIR}/converters/mpack
+
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_IMLIB=	yes
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.mk>

@@ -1,0 +1,20 @@
+--- configure.in.orig	Wed Feb  6 20:56:47 2002
++++ configure.in	Wed Mar 13 12:42:20 2002
+@@ -1792,7 +1792,7 @@
+   yes)
+     AC_MSG_RESULT(yes)
+     AC_DEFINE(KRB5_AUTH)
+-    LIBS="$LIBS -ldes425 -lkrb5 -lcrypto -lcom_err"
++    LIBS="$LIBS -ldes425 -lkrb5 -lk5crypto -lcom_err"
+     CFLAGS="$CFLAGS -I$withval/include"
+     LDFLAGS="$LDFLAGS -L$withval/lib"
+     ;;
+@@ -1966,7 +1966,7 @@
+   yes)
+     AC_MSG_RESULT(yes)
+     AC_DEFINE(WITH_LDAP_SAM)
+-    LIBS="-lldap -llber -lresolv $LIBS"
++    LIBS="-lldap -llber $LIBS"
+     with_smbpasswd_sam=no
+     ;;
+   *)

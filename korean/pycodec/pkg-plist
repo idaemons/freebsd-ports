@@ -1,0 +1,54 @@
+%%PYTHON_SITELIBDIR%%/KoreanCodecs.pth
+%%PYTHON_SITELIBDIR%%/korean/__init__.py
+%%PYTHON_SITELIBDIR%%/korean/__init__.pyc
+%%PYTHON_SITELIBDIR%%/korean/c/__init__.py
+%%PYTHON_SITELIBDIR%%/korean/c/__init__.pyc
+%%PYTHON_SITELIBDIR%%/korean/c/_koco.so
+%%PYTHON_SITELIBDIR%%/korean/c/cp949.py
+%%PYTHON_SITELIBDIR%%/korean/c/cp949.pyc
+%%PYTHON_SITELIBDIR%%/korean/c/euc_kr.py
+%%PYTHON_SITELIBDIR%%/korean/c/euc_kr.pyc
+%%PYTHON_SITELIBDIR%%/korean/cp949.py
+%%PYTHON_SITELIBDIR%%/korean/cp949.pyc
+%%PYTHON_SITELIBDIR%%/korean/euc_kr.py
+%%PYTHON_SITELIBDIR%%/korean/euc_kr.pyc
+%%PYTHON_SITELIBDIR%%/korean/hangul.py
+%%PYTHON_SITELIBDIR%%/korean/hangul.pyc
+%%PYTHON_SITELIBDIR%%/korean/iso_2022_kr.py
+%%PYTHON_SITELIBDIR%%/korean/iso_2022_kr.pyc
+%%PYTHON_SITELIBDIR%%/korean/johab.py
+%%PYTHON_SITELIBDIR%%/korean/johab.pyc
+%%PYTHON_SITELIBDIR%%/korean/mappings/__init__.py
+%%PYTHON_SITELIBDIR%%/korean/mappings/__init__.pyc
+%%PYTHON_SITELIBDIR%%/korean/mappings/johab_ideograph.py
+%%PYTHON_SITELIBDIR%%/korean/mappings/johab_ideograph.pyc
+%%PYTHON_SITELIBDIR%%/korean/mappings/ksc5601_hangul.py
+%%PYTHON_SITELIBDIR%%/korean/mappings/ksc5601_hangul.pyc
+%%PYTHON_SITELIBDIR%%/korean/mappings/ksc5601_ideograph.py
+%%PYTHON_SITELIBDIR%%/korean/mappings/ksc5601_ideograph.pyc
+%%PYTHON_SITELIBDIR%%/korean/mappings/ksc5601_misc.py
+%%PYTHON_SITELIBDIR%%/korean/mappings/ksc5601_misc.pyc
+%%PYTHON_SITELIBDIR%%/korean/mappings/uhc.py
+%%PYTHON_SITELIBDIR%%/korean/mappings/uhc.pyc
+%%PYTHON_SITELIBDIR%%/korean/python/__init__.py
+%%PYTHON_SITELIBDIR%%/korean/python/__init__.pyc
+%%PYTHON_SITELIBDIR%%/korean/python/cp949.py
+%%PYTHON_SITELIBDIR%%/korean/python/cp949.pyc
+%%PYTHON_SITELIBDIR%%/korean/python/euc_kr.py
+%%PYTHON_SITELIBDIR%%/korean/python/euc_kr.pyc
+%%PYTHON_SITELIBDIR%%/korean/python/iso_2022_kr.py
+%%PYTHON_SITELIBDIR%%/korean/python/iso_2022_kr.pyc
+%%PYTHON_SITELIBDIR%%/korean/python/johab.py
+%%PYTHON_SITELIBDIR%%/korean/python/johab.pyc
+%%PYTHON_SITELIBDIR%%/korean/python/qwerty2bul.py
+%%PYTHON_SITELIBDIR%%/korean/python/qwerty2bul.pyc
+%%PYTHON_SITELIBDIR%%/korean/python/unijohab.py
+%%PYTHON_SITELIBDIR%%/korean/python/unijohab.pyc
+%%PYTHON_SITELIBDIR%%/korean/qwerty2bul.py
+%%PYTHON_SITELIBDIR%%/korean/qwerty2bul.pyc
+%%PYTHON_SITELIBDIR%%/korean/unijohab.py
+%%PYTHON_SITELIBDIR%%/korean/unijohab.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/korean/python
+@dirrm %%PYTHON_SITELIBDIR%%/korean/mappings
+@dirrm %%PYTHON_SITELIBDIR%%/korean/c
+@dirrm %%PYTHON_SITELIBDIR%%/korean

@@ -1,0 +1,37 @@
+bin/ircd
+bin/mkpasswd
+bin/viconf
+bin/viklines
+bin/vimotd
+etc/ircd/ircd.conf.sample
+etc/ircd/ircd.motd.sample
+etc/ircd/kline.conf.sample
+etc/ircd/opers.txt.sample
+etc/rc.d/ircd.sh
+@unexec rmdir %D/etc/ircd 2>/dev/null || true
+%%PORTDOCS%%share/doc/ircd-hybrid/CIDR.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/INDEX
+%%PORTDOCS%%share/doc/ircd-hybrid/Makefile
+%%PORTDOCS%%share/doc/ircd-hybrid/README.TSora
+%%PORTDOCS%%share/doc/ircd-hybrid/Tao-of-IRC.940110
+%%PORTDOCS%%share/doc/ircd-hybrid/blalloc.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/example.conf
+%%PORTDOCS%%share/doc/ircd-hybrid/example.conf.trillian
+%%PORTDOCS%%share/doc/ircd-hybrid/ircd.8
+%%PORTDOCS%%share/doc/ircd-hybrid/mtrie.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/old/Authors
+%%PORTDOCS%%share/doc/ircd-hybrid/old/Etiquette
+%%PORTDOCS%%share/doc/ircd-hybrid/old/README
+%%PORTDOCS%%share/doc/ircd-hybrid/old/US-Admin/Networking
+%%PORTDOCS%%share/doc/ircd-hybrid/old/US-Admin/Operators
+%%PORTDOCS%%share/doc/ircd-hybrid/old/US-Admin/README
+%%PORTDOCS%%share/doc/ircd-hybrid/operguide.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/opermyth.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/rfc1459.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/server-version-info
+%%PORTDOCS%%share/doc/ircd-hybrid/simple.conf
+%%PORTDOCS%%share/doc/ircd-hybrid/ts5.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/yline.txt
+%%PORTDOCS%%@dirrm share/doc/ircd-hybrid/old/US-Admin
+%%PORTDOCS%%@dirrm share/doc/ircd-hybrid/old
+%%PORTDOCS%%@dirrm share/doc/ircd-hybrid

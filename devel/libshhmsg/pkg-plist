@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+include/shhmsg.h
+lib/libshhmsg.so
+lib/libshhmsg.so.1
+share/doc/libshhmsg/CREDITS
+share/doc/libshhmsg/README
+share/doc/libshhmsg/shhmsg.txt
+@dirrm share/doc/libshhmsg

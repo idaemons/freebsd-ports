@@ -1,14 +1,21 @@
 # New ports collection makefile for:	screen
-# Version required:     3.6.1
 # Date created:         25 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1994/12/22 06:46:32 ache Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       screen-3.6.1
-NCFTPFLAGS=     -PN
-MASTER_SITES=   ftp://ftp.uni-erlangen.de/pub/utilities/screen/
-GNU_CONFIGURE=	YES
+PORTNAME=	screen
+PORTVERSION=    3.9.11
+PORTREVISION=	1
+CATEGORIES=	misc
+MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
+		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	screen
+
+MAINTAINER=	ache@FreeBSD.org
+
+GNU_CONFIGURE=	yes
+MAN1=		screen.1
 
 .include <bsd.port.mk>

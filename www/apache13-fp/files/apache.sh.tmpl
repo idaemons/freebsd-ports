@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+
+#
+# Create New FrontPage suidkey
+#
+
+new_key() {
+
+	CUR_UMASK=`umask`
+	skdir=PREFIX/frontpage/versionFP_VER/apache-fp
+	PERL=PERL5
+
+	if [ -x PREFIX/libexec/apache/mod_frontpage.so ]
+	then
+
+		#NOTE: We need Perl 5, to generate a new key
+		if [ -x ${PERL} ]
+		then
+			umask 077
+			${PERL} -e '@a=(split(//, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*-=_+")); print((map {$a[rand(scalar @a)]} (1..128)), "\n");' > $skdir/suidkey
+			umask ${CUR_UMASK}
+		fi
+	fi
+
+}
+
+#
+# Main
+#
+
+if [ -x PREFIX/libexec/apache/mod_frontpage.so ]
+then
+	MODULES="_FP"
+fi
+
+case "$1" in
+
+start)
+        if [ -x PREFIX/sbin/apachectl ]
+        then
+		new_key
+		PREFIX/sbin/apachectl start${MODULES} && echo -n ' httpd'
+	fi
+	;;
+
+stop)
+	if [ -r /var/run/httpd.pid ]
+	then
+		PREFIX/sbin/apachectl stop && echo -n ' httpd'
+	fi
+	;;
+
+*)
+	echo "usage: $0 {start|stop}" 1>&2
+	exit 64
+	;;
+
+esac

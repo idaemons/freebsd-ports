@@ -2,12 +2,17 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.1.1.1 1995/01/03 08:49:55 swallace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       xmj
-MASTER_SITES=	ftp://ftp.cs.orst.edu/pub/src/X11R4/contrib/demos/
+PORTNAME=	xmj
+PORTVERSION=	1.0
+CATEGORIES=	games
+MASTER_SITES=	ftp://forte.mathematik.uni-bremen.de/pub/comp/X11/
+DISTNAME=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+
 USE_IMAKE=	yes
-NO_INSTALL_MANPAGES= yes
 
 .include <bsd.port.mk>

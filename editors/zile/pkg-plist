@@ -1,0 +1,12 @@
+info/zile.info
+share/zile/zilerc.sample
+share/zile/FAQ
+share/zile/HELP
+share/zile/MINIHELP1
+share/zile/MINIHELP2
+share/zile/MINIHELP3
+share/zile/LATEST_VERSION
+share/zile/TUTORIAL
+share/zile/AUTODOC
+bin/zile
+@dirrm share/zile

@@ -1,0 +1,34 @@
+%%RUBY_SITEARCHLIBDIR%%/ldap.so
+%%RUBY_SITELIBDIR%%/ldap/schema.rb
+@dirrm %%RUBY_SITELIBDIR%%/ldap
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/add.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/add2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind-ldaps.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind-sasl.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind-ssl.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/cgi/search.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/cgi/search.html
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/conf.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/delete.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/modrdn.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap1/slapd.conf.in
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/slapd-ssl.conf.in
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/slapd.conf.in
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openssl/openssl.cnf
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/search.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/search2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/search3.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/subschema.rb
+%%PORTDOCS%%@unexec rm -f %D/%%RUBY_EXAMPLESDIR%%/ldap/test 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/test.sh
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openssl
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap2
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap1
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/cgi
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ldap/CHANGES
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ldap/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ldap/README.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ldap/TODO
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ldap

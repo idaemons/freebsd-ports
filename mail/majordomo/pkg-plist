@@ -1,0 +1,54 @@
+majordomo/archive
+majordomo/archive2.pl
+majordomo/bin/approve
+majordomo/bin/bounce
+majordomo/bin/medit
+majordomo/bounce-remind
+majordomo/config_parse.pl
+majordomo/digest
+majordomo/majordomo
+majordomo/majordomo.pl
+majordomo/majordomo_version.pl
+majordomo/request-answer
+majordomo/resend
+majordomo/shlock.pl
+majordomo/config-test
+majordomo/Tools/archive.pl
+majordomo/Tools/archive_mh.pl
+majordomo/Tools/digest.send
+majordomo/Tools/makeindex.pl
+majordomo/Tools/logsummary.pl
+majordomo/Tools/new-list
+majordomo/Tools/sequencer
+majordomo/majordomo.cf
+majordomo/sample.cf
+majordomo/wrapper
+majordomo/lists/test-l
+majordomo/lists/test-l-digest
+majordomo/lists/test-l.passwd
+majordomo/lists/test-l.info
+majordomo/lists/test-l-digest.info
+majordomo/lists/test-l-digest.passwd
+majordomo/doc/Changelog
+majordomo/doc/FUTURE
+majordomo/doc/INSTALL
+majordomo/doc/LICENSE
+majordomo/doc/NEWLIST
+majordomo/doc/README
+majordomo/doc/FAQ
+majordomo/doc/README.sequencer
+majordomo/doc/list-owner-info
+majordomo/doc/majordomo-faq.html
+majordomo/doc/majordomo.lisa6.ps
+majordomo/doc/majordomo.ora
+majordomo/doc/post-install-notes
+@dirrm majordomo/bin
+@dirrm majordomo/doc
+@dirrm majordomo/digests/test-l-digest
+@dirrm majordomo/digests
+@dirrm majordomo/lists/test-l-digest.archive
+@dirrm majordomo/lists/test-l.archive
+@unexec rmdir %D/majordomo/lists 2>/dev/null || true
+@dirrm majordomo/tmp
+@dirrm majordomo/Tools
+@unexec rmdir %D/majordomo 2>/dev/null || true

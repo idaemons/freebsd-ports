@@ -1,0 +1,39 @@
+--- configure.orig	Wed Mar  6 09:51:35 2002
++++ configure	Thu Mar  7 07:24:23 2002
+@@ -5251,7 +5251,7 @@
+     EXTRA_CFLAGS=""
+     TCL_EXPORT_FILE_SUFFIX=""
+     UNSHARED_LIB_SUFFIX=""
+-    TCL_TRIM_DOTS='`echo ${VERSION} | tr -d .`'
++    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
+     ECHO_VERSION='`echo ${VERSION}`'
+     TCL_LIB_VERSIONS_OK=ok
+     CFLAGS_DEBUG=-g
+@@ -5878,22 +5878,23 @@
+ 	FreeBSD-*)
+ 	    # FreeBSD 3.* and greater have ELF.
+ 	    SHLIB_CFLAGS="-fPIC"
+-	    SHLIB_LD="ld -Bshareable -x"
++	    TCL_SHLIB_LD_EXTRAS="-soname \$@"
++	    SHLIB_LD="ld -shared -x"
+ 	    SHLIB_LD_LIBS='${LIBS}'
+ 	    SHLIB_SUFFIX=".so"
+ 	    DL_OBJS="tclLoadDl.o"
+ 	    DL_LIBS=""
+-	    LDFLAGS="-export-dynamic"
++	    LDFLAGS=""
+ 	    LD_SEARCH_FLAGS=""
+ 	    if test "${TCL_THREADS}" = "1" ; then
+ 		EXTRA_CFLAGS="-pthread"
+ 	    	LDFLAGS="$LDFLAGS -pthread"
+ 	    fi
+ 	    case $system in
+-	    FreeBSD-3.*)
++	    FreeBSD-*)
+ 	    	# FreeBSD-3 doesn't handle version numbers with dots.
+ 	    	UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
+-	    	SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
++	        SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}${DBGX}.so.1'
+ 	    	TCL_LIB_VERSIONS_OK=nodots
+ 		;;
+ 	    esac

@@ -1,0 +1,3 @@
+bin/gnetlist
+bin/gschem2pcb
+bin/mk_verilog_syms

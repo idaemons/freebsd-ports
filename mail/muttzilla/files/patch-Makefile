@@ -1,0 +1,26 @@
+--- Makefile.orig	Wed Jan 26 23:11:08 2000
++++ Makefile	Fri Nov 24 14:42:09 2000
+@@ -1 +1 @@
+-CFLAGS = -O2 -Wall
++CFLAGS += -Wall
+@@ -7,3 +7,3 @@
+-BINDIR = /usr/local/bin
+-LIBDIR = /usr/local/lib
+-ETCDIR = /etc
++BINDIR = ${PREFIX}/bin
++LIBDIR = ${PREFIX}/lib
++ETCDIR = ${PREFIX}/etc
+@@ -18 +18 @@
+-	$(LD) $(LDFLAGS) -o $@ $^
++	$(CC) -shared -o $@ $>
+@@ -27,5 +27,5 @@
+-	install --mode=0755 muttzilla.so $(LIBDIR)
+-	install --mode=0755 -d $(MZLIBDIR)
+-	install --mode=0755 mzmail.sh mzmail.py mznews.sh mznews.py $(BINDIR)
+-	install --mode=0644 $(MAILERLIBS) $(MZLIBDIR)
+-	install --mode=0644 -b muttzilla.conf $(ETCDIR)
++	install -m 0755 -c muttzilla.so $(LIBDIR)
++	install -m 0755 -d $(MZLIBDIR)
++	install -m 0755 -c mzmail.sh mzmail.py mznews.sh mznews.py $(BINDIR)
++	install -m 0644 -c $(MAILERLIBS) $(MZLIBDIR)
++	install -m 0644 -c muttzilla.conf $(ETCDIR)

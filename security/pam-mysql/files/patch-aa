@@ -1,0 +1,63 @@
+--- pam_mysql.c.old	Sun Sep 24 02:26:17 2000
++++ pam_mysql.c	Sun Sep 24 02:42:23 2000
+@@ -14,7 +14,6 @@
+ #include <unistd.h>
+ #include <syslog.h>
+ #include <stdarg.h>
+-#include <alloca.h>
+ #include <string.h>
+ 
+ #include <mysql/mysql.h>
+@@ -332,40 +331,40 @@
+ 		}
+ 		strcpy (junk, argv[i]);
+ 		if ((strchr (junk, (int) '=') != NULL)) {
+-			strncpy (mybuf, strtok (junk, "="), 255);
+-			strncpy (myval, strtok (NULL, "="), 255);
++			strlcpy (mybuf, strtok (junk, "="), 255);
++			strlcpy (myval, strtok (NULL, "="), 255);
+ 			free (junk);
+ 			if (!strcasecmp ("host", mybuf)) {
+-				strncpy (options.host, myval, 255);
++				strlcpy (options.host, myval, 255);
+ 				D (("host changed."));
+ 			} else if (!strcasecmp ("where", mybuf)) {
+ 				while ( (mj = strtok(NULL,"=")) != NULL )
+ 				{
+-					strcat(myval, "=");
+-					strcat(myval, mj);
++					strlcat(myval, "=", 255);
++					strlcat(myval, mj, 255);
+ 				}
+-				strncpy (options.where, myval, 256);
++				strlcpy (options.where, myval, 256);
+ 				D (("where changed."));
+ #ifdef DEBUG
+ 				syslog(LOG_ERR, "pam_mysql: where now is %s", options.where);
+ #endif
+ 			} else if (!strcasecmp ("db", mybuf)) {
+-				strncpy (options.database, myval, 16);
++				strlcpy (options.database, myval, 16);
+ 				D (("database changed."));
+ 			} else if (!strcasecmp ("user", mybuf)) {
+-				strncpy (options.dbuser, myval, 16);
++				strlcpy (options.dbuser, myval, 16);
+ 				D (("dbuser changed."));
+ 			} else if (!strcasecmp ("passwd", mybuf)) {
+-				strncpy (options.dbpasswd, myval, 16);
++				strlcpy (options.dbpasswd, myval, 16);
+ 				D (("dbpasswd changed."));
+ 			} else if (!strcasecmp ("table", mybuf)) {
+-				strncpy (options.table, myval, 16);
++				strlcpy (options.table, myval, 16);
+ 				D (("table changed."));
+ 			} else if (!strcasecmp ("usercolumn", mybuf)) {
+-				strncpy (options.usercolumn, myval, 16);
++				strlcpy (options.usercolumn, myval, 16);
+ 				D (("usercolumn changed."));
+ 			} else if (!strcasecmp ("passwdcolumn", mybuf)) {
+-				strncpy (options.passwdcolumn, myval, 16);
++				strlcpy (options.passwdcolumn, myval, 16);
+ 				D (("passwdcolumn changed."));
+ 			} else if (!strcasecmp ("crypt", mybuf)) {
+ 				if ((!strcmp (myval, "1")) ||

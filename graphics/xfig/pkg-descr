@@ -1,4 +1,4 @@
-XFIG 3.1.3 - Facility for Interactive Generation of figures under X11
+XFIG - Facility for Interactive Generation of figures under X11
 
 Xfig is a menu-driven tool that allows the user to draw and manipulate objects
 interactively in an X window.  The resulting pictures can be saved, printed
@@ -8,5 +8,15 @@ allow inclusion in LaTeX documents).
 To enjoy the beautiful colors, specify "*customization: -color" in your 
 .Xdefaults or .Xresources file.
 
-To obtain full capability, we recommend you to install the transfig
-package too.
+Xfig is internationlized from version 3.2.  To use i18n feature, type
+$ xfig -international  [-inputStyle OverTheSpot]
+Xfig acts as non-i18n version without -international option. If you put 
+"Fig.international: true" into your resource file, -international option may 
+omitted.
+
+ja_JP.EUC and ko_KR.EUC is tested for input, display, and printing.
+For zh_CN.EUC, only display is confirmed.
+
+Read /usr/X11R6/lib/X11/xfig/xfig.html for more information.
+
+WWW: http://www.xfig.org/

@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Tue Mar 12 14:51:22 2002
++++ Makefile.in	Fri Mar 15 18:42:49 2002
+@@ -40,3 +40,3 @@
+ 
+-ACLOCAL = @ACLOCAL@
++ACLOCAL = /usr/bin/true
+ AUTOCONF = @AUTOCONF@
+@@ -152,3 +152,3 @@
+ 
+-SUBDIRS = doc intl intl-java lib libuniname src po man m4 projects misc tests
++SUBDIRS = doc intl lib libuniname src po man m4 projects misc tests
+ 

@@ -1,0 +1,33 @@
+--- Makefile.in.orig	Sun Apr  1 22:14:07 2001
++++ Makefile.in	Mon May 21 20:01:41 2001
+@@ -37,3 +37,3 @@
+ pkgdatadir = $(datadir)/@PACKAGE@
+-pkglibdir = $(libdir)/@PACKAGE@
++pkglibdir = $(prefix)/libdata/pkgconfig
+ pkgincludedir = $(includedir)/@PACKAGE@
+@@ -130,3 +130,3 @@
+ 
+-bin_SCRIPTS = gtk-config
++bin_SCRIPTS = gtk@LT_RELEASE@-config
+ 
+@@ -138,3 +138,3 @@
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(pkglibdir)
+ pkgconfig_DATA = gdk.pc gtk+.pc
+@@ -146,3 +146,3 @@
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES =  gtk+.spec gtk-config gdk.pc gtk+.pc
++CONFIG_CLEAN_FILES =  gtk+.spec gtk@LT_RELEASE@-config gdk.pc gtk+.pc
+ SCRIPTS =  $(bin_SCRIPTS)
+@@ -208,3 +208,5 @@
+ 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+-gtk-config: $(top_builddir)/config.status gtk-config.in
++gtk@LT_RELEASE@-config.in: gtk-config.in
++	cp gtk-config.in gtk@LT_RELEASE@-config.in
++gtk@LT_RELEASE@-config: $(top_builddir)/config.status gtk@LT_RELEASE@-config.in
+ 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+@@ -440,3 +442,2 @@
+ 	done
+-	$(MAKE) $(AM_MAKEFLAGS) top_distdir="$(top_distdir)" distdir="$(distdir)" dist-hook
+ info-am:

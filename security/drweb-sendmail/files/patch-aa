@@ -1,0 +1,57 @@
+--- configure.orig	Tue Oct 16 19:28:21 2001
++++ configure	Wed Feb 20 23:50:34 2002
+@@ -135,7 +135,7 @@
+         MILTER_VER="FFR"
+     fi
+     
+-    if [ $MILTER_VER = "STD" ] ; then
++    if [ $MILTER_VER = "xSTD" ] ; then
+         SM_LIB="libsm"
+         SM_LIB_CMD="-lsm"
+     elif [ $OS = "Linux_DW" ] ; then
+@@ -173,40 +173,15 @@
+     rm -f configure.cache
+     echo $n "${SM_DIR}${c}" >> configure.cache
+     
+-    OBJ_DIR=`ls -1 "$SM_DIR" | grep "obj.*"`
+-    if [ ! -d "$SM_DIR/$OBJ_DIR" ] ; then 
+-        echo
+-        echo "Cannot found directory in that Sendmail puts results of compilation"
+-        echo "Please re-build Sendmail or enter name (not a path) of this directory"
+-        echo $n ">$c"
+-        read INPUT
+-        if [ "x$INPUT" = "x" ] ; then
+-            echo "Try later."
+-            exit 2
+-        elif [ ! -d "$SM_DIR/$INPUT" ] ; then
+-            echo "$SM_DIR/$INPUT not found"
+-            exit 1
+-        fi
+-        OBJ_DIR="$INPUT"
+-    fi   
+-
+-    if [ ! -f "$SM_DIR/$OBJ_DIR/libmilter/libmilter.a" ] ; then
+-        echo "Cannot found Milter library (libmilter.a)"
+-        echo "Please go to $SM_DIR/libmilter and build it"
+-        exit 1
+-    fi
+-    if [ "x$SM_LIB" != "x" -a ! -f "$SM_DIR/$OBJ_DIR/$SM_LIB/$SM_LIB.a" ] ; then
+-        echo "Cannot found additional library ($SM_LIB.a)"
+-        echo "Please go to $SM_DIR and check it"
+-        exit 1    
+-    fi
+     rm -fr include/libmilter
+     rm -f lib/libmilter.a           
+-    ln -s "$SM_DIR/include/libmilter" include/libmilter
+-    ln -s "$SM_DIR/$OBJ_DIR/libmilter/libmilter.a" lib/libmilter.a           
++    if [ ! -f /usr/lib/libmilter.a ] ; then
++	ln -s "$SM_DIR/include/libmilter" include/libmilter
++	ln -s "../libmilter/libmilter.a" lib/libmilter.a
++    fi
+     if [  "x$SM_LIB" != "x" ] ; then
+         rm -f "lib/$SM_LIB.a"
+-        ln -s "$SM_DIR/$OBJ_DIR/$SM_LIB/$SM_LIB.a" "lib/$SM_LIB.a"
++	ln -s "../libsmutil/$SM_LIB.a" "lib/$SM_LIB.a"
+     fi
+ else
+     DRWEB_SM=""

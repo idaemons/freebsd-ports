@@ -1,0 +1,16 @@
+bin/xstella
+bin/stella-sound
+share/stella/roms/ELK.BIN
+share/stella/roms/OKIEDOKE.BIN
+share/stella/roms/OYSTR29.BIN
+share/stella/roms/TEST.BIN
+share/stella/roms/TPS.BIN
+@dirrm share/stella/roms
+share/stella/stella.pro
+@dirrm share/stella
+share/doc/stella/Stella.pdf
+share/doc/stella/elk.doc
+share/doc/stella/okiedoke.doc
+share/doc/stella/oystron.doc
+share/doc/stella/tps.doc
+@dirrm share/doc/stella

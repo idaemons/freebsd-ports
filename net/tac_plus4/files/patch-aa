@@ -1,0 +1,72 @@
+--- Makefile.orig	Sun Jun 18 19:26:54 2000
++++ Makefile	Mon Jan 22 20:22:57 2001
+@@ -19,7 +19,7 @@
+ # LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ # FOR A PARTICULAR PURPOSE. 
+ 
+-CC = gcc
++# CC = gcc
+ 
+ # For AIX
+ # See /usr/lpp/bos/bsdport on your system for details of how to define bsdcc
+@@ -33,13 +33,13 @@
+ # OS=-DMIPS
+ 
+ # For Solaris (SUNOS 5.3, 5.4, 5.5, 5.6) uncomment the following two lines
+-OS=-DSOLARIS
+-OSLIBS=-lsocket -lnsl
++# OS=-DSOLARIS
++# OSLIBS=-lsocket -lnsl
+ 
+ # For FreeBSD
+-# OS=-DFREEBSD
++OS=-DFREEBSD
+ # You may also need to add:
+-# OSLIBS=-lcrypt
++OSLIBS=-lcrypt
+ # NOTE: If you want your password encryption to be compatible with
+ # e.g. SunOS, you may need to instead use:
+ # OSLIBS=-ldescrypt
+@@ -64,12 +64,12 @@
+ # FLAGS   = -DTAC_PLUS_USERID=$(USERID) -DTAC_PLUS_GROUPID=$(GROUPID)
+ 
+ # Definitions for SKEY functionality
+-# DEFINES = -DSKEY
+-# LIBS = ../crimelab/skey/src/libskey.a
++DEFINES = -DSKEY
++LIBS = -lskey -lmd
+ # INCLUDES = -I../crimelab/skey/src
+ 
+ # Debugging flags
+-DEBUG = -g
++# DEBUG = -g
+ 
+ # Enforce a limit on maximum sessions per user. See the user's guide
+ # for more information.
+@@ -85,13 +85,13 @@
+ # possible), containing its process id. Uncomment and modify the
+ # following line to change this filename
+ 
+-# PIDFILE = -DTAC_PLUS_PIDFILE=\"/var/run/tac_plus.pid\" 
++PIDFILE = -DTAC_PLUS_PIDFILE=\"/var/run/tac_plus.pid\" 
+ 
+ #
+ # End of customisable section of Makefile
+ #
+ 
+-CFLAGS = $(DEBUG) $(DEFINES) $(INCLUDES) $(FLAGS) $(OS) $(PIDFILE) $(MAXSESS)
++CFLAGS += $(DEBUG) $(DEFINES) $(INCLUDES) $(FLAGS) $(OS) $(PIDFILE) $(MAXSESS)
+ 
+ HFILES = expire.h parse.h regmagic.h md5.h regexp.h tac_plus.h 
+ 
+@@ -130,8 +130,8 @@
+ 	-rm -f *.o *~ *.BAK tac_plus generate_passwd
+ 
+ install:
+-	cp tac_plus /usr/local/bin
+-	cp tac_plus.1 /usr/man/manl/tac_plus.1
++	cp tac_plus $(PREFIX)/sbin
++	cp tac_plus.1 $(PREFIX)/man1/tac_plus.1
+ 
+ depend:
+ 	makedepend $(CFLAGS) $(SRCS)

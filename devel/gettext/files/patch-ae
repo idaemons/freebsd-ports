@@ -1,0 +1,7 @@
+--- configure.orig	Tue Mar 12 13:03:57 2002
++++ configure	Fri Mar 15 18:15:51 2002
+@@ -11776,3 +11775,3 @@
+ fi
+-EMACS="$ac_cv_prog_EMACS"
++EMACS=no
+ if test -n "$EMACS"; then

@@ -1,0 +1,33 @@
+--- Imakefile.orig	Mon Jan 29 09:27:25 2001
++++ Imakefile	Mon Jan 29 09:29:06 2001
+@@ -42,7 +42,7 @@
+ 
+ XCOMM -------------- ActX 本体 Install先 Directory ---------------
+ 
+-PREFIX = /usr/local
++XCOMM PREFIX = /usr/local
+ XCOMM PREFIX = ${HOME}
+ 
+ BINDIR = ${PREFIX}/bin
+@@ -50,9 +50,11 @@
+ 
+ XCOMM -------- ActX マスコットデータ Install先 Directory ----------
+ 
+-#define MASCOTDIR ${PREFIX}/lib/X11/actx
++#define MASCOTDIR ${PREFIX}/share/examples/actx
++XCOMM #define MASCOTDIR ${PREFIX}/lib/X11/actx
+ 
+-DEFINES_MASCOTDIR = -DMASCOTDIR=\"${PREFIX}/lib/X11/actx\"
++DEFINES_MASCOTDIR = -DMASCOTDIR=\"${PREFIX}/share/examples/actx\"
++XCOMM DEFINES_MASCOTDIR = -DMASCOTDIR=\"${PREFIX}/lib/X11/actx\"
+ 
+ 
+ 
+@@ -72,7 +74,7 @@
+ EXTRA_LIBRARIES += -lXpm
+ 
+ AllTarget(actx)
+-NormalProgramTarget(actx,$(OBJS),,$(LOCAL_LIBRARIES),$(XPMLIB))
++NormalProgramTarget(actx,$(OBJS),$(LOCAL_LIBRARIES),XawClientLibs,$(XPMLIB))
+ 
+ InstallManPage(actx,$(MANDIR))
