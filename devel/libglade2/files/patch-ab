@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Nov 29 15:14:24 2004
++++ Makefile.in	Mon Nov 29 15:14:24 2004
+@@ -22,7 +22,7 @@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+-pkglibdir = $(libdir)/@PACKAGE@
++pkglibdir = $(prefix)/libdata/pkgconfig
+ pkgincludedir = $(includedir)/@PACKAGE@
+ top_builddir = .
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+@@ -250,7 +250,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = glade doc tests
++SUBDIRS = glade doc
+ INCLUDES = $(LIBGLADE_CFLAGS)
+ 
+ # build documentation when doing a distcheck.

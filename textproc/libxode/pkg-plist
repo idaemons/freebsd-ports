@@ -1,0 +1,5 @@
+bin/libxode-config
+include/libxode.h
+lib/libxode.a
+lib/libxode.so
+lib/libxode.so.2

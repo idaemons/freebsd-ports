@@ -1,0 +1,5 @@
+bin/gruler
+share/gRuler/glade/gRuler.glade
+share/gnome/applications/gRuler.desktop
+@dirrm share/gRuler/glade
+@dirrm share/gRuler

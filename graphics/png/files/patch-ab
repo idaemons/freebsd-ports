@@ -1,0 +1,10 @@
+--- scripts/libpng.pc.in.orig	Sun Aug 15 16:15:22 2004
++++ scripts/libpng.pc.in	Fri Sep  3 07:09:49 2004
+@@ -7,5 +7,5 @@
+ Name: libpng12
+ Description: Loads and saves PNG files
+ Version: 1.2.8
+-Libs: -L${libdir} -lpng12 -lz -lm
+-Cflags: -I${includedir}/libpng12
++Libs: -L${libdir} -lpng -lz -lm
++Cflags: -I${includedir}/libpng

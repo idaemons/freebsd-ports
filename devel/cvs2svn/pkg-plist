@@ -1,0 +1,20 @@
+bin/cvs2svn
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/__init__.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/__init__.pyo
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/common.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/common.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/common.pyo
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/compat.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/compat.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/compat.pyo
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/debug.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/debug.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/debug.pyo
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/default.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/default.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/default.pyo
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/texttools.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/texttools.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse/texttools.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/cvs2svn_rcsparse

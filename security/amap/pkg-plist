@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/amap
+bin/amapcrap
+%%DATADIR%%/appdefs.resp
+%%DATADIR%%/appdefs.rpc
+%%DATADIR%%/appdefs.trig
+@dirrm %%DATADIR%%

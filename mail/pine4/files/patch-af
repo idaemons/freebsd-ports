@@ -1,0 +1,41 @@
+--- imap/src/osdep/unix/Makefile.orig	Tue Jun 22 13:56:05 2004
++++ imap/src/osdep/unix/Makefile	Sun Aug 22 15:51:12 2004
+@@ -99,7 +99,7 @@
+ # Commands possibly overriden by the individual port
+ 
+ ARRC=ar rc
+-CC=cc
++#CC=cc
+ LN=ln -s
+ RANLIB=ranlib
+ 
+@@ -117,7 +117,7 @@
+  dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+  rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  unix.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+-CFLAGS=-g
++CFLAGS=$(BASECFLAGS) $(EXTRACFLAGS)
+ 
+ CAT=cat
+ MAKE=make
+@@ -131,7 +131,7 @@
+ BUILD=$(MAKE) build EXTRACFLAGS='$(EXTRACFLAGS)'\
+  EXTRALDFLAGS='$(EXTRALDFLAGS)'\
+  EXTRADRIVERS='$(EXTRADRIVERS)' EXTRAAUTHENTICATORS='$(EXTRAAUTHENTICATORS)'\
+- PASSWDTYPE=$(PASSWDTYPE) SSLTYPE=$(SSLTYPE)
++ PASSWDTYPE=$(PASSWDTYPE) SSLTYPE=$(SSLTYPE) IP=$(IP)
+ 
+ 
+ # Here if no make argument established
+@@ -219,8 +219,9 @@
+ 	 SPOOLDIR=/var \
+ 	 ACTIVEFILE=/usr/local/news/lib/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-g -O -pipe" \
+-	 BASELDFLAGS="-lcrypt"
++	 LOCKPGM=$(PREFIX)/libexec/mlock \
++	 BASECFLAGS="-DNFSKLUDGE" \
++	 BASELDFLAGS="-lpam -lcrypt"
+ 
+ bsi:	# BSD/i386
+ 	$(BUILD) `$(CAT) SPECIALS` OS=$@ \

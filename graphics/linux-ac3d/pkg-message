@@ -1,0 +1,4 @@
+*******************************************************************************
+Now you can start program by running %%PREFIX%%/bin/%%PORTNAME%%.sh
+There are also some sample models installed in %%EXAMPLESDIR%%
+*******************************************************************************

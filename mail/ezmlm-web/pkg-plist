@@ -1,0 +1,12 @@
+bin/ezmlm-web.cgi
+%%CGI_BIN%%/ezmlm-web
+etc/ezmlm/ezmlmwebrc.sample
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+share/examples/ezmlm-web/htaccess.sample
+share/examples/ezmlm-web/index.c
+share/examples/ezmlm-web/webusers.sample
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/examples/ezmlm-web

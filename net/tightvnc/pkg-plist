@@ -1,0 +1,23 @@
+bin/Xvnc
+bin/vncconnect
+bin/vncpasswd
+bin/vncserver
+bin/vncviewer
+share/tightvnc/classes/AuthPanel.class
+share/tightvnc/classes/ButtonPanel.class
+share/tightvnc/classes/ClipboardFrame.class
+share/tightvnc/classes/DesCipher.class
+share/tightvnc/classes/HTTPConnectSocket.class
+share/tightvnc/classes/HTTPConnectSocketFactory.class
+share/tightvnc/classes/OptionsFrame.class
+share/tightvnc/classes/RecordingFrame.class
+share/tightvnc/classes/ReloginPanel.class
+share/tightvnc/classes/RfbProto.class
+share/tightvnc/classes/SessionRecorder.class
+share/tightvnc/classes/SocketFactory.class
+share/tightvnc/classes/VncCanvas.class
+share/tightvnc/classes/VncViewer.class
+share/tightvnc/classes/VncViewer.jar
+share/tightvnc/classes/index.vnc
+@dirrm share/tightvnc/classes
+@dirrm share/tightvnc

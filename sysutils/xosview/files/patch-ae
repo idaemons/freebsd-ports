@@ -1,0 +1,11 @@
+--- Xdefaults.in.orig	Wed Jul  5 21:44:36 2000
++++ Xdefaults.in	Tue Aug 21 12:15:19 2001
+@@ -175,7 +175,7 @@
+ ! Interrupt Rate Meter Resources
+ xosview*irqrate:	True
+ xosview*irqrateUsedColor:	red
+-xosview*irqrateIdleColor:	black
++xosview*irqrateIdleColor:	aquamarine
+ xosview*irqratePriority:	1
+ xosview*irqrateUsedFormat:  autoscale
+ xosview*irqrateDecay:	True

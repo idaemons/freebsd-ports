@@ -1,0 +1,5 @@
+bin/classpath
+bin/javavm
+bin/registervm
+bin/unregistervm
+bin/checkvms

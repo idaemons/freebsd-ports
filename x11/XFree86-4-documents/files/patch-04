@@ -1,0 +1,17 @@
+--- Imakefile.orig	Sun Apr 11 08:26:03 2004
++++ Imakefile	Sun Apr 11 08:26:24 2004
+@@ -13,13 +13,11 @@
+ #else
+ SUBDIRS = BDF CTEXT FSProtocol GL ICCCM ICE PM Render SM X11 XDMCP \
+ 	  XIM XLFD XProtocol Xaw Xext Xi Xmu Xserver Xt Xv XvMC \
+-          i18n programs rstart test xfs xterm xtrans
++          i18n rstart xfs xterm xtrans
+ #endif
+ 
+ all::
+ 
+ MakeSubdirs($(SUBDIRS))
+ DependSubdirs($(SUBDIRS))
+-
+-InstallDoc(specindex,specindex.html)
+ 

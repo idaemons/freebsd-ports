@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Locale/Country.pm
+%%SITE_PERL%%/Locale/Country.pod
+%%SITE_PERL%%/Locale/Language.pm
+%%SITE_PERL%%/Locale/Language.pod
+%%SITE_PERL%%/Locale/Constants.pm
+%%SITE_PERL%%/Locale/Constants.pod
+%%SITE_PERL%%/Locale/Currency.pm
+%%SITE_PERL%%/Locale/Currency.pod
+%%SITE_PERL%%/Locale/Script.pm
+%%SITE_PERL%%/Locale/Script.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Codes/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Codes
+@dirrm %%SITE_PERL%%/Locale

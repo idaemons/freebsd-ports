@@ -1,0 +1,18 @@
+--- src/Makefile.common.orig	Mon May 17 13:37:27 2004
++++ src/Makefile.common	Thu May 20 20:27:59 2004
+@@ -18,12 +18,12 @@
+ AR              = ar cru
+ RANLIB          = ranlib
+ 
+-DDEBUG          = -DDEBUG -g
++DDEBUG          = $(DEBUG_FLAGS)
+ INCDIR          = ../include
+-CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -Wall -O2
++CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -Wall $(CFLAGS)
+ LDLIBS          = $(OS_LDLIBS)
+ 
+-CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall -O2
++CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall $(CFLAGS) $(PTHREAD_CFLAGS)
+ LDLIBS_ST       = $(OS_LDLIBS_ST)
+ 
+ LIBNAME         = libptypes.a

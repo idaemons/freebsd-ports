@@ -1,22 +1,36 @@
 # New ports collection makefile for:	nn
-# Version required:	6.5.0
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.2 1994/11/10 17:28:47 ache Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	nn-6.5.0.b3
-MASTER_SITES=	ftp://uniwa.uwa.edu.au/pub/nn/beta/
+PORTNAME=	nn
+PORTVERSION=	6.6.5
+CATEGORIES=	news
+MASTER_SITES=	ftp://ftp.nndev.org/pub/nn-6.6/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	jooji@nickelkid.com
+COMMENT=	Newsreader
+
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -Iconf" LDFLAGS="${LDFLAGS} -s"
+
+MAN1=		nn.1 nncheck.1 nngoback.1 nngrab.1  nngrep.1 nnpost.1 \
+		nntidy.1 nnview.1 nnacct.1m nnadmin.1m nnstats.1m nnusage.1m
+MAN8=		nnmaster.8 nnspew.8
+
+.include <bsd.port.pre.mk>
 
 pre-patch:
-	@cp ${WRKSRC}/config.h-dist ${WRKSRC}/config.h
-	@cp ${WRKSRC}/conf/s-386bsd.h ${WRKSRC}/conf/s-freebsd.h
+	@${CP} ${WRKSRC}/config.h-dist ${WRKSRC}/config.h.unparsed
 
 pre-build:
-	[ -r /usr/local/lib/news/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} all )
+	@${CAT} ${WRKSRC}/config.h.unparsed | ${SED} -e "s#SUB_PREFIX#${PREFIX}#" \
+	    | ${SED} -e "s#SUB_MANPREFIX#${MANPREFIX}#" > ${WRKSRC}/config.h
 
-pre-install:
-	[ -r /usr/local/lib/news/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} install )
+post-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${DISTNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

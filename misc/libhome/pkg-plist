@@ -1,0 +1,13 @@
+bin/home_finger
+bin/libhome.sh
+etc/home.conf.dist
+include/home/home_version.h
+include/home/hparam.h
+include/home/hpwd.h
+include/home/pwd.h
+@dirrm include/home
+lib/libhome.a
+lib/libhome.so
+lib/libhome.so.1
+lib/libhome-preload.so
+lib/libhome-preload.so.1

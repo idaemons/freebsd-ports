@@ -1,0 +1,10 @@
+%%PORTDOCS%%%%EXAMPLESDIR%%/tdiff
+%%PORTDOCS%%%%EXAMPLESDIR%%/diff.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/new.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/old.txt
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%SITE_PERL%%/Text/ParagraphDiff.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParagraphDiff/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParagraphDiff
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true

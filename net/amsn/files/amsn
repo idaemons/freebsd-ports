@@ -1,0 +1,3 @@
+#! /bin/sh
+
+wish8.4 !!PREFIX!!/lib/msn/amsn

@@ -1,0 +1,14 @@
+--- configure.orig	Wed Apr 14 12:39:47 2004
++++ configure	Sat Apr 17 21:05:56 2004
+@@ -1592,8 +1592,9 @@
+ # Determine include directories
+ #
+ 
+-TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include
+-TK_INCLUDE_PATH=$TCL_INCLUDE_PATH
++TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include/tcl${TCL_VERSION}
++TK_INCLUDE_PATH=$TK_EXEC_PREFIX/include/tk${TK_VERSION}
++
+ 
+ #
+ # Perform substitutions

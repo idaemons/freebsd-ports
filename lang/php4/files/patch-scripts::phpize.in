@@ -1,0 +1,16 @@
+--- scripts/phpize.in.orig	Fri Nov 14 03:21:15 2003
++++ scripts/phpize.in	Wed Jul  7 01:34:05 2004
+@@ -56,5 +56,5 @@
+ 
+-aclocal || exit 1
+-autoconf || exit 1
+-autoheader || exit 1
++aclocal15 || exit 1
++autoconf253 || exit 1
++autoheader253 || exit 1
+ test -x $builddir/build/shtool || chmod +x $builddir/build/shtool
+@@ -66,3 +66,3 @@
+ fi
+-libtoolize=`$builddir/build/shtool path glibtoolize libtoolize`
++libtoolize=`$builddir/build/shtool path libtoolize13`
+ $libtoolize -f -c || exit 1

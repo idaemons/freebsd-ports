@@ -1,0 +1,59 @@
+bin/scp
+bin/scp2
+bin/sftp
+bin/sftp2
+bin/sftp-server
+bin/sftp-server2
+bin/ssh
+bin/ssh-add
+bin/ssh-add2
+bin/ssh-agent
+bin/ssh-agent2
+%%WITH_X11:%%bin/ssh-askpass
+%%WITH_X11:%%bin/ssh-askpass2
+bin/ssh-dummy-shell
+bin/ssh-keygen
+bin/ssh-keygen2
+bin/ssh-probe
+bin/ssh-probe2
+bin/ssh-signer
+bin/ssh-signer2
+bin/ssh2
+etc/rc.d/sshd2.sh.sample
+@exec if [ "`grep ssh /etc/inetd.conf | grep -v ^#ssh`" = "" ] & [ ! -f %B/sshd2.sh ]; then cp %B/%f %B/sshd2.sh; fi
+@unexec if [ -f %B/sshd2.sh ]; then echo "If permanently deleting this package, %B/sshd2.sh must be removed manually."; fi
+@unexec if cmp -s %D/etc/ssh2/sshd2_config %D/etc/ssh2/sshd2_config.example; then rm -f %D/etc/ssh2/sshd2_config; fi
+etc/ssh2/sshd2_config.example
+@exec [ -f %B/sshd2_config ] || cp %B/%f %B/sshd2_config
+@unexec if cmp -s %D/etc/ssh2/ssh2_config %D/etc/ssh2/ssh2_config.example; then rm -f %D/etc/ssh2/ssh2_config; fi
+etc/ssh2/ssh2_config.example
+@exec [ -f %B/ssh2_config ] || cp %B/%f %B/ssh2_config
+etc/ssh2/ssh_dummy_shell.out
+etc/ssh2/subconfig/anonymous.example
+etc/ssh2/subconfig/host_ext.example
+etc/ssh2/subconfig/host_int.example
+etc/ssh2/subconfig/user.example
+@exec [ -d %D/etc/ssh2/hostkeys ] || mkdir %D/etc/ssh2/hostkeys
+@exec [ -d %D/etc/ssh2/knownhosts ] || mkdir %D/etc/ssh2/knownhosts
+@exec if [ ! -f %D/etc/ssh2/hostkey ]; then umask 022; echo "Generating host key."; %D/bin/ssh-keygen2 -P -t dsa "DSA hostkey" %D/etc/ssh2/hostkey;  fi
+sbin/sshd
+sbin/sshd-check-conf
+sbin/sshd2
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO.anonymous.sftp
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/REGEX-SYNTAX
+%%PORTDOCS%%%%DOCSDIR%%/SSH2.QUICKSTART
+%%PORTDOCS%%%%DOCSDIR%%/RFC.authorization_program_protocol
+%%PORTDOCS%%%%DOCSDIR%%/RFC.kbdint_plugin_protocol
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/ext_authorization_example.sh
+%%EXAMPLESDIR%%/kbdint_plugin_example.sh
+@dirrm %%EXAMPLESDIR%%
+@unexec rmdir %D/etc/ssh2/hostkeys 2> /dev/null || true
+@unexec rmdir %D/etc/ssh2/knownhosts 2> /dev/null || true
+@unexec rmdir %D/etc/ssh2/subconfig 2> /dev/null || true
+@unexec rmdir %D/etc/ssh2 2> /dev/null || echo "If permanently deleting this package, %D/etc/ssh2 and its contents must be removed manually."

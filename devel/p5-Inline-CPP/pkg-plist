@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Inline/CPP.pm
+%%SITE_PERL%%/Inline/CPP.pod
+%%SITE_PERL%%/Inline/CPP/grammar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/CPP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/CPP
+@dirrm %%SITE_PERL%%/Inline/CPP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Inline 2>/dev/null || true

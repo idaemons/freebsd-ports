@@ -1,0 +1,73 @@
+--- configure.orig	Mon Nov  8 02:12:49 2004
++++ configure	Mon Nov  8 13:47:08 2004
+@@ -2902,7 +2902,7 @@
+ fi
+ 
+ 
+-if test "$GXX" = "yes" && expr "$CXXFLAGS" : '.*-O' > /dev/null
++if test "$GXX" = "yes" && expr -- "$CXXFLAGS" : '.*-O' > /dev/null
+ then
+   CXXFLAGS="$CXXFLAGS -fno-exceptions"
+ fi
+@@ -9830,13 +9830,6 @@
+ 	;;
+     esac
+ 
+-    if grep "^# ### BEGIN LIBTOOL TAG CONFIG: $tagname$" < "${ofile}" > /dev/null
+-    then
+-      { { echo "$as_me:$LINENO: error: tag name \"$tagname\" already exists" >&5
+-echo "$as_me: error: tag name \"$tagname\" already exists" >&2;}
+-   { (exit 1); exit 1; }; }
+-    fi
+-
+     # Update the list of available tags.
+     if test -n "$tagname"; then
+       echo appending configuration tag \"$tagname\" to $ofile
+@@ -19388,6 +19381,10 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++save_CC="$CC"
++CC="$CXX"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
++CC="$save_CC"
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -21283,16 +21280,16 @@
+ /* end confdefs.h.  */
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
++extern int *libintl_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+ #endif
+-const char *_nl_expand_alias ();
+ int
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
+   ;
+   return 0;
+ }
+@@ -22406,7 +22403,7 @@
+   CURSES_LIB=-lncurses
+ 
+ cat >>confdefs.h <<\_ACEOF
+-#define CURSES_HEADER <ncurses/curses.h>
++#define CURSES_HEADER <ncurses/ncurses.h>
+ _ACEOF
+ 
+ else
+@@ -22589,7 +22586,7 @@
+ 
+ 
+ cat >>confdefs.h <<\_ACEOF
+-#define CURSES_HEADER <curses.h>
++#define CURSES_HEADER <ncurses/ncurses.h>
+ _ACEOF
+ 
+ 

@@ -1,0 +1,11 @@
+bin/lookat
+lib/libopenvrml.a
+lib/libopenvrml.so
+lib/libopenvrml.so.4
+lib/libopenvrml-gl.a
+lib/libopenvrml-gl.so
+lib/libopenvrml-gl.so.5
+libdata/pkgconfig/openvrml.pc
+libdata/pkgconfig/openvrml-gl.pc
+share/pixmaps/lookat.xpm
+@dirrm share/pixmaps

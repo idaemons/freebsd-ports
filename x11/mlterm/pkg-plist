@@ -1,0 +1,44 @@
+bin/mlcc
+bin/mlterm
+bin/mlclient
+bin/w3mmlconfig
+etc/mlterm/aafont
+etc/mlterm/color
+etc/mlterm/font
+etc/mlterm/key
+etc/mlterm/main
+etc/mlterm/menu
+etc/mlterm/termcap
+etc/mlterm/taafont
+etc/mlterm/tfont
+etc/mlterm/vaafont
+etc/mlterm/vfont
+etc/mlterm/xim
+lib/libkik.a
+lib/libkik.so
+lib/libkik.so.10
+lib/libmkf.a
+lib/libmkf.so
+lib/libmkf.so.13
+lib/mlterm/libathena.so
+%%IIIMF%%lib/mlterm/libim-iiimf.so
+lib/mlterm/libim-kbd.so
+%%M17NLIB%%lib/mlterm/libim-m17nlib.so
+%%UIM%%lib/mlterm/libim-uim.so
+lib/mlterm/libmotif.so
+lib/mlterm/libmozmodern.so
+lib/mlterm/libnext.so
+lib/mlterm/libsample.so
+lib/mlterm/libsample2.so
+libexec/mlconfig
+libexec/mlterm-menu
+libexec/w3mmlconfig/mlconfig-data.pl
+libexec/w3mmlconfig/mlconfig.cgi
+%%PORTDOCS%%share/doc/ja/mlterm/README.ja
+share/locale/de/LC_MESSAGES/mlconfig.mo
+share/locale/ja/LC_MESSAGES/mlconfig.mo
+share/locale/zh_TW/LC_MESSAGES/mlconfig.mo
+@dirrm etc/mlterm
+@dirrm lib/mlterm
+@dirrm libexec/w3mmlconfig
+%%PORTDOCS%%@dirrm share/doc/ja/mlterm

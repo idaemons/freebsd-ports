@@ -1,0 +1,8 @@
+bin/ktoblzcheck
+include/iban.h
+include/ktoblzcheck.h
+lib/libktoblzcheck.a
+lib/libktoblzcheck.so
+lib/libktoblzcheck.so.1
+%%DATADIR%%/bankdata.txt
+@dirrm %%DATADIR%%

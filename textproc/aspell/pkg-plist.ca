@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/ca.dat
+lib/aspell-%%VER%%/ca_affix.dat
+share/aspell/ca.multi
+share/aspell/ca.rws
+share/aspell/catalan.alias

@@ -1,0 +1,20 @@
+%%SITE_PERL%%/Mail/Audit.pm
+%%SITE_PERL%%/Mail/Audit/KillDups.pm
+%%SITE_PERL%%/Mail/Audit/List.pm
+%%SITE_PERL%%/Mail/Audit/MAPS.pm
+%%SITE_PERL%%/Mail/Audit/MailInternet.pm
+%%SITE_PERL%%/Mail/Audit/MimeEntity.pm
+%%SITE_PERL%%/Mail/Audit/PGP.pm
+%%SITE_PERL%%/Mail/Audit/Razor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit/.packlist
+%%PORTDOCS%%share/doc/p5-Mail-Audit/Changes
+%%PORTDOCS%%share/doc/p5-Mail-Audit/FAQ
+%%PORTDOCS%%share/doc/p5-Mail-Audit/README
+share/examples/p5-Mail-Audit/popread
+share/examples/p5-Mail-Audit/proc2ma
+@dirrm share/examples/p5-Mail-Audit
+%%PORTDOCS%%@dirrm share/doc/p5-Mail-Audit
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Mail/Audit
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true

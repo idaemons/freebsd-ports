@@ -1,0 +1,5 @@
+bin/xpad
+share/xpad/xpad.xpm
+share/xpad/xpad2.xpm
+share/xpad/sticky.xpm
+@dirrm share/xpad

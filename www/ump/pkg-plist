@@ -1,0 +1,2 @@
+@cwd %%X11BASE%%
+lib/browser_plugins/ump.so

@@ -1,19 +1,61 @@
-*** Imakefile.orig	Sun Nov 13 23:04:28 1994
---- Imakefile	Sun Nov 13 23:04:41 1994
+$FreeBSD$
+
+*** Imakefile.orig	Wed Dec 12 00:38:52 2001
+--- Imakefile	Fri Aug  9 23:45:46 2002
 ***************
-*** 10,16 ****
-  #undef  IMCONV
+*** 11,26 ****
   #undef  USE_SOUND
   #define XPM
-! #define USEM4
+  #define USEM4
+! #undef X11R6
+! #undef I18N
   
            YFLAGS = -d
           DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
---- 10,16 ----
-  #undef  IMCONV
+         LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
+  
+  #ifdef XPM
+!       XPMLIBDIR = 
+!       XPMINCDIR = 
+  
+       XPMDEFINES = -DXPM
+           XPMLIB = $(XPMLIBDIR) -lXpm
+--- 11,26 ----
   #undef  USE_SOUND
   #define XPM
-! #undef  USEM4
+  #define USEM4
+! #define X11R6
+! #define I18N
   
            YFLAGS = -d
           DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
+         LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
+  
+  #ifdef XPM
+!       XPMLIBDIR = -L$(USRLIBDIR)
+!       XPMINCDIR = -I$(INCROOT)
+  
+       XPMDEFINES = -DXPM
+           XPMLIB = $(XPMLIBDIR) -lXpm
+***************
+*** 44,52 ****
+  #endif
+  
+  #ifdef USEM4
+     M4LIBDIR =
+     M4INCDIR =
+!   M4DEFINES = -DUSEM4
+        M4LIB = $(M4LIBDIR)
+  #else
+     M4LIBDIR = 
+--- 44,53 ----
+  #endif
+  
+  #ifdef USEM4
++      M4PROG = ${LOCALBASE}/bin/gm4
+     M4LIBDIR =
+     M4INCDIR =
+!   M4DEFINES = -DUSEM4 -DM4PROG=\"${M4PROG}\"
+        M4LIB = $(M4LIBDIR)
+  #else
+     M4LIBDIR = 

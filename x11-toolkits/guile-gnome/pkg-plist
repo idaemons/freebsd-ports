@@ -1,0 +1,46 @@
+bin/gnomeg
+lib/libguilebonobo.a
+lib/libguilebonobo.so
+lib/libguilebonobo.so.0
+lib/libguilegdkpixbuf.a
+lib/libguilegdkpixbuf.so
+lib/libguilegdkpixbuf.so.0
+lib/libguileghttp.a
+lib/libguileghttp.so
+lib/libguileghttp.so.0
+lib/libguileglade.a
+lib/libguileglade.so
+lib/libguileglade.so.0
+lib/libguilegnome.a
+lib/libguilegnome.so
+lib/libguilegnome.so.0
+lib/libguilegnorba.a
+lib/libguilegnorba.so
+lib/libguilegnorba.so.0
+lib/libguilegtkhtml.a
+lib/libguilegtkhtml.so
+lib/libguilegtkhtml.so.0
+lib/libguilezvt.a
+lib/libguilezvt.so
+lib/libguilezvt.so.0
+share/gnome/guile-gnome/bonobo.defs
+share/gnome/guile-gnome/ghttp.defs
+share/gnome/guile-gnome/gnome.defs
+share/gnome/guile-gnome/gnorba.defs
+share/gnome/guile-gnome/gtkhtml.defs
+share/gnome/guile-gnome/zvt.defs
+share/gnome/guile-gtk/gdkpixbuf.defs
+share/gnome/guile-gtk/libglade.defs
+share/gnome/guile/gnome/bonobo.scm
+share/gnome/guile/gnome/ghttp.scm
+share/gnome/guile/gnome/gnome.scm
+share/gnome/guile/gnome/gnorba.scm
+share/gnome/guile/gnome/zvt.scm
+share/gnome/guile/gtk/gdkpixbuf.scm
+share/gnome/guile/gtk/gtkhtml.scm
+share/gnome/guile/gtk/libglade.scm
+@dirrm share/gnome/guile/gtk
+@dirrm share/gnome/guile/gnome
+@dirrm share/gnome/guile
+@dirrm share/gnome/guile-gtk
+@dirrm share/gnome/guile-gnome

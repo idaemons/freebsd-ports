@@ -1,0 +1,6 @@
+p7zip is a port of 7za.exe for Unix.
+
+7za is a command line version of 7-zip, a file archiver with highest
+compression ratio with LZMA algorithm.
+
+WWW: http://p7zip.sourceforge.net/

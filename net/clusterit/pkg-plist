@@ -1,0 +1,14 @@
+bin/barrier
+bin/barrierd
+bin/clustersed
+bin/dsh
+bin/dshbak
+%%X11%%bin/dvt
+bin/jsd
+bin/jsh
+bin/pcp
+bin/pdf
+bin/prm
+bin/run
+%%X11%%bin/rvt
+bin/seq

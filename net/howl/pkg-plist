@@ -1,0 +1,55 @@
+bin/mDNSBrowse
+bin/mDNSPublish
+bin/mDNSQuery
+bin/mDNSResolve
+bin/mDNSResponder
+include/howl-%%VERSION%%/corby/buffer.h
+include/howl-%%VERSION%%/corby/channel.h
+include/howl-%%VERSION%%/corby/corby.h
+include/howl-%%VERSION%%/corby/message.h
+include/howl-%%VERSION%%/corby/object.h
+include/howl-%%VERSION%%/corby/orb.h
+include/howl-%%VERSION%%/discovery/discovery.h
+include/howl-%%VERSION%%/discovery/text_record.h
+include/howl-%%VERSION%%/howl.h
+include/howl-%%VERSION%%/howl_config.h
+include/howl-%%VERSION%%/rendezvous/rendezvous.h
+include/howl-%%VERSION%%/rendezvous/text_record.h
+include/howl-%%VERSION%%/salt/address.h
+include/howl-%%VERSION%%/salt/debug.h
+include/howl-%%VERSION%%/salt/interface.h
+include/howl-%%VERSION%%/salt/platform.h
+include/howl-%%VERSION%%/salt/salt.h
+include/howl-%%VERSION%%/salt/signal.h
+include/howl-%%VERSION%%/salt/socket.h
+include/howl-%%VERSION%%/salt/time.h
+lib/libhowl-%%VERSION%%.so.1
+lib/libhowl-%%VERSION%%.so
+lib/libhowl.a
+lib/libhowl.so
+lib/libmDNSResponder-%%VERSION%%.so
+lib/libmDNSResponder-%%VERSION%%.so.0
+lib/libmDNSResponder.a
+lib/libmDNSResponder.so
+libdata/pkgconfig/howl.pc
+share/howl/help/address-summary.html
+share/howl/help/address.html
+share/howl/help/discovery-summary.html
+share/howl/help/discovery.html
+share/howl/help/index.html
+share/howl/help/overall.html
+share/howl/help/salt-summary.html
+share/howl/help/salt.html
+share/howl/help/txt_rec-summary.html
+share/howl/help/txt_rec.html
+share/howl/help/txt_rec_iter-summary.html
+share/howl/help/txt_rec_iter.html
+share/howl/help/txt_rec_str_iter-summary.html
+share/howl/help/txt_rec_str_iter.html
+@dirrm share/howl/help
+@dirrm share/howl
+@dirrm include/howl-%%VERSION%%/salt
+@dirrm include/howl-%%VERSION%%/rendezvous
+@dirrm include/howl-%%VERSION%%/discovery
+@dirrm include/howl-%%VERSION%%/corby
+@dirrm include/howl-%%VERSION%%

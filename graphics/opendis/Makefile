@@ -1,0 +1,34 @@
+# New ports collection makefile for: 	opendis
+# Date created:		22 May 2001
+# Whom:			Anders Nordby <anders@fix.no>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	opendis
+PORTVERSION=	0.0.3
+PORTREVISION=	1
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://ods.sourceforge.net/dl/
+MASTER_SITE_SUBDIR=	ods
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Access Flashpoint Digita-based cameras, download images and more
+
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pedantic -W|-pedantic|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| -g| @CFLAGS@|g' ${WRKSRC}/src/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in NEWS AUTHORS doc/ERRATA doc/PHILOSOPHY doc/THUMB
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>

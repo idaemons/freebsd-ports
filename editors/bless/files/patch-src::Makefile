@@ -1,0 +1,17 @@
+--- src/Makefile.orig	Sun Nov 28 04:02:39 2004
++++ src/Makefile	Sun Nov 28 04:06:32 2004
+@@ -49,12 +49,12 @@
+ 
+ 
+ bless.exe: $(GUI_SRC) $(BB_SRC) $(GUI_DRAWERS_SRC) $(GUI_AREAS_SRC) $(GUI_DIALOGS_SRC) $(UTIL_SRC) $(MISC_DEPS)
+-	$(MCS) -g -o bless.exe -t:exe -r:nunit.framework  $(RESOURCES) -pkg:gtk-sharp -pkg:glade-sharp \
++	$(MCS) -g -o bless.exe -t:exe -r:nunit.framework  $(RESOURCES) $(shell pkg-config --libs gtk-sharp glade-sharp) \
+ 	$(GUI_SRC) $(BB_SRC) $(GUI_DRAWERS_SRC)  $(GUI_AREAS_SRC) $(GUI_DIALOGS_SRC) $(UTIL_SRC)
+ 
+ 
+ %.dll:%.cs
+-	$(MCS) -t:library -r:nunit.framework -pkg:gtk-sharp $<
++	$(MCS) -t:library -r:nunit.framework $(shell pkg-config --libs gtk-sharp) $<
+ 
+ install: bless.exe 
+ 	install -c -d $(PREFIX)/lib/bless

@@ -1,0 +1,4 @@
+bin/uuwish
+bin/xdeview
+%%PORTDOCS%%%%DOCSDIR%%/porting.notes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

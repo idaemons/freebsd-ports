@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jun 12 17:26:37 2004
++++ configure	Sat Jun 12 17:27:52 2004
+@@ -3331,8 +3331,6 @@
+ 
+ 
+ 
+-CFLAGS=" -Wall -s -O3"
+-CXXFLAGS=" -Wall -s -O3"
+ 
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'

@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Fri Nov  7 23:43:47 2003
++++ Makefile.in	Fri Nov  7 23:46:09 2003
+@@ -153,8 +153,12 @@ target_vendor = @target_vendor@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-SUBDIRS = bin compiler blitz random src lib testsuite \
+-	examples benchmarks doc manual
++ifndef NOPORTDOCS
++DOCS = doc manual
++endif
++
++SUBDIRS = bin compiler blitz random src lib  $(DOCS)
++	
+ 
+ 
+ EXTRA_DIST = LEGAL LICENSE README.binutils README-VS.NET Blitz-VS.NET.zip \

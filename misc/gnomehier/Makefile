@@ -1,0 +1,44 @@
+# New ports collection makefile for:	gnomehier
+# Date created:				2 July 2002
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnomehier
+PORTVERSION=	1.0
+PORTREVISION=	21
+CATEGORIES=	misc gnome
+MASTER_SITES=	# none
+DISTFILES=	# none
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A utility port that creates the GNOME directory tree
+
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+PLIST?=		${WRKDIR}/pkg-plist
+
+USE_X_PREFIX=	yes
+
+do-fetch:
+	@${DO_NADA}
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@${TOUCH} -f ${PLIST}
+	@${CAT} ${FILESDIR}/dirlist | ${SORT} | ${SED} -e \
+		's|$$|/.keep_me|' >> ${PLIST}
+	@${CAT} ${FILESDIR}/dirlist | ${SORT} -r | ${SED} -e \
+		's|^|@dirrm |' >> ${PLIST}
+
+do-install:
+	@for dir in `${CAT} ${FILESDIR}/dirlist`; \
+	do \
+		${MKDIR} ${PREFIX}/$${dir}; \
+		${TOUCH} ${PREFIX}/$${dir}/.keep_me; \
+	done
+	${CHGRP} games ${PREFIX}/share/gnome/games
+	${CHMOD} g=rwXs ${PREFIX}/share/gnome/games
+
+.include <bsd.port.mk>

@@ -1,0 +1,75 @@
+--- ../MailScanner-install-4.37.3.orig/docs/man/MailScanner.conf.5	Wed Dec 15 21:17:17 2004
++++ docs/man/MailScanner.conf.5	Wed Dec 15 21:30:00 2004
+@@ -1,4 +1,4 @@
+-.TH "MailScanner.conf" "5" "4.34.8" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.37.3" "Julian Field" "Mail"
+ .SH "NAME"
+ .LP 
+ MailScanner.conf \- Main configuration for MailScanner
+@@ -485,7 +485,7 @@
+ .br 
+ 
+ .br 
+-Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, bitdefender, kaspersky, kaspersky\-4.5, kavdaemonclient, inoculate, inoculan, nod32, nod32\-1.99, f\-secure, f\-prot, panda, rav, antivir, clamav, clamavmodule, css, trend, norman, avg, vexira, none (no virus scanning at all). This *cannot* be the filename of a ruleset.
++Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, bitdefender, kaspersky, kaspersky\-4.5, kavdaemonclient, inoculate, inoculan, nod32, nod32\-1.99, f\-secure, f\-prot, panda, rav, antivir, clamav, clamavmodule, css, trend, norman, avg, vexira, symscanengine, generic, none (no virus scanning at all). This *cannot* be the filename of a ruleset.
+ .br 
+ 
+ .br 
+@@ -781,6 +781,15 @@
+ When an entire message is saved in the quarantine for any reason, do you want to save it as the raw data files out of the mail queue (which can be processed with the df2mbox script, and which is easier to send to its original recipients), or do you want a conventional message file consisting of the header followed by the body of the message. If the previous option is switched off, then this will only affect archived mail and quarantined spam. If the previous option is on, then this also affects quarantined infections. 
+ 
+ .TP 
++\fBKeep Spam And MCP Archive Clean\fR
++Default: no
++.br 
++
++.br 
++Do you want to stop any virus\-infected spam getting into the spam or MCP archives? If you have a system where users can release messages from the spam or MCP archives, then you probably want to stop them being able to release any infected messages, so set this to yes. It is set to no by default as it causes a small hit in performance, and many people don't allow users to access the spam quarantine, so don't need it. This can also be the filename of a ruleset.
++
++
++.TP 
+ \fBLanguage Strings\fR
+ Default: %reports\-dir%/languages.conf
+ .br 
+@@ -1266,12 +1275,11 @@
+ 
+ .TP 
+ \fBAttachment Encoding Charset\fR
+-Default: us\-ascii
++Default: ISO\-8859\-1
+ .br 
+ 
+ .br 
+-This is the name of the encoding character set used for the contents of "VirusWarning.txt" attachments. If your users do not use English as their preferred language, you may want to set this to "ISO\-8859\-1". 
+-
++This is the name of the encoding character set used for the contents of "VirusWarning.txt" attachments. 
+ .SH "Mail archiving and monitoring"
+ .TP 
+ \fBArchive Mail\fR
+@@ -1725,8 +1733,16 @@
+ 
+ .br 
+ Log all the filenames that are allowed by the Filetype Rules, or just the filetypes that are denied? This can also be the filename of a ruleset.
++
++.TP 
++\fBLog Silent Viruses\fR
++Default: no
++.br 
++
++.br 
++Log all occurrences of "Silent Viruses" as defined above? This can only be a simple yes/no value, not a ruleset.
+ .SH "Advanced SpamAssassin Settings"
+-If you are using Postfix you may well need to use some of the settings below, as the home directory for the "postfix" user cannot be written to by the "postfix" user. You may also need to use these if you have installed SpamAssassin somewhere other than the default location.
++If you are using Postfix you may well need to use some of the settings below, as the home directory for the "postfix" user cannot be written to by the "postfix" user. You may also need to use these if you have installed SpamAssassin somewhere other than the default location. 
+ 
+ .TP 
+ \fBSpamAssassin User State Dir\fR
+@@ -1734,7 +1750,7 @@
+ .br 
+ 
+ .br 
+-The per\-user files (bayes, auto\-whitelist, user_prefs) are looked for here and in ~/.spamassassin/. Note the files are mutable. If this is unset then no extra places are searched for. If using Postfix, you probably want to set this to /var/spool/MailScanner/spamassassin and do
++The per\-user files (bayes, auto\-whitelist, user_prefs) are looked for here and in ~/.spamassassin/. Note the files are mutable. If this is unset then no extra places are searched for. NOTE: SpamAssassin is always called from MailScanner as the same user, and that is the "Run As" user specified in MailScanner.conf. So you can only have 1 set of "per\-user" files, it's just that you might possibly need to modify this location. You should not normally need to set this at all. If using Postfix, you probably want to set this to /var/spool/MailScanner/spamassassin and do
+ 
+ .RS 10
+ mkdir /var/spool/MailScanner/spamassassin

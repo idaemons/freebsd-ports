@@ -1,15 +1,31 @@
-# New ports collection makefile for:    STk
-# Version required:     2.1
-# Date created:         28 Dec 1994
-# Whom:                 jmacd@uclink.berkeley.edu
+# New ports collection makefile for:	STk
+# Date created:		17 Sep 96
+# Whom:			jmacd@cs.berkeley.edu
 #
-# $Id: Makefile,v 1.2 1994/12/31 03:48:02 swallace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       STk-2.1
-MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/scheme-repository/imp/
+PORTNAME=	STk
+PORTVERSION=	4.0.1
+CATEGORIES=	lang scheme
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		ftp://kaolin.unice.fr/pub/STk/
+MASTER_SITE_SUBDIR=	devel/lang/lisp
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A scheme interpreter with full access to the Tk graphical package
+
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-MAKE_FLAGS=  	"prefix = ${PREFIX}"
 
+PLIST_SUB=	STK_VERSION=${PORTVERSION} STK_ARCH=${STK_ARCH}
 
-.include <bsd.port.mk>
+STK_ARCH!=	${ECHO} "$$(uname)-$$(uname -r)-$$(uname -m)"
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,16 @@
+lib/libsocket++.a
+lib/libsocket++.so.1
+lib/libsocket++.so
+include/socket++/fork.h
+include/socket++/echo.h
+include/socket++/ftp.h
+include/socket++/pipestream.h
+include/socket++/protocol.h
+include/socket++/sig.h
+include/socket++/smtp.h
+include/socket++/sockinet.h
+include/socket++/sockstream.h
+include/socket++/sockunix.h
+%%PORTDOCS%%share/doc/libsocket++/README
+@dirrm share/doc/libsocket++
+@dirrm include/socket++

@@ -1,0 +1,191 @@
+@comment $FreeBSD$
+bin/fop
+%%PORTDOCS%%%%DOCSDIR%%/anttask.html
+%%PORTDOCS%%%%DOCSDIR%%/anttask.pdf
+%%PORTDOCS%%%%DOCSDIR%%/bugs.html
+%%PORTDOCS%%%%DOCSDIR%%/bugs.pdf
+%%PORTDOCS%%%%DOCSDIR%%/compiling.html
+%%PORTDOCS%%%%DOCSDIR%%/compiling.pdf
+%%PORTDOCS%%%%DOCSDIR%%/compliance.html
+%%PORTDOCS%%%%DOCSDIR%%/compliance.pdf
+%%PORTDOCS%%%%DOCSDIR%%/configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/configuration.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/api-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/api-doc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/conventions.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/conventions.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/doc.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/doc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/extensions.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/faq.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/fo/embedding.fo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/fo/embedding.fo.xml
+%%PORTDOCS%%%%DOCSDIR%%/dev/fonts.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/fonts.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/implement.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/implement.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/index.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/index.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/release.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/release.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/rtflib.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/rtflib.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg/images.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg/images.svg
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg/link.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg/link.svg
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg/paints.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg/paints.svg
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg/text.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg/text.svg
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg/transparency.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/svg/transparency.svg
+%%PORTDOCS%%%%DOCSDIR%%/dev/testing.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/testing.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dev/tools.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/tools.pdf
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/download.pdf
+%%PORTDOCS%%%%DOCSDIR%%/embedding.html
+%%PORTDOCS%%%%DOCSDIR%%/embedding.pdf
+%%PORTDOCS%%%%DOCSDIR%%/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/examples.pdf
+%%PORTDOCS%%%%DOCSDIR%%/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/extensions.pdf
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.pdf
+%%PORTDOCS%%%%DOCSDIR%%/favicon.ico
+%%PORTDOCS%%%%DOCSDIR%%/fo.html
+%%PORTDOCS%%%%DOCSDIR%%/fo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/fo/align.fo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/fo/align.fo.xml
+%%PORTDOCS%%%%DOCSDIR%%/fo/align2.fo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/fo/align2.fo.xml
+%%PORTDOCS%%%%DOCSDIR%%/fo/embed.fo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/fo/embed.fo.xml
+%%PORTDOCS%%%%DOCSDIR%%/fo/fonts.fo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/fo/fonts.fo.xml
+%%PORTDOCS%%%%DOCSDIR%%/fo/images/fop.jpg
+%%PORTDOCS%%%%DOCSDIR%%/fo/size.fo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/fo/size.fo.xml
+%%PORTDOCS%%%%DOCSDIR%%/fonts.html
+%%PORTDOCS%%%%DOCSDIR%%/fonts.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gethelp.html
+%%PORTDOCS%%%%DOCSDIR%%/gethelp.pdf
+%%PORTDOCS%%%%DOCSDIR%%/graphics.html
+%%PORTDOCS%%%%DOCSDIR%%/graphics.pdf
+%%PORTDOCS%%%%DOCSDIR%%/hyphenation.html
+%%PORTDOCS%%%%DOCSDIR%%/hyphenation.pdf
+%%PORTDOCS%%%%DOCSDIR%%/images/EmbeddingExampleFO2PDF.png
+%%PORTDOCS%%%%DOCSDIR%%/images/EmbeddingExampleObj2PDF.png
+%%PORTDOCS%%%%DOCSDIR%%/images/EmbeddingExampleObj2XML.png
+%%PORTDOCS%%%%DOCSDIR%%/images/EmbeddingExampleXML2FO.png
+%%PORTDOCS%%%%DOCSDIR%%/images/EmbeddingExampleXML2PDF.png
+%%PORTDOCS%%%%DOCSDIR%%/images/document.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/group-logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/layout.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/logo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/track.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.pdf
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/license.pdf
+%%PORTDOCS%%%%DOCSDIR%%/logocontest.html
+%%PORTDOCS%%%%DOCSDIR%%/logocontest.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maillist.html
+%%PORTDOCS%%%%DOCSDIR%%/maillist.pdf
+%%PORTDOCS%%%%DOCSDIR%%/news.html
+%%PORTDOCS%%%%DOCSDIR%%/news.pdf
+%%PORTDOCS%%%%DOCSDIR%%/output.html
+%%PORTDOCS%%%%DOCSDIR%%/output.pdf
+%%PORTDOCS%%%%DOCSDIR%%/pdfencryption.html
+%%PORTDOCS%%%%DOCSDIR%%/pdfencryption.pdf
+%%PORTDOCS%%%%DOCSDIR%%/relnotes.html
+%%PORTDOCS%%%%DOCSDIR%%/relnotes.pdf
+%%PORTDOCS%%%%DOCSDIR%%/resources.html
+%%PORTDOCS%%%%DOCSDIR%%/resources.pdf
+%%PORTDOCS%%%%DOCSDIR%%/running.html
+%%PORTDOCS%%%%DOCSDIR%%/running.pdf
+%%PORTDOCS%%%%DOCSDIR%%/servlets.html
+%%PORTDOCS%%%%DOCSDIR%%/servlets.pdf
+%%PORTDOCS%%%%DOCSDIR%%/skin/breadcrumbs-optimized.js
+%%PORTDOCS%%%%DOCSDIR%%/skin/breadcrumbs.js
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/chapter.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/chapter_open.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/current.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/favicon.ico
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/label.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/menu-left.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/menu-right.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/page.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/printer.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/search-left.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/search-right.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/singlepage.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/spacer.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/tab-left.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/tab-right.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/tabSel-left.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/tabSel-right.gif
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/valid-html401.png
+%%PORTDOCS%%%%DOCSDIR%%/skin/images/vcss.png
+%%PORTDOCS%%%%DOCSDIR%%/skin/page.css
+%%PORTDOCS%%%%DOCSDIR%%/status.html
+%%PORTDOCS%%%%DOCSDIR%%/status.pdf
+%%PORTDOCS%%%%DOCSDIR%%/team.html
+%%PORTDOCS%%%%DOCSDIR%%/team.pdf
+%%DATADIR%%/CHANGES
+%%DATADIR%%/LICENSE
+%%DATADIR%%/README
+%%DATADIR%%/ReleaseNotes.html
+%%DATADIR%%/STATUS
+%%DATADIR%%/build/fop.jar
+%%DATADIR%%/conf/config.dtd
+%%DATADIR%%/conf/config.xml
+%%DATADIR%%/conf/userconfig.xml
+%%DATADIR%%/hyph/README
+%%DATADIR%%/hyph/en.xml
+%%DATADIR%%/hyph/es.xml
+%%DATADIR%%/hyph/fi.xml
+%%DATADIR%%/hyph/hu.xml
+%%DATADIR%%/hyph/hyphenation.dtd
+%%DATADIR%%/hyph/it.xml
+%%DATADIR%%/hyph/pl.xml
+%%DATADIR%%/hyph/pt.xml
+%%DATADIR%%/hyph/ru.xml
+%%DATADIR%%/lib/ant-1.5.1.jar
+%%DATADIR%%/lib/ant.license.txt
+%%DATADIR%%/lib/avalon-framework-cvs-20020806.jar
+%%DATADIR%%/lib/avalon.LICENSE.txt
+%%DATADIR%%/lib/batik.LICENSE.txt
+%%DATADIR%%/lib/batik.jar
+%%DATADIR%%/lib/bin/antRun
+%%DATADIR%%/lib/readme
+%%DATADIR%%/lib/xalan-2.4.1.jar
+%%DATADIR%%/lib/xalan.LICENSE.txt
+%%DATADIR%%/lib/xerces.LICENSE.txt
+%%DATADIR%%/lib/xercesImpl-2.2.1.jar
+%%DATADIR%%/lib/xml-apis.LICENSE.txt
+%%DATADIR%%/lib/xml-apis.README.txt
+%%DATADIR%%/lib/xml-apis.jar
+@dirrm %%DATADIR%%/lib/bin
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/hyph
+@dirrm %%DATADIR%%/conf
+@dirrm %%DATADIR%%/build
+@dirrm %%DATADIR%%
+@unexec rmdir %D/%%DOCSDIR%%/skin/css 2>/dev/null || true
+@dirrm %%DOCSDIR%%/skin/images
+@unexec rmdir %D/%%DOCSDIR%%/skin/scripts 2>/dev/null || true
+@dirrm %%DOCSDIR%%/skin
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%/fo/images
+@dirrm %%DOCSDIR%%/fo
+@dirrm %%DOCSDIR%%/dev/svg
+@dirrm %%DOCSDIR%%/dev/fo
+@dirrm %%DOCSDIR%%/dev
+@dirrm %%DOCSDIR%%

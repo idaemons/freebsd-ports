@@ -1,0 +1,29 @@
+bin/pdnmesh
+%%DATADIR%%/README
+%%DATADIR%%/COPYING
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/tutorial/README
+%%DATADIR%%/tutorial/tutorial.sgml.bz2
+%%DATADIR%%/tutorial/tutorial.html.bz2
+%%DATADIR%%/examples/README
+%%DATADIR%%/examples/coords.1
+%%DATADIR%%/examples/coords.10
+%%DATADIR%%/examples/coords.11
+%%DATADIR%%/examples/coords.1a
+%%DATADIR%%/examples/coords.2
+%%DATADIR%%/examples/coords.3
+%%DATADIR%%/examples/coords.4
+%%DATADIR%%/examples/coords.5
+%%DATADIR%%/examples/coords.6
+%%DATADIR%%/examples/coords.7
+%%DATADIR%%/examples/coords.8
+%%DATADIR%%/examples/coords.9
+%%DATADIR%%/examples/heat
+%%DATADIR%%/examples/flow
+%%DATADIR%%/examples/flow.1
+%%DATADIR%%/examples/heart
+%%DATADIR%%/examples/switch
+%%DATADIR%%/examples/trans
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/tutorial
+@dirrm %%DATADIR%%

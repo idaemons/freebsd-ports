@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Wed Jul 21 17:54:38 2004
++++ src/Makefile	Wed Jul 21 17:55:11 2004
+@@ -18,7 +18,7 @@
+ # for releases use -Os, this makes the lib 15% smaller 
+ CFLAGS += -Wall -pedantic
+ 
+-TCL_VERSION := $(shell echo 'puts $$tcl_version' | tclsh)
++TCL_VERSION := 84
+ 
+ # this breaks build on GTK 2.4 
+ # -DGTK_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED 

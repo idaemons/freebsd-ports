@@ -1,0 +1,17 @@
+%%JAVAJARDIR%%/beepcore.jar
+%%JAVAJARDIR%%/beepsasl.jar
+%%JAVAJARDIR%%/beeptls-jsse.jar
+%%JAVAJARDIR%%/beeptls-ptls.jar
+%%EXAMPLESDIR%%/example.jar
+%%EXAMPLESDIR%%/org/beepcore/beep/example/Beepd.java
+%%EXAMPLESDIR%%/org/beepcore/beep/example/Bing.java
+%%EXAMPLESDIR%%/org/beepcore/beep/example/README_EXAMPLE
+%%EXAMPLESDIR%%/org/beepcore/beep/example/beepd-config.xml
+%%EXAMPLESDIR%%/org/beepcore/beep/util/BeepLogger.java
+%%EXAMPLESDIR%%/org/beepcore/beep/util/Log4JLog.java
+@dirrm %%EXAMPLESDIR%%/org/beepcore/beep/util
+@dirrm %%EXAMPLESDIR%%/org/beepcore/beep/example
+@dirrm %%EXAMPLESDIR%%/org/beepcore/beep
+@dirrm %%EXAMPLESDIR%%/org/beepcore
+@dirrm %%EXAMPLESDIR%%/org
+@dirrm %%EXAMPLESDIR%%

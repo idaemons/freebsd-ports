@@ -1,0 +1,36 @@
+--- logrotate-3.7-orig/Makefile	Wed Oct 20 19:07:27 2004
++++ logrotate-3.7/Makefile	Wed Oct 20 19:07:42 2004
+@@ -1,5 +1,4 @@
+ VERSION = $(shell awk '/Version:/ { print $$2 }' logrotate.spec)
+-CVSROOT = $(shell cat CVS/Root)
+ CVSTAG = r$(subst .,-,$(VERSION))
+ OS_NAME = $(shell uname -s)
+ LFS = $(shell echo `getconf LFS_CFLAGS 2>/dev/null`)
+@@ -50,6 +49,12 @@
+     BASEDIR = /usr
+ endif
+ 
++ifeq ($(OS_NAME),FreeBSD)
++    LOADLIBES += -L${LOCALBASE}/lib
++    CFLAGS += -I${LOCALBASE}/include
++    PREFIX=
++endif
++
+ ifneq ($(POPT_DIR),)
+     CFLAGS += -I$(POPT_DIR)
+     LOADLIBES += -L$(POPT_DIR)
+@@ -102,10 +107,13 @@
+ 	if [ "$(OS_NAME)" = HP-UX ]; then \
+ 	$(INSTALL) $(PROG) $(PREFIX)/$(BINDIR) 0755 bin bin; \
+ 	$(INSTALL) $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"` 0644 bin bin; \
++	else if [ "$(OS_NAME)" = FreeBSD ]; then \
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(BINDIR); \
++	$(BSD_INSTALL_MAN) $(MAN) $(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN); \
+ 	else \
+ 	$(INSTALL) -m 755 $(PROG) $(PREFIX)/$(BINDIR); \
+ 	$(INSTALL) -m 644 $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN); \
+-	fi
++	fi; fi
+ 
+ co:
+ 	co RCS/*,v

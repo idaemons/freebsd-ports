@@ -1,0 +1,6 @@
+bin/pdmenu
+etc/pdmenurc
+%%DATADIR%%/editdir.pl
+%%DATADIR%%/showdir.pl
+@dirrm %%DATADIR%%
+@dirrm lib/pdmenu

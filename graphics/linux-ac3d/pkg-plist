@@ -1,0 +1,93 @@
+bin/ac3d.sh
+%%DYNAMIC_VERSION%%bin/real-ac3d
+%%STATIC_VERSION%%bin/real-ac3ds
+%%DATADIR%%/font.ac
+%%DATADIR%%/fontwire.ac
+%%DATADIR%%/lib/tcl8.4/auto.tcl
+%%DATADIR%%/lib/tcl8.4/history.tcl
+%%DATADIR%%/lib/tcl8.4/init.tcl
+%%DATADIR%%/lib/tcl8.4/ldAout.tcl
+%%DATADIR%%/lib/tcl8.4/package.tcl
+%%DATADIR%%/lib/tcl8.4/parray.tcl
+%%DATADIR%%/lib/tcl8.4/safe.tcl
+%%DATADIR%%/lib/tcl8.4/tclIndex
+%%DATADIR%%/lib/tcl8.4/word.tcl
+%%DATADIR%%/lib/tk8.4/bgerror.tcl
+%%DATADIR%%/lib/tk8.4/button.tcl
+%%DATADIR%%/lib/tk8.4/choosedir.tcl
+%%DATADIR%%/lib/tk8.4/clrpick.tcl
+%%DATADIR%%/lib/tk8.4/comdlg.tcl
+%%DATADIR%%/lib/tk8.4/console.tcl
+%%DATADIR%%/lib/tk8.4/dialog.tcl
+%%DATADIR%%/lib/tk8.4/entry.tcl
+%%DATADIR%%/lib/tk8.4/focus.tcl
+%%DATADIR%%/lib/tk8.4/listbox.tcl
+%%DATADIR%%/lib/tk8.4/menu.tcl
+%%DATADIR%%/lib/tk8.4/mkpsenc.tcl
+%%DATADIR%%/lib/tk8.4/msgbox.tcl
+%%DATADIR%%/lib/tk8.4/obsolete.tcl
+%%DATADIR%%/lib/tk8.4/optMenu.tcl
+%%DATADIR%%/lib/tk8.4/palette.tcl
+%%DATADIR%%/lib/tk8.4/panedwindow.tcl
+%%DATADIR%%/lib/tk8.4/pkgIndex.tcl
+%%DATADIR%%/lib/tk8.4/safetk.tcl
+%%DATADIR%%/lib/tk8.4/scale.tcl
+%%DATADIR%%/lib/tk8.4/scrlbar.tcl
+%%DATADIR%%/lib/tk8.4/spinbox.tcl
+%%DATADIR%%/lib/tk8.4/tclIndex
+%%DATADIR%%/lib/tk8.4/tearoff.tcl
+%%DATADIR%%/lib/tk8.4/text.tcl
+%%DATADIR%%/lib/tk8.4/tk.tcl
+%%DATADIR%%/lib/tk8.4/tkfbox.tcl
+%%DATADIR%%/lib/tk8.4/unsupported.tcl
+%%DATADIR%%/lib/tk8.4/xmfbox.tcl
+@dirrm %%DATADIR%%/lib/tk8.4
+@dirrm %%DATADIR%%/lib/tcl8.4
+@dirrm %%DATADIR%%/lib
+%%DATADIR%%/tcl/ac3d.tcl
+%%DATADIR%%/tcl/ac3dfsbox.tcl
+%%DATADIR%%/tcl/ac3dhier.tcl
+%%DATADIR%%/tcl/ac3dkeys.tcl
+%%DATADIR%%/tcl/ac3dobject.tcl
+%%DATADIR%%/tcl/ac3dobjlib.tcl
+%%DATADIR%%/tcl/ac3dops.tcl
+%%DATADIR%%/tcl/ac3dpalette.tcl
+%%DATADIR%%/tcl/ac3dplugins.tcl
+%%DATADIR%%/tcl/ac3dprefs.tcl
+%%DATADIR%%/tcl/ac3drender.tcl
+%%DATADIR%%/tcl/ac3dtips.tcl
+%%DATADIR%%/tcl/ac3dttfont.tcl
+%%DATADIR%%/tcl/ac3dutil.tcl
+%%DATADIR%%/tcl/ac3duvedit.tcl
+%%DATADIR%%/tcl/ac3dview.tcl
+%%DATADIR%%/tcl/combobox.tcl
+@dirrm %%DATADIR%%/tcl
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/IMPORTANT
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/Penguin_beak.rgb
+%%EXAMPLESDIR%%/Penguin_body.rgb
+%%EXAMPLESDIR%%/amp.ac
+%%EXAMPLESDIR%%/car.ac
+%%EXAMPLESDIR%%/celtic12.ac
+%%EXAMPLESDIR%%/diningtable.ac
+%%EXAMPLESDIR%%/enterprise.ac
+%%EXAMPLESDIR%%/falcon.ac
+%%EXAMPLESDIR%%/glider.ac
+%%EXAMPLESDIR%%/gym2.ac
+%%EXAMPLESDIR%%/head.ac
+%%EXAMPLESDIR%%/mydesk4.ac
+%%EXAMPLESDIR%%/racecar.ac
+%%EXAMPLESDIR%%/rocket.ac
+%%EXAMPLESDIR%%/rose.ac
+%%EXAMPLESDIR%%/subdivided hand.ac
+%%EXAMPLESDIR%%/sword.ac
+%%EXAMPLESDIR%%/tie3.ac
+%%EXAMPLESDIR%%/tree.ac
+%%EXAMPLESDIR%%/tree_transparent.gif
+%%EXAMPLESDIR%%/tuxedo.ac
+%%EXAMPLESDIR%%/world.ac
+%%EXAMPLESDIR%%/world.rgb
+@dirrm %%EXAMPLESDIR%%

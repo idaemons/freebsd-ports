@@ -1,0 +1,20 @@
+--- configure.orig	Mon Sep  6 16:00:20 2004
++++ configure	Thu Sep  9 00:14:54 2004
+@@ -7852,7 +7852,7 @@
+ if test "${with_umfpack+set}" = set; then
+   withval="$with_umfpack"
+   ff_umfpack_ok=yes
+-                ff_umfpack_lib="$ff_umfpack_lib ${withval}"
++                ff_umfpack_lib="${withval} $ff_umfpack_lib"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBUMFPACK 1
+@@ -7864,7 +7864,7 @@
+ 
+ 
+ 
+-for ac_header in umfpack.h umfpack/umfpack.h
++for ac_header in UMFPACK/umfpack.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then

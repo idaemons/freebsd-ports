@@ -1,0 +1,4 @@
+bin/ftp-tls
+%%PORTDOCS%%%%DOCSDIR%%/README.TLS
+%%PORTDOCS%%%%DOCSDIR%%/draft-murray-auth-ftp-ssl-09.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

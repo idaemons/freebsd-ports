@@ -1,0 +1,17 @@
+@comment $FreeBSD: /tmp/pcvs/ports/net/crescendo/Attic/pkg-plist,v 1.5 2003-10-19 19:21:10 dinoex Exp $
+bin/crescendo
+share/gnome/crescendo/cr-about.jpg
+share/gnome/crescendo/cr-splash1.jpg
+share/gnome/crescendo/startup2.wav
+share/gnome/apps/Internet/crescendo.desktop
+share/gnome/pixmaps/crescendo.png
+@dirrm share/gnome/crescendo
+%%PORTDOCS%%%%DOCDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCDIR%%/HACKING
+%%PORTDOCS%%%%DOCDIR%%/INSTALL
+%%PORTDOCS%%%%DOCDIR%%/NEWS
+%%PORTDOCS%%%%DOCDIR%%/README
+%%PORTDOCS%%%%DOCDIR%%/README.BINARY
+%%PORTDOCS%%%%DOCDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCDIR%%

@@ -1,0 +1,72 @@
+#! /bin/sh
+#
+# $Log: pkg-deinstall,v $
+# Revision 1.2.2.1  2004/11/21 10:52:27  lupe
+# make stop_process use old or new start-stop script.
+#
+# Revision 1.2  2004/02/06 18:49:58  lupe
+# Fixes for pkg_add compatibility.
+#
+#
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+stop_process() {
+    if [ -x $STARTSTOP ]; then
+	$STARTSTOP stop
+    fi
+}
+
+delete_group() {
+    local g
+
+    g=$1
+    if yesno "Do you want me to remove group \"${g}\"" y; then
+	pw groupdel -n ${g}
+	echo "Done."
+    fi
+}
+
+OSVERSION=`/sbin/sysctl -n kern.osreldate`
+if [ $OSVERSION -lt 500000 ]; then
+    STARTSTOP=${PKG_PREFIX}/etc/rc.d/munin-node.sh
+else
+    STARTSTOP=/etc/rc.d/munin_node
+fi
+
+case $2 in
+    DEINSTALL)
+	stop_process
+	exit 0 # ignore error
+	;;
+    POST-DEINSTALL)
+	delete_group munin
+	;;
+esac

@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+etc/ebnetd.conf.sample
+etc/rc.d/ebnetd.sh
+libexec/ebhtstat
+libexec/ebnstat
+libexec/ndtpstat
+sbin/ebhtcheck
+sbin/ebhtcontrol
+sbin/ebhttpd
+sbin/ebncheck
+sbin/ebncontrol
+sbin/ebndaily
+sbin/ebnetd
+sbin/ebnupgrade
+sbin/ndtpcheck
+sbin/ndtpcontrol
+sbin/ndtpd
+@exec /bin/mkdir -m 0755 -p /var/run/ebnetd
+@unexec rmdir /var/run/ebnetd

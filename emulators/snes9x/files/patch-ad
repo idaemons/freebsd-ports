@@ -1,0 +1,20 @@
+--- memmap.cpp.orig	Fri Jul 25 23:20:19 2003
++++ memmap.cpp	Sat Aug  9 01:08:05 2003
+@@ -79,7 +79,7 @@
+ #endif
+ #include <ctype.h>
+ 
+-#ifdef __linux
++#if defined(__linux) || defined(__FreeBSD__)
+ #include <unistd.h>
+ #endif
+ 
+@@ -1443,7 +1443,7 @@
+ 		{
+ 			fwrite ((char *) ::SRAM, size, 1, file);
+ 			fclose (file);
+-#if defined(__linux)
++#if defined(__linux) || defined(__FreeBSD__)
+ 			chown (filename, getuid (), getgid ());
+ #endif
+ 			if(Settings.SPC7110RTC)

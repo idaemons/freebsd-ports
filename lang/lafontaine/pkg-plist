@@ -1,0 +1,16 @@
+bin/lafontaine
+share/lafontaine/animator.png
+share/lafontaine/animator.xcf
+share/lafontaine/execute.xpm
+share/lafontaine/gypsum.flower.2.fr.logo
+share/lafontaine/gypsum.flower.fr.logo
+share/lafontaine/help.xpm
+share/lafontaine/open.xpm
+share/lafontaine/quit.xpm
+share/lafontaine/save.xpm
+share/lafontaine/spirelo.fr.logo
+share/lafontaine/stars.en.logo
+share/lafontaine/test1.logo
+share/lafontaine/turtle2.png
+share/lafontaine/turtle3.png
+@dirrm share/lafontaine

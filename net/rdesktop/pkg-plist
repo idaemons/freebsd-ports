@@ -1,0 +1,42 @@
+@comment $FreeBSD$
+bin/rdesktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/ipv6.txt
+%%PORTDOCS%%%%DOCSDIR%%/keymap-names.txt
+%%PORTDOCS%%%%DOCSDIR%%/keymapping.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/keymaps/pt-br
+%%DATADIR%%/keymaps/fr-ch
+%%DATADIR%%/keymaps/fr-be
+%%DATADIR%%/keymaps/fr-ca
+%%DATADIR%%/keymaps/en-us
+%%DATADIR%%/keymaps/en-gb
+%%DATADIR%%/keymaps/de-ch
+%%DATADIR%%/keymaps/tr
+%%DATADIR%%/keymaps/th
+%%DATADIR%%/keymaps/sv
+%%DATADIR%%/keymaps/sl
+%%DATADIR%%/keymaps/ru
+%%DATADIR%%/keymaps/pt
+%%DATADIR%%/keymaps/pl
+%%DATADIR%%/keymaps/no
+%%DATADIR%%/keymaps/mk
+%%DATADIR%%/keymaps/lv
+%%DATADIR%%/keymaps/lt
+%%DATADIR%%/keymaps/ja
+%%DATADIR%%/keymaps/it
+%%DATADIR%%/keymaps/hu
+%%DATADIR%%/keymaps/hr
+%%DATADIR%%/keymaps/fr
+%%DATADIR%%/keymaps/fo
+%%DATADIR%%/keymaps/fi
+%%DATADIR%%/keymaps/es
+%%DATADIR%%/keymaps/de
+%%DATADIR%%/keymaps/da
+%%DATADIR%%/keymaps/ar
+%%DATADIR%%/keymaps/common
+%%DATADIR%%/keymaps/convert-map
+%%DATADIR%%/keymaps/modifiers
+@unexec rmdir %D/%%DATADIR%%/keymaps 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true

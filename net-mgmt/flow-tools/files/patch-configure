@@ -1,0 +1,11 @@
+--- configure.in.orig	Wed Dec  3 22:18:15 2003
++++ configure.in	Wed Jul  7 15:03:57 2004
+@@ -6,7 +6,7 @@
+ AM_INIT_AUTOMAKE(flow-tools, 0.67)
+ AM_CONFIG_HEADER(lib/ftconfig.h:lib/ftconfig.h.in) 
+ 
+-CFLAGS="-g -Wall"
++dnl CFLAGS="-g -Wall"
+ 
+ dnl Checks for programs.
+ AC_PROG_CC

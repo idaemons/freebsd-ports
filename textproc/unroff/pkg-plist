@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+bin/unroff
+%%PORTDOCS%%%%DOCSDIR%%/manual.ms
+%%DATADIR%%/misc/sample.unroff
+%%DATADIR%%/misc/tmac.hyper
+%%DATADIR%%/scm/troff.scm
+%%DATADIR%%/scm/troff.scm.orig
+%%DATADIR%%/scm/html/common.scm
+%%DATADIR%%/scm/html/common.scm.orig
+%%DATADIR%%/scm/html/m.scm
+%%DATADIR%%/scm/html/man.scm
+%%DATADIR%%/scm/html/me.scm
+%%DATADIR%%/scm/html/me.scm.orig
+%%DATADIR%%/scm/html/ms.scm
+%%DATADIR%%/scm/html/ms.scm.orig
+%%DATADIR%%/scm/misc/hyper.scm
+%%DATADIR%%/scm/misc/hyper.scm.orig
+@dirrm %%DATADIR%%/scm/misc
+@dirrm %%DATADIR%%/scm/html
+@dirrm %%DATADIR%%/scm
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,16 @@
+%%DATADIR%%/chinese-simplified/Adobe-GB1.cidToUnicode
+%%DATADIR%%/chinese-simplified/EUC-CN.unicodeMap
+%%DATADIR%%/chinese-simplified/GBK.unicodeMap
+%%DATADIR%%/chinese-simplified/ISO-2022-CN.unicodeMap
+%%DATADIR%%/chinese-simplified/README
+%%DATADIR%%/chinese-traditional/Adobe-CNS1.cidToUnicode
+%%DATADIR%%/chinese-traditional/Big5.unicodeMap
+%%DATADIR%%/chinese-traditional/Big5ascii.unicodeMap
+%%DATADIR%%/chinese-traditional/README
+@unexec cp %D/etc/xpdfrc %D/etc/xpdfrc.chinese-traditional
+@unexec grep -F -v --file=%D/%%DATADIR%%/chinese-traditional/dot.xpdfrc %D/etc/xpdfrc.chinese-traditional > %D/etc/xpdfrc
+%%DATADIR%%/chinese-traditional/dot.xpdfrc
+@unexec rm -f %D/etc/xpdfrc.chinese-traditional
+@dirrm %%DATADIR%%/chinese-simplified
+@dirrm %%DATADIR%%/chinese-traditional
+@unexec rmdir %D/%%DATADIR%% 2> /dev/null || true

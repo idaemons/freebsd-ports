@@ -1,0 +1,36 @@
+#!/bin/sh
+# $FreeBSD$
+
+PAPERSIZE=%%PAPERSIZE%%
+XDVIDIR=%%XDVIDIR%%
+XDVIVARDIR=%%XDVIVARDIR%%
+MKTEXLSR=%%MKTEXLSR%%
+TEXCONFIG=%%TEXCONFIG%%
+PATH=${PATH}:%%LOCALBASE%%/bin
+
+case $2 in
+POST-INSTALL)
+	cp -v ${XDVIDIR}/XDvi.xdvik-tetex ${XDVIDIR}/XDvi
+	if [ -f ${XDVIVARDIR}/XDvi ]; then
+		echo "======"
+		echo "NOTICE: you have to merge "\
+			"${XDVIVARDIR}/XDvi from ${XDVIDIR}/XDvi."
+		echo "======"
+	fi
+	case ${PAPERSIZE} in
+	letter)
+		${TEXCONFIG} xdvi us
+	;;
+	*)
+		${TEXCONFIG} xdvi a4
+	;;
+	esac
+	${MKTEXLSR}
+;;
+DEINSTALL)
+	rm -f ${XDVIVARDIR}/XDvi
+	cp -v ${XDVIDIR}/XDvi.tetex ${XDVIDIR}/XDvi
+	${MKTEXLSR}
+;;
+esac
+
