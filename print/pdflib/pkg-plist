@@ -1,0 +1,25 @@
+bin/pdflib-config
+include/pdflib.h
+lib/libpdf.a
+lib/libpdf.so
+lib/libpdf.so.5
+%%PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.a
+%%PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.pm
+%%PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.so
+%%PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.so.0
+%%PORTDOCS%%share/doc/pdflib/PDFlib-Lite-license.pdf
+%%PORTDOCS%%share/doc/pdflib/PDFlib-manual.pdf
+%%PORTDOCS%%share/doc/pdflib/PDFlib-purchase-order.pdf
+%%PORTDOCS%%share/doc/pdflib/changes.txt
+%%PORTDOCS%%share/doc/pdflib/changes4.txt
+%%PORTDOCS%%share/doc/pdflib/compatibility.txt
+%%PORTDOCS%%share/doc/pdflib/readme-binary.txt
+%%PORTDOCS%%share/doc/pdflib/readme-source-mac.txt
+%%PORTDOCS%%share/doc/pdflib/readme-source-unix.txt
+%%PORTDOCS%%share/doc/pdflib/readme-source-windows.txt
+%%PORTDOCS%%share/doc/pdflib/readme.txt
+share/pdflib/fonts/pdflib.upr
+share/pdflib/fonts/print_glyphs.ps
+%%PORTDOCS%%@dirrm share/doc/pdflib
+@dirrm share/pdflib/fonts
+@dirrm share/pdflib

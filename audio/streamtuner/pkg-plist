@@ -1,0 +1,24 @@
+bin/streamtuner
+bin/streamtuner-theme-convert
+include/streamtuner/st-category-api.h
+include/streamtuner/st-dialog-api.h
+include/streamtuner/st-handler-api.h
+include/streamtuner/st-handler-field-api.h
+include/streamtuner/st-handlers-api.h
+include/streamtuner/st-programs-api.h
+include/streamtuner/st-re-api.h
+include/streamtuner/st-settings-api.h
+include/streamtuner/st-state-api.h
+include/streamtuner/st-stream-api.h
+include/streamtuner/st-transfer-api.h
+include/streamtuner/st-version-api.h
+include/streamtuner/streamtuner.h
+lib/streamtuner/plugins/shoutcast.a
+lib/streamtuner/plugins/shoutcast.la
+lib/streamtuner/plugins/shoutcast.so
+libdata/pkgconfig/streamtuner.pc
+share/applications/streamtuner.desktop
+share/pixmaps/streamtuner.png
+@dirrm include/streamtuner
+@dirrm lib/streamtuner/plugins
+@dirrm lib/streamtuner

@@ -1,52 +1,87 @@
-DISTNAME	=	xc
-PKGNAME		= 	XFree86-3.1.1
-WRKDIR?=                ${.CURDIR}/work
-BUILD_COOKIE?=		${WRKDIR}/.build_done
-PATCH_STRIP	=	-p1
+# New ports collection makefile for:	XFree86-libraries
+# Date created:		10 Oct 1999
+# Whom:			taguchi@tohoku.iij.ad.jp
+#
+# $FreeBSD$
+#
 
-# uncomment one of the 2 lines below!
-#X11_ON_CDROM	=	yes
-X11_VIA_FTP	=	yes
+PORTNAME=	libraries
+PORTVERSION=	4.3.0
+PORTREVISION=	6
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
+			anholt/:local
+PKGNAMEPREFIX=	XFree86-
+DISTFILES=	X430src-1.tgz:x \
+		X430src-2.tgz:x \
+		X430src-3.tgz:x \
+		Wraphelp2.gz:local
+EXTRACT_ONLY=	X430src-1.tgz \
+		X430src-2.tgz \
+		X430src-3.tgz
 
-#define this if you are short of space - save ~28 Mbytes
-#REMOVE_NOT_ESSENTIAL	=	yes
+MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 libraries and headers
 
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-.if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
-build: configure ${BUILD_COOKIE}
+USE_X_PREFIX=		no
+PREFIX?=		${X11BASE}
+MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
+INSTALLS_SHLIB=		yes
+SCRIPTS_ENV=		DebuggableLibraries=${DebuggableLibraries}
+MAN3=			Xaw.3 Xcursor.3 Xrandr.3
+XBUILD_DIRS=		lib nls programs/Xserver/include \
+			programs/Xserver/hw/xfree86/parser
+XINCLUDE_DIRS=		programs/proxymngr
+XINSTALL_DIRS=		include lib nls programs/Xserver/include \
+			programs/Xserver/hw/xfree86/parser
+XINSTALL_MAN_DIRS=	${XINSTALL_DIRS}
 
-${BUILD_COOKIE}:
-	@echo "===>  Building for ${DISTNAME}"
-	@${MAKE} ${.MAKEFLAGS} pre-build
-.if defined(REMOVE_NOT_ESSENTIAL)
-	@rm -rf ${WRKSRC}/test ${WRKSRC}/doc/hardcopy ${WRKSRC}/doc/specs
-	@find ${WRKSRC}/ -name '*.orig' -exec rm -f {} ';'
+# XFree86 User Config:
+# DebuggableLibraries NO	build with debug libs (require FreeBSD-4 or later)
+# ----------------------------------------------------------------------------
+DebuggableLibraries?=	NO
+# End of XFree86 User Config
+
+.ifdef USE_XLIB
+.error You have `USE_XLIB' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
-	@(cd ${WRKSRC}; echo Good night...; make World)
-	@touch ${WRKDIR}/.build_done
 
-install:
-	@(cd ${WRKSRC}; make install; make install.man)
-	@touch ${WRKDIR}/.install_done
-.endif
+.include "Makefile.inc"
+.include <bsd.port.pre.mk>
 
-.if defined(X11_ON_CDROM)
-.include "Makefile.cdrom"
-.elif defined(X11_VIA_FTP)
-.include "Makefile.ftp"
+# BuildXF86DRI is false for FreeBSD < 4.1
+.if ${OSVERSION} < 410000
+PLIST_SUB+=	OSMESA:="@comment "
 .else
-all:
-	@echo -n
-fetch:
-	@echo -n
-extract:
-	@echo -n
-configure:
-	@echo -n
-build:
-	@echo -n
-install:
-	@echo -n
+PLIST_SUB+=	OSMESA:=""
 .endif
 
+# sparc64 doesn't have a working libc_r yet, and -current doesn't need libXThrStub.
+.if ${MACHINE_ARCH} == "sparc64" || ${OSVERSION} >= 500043
+PLIST_SUB+=	XTHRSTUB:="@comment "
+.else
+PLIST_SUB+=	XTHRSTUB:=""
+.endif
 
+post-extract:
+	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
+		${WRKSRC}/lib/Xdmcp/Wraphelp.c
+
+post-patch:
+	${CP} ${MASTERDIR}/files/nls::Compose::microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PM.h \
+		${PREFIX}/include/X11/PM
+	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PMproto.h \
+		${PREFIX}/include/X11/PM
+	${MKDIR} ${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/lib/Xcursor/xcursor.pc \
+		${PREFIX}/libdata/pkgconfig
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,20 @@
+--- makefile.in.orig	Mon May  5 12:52:50 2003
++++ makefile.in	Mon May  5 13:02:33 2003
+@@ -52,7 +52,7 @@
+ AWK		= @AWK@
+ PERL		= @PERL@
+ PERLLIB		= @perl_lib_path@
+-INSTALL_SCRIPT	= $(SHELL) $(srcdir)/sinstall.sh $(PERL) $(INSTALL_PROGRAM)
++INSTALL_SCRIPT	= $(INSTALL) -m 555
+ INSTALL_MODULE	= $(SHELL) $(srcdir)/sinstall.sh $(PERL) $(INSTALL_DATA)
+ 
+ prefix		= @prefix@
+@@ -628,7 +628,7 @@
+ 	$(INSTALL_PROGRAM)	$(TARGET) $@
+ 
+ $(BINDIR)/xshell.sh:		$(srcdir)/xshell.sh
+-	$(INSTALL_PROGRAM)	$(srcdir)/xshell.sh $@
++	$(INSTALL_SCRIPT)	$(srcdir)/xshell.sh $@
+ $(BINDIR)/vileget:		$(srcdir)/perl/vileget
+ 	$(INSTALL_SCRIPT)	$(srcdir)/perl/vileget $@
+ 

@@ -1,0 +1,38 @@
+# New ports collection makefile for:    p5-DBD-Sybase
+# Date created:				May 10th 2001
+# Whom:	      				Sheldon Hearn <sheldonh@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	DBD-Sybase
+PORTVERSION=	1.00
+PORTREVISION=	1
+CATEGORIES=	databases perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	DBD
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sheldonh@FreeBSD.org
+COMMENT=	A Sybase DBI driver for Perl 5
+
+LIB_DEPENDS=	ct.1:${PORTSDIR}/databases/freetds \
+		intl.5:${PORTSDIR}/devel/gettext
+
+PERL_CONFIGURE=	yes
+CONFIGURE_ENV+=	SYBASE=${LOCALBASE}
+
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		DBD::Sybase.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+.else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.endif
+
+.include <bsd.port.post.mk>

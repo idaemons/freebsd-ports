@@ -1,0 +1,125 @@
+bin/vamos
+include/vamos/body/Aerodynamic_Device.h
+include/vamos/body/Body.h
+include/vamos/body/Brake.h
+include/vamos/body/Car.h
+include/vamos/body/Clutch.h
+include/vamos/body/Contact_Point.h
+include/vamos/body/Differential.h
+include/vamos/body/Drivetrain.h
+include/vamos/body/Engine.h
+include/vamos/body/Exerter.h
+include/vamos/body/Frame.h
+include/vamos/body/Fuel_Tank.h
+include/vamos/body/Gl_Car.h
+include/vamos/body/Particle.h
+include/vamos/body/Suspension.h
+include/vamos/body/Tire.h
+include/vamos/body/Transmission.h
+include/vamos/body/Wheel.h
+include/vamos/geometry/Constants.h
+include/vamos/geometry/Conversions.h
+include/vamos/geometry/Gl_Texture_Image.h
+include/vamos/geometry/Handle.h
+include/vamos/geometry/Inertia_Tensor.h
+include/vamos/geometry/Interpolator.h
+include/vamos/geometry/Linear_Interpolator.h
+include/vamos/geometry/Material.h
+include/vamos/geometry/Sample.h
+include/vamos/geometry/Spline.h
+include/vamos/geometry/Texture_Image.h
+include/vamos/geometry/Three_Matrix.h
+include/vamos/geometry/Three_Vector.h
+include/vamos/geometry/Two_Point.h
+include/vamos/track/Road_Segment.h
+include/vamos/track/Strip_Track.h
+include/vamos/track/Track.h
+include/vamos/world/Atmosphere.h
+include/vamos/world/Car_World.h
+include/vamos/world/Controls.h
+include/vamos/world/Gl_Car_World.h
+include/vamos/world/Sounds.h
+include/vamos/world/World.h
+lib/libvamos-body.a
+lib/libvamos-body.so
+lib/libvamos-body.so.0
+lib/libvamos-geometry.a
+lib/libvamos-geometry.so
+lib/libvamos-geometry.so.0
+lib/libvamos-track.a
+lib/libvamos-track.so
+lib/libvamos-track.so.0
+lib/libvamos-world.a
+lib/libvamos-world.so
+lib/libvamos-world.so.0
+share/vamos/cars/F1-1967.xml
+share/vamos/cars/F1.xml
+share/vamos/cars/GT.xml
+share/vamos/cars/default-car.xml
+share/vamos/cars/front-drive.xml
+share/vamos/cars/trainer.xml
+share/vamos/controls/clutch-wheel.xml
+share/vamos/controls/default-controls.xml
+share/vamos/controls/stick.xml
+share/vamos/controls/throttle-wheel.xml
+share/vamos/sounds/crash.wav
+share/vamos/sounds/default-sounds.xml
+share/vamos/sounds/engine.wav
+share/vamos/sounds/f1-engine.wav
+share/vamos/sounds/rumble.wav
+share/vamos/sounds/tire_squeal.wav
+share/vamos/sounds/wind.wav
+share/vamos/textures/100.png
+share/vamos/textures/150.png
+share/vamos/textures/200.png
+share/vamos/textures/300.png
+share/vamos/textures/400.png
+share/vamos/textures/50.png
+share/vamos/textures/blue-green-tires.png
+share/vamos/textures/blue-kerb.png
+share/vamos/textures/blue-tires.png
+share/vamos/textures/grass.png
+share/vamos/textures/gravel.png
+share/vamos/textures/gravel2.png
+share/vamos/textures/gravel3.png
+share/vamos/textures/kerb.png
+share/vamos/textures/rail.png
+share/vamos/textures/red-kerb.png
+share/vamos/textures/red-tires.png
+share/vamos/textures/sky.png
+share/vamos/textures/sky_bottom.png
+share/vamos/textures/sky_sides.png
+share/vamos/textures/sky_top.png
+share/vamos/textures/tires.png
+share/vamos/textures/track.png
+share/vamos/textures/track2.png
+share/vamos/textures/wall.png
+share/vamos/tracks/Albert_Park.xml
+share/vamos/tracks/Indianapolis.xml
+share/vamos/tracks/Magny-Cours.xml
+share/vamos/tracks/Monza.xml
+share/vamos/tracks/Mosport.xml
+share/vamos/tracks/Nurburgring.xml
+share/vamos/tracks/Peanut.xml
+share/vamos/tracks/Silverstone.xml
+share/vamos/tracks/Spa.xml
+share/vamos/tracks/Suzuka.xml
+share/vamos/tracks/default-track.xml
+share/vamos/tracks/drag.xml
+share/vamos/tracks/jump.xml
+share/vamos/tracks/skid_pad.xml
+share/vamos/worlds/default-world.xml
+share/vamos/worlds/earth.xml
+share/vamos/worlds/moon.xml
+@dirrm share/vamos/worlds
+@dirrm share/vamos/tracks
+@dirrm share/vamos/textures
+@dirrm share/vamos/sounds
+@dirrm share/vamos/controls
+@dirrm share/vamos/cars
+@dirrm share/vamos
+@dirrm include/vamos/world
+@dirrm include/vamos/track
+@dirrm include/vamos/geometry
+@dirrm include/vamos/body
+@dirrm include/vamos

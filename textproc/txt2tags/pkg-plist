@@ -1,0 +1,31 @@
+bin/txt2tags
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/RULES
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/userguide.html
+%%PORTDOCS%%%%DOCSDIR%%/userguide.t2t
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/abuseme.html
+%%EXAMPLESDIR%%/abuseme.t2t
+%%EXAMPLESDIR%%/photo.jpg
+%%EXAMPLESDIR%%/pwrbytxt2tags-1.png
+%%EXAMPLESDIR%%/pwrbytxt2tags-2.png
+%%EXAMPLESDIR%%/sample.html
+%%EXAMPLESDIR%%/sample.man
+%%EXAMPLESDIR%%/sample.mgp
+%%EXAMPLESDIR%%/sample.moin
+%%EXAMPLESDIR%%/sample.pm6
+%%EXAMPLESDIR%%/sample.sgml
+%%EXAMPLESDIR%%/sample.t2t
+%%EXAMPLESDIR%%/sample.tex
+%%EXAMPLESDIR%%/sample.txt
+@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/pagemaker.vim
+%%DATADIR%%/txt2tags-mode.el
+%%DATADIR%%/txt2tags-reverse_title.patch
+%%DATADIR%%/txt2tags.php
+%%DATADIR%%/txt2tags.vim
+%%DATADIR%%/unhtml.vim
+@dirrm %%DATADIR%%

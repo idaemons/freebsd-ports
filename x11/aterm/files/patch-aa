@@ -1,0 +1,33 @@
+--- src/command.c.orig Mon Oct 22 23:02:47 2001
++++ src/command.c      Mon Oct 22 22:43:26 2001
+@@ -69,12 +69,18 @@
+ #ifndef NO_XLOCALE
+ # if (XtSpecificationRelease < 6)
+ #  define NO_XLOCALE
+-# else
+-#  define X_LOCALE
+-#  include <X11/Xlocale.h>
+ # endif
+ #endif				/* NO_XLOCALE */
+ 
++#ifndef NO_XSETLOCALE
++# define X_LOCALE
++# include <X11/Xlocale.h>
++#else
++# ifndef NO_SETLOCALE
++#  include <locale.h>
++# endif
++#endif                          /* NO_XLOCALE */
++
+ #ifdef TTY_GID_SUPPORT
+ # include <grp.h>
+ #endif
+@@ -534,7 +540,7 @@
+     ttydev = tty_name;
+ 
+ # define PTYCHAR1	"pqrstuvwxyz"
+-# define PTYCHAR2	"0123456789abcdef"
++# define PTYCHAR2	"0123456789abcdefghijklmnopqrstuvwxyz"
+     for (c1 = PTYCHAR1; *c1; c1++) {
+ 	ptydev[len - 2] = ttydev[len - 2] = *c1;
+ 	for (c2 = PTYCHAR2; *c2; c2++) {

@@ -1,0 +1,8 @@
+bin/pinfo
+etc/pinforc
+share/locale/cs/LC_MESSAGES/pinfo.mo
+share/locale/de/LC_MESSAGES/pinfo.mo
+share/locale/ja/LC_MESSAGES/pinfo.mo
+share/locale/pl/LC_MESSAGES/pinfo.mo
+share/locale/ru/LC_MESSAGES/pinfo.mo
+share/locale/sv/LC_MESSAGES/pinfo.mo

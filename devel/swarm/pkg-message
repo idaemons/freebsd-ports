@@ -1,0 +1,10 @@
+
+Please set SWARMHOME to %%PREFIX%% while using this package.
+ex:
+  in tcsh:
+	setenv SWARMHOME %%PREFIX%%
+
+  in bash:
+	export SWARMHOME=%%PREFIX%%
+
+Swarm samples can be found at ftp://ftp.swarm.org/pub/swarm/src/apps/objc/swarmapps-2.1.1.tar.gz

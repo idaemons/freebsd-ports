@@ -1,0 +1,41 @@
+--- scripts/exim_install.orig	Wed Dec 18 12:28:00 2002
++++ scripts/exim_install	Mon Jan  6 11:11:46 2003
+@@ -330,9 +330,8 @@
+   echo $com ' ' ${CONFIGURE_FILE}
+   echo $com Therefore, skipping automatic installation.
+ 
+-elif [ ! -f ${CONFIGURE_FILE} ]; then
+-  echo $com Installing default configuration in ${CONFIGURE_FILE}
+-  echo $com because there is no existing configuration file.
++else
++  echo $com Installing default configuration in ${CONFIGURE_FILE}.default
+   if [ "${SYSTEM_ALIASES_FILE}" = "" ] ; then
+     SYSTEM_ALIASES_FILE=/etc/aliases
+     echo $com This configuration has system aliases in ${SYSTEM_ALIASES_FILE}.
+@@ -343,7 +342,7 @@
+ 
+   echo sed -e '\\'
+   echo "  \"/SYSTEM_ALIASES_FILE/ s'SYSTEM_ALIASES_FILE'${ACTUAL_SYSTEM_ALIASES_FILE}'\"" '\\'
+-  echo "  ../src/configure.default > \${CONFIGURE_FILE}"
++  echo "  ../src/configure.default > \${CONFIGURE_FILE}.default"
+ 
+   # I can't find a way of writing this using the ${real} feature because
+   # it seems that the output redirection always happens, even when -n was
+@@ -352,7 +351,7 @@
+   if [ "$real" = "" ] ; then
+     sed -e \
+       "/SYSTEM_ALIASES_FILE/ s'SYSTEM_ALIASES_FILE'${ACTUAL_SYSTEM_ALIASES_FILE}'" \
+-      ../src/configure.default > ${CONFIGURE_FILE}
++      ../src/configure.default > ${CONFIGURE_FILE}.default
+   else
+     true
+   fi
+@@ -372,8 +371,6 @@
+     ${real} ${CP} ../src/aliases.default ${SYSTEM_ALIASES_FILE}
+   fi
+ 
+-else
+-  echo $com Configuration file ${CONFIGURE_FILE} already exists
+ fi
+ 
+ # Install info files if the directory is defined and the Texinfo

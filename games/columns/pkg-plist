@@ -1,0 +1,22 @@
+bin/columns
+share/Columns/applause.wav
+share/Columns/bg.bmp
+share/Columns/big.fnt
+share/Columns/bye.wav
+@mode 0666
+share/Columns/columns.hsc
+@mode
+share/Columns/drop.wav
+share/Columns/hello.wav
+share/Columns/laugh.wav
+share/Columns/level.wav
+share/Columns/magic.wav
+share/Columns/move.wav
+share/Columns/perfect.wav
+share/Columns/remove.wav
+share/Columns/rotate.wav
+share/Columns/small.fnt
+share/Columns/tiles.bmp
+%%PORTDOCS%%share/doc/columns/README
+%%PORTDOCS%%@dirrm share/doc/columns
+@dirrm share/Columns

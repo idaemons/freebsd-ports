@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/hspell
+bin/hspell-i
+bin/multispell
+%%DATADIR%%/hebrew.wgz
+%%DATADIR%%/hebrew.wgz.prefixes
+%%DATADIR%%/hebrew.wgz.sizes
+@dirrm %%DATADIR%%

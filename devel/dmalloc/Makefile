@@ -1,0 +1,42 @@
+# New ports collection makefile for:	dmalloc
+# Date created:			7 December 2000
+# Whom:				Jeremy Shaffner <jeremy@external.org>
+#
+# $FreeBSD$
+
+PORTNAME=	dmalloc
+PORTVERSION=	5.2.1
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	dmalloc
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	jeremy@external.org
+COMMENT=	Portable debug memory allocation library
+
+INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+CONFIGURE_ARGS=	--enable-threads --enable-shlib
+
+ALL_TARGET=	all heavy
+INSTALL_TARGET=	install
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET+=installdocs installinfo
+.endif
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|\.so|\.so.1|' ${WRKSRC}/Makefile.in
+
+post-install:
+	@(cd ${PREFIX}/lib; \
+		${LN} -sf ${PREFIX}/lib/libdmalloc.so.1 ${PREFIX}/lib/libdmalloc.so; \
+		${LN} -sf ${PREFIX}/lib/libdmallocxx.so.1 ${PREFIX}/lib/libdmallocxx.so; \
+		${LN} -sf ${PREFIX}/lib/libdmallocth.so.1 ${PREFIX}/lib/libdmallocth.so; \
+		${LN} -sf ${PREFIX}/lib/libdmallocthcxx.so.1 ${PREFIX}/lib/libdmallocthcxx.so)
+.if !defined(NOPORTDOCS)
+	@install-info ${PREFIX}/info/dmalloc.info ${PREFIX}/info/dir
+.endif
+
+.include <bsd.port.mk>

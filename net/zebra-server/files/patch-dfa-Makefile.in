@@ -1,0 +1,11 @@
+--- dfa/Makefile.in.orig	Sat Jan  4 16:35:12 2003
++++ dfa/Makefile.in	Sat Jan  4 16:35:30 2003
+@@ -84,7 +84,7 @@
+ noinst_PROGRAMS = agrep lexer grepper
+ 
+ INCLUDES = -I$(srcdir)/../include @YAZINC@
+-LDADD = libdfa.a ../util/libutil.a $(YAZLIB) $(TCL_LIB)
++LDADD = libdfa.a ../util/libutil.a $(YAZLIB) $(TCL_LIB) @PTHREAD_LIBS@
+ 
+ agrep_SOURCES = agrep.c
+ 

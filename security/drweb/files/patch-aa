@@ -1,0 +1,92 @@
+--- etc/drweb/drweb32.ini.orig	Mon Jan  6 21:03:02 2003
++++ etc/drweb/drweb32.ini	Sat Jun  7 12:32:31 2003
+@@ -1,11 +1,11 @@
+ [Scanner]
+-EnginePath = "/opt/drweb/lib/drweb32.dll"
+-VirusBase = "/var/drweb/bases/*.vdb", "/var/drweb/bases/*.VDB"
+-MoveFilesTo = "/var/drweb/infected"
+-;LngFileName = "/opt/drweb/lib/russian.dwl"
++EnginePath = "%INSTALL%/lib/drweb32.dll"
++VirusBase = "%INSTALL%/bases/*.vdb", "%INSTALL%/bases/*.VDB"
++MoveFilesTo = "%INSTALL%/infected"
++;LngFileName = "%INSTALL%/lib/russian.dwl"
+ 
+-Key = "/opt/drweb/drweb.key"
+-LogFileName = "/var/drweb/log/drweb.log"
++Key = "%INSTALL%/drweb.key"
++LogFileName = "/dev/null"
+ RenameFilesTo = #??
+ FilesTypes = EXE,COM,SYS,OV?,BAT,BIN,DRV,PRG,BOO,SCR,CMD,VXD,386,DLL,FON,DO?
+ FilesTypes = XL?,WIZ,RTF,CL*,HT*,VB*,JS*,INF,AR?,ZIP,R??,PP?,OBJ,LIB,HLP,MD?
+@@ -30,42 +30,42 @@
+ ScanSubDirectories = Yes
+ PromptOnAction = No
+ LimitLog = No
+-MaxLogSize = 512
++;MaxLogSize = 512
+ OutputMode = Terminal
+ FollowLinks = No
+ 
+-UpdatePath = "/opt/drweb/updates"
++UpdatePath = "%INSTALL%/updates"
+ 
+ RecodeNonprintable = Yes
+ RecodeMode = QuotedPrintable
+ RecodeChar = "?"
+ 
+ [Daemon]
+-EnginePath = "/opt/drweb/lib/drweb32.dll"
+-VirusBase = "/var/drweb/bases/*.vdb", "/var/drweb/bases/*.VDB"
+-MoveFilesTo = "/var/drweb/infected"
+-;LngFileName = "/opt/drweb/lib/russian.dwl"
++EnginePath = "%INSTALL%/lib/drweb32.dll"
++VirusBase = "%INSTALL%/bases/*.vdb", "%INSTALL%/bases/*.VDB"
++MoveFilesTo = "%INSTALL%/infected"
++;LngFileName = "%INSTALL%/lib/russian.dwl"
+ 
+-Key = "/opt/drweb/drwebd.key"
++Key = "%INSTALL%/drwebd.key"
+ LogTime = Yes
+ LogFileName = "syslog"
+-;LogFileName = "/var/drweb/log/drwebd.log"
+-;BusyFile = "/var/drweb/run/drwebd.bsy"
+-;PidFile = "/var/drweb/run/drwebd.pid"
++;LogFileName = "/var/log/drwebd.log"
++;BusyFile = "%INSTALL%/run/drwebd.bsy"
++PidFile = "%INSTALL%/run/drwebd.pid"
+ 
+-Socket 3000 127.0.0.1
+-;Scket /var/drweb/run/drwebd.socket 666
++;Socket 3000 127.0.0.1
++Socket = %INSTALL%/run/drwebd.sock 660
+ 
+ SocketTimeout = 40
+ SocketReuseAddr = Yes
+ FileTimeout = 40
+-OutputMode = Terminal
++OutputMode = Quiet
+ LimitLog = No
+-MaxLogSize = 512
++;MaxLogSize = 512
+ LogScanned = Yes
+ LogInfo = Yes
+ LogPacked = Yes
+-;User = drweb
++User = drweb
+ ;UserID = 
+ ;GroupID = 
+ ScanFiles = All
+@@ -75,10 +75,10 @@
+ SyslogPriority = "Alert"
+ 
+ FilterRule X-Mailer ".*Mass.*Sender.*" Reject
+-FilterRule To ".*undisclosed.*recipient.*" Reject
+-FilterRule Subject ".*free.*xxx.*" Reject
++;FilterRule To ".*undisclosed.*recipient.*" Reject
++;FilterRule Subject ".*free.*xxx.*" Reject
+ 
+-UpdatePath = "/opt/drweb/updates"
++UpdatePath = "%INSTALL%/updates"
+ 
+ RecodeNonprintable = Yes
+ RecodeMode = QuotedPrintable

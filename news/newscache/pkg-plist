@@ -1,0 +1,4 @@
+bin/updatenews
+etc/newscache.conf-dist
+sbin/newscache
+sbin/newscacheclean

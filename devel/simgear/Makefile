@@ -1,0 +1,33 @@
+# New ports collection makefile for:	SimGear
+# Date created:				2003-01-21
+# Whom:					des
+#
+# $FreeBSD$
+#
+
+PORTNAME=	SimGear
+PORTVERSION=	0.3.3
+CATEGORIES=	devel games
+MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
+		ftp://ftp.de.flightgear.org/pub/simgear/Source/
+
+MAINTAINER=	des@FreeBSD.org
+COMMENT=	A toolkit for 3D games and simulations
+
+# These should be LIB_DEPENDS, but it seems bsd.port.mk can't handle
+# versionless or static libraries.
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit \
+		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
+RUN_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit \
+		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
+
+USE_X_PREFIX=	yes
+USE_MESA=	yes
+GNU_CONFIGURE=	yes
+# Force configure to look in /usr/local/{include,lib}
+CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.mk>

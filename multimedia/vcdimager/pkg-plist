@@ -1,0 +1,8 @@
+bin/vcdimager
+bin/vcddebug
+bin/vcddump
+bin/cdxa2mpeg
+bin/vcdxbuild
+bin/vcdxgen
+bin/vcdxrip
+bin/vcdxminfo

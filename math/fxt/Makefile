@@ -1,0 +1,23 @@
+# ex:ts=8
+# New ports collection makefile for:	fxt
+# Date created:			Nov 28, 2001
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	fxt
+PORTVERSION=	2003.02.18
+CATEGORIES=	math
+MASTER_SITES=	http://www.jjj.de/fxt/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	FFT code and related stuff
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_GMAKE=	yes
+MAKEFILE=	makefile
+
+.include <bsd.port.mk>

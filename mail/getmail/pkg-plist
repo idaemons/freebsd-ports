@@ -1,0 +1,23 @@
+bin/getmail
+bin/getmail_maildir
+bin/getmail_mbox
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/docs.html
+%%PORTDOCS%%%%DOCSDIR%%/docs.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/getmail.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/getmailrc-example
+@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/ConfParser.py
+%%DATADIR%%/getmail.py
+%%DATADIR%%/getmail_classes.py
+%%DATADIR%%/getmail_constants.py
+%%DATADIR%%/getmail_defaults.py
+%%DATADIR%%/getmail_mbox.py
+%%DATADIR%%/getmail_utilities.py
+%%DATADIR%%/timeoutsocket.py
+@dirrm %%DATADIR%%

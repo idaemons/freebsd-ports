@@ -1,0 +1,24 @@
+# New ports collection makefile for:	py-sip
+# Date created:		Tue Oct  8 09:51:22 SAST 2002
+# Whom:			nbm
+#
+# $FreeBSD$
+
+PORTNAME=	sip
+PORTVERSION=	3.8
+CATEGORIES=	devel python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=
+
+MAINTAINER=	eugos@gmx.net
+COMMENT=	Python convenience link to sip library
+
+LIB_DEPENDS=	sip.10:${PORTSDIR}/devel/sip
+
+USE_PYTHON=	yes
+NO_BUILD=	yes
+
+do-install:
+	${LN} -s ${LOCALBASE}/lib/libsip.so ${PYTHONPREFIX_SITELIBDIR}/libsip.so
+
+.include <bsd.port.mk>

@@ -1,0 +1,29 @@
+--- Makefile.in.orig	Mon Jul 14 23:52:38 2003
++++ Makefile.in	Sun Jul 27 22:04:59 2003
+@@ -168,7 +168,7 @@
+ tmpdir = /tmp
+ 
+ # Directory for app-defaults file
+-appdefaultsdir = $(datadir)/$(PACKAGE)-$(VERSION)/app-defaults
++appdefaultsdir = $(libdir)/X11/app-defaults
+ 
+ PATHNAMES = -DPROG_VERSION=$(VERSION) \
+ 	-DCAD_DIR=\"$(prefix)\" \
+@@ -195,7 +195,7 @@
+ INCLUDES = -IXw ${INC_SPECS}
+ 
+ # Library directory and files
+-librarydir = $(datadir)/$(PACKAGE)-$(VERSION)
++librarydir = $(libdir)/X11/$(PACKAGE)
+ USER_RC_FILE = .xcircuitrc
+ PROLOGUE_FILE = xcircps2.pro
+ BUILTINS_DEP1 = generic.lps
+@@ -746,7 +746,7 @@
+ 
+ lib/tcl/xcircuit${SHDLIB_EXT}: xcwrap.o ${xcircuit_OBJECTS}
+ 	$(RM) lib/xcircuit${SHDLIB_EXT}
+-	$(CC) ${CFLAGS} -o $@ ${LDDL_FLAGS} xcwrap.o ${xcircuit_OBJECTS} \
++	$(LD) ${CFLAGS} -o $@ ${LDDL_FLAGS} xcwrap.o ${xcircuit_OBJECTS} \
+ 		${X_LIBS} ${X_EXTRA_LIBS} ${EXTRA_LIBS} -lc ${LIBS}
+ 
+ tcl:	lib/tcl/xcircuit${SHDLIB_EXT}

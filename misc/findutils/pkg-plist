@@ -1,0 +1,10 @@
+bin/gfind
+bin/gxargs
+bin/glocate
+bin/gupdatedb
+libexec/gfrcode
+libexec/gcode
+libexec/gbigram
+@unexec install-info --delete %D/info/find.info %D/info/dir
+info/find.info
+@exec install-info %D/info/find.info %D/info/dir

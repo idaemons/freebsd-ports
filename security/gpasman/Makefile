@@ -1,0 +1,26 @@
+# New ports collection makefile for:	gpasman
+# Date created:			Mon Mai 10 1999
+# Whom:				domi@saargate.de
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gpasman
+PORTVERSION=	1.3.0
+PORTREVISION=	1
+CATEGORIES=	security
+MASTER_SITES=	http://gpasman.nl.linux.org/
+
+MAINTAINER=	domi@saargate.de
+COMMENT=	A password manager that stores password information encrypted
+
+USE_GMAKE=	yes
+USE_X_PREFIX=	yes
+USE_GNOME=	gtk12
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}"
+
+do-install:
+	 ${INSTALL_PROGRAM} ${WRKSRC}/src/gpasman ${PREFIX}/bin
+
+.include <bsd.port.mk>

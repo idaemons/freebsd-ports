@@ -1,0 +1,11 @@
+bin/cdlabelgen
+share/cdlabelgen/cd.eps
+share/cdlabelgen/cdda.eps
+share/cdlabelgen/debian-bw.eps
+share/cdlabelgen/debian-color.eps
+share/cdlabelgen/mp3.eps
+share/cdlabelgen/penguin.eps
+share/cdlabelgen/recycle.epsi
+share/cdlabelgen/recycle.ps
+share/cdlabelgen/template.ps
+@dirrm share/cdlabelgen

@@ -1,0 +1,99 @@
+--- Makefile.orig	Tue Jan 28 06:24:21 2003
++++ Makefile	Thu Jan 30 20:19:25 2003
+@@ -28,20 +28,20 @@
+ #
+ # Pick your C++ compiler. 
+ #
+-CC=g++
++CXX?=${CXX}
+ # CC=gcc
+ 
+ #
+ # Pick your YACC processor
+ #
+-YACC = bison -y
+-# YACC = yacc
++# YACC = bison -y
++YACC ?= yacc
+ 
+ #
+ # Define the FLEX processor
+ #    note - lex will not work
+ #
+-FLEX = flex
++FLEX ?= flex
+ 
+ # Link in any necessary C++ libraries
+ #
+@@ -50,21 +50,22 @@
+ 
+ 
+ # installation information
+-BINDIR=/usr/local/bin
+-MANDIR=/usr/local/man/man1
++PREFIX?=/usr/local
++BINDIR=$(PREFIX)/bin
++MANDIR=$(PREFIX)/man/man1
+ MANEXT=1
+ 
+ 
+ # other commands
+-CP=cp -f
+-MKDIR=mkdir
+-MV=mv -f
+-RM=rm -f
++CP?=cp -f
++MKDIR?=mkdir
++MV?=mv -f
++RM?=rm -f
+ 
+ # CFLAGS
+-CFLAGS = -pipe -Iplatform -Ircxlib -Inqc -Icompiler -Wall -Wstrict-prototypes -Wmissing-prototypes
++CFLAGS += -Iplatform -Ircxlib -Inqc -Icompiler
+ 
+-USBOBJ = rcxlib/RCX_USBTowerPipe_none.o
++USBOBJ = rcxlib/RCX_USBTowerPipe_fbsd.o
+ 
+ #
+ # Platform specific tweaks
+@@ -78,9 +79,6 @@
+ ifeq ($TARGET),solaris)
+   # Solaris
+   CFLAGS += -DSOLARIS
+-else
+-  # default - works for Linux
+-  CFLAGS += -O6
+ endif
+ endif
+ 
+@@ -88,7 +86,7 @@
+ # wants to redefine the default serial name
+ #
+ ifndef DEFAULT_SERIAL_NAME
+-  DEFAULT_SERIAL_NAME = "/dev/ttyS0"
++  DEFAULT_SERIAL_NAME = "/dev/cuaa0"
+ endif
+ CFLAGS += -DDEFAULT_SERIAL_NAME='$(DEFAULT_SERIAL_NAME)'
+ 
+@@ -140,10 +138,10 @@
+ 	$(MKDIR) bin
+ 
+ bin/nqc : compiler/parse.cpp $(OBJ)
+-	$(CC) -o $@ $(OBJ) $(LIBS)
++	$(CXX) -o $@ $(OBJ) $(LIBS)
+ 
+ bin/mkdata : mkdata/mkdata.cpp nqc/SRecord.cpp
+-	$(CC) -o bin/mkdata -Inqc/ -Iplatform/ mkdata/mkdata.cpp nqc/SRecord.cpp
++	$(CXX) -o bin/mkdata -Inqc/ -Iplatform/ mkdata/mkdata.cpp nqc/SRecord.cpp
+ 
+ #
+ # clean up stuff
+@@ -203,7 +201,7 @@
+ # general rule for compiling
+ #
+ .cpp.o:
+-	$(CC) -c $(CFLAGS) $< -o $*.o 
++	$(CXX) -c $(CFLAGS) $< -o $*.o 
+ 
+ 
+ #

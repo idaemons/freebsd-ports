@@ -1,0 +1,45 @@
+# New ports collection makefile for: 	gphoto
+# Date created:		26 May 1999
+# Whom:			Anders Nordby <anders@fix.no>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gphoto2
+PORTVERSION=	2.1.2
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gphoto
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A command-line frontend to libgphoto2
+
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+		aa.1:${PORTSDIR}/graphics/aalib \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+
+USE_BZIP2=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--without-cdk
+
+MAN1=		gphoto2.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREADS_LIBS:S/"//g}|g ; \
+		 s|-g -Wall||g' ${WRKSRC}/configure
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>

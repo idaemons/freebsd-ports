@@ -1,0 +1,65 @@
+bin/authtest
+%%OPENSSLFLAG%%bin/couriertls
+bin/deliverquota
+bin/imapd
+bin/maildirkw
+bin/maildirmake
+bin/pop3d
+%%AUTHDFLAG%%%%CONFDIR%%/authdaemonrc.dist
+%%LDAPFLAG%%%%CONFDIR%%/authldaprc.dist
+%%MYSQLFLAG%%%%CONFDIR%%/authmysqlrc.dist
+%%PGSQLFLAG%%%%CONFDIR%%/authpgsqlrc.dist
+%%CONFDIR%%/imapd-ssl.dist
+%%CONFDIR%%/imapd.cnf.dist
+%%CONFDIR%%/imapd.dist
+%%CONFDIR%%/pop3d-ssl.dist
+%%CONFDIR%%/pop3d.cnf.dist
+%%CONFDIR%%/pop3d.dist
+%%CONFDIR%%/quotawarnmsg.example
+%%RCDIR%%/courier-imap-imapd.sh.sample
+%%RCDIR%%/courier-imap-imapd-ssl.sh.sample
+%%RCDIR%%/courier-imap-pop3d.sh.sample
+%%RCDIR%%/courier-imap-pop3d-ssl.sh.sample
+%%LIBEXECDIR%%/authlib/authcustom
+%%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemon
+%%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemond
+%%LDAPFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.ldap
+%%MYSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.mysql
+%%PGSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.pgsql
+%%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.plain
+%%LIBEXECDIR%%/authlib/authpam
+%%LIBEXECDIR%%/authlib/authuserdb
+%%VPOPMAILFLAG%%%%LIBEXECDIR%%/authlib/authvchkpw
+%%LIBEXECDIR%%/courierlogger
+%%LIBEXECDIR%%/couriertcpd
+%%LIBEXECDIR%%/imapd-ssl.rc
+%%LIBEXECDIR%%/imapd.rc
+%%LIBEXECDIR%%/makedatprog
+%%LIBEXECDIR%%/pop3d-ssl.rc
+%%LIBEXECDIR%%/pop3d.rc
+sbin/imaplogin
+sbin/makeuserdb
+sbin/mkimapdcert
+sbin/mkpop3dcert
+sbin/pop3login
+sbin/pw2userdb
+sbin/userdb
+sbin/userdbpw
+sbin/vchkpw2userdb
+share/courier-imap/makeuserdb
+share/courier-imap/mkimapdcert
+share/courier-imap/mkpop3dcert
+share/courier-imap/pw2userdb
+share/courier-imap/userdb
+share/courier-imap/vchkpw2userdb
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/README
+%%AUTHDFLAG%%@dirrm var/authdaemon
+@dirrm var
+@dirrm %%DOCSDIR%%
+@dirrm share/courier-imap
+@dirrm %%LIBEXECDIR%%/authlib
+@dirrm %%LIBEXECDIR%%
+@dirrm %%CONFDIR%%

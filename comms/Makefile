@@ -1,7 +1,69 @@
-# $Id: Makefile,v 1.8 1995/01/06 08:26:17 jkh Exp $
+# $FreeBSD$
 #
-# restricted: rzsz kermit
-#
-SUBDIR= flexfax mgetty+sendfax seyon
+
+    SUBDIR += acfax
+    SUBDIR += asmodem
+    SUBDIR += bayonne
+    SUBDIR += bforce
+    SUBDIR += bforce-kst
+    SUBDIR += birda
+    SUBDIR += bpl+
+    SUBDIR += comserv
+    SUBDIR += conserver
+    SUBDIR += conserver-com
+    SUBDIR += ecu
+    SUBDIR += efax
+    SUBDIR += gfax
+    SUBDIR += ghfaxviewer
+    SUBDIR += gkermit
+    SUBDIR += gmfsk
+    SUBDIR += gnokii
+    SUBDIR += gsmlib
+    SUBDIR += hamlib
+    SUBDIR += hylafax
+    SUBDIR += ixj
+    SUBDIR += java-commapi
+    SUBDIR += java-commapi-freebsd
+    SUBDIR += kallers
+    SUBDIR += kermit
+    SUBDIR += kpsk
+    SUBDIR += libticables
+    SUBDIR += lrzsz
+    SUBDIR += ltmdm
+    SUBDIR += mgetty+sendfax
+    SUBDIR += minicom
+    SUBDIR += mlan
+    SUBDIR += mlan3
+    SUBDIR += mserver
+    SUBDIR += mwavem
+    SUBDIR += p5-Device-Modem
+    SUBDIR += p5-Device-SerialPort
+    SUBDIR += plp
+    SUBDIR += pr
+    SUBDIR += py-serial
+    SUBDIR += qico
+    SUBDIR += qpage
+    SUBDIR += ruby-serialport
+    SUBDIR += ruby-termios
+    SUBDIR += scmxx
+    SUBDIR += scud
+    SUBDIR += seyon
+    SUBDIR += sms_client
+    SUBDIR += snooper
+    SUBDIR += sredird
+    SUBDIR += tilp
+    SUBDIR += tits
+    SUBDIR += tkhylafax
+    SUBDIR += tkscanfax
+    SUBDIR += viewfax
+    SUBDIR += vpb2
+    SUBDIR += vrflash
+    SUBDIR += wy60
+    SUBDIR += xcept
+    SUBDIR += xlog
+    SUBDIR += yaps
+    SUBDIR += yawmppp
+    SUBDIR += zmtx-zmrx
+    SUBDIR += zssh
 
 .include <bsd.port.subdir.mk>

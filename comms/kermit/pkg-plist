@@ -1,3 +1,16 @@
-@cwd /usr/local
+@comment $FreeBSD$
 bin/kermit
-man/man1/kermit.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.TXT
+%%PORTDOCS%%%%DOCSDIR%%/READ.ME
+%%PORTDOCS%%%%DOCSDIR%%/ckcbwr.txt
+%%PORTDOCS%%%%DOCSDIR%%/ckccfg.txt
+%%PORTDOCS%%%%DOCSDIR%%/ckcplm.txt
+%%PORTDOCS%%%%DOCSDIR%%/ckermit70.txt
+%%PORTDOCS%%%%DOCSDIR%%/ckermit80.txt
+%%PORTDOCS%%%%DOCSDIR%%/ckubwr.txt
+%%PORTDOCS%%%%DOCSDIR%%/ckuins.txt
+%%PORTDOCS%%%%DOCSDIR%%/ckututor.txt
+%%EXAMPLESDIR%%/dot.kermrc
+%%EXAMPLESDIR%%/dot.mykermrc
+@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%

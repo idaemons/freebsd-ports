@@ -1,0 +1,6 @@
+bin/bmore
+bin/bvedit
+bin/bvi
+bin/bview
+share/bvi/bmore.help
+@dirrm share/bvi

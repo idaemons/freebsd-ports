@@ -1,11 +1,32 @@
-DISTFILES=      iozone-2.01.shar.gz
-DISTNAME=       iozone
-MASTER_SITES=   ftp://ftp.cs.uni-sb.de/pub/others/
-EXTRACT_CMD=    (cd ${WRKDIR}; gzcat | /usr/local/bin/gunshar)
-EXTRACT_ARGS=   <
-NO_WRKSUBDIR=   YES
-EXEC_DEPENDS=   gunshar:${PORTSDIR}/archivers/gshar+gunshar
+# New ports collection makefile for:    iozone
+# Date created:         26 September 1994
+# Whom:                 jmz
+#
+# $FreeBSD$
+#
 
-pre-extract: depends
+PORTNAME=	iozone
+PORTVERSION=	3.196
+PORTREVISION=	0
+CATEGORIES=	benchmarks
+MASTER_SITES=	http://www.iozone.org/src/current/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
+EXTRACT_SUFX=	.tar
+
+MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Performance Test of Sequential File I/O
+
+WRKSRC=		${WRKDIR}/src/current
+
+MAKEFILE=	makefile
+MAKE_ARGS=	freebsd
+ALL_TARGET=
+
+MAN1=		iozone.1
+
+do-install:
+	strip ${WRKSRC}/iozone
+	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/docs/iozone.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

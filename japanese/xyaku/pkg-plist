@@ -1,0 +1,24 @@
+bin/xyaku
+libexec/xyaku/clearcache.sh
+libexec/xyaku/dict.sh
+libexec/xyaku/edict.sh
+libexec/xyaku/help.ja
+libexec/xyaku/help.sh
+libexec/xyaku/ndtp.rb
+libexec/xyaku/openurl.sh
+libexec/xyaku/searcheb.rb
+libexec/xyaku/showrc.sh
+libexec/xyaku/websearch.sh
+libexec/xyaku/xyakurc
+@dirrm libexec/xyaku
+%%PORTDOCS%%share/doc/xyaku/ADDIN.txt
+%%PORTDOCS%%share/doc/xyaku/ADDIN.ChangeLog
+%%PORTDOCS%%share/doc/xyaku/AUTHORS
+%%PORTDOCS%%share/doc/xyaku/ChangeLog
+%%PORTDOCS%%share/doc/xyaku/INSTALL
+%%PORTDOCS%%share/doc/xyaku/NEWS
+%%PORTDOCS%%share/doc/xyaku/README
+%%PORTDOCS%%share/doc/xyaku/TODO
+%%PORTDOCS%%share/doc/xyaku/ja/README.searcheb.ja
+%%PORTDOCS%%@dirrm share/doc/xyaku/ja
+%%PORTDOCS%%@dirrm share/doc/xyaku

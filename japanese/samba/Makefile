@@ -1,0 +1,292 @@
+# New ports collection makefile for:	samba
+# Date created:				27 Dec 1999
+# Whom:					Shinya Sasaki <pcmaster@osk3.3web.ne.jp>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	samba
+PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
+CATEGORIES=	japanese net
+MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
+		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
+		ftp://SunSITE.tus.ac.jp/pub/archives/packages/samba/samba-jp/%SUBDIR%/ \
+		ftp://ftp.plathome.co.jp/pub/samba/samba-jp/%SUBDIR%/ \
+		ftp://ftp2.samba.gr.jp/pub/samba-jp/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}-${SAMBA_VERSION}-ja
+DISTNAME=	${PORTNAME}-${SAMBA_VERSION}-ja-${SAMBA_JA_VERSION}
+
+MAINTAINER=	nakaji@jp.FreeBSD.org
+COMMENT=	A free SMB and CIFS client and server for UNIX
+
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+
+SAMBA_VERSION=		2.2.8a
+SAMBA_JA_VERSION=	1.1
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_SUBMAKE=	yes
+
+# directories
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
+.endif
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
+.if defined(WITH_GNU_GETTEXT)
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+.endif
+
+AUDIT?=		"@comment "
+RECYCLE?=	"@comment "
+LIBSAMBA?=	"@comment "
+BUILD_VFS?=	"@comment "
+LDAPSAM?=	"@comment "
+WINBIND?=	"@comment "
+SMBSH?=		"@comment "
+
+.if defined(WITH_AUDIT)
+AUDIT=		""
+LIBSAMBA=	""
+BUILD_VFS=	""
+USE_LIBTOOL=	yes
+.endif
+
+.if defined(WITH_RECYCLE)
+RECYCLE=	""
+LIBSAMBA=	""
+BUILD_VFS=	""
+.endif
+
+VARDIR=		/var
+SAMBA_SPOOL=	${VARDIR}/spool/samba
+SAMBA_LOGDIR=	${VARDIR}/log
+SAMBA_PRIVATE=	${PREFIX}/private
+SAMBA_CONFDIR=	${PREFIX}/etc
+SAMBA_VFSDIR=	${PREFIX}/lib/samba
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		TOUCH="${TOUCH}" \
+		MKDIR="${MKDIR}" \
+		CAT="${CAT}" \
+		SAMBA_OPTIONS="${SAMBA_OPTIONS}" \
+		REALCURDIR="${.CURDIR}"
+# sample files
+STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh.sample
+SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
+
+CONFIGURE_ARGS=	--with-i18n-swat \
+		--libdir=${SAMBA_CONFDIR} \
+		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
+		--with-lockdir=${VARDIR}/db/samba \
+		--with-logfilebase=${SAMBA_LOGDIR} \
+		--with-privatedir=${SAMBA_PRIVATE} \
+		--with-piddir=${VARDIR}/run \
+		--with-pam --with-pam_smbpass \
+		--prefix=${PREFIX}
+
+.if defined(WITH_GNU_GETTEXT)
+CONFIGURE_ARGS+=	--with-included-gettext=no
+.else
+CONFIGURE_ARGS+=	--with-included-gettext
+.endif
+
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ENV+=	TESTDIR=/tmp \
+		CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
+
+.if defined(WITH_SYSLOG)
+CONFIGURE_ARGS+=	--with-syslog
+.endif
+
+.if defined(WITH_SSL)
+CONFIGURE_ARGS+=	--with-ssl --with-sslinc=/usr/include/openssl --with-ssllib=/usr/lib
+.endif
+
+.if defined(WITH_QUOTAS)
+CONFIGURE_ARGS+=	--with-quotas
+.endif
+
+.if defined(WITH_UTMP)
+CONFIGURE_ARGS+=	--with-utmp
+.endif
+
+.if defined(WITH_MSDFS)
+CONFIGURE_ARGS+=	--with-msdfs
+.endif
+
+.if defined(WITH_LDAP)
+LIB_DEPENDS+=  ldap.2:${PORTSDIR}/net/openldap20-client
+CONFIGURE_ARGS+=	--with-ldapsam
+CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
+LDAPSAM=	""
+.endif
+
+.if defined(WITH_CUPS)
+WITH_CUPS=	yes
+.endif
+
+.if defined(WITH_WINBIND)
+CONFIGURE_ARGS+=	--with-winbind
+WINBIND=	""
+.endif
+
+.if defined(WITH_WINBIND_AUTH_CHALLENGE)
+CONFIGURE_ARGS+=	--with-winbind-auth-challenge
+.endif
+
+.if defined(WITH_SMBSH)
+CONFIGURE_ARGS+=	--with-smbwrapper --with-libsmbclient
+SMBSH=		""
+.endif
+
+# malloc.h check is not needed.
+CONFIGURE_ENV+=	ac_cv_header_malloc_h=no
+
+pre-fetch:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.samba
+
+post-clean:
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+
+.if defined(WITH_CUPS)
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+= --disable-cups
+.endif
+
+.if defined(KRB5_HOME) && exists(${KRB5_HOME})
+CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
+.endif
+
+.if defined(WITH_ACL_SUPPORT)
+.if ${OSVERSION} < 500018
+BROKEN=	"ACL support requires a recent FreeBSD 5.0-CURRENT"
+.else
+CONFIGURE_ARGS+=	--with-acl-support
+.endif
+.endif
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/source
+
+MAN1=		findsmb.1 nmblookup.1 rpcclient.1 smbcacls.1 \
+		smbcontrol.1 smbstatus.1 smbclient.1 smbtar.1 \
+		testparm.1 testprns.1 make_smbcodepage.1 smbsh.1 \
+		make_unicodemap.1 wbinfo.1
+MAN5=		smb.conf.5 smbpasswd.5 lmhosts.5
+MAN7=		samba.7
+MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 smbspool.8 \
+		smbmnt.8 smbmount.8 smbumount.8 winbindd.8 \
+		pdbedit.8
+MANLANG=	"" ja
+
+SED_PLIST=	${SED} -e 's!${PREFIX}!%D!g'
+
+PLIST_SUB=      AUDIT=${AUDIT} \
+		RECYCLE=${RECYCLE} \
+		LIBSAMBA=${LIBSAMBA} \
+		BUILD_VFS=${BUILD_VFS} \
+		LDAPSAM=${LDAPSAM} \
+		WINBIND=${WINBIND} \
+		SMBSH=${SMBSH}
+
+post-patch:
+	${FIND} ${WRKSRC}/.. -name '*.orig' -delete
+
+#pre-build:
+#	${RM} -fr ${WRKSRC}/include/proto.h
+#	(cd ${WRKSRC} && make proto)
+
+post-build:
+	${SED} 's:/usr/local:${PREFIX}:g' ${FILESDIR}/samba.sh.sample \
+		> ${WRKDIR}/samba.sh.sample
+.if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
+	cd ${WRKSRC}/../examples/VFS; \
+		${SETENV} LIBTOOL=${LIBTOOL} ./configure;${GMAKE}; \
+		${RM} -f config.cache config.log config.status
+.endif
+
+post-install:
+.if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
+	@test -d ${SAMBA_VFSDIR} || ${MKDIR} ${SAMBA_VFSDIR}
+.if defined(WITH_AUDIT)
+	@${INSTALL_PROGRAM} ${WRKSRC}/../examples/VFS/audit.so ${SAMBA_VFSDIR}
+.endif
+.if defined(WITH_RECYCLE)
+	@${INSTALL_PROGRAM} ${WRKSRC}/../examples/VFS/recycle/recycle.so ${SAMBA_VFSDIR}
+.endif
+.endif
+	@${MKDIR} ${PREFIX}/share/examples/samba
+	@-${RM} -f ${WRKSRC}/../examples/libsmbclient/*.o
+	@cd ${WRKSRC}/../examples; \
+		${TAR}  --exclude .cvsignore --exclude .libs --exclude '*.o' --exclude '*.lo' -cf - . | ${TAR} -xf - -C ${PREFIX}/share/examples/samba
+	@${STRIP_CMD} ${PREFIX}/sbin/smbd ${PREFIX}/sbin/nmbd ${PREFIX}/sbin/swat
+	@${STRIP_CMD} ${PREFIX}/bin/smbclient ${PREFIX}/bin/smbspool
+	@${STRIP_CMD} ${PREFIX}/bin/testparm ${PREFIX}/bin/testprns ${PREFIX}/bin/testprns ${PREFIX}/bin/smbstatus ${PREFIX}/bin/smbcontrol ${PREFIX}/bin/make_printerdef
+	@${STRIP_CMD} ${PREFIX}/bin/smbpasswd ${PREFIX}/bin/make_smbcodepage ${PREFIX}/bin/rpcclient ${PREFIX}/bin/make_unicodemap ${PREFIX}/bin/smbcacls ${PREFIX}/bin/nmblookup
+	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
+		${ECHO} "Installing ${STARTUP_SCRIPT} startup file." ;	\
+		${INSTALL_SCRIPT} ${WRKDIR}/samba.sh.sample 		\
+			${STARTUP_SCRIPT} ;				\
+	fi
+	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && ${CHMOD} 1777 ${SAMBA_SPOOL}
+	@test -d ${VARDIR}/db/samba || ${MKDIR} ${VARDIR}/db/samba && ${CHMOD} 0755 ${VARDIR}/db/samba
+	@if [ ! -f ${SAMPLE_CONFIG} ]; then				\
+		${SED} -e 's!%%SAMBA_SPOOL%%!${SAMBA_SPOOL}!'		\
+			-e 's!%%SAMBA_LOGDIR%%!${SAMBA_LOGDIR}!'	\
+			-e 's!%%SAMBA_CONFDIR%%!${SAMBA_CONFDIR}!'	\
+			${FILESDIR}/smb.conf.default			\
+			> ${SAMPLE_CONFIG} ;				\
+	fi
+	@${INSTALL_SCRIPT} ${WRKSRC}/../source/script/mksmbpasswd.sh ${PREFIX}/bin/make_smbpasswd
+
+	@${MKDIR} -m 500 ${SAMBA_PRIVATE}
+	@${CHOWN} root:wheel ${SAMBA_PRIVATE}
+	@${CAT} /etc/passwd | ${AWK} -F: '$$6 ~ /home/' | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd.sample
+	@test -f ${SAMBA_PRIVATE}/smbpasswd || ${TOUCH} ${SAMBA_PRIVATE}/smbpasswd
+	@${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd.sample ${SAMBA_PRIVATE}/smbpasswd
+
+	@${CHOWN} root:wheel ${PREFIX}/bin/smbpasswd
+	@${CHMOD} 111 ${PREFIX}/bin/smbpasswd
+	@${ECHO_CMD} "@exec ${TEST} -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && ${CHMOD} 1777 ${SAMBA_SPOOL}" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RM} -rf ${SAMBA_SPOOL}" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${MKDIR} -m 500 ${SAMBA_PRIVATE}" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHOWN} root:wheel ${SAMBA_PRIVATE}" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CAT} /etc/passwd | ${GREP} -v "^#" | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd.default" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${TEST} -e ${SAMBA_PRIVATE}/smbpasswd || ${CP} -p ${SAMBA_PRIVATE}/smbpasswd.default ${SAMBA_PRIVATE}/smbpasswd" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd*" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec /usr/bin/cmp -s ${SAMBA_PRIVATE}/smbpasswd ${SAMBA_PRIVATE}/smbpasswd.default && ${RM} -f ${SAMBA_PRIVATE}/smbpasswd ${SAMBA_PRIVATE}/secrets.tdb || ${TRUE}" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RM} -f ${SAMBA_PRIVATE}/smbpasswd.default" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} ${SAMBA_PRIVATE} || (${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore,\" && ${ECHO_CMD} \"         please remove ${SAMBA_PRIVATE} and its contents manually.\")" | ${SED_PLIST} >> ${TMPPLIST}
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/samba
+	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/samba
+	@for i in ${WRKSRC}/../README				\
+			${WRKSRC}/../COPYING			\
+			${WRKSRC}/../Manifest			\
+			${WRKSRC}/../Read-Manifest-Now		\
+			${WRKSRC}/../Roadmap			\
+			${WRKSRC}/../WHATSNEW.txt; do		\
+		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;		\
+	done
+	@cd ${WRKSRC}/../docs; \
+		${TAR}  --exclude .cvsignore -cf - . | ${TAR} -xf - -C ${PREFIX}/share/doc/samba
+	@${INSTALL_DATA} ${WRKSRC}/../swat/README ${PREFIX}/share/doc/samba/README.swat
+.endif
+
+	@if [ -f ${VARDIR}/spool/lock/browse.dat ]; then \
+		${RM} -f ${VARDIR}/spool/lock/browse.dat; \
+	fi
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

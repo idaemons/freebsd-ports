@@ -1,0 +1,12 @@
+--- outgoing.cpp.orig	Thu Apr 22 23:24:59 1999
++++ outgoing.cpp	Fri Mar 31 03:22:18 2000
+@@ -14,7 +14,9 @@
+ #include "rcfile.h"
+ #include "outgoing.h"
+ 
++#ifndef MAILER
+ #define MAILER	"/usr/lib/sendmail -t"
++#endif
+ #define EDITOR	"vi +%d"
+ #define SIGFILE	".signature"
+ 

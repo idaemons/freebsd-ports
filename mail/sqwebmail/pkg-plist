@@ -1,0 +1,139 @@
+%%AUTHDFLAG%%etc/rc.d/sqwebmail-authdaemond.sh
+libexec/sqwebmail/authlib/authcram
+libexec/sqwebmail/authlib/authcustom
+%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemon
+%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemon.passwd
+%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemond
+%%PGSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.pgsql
+%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemond.plain
+%%MYSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.mysql
+%%VPOPMAILFLAG%%libexec/sqwebmail/authlib/authvchkpw
+libexec/sqwebmail/authlib/authpam
+libexec/sqwebmail/authlib/authsystem.passwd
+libexec/sqwebmail/authlib/authuserdb
+libexec/sqwebmail/sqwebmail/deliverquota
+libexec/sqwebmail/sqwebmail/maildirmake
+libexec/sqwebmail/sqwebmail/makedatprog
+libexec/sqwebmail/sqwebmail/makemime
+libexec/sqwebmail/sqwebmail/pcpd
+libexec/sqwebmail/sqwebmail/reformime
+%%AUTHDFLAG%%share/sqwebmail/authdaemonrc.dist
+share/sqwebmail/authmodulelist
+%%MYSQLFLAG%%share/sqwebmail/authmysqlrc.dist
+%%PGSQLFLAG%%share/sqwebmail/authpgsqlrc.dist
+%%CACHE%%@unexec %D/share/sqwebmail/cleancache.pl
+share/sqwebmail/cleancache.pl
+share/sqwebmail/html/en
+share/sqwebmail/html/en-us/CHARSET
+share/sqwebmail/html/en-us/ISPELLDICT
+share/sqwebmail/html/en-us/LANGUAGE
+share/sqwebmail/html/en-us/LANGUAGE_PREF
+share/sqwebmail/html/en-us/LOCALE
+share/sqwebmail/html/en-us/TIMEZONELIST
+share/sqwebmail/html/en-us/abooklist.html
+share/sqwebmail/html/en-us/attachments.html
+share/sqwebmail/html/en-us/autoresponder.html
+share/sqwebmail/html/en-us/calendarlogin.inc.html
+share/sqwebmail/html/en-us/empty.html
+share/sqwebmail/html/en-us/eventacl.html
+share/sqwebmail/html/en-us/eventdaily.html
+share/sqwebmail/html/en-us/eventdelete.html
+share/sqwebmail/html/en-us/eventmonthly.html
+share/sqwebmail/html/en-us/eventnotifydelete.txt
+share/sqwebmail/html/en-us/eventnotifynew.txt
+share/sqwebmail/html/en-us/eventnotifysubject.txt
+share/sqwebmail/html/en-us/eventshow.html
+share/sqwebmail/html/en-us/eventweekly.html
+share/sqwebmail/html/en-us/expired.html
+share/sqwebmail/html/en-us/filter.html
+share/sqwebmail/html/en-us/folder.html
+share/sqwebmail/html/en-us/folders.html
+share/sqwebmail/html/en-us/gpg.html
+share/sqwebmail/html/en-us/gpgcreate.html
+share/sqwebmail/html/en-us/gpgerr.html
+share/sqwebmail/html/en-us/index.html
+share/sqwebmail/html/en-us/invalid.html
+share/sqwebmail/html/en-us/keyimport.html
+share/sqwebmail/html/en-us/ldaplist.html
+share/sqwebmail/html/en-us/ldapsearch.html
+share/sqwebmail/html/en-us/login.html
+share/sqwebmail/html/en-us/navbar.inc.html
+share/sqwebmail/html/en-us/navbar2.inc.html
+share/sqwebmail/html/en-us/navbar3.inc.html
+share/sqwebmail/html/en-us/newevent.html
+share/sqwebmail/html/en-us/newmsg.html
+share/sqwebmail/html/en-us/preferences.html
+share/sqwebmail/html/en-us/print.html
+share/sqwebmail/html/en-us/printnocookie.html
+share/sqwebmail/html/en-us/printredirect.html
+share/sqwebmail/html/en-us/quickadd.html
+share/sqwebmail/html/en-us/readmsg.html
+share/sqwebmail/html/en-us/redirect.html
+share/sqwebmail/html/en-us/spellchk.html
+share/sqwebmail/ldapaddressbook.dist
+share/sqwebmail/ldapsearch
+share/sqwebmail/lib/charset.alias
+share/sqwebmail/nodsn
+share/sqwebmail/sbin/makeuserdb
+share/sqwebmail/sbin/pw2userdb
+share/sqwebmail/sbin/userdb
+share/sqwebmail/sbin/userdbpw
+share/sqwebmail/sbin/vchkpw2userdb
+share/sqwebmail/sendit.sh
+share/sqwebmail/share/locale/locale.alias
+share/sqwebmail/webgpg
+@dirrm share/sqwebmail/var/calendar/public
+@dirrm share/sqwebmail/var/calendar/private
+@dirrm share/sqwebmail/var/calendar/localcache
+@dirrm share/sqwebmail/var/calendar
+%%AUTHDFLAG%%@dirrm share/sqwebmail/var/authdaemon
+@dirrm share/sqwebmail/var
+@dirrm share/sqwebmail/share/locale
+@dirrm share/sqwebmail/share
+@dirrm share/sqwebmail/sbin
+@dirrm share/sqwebmail/lib
+@dirrm share/sqwebmail/html/en-us
+@dirrm share/sqwebmail/html
+@dirrm share/sqwebmail
+@dirrm libexec/sqwebmail/sqwebmail
+@dirrm libexec/sqwebmail/authlib
+@dirrm libexec/sqwebmail
+%%CACHE%%@unexec rmdir /var/sqwebmail/cache 2> /dev/null || true
+%%CACHE%%@unexec rmdir /var/sqwebmail 2> /dev/null || true
+%%CGIBINDIR%%/%%CGIBINSUBDIR%%/sqwebmail
+@unexec /bin/rmdir %D/%%CGIBINDIR%%/%%CGIBINSUBDIR%% 2> /dev/null || true
+@unexec /bin/rmdir %D/%%CGIBINDIR%% 2> /dev/null || true
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bg.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluebottomleft.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluebottomright.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluetopleft.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluetopright.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/calendar.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/cancel.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/folder.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/folder2.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/folders.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/forward.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/forwardatt.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/fullheaders.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graybottomleft.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graybottomright.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graytopleft.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graytopright.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/left.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/left2.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/logo.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/print.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/reply.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/replyall.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/replylist.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/right.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/right2.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/save.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sep.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/signin.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sqwebmail.css
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/trash2.gif
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/uncancel.gif
+@unexec /bin/rmdir %D/%%WEBDATADIR%%/%%WEBDATASUBDIR%% 2> /dev/null || true
+@unexec /bin/rmdir %D/%%WEBDATADIR%% 2> /dev/null || true

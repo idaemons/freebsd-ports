@@ -1,0 +1,19 @@
+bin/gnupod_INITpod.pl
+bin/gnupod_addsong.pl
+bin/gnupod_delete.pl
+bin/gnupod_list.pl
+bin/gnupod_m3u2pl.pl
+bin/gnupod_mkm3u.pl
+bin/gnupod_renumber.pl
+bin/gnupod_search.pl
+bin/mktunes.pl
+bin/tunes2pod.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/iPod.pm
+%%PORTDOCS%%share/doc/gnupod/CHANGES
+%%PORTDOCS%%share/doc/gnupod/gnutunesdb.example
+%%PORTDOCS%%share/doc/gnupod/gnupod.html
+%%PORTDOCS%%share/doc/gnupod/gnupod.texi
+%%PORTDOCS%%share/doc/gnupod/fdl.texi
+%%PORTDOCS%%share/doc/gnupod/version.texi
+%%PORTDOCS%%share/doc/gnupod/ipod.svg
+%%PORTDOCS%%@dirrm share/doc/gnupod

@@ -1,0 +1,219 @@
+# ports collection makefile for:	VMware 3.2 for Linux
+# Date created:		Fri 13 Apr 04:59:47 CET 2003
+# Whom:			mbr@freebsd.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	vmware3
+PORTVERSION=	3.2.1-2237
+PORTREVISION=	1
+CATEGORIES=	emulators linux
+MASTER_SITES=	${FREEBSD_MODULE_SITES} \
+		${VMWARE_MIRROR_SITES}
+DISTFILES=	VMware-workstation-${PORTVERSION}${EXTRACT_SUFX}:vmware \
+		vmmon-only-3.2.1-20030514${EXTRACT_SUFX}:patch \
+		vmnet-only-3.2.1-20030412${EXTRACT_SUFX}:patch
+
+# Feel free to post your questions/reports/suggestions on this port to
+# freebsd-emulation mailing list with the following maintainer address CC'ed.
+MAINTAINER=	orlando.bassotto@ieo-research.it
+COMMENT=	A virtual machine emulator - a full PC in a window
+
+RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
+
+RESTRICTED=	"Not sure if we can redistribute it"
+
+VMWARE_MIRROR_SITES=	\
+		ftp.hol.gr/pub/mirror/vmware/:vmware
+#		http://vmware-svca.www.conxion.com/software/:vmware \
+#		http://vmware-chil.www.conxion.com/software/:vmware \
+#		http://vmware-heva.www.conxion.com/software/:vmware \
+#		http://vmware.wespe.de/software/:vmware \
+#		ftp://vmware.wespe.de/pub/software:vmware
+FREEBSD_MODULE_SITES=	\
+		http://people.freebsd.org/~mbr/vmware/:patch \
+
+USE_SUBMAKE=	yes
+USE_LINUX=	yes
+VMDIR=		${PREFIX}/lib/vmware
+SRC_BASE?=	/usr/src
+
+ONLY_FOR_ARCHS=	i386
+USE_XLIB=	yes
+WRKSRC=		${WRKDIR}/vmware-distrib
+GZCAT=		${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/extract
+MAN1=		vmware.1
+
+MODULES=	vmmon vmnet
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Systems prior to FreeBSD 5 currently out of support"
+.endif
+
+.if !defined(HAVE_LINPROCFS) && !exists(/modules/linprocfs.ko) && !exists(/boot/kernel/linprocfs.ko) && !exists(${PREFIX}/modules/linprocfs.ko)
+BROKEN=		"This software absolutely requires Linux procfs support"
+.endif
+
+.if !exists(${SRC_BASE}/Makefile)
+BROKEN=		"Kernel source files required"
+.endif
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net)
+.include "${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net"
+.endif
+
+.if ${OSVERSION} < 500023
+VMNET1_MINOR=	0x00010001
+.else
+VMNET1_MINOR=	0x00800001
+.endif
+
+SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
+		VMNET_HOST_IP="${VMNET_HOST_IP}" \
+		VMNET_NETMASK="${VMNET_NETMASK}" \
+		VMNET1_MINOR="${VMNET1_MINOR}"
+MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
+PLIST_SUB=	LINUXBASE="${LINUXBASE}" VMNET1_MINOR="${VMNET1_MINOR}"
+
+pre-fetch:
+.if ${OSVERSION} < 500113
+	@${ECHO}
+	@${ECHO} "You need a uncommitted kernel patch to run this port:"
+	@${ECHO} "You can get it at: http://people.freebsd.org/~mbr/patches/"
+	@${ECHO} "linux.shm.patch-cvs-freebsd5-20030329"
+	@${ECHO}
+.endif
+
+post-extract:
+.for m in ${MODULES}
+	${TAR} -xf ${WRKSRC}/lib/modules/source/${m}.tar -C ${WRKSRC}
+.endfor
+	${GUNZIP_CMD} ${WRKSRC}/man/man1/vmware.1.gz
+
+pre-patch:
+	@${MKDIR} ${WRKSRC}/vmnet-only/freebsd
+	@${MKDIR} ${WRKSRC}/vmnet-only/netbsd
+	@${MKDIR} ${WRKSRC}/vmmon-only/freebsd
+	@${MKDIR} ${WRKSRC}/vmmon-only/netbsd
+	@cd ${WRKSRC} && patch < ${WRKDIR}/vmnet-only.diff
+	@cd ${WRKSRC} && patch < ${WRKDIR}/vmmon-only.diff
+
+.if exists(/sys/compat/linux/linux_ioctl.h)
+	${PERL} -i -pe 's,i386(/linux/linux_ioctl\.h),compat$$1,' \
+		${WRKSRC}/vmnet-only/freebsd/vmnet_linux.c
+.endif
+.if exists(/usr/include/sys/selinfo.h)
+	${PERL} -i -pe 's,<sys/select\.h>,<sys/selinfo.h>,' \
+		${WRKSRC}/vmmon-only/freebsd/*.c
+.endif
+	cd ${WRKSRC}/vmmon-only/freebsd && ${TOUCH} bus_if.h device_if.h
+.if ${OSVERSION} >= 500019
+	${PERL} -i -pe 's,<machine/ioctl_fd\.h>,<sys/fdcio.h>,' \
+		${WRKSRC}/vmmon-only/freebsd/*.c \
+		${WRKSRC}/vmware-distrib/vmmon-only/freebsd/*.c
+.endif
+
+post-patch:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
+	${CP} ${FILESDIR}/Makefile.vmnet ${WRKSRC}/vmnet-only/Makefile
+
+setoptions:
+	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
+		-e 's;@@HOST_IP@@;${VMNET_HOST_IP};' \
+		-e 's;@@NETMASK@@;${VMNET_NETMASK};' \
+		${FILESDIR}/config > ${WRKDIR}/config
+
+	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
+		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
+		-e 's;@@NETWORKING@@;${VMNET_NETWORKING};' \
+		-e 's;@@BRIDGED@@;${VMNET_BRIDGED};' \
+		-e 's;@@BRIDGE_INTF@@;${VMNET_BRIDGED_INTERFACE};' \
+		${FILESDIR}/vmware.sh > ${WRKDIR}/vmware.sh
+
+	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
+		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
+		${FILESDIR}/vmware > ${WRKDIR}/vmware
+
+pre-install: setoptions
+	${INSTALL_MAN} ${WRKSRC}/man/man1/vmware.1 ${MANPREFIX}/man/man1
+	${MKDIR} ${VMDIR}/lib/modules
+
+	${MKDIR} ${PREFIX}/etc/vmware
+	${INSTALL_DATA} ${WRKDIR}/config ${PREFIX}/etc/vmware
+
+	${INSTALL_SCRIPT} ${WRKDIR}/vmware.sh ${PREFIX}/etc/rc.d
+
+	${MKDIR} ${VMDIR}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/df ${VMDIR}/bin
+	[ -f ${LINUXBASE}/bin/df ] || ${LN} -s ${VMDIR}/bin/df ${LINUXBASE}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pl ${VMDIR}/bin
+
+	for i in \
+		 vmnet-bridge vmnet-dhcpd vmnet-natd vmnet-netifup \
+		 vmnet-sniffer vmware-nmbd vmware-smbd vmware-smbpasswd  \
+		 vmware-smbpasswd.bin vmware-ping vmware-wizard \
+		 ; do \
+		${INSTALL_SCRIPT} ${WRKSRC}/bin/$${i} ${VMDIR}/bin; \
+	done
+	for file in ${WRKSRC}/lib/bin/*; do \
+		${INSTALL_SCRIPT} $${file} ${VMDIR}/bin; \
+	done
+
+	${MKDIR} ${VMDIR}/lib/configurator
+	for file in ${WRKSRC}/lib/configurator/* ; do \
+		${INSTALL_DATA} $${file} ${VMDIR}/lib/configurator; \
+	done
+
+	${MKDIR} ${VMDIR}/lib/isoimages
+	for file in ${WRKSRC}/lib/isoimages/* ; do \
+		${INSTALL_DATA} $${file} ${VMDIR}/lib/isoimages; \
+	done
+
+	${MKDIR} ${VMDIR}/lib/licenses/site
+	${MKDIR} ${VMDIR}/lib/licenses/user
+	${INSTALL_DATA} -m 4555 ${WRKSRC}/lib/licenses/user/license.ws.3.0 \
+		${VMDIR}/lib/licenses/user
+	${INSTALL_SCRIPT} -m 4555 ${WRKSRC}/bin/vmware ${VMDIR}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/vmware ${PREFIX}/bin
+	${MKDIR} ${VMDIR}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/config ${VMDIR}/lib
+	${MKDIR} ${VMDIR}/lib/help
+	${INSTALL_DATA} ${WRKSRC}/lib/help/* ${VMDIR}/lib/help
+
+	${MKDIR} ${VMDIR}/lib/xkeymap
+	${INSTALL_DATA} ${WRKSRC}/lib/xkeymap/* ${VMDIR}/lib/xkeymap
+
+	${MKDIR} ${VMDIR}/lib/smb/codepages
+	${INSTALL_DATA} ${WRKSRC}/lib/smb/codepages/* ${VMDIR}/lib/smb/codepages
+
+	${MKDIR} ${VMDIR}/lib/messages/chef
+	${INSTALL_DATA} ${WRKSRC}/lib/messages/chef/* ${VMDIR}/lib/messages/chef
+	${MKDIR} ${VMDIR}/lib/messages/ja
+	${INSTALL_DATA} ${WRKSRC}/lib/messages/ja/* ${VMDIR}/lib/messages/ja
+	${MKDIR} ${VMDIR}/lib/messages/jive
+	${INSTALL_DATA} ${WRKSRC}/lib/messages/jive/* ${VMDIR}/lib/messages/jive
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/vmware
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/vmware
+.for f in README.FreeBSD Hints.FreeBSD
+	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/doc/vmware
+.endfor
+.endif
+
+post-install:
+	${LN} -sf ${PREFIX}/etc/vmware ${LINUXBASE}/etc/
+	@if [ ! -e ${LINUXBASE}/usr/lib/vmware/bin/vmware ]; then \
+		${LN} -sf ${PREFIX}/lib/vmware ${LINUXBASE}/usr/lib/vmware; \
+	fi
+	@${CAT} ${PKGMESSAGE}
+
+pre-clean:
+.if exists(${WRKSRC})
+	@${FIND} ${WRKSRC} | ${GREP} \@ | ${XARGS} ${RM}
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,46 @@
+bin/radclient
+bin/radlast
+bin/radtest
+bin/radwho
+bin/radzap
+etc/raddb/clients.sample
+etc/raddb/dictionary
+etc/raddb/hints.sample
+etc/raddb/huntgroups.sample
+etc/raddb/naslist.sample
+etc/raddb/naspasswd.sample
+etc/raddb/realms.sample
+etc/raddb/users.sample
+etc/rc.d/radiusd-cistron.sh
+sbin/checkrad
+sbin/radiusd
+sbin/radrelay
+share/radius/dictionary.ascend
+share/radius/dictionary.bay
+share/radius/dictionary.cisco
+share/radius/dictionary.cistron
+share/radius/dictionary.compat
+share/radius/dictionary.erx
+share/radius/dictionary.livingston
+share/radius/dictionary.redback
+share/radius/dictionary.shiva
+share/radius/dictionary.standard
+share/radius/dictionary.tunnel
+share/radius/dictionary.usr
+share/radius/dictionary.versanet
+share/doc/radiusd-cistron/COPYRIGHT
+share/doc/radiusd-cistron/ChangeLog
+share/doc/radiusd-cistron/INSTALL
+share/doc/radiusd-cistron/README
+share/doc/radiusd-cistron/README.Y2K
+share/doc/radiusd-cistron/README.cisco
+share/doc/radiusd-cistron/README.pam
+share/doc/radiusd-cistron/README.proxy
+share/doc/radiusd-cistron/README.simul
+share/doc/radiusd-cistron/README.usersfile
+@dirrm etc/raddb
+@dirrm share/doc/radiusd-cistron
+@dirrm share/radius
+@unexec rm -f /var/log/radius.log
+@unexec rm -f /var/run/radiusd.pid
+@unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radacct alone."

@@ -1,0 +1,603 @@
+#
+# MOVED - a list of (recently) moved or removed ports
+#
+# $FreeBSD$
+#
+# Each entry consists of a single line containing the following four
+# fields in the order named, separated with the pipe (`|') character:
+#
+#     Port:	A port that was moved (category/portname).
+#     Moved to:	Where the port was moved to, or which port users
+#		can and should migrate to (category/portname).
+#		Blank indicates that the port was deleted.
+#     Date:	When the moving or the removal was done (YYYY-MM-DD,
+#		in PST/PDT).
+#     Why:	The reason why the port was moved or removed.
+#
+# Keep this list sorted in the chronological order.  New entries must
+# be added at the tail.
+#
+# Port|Moved to|Date|Why
+net/ratoolset|net/irrtoolset|2002-11-16|software was renamed
+chinese/linux-netscape47-communicator||2002-11-17|security vulnerability
+chinese/linux-netscape47-navigator||2002-11-17|security vulnerability
+chinese/netscape47-communicator||2002-11-17|security vulnerability
+chinese/netscape47-navigator||2002-11-17|security vulnerability
+japanese/eb2||2003-03-28|obsoleted by japanese/eb
+japanese/linux-netscape47-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
+japanese/linux-netscape47-navigator|japanese/netscape48-navigator|2002-11-17|security vulnerability
+japanese/netscape-fonts|japanese/alias-fonts|2002-11-17|obsoleted by alias-fonts
+japanese/netscape3.language||2002-11-17|security vulnerability
+japanese/netscape4-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
+japanese/netscape4-navigator|japanese/netscape48-navigator|2002-11-17|security vulnerability
+japanese/netscape47-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
+japanese/netscape47-navigator|japanese/netscape48-navigator|2002-11-17|security vulnerability
+korean/linux-netscape47-communicator|korean/netscape48-communicator|2002-11-27|security vulnerability
+korean/linux-netscape47-navigator|korean/netscape48-navigator|2002-11-27|security vulnerability
+korean/netscape3||2002-11-17|security vulnerability
+korean/netscape4-communicator|korean/netscape48-communicator|2002-11-27|security vulnerability
+korean/netscape4-navigator|korean/netscape48-navigator|2002-11-27|security vulnerability
+korean/netscape47-communicator|korean/netscape48-communicator|2002-11-27|security vulnerability
+korean/netscape47-navigator|korean/netscape48-navigator|2002-11-27|security vulnerability
+russian/netscape4.language||2002-11-17|security vulnerability
+www/linux-netscape4|www/netscape48-navigator|2002-11-17|security vulnerability
+www/linux-netscape47-communicator|www/netscape48-communicator|2002-11-17|security vulnerability
+www/linux-netscape47-navigator|www/netscape48-navigator|2002-11-17|security vulnerability
+www/netscape3||2002-11-17|security vulnerability
+www/netscape3-gold||2002-11-17|security vulnerability
+www/netscape4-communicator|www/netscape48-communicator|2002-11-17|security vulnerability
+www/netscape4-communicator.us|www/netscape48-communicator|2002-11-17|security vulnerability
+www/netscape4-navigator|www/netscape48-navigator|2002-11-17|security vulnerability
+www/netscape47-communicator|www/netscape48-communicator|2002-11-17|security vulnerability
+www/netscape47-navigator|www/netscape48-navigator|2002-11-17|security vulnerability
+japanese/mhonarc|www/mhonarc|2002-11-17|current www/mhonarc could use Japanese
+graphics/linux_mesa||2002-11-17|Port was broken and out of date
+audio/cdrdao|sysutils/cdrdao|2002-11-18|misfiled, burns data CDs too
+sysutils/pkgview|sysutils/gnome-pkgview|2002-11-20|author has changed the binary and package name
+japanese/tvi||2002-11-21|development discontinued and distfile unavailable
+textproc/pt-aspell|portuguese/aspell|2002-11-21|new category
+math/p5-Math-Financial|finance/p5-Math-Financial|2002-11-21|new category
+graphics/xmms-avi|multimedia/xmms-avi|2002-11-21|new category
+misc/qhacc|finance/qhacc|2002-11-21|new category
+textproc/br-ispell|portuguese/ispell-pt_BR|2002-11-22|new category
+french/cups||2002-11-23|deleted since not supportable under cups 1.1.16
+french/cups-base||2002-11-23|deleted since not supportable under cups 1.1.16
+french/cups-lpr||2002-11-23|deleted since not supportable under cups 1.1.16
+korean/w3m|www/w3m-m17n|2002-11-23|www/w3m-m17n could handle Korean
+korean/gaim|net/gaim|2002-11-24|net/gaim could handle Korean
+palm/xcopilot|ports/pose|2002-11-24|pose supersceded xcopilot
+www/libxpg4-ns||2002-11-24|needless since all native netscapes are removed
+textproc/pspell-ispell||2002-11-28|this plugin was obsoleted by aspell
+audio/linux-realplayer|multimedia/linux-realplayer|2002-11-28|new category
+audio/xmms|multimedia/xmms|2002-11-28|new category
+graphics/avifile|multimedia/avifile|2002-11-28|new category
+graphics/divx4linux4|multimedia/linux-divx4linux4|2002-11-28|new category
+graphics/divx4linux|multimedia/linux-divx4linux|2002-11-28|new category
+graphics/ffmpeg|multimedia/ffmpeg|2002-11-28|new category
+graphics/gstreamer-player|multimedia/gstreamer-player|2002-11-28|new category
+graphics/gstreamer-plugins|multimedia/gstreamer-plugins|2002-11-28|new category
+graphics/gstreamer|multimedia/gstreamer|2002-11-28|new category
+graphics/gsubedit|multimedia/gsubedit|2002-11-28|new category
+graphics/libdivxdecore-devel|multimedia/libdivxdecore-devel|2002-11-28|new category
+graphics/libdivxdecore|multimedia/libdivxdecore|2002-11-28|new category
+graphics/libdivxencore|multimedia/libdivxencore|2002-11-28|new category
+graphics/libdvdcss|multimedia/libdvdcss|2002-11-28|new category
+graphics/libdvdread|multimedia/libdvdread|2002-11-28|new category
+graphics/libdv|multimedia/libdv|2002-11-28|new category
+graphics/libmovtar|multimedia/libmovtar|2002-11-28|new category
+graphics/libmpeg2|multimedia/libmpeg2|2002-11-28|new category
+graphics/linux-divxplayer|multimedia/linux-divxplayer|2002-11-28|new category
+graphics/mjpegtools|multimedia/mjpegtools|2002-11-28|new category
+graphics/mpeg4ip|multimedia/mpeg4ip|2002-11-28|new category
+graphics/mplayer-fonts|multimedia/mplayer-fonts|2002-11-28|new category
+graphics/mplayer-skins|multimedia/mplayer-skins|2002-11-28|new category
+graphics/mplayer|multimedia/mplayer|2002-11-28|new category
+graphics/ogle-gui|multimedia/ogle-gui|2002-11-28|new category
+graphics/ogle|multimedia/ogle|2002-11-28|new category
+graphics/ogmtools|multimedia/ogmtools|2002-11-28|new category
+graphics/okle|multimedia/okle|2002-11-28|new category
+graphics/openquicktime|multimedia/openquicktime|2002-11-28|new category
+graphics/oqtencoder|multimedia/oqtencoder|2002-11-28|new category
+graphics/oqtplayer|multimedia/oqtplayer|2002-11-28|new category
+graphics/win32-codecs|multimedia/win32-codecs|2002-11-28|new category
+graphics/xmps-opendivx-plugin|multimedia/xmps-opendivx-plugin|2002-11-28|new category
+graphics/xmps-win32-plugin|multimedia/xmps-win32-plugin|2002-11-28|new category
+editors/ooodict-pt_BR|portuguese/ooodict-pt_BR|2002-12-06|new category
+editors/ooodict-pt_PT|portuguese/ooodict-pt_PT|2002-12-06|new category
+editors/openoffice-pt|portuguese/openoffice|2002-12-06|new category
+editors/staroffice52-pt|portuguese/staroffice52|2002-12-06|new category
+www/frontpage-pt_BR|portuguese/frontpage-pt_BR|2002-12-06|new category
+audio/kdemultimedia3|multimedia/kdemultimedia3|2002-12-08|new category
+japanese/gn-mnews||2002-12-08|security vulnerability
+japanese/mnews||2002-12-08|security vulnerability
+japanese/mnews-gnspool||2002-12-08|security vulnerability
+japanese/mnews-im||2002-12-08|security vulnerability
+print/pips-sc20||2002-12-08|license problems
+print/pips-sc40||2002-12-08|license problems
+print/pips-sc480||2002-12-08|license problems
+print/pips-sc580||2002-12-08|license problems
+print/pips-sc880||2002-12-08|license problems
+print/pips-sc980||2002-12-08|license problems
+print/pips-sp810_820||2002-12-08|license problems
+print/pips720||2002-12-08|license problems
+print/pips780cs||2002-12-08|license problems
+print/pips790||2002-12-08|license problems
+print/pips820ug||2002-12-08|license problems
+print/pips920||2002-12-08|license problems
+print/pips-sc680_777||2002-12-08|license problems
+x11/launch.app||2002-12-08|security vulnerability
+net/icradius||2002-12-08|security vulnerability
+net/p5-IC-Radius||2002-12-08|security vulnerability
+net/radius||2002-12-08|security vulnerability
+net/xtradius||2002-12-08|security vulnerability
+net/gated||2002-12-13|no longer distributed by vendor
+japanese/gnomecore|x11/gnomecore|2002-12-16|patches integrated into the upstream
+www/comline|www/libwww|2003-01-03|part of libwww
+devel/dbregc||2003-01-05|no longer relevant
+lang/smalleiffel|lang/smarteiffel|2003-01-06|change name
+graphics/tosvcd|multimedia/tosvcd|2003-01-06|new category
+graphics/vcdgear|multimedia/vcdgear|2003-01-06|new category
+graphics/vcdimager|multimedia/vcdimager|2003-01-06|new category
+graphics/vcdpad|multimedia/vcdpad|2003-01-06|new category
+graphics/vcdtools|multimedia/vcdtools|2003-01-06|new category
+devel/autoconf254|devel/autoconf257|2003-01-06|new version from FSF
+devel/ncurses-dialog|devel/cdialog|2003-01-11|renamed by delete+add
+graphics/dvdrip|multimedia/dvdrip|2003-01-17|new category
+misc/pipebench|benchmarks/pipebench|2003-01-18|fix category
+math/xmgr||2003-01-19|removed, obsoleted, successor is grace
+x11/libhelp||2003-01-19|removed, didn't compile on current motif, only used by xmgr
+mail/xfaces||2003-01-19|removed, obsoleted, functionality taken over by faces
+devel/gnustep-devel|devel/gnustep|2003-01-20|merged
+devel/gnustep-devel|devel/gnustep|2003-01-20|merged
+x11-toolkits/gnustep-gui-devel|x11-toolkits/gnustep-gui|2003-01-20|merged
+x11-toolkits/gnustep-xgps|x11-toolkits/gnustep-back|2003-01-20|full substitute
+devel/ruby-unit|devel/ruby-testunit|2003-01-23|succeeded
+mail/p5-Mail-SpamAssassin-devel|mail/p5-Mail-SpamAssassin-snapshot|2003-01-25|directory renamed
+devel/uml|devel/umbrello|2003-01-26|project renamed
+x11-toolkits/qt30|x11-toolkits/qt31|2003-01-28|qt30 replaced by qt31
+x11-toolkits/qt31|x11-toolkits/qt32|2003-09-18|qt31 replaced by qt32
+misc/kde3-i18n-pt|portuguese/kde3-i18n|2003-01-28|new category
+misc/kde3-i18n-pt_BR|portuguese/kde3-i18n-pt_BR|2003-01-28|new category
+lang/php4||2003-01-29|integrated into www/mod_php4
+biology/gaussian||2003-01-31|deleted maintain is hard and gray in license
+graphics/xine_dvdnav_plugin||2003-02-01|integrated into graphics/libxine
+devel/ossp-mm||2003-02-01|accidental dupe of devel/mm
+archivers/linux_rar||2003-02-03|FreeBSD/i386 binary is available
+security/krb5-beta||2003-08-07|deleted: no longer in beta, MIT KRB5 1.3 released
+security/pam_krb5||2003-02-12|resurrected: required when MIT KRB5 used in place of base system KRB5
+deskutils/gnucash|finance/gnucash|2003-02-05|new category
+x11-toolkits/crux||2003-02-07|deleted: added to GNOME 2.2 desktop
+textproc/ruby-erb||2003-02-09|ERb 1.x is obsolete: use the one included in ruby 1.8 or ruby16-shim-ruby18
+audio/lame-devel||2003-02-09|obsolete
+x11-fm/gnomemc||2003-02-10|obsolete
+x11/wmshutdown|sysutils/wmshutdown|2003-02-13|fix category
+security/kgpgapplet||2003-02-19|merged into kgpg
+net/ip-tun||2003-02-19|obsoleted by gif interfaces
+net/edonkey-gui-gtk-kioslave||2003-02-19|merged into edonkey-gui-gtk
+print/dvipdfm||2003-02-20|merged into teTeX
+net/amcl|net/gnome-mud|2003-02-23|project renamed
+net/openldap|net/openldap12|2003-02-23|port renamed
+net/openldap2|net/openldap20|2003-02-23|port renamed
+www/caudium|www/caudium10|2003-02-23|port renamed
+mail/imp||2003-02-24|security vulnerability
+graphics/libdvdnav|multimedia/libdvdnav|2003-02-24|new category
+graphics/libxine|multimedia/libxine|2003-02-24|new category
+graphics/xine|multimedia/xine|2003-02-24|new category
+net/rdesktop-devel|net/rdesktop|2003-02-24|obsolete beta version
+java/jikes-devel|java/jikes|2003-02-24|stable version caught up with development version
+www/horde||2003-02-25|obsolete
+astro/kstars|misc/kdeedu3|2003-03-02|kstars included in kdeedu package
+devel/ruby-testunit||2003-03-03|integrated into ruby16-shim-ruby18
+graphics/qdraw||2003-03-24|obsolete
+x11-fm/rox-base||2003-03-24|obsolete
+graphics/xvid|multimedia/xvid|2003-03-29|new category
+print/dvipdfm-cjk|print/dvipdfmx|2003-03-29|port renamed
+games/tetris|games/bsdtris|2003-04-02|port renamed (see ports/13693)
+misc/p5-Business-CreditCard|finance/p5-Business-CreditCard|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment|finance/p5-Business-OnlinePayment|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-2CheckOut|finance/p5-Business-OnlinePayment-2CheckOut|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-AuthorizeNet|finance/p5-Business-OnlinePayment-AuthorizeNet|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-BankOfAmerica|finance/p5-Business-OnlinePayment-BankOfAmerica|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-Beanstream|finance/p5-Business-OnlinePayment-Beanstream|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-Cardstream|finance/p5-Business-OnlinePayment-Cardstream|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-Jettis|finance/p5-Business-OnlinePayment-Jettis|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-LinkPoint|finance/p5-Business-OnlinePayment-LinkPoint|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-MerchantCommerce|finance/p5-Business-OnlinePayment-MerchantCommerce|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-Network1Financial|finance/p5-Business-OnlinePayment-Network1Financial|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-PayConnect|finance/p5-Business-OnlinePayment-PayConnect|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-PaymentsGateway|finance/p5-Business-OnlinePayment-PaymentsGateway|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-SurePay|finance/p5-Business-OnlinePayment-SurePay|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-TCLink|finance/p5-Business-OnlinePayment-TCLink|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-VirtualNet|finance/p5-Business-OnlinePayment-VirtualNet|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-eSec|finance/p5-Business-OnlinePayment-eSec|2003-04-03|port renamed (see ports/50557)
+misc/p5-Business-OnlinePayment-WorldPay-Junior|finance/p5-Business-WorldPay-Junior|2003-04-03|port renamed (see ports/50557)
+math/p5-Math-Trig||2003-04-03|in base perl5 suite
+graphics/avidemux|multimedia/avidemux|2003-04-04|new category
+graphics/avinfo|multimedia/avinfo|2003-04-04|new category
+graphics/camserv|multimedia/camserv|2003-04-04|new category
+graphics/dtv|multimedia/dtv|2003-04-04|new category
+graphics/dumpmpeg|multimedia/dumpmpeg|2003-04-04|new category
+graphics/enjoympeg|multimedia/enjoympeg|2003-04-04|new category
+graphics/fxtv|multimedia/fxtv|2003-04-04|new category
+graphics/gopchop|multimedia/gopchop|2003-04-04|new category
+graphics/gxanim|multimedia/gxanim|2003-04-04|new category
+graphics/libdvbpsi|multimedia/libdvbpsi|2003-04-04|new category
+graphics/libfame|multimedia/libfame|2003-04-04|new category
+graphics/libquicktime|multimedia/libquicktime|2003-04-04|new category
+graphics/mmsclient|multimedia/mmsclient|2003-04-04|new category
+graphics/mpeg2codec|multimedia/mpeg2codec|2003-04-04|new category
+graphics/mpeg2play|multimedia/mpeg2play|2003-04-04|new category
+graphics/mpeg_encode|multimedia/mpeg_encode|2003-04-04|new category
+graphics/mpeg_play|multimedia/mpeg_play|2003-04-04|new category
+graphics/mpeg_stat|multimedia/mpeg_stat|2003-04-04|new category
+graphics/mpegedit|multimedia/mpegedit|2003-04-04|new category
+graphics/mpeg|multimedia/mpeg|2003-04-04|new category
+graphics/mpgtx|multimedia/mpgtx|2003-04-04|new category
+graphics/mplex|multimedia/mplex|2003-04-04|new category
+graphics/mtv|multimedia/mtv|2003-04-04|new category
+graphics/netshow|multimedia/netshow|2003-04-04|new category
+graphics/ppm2fli|multimedia/ppm2fli|2003-04-04|new category
+graphics/smpeg-xmms|multimedia/smpeg-xmms|2003-04-04|new category
+graphics/smpeg|multimedia/smpeg|2003-04-04|new category
+graphics/splitmpg|multimedia/splitmpg|2003-04-04|new category
+graphics/tkxanim|multimedia/tkxanim|2003-04-04|new category
+graphics/totem|multimedia/totem|2003-04-04|new category
+graphics/transcode|multimedia/transcode|2003-04-04|new category
+graphics/vlc|multimedia/vlc|2003-04-04|new category
+graphics/xanim|multimedia/xanim|2003-04-04|new category
+graphics/xawtv|multimedia/xawtv|2003-04-04|new category
+graphics/xine_d4d_plugin|multimedia/xine_d4d_plugin|2003-04-04|new category
+graphics/xine_d5d_plugin|multimedia/xine_d5d_plugin|2003-04-04|new category
+graphics/xmovie|multimedia/xmovie|2003-04-04|new category
+graphics/xmps|multimedia/xmps|2003-04-04|new category
+graphics/xtheater|multimedia/xtheater|2003-04-04|new category
+graphics/recmpeg|multimedia/recmpeg|2003-04-04|new category
+graphics/spigot|multimedia/spigot|2003-04-04|new category
+net/gaim-snapshot|net/gaim|2003-04-05|rolled into net/gaim
+net/gift||2003-04-05|no current official releases
+net/jift||2003-04-05|lack of development
+x11-toolkits/pike-gtk||2003-04-09|included in pike
+japanese/samba20|japanese/samba|2003-04-13|security vulnerability
+japanese/ptex-euc|japanese/ptex|2003-04-13|all 3 charset are supported
+japanese/ptex-jis|japanese/ptex|2003-04-13|all 3 charset are supported by japanese/ptex
+japanese/ptex-sjis|japanese/ptex|2003-04-13|all 3 charset are supported by japanese/ptex
+japanese/ptex-common|japanese/ptex-base|2003-04-13|only used by one port
+misc/kde3-i18n-he|hebrew/kde3-i18n|2003-04-13|new category
+misc/kde3-i18n-hu|hungarian/kde3-i18n|2003-04-13|new category
+misc/kde3-i18n-vi|vietnamese/kde3-i18n|2003-04-13|new category
+devel/linux_devtools|linux/linux_devtools-6|2003-04-17|finished repocopy
+emulators/linux-vmware-toolbox|emulators/linux-vmware-toolbox2|2003-04-19|port renamed
+emulators/vmware-guestd|emulators/vmware-guestd3|2003-04-19|port renamed
+archivers/ruby-zlib||2003-04-19|integrated into ruby16-shim-ruby18
+math/ruby-bigfloat||2003-04-19|integrated into ruby16-shim-ruby18
+palm/prc-tools-binutils||2003-04-27|integrate into palm/prc-tools
+palm/prc-tools-gcc||2003-04-27|integrate into palm/prc-tools
+multimedia/gini|net/gini|2003-04-27|inappropriate primary CATEGORIES
+graphics/gimp-manual-ps||2003-04-29|new versions of the manual not available as PS
+archivers/pkzip||2003-05-05|port contained a security vulnerability with no sign of a fix
+audio/mxv||2003-05-05|port was broken with no sign of a fix
+audio/openag||2003-05-05|port was broken with no sign of a fix
+databases/libodbc++||2003-05-05|port was broken with no sign of a fix
+databases/p5-Msql||2003-05-05|port was broken with no sign of a fix
+databases/sixpack||2003-05-05|port was broken with no sign of a fix
+devel/arm-aout-gcc295||2003-05-05|port was broken with no sign of a fix
+devel/arm-elf-gcc31||2003-05-05|port was broken with no sign of a fix
+devel/codemedic||2003-05-05|port was broken with no sign of a fix
+devel/flux||2003-05-05|port was broken with no sign of a fix
+devel/gecc||2003-05-05|port was broken with no sign of a fix
+devel/glade--||2003-05-05|port was broken with no sign of a fix
+devel/ilu||2003-05-05|port was broken with no sign of a fix
+emulators/vmware||2003-05-05|port was broken with no sign of a fix
+graphics/ruby-gimp||2003-05-05|port was broken with no sign of a fix
+graphics/p5-Gimp||2003-05-05|port depended on the broken PDL port which was removed
+irc/kvirc||2003-05-05|port was broken with no sign of a fix
+japanese/ee||2003-05-05|port was broken with no sign of a fix
+japanese/kdevelop||2003-05-05|port was broken with no sign of a fix
+korean/byeoroo||2003-05-05|port was broken with no sign of a fix
+lang/gpc||2003-05-05|port was broken with no sign of a fix
+math/PDL||2003-05-05|port was broken with no sign of a fix
+misc/cassowary||2003-05-05|port was broken with no sign of a fix
+net/coda_client||2003-05-05|port was broken with no sign of a fix
+net/coda_server||2003-05-05|port was broken with no sign of a fix
+net/gtk+licq||2003-05-05|port was broken with no sign of a fix
+net/icukrell||2003-05-05|port was broken with no sign of a fix
+net/macipgw||2003-05-05|port was broken with no sign of a fix
+net/trafcount||2003-05-05|port was broken with no sign of a fix
+net/zephyr||2003-05-05|port was broken with no sign of a fix
+news/xvnews||2003-05-05|port was broken with no sign of a fix
+print/pdflib3||2003-05-05|port was broken with no sign of a fix
+textproc/xsl-docbook-modular||2003-05-05|port was broken with no sign of a fix
+www/eddie||2003-05-05|port was broken with no sign of a fix
+www/wn||2003-05-05|port contained a security vulnerability with no sign of a fix
+x11-fm/jafm||2003-05-05|port was broken with no sign of a fix
+x11-servers/Xatm||2003-05-05|port was broken with no sign of a fix
+audio/gdcd||2003-05-05|port was broken with no sign of a fix
+devel/SN|devel/sourcenav|2003-05-07|renamed by upstream
+japanese/gp||2003-05-07|development discontinued and distfile unavailable
+www/orion-devel|www/orion|2003-05-08|stable version caught up with development version
+editors/xemacs21-mule-common||2003-05-09|needless since new xemacs21-mule is 21.4.12
+x11-toolkits/fltk-xunicode|x11-toolkits/fltk|2003-05-011|maintenance discontinued
+www/nautilus-gtkhtml||2003-05-11|maintenance discontinued
+editors/xemacs21-sumo||2003-05-12|needless since merged to xemacs-{mule-}packages
+editors/xemacs21-mule-sumo||2003-05-12|needless since merged to xemacs-{mule-}packages
+japanese/xemacs21-sumo-canna||2003-05-12|needless since merged to xemacs-{mule-}packages
+japanese/xemacs21-sumo-canna+freewnn||2003-05-12|needless since merged to xemacs-{mule-}packages
+japanese/xemacs21-sumo-canna+wnn6||2003-05-12|needless since merged to xemacs-{mule-}packages
+japanese/xemacs21-sumo-freewnn||2003-05-12|needless since merged to xemacs-{mule-}packages
+japanese/xemacs21-sumo-wnn6||2003-05-12|needless since merged to xemacs-{mule-}packages
+editors/xemacs-additional-packages||2003-05-12|obsolete xemacs package category
+editors/xemacs-basic-mule-packages||2003-05-12|obsolete xemacs package category
+editors/xemacs-comm-packages||2003-05-12|obsolete xemacs package category
+editors/xemacs-games-packages||2003-05-12|obsolete xemacs package category
+editors/xemacs-libs-packages||2003-05-12|obsolete xemacs package category
+editors/xemacs-oa-packages||2003-05-12|obsolete xemacs package category
+editors/xemacs-prog-packages||2003-05-12|obsolete xemacs package category
+editors/xemacs-wp-packages||2003-05-12|obsolete xemacs package category
+devel/p5-Time|devel/p5-Time-modules|2003-05-13|Use devel/p5-Time-modules port instead
+www/sqmgrlog|www/sarg|2003-05-15|Renamed into sarg
+devel/adabroker||2003-05-19|no longer maintained, does not compile with latest compiler
+chinese/rxvt||2003-05-20|no longer needed
+chinese/rxvt-big5||2003-05-20|no longer needed
+chinese/rxvt-gb||2003-05-20|no longer needeD
+misc/p5-DataCash||2003-05-20|No longer available
+net/p5-Net-BGP4|net/p5-Net-BGP|2003-05-21|module was renamed
+x11-wm/kde-icontheme-crystal||2003-05-22|Included in kdelibs
+devel/p5-File-Tools||2003-05-22|Newer version included into Perl distribution
+x11-servers/XttXF98srv-EGC||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-GA968||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-GANBWAP||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-MGA||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-NEC480||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-NECS3||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-NKVNEC||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-PWLB||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-PWSKB||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-SVGA||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-TGUI||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-WABEP||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-WABS||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-WSNA||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+www/phoenix|www/mozilla-firebird|2003-06-02|project changed names
+x11/gswitchit_applet||2003-06-02|replaced by GNOME 2 version in x11/gswitchit
+audio/agsatellite|net/linux-agsatellite|2003-06-02|accurate category and name
+devel/understand_ada|devel/linux-understand_ada|2003-06-02|accurate naming
+devel/understand_c|devel/linux-understand_c|2003-06-02|accurate naming
+misc/edonkey-tool-list|misc/linux-edonkey-tool-list|2003-06-02|accurate naming
+misc/edonkey-tool-recovermet|misc/linux-edonkey-tool-recovermet|2003-06-02|accurate naming
+multimedia/xmovie|multimedia/linux-xmovie|2003-06-02|accurate naming
+net/edonkey-core|net/linux-edonkey-core|2003-06-02|accurate naming
+audio/xnap|net/xnap|2003-06-02|accurate category
+x11-wm/bbrun|x11/bbrun|2003-06-03|accurate category
+x11-wm/bbapm|sysutils/bbapm|2003-06-03|accurate category
+x11-wm/icemc|misc/icemc|2003-06-03|accurate category
+net/bittorrent|net/py-bittorrent|2003-06-06|duplicate entry
+textproc/py-trex||2003-06-08|part of py-xml
+devel/pear-install|devel/pear-PEAR|2003-06-08|merged
+textproc/gnomespell-devel|textproc/gnomespell|2003-06-11|rolled into gnomespell
+mail/evolution-devel|mail/evolution|2003-06-11|rolled into evolution
+misc/wmessage|x11/wmessage|2003-06-12|accurate category
+net/mldonkey-src|net/mldonkey|2003-06-15|no londer needed
+news/straw||2003-06-20|port was broken with no sign of a fix
+devel/libtool|devel/libtool13|2003-06-26|move to versioned libtool portnames
+www/mozilla-vendor|www/mozilla|2003-07-01|vendor tree in sync with 1.4
+www/mozilla-embedded-vendor|www/mozilla-embedded|2003-07-01|vendor tree in sync with 1.4
+www/mozilla-headers-vendor|www/mozilla-headers|2003-07-01|vendor tree in sync with 1.4
+www/skipstone||2003-07-01|port is more than a year old with no update in sight
+graphics/glass||2003-07-03|useless
+www/linux-phoenix|www/linux-mozillafirebird|2003-07-03|legal problem with name
+graphics/kpovmodeler||2003-07-03|now part of kdegraphics
+www/linux-opera7|www/linux-opera|2003-07-09|move to www/linux-opera
+www/xswallow||2003-07-12|port is obsolete
+net/gnut||2003-07-12|security vulnerability, and no active development
+www/mod_log_mysql|www/mod_log_sql|2003-07-12|renamed by author in new version
+x11/gnomecore||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/gdm||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/gnomeapplets||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/xalf||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/linux-xalf||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/gnome||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11/gnome-fifth-toe||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+editors/gedit||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11-wm/sawfish||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+audio/gnomemedia||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+sysutils/gtop||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11-fm/nautilus||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+devel/bugbuddy||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+audio/gnomeaudio||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+games/gnomegames||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+misc/gnomeutils||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+misc/gnomeuserdocs||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+graphics/eog||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+print/ggv||2003-07-15|removed as part of GNOME 1.4 desktop phase out
+x11-wm/spager||2003-07-15|removed as it depends on sawfish
+mail/gtkgrepmail||2003-07-15|removed as it depends on gnomecore
+x11-toolkits/eazel-themes||2003-07-15|removed as it depends on sawfish
+chinese/pycodec||2003-07-20|is replaced by converters/py-cjkcodecs
+korean/pycodec||2003-07-20|is replaced by converters/py-cjkcodecs
+devel/jakarta-ant|devel/apache-ant|2003-07-21|project renamed
+games/newkind||2003-07-22|project abandoned
+print/acroread4|print/acroread5|2003-07-24|security vulnerability
+print/acroread-commfont|print/acroread5-commfont|2003-07-24|security vulnerability
+japanese/acroread-jpnfont|japanese/acroread5-jpnfont|2003-07-24|security vulnerability
+korean/acroread-korfont|korean/acroread5-korfont|2003-07-24|security vulnerability
+chinese/acroread-chsfont|chinese/acroread5-chsfont|2003-07-24|security vulnerability
+chinese/acroread-chtfont|chinese/acroread5-chtfont|2003-07-24|security vulnerability
+x11-wm/xfwm4|x11-wm/xfce4-wm|2003-07-27|rename it to be consistent with other xfce4 ports
+misc/shc||2003-07-30|broken for nearly a year
+mail/icqmail||2003-07-30|port no longer works, and is no longer developed
+games/bnetd||2003-07-30|project was abandoned for legal reasons
+devel/gnome-devel||2003-07-30|no longer needed after GNOME 1.4 removal
+devel/gnome2-devel||2003-07-30|no longer needed after GNOME 1.4 removal
+x11-toolkits/Motif-dummy||2003-07-31|dummy port is no longer used
+korean/netdic||2003-08-05|not functional and not maintained anymore
+misc/gnomeutils2|deskutils/gnomeutils2|2003-08-06|repo move to a better category
+misc/gucharmap|deskutils/gucharmap|2003-08-06|repo move to a better category
+net/cphone||2003-08-06|port was marked broken for 3 months with no fix submitted
+devel/crystal||2003-08-06|port was marked broken for 3 months with no fix submitted
+net/cvsupit||2003-08-06|port was marked broken for 3 months with no fix submitted
+www/encompass||2003-08-06|port was marked broken for 3 months with no fix submitted
+news/glitter||2003-08-06|port was marked broken for 3 months with no fix submitted
+x11-toolkits/iv||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/jtex209-both||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/jtex209-ascii||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/jtex209-ntt||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/sjxa||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/skk-elisp||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/vfghostscript||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/vfghostscript5||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/vfghostscript55||2003-08-06|port was marked broken for 3 months with no fix submitted
+japanese/xnetmaj||2003-08-06|port was marked broken for 3 months with no fix submitted
+devel/kelp||2003-08-06|port was marked broken for 3 months with no fix submitted
+korean/ftghostscript5||2003-08-06|port was marked broken for 3 months with no fix submitted
+korean/ghostscript55httf||2003-08-06|port was marked broken for 3 months with no fix submitted
+korean/htexp||2003-08-06|port was marked broken for 3 months with no fix submitted
+textproc/no-ispell||2003-08-06|port was marked broken for 3 months with no fix submitted
+net/opengatekeeper||2003-08-06|port was marked broken for 3 months with no fix submitted
+net/openh323proxy||2003-08-06|port was marked broken for 3 months with no fix submitted
+security/p5-Authen-Krb4||2003-08-06|port was marked broken for 3 months with no fix submitted
+x11-toolkits/p5-GnomeApplet||2003-08-06|port was marked broken for 3 months with no fix submitted
+lang/ruby|lang/ruby16|2003-08-07|renamed
+lang/ruby-devel|lang/ruby18|2003-08-07|renamed
+lang/ruby_r|lang/ruby16_r|2003-08-07|renamed
+lang/ruby_r-devel|lang/ruby18_r|2003-08-07|renamed
+lang/ruby_static|lang/ruby16_static|2003-08-07|renamed
+lang/ruby_static-devel|lang/ruby18_static|2003-08-07|renamed
+x11-wm/metacity-setup||2003-08-07|distfiles have disappeared and functionality exists in x11-wm/metacity
+biology/p5-bioperl-devel|biology/p5-bioperl|2003-08-07|port was marked broken for 3 months with no fix submitted
+cad/pisces||2003-08-07|port was marked broken for 3 months with no fix submitted
+cad/sis||2003-08-07|port was marked broken for 3 months with no fix submitted
+chinese/dia||2003-08-07|port was marked broken for 3 months with no fix submitted
+chinese/mozilla-tclp||2003-08-07|port was marked broken for 3 months with no fix submitted
+devel/uds||2003-08-07|port was marked broken for 3 months with no fix submitted
+devel/py-htmlkit||2003-08-07|port was marked broken for 3 months with no fix submitted
+devel/sdcc||2003-08-07|port was marked broken for 3 months with no fix submitted
+devel/ptl||2003-08-07|port was marked broken for 3 months with no fix submitted
+devel/silc-toolkit||2003-08-07|port was marked broken for 3 months with no fix submitted
+lang/pnet||2003-08-07|port was marked broken for 3 months with no fix submitted
+lang/wxbasic||2003-08-07|port was marked broken for 3 months with no fix submitted
+math/siag||2003-08-07|port was marked broken for 3 months with no fix submitted
+net/samba-tng||2003-08-07|port was marked broken for 3 months with no fix submitted
+net/qtella||2003-08-07|port was marked broken for 3 months with no fix submitted
+print/xpp||2003-08-07|port was marked broken for 3 months with no fix submitted
+www/slash||2003-08-07|port was marked broken for 3 months with no fix submitted
+www/viewml||2003-08-07|port was marked broken for 3 months with no fix submitted
+x11/wscan||2003-08-07|port was marked broken for 3 months with no fix submitted
+x11-toolkits/ruby-fltk||2003-08-07|port was marked broken for 3 months with no fix submitted
+x11-wm/scwm||2003-08-07|port was marked broken for 3 months with no fix submitted
+chinese/cce||2003-08-07|port contains a security vulnerability and is no longer developed
+net/ruby-romp||2003-08-08|discontinued
+audio/ruby-qt2sound||2003-08-09|obsolete
+graphics/ruby-qt2gl||2003-08-09|obsolete
+textproc/ruby-qt2xml||2003-08-09|obsolete
+x11-toolkits/ruby-qt2||2003-08-09|obsolete
+x11-toolkits/ruby-qt2canvas||2003-08-09|obsolete
+x11-toolkits/ruby-qt2iconview||2003-08-09|obsolete
+x11-toolkits/ruby-qt2table||2003-08-09|obsolete
+x11-wm/toolbox||2003-08-09|superseded by bbconf
+devel/p5-DateTime-LeapSecond|devel/p5-DateTime|2003-08-09|integrated into devel/p5-DateTime
+astro/glunarclock||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+astro/seti_applet||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+deskutils/bulb||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+ftp/gtm||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+net/gnomicu||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+palm/gnomepilot||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+palm/gnomepilot-conduits||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+sysutils/bubblemon||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+sysutils/battstat-applet||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11/gbackground||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11/gnoclip||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11/gvid||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11/libpanel||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11-fm/file_applet_menu||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11-toolkits/panel--||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+mail/flink||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+net/openldap20|net/openldap20-server|2003-08-13|split into -client and -server
+net/openldap21|net/openldap21-server|2003-08-13|split into -client and -server
+net/openldap22|net/openldap22-server|2003-08-13|split into -client and -server
+x11-toolkits/gtk-industrial-theme|x11-toolkits/gnome-themes-extras|2003-08-14|gtk-industrial-theme is now included with gnome-themes-extras
+devel/gnomedebug||2003-08-17|remove stale, broken port
+devel/gide|devel/anjuta|2003-08-17|gide was superceded by anjuta
+graphics/gd2|graphics/gd|2003-08-19|Cleanup gd-related ports
+graphics/gd-nox11|graphics/gd|2003-08-19|Cleanup gd-related ports
+graphics/p5-GD2|graphics/p5-GD|2003-08-19|Cleanup gd-related ports
+mail/sonicmail||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+mail/gbiff||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+x11/gnomeres_applet||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+x11/finder||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+x11-clocks/zclock||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+x11/stockticker_applet||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+net/ekg|polish/ekg|2003-08-19|moved to new polish category
+net/gnugadu|polish/gnugadu|2003-08-19|moved to new polish category
+misc/pl-sms|polish/sms|2003-08-19|moved to new polish category
+misc/kde3-i18n-pl|polish/kde3-i18n|2003-08-19|moved to new polish category
+misc/koffice-i18n-pl|polish/koffice-i18n|2003-08-19|moved to new polish category
+textproc/pl-aspell|polish/pl-aspell|2003-08-19|moved to new polish category
+www/bmsync||2003-08-19|obsolete
+shells/tcsh||2003-08-21|removed, already in base system, not really maintained
+x11/ruby-panel-applet||2003-08-22|GNOME 1.4 desktop is gone
+emulators/truereality||2003-08-25|Lack of developement in recent years
+www/bacon||2003-08-26|removed as unmaintained for two years
+mail/mailfilter||2003-08-26|removed as unmaintained for two years
+security/py-amkCrypto||2003-08-27|replaced by security/py-pycrypto
+devel/libdjbdns|dns/libdjbdns|2003-09-05|moved to new dns category
+devel/p5-POE-Component-Client-DNS|dns/p5-POE-Component-Client-DNS|2003-09-05|moved to new dns category
+net/adns|dns/adns|2003-09-05|moved to new dns category
+net/bind8|dns/bind8|2003-09-05|moved to new dns category
+net/bind84|dns/bind84|2003-09-05|moved to new dns category
+net/bind9|dns/bind9|2003-09-05|moved to new dns category
+net/bind9-dlz|dns/bind9-dlz|2003-09-05|moved to new dns category
+net/ddclient|dns/ddclient|2003-09-05|moved to new dns category
+net/ddup|dns/ddup|2003-09-05|moved to new dns category
+net/dhid|dns/dhid|2003-09-05|moved to new dns category
+net/dhisd|dns/dhisd|2003-09-05|moved to new dns category
+net/djbdns|dns/djbdns|2003-09-05|moved to new dns category
+net/dlint|dns/dlint|2003-09-05|moved to new dns category
+net/dnrd|dns/dnrd|2003-09-05|moved to new dns category
+net/dns_balance|dns/dns_balance|2003-09-05|moved to new dns category
+net/dnsmasq|dns/dnsmasq|2003-09-05|moved to new dns category
+net/dnssecwalker|dns/dnssecwalker|2003-09-05|moved to new dns category
+net/dnstop|dns/dnstop|2003-09-05|moved to new dns category
+net/dnstracer|dns/dnstracer|2003-09-05|moved to new dns category
+net/dnsutl|dns/dnsutl|2003-09-05|moved to new dns category
+net/dnswalk|dns/dnswalk|2003-09-05|moved to new dns category
+net/domtools|dns/domtools|2003-09-05|moved to new dns category
+net/ez-ipupdate|dns/ez-ipupdate|2003-09-05|moved to new dns category
+net/firedns|dns/firedns|2003-09-05|moved to new dns category
+net/ghtool|dns/ghtool|2003-09-05|moved to new dns category
+net/h2n|dns/h2n|2003-09-05|moved to new dns category
+net/hesiod|dns/hesiod|2003-09-05|moved to new dns category
+net/host|dns/host|2003-09-05|moved to new dns category
+net/idnkit|dns/idnkit|2003-09-05|moved to new dns category
+net/ipcheck|dns/ipcheck|2003-09-05|moved to new dns category
+net/maradns|dns/maradns|2003-09-05|moved to new dns category
+net/mdnsd|dns/mdnsd|2003-09-05|moved to new dns category
+net/mydns|dns/mydns|2003-09-05|moved to new dns category
+net/noip|dns/noip|2003-09-05|moved to new dns category
+net/nsd|dns/nsd|2003-09-05|moved to new dns category
+net/nslint|dns/nslint|2003-09-05|moved to new dns category
+net/nsping|dns/nsping|2003-09-05|moved to new dns category
+net/odsclient|dns/odsclient|2003-09-05|moved to new dns category
+net/p5-BIND-Conf_Parser|dns/p5-BIND-Conf_Parser|2003-09-05|moved to new dns category
+net/p5-DNS-Config|dns/p5-DNS-Config|2003-09-05|moved to new dns category
+net/p5-DNS-Zone|dns/p5-DNS-Zone|2003-09-05|moved to new dns category
+net/p5-Net-DNS|dns/p5-Net-DNS|2003-09-05|moved to new dns category
+net/p5-Net-DNS-SEC|dns/p5-Net-DNS-SEC|2003-09-05|moved to new dns category
+net/p5-Net-DNS-ZoneFile|dns/p5-Net-DNS-ZoneFile|2003-09-05|moved to new dns category
+net/p5-Tie-DNS|dns/p5-Tie-DNS|2003-09-05|moved to new dns category
+net/pdnsd|dns/pdnsd|2003-09-05|moved to new dns category
+net/posadis|dns/posadis|2003-09-05|moved to new dns category
+net/powerdns|dns/powerdns|2003-09-05|moved to new dns category
+net/py-adns|dns/py-adns|2003-09-05|moved to new dns category
+net/py-dns|dns/py-dns|2003-09-05|moved to new dns category
+net/sleuth|dns/sleuth|2003-09-05|moved to new dns category
+net/staticcharge|dns/staticcharge|2003-09-05|moved to new dns category
+net/totd|dns/totd|2003-09-05|moved to new dns category
+net/walker|dns/walker|2003-09-05|moved to new dns category
+net/gnomemeeting2|net/gnomemeeting|2003-09-07|no need to keep two versions in ports tree
+irc/ircproxy-freebsd-port|irc/ircproxy|2003-09-08|fix directory name
+audio/soribada||2003-09-09|project closed
+devel/bonobo-activation|devel/libbonobo|2003-09-18|merged into libbonobo
+x11-fonts/fontilus|sysutils/gnomecontrolcenter2|2003-09-18|merged into gnomecontrolcenter2
+misc/stickynotes_applet|x11/gnomeapplets2|2003-09-18|merged into gnomeapplets2
+x11-toolkits/gtk-thinice-engine|x11-toolkits/gnome-themes|2003-09-18|merged into gnome-themes
+korean/qt31|x11-toolkits/qt32|2003-09-19|no need to patch in qt32

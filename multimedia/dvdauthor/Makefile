@@ -1,0 +1,34 @@
+# New ports collection makefile for:   dvdauthor
+# Date created:        20 April 2003
+# Whom:                pb@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	dvdauthor
+PORTVERSION=	0.5.3
+PORTREVISION=	2
+CATEGORIES=	multimedia
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	pb@FreeBSD.org
+COMMENT=	Makes a DVD file structure from one or more MPEG2 streams
+
+LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
+		png.5:${PORTSDIR}/graphics/png
+
+USE_GETOPT_LONG=yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/dvdauthor
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dvdauthor
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/dvdauthor
+	${INSTALL_DATA} ${WRKSRC}/iso639.txt ${PREFIX}/share/doc/dvdauthor
+	${INSTALL_DATA} ${WRKSRC}/menu.txt ${PREFIX}/share/doc/dvdauthor
+.endif
+
+.include <bsd.port.mk>

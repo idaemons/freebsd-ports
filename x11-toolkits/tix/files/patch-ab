@@ -1,0 +1,11 @@
+--- ../Makefile.in.orig	Wed Jul  9 22:33:48 1997
++++ ../Makefile.in	Wed Oct  1 12:03:37 1997
+@@ -115,7 +115,7 @@
+ 		fi; \
+ 	    done;
+ 	@echo "installing the tixindex program for builing tclIndex for Tix scripts"
+-	@cd $(TOOLS_DIR); $(INSTALL_PROGRAM) tixindex $(BIN_DIR)/tixindex
++	-@cd $(TOOLS_DIR); $(INSTALL_PROGRAM) tixindex $(BIN_DIR)/tixindex
+ 
+ install-headers:
+ 	@for i in $(INCLUDE_DIR); \

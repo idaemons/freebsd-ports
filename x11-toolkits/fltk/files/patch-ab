@@ -1,0 +1,43 @@
+--- configure.orig	Mon Nov 25 17:38:38 2002
++++ configure	Sun Jan  5 15:03:00 2003
+@@ -1212,7 +1212,7 @@
+ FL_MINOR_VERSION=1
+ FL_PATCH_VERSION=2
+ FL_RELEASE_VERSION=
+-FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}
++FL_API_VERSION=${FL_MAJOR_VERSION}
+ 
+ 
+ 
+@@ -2045,13 +2045,13 @@
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++#    CFLAGS="-g -O2"
+   else
+     CFLAGS="-g"
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++#    CFLAGS="-O2"
+   else
+     CFLAGS=
+   fi
+@@ -2395,13 +2395,13 @@
+   CXXFLAGS=$ac_save_CXXFLAGS
+ elif test $ac_cv_prog_cxx_g = yes; then
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
++#    CXXFLAGS="-g -O2"
+   else
+     CXXFLAGS="-g"
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++#    CXXFLAGS="-O2"
+   else
+     CXXFLAGS=
+   fi

@@ -1,0 +1,72 @@
+--- cliplibs/clip-gtk/configure.orig	Tue Jan 14 08:09:54 2003
++++ cliplibs/clip-gtk/configure	Mon Mar 24 19:44:16 2003
+@@ -3,6 +3,8 @@
+ uname=`uname -s`
+ uver=`uname -r`
+ hname=`hostname -f 2>/dev/null`
++gtkconfig=gtk-config
++gtkpath=
+ oldpwd=`pwd`
+ 
+ [ -z "$CLIPROOT" ] && CLIPROOT=/usr/local/clip
+@@ -34,6 +36,8 @@
+ 		;;
+ 	FreeBSD*)
+ 		osname=FREEBSD
++		gtkconfig=gtk12-config
++		gtkpath=/gtk12
+ 		STATICLINK=-static
+ 		;;
+ 	NetBSD*)
+@@ -66,7 +70,7 @@
+ echo '#define SYSTEM "'$uname'"' >&3
+ echo '' >&3
+ 
+-gtkprefix=`gtk-config --prefix 2>/dev/null`
++gtkprefix=`${gtkconfig} --prefix 2>/dev/null`
+ 
+ if [ $? -ne 0 ]
+ then
+@@ -81,7 +85,7 @@
+ #	cd $gtkincpath/..
+ #	gtkincpath=`pwd`
+ #	cd $oldpwd
+-	LIBS=`gtk-config --libs`
++	LIBS=`${gtkconfig} --libs`
+ 
+ 	if [ "$osname" = "CYGWIN" ]
+ 	then
+@@ -95,12 +99,14 @@
+ #		echo
+ #		echo 'Warning: system do not have installed GTK+ development'
+ #	fi
+-	GTK_MAJOR=`gtk-config --version|cut -d. -f1`
+-	GTK_MINOR=`gtk-config --version|cut -d. -f2`
++	GTK_MAJOR=`${gtkconfig} --version|cut -d. -f1`
++	GTK_MINOR=`${gtkconfig} --version|cut -d. -f2`
+ 	if [ ! \( "$GTK_MAJOR" -ge 1 -o "$GTK_MINOR" -ge 2 -o "$GTK_MAJOR" -gt 1 \) ]
+ 	then
+ 		echo
+ 		echo 'Warning: system must have installed GTK+ version 1.2 or above'
++	else
++		USE_GTK=yes
+ 	fi
+ fi
+ 
+@@ -141,14 +147,14 @@
+ echo "DLLSUFF='$DLLSUFF'" >&3
+ echo "DLLREALSUFF='$DLLREALSUFF'" >&3
+ echo "CLIPROOT=$CLIPROOT" >&3
+-echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include '$(gtk-config --cflags) >&3
++echo 'INCLUDEDIRS=-I. -I$(CLIPROOT)/include -I'$gtkprefix'/include'${gtkpath} >&3
+ echo "XTARGETS='"'$(XLIB) $(XSLIB)'"'" >&3
+ echo "C_FLAGS=-Wall '"'$(INCLUDEDIRS)'"' '$EXTRACFLAGS'" >&3
+ echo "LIBS='$LIBS'" >&3
+ 
+ if [ "$USE_GTK" = yes ]
+ then
+-	XCFLAGS=`gtk-config --cflags`
++	XCFLAGS=`${gtkconfig} --cflags`
+ 	echo "XCFLAGS='$XCFLAGS'" >&3
+ fi
+ 

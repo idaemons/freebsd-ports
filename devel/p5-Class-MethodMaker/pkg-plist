@@ -1,0 +1,46 @@
+%%SITE_PERL%%/Class/MethodMaker.pm
+%%SITE_PERL%%/auto/Class/MethodMaker/_add_hash_methods.al
+%%SITE_PERL%%/auto/Class/MethodMaker/_add_list_methods.al
+%%SITE_PERL%%/auto/Class/MethodMaker/_ancestry.al
+%%SITE_PERL%%/auto/Class/MethodMaker/_make_get_set.al
+%%SITE_PERL%%/auto/Class/MethodMaker/abstract.al
+%%SITE_PERL%%/auto/Class/MethodMaker/autosplit.ix
+%%SITE_PERL%%/auto/Class/MethodMaker/boolean.al
+%%SITE_PERL%%/auto/Class/MethodMaker/builtin_class.al
+%%SITE_PERL%%/auto/Class/MethodMaker/code.al
+%%SITE_PERL%%/auto/Class/MethodMaker/copy.al
+%%SITE_PERL%%/auto/Class/MethodMaker/counter.al
+%%SITE_PERL%%/auto/Class/MethodMaker/deep_copy.al
+%%SITE_PERL%%/auto/Class/MethodMaker/forward.al
+%%SITE_PERL%%/auto/Class/MethodMaker/get_concat.al
+%%SITE_PERL%%/auto/Class/MethodMaker/get_set.al
+%%SITE_PERL%%/auto/Class/MethodMaker/grouped_fields.al
+%%SITE_PERL%%/auto/Class/MethodMaker/hash.al
+%%SITE_PERL%%/auto/Class/MethodMaker/hash_of_lists.al
+%%SITE_PERL%%/auto/Class/MethodMaker/key_attrib.al
+%%SITE_PERL%%/auto/Class/MethodMaker/key_with_create.al
+%%SITE_PERL%%/auto/Class/MethodMaker/list.al
+%%SITE_PERL%%/auto/Class/MethodMaker/listed_attrib.al
+%%SITE_PERL%%/auto/Class/MethodMaker/method.al
+%%SITE_PERL%%/auto/Class/MethodMaker/new.al
+%%SITE_PERL%%/auto/Class/MethodMaker/new_hash_init.al
+%%SITE_PERL%%/auto/Class/MethodMaker/new_hash_with_init.al
+%%SITE_PERL%%/auto/Class/MethodMaker/new_with_args.al
+%%SITE_PERL%%/auto/Class/MethodMaker/new_with_init.al
+%%SITE_PERL%%/auto/Class/MethodMaker/object.al
+%%SITE_PERL%%/auto/Class/MethodMaker/object_list.al
+%%SITE_PERL%%/auto/Class/MethodMaker/object_tie_hash.al
+%%SITE_PERL%%/auto/Class/MethodMaker/object_tie_list.al
+%%SITE_PERL%%/auto/Class/MethodMaker/singleton.al
+%%SITE_PERL%%/auto/Class/MethodMaker/static_get_set.al
+%%SITE_PERL%%/auto/Class/MethodMaker/static_hash.al
+%%SITE_PERL%%/auto/Class/MethodMaker/static_list.al
+%%SITE_PERL%%/auto/Class/MethodMaker/struct.al
+%%SITE_PERL%%/auto/Class/MethodMaker/tie_hash.al
+%%SITE_PERL%%/auto/Class/MethodMaker/tie_list.al
+%%SITE_PERL%%/auto/Class/MethodMaker/tie_scalar.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class-MethodMaker/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class-MethodMaker
+@dirrm %%SITE_PERL%%/auto/Class/MethodMaker
+@unexec rmdir %D/%%SITE_PERL%%/auto/Class 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true

@@ -1,0 +1,50 @@
+--- doc/Makefile.in.orig	Thu May  1 08:12:55 2003
++++ doc/Makefile.in	Thu Jul 24 12:48:33 2003
+@@ -25,7 +25,7 @@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ configdir = ${sysconfdir}/sane.d
+-docdir=$(prefix)/doc/sane-@VERSION@
++docdir=$(datadir)/doc/sane
+ 
+ MKDIR = $(top_srcdir)/mkinstalldirs
+ INSTALL = @INSTALL@
+@@ -54,7 +54,7 @@
+ 	  sane-ma1509.5 sane-ibm.5 sane-hp5400.5
+ SECT7   = sane.7
+ MANPAGES = $(SECT1) $(SECT5) $(SECT7)
+-READMES = README AUTHORS COPYING ChangeLog LICENSE NEWS PROBLEMS \
++READMES = README AUTHORS ChangeLog LICENSE NEWS PROBLEMS \
+           PROJECTS README README.aix README.beos README.darwin README.freebsd \
+           README.hp-ux README.linux README.netbsd README.openbsd README.os2 \
+           README.solaris README.unixware2 README.unixware7 TODO
+@@ -77,7 +77,7 @@
+ ifeq (@USE_LATEX@,no)
+ STANDARD =
+ else
+-STANDARD = sane.ps
++STANDARD =
+ endif
+ 
+ SUBDIRS = $(BACKDIRS) icons figs descriptions descriptions-external
+@@ -133,6 +133,7 @@
+ 	  echo installing $${page} in $(mandir)/man7/$${page}...; \
+ 	  $(INSTALL_DATA) $${page} $(DESTDIR)$(mandir)/man7/$${page} || exit 1; \
+ 	done
++ifndef NOPORTDOCS
+ 	$(MKDIR) $(DESTDIR)$(docdir)
+ 	@for readme in $(READMES); do \
+ 	  echo installing $${readme} in $(docdir)/$${readme}...; \
+@@ -149,10 +150,11 @@
+ 	    fi \
+ 	  done \
+ 	done
+-	@-for doc in $(DOCS) $(HTML_PAGES); do \
++	@-for doc in $(HTML_PAGES); do \
+ 	    echo installing $${doc} in $(docdir)/$${doc}...; \
+ 	    $(INSTALL_DATA) $${doc} $(DESTDIR)$(docdir)/$${doc}; \
+ 	  done
++endif
+ 
+ uninstall:
+ 	@for page in $(SECT1); do \

@@ -1,0 +1,44 @@
+--- configure.in.orig	Fri Mar 21 18:46:36 2003
++++ configure.in	Fri Mar 21 18:54:01 2003
+@@ -37,7 +37,7 @@
+ AC_ARG_WITH(zlib,--with-zlib=[[PATH]]         Which zlib library/object file to use,
+   with_zlib="$withval", with_zlib="")
+ 
+-AC_CHECK_HEADERS(crypt.h getopt.h pthread.h stdlib.h string.h strings.h unistd.h sys/inttypes.h)
++AC_CHECK_HEADERS(crypt.h getopt.h pthread.h stdlib.h string.h strings.h unistd.h inttypes.h)
+ AC_CHECK_HEADERS(netinet/ip_fil.h, AC_DEFINE(HAVE_IPF))
+ AC_CHECK_HEADERS(netinet/ip6.h, AC_DEFINE(HAVE_IP6_H))
+ 
+@@ -375,10 +375,10 @@
+ esac
+ 
+ if test "X$MYSQL_PATH" != "X" ; then
+-    LIBS="-L$MYSQL_PATH/lib -lmysqlclient $LIBS"
++    LIBS="-L$MYSQL_PATH/lib/mysql -lmysqlclient $LIBS"
+     AC_DEFINE(HAVE_MYSQL)
+-    CFLAGS="$CFLAGS -I$MYSQL_PATH/include"
+-    MYSQL_LIB="-L$MYSQL_PATH/lib -lmysqlclient"
++    CFLAGS="$CFLAGS -I$MYSQL_PATH/include/mysql"
++    MYSQL_LIB="-L$MYSQL_PATH/lib/mysql -lmysqlclient"
+ fi
+ 
+ if test "X$PGSQL_PATH" != "X" ; then
+@@ -464,6 +464,9 @@
+     LIBDB_PATH="$pwd"
+ elif test -r "/usr/local/lib/libdb.a"; then
+     LIBDB_PATH="/usr/local"
++elif test -r "/usr/local/lib/libdb4.a"; then
++    LIBDB_PATH="/usr/local"
++    LIBDB_NAME=-ldb4
+ elif test -r "/usr/lib/libdb2.a"; then                                         
+     LIBDB_PATH="/usr"                                                          
+     LIBDB_NAME=-ldb2                                                           
+@@ -574,7 +577,7 @@
+     AC_DEFINE(HAVE_ZLIB)
+     AC_MSG_RESULT(/usr/local/lib/libz.a)
+     if test "X`echo $CFLAGS | grep '\-I/usr/local/include'`" = "X"; then
+-	CFLAGS="$CFLAGS -I/usr/local/include"
++	CFLAGS="$CFLAGS"
+     fi
+ elif test -r "/usr/lib/libz.a"; then
+     LIBZ_NAME="/usr/lib/libz.a"

@@ -1,0 +1,8 @@
+bin/kwebget
+share/doc/HTML/en/kwebget/index.docbook
+share/doc/HTML/en/kwebget/index.cache.bz2
+share/doc/HTML/en/kwebget/common
+share/applnk/Applications/kwebget.desktop
+share/icons/locolor/32x32/apps/kwebget.png
+share/icons/locolor/16x16/apps/kwebget.png
+@dirrm share/doc/HTML/en/kwebget

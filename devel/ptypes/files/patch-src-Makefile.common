@@ -1,0 +1,27 @@
+--- src/Makefile.common.orig	Tue Jun 24 13:49:22 2003
++++ src/Makefile.common	Wed Jun 25 03:56:22 2003
+@@ -19,12 +19,12 @@
+ AR              = ar
+ RANLIB          = ranlib
+ 
+-DDEBUG          = -DDEBUG
++DDEBUG          =
+ INCDIR          = ../include
+-CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -fPIC -Wall -O2
++CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -fPIC -Wall $(CFLAGS)
+ LDLIBS          = $(OS_LDLIBS)
+ 
+-CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall -O2
++CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall $(CFLAGS)
+ LDLIBS_ST       = $(OS_LDLIBS_ST)
+ 
+ LIBNAME         = libptypes.a
+@@ -32,7 +32,7 @@
+ LIBDEST         = ../lib
+ 
+ SONAME          = libptypes.$(SOEXT)
+-SOVER           = 1
++SOVER           = $(SHLIB_VER)
+ SOREALNAME      = $(SONAME).$(SOVER)
+ SODEST          = ../so
+ 

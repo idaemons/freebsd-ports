@@ -1,0 +1,7 @@
+bin/3dpong
+%%DATADIR%%/hit.au
+%%DATADIR%%/score.au
+%%DATADIR%%/wall.au
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

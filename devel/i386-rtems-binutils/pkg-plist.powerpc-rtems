@@ -1,0 +1,77 @@
+bin/powerpc-rtems-size
+bin/powerpc-rtems-objdump
+bin/powerpc-rtems-ar
+bin/powerpc-rtems-strings
+bin/powerpc-rtems-ranlib
+bin/powerpc-rtems-objcopy
+bin/powerpc-rtems-addr2line
+bin/powerpc-rtems-readelf
+bin/powerpc-rtems-nm
+bin/powerpc-rtems-strip
+bin/powerpc-rtems-as
+bin/powerpc-rtems-ld
+lib/libiberty.a
+powerpc-rtems/bin/nm
+powerpc-rtems/bin/strip
+powerpc-rtems/bin/ar
+powerpc-rtems/bin/ranlib
+powerpc-rtems/bin/as
+powerpc-rtems/bin/ld
+powerpc-rtems/lib/ldscripts/elf32ppc.x
+powerpc-rtems/lib/ldscripts/elf32ppc.xbn
+powerpc-rtems/lib/ldscripts/elf32ppc.xn
+powerpc-rtems/lib/ldscripts/elf32ppc.xr
+powerpc-rtems/lib/ldscripts/elf32ppc.xs
+powerpc-rtems/lib/ldscripts/elf32ppc.xu
+powerpc-rtems/lib/ldscripts/elf32ppc.xc
+powerpc-rtems/lib/ldscripts/elf32ppc.xsc
+share/locale/fr/LC_MESSAGES/bfd.mo
+share/locale/fr/LC_MESSAGES/opcodes.mo
+share/locale/fr/LC_MESSAGES/binutils.mo
+share/locale/fr/LC_MESSAGES/gas.mo
+share/locale/fr/LC_MESSAGES/ld.mo
+share/locale/tr/LC_MESSAGES/bfd.mo
+share/locale/tr/LC_MESSAGES/opcodes.mo
+share/locale/tr/LC_MESSAGES/binutils.mo
+share/locale/tr/LC_MESSAGES/gas.mo
+share/locale/tr/LC_MESSAGES/ld.mo
+share/locale/ja/LC_MESSAGES/bfd.mo
+share/locale/ja/LC_MESSAGES/binutils.mo
+share/locale/es/LC_MESSAGES/bfd.mo
+share/locale/es/LC_MESSAGES/opcodes.mo
+share/locale/es/LC_MESSAGES/binutils.mo
+share/locale/es/LC_MESSAGES/gas.mo
+share/locale/es/LC_MESSAGES/ld.mo
+share/locale/sv/LC_MESSAGES/bfd.mo
+share/locale/sv/LC_MESSAGES/opcodes.mo
+share/locale/sv/LC_MESSAGES/binutils.mo
+share/locale/sv/LC_MESSAGES/ld.mo
+share/locale/da/LC_MESSAGES/bfd.mo
+share/locale/da/LC_MESSAGES/binutils.mo
+share/locale/da/LC_MESSAGES/opcodes.mo
+share/locale/de/LC_MESSAGES/opcodes.mo
+share/locale/id/LC_MESSAGES/opcodes.mo
+share/locale/pt_BR/LC_MESSAGES/opcodes.mo
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/id/LC_MESSAGES
+@dirrm share/locale/id
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale
+@dirrm powerpc-rtems/lib/ldscripts
+@dirrm powerpc-rtems/lib
+@dirrm powerpc-rtems/bin
+@dirrm powerpc-rtems

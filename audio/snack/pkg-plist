@@ -1,0 +1,21 @@
+lib/libsnackstub%%SNACK_VER%%.a
+lib/snack%%SNACK_VER%%/libsnack.so
+lib/snack%%SNACK_VER%%/libsound.so
+%%VORBIS%%lib/snack%%SNACK_VER%%/libsnackogg.so
+lib/snack%%SNACK_VER%%/pkgIndex.tcl
+lib/snack%%SNACK_VER%%/snack.tcl
+@dirrm lib/snack%%SNACK_VER%%
+%%PORTDOCS%%%%DOCSDIR%%/AddSubCmd.html
+%%PORTDOCS%%%%DOCSDIR%%/Callback.html
+%%PORTDOCS%%%%DOCSDIR%%/CreateFilter.html
+%%PORTDOCS%%%%DOCSDIR%%/FileFormat.html
+%%PORTDOCS%%%%DOCSDIR%%/SampConv.html
+%%PORTDOCS%%%%DOCSDIR%%/SnackLib.html
+%%PORTDOCS%%%%DOCSDIR%%/SoundData.html
+%%PORTDOCS%%%%DOCSDIR%%/SoundObj.html
+%%PORTDOCS%%%%DOCSDIR%%/SoundProp.html
+%%PORTDOCS%%%%DOCSDIR%%/SoundSamp.html
+%%PORTDOCS%%%%DOCSDIR%%/SphereFile.txt
+%%PORTDOCS%%%%DOCSDIR%%/python-man.html
+%%PORTDOCS%%%%DOCSDIR%%/tcl-man.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

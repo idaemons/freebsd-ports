@@ -1,5 +1,3 @@
-@cwd /usr/X11R6
 bin/olvwm
+lib/X11/doc/html/olvwm.1.html
 lib/help/olvwm.info
-man/man1/olvwm.1.gz
-man/man1/olvwmrc.1.gz

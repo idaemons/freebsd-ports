@@ -1,0 +1,82 @@
+@comment $FreeBSD$
+bin/g++
+bin/g++28
+bin/protoize
+bin/unprotoize
+bin/gcov
+bin/gcc
+bin/gcc28
+bin/%%GNUHOST%%-gcc
+@unexec install-info --delete %D/info/cpp.info %D/info/dir
+@unexec install-info --delete %D/info/gcc.info %D/info/dir
+info/cpp.info
+info/cpp.info-1
+info/cpp.info-2
+info/cpp.info-3
+info/gcc.info
+info/gcc.info-1
+info/gcc.info-10
+info/gcc.info-11
+info/gcc.info-12
+info/gcc.info-13
+info/gcc.info-14
+info/gcc.info-15
+info/gcc.info-16
+info/gcc.info-17
+info/gcc.info-18
+info/gcc.info-19
+info/gcc.info-2
+info/gcc.info-20
+info/gcc.info-21
+info/gcc.info-22
+info/gcc.info-23
+info/gcc.info-24
+info/gcc.info-25
+info/gcc.info-26
+info/gcc.info-27
+info/gcc.info-28
+info/gcc.info-3
+info/gcc.info-4
+info/gcc.info-5
+info/gcc.info-6
+info/gcc.info-7
+info/gcc.info-8
+info/gcc.info-9
+@exec install-info %D/info/cpp.info %D/info/dir
+@exec install-info %D/info/gcc.info %D/info/dir
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/float.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/math.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/syslimits.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/typeinfo
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/exception
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/new
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/new.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/limits.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/README
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc/hash.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc/objc-list.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc/sarray.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc/objc.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc/objc-api.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc/NXConstStr.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc/Object.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc/Protocol.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc/encoding.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc/typedstream.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc/thr.h
+lib/gcc-lib/%%GNUHOST%%/2.8.1/cc1
+lib/gcc-lib/%%GNUHOST%%/2.8.1/cc1plus
+lib/gcc-lib/%%GNUHOST%%/2.8.1/cc1obj
+lib/gcc-lib/%%GNUHOST%%/2.8.1/specs
+lib/gcc-lib/%%GNUHOST%%/2.8.1/SYSCALLS.c.X
+lib/gcc-lib/%%GNUHOST%%/2.8.1/cpp
+lib/gcc-lib/%%GNUHOST%%/2.8.1/libgcc.a
+lib/gcc-lib/%%GNUHOST%%/2.8.1/libobjc.a
+%%GNUHOST%%/include/assert.h
+@dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc
+@dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1/include
+@dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1
+@dirrm lib/gcc-lib/%%GNUHOST%%
+@dirrm lib/gcc-lib
+@dirrm %%GNUHOST%%/include
+@dirrm %%GNUHOST%%

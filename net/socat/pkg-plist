@@ -1,0 +1,7 @@
+bin/filan
+bin/procan
+bin/socat
+%%PORTDOCS%%%%DOCSDIR%%/EXAMPLES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SECURITY
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

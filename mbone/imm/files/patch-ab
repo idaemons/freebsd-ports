@@ -1,31 +1,11 @@
-*** main.c.orig	Fri Mar  4 16:01:13 1994
---- main.c	Sat Oct 29 15:45:04 1994
-***************
-*** 129,135 ****
-  ClientData clientdata;
-  Tcl_Interp *interp;
-  int argc;
-! int *argv[];
-  {
-      int transmitflag = FALSE;
-      int ofp;
---- 129,135 ----
-  ClientData clientdata;
-  Tcl_Interp *interp;
-  int argc;
-! char *argv[];
-  {
-      int transmitflag = FALSE;
-      int ofp;
-***************
-*** 161,166 ****
---- 161,169 ----
-  			   repeatnum,argv[3], argv[1]);
-  	fclose(stdin);
-  	closeall();
-+ #ifndef SIGCLD
-+ #define SIGCLD SIGCHLD
-+ #endif
-  	signal(SIGCLD,SIG_IGN);
-  	Tcl_DeleteInterp(interp);
-  	if (localhost == NULL)
+--- src/xlopen.c.orig	Tue Nov 19 12:33:53 1996
++++ src/xlopen.c	Tue Nov 19 12:35:01 1996
+@@ -34,7 +34,7 @@
+ extern int optind, opterr;
+ extern int useimageloader;
+ extern struct hosttype *hosts_tail;
+-#ifndef __NetBSD__
++#if !defined(__NetBSD__) && !defined(__FreeBSD__)	/* XXX */
+ extern char *sys_errlist[];
+ #endif
+ extern unsigned int total;

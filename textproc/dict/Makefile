@@ -1,0 +1,35 @@
+# ex:ts=8
+# Ports collection makefile for:  dict
+# Date created:			  19 February 1998
+# Whom:				  Josh Gilliam <josh@quick.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	dict
+PORTVERSION=	1.8.0
+PORTREVISION=	1
+CATEGORIES=	textproc
+MASTER_SITES=	ftp://ftp.dict.org/pub/dict/
+DISTNAME=	${PORTNAME}d-${PORTVERSION}
+
+MAINTAINER=	dd@FreeBSD.org
+COMMENT=	Dictionary Server Protocol (RFC2229) client
+
+LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
+
+USE_BISON=	yes
+USE_REINPLACE=	yes
+USE_LIBTOOL_VER=	14
+CFLAGS+=	-I${PREFIX}/include
+CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
+		--with-etcdir=${PREFIX}/etc
+USE_GMAKE=	yes
+ALL_TARGET=	dict
+INSTALL_TARGET=	install.dict
+MAN1=		dict.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/dict.1
+
+.include <bsd.port.mk>

@@ -1,0 +1,47 @@
+
+$FreeBSD$
+
+--- configure.orig	Sun Oct  6 23:35:02 2002
++++ configure	Fri Jun 27 22:19:43 2003
+@@ -674,9 +674,9 @@
+ 
+ # libtool versioning
+ LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
+-LT_CURRENT=`expr $SDL_MICRO_VERSION - $SDL_INTERFACE_AGE`
++LT_CURRENT=$SDL_INTERFACE_AGE
+ LT_REVISION=$SDL_INTERFACE_AGE
+-LT_AGE=`expr $SDL_BINARY_AGE - $SDL_INTERFACE_AGE`
++LT_AGE=$SDL_INTERFACE_AGE
+ 
+ 
+ 
+@@ -2794,7 +2794,7 @@
+ 
+ 
+ SDL_CFLAGS=""
+-SDL_LIBS="-lSDL"
++SDL_LIBS="-lSDL-1.1"
+ 
+ 
+ case "$target" in
+@@ -5840,8 +5840,8 @@
+ #            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+             ;;
+         *-*-freebsd*)
+-            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+-            pthread_lib="-pthread"
++            pthread_cflags="-D_REENTRANT ${PTHREAD_CFLAGS}"
++            pthread_lib="${PTHREAD_LIBS}"
+             ;;
+         *-*-netbsd*)
+             pthread_cflags="-I/usr/pkg/include -D_REENTRANT"
+@@ -6946,7 +6946,9 @@
+             CFLAGS="$CFLAGS -DHAVE_USBHID_H"
+         fi
+         if test x$have_libusb_h = xyes; then
++	    if x$have_libusbhid_h = xno; then
+             CFLAGS="$CFLAGS -DHAVE_LIBUSB_H"
++	    fi
+         fi
+         if test x$have_libusbhid_h = xyes; then
+             CFLAGS="$CFLAGS -DHAVE_LIBUSBHID_H"

@@ -1,0 +1,11 @@
+--- M	Thu Feb 13 17:29:03 2003
++++ Makefile.PL	Thu Feb 13 17:29:22 2003
+@@ -419,7 +419,7 @@
+ 	cd "$(MODPERL_SRC)" && $(MODPERL_LIBMAKE)
+ 
+ modperl_lib_install:
+-	cd "$(MODPERL_SRC)" && $(MODPERL_LIBMAKE) install
++#	cd "$(MODPERL_SRC)" && $(MODPERL_LIBMAKE) install
+ 
+ modperl_src_clean:
+ 	cd "$(MODPERL_SRC)" && $(MODPERL_LIBMAKE) clean

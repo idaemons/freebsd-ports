@@ -1,0 +1,25 @@
+%%PORTDOCS%%%%DOCSDIR%%/AAAREADME.first
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.chroot
+%%PORTDOCS%%%%DOCSDIR%%/README.contributed
+%%PORTDOCS%%%%DOCSDIR%%/README.customize
+%%PORTDOCS%%%%DOCSDIR%%/README.exim_v3
+%%PORTDOCS%%%%DOCSDIR%%/README.exim_v4
+%%PORTDOCS%%%%DOCSDIR%%/README.exim_v4_app
+%%PORTDOCS%%%%DOCSDIR%%/README.exim_v4_app2
+%%PORTDOCS%%%%DOCSDIR%%/README.lookups
+%%PORTDOCS%%%%DOCSDIR%%/README.milter
+%%PORTDOCS%%%%DOCSDIR%%/README.old.scanners
+%%PORTDOCS%%%%DOCSDIR%%/README.performance
+%%PORTDOCS%%%%DOCSDIR%%/README.policy-on-notifications
+%%PORTDOCS%%%%DOCSDIR%%/README.postfix
+%%PORTDOCS%%%%DOCSDIR%%/README.sendmail
+%%PORTDOCS%%%%DOCSDIR%%/README.sendmail-dual
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+etc/amavisd.conf-dist
+etc/rc.d/amavisd.sh
+%%AMAVIS_NOMILTER%%sbin/amavis
+%%AMAVIS_NOMILTER%%sbin/amavis-milter
+sbin/amavisd

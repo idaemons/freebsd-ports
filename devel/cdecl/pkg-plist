@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+bin/cdecl
+bin/c++decl
+%%PORTDOCS%%share/doc/cdecl/testset
+%%PORTDOCS%%share/doc/cdecl/testset++
+%%PORTDOCS%%@dirrm share/doc/cdecl

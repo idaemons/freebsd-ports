@@ -1,0 +1,10 @@
+--- config/_arch-n-opsys.orig	Thu Oct 10 22:18:48 2002
++++ config/_arch-n-opsys	Sun Nov 10 23:59:17 2002
+@@ -100,6 +100,7 @@
+       i486) ARCH=x86;;
+       i586) ARCH=x86;;
+       i686) ARCH=x86;;
++      alpha) ARCH=alpha32;;
+       *) exit 1;;
+     esac
+     ;;

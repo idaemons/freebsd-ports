@@ -1,0 +1,14 @@
+bin/distcc
+bin/distccmon-text
+%%WITH_GNOME%%bin/distccmon-gnome
+sbin/distccd
+etc/rc.d/distccd.sh.sample
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.FDL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/protocol-1.txt
+%%PORTDOCS%%%%DOCSDIR%%/status-1.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,52 +1,58 @@
-DISTNAME	=	xc
-PKGNAME		= 	XFree86-3.1.1
-WRKDIR?=                ${.CURDIR}/work
-BUILD_COOKIE?=		${WRKDIR}/.build_done
-PATCH_STRIP	=	-p1
+# New ports collection makefile for:	XFree86-clients
+# Date created:		10 Oct 1999
+# Whom:			taguchi@tohoku.iij.ad.jp
+#
+# $FreeBSD$
+#
 
-# uncomment one of the 2 lines below!
-#X11_ON_CDROM	=	yes
-X11_VIA_FTP	=	yes
+PORTNAME=	clients
+PORTVERSION=	4.3.0
+PORTREVISION=	3
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITE_SUBDIR=	4.3.0
+PKGNAMEPREFIX=	XFree86-
+DISTFILES=	X430src-1.tgz \
+		X430src-2.tgz \
+		X430src-3.tgz \
+		X430src-4.tgz
 
-#define this if you are short of space - save ~28 Mbytes
-#REMOVE_NOT_ESSENTIAL	=	yes
+MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 client programs and related files
 
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		Xcursor.1:${PORTSDIR}/x11/XFree86-4-libraries \
+		png.5:${PORTSDIR}/graphics/png \
+		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
-.if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
-build: configure ${BUILD_COOKIE}
+SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
+			InstallXinitConfig=${InstallXinitConfig} \
+			InstallAppDefFiles=${InstallAppDefFiles}
+			
+MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
+			PORTNAME=${PORTNAME} \
+			PORTVERSION=${PORTVERSION}
+XBUILD_DIRS=		lib/xtrans lib/lbxutil programs fonts/util
+XINSTALL_DIRS=		programs fonts/util
+XINSTALL_MAN_DIRS=	programs
 
-${BUILD_COOKIE}:
-	@echo "===>  Building for ${DISTNAME}"
-	@${MAKE} ${.MAKEFLAGS} pre-build
-.if defined(REMOVE_NOT_ESSENTIAL)
-	@rm -rf ${WRKSRC}/test ${WRKSRC}/doc/hardcopy ${WRKSRC}/doc/specs
-	@find ${WRKSRC}/ -name '*.orig' -exec rm -f {} ';'
-.endif
-	@(cd ${WRKSRC}; echo Good night...; make World)
-	@touch ${WRKDIR}/.build_done
+# ---
+# XFree86 User Config:
+# Name          Default		Meaning
+# ----------------------------------------------------------------------------
+# HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
+# HasPam	YES		support PAM (require FreeBSD-3.1 or later)
+# InstallXdmConfig      YES     install config files for xdm.
+# InstallXinitConfig    YES     install config files for xinit.
+# InstallAppDefFiles    YES	install resource files.
+# ----------------------------------------------------------------------------
+# DEFAULT means ports will use values which set by ${PORTSDIR}/devel/imake-4
+#
+InstallXdmConfig?=	DEFAULT
+InstallXinitConfig?=	DEFAULT
+InstallAppDefFiles?=	DEFAULT
 
-install:
-	@(cd ${WRKSRC}; make install; make install.man)
-	@touch ${WRKDIR}/.install_done
-.endif
-
-.if defined(X11_ON_CDROM)
-.include "Makefile.cdrom"
-.elif defined(X11_VIA_FTP)
-.include "Makefile.ftp"
-.else
-all:
-	@echo -n
-fetch:
-	@echo -n
-extract:
-	@echo -n
-configure:
-	@echo -n
-build:
-	@echo -n
-install:
-	@echo -n
-.endif
-
-
+.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/manpages"
+.include <bsd.port.post.mk>

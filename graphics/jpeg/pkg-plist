@@ -1,15 +1,24 @@
-@cwd /usr/local
 bin/cjpeg
 bin/djpeg
+bin/jpegtran
 bin/rdjpgcom
 bin/wrjpgcom
-man/man1/cjpeg.1
-man/man1/djpeg.1
-man/man1/rdjpgcom.1
-man/man1/wrjpgcom.1
 include/jconfig.h
-include/jpeglib.h
-include/jmorecfg.h
 include/jerror.h
-lib/libjpeg.so.5.0
+include/jinclude.h
+include/jmorecfg.h
+include/jpegint.h
+include/jpeglib.h
 lib/libjpeg.a
+lib/libjpeg.so
+lib/libjpeg.so.9
+%%PORTDOCS%%share/doc/jpeg/README
+%%PORTDOCS%%share/doc/jpeg/coderules.doc
+%%PORTDOCS%%share/doc/jpeg/filelist.doc
+%%PORTDOCS%%share/doc/jpeg/install.doc
+%%PORTDOCS%%share/doc/jpeg/jconfig.doc
+%%PORTDOCS%%share/doc/jpeg/libjpeg.doc
+%%PORTDOCS%%share/doc/jpeg/structure.doc
+%%PORTDOCS%%share/doc/jpeg/usage.doc
+%%PORTDOCS%%share/doc/jpeg/wizard.doc
+%%PORTDOCS%%@dirrm share/doc/jpeg

@@ -1,0 +1,22 @@
+--- configure.orig	Mon Apr 21 06:01:46 2003
++++ configure	Sat May 10 23:21:51 2003
+@@ -7814,6 +7814,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -9305,7 +9306,11 @@
+   fi
+   exec_prefix_save=$exec_prefix
+   if test "x$exec_prefix" = "xNONE"; then
++  if test "x$prefix" = "xNONE"; then
+     exec_prefix=/usr/local
++  else
++    exec_prefix=${prefix}
++  fi
+   fi
+ 
+   full_var="$FROM_VAR"

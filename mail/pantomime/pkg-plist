@@ -1,0 +1,74 @@
+%%LOCALLIBRARY%%/Headers/Pantomime/Charset.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Connection.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Constants.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Container.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Flags.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Folder.h
+%%LOCALLIBRARY%%/Headers/Pantomime/FolderInformation.h
+%%LOCALLIBRARY%%/Headers/Pantomime/IMAPCacheManager.h
+%%LOCALLIBRARY%%/Headers/Pantomime/IMAPFolder.h
+%%LOCALLIBRARY%%/Headers/Pantomime/IMAPMessage.h
+%%LOCALLIBRARY%%/Headers/Pantomime/IMAPStore.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_1.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_10.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_11.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_13.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_14.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_15.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_2.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_3.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_4.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_5.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_6.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_7.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_8.h
+%%LOCALLIBRARY%%/Headers/Pantomime/ISO8859_9.h
+%%LOCALLIBRARY%%/Headers/Pantomime/InternetAddress.h
+%%LOCALLIBRARY%%/Headers/Pantomime/KOI8_R.h
+%%LOCALLIBRARY%%/Headers/Pantomime/KOI8_U.h
+%%LOCALLIBRARY%%/Headers/Pantomime/LocalFolder.h
+%%LOCALLIBRARY%%/Headers/Pantomime/LocalFolderCacheManager.h
+%%LOCALLIBRARY%%/Headers/Pantomime/LocalMessage.h
+%%LOCALLIBRARY%%/Headers/Pantomime/LocalStore.h
+%%LOCALLIBRARY%%/Headers/Pantomime/MD5.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Message.h
+%%LOCALLIBRARY%%/Headers/Pantomime/MimeMultipart.h
+%%LOCALLIBRARY%%/Headers/Pantomime/MimeUtility.h
+%%LOCALLIBRARY%%/Headers/Pantomime/NSData+Extensions.h
+%%LOCALLIBRARY%%/Headers/Pantomime/NSRegEx.h
+%%LOCALLIBRARY%%/Headers/Pantomime/NSString+Extensions.h
+%%LOCALLIBRARY%%/Headers/Pantomime/POP3CacheManager.h
+%%LOCALLIBRARY%%/Headers/Pantomime/POP3CacheObject.h
+%%LOCALLIBRARY%%/Headers/Pantomime/POP3Folder.h
+%%LOCALLIBRARY%%/Headers/Pantomime/POP3Message.h
+%%LOCALLIBRARY%%/Headers/Pantomime/POP3Store.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Pantomime.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Parser.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Part.h
+%%LOCALLIBRARY%%/Headers/Pantomime/SMTP.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Sendmail.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Service.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Store.h
+%%LOCALLIBRARY%%/Headers/Pantomime/TCPConnection.h
+%%LOCALLIBRARY%%/Headers/Pantomime/Transport.h
+%%LOCALLIBRARY%%/Headers/Pantomime/URLName.h
+%%LOCALLIBRARY%%/Headers/Pantomime/UTF8.h
+%%LOCALLIBRARY%%/Headers/Pantomime/UUFile.h
+%%LOCALLIBRARY%%/Headers/Pantomime/WINDOWS_1250.h
+%%LOCALLIBRARY%%/Headers/Pantomime/WINDOWS_1251.h
+%%LOCALLIBRARY%%/Headers/Pantomime/WINDOWS_1252.h
+%%LOCALLIBRARY%%/Headers/Pantomime/WINDOWS_1253.h
+%%LOCALLIBRARY%%/Headers/Pantomime/WINDOWS_1254.h
+%%LOCALLIBRARY%%/Headers/Pantomime/elm_defs.h
+%%LOCALLIBRARY%%/Headers/Pantomime/elm_lib.h
+%%LOCALLIBRARY%%/Headers/Pantomime/parseaddrs.h
+%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libPantomime.so
+%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libPantomime.so.%%MAJORVERSION%%
+%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libPantomime.so.%%VERSION%%
+%%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%
+@dirrm %%LOCALLIBRARY%%/Libraries
+@dirrm %%LOCALLIBRARY%%/Headers/Pantomime
+@dirrm %%LOCALLIBRARY%%/Headers
+%%GNUSTEP_DEVEL%%@dirrm %%LOCALLIBRARY%%

@@ -1,0 +1,5 @@
+bin/dcl2inc
+bin/ftnchek
+share/emacs/site-lisp/ftnchek.el
+share/ftnchek/dcl2inc.awk
+@dirrm share/ftnchek

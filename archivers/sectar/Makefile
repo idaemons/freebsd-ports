@@ -1,0 +1,20 @@
+# New ports collection makefile for:   sectar
+# Date created:        22 January 2001
+# Whom:                George Reid <greid@ukug.uk.freebsd.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=		sectar
+PORTVERSION=		1.02
+CATEGORIES=		archivers
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	star
+
+MAINTAINER=		greid@ukug.uk.freebsd.org
+COMMENT=		A program to create encrypted tar archives
+
+USE_GETOPT_LONG=	yes
+USE_LIBTOOL=		yes
+
+.include <bsd.port.mk>

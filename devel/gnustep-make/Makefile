@@ -1,0 +1,51 @@
+# New ports collection makefile for:    gnustep-make
+# Date created:         17 April 2001
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnustep-make
+.if defined(WITH_GNUSTEP_DEVEL)
+PORTVERSION=	1.7.3
+.else
+PORTVERSION=	1.6.0
+.endif
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
+		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
+		http://archive.progeny.com/gnustep/%SUBDIR%/ \
+		ftp://ftp.easynet.nl/mirror/GNUstep/%SUBDIR%/
+MASTER_SITE_SUBDIR=	core
+.if defined(WITH_GNUSTEP_DEVEL)
+EXTRA_PATCHES+=	${FILESDIR}/target.make.patch-devel
+.else
+EXTRA_PATCHES+=	${FILESDIR}/target.make.patch
+.endif
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	GNUstep makefile package
+
+PREFIX=		${LOCALBASE}/GNUstep
+NO_MTREE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} -c" INSTALL_DATA="${INSTALL} -c" \
+		CFLAGS="${CFLAGS} -D_THREAD_SAFE"
+CONFIGURE_TARGET=
+USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+MAKEFILE=
+MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
+
+.if defined(WITH_GNUSTEP_DEVEL)
+PLIST_SUB+=	NOFLAT2=""
+.else
+PLIST_SUB+=	NOFLAT2="${GNU_ARCH}/${OPSYS:L}/"
+.endif
+
+post-configure:
+	${MV} ${WRKSRC}/config.make ${WRKSRC}/config.make.sed
+	${SED} -e "s|\(objc_threaded:=\).*|\1 ${PTHREAD_LIBS}|" \
+		< ${WRKSRC}/config.make.sed > ${WRKSRC}/config.make
+
+.include <bsd.port.mk>

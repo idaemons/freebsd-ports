@@ -1,0 +1,12 @@
+include/libpng/png.h
+@exec ln -sf libpng/%f %D/include/%f
+@unexec rm -f %D/include/%f
+include/libpng/pngconf.h
+@exec ln -sf libpng/%f %D/include/%f
+@unexec rm -f %D/include/%f
+lib/libpng.a
+lib/libpng.so
+lib/libpng.so.%%SHLIB_VER%%
+libdata/pkgconfig/libpng12.pc
+@dirrm include/libpng
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

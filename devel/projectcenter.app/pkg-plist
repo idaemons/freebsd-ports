@@ -1,0 +1,164 @@
+%%GNUSTEP_STABLE%%System/Applications/ProjectCenter.app/%%NOFLAT%%ProjectCenter
+System/Applications/ProjectCenter.app/%%NOFLAT%%library_paths.openapp
+System/Applications/ProjectCenter.app/ProjectCenter
+System/Applications/ProjectCenter.app/Resources/ButtonTile.tiff
+System/Applications/ProjectCenter.app/Resources/FileIcon_.c.tiff
+System/Applications/ProjectCenter.app/Resources/FileIcon_.h.tiff
+System/Applications/ProjectCenter.app/Resources/FileIcon_.m.tiff
+System/Applications/ProjectCenter.app/Resources/FileIcon_rtf.tiff
+System/Applications/ProjectCenter.app/Resources/Info-gnustep.plist
+System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/%%NOFLAT%%PCAppProj
+System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/Resources/AppController.h
+System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/Resources/AppController.m
+System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/Resources/GNUmakefile.postamble
+System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/Resources/GNUmakefile.preamble
+System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/Resources/Info-gnustep.plist
+System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/Resources/PC.proj
+System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/Resources/main.m
+System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/stamp.make
+System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/%%NOFLAT%%PCBaseFileTypes
+System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/Resources/Info-gnustep.plist
+System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/Resources/cfile.template
+System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/Resources/cheader.template
+System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/Resources/class.template
+System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/Resources/gsmarkup.template
+System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/Resources/header.template
+System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/Resources/protocol.template
+System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/stamp.make
+System/Applications/ProjectCenter.app/Resources/PCBundleProj.bundle/%%NOFLAT%%PCBundleProj
+System/Applications/ProjectCenter.app/Resources/PCBundleProj.bundle/Resources/Info-gnustep.plist
+System/Applications/ProjectCenter.app/Resources/PCBundleProj.bundle/Resources/PC.proj
+System/Applications/ProjectCenter.app/Resources/PCBundleProj.bundle/stamp.make
+System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/Resources/nsviewclass.template
+System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/Resources/nsviewheader.template
+System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle/%%NOFLAT%%PCGormProj
+System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle/Resources/Info-gnustep.plist
+System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle/Resources/PC.proj
+System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle/Resources/baseInterface.classes
+System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle/Resources/baseInterface.gorm
+System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle/Resources/main.m
+System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle/stamp.make
+System/Applications/ProjectCenter.app/Resources/PCLibProj.bundle/%%NOFLAT%%PCLibProj
+System/Applications/ProjectCenter.app/Resources/PCLibProj.bundle/Resources/Info-gnustep.plist
+System/Applications/ProjectCenter.app/Resources/PCLibProj.bundle/Resources/PC.proj
+System/Applications/ProjectCenter.app/Resources/PCLibProj.bundle/Resources/Version
+System/Applications/ProjectCenter.app/Resources/PCLibProj.bundle/stamp.make
+System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/%%NOFLAT%%PCRenaissanceProj
+System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/Resources/Info-gnustep.plist
+System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/Resources/PC.proj
+System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/Resources/main.m
+System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/Resources/AppController.m
+System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/Resources/AppController.h
+System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/Resources/Main.gsmarkup
+System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/Resources/MainMenu-GNUstep.gsmarkup
+System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/Resources/MainMenu-OSX.gsmarkup
+System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/stamp.make
+System/Applications/ProjectCenter.app/Resources/PCToolProj.bundle/%%NOFLAT%%PCToolProj
+System/Applications/ProjectCenter.app/Resources/PCToolProj.bundle/Resources/Info-gnustep.plist
+System/Applications/ProjectCenter.app/Resources/PCToolProj.bundle/Resources/Info-project.plist
+System/Applications/ProjectCenter.app/Resources/PCToolProj.bundle/Resources/PC.proj
+System/Applications/ProjectCenter.app/Resources/PCToolProj.bundle/Resources/main.m
+System/Applications/ProjectCenter.app/Resources/PCToolProj.bundle/stamp.make
+System/Applications/ProjectCenter.app/Resources/ProjectCenter.desktop
+System/Applications/ProjectCenter.app/Resources/ProjectCenter.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenterInfo.plist
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_add.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_build.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_clean.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_cvs.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_debug.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_dist.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_documentation.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_files.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_find.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_install.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_make.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_profile.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_rpm.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_prefs.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_run.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_settings.tiff
+System/Applications/ProjectCenter.app/Resources/ProjectCenter_uml.tiff
+System/Applications/ProjectCenter.app/Resources/Stop.tiff
+System/Applications/ProjectCenter.app/stamp.make
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/FileCreator.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCBrowserController.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCBundleLoader.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCButton.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCDataSource.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCDefines.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCEditor+UInterface.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCEditor.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCEditorController.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCEditorView+Highlighting.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCEditorView.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCFileManager+UInterface.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCFileManager.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCHistoryController.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCMakefileFactory.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCProject+ComponentHandling.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCProject.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCProject+UInterface.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCProjectBuilder.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCProjectDebugger+UInterface.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCProjectDebugger.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCProjectEditor.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCProjectManager+UInterface.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCProjectManager.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCServer.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCSplitView.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCTextFinder+UInterface.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PCTextFinder.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/PreferenceController.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/ProjectBuilder.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/ProjectCenter.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/ProjectComponent.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/ProjectDebugger.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/ProjectEditor.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/ProjectType.h
+%%SYSTEMLIBRARY%%/Headers/ProjectCenter/Server.h
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libProjectCenter.so
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libProjectCenter.so.0
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libProjectCenter.so.%%VERSION%%
+@dirrm %%SYSTEMLIBRARY%%/Headers/ProjectCenter
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/%%GNU_ARCH%%
+@dirrm System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/PCRenaissanceProj.bundle
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCToolProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCToolProj.bundle/%%GNU_ARCH%%
+@dirrm System/Applications/ProjectCenter.app/Resources/PCToolProj.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/PCToolProj.bundle
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCLibProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCLibProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCLibProj.bundle/%%GNU_ARCH%%
+@dirrm System/Applications/ProjectCenter.app/Resources/PCLibProj.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/PCLibProj.bundle
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle/%%GNU_ARCH%%
+@dirrm System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/PCGormProj.bundle
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCBundleProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCBundleProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCBundleProj.bundle/%%GNU_ARCH%%
+@dirrm System/Applications/ProjectCenter.app/Resources/PCBundleProj.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/PCBundleProj.bundle
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/%%GNU_ARCH%%
+@dirrm System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/PCBaseFileTypes.bundle
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/%%GNU_ARCH%%
+@dirrm System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/PCAppProj.bundle
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Applications/ProjectCenter.app/%%GNU_ARCH%%
+@dirrm System/Applications/ProjectCenter.app/Resources
+@dirrm System/Applications/ProjectCenter.app
+%%GNUSTEP_STABLE%%@dirrm System/Applications
