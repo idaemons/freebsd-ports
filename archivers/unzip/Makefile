@@ -1,14 +1,41 @@
-DISTFILES=	unzip512.tar.Z
-DISTNAME=	unzip-5.12
-MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
-MAKEFILE=       unix/Makefile
-ALL_TARGET=     bsd
-MAKE_FLAGS=     LOCAL_UNZIP="-O2 -DCHECK_EOF" \
-		INSTALL="install -c -o bin -g bin" \
-		prefix=${PREFIX} -f
+# New ports collection makefile for:    unzip
+# Version required:     5.*
+# Date created:         17 October 1994
+# Whom:                 jmz
+#
+# $FreeBSD$
+#
 
-pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/man/man1
+DISTNAME=       unzip540
+PKGNAME=        unzip-5.40
+CATEGORIES=	archivers
+MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
+
+MAINTAINER=     ache@FreeBSD.org
+
+Y2K=		http://www.cdrom.com/pub/infozip/FAQ.html#Y2K
+
+WRKSRC=         ${WRKDIR}/unzip-5.40
+MAKEFILE=       unix/Makefile
+MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
+MAN1=           funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
+
+do-install:
+	cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} unzip funzip unzipsfx ${PREFIX}/bin
+	${LN} -sf unzip ${PREFIX}/bin/zipinfo
+	cd ${WRKSRC}/unix && \
+		${INSTALL_SCRIPT} zipgrep ${PREFIX}/bin
+	cd ${WRKSRC}/unix && \
+		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+	${INSTALL} -d -m 555 -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/share/doc/unzip
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} README COPYING WHERE ${PREFIX}/share/doc/unzip
 
 .include <bsd.port.mk>
+
+.if ${ARCH} == "alpha"
+ALL_TARGET=	bsd
+.else
+ALL_TARGET=     freebsd
+.endif

@@ -1,0 +1,30 @@
+Index: libaudio/audio.h
+@@ -17,13 +17,15 @@
+ |
+ ****************************************************************************/
+ 
+-#ifdef LINUX
++#if defined(LINUX) || defined(__FreeBSD__)
+ 
+ #ifndef _audio_h
+ #define _audio_h
+ 
+ #include <stdio.h>
++#ifndef	__FreeBSD__
+ #include <malloc.h>
++#endif
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <limits.h>
+@@ -31,7 +33,11 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
++#ifdef	__FreeBSD__
++#include <machine/soundcard.h>
++#else
+ #include <sys/soundcard.h>
++#endif
+ 
+ #ifdef __cplusplus
+ extern "C"

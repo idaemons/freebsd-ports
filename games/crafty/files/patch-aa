@@ -1,0 +1,74 @@
+--- Makefile.orig	Thu Nov 11 09:19:29 1999
++++ Makefile	Thu Dec  2 15:50:05 1999
+@@ -23,7 +23,7 @@
+ #     SGI      {SGI Workstation running Irix (SYSV/R4) Unix}
+ #     SUN      {Sun SparcStation running Solaris (SYSV/R4) Unix}
+ #     SUN_BSD  {Sun SparcStation running SunOS (BSD) Unix}
+-#     FreeBSD  {80X86 architecture running FreeBSD (unix)}
++#     FreeBSD  {80X86/Alpha architecture running FreeBSD (unix)}
+ #   
+ #   The next options are optimizations inside Crafty that you will have
+ #   test to see if they help.  on some machines, these will slow things
+@@ -83,13 +83,13 @@
+ # asm     = X86.o
+ 
+ # FreeBSD (gcc 2.6.3)
+-#target  = FreeBSD
++target  = FreeBSD
+ #CC      = gcc
+ #CFLAGS  = -fomit-frame-pointer -m486 -O3 -Wall
+-#CPP	 = $(CC)
+-#LDFLAGS = 
+-#opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
+-#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
++CPP	 = $(CXX)
++LDFLAGS = 
++opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
++          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
+ 
+ # FreeBSD (pgcc)
+ #target  = FreeBSD
+@@ -111,20 +111,25 @@
+  
+ # LINUX (gcc 2.95)
+ # Note: You have to uncomment exactly ONE of the `asm' lines below.
+-target  = LINUX
+-CC      = gcc
+-CPP	= g++
+-CFLAGS  = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem \
+-          -fomit-frame-pointer
+-LDFLAGS = -lpthread
+-opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
+-          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
++#target  = LINUX
++#CC      = gcc
++#CPP	= g++
++#CFLAGS  = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem \
++#          -fomit-frame-pointer
++#LDFLAGS = -lpthread
++#opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
++#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
+ 
+ # Uncomment the FIRST `asm' line for a.out systems.
+ # Uncomment the SECOND `asm' line for ELF systems.
+ #
+-#asm     = X86-aout.o
++.if ${MACHINE_ARCH} == "i386"
++.if ${PORTOBJFORMAT} == "aout"
++asm     = X86-aout.o
++.else
+ asm     = X86-elf.o
++.endif
++.endif
+  
+ # NEXT
+ #target  = NEXT
+@@ -169,7 +174,7 @@
+ 
+ # Do not change anything below this line!
+ 
+-opts = $(opt) -D$(target)
++CFLAGS += $(opt) -D$(target)
+ 
+ objects = searchr.o search.o thread.o searchmp.o repeat.o next.o nexte.o      \
+        nextr.o history.o quiesce.o evaluate.o movgen.o make.o unmake.o hash.o \

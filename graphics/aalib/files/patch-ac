@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue Oct 28 22:48:40 1997
++++ configure.in	Sun Apr 19 12:18:10 1998
+@@ -245,7 +245,7 @@
+   ])
+   AC_SLANG(/usr/include, slang.h, , -I/usr/include/slang , "slang on /usr/include")
+   AC_SLANG(/usr/include/slang, slang.h, , -I/usr/include/slang , "slang on /usr/include/slang")
+-  AC_SLANG(/usr/local/include, slang.h, , -I/usr/local/include/slang , "slang on /usr/local/include")
++  AC_SLANG(/usr/local/include, slang.h, , -I/usr/local/include , "slang on /usr/local/include")
+   AC_SLANG(/usr/local/include/slang, slang.h, , -I/usr/local/include/slang , "slang on /usr/local/include/slang")
+   if test "$slang_driver" = true; then
+     if test "$force_curses_driver" = false; then

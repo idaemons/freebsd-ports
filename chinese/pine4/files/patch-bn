@@ -1,0 +1,56 @@
+--- pine/takeaddr.c.orig	Fri Sep 10 05:35:29 1999
++++ pine/takeaddr.c	Thu Oct 14 10:53:45 1999
+@@ -895,7 +895,7 @@
+     return;
+ 
+ take_to_addrbooks_cancel:
+-    cancel_warning(NO_DING, "addition");
++    cancel_warning(NO_DING, "新增");
+     if(tas && *tas){
+ 	restore_state(&((*tas)->state));
+ 	(*tas)->pab   = NULL;
+@@ -1385,7 +1385,7 @@
+ 	    break;
+ 
+ 	  case MC_EXIT:				/* exit takeaddr screen */
+-	    cancel_warning(NO_DING, "addition");
++	    cancel_warning(NO_DING, "新增");
+ 	    ret = 1;
+ 	    done++;
+ 	    break;
+@@ -2862,7 +2862,7 @@
+     
+     switch(j){
+       case 'x':
+-	cancel_warning(NO_DING, "save");
++	cancel_warning(NO_DING, "存檔");
+ 	return;
+ 
+       case 'e':
+@@ -2962,7 +2962,7 @@
+ 
+     switch(i){
+       case 'x':
+-	cancel_warning(NO_DING, "export");
++	cancel_warning(NO_DING, "匯出");
+ 	return;
+     
+       case 'a':
+@@ -4937,7 +4937,7 @@
+ 	    
+ 	    switch(j){
+ 	      case 'x':
+-		cancel_warning(NO_DING, "Save");
++		cancel_warning(NO_DING, "存檔");
+ 		break;
+ 
+ 	      case 'e':
+@@ -5155,7 +5155,7 @@
+ 	
+ 	switch(j){
+ 	  case 'x':
+-	    cancel_warning(NO_DING, "Export");
++	    cancel_warning(NO_DING, "匯出");
+ 	    break;
+ 	
+ 	  case 't':

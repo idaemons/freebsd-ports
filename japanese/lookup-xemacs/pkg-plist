@@ -1,0 +1,26 @@
+lib/xemacs/site-packages/lisp/lookup-startup.el
+lib/xemacs/site-packages/lisp/lookup/evi-mule.el
+lib/xemacs/site-packages/lisp/lookup/evi.el
+lib/xemacs/site-packages/lisp/lookup/lookup-content.el
+lib/xemacs/site-packages/lisp/lookup/lookup-entry.el
+lib/xemacs/site-packages/lisp/lookup/lookup-package.el
+lib/xemacs/site-packages/lisp/lookup/lookup-select.el
+lib/xemacs/site-packages/lisp/lookup/lookup-types.el
+lib/xemacs/site-packages/lisp/lookup/lookup-utils.el
+lib/xemacs/site-packages/lisp/lookup/lookup-vars.el
+lib/xemacs/site-packages/lisp/lookup/lookup-vse.el
+lib/xemacs/site-packages/lisp/lookup/lookup.el
+lib/xemacs/site-packages/lisp/lookup/ndcookie.el
+lib/xemacs/site-packages/lisp/lookup/ndeb.el
+lib/xemacs/site-packages/lisp/lookup/ndic.el
+lib/xemacs/site-packages/lisp/lookup/ndict.el
+lib/xemacs/site-packages/lisp/lookup/ndkks.el
+lib/xemacs/site-packages/lisp/lookup/ndmisc.el
+lib/xemacs/site-packages/lisp/lookup/ndspell.el
+lib/xemacs/site-packages/lisp/lookup/ndsrd.el
+lib/xemacs/site-packages/lisp/lookup/ndtp.el
+lib/xemacs/site-packages/lisp/lookup/sdicf.el
+lib/xemacs/site-packages/lisp/lookup/stem-english.el
+lib/xemacs/site-packages/pkginfo/MANIFEST.lookup
+lib/xemacs/site-packages/info/lookup.info
+@dirrm lib/xemacs/site-packages/lisp/lookup

@@ -1,6 +1,68 @@
-
-# $Id: Makefile,v 1.6 1994/12/06 11:57:27 asami Exp $
+# $FreeBSD$
 #
-SUBDIR=	blas calc eispack fudgit gnuplot hexcalc linpack oleo xgraph
+
+    SUBDIR += PDL
+    SUBDIR += R-a4
+    SUBDIR += R-letter
+    SUBDIR += Scilab
+    SUBDIR += abs
+    SUBDIR += add
+    SUBDIR += apc
+    SUBDIR += blas
+    SUBDIR += calc
+    SUBDIR += calctool
+    SUBDIR += dcdflib
+    SUBDIR += eispack
+    SUBDIR += eval
+    SUBDIR += femlab
+    SUBDIR += fftpack
+    SUBDIR += fftw
+    SUBDIR += freefem
+    SUBDIR += fudgit
+    SUBDIR += geg
+    SUBDIR += gnumeric
+    SUBDIR += gnuplot
+    SUBDIR += gnuplot+
+    SUBDIR += grace
+    SUBDIR += grpn
+    SUBDIR += hexcalc
+    SUBDIR += lapack
+    SUBDIR += libranlib
+    SUBDIR += linpack
+    SUBDIR += metis
+    SUBDIR += netcdf
+    SUBDIR += ngraph
+    SUBDIR += numpy
+    SUBDIR += octave
+    SUBDIR += oleo
+    SUBDIR += p5-MatrixReal
+    SUBDIR += p5-Set-IntSpan
+    SUBDIR += pari
+    SUBDIR += parmetis
+    SUBDIR += plplot
+    SUBDIR += py-scientific
+    SUBDIR += pygist
+    SUBDIR += rcalc
+    SUBDIR += rng
+    SUBDIR += sc
+    SUBDIR += siag
+    SUBDIR += simpack
+    SUBDIR += snns
+    SUBDIR += spin
+    SUBDIR += ss
+    SUBDIR += superlu
+    SUBDIR += topaz
+    SUBDIR += umatrix
+    SUBDIR += umfpack
+    SUBDIR += vtk
+    SUBDIR += wingz
+    SUBDIR += xgfe
+    SUBDIR += xgraph
+    SUBDIR += xldlas
+    SUBDIR += xlispstat
+    SUBDIR += xmgr
+    SUBDIR += xplot
+    SUBDIR += xspread
+    SUBDIR += xwpl
 
 .include <bsd.port.subdir.mk>

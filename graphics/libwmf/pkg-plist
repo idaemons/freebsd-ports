@@ -1,0 +1,15 @@
+bin/wmftogif
+bin/xwmf
+include/Xwmfapi.h
+include/dibtoxpm.h
+include/gdwmfapi.h
+include/wmfapi.h
+include/xgd.h
+include/xgdttf.h
+lib/libXwmf.a
+lib/libdib.a
+lib/libgdwmf.a
+lib/libwmf.a
+lib/libxfig.a
+lib/libxfwmf.a
+lib/libxgd.a

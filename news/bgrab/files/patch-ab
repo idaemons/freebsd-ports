@@ -1,0 +1,39 @@
+--- main.cc.orig	Thu Sep 30 09:20:30 1999
++++ main.cc	Thu Sep 30 09:22:51 1999
+@@ -7,7 +7,6 @@
+ #include <sys/types.h>
+ #include <sys/wait.h>
+ #include <stdlib.h>
+-#include <curses.h>
+ #include "server.h"
+ #include "screen.h"
+ #include "tree.h"
+@@ -15,7 +14,7 @@
+ #include "grouplist.h"
+ #include "findfile.h"
+ 
+-#define		NNTP_PORT		119
++unsigned NNTP_PORT = 119;
+ 
+ char *NNTP_SERVER = NULL;
+ groupListPointer NNTP_GROUP = new groupList();
+@@ -249,6 +248,10 @@
+ 	fprintf(stderr," -a user pass	Authenticate the login to the server with\n");
+ 	fprintf(stderr,"		'user' as username and 'pass' as password.\n");
+ 	fprintf(stderr,"		Both username and password must be present.\n");
++	fprintf(stderr,"\nThe hostname or IP address of the news server can be\n");
++	fprintf(stderr,"specified by the NNTPSERVER environment variable, or defaults\n");
++	fprintf(stderr,"to \"news\". The port to connect to can be specified by the\n");
++	fprintf(stderr,"NNTPPORT environment variable or defaults to 119.\n");
+ 	exit(-1);
+ }
+ 
+@@ -301,6 +304,8 @@
+ 
+ 	if (getenv("NNTPSERVER")) NNTP_SERVER = strdup(getenv("NNTPSERVER"));
+ 	else NNTP_SERVER = strdup("news");
++
++	if (getenv("NNTPPORT")) NNTP_PORT = atoi(getenv("NNTPPORT"));
+ 
+ 	process_command_line(argc, argv);
+ 

@@ -1,0 +1,15 @@
+rtty/bin/ttysrv
+rtty/bin/rtty
+rtty/bin/locbrok
+rtty/bin/Startup
+rtty/bin/console
+rtty/bin/startsrv
+rtty/bin/agelogs
+rtty/bin/agelog
+@dirrm rtty/bin
+@dirrm rtty/dev
+@dirrm rtty/log
+@dirrm rtty/opt
+@dirrm rtty/pid
+@dirrm rtty/sock
+@dirrm rtty

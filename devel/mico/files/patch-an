@@ -1,0 +1,12 @@
+diff -ruN work/mico/auxdir/Makefile mico/auxdir/Makefile
+--- work/mico/auxdir/Makefile	Mon Jul 26 20:44:45 1999
++++ auxdir/Makefile	Sun Sep 26 04:48:35 1999
+@@ -24,7 +24,7 @@
+ 
+ LDLIBS    = -lmico$(VERSION) $(CONFLIBS)
+ LDFLAGS  := -L../orb $(LDFLAGS)
+-CXXFLAGS := -I. -I../include $(CXXFLAGS) $(X_CFLAGS)
++CXXFLAGS := -I. -I../include -I$(QT_INCLUDES) $(CXXFLAGS) $(X_CFLAGS)
+ 
+ AUX_SRCS=dynany_impl.cc
+ STATIC_AUX_OBJS = $(AUX_SRCS:.cc=.o)

@@ -1,17 +1,31 @@
 # New ports collection makefile for:	transfig
-# Version required:	3.1.1
-# Date created:		?
-# Whom:			mr (original)
+# Version required:	3.2.1
+# Date created:		9 August 1996
+# Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.4 1995/01/28 18:36:35 asami Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	transfig.3.1.1
-PKGNAME=	transfig-3.1.1
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/drawing_tools/transfig/ \
-	ftp://crl.dec.com/pub/X11/contrib/applications/drawing_tools/transfig/
+DISTNAME=	transfig.3.2.1
+PKGNAME=	transfig-3.2.1
+CATEGORIES=	print
+MASTER_SITES=	${MASTER_SITE_XCONTRIB} ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	applications/drawing_tools/transfig
+DISTFILES=	transfig.3.2.1.tar.gz transfig.3.2.ja_JP.EUC.ps.gz
+
+MAINTAINER=	chuckr@freebsd.org
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
+RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
+
 USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/transfig
+EXTRACT_ONLY=	transfig.3.2.1.tar.gz
+MAN1=		fig2dev.1 fig2ps2tex.1 pic2tpic.1 transfig.1
+
+post-install:
+	@${MKDIR} ${PREFIX}/lib/X11/fig2dev
+	@${GZCAT} ${DISTDIR}/transfig.3.2.ja_JP.EUC.ps.gz \
+		> ${PREFIX}/lib/X11/fig2dev/ja_JP.EUC.ps
 
 .include <bsd.port.mk>
-

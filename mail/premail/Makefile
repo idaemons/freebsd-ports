@@ -1,0 +1,39 @@
+# New ports collection makefile for: premail
+# Version required:     0.46
+# Premail homepage is http://www.c2.net/~raph/premail.html
+#
+# Date created:         31 Jan 1997
+# Whom:                 ache
+#
+# $FreeBSD$
+#
+
+DISTNAME=       premail-0.46
+CATEGORIES=     security mail
+MASTER_SITES=   ftp://ftp.jpunix.com/pub/remailer-tools/ \
+		ftp://ftp.kiarchive.ru/pub/unix/crypto/
+
+MAINTAINER=	ache@FreeBSD.org
+
+BUILD_DEPENDS+= pgp:${PORTSDIR}/security/pgp
+
+WRKSRC=         ${WRKDIR}/premail
+USE_PERL5=      Yes
+NO_BUILD=       Yes
+RESTRICTED=     "Author treats it as ITAR subject"
+
+post-patch:
+	cd ${WRKSRC}; \
+	${CP} premail premail.old; \
+	${SED} 's=#!/usr/local/bin/perl=#!${PERL} -w=' < premail.old > premail
+
+do-install:
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} premail ${PREFIX}/bin
+	${MKDIR} -m 555 ${PREFIX}/share/doc/premail
+	cd ${WRKSRC} && ${INSTALL_DATA} \
+	   preferences doc-0.46.html doc-0.46.txt ${PREFIX}/share/doc/premail
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Check ${PREFIX}/share/doc/premail for further instructions"
+	@${ECHO_MSG}
+
+.include <bsd.port.mk>

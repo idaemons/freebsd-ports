@@ -1,0 +1,22 @@
+--- makefile.orig	Fri Jul 16 13:47:54 1999
++++ makefile	Mon Nov 29 02:07:56 1999
+@@ -22,13 +22,13 @@
+ # THIS SOFTWARE.
+ # ****************************************************************/
+ 
+-CFLAGS = -g
+-CFLAGS = -O2
+-CFLAGS =
++#CFLAGS = -g
++CFLAGS ?= -O2
++#CFLAGS =
+ 
+-CC = gcc -Wall -g
+-CC = /opt/pure/purify/purify cc
+-CC = cc
++CC ?= gcc -Wall -g
++#CC = /opt/pure/purify/purify cc
++#CC = cc
+ 
+ YACC = bison -y
+ YACC = yacc

@@ -1,0 +1,23 @@
+*** Imakefile.orig	Tue Oct 26 22:43:27 1999
+--- Imakefile	Wed Oct 27 04:11:29 1999
+***************
+*** 31,39 ****
+  # Change the following as desired to suit your environment:
+  #------------------------------------------------------------------------
+  #
+! PREFIX = /usr/local
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.0a11/psfiles
+! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/xcircuit-2.0
+  XCIRCUIT_BIN_DIR = $(PREFIX)/bin
+  XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
+  
+--- 31,39 ----
+  # Change the following as desired to suit your environment:
+  #------------------------------------------------------------------------
+  #
+! PREFIX ?= /usr/local
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.0a11/psfiles
+! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/X11/xcircuit
+  XCIRCUIT_BIN_DIR = $(PREFIX)/bin
+  XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
+  

@@ -1,0 +1,28 @@
+--- Makefile.orig	Tue Oct 13 18:16:35 1998
++++ Makefile	Sat Jan  9 15:40:09 1999
+@@ -5,8 +5,8 @@
+ #--------------------------------------------------------------------------
+ 
+ # Where you want to have it installed
+-BINDIR	= /usr/X11/bin
+-MANDIR	= /usr/X11/man/man1
++BINDIR	= /usr/X11R6/bin
++MANDIR	= /usr/X11R6/man/man1
+ 
+ # Use these for Mesa
+ #GL	= -lglut -lMesaGLU -lMesaGL
+@@ -16,10 +16,12 @@
+ 
+ # Use these for gcc on Linux (may work in other systems as well)
+ CC	= gcc
+-CFLAGS	= -O3 -fomit-frame-pointer -ffast-math -Wall -Wno-implicit-int
++CFLAGS	= -pipe -O2 -fexpensive-optimizations -ffast-math -fomit-frame-pointer \
++	  -fforce-mem -fforce-addr -Wall -Wno-implicit-int -I/usr/X11R6/include \
++	  -I/usr/local/include
+ LD	= gcc
+ LDFLAGS	= -o $@
+-LIBS	= -L/usr/X11/lib -L/usr/local/lib $(GL) -lX11 -lXext -lXmu -lXi -lm
++LIBS	= -Wl,-rpath,/usr/X11R6/lib -L/usr/X11R6/lib -L/usr/local/lib $(GL) -lX11 -lXext -lXmu -lXi -lm
+ 
+ # Use these for cc on IRIX (submitted by Andrew Dalke <dalke@bioreason.com>)
+ #CC	= cc

@@ -1,14 +1,26 @@
+# New ports collection makefile for:    linpack
+# Version required:     ?
+# Date created:         31 October 1994
+# Whom:                 ljo
+#
+# $FreeBSD$
+#
+
 DISTNAME=	linpack
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
-MASTER_SITES=	ftp://netlib.att.com/netlib/linpack/
-.if defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/linpack/
-.undef MASTER_SITE_OVERRIDE
-.endif
-EXTRACT_CMD=scripts/uncomp
-EXTRACT_SUFX=.Z
-EXTRACT_ARGS= ${WRKDIR}
-WRKSRC=${WRKDIR}
+PKGNAME=	linpack-1.0
+CATEGORIES=	math
+MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/linpack/
+
+DIST_SUBDIR=	${DISTNAME}
+
+LIB_DEPENDS=    blas.1:${PORTSDIR}/math/blas
+
+EXTRACT_CMD=	${SH} ${SCRIPTDIR}/uncomp
+EXTRACT_SUFX=	.gz
+EXTRACT_BEFORE_ARGS=	${WRKDIR}
+EXTRACT_AFTER_ARGS=	# empty
+
+NO_WRKSUBDIR=	yes
 
 SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 	cgeco.f cgedi.f cgefa.f cgesl.f cgtsl.f chico.f chidi.f chifa.f \
@@ -34,13 +46,17 @@ SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 	zsico.f zsidi.f zsifa.f zsisl.f zspco.f zspdi.f zspfa.f zspsl.f \
 	zsvdc.f ztrco.f ztrdi.f ztrsl.f
 
-DISTFILES=	${SRCS:.f=.f.Z}
+DISTFILES=	${SRCS:.f=.f.gz}
+
+.include <bsd.port.pre.mk>
 
 pre-build:
-	cp Makefile.lib ${WRKDIR}/Makefile
+	${CP} ${FILESDIR}/Makefile.lib ${WRKDIR}/Makefile
 
-pre-extract:
-	chmod +x scripts/uncomp
+post-install:
+	${LDCONFIG} -m ${PREFIX}/lib
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf liblinpack.so.1.0 ${PREFIX}/lib/liblinpack.so
+.endif
 
-.include <bsd.port.mk>
-
+.include <bsd.port.post.mk>

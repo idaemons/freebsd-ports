@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Thu Nov  5 21:54:07 1998
++++ Makefile.in	Sun Sep 26 07:45:19 1999
+@@ -68,7 +68,7 @@
+ HOST_PREFIX_1 = loser-
+ 
+ # These flag values are normally overridden by the configure script.
+-CFLAGS = -g
++CFLAGS+= -g
+ CXXFLAGS = -g -O2
+ 
+ LIBCFLAGS = $(CFLAGS)
+@@ -121,7 +121,7 @@
+ 
+ M4 = `if [ -f $$r/m4/m4 ] ; \
+ 	then echo $$r/m4/m4 ; \
+-	else echo m4 ; fi`
++	else echo gm4 ; fi`
+ 
+ MAKEINFO = `if [ -f $$r/texinfo/makeinfo/Makefile ] ; \
+ 	then echo $$r/texinfo/makeinfo/makeinfo ; \

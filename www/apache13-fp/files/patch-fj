@@ -1,0 +1,11 @@
+--- src/main/util.c.orig	Sat Aug 14 03:35:50 1999
++++ src/main/util.c	Mon Sep  6 13:12:55 1999
+@@ -635,7 +635,7 @@
+     char *res;
+ 
+     for (x = 0; (*line)[x]; x++) {
+-	if (ap_isspace((*line)[x])) {
++	if (ap_isspace((*line)[x]) && ((*line)[x] & 0x80)==0) {
+ 	    pos = x;
+ 	    break;
+ 	}

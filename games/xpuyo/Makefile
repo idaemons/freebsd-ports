@@ -1,0 +1,28 @@
+# New ports collection makefile for:   xpuyo
+# Version required:    0.0
+# Date created:        12 October 1996
+# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	xpuyo
+PKGNAME=	xpuyo-0.0
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.meme.hokudai.ac.jp/pub/games/
+
+MAINTAINER=	nacai@iname.com
+
+USE_IMAKE=	yes
+XMKMF=		xmkmf
+NO_INSTALL_MANPAGES=yes
+
+RESTRICTED=	"The author\'s ashamed of the quality of this version"
+
+post-install:
+	@${CHMOD} 755 ${PREFIX}/bin/xpuyo
+	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/xpuyo
+	${MKDIR} ${PREFIX}/share/doc/xpuyo
+	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/doc/xpuyo
+
+.include <bsd.port.mk>

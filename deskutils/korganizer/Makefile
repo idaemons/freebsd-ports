@@ -1,0 +1,32 @@
+# New ports collection makefile for:   korganizer
+# Version required:    Beta4
+# Date created:        23 May 1998
+# Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	korganizer-1.1
+CATEGORIES=	deskutils kde
+MASTER_SITES=	$(MASTER_SITE_KDE)
+MASTER_SITE_SUBDIR=stable/1.1/distribution/tar/generic/source/bz2
+
+MAINTAINER=	hanspb@persbraten.vgs.no
+
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11
+
+USE_BZIP2=	yes
+USE_QT=		yes
+HAS_CONFIGURE=	yes
+USE_GMAKE=	yes
+CONFIGURE_ARGS=	"--prefix=$(PREFIX)"
+CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
+		INSTALL_SCRIPT="install -c -m 555"
+
+pre-configure:
+		${RM} -rf -- $(WRKSRC)/src/.deps $(WRKSRC)/config.cache
+
+.include <bsd.port.mk>

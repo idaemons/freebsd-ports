@@ -1,0 +1,28 @@
+--- configure.orig	Fri Apr  9 18:03:33 1999
++++ configure	Sat May 22 21:21:21 1999
+@@ -3122,7 +3122,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  PTHREAD_LIB="-lc_r"
++  PTHREAD_LIB=""
+ else
+   echo "$ac_t""no" 1>&6
+ echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
+@@ -5098,7 +5098,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -6269,6 +6269,7 @@
+ case "$host" in
+ *linux*) CDROM_HOST=linux;;
+ *solaris*) CDROM_HOST=solaris;;
++*freebsd*) CDROM_HOST=freebsd;;
+ esac
+ 
+ 

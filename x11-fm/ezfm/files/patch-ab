@@ -1,0 +1,12 @@
+--- ezfm.h	Thu Dec 10 09:30:59 1998
++++ /home/andy/tmp/wrk/ezfm.h	Tue Mar 16 17:23:47 1999
+@@ -53,7 +53,9 @@
+ #endif
+ /*************************************************************/
+ EXTERN   int erron, sys_nerr;
++#ifndef __FreeBSD__
+ EXTERN   char *sys_errlist[];
++#endif
+ #define syserr(en) (((en) >= 0 && (en) < sys_nerr) ? sys_errlist[(en)] : "Unknown error")
+ #define SECONDS_IN_YEAR         31536000
+ #define SelectionBackground     "yellow"

@@ -1,14 +1,24 @@
 # New ports collection makefile for:	xgraph
-# Version required:	11
+# Version required:	11.3.2
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/25 04:47:47 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xgraph-11
-USE_IMAKE=	yes
-MASTER_SITES=	ftp://ftp.cs.orst.edu/pub/src/Xclients.local/
+PKGNAME=	xgraph-11.3.2
+CATEGORIES=	math print
+MASTER_SITES=	ftp://ftp.cs.utoronto.ca/pub/radford/
 EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	sanpei@sanpei.org
+
+USE_IMAKE=	yes
+MAN1=		xgraph.1
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/examples/xgraph
+	${INSTALL_DATA} ${WRKSRC}/examples/*.xg ${PREFIX}/share/examples/xgraph
 
 .include <bsd.port.mk>

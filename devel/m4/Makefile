@@ -3,12 +3,24 @@
 # Date created:		25 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/25 00:10:39 jkh Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       m4-1.4
-MASTER_SITES=   ftp://gatekeeper.dec.com/pub/GNU/ ftp://prep.ai.mit.edu/pub/gnu/
-CONFIGURE_ARGS= --program-prefix=g --prefix=${PREFIX}
+CATEGORIES=	devel
+MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	m4
+
+MAINTAINER=	ports@FreeBSD.org
+
+Y2K=		http://www.gnu.org/software/year2000.html
+
 GNU_CONFIGURE=yes
+CONFIGURE_ARGS= --program-prefix=g
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/examples/gm4
+	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/share/examples/gm4
+	@install-info ${PREFIX}/info/m4.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

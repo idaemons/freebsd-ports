@@ -1,0 +1,22 @@
+--- Makefile.orig	Thu Jul  1 10:39:20 1999
++++ Makefile	Sat Aug 28 09:25:59 1999
+@@ -187,6 +187,19 @@
+ 		-cd tests;		$(MAKE) Clean
+ 
+ ##################################################################
++
++install:
++	@bin/patchstr bin/iconc ${PREFIX}/share/icon/
++	@bin/patchstr bin/icont ${PREFIX}/bin/iconx
++	install -c -s -g bin -o bin -m 755 bin/iconc ${PREFIX}/bin/iconc
++	install -c -s -g bin -o bin -m 755 bin/icont ${PREFIX}/bin/icont
++	install -c -s -g bin -o bin -m 755 bin/iconx ${PREFIX}/bin/iconx
++	install -c -s -g bin -o bin -m 755 bin/patchstr ${PREFIX}/bin/patchstr
++	@mkdir -p ${PREFIX}/share/icon
++	install -c -g bin -o bin -m 644 bin/dlrgint.o ${PREFIX}/share/icon/dlrgint.o
++	install -c -g bin -o bin -m 644 bin/rt.a ${PREFIX}/share/icon/rt.a
++	install -c -g bin -o bin -m 644 bin/rt.db ${PREFIX}/share/icon/rt.db
++	install -c -g bin -o bin -m 644 bin/rt.h ${PREFIX}/share/icon/rt.h
+ # Entries beyond this point are for use at Arizona only.
+ #   *** Do not delete the line above; it is used in trimming Makefiles
+ #   for distribution ***

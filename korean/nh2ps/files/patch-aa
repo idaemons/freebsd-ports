@@ -1,0 +1,10 @@
+--- ../nh2ps-2.3.orig/Makefile	Sat Jul 18 22:12:03 1998
++++ Makefile	Sat Jul 18 22:12:12 1998
+@@ -42,7 +42,6 @@
+ # stupid a**holes who add non-compatible "features"
+ 
+ # installation prefix
+-PREFIX  = /usr/local
+ 
+ # directories
+ BINDIR	= ${PREFIX}/bin

@@ -1,0 +1,109 @@
+# New ports collection makefile for:    apache-ssl HTTPSD
+# Version required:     1.2.x+
+# Date created:     	8th November, 1998
+# Whom:			Adam Laurie <adam@algroup.co.uk>
+#			based on apache port by ache@nagual.pp.ru
+#			and apache-ssl port by Mark Murray <mark@grondar.za>.
+#			Oh, and with a little bit of help from Ben :)
+#
+# $FreeBSD$
+
+APACHE= 	1.3.9
+APACHE-SSL=	1.37
+
+DISTNAME=       apache_${APACHE}
+PKGNAME=        apache+ssl-${APACHE}+${APACHE-SSL}
+CATEGORIES=	www security
+MASTER_SITES=   ftp://www.apache.org/dist/ \
+		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
+		ftp://ftp.gbnet.net/pub/apache/dist/ \
+		ftp://ftp.MASTER.pgp.net/pub/crypto/SSL/Apache-SSL/ \
+		ftp://ftp.flirble.org/pub/web/apache/dist/ \
+		ftp://ftp.replay.com/pub/crypto/apache/Apache-SSL/ \
+		ftp://ukug.uk.freebsd.org/pub/mirrors/apache/dist/ \
+		ftp://ftp.win.or.jp/pub/network/security/apache-ssl/Apache-SSL/ \
+		ftp://ftp.sage-au.org.au/pub/network/security/apache-ssl/Apache-SSL/ \
+		ftp://ftp.vwv.com/pub/crypto/SSL/Apache-SSL/ \
+		ftp://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
+		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
+		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/Apache-SSL/Apache-SSL/ \
+		ftp://ftp.funet.fi/pub/crypt/mirrors/ftp.ox.ac.uk/SSL/Apache-SSL/ \
+		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/
+
+Y2K=		http://www.apache-ssl.org/#Y2K
+
+DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} \
+		apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
+
+MAINTAINER=     adam@algroup.co.uk
+
+BUILD_DEPENDS=  openssl:${PORTSDIR}/security/openssl
+
+LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
+		ssl.1:${PORTSDIR}/security/openssl
+RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
+
+HAS_CONFIGURE=	yes
+CFLAGS+=	-I${PREFIX}/include/openssl
+CONFIGURE_ARGS=	\
+		--prefix=${PREFIX} \
+		--with-layout=GNU \
+		--sysconfdir=${PREFIX}/etc/apache \
+		--includedir=${PREFIX}/include/apache \
+		--localstatedir=/var \
+		--datadir=${PREFIX}/www \
+		--suexec-docroot=${PREFIX}/www/data \
+		--proxycachedir=${PREFIX}/www/proxy \
+		--libexecdir=${PREFIX}/libexec/apache \
+		--without-confadjust \
+		--enable-shared=remain \
+		--enable-module=most \
+		--enable-module=auth_db \
+		--disable-module=auth_dbm
+
+OPTIM=-DHARD_SERVER_LIMIT=512 \
+-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
+-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
+
+.if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
+OPTIM+= -DBUFFERED_LOGS
+CFLAGS+= -O6 -fomit-frame-pointer
+.endif
+
+CONFIGURE_ENV= OPTIM='${OPTIM}'
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+MAKE_ENV+=EXTRA_SSL_LIBS="-lRSAglue -lrsaref"
+.endif
+
+EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
+
+RESTRICTED=     "Contains cryptography"
+
+MAN1= 		dbmmanage.1 htdigest.1 htpasswd.1
+MAN8= 		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8
+
+post-extract:
+	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
+
+post-patch:
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch
+
+pre-configure:
+.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES
+	@${ECHO}
+	@${ECHO} "*** Warning!"
+	@${ECHO} You must set variable USA_RESIDENT to YES if you are USA
+	@${ECHO} resident and are using RSAREF otherwise package will not link
+	@${ECHO} correctly.
+	@${ECHO} 
+	@${ECHO} 
+.endif
+
+certificate:
+	@if [ -f ${PREFIX}/lib/openssl.cnf ]; then \
+		cd ${WRKSRC}; ${MAKE} ${MAKE_ENV} $@; \
+		${CP} ${WRKSRC}/SSLconf/conf/httpsd.pem ${PREFIX}/certs/cert.pem; \
+	else \
+		${ECHO} "You must create the file ${PREFIX}/lib/openssl.cnf first."; \
+
+.include <bsd.port.mk>

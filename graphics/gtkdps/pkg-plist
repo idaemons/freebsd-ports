@@ -1,0 +1,14 @@
+bin/gtkDPS-config
+include/gtkDPS/gdkDPS.h
+include/gtkDPS/gtkDPS.h
+include/gtkDPS/gtkDPSarea.h
+include/gtkDPS/gtkDPScontext.h
+include/gtkDPS/gdkDPSfont.h
+include/gtkDPS/gtkDPSfontsel.h
+include/gtkDPS/gtkDPSwidget.h
+lib/libgtkDPS.a
+lib/libgtkDPS.so
+lib/libgtkDPS.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@dirrm include/gtkDPS

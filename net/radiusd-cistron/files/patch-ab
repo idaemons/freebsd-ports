@@ -1,0 +1,21 @@
+--- src/Make.inc.orig	Sun Dec 20 05:52:48 1998
++++ src/Make.inc	Mon Dec 21 16:48:37 1998
+@@ -102,10 +102,12 @@
+ 	rm -f ../build ../debian/substvars ../debian/files
+ 
+ install:
+-	install -m 755 -s radiusd $(SBINDIR)/radiusd
+-	install -m 755 -s radwho  $(BINDIR)
+-	install -m 755 -s raduse  $(BINDIR)
+-	install -m 755 -s radzap  $(BINDIR)
+-	install -m 755    checkrad.pl $(SBINDIR)/checkrad
+-	install -m 755    radlast $(BINDIR)
++	${BSD_INSTALL_PROGRAM} radiusd $(SBINDIR)/radiusd
++	${BSD_INSTALL_SCRIPT}  checkrad.pl $(SBINDIR)/checkrad
++	${BSD_INSTALL_SCRIPT}  ../scripts/radwatch $(SBINDIR)/radwatch
++	${BSD_INSTALL_SCRIPT}  radlast $(BINDIR)
++	${BSD_INSTALL_PROGRAM} radtest  $(BINDIR)
++	${BSD_INSTALL_PROGRAM} radwho  $(BINDIR)
++	${BSD_INSTALL_PROGRAM} raduse  $(BINDIR)
++	${BSD_INSTALL_PROGRAM} radzap  $(BINDIR)
+ 

@@ -1,0 +1,85 @@
+--- conf/httpd.conf-dist.orig	Wed May  5 15:17:59 1999
++++ conf/httpd.conf-dist	Mon Sep  6 13:01:08 1999
+@@ -97,6 +97,13 @@
+ #ResourceConfig conf/srm.conf
+ #AccessConfig conf/access.conf
+ 
++<IfDefine FRONTPAGE>
++### FrontPage needs these two directives defined, otherwise	###
++### the fpadmsrv.exe program will cause errors.		###
++ResourceConfig @@ServerRoot@@/srm.conf
++AccessConfig @@ServerRoot@@/access.conf
++</IfDefine>
++
+ #
+ # Timeout: The number of seconds before receives and sends time out.
+ #
+@@ -246,7 +253,7 @@
+ #  don't use Group #-1 on these systems!
+ #
+ User nobody
+-Group #-1
++Group nogroup
+ 
+ #
+ # ServerAdmin: Your address, where problems with the server should be
+@@ -274,7 +281,7 @@
+ # documents. By default, all requests are taken from this directory, but
+ # symbolic links and aliases may be used to point to other locations.
+ #
+-DocumentRoot "@@ServerRoot@@/htdocs"
++DocumentRoot @@ServerRoot@@/htdocs
+ 
+ #
+ # Each directory to which Apache has access, can be configured with respect
+@@ -315,7 +322,16 @@
+ # override. Can also be "All", or any combination of "Options", "FileInfo", 
+ # "AuthConfig", and "Limit"
+ #
++<IfDefine FRONTPAGE>
++### These are the Minimum options need by the FrontPage Module.
++### With out these options set the FrontPage Client will not be
++### able to access the server.
++    AllowOverride AuthConfig Limit Indexes Options
++</IfDefine>
++
++<IfDefine !FRONTPAGE>
+     AllowOverride None
++</IfDefine>
+ 
+ #
+ # Controls who can get stuff from this server.
+@@ -347,6 +363,15 @@
+ #    </Limit>
+ #</Directory>
+ 
++### In Order for FrontPage to work in User and Virtual ###
++### Web Directories, they need to be set up as shown:  ###
++<IfDefine FRONTPAGE>
++    <Directory /*/public_html>
++ 	AllowOverride AuthConfig Limit Indexes Options
++	Options ExecCGI
++    </Directory>
++</IfDefine>
++
+ #
+ # DirectoryIndex: Name of the file or files to use as a pre-written HTML
+ # directory index.  Separate multiple entries with spaces.
+@@ -467,7 +492,7 @@
+ # define per-<VirtualHost> access logfiles, transactions will be
+ # logged therein and *not* in this file.
+ #
+-CustomLog logs/access_log common
++#CustomLog logs/access_log common
+ 
+ #
+ # If you would like to have agent and referer logfiles, uncomment the
+@@ -480,7 +505,7 @@
+ # If you prefer a single logfile with access, agent, and referer information
+ # (Combined Logfile Format) you can use the following directive.
+ #
+-#CustomLog logs/access_log combined
++CustomLog logs/access_log combined
+ 
+ #
+ # Optionally add a line containing the server version and virtual host

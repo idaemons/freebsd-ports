@@ -1,0 +1,85 @@
+--- Makefile.in.orig	Thu Sep 30 04:39:33 1999
++++ Makefile.in	Sat Oct  9 15:23:23 1999
+@@ -5,14 +5,15 @@
+ @MCFGR@@MCF@
+ 
+ foreigndirs=pc
+-codedirs=vfs lib doc slang gtkedit edit src gnome new_icons icons idl syntax
+-unixdirs=intl $(codedirs) doc-gnome @POSUB@
++codedirs=vfs lib doc slang edit src syntax
++unixdirs=intl $(codedirs) @POSUB@
+ alldirs=$(unixdirs) $(foreigndirs) 
+ subdirs=$(alldirs)
+ 
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ 
+ DISTMAIN =	configure configure.in NEWS README INSTALL INSTALL.FAST \
+ 		Makefile.in FAQ COPYING create_vcs install-sh \
+@@ -45,7 +46,7 @@
+ install: installdirs
+ 	@for I in $(unixdirs); do cd $$I; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1; cd ..; done
+ 	$(INSTALL_DATA) $(srcdir)/FAQ $(DESTDIR)$(mclibdir)/FAQ
+-	$(INSTALL_PROGRAM) mcfn_install $(DESTDIR)$(suppbindir)/mcfn_install
++	$(INSTALL_SCRIPT) mcfn_install $(DESTDIR)$(suppbindir)/mcfn_install
+ 	chmod +x $(DESTDIR)$(suppbindir)/mcfn_install
+ 	@echo "Please verify that the configuration values are correctly"
+ 	@echo "set in the mc.ext file in $(mclibdir)"
+@@ -57,9 +58,9 @@
+ installdirs:
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(bindir) $(DESTDIR)$(mclibdir)
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(mandir) $(DESTDIR)$(man8dir)
+-	$(MKINSTALLDIRS) $(DESTDIR)$(icondir) $(DESTDIR)$(suppbindir)
++	$(MKINSTALLDIRS) $(DESTDIR)$(suppbindir)
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(tidir) $(DESTDIR)$(extfsdir)
+-	$(MKINSTALLDIRS) $(DESTDIR)$(idldir) $(DESTDIR)$(syntaxdir)
++	$(MKINSTALLDIRS) $(DESTDIR)$(syntaxdir)
+ 
+ mcfninstall:
+ 	-/bin/sh ./mcfn_install
+--- src/Makefile.in.orig	Thu Sep 30 04:39:39 1999
++++ src/Makefile.in	Sat Oct  9 15:03:45 1999
+@@ -130,7 +130,7 @@
+ 	-$(RMF) $(srcdir)/Makefile
+ 
+ install: mc mcmfmt @saver@
+-	$(INSTALL_PROGRAM) mc     $(DESTDIR)$(bindir)/$(binprefix)mc
++	$(INSTALL_PROGRAM) mc     $(DESTDIR)$(bindir)/$(binprefix)midc
+ 	$(INSTALL_PROGRAM) mcmfmt $(DESTDIR)$(bindir)/$(binprefix)mcmfmt
+ 	$(SEDCMD2) < $(srcdir)/mc.hlp > $(DESTDIR)$(mclibdir)/$(libprefix)mc.hlp 
+ 
+--- doc/Makefile.in.orig	Thu Sep 30 04:39:38 1999
++++ doc/Makefile.in	Sat Oct  9 15:03:45 1999
+@@ -17,7 +17,7 @@
+ install:
+ 	$(MKINSTALLDIRS) $(DESTDIR)/$(man1dir)
+ 	$(MKINSTALLDIRS) $(DESTDIR)/$(man8dir)
+-	-$(SEDCMD2) < mc.1 > $(DESTDIR)$(man1dir)/$(manprefix)mc.$(manext)
++	-$(SEDCMD2) < mc.1 > $(DESTDIR)$(man1dir)/$(manprefix)midc.$(manext)
+ 	-$(SEDCMD2) < mcedit.1 > $(DESTDIR)$(man1dir)/$(manprefix)mcedit.$(manext)
+ 	-$(SEDCMD2) < mcserv.8 > $(DESTDIR)$(man8dir)/$(manprefix)mcserv.$(man8ext)
+ 
+--- lib/Makefile.in.orig	Thu Sep 30 04:39:38 1999
++++ lib/Makefile.in	Sat Oct  9 15:03:45 1999
+@@ -12,8 +12,8 @@
+ # Distribution variables
+ #
+ 
+-LIBFILES_IN = mc.ext.in mc-gnome.ext.in
+-LIBFILES_OUT = mc.ext mc-gnome.ext mc.csh mc.sh
++LIBFILES_IN = mc.ext.in
++LIBFILES_OUT = mc.ext mc.csh mc.sh
+ LIBFILES_CONST = mc.hint mc.hint.es mc.lib mc.menu
+ SUPPBIN_IN = mc.csh.in mc.sh.in
+ SUPPBIN_OUT =  mc.csh mc.sh
+@@ -62,7 +62,7 @@
+ 	for I in $(LIBFILES_OUT); \
+ 	do $(INSTALL_DATA) $(builddir)/lib/$$I $(DESTDIR)$(mclibdir)/$$I; done
+ 	for I in $(SUPPBIN_OUT); \
+-	do $(INSTALL_PROGRAM) -m 755 $(builddir)/lib/$$I $(DESTDIR)$(suppbindir)//$$I; done
++	do $(INSTALL_DATA) -m 755 $(builddir)/lib/$$I $(DESTDIR)$(suppbindir)//$$I; done
+ 	for I in $(TIFILES); \
+ 	do $(INSTALL_DATA) $(srcdir)/$$I $(DESTDIR)$(tidir)/$$I; done
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(confdir)

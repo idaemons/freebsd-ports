@@ -1,0 +1,19 @@
+*** configure.h.orig	Tue Jul 13 00:35:34 1999
+--- configure.h	Thu Sep 23 00:19:06 1999
+***************
+*** 74,80 ****
+  XCOMM            CDEBUGFLAGS = -g -Wall
+  XCOMM            CDEBUGFLAGS = -g
+  
+! ICONPATH = /usr/X11R6/include/pixmaps
+  
+  MLVWMDEFINES = $(Locale_DEFINES) $(COMPATIBLE)
+  MLVWMLIBRARIES = $(Locale_LIBRARIES)
+--- 74,80 ----
+  XCOMM            CDEBUGFLAGS = -g -Wall
+  XCOMM            CDEBUGFLAGS = -g
+  
+! ICONPATH = /usr/X11R6/include/X11/pixmaps
+  
+  MLVWMDEFINES = $(Locale_DEFINES) $(COMPATIBLE)
+  MLVWMLIBRARIES = $(Locale_LIBRARIES)

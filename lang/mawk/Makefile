@@ -1,0 +1,26 @@
+# ex:ts=8
+# New ports collection makefile for:	mawk
+# Version required:	1.3.3
+# Date created:		24 Dec 1998
+# Whom:			Pedro F. Giffuni <giffunip@asme.org>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	mawk1.3.3
+PKGNAME=	mawk-1.3.3
+CATEGORIES=	lang
+MASTER_SITES=	ftp://ftp.whidbey.net/pub/brennan/
+
+MAINTAINER=	obrien@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${PKGNAME}
+GNU_CONFIGURE=	yes
+ALL_TARGET=
+
+MAN1=		mawk.1
+
+pre-configure:
+	${PERL} -pi.orig -e 's:/usr/local:${PREFIX}:' ${WRKSRC}/config.user
+
+.include <bsd.port.mk>

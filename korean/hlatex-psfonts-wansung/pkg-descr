@@ -1,0 +1,16 @@
+HLaTeX PostScript Fonts
+=======================
+
+This is Type1 font collection for HLaTeX.
+
+ - Myoungjo (pkmj)
+ - Gothic (pkgt)
+ - Hanja Myeoungjo (pshanja-myoungjo)
+ - Hanja Gothic (pshanja-gothic)
+ - KSC5601 Full-width symbols (phsym)
+ - Taza (ptaza)
+
+It can be used in korean/nhppf also.
+
+--
+Ports by CHOI Junho <junker@jazz.snu.ac.kr>

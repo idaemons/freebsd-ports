@@ -1,0 +1,22 @@
+bin/esd
+bin/esd-config
+bin/esdcat
+bin/esdctl
+bin/esddsp
+bin/esdfilt
+bin/esdloop
+bin/esdmon
+bin/esdplay
+bin/esdrec
+bin/esdsample
+etc/esd.conf
+include/esd.h
+lib/libesd.a
+lib/libesd.so
+lib/libesd.so.2
+lib/libesddsp.a
+lib/libesddsp.so
+lib/libesddsp.so.2
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/aclocal/esd.m4

@@ -1,0 +1,10 @@
+--- Imakefile.orig	Thu Nov  4 19:43:09 1999
++++ Imakefile	Fri Nov 26 17:17:54 1999
+@@ -4,6 +4,7 @@
+ SYS_LIBRARIES = MathLibrary
+         DEPLIBS = $(DEPXMULIB) $(DEPXTOOLLIB) $(DEPXLIB)
+ LOCAL_LIBRARIES = $(XMULIB) $(XTOOLLIB) $(XLIB) $(XPMLIB)
++CDEBUGFLAGS     = __CFLAGS__
+ 
+ SRCS = speyes.c
+ OBJS = speyes.o getopt.o getopt1.o

@@ -1,0 +1,12 @@
+*** Makefile.orig	Fri Oct 22 09:17:37 1999
+--- Makefile	Fri Oct 22 09:18:27 1999
+***************
+*** 74,79 ****
+--- 74,80 ----
+  CFLAGS+=	-DVERSION=\"$(VERSION)\"
+  CFLAGS+=	-DRELOC=$(RELOCADDR)
+  #AS=		/usr/ports/net/etherboot/work/binutils-2.9.1.0.25/gas/as-new
++ AS=          `echo ../../bin*/gas/as-new`
+  
+  IDENT=		'Etherboot/$(BITS) $(VERSION) (GPL) $@'
+  # Stack must be below 640kb so we have real memory there

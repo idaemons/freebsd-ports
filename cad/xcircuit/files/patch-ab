@@ -1,0 +1,27 @@
+*** xcircuit.c.orig	Fri Jun 25 23:25:12 1999
+--- xcircuit.c	Tue Sep  7 00:48:01 1999
+***************
+*** 17,22 ****
+--- 17,25 ----
+  #include <errno.h>
+  #include <limits.h>
+  #include <locale.h>
++ #ifdef __FreeBSD__
++ #include <machine/floatingpoint.h>
++ #endif
+  
+  #include <X11/Intrinsic.h>
+  #include <X11/StringDefs.h>
+***************
+*** 1384,1389 ****
+--- 1387,1396 ----
+     objectptr	*page;		/* -schem flag and renumbers argc! (bug?) */
+     Pixmap	icon, mask;
+     char		*argv0;		/* find root of argv[0] */
++ 
++ #ifdef __FreeBSD__
++    fpsetmask(0);
++ #endif
+  
+     /*-----------------------------------------------------------*/
+     /* Find the root of the command called from the command line */

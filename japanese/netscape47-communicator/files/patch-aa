@@ -1,0 +1,125 @@
+--- Netscape.ad-ja_euc.orig	Mon Oct 11 07:29:16 1999
++++ Netscape.ad-ja_euc	Mon Oct 11 07:35:10 1999
+@@ -60,7 +60,7 @@
+ ! code. The directory and file listings are always maintained
+ ! as equal size. We don't do this for SGI, as they have solved
+ ! the problem. See *useEnhancedFSB above.
+-*nsMotifFSBHacks: True
++*nsMotifFSBHacks: False
+ 
+ ! This resource enables the CDE mode of the File Selection Box.
+ ! You must be running a CDE enhanced Motif library for this
+@@ -177,8 +177,8 @@
+ ! If you find a need to let one or both of them continue on to the actual
+ ! terminal of Netscape, you can do it by setting these resources to False.
+ !
+-*useStderrDialog:		True
+-*useStdoutDialog:		True
++*useStderrDialog:		False
++*useStdoutDialog:		False
+ 
+ ! For those MIME content-encodings which are not directly understood
+ ! internally, it is possible to specify another Unix program to use as
+@@ -2226,7 +2226,7 @@
+ *decreaseFont.documentationString:	\
+ このページの表示に使用するフォント サイズを小さくします。
+ 
+-*reload.labelString:				再読み込み(R)
++*reload.labelString:				再読込(R)
+ *reload.mnemonic:					R
+ *reload.acceleratorText:			Alt+R
+ ! In mail and news reply to sender uses this accelerator
+@@ -4529,8 +4529,8 @@
+ !                                       ------------------------
+ ! back
+ ! forward
+-*reloadNonFrameCmdString:				再読み込み(R)
+-*reloadWithFrameCmdString:				フレームの再読み込み(R)
++*reloadNonFrameCmdString:				再読込(R)
++*reloadWithFrameCmdString:				フレームの再読込(R)
+ *popup.frameReload.mnemonic:			 R
+ *popup.showImage.labelString:			画像の表示(G)
+ *popup.showImage.mnemonic:              g
+@@ -5050,6 +5050,8 @@
+ !*openURLDialog.width:				500
+ *openURLDialog*openInEditor.labelString: Composer で開く
+ *openURLDialog*openInBrowser.labelString: Navigator で開く
++*openURLDialog*XmTextField.fontList:\
++-adobe-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
+ 
+ *message_popup.title:			Netscape
+ *message_popup*OK.labelString:	OK
+@@ -6017,7 +6019,7 @@
+ 
+ 
+ *urlLocationLabel.netsiteLabelString:		Netsite:
+-*urlLocationLabel.uneditedLabelString:		場所:
++*urlLocationLabel.uneditedLabelString:		　　場所:
+ *urlLocationLabel.editedLabelString:		ジャンプ:
+ 
+ ! this must be the longer of the two...
+@@ -6429,10 +6431,10 @@
+ 
+ *prefs*cache*cacheLabel.labelString:		\
+ キャッシュは頻繁にアクセスされるドキュメントをコピーしておくことで、\n\
+-ネットワークに接続する時間を節約します。[再読み込み]ボタンを押すと、\n\
++ネットワークに接続する時間を節約します。[再読込]ボタンを押すと、\n\
+ キャッシュしたドキュメントとネットワーク上のものを比較して、\n\
+ 最新のドキュメントを表示します。ページや画像をキャッシュからではなく\n\
+-ネットワークから読み込むには、Shift キーを押しながら[再読み込み]\n\
++ネットワークから読み込むには、Shift キーを押しながら[再読込]\n\
+ ボタンをクリックします。
+ *prefs*cache*cacheDirLabel.labelString:		キャッシュフォルダ:
+ *prefs*cache*memoryLabel.labelString:		メモリ キャッシュ:
+@@ -6461,7 +6463,7 @@
+ *prefs*proxies*auto.labelString:			自動プロキシ設定
+ *prefs*proxies*config.labelString:			設定ファイルの場所 (URL)
+ *prefs*proxies*view.labelString:			表示...
+-*prefs*proxies*reload.labelString:			再読み込み
++*prefs*proxies*reload.labelString:			再読込
+ 
+ ! Preferences dialog - General - Proxies - View
+ 
+@@ -7416,7 +7418,7 @@
+ *print.tipString:                   このページを印刷
+ *MailThread*print.tipString:        選択したメッセージを印刷
+ *MailMsg*print.tipString:           選択したメッセージを印刷
+-*toolBar*reload.labelString:	再読み込み
++*toolBar*reload.labelString:	再読込
+ 
+ ! buttons specific to the compose frame.
+ *toolBar*sendMessageNow.labelString:	送信
+@@ -7470,7 +7472,7 @@
+ *bccBtn.documentationString:          メッセージを作成してブラインドカーボン コピーを選択した項目宛に送信します
+ !
+ ! buttons used everywhere (it seems.)
+-*toolBar*viewSecurity.labelString:	セキュリティ
++*toolBar*viewSecurity.labelString:	保護
+ *toolBar*stopLoading.labelString:	停止
+ 
+ *changeDocumentEncoding.documentationString: ドキュメントの文字コード セットを指定します。
+@@ -9022,7 +9024,7 @@
+ 
+ *strings.23715:新規/編集 ...
+ 
+-*strings.23716:再読み込み
++*strings.23716:再読込
+ 
+ *strings.23717:削除
+ 
+@@ -11155,7 +11157,7 @@
+ 
+ *strings.21597: キャッシュに一部だけあります。残りはサーバから取り出しています:\n
+ 
+-*strings.21598: 強制再読み込みが設定されたので、\nサーバでキャッシュ項目を確認しています:\n
++*strings.21598: 強制再読込が設定されたので、\nサーバでキャッシュ項目を確認しています:\n
+ 
+ *strings.21599: オブジェクトの期限が切れています。もう一度読み込みます:\n
+ 
+@@ -14573,3 +14575,6 @@
+ *tableCreateDialog.ApplyLabelString:		クリア
+ *documentPropertiesDialog.ApplyLabelString:	クリア
+ 
++! kinput2 が Bus error を起こさないように
++*mainForm.toolBox.urlBarItem.urlBarMainForm.urlComboBox.Text.fontList:\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1

@@ -1,0 +1,66 @@
+bin/cdbmake
+include/Pix.h
+include/QwCluster.h
+include/QwPublicList.h
+include/QwSpriteField.h
+include/js.h
+include/jsint.h
+include/mimelib/address.h
+include/mimelib/addrlist.h
+include/mimelib/binhex.h
+include/mimelib/body.h
+include/mimelib/bodypart.h
+include/mimelib/boyermor.h
+include/mimelib/config.h
+include/mimelib/datetime.h
+include/mimelib/debug.h
+include/mimelib/disptype.h
+include/mimelib/entity.h
+include/mimelib/enum.h
+include/mimelib/field.h
+include/mimelib/fieldbdy.h
+include/mimelib/group.h
+include/mimelib/headers.h
+include/mimelib/mailbox.h
+include/mimelib/mboxlist.h
+include/mimelib/mechansm.h
+include/mimelib/mediatyp.h
+include/mimelib/message.h
+include/mimelib/mimepp.h
+include/mimelib/msgcmp.h
+include/mimelib/msgid.h
+include/mimelib/nntp.h
+include/mimelib/param.h
+include/mimelib/pop.h
+include/mimelib/protocol.h
+include/mimelib/smtp.h
+include/mimelib/string.h
+include/mimelib/text.h
+include/mimelib/token.h
+include/mimelib/utility.h
+include/mimelib/uuencode.h
+include/rdb/cdb.h
+include/rdb/cdbmake.h
+include/rdb/hash.h
+include/rdb/rdb.h
+include/rdb/uint32.h
+lib/libQwSpriteField.a
+lib/libQwSpriteField.so.6
+lib/libjs.a
+lib/libjs.so.2
+lib/libmimelib.a
+lib/libmimelib.so.1
+lib/librdb.a
+lib/librdb.so.55
+@exec ln -sf libQwSpriteField.so.6 %D/lib/libQwSpriteField.so
+@exec ln -sf libjs.so.2 %D/lib/libjs.so
+@exec ln -sf libmimelib.so.1 %D/lib/libmimelib.so
+@exec ln -sf librdb.so.55 %D/lib/librdb.so
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@dirrm include/rdb
+@dirrm include/mimelib
+@unexec rm -f %D/lib/libQwSpriteField.so
+@unexec rm -f %D/lib/libjs.so
+@unexec rm -f %D/lib/libmimelib.so
+@unexec rm -f %D/lib/librdb.so
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

@@ -1,0 +1,74 @@
+# New ports collection makefile for:	WindowMaker
+# Version required:	0.61.1
+# Date created:		August 13, 1997
+# Whom:			handy@physics.montana.edu
+#
+# $FreeBSD$
+
+DISTNAME=	WindowMaker-0.61.1
+PKGNAME=	windowmaker-0.61.1
+CATEGORIES=	x11-wm windowmaker
+MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
+		http://jgo.local.net/cool_downloads/wm/
+MASTER_SITE_SUBDIR=	beta/srcs
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
+
+MAINTAINER=	handy@physics.montana.edu
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		gif.5:${PORTSDIR}/graphics/giflib \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.3:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		PropList.2:${PORTSDIR}/devel/libPropList
+
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	X11BASE=${X11BASE} LIBS=-L${LOCALBASE}/lib \
+		CPPFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
+	--with-nlsdir=${LOCALBASE}/lib/locale \
+	--with-libs-from="-L${LOCALBASE}/lib" \
+	--with-incs-from="-I${LOCALBASE}/include" \
+	--with-appspath="${PREFIX}/GNUstep/Apps" \
+	--disable-debug
+
+MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
+	wdwrite.1x wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
+
+DATAFILES=	WindowMaker-extra-0.1.tar.bz2
+
+.if defined(USE_GNOME)
+CONFIGURE_ARGS+=	--enable-gnome
+.endif
+
+.if defined(USE_KDE)
+CONFIGURE_ARGS+=	--enable-kde
+.endif
+
+.if defined(USE_SINGLE_ICON)
+CONFIGURE_ARGS+=	--enable-single-icon
+.endif
+
+.SILENT:
+
+.if !defined(USE_KDE) && !defined(USE_GNOME)
+pre-extract:
+	${ECHO} "You can add hooks for Gnome and KDE by defining USE_GNOME and/or USE_KDE"
+.endif
+
+post-patch:
+	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c \
+		${WRKSRC}/WindowMaker/Defaults/*
+
+post-configure:
+	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
+		./configure --prefix=${PREFIX}
+
+post-install:
+	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
+		${MAKE} ${MAKE_ARGS} install
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+
+.include <bsd.port.mk>

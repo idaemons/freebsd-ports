@@ -1,0 +1,18 @@
+bin/macunpack
+bin/hexbin
+bin/macsave
+bin/macstream
+bin/binhex
+bin/tomac
+bin/frommac
+share/doc/macutils/README
+share/doc/macutils/README.crc
+share/doc/macutils/README.crc.orig
+share/doc/macutils/README.hexbin
+share/doc/macutils/README.macget
+share/doc/macutils/README.macput
+share/doc/macutils/README.scan
+share/doc/macutils/README.unpit
+share/doc/macutils/README.unsit
+share/doc/macutils/README.zoom
+@dirrm share/doc/macutils

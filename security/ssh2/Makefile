@@ -1,0 +1,100 @@
+# New ports collection makefile for:	ssh2
+# Version required:     2.0.*
+# Date created:		5 Oct 1998
+# Whom:			Issei Suzuki <issei@jp.FreeBSD.org>
+#
+# $FreeBSD$
+#
+# Maximal ssh2 package requires YES values for
+# USE_SSH1, USE_TCPWRAP
+
+DISTNAME=       ssh-2.0.13
+CATEGORIES=	security net
+MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/ \
+		ftp://sunsite.unc.edu/pub/packages/security/ssh/ \
+		ftp://ftp.kyoto.wide.ad.jp/pub/security/ssh/
+
+PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown
+PATCH_SITES=	http://www.ssh.org/patches/
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	issei@jp.FreeBSD.org
+
+RESTRICTED=	"Crypto; export-controlled"
+
+GNU_CONFIGURE=	YES
+
+CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${PREFIX}/etc --enable-debug
+#Uncomment if all your users are in their own group and their homedir
+#is writeable by that group.  Beware the security implications!
+#CONFIGURE_ARGS+= --enable-group-writeability
+
+# Include support for ssh1 client backward compatibility
+USE_SSH1?=	YES
+# Include tcp_wrappers support (automaticlly YES if /usr/include/tcpd.h exists)
+USE_TCPWRAP?=	NO
+# Warning: untested !
+# Include support for the TIS authentication server
+USE_TIS?=	NO
+# Include support for the SecureID card
+USE_SECUREID?=	NO
+
+.if defined(USE_SSH1) && ${USE_SSH1} == YES
+BUILD_DEPENDS+=	ssh1:${PORTSDIR}/security/ssh
+RUN_DEPENDS+=	ssh1:${PORTSDIR}/security/ssh
+.endif
+.if defined(USE_SECUREID) && ${USE_SECUREID} == YES
+CONFIGURE_ARGS+= --with-secureid
+.endif
+.if defined(USE_TIS) && ${USE_TIS} == YES
+CONFIGURE_ARGS+= --with-tis
+.endif
+.if exists(/usr/include/tcpd.h)
+CONFIGURE_ARGS+= --with-libwrap
+.else
+.if defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES
+CONFIGURE_ARGS+= --with-libwrap="-L ${PREFIX}/lib -lwrap"
+LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
+.endif
+.endif
+
+MAN1=	ssh2.1 ssh-keygen2.1 ssh-add2.1 ssh-agent2.1 \
+	scp2.1 sftp2.1
+MAN8=	sshd2.8
+
+MLINKS=	ssh2.1 ssh.1 \
+	ssh-keygen2.1 ssh-keygen.1 \
+	ssh-add2.1 ssh-add.1 \
+	ssh-agent2.1 ssh-agent.1 \
+	scp2.1 scp.1 \
+	sftp2.1 sftp.1 \
+	sshd2.8 sshd.8
+
+PORTDOCS=	CHANGES LICENSING README
+.if !defined(USE_SSH1) || (defined(USE_SSH1) && ${USE_SSH1} != YES)
+PLIST=		${PKGDIR}/PLIST.ssh2_only
+.endif
+
+post-install:
+.if defined(USE_SSH1) && ${USE_SSH1} == YES
+.for i in ssh ssh-keygen ssh-add ssh-agent scp
+	${MV} -f ${PREFIX}/man/man1/${i}.1${MAN_SUFX} ${PREFIX}/man/man1/${i}.old.1${MAN_SUFX}
+.endfor
+	${MV} -f ${PREFIX}/man/man8/sshd.8${MAN_SUFX} ${PREFIX}/man/man8/sshd.old.8${MAN_SUFX}
+.endif
+#
+.if !defined(NOPORTDOCS)
+	-${MKDIR} ${PREFIX}/share/doc/ssh2
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/ssh2
+.endfor
+.endif
+#
+	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
+		${ECHO} "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
+		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
+		${ECHO} "[ -x ${PREFIX}/sbin/sshd ] && ${PREFIX}/sbin/sshd && ${ECHO} -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/sshd.sh; \
+	fi
+
+.include <bsd.port.mk>

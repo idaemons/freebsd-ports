@@ -1,0 +1,49 @@
+# New ports collection makefile for:   htdig
+# Version required:    3.1.3
+# Date created:        18 August 1998
+# Whom:                Bill Fumerola <billf@chc-chimes.com>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	htdig-3.1.3
+CATEGORIES=	textproc www
+MASTER_SITES=	http://www.htdig.org/files/ \
+		${MASTER_SITE_SUNSITE} \
+		ftp://ftp.ntua.gr/pub/www/htdig/ \
+		ftp://ftp.max.irk.ru/unix/net/www/ \
+		ftp://ftp.loxinfo.co.th/pub/unix/www/ \
+		ftp://ftp.htdig.org/pub/htdig/
+MASTER_SITE_SUBDIR=	apps/www/indexing
+
+PATCH_SITES=	http://www.htdig.org/files/contrib/other/
+PATCHFILES=	htdig-3.1.3-urlparmbug.patch
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	billf@FreeBSD.org
+
+RUN_DEPENDS=	${PREFIX}/share/apache:${PORTSDIR}/www/apache13
+
+Y2K=		http://www.htdig.org/FAQ.html#q1.7
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --with-cgi-bin-dir=${PREFIX}/share/apache/cgi-bin \
+		--with-image-dir=${PREFIX}/share/apache/icons \
+		--with-search-dir=${PREFIX}/share/apache/htdocs
+BUILD_TARGET=	depends all
+
+post-patch:
+
+	@ ${MV} ${WRKSRC}/CONFIG.in ${WRKSRC}/CONFIG.in.Dist
+	@ ${SED} -e 's#/conf#/etc#' \
+		-e 's#/common#/share/htdig#' \
+		-e 's#/db#/share/htdig#' \
+	${WRKSRC}/CONFIG.in.Dist > ${WRKSRC}/CONFIG.in
+
+	@ ${MV} ${WRKSRC}/CONFIG ${WRKSRC}/CONFIG.Dist
+	@ ${SED} -e 's#/conf#/etc#' \
+		-e 's#/common#/share/htdig#' \
+		-e 's#/db#/share/htdig#' \
+	${WRKSRC}/CONFIG.Dist > ${WRKSRC}/CONFIG
+
+.include <bsd.port.mk>

@@ -1,0 +1,193 @@
+--- ../make/Makefile.orig	Mon Jul 12 10:56:36 1999
++++ ../make/Makefile	Sun Aug 29 15:07:57 1999
+@@ -9,8 +9,8 @@
+ ##
+ ##   1. make all              Build all the TINKER executables
+ ##   2. make rename           Move the executables to BINDIR
+-##   3. make remove_links     Create soft links in LINKDIR
+-##   4. make create_links     Remove soft links from LINKDIR
++##   3. make remove_links     Remove soft links in LINKDIR
++##   4. make create_links     Create soft links from LINKDIR
+ ##   6. make listing          Concatenate source to tinker.txt
+ ##   5. make clean            Delete objects and executables
+ ##
+@@ -30,9 +30,9 @@
+ ##  LINKDIR      Linked Copies of TINKER Executables
+ ##
+ 
+-TINKERDIR = /user/ponder/tinker
+-BINDIR = $(TINKERDIR)/bin
+-LINKDIR = /usr/local/bin
++TINKERDIR = ${WRKDIR}
++BINDIR = ${PREFIX}/bin
++#LINKDIR = /usr/local/bin
+ 
+ ####################################################################
+ ##  Known Machine Types; Uncomment One of the Following Sections  ##
+@@ -45,13 +45,13 @@
+ ##  Compiler: DEC Fortran 77/90, V4.1
+ ##
+ 
+-F77 = /usr/bin/f77
+-RM = /sbin/rm
+-LIBS =
+-F77FLAGS = -c
+-OPTFLAGS = -fast -tune host
+-LIBFLAGS = -rlv
+-LINKFLAGS = -fast -non_shared -om -WL,-om_no_inst_sched
++#F77 = /usr/bin/f77
++#RM = /sbin/rm
++#LIBS =
++#F77FLAGS = -c
++#OPTFLAGS = -fast -tune host
++#LIBFLAGS = -rlv
++#LINKFLAGS = -fast -non_shared -om -WL,-om_no_inst_sched
+ 
+ ##
+ ##  Machine:  Silicon Graphics
+@@ -104,6 +104,40 @@
+ #diagq.o:
+ #	${F77} ${F77FLAGS} -ffast-math diagq.f
+ 
++##
++##  Machine: IntelPC
++##  CPU Type:        Pentium Pro
++##  Oper Sys:        FreeBSD 3.0
++##  Compiler:        f77(f2c/gcc version 2.7.2.1) || egcs g77
++##
++
++F77 = ${FC}
++RM = /bin/rm
++
++.if ${FC}==f77
++.if !defined(HAVE_G2C)
++LIBS = -lU77
++F77FLAGS = -NL400 -c
++LINKFLAGS = -L${PREFIX}/lib
++.else
++LIBS = -lg2c
++F77FLAGS = -Wno-globals -fno-globals -c
++LINKFLAGS =
++.endif
++.elseif ${FC}==g77
++LIBS=
++F77FLAGS = -Wno-globals -fno-globals -c
++LINKFLAGS =
++.endif
++
++OPTFLAGS = ${FFLAGS} -ffast-math
++.if ${MACHINE_ARCH} == "i386"
++OPTFLAGS+= -malign-double
++.endif
++LIBFLAGS = -rcuv
++diagq.o:
++	${F77} ${F77FLAGS} -ffast-math diagq.f
++
+ #################################################################
+ ##  Should not be Necessary to Change Things Below this Point  ##
+ #################################################################
+@@ -775,6 +809,7 @@
+         volume2.o \
+         writeout.o \
+         xyzatm.o
++	ranlib libtinker.a
+ 
+ alchemy.x:
+ 	${F77} ${LINKFLAGS} -o alchemy.x alchemy.o libtinker.a ${LIBS}
+@@ -868,51 +903,51 @@
+ 	${F77} ${LINKFLAGS} -o xyzsybyl.x xyzsybyl.o libtinker.a ${LIBS}
+ 
+ rename:
+-	mv  alchemy.x    $(BINDIR)/alchemy
+-	mv  analyze.x    $(BINDIR)/analyze
+-	mv  anneal.x     $(BINDIR)/anneal
+-	mv  archive.x    $(BINDIR)/archive
+-	mv  correlate.x  $(BINDIR)/correlate
+-	mv  crystal.x    $(BINDIR)/crystal
+-	mv  distgeom.x   $(BINDIR)/distgeom
+-	mv  document.x   $(BINDIR)/document
+-	mv  dynamic.x    $(BINDIR)/dynamic
+-	mv  gda.x        $(BINDIR)/gda
+-	mv  intedit.x    $(BINDIR)/intedit
+-	mv  intxyz.x     $(BINDIR)/intxyz
+-	mv  minimize.x   $(BINDIR)/minimize
+-	mv  minirot.x    $(BINDIR)/minirot
+-	mv  newton.x     $(BINDIR)/newton
+-	mv  newtrot.x    $(BINDIR)/newtrot
+-	mv  optimize.x   $(BINDIR)/optimize
+-	mv  optirot.x    $(BINDIR)/optirot
+-	mv  optrigid.x   $(BINDIR)/optrigid
+-	mv  path.x       $(BINDIR)/path
+-	mv  pdbxyz.x     $(BINDIR)/pdbxyz
+-	mv  protein.x    $(BINDIR)/protein
+-	mv  pss.x        $(BINDIR)/pss
+-	mv  pssrigid.x   $(BINDIR)/pssrigid
+-	mv  pssrot.x     $(BINDIR)/pssrot
+-	mv  saddle.x     $(BINDIR)/saddle
+-	mv  scan.x       $(BINDIR)/scan
+-	mv  sniffer.x    $(BINDIR)/sniffer
+-	mv  spacefill.x  $(BINDIR)/spacefill
+-	mv  superpose.x  $(BINDIR)/superpose
+-	mv  sybylxyz.x   $(BINDIR)/sybylxyz
+-	mv  testgrad.x   $(BINDIR)/testgrad
+-	mv  testhess.x   $(BINDIR)/testhess
+-	mv  testlight.x  $(BINDIR)/testlight
+-	mv  testrot.x    $(BINDIR)/testrot
+-	mv  timer.x      $(BINDIR)/timer
+-	mv  timerot.x    $(BINDIR)/timerot
+-	mv  vibrate.x    $(BINDIR)/vibrate
+-	mv  vibrot.x     $(BINDIR)/vibrot
+-	mv  xtalfit.x    $(BINDIR)/xtalfit
+-	mv  xtalmin.x    $(BINDIR)/xtalmin
+-	mv  xyzedit.x    $(BINDIR)/xyzedit
+-	mv  xyzint.x     $(BINDIR)/xyzint
+-	mv  xyzpdb.x     $(BINDIR)/xyzpdb
+-	mv  xyzsybyl.x   $(BINDIR)/xyzsybyl
++	${INSTALL} -c -s  alchemy.x    $(BINDIR)/alchemy
++	${INSTALL} -c -s  analyze.x    $(BINDIR)/analyze
++	${INSTALL} -c -s  anneal.x     $(BINDIR)/anneal
++	${INSTALL} -c -s  archive.x    $(BINDIR)/archive
++	${INSTALL} -c -s  correlate.x  $(BINDIR)/correlate
++	${INSTALL} -c -s  crystal.x    $(BINDIR)/crystal
++	${INSTALL} -c -s  distgeom.x   $(BINDIR)/distgeom
++	${INSTALL} -c -s  document.x   $(BINDIR)/document
++	${INSTALL} -c -s  dynamic.x    $(BINDIR)/dynamic
++	${INSTALL} -c -s  gda.x        $(BINDIR)/gda
++	${INSTALL} -c -s  intedit.x    $(BINDIR)/intedit
++	${INSTALL} -c -s  intxyz.x     $(BINDIR)/intxyz
++	${INSTALL} -c -s  minimize.x   $(BINDIR)/minimize
++	${INSTALL} -c -s  minirot.x    $(BINDIR)/minirot
++	${INSTALL} -c -s  newton.x     $(BINDIR)/newton
++	${INSTALL} -c -s  newtrot.x    $(BINDIR)/newtrot
++	${INSTALL} -c -s  optimize.x   $(BINDIR)/optimize
++	${INSTALL} -c -s  optirot.x    $(BINDIR)/optirot
++	${INSTALL} -c -s  optrigid.x   $(BINDIR)/optrigid
++	${INSTALL} -c -s  path.x       $(BINDIR)/path
++	${INSTALL} -c -s  pdbxyz.x     $(BINDIR)/pdbxyz
++	${INSTALL} -c -s  protein.x    $(BINDIR)/protein
++	${INSTALL} -c -s  pss.x        $(BINDIR)/pss
++	${INSTALL} -c -s  pssrigid.x   $(BINDIR)/pssrigid
++	${INSTALL} -c -s  pssrot.x     $(BINDIR)/pssrot
++	${INSTALL} -c -s  saddle.x     $(BINDIR)/saddle
++	${INSTALL} -c -s  scan.x       $(BINDIR)/scan
++	${INSTALL} -c -s  sniffer.x    $(BINDIR)/sniffer
++	${INSTALL} -c -s  spacefill.x  $(BINDIR)/spacefill
++	${INSTALL} -c -s  superpose.x  $(BINDIR)/superpose
++	${INSTALL} -c -s  sybylxyz.x   $(BINDIR)/sybylxyz
++	${INSTALL} -c -s  testgrad.x   $(BINDIR)/testgrad
++	${INSTALL} -c -s  testhess.x   $(BINDIR)/testhess
++	${INSTALL} -c -s  testlight.x  $(BINDIR)/testlight
++	${INSTALL} -c -s  testrot.x    $(BINDIR)/testrot
++	${INSTALL} -c -s  timer.x      $(BINDIR)/timer
++	${INSTALL} -c -s  timerot.x    $(BINDIR)/timerot
++	${INSTALL} -c -s  vibrate.x    $(BINDIR)/vibrate
++	${INSTALL} -c -s  vibrot.x     $(BINDIR)/vibrot
++	${INSTALL} -c -s  xtalfit.x    $(BINDIR)/xtalfit
++	${INSTALL} -c -s  xtalmin.x    $(BINDIR)/xtalmin
++	${INSTALL} -c -s  xyzedit.x    $(BINDIR)/xyzedit
++	${INSTALL} -c -s  xyzint.x     $(BINDIR)/xyzint
++	${INSTALL} -c -s  xyzpdb.x     $(BINDIR)/xyzpdb
++	${INSTALL} -c -s  xyzsybyl.x   $(BINDIR)/xyzsybyl
+ 
+ remove_links:
+ 	rm -f $(LINKDIR)/alchemy

@@ -1,0 +1,31 @@
+--- Makefile.orig	Sun Jun 20 16:21:31 1999
++++ Makefile	Sun Jun 20 16:22:52 1999
+@@ -5,7 +5,7 @@
+ #################################################
+ 
+ # WISHPROG can be a full path or just program name.
+-WISHPROG	= wish
++WISHPROG	= wish8.2
+ 
+ # Set GNATS=network if you _are_ using the GNATS daemon "gnatsd".
+ # Set GNATS=local   if you're going to access disk files directly.
+@@ -16,7 +16,7 @@
+ 
+ ########## TkGnats installation locations
+ 
+-prefix		= /usr/local
++prefix		= $(PREFIX)
+ 
+ ########## tkgnats executable location
+ BINDIR		= $(prefix)/bin
+--- tkgnats.config	Sun Jun 20 16:21:47 1999
++++ tkgnats.config	Sun Jun 20 16:23:06 1999
+@@ -95,7 +95,7 @@
+ set TkGnats(psPreviewer)	"ghostview %s"
+ 				# PostScript previewer for printed reports
+ 
+-set TkGnats(Mailer)		"/usr/lib/sendmail -em -oi -t"
++set TkGnats(Mailer)		"/usr/sbin/sendmail -em -oi -t"
+ 				# Mailer to use for send prs, etc..
+                                 # Like GNATS, it must read headers from file.
+ 

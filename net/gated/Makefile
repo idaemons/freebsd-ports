@@ -1,14 +1,21 @@
 # Makefile for:		gated
-# Version required:	3.0 / 2.17
+# Version required:     3.5.11
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id$
+# $FreeBSD$
 #
 
-DISTNAME=	gated-R3_5Alpha_9
-EXTRACT_SUFX=	.tar.Z
-MASTER_SITES=	ftp://gated.cornell.edu/pub/gated/
+DISTNAME=       gated-3-5-11
+PKGNAME=        gated-3.5.11
+CATEGORIES=	net
+MASTER_SITES=   ftp://ftp.gated.merit.edu/net-research/gated/
+
+MAINTAINER=	peter@FreeBSD.org
+
+BROKEN=		"Security hole (buffer overflow possibly yielding root)"
+
 ALL_TARGET=	gated
+MAN8=		gated.8 ripquery.8 ospf_monitor.8 gdc.8
 
 .include <bsd.port.mk>

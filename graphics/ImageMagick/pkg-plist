@@ -1,0 +1,43 @@
+bin/Magick-config
+bin/animate
+bin/combine
+bin/convert
+bin/display
+bin/identify
+bin/import
+bin/mogrify
+bin/montage
+bin/xtp
+include/magick/api.h
+include/magick/blob.h
+include/magick/classify.h
+include/magick/compress.h
+include/magick/config.h
+include/magick/defines.h
+include/magick/delegates.h
+include/magick/error.h
+include/magick/gems.h
+include/magick/image.h
+include/magick/magick.h
+include/magick/memory.h
+include/magick/monitor.h
+include/magick/quantize.h
+include/magick/utility.h
+include/magick/version.h
+lib/libMagick.a
+lib/libMagick.la
+lib/libMagick.so
+lib/libMagick.so.4
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Image/Magick.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
+share/ImageMagick/delegates.mgk
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Image
+@dirrm include/magick
+@dirrm share/ImageMagick

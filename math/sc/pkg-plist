@@ -1,0 +1,5 @@
+bin/sc
+bin/scqref
+bin/psc
+share/sc/tutorial.sc
+@dirrm share/sc

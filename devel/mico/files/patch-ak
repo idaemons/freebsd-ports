@@ -1,0 +1,26 @@
+diff -ruN work/mico/configure.in mico/configure.in
+--- work/mico/configure.in	Sun Aug  8 06:00:49 1999
++++ configure.in	Sun Sep 26 04:44:44 1999
+@@ -170,7 +170,7 @@
+ # extra dirs
+ #
+ 
+-wi_EXTRA_DIRS(no, /usr/local /local /user/local /usr/share /opt /opt/local $QTDIR $GTKDIR $TCLDIR $SSLDIR)
++wi_EXTRA_DIRS(no, /usr/local /local /user/local /usr/share /opt /opt/local /usr/X11R6 $QTDIR $GTKDIR $TCLDIR $SSLDIR, tcl8.0 X11/qt )
+ 
+ #
+ # misc
+@@ -314,7 +314,12 @@
+     CONF_OBJ_SIZE_LIMIT=yes
+     ;;
+   *bsd*)
+-    CONF_SOEXT=so.1.0
++    if test "X$PORTOBJFORMAT" = "Xelf"; then
++      CONF_SHARED_CC="$CXX -shared -Wl,-x "
++      CONF_SOEXT=so.1
++    else
++      CONF_SOEXT=so.1.0
++    fi
+     ;;
+   *cygwin32*)
+     have_cdk=yes;

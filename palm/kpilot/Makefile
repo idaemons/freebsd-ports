@@ -1,0 +1,38 @@
+# New ports collection makefile for:   kpilot
+# Version required:    3.0.2
+# Date created:        09 April 1998
+# Whom:                Stefan Eßer <se@freebsd.org>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	kpilot-3.0.2
+CATEGORIES=	palm comms kde
+MASTER_SITES=	http://www.slac.com/pilone/kpilot_home/download/
+
+MAINTAINER=	dima@freebsd.org
+
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
+		jscript.2:${PORTSDIR}/x11/kdelibs11 \
+		khtmlw.2:${PORTSDIR}/x11/kdelibs11 \
+		kfm.2:${PORTSDIR}/x11/kdelibs11 \
+		mediatool.2:${PORTSDIR}/x11/kdelibs11
+
+USE_QT=		yes
+KDEDIR?=	$(PREFIX)
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
+		INSTALL_SCRIPT="install -c -m 555" \
+		KDEDIR="${KDEDIR}"
+
+MAKE_ENV=	KDEDIR="${KDEDIR}"
+
+pre-configure:
+		${CP} ${FILESDIR}/libtool.${PORTOBJFORMAT} ${WRKSRC}/kpilot/libpilot/libtool
+		${CP} ${FILESDIR}/ltmain.sh ${WRKSRC}/kpilot/libpilot/ltmain.sh
+
+.include <bsd.port.mk>

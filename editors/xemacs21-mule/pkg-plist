@@ -1,0 +1,15 @@
+bin/b2m
+bin/ctags
+bin/etags
+bin/gnuattach
+bin/gnuclient
+bin/gnudoit
+bin/ootags
+bin/pstogif
+bin/rcs-checkin
+bin/%%XEMACS_DIR%%
+@exec ln -sf %D/%F %B/xemacs
+@unexec rm %B/xemacs
+lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/DOC
+lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%/config.values
+@dirrm lib/%%XEMACS_DIR%%/%%ARCH_SUBDIR%%

@@ -1,0 +1,43 @@
+--- Makefile.orig	Thu Aug 26 09:49:08 1999
++++ Makefile	Mon Oct  4 19:01:45 1999
+@@ -2,17 +2,17 @@
+ # Maarten Boekhold (boekhold@cindy.et.tudelft.nl) 1995
+ 
+ # Set this to your C-compiler
+-CC=gcc
++#CC=gcc
+ 
+ # set this to your install-program (what does Solaris have
+ # in /usr/sbin/install? SYSV install?)
+-INSTALL=/usr/bin/install
++#INSTALL=/usr/bin/install
+ 
+ #AR=/usr/bin/ar
+-AR=ar
++#AR=ar
+ 
+ # Set this to whatever your compiler accepts. Nothing special is needed
+-CFLAGS=-O2 -Wall
++#CFLAGS=-O2 -Wall
+ 
+ # Set this to your MySQL installation-path
+ MYSQLINC=-I/usr/local/mysql/include
+@@ -20,7 +20,7 @@
+ 
+ # Set this to where you want the binary (no man-page yet, don't know
+ # how to write them)
+-INSTALLDIR=/usr/local/bin
++#INSTALLDIR=/usr/local/bin
+ 
+ # Set this if your system needs extra libraries
+ #
+@@ -42,7 +42,8 @@
+ all: dbf2mysql mysql2dbf
+ 
+ libdbf.a: dbf.o endian.o
+-	$(AR) rcs libdbf.a dbf.o endian.o
++	$(AR) rc libdbf.a dbf.o endian.o
++	$(RANLIB) libdbf.a
+ 
+ dbf2mysql: dbf2mysql.o libdbf.a
+ 	$(CC) $(CFLAGS) -s -L. $(MYSQLLIB) -o $@ dbf2mysql.o -ldbf \

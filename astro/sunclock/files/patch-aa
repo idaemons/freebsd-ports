@@ -1,0 +1,19 @@
+--- Imakefile.orig      Wed Jul  8 08:16:59 1998
++++ Imakefile   Wed Jul  8 08:17:11 1998
+@@ -11,14 +11,14 @@
+ CCOPTIONS = -Ae -DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\"
+ #else
+ # gcc
+-CCOPTIONS = -DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\" -Wall
++CCOPTIONS = -DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\" -Wall -DNEW_CTIME
+ #endif
+ 
+ SRCS=sunclock.c bitmaps.c astro.c tildepath.c
+ OBJS=sunclock.o bitmaps.o astro.o tildepath.o
+ 
+ # may have to replace XONLYLIB with XLIB for old imake
+-LOCAL_LIBRARIES=$(XONLYLIB) -lm
++LOCAL_LIBRARIES=$(XONLYLIB) -lm -lcompat
+ 
+ #DEPLIBS=              # I don't know what I'm doing, and I hate imake!
+ 

@@ -1,0 +1,36 @@
+*** Makefile.orig	Thu Jun 23 21:14:46 1994
+--- Makefile	Thu Nov 25 02:59:22 1999
+***************
+*** 27,33 ****
+  #
+  
+  
+! CFLAGS = $(COMPILERFLAGS)
+  # debugging: -ggdb -DDEBUG
+  # profiling: -pg (gprof) or -p (prof)
+  # strip command has to be removed for debugging or profiling
+--- 27,33 ----
+  #
+  
+  
+! CFLAGS += $(COMPILERFLAGS)
+  # debugging: -ggdb -DDEBUG
+  # profiling: -pg (gprof) or -p (prof)
+  # strip command has to be removed for debugging or profiling
+***************
+*** 39,45 ****
+  
+  .SUFFIXES:	.cc
+  
+! install:
+  		@./configuration.sh
+  
+  all:		maplay
+--- 39,45 ----
+  
+  .SUFFIXES:	.cc
+  
+! pre-install:
+  		@./configuration.sh
+  
+  all:		maplay

@@ -1,0 +1,18 @@
+Ghostscript with FreeType(Korean)
+=================================
+
+This is Aladdin Ghostscript, the non-GPL version that comes
+with a licence different from the GPL. Read the file PUBLIC in the
+work/gsX.Y directory or in /usr/local/share/ghostscript/X.Y/doc/PUBLIC
+after installation for details !
+
+This version can handle Korean(and Japanese) Truetype fonts
+using FreeType library. It also has some bugfix for correctly working 
+CID-Keyed fonts.
+
+GS with Korean Web page:
+	http://www.kr.freebsd.org/~cjh/freetime/printings/gs-ko/
+
+--
+Ports by CHOI Junho <cjh@kr.freebsd.org>
+WWW: http://www.kr.freebsd.org/~cjh/freetime/printings/gs-ko/
