@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Business/OnlinePayment/MerchantCommerce.pm
+%%SITE_PERL%%/auto/Business/OnlinePayment/MerchantCommerce/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/MerchantCommerce/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/MerchantCommerce
+@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/MerchantCommerce
+@unexec rmdir %D/%%SITE_PERL%%/Business/OnlinePayment 2>/dev/null || true

@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+POST-INSTALL)
+  if [ ! -f "%%DATABASEDIR%%/auditfile.tbz" ]; then
+    echo
+    echo "===>  To check your installed ports for known vulnerabilities now do:"
+    echo
+    echo "      %%PREFIX%%/bin/portaudit -F -a"
+    echo
+  fi
+  ;;
+esac

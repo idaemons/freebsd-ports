@@ -1,0 +1,27 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Action.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Bitmap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Button.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/DisplayItem.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Fill.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Font.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Gradient.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Morph.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Movie.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Shape.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Sound.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Sprite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Text.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/TextField.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SWF
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/SWF.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/SWF.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF
+%%PORTDOCS%%share/examples/perl5/ming/animation.cgi
+%%PORTDOCS%%share/examples/perl5/ming/jpegfill.cgi
+%%PORTDOCS%%share/examples/perl5/ming/morph.cgi
+%%PORTDOCS%%share/examples/perl5/ming/shape.cgi
+%%PORTDOCS%%share/examples/perl5/ming/sprite.cgi
+%%PORTDOCS%%@dirrm share/examples/perl5/ming
+%%PORTDOCS%%@unexec rmdir %D/share/examples/perl5 2>/dev/null || true

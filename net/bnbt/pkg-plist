@@ -1,0 +1,7 @@
+bin/bnbt
+%%DATADIR%%/footer.html
+%%DATADIR%%/header.html
+%%DATADIR%%/lesser.txt
+%%DATADIR%%/readme.txt
+%%DATADIR%%/users.txt
+@dirrm share/bnbt

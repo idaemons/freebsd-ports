@@ -1,0 +1,16 @@
+--- TAO/orbsvcs/Makefile.orig	Thu Jan 15 22:51:35 2004
++++ TAO/orbsvcs/Makefile	Thu Jan 15 22:52:27 2004
+@@ -43,10 +43,9 @@
+ 	Trading_Service \
+ 	LoadBalancer \
+ 	TAO_Service \
+-	PSS \
+-        tests \
+-	performance-tests \
+-        examples
++	PSS
++
++DIRS += tests
+ 
+ ifeq ($(minimum_corba),0)
+     ifneq (Compilers 4.2,$(findstring Compilers 4.2,$(CC_VERSION)))

@@ -1,0 +1,26 @@
+@comment $FreeBSD$
+@unexec [ ! -f /var/run/clamav/clamd.pid ] || %%RC_DIR%%/clamd%%RC_SUFX%% stop || true
+bin/clamscan
+bin/clamdscan
+bin/freshclam
+bin/sigtool
+etc/rc.d/clamav-clamd%%RC_SUFX%%
+etc/rc.d/clamav-freshclam%%RC_SUFX%%
+%%CLAMAV-MILTER%%etc/rc.d/clamav-milter%%RC_SUFX%%
+%%CLAMAV-MILTER%%sbin/clamav-milter
+sbin/clamd
+include/clamav.h
+lib/libclamav.so.1
+lib/libclamav.so
+lib/libclamav.a
+@unexec if cmp -s %D/etc/clamav.conf %D/etc/clamav.conf.default; then rm -f %D/etc/clamav.conf; fi
+etc/clamav.conf.default
+@exec [ -f %B/clamav.conf ] || cp %B/%f %B/clamav.conf
+@unexec if cmp -s %D/etc/freshclam.conf %D/etc/freshclam.conf.default; then rm -f %D/etc/freshclam.conf; fi
+etc/freshclam.conf.default
+@exec [ -f %B/freshclam.conf ] || cp %B/%f %B/freshclam.conf
+@unexec rm -f %D/%%DATADIR%%/daily.cvd || true
+@unexec rm -f %D/%%DATADIR%%/main.cvd || true
+@dirrm %%DATADIR%%
+@unexec rmdir /var/run/clamav 2>/dev/null || true
+@unexec rmdir /var/log/clamav 2>/dev/null || true

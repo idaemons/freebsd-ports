@@ -1,0 +1,47 @@
+--- Makefile.orig	Thu Jan 15 20:56:02 2004
++++ Makefile	Wed Feb 11 17:44:32 2004
+@@ -1,33 +1,30 @@
+-PREFIX = /usr/local
+-INSTALL = install
+-
+ BINDIR = $(PREFIX)/bin
+ 
+ VERSION = 0.8
+ 
+ #DEBUG = -g
+-OPTIMIZE = -O3
++#OPTIMIZE = -O3
+ #PROFILE = -pg
+ 
+-LDOPTS = -L/sw/lib -L/usr/X11R6/lib $(PROFILE) $(DEBUG)
+-CCOPTS = -I/sw/include -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I. -Wall $(OPTIMIZE) $(DEBUG) $(PROFILE) -DMETAPIXEL_VERSION=\"$(VERSION)\"
+-CC = gcc
++LDOPTS = ${LDFLAGS} $(PROFILE) $(DEBUG)
++CCOPTS = ${CFLAGS} ${CPPFLAGS} -Wall $(DEBUG) $(PROFILE) -DMETAPIXEL_VERSION=\"$(VERSION)\"
++#CC = gcc
+ #LIBFFM = -lffm
+ 
+-OBJS = metapixel.o vector.o rwpng.o rwjpeg.o readimage.o writeimage.o lispreader.o getopt.o getopt1.o
+-CONVERT_OBJS = convert.o lispreader.o getopt.o getopt1.o
++OBJS = metapixel.o vector.o rwpng.o rwjpeg.o readimage.o writeimage.o lispreader.o
++CONVERT_OBJS = convert.o lispreader.o
+ IMAGESIZE_OBJS = imagesize.o rwpng.o rwjpeg.o readimage.o
+ 
+-all : metapixel convert imagesize
++all : metapixel metapixel-convert metapixel-imagesize
+ 
+ metapixel : $(OBJS) libzoom/libzoom.a
+ 	$(CC) $(LDOPTS) -o metapixel $(OBJS) libzoom/libzoom.a -lpng -ljpeg $(LIBFFM) -lm -lz
+ 
+-convert : $(CONVERT_OBJS)
+-	$(CC) $(LDOPTS) -o convert $(CONVERT_OBJS)
++metapixel-convert : $(CONVERT_OBJS)
++	$(CC) $(LDOPTS) -o metapixel-convert $(CONVERT_OBJS)
+ 
+-imagesize : $(IMAGESIZE_OBJS)
+-	$(CC) $(LDOPTS) -o imagesize $(IMAGESIZE_OBJS) libzoom/libzoom.a -lpng -ljpeg -lm -lz
++metapixel-imagesize : $(IMAGESIZE_OBJS)
++	$(CC) $(LDOPTS) -o metapixel-imagesize $(IMAGESIZE_OBJS) libzoom/libzoom.a -lpng -ljpeg -lm -lz
+ 
+ %.o : %.c
+ 	$(CC) $(CCOPTS) -c $<

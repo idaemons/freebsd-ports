@@ -1,0 +1,4 @@
+bin/dbview
+%%PORTDOCS%%share/doc/dbview/README
+%%PORTDOCS%%share/doc/dbview/dBASE
+%%PORTDOCS%%@dirrm share/doc/dbview

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/mach/auto/Test/Exception/.packlist
+%%SITE_PERL%%/Test/Exception.pm
+@dirrm %%SITE_PERL%%/mach/auto/Test/Exception
+@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true

@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+bin/scmxx
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/gsmcharset.txt
+%%PORTDOCS%%%%DOCSDIR%%/gsm0338.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc_sources.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/sms.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/vCalendar.vcs
+%%PORTDOCS%%%%EXAMPLESDIR%%/vCard.vcf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

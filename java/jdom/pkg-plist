@@ -1,0 +1,31 @@
+%%PORTDOCS%%%%EXAMPLESDIR%%/sax/XMLWriter.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/sax/DataUnformatFilter.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/sax/DocumentReader.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/sax/FilterTest.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/sax/ReaderTest.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/sax/test1.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/sax/test2.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/sax/XMLFilterBase.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/sax/XMLReaderBase.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/sax/DataFormatFilter.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/catalog.xsl
+%%PORTDOCS%%%%EXAMPLESDIR%%/cdata.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/contents.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/Count.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/DOMBuilderDemo.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/fibo.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/inline.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/namespaces.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/SAXBuilderDemo.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/SAXBuilderTestEntity.dtd
+%%PORTDOCS%%%%EXAMPLESDIR%%/SAXBuilderTestEntity.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/SAXBuilderTestEntity2.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/testNamespaces.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/TestXMLOutputter.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/WarReader.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/web.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/XPathReader.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/catalog.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/XSLTransform.java
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/sax
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

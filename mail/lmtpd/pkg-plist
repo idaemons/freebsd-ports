@@ -1,0 +1,50 @@
+@comment $FreeBSD$
+bin/filtercheck
+bin/lmtpdlogsum
+etc/lmtpd.conf.dist
+libexec/lmtpd
+share/nls/C/filtercheck.cat
+share/nls/en_AU.ISO8859-1/filtercheck.cat
+share/nls/en_AU.ISO8859-15/filtercheck.cat
+share/nls/en_AU.US-ASCII/filtercheck.cat
+share/nls/en_CA.ISO8859-1/filtercheck.cat
+share/nls/en_CA.ISO8859-15/filtercheck.cat
+share/nls/en_CA.US-ASCII/filtercheck.cat
+share/nls/en_GB.ISO8859-1/filtercheck.cat
+share/nls/en_GB.ISO8859-15/filtercheck.cat
+share/nls/en_GB.US-ASCII/filtercheck.cat
+share/nls/en_NZ.ISO8859-1/filtercheck.cat
+share/nls/en_NZ.ISO8859-15/filtercheck.cat
+share/nls/en_NZ.US-ASCII/filtercheck.cat
+share/nls/en_US.ISO8859-1/filtercheck.cat
+share/nls/en_US.ISO8859-15/filtercheck.cat
+share/nls/fr_BE.ISO8859-1/filtercheck.cat
+share/nls/fr_BE.ISO8859-15/filtercheck.cat
+share/nls/fr_CA.ISO8859-1/filtercheck.cat
+share/nls/fr_CA.ISO8859-15/filtercheck.cat
+share/nls/fr_CH.ISO8859-1/filtercheck.cat
+share/nls/fr_CH.ISO8859-15/filtercheck.cat
+share/nls/fr_FR.ISO8859-1/filtercheck.cat
+share/nls/fr_FR.ISO8859-15/filtercheck.cat
+share/nls/fr_FR.ISO_8859-1/filtercheck.cat
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/log.sql
+%%EXAMPLESDIR%%/mysqllog.mysql
+%%EXAMPLESDIR%%/overquota.sql
+%%EXAMPLESDIR%%/msg/README
+%%EXAMPLESDIR%%/msg/bounce.en.txt
+%%EXAMPLESDIR%%/msg/bounce.fr.txt
+%%EXAMPLESDIR%%/msg/debug.en.txt
+%%EXAMPLESDIR%%/msg/debug.fr.txt
+%%EXAMPLESDIR%%/msg/logmsg.fr.txt
+%%EXAMPLESDIR%%/msg/quotamsg.en.txt
+%%EXAMPLESDIR%%/msg/quotamsg.es.txt
+%%EXAMPLESDIR%%/msg/quotamsg.fr.txt
+%%EXAMPLESDIR%%/msg/quotamsg.it.txt
+%%EXAMPLESDIR%%/msg/virus.en.txt
+%%EXAMPLESDIR%%/msg/virus.fr.txt
+@dirrm %%EXAMPLESDIR%%/msg
+@dirrm %%EXAMPLESDIR%%

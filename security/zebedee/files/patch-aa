@@ -1,0 +1,86 @@
+--- Makefile.orig	Tue Sep 23 14:37:56 2003
++++ Makefile	Mon Dec 15 19:56:14 2003
+@@ -5,7 +5,7 @@
+ 
+ ZBD_VERSION = 2.5.2
+ 
+-OS = 
++OS = freebsd
+ 
+ ###
+ ### Locations of tools, libraries and installation directories.
+@@ -14,12 +14,10 @@
+ 
+ # Choose your C compiler
+ 
+-CC_$(OS) = gcc
+-
+ CC_win32 = gcc -mno-cygwin
+ CC_linux = gcc -pthread
+ CC_solaris = gcc
+-CC_freebsd = gcc -pthread
++CC_freebsd ?= gcc
+ CC_tru64 = cc
+ CC_irix = cc -n32 -woff 1110
+ CC_hpux = cc -Ae +DAportable
+@@ -30,7 +28,7 @@
+ # Optimise/debug compilation
+ 
+ #OPTIM = -Wall -g
+-OPTIM = -Wall -O3
++OPTIM = -Wall
+ 
+ # Location of gmp include and library
+ #
+@@ -45,25 +43,26 @@
+ # BFINC = /usr/include/openssl
+ # BFLIB = -lcrypto
+ 
+-BFINC = -I../blowfish-0.9.5a
+-BFLIB = ../blowfish-0.9.5a/libblowfish.a
++BFINC = -I$(OPENSSLINC) -I$(OPENSSLINC)/openssl
++BFLIB = $(OPENSSLLIB)/libcrypto.a
+ 
+ # Location of zlib include and library
+ 
+-ZINC = -I../zlib-1.1.4
+-ZLIB = ../zlib-1.1.4/libz.a
++ZINC =
++ZLIB = -lz
+ 
+ # Location of bzlib include and library
+ # Set these empty if you don't want bzib2 support
+ 
+-BZINC = -I../bzip2-1.0.1
+-BZLIB = ../bzip2-1.0.1/libbz2.a
++BZINC = -I$(LOCALBASE)/include
++BZLIB = -L$(LOCALBASE)/lib -lbz2
+ 
+ #
+ # Tools needed for Perl "POD"-format documentation conversion.
+ #
+ PERL_$(OS) = perl
+ PERL_win32 = c:/perl/bin/perl	# Avoid Cygwin port
++PERL_freebsd = perl
+ PERL = $(PERL_$(OS))
+ 
+ BAT_win32 = .bat
+@@ -182,7 +181,8 @@
+ #### You REALLY shouldn't have to modify anything beyond here ...
+ ####
+ 
+-CFLAGS = $(OPTIM) $(DEFINES) -I. $(GMPINC) $(BFINC) $(ZINC) $(BZINC)
++CFLAGS ?= -03
++CFLAGS += $(PTHREAD_CFLAGS) $(OPTIM) $(DEFINES) -I. $(GMPINC) $(BFINC) $(ZINC) $(BZINC)
+ 
+ LIBS = $(GMPLIB) $(BFLIB) $(ZLIB) $(BZLIB) $(OSLIBS)
+ 
+@@ -202,7 +202,7 @@
+ 	@ if test -z "$(OS)"; then echo "Use '$(MAKE) OS=xxx' where xxx is win32, linux, solaris, freebsd, tru64, irix, hpux, macosx or bsdi"; exit 1; fi
+ 
+ zebedee$(EXE) : $(OBJS)
+-	$(CC) $(CFLAGS) -o zebedee$(EXE) $(OBJS) $(LIBS)
++	$(CC) $(CFLAGS) -o zebedee$(EXE) $(OBJS) $(LIBS) $(PTHREAD_LIBS)
+ 
+ huge.o : huge.h
+ 

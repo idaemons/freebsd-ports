@@ -1,0 +1,109 @@
+# New ports collection makefile for:	ocaml
+# Date created:		24 December 1996
+# Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ocaml
+PORTVERSION=	3.07.2
+CATEGORIES=	lang
+MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME}/ \
+		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME}/ \
+		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME}/
+PKGNAMESUFFIX=	${SFX}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2$//}
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${DISTNAME}-patch2.diffs
+PATCH_DIST_STRIP=-p1
+
+MAINTAINER?=	eugos@gmx.net
+COMMENT?=	The Objective Caml compiler and programming environment
+
+.if defined(WITHOUT_X11)
+PLIST_SUB+=	X11="@comment " TK="@comment "
+WITHOUT_TK=	yes
+SFX=		-nox11
+CONFLICTS=	ocaml-[0-9]* ocaml-notk-*
+.else
+PLIST_SUB+=	X11=""
+USE_XLIB=	yes
+.if defined(WITHOUT_TK)
+PLIST_SUB+=	TK="@comment "
+SFX=		-notk
+CONFLICTS=	ocaml-[0-9]* ocaml-nox11-*
+.else
+PLIST_SUB+=	TK=""
+CONFLICTS=	ocaml-nox11-* ocaml-notk-*
+
+BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.4:${PORTSDIR}/lang/tcl84 \
+		${LOCALBASE}/include/tk8.4:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+.endif
+.endif
+
+HAS_CONFIGURE=	yes
+ALL_TARGET=	world.opt
+
+.if ${MACHINE_ARCH} != "i386"
+PLIST_SUB+=	PROF="@comment "
+.else
+PLIST_SUB+=	PROF=""
+.endif
+
+MAN1=		ocamlcp.1 ocamldep.1 ocamldebug.1 ocamlopt.1 ocamlrun.1 \
+		ocamlyacc.1 ocamlmktop.1 ocaml.1 ocamlc.1 ocamllex.1 \
+		ocamlprof.1 camlp4.1
+MANN=		Arg.n Array.n ArrayLabels.n Bigarray.Array1.n \
+		Bigarray.Array2.n Bigarray.Array3.n Bigarray.Genarray.n \
+		Bigarray.n Buffer.n Callback.n CamlinternalOO.n Char.n \
+		Complex.n Digest.n Filename.n Format.n Gc.n Genlex.n \
+		Hashtbl.HashedType.n Hashtbl.Make.n Hashtbl.S.n Hashtbl.n \
+		Int32.n Int64.n Lazy.n Lexing.n List.n ListLabels.n \
+		Map.Make.n Map.OrderedType.n Map.S.n Map.n Marshal.n \
+		MoreLabels.Hashtbl.HashedType.n MoreLabels.Hashtbl.Make.n \
+		MoreLabels.Hashtbl.S.n MoreLabels.Hashtbl.n \
+		MoreLabels.Map.Make.n MoreLabels.Map.OrderedType.n \
+		MoreLabels.Map.S.n MoreLabels.Map.n MoreLabels.Set.Make.n \
+		MoreLabels.Set.OrderedType.n MoreLabels.Set.S.n \
+		MoreLabels.Set.n MoreLabels.n Nativeint.n Num.n Obj.n Oo.n \
+		Parsing.n Pervasives.LargeFile.n Pervasives.n Printexc.n \
+		Printf.n Queue.n Random.n Random.State.n Scanf.Scanning.n \
+		Scanf.n Set.Make.n Set.OrderedType.n Set.S.n Set.n Sort.n \
+		Stack.n StdLabels.Array.n StdLabels.List.n StdLabels.String.n \
+		StdLabels.n Str.n Stream.n String.n StringLabels.n Sys.n \
+		Unix.LargeFile.n Unix.n Weak.Make.n Weak.S.n Weak.n
+MLINKS=		ocamlc.1 ocamlc.opt.1 ocamlopt.1 ocamlopt.opt.1 \
+		camlp4.1 camlp4o.1 camlp4.1 camlp4r.1 camlp4.1 mkcamlp4.1 \
+		camlp4.1 camlp4o.opt.1 camlp4.1 camlp4r.opt.1 \
+		camlp4.1 ocpp.1 camlp4.1 camlp4sch.1
+
+CONFIGURE_ARGS=	-prefix ${PREFIX} -with-pthread
+
+.if !defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
+.if defined(WITHOUT_TK)
+CONFIGURE_ARGS+=	-no-tk
+.else
+CONFIGURE_ARGS+=	-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4"
+.endif
+.endif
+
+post-install:
+.if !defined(WITHOUT_TK)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}/labltk
+	@${MKDIR} ${EXAMPLESDIR}/camltk
+	@${MKDIR} ${EXAMPLESDIR}/camltk/images
+	@cd ${WRKSRC}/otherlibs/labltk/examples_labltk; \
+		${INSTALL_DATA} * ${EXAMPLESDIR}/labltk
+	@${CP} -r ${WRKSRC}/otherlibs/labltk/examples_camltk/* \
+		${EXAMPLESDIR}/camltk
+.endif
+.for prog in camlp4o.opt camlp4r.opt ocamlc.opt ocamldep.opt ocamldoc.opt \
+		ocamllex.opt ocamlopt.opt ocamlrun ocamlyacc
+	@${STRIP_CMD} ${PREFIX}/bin/${prog}
+.endfor
+
+.include <bsd.port.mk>

@@ -1,0 +1,13 @@
+--- doc/Makefile.in.orig	Mon Jan  5 14:58:48 2004
++++ doc/Makefile.in	Mon Jan  5 14:59:01 2004
+@@ -94,8 +94,8 @@
+ 
+ CLEANFILES = fluxbox.1
+ MAINTAINERCLEANFILES = Makefile.in
+-man_MANS = fluxbox.1 bsetroot.1
+-EXTRA_DIST = fluxbox.1.in bsetroot.1 Coding_style
++man_MANS = fluxbox.1
++EXTRA_DIST = fluxbox.1.in Coding_style
+ subdir = doc
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h

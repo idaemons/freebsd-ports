@@ -1,0 +1,20 @@
+--- Makefile.orig	Thu Oct 30 12:41:45 2003
++++ Makefile	Thu Nov 20 12:35:49 2003
+@@ -8,15 +8,13 @@
+ ##  @todo auto-dep
+ 
+ #   the tools
+-APXS = apxs
+ APACHECTL = apachectl
+-CC = gcc
+ INSTALL = install
+ 
+ #   additional user defines, includes and libraries
+ #DEF = 
+-#INC =
+-#LIB = 
++INC = -I/usr/local/include
++LIB = -L/usr/local/lib
+ CFLAGS = -O2 -Wall
+ DOCROOT = /var/www
+ 

@@ -1,0 +1,37 @@
+%%PORTDOCS%%share/doc/libiodbc/AUTHORS
+%%PORTDOCS%%share/doc/libiodbc/COPYING
+%%PORTDOCS%%share/doc/libiodbc/ChangeLog
+%%PORTDOCS%%share/doc/libiodbc/NEWS
+%%PORTDOCS%%share/doc/libiodbc/README
+bin/iodbc-config
+bin/iodbctest
+%%GUI%%bin/iodbcadm-gtk
+etc/libiodbc/odbc.ini.sample
+etc/libiodbc/odbcinst.ini.sample
+include/iodbcext.h
+include/iodbcinst.h
+include/isql.h
+include/isqlext.h
+include/isqltypes.h
+include/sql.h
+include/sqlext.h
+include/sqltypes.h
+include/sqlucode.h
+%%GUI%%lib/libdrvproxy.a
+%%GUI%%lib/libdrvproxy.la
+%%GUI%%lib/libdrvproxy.so
+%%GUI%%lib/libdrvproxy.so.3
+lib/libiodbc.a
+lib/libiodbc.la
+lib/libiodbc.so
+lib/libiodbc.so.3
+%%GUI%%lib/libiodbcadm.a
+%%GUI%%lib/libiodbcadm.la
+%%GUI%%lib/libiodbcadm.so
+%%GUI%%lib/libiodbcadm.so.3
+lib/libiodbcinst.a
+lib/libiodbcinst.la
+lib/libiodbcinst.so
+lib/libiodbcinst.so.3
+%%PORTDOCS%%@dirrm share/doc/libiodbc
+@dirrm etc/libiodbc

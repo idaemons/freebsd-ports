@@ -1,0 +1,2 @@
+etc/nss_ldap.conf.sample
+lib/nss_ldap.so.1

@@ -1,0 +1,11 @@
+bin/fcitx
+share/fcitx/punc.mb
+share/fcitx/pybase.mb
+share/fcitx/pyphrase.mb
+share/fcitx/wbx.mb
+@dirrm share/fcitx
+%%PORTDOCS%%%%DOCSDIR%%/cjkvinput.txt
+%%PORTDOCS%%%%DOCSDIR%%/hf_wb98.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/wb_fh.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

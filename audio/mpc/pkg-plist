@@ -1,0 +1,5 @@
+bin/mpc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/mpc-bashrc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

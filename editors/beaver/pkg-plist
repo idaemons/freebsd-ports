@@ -1,0 +1,4 @@
+bin/beaver
+share/gnome/applications/beaver.desktop
+share/gnome/pixmaps/beaver.png
+share/locale/de/LC_MESSAGES/beaver.mo

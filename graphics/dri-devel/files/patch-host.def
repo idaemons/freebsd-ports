@@ -1,0 +1,44 @@
+--- config/cf/host.def.orig	Tue Dec  9 17:50:12 2003
++++ config/cf/host.def	Tue Dec  9 23:06:33 2003
+@@ -5,7 +5,7 @@
+ #define XFree86CustomVersion "DRI trunk"
+ 
+ /* You need this now */
+-#define MesaSrcDir /X11R6/SourceForge/Mesanew/Mesa-newtree
++#define MesaSrcDir $(TOP)/../Mesa-newtree
+ 
+ 
+ /* Don't use any special flags by default, but leave this here commented out
+@@ -24,6 +24,13 @@
+ #endif
+ */
+ 
++#define DefaultGcc2AxpOpt ${FBSDCFLAGS}
++#define DefaultGcc2PpcOpt ${FBSDCFLAGS}
++#define DefaultGcc2i386Opt ${FBSDCFLAGS}
++#define LibraryCDebugFlags ${FBSDCFLAGS}
++
++#define CcCmd ${FBSDCC}
++#define CplusplusCmd ${FBSDCXX}
+ 
+ #define BuildXFree86ConfigTools YES
+ 
+@@ -46,15 +53,17 @@
+ 
+ #if defined(FreeBSDArchitecture) && defined(HasGcc3) && HasGcc3
+ #define NoSystemWarn		-Wno-system-headers
++#define AliasingArg		-fno-strict-aliasing
+ #else
+ #define NoSystemWarn
++#define AliasingArg
+ #endif
+ 
+ #define GccWarningOptions -Wall -Wpointer-arith -Wstrict-prototypes \
+                           -Wmissing-prototypes -Wmissing-declarations \
+                           -Wredundant-decls -Wnested-externs -Wundef \
+ 			  NoSystemWarn
+-#define DefaultCCOptions -ansi -pedantic GccWarningOptions -pipe -g
++#define DefaultCCOptions AliasingArg GccWarningOptions
+ 
+ #define NormalLibGlx NO
+ 

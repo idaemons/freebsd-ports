@@ -1,0 +1,32 @@
+# New ports collection makefile for:	streamtuner
+# Date created:			02 Apr 2002
+# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
+#
+# $FreeBSD$
+#
+
+PORTNAME=		streamtuner
+PORTVERSION=		0.12.1
+PORTREVISION=	1
+CATEGORIES=		audio www
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=		jylefort@brutele.be
+COMMENT=		A GTK+ stream directory browser
+
+BUILD_DEPENDS=		scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+LIB_DEPENDS=		curl:${PORTSDIR}/ftp/curl
+
+USE_X_PREFIX=		yes
+USE_GNOME=		gtk20 gnomehack
+USE_LIBTOOL_VER=	15
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|[(]datadir[)]/pixmaps|(prefix)/share/gnome/pixmaps|g ; \
+		 s|[(]datadir[)]/applications|(prefix)/share/gnome/applications|g'
+
+.include <bsd.port.mk>

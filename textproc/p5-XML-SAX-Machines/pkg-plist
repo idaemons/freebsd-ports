@@ -1,0 +1,27 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Machines/.packlist
+%%SITE_PERL%%/XML/Filter/Distributor.pm
+%%SITE_PERL%%/XML/Filter/DocSplitter.pm
+%%SITE_PERL%%/XML/Filter/Merger.pm
+%%SITE_PERL%%/XML/Filter/Tee.pm
+%%SITE_PERL%%/XML/SAX/ByRecord.pm
+%%SITE_PERL%%/XML/SAX/EventMethodMaker.pm
+%%SITE_PERL%%/XML/SAX/Machine.pm
+%%SITE_PERL%%/XML/SAX/Machines.pm
+%%SITE_PERL%%/XML/SAX/Machines/ConfigDefaults.pm
+%%SITE_PERL%%/XML/SAX/Machines/ConfigHelper.pm
+%%SITE_PERL%%/XML/SAX/Machines/SiteConfig.pm
+%%SITE_PERL%%/XML/SAX/Manifold.pm
+%%SITE_PERL%%/XML/SAX/Pipeline.pm
+%%SITE_PERL%%/XML/SAX/Tap.pm
+@dirrm %%SITE_PERL%%/XML/SAX/Machines
+@unexec rmdir %D/%%SITE_PERL%%/XML/Filter 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML/SAX 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Machines
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+%%EXAMPLESDIR%%/append_to_xml_file
+%%EXAMPLESDIR%%/output_to_process
+%%EXAMPLESDIR%%/xml_records_thru_libxslt
+%%EXAMPLESDIR%%/xml_records_to_data_structures
+@dirrm %%EXAMPLESDIR%%

@@ -1,0 +1,3 @@
+bin/texi2html
+%%DOCSDIR%%/texi2html.html
+@dirrm %%DOCSDIR%%

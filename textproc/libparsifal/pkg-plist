@@ -1,0 +1,12 @@
+include/libparsifal/bistream.h
+include/libparsifal/isrcmem.h
+include/libparsifal/parsifal.h
+include/libparsifal/xmlcfg.h
+include/libparsifal/xmlhash.h
+include/libparsifal/xmlpool.h
+include/libparsifal/xmlsbuf.h
+include/libparsifal/xmlvect.h
+lib/libparsifal-%%VERSION%%.so
+lib/libparsifal.a
+lib/libparsifal.so
+@dirrm include/libparsifal

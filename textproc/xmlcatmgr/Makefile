@@ -1,0 +1,66 @@
+# Ports collection makefile for:  xmlcatmgr
+# Date created:			  Sat May 24, 2003
+# Whom:				  Hiroki Sato <hrs@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xmlcatmgr
+PORTVERSION=	2.0.b1
+CATEGORIES=	textproc
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
+
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	SGML and XML catalog manager
+
+MAN1=		xmlcatmgr.1
+
+HAS_CONFIGURE=	yes
+
+CONFIGURE_SCRIPT=	configure.sh
+CONFIGURE_ARGS=		-D
+CONFIGURE_ARGS+=	-p ${PREFIX}
+CONFIGURE_ARGS+=	-d ${DOCSDIR}
+CONFIGURE_ARGS+=	-c ${CATALOG_PORTS_XML}
+CONFIGURE_ARGS+=	-C ${CATALOG_PORTS_SGML}
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	-n doc
+.endif
+CONFIGURE_ENV=		SED="${SED}"
+CONFIGURE_ENV+=		INSTALL_DATA="${INSTALL_DATA}"
+CONFIGURE_ENV+=		INSTALL_DIR="${INSTALL_DATA_DIR}"
+CONFIGURE_ENV+=		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+CONFIGURE_ENV+=		NOPORTDOCS="${NOPORTDOCS}"
+
+BUILD_WRKSRC=		${WRKSRC}/work
+INSTALL_WRKSRC=		${WRKSRC}/work
+
+COMMONVARS=		${WRKDIR}/commonvars.sh
+XMLCATMGR?=		${PREFIX}/bin/xmlcatmgr
+CATALOG_MASTER_SGML?=	${PREFIX}/share/sgml/catalog
+CATALOG_PORTS_SGML?=	${PREFIX}/share/sgml/catalog.ports
+CATALOG_MASTER_XML?=	${PREFIX}/share/xml/catalog
+CATALOG_PORTS_XML?=	${PREFIX}/share/xml/catalog.ports
+
+PKGINSTALL=		${WRKDIR}/pkg-install.sh
+PKGDEINSTALL=		${WRKDIR}/pkg-deinstall.sh
+
+post-build:
+	${TOUCH} ${COMMONVARS}
+	${ECHO} '#!/bin/sh' >> ${COMMONVARS}
+	${ECHO} 'PATH=$${PATH}:/bin:/usr/bin:${LOCALBASE}/bin:${X11BASE}/bin' >> ${COMMONVARS}
+	${ECHO} 'export PATH;' >> ${COMMONVARS}
+.for V in XMLCATMGR CATALOG_MASTER_SGML CATALOG_MASTER_XML CATALOG_PORTS_SGML CATALOG_PORTS_XML
+	${ECHO} '${V}=${${V}}' >> ${COMMONVARS}
+.endfor
+	${CAT} ${COMMONVARS} ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	${CAT} ${COMMONVARS} ${FILESDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+	${CHMOD} 0555 ${PKGINSTALL} ${PKGDEINSTALL}
+
+post-install:
+	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

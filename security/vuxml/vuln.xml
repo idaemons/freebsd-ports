@@ -1,0 +1,2774 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.1//EN" "http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd">
+<!--
+Copyright 2003, 2004 Jacques Vidrine and contributors
+
+Redistribution and use in source (VuXML) and 'compiled' forms (SGML,
+HTML, PDF, PostScript, RTF and so forth) with or without modification,
+are permitted provided that the following conditions are met:
+1. Redistributions of source code (VuXML) must retain the above
+   copyright notice, this list of conditions and the following
+   disclaimer as the first lines of this file unmodified.
+2. Redistributions in compiled form (transformed to other DTDs,
+   published online in any format, converted to PDF, PostScript,
+   RTF and other formats) must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer
+   in the documentation and/or other materials provided with the
+   distribution.
+
+THIS DOCUMENTATION IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS
+BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8338a20f-9573-11d8-9366-0020ed76ef5a">
+    <topic>xchat remotely exploitable buffer overflow (Socks5)</topic>
+    <affects>
+      <package>
+	<name>xchat</name>
+	<range><ge>1.8</ge><lt>2.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A straightforward stack buffer overflow exists in XChat's
+	  Socks5 proxy support.</p>
+	<p>The XChat developers report that `tsifra' discovered this
+	  issue.</p>
+	<p>NOTE: XChat Socks5 support is disabled by support in the
+	  FreeBSD Ports Collection.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0409</cvename>
+      <url>http://xchat.org/files/source/2.0/patches/xc208-fixsocks5.diff</url>
+      <url>http://marc.theaimsgroup.com/?l=xchat-announce&amp;m=108114935507357</url>
+      <!-- <mlist msgid="20040405171305.04f19c44.zed@xchat.org">http://marc.theaimsgroup.com/?l=xchat-announce&amp;m=108114935507357</mlist> -->
+    </references>
+    <dates>
+      <discovery>2004-04-05</discovery>
+      <entry>2004-04-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cfe17ca6-6858-4805-ba1d-a60a61ec9b4d">
+    <topic>phpBB IP address spoofing</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><le>2.0.8_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The common.php script always trusts the `X-Forwarded-For'
+        header in the client's HTTP request.  A remote user could
+	forge this header in order to bypass any IP address access
+	control lists (ACLs).</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108239864203144</url>
+      <!--
+      <mlist msgid="20040419000129.28917.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108239864203144</mlist>
+      -->
+    </references>
+    <dates>
+      <discovery>2004-04-18</discovery>
+      <entry>2004-04-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c7705712-92e6-11d8-8b29-0020ed76ef5a">
+    <topic>TCP denial-of-service attacks against long lived connections</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>0</ge></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p><a href="http://www.niscc.gov.uk/">NISCC</a> /
+	  <a href="http://www.uniras.gov.uk/">UNIRAS</a> has published
+	  an advisory that re-visits the long discussed spoofed TCP RST
+	  denial-of-service vulnerability.  This new look emphasizes
+	  the fact that for some applications such attacks are
+	  practically feasible.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0230</cvename>
+      <url>http://www.uniras.gov.uk/vuls/2004/236929/index.htm</url>
+    </references>
+    <dates>
+      <discovery>1995-06-01</discovery>
+      <entry>2004-04-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2e129846-8fbb-11d8-8b29-0020ed76ef5a">
+    <topic>MySQL insecure temporary file creation (mysqlbug)</topic>
+    <affects>
+      <package>
+        <name>mysql-client</name>
+	<range><gt>3.2</gt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+	 <p>Shaun Colley reports that the script `mysqlbug' included
+	   with MySQL sometimes creates temporary files in an unsafe
+	   manner.  As a result, an attacker may create a symlink in
+	   /tmp so that if another user invokes `mysqlbug' and <em>quits
+	   without making <strong>any</strong> changes</em>, an
+	   arbitrary file may be overwritten with the bug report
+	   template.</p>
+       </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108023246916294&amp;w=2</url>
+      <bid>9976</bid>
+      <cvename>CAN-2004-0381</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-25</discovery>
+      <entry>2004-04-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="99230277-8fb4-11d8-8b29-0020ed76ef5a">
+    <topic>ident2 double byte buffer overflow</topic>
+    <affects>
+      <package>
+	<name>ident2</name>
+	<range><le>1.04</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Jack of RaptureSecurity reported a double byte buffer
+          overflow in ident2. The bug may allow a remote attacker to
+          execute arbitrary code within the context of the ident2
+          daemon.  The daemon typically runs as user-ID `nobody', but
+          with group-ID `wheel'.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0408</cvename>
+      <url>http://cvsweb.freebsd.org/ports/security/ident2/files/patch-common.c</url>
+    </references>
+    <dates>
+      <discovery>2004-04-15</discovery>
+      <entry>2004-04-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="da6f265b-8f3d-11d8-8b29-0020ed76ef5a">
+    <topic>kdepim exploitable buffer overflow in VCF reader</topic>
+    <affects>
+      <package>
+	<name>kdepim</name>
+	<range><ge>3.1.0</ge><lt>3.1.4_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A buffer overflow is present in some versions of the KDE
+          personal information manager (kdepim) which may be triggered
+          when processing a specially crafted VCF file.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0988</cvename>
+      <url>http://www.kde.org/info/security/advisory-20040114-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-01-14</discovery>
+      <entry>2004-04-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="84237895-8f39-11d8-8b29-0020ed76ef5a">
+    <topic>neon format string vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>neon</name>
+	<range><lt>0.24.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Greuff reports that the neon WebDAV client library contains
+          several format string bugs within error reporting code.  A
+          malicious server may exploit these bugs by sending specially
+          crafted PROPFIND or PROPPATCH responses.</p>
+	<p>Although several applications include neon, such as cadaver and
+	  subversion, the FreeBSD Ports of these applications are not
+	  affected.  They are specifically configured to NOT use the
+	  included neon.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0179</cvename>
+      <url>http://www.webdav.org/neon/</url>
+    </references>
+    <dates>
+      <discovery>2004-04-14</discovery>
+      <entry>2004-04-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0792e7a7-8e37-11d8-90d1-0020ed76ef5a">
+    <topic>CVS path validation errors</topic>
+    <affects>
+      <package>
+	<name>cvs+ipv6</name>
+	<range><le>1.11.5_1</le></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2.1p5</lt></range>
+	<range><ge>4.9</ge><lt>4.9p5</lt></range>
+	<range><ge>4.8</ge><lt>4.8p18</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Two programming errors were discovered in which path names
+          handled by CVS were not properly validated.  In one case,
+          the CVS client accepts absolute path names from the server
+          when determining which files to update.  In another case,
+          the CVS server accepts relative path names from the client
+          when determining which files to transmit, including those
+          containing references to parent directories (`../').</p>
+        <p>These programming errors generally only have a security
+	  impact when dealing with remote CVS repositories.</p>
+        <p>A malicious CVS server may cause a CVS client to overwrite
+	  arbitrary files on the client's system.</p>
+        <p>A CVS client may request RCS files from a remote system
+          other than those in the repository specified by $CVSROOT.
+          These RCS files need not be part of any CVS repository
+          themselves.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0180</cvename>
+      <cvename>CAN-2004-0405</cvename>
+      <url>http://ccvs.cvshome.org/servlets/NewsItemView?newsID=102</url>
+      <freebsdsa>SA-04:07.cvs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-04-14</discovery>
+      <entry>2004-04-14</entry>
+      <modified>2004-04-15</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="27c331d5-64c7-11d8-80e3-0020ed76ef5a">
+    <topic>Vulnerabilities in H.323 implementations</topic>
+    <affects>
+      <package>
+        <name>pwlib</name>
+        <range><lt>1.6.0</lt></range>
+      </package>
+      <package>
+        <name>asterisk</name>
+        <range><le>0.7.2</le></range>
+      </package>
+      <package>
+        <name>openh323</name>
+        <range><lt>1.13.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The <a href="http://www.niscc.gov.uk/">NISCC</a> and the <a href="http://www.ee.oulu.fi/research/ouspg/">OUSPG</a>
+          developed a test suite for the H.323 protocol.  This test
+          suite has uncovered vulnerabilities in several H.323
+          implementations with impacts ranging from denial-of-service
+          to arbitrary code execution.</p>
+        <p>In the FreeBSD Ports Collection, `pwlib' is directly
+          affected.  Other applications such as `asterisk' and
+          `openh323' incorporate `pwlib' statically and so are also
+          independently affected.</p>
+      </body>
+    </description>
+    <references>
+      <!-- General references -->
+      <url>http://www.uniras.gov.uk/vuls/2004/006489/h323.htm</url>
+      <url>http://www.ee.oulu.fi/research/ouspg/protos/testing/c07/h2250v4/index.html</url>
+      <certsa>CA-2004-01</certsa>
+      <certvu>749342</certvu>
+      <!-- pwlib and pwlib-using applications -->
+      <cvename>CAN-2004-0097</cvename>
+      <url>http://www.southeren.com/blog/archives/000055.html</url>
+    </references>
+    <dates>
+      <discovery>2004-01-13</discovery>
+      <entry>2004-02-22</entry>
+      <modified>2004-04-15</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="ccd698df-8e20-11d8-90d1-0020ed76ef5a">
+    <topic>racoon remote denial of service vulnerability (ISAKMP header length field)</topic>
+    <affects>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040408a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>When racoon receives an ISAKMP header, it will attempt to
+          allocate sufficient memory for the entire ISAKMP message
+          according to the header's length field.  If an attacker
+          crafts an ISAKMP header with a ridiculously large value
+          in the length field, racoon may exceed operating system
+          resource limits and be terminated, resulting in a denial of
+          service.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0403</cvename>
+      <url>http://www.kame.net/dev/cvsweb2.cgi/kame/kame/kame/racoon/isakmp.c.diff?r1=1.180&amp;r2=1.181</url>
+    </references>
+    <dates>
+      <discovery>2004-03-31</discovery>
+      <entry>2004-04-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="40fcf20f-8891-11d8-90d1-0020ed76ef5a">
+    <topic>racoon remote denial of service vulnerability (IKE Generic Payload Header)</topic>
+    <affects>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040407b</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When racoon receives an IKE message with an incorrectly
+	  constructed Generic Payload Header, it may behave erratically,
+	  going into a tight loop and dropping connections.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0392</cvename>
+      <url>http://orange.kame.net/dev/query-pr.cgi?pr=555</url>
+    </references>
+    <dates>
+      <discovery>2003-12-03</discovery>
+      <entry>2004-04-07</entry>
+      <modified>2004-04-14</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="f8551668-de09-4d7b-9720-f1360929df07">
+    <topic>tcpdump ISAKMP payload handling remote denial-of-service</topic>
+    <affects>
+      <package>
+	<name>tcpdump</name>
+	<range><lt>3.8.3</lt></range>
+      </package>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040408a</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>0</ge></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Chad Loder has discovered vulnerabilities in tcpdump's
+          ISAKMP protocol handler.  During an audit to repair these
+          issues, Bill Fenner discovered some related problems.</p>
+        <p>These vulnerabilities may be used by an attacker to crash a
+	  running `tcpdump' process.  They can only be triggered if
+	  the `-v' command line option is being used.</p>
+	<p>NOTE: the racoon ISAKMP/IKE daemon incorporates the ISAKMP
+	  protocol handler from tcpdump, and so is also affected by
+	  this issue.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108067265931525</url>
+      <url>http://www.rapid7.com/advisories/R7-0017.html</url>
+      <cvename>CAN-2004-0183</cvename>
+      <cvename>CAN-2004-0184</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-12</discovery>
+      <entry>2004-03-31</entry>
+      <modified>2004-04-14</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="322d4ff6-85c3-11d8-a41f-0020ed76ef5a">
+    <topic>Midnight Commander buffer overflow during symlink resolution</topic>
+    <affects>
+      <package>
+	<name>mc</name>
+	<range><lt>4.6.0_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Midnight Commander uses a fixed sized stack buffer while
+	  resolving symbolic links within file archives (tar or cpio).
+	  If an attacker can cause a user to process a specially
+	  crafted file archive with Midnight Commander,
+	  the attacker may be able to obtain the privileges of the
+	  target user.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-1023</cvename>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=106399528518704</url>
+      <!--
+      <mlist msgid="E1A0LbX-000NPk-00.alienhard-mail-ru@f9.mail.ru">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=106399528518704</mlist>
+      -->
+      <bid>8658</bid>
+    </references>
+    <dates>
+      <discovery>2003-09-19</discovery>
+      <entry>2004-04-03</entry>
+      <modified>2004-04-13</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="7229d900-88af-11d8-90d1-0020ed76ef5a">
+    <topic>mksnap_ffs clears file system options</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2p1</lt></range>
+	<range><ge>5.1</ge><lt>5.1p12</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The kernel interface for creating a snapshot of a
+          filesystem is the same as that for changing the flags on
+	  that filesystem.  Due to an oversight, the <a href="http://www.freebsd.org/cgi/man.cgi?query=mksnap_ffs">mksnap_ffs(8)</a>
+          command called that interface with only the snapshot flag
+          set, causing all other flags to be reset to the default
+	  value.</p>
+        <p>A regularly scheduled backup of a live filesystem, or
+          any other process that uses the mksnap_ffs command
+          (for instance, to provide a rough undelete functionality
+          on a file server), will clear any flags in effect on the
+          filesystem being snapshot.  Possible consequences depend
+          on local usage, but can include disabling extended access
+          control lists or enabling the use of setuid executables
+	  stored on an untrusted filesystem.</p>
+        <p>The mksnap_ffs command is normally only available to
+          the superuser and members of the `operator' group.  There
+          is therefore no risk of a user gaining elevated privileges
+          directly through use of the mksnap_ffs command unless
+          it has been intentionally made available to unprivileged
+          users.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0099</cvename>
+      <freebsdsa>SA-04:01.mksnap_ffs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-01-30</discovery>
+      <entry>2004-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f95a9005-88ae-11d8-90d1-0020ed76ef5a">
+    <topic>shmat reference counting bug</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2p2</lt></range>
+	<range><ge>5.1</ge><lt>5.1p14</lt></range>
+	<range><ge>5.0</ge><lt>5.0p20</lt></range>
+	<range><ge>4.9</ge><lt>4.9p2</lt></range>
+	<range><ge>4.8</ge><lt>4.8p15</lt></range>
+	<range><lt>4.7p25</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A programming error in the <a href="http://www.freebsd.org/cgi/man.cgi?query=shmat">shmat(2)</a> system call can result
+          in a shared memory segment's reference count being erroneously
+	  incremented.</p>
+        <p>It may be possible to cause a shared memory segment to
+          reference unallocated kernel memory, but remain valid.
+          This could allow a local attacker to gain read or write
+          access to a portion of kernel memory, resulting in sensitive
+          information disclosure, bypass of access control mechanisms,
+          or privilege escalation. </p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0114</cvename>
+      <freebsdsa>SA-04:02.shmat</freebsdsa>
+      <url>http://www.pine.nl/press/pine-cert-20040201.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-02-01</discovery>
+      <entry>2004-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9082a85a-88ae-11d8-90d1-0020ed76ef5a">
+    <topic>jailed processes can attach to other jails</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.1</ge><lt>5.1p14</lt></range>
+	<range><ge>5.2</ge><lt>5.2.1</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A programming error has been found in the <a href="http://www.freebsd.org/cgi/man.cgi?query=jail_attach">jail_attach(2)</a>
+          system call which affects the way that system call verifies
+          the privilege level of the calling process.  Instead of
+          failing immediately if the calling process was already
+          jailed, the jail_attach system call would fail only after
+	  changing the calling process's root directory.</p>
+        <p>A process with superuser privileges inside a jail could
+          change its root directory to that of a different jail,
+          and thus gain full read and write access to files and
+          directories within the target jail. </p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0126</cvename>
+      <freebsdsa>SA-04:03.jail</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-02-19</discovery>
+      <entry>2004-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e289f7fd-88ac-11d8-90d1-0020ed76ef5a">
+    <topic>many out-of-sequence TCP packets denial-of-service</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2.1p2</lt></range>
+	<range><ge>5.0</ge><lt>5.1p15</lt></range>
+	<range><ge>4.9</ge><lt>4.9p3</lt></range>
+	<range><ge>4.8</ge><lt>4.8p16</lt></range>
+	<range><lt>4.7p26</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>FreeBSD does not limit the number of TCP segments that
+        may be held in a reassembly queue.  A remote attacker may
+        conduct a low-bandwidth denial-of-service attack against
+        a machine providing services based on TCP (there are many
+        such services, including HTTP, SMTP, and FTP).  By sending
+        many out-of-sequence TCP segments, the attacker can cause
+        the target machine to consume all available memory buffers
+        (``mbufs''), likely leading to a system crash. </p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0171</cvename>
+      <freebsdsa>SA-04:04.tcp</freebsdsa>
+      <url>http://www.idefense.com/application/poi/display?id=78&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2004-02-18</discovery>
+      <entry>2004-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d8769838-8814-11d8-90d1-0020ed76ef5a">
+    <topic>racoon fails to verify signature during Phase 1</topic>
+    <affects>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040407b</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Ralf Spenneberg discovered a serious flaw in racoon.
+          When using Phase 1 main or aggressive mode, racoon does
+          not verify the client's RSA signature.  Any installations
+          using <em>X.509 authentication</em> are <strong>strongly
+	  urged</strong> to upgrade.</p>
+	<p>Installations using <em>pre-shared keys</em> are believed
+	  to be unaffected.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0155</cvename>
+      <url>http://www.kame.net/dev/cvsweb2.cgi/kame/kame/kame/racoon/crypto_openssl.c?rev=1.84&amp;content-type=text/x-cvsweb-markup</url>
+    </references>
+    <dates>
+      <discovery>2004-04-05</discovery>
+      <entry>2004-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6fd02439-5d70-11d8-80e3-0020ed76ef5a">
+    <topic>Several remotely exploitable buffer overflows in gaim</topic>
+    <affects>
+      <package>
+        <name>gaim</name>
+        <range><lt>0.75_3</lt></range>
+        <range><eq>0.75_5</eq></range>
+	<range><eq>0.76</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Stefan Esser of e-matters found almost a dozen remotely
+          exploitable vulnerabilities in Gaim.  From the e-matters
+          advisory:</p>
+        <blockquote cite="http://security.e-matters.de/advisories/012004.txt">
+          <p>While developing a custom add-on, an integer overflow
+          in the handling of AIM DirectIM packets was revealed that
+          could lead to a remote compromise of the IM client. After
+          disclosing this bug to the vendor, they had to make a
+          hurried release because of a change in the Yahoo connection
+          procedure that rendered GAIM useless. Unfourtunately at the
+          same time a closer look onto the sourcecode revealed 11 more
+          vulnerabilities.</p>
+
+          <p>The 12 identified problems range from simple standard
+          stack overflows, over heap overflows to an integer overflow
+          that can be abused to cause a heap overflow. Due to the
+          nature of instant messaging many of these bugs require
+          man-in-the-middle attacks between client and server. But the
+          underlying protocols are easy to implement and MIM attacks
+          on ordinary TCP sessions is a fairly simple task.</p>
+
+          <p>In combination with the latest kernel vulnerabilities or
+          the habit of users to work as root/administrator these bugs
+          can result in remote root compromises.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://security.e-matters.de/advisories/012004.txt</url>
+      <cvename>CAN-2004-0005</cvename>
+      <cvename>CAN-2004-0006</cvename>
+      <cvename>CAN-2004-0007</cvename>
+      <cvename>CAN-2004-0008</cvename>
+    </references>
+    <dates>
+      <discovery>2004-01-26</discovery>
+      <entry>2004-02-12</entry>
+      <modified>2004-04-07</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="290d81b9-80f1-11d8-9645-0020ed76ef5a">
+    <topic>oftpd denial-of-service vulnerability (PORT command)</topic>
+    <affects>
+      <package>
+	<name>oftpd</name>
+	<range><lt>0.3.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Philippe Oechslin reported a denial-of-service vulnerability
+	  in oftpd.  The oftpd server can be crashed by sending a PORT
+	  command containing an integer over 8 bits long (over 255).</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.time-travellers.org/oftpd/oftpd-dos.html</url>
+      <bid>9980</bid>
+      <cvename>CAN-2004-0376</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-04</discovery>
+      <entry>2004-03-28</entry>
+      <modified>2004-04-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="bfb36941-84fa-11d8-a41f-0020ed76ef5a">
+    <topic>Incorrect cross-realm trust handling in Heimdal</topic>
+    <affects>
+      <package>
+	<name>heimdal</name>
+	<range><lt>0.6.1</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>4.0</ge></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Heimdal does not correctly validate the `transited' field of
+	  Kerberos tickets when computing the authentication path.  This
+	  could allow a rogue KDC with which cross-realm relationships
+	  have been established to impersonate any KDC in the
+	  authentication path.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0371</cvename>
+      <url>http://www.pdc.kth.se/heimdal/advisory/2004-04-01/</url>
+    </references>
+    <dates>
+      <discovery>2004-04-01</discovery>
+      <entry>2004-04-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="98bd69c3-834b-11d8-a41f-0020ed76ef5a">
+    <topic>Courier mail services: remotely exploitable buffer overflows</topic>
+    <affects>
+      <package>
+	<name>courier</name>
+	<range><lt>0.45</lt></range>
+      </package>
+      <package>
+	<name>courier-imap</name>
+	<range><lt>3.0</lt></range>
+      </package>
+      <package>
+	<name>sqwebmail</name>
+	<range><lt>4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Courier set of mail services use a common Unicode
+	  library.  This library contains buffer overflows in the
+	  converters for two popular Japanese character encodings.
+	  These overflows may be remotely exploitable, triggered by
+	  a maliciously formatted email message that is later processed
+	  by one of the Courier mail services.
+	  From the release notes for the corrected versions of the
+	  Courier set of mail services:</p>
+	<blockquote>
+          <p>iso2022jp.c: Converters became (upper-)compatible with
+            ISO-2022-JP (RFC1468 / JIS X 0208:1997 Annex 2) and
+            ISO-2022-JP-1 (RFC2237).  Buffer overflow vulnerability
+            (when Unicode character is out of BMP range) has been
+            closed.  Convert error handling was implemented.</p>
+          <p>shiftjis.c: Broken SHIFT_JIS converters has been fixed
+            and became (upper-)compatible with Shifted Encoding Method
+            (JIS X 0208:1997 Annex 1). Buffer overflow vulnerability
+            (when Unicode character is out of BMP range) has been
+            closed.  Convert error handling was implemented.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0224</cvename>
+      <url>http://cvs.sourceforge.net/viewcvs.py/courier/libs/unicode/iso2022jp.c?rev=1.10&amp;view=markup</url>
+      <url>http://cvs.sourceforge.net/viewcvs.py/courier/libs/unicode/shiftjis.c?rev=1.6&amp;view=markup</url>
+      <bid>9845</bid>
+    </references>
+    <dates>
+      <discovery>2004-02-01</discovery>
+      <entry>2004-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b7cb488c-8349-11d8-a41f-0020ed76ef5a">
+    <topic>isakmpd payload handling denial-of-service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>iaskmpd</name>
+	<range><le>20030903</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Numerous errors in isakmpd's input packet validation lead to
+	  denial-of-service vulnerabilities.  From the Rapid7 advisory:</p>
+	<blockquote cite="http://www.rapid7.com/advisories/R7-0018.html">
+          <p>The ISAKMP packet processing functions in OpenBSD's
+            isakmpd daemon contain multiple payload handling flaws
+            that allow a remote attacker to launch a denial of
+            service attack against the daemon.</p>
+          <p>Carefully crafted ISAKMP packets will cause the isakmpd
+            daemon to attempt out-of-bounds reads, exhaust available
+	    memory, or loop endlessly (consuming 100% of the CPU).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0218</cvename>
+      <cvename>CAN-2004-0219</cvename>
+      <cvename>CAN-2004-0220</cvename>
+      <cvename>CAN-2004-0221</cvename>
+      <cvename>CAN-2004-0222</cvename>
+      <url>http://www.rapid7.com/advisories/R7-0018.html</url>
+      <url>http://www.openbsd.org/errata34.html</url>
+    </references>
+    <dates>
+      <discovery>2004-03-17</discovery>
+      <entry>2004-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3362f2c1-8344-11d8-a41f-0020ed76ef5a">
+    <topic>apache 2 denial-of-service attack (does not affect FreeBSD)</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><lt>0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p><em>NOTE WELL:</em> This issue does not affect any FreeBSD
+	  platform.  It is recorded only for reference.</p>
+	<p>A denial-of-service issue was reported by Jeff Trawick.  From
+	   the CVS commit log for the fix:</p>
+	<blockquote cite="">
+          <p>Fix starvation issue on listening sockets where a
+            short-lived connection on a rarely-accessed listening
+            socket will cause a child to hold the accept mutex and
+            block out new connections until another connection arrives
+            on that rarely-accessed listening socket.  With Apache
+            2.x there is no performance concern about enabling the
+            logic for platforms which don't need it, so it is enabled
+            everywhere except for Win32.</p>
+	</blockquote>
+	<p>It was determined that this issue does not affect
+	  FreeBSD systems. From the Apache security advisory:</p>
+	<blockquote cite="http://www.apacheweek.com/features/security-20">
+            <p>This issue is known to affect some versions of AIX,
+              Solaris, and Tru64; it is known to not affect FreeBSD or
+              Linux.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0174</cvename>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107973894328806</url>
+      <url>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107969495524201</url>
+      <url>http://www.apacheweek.com/features/security-20</url>
+    </references>
+    <dates>
+      <discovery>2004-03-19</discovery>
+      <entry>2004-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5e7f58c3-b3f8-4258-aeb8-795e5e940ff8">
+    <topic>mplayer heap overflow in http requests</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk-esound</name>
+	<range><lt>0.92.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A remotely exploitable heap buffer overflow vulnerability was
+	  found in MPlayer's URL decoding code.  If an attacker can
+	  cause MPlayer to visit a specially crafted URL, arbitrary code
+	  execution with the privileges of the user running MPlayer may
+	  occur.  A `visit' might be caused by social engineering, or a
+	  malicious web server could use HTTP redirects which MPlayer
+	  would then process.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mplayerhq.hu/homepage/design6/news.html</url>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108066964709058</url>
+      <!-- <freebsdpr>ports/64974</freebsdpr> -->
+    </references>
+    <dates>
+      <discovery>2004-03-30</discovery>
+      <entry>2004-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="705e003a-7f36-11d8-9645-0020ed76ef5a">
+    <topic>squid ACL bypass due to URL decoding bug</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>squid-2.5.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the Squid advisory:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2004_1.txt">
+          <p>Squid versions 2.5.STABLE4 and earlier contain a bug
+          in the "%xx" URL decoding function.  It may insert a NUL
+          character into decoded URLs, which may allow users to bypass
+          url_regex ACLs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2004_1.txt</url>
+      <cvename>CAN-2004-0189</cvename>
+    </references>
+    <dates>
+      <discovery>2004-02-29</discovery>
+      <entry>2004-03-26</entry>
+      <modified>2004-03-30</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="cad045c0-81a5-11d8-9645-0020ed76ef5a">
+    <topic>zebra/quagga denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>zebra</name>
+	<range><lt>0.93b_7</lt></range>
+      </package>
+      <package>
+	<name>quagga</name>
+	<range><lt>0.96.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A remote attacker could cause zebra/quagga to crash by
+          sending a malformed telnet command to their management
+          port.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0858</cvename>
+      <url>http://rhn.redhat.com/errata/RHSA-2003-305.html</url>
+      <url>http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=107140</url>
+      <url>http://lists.quagga.net/pipermail/quagga-users/2003-November/000906.html</url>
+    </references>
+    <dates>
+      <discovery>2003-11-20</discovery>
+      <entry>2004-03-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2c6acefd-8194-11d8-9645-0020ed76ef5a">
+    <topic>setsockopt(2) IPv6 sockets input validation error</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2.1p4</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the FreeBSD Security Advisory:</p>
+	<blockquote>
+          <p>A programming error in the handling of some IPv6 socket
+	    options within the <a href="http://www.freebsd.org/cgi/man.cgi?query=setsockopt">setsockopt(2)</a> system call may result
+            in memory locations being accessed without proper
+            validation.</p>
+          <p>It may be possible for a local attacker to read portions
+            of kernel memory, resulting in disclosure of sensitive
+            information.  A local attacker can cause a system
+            panic.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0370</cvename>
+      <freebsdsa>SA-04:06.ipv6</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-03-29</discovery>
+      <entry>2004-03-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3e9be8c4-8192-11d8-9645-0020ed76ef5a">
+    <topic>ecartis buffer overflows and input validation bugs</topic>
+    <affects>
+      <package>
+	<name>ecartis</name>
+	<range><lt>1.0.0.s20030814,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Timo Sirainen reports multiple buffer overflows that may be
+	  triggered while parsing messages, as well as input validation
+	  errors that could result in disclosure of mailing list
+	  passwords.</p>
+	<p>These bugs were resolved in the August 2003 snapshot of
+	  ecartis.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0781</cvename>
+      <cvename>CAN-2003-0782</cvename>
+      <url>http://www.securiteam.com/unixfocus/5YP0H2AAUY.html</url>
+      <!-- <freebsdpr>ports/57082</freebsdpr> -->
+    </references>
+    <dates>
+      <discovery>2003-08-14</discovery>
+      <entry>2004-03-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cdf18ed9-7f4a-11d8-9645-0020ed76ef5a">
+    <topic>multiple vulnerabilities in ethereal</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<range><lt>0.10.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser of e-matters Security discovered a baker's dozen
+	  of buffer overflows in Ethereal's decoders, including:</p>
+	<ul>
+	  <li>NetFlow</li>
+	  <li>IGAP</li>
+	  <li>EIGRP</li>
+	  <li>PGM</li>
+	  <li>IRDA</li>
+	  <li>BGP</li>
+	  <li>ISUP</li>
+	  <li>TCAP</li>
+	  <li>UCP</li>
+	</ul>
+	<p>In addition, a vulnerability in the RADIUS decoder was found
+	  by Jonathan Heusser.</p>
+	<p>Finally, there is one uncredited vulnerability described by the
+	   Ethereal team as:</p>
+	<blockquote cite="http://www.ethereal.com/appnotes/enpa-sa-00013.html">
+	    <p>A zero-length Presentation protocol selector could make
+	    Ethereal crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00013.html</url>
+      <cvename>CAN-2004-0176</cvename>
+      <cvename>CAN-2004-0365</cvename>
+      <cvename>CAN-2004-0367</cvename>
+      <bid>9952</bid>
+    </references>
+    <dates>
+      <discovery>2004-03-23</discovery>
+      <entry>2004-03-26</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="fde53204-7ea6-11d8-9645-0020ed76ef5a">
+    <topic>insecure temporary file creation in xine-check, xine-bugreport</topic>
+    <affects>
+      <package>
+	<name>xine</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Some scripts installed with xine create temporary files
+	  insecurely.  It is recommended that these scripts (xine-check,
+	  xine-bugreport) not be used.  They are not needed for normal
+	  operation.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107997911025558</url>
+      <bid>9939</bid>
+    </references>
+    <dates>
+      <discovery>2004-03-20</discovery>
+      <entry>2004-03-26</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="c551ae17-7f00-11d8-868e-000347dd607f">
+    <topic>multiple vulnerabilities in phpBB</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><lt>2.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Users with admin rights can severly damage an phpBB installation,
+          potentially triggered by viewing a page with a malicious link sent
+          by an attacker.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.gulftech.org/03202004.php</url>
+      <url>http://www.phpbb.com/phpBB/viewtopic.php?t=183982</url>
+      <bid>9942</bid>
+    </references>
+    <dates>
+      <discovery>2004-03-20</discovery>
+      <entry>2004-03-26</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="c480eb5e-7f00-11d8-868e-000347dd607f">
+    <topic>ezbounce remote format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>ezbounce</name>
+	<range><lt>1.04.a_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A security hole exists that can be used to crash the proxy and
+          execute arbitrary code. An exploit is circulating that takes
+          advantage of this, and in some cases succeeds in obtaining a login
+          shell on the machine.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0510</cvename>
+      <url>http://ezbounce.dc-team.com/</url>
+      <bid>8071</bid>
+    </references>
+    <dates>
+      <discovery>2003-07-01</discovery>
+      <entry>2004-03-26</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="739bb51d-7e82-11d8-9645-0020ed76ef5a">
+    <topic>racoon security association deletion vulnerability</topic>
+    <affects>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040116a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A remote attacker may use specially crafted IKE/ISAKMP
+          messages to cause racoon to delete security associations.
+          This could result in denial-of-service or possibly cause
+          sensitive traffic to be transmitted in plaintext, depending
+          upon configuration.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107403331309838</url>
+      <bid>9416</bid>
+      <bid>9417</bid>
+      <cvename>CAN-2004-0164</cvename>
+    </references>
+    <dates>
+      <discovery>2004-01-13</discovery>
+      <entry>2004-03-25</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="68233cba-7774-11d8-89ed-0020ed76ef5a">
+    <topic>OpenSSL ChangeCipherSpec denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<name>openssl-beta</name>
+	<range><lt>0.9.7d</lt></range>
+      </package>
+      <system>
+        <name>FreeBSD</name>
+	<range><ge>4.0</ge><lt>4.8p17</lt></range>
+	<range><ge>4.9</ge><lt>4.9p4</lt></range>
+	<range><ge>5.0</ge><lt>5.1p16</lt></range>
+	<range><ge>5.2</ge><lt>5.2.1p3</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A remote attacker could cause an application using OpenSSL to
+	  crash by performing a specially crafted SSL/TLS handshake.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0079</cvename>
+      <url>http://www.openssl.org/news/secadv_20040317.txt</url>
+      <freebsdsa>SA-04:05.openssl</freebsdsa>
+      <certvu>288574</certvu>
+      <bid>9899</bid>
+    </references>
+    <dates>
+      <discovery>2004-03-17</discovery>
+      <entry>2004-03-17</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="c2e10368-77ab-11d8-b9e8-00e04ccb0a62">
+    <topic>ModSecurity for Apache 2.x remote off-by-one overflow</topic>
+    <affects>
+      <package>
+        <name>mod_security</name>
+	<range><lt>1.7.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>When the directive "SecFilterScanPost" is enabled,
+          the Apache 2.x version of ModSecurity is vulnerable
+          to an off-by-one overflow</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.s-quadra.com/advisories/Adv-20040315.txt</url>
+      <bid>9885</bid>
+    </references>
+    <dates>
+      <discovery>2004-02-09</discovery>
+      <entry>2004-03-17</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="3b7c7f6c-7102-11d8-873f-0020ed76ef5a">
+    <topic>wu-ftpd ftpaccess `restricted-uid'/`restricted-gid' directive may be bypassed</topic>
+    <affects>
+      <package>
+	<name>wu-ftpd</name>
+	<range><le>2.6.2_3</le></range>
+      </package>
+      <package>
+	<name>wu-ftpd+ipv6</name>
+	<range><le>2.6.2_5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Glenn Stewart reports a bug in wu-ftpd's ftpaccess
+	  `restricted-uid'/`restricted-gid' directives:</p>
+	<blockquote>
+          <p>Users can get around the restriction to their home
+            directory by issuing a simple chmod command on their home
+            directory. On the next ftp log in, the user will have '/'
+            as their root directory.</p>
+	</blockquote>
+	<p>Matt Zimmerman discovered that the cause of the bug was a
+	  missing check for a restricted user within a code path that
+	  is executed only when a certain error is encountered.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0148</cvename>
+      <bid>9832</bid>
+    </references>
+    <dates>
+      <discovery>2004-02-17</discovery>
+      <entry>2004-03-08</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="492f8896-70fa-11d8-873f-0020ed76ef5a">
+    <topic>Apache 2 mod_ssl denial-of-service</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><ge>2.0</ge><le>2.0.48_3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Jon Orton reports a memory leak in Apache 2's mod_ssl.
+          A remote attacker may issue HTTP requests on an HTTPS
+          port, causing an error.  Due to a bug in processing this
+          condition, memory associated with the connection is
+          not freed.  Repeated requests can result in consuming
+          all available memory resources, probably resulting in
+          termination of the Apache process.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0113</cvename>
+      <url>http://www.apacheweek.com/features/security-20</url>
+      <url>http://cvs.apache.org/viewcvs.cgi/httpd-2.0/modules/ssl/ssl_engine_io.c?r1=1.100.2.11&amp;r2=1.100.2.12</url>
+      <url>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869699329638</url>
+      <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=27106</url>
+      <bid>9826</bid>
+    </references>
+    <dates>
+      <discovery>2004-02-20</discovery>
+      <entry>2004-03-08</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="8471bb85-6fb0-11d8-873f-0020ed76ef5a">
+    <topic>GNU Anubis buffer overflows and format string vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>anubis</name>
+	<range><le>3.6.2_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ulf Härnhammar discovered several vulnerabilities in GNU
+	  Anubis.</p>
+	<ul>
+	  <li>Unsafe uses of `sscanf'.  The `%s' format specifier is
+	    used, which allows a classical buffer overflow.  (auth.c)</li>
+	  <li>Format string bugs invoking `syslog'.  (log.c, errs.c,
+	    ssl.c)</li>
+	</ul>
+	<p>Ulf notes that these vulnerabilities can be exploited by a
+	  malicious IDENT server as a denial-of-service attack.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-March/018290.html</url>
+      <bid>9772</bid>
+      <cvename>CAN-2004-0353</cvename>
+      <cvename>CAN-2004-0354</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-04</discovery>
+      <entry>2004-03-06</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="3837f462-5d6b-11d8-80e3-0020ed76ef5a">
+    <topic>Buffer overflows in XFree86 servers</topic>
+    <affects>
+      <package>
+        <name>XFree86-Server</name>
+        <range><le>4.3.0_13</le></range>
+        <range><ge>4.3.99</ge><le>4.3.99.15_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A number of buffer overflows were recently discovered in
+          XFree86, prompted by initial discoveries by iDEFENSE.  These
+          buffer overflows are present in the font alias handling.  An
+          attacker with authenticated access to a running X server may
+          exploit these vulnerabilities to obtain root privileges on
+          the machine running the X server.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.idefense.com/application/poi/display?id=72</url>
+      <url>http://www.idefense.com/application/poi/display?id=73</url>
+      <cvename>CAN-2004-0083</cvename>
+      <cvename>CAN-2004-0084</cvename>
+      <cvename>CAN-2004-0106</cvename>
+      <bid>9636</bid>
+      <bid>9652</bid>
+      <bid>9655</bid>
+    </references>
+    <dates>
+      <discovery>2004-02-10</discovery>
+      <entry>2004-02-12</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="e25566d5-6d3f-11d8-83a4-000a95bc6fae">
+    <topic>multiple buffer overflows in xboing</topic>
+    <affects>
+      <package>
+        <name>xboing</name>
+        <range><lt>2.4_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Steve Kemp reports (in a Debian bug submission):</p>
+        <blockquote cite="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=174924">
+          <p>Due to improper bounds checking it is possible for a
+            malicious user to gain a shell with membership group
+            'games'.  (The binary is installed setgid games).</p>
+          <p>Environmental variables are used without being bounds-checked
+            in any way, from the source code:</p>
+<pre>
+highscore.c:
+   /* Use the environment variable if it exists */
+   if ((str = getenv("XBOING_SCORE_FILE")) != NULL)
+        strcpy(filename, str);
+   else
+        strcpy(filename, HIGH_SCORE_FILE);
+
+misc.c:
+    if ((ptr = getenv("HOME")) != NULL)
+        (void) strcpy(dest, ptr);
+</pre>
+        <p>Neither of these checks are boundschecked, and will allow
+          arbitary shell code to be run.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0149</cvename>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=174924</url>
+      <bid>9764</bid>
+    </references>
+    <dates>
+      <discovery>2003-01-01</discovery>
+      <entry>2004-03-05</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="a20082c3-6255-11d8-80e3-0020ed76ef5a">
+    <topic>metamail format string bugs and buffer overflows</topic>
+    <affects>
+      <package>
+        <name>metamail</name>
+        <range><lt>2.7_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Ulf Härnhammar reported four bugs in metamail: two are format
+          string bugs and two are buffer overflows.  The bugs are in
+          SaveSquirrelFile(), PrintHeader(), and ShareThisHeader().</p>
+        <p>These vulnerabilities could be triggered by a maliciously
+          formatted email message if `metamail' or `splitmail' is used
+          to process it, possibly resulting in arbitrary code execution
+          with the privileges of the user reading mail.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0104</cvename>
+      <cvename>CAN-2004-0105</cvename>
+      <bid>9692</bid>
+    </references>
+    <dates>
+      <discovery>2004-02-18</discovery>
+      <entry>2004-02-18</entry>
+      <modified>2004-03-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="ce46b93a-80f2-11d8-9645-0020ed76ef5a">
+    <topic>Buffer overflows and format string bugs in Emil</topic>
+    <affects>
+      <package>
+	<name>emil</name>
+	<range><le>2.1b9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ulf Härnhammar reports multiple buffer overflows in
+	  Emil, some of which are triggered during the parsing
+	  of attachment filenames.  In addition, some format string bugs
+	  are present in the error reporting code.</p>
+        <p>Depending upon local configuration, these vulnerabilities
+	  may be exploited using specially crafted messages in order
+	  to execute arbitrary code running with the privileges of
+	  the user invoking Emil.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-March/019325.html</url>
+      <url>http://www.debian.org/security/2004/dsa-468</url>
+      <cvename>CAN-2004-0152</cvename>
+      <cvename>CAN-2004-0153</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-24</discovery>
+      <entry>2004-03-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="70f5b3c6-80f0-11d8-9645-0020ed76ef5a">
+    <topic>Critical SQL injection in phpBB</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><le>2.0.8</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Anyone can get admin's username and password's md5 hash via a
+	  single web request.
+	  A working example is provided in the advisory.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108032454818873</url>
+      <bid>9984</bid>
+    </references>
+    <dates>
+      <discovery>2004-03-26</discovery>
+      <entry>2004-03-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6c7661ff-7912-11d8-9645-0020ed76ef5a">
+    <topic>uudeview buffer overflows</topic>
+    <affects>
+      <package>
+	<name>uulib</name>
+	<name>uudeview</name>
+	<name>xdeview</name>
+	<range><lt>0.5.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The authors of UUDeview report repairing two buffer
+	  overflows in their software.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.fpx.de/fp/Software/UUDeview/HISTORY.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-03-01</discovery>
+      <entry>2004-03-18</entry>
+      <modified>2004-03-25</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="09d418db-70fd-11d8-873f-0020ed76ef5a">
+    <topic>Apache 1.3 IP address access control failure on some 64-bit platforms</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><lt>1.3.29_2</lt></range>
+      </package>
+      <package>
+	<name>apache+mod_ssl</name>
+	<range><lt>1.3.29+2.8.16_1</lt></range>
+      </package>
+      <package>
+	<name>apache+ssl</name>
+	<range><lt>1.3.29.1.53_1</lt></range>
+      </package>
+      <package>
+	<name>ru-apache</name>
+	<range><lt>1.3.29+30.19_1</lt></range>
+      </package>
+      <package>
+	<name>ru-apache+mod_ssl</name>
+	<range><lt>1.3.29+30.19+2.8.16_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Henning Brauer discovered a programming error in Apache
+          1.3's mod_access that results in the netmasks in IP address
+          access control rules being interpreted incorrectly on
+          64-bit, big-endian platforms.  In some cases, this could
+          cause a `deny from' IP address access control rule including
+          a netmask to fail.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0993</cvename>
+      <url>http://cvs.apache.org/viewcvs.cgi/apache-1.3/src/modules/standard/mod_access.c?r1=1.46&amp;r2=1.47</url>
+      <url>http://www.apacheweek.com/features/security-13</url>
+      <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=23850</url>
+      <url>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869603013722</url>
+    </references>
+    <dates>
+      <discovery>2004-03-07</discovery>
+      <entry>2004-03-08</entry>
+      <modified>2004-03-12</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="1a448eb7-6988-11d8-873f-0020ed76ef5a">
+    <topic>mod_python denial-of-service vulnerability in parse_qs</topic>
+    <affects>
+      <package>
+        <name>mod_python</name>
+	<range><ge>2.7</ge><lt>2.7.10</lt></range>
+	<range><ge>3.0</ge><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>An attacker may cause Apache with mod_python to crash
+          by using a specially constructed query string.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0973</cvename>
+      <bid>9129</bid>
+      <url>http://www.modpython.org/pipermail/mod_python/2003-November/014532.html</url>
+      <url>http://www.modpython.org/pipermail/mod_python/2004-January/014879.html</url>
+    </references>
+    <dates>
+      <discovery>2003-11-28</discovery>
+      <entry>2004-03-03</entry>
+      <modified>2004-03-11</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="9fccad5a-7096-11d8-873f-0020ed76ef5a">
+    <topic>mpg123 vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mpg123</name>
+	<name>mpg123-esound</name>
+	<range><le>0.59r_12</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>In 2003, two vulnerabilities were discovered in mpg123
+	  that could result in remote code execution when using
+	  untrusted input or streaming from an untrusted server.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0577</cvename>
+      <cvename>CAN-2003-0865</cvename>
+      <bid>6629</bid>
+      <bid>8680</bid>
+    </references>
+    <dates>
+      <discovery>2003-01-16</discovery>
+      <entry>2004-03-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ac4b9d18-67a9-11d8-80e3-0020ed76ef5a">
+    <topic>fetchmail denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+        <name>fetchmail</name>
+        <range><lt>6.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Dave Jones discovered a denial-of-service vulnerability
+	  in fetchmail. An email message containing a very long line
+	  could cause fetchmail to segfault due to missing NUL
+	  termination in transact.c.</p>
+        <p>Eric Raymond decided not to mention this issue in the
+          release notes for fetchmail 6.2.5, but it was fixed
+          there.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0792</cvename>
+      <bid>8843</bid>
+      <url>http://xforce.iss.net/xforce/xfdb/13450</url>
+      <url>http://www.openbsd.org/cgi-bin/cvsweb/ports/mail/fetchmail/patches/Attic/patch-rfc822_c?rev=1.1</url>
+    </references>
+    <dates>
+      <discovery>2003-10-16</discovery>
+      <entry>2004-02-25</entry>
+      <modified>2004-03-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="b0e76877-67a8-11d8-80e3-0020ed76ef5a">
+    <topic>mailman denial-of-service vulnerability in MailCommandHandler</topic>
+    <affects>
+      <package>
+        <name>mailman</name>
+        <range><lt>2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A malformed message could cause mailman to crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0991</cvename>
+      <url>http://umn.dl.sourceforge.net/sourceforge/mailman/mailman-2.0.13-2.0.14-diff.txt</url>
+    </references>
+    <dates>
+      <discovery>2003-11-18</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3cb88bb2-67a6-11d8-80e3-0020ed76ef5a">
+    <topic>mailman XSS in admin script</topic>
+    <affects>
+      <package>
+        <name>mailman</name>
+        <range><lt>2.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Dirk Mueller reports:</p>
+          <blockquote><p>I've found a cross-site scripting
+           vulnerability in the admin interface of mailman 2.1.3 that
+           allows, under certain circumstances, for anyone to retrieve
+           the (valid) session cookie.</p></blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0965</cvename>
+      <url>http://mail.python.org/pipermail/mailman-announce/2003-December/000066.html</url>
+      <url>http://xforce.iss.net/xforce/xfdb/14121</url>
+    </references>
+    <dates>
+      <discovery>2003-12-31</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="429249d2-67a7-11d8-80e3-0020ed76ef5a">
+    <topic>mailman XSS in create script</topic>
+    <affects>
+      <package>
+        <name>mailman</name>
+        <range><lt>2.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>From the 2.1.3 release notes:</p>
+        <blockquote><p>Closed a cross-site scripting exploit in the
+        create cgi script.</p></blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0992</cvename>
+      <url>http://mail.python.org/pipermail/mailman-announce/2003-September/000061.html</url>
+    </references>
+    <dates>
+      <discovery>2003-09-28</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="00263aa3-67a8-11d8-80e3-0020ed76ef5a">
+    <topic>mailman XSS in user options page</topic>
+    <affects>
+      <package>
+        <name>mailman</name>
+        <range><lt>2.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>From the 2.1.1 release notes:</p>
+        <blockquote><p>Closed a cross-site scripting vulnerability in
+        the user options page.</p></blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0038</cvename>
+      <url>http://mail.python.org/pipermail/mailman-announce/2003-February/000056.html</url>
+    </references>
+    <dates>
+      <discovery>2003-02-08</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="75770425-67a2-11d8-80e3-0020ed76ef5a">
+    <topic>SQL injection vulnerability in phpnuke</topic>
+    <affects>
+      <package>
+        <name>phpnuke</name>
+        <range><le>6.9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Multiple researchers have discovered multiple SQL injection
+          vulnerabilities in some versions of Php-Nuke.  These
+          vulnerabilities may lead to information disclosure, compromise
+          of the Php-Nuke site, or compromise of the back-end
+          database.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://security.nnov.ru/search/document.asp?docid=5748</url>
+      <url>http://www.securityfocus.com/archive/1/348375</url>
+      <url>http://www.security-corporation.com/advisories-027.html</url>
+      <url>http://www.securityfocus.com/archive/1/353201</url>
+    </references>
+    <dates>
+      <discovery>2003-12-12</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ad4f6ca4-6720-11d8-9fb5-000a95bc6fae">
+    <topic>lbreakout2 vulnerability in environment variable handling</topic>
+    <affects>
+      <package>
+        <name>lbreakout2</name>
+        <range><le>2.2.2_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Ulf Härnhammar discovered an exploitable vulnerability in
+          lbreakout2's environmental variable handling.  In several
+          instances, the contents of the HOME environmental variable
+          are copied to a stack or global buffer without range
+          checking.  A local attacker may use this vulnerability to
+          acquire group-ID `games' privileges.</p>
+        <p>An exploit for this vulnerability has been published by
+          ``Li0n7 voila fr''.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0158</cvename>
+      <url>http://www.debian.org/security/2004/dsa-445</url>
+      <url>http://www.securityfocus.com/archive/1/354760</url>
+    </references>
+    <dates>
+      <discovery>2004-02-21</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="316e1c9b-671c-11d8-9aad-000a95bc6fae">
+    <topic>hsftp format string vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>hsftp</name>
+        <range><lt>1.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Ulf Härnhammar discovered a format string bug in hsftp's file
+          listing code may allow a malicious server to cause arbitrary
+          code execution by the client.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.debian.org/debian-security-announce/debian-security-announce-2004/msg00044.html</url>
+    </references>
+    <dates>
+      <discovery>2004-02-22</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c7cad0f0-671a-11d8-bdeb-000a95bc6fae">
+    <topic>Darwin Streaming Server denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+        <name>DarwinStreamingServer</name>
+        <range><le>4.1.3g</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>An attacker can cause an assertion to trigger by sending
+          a long User-Agent field in a request.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0169</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=75</url>
+    </references>
+    <dates>
+      <discovery>2004-02-23</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="847ade05-6717-11d8-b321-000a95bc6fae">
+    <topic>libxml2 stack buffer overflow in URI parsing</topic>
+    <affects>
+      <package>
+        <name>libxml2</name>
+        <range><lt>2.6.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Yuuichi Teranishi reported a crash in libxml2's URI handling
+          when a long URL is supplied.  The implementation in nanohttp.c
+          and nanoftp.c uses a 4K stack buffer, and longer URLs will
+          overwrite the stack.  This could result in denial-of-service
+          or arbitrary code execution in applications using libxml2
+          to parse documents.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0110</cvename>
+      <url>http://www.xmlsoft.org/news.html</url>
+      <url>http://mail.gnome.org/archives/xml/2004-February/msg00070.html</url>
+    </references>
+    <dates>
+      <discovery>2004-02-08</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cc0fb686-6550-11d8-80e3-0020ed76ef5a">
+    <topic>file disclosure in phpMyAdmin</topic>
+    <affects>
+      <package>
+        <name>phpMyAdmin</name>
+        <range><le>2.5.4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Lack of proper input validation in phpMyAdmin may allow an
+          attacker to obtain the contents of any file on the target
+          system that is readable by the web server.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0129</cvename>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107582619125932&amp;w=2</url>
+      <url>http://cvs.sourceforge.net/viewcvs.py/phpmyadmin/phpMyAdmin/export.php#rev2.3.2.1</url>
+    </references>
+    <dates>
+      <discovery>2004-02-17</discovery>
+      <entry>2004-02-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="87cc48fd-5fdd-11d8-80e3-0020ed76ef5a">
+    <topic>mnGoSearch buffer overflow in UdmDocToTextBuf()</topic>
+    <affects>
+      <package>
+        <name>mnogosearch</name>
+        <range><ge>3.2</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Jedi/Sector One &lt;j@pureftpd.org&gt; reported the following
+          on the full-disclosure list:</p>
+        <blockquote>
+          <p>Every document is stored in multiple parts according to
+            its sections (description, body, etc) in databases. And
+            when the content has to be sent to the client,
+            UdmDocToTextBuf() concatenates those parts together and
+            skips metadata.</p>
+          <p>Unfortunately, that function lacks bounds checking and
+            a buffer overflow can be triggered by indexing a large
+            enough document.</p>
+          <p>'len' is fixed to 10K [in UdmDocToTextBuf] in searchd.c
+            . S-&gt;val length depends on the length of the original
+            document and on the indexer settings (the sample
+            configuration file has low limits that work around the
+            bug, though).</p>
+          <p>Exploitation should be easy, moreover textbuf points to
+          the stack.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-February/017366.html</url>
+    </references>
+    <dates>
+      <discovery>2004-02-15</discovery>
+      <entry>2004-02-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cacaffbc-5e64-11d8-80e3-0020ed76ef5a">
+    <topic>GNU libtool insecure temporary file handling</topic>
+    <affects>
+      <package>
+        <name>libtool</name>
+        <range><ge>1.3</ge><lt>1.3.5_2</lt></range>
+        <range><ge>1.4</ge><lt>1.4.3_3</lt></range>
+        <range><ge>1.5</ge><lt>1.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>libtool attempts to create a temporary directory in
+          which to write scratch files needed during processing.  A
+          malicious user may create a symlink and then manipulate
+          the directory so as to write to files to which she normally
+          has no permissions.</p>
+        <p>This has been reported as a ``symlink vulnerability'',
+          although I do not think that is an accurate description.</p>
+        <p>This vulnerability could possibly be used on a multi-user
+          system to gain elevated privileges, e.g. root builds some
+          packages, and another user successfully exploits this
+          vulnerability to write to a system file.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.geocrawler.com/mail/msg.php3?msg_id=3438808&amp;list=405</url>
+      <url>http://www.securityfocus.com/archive/1/352333</url>
+    </references>
+    <dates>
+      <discovery>2004-01-30</discovery>
+      <entry>2004-02-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0e154a9c-5d7a-11d8-80e3-0020ed76ef5a">
+    <topic>seti@home remotely exploitable buffer overflow</topic>
+    <affects>
+      <package>
+        <name>setiathome</name>
+        <range><lt>3.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The seti@home client contains a buffer overflow in the HTTP
+          response handler.  A malicious, spoofed seti@home server can
+          exploit this buffer overflow to cause remote code execution
+          on the client.  Exploit programs are widely available.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://setiathome.berkeley.edu/version308.html</url>
+      <url>http://web.archive.org/web/20030609204812/http://spoor12.edup.tudelft.nl/</url>
+    </references>
+    <dates>
+      <discovery>2003-04-08</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5e92e8a2-5d7b-11d8-80e3-0020ed76ef5a">
+    <topic>icecast 1.x multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>icecast</name>
+        <range><lt>1.3.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>icecast 1.3.11 and earlier contained numerous security
+          vulnerabilities, the most severe allowing a remote attacker
+          to execute arbitrary code as root.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2002-0177</cvename>
+      <cvename>CAN-2001-1230</cvename>
+      <cvename>CAN-2001-1229</cvename>
+      <cvename>CAN-2001-1083</cvename>
+      <cvename>CAN-2001-0784</cvename>
+      <bid>4415</bid>
+      <bid>2933</bid>
+    </references>
+    <dates>
+      <discovery>2002-04-28</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83119e27-5d7c-11d8-80e3-0020ed76ef5a">
+    <topic>nap allows arbitrary file access</topic>
+    <affects>
+      <package>
+        <name>nap</name>
+        <range><lt>1.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>According to the author:</p>
+        <blockquote>
+          <p>Fixed security loophole which allowed remote
+            clients to access arbitrary files on our
+            system.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://quasar.mathstat.uottawa.ca/~selinger/nap/NEWS</url>
+    </references>
+    <dates>
+      <discovery>2001-04-12</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a736deab-5d7d-11d8-80e3-0020ed76ef5a">
+    <topic>CCE contains exploitable buffer overflows</topic>
+    <affects>
+      <package>
+        <name>zh-cce</name>
+        <range><lt>0.40</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The Chinese Console Environment contains exploitable buffer
+          overflows.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://programmer.lib.sjtu.edu.cn/cce/cce.html</url>
+    </references>
+    <dates>
+      <discovery>2000-06-22</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="49ad1bf8-5d7e-11d8-80e3-0020ed76ef5a">
+    <topic>ChiTeX/ChiLaTeX unsafe set-user-id root</topic>
+    <affects>
+      <package>
+        <name>zh-chitex</name>
+        <range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Niels Heinen reports that ChiTeX installs set-user-id root
+          executables that invoked system(3) without setting up the
+          environment, trivially allowing local root compromise.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://cvsweb.freebsd.org/ports/chinese/chitex/Attic/Makefile?rev=1.5&amp;content-type=text/x-cvsweb-markup</url>
+    </references>
+    <dates>
+      <discovery>2003-04-25</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5789a92e-5d7f-11d8-80e3-0020ed76ef5a">
+    <topic>pine remotely exploitable buffer overflow in newmail.c</topic>
+    <affects>
+      <package>
+        <name>zh-pine</name>
+        <name>iw-pine</name>
+        <name>pine</name>
+        <name>pine4-ssl</name>
+        <range><le>4.21</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Kris Kennaway reports a remotely exploitable buffer overflow
+          in newmail.c.  Mike Silbersack submitted the fix.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.freebsd.org/cgi/cvsweb.cgi/ports/mail/pine4/Makefile?rev=1.43&amp;content-type=text/x-cvsweb-markup</url>
+    </references>
+    <dates>
+      <discovery>2000-09-29</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="34134fd4-5d81-11d8-80e3-0020ed76ef5a">
+    <topic>pine insecure URL handling</topic>
+    <affects>
+      <package>
+        <name>pine</name>
+        <name>zh-pine</name>
+        <name>iw-pine</name>
+        <range><lt>4.44</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>An attacker may send an email message containing a specially
+          constructed URL that will execute arbitrary commands when
+          viewed.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-02:05.pine</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2002-01-04</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5abfee2d-5d82-11d8-80e3-0020ed76ef5a">
+    <topic>pine remote denial-of-service attack</topic>
+    <affects>
+      <package>
+        <name>pine</name>
+        <name>zh-pine</name>
+        <name>iw-pine</name>
+        <range><lt>4.50</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>An attacker may send a specially-formatted email message
+          that will cause pine to crash.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103668430620531&amp;w=2</url>
+      <cvename>CAN-2002-1320</cvename>
+    </references>
+    <dates>
+      <discovery>2002-10-23</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="39bd57e6-5d83-11d8-80e3-0020ed76ef5a">
+    <topic>pine remotely exploitable vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>pine</name>
+        <name>zh-pine</name>
+        <name>iw-pine</name>
+        <range><lt>4.58</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Pine versions prior to 4.58 are affected by two
+          vulnerabilities discovered by iDEFENSE, a buffer overflow
+          in mailview.c and an integer overflow in strings.c.  Both
+          vulnerabilities can result in arbitrary code execution
+          when processing a malicious message.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0720</cvename>
+      <cvename>CAN-2003-0721</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=5</url>
+    </references>
+    <dates>
+      <discovery>2003-09-10</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5729b8ed-5d75-11d8-80e3-0020ed76ef5a">
+    <topic>rsync buffer overflow in server mode</topic>
+    <affects>
+      <package>
+        <name>rsync</name>
+        <range><lt>2.5.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>When rsync is run in server mode, a buffer overflow could
+          allow a remote attacker to execute arbitrary code with the
+          privileges of the rsync server.  Anonymous rsync servers are
+          at the highest risk.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0962</cvename>
+      <url>http://lists.samba.org/archive/rsync-announce/2003/000011.html</url>
+      <url>http://rsync.samba.org/#security</url>
+    </references>
+    <dates>
+      <discovery>2003-12-04</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3388eff9-5d6e-11d8-80e3-0020ed76ef5a">
+    <topic>Samba 3.0.x password initialization bug</topic>
+    <affects>
+      <package>
+        <name>samba</name>
+        <range><ge>3.0,1</ge><lt>3.0.1_2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>From the Samba 3.0.2 release notes:</p>
+        <blockquote cite="http://www.samba.org/samba/whatsnew/samba-3.0.2.html">
+          <p>Security Announcement: It has been confirmed that
+          previous versions of Samba 3.0 are susceptible to a password
+          initialization bug that could grant an attacker unauthorized
+          access to a user account created by the mksmbpasswd.sh shell
+          script.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.samba.org/samba/whatsnew/samba-3.0.2.html</url>
+      <cvename>CAN-2004-0082</cvename>
+    </references>
+    <dates>
+      <discovery>2004-02-09</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="74a9541d-5d6c-11d8-80e3-0020ed76ef5a">
+    <topic>clamav remote denial-of-service</topic>
+    <affects>
+      <package>
+        <name>clamav</name>
+        <range><lt>0.65_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>clamav will exit when a programming
+          assertion is not met.  A malformed uuencoded message can
+          trigger this assertion, allowing an attacker to trivially
+          crash clamd or other components of clamav.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/62586</url>
+      <url>http://www.securityfocus.com/archive/1/353186</url>
+    </references>
+    <dates>
+      <discovery>2004-02-09</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="67c05283-5d62-11d8-80e3-0020ed76ef5a">
+    <topic>Buffer overflow in Mutt 1.4</topic>
+    <affects>
+      <package>
+        <name>mutt</name>
+        <name>ja-mutt</name>
+        <range><ge>1.4</ge><lt>1.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Mutt 1.4 contains a buffer overflow that could be exploited
+          with a specially formed message, causing Mutt to crash or
+          possibly execute arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0078</cvename>
+      <url>http://www.mutt.org/news.html</url>
+    </references>
+    <dates>
+      <discovery>2004-02-11</discovery>
+      <entry>2004-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7557a2b1-5d63-11d8-80e3-0020ed76ef5a">
+    <topic>Apache-SSL optional client certificate vulnerability</topic>
+    <affects>
+      <package>
+        <name>apache+ssl</name>
+        <range><lt>1.3.29.1.53</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>From the Apache-SSL security advisory:</p>
+        <blockquote>
+          <p>If configured with SSLVerifyClient set to 1 or 3 (client
+          certificates optional) and SSLFakeBasicAuth, Apache-SSL
+          1.3.28+1.52 and all earlier versions would permit a
+          client to use real basic authentication to forge a client
+          certificate.</p>
+
+          <p>All the attacker needed is the "one-line DN" of a valid
+          user, as used by faked basic auth in Apache-SSL, and the
+          fixed password ("password" by default).</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.apache-ssl.org/advisory-20040206.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-02-06</discovery>
+      <entry>2004-02-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="96ba2dae-4ab0-11d8-96f2-0020ed76ef5a">
+    <topic>L2TP, ISAKMP, and RADIUS parsing vulnerabilities in tcpdump</topic>
+    <affects>
+      <package>
+        <name>tcpdump</name>
+        <range><lt>3.8.1_351</lt></range>
+      </package>
+      <system>
+        <name>FreeBSD</name>
+        <range><lt>5.2.1</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Jonathan Heusser discovered vulnerabilities in tcpdump's
+        L2TP, ISAKMP, and RADIUS protocol handlers.  These
+        vulnerabilities may be used by an attacker to crash a running
+        `tcpdump' process.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0989</cvename>
+      <cvename>CAN-2003-1029</cvename>
+      <cvename>CAN-2004-0057</cvename>
+      <url>http://www.tcpdump.org/lists/workers/2003/12/msg00083.html</url>
+      <url>http://marc.theaimsgroup.com/?l=tcpdump-workers&amp;m=107325073018070&amp;w=2</url>
+    </references>
+    <dates>
+      <discovery>2003-12-24</discovery>
+      <entry>2004-01-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="20be2982-4aae-11d8-96f2-0020ed76ef5a">
+    <topic>fsp buffer overflow and directory traversal vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>fspd</name>
+        <range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The <a href="http://www.debian.org/security">Debian
+        security team</a> reported a pair of vulnerabilities in
+        fsp:</p>
+        <blockquote cite="http://www.debian.org/security/2004/dsa-416">
+          <p>A vulnerability was discovered in fsp, client utilities
+          for File Service Protocol (FSP), whereby a remote user could
+          both escape from the FSP root directory (CAN-2003-1022), and
+          also overflow a fixed-length buffer to execute arbitrary
+          code (CAN-2004-0011).</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-1022</cvename>
+      <cvename>CAN-2004-0011</cvename>
+      <url>http://www.debian.org/security/2004/dsa-416</url>
+    </references>
+    <dates>
+      <discovery>2004-01-06</discovery>
+      <entry>2004-01-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fd376b8b-41e1-11d8-b096-0020ed76ef5a">
+    <topic>Buffer overflow in INN control message handling</topic>
+    <affects>
+      <package>
+        <name>inn</name>
+        <range><lt>2.4.1</lt></range>
+      </package>
+      <package>
+        <name>inn-stable</name>
+        <range><lt>20031022_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A small, fixed-size stack buffer is used to construct a
+          filename based on a received control message.  This could
+          result in a stack buffer overflow.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.litech.org/pipermail/inn-workers/2004q1/002763.html</url>
+    </references>
+    <dates>
+      <discovery>2004-01-07</discovery>
+      <entry>2004-01-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cf0fb426-3f96-11d8-b096-0020ed76ef5a">
+    <topic>ProFTPD ASCII translation bug resulting in remote root compromise</topic>
+    <affects>
+      <package>
+        <name>proftpd</name>
+        <range><lt>1.2.8_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A buffer overflow exists in the ProFTPD code that handles
+          translation of newline characters during ASCII-mode file
+          uploads.  An attacker may exploit this buffer overflow by
+          uploading a specially crafted file, resulting in code
+          execution and ultimately a remote root compromise.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://xforce.iss.net/xforce/alerts/id/154</url>
+      <cvename>CAN-2003-0831</cvename>
+    </references>
+    <dates>
+      <discovery>2003-09-23</discovery>
+      <entry>2004-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f04cc5cb-2d0b-11d8-beaf-000a95c4d922">
+    <topic>bind8 negative cache poison attack</topic>
+    <affects>
+      <package>
+        <name>bind</name>
+        <range><ge>8.3</ge><lt>8.3.7</lt></range>
+        <range><ge>8.4</ge><lt>8.4.3</lt></range>
+      </package>
+      <system>
+        <name>FreeBSD</name>
+        <range><ge>5.1</ge><lt>5.1p11</lt></range>
+        <range><ge>5.0</ge><lt>5.0p19</lt></range>
+        <range><ge>4.9</ge><lt>4.9p1</lt></range>
+        <range><ge>4.8</ge><lt>4.8p14</lt></range>
+        <range><ge>4.7</ge><lt>4.7p24</lt></range>
+        <range><ge>4.6</ge><lt>4.6.2p27</lt></range>
+        <range><ge>4.5</ge><lt>4.5p37</lt></range>
+        <range><lt>4.4p47</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A programming error in BIND 8 named can result in a DNS
+        message being incorrectly cached as a negative response.  As
+        a result, an attacker may arrange for malicious DNS messages
+        to be delivered to a target name server, and cause that name
+        server to cache a negative response for some target domain
+        name.  The name server would thereafter respond negatively
+        to legitimate queries for that domain name, resulting in a
+        denial-of-service for applications that require DNS.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0914</cvename>
+      <freebsdsa>SA-03:19.bind</freebsdsa>
+      <certvu>734644</certvu>
+    </references>
+    <dates>
+      <discovery>2003-11-28</discovery>
+      <entry>2003-12-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="81313647-2d03-11d8-9355-0020ed76ef5a">
+    <topic>ElGamal sign+encrypt keys created by GnuPG can be compromised</topic>
+    <affects>
+      <package>
+        <name>gnupg</name>
+        <range><ge>1.0.2</ge><lt>1.2.3_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Any ElGamal sign+encrypt keys created by GnuPG contain a
+          cryptographic weakness that may allow someone to obtain
+          the private key. <strong>These keys should be considered
+          unusable and should be revoked.</strong></p>
+        <p>The following summary was written by Werner Koch, GnuPG
+          author:</p>
+        <blockquote cite="http://lists.gnupg.org/pipermail/gnupg-devel/2003-November/020570.html">
+          <p>Phong Nguyen identified a severe bug in the way GnuPG
+            creates and uses ElGamal keys for signing.  This is
+            a significant security failure which can lead to a
+            compromise of almost all ElGamal keys used for signing.
+            Note that this is a real world vulnerability which will
+            reveal your private key within a few seconds.</p>
+          <p>...</p>
+          <p>Please <em>take immediate action and revoke your ElGamal
+            signing keys</em>.  Furthermore you should take whatever
+            measures necessary to limit the damage done for signed or
+            encrypted documents using that key.</p>
+          <p>Note that the standard keys as generated by GnuPG (DSA
+            and ElGamal encryption) as well as RSA keys are NOT
+            vulnerable.  Note also that ElGamal signing keys cannot
+            be generated without the use of a special flag to enable
+            hidden options and even then overriding a warning message
+            about this key type.  See below for details on how to
+            identify vulnerable keys.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0971</cvename>
+      <url>http://lists.gnupg.org/pipermail/gnupg-devel/2003-November/020570.html</url>
+    </references>
+    <dates>
+      <discovery>2003-11-27</discovery>
+      <entry>2003-12-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="96fdbf5b-2cfd-11d8-9355-0020ed76ef5a">
+    <topic>Mathopd buffer overflow</topic>
+    <affects>
+      <package>
+        <name>mathopd</name>
+        <range><lt>1.4p2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Mathopd contains a buffer overflow in the prepare_reply()
+          function that may be remotely exploitable.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mail-archive.com/mathopd%40mathopd.org/msg00136.html</url>
+    </references>
+    <dates>
+      <discovery>2003-12-04</discovery>
+      <entry>2003-12-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d7af61c8-2cc0-11d8-9355-0020ed76ef5a">
+    <topic>lftp HTML parsing vulnerability</topic>
+    <affects>
+      <package>
+        <name>lftp</name>
+        <range><le>2.6.10</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A buffer overflow exists in lftp which may be triggered when
+          requesting a directory listing from a malicious server over
+          HTTP.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0963</cvename>
+      <url>http://lftp.yar.ru/news.html#2.6.10</url>
+    </references>
+    <dates>
+      <discovery>2003-12-11</discovery>
+      <entry>2003-12-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ebdf65c7-2ca6-11d8-9355-0020ed76ef5a">
+    <topic>qpopper format string vulnerability</topic>
+    <affects>
+      <package>
+        <name>qpopper</name>
+        <range><lt>2.53_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>An authenticated user may trigger a format string
+          vulnerability present in qpopper's UIDL code, resulting
+          in arbitrary code execution with group ID `mail'
+          privileges.</p>
+      </body>
+    </description>
+    <references>
+      <bid>1241</bid>
+      <cvename>CVE-2000-0442</cvename>
+      <url>http://www.netsys.com/suse-linux-security/2000-May/att-0137/01-b0f5-Qpopper.txt</url>
+    </references>
+    <dates>
+      <discovery>2000-05-23</discovery>
+      <entry>2003-12-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="af0296be-2455-11d8-82e5-0020ed76ef5a">
+    <topic>Fetchmail address parsing vulnerability</topic>
+    <affects>
+      <package>
+        <name>fetchmail</name>
+        <range><le>6.2.0</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Fetchmail can be crashed by a malicious email message.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://security.e-matters.de/advisories/052002.html</url>
+    </references>
+    <dates>
+      <discovery>2003-10-25</discovery>
+      <entry>2003-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2bcd2d24-24ca-11d8-82e5-0020ed76ef5a">
+    <topic>Buffer overflow in pam_smb password handling</topic>
+    <affects>
+      <package>
+        <name>pam_smb</name>
+        <range><lt>1.9.9_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Applications utilizing pam_smb can be compromised by
+          any user who can enter a password.  In many cases,
+          this is a remote root compromise.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.skynet.ie/~airlied/pam_smb/</url>
+      <cvename>CAN-2003-0686</cvename>
+    </references>
+    <dates>
+      <discovery>2003-10-25</discovery>
+      <entry>2003-10-25</entry>
+      <modified>2003-10-25</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="c4b7badf-24ca-11d8-82e5-0020ed76ef5a">
+    <topic>Buffer overflows in libmcrypt</topic>
+    <affects>
+      <package>
+        <name>libmcrypt</name>
+        <range><lt>2.5.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>libmcrypt does incomplete input validation, leading to
+          several buffer overflow vuxml.  Additionally,
+          a memory leak is present.  Both of these problems may be
+          exploited in a denial-of-service attack.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=104162752401212&amp;w=2</url>
+      <cvename>CAN-2003-0031</cvename>
+      <cvename>CAN-2003-0032</cvename>
+    </references>
+    <dates>
+      <discovery>2003-10-25</discovery>
+      <entry>2003-10-25</entry>
+      <modified>2003-10-25</modified>
+    </dates>
+  </vuln>
+</vuxml>

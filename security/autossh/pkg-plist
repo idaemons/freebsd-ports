@@ -1,0 +1,7 @@
+bin/autossh
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/autossh.host
+%%EXAMPLESDIR%%/rscreen
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

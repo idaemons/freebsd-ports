@@ -1,0 +1,18 @@
+bin/starplot
+bin/starconvert
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/example.spec
+%%PORTDOCS%%%%DOCSDIR%%/html/ch1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/images/bayerdes.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/coords.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/gcoords.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/hrdiagram.png
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+share/starplot/examples/sample.stars
+share/starplot/examples/test.stars
+@dirrm share/starplot/examples
+@dirrm share/starplot/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/

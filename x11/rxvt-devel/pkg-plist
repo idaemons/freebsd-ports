@@ -1,3 +1,6 @@
-@cwd /usr/X11R6
 bin/rxvt
-man/man1/rxvt.1.gz
+bin/rxvt-2.7.10
+include/rxvtlib.h
+lib/librxvt.a
+lib/librxvt.so
+lib/librxvt.so.1

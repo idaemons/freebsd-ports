@@ -1,0 +1,3 @@
+bin/i960-rtems-gdb
+bin/i960-rtems-run
+lib/libi960-rtems-sim.a

@@ -1,0 +1,22 @@
+================================================================
+** PLEASE REMOVE FOLLOWING LINES FROM %%X11BASE%%/bin/mozilla **
+
+LD_PRELOAD=%%PREFIX%%/lib/pluginwrapper.so
+export LD_PRELOAD
+
+** PLEASE CHANGE FOLLOWING LINES FROM /etc/libmap.conf **
+libpthread.so.0			liblthread.so.3
+	to
+libpthread.so.0			pluginwrapper/flash6.so
+
+================================================================
+
+
+Setup your /etc/libmap.conf.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+%%LIBMAPCONF%%
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Now start browser and go to 'about:plugins' and the new plugins
+are enabled!
+

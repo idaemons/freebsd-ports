@@ -1,0 +1,11 @@
+--- configure.orig	Wed Mar  3 17:17:27 2004
++++ configure	Wed Mar  3 17:17:50 2004
+@@ -2070,7 +2070,7 @@
+ # Generate a default definition for YACC.  This is used if the makefile can't
+ # locate bison or byacc in objdir.
+ 
+-for prog in 'bison -y' byacc yacc
++for prog in byacc yacc
+ do
+   set dummy $prog; tmp=$2
+   IFS="${IFS= 	}"; save_ifs="$IFS"; IFS="${IFS}:"

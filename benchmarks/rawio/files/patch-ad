@@ -1,0 +1,23 @@
+--- rawio.c.orig	Sun Nov 26 19:28:19 2000
++++ rawio.c	Fri Jan  9 23:53:28 2004
+@@ -423,7 +423,7 @@
+ 	  printf ("No arg to n flag\n");
+ 	  break;
+ 	  }
+-	filesize = sizespec (argv [++i]);
++	filesize = sizespec (arg);
+ 	break;
+ 
+       case 'S':
+@@ -580,7 +580,11 @@
+   childinfo = mmap (NULL,
+ 		    nproc * sizeof (struct childinfo),
+ 		    PROT_READ | PROT_WRITE,
++#ifdef MAP_INHERIT
+ 		    MAP_INHERIT | MAP_SHARED | MAP_ANON,
++#else
++		    MAP_SHARED | MAP_ANON,
++#endif
+ 		    -1,
+ 		    (off_t) 0 );
+ #else

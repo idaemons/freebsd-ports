@@ -1,0 +1,6 @@
+Interface to pcap(3) LBL packet capture library
+
+WWW: http://search.cpan.org/dist/Net-Pcap/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org

@@ -1,0 +1,22 @@
+sbin/apcupsd
+sbin/apcaccess
+sbin/apcnisd
+sbin/apctest
+%%POWERFL%%sbin/powerflute
+etc/apcupsd/apcupsd.conf.net-master.sample
+etc/apcupsd/apcupsd.conf.net-slave.sample
+etc/apcupsd/apccontrol
+etc/apcupsd/changeme
+etc/apcupsd/commfailure
+etc/apcupsd/commok
+etc/apcupsd/mainsback
+etc/apcupsd/masterconnect
+etc/apcupsd/mastertimeout
+etc/apcupsd/onbattery
+%%CGI%%etc/apcupsd/cgi/multimon.cgi
+%%CGI%%etc/apcupsd/cgi/multimoncss.cgi
+%%CGI%%etc/apcupsd/cgi/upsfstats.cgi
+%%CGI%%etc/apcupsd/cgi/upsimage.cgi
+%%CGI%%etc/apcupsd/cgi/upsstats.cgi
+etc/rc.d/%%STARTUP_SCRIPT%%
+%%CGI%%@dirrm etc/apcupsd/cgi

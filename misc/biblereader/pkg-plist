@@ -1,0 +1,4 @@
+bin/biblereader
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,83 @@
+@exec mkdir -p etc/dansguardian
+@exec mkdir -p etc/dansguardian/phraselists
+@exec mkdir -p etc/dansguardian/phraselists/chat
+@exec mkdir -p etc/dansguardian/phraselists/drugadvocacy
+@exec mkdir -p etc/dansguardian/phraselists/dutchbadwords
+@exec mkdir -p etc/dansguardian/phraselists/frenchbadwords
+@exec mkdir -p etc/dansguardian/phraselists/gambling
+@exec mkdir -p etc/dansguardian/phraselists/germanpornography
+@exec mkdir -p etc/dansguardian/phraselists/goodphrases
+@exec mkdir -p etc/dansguardian/phraselists/gore
+@exec mkdir -p etc/dansguardian/phraselists/illegaldrugs
+@exec mkdir -p etc/dansguardian/phraselists/intolerance
+@exec mkdir -p etc/dansguardian/phraselists/italianbadwords
+@exec mkdir -p etc/dansguardian/phraselists/legaldrugs
+@exec mkdir -p etc/dansguardian/phraselists/personals
+@exec mkdir -p etc/dansguardian/phraselists/pornography
+@exec mkdir -p etc/dansguardian/phraselists/violence
+@exec mkdir -p etc/dansguardian/phraselists/warezhacking
+@exec mkdir -p etc/dansguardian/phraselists/weapons
+etc/dansguardian/bannedextensionlist.dist
+etc/dansguardian/bannediplist.dist
+etc/dansguardian/bannedmimetypelist.dist
+etc/dansguardian/bannedphraselist.dist
+etc/dansguardian/bannedregexpurllist.dist
+etc/dansguardian/bannedsitelist.dist
+etc/dansguardian/bannedurllist.dist
+etc/dansguardian/banneduserlist.dist
+etc/dansguardian/contentregexplist.dist
+etc/dansguardian/dansguardian.conf.dist
+etc/dansguardian/exceptioniplist.dist
+etc/dansguardian/exceptionphraselist.dist
+etc/dansguardian/exceptionsitelist.dist
+etc/dansguardian/exceptionurllist.dist
+etc/dansguardian/exceptionuserlist.dist
+etc/dansguardian/messages.dist
+etc/dansguardian/phraselists/chat/weighted.dist
+etc/dansguardian/phraselists/drugadvocacy/weighted.dist
+etc/dansguardian/phraselists/dutchbadwords/weighted.dist
+etc/dansguardian/phraselists/frenchbadwords/weighted.dist
+etc/dansguardian/phraselists/gambling/banned.dist
+etc/dansguardian/phraselists/gambling/weighted.dist
+etc/dansguardian/phraselists/germanpornography/weighted.dist
+etc/dansguardian/phraselists/goodphrases/exception.dist
+etc/dansguardian/phraselists/goodphrases/weighted.dist
+etc/dansguardian/phraselists/gore/weighted.dist
+etc/dansguardian/phraselists/illegaldrugs/banned.dist
+etc/dansguardian/phraselists/illegaldrugs/weighted.dist
+etc/dansguardian/phraselists/intolerance/weighted.dist
+etc/dansguardian/phraselists/italianbadwords/weighted.dist
+etc/dansguardian/phraselists/legaldrugs/weighted.dist
+etc/dansguardian/phraselists/personals/weighted.dist
+etc/dansguardian/phraselists/pornography/banned.dist
+etc/dansguardian/phraselists/pornography/weighted.dist
+etc/dansguardian/phraselists/violence/weighted.dist
+etc/dansguardian/phraselists/warezhacking/weighted.dist
+etc/dansguardian/phraselists/weapons/weighted.dist
+etc/dansguardian/pics.dist
+etc/dansguardian/template.html.dist
+etc/dansguardian/weightedphraselist.dist
+etc/rc.d/start-dg.sh.dist
+sbin/dansguardian
+www/cgi-bin/dansguardian.pl.dist
+@dirrm etc/dansguardian/phraselists/chat
+@dirrm etc/dansguardian/phraselists/drugadvocacy
+@dirrm etc/dansguardian/phraselists/dutchbadwords
+@dirrm etc/dansguardian/phraselists/frenchbadwords
+@dirrm etc/dansguardian/phraselists/gambling
+@dirrm etc/dansguardian/phraselists/germanpornography
+@dirrm etc/dansguardian/phraselists/goodphrases
+@dirrm etc/dansguardian/phraselists/gore
+@dirrm etc/dansguardian/phraselists/illegaldrugs
+@dirrm etc/dansguardian/phraselists/intolerance
+@dirrm etc/dansguardian/phraselists/italianbadwords
+@dirrm etc/dansguardian/phraselists/legaldrugs
+@dirrm etc/dansguardian/phraselists/personals
+@dirrm etc/dansguardian/phraselists/pornography
+@dirrm etc/dansguardian/phraselists/violence
+@dirrm etc/dansguardian/phraselists/warezhacking
+@dirrm etc/dansguardian/phraselists/weapons
+@dirrm etc/dansguardian/phraselists
+@dirrm etc/dansguardian
+@unexec echo If permanently deleting this package, /var/log/dansguardian.log must be removed manually
+@unexec echo If permanently deleting this package, custom configuration files must be removed manually

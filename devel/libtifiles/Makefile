@@ -1,0 +1,30 @@
+# New ports collection makefile for:	libtifiles
+# Date created:		27 August 2003
+# Whom:			Tijl Coosemans <tijl@ulyssis.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libtifiles
+PORTVERSION=	0.5.7
+PORTREVISION=	1
+CATEGORIES=	devel
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	tilp
+
+MAINTAINER=	tijl@ulyssis.org
+COMMENT=	TI calculator file types library
+
+GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	pkgconfig
+USE_LIBTOOL_VER=	13
+USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN1=	tifiles-config.1
+
+.include <bsd.port.mk>

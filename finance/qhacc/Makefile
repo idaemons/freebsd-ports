@@ -1,0 +1,102 @@
+# New ports collection makefile for:	qhacc
+# Date created:		28 Dec 1999
+# Whom:			Will Andrews <andrews@technologist.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	qhacc
+PORTVERSION=	2.9.9
+CATEGORIES=	finance
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple QT-based financial manager
+
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+
+USE_QT_VER=	3
+USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_AUTOCONF_VER=	257
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-qt-moc=${QT_PREFIX}/bin \
+		--with-qt-libs=${QT_PREFIX}/lib
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
+INSTALLS_SHLIB=	yes
+
+QTCPPFLAGS+=	${PTHREAD_CFLAGS}
+QTCFGLIBS+=	${PTHREAD_LIBS}
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+CXXFLAGS+=	-fpermissive
+.endif
+
+.if defined(WITH_MYSQL)
+CONFIGURE_ARGS+=	--enable-mysql \
+		--with-mysql-libs="${LOCALBASE}/lib/mysql" \
+		--with-mysql-includes="${LOCALBASE}/include/mysql"
+PLIST_SUB+=	MYSQL=""
+.else
+PLIST_SUB+=	MYSQL="@comment "
+.endif
+
+.if defined(WITH_PGSQL)
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq:${PORTSDIR}/${POSTGRESQL_PORT}
+CONFIGURE_ARGS+=	--enable-psql
+PLIST_SUB+=	PGSQL=""
+.else
+PLIST_SUB+=	PGSQL="@comment "
+.endif
+
+.if defined(WITH_SQLITE)
+LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite
+CONFIGURE_ARGS+=	--enable-sqlite \
+		--with-sqlite-libs="${LOCALBASE}/lib" \
+		--with-sqlite-includes="${LOCALBASE}/include"
+PLIST_SUB+=	SQLITE=""
+.else
+PLIST_SUB+=	SQLITE="@comment "
+.endif
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "QHacc has the following tunable option(s):"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "	WITH_MYSQL=yes		Turns on MySQL support"
+	@${ECHO_MSG} "	WITH_PGSQL=yes		Turns on PostgreSQL support"
+	@${ECHO_MSG} "	WITH_SQLITE=yes		Turns on SQLite support"
+	@${ECHO_MSG}
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/src/qhacc.in
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's| -O2||g ; \
+		 s| -g||g ; \
+		 s| -pedantic||g ; \
+		 s|$$(prefix)/plugins|$$(pkglibdir)/plugins|g'
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/qm/*.qm ${PREFIX}/lib/qhacc
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+.for file in accounts accounttypes jobs journals namedtrans preferences \
+	splits transactions
+	${INSTALL_DATA} ${WRKSRC}/contrib/easysetup/${file} ${EXAMPLESDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>

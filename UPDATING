@@ -1,0 +1,164 @@
+This file documents some of the problems you may encounter when
+upgrading your ports.  We try our best to minimize these disruptions,
+but sometimes they are unavoidable.
+
+You should get into the habit of checking this file for changes each
+time you update your ports collection, before attempting any port
+upgrades.
+
+20040420:
+  AFFECTS: users of sysutils/cdrtools
+
+  The cdrecord program now uses ${PREFIX}/etc (e.g. /usr/local/etc) instead
+  of /etc/default as the location of the global configuration file. If you
+  created such a configuration file you need to copy it over to the new
+  location.
+
+20040420:
+  AFFECTS: users of x11/kdebase3
+
+  If you update KDE from version 3.2.1 or earlier to version 3.2.2 while
+  running a KDE session, newly opened instances of Konqueror might hang
+  or crash, depending on how far the update has progressed. 
+  
+  If this happens, it is necessary to restart your KDE session in order to
+  restore proper operations.
+
+20040404:
+  AFFECTS: GNOME desktop users
+
+  GNOME has been updated to 2.6.  Simply portupgrading will cause serious
+  problems if you are using the desktop itself.  If you are a GNOME desktop
+  user, you should carefully read the instructions at:
+
+  http://www.freebsd.org/gnome/docs/faq26.html
+
+  And use the gnome_upgrade.sh script to properly upgrade to GNOME 2.6.  If
+  you are just a casual user of some of the GNOME libraries, portupgrade
+  should be sufficient to update your ports.
+
+20040316:
+  AFFECTS: users of net/isc-dhcp3-*
+
+  The isc-dhcp3-* ports must now be enabled / disabled and configured in
+  rc.conf.  See the pkg-message for details.
+
+20040313:
+  AFFECTS: users of textproc/expat2
+
+  Users of expat2 (and its many dependencies) should do the following to
+  properly update expat2 and all of its dependencies:
+
+  portupgrade -rf textproc/expat2
+
+20040311:
+  AFFECTS: users of databases/postgresql7
+
+  PostgreSQL 7.4.2 Released and release notes available at
+  http://www.postgresql.org/news/173.html
+
+  NOTICE: unlike most minor versions, this version does require some
+  updates to the pg_* system tables. Full instructions for how to do
+  this are included in the full HISTORY file.
+
+  DO NOT UPGRADE WITHOUT READING THESE INSTRUCTIONS.
+
+20040309:
+  AFFECTS: users of x11/kdelibs3 and x11/kdebase3
+
+  If you update kdelibs from version 3.2.0 to version 3.2.1 while running
+  a KDE 3.2.0 session, newly opened instances of Konqueror will silently
+  crash as soon as the new version of kdelibs has been installed, due to
+  mismatching linker symbols.
+
+  It is recommended you quit your KDE session at that point and update
+  kdebase to version 3.2.1, then restart KDE.
+
+20040309:
+  AFFECTS: users of audio/arts and x11/kdebase
+
+  The arts port, PORTVERSION 1.2.1 does not include artswrapper anymore.
+  Instead, artswrapper is now installed by a new port audio/artswrapper.
+
+  Installation of artswrapper is optional, however:
+
+  If you presently run KDE and you have "Run with the highest possible
+  priority (realtime priority)" checked in Control Center/Sound & Multimedia/
+  Sound System and you choose to NOT install audio/artswrapper, you need to
+
+  - Uncheck "Run with the highest possible priority (realtime priority)"
+    in Control Center/Sound & Multimedia/Sound System BEFORE updating arts
+
+  OR
+
+  - AFTER updating arts and kdebase, go to Control Center/Sound & Multimedia/
+    Sound System, click on the unchecked "Run with the highest possible priority
+    (realtime priority)", dismiss the message telling you that realtime is un-
+    available or artswrapper is missing and then click Apply.
+
+20040305:
+  AFFECTS: users of security/antivir-milter
+
+  When updating from a previous version of security/antivir-milter you
+  have to do the following after deinstalling the old port:
+      rm <PREFIX>/AntiVir/antivir
+      rm <PREFIX>/AntiVir/antivir.vdf
+      chown root:wheel <PREFIX>/AntiVir
+      chown root:smmsp <PREFIX>/AntiVir/hbedv.key
+    In your SENDMAIL_MC change
+      `S=unix:<PREFIX>/AntiVir/avmilter.sock, F=T, T=S:10m;R:10m;E:5m'
+    to:
+      `S=unix:/var/spool/avmilter/avmilter.sock, F=T, T=S:10m;R:10m;E:10m'
+    and rebuild sendmail.cf.
+    If /var/spool/avmilter exist you have to:
+      chown -R smmsp:smmsp /var/spool/avmilter
+    If you are using a customized <PREFIX>/etc/avmilter.conf the port
+    won't remove it on deinstall and you have to manually change User
+    and Group to smmsp there.
+    Afterwards you can install the new version of this port. You then
+    should run antivirupdater to get a current VDF.
+
+20040226:
+  AFFECTS: i386 users of ruby and portupgrade
+
+  Change the default version of ruby to 1.8 for i386.
+
+  If you are a ruby developer and want to keep ruby 1.6 as default,
+  please add RUBY_DEFAULT_VER=1.6 to /etc/make.conf.
+
+  Otherwise, please run the following series of commands to migrate to
+  ruby 1.8:
+
+  1) Reinstall portupgrade manually (and as a result ruby 1.8 will be
+     installed):
+	pkg_delete portupgrade-\*
+	(cd /usr/ports/sysutils/portupgrade; make install clean)
+
+  2) Reinstall everything that depends on ruby 1.6 to use ruby 1.8
+     instead:
+	portupgrade -fr lang/ruby16
+
+  3) Reinstall ruby 1.8 (because the previous step kills symlinks):
+	portupgrade -f lang/ruby18
+
+  4) Deinstall ruby 1.6 stuff (if you are paranoia):
+	pkg_deinstall -ri lang/ruby16
+
+  5) If the above commands do now work somehow and portupgrade starts
+     causing LoadError, please reinstall portupgrade manually again.
+     Whenever you get confused, you can always deinstall portupgrade
+     and all the ruby stuff (run "pkg_delete -r ruby-\*") and
+     reinstall portupgrade as a last resort.
+
+20040204:
+  AFFECTS: 5.2-CURRENT users who started with a 5.2-RELEASE or older.
+
+  Change the default version of perl to 5.8.
+
+  1) Force perl-5.6.1 to be upgraded with perl-5.8.
+        portupgrade -o lang/perl5.8 -f perl-5.6.1_15
+
+  2) Update all p5-* modules.
+	portupgrade -f p5-\*
+
+$FreeBSD$

@@ -1,0 +1,5 @@
+bin/plugger-5.0
+bin/plugger-controller
+etc/pluggerrc-5.0.sample
+lib/browser_plugins/npplugger.so
+@dirrm lib/browser_plugins

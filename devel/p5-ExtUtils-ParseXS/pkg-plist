@@ -1,0 +1,6 @@
+%%SITE_PERL%%/ExtUtils/xsubpp
+%%SITE_PERL%%/ExtUtils/ParseXS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/ParseXS/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/ParseXS
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/ExtUtils 2>/dev/null || true

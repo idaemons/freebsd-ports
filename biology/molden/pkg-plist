@@ -1,0 +1,54 @@
+bin/molden
+bin/moldenogl
+%%PORTDOCS%%%%DOCSDIR%%/figures.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/manual.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt.Z
+%%PORTDOCS%%share/molden/test/adf.molf
+%%PORTDOCS%%share/molden/test/ampac.arc
+%%PORTDOCS%%share/molden/test/ampac.test
+%%PORTDOCS%%share/molden/test/bucky.xyz
+%%PORTDOCS%%share/molden/test/chemx.test
+%%PORTDOCS%%share/molden/test/complex2.out
+%%PORTDOCS%%share/molden/test/esp.test
+%%PORTDOCS%%share/molden/test/esp.txt
+%%PORTDOCS%%share/molden/test/esp.xyz
+%%PORTDOCS%%share/molden/test/fragment
+%%PORTDOCS%%share/molden/test/gamess_uk.freq
+%%PORTDOCS%%share/molden/test/gamess_uk.input
+%%PORTDOCS%%share/molden/test/gamess_uk.test1
+%%PORTDOCS%%share/molden/test/gamess_uk.test2
+%%PORTDOCS%%share/molden/test/gamess_us.h2o_631g_opt.out
+%%PORTDOCS%%share/molden/test/gamess_us.irc
+%%PORTDOCS%%share/molden/test/gamess_us_uhf_opt
+%%PORTDOCS%%share/molden/test/gaussian.freq
+%%PORTDOCS%%share/molden/test/gaussian.input
+%%PORTDOCS%%share/molden/test/gaussian.test
+%%PORTDOCS%%share/molden/test/jaguar.cube
+%%PORTDOCS%%share/molden/test/molden.ogl
+%%PORTDOCS%%share/molden/test/mopac.freq
+%%PORTDOCS%%share/molden/test/mopac.test
+%%PORTDOCS%%share/molden/test/pdb.test
+%%PORTDOCS%%share/molden/test/reacpth.xyz
+%%PORTDOCS%%share/molden/test/shelx.ins
+%%PORTDOCS%%share/molden/test/surface.molf
+%%PORTDOCS%%share/molden/test/test.fdat
+%%PORTDOCS%%share/molden/test/test.mol2
+%%PORTDOCS%%share/molden/test/test_homo.cube
+%%PORTDOCS%%share/molden/test/tinker_charmm.xyz
+%%PORTDOCS%%share/molden/test/tinker_mm3.xyz
+%%PORTDOCS%%share/molden/test/uracil.fdat
+%%PORTDOCS%%share/molden/test/uracil_gauss.out
+%%PORTDOCS%%share/molden/test/vamp.test
+%%PORTDOCS%%share/molden/utils/INFO
+%%PORTDOCS%%share/molden/utils/ch_backspace
+%%PORTDOCS%%share/molden/utils/ch_mxcon
+%%PORTDOCS%%share/molden/utils/ch_par
+%%PORTDOCS%%share/molden/utils/colors
+%%PORTDOCS%%share/molden/utils/ircextract.awk
+%%PORTDOCS%%share/molden/utils/molden
+%%PORTDOCS%%share/molden/utils/multi_vrml.csh
+%%PORTDOCS%%share/molden/utils/multi_vrml_orbitals.csh
+%%PORTDOCS%%@dirrm share/molden/test
+%%PORTDOCS%%@dirrm share/molden/utils
+%%PORTDOCS%%@dirrm share/molden
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

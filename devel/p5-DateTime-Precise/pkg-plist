@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Precise/.packlist
+%%SITE_PERL%%/DateTime/Precise.pm
+%%SITE_PERL%%/DateTime/Math/bigint.pl
+%%SITE_PERL%%/DateTime/Math/bigfloat.pl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Precise
+@unexec rmdir %D/%%SITE_PERL%%/DateTime/Math 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DateTime 2>/dev/null || true

@@ -1,0 +1,14 @@
+bin/estic.res
+bin/xestic
+etc/pbx/aliases.example
+etc/pbx/config
+etc/pbx/estic.ini.freebsd_example
+etc/pbx/estic.ini.generic_example
+%%DOCSDIR%%/README
+%%DOCSDIR%%/estic.doc
+var/log/pbx/debug
+@dirrm etc/pbx
+@dirrm %%DOCSDIR%%
+@dirrm var/log/pbx
+@dirrm var/log
+@dirrm var

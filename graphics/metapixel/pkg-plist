@@ -1,0 +1,5 @@
+bin/metapixel
+bin/metapixel-prepare
+bin/metapixel-convert
+bin/metapixel-imagesize
+bin/metapixel-sizesort

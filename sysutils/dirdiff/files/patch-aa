@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Mar 13 20:40:19 2001
++++ Makefile	Fri Mar  5 04:55:10 2004
+@@ -6,7 +6,7 @@
+ INSTALL=install
+ 
+ # You may need to change the -I arguments depending on your system
+-CFLAGS=-O3 -I/usr/include/tcl8.3/ -I/usr/include/tcl
++CFLAGS+=-fPIC -I/usr/local/include/tcl8.4/
+ 
+ all:	filecmp.so.0.0
+ 

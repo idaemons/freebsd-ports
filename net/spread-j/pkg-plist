@@ -1,0 +1,5 @@
+%%JAVALIBDIR%%/spread-3.17.1.jar
+%%PORTDOCS%%%%EXAMPLESDIR%%/Flooder.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/recThread.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/User.java
+%%PORTDOCS%%@dirrm share/examples/spread-j

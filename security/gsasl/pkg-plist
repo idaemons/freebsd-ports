@@ -1,0 +1,14 @@
+bin/gsasl
+include/gsasl.h
+lib/libgsasl.a
+lib/libgsasl.so
+lib/libgsasl.so.5
+libdata/pkgconfig/libgsasl.pc
+%%PORTDOCS%%%%DOCSDIR%%/gsasl.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/c4.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/index.html
+%%NLS%%share/locale/sv/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/libgsasl.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

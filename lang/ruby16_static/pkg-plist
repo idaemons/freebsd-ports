@@ -1,0 +1,2 @@
+%%IF_DEFAULT%%bin/ruby_s
+bin/ruby%%RUBY_SUFFIX%%_s

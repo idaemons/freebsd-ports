@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+bin/opencdk-config
+include/opencdk.h
+lib/libopencdk.so.8
+lib/libopencdk.so
+lib/libopencdk.a
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/opencdk-api.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/minpg.c
+%%EXAMPLESDIR%%/pub.gpg
+%%EXAMPLESDIR%%/sec-with-pwd.gpg
+%%EXAMPLESDIR%%/sec.gpg
+%%EXAMPLESDIR%%/t-stream.c
+%%EXAMPLESDIR%%/ts.gpg
+%%EXAMPLESDIR%%/wkold.gpg
+@dirrm %%EXAMPLESDIR%%

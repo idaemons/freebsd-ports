@@ -1,0 +1,5 @@
+bin/ines
+bin/ines-debug
+%%DATADIR%%/iNES.html
+%%DATADIR%%/CART.NES
+@dirrm %%DATADIR%%

@@ -1,7 +1,90 @@
-# $Id: Makefile,v 1.4 1995/01/15 08:00:29 ache Exp $
+# $FreeBSD$
 #
-# restricted: hpack.non-usa_only unzip.with_encryption zip.with_encryption
-#
-SUBDIR= arc gshar+gunshar ha lha unarj unrar unzip zip zoo
+
+    COMMENT = Archivers
+
+    SUBDIR += 9e
+    SUBDIR += alz2zip
+    SUBDIR += arc
+    SUBDIR += arj
+    SUBDIR += bicom
+    SUBDIR += bzip
+    SUBDIR += bzip2
+    SUBDIR += cabextract
+    SUBDIR += dact
+    SUBDIR += deepforest
+    SUBDIR += dpkg
+    SUBDIR += fastjar
+    SUBDIR += fileroller
+    SUBDIR += fpc-paszlib
+    SUBDIR += freeze
+    SUBDIR += gtar
+    SUBDIR += gzip
+    SUBDIR += ha
+    SUBDIR += hffzip
+    SUBDIR += hpack.non-usa.only
+    SUBDIR += jzip.org
+    SUBDIR += lbrate
+    SUBDIR += lha
+    SUBDIR += libarc
+    SUBDIR += libarchive
+    SUBDIR += libcabinet
+    SUBDIR += libcomprex
+    SUBDIR += linux-unace
+    SUBDIR += lzo
+    SUBDIR += lzop
+    SUBDIR += macutils
+    SUBDIR += makeself
+    SUBDIR += mscompress
+    SUBDIR += mtf
+    SUBDIR += nomarch
+    SUBDIR += nulib
+    SUBDIR += nwreckdum
+    SUBDIR += p5-Archive-Tar
+    SUBDIR += p5-Archive-Zip
+    SUBDIR += p5-Compress-Bzip2
+    SUBDIR += p5-Compress-Zlib
+    SUBDIR += p5-IO-Zlib
+    SUBDIR += p5-Mac-Macbinary
+    SUBDIR += par2cmdline
+    SUBDIR += parchive
+    SUBDIR += pear-Archive_Tar
+    SUBDIR += ppunpack
+    SUBDIR += py-bzip2
+    SUBDIR += py-tarfile
+    SUBDIR += rar
+    SUBDIR += rox-archive
+    SUBDIR += rpm
+    SUBDIR += rpm2cpio
+    SUBDIR += rpm4
+    SUBDIR += ruby-bz2
+    SUBDIR += ruby-zip
+    SUBDIR += rvm
+    SUBDIR += rzip
+    SUBDIR += sectar
+    SUBDIR += sharutils
+    SUBDIR += squsq
+    SUBDIR += star
+    SUBDIR += stuffit
+    SUBDIR += szip
+    SUBDIR += tardy
+    SUBDIR += ucl
+    SUBDIR += unace
+    SUBDIR += unadf
+    SUBDIR += unarj
+    SUBDIR += undms
+    SUBDIR += unlzx
+    SUBDIR += unrar
+    SUBDIR += unshield
+    SUBDIR += untar
+    SUBDIR += unzip
+    SUBDIR += upx
+    SUBDIR += wzip
+    SUBDIR += xdms
+    SUBDIR += xmill
+    SUBDIR += xpk
+    SUBDIR += zip
+    SUBDIR += zipios++
+    SUBDIR += zoo
 
 .include <bsd.port.subdir.mk>

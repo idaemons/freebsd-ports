@@ -1,0 +1,4 @@
+bin/empire
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/READ.ME
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

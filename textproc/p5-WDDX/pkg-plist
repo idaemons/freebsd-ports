@@ -1,0 +1,16 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WDDX/.packlist
+%%SITE_PERL%%/WDDX.pm
+%%SITE_PERL%%/WDDX/Array.pm
+%%SITE_PERL%%/WDDX/Binary.pm
+%%SITE_PERL%%/WDDX/Boolean.pm
+%%SITE_PERL%%/WDDX/Datetime.pm
+%%SITE_PERL%%/WDDX/Null.pm
+%%SITE_PERL%%/WDDX/Number.pm
+%%SITE_PERL%%/WDDX/Parser.pm
+%%SITE_PERL%%/WDDX/Recordset.pm
+%%SITE_PERL%%/WDDX/String.pm
+%%SITE_PERL%%/WDDX/Struct.pm
+%%PORTDOCS%%share/doc/WDDX/Changes
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WDDX
+@dirrm %%SITE_PERL%%/WDDX
+%%PORTDOCS%%@dirrm share/doc/WDDX
