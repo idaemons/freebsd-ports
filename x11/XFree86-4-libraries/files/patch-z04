@@ -1,0 +1,15 @@
+--- lib/X11/Imakefile.orig	Sun Jun 18 03:41:29 2000
++++ lib/X11/Imakefile	Tue Jul 18 22:01:12 2000
+@@ -950,8 +950,12 @@
+ #if InstallXcmsTxt
+ InstallNonExecFile(Xcms.txt,$(LIBDIR))
+ #endif
++#if !defined(FreeBSDBuildXlib) || !FreeBSDBuildXlib
+ InstallNonExecFile(XErrorDB,$(LIBDIR))
+ InstallNonExecFile(XKeysymDB,$(LIBDIR))
++test:
++	_LinkBuildLibrary($@)
++#endif
+ InstallLintLibrary(X11,$(LINTLIBDIR))
+ 
+ 

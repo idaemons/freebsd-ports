@@ -1,0 +1,16 @@
+usr/doc/locale-ja-%%VER%%/changelog
+usr/doc/locale-ja-%%VER%%/control
+usr/doc/locale-ja-%%VER%%/copyright
+usr/doc/locale-ja-%%VER%%/dirs
+usr/doc/locale-ja-%%VER%%/rules
+usr/share/locale/ja_JP/LC_COLLATE
+usr/share/locale/ja_JP/LC_CTYPE
+usr/share/locale/ja_JP/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/ja_JP/LC_MONETARY
+usr/share/locale/ja_JP/LC_NUMERIC
+usr/share/locale/ja_JP/LC_TIME
+@exec ln -sf ja_JP %D/usr/share/locale/ja_JP.EUC
+@unexec rm -f %D/usr/share/locale/ja_JP.EUC
+@dirrm usr/share/locale/ja_JP/LC_MESSAGES
+@dirrm usr/share/locale/ja_JP
+@dirrm usr/doc/locale-ja-%%VER%%

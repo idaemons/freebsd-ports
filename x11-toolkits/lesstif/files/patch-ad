@@ -1,0 +1,17 @@
+--- doc/lessdox/functions/Makefile.in.orig	Mon Nov  8 13:17:08 1999
++++ doc/lessdox/functions/Makefile.in	Mon Nov  8 13:17:55 1999
+@@ -120,10 +120,10 @@
+ EXTRA_DIST =  $(man1_DATA) $(man3_DATA) $(man5_DATA)
+ SUFFIXES = .1 .3 .5 .html
+ 
+-mandir = $(exec_prefix)/LessTif/doc/man
+-man1dir = $(exec_prefix)/LessTif/doc/man/man1
+-man3dir = $(exec_prefix)/LessTif/doc/man/man3
+-man5dir = $(exec_prefix)/LessTif/doc/man/man5
++mandir = @mandir@
++man1dir = $(mandir)/man1
++man3dir = $(mandir)/man3
++man5dir = $(mandir)/man5
+ 
+ man1_DATA = 
+ man3_DATA = 

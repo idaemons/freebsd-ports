@@ -1,0 +1,12 @@
+lib/dsniff.magic
+lib/dsniff.services
+sbin/arpredirect
+sbin/dsniff
+sbin/filesnarf
+sbin/macof
+sbin/mailsnarf
+sbin/tcpkill
+sbin/tcpnice
+sbin/urlsnarf
+sbin/webspy
+

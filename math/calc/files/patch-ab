@@ -1,0 +1,36 @@
+--- Makefile.orig	Sun Dec 19 04:20:02 1999
++++ Makefile	Thu Nov  9 05:47:33 2000
+@@ -625,14 +625,14 @@
+ CCOPT= ${DEBUG} ${NO_SHARED}
+ CCMISC=
+ #
+-CFLAGS= ${CCWARN} ${CCOPT} ${CCMISC}
++CFLAGS+= ${CCWARN} ${CCOPT} ${CCMISC}
+ ICFLAGS= ${CCWARN} ${CCMISC}
+ #
+ LDFLAGS= ${NO_SHARED} ${LD_NO_SHARED}
+ ILDFLAGS=
+ #
+ LCC= gcc
+-CC= ${PURIFY} ${LCC}
++CC?= ${PURIFY} ${LCC}
+ #
+ ###
+ #
+@@ -1073,7 +1073,7 @@
+ all: .hsrc ${TARGETS}
+ 
+ calc: .hsrc ${CALC_LIBS} ${CALCOBJS}
+-	${CC} ${LDFLAGS} ${CALCOBJS} ${CALC_LIBS} ${LD_DEBUG} ${READLINE_LIB} -o calc
++	${CC} ${CFLAGS} ${LDFLAGS} ${CALCOBJS} ${CALC_LIBS} ${LD_DEBUG} ${READLINE_LIB} -o calc
+ 
+ libcalc.a: ${LIBOBJS} ${MAKE_FILE}
+ 	-rm -f libcalc.a
+@@ -1200,6 +1200,7 @@
+ 	${Q}echo '' >> endian_calc.h
+ 	${Q}echo '' >> endian_calc.h
+ 	${Q}echo '/* what byte order are we? */' >> endian_calc.h
++	${Q}echo '#include <sys/types.h>' >> endian_calc.h
+ 	-${Q}if [ X"${BYTE_ORDER}" = X ]; then \
+ 	    if [ -f /usr/include/endian.h ]; then \
+ 		echo '#include <endian.h>' >> endian_calc.h; \

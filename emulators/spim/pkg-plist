@@ -1,0 +1,7 @@
+bin/spim
+bin/xspim
+share/spim/trap.handler
+share/doc/spim/spim.ps.gz
+share/doc/spim/cycle.ps.gz
+@dirrm share/doc/spim
+@dirrm share/spim

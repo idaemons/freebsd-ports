@@ -1,0 +1,62 @@
+--- sapphire.inst.orig	Tue Feb 22 08:30:53 2000
++++ sapphire.inst	Fri Mar 24 03:27:02 2000
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Sapphire 0.14.1
+ #
+@@ -9,6 +9,8 @@
+ # 21 Feb 2000 at 18:10
+ # frankhale@yahoo.com
+ #
++DATADIR=%%PREFIX%%/share/sapphire
++
+ if [ -d ~/.sapphire ]
+ then
+ 	echo "~/.sapphire directory exists";
+@@ -21,12 +23,12 @@
+ if [ -d ~/.sapphire/themes ]
+ then
+ 	echo "~/.sapphire/themes directory exists, copying themes there";	
+-	cp data/themes/* ~/.sapphire/themes
++	cp -pPR $DATADIR/themes/* ~/.sapphire/themes
+ else
+ 	mkdir ~/.sapphire/themes
+ 	echo "created directory ~/.sapphire/themes";
+ 	
+-	cp data/themes/* ~/.sapphire/themes
++	cp -pPR $DATADIR/themes/* ~/.sapphire/themes
+ 	echo "themes were copied to ~/.sapphire/themes";
+ fi
+ 	
+@@ -34,12 +36,12 @@
+ if [ -d ~/.sapphire/menu ]
+ then
+ 	echo "~/.sapphire/menu directory exists, copying menu files there";
+-	cp data/menu/* ~/.sapphire/menu
++	cp $DATADIR/menu/* ~/.sapphire/menu
+ else
+ 	mkdir ~/.sapphire/menu
+ 	echo "created directory ~/.sapphire/menu";	
+ 	
+-	cp data/menu/* ~/.sapphire/menu
++	cp $DATADIR/menu/* ~/.sapphire/menu
+ 	echo "menu files were copied to ~/.sapphire/menu";
+ fi
+ 
+@@ -47,12 +49,12 @@
+ if [ -d ~/.sapphire/wmconfig ]
+ then
+ 	echo "~/.sapphire/wmconfig directory exists, copying configuration files there";
+-	cp data/wmconfig/* ~/.sapphire/wmconfig		
++	cp $DATADIR/wmconfig/* ~/.sapphire/wmconfig		
+ else
+ 	mkdir ~/.sapphire/wmconfig
+ 	echo "created directory ~/.sapphire/wmconfig";
+ 
+-	cp data/wmconfig/* ~/.sapphire/wmconfig
++	cp $DATADIR/wmconfig/* ~/.sapphire/wmconfig
+ 	echo "configuration files were copied to ~/.sapphire/wmconfig";	
+ fi
+ 

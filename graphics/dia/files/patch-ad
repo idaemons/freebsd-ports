@@ -1,0 +1,11 @@
+--- configure.orig	Mon Aug  7 11:47:15 2000
++++ configure	Mon Aug  7 11:47:51 2000
+@@ -2565,7 +2565,7 @@
+ 
+ 
+ OLDCPPFLAGS=$CPPFLAGS
+-CPPFLAGS="$CPPFLAGS `glib-config --cflags`"
++CPPFLAGS="$CPPFLAGS `${GLIB_CONFIG} --cflags`"
+ 
+ 
+ CPPFLAGS=$OLDCPPFLAGS

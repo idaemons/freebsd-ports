@@ -1,0 +1,16 @@
+bin/%%PKGNAMEPREFIX%%webalizer
+@unexec rm -f %B/%%PKGNAMEPREFIX%%webazolver
+etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
+share/doc/%%PKGNAMEPREFIX%%webalizer/CHANGES
+share/doc/%%PKGNAMEPREFIX%%webalizer/COPYING
+share/doc/%%PKGNAMEPREFIX%%webalizer/Copyright
+share/doc/%%PKGNAMEPREFIX%%webalizer/DNS.README
+share/doc/%%PKGNAMEPREFIX%%webalizer/INSTALL
+share/doc/%%PKGNAMEPREFIX%%webalizer/README
+share/doc/%%PKGNAMEPREFIX%%webalizer/README.FIRST
+share/doc/%%PKGNAMEPREFIX%%webalizer/country-codes.txt
+@dirrm share/doc/%%PKGNAMEPREFIX%%webalizer
+share/examples/%%PKGNAMEPREFIX%%webalizer/msfree.png
+share/examples/%%PKGNAMEPREFIX%%webalizer/sample.conf
+share/examples/%%PKGNAMEPREFIX%%webalizer/webalizer.png
+@dirrm share/examples/%%PKGNAMEPREFIX%%webalizer

@@ -1,0 +1,24 @@
+# New ports collection makefile for:	gleyes
+# Date created:		2 December 1998
+# Whom:			Malte Lance <malte.lance@gmx.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gleyes
+PORTVERSION=	0.2
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.kddlabs.co.jp/.1/X11/acontrib/gleyes/ \
+		ftp://ftp.riken.go.jp/pub/X11/acontrib/gleyes/ \
+		ftp://ftp.cit.nepean.uws.edu.au/unix/X/graphics/
+# initial distribution location was http://puma.inf.ufpr.br/~claudio/gleyes/
+# which is unresponsive since about 21.12.1998
+
+MAINTAINER=	malte.lance@gmx.net
+
+USE_X_PREFIX=	yes
+USE_MESA=	yes
+
+MAN1=		gleyes.1
+
+.include <bsd.port.mk>

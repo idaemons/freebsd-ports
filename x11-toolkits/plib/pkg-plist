@@ -1,0 +1,20 @@
+include/plib/fnt.h
+include/plib/fntLocal.h
+include/plib/js.h
+include/plib/pu.h
+include/plib/sg.h
+include/plib/sl.h
+include/plib/slMODPrivate.h
+include/plib/slMODfile.h
+include/plib/slPortability.h
+include/plib/sm.h
+include/plib/ssg.h
+include/plib/ssgKeyFlier.h
+include/plib/ul.h
+lib/libplibfnt.a
+lib/libplibsl.a
+lib/libplibsm.a
+lib/libplibpu.a
+lib/libplibsg.a
+lib/libplibssg.a
+@dirrm include/plib

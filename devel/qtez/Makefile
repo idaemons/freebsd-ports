@@ -1,0 +1,38 @@
+# New ports collection makefile for:	qtez
+# Date created:				14 May 1998
+# Whom:					Andrey Zakhvatov
+#
+# $FreeBSD$
+#
+
+PORTNAME=	qtez
+PORTVERSION=	0.93.2
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://qtez.ibl.sk/qtez/download/
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_QT2=	yes
+USE_AUTOMAKE=	yes
+AUTOMAKE=	automake -a -i && ${PERL} automoc
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	QTDIR="${X11BASE}" MOC="${X11BASE}/bin/moc2" \
+		QTEZ="${X11BASE}/share/qtez"
+CONFIGURE_ARGS=	--disable-shared
+MAKE_ENV=	QTEZ="${X11BASE}/share/qtez"
+
+post-patch:
+	@find ${WRKSRC} -name "Makefile.am" | xargs ${PERL} -pi -e \
+		's|\@DEBUG\@|\@CXXFLAGS\@ \@DEBUG\@|g'
+
+pre-configure:
+	@cd ${WRKSRC}/src && ${SH} ./autolinks.sh
+
+post-install:
+	@${SED} -e "s:/usr/X11R6:${PREFIX}:g" ${PKGMESSAGE}
+
+.include <bsd.port.mk>

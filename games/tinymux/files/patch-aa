@@ -1,0 +1,11 @@
+--- configure.in.orig	Thu Nov  5 16:36:22 1998
++++ configure.in	Sun Mar 26 16:35:37 2000
+@@ -17,7 +17,7 @@
+ else
+ 	AC_EGREP_HEADER(sys_errlist,errno.h, ,AC_EGREP_HEADER(sys_errlist,stdio.h,,AC_DEFINE(NEED_SYS_ERRLIST_DCL)))
+ fi
+-LIBS="-L./gdbm-1.7.3 -lgdbm"
++LIBS="-L/usr/local/lib -lgdbm"
+ AC_CHECK_LIB(crypt, main)
+ AC_FUNC_STRFTIME
+ AC_FUNC_VFORK

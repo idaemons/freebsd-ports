@@ -1,0 +1,171 @@
+@cwd /usr/local
+bin/faxalter
+bin/faxcover
+bin/faxmail
+bin/faxrm
+bin/faxstat
+bin/sendfax
+bin/sendpage
+etc/rc.d/hylafax.sh.sample
+lib/fax/faxcover.ps
+lib/fax/faxmail.ps
+lib/fax/hfaxd.conf
+lib/fax/pagesizes
+lib/fax/typerules
+sbin/choptest
+sbin/cqtest
+sbin/dialtest
+sbin/faxabort
+sbin/faxaddmodem
+sbin/faxadduser
+sbin/faxanswer
+sbin/faxconfig
+sbin/faxcron
+sbin/faxdeluser
+sbin/faxgetty
+sbin/faxinfo
+sbin/faxmodem
+sbin/faxmsg
+sbin/faxq
+sbin/faxqclean
+sbin/faxquit
+sbin/faxsend
+sbin/faxsetup
+sbin/faxsetup.bsdi
+sbin/faxsetup.irix
+sbin/faxsetup.linux
+sbin/faxstate
+sbin/faxwatch
+sbin/hfaxd
+sbin/hylafax
+sbin/lockname
+sbin/ondelay
+sbin/pagesend
+sbin/probemodem
+sbin/recvstats
+sbin/tagtest
+sbin/textfmt
+sbin/tiffcheck
+sbin/tsitest
+sbin/typetest
+sbin/xferfaxstats
+@dirrm lib/fax
+@cwd /var/spool
+fax/COPYRIGHT
+fax/bin/faxrcvd
+fax/bin/mkcover
+fax/bin/notify
+fax/bin/notify.awk
+fax/bin/pcl2fax
+fax/bin/pollrcvd
+fax/bin/ps2fax.dps
+fax/bin/ps2fax.gs
+fax/bin/ps2fax.imp
+fax/bin/tiff2fax
+fax/bin/wedged
+fax/config/att-dataport
+fax/config/att-dataport-2
+fax/config/att-dataport-2.0
+fax/config/cirrus
+fax/config/class1
+fax/config/class2
+fax/config/class2.0
+fax/config/dsi-scout+
+fax/config/e-tech
+fax/config/everex-2496d
+fax/config/exar
+fax/config/gvc-288
+fax/config/gvc-288-2
+fax/config/intel-400e
+fax/config/moto-288
+fax/config/mt-1432
+fax/config/nuvo-voyager
+fax/config/ppi-pm14400fxmt
+fax/config/ppi-pm14400fxsa
+fax/config/rc144ac
+fax/config/rc144ac-1
+fax/config/rc288dpi
+fax/config/rc288dpi-1
+fax/config/rc32acl
+fax/config/rc32acl-1
+fax/config/rockwell
+fax/config/sierra
+fax/config/skel
+fax/config/telebit-qblazer
+fax/config/telebit-t3000
+fax/config/telebit-wb
+fax/config/tricom2842
+fax/config/uds-fastalk
+fax/config/usr-2.0
+fax/config/usr-rts
+fax/config/usr-xon
+fax/config/zyxel-1496e
+fax/config/zyxel-1496e-1
+fax/config/zyxel-1496e-2.0
+fax/config/zyxel-2864
+fax/etc/cover.templ
+fax/etc/dialrules
+fax/etc/dialrules.europe
+fax/etc/dialrules.sf-ba
+fax/etc/dpsprinter.ps
+fax/etc/hosts.hfaxd
+fax/etc/lutRS18.pcf
+fax/etc/xferfaxlog
+@exec chown uucp:dialer %D/fax
+@comment pkg_* can't deal with fifos if specified as a file
+@exec mkfifo %D/fax/FIFO
+@exec chown uucp:dialer %D/fax/FIFO
+@exec chmod 600 %D/fax/FIFO
+@unexec rm %D/fax/FIFO
+@exec mkdir %D/fax/archive
+@exec chown uucp:dialer %D/fax/archive
+@exec chmod 700 %D/fax/archive
+@exec mkdir %D/fax/client
+@exec chown uucp:dialer %D/fax/client
+@exec chmod 755 %D/fax/client
+@exec mkdir %D/fax/dev
+@exec chown uucp:dialer %D/fax/dev
+@exec chmod 755 %D/fax/dev
+@exec mkdir %D/fax/docq
+@exec chown uucp:dialer %D/fax/docq
+@exec chmod 700 %D/fax/docq
+@exec mkdir %D/fax/doneq
+@exec chown uucp:dialer %D/fax/doneq
+@exec chmod 700 %D/fax/doneq
+@exec mkdir %D/fax/info
+@exec chown uucp:dialer %D/fax/info
+@exec chmod 755 %D/fax/info
+@exec mkdir %D/fax/log
+@exec chown uucp:dialer %D/fax/log
+@exec chmod 755 %D/fax/log
+@exec mkdir %D/fax/pollq
+@exec chown uucp:dialer %D/fax/pollq
+@exec chmod 700 %D/fax/pollq
+@exec mkdir %D/fax/recvq
+@exec chown uucp:dialer %D/fax/recvq
+@exec chmod 755 %D/fax/recvq
+@exec mkdir %D/fax/sendq
+@exec chown uucp:dialer %D/fax/sendq
+@exec chmod 700 %D/fax/sendq
+@exec mkdir %D/fax/status
+@exec chown uucp:dialer %D/fax/status
+@exec chmod 755 %D/fax/status
+@exec mkdir %D/fax/tmp
+@exec chown uucp:dialer %D/fax/tmp
+@exec chmod 700 %D/fax/tmp
+@dirrm fax/archive
+@dirrm fax/bin
+@dirrm fax/client
+@dirrm fax/config
+@dirrm fax/dev
+@dirrm fax/docq
+@dirrm fax/doneq
+@dirrm fax/etc
+@dirrm fax/info
+@dirrm fax/log
+@dirrm fax/pollq
+@dirrm fax/recvq
+@dirrm fax/sendq
+@dirrm fax/status
+@dirrm fax/tmp
+@dirrm fax

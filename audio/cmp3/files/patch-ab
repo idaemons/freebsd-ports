@@ -1,0 +1,11 @@
+--- cmp3.h.orig	Tue Mar  7 14:25:06 2000
++++ cmp3.h	Tue Mar  7 14:25:12 2000
+@@ -1,7 +1,7 @@
+ #ifndef _CMP3_H
+ #define _CMP3_H
+ 
+-#include<curses.h>
++#include <ncurses.h>
+ 
+ #ifndef NCURSES_VERSION
+   #error "This program requires ncurses to function"

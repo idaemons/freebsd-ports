@@ -1,0 +1,4 @@
+lib/libmcrypt-nm.a
+lib/libmcrypt-nm.so
+lib/libmcrypt-nm.so.0
+include/mcrypt-nm.h

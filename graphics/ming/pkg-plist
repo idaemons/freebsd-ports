@@ -1,0 +1,15 @@
+include/ming/blocklist.h
+include/ming/displaylist.h
+include/ming/fill.h
+include/ming/libming.h
+include/ming/ming.h
+include/ming/movie.h
+include/ming/movieclip.h
+include/ming/position.h
+include/ming/shape.h
+include/ming/blocks/swf.h
+@dirrm include/ming/blocks
+@dirrm include/ming
+lib/libming.a
+lib/libming.so
+lib/libming.so.1

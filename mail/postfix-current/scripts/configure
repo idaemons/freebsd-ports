@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+for f in `grep -r "\!\!PREFIX\!\!" ${WRKSRC} | cut -f 1 -d ':' | uniq` ; do \
+	mv $f $f.orig && sed s+!!PREFIX!!+$PREFIX+g < $f.orig > $f && \
+		rm $f.orig
+done

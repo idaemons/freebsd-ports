@@ -1,0 +1,5 @@
+include/qcanvas.h
+include/qdom.h
+include/qpolygonscanner.h
+lib/libkde-qt-addon.la
+lib/libkde-qt-addon.so.4

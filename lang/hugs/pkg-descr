@@ -1,0 +1,14 @@
+This is a port of OGI's new release of Hugs, a Haskell interpreter and
+programming environment for developing Haskell programs.
+
+This release is largely conformant with Haskell 98, including monad
+and record syntax, newtypes, strictness annotations, and modules.  In
+addition, it comes packaged with almost all libraries defined in the
+most recent version of the Haskell 98 Library Report.
+
+More online information is available from http://www.haskell.org/
+
+WWW: http://www.haskell.org/
+
+-- Teggy
+teggy@teggy.org

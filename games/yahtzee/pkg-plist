@@ -1,0 +1,3 @@
+bin/yahtzee
+share/yahtzee/yahtzee.sco
+@dirrm share/yahtzee

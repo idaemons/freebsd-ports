@@ -1,0 +1,42 @@
+# New ports collection makefile for:	svgalib
+# Date created:				24 August 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	svgalib
+PORTVERSION=	1.4.2
+PORTREVISION=	1
+CATEGORIES=	graphics devel
+MASTER_SITES=	http://www.svgalib.org/
+
+MAINTAINER=	sobomax@FreeBSD.org
+
+USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
+
+ALL_TARGET=	shared static
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400000
+BROKEN=		"3.* isn't supported - please upgrade to use the port"
+.endif
+
+.for i in 1 2 3 4 5 6 7 8 9
+.if exists(${FILESDIR}/man${i})
+MAN${i}!=	/bin/cat ${FILESDIR}/man${i}
+.endif
+.endfor
+
+pre-patch:
+	${PERL} -pi -e 's.\x0D..' ${WRKSRC}/utils/gtf/*
+	${MKDIR} ${WRKSRC}/include/linux
+
+post-install:
+	${MKDIR} ${PREFIX}/include/linux
+	cd ${WRKSRC}/include/linux && \
+		${INSTALL_DATA} keyboard.h kd.h ${PREFIX}/include/linux
+
+.include <bsd.port.post.mk>

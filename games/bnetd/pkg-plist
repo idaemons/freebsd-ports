@@ -1,0 +1,9 @@
+bin/bnbot
+bin/bnchat
+bin/bnftp
+bin/bnpass
+bin/bnstat
+sbin/bnetd
+sbin/bnproxy
+etc/rc.d/bnetd.sh
+@unexec rm -rf %D/bnetd 2>/dev/null || true

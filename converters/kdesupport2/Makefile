@@ -1,0 +1,45 @@
+# New ports collection makefile for:	kdesupport2
+# Date created:				Sun May 14 2000 01:14:20
+# Whom:					Will Andrews <will@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	kdesupport
+PORTVERSION=	2.0
+CATEGORIES=	converters kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
+
+MAINTAINER=	will@FreeBSD.org
+
+BUILD_DEPENDS=	jade:${PORTSDIR}/textproc/jade \
+		${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc
+
+USE_QT2=	yes
+MOC=		${X11BASE}/bin/moc2
+SOMAJOR=	8
+SOMINOR=	0
+USE_BZIP2=	yes
+USE_NEWGCC=	yes
+INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
+		--with-qt-includes=${X11BASE}/include/qt2 \
+		--with-qt-libraries=${X11BASE}/lib \
+		--without-libjpeg --without-libgif \
+		--without-libgdbm --without-libuulib \
+		--without-odbc --without-audiofile \
+		--with-extra-libs=${LOCALBASE}/lib
+CONFIGURE_ENV+= LIBQT="-lqt2" MOC="${MOC}" LIBQTFILE="libqt2" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc"
+USE_GMAKE=	yes
+PLIST_SUB+=	LIBVER="${SOMAJOR}"
+
+pre-configure:
+	${PERL} -pi -e "s@TOPSUBDIRS libaps@TOPSUBDIRS@g" ${WRKSRC}/configure
+	${PERL} -pi -e "s@odbc libaps@odbc@g" ${WRKSRC}/configure
+	${PERL} -pi -e "s@-version-info 1:1@-version-info 3:0@g" ${WRKSRC}/mimelib/Makefile.in
+
+.include <bsd.port.mk>

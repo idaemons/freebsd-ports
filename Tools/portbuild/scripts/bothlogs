@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# prints out logs that are in all directories
+
+if [ $# -lt 2 ]; then
+  echo "usage: $0 dir1 dir2 [dir3...]"
+  exit 1
+fi
+
+here=$(pwd)
+dir1=$1
+
+concat="$(echo $*)"
+plus="$(echo $* | sed -e 's/ /+/g')"
+
+of=$here/$plus.html
+
+echo "<html><head><title>Logs that are in all of \"$concat\"</title>" >$of
+echo "<h1>Logs that are in all of \"$concat\"</h1>" >>$of
+echo "</head><body>" >>$of
+
+cd $here/$1
+
+logs="$(echo *.log)"
+
+if [ "x$logs" = "x*.log" ]; then
+  echo "No errors" >>$of
+else
+  shift
+  while [ $# -gt 0 ]; do
+    num=0
+    newlogs=""
+    cd $here/$1
+    for log in *.log; do
+      if echo $logs | grep -Fwq $log; then
+        newlogs="$newlogs $log"
+        num=$(($num + 1))
+      fi
+    done
+    logs=$newlogs
+    shift
+  done
+  if [ $num = 0 ]; then
+    echo "No errors" >>$of
+  else
+    echo "<table border=1>" >>$of
+    echo "<tr><th>Log</th></tr>" >>$of
+    set $newlogs
+    while [ $# -gt 0 ]; do
+      echo -n "<tr><td>" >>$of
+      echo -n "<a href=\"$dir1/index.html#$1\">" >>$of
+      echo -n $(basename $1 .log) >>$of
+      echo -n "</a>" >>$of
+      echo "</td></tr>" >>$of
+      shift
+    done
+    echo "</table><br>" >> $of
+    echo "$num errors<br>" >> $of
+  fi
+fi
+
+echo "<hr>" >> $of
+echo "<a href=\"../\">back to top</a>" >> $of
+
+echo "</body></html>" >>$of

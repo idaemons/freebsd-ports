@@ -1,0 +1,19 @@
+bin/atari800
+share/atari/atari800.cfg
+share/atari/ataribas.rom
+share/atari/atariosb.rom
+share/atari/atarixl.rom
+share/atari/demos1.xfd
+share/atari/demos2.xfd
+share/atari/dos25.xfd
+share/atari/mydos45d.atr
+share/doc/atari/BUGS
+share/doc/atari/CHANGES
+share/doc/atari/CREDITS
+share/doc/atari/INSTALL
+share/doc/atari/README
+share/doc/atari/README.FreeBSD
+share/doc/atari/TODO
+share/doc/atari/USAGE
+@dirrm share/doc/atari
+@dirrm share/atari

@@ -1,0 +1,9 @@
+bin/bprint
+bin/lcc
+lib/lcc-3.6/%%ARCH%%-FreeBSD/bbexit.o
+lib/lcc-3.6/%%ARCH%%-FreeBSD/bprint
+lib/lcc-3.6/%%ARCH%%-FreeBSD/cpp
+lib/lcc-3.6/%%ARCH%%-FreeBSD/lcc
+lib/lcc-3.6/%%ARCH%%-FreeBSD/rcc
+@dirrm lib/lcc-3.6/%%ARCH%%-FreeBSD
+@dirrm lib/lcc-3.6

@@ -1,0 +1,11 @@
+bin/xscorch
+%%DATADIR%%/xscorch/sounds/stamp
+%%DATADIR%%/xscorch/images/xscorch-icon.xpm
+%%DATADIR%%/xscorch/images/xscorch-logo.xpm
+%%DATADIR%%/xscorch/copying.txt
+%%DATADIR%%/xscorch/xscorch.txt
+%%DATADIR%%/xscorch/tankprofiles
+%%DATADIR%%/xscorch/tankprofiles~
+@dirrm %%DATADIR%%/xscorch/sounds
+@dirrm %%DATADIR%%/xscorch/images
+@dirrm %%DATADIR%%/xscorch

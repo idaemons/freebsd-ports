@@ -1,0 +1,3 @@
+include/getopt.h
+lib/libgnugetopt.so
+lib/libgnugetopt.so.1

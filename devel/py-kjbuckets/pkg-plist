@@ -1,0 +1,3 @@
+@exec mkdir -p %D/lib/%%PYTHON_VERSION%%/site-packages
+lib/%%PYTHON_VERSION%%/site-packages/kjbucketsmodule.so
+share/doc/kjbuckets.html

@@ -1,0 +1,16 @@
+bin/xdelta
+bin/xdelta-config
+bin/edsio-comp
+include/xdelta.h
+include/xd_edsio.h
+include/edsio.h
+include/edsio_edsio.h
+lib/libxdelta.so.2
+lib/libxdelta.so
+lib/libxdelta.a
+lib/libedsio.so.0
+lib/libedsio.so
+lib/libedsio.a
+share/aclocal/xdelta.m4
+@unexec install-info --delete %D/info/xdelta.info %D/info/dir
+info/xdelta.info

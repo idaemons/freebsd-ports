@@ -1,0 +1,58 @@
+--- src/osdep/unix/Makefile.orig	Tue Nov 16 18:05:48 1999
++++ src/osdep/unix/Makefile	Fri Jul  7 00:38:22 2000
+@@ -86,7 +86,7 @@
+ # Commands possibly overriden by the individual port
+ 
+ ARRC=ar rc
+-CC=cc
++CC?=cc
+ LN=ln -s
+ RANLIB=ranlib
+ 
+@@ -104,7 +104,7 @@
+  dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+  rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+-CFLAGS=$(BASECFLAGS) $(EXTRACFLAGS)
++CFLAGS+=$(BASECFLAGS) $(EXTRACFLAGS)
+ MAKE=make
+ MV=mv
+ RM=rm -rf
+@@ -178,6 +178,15 @@
+ 	 BASECFLAGS="-g -B/usr/lib/big/ -Dvoid=char -Dconst= -DNFSKLUDGE" \
+ 	 RANLIB=true ARRC="ar -rc"
+ 
++bfp:	# FreeBSD Pluggable Authentication Modules
++	$(BUILD) `cat EXTRASPECIALS` OS=bsi SIGTYPE=psx CHECKPW=pam \
++	 SPOOLDIR=/var \
++	 ACTIVEFILE=/usr/local/news/lib/active \
++	 RSHPATH=/usr/bin/rsh \
++	 LOCKPGM=$(PREFIX)/libexec/mlock \
++	 BASECFLAGS="-DNFSKLUDGE" \
++	 BASELDFLAGS="-lpam -lcrypt"
++
+ bs3:	# BSD/i386 3.0 or higher
+ 	$(BUILD) `cat EXTRASPECIALS` OS=bsi CHECKPW=bsi LOGINPW=bsi \
+ 	 SPOOLDIR=/var NEWSSPOOL=/var/news/spool \
+@@ -194,7 +203,8 @@
+ 	 SPOOLDIR=/var \
+ 	 ACTIVEFILE=/usr/local/news/lib/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-g -O -pipe -DNFSKLUDGE" \
++	 LOCKPGM=$(PREFIX)/libexec/mlock \
++	 BASECFLAGS="-DNFSKLUDGE" \
+ 	 BASELDFLAGS="-lcrypt"
+ 
+ bsi:	# BSD/i386
+@@ -627,9 +637,9 @@
+ 
+ # Build it!
+ 
+-build:	clean once $(ARCHIVE)
++build:	clean all
+ 
+-all:	$(ARCHIVE)
++all:	onceenv
+ 
+ $(ARCHIVE): $(BINARIES)
+ 	sh -c '$(RM) $(ARCHIVE) || true'

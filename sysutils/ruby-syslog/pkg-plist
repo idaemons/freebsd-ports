@@ -1,0 +1,5 @@
+%%RUBY_SITEARCHLIBDIR%%/syslog.so
+%%RUBY_EXAMPLESDIR%%/syslog/test.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/syslog
+%%RUBY_DOCDIR%%/syslog/README
+@dirrm %%RUBY_DOCDIR%%/syslog

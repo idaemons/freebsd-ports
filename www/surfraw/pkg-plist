@@ -1,0 +1,40 @@
+bin/W
+bin/altavista
+bin/appwatch
+bin/ask
+bin/austlii
+bin/britannica
+bin/cite
+bin/cnn
+bin/currency
+bin/deja
+bin/excite
+bin/fast
+bin/freshmeat
+bin/ftpsearch
+bin/google
+bin/ircsearch
+bin/jake
+bin/linuxdoc
+bin/netbsd
+bin/newscientist
+bin/pubmed
+bin/raging
+bin/rhyme
+bin/slashdot
+bin/stockquote
+bin/sundocs
+bin/sunsolve
+bin/surfraw
+bin/surfraw-netscape-remote
+bin/thesaurus
+bin/translate
+bin/webster
+bin/wetandwild
+bin/xxx
+bin/yahoo
+@unexec if cmp -s %D/etc/surfraw.conf %D/share/examples/surfraw/surfraw.conf; then rm -f %D/etc/surfraw.conf; fi
+share/examples/surfraw/surfraw.conf
+share/surfraw/surfraw_elvi.list
+@dirrm share/examples/surfraw
+@dirrm share/surfraw

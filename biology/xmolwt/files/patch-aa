@@ -1,0 +1,15 @@
+--- Makefile.gtk.orig	Sat Aug 28 03:46:47 1999
++++ Makefile.gtk	Sun Sep 24 00:20:45 2000
+@@ -1,7 +1,9 @@
+-CC = gcc
+-CFLAGS = -DGTK
+-GTKCONFIG = gtk12-config
++CC ?= gcc
++CFLAGS += -DGTK
++GTKCONFIG = $(GTK_CONFIG)
+ OBJS = molwt.o usage.o element.o reduce.o count.o calculate.o initwidget.o allowcase.o inputformula.o addtolist.o
++
++all: gmolwt
+ 
+ molwt: gmolwt
+ 	ln -s gmolwt molwt

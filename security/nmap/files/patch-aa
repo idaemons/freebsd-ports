@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon May  1 19:17:38 2000
++++ Makefile.in	Thu May  4 16:42:44 2000
+@@ -16 +16 @@
+-INCLS = -I. -I$(LIBPCAPDIR)
++INCLS = -I. # -I$(LIBPCAPDIR)
+@@ -41 +41 @@
+-$(TARGET): $(DEPS) @PCAP_DEPENDS@ $(OBJS)
++$(TARGET): $(DEPS) $(OBJS)
+@@ -144 +144 @@
+-	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(nmapdatadir) $(deskdir)
++	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(nmapdatadir)

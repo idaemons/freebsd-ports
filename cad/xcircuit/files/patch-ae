@@ -1,0 +1,30 @@
+*** filelist.c.orig	Thu May  4 06:58:52 2000
+--- filelist.c	Fri Oct 13 04:55:01 2000
+***************
+*** 5,12 ****
+--- 5,19 ----
+  
+  #include <stdio.h>
+  #include <string.h>
++ #ifndef __STDC__
+  #include <malloc.h>
++ #endif
+  #include <sys/types.h>
++ #ifdef __FreeBSD__
++ #include <dirent.h>
++ #include <unistd.h>
++ #define direct dirent
++ #else
+  #ifdef linux
+  #include <dirent.h>
+  #include <linux/unistd.h>
+***************
+*** 19,24 ****
+--- 26,32 ----
+  #else
+  #include <stdlib.h>
+  #include <sys/dir.h>
++ #endif
+  #endif
+  #endif
+  #include <sys/stat.h>

@@ -1,0 +1,83 @@
+--- msdosfs_denode.c.orig	Mon Apr 10 04:32:36 2000
++++ msdosfs_denode.c	Sun Oct 22 23:52:20 2000
+@@ -50,24 +50,21 @@
+ 
+ #include "opt_msdosfs.h"
+ 
+-/*
+- * System include files.
+- */
+ #include <sys/param.h>
+ #include <sys/systm.h>
+ #include <sys/kernel.h>
+ #include <sys/mount.h>
+ #include <sys/malloc.h>
+ #include <sys/proc.h>
++#include <sys/bio.h>
+ #include <sys/buf.h>
+ #include <sys/vnode.h>
+ 
+ #include <vm/vm.h>
+ #include <vm/vm_extern.h>
+ 
+-/*
+- * MSDOSFS include files.
+- */
++#include <machine/mutex.h>
++
+ #include <msdosfs/bpb.h>
+ #include <msdosfs/msdosfsmount.h>
+ #include <msdosfs/direntry.h>
+@@ -117,6 +114,16 @@
+ 	return (0);
+ }
+ 
++int 
++msdosfs_uninit(vfsp)
++	struct vfsconf *vfsp;
++{
++
++	if (dehashtbl)
++		free(dehashtbl, M_MSDOSFSMNT);
++	return (0);
++}
++
+ static struct denode *
+ msdosfs_hashget(dev, dirclust, diroff)
+ 	dev_t dev;
+@@ -135,7 +142,7 @@
+ 		    && dev == dep->de_dev
+ 		    && dep->de_refcnt != 0) {
+ 			vp = DETOV(dep);
+-			simple_lock(&vp->v_interlock);
++			mtx_enter(&vp->v_interlock, MTX_DEF);
+ 			simple_unlock(&dehash_slock);
+ 			if (vget(vp, LK_EXCLUSIVE | LK_INTERLOCK, p))
+ 				goto loop;
+@@ -259,7 +266,8 @@
+ 		return error;
+ 	}
+ 	bzero((caddr_t)ldep, sizeof *ldep);
+-	lockinit(&ldep->de_lock, PINOD, "denode", 0, 0);
++	lockinit(&nvp->v_lock, PINOD, "denode", 0, 0);
++	nvp->v_vnlock = &nvp->v_lock;
+ 	nvp->v_data = ldep;
+ 	ldep->de_vnode = nvp;
+ 	ldep->de_flag = 0;
+@@ -275,7 +283,7 @@
+ 	 * of at the start of msdosfs_hashins() so that reinsert() can
+ 	 * call msdosfs_hashins() with a locked denode.
+ 	 */
+-	if (lockmgr(&ldep->de_lock, LK_EXCLUSIVE, (struct simplelock *)0, p))
++	if (VOP_LOCK(nvp, LK_EXCLUSIVE, p) != 0)
+ 		panic("deget: unexpected lock failure");
+ 
+ 	/*
+@@ -657,6 +665,7 @@
+ #if 0 /* XXX */
+ 	dep->de_flag = 0;
+ #endif
++	lockdestroy(&vp->v_lock);
+ 	FREE(dep, M_MSDOSFSNODE);
+ 	vp->v_data = NULL;
+ 

@@ -1,0 +1,15 @@
+%%RUBY_SITELIBDIR%%/optparse/shellwords.rb
+%%RUBY_SITELIBDIR%%/optparse/time.rb
+%%RUBY_SITELIBDIR%%/optparse.rb
+@dirrm %%RUBY_SITELIBDIR%%/optparse
+%%RUBY_EXAMPLESDIR%%/optparse/ja/getopts.test
+%%RUBY_EXAMPLESDIR%%/optparse/cmd-ls.rb
+%%RUBY_EXAMPLESDIR%%/optparse/cmd.rb
+%%RUBY_EXAMPLESDIR%%/optparse/getopts.test.en
+%%RUBY_EXAMPLESDIR%%/optparse/opttest.rb
+%%RUBY_DOCDIR%%/optparse/ja/optparse.ja.rd
+%%RUBY_DOCDIR%%/optparse/optparse.rlog
+@dirrm %%RUBY_EXAMPLESDIR%%/optparse/ja
+@dirrm %%RUBY_EXAMPLESDIR%%/optparse
+@dirrm %%RUBY_DOCDIR%%/optparse/ja
+@dirrm %%RUBY_DOCDIR%%/optparse

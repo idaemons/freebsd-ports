@@ -1,0 +1,66 @@
+# New ports collection makefile for:	mpg123
+# Date created:			25 June 1997
+# Whom:				Carey Jones <mcj@acquiesce.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mpg123
+PORTVERSION=	0.59r
+CATEGORIES=	audio ipv6
+MASTER_SITES=	http://www.mpg123.de/mpg123/ \
+		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/ \
+		ftp://ftp.tu-clausthal.de/pub/unix/audio/mpg123/ \
+		http://ftp.tu-clausthal.de/pub/unix/audio/mpg123/
+DISTFILES=	mpg123-0.59r-pl1.tar.gz
+
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
+		http://www.unix-ag.org/Linux-Alpha/Packages/
+PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz \
+		l3.diff.gz
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	jkoshy@freebsd.org
+
+WANT_ESOUND=	yes
+
+MAN1=		mpg123.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+MAKE_ENV+=	USE_INET6=yes
+.endif
+
+.if defined(HAVE_ESOUND)
+USE_ESOUND=	yes
+ALL_TARGET=	freebsd-esd
+.else
+ALL_TARGET=	freebsd
+.endif
+
+pre-configure:
+.if ${MACHINE_ARCH} == "i386"
+.if !defined(OPT_ARCH) || ((${OPT_ARCH} != "i486") && (${OPT_ARCH} != "i586") \
+    && (${OPT_ARCH} != "3dnow"))
+	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+	@${ECHO_MSG} "Note: you can set OPT_ARCH to optimize for your hardware. (Eg:- make OPT_ARCH=i486)"
+.if ${PORTOBJFORMAT} == "elf"
+	@${ECHO_MSG} "Valid values are: i486, i586, 3dnow"
+.else
+	@${ECHO_MSG} "Valid values are: i486"
+.endif
+	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+.endif
+.if ${PORTOBJFORMAT} == "elf"
+OPT_ARCH?=	i586
+.else
+OPT_ARCH?=	i486
+.endif
+.endif
+
+.if defined(OPT_ARCH)
+MAKE_ARGS+=	OPT_ARCH=${OPT_ARCH}
+.endif
+
+.include <bsd.port.post.mk>

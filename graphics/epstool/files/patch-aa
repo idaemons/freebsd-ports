@@ -1,0 +1,27 @@
+--- makefile.unx.orig	Sat Dec  5 04:05:34 1998
++++ makefile.unx	Fri Feb 25 04:42:20 2000
+@@ -20,13 +20,13 @@
+ RM=/bin/rm -f
+ SHELL=/bin/sh
+ 
+-BINDIR=/usr/local/bin
+-INCLUDES=-I/usr/openwin/include
++BINDIR=${PREFIX}/bin
++INCLUDES=
+ LIBS=
+ # if you have a strict ANSI compiler, add -D__STDC__
+ DEFINES=-DUNIX -DEPSTOOL -DHAVE_UNISTD_H
+ OBJ=o
+-CC=gcc
++#CC=gcc
+ 
+ OBJS=epstool.$(OBJ) gvceps.$(OBJ) ps.$(OBJ)
+ 
+@@ -54,5 +54,5 @@
+ 	-$(RM) epstool
+ 
+ install: epstool
+-	cp epstool $(BINDIR)
+-	chmod 755 $(BINDIR)/epstool
++	${BSD_INSTALL_PROGRAM} epstool $(BINDIR)
++

@@ -1,0 +1,3 @@
+bin/mips64orion-rtems-gdb
+bin/mips64orion-rtems-run
+lib/libmips64orion-rtems-sim.a

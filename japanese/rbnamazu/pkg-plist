@@ -1,0 +1,10 @@
+bin/namazu.rb
+bin/rbnamazu
+%%RUBY_SITELIBDIR%%/nmzdoc.rb
+%%RUBY_SITELIBDIR%%/nmzqr.rb
+%%RUBY_SITELIBDIR%%/nmzqr.tab.rb
+%%RUBY_SITELIBDIR%%/rbnamazu.rb
+%%RUBY_DOCDIR%%/rbnamazu/ja/rbnamazu.html.ja
+%%RUBY_DOCDIR%%/rbnamazu/rbnamazu.html.en
+@dirrm %%RUBY_DOCDIR%%/rbnamazu/ja
+@dirrm %%RUBY_DOCDIR%%/rbnamazu

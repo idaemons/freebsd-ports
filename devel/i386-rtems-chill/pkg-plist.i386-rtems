@@ -1,0 +1,6 @@
+bin/i386-rtems-chill
+lib/gcc-lib/i386-rtems/2.95.2/libchill.a
+lib/gcc-lib/i386-rtems/2.95.2/cc1chill
+lib/gcc-lib/i386-rtems/2.95.2/chillrt0.o
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/chillrt0.o
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/libchill.a

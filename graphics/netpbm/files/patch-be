@@ -1,0 +1,25 @@
+--- pgm/Makefile.orig	Fri Aug  4 08:45:21 2000
++++ pgm/Makefile	Sat Aug  5 00:00:00 2000
+@@ -10,11 +10,13 @@
+ INCLUDEPBM = -I$(PBMDIR)
+ LIBPBM = libpbm.$(NETPBMLIBSUFFIX)
+ 
+-INCLUDE = -I$(SRCDIR) $(INCLUDEPBM) -I$(SRCDIR)/shhopt
++INCLUDE = -I$(SRCDIR) $(INCLUDEPBM)
+ 
+ NETPBMLIBS = $(LIBPGM) $(PBMDIR)/$(LIBPBM)
+ LIBLIBS = $(PBMDIR)/$(LIBPBM)
+ 
++SOVER = 1
++
+ PORTBINARIES =	asciitopgm bioradtopgm fstopgm hipstopgm \
+ 		lispmtopgm pbmtopgm pgmbentley pgmenhance pgmhist \
+ 		pgmnoise pgmnorm pgmoil pgmramp pgmslice pgmtofs pgmtolispm \
+@@ -27,6 +29,7 @@
+ MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
+ 
+ LIBOBJECTS = libpgm1.o libpgm2.o
++SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
+ 
+ MANUALS1 =	$(BINARIES)
+ MANUALS3 =	libpgm

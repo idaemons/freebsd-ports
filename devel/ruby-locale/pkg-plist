@@ -1,0 +1,5 @@
+%%RUBY_SITEARCHLIBDIR%%/locale.so
+%%RUBY_EXAMPLESDIR%%/locale/test.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/locale
+%%RUBY_DOCDIR%%/locale/README
+@dirrm %%RUBY_DOCDIR%%/locale
