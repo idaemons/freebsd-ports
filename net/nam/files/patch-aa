@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- configure.orig	Sat Jun  8 23:00:16 2002
++++ configure	Sat Jun  8 23:00:41 2002
+@@ -2041,7 +2041,7 @@
+ EOF
+ 
+ 
+-		V_INCLUDES="$V_INCLUDE_ZLIB $V_INCLUDES"
++		V_INCLUDES="$V_INCLUDES"
+ 		V_DEFINES="-D$ac_tr_hdr $V_DEFINES"
+ 
+ 		NS_PACKAGE_zlib_UNDERWAY=true

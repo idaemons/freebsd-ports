@@ -1,16 +1,26 @@
-This is Wnn4.2, a Japanese/Chinese/Korean input method.  It is
-included primarily so that we can compile mule-2.1, a multilingual
-emacs.
+This port has include files (e.g. wnn/commonhd.h) and a library file
+(e.g. libwnn.a) to build Wnn7 clients. The files are compiled from
+sources Wnn7SDK.tgz which you can get in
 
-Since I don't have time to test anything else, only Japanese is built
-at this time.  (Or I won't get it on the 2.0 CDROM!)  Also, jserver
-doesn't seem to work well so it's temporarily disabled too.  Take a
-look at the file patches/patch-aa and change them back if you want to
-try others.
+WWW: http://www.omronsoft.co.jp/
 
-Note that binaries and libraries go to /usr/local, while man pages and 
-includes go to /usr/X11R6.  That's the way it was designed, I don't
-know why.
+The license of the sources is in
 
-- Satoshi
-(asami@cs.berkeley.edu)
+/usr/local/share/doc/ja-Wnn7-lib/README
+
+By the way, you must buy the server of Wnn7, whose name is jserver,
+from Omron Software Co., Ltd.
+
++------------------------------------------+
+| URL:	   http://www.omronsoft.co.jp      |
+| E-mail:  wnn-info@omronsoft.co.jp        |
+| TEL:     +81-44-246-6006                 |
+| FAX:     +81-44-246-6011                 |
++------------------------------------------+
+
+Wnn7 is one of Japanese input methods. 'Wnn7 Personal' 
+supports Japanese method only. However, FreeWnn (which is free)
+supports Chinese and Korean ones, too.
+
+- S. Taoka
+taoka@FreeBSD.org

@@ -1,0 +1,40 @@
+# ex:ts=8
+# Ports collection makefile for:	GOPchop
+# Date created:				Apr 24, 2002
+# Whom:					ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gopchop
+PORTVERSION=	0.9.1
+CATEGORIES=	multimedia
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://outflux.net/unix/software/GOPchop/download/
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	GOPchop-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	MPEG2 GOP-accurate editor
+
+LIB_DEPENDS=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
+
+USE_SDL=	yes
+USE_GETOPT_LONG=	yes
+USE_GNOME=	gnometarget gtk12
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		SDLCONFIG="${SDL_CONFIG}"
+CONFIGURE_ARGS=	--disable-mlib
+
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
+LDFLAGS=	-L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| -mcpu=.*"|"|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|pixmaps/\$$(PACKAGE)|\$$(PACKAGE)/pixmaps|g ; \
+		 s|-lglib||g'
+
+.include <bsd.port.mk>

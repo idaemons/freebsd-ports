@@ -1,0 +1,55 @@
+bin/htmltoc
+bin/nodefs
+bin/noindex
+bin/noroff
+bin/noroots
+bin/notangle
+bin/nountangle
+bin/noweave
+bin/noweb
+bin/nuweb2noweb
+bin/cpif
+bin/sl2h
+share/emacs/site-lisp/noweb-mode.el
+share/noweb/autodefs.asdl
+share/noweb/autodefs.c
+share/noweb/autodefs.icon
+share/noweb/autodefs.lrtl
+share/noweb/autodefs.mmix
+share/noweb/autodefs.pascal
+share/noweb/autodefs.promela
+share/noweb/autodefs.sml
+share/noweb/autodefs.tex
+share/noweb/autodefs.yacc
+share/noweb/btdefn
+share/noweb/disambiguate
+share/noweb/docs2comments
+share/noweb/elide
+share/noweb/emptydefn
+share/noweb/finduses
+share/noweb/h2a
+share/noweb/l2h
+share/noweb/markup
+share/noweb/mnt
+share/noweb/noidx
+share/noweb/nt
+share/noweb/nwmtime
+share/noweb/pipedocs
+share/noweb/tmac.w
+share/noweb/toascii
+share/noweb/tohtml
+share/noweb/totex
+share/noweb/toroff
+share/noweb/unmarkup
+share/texmf-local/tex/plain/noweb/nwmac.tex
+share/texmf-local/tex/latex/noweb/noweb.sty
+share/noweb/xchunks
+@dirrm share/texmf-local/tex/latex/noweb
+@dirrm share/texmf-local/tex/plain/noweb
+@unexec rmdir %D/share/texmf-local/tex/latex 2>/dev/null || true
+@unexec rmdir %D/share/texmf-local/tex/plain 2>/dev/null || true
+@unexec rmdir %D/share/texmf-local/tex 2>/dev/null || true
+@unexec rm %D/share/texmf-local/ls-R 2>/dev/null || true
+@unexec rmdir %D/share/texmf-local 2>/dev/null || true
+@unexec mktexlsr 2>/dev/null || true
+@dirrm share/noweb

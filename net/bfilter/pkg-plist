@@ -1,0 +1,7 @@
+bin/bfilter
+%%WITH_GUI%%bin/bfilter-gui
+etc/bfilter/config
+etc/bfilter/config.default
+etc/bfilter/rules
+etc/bfilter/rules.local
+@dirrm /etc/bfilter

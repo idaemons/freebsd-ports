@@ -1,0 +1,5 @@
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+lib/xmms/Effect/xmmspipe.so
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

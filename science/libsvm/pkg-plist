@@ -1,0 +1,6 @@
+bin/svm-predict
+bin/svm-scale
+bin/svm-train
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

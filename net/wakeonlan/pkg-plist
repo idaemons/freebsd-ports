@@ -1,0 +1,5 @@
+bin/wakeonlan
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/wakeonlan/.packlist
+share/examples/wakeonlan/lab001.wol
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/wakeonlan
+@dirrm share/examples/wakeonlan

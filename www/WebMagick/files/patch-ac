@@ -1,0 +1,11 @@
+--- configure.bak	Mon Oct 18 00:00:03 1999
++++ configure	Sun Nov 21 05:44:06 1999
+@@ -1061,7 +1061,7 @@
+       esac
+     done
+ 
+-    exec < /dev/tty
++#    exec < /dev/tty
+     rm $tmpfile
+   fi
+ 

@@ -1,0 +1,19 @@
+lib/ladspa/adsr_1653.so
+lib/ladspa/adsr_1680.so
+lib/ladspa/amp_1654.so
+lib/ladspa/branch_1673.so
+lib/ladspa/fmod_1656.so
+lib/ladspa/interpolator_1660.so
+lib/ladspa/lp4pole_1671.so
+lib/ladspa/product_1668.so
+lib/ladspa/pulse_1645.so
+lib/ladspa/random_1661.so
+lib/ladspa/sawtooth_1641.so
+lib/ladspa/sequencer16_1677.so
+lib/ladspa/sequencer32_1676.so
+lib/ladspa/sequencer64_1675.so
+lib/ladspa/square_1643.so
+lib/ladspa/sum_1665.so
+lib/ladspa/sync_square_1678.so
+lib/ladspa/triangle_1649.so
+@unexec rmdir %D/lib/ladspa 2>/dev/null || true

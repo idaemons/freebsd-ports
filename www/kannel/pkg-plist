@@ -1,0 +1,9 @@
+bin/seewbmp
+bin/wmlsc
+bin/wmlsdasm
+etc/smskannel.conf
+etc/wapkannel.conf
+sbin/bearerbox
+sbin/run_kannel_box
+sbin/smsbox
+sbin/wapbox

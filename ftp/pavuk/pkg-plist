@@ -1,0 +1,19 @@
+bin/pavuk
+etc/pavuk_authinfo.sample
+etc/pavukrc.sample
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/MAILINGLIST
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/pavuk/icons/pavuk_16x16.xpm
+share/pavuk/icons/pavuk_32x32.xpm
+share/pavuk/icons/pavuk_64x64.xpm
+share/pavuk/icons/pavuk_as_icon.xpm
+share/pavuk/icons/pavuk_prg_icon.xpm
+@dirrm share/pavuk/icons
+@dirrm share/pavuk
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,45 @@
+# New ports collection makefile for:	gdeskcal-skins
+# Date created:		04 May 2003
+# Whom:			Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gdeskcal-skins
+PORTVERSION=	0.53
+CATEGORIES=	deskutils python gnome
+MASTER_SITES=	http://www.pycage.de/download/skins/gdeskcal/
+DISTNAME=
+DISTFILES=	gnometheme.tar.gz \
+		SimpleForDark.tar.gz \
+		e_01.tar.gz \
+		light_01.tar.gz \
+		light_02.tar.gz \
+		tnf.tar.gz \
+		redskin.tar.gz \
+		tiny_and_simple.tar.gz \
+		LCD.tar.gz
+
+MAINTAINER=	ports@freebsd.org
+COMMENT=	Skins for gdeskcal
+
+RUN_DEPENDS=	${X11BASE}/bin/gdeskcal:${PORTSDIR}/deskutils/gdeskcal
+
+USE_PYTHON=	yes
+USE_X_PREFIX=	yes
+USE_GNOME=	gnomeprefix
+NO_BUILD=	yes
+
+DATA_DIRS=	GNOME LCD Red_skin SimpleForDark e light_01 light_02 \
+		tiny_and_simple tnf
+
+do-install:
+	@${MKDIR} ${PREFIX}/share/gnome/gdeskcal
+.for d in ${DATA_DIRS}
+		@${MKDIR} ${PREFIX}/share/gnome/gdeskcal/skins/${d}
+		@cd ${WRKSRC}/${d} && ${FIND} . | \
+	    		cpio --quiet -pdm -L -R ${LIBOWN}:${LIBGRP}  \
+			${PREFIX}/share/gnome/gdeskcal/skins/${d}
+.endfor
+
+.include <bsd.port.mk>

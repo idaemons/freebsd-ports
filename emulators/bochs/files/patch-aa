@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- .bochsrc.orig	Thu May 31 22:55:33 2001
++++ .bochsrc	Mon Jun  4 10:24:44 2001
+@@ -116,8 +116,8 @@
+ #   log: ./bochs.out
+ #   log: /dev/tty
+ #=======================================================================
+-#log: /dev/null
+-log: bochsout.txt
++log: /dev/null
++#log: bochsout.txt
+ 
+ #=======================================================================
+ # LOG CONTROLS

@@ -1,0 +1,13 @@
+bin/squidGuard
+share/doc/squidGuard/README
+share/doc/squidGuard/README.blacklists
+share/doc/squidGuard/configuration.html
+share/doc/squidGuard/configuration.txt
+share/doc/squidGuard/faq.html
+share/doc/squidGuard/faq.txt
+share/doc/squidGuard/index.html
+share/doc/squidGuard/installation.html
+share/doc/squidGuard/installation.txt
+share/doc/squidGuard/squidGuard.gif
+etc/squid/squidGuard.conf.sample
+@dirrm share/doc/squidGuard

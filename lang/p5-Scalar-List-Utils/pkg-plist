@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Util/Util.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Util/Util.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Util/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Scalar/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/List/Util.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Util
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/List 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Scalar 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/List 2>/dev/null || true

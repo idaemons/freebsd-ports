@@ -1,0 +1,6 @@
+%%SITE_PERL%%/mach/auto/Attribute/Handlers/.packlist
+%%SITE_PERL%%/Attribute/Handlers.pm
+@dirrm %%SITE_PERL%%/mach/auto/Attribute/Handlers
+@dirrm %%SITE_PERL%%/mach/auto/Attribute
+@unexec rmdir %D/%%SITE_PERL%%/mach/auto 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Attribute

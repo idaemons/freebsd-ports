@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Business/OnlinePayment/TCLink.pm
+%%SITE_PERL%%/auto/Business/OnlinePayment/TCLink/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/TCLink/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/TCLink
+@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/TCLink
+@unexec rmdir %D/%%SITE_PERL%%/Business/OnlinePayment 2>/dev/null || true

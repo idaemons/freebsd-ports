@@ -1,0 +1,3 @@
+bin/yabasic
+%%PORTDOCS%%%%DOCSDIR%%/yabasic.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

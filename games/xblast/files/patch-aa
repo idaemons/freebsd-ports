@@ -1,0 +1,23 @@
+--- Imakefile.orig	Thu Jul 29 04:36:20 1999
++++ Imakefile	Sat Oct 21 08:33:56 2000
+@@ -25,7 +25,9 @@
+  * If you want to have sound, comment the following line
+  * Set SOUND_DIR to the directory, where the sounds can be found
+  */
+-EXTRA_DEFINES=-DXBLASTDIR=\"$(XBLASTDIR)\" -DXBLAST_SOUND
++EXTRA_DEFINES=-DXBLASTDIR=\"$(DESTDIR)$(XBLASTDIR)\" \
++	      -DAPPLOADDIR=\"$(DESTDIR)$(XAPPLOADDIR)\" \
++	      -DXBLAST_SOUND 
+ 
+ /*
+  * all programs to be build
+@@ -71,7 +73,8 @@
+ SRCS2  = xbsndsrv.c
+ OBJS2  = xbsndsrv.o
+ 
+-ComplexProgramTarget_2(xbsndsrv,NullParameter,NullParameter)
++NormalProgramTarget(xbsndsrv,$(OBJS2),,,)
++InstallProgram(xbsndsrv,$(BINDIR))
+ 
+ /*
+  * Part 3: install Application Defaults

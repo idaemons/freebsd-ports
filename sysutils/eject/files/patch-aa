@@ -1,0 +1,107 @@
+--- eject.c.orig	Tue Jan  4 06:42:12 2000
++++ eject.c	Mon Sep 29 07:16:58 2003
+@@ -43,8 +43,8 @@
+ extern int optind;
+ 
+ void usage(void);
+-int check_device(char *, char *);
+-int unmount_fs(char *, char *);
++int check_device(char *, char **);
++int unmount_fs(char *, char **);
+ int eject(char *, char *);
+ 
+ char *program = "eject";
+@@ -65,8 +65,8 @@
+ {
+     int ch;
+     int sts;
+-    char device[256], name[256];
+-    char err[256];
++    char *device, *name;
++    char *err;
+     char *defdev;
+ 
+     fflag = nflag = vflag = 0;
+@@ -95,18 +95,27 @@
+ 	if (argc == 0) {
+ 	    usage();
+ 	}
+-	strcpy(name, *argv);
++	name = strdup(*argv);
+     } else {
+-	strcpy(name, defdev);
++	name = strdup(defdev);
+     }    
+ 
+-    sts = check_device(name, device);
++    sts = check_device(name, &device);
+     if (sts < 0) {
+ 	perror(program);
+ 	exit(1);
++    } else {
++         int c;
++         char *dev_bak = malloc(MAXPATHLEN);
++         if (c = readlink(device, dev_bak, MAXPATHLEN)) {
++              dev_bak[c] = '\0';
++              name = dev_bak;
++         } else {
++              free(dev_bak);
++         }
+     }
+ 
+-    sts = unmount_fs(name, err);
++    sts = unmount_fs(name, &err);
+     if (sts < 0) {
+ 	perror(err);
+ 	exit(1);
+@@ -128,16 +137,26 @@
+ int
+ check_device(name, device)
+     char *name;
+-    char *device;
++    char **device;
+ {
+-    int sts;
++    int sts, i;
+     struct stat sb;
+ 
+-    sprintf(device, "/dev/r%sc", name);
+-    if (vflag || nflag) {
+-	printf("%s: using device %s\n", program, device);
++    const char* dev_list[] = { "/dev/%sc", "/dev/%s", "%s" };
++    for (i = 0; i < 2; i++) {
++         if (asprintf(device, dev_list[i], name) == -1)
++              return sts;
++         if (vflag || nflag) {
++              printf("%s: trying device %s\n", program, *device);
++         }
++         sts = stat(*device, &sb);
++        if (sts) { /* stat failed, try next */
++              free(*device);
++              continue;
++         } else {
++              break;
++         }
+     }
+-    sts = stat(device, &sb);
+ 
+     return sts;
+ }
+@@ -155,7 +174,7 @@
+ int
+ unmount_fs(name, err)
+     char *name;
+-    char *err;
++    char **err;
+ {
+     int mnts;
+     struct statfs *mntbuf;
+@@ -221,7 +240,7 @@
+ 	    sts = 0;
+ 	}
+ 	if (sts < 0 && fflag == 0) {
+-	    sprintf(err, "%s: %s", program, mp->mntonname);
++	    asprintf(err, "%s: %s", program, mp->mntonname);
+ 	    return sts;
+ 	}
+ 	nextp = mp->next;

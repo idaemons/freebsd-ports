@@ -1,0 +1,66 @@
+--- doc/Makefile.in.orig	Thu Jan 24 22:53:25 2002
++++ doc/Makefile.in	Fri Aug 30 11:26:16 2002
+@@ -61,13 +61,23 @@
+ topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
+ 	README NEWS TODO README.SECURITY README.SSL 
+ 
+-all: muttrc.man try-html try-txt
++all:
+ 
+ try-html: ../makedoc
+-	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
++	rm -f *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
++	touch $@
+ 
+ try-txt: ../makedoc
+-	test -f manual.txt || $(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
++	$(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
++	touch $@
++
++try-latin1: 
++	$(MAKE) manual.latin1 || cp $(srcdir)/manual.latin1 ./
++	touch $@
++
++try-ps: 
++	$(MAKE) manual.ps || cp $(srcdir)/manual.ps ./
++	touch $@
+ 
+ install: all instdoc
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
+@@ -87,10 +97,6 @@
+ 		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
+ 	done
+ 	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
+-	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
+-	for file in manual*.html ; do	\
+-		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
+-	done
+ 
+ uninstall:
+ 	-rm -f $(DESTDIR)$(mandir)/man1/mutt.1
+@@ -100,17 +106,20 @@
+ 
+ check:
+ manual.txt: manual.sgml
+-	if sgml2txt -c latin manual ; then \
+-		uniq < manual.txt | expand > _manual.txt ; \
+-		rm manual.txt ; \
++	if sgmlfmt -f ascii manual; then \
++		uniq < manual.ascii | expand > _manual.txt ; \
++		rm -f manual.txt manual.ascii; \
+ 		mv _manual.txt manual.txt ;\
+ 	fi
+ 
+ manual.html: manual.sgml
+-	sgml2html manual  || true
++	sgmlfmt -f html manual  || true
++
++manual.latin1: manual.sgml
++	sgmlfmt -f latin1 manual  || true
+ 
+ manual.ps: manual.sgml
+-	sgml2latex --output=ps manual || true
++	sgmlfmt -f ps manual  || true
+ 
+ clean: 
+ 	rm -f *~ *.html *.orig *.rej  stamp-doc-sgml stamp-doc-man *.ps

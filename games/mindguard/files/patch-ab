@@ -1,0 +1,14 @@
+--- mindguard.c.orig	Wed Nov 15 18:49:17 2000
++++ mindguard.c	Fri Nov 24 11:56:32 2000
+@@ -353,7 +353,7 @@
+ 				strcpy(car_path, "./carriers/");
+ 				break;
+ 			case 1:
+-				sprintf(car_path, "%s/MindGuard/carriers/", getenv("HOME"));
++				sprintf(car_path, X11BASE "/share/mindguard/");
+ 				break;
+ 			case 2:
+ 				strcpy(car_path, "/usr/local/share/MindGuard/carriers/");
+@@ -2739,4 +2739,4 @@
+     return 0;
+ }

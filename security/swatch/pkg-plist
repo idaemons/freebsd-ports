@@ -1,0 +1,4 @@
+bin/swatch
+bin/swatch_oldrc2newrc
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/swatch/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/swatch

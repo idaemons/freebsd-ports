@@ -1,0 +1,27 @@
+# New ports collection makefile for:	streamtuner
+# Date created:			02 Apr 2002
+# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
+#
+# $FreeBSD$
+#
+
+PORTNAME=		streamtuner
+PORTVERSION=		0.10.1
+CATEGORIES=		audio www
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
+
+MAINTAINER=		jylefort@brutele.be
+COMMENT=		A GTK+ stream directory browser
+
+LIB_DEPENDS=		curl:${PORTSDIR}/ftp/curl
+
+USE_X_PREFIX=		yes
+USE_GNOME=		gtk20
+USE_LIBTOOL_VER=	15
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN1=			streamtuner.1 streamtuner-theme-convert.1
+
+.include <bsd.port.mk>

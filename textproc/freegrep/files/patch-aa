@@ -1,0 +1,18 @@
+--- Makefile.orig	Fri Nov  5 17:28:02 1999
++++ Makefile	Fri Jun 30 12:24:05 2000
+@@ -9,8 +9,13 @@
+ 	grep.1 fgrep.1 \
+ 	grep.1 zgrep.1
+ 
+-CFLAGS+= -I/usr/local/include -Wall -pedantic
++DESTDIR=       ${PREFIX}
++BINDIR=                /bin
++MANDIR=                /man/man
++NOMANCOMPRESS= 1
+ 
+-LDADD=  -lz -L/usr/local/lib/ -liberty
++CFLAGS+= -I${LOCALBASE}/include -Wall -pedantic
++
++LDADD=  -lz -L${LOCALBASE}/lib -liberty
+ 
+ .include <bsd.prog.mk>

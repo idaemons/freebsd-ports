@@ -1,0 +1,17 @@
+bin/gnupod_INIT.pl
+bin/gnupod_addsong.pl
+bin/gnupod_search.pl
+bin/mktunes.pl
+bin/tunes2pod.pl
+%%SITE_PERL%%/mach/GNUpod/FileMagic.pm
+%%SITE_PERL%%/mach/GNUpod/FooBar.pm
+%%SITE_PERL%%/mach/GNUpod/iTunesDB.pm
+%%SITE_PERL%%/mach/GNUpod/XMLhelper.pm
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/gnutunesdb.example
+%%PORTDOCS%%%%DOCSDIR%%/gnupod.html
+%%PORTDOCS%%%%DOCSDIR%%/gnupod.texi
+%%PORTDOCS%%%%DOCSDIR%%/fdl.texi
+%%PORTDOCS%%%%DOCSDIR%%/version.texi
+%%PORTDOCS%%%%DOCSDIR%%/ipod.svg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

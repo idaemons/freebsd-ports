@@ -1,0 +1,101 @@
+bin/conglomerate
+share/gnome/applications/conglomerate.desktop
+share/gnome/conglomerate/dispspecs/cnxml.xds
+share/gnome/conglomerate/dispspecs/dispspec.xds
+share/gnome/conglomerate/dispspecs/docbook.xds
+share/gnome/conglomerate/dispspecs/forrest-document.xds
+share/gnome/conglomerate/dispspecs/kernel-traffic-newsletter.xds
+share/gnome/conglomerate/dispspecs/readme.xds
+share/gnome/conglomerate/dispspecs/relax-ng.xds
+share/gnome/conglomerate/dispspecs/website-layout.xds
+share/gnome/conglomerate/dispspecs/website-webpage.xds
+share/gnome/conglomerate/dispspecs/xhtml1-strict.xds
+share/gnome/conglomerate/dispspecs/xsl.xds
+share/gnome/conglomerate/dtd/xds.dtd
+share/gnome/conglomerate/examples/cnxml.xml
+share/gnome/conglomerate/examples/error-proposal.xml
+share/gnome/conglomerate/examples/file-roller.xml
+share/gnome/conglomerate/examples/i18n.xml
+share/gnome/conglomerate/examples/readme.xml
+share/gnome/conglomerate/examples/test-docbook.xml
+share/gnome/conglomerate/examples/test-entities.xml
+share/gnome/conglomerate/examples/test-table.xml
+share/gnome/conglomerate/glade/cong-file-import.glade
+share/gnome/conglomerate/glade/docbook-common-properties.glade
+share/gnome/conglomerate/glade/docbook-orderedlist-properties.glade
+share/gnome/conglomerate/glade/docbook-ulink-properties.glade
+share/gnome/conglomerate/glade/string_selection_dialog.glade
+share/gnome/conglomerate/pixmaps/conglomerate-icon-32.png
+share/gnome/conglomerate/pixmaps/cong-address-16.png
+share/gnome/conglomerate/pixmaps/cong-answer-16.png
+share/gnome/conglomerate/pixmaps/cong-author-16.png
+share/gnome/conglomerate/pixmaps/cong-bibliography-16.png
+share/gnome/conglomerate/pixmaps/cong-bulleted-list-16.png
+share/gnome/conglomerate/pixmaps/cong-caution-48.png
+share/gnome/conglomerate/pixmaps/cong-code-fragment-16.png
+share/gnome/conglomerate/pixmaps/cong-definition-list-16.png
+share/gnome/conglomerate/pixmaps/cong-docbook-article-16.png
+share/gnome/conglomerate/pixmaps/cong-docbook-book-16.png
+share/gnome/conglomerate/pixmaps/cong-docbook-set-16.png
+share/gnome/conglomerate/pixmaps/cong-editor-16.png
+share/gnome/conglomerate/pixmaps/cong-entry-16.png
+share/gnome/conglomerate/pixmaps/cong-faq-16.png
+share/gnome/conglomerate/pixmaps/cong-footnote-16.png
+share/gnome/conglomerate/pixmaps/cong-history-16.png
+share/gnome/conglomerate/pixmaps/cong-important-48.png
+share/gnome/conglomerate/pixmaps/cong-indexterm-16.png
+share/gnome/conglomerate/pixmaps/cong-list-item-16.png
+share/gnome/conglomerate/pixmaps/cong-list-16.png
+share/gnome/conglomerate/pixmaps/cong-metadata-16.png
+share/gnome/conglomerate/pixmaps/cong-name-16.png
+share/gnome/conglomerate/pixmaps/cong-note-48.png
+share/gnome/conglomerate/pixmaps/cong-numbered-list-16.png
+share/gnome/conglomerate/pixmaps/cong-paragraph-16.png
+share/gnome/conglomerate/pixmaps/cong-publisher-16.png
+share/gnome/conglomerate/pixmaps/cong-question-16.png
+share/gnome/conglomerate/pixmaps/cong-subsection-16.png
+share/gnome/conglomerate/pixmaps/cong-summary-16.png
+share/gnome/conglomerate/pixmaps/cong-tip-48.png
+share/gnome/conglomerate/pixmaps/cong-title-16.png
+share/gnome/conglomerate/pixmaps/cong-warning-48.png
+share/gnome/conglomerate/pixmaps/cong-wrapper-16.png
+share/gnome/conglomerate/templates/dispspec.xml
+share/gnome/conglomerate/templates/html.xml
+share/gnome/help/conglomerate/C/conglomerate.xml
+share/gnome/help/conglomerate/C/figures/conglomerate_logo.png
+share/gnome/help/conglomerate/C/figures/intro.png
+share/gnome/help/conglomerate/C/figures/menu-properties.png
+share/gnome/help/conglomerate/C/figures/new-doc-wizard.png
+share/gnome/help/conglomerate/C/figures/new.png
+share/gnome/help/conglomerate/C/figures/properties-dialog.png
+share/gnome/help/conglomerate/C/figures/quote.png
+share/gnome/omf/conglomerate/conglomerate-C.omf
+share/gnome/pixmaps/conglomerate-icon-16.png
+share/locale/az/LC_MESSAGES/conglomerate.mo
+share/locale/ca/LC_MESSAGES/conglomerate.mo
+share/locale/cs/LC_MESSAGES/conglomerate.mo
+share/locale/da/LC_MESSAGES/conglomerate.mo
+share/locale/de/LC_MESSAGES/conglomerate.mo
+share/locale/el/LC_MESSAGES/conglomerate.mo
+share/locale/es/LC_MESSAGES/conglomerate.mo
+share/locale/nl/LC_MESSAGES/conglomerate.mo
+share/locale/pl/LC_MESSAGES/conglomerate.mo
+share/locale/pt/LC_MESSAGES/conglomerate.mo
+share/locale/ru/LC_MESSAGES/conglomerate.mo
+share/locale/sr/LC_MESSAGES/conglomerate.mo
+share/locale/sr@Latn/LC_MESSAGES/conglomerate.mo
+share/locale/sv/LC_MESSAGES/conglomerate.mo
+@exec scrollkeeper-install -q %D/share/gnome/omf/conglomerate/conglomerate-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/conglomerate/conglomerate-C.omf 2>/dev/null || /usr/bin/true
+@dirrm share/doc/conglomerate
+@dirrm share/gnome/omf/conglomerate
+@dirrm share/gnome/help/conglomerate/C/figures
+@dirrm share/gnome/help/conglomerate/C
+@dirrm share/gnome/help/conglomerate
+@dirrm share/gnome/conglomerate/dispspecs
+@dirrm share/gnome/conglomerate/dtd
+@dirrm share/gnome/conglomerate/examples
+@dirrm share/gnome/conglomerate/glade
+@dirrm share/gnome/conglomerate/pixmaps
+@dirrm share/gnome/conglomerate/templates
+@dirrm share/gnome/conglomerate

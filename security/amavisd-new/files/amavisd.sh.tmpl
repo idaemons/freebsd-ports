@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/security/amavisd-new/files/Attic/amavisd.sh.tmpl,v 1.6 2003-11-20 11:00:19 jeh Exp $
+#
+
+# PROVIDE: amavisd
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable amavisd:
+#
+#amavisd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=amavisd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/amavisd > /dev/null 2>&1
+
+amavisd_user=%%AMAVISUSER%%
+
+pidfile=%%AMAVISDIR%%/amavisd.pid
+required_files=%%PREFIX%%/etc/amavisd.conf
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+# set defaults
+
+amavisd_enable=${amavisd_enable:-"NO"}
+amavisd_flags=${amavisd_flags:-""}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,4 @@
+bin/lineakd
+etc/lineakkb.def
+%%EXAMPLESDIR%%/lineakd.conf.example
+@dirrm %%EXAMPLESDIR%%

@@ -1,0 +1,35 @@
+--- src/Makefile.orig	Wed Dec 18 01:01:16 2002
++++ src/Makefile	Mon Feb  3 20:18:03 2003
+@@ -46,7 +46,7 @@
+ OPTIMIZATION_CFLAGS=-O3
+ 
+ # System directories
+-prefix = /usr/local
++prefix = %%PREFIX%%
+ #prefix = /sw
+ #prefix = /opt/${binname}
+ #prefix = /tmp/upclient
+@@ -59,8 +59,8 @@
+ datadir = ${prefix}/share
+ sysconfdir = ${prefix}/etc
+ #sysconfdir = /etc
+-localstatedir = ${prefix}/var
+-#localstatedir = /var
++#localstatedir = ${prefix}/var
++localstatedir = /var
+ destdir=
+ 
+ 
+@@ -90,9 +90,9 @@
+ 
+ ## [x86] FreeBSD (4.7-RC)
+ ## assumes gettext installed in /usr/local
+-#localedir = ${datadir}/locale
+-#LOCALEFLAGS = -DLOCALEPATH=\"$(localedir)\" -I/usr/local/include
+-#LOCALELIBS = -L/usr/local/lib -lintl
++localedir = ${datadir}/locale
++LOCALEFLAGS = -DLOCALEPATH=\"$(localedir)\" -I%%LOCALBASE%%/include
++LOCALELIBS = -L%%LOCALBASE%%/lib -lintl
+ 
+ ## [Sparc - R220] Sun Solaris (5.8)
+ ## not sure whether this locale dir is correct

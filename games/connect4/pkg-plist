@@ -1,0 +1,3 @@
+bin/connect4
+share/connect4/scores
+@dirrm share/connect4

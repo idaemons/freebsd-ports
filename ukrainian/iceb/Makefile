@@ -1,0 +1,49 @@
+# New ports collection makefile for:	iceb
+# Date created:		20 December 2002
+# Whom:			Vadim Chekan <vchekan@softline.kiev.ua>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	iceb
+PORTVERSION=	5.35
+CATEGORIES=	ukrainian finance
+MASTER_SITES=	http://www.iceb.vinnitsa.com/download/
+
+MAINTAINER=	vchekan@softline.kiev.ua
+COMMENT=	Ukrainian accounting system
+
+BROKEN=		"Does not fetch; will be removed after Feb 2"
+
+USE_MYSQL=	yes
+WANT_MYSQL_VER=	323
+USE_GMAKE=	yes
+#MAKE_FLAGS=	-j2
+GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+USE_AUTOCONF=	yes
+USE_AUTOMAKE=	yes
+USE_REINPLACE=	yes
+NO_WRKSUBDIR=	yes
+CONFIGURE_ARGS=	\
+		--prefix=${PREFIX} \
+		--with-lang=ua \
+		--with-lock-dir=/var/spool/lock \
+		--with-config-path=${PREFIX}/etc/iceb \
+		--with-lang-path=${PREFIX}/share/nls/uk_UA.KOI8-U
+CFLAGS+=	-I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql
+CONFIGURE_ENV=	ICEB_DB_LIB=${LOCALBASE}/lib/mysql
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		Does not compile on -current. Maintainer informed.
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/configure.in
+
+pre-configure:
+	${MKDIR} ${PREFIX}/share/nls/uk_UA.KOI8-U
+
+.include <bsd.port.post.mk>

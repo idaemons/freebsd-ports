@@ -1,0 +1,21 @@
+bin/longplayer
+bin/lplayer-bin
+share/lplayer/images/genre.png
+share/lplayer/images/go.png
+share/lplayer/images/go32.png
+share/lplayer/images/lplayericon.png
+share/lplayer/images/lplayerlogo.png
+share/lplayer/images/lplayerlogo2.png
+share/lplayer/images/lplayerlogo3.png
+share/lplayer/images/next.png
+share/lplayer/images/play.png
+share/lplayer/images/playnow.png
+share/lplayer/images/previous.png
+share/lplayer/images/queue.png
+share/lplayer/images/ratedown.png
+share/lplayer/images/ratedown32.png
+share/lplayer/images/rateup.png
+share/lplayer/images/rateup32.png
+share/lplayer/images/stop.png
+@dirrm share/lplayer/images
+@dirrm share/lplayer

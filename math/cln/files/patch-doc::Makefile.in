@@ -1,0 +1,18 @@
+--- doc/Makefile.in.orig	Wed Dec  6 00:38:27 2000
++++ doc/Makefile.in	Thu Oct  9 22:51:12 2003
+@@ -81,14 +81,11 @@
+ 
+ install : all installdirs force
+ 	$(INSTALL_DATA) $(srcdir)/$(PACKAGE).info $(DESTDIR)$(infodir)/$(PACKAGE).info
+-	$(INSTALL_DATA) $(srcdir)/$(PACKAGE)_*.html $(DESTDIR)$(htmldir)
+-	$(INSTALL_DATA) $(srcdir)/$(PACKAGE).dvi $(DESTDIR)$(dvidir)/$(PACKAGE).dvi
++	install-info $(DESTDIR)$(infodir)/$(PACKAGE).info $(DESTDIR)$(infodir)/dir
+ 
+ installdirs : force
+ 	$(MKDIR) $(DESTDIR)$(datadir)
+ 	$(MKDIR) $(DESTDIR)$(infodir)
+-	$(MKDIR) $(DESTDIR)$(htmldir)
+-	$(MKDIR) $(DESTDIR)$(dvidir)
+ 
+ uninstall : force
+ 	$(RM) $(DESTDIR)$(infodir)/$(PACKAGE).info

@@ -1,0 +1,5 @@
+bin/xmlwf
+include/expat.h
+lib/libexpat.a
+lib/libexpat.so
+lib/libexpat.so.%%SHLIB_MAJOR%%

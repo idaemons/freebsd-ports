@@ -1,0 +1,28 @@
+--- install.sh.orig	Wed Sep 17 01:38:25 2003
++++ install.sh	Thu Sep 25 22:01:32 2003
+@@ -17,20 +17,18 @@
+ chown ${USER} ${STATEDIR}
+ chgrp ${GROUP} ${STATEDIR}
+ 
+-cp -f ${MILTER} ${BINDIR}
+-chown ${USER} ${BINDIR}/${MILTER}
+-chgrp ${GROUP} ${BINDIR}/${MILTER}
++install -s ${MILTER} ${BINDIR}
++#chown ${USER} ${BINDIR}/${MILTER}
++#chgrp ${GROUP} ${BINDIR}/${MILTER}
+ 
+-chgrp ${GROUP} ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.*
++#chgrp ${GROUP} ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.*
+ 
+ 
+ case `uname -s` in
+ *BSD*)
+-	RC="/usr/local/etc/rc.d/${MILTER}.sh"
+-	if [ ! -f $RC ]; then
++	RC="${PREFIX}/etc/rc.d/${MILTER}.sh-dist"
+ 		cp ${MILTER}.sh $RC
+ 		chmod 640 $RC
+-	fi
+ 	;;
+ Linux*)
+ 	if [ -d '/etc/rc.d/init.d' ]; then

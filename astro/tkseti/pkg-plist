@@ -1,0 +1,4 @@
+bin/tkseti
+%%PORTDOCS%%%%DOCSDIR%%/DOC
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,20 @@
+# $FreeBSD$
+#
+    SUBDIR += aspell
+    SUBDIR += frontpage-pt_BR
+    SUBDIR += ispell-pt_BR
+    SUBDIR += kde3-i18n
+    SUBDIR += kde3-i18n-pt_BR
+    SUBDIR += koffice-i18n
+    SUBDIR += koffice-i18n-pt_BR
+    SUBDIR += netscape7
+    SUBDIR += ooodict-pt_BR
+    SUBDIR += ooodict-pt_PT
+    SUBDIR += openoffice-1.0
+    SUBDIR += openoffice-1.1-pt_BR
+    SUBDIR += openoffice-1.1-pt_PT
+    SUBDIR += staroffice52
+    SUBDIR += webalizer-pt_BR
+    SUBDIR += webalizer-pt_PT
+
+.include <bsd.port.subdir.mk>

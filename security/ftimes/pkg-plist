@@ -1,0 +1,7 @@
+bin/ftimes
+etc/digfull.cfg.sample
+etc/diglean.cfg.sample
+etc/get.cfg.sample
+etc/mapfull.cfg.sample
+etc/maplean.cfg.sample
+etc/put.cfg.sample

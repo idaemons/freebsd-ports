@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Math/Currency.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Currency/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Currency

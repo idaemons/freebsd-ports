@@ -2,15 +2,27 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.1.1.1 1995/01/03 08:48:44 swallace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       xpipeman
-MASTER_SITES=	ftp://iraun1.ira.uka.de/pub/x11/
+PORTNAME=	xpipeman
+PORTVERSION=	1.0
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	games/strategy
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Connect the pipes to stop the leaks
+
+# LP64 issues
+ONLY_FOR_ARCHS=	i386
+
 USE_IMAKE=	yes
+MAN6=		xpipeman.6
+
+post-install:
+	${INSTALL} -c -g games -m 664 ${FILESDIR}/xpipescores ${PREFIX}/lib/X11
 
 .include <bsd.port.mk>
-
-install:
-	install -c -g games -m 664 ${.CURDIR}/files/xpipescores /usr/X11R6/lib/X11

@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Locale/Maketext.pm
+%%SITE_PERL%%/Locale/Maketext.pod
+%%SITE_PERL%%/Locale/Maketext/Guts.pm
+%%SITE_PERL%%/Locale/Maketext/GutsLoader.pm
+%%SITE_PERL%%/Locale/Maketext/TPJ13.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Maketext/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Maketext
+@dirrm %%SITE_PERL%%/Locale/Maketext
+@unexec rmdir %D/%%SITE_PERL%%/Locale 2>/dev/null || true

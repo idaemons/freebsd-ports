@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+%%YULE%%etc/yulerc.sample
+%%YULE%%sbin/yule_setpwd
+%%YULE%%sbin/yule
+%%YULE%%etc/rc.d/yule.sh.sample
+%%YULE%%@unexec rmdir /var/lib/yule 2>/dev/null || true
+%%SAMHAIN%%sbin/samhain
+%%SAMHAIN%%etc/rc.d/samhain.sh.sample
+%%SAMHAIN%%etc/samhainrc.sample
+%%SAMHAIN%%@unexec rmdir /var/lib/samhain 2>/dev/null || true
+%%SETPWD%%sbin/samhain_setpwd
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL-1_8.ps
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL-1_8.html.tar
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO-client+server.html
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO-samhain+GnuPG.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

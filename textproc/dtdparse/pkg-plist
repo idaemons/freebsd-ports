@@ -1,0 +1,26 @@
+bin/contentmodel
+bin/dtdflatten
+bin/dtdformat
+bin/dtdparse
+bin/dtdstats
+bin/elements
+%%SITE_PERL%%/XML/DTDParse/Catalog.pm
+%%SITE_PERL%%/XML/DTDParse/ContentModel.pm
+%%SITE_PERL%%/XML/DTDParse/DTD.pm
+%%SITE_PERL%%/XML/DTDParse/Tokenizer.pm
+%%SITE_PERL%%/XML/DTDParse/html.pl
+%%SITE_PERL%%/XML/DTDParse/plain.pl
+%%SITE_PERL%%/XML/DTDParse/refentry.pl
+@dirrm %%SITE_PERL%%/XML/DTDParse
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+share/xml/dtdparse/catalog
+share/xml/dtdparse/dtd.dtd
+@dirrm share/xml/dtdparse
+%%EXAMPLESDIR%%/sample.dtd
+%%EXAMPLESDIR%%/sample.mod
+%%EXAMPLESDIR%%/simple-inline.mod
+%%EXAMPLESDIR%%/simple.dtd
+@dirrm %%EXAMPLESDIR%%
+%%DOCSDIR%%/README
+%%DOCSDIR%%/WhatsNew
+@dirrm %%DOCSDIR%%

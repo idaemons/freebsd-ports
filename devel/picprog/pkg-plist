@@ -1,0 +1,7 @@
+bin/picprog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/anybrowser3.gif
+%%PORTDOCS%%%%DOCSDIR%%/jdm84pcb3.gif
+%%PORTDOCS%%%%DOCSDIR%%/jdm84new.gif
+%%PORTDOCS%%%%DOCSDIR%%/picprog.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

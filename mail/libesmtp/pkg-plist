@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+bin/libesmtp-config
+include/auth-client.h
+include/auth-plugin.h
+include/libesmtp.h
+lib/esmtp-plugins/sasl-cram-md5.so
+lib/esmtp-plugins/sasl-login.so
+lib/esmtp-plugins/sasl-ntlm.so
+lib/esmtp-plugins/sasl-plain.so
+@dirrm lib/esmtp-plugins
+lib/libesmtp.a
+lib/libesmtp.so
+lib/libesmtp.so.6
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/Notes
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/mail-file.c
+%%EXAMPLESDIR%%/test-mail
+@dirrm %%EXAMPLESDIR%%

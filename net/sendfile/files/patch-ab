@@ -1,0 +1,96 @@
+--- develop/install.orig	Mon Mar  5 23:27:57 2001
++++ develop/install	Mon Mar  5 23:34:38 2001
+@@ -82,7 +82,6 @@
+   make_man fetchfile 7 $manmisc
+   make_man sendfiled 8 $manadmin
+   cp doc/wlock.1 doc/utf7encode.1 $MANDIR/man1
+-  (cd $MANDIR/man1; ln -s utf7encode.1 utf7decode.1 2>/dev/null)
+ }
+ 
+ SYSTEM=$1
+@@ -165,14 +164,6 @@
+ To deinstall the sendfile-daemon, simply type: 	rm -f $SERVERDIR/sendfiled
+ 
+ EOD
+-echo 'If you are satisfied with these defaults, then type "ok" now:'
+-read answer
+-if [ "$answer" != ok ]; then
+-  echo
+-  echo "You can install sendfile manually, too. Please type: more doc/README"
+-  echo
+-  exit
+-fi
+ 
+ umask 022
+ 
+@@ -250,6 +241,23 @@
+   fi
+ fi
+ 
++if [ -z "$BATCH" ] ; then
++echo ''
++echo 'I would now configure and start your sendfiled.'
++echo 'If you do not like this, enter "no" here'
++read answer
++fi
++if [ "$answer" = no ]; then
++  echo
++  echo "Things left to do if you want to start sendfiled:"
++  echo 
++  echo " - Maybe add 'saft	487/tcp' to /etc/services (prior to FreeBSD-4)"
++  echo " - Add sendfiled to /etc/inetd.conf and killall -HUP inetd"
++  echo " - Add 'test -x $BINDIR/check_sendfile && $BINDIR/check_sendfile'"
++  echo "   to /etc/profile and /etc/csh.login"
++  echo
++else
++
+ if [ "$SYSTEM" = NEXT ]; then
+   SERVICE="`nidump services . | awk '/[ \t]487\/tcp/'`"
+ else
+@@ -266,7 +274,6 @@
+     echo "saft	487/tcp		# simple asynchronous file transfer" | niload services .
+   else
+     echo "configuring $SERVICES"
+-    echo "#" >>$SERVICES
+     echo "saft	487/tcp		# simple asynchronous file transfer" >>$SERVICES
+   fi
+ fi
+@@ -279,8 +286,6 @@
+   fi
+   RESTART=true
+   echo "configuring $INETDCONF"
+-  echo "#" >>$INETDCONF
+-  echo "# simple asynchronous file transfer" >>$INETDCONF
+   echo "saft	stream	tcp	nowait	root	$SFD" >>$INETDCONF
+ fi
+ 
+@@ -308,6 +313,8 @@
+   fi
+ fi
+ 				
++fi
++				
+ if [ ! -d "$SPOOL/OUTGOING" ]; then
+   echo "creating $SPOOL"
+   mkdir_recursive $SPOOL/OUTGOING
+@@ -344,15 +351,12 @@
+ EOD
+ fi
+ 
+-echo
+-echo "You may want to add the following line to your system bootup script:"
+-echo "    $SERVERDIR/sendfiled -Q"
+-echo "This will start an outgoing spooling sendfile daemon on boot time"
+-echo "which processes any old files in the outgoing spool."
+-echo
++echo "[ -x $SERVERDIR/sendfiled ] && $SERVERDIR/sendfiled -Q && echo -n ' sendfiled'">${PREFIX}/etc/rc.d/sendfiled.sh
++chmod a+x ${PREFIX}/etc/rc.d/sendfiled.sh
+ 
+ if [ "$RESTART" = true ]; then
+-  echo
+-  echo "please restart now your inetd ( or simply reboot :-) )"
++  kill -HUP `cat /var/run/inetd.pid`
+   echo
+ fi
++[ -f $SERVERDIR/sendfiled.old ] && rm -f $SERVERDIR/sendfiled.old
++echo done.

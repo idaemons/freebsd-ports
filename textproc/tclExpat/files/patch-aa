@@ -1,0 +1,331 @@
+--- tclexpat.c.orig	Sat Aug 22 00:35:44 1998
++++ tclexpat.c	Fri Aug 23 14:18:22 2002
+@@ -18,8 +18,9 @@
+  *
+  */
+ 
++#include <string.h>
+ #include <tcl.h>
+-#include "xmlparse.h"
++#include "expat.h"
+ 
+ /*
+  * The structure below is used to refer to an expat parser object.
+@@ -72,32 +73,32 @@
+ 				       int objc,
+ 				       Tcl_Obj *CONST objv[]));
+ 
+-static void * (TclExpatElementStartHandler) _ANSI_ARGS_((void *userdata,
++static void (TclExpatElementStartHandler) _ANSI_ARGS_((void *userdata,
+ 							 const XML_Char *name,
+ 							 const XML_Char **atts));
+-static void * (TclExpatElementEndHandler) _ANSI_ARGS_((void *userData,
++static void (TclExpatElementEndHandler) _ANSI_ARGS_((void *userData,
+ 						       const XML_Char *name));
+-static void * (TclExpatCharacterDataHandler) _ANSI_ARGS_((void *userData,
++static void (TclExpatCharacterDataHandler) _ANSI_ARGS_((void *userData,
+ 							  const XML_Char *s,
+ 							  int len));
+-static void * (TclExpatProcessingInstructionHandler) _ANSI_ARGS_((void *userData,
++static void (TclExpatProcessingInstructionHandler) _ANSI_ARGS_((void *userData,
+ 								  const XML_Char *target,
+ 								  const XML_Char *data));
+-static void * (TclExpatExternalEntityRefHandler) _ANSI_ARGS_((XML_Parser parser,
++static int (TclExpatExternalEntityRefHandler) _ANSI_ARGS_((XML_Parser parser,
+ 							      const XML_Char *openEntityNames,
+ 							      const XML_Char *base,
+ 							      const XML_Char *systemId,
+ 							      const XML_Char *publicId));
+-static void * (TclExpatDefaultHandler) _ANSI_ARGS_ ((void *userData,
++static void (TclExpatDefaultHandler) _ANSI_ARGS_ ((void *userData,
+ 						     const XML_Char *s,
+ 						     int len));
+-static void * (TclExpatUnparsedDeclHandler) _ANSI_ARGS_ ((void *userData,
++static void (TclExpatUnparsedDeclHandler) _ANSI_ARGS_ ((void *userData,
+ 							  const XML_Char *entityname,
+ 							  const XML_Char *base,
+ 							  const XML_Char *systemId,
+ 							  const XML_Char *publicId,
+ 							  const XML_Char *notationName));
+-static void * (TclExpatNotationDeclHandler) _ANSI_ARGS_ ((void *userData,
++static void (TclExpatNotationDeclHandler) _ANSI_ARGS_ ((void *userData,
+ 							  const XML_Char *notationName,
+ 							  const XML_Char *base,
+ 							  const XML_Char *systemId,
+@@ -106,7 +107,7 @@
+ 							 const XML_Char *name,
+ 							 XML_Encoding *info));
+ 
+-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
++#if (TCL_MAJOR_VERSION >= 8) && !defined(Tcl_GetString)
+ 
+ /*
+  *----------------------------------------------------------------------------
+@@ -134,7 +135,7 @@
+   s = Tcl_GetStringFromObj(obj, &i);
+   return s;
+ }
+-#endif /* TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0 */
++#endif /* TCL_MAJOR_VERSION >= 8 */
+ 
+ /*
+  *----------------------------------------------------------------------------
+@@ -267,7 +268,6 @@
+      Tcl_Interp *interp;
+      TclExpatInfo *expat;
+ {
+-  int len;
+ 
+   if (!(expat->parser = XML_ParserCreate(NULL))) {
+     Tcl_SetResult(interp, "unable to create expat parser", NULL);
+@@ -284,22 +284,22 @@
+    */
+ 
+   XML_SetElementHandler(expat->parser,
+-			(XML_StartElementHandler) TclExpatElementStartHandler,
+-			(XML_EndElementHandler) TclExpatElementEndHandler);
++			TclExpatElementStartHandler,
++			TclExpatElementEndHandler);
+   XML_SetCharacterDataHandler(expat->parser,
+-			      (XML_CharacterDataHandler) TclExpatCharacterDataHandler);
++			      TclExpatCharacterDataHandler);
+   XML_SetProcessingInstructionHandler(expat->parser,
+-				      (XML_ProcessingInstructionHandler) TclExpatProcessingInstructionHandler);
++				      TclExpatProcessingInstructionHandler);
+   XML_SetDefaultHandler(expat->parser,
+-			(XML_DefaultHandler) TclExpatDefaultHandler);
++			TclExpatDefaultHandler);
+   XML_SetUnparsedEntityDeclHandler(expat->parser,
+-				   (XML_UnparsedEntityDeclHandler) TclExpatUnparsedDeclHandler);
++				   TclExpatUnparsedDeclHandler);
+   XML_SetNotationDeclHandler(expat->parser,
+-			     (XML_NotationDeclHandler) TclExpatNotationDeclHandler);
++			     TclExpatNotationDeclHandler);
+   XML_SetExternalEntityRefHandler(expat->parser,
+-				  (XML_ExternalEntityRefHandler) TclExpatExternalEntityRefHandler);
++				  TclExpatExternalEntityRefHandler);
+   XML_SetUnknownEncodingHandler(expat->parser,
+-				(XML_UnknownEncodingHandler) TclExpatUnknownEncodingHandler,
++				TclExpatUnknownEncodingHandler,
+ 				(void *) expat);
+   XML_SetUserData(expat->parser,
+ 		  (void *) expat);
+@@ -327,7 +327,6 @@
+ TclExpatFreeParser(expat)
+      TclExpatInfo *expat;
+ {
+-  int len;
+ 
+   XML_ParserFree(expat->parser);
+   expat->parser = NULL;
+@@ -357,7 +356,7 @@
+      Tcl_Obj *CONST objv[];
+ {
+   TclExpatInfo *expat = (TclExpatInfo *) clientData;
+-  char *method, *data;
++  char *data;
+   int len, index, result = TCL_OK;
+   static char *options[] = {
+     "configure", "cget", "parse", "reset", NULL
+@@ -795,7 +794,7 @@
+  *----------------------------------------------------------------------------
+  */
+ 
+-static void *
++static void
+ TclExpatElementStartHandler(userData, name, atts)
+      void *userData;
+      const char *name;
+@@ -847,7 +846,7 @@
+    * It would be desirable to be able to terminate parsing
+    * if the return result is TCL_ERROR or TCL_BREAK.
+    */
+-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
++#if (TCL_MAJOR_VERSION >= 8)
+   result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
+ #else
+   result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
+@@ -877,7 +876,7 @@
+  *----------------------------------------------------------------------------
+  */
+ 
+-static void *
++static void
+ TclExpatElementEndHandler(userData, name)
+      void *userData;
+      CONST char *name;
+@@ -917,7 +916,7 @@
+    * It would be desirable to be able to terminate parsing
+    * if the return result is TCL_ERROR or TCL_BREAK.
+    */
+-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
++#if (TCL_MAJOR_VERSION >= 8)
+   result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
+ #else
+   result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
+@@ -947,7 +946,7 @@
+  *----------------------------------------------------------------------------
+  */
+ 
+-static void *
++static void
+ TclExpatCharacterDataHandler(userData, s, len)
+      void *userData;
+      CONST char *s;
+@@ -976,7 +975,7 @@
+    * It would be desirable to be able to terminate parsing
+    * if the return result is TCL_ERROR or TCL_BREAK.
+    */
+-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
++#if (TCL_MAJOR_VERSION >= 8)
+   result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
+ #else
+   result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
+@@ -1006,7 +1005,7 @@
+  *----------------------------------------------------------------------------
+  */
+ 
+-static void *
++static void
+ TclExpatProcessingInstructionHandler(userData, target, data)
+      void *userData;
+      CONST char *target;
+@@ -1036,7 +1035,7 @@
+    * It would be desirable to be able to terminate parsing
+    * if the return result is TCL_ERROR or TCL_BREAK.
+    */
+-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
++#if (TCL_MAJOR_VERSION >= 8)
+   result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
+ #else
+   result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
+@@ -1066,7 +1065,7 @@
+  *----------------------------------------------------------------------------
+  */
+ 
+-static void *
++static void
+ TclExpatDefaultHandler(userData, s, len)
+      void *userData;
+      CONST char *s;
+@@ -1095,7 +1094,7 @@
+    * It would be desirable to be able to terminate parsing
+    * if the return result is TCL_ERROR or TCL_BREAK.
+    */
+-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
++#if (TCL_MAJOR_VERSION >= 8)
+   result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
+ #else
+   result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
+@@ -1125,7 +1124,7 @@
+  *----------------------------------------------------------------------------
+  */
+ 
+-static void *
++static void
+ TclExpatUnparsedDeclHandler(userData, entityname, base, systemId, publicId, notationName)
+      void *userData;
+      CONST char *entityname;
+@@ -1169,7 +1168,7 @@
+    * It would be desirable to be able to terminate parsing
+    * if the return result is TCL_ERROR or TCL_BREAK.
+    */
+-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
++#if (TCL_MAJOR_VERSION >= 8)
+   result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
+ #else
+   result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
+@@ -1199,7 +1198,7 @@
+  *----------------------------------------------------------------------------
+  */
+ 
+-static void *
++static void
+ TclExpatNotationDeclHandler(userData, notationName, base, systemId, publicId)
+      void *userData;
+      CONST char *notationName;
+@@ -1241,7 +1240,7 @@
+    * It would be desirable to be able to terminate parsing
+    * if the return result is TCL_ERROR or TCL_BREAK.
+    */
+-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
++#if (TCL_MAJOR_VERSION >= 8)
+   result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
+ #else
+   result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
+@@ -1279,15 +1278,18 @@
+      XML_Encoding *info;
+ {
+   TclExpatInfo *expat = (TclExpatInfo *) encodingHandlerData;
++#if 0
+   Tcl_Obj *cmdPtr;
+   int result;
++#endif
+ 
+   Tcl_SetResult(expat->interp, "not implemented", NULL);
+-  return 0;
++  return 1;
+ 
++#if 0
+   if (expat->unknownencodingcommand == NULL ||
+       expat->status != TCL_OK) {
+-    return;
++    return 1;
+   }
+ 
+   /*
+@@ -1306,7 +1308,7 @@
+    * It would be desirable to be able to terminate parsing
+    * if the return result is TCL_ERROR or TCL_BREAK.
+    */
+-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
++#if (TCL_MAJOR_VERSION >= 8)
+   result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
+ #else
+   result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
+@@ -1317,7 +1319,8 @@
+ 
+   TclExpatHandlerResult(expat, result);
+ 
+-  return;
++  return 0;
++#endif
+ }
+ 
+ /*
+@@ -1336,7 +1339,7 @@
+  *----------------------------------------------------------------------------
+  */
+ 
+-static void *
++static int
+ TclExpatExternalEntityRefHandler(parser, openEntityNames, base, systemId, publicId)
+      XML_Parser parser;
+      CONST char *openEntityNames;
+@@ -1350,7 +1353,7 @@
+ 
+   if (expat->externalentitycommand == NULL ||
+       expat->status != TCL_OK) {
+-    return;
++    return 0;
+   }
+ 
+   /*
+@@ -1370,7 +1373,7 @@
+    * It would be desirable to be able to terminate parsing
+    * if the return result is TCL_ERROR or TCL_BREAK.
+    */
+-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
++#if (TCL_MAJOR_VERSION >= 8)
+   result = Tcl_GlobalEvalObj(expat->interp, cmdPtr);
+ #else
+   result = Tcl_EvalObj(expat->interp, cmdPtr, TCL_EVAL_GLOBAL);
+@@ -1381,7 +1384,7 @@
+ 
+   TclExpatHandlerResult(expat, result);
+ 
+-  return;
++  return 1;
+ }
+ 
+ /*

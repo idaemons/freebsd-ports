@@ -1,0 +1,8 @@
+bin/khacc
+bin/khacc-gui
+share/apps/khacc/khaccui.rc
+share/doc/HTML/en/khacc/common
+share/doc/HTML/en/khacc/index.cache.bz2
+share/doc/HTML/en/khacc/index.docbook
+@dirrm share/doc/HTML/en/khacc
+@dirrm share/apps/khacc

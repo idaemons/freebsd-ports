@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Mail/Cclient.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Mail/Cclient.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Cclient/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Cclient/Cclient.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Cclient/Cclient.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Cclient
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Mail 2>/dev/null || true

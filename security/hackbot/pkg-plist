@@ -1,0 +1,5 @@
+bin/hackbot.pl
+share/hackbot/google.db
+share/hackbot/fingerprint.db
+share/hackbot/cgi.db
+@dirrm share/hackbot

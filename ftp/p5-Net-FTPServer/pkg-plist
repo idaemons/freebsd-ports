@@ -1,0 +1,45 @@
+%%SITE_PERL%%/Net/FTPServer.pm
+%%SITE_PERL%%/Net/FTPServer/DBeg1/DirHandle.pm
+%%SITE_PERL%%/Net/FTPServer/DBeg1/FileHandle.pm
+%%SITE_PERL%%/Net/FTPServer/DBeg1/IOBlob.pm
+%%SITE_PERL%%/Net/FTPServer/DBeg1/Server.pm
+%%SITE_PERL%%/Net/FTPServer/DirHandle.pm
+%%SITE_PERL%%/Net/FTPServer/FileHandle.pm
+%%SITE_PERL%%/Net/FTPServer/Full/DirHandle.pm
+%%SITE_PERL%%/Net/FTPServer/Full/FileHandle.pm
+%%SITE_PERL%%/Net/FTPServer/Full/Server.pm
+%%SITE_PERL%%/Net/FTPServer/Handle.pm
+%%SITE_PERL%%/Net/FTPServer/InMem/DirHandle.pm
+%%SITE_PERL%%/Net/FTPServer/InMem/FileHandle.pm
+%%SITE_PERL%%/Net/FTPServer/InMem/Server.pm
+%%SITE_PERL%%/Net/FTPServer/RO/DirHandle.pm
+%%SITE_PERL%%/Net/FTPServer/RO/FileHandle.pm
+%%SITE_PERL%%/Net/FTPServer/RO/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer/.packlist
+sbin/dbeg1-ftpd.pl
+sbin/ftpd.pl
+sbin/inmem-ftpd.pl
+sbin/ro-ftpd.pl
+%%PORTDOCS%%share/doc/Net-FTPServer/FAQ
+%%PORTDOCS%%share/doc/Net-FTPServer/README
+%%PORTDOCS%%share/doc/Net-FTPServer/TODO
+%%PORTDOCS%%share/doc/Net-FTPServer/archives.txt
+%%PORTDOCS%%share/doc/Net-FTPServer/eg1-psql63.sql
+%%PORTDOCS%%share/doc/Net-FTPServer/eg1.sql
+%%PORTDOCS%%share/doc/Net-FTPServer/modules.txt
+%%PORTDOCS%%share/doc/Net-FTPServer/press1.0.txt
+%%PORTDOCS%%share/doc/Net-FTPServer/rfcs.txt
+%%PORTDOCS%%share/doc/Net-FTPServer/roadmap-1.2.txt
+%%PORTDOCS%%share/doc/Net-FTPServer/safesignals.txt
+%%PORTDOCS%%share/doc/Net-FTPServer/sharedstate.txt
+share/examples/Net-FTPServer/ftpd.conf
+@dirrm share/examples/Net-FTPServer
+%%PORTDOCS%%@dirrm share/doc/Net-FTPServer
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null
+@dirrm %%SITE_PERL%%/Net/FTPServer/RO
+@dirrm %%SITE_PERL%%/Net/FTPServer/InMem
+@dirrm %%SITE_PERL%%/Net/FTPServer/Full
+@dirrm %%SITE_PERL%%/Net/FTPServer/DBeg1
+@dirrm %%SITE_PERL%%/Net/FTPServer
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null

@@ -1,0 +1,57 @@
+bin/gcl
+lib/gcl-%%GCL_VER%%/cmpnew/cmpmain.lsp
+lib/gcl-%%GCL_VER%%/cmpnew/cmpopt.lsp
+lib/gcl-%%GCL_VER%%/cmpnew/collectfn.o
+lib/gcl-%%GCL_VER%%/cmpnew/lfun_list.lsp
+lib/gcl-%%GCL_VER%%/gcl-tk/decode.tcl
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/gc-monitor.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/gc-monitor.o
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/index.lsp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkBasic.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkCanvText.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkEntry.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkEntry2.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkForm.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkHScale.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkItems.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkLabel.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkListbox.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkPlot.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkRadio.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkRuler.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkSearch.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkStyles.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkTextBind.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkVScale.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkdialog.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/nqthm-stack.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/showVars.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/widget.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/gcl.tcl
+lib/gcl-%%GCL_VER%%/gcl-tk/gcltkaux
+lib/gcl-%%GCL_VER%%/gcl-tk/gcltksrv
+lib/gcl-%%GCL_VER%%/gcl-tk/tinfo.o
+lib/gcl-%%GCL_VER%%/gcl-tk/tk-package.lsp
+lib/gcl-%%GCL_VER%%/gcl-tk/tkl.o
+lib/gcl-%%GCL_VER%%/h/cmpinclude.h
+lib/gcl-%%GCL_VER%%/lsp/auto_new.lsp
+lib/gcl-%%GCL_VER%%/lsp/autoload.lsp
+lib/gcl-%%GCL_VER%%/lsp/export.lsp
+lib/gcl-%%GCL_VER%%/lsp/gprof.lsp
+lib/gcl-%%GCL_VER%%/lsp/info.o
+lib/gcl-%%GCL_VER%%/lsp/profile.lsp
+lib/gcl-%%GCL_VER%%/lsp/readline.o
+lib/gcl-%%GCL_VER%%/unixport/init_ansi_gcl.lsp
+lib/gcl-%%GCL_VER%%/unixport/libansi_gcl.a
+lib/gcl-%%GCL_VER%%/unixport/libgclp.a
+lib/gcl-%%GCL_VER%%/unixport/rsym
+lib/gcl-%%GCL_VER%%/unixport/saved_ansi_gcl
+@dirrm lib/gcl-%%GCL_VER%%/cmpnew
+@dirrm lib/gcl-%%GCL_VER%%/gcl-tk/demos
+@dirrm lib/gcl-%%GCL_VER%%/gcl-tk
+@dirrm lib/gcl-%%GCL_VER%%/h
+@dirrm lib/gcl-%%GCL_VER%%/lsp
+@dirrm lib/gcl-%%GCL_VER%%/unixport
+@dirrm lib/gcl-%%GCL_VER%%
+share/nls/POSIX
+share/nls/en_US.US-ASCII

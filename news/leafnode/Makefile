@@ -1,0 +1,78 @@
+# ports collection Makefile for: leafnode
+# Whom:			Brian Somers <brian@FreeBSD.org>
+# Date created:		1997-06-27
+#
+# $FreeBSD$
+#
+
+PORTNAME=	leafnode
+PORTVERSION=	1.9.45
+CATEGORIES=	news ipv6
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sourceforge/} \
+		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
+		${MASTER_SITE_SUNSITE:S/$/:sunsite/}
+MASTER_SITE_SUBDIR=	${PORTNAME}/:sourceforge \
+			./:DEFAULT \
+			system/news/transport/:sunsite
+DISTNAME=	${PORTNAME}-${PORTVERSION}.rel
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sourceforge,sunsite,DEFAULT
+
+MAINTAINER=	matthias.andree@gmx.de
+COMMENT=	NNTP package for offline news caching and reading
+
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
+.if exists(/var/spool/news) && !defined(PACKAGE_BUILDING)
+LEAFNODE_SPOOLDIR?=/var/spool/news
+.endif
+LEAFNODE_SPOOLDIR?=${PREFIX}/var/spool/leafnode
+PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc/leafnode \
+		--with-lockfile=${LEAFNODE_SPOOLDIR}/leaf.node/lock.file \
+		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAKE_ARGS=
+PKGMESSAGE=	${WRKSRC}/pkg-message
+
+MAN1=		leafnode-version.1 newsq.1
+MAN8=		applyfilter.8 checkgroups.8 fetchnews.8 leafnode.8 texpire.8
+MANLANG=	"" de.ISO8859-1
+MAN1DIR_DE=	${MAN1PREFIX}/man/de.ISO8859-1/man1
+MAN8DIR_DE=	${MAN8PREFIX}/man/de.ISO8859-1/man8
+
+DOCS=		ADD-ONS ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
+		INSTALL NEWS README ChangeLog.old README-FQDN README-FQDN.html \
+		README-daemontools README.FIRST TODO leafnode.cron.daily \
+		leafnode-SA-2002-01 leafnode-SA-2003-01 KNOWNBUGS
+DOCS_DE=	INSTALL_de LIESMICH-daemontools README README_de
+
+pre-configure:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "------------------------------------------------------------------------"
+	@${ECHO_MSG} "This port will use ${LEAFNODE_SPOOLDIR} as spool directory."
+	@${ECHO_MSG} "Use LEAFNODE_SPOOLDIR=d to specify d as spool directory."
+	@${ECHO_MSG} "------------------------------------------------------------------------"
+	@${ECHO_MSG}
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/quickmkdir ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${PREFIX}/sbin/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/german
+	cd ${WRKSRC}/doc_german && ${INSTALL_DATA} ${DOCS_DE} ${DOCSDIR}/german
+.endif
+	${MKDIR} ${MAN1DIR_DE} ${MAN8DIR_DE}
+	cd ${WRKSRC}/doc_german && \
+	${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/de.ISO8859-1/man1 && \
+	${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/de.ISO8859-1/man8
+	@${SED} 's:%%DOCSDIR%%:${DOCSDIR}:g' ${FILESDIR}/pkg-message.in >${PKGMESSAGE}
+	PKG_PREFIX=${PREFIX} SPOOLDIR=${LEAFNODE_SPOOLDIR} \
+		${SH} pkg-install ${PORTNAME} POST-INSTALL
+	${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

@@ -1,0 +1,23 @@
+--- man/Makefile.in.orig	Sun Jun 15 01:14:43 2003
++++ man/Makefile.in	Tue Jun 17 01:14:37 2003
+@@ -216,18 +216,9 @@
+ 
+ AUTOMAKE_OPTIONS = gnu
+ 
+-man_MANS = \
+- medcon.1 \
+- xmedcon.1 \
+- xmedcon-config.1 \
+- medcon.3 \
+- m-acr.4 \
+- m-anlz.4 \
+- m-ecat.4 \
+- m-gif.4 \
+- m-intf.4 \
+- m-inw.4
++@DO_XSUPPORT_TRUE@man_MANS = medcon.1 xmedcon.1 xmedcon-config.1 medcon.3 m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
+ 
++@DO_XSUPPORT_FALSE@man_MANS = medcon.1 xmedcon-config.1 medcon.3 m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
+ 
+ EXTRA_DIST = $(man_MANS)
+ subdir = man

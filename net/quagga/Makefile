@@ -1,0 +1,154 @@
+# New ports collection makefile for:    quagga
+# Date created:         3 September 2003
+# Whom:                 Bruce M Simpson <bms@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	quagga
+PORTVERSION=	0.96.4
+PORTREVISION=	3
+CATEGORIES=	net ipv6
+MASTER_SITES=	http://quagga.net/download/
+
+PATCH_SITES=	http://quagga.net/
+PATCHFILES=	quagga-bgp_route-wspace.diff
+
+MAINTAINER=	boris@tagnet.ru
+COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
+
+CONFLICTS=	zebra-devel-* zebra-0*
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_SUBMAKE=	yes
+WANT_AUTOCONF_VER=	253
+WANT_AUTOMAKE_VER=	15
+AUTOMAKE_ARGS= -a -i
+
+MAN1=		vtysh.1
+MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
+
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include/quagga
+SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX} WITH_SNMP_4=${WITH_SNMP_4} \
+		SYSCONF_DIR=${SYSCONF_DIR} SYSSTATE_DIR=${SYSSTATE_DIR} \
+		ENABLE_USER=${ENABLE_USER} ENABLE_GROUP=${ENABLE_GROUP}
+
+pre-fetch:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.quagga
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
+.if ${CONFIGURE_ARGS:M--enable-opaque-lsa} != ""
+PLIST_SUB+=	OSPFAPI_HEADER="include/quagga/ospfapi/ospf_apiclient.h"
+PLIST_SUB+=	OSPFAPI_PATH="@dirrm include/quagga/ospfapi"
+.else
+PLIST_SUB+=	OSPFAPI_HEADER=
+PLIST_SUB+=	OSPFAPI_PATH=
+.endif
+
+.if !defined(ENABLE_USER)
+ENABLE_USER=quagga
+.endif
+.if !defined(ENABLE_GROUP)
+ENABLE_GROUP=quagga
+.endif
+
+CONFIGURE_ARGS+=--enable-user=${ENABLE_USER}
+CONFIGURE_ARGS+=--enable-group=${ENABLE_GROUP}
+
+.if !defined(SYSCONF_DIR)
+SYSCONF_DIR=${PREFIX}/etc/quagga
+.endif
+.if !defined(LOCALSTATE_DIR)
+LOCALSTATE_DIR=/var/run/quagga
+.endif
+
+CONFIGURE_ARGS+=--sysconfdir=${SYSCONF_DIR}
+CONFIGURE_ARGS+=--localstatedir=${LOCALSTATE_DIR}
+
+.if defined(ENABLE_VTY_GROUP)
+CONFIGURE_ARGS+=--enable-vty-group=${ENABLE_VTY_GROUP}
+.endif
+
+CONFIGURE_ARGS+=--enable-vtysh
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500038
+RC_SUBR?=	${DESTDIR}/etc/rc.subr
+RC_DIR=		${DESTDIR}/etc/rc.d
+RC_SUFX=
+.else
+USE_RC_SUBR=	yes
+RC_DIR=		${PREFIX}/etc/rc.d
+RC_SUFX=	.sh
+.endif
+
+QUAGGA_SCRIPTS=	zebra ripd ripngd ospfd ospf6d bgpd
+
+SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%SYSCONF_DIR%%,${SYSCONF_DIR},g' \
+		-e 's,%%LOCALSTATE_DIR%%,${LOCALSTATE_DIR},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		-e 's,%%RC_DIR%%,${RC_DIR},g' \
+		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
+
+PLIST_SUB+=	RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX} \
+		LOCALSTATE_DIR=${LOCALSTATE_DIR} \
+		ENABLE_USER=${ENABLE_USER} \
+		ENABLE_GROUP=${ENABLE_GROUP}
+
+pre-everything::
+	@${ECHO} "============================================================="
+	@${ECHO}
+	@${ECHO} "You can build ${PORTNAME} with the following options:"
+	@${ECHO}
+	@${ECHO} "WITH_SNMP_4       Force net-snmp 4.x to be used"
+	@${ECHO} "ENABLE_USER       Specify user to run Quagga suite as"
+	@${ECHO} "ENABLE_GROUP      Specify group to run Quagga suite as"
+	@${ECHO} "ENABLE_VTY_GROUP  Specify group for vty socket ownership"
+	@${ECHO} "SYSCONF_DIR       Specify directory for Quagga configuration files"
+	@${ECHO} "LOCALSTATE_DIR    Specify directory for Quagga runtime files"
+	@${ECHO}
+	@${ECHO} "The following options may be configured interactively:"
+	@${ECHO} "QUAGGA_OPTIONS    Specify additional switches, including:"
+	@${ECHO} "   LIBPAM           PAM authentication for vtysh"
+	@${ECHO} "   OSPF_NSSA        NSSA support (RFC1587)"
+	@${ECHO} "   OSPF_OPAQUE_LSA  OSPF Opaque-LSA with OSPFAPI support (RFC2370)"
+	@${ECHO} "   RTADV            IPv6 Router Advertisements"
+	@${ECHO} "   SNMP             SNMP support"
+	@${ECHO} "   TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
+
+pre-configure:
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} )
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOHEADER_ENV} ${AUTOHEADER} \
+		${AUTOHEADER_ARGS})
+	-@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${AUTOMAKE} \
+		${AUTOMAKE_ARGS})
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
+		${AUTOCONF_ARGS})
+
+post-build:
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/quagga.sh > ${WRKDIR}/quagga.sh
+
+post-install:
+	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${ECHO} "===>     installing ${PORTNAME} startup file..."
+	@${ECHO} "Add the folliwing lines to /etc/rc.conf to enable quagga:"
+	@${ECHO} ""
+	@${ECHO} "defaultrouter=\"NO\""
+	@${ECHO} "quagga_enable=\"YES\""
+	@${ECHO} "Also You may want to set router_enable=\"NO\""
+	@${ECHO} ""
+	@${INSTALL_SCRIPT} ${WRKDIR}/quagga.sh ${RC_DIR}/quagga${RC_SUFX}
+
+.if !defined(BATCH)
+post-clean:
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+.endif
+
+.include <bsd.port.post.mk>
