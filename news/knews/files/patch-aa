@@ -1,0 +1,11 @@
+--- configure.h.orig	Sun Aug 18 21:11:26 1996
++++ configure.h	Mon May  5 01:09:11 1997
+@@ -14,7 +14,7 @@
+  *
+  *  If you don't have sendmail, use /bin/false :-).
+  */
+-/* #define MAIL_COMMAND "/usr/sbin/sendmail -t" */
++#define MAIL_COMMAND "/usr/sbin/sendmail -t"
+ /* #define MAIL_COMMAND "/usr/lib/sendmail -t"  */
+ 
+ 

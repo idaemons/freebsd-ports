@@ -1,0 +1,34 @@
+--- Makefile.orig	Tue Jun 10 13:09:55 1997
++++ Makefile	Wed Sep 17 06:33:48 1997
+@@ -15,7 +15,7 @@
+ 
+ LIBFILE =	libmimekit.a
+ 
+-CFLAGS =	-O
++CFLAGS +=	-O
+ TARGET =	all
+ target:		$(TARGET)
+ libx:		Makefile.go
+@@ -58,7 +58,8 @@
+ 
+ MMDIR =		../../../src
+ MMSDIR =	../
+-INSTDIR =	/usr/local/lib
++PREFIX ?= /usr/local
++INSTDIR =	${PREFIX}/lib
+ 
+ LOCALFILES =	README \
+ 		README.LIB \
+@@ -154,9 +155,9 @@
+ 		enMime deMime bench.o test.out sample.out
+ 
+ install:	fromMime toMime $(LIBFILE)
+-		install -o bin -g bin -m 755 fromMime $(INSTDIR)
+-		install -o bin -g bin -m 755 toMime $(INSTDIR)
+-		install -o root -g staff -m 644 $(LIBFILE) $(INSTDIR)
++		install -s -c -o bin -g bin -m 755 fromMime $(INSTDIR)
++		install -s  -c -o bin -g bin -m 755 toMime $(INSTDIR)
++		install -c -o bin -g bin -m 644 $(LIBFILE) $(INSTDIR)
+ 		-$(RANLIB) $(INSTDIR)/$(LIBFILE)
+ 
+ config.h:;	$(LKFILE) $(MMDIR)/config.h .

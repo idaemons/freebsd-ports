@@ -1,7 +1,8 @@
-@cwd /usr/local
-libexec/nntpd
-man/man8/nntpd.8c
-man/man8/mkgrdates.8c
-man/man1/nntpxmit.1
-bin/nntpxmit
-bin/shlock	#just in case anyone wants it
+sbin/nntpd
+man/man8/nntpd.8c.gz
+man/man8/mkgrdates.8c.gz
+man/man1/nntpxmit.1.gz
+news/cnewsbin/nntpxmit
+news/cnewsbin/nntpxfer
+@comment     just in case anyone wants it
+news/cnewsbin/shlock

@@ -1,13 +1,100 @@
-# $Id: Makefile,v 1.44 1995/01/06 05:42:02 jkh Exp $
+# $Id: Makefile,v 1.157 1997/10/07 04:30:56 obrien Exp $
 #
-SUBDIR= Xaw3d color_xterm ctwm emu fvwm kterm olvwm piewm rxvt tk \
-	tkhfs tkman tvtwm x3270 xearth xfed xlockmore xsnow \
-	xview-config xview-lib xview-clients
 
-#
-# These depend on tk, so might as well build tk first...
-# (And vic depends on blt.)
-#
-SUBDIR+= blt vic
+    SUBDIR += FWF
+    SUBDIR += XFree86
+    SUBDIR += XFree86-contrib
+    SUBDIR += Xaw3d
+    SUBDIR += afterstep
+    SUBDIR += auis
+    SUBDIR += bclock
+    SUBDIR += blast
+    SUBDIR += blt
+    SUBDIR += bricons
+    SUBDIR += camltk41
+    SUBDIR += ctwm
+    SUBDIR += dclock
+    SUBDIR += emiclock
+    SUBDIR += emu
+    SUBDIR += enlightenment
+    SUBDIR += etlfonts
+    SUBDIR += explorer
+    SUBDIR += fbsd-icons
+    SUBDIR += filerunner
+    SUBDIR += freefonts
+    SUBDIR += fvwm
+    SUBDIR += fvwm2
+    SUBDIR += fvwm2-english
+    SUBDIR += fvwm95
+    SUBDIR += getbdf
+    SUBDIR += gtk
+    SUBDIR += gwm
+    SUBDIR += iv
+    SUBDIR += lesstif
+    SUBDIR += libdnd
+    SUBDIR += libsx
+    SUBDIR += lupe
+    SUBDIR += mlvwm
+    SUBDIR += mouseclock
+    SUBDIR += neXtaw
+    SUBDIR += olvwm
+    SUBDIR += p5-Tcl-Tk
+    SUBDIR += p5-Tk
+    SUBDIR += piewm
+    SUBDIR += pythonqt
+    SUBDIR += qt
+    SUBDIR += qvwm
+    SUBDIR += rclock
+    SUBDIR += rxvt
+    SUBDIR += sliderule
+    SUBDIR += slingshot
+    SUBDIR += swisswatch
+    SUBDIR += sxpc
+    SUBDIR += tix
+    SUBDIR += tk41
+    SUBDIR += tk42
+    SUBDIR += tk80
+    SUBDIR += tkdesk
+    SUBDIR += tkgoodstuff
+    SUBDIR += tvtwm
+    SUBDIR += viewfax
+    SUBDIR += wm2
+    SUBDIR += x3270
+    SUBDIR += xalarm
+    SUBDIR += xantfarm
+    SUBDIR += xautolock
+    SUBDIR += xbuffy
+    SUBDIR += xcb
+    SUBDIR += xco
+    SUBDIR += xcoloredit
+    SUBDIR += xcolors
+    SUBDIR += xdaliclock
+    SUBDIR += xdtm
+    SUBDIR += xfce
+    SUBDIR += xfed
+    SUBDIR += xfedor
+    SUBDIR += xfishtank
+    SUBDIR += xfm
+    SUBDIR += xforms
+    SUBDIR += xgrab
+    SUBDIR += xkeycaps
+    SUBDIR += xloadimage
+    SUBDIR += xlockmore
+    SUBDIR += xmascot
+    SUBDIR += xmbdfed
+    SUBDIR += xmold
+    SUBDIR += xpostit
+    SUBDIR += xpostitPlus
+    SUBDIR += xprompt
+    SUBDIR += xscreensaver
+    SUBDIR += xskyroot
+    SUBDIR += xsnow
+    SUBDIR += xtacy
+    SUBDIR += xtestpicture
+    SUBDIR += xtoolwait
+    SUBDIR += xview-clients
+    SUBDIR += xview-config
+    SUBDIR += xview-lib
+    SUBDIR += xzoom
 
 .include <bsd.port.subdir.mk>

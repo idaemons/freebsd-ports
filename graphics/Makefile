@@ -1,6 +1,71 @@
-# $Id: Makefile,v 1.1.1.1 1995/01/13 11:11:29 jkh Exp $
+# $Id: Makefile,v 1.53 1997/09/28 13:25:40 markm Exp $
 #
-SUBDIR=	mpeg-lib mpeg_play netpbm povray jpeg tiff xanim xli xfig \
-	xpaint xpm xv
+
+    SUBDIR += ImageMagick
+    SUBDIR += Mesa
+    SUBDIR += aero
+    SUBDIR += camediaplay
+    SUBDIR += dc3play
+    SUBDIR += dore
+    SUBDIR += fxtv
+    SUBDIR += gd
+    SUBDIR += geomview
+    SUBDIR += gfont
+    SUBDIR += giflib
+    SUBDIR += gifmerge
+    SUBDIR += giftool
+    SUBDIR += giftrans
+    SUBDIR += gimp
+    SUBDIR += gimp-devel
+    SUBDIR += hobbes-icons-xpm
+    SUBDIR += hpscan
+    SUBDIR += imlib
+    SUBDIR += jbigkit
+    SUBDIR += jpeg
+    SUBDIR += mpeg-lib
+    SUBDIR += mpeg2codec
+    SUBDIR += mpeg2play
+    SUBDIR += mpeg_encode
+    SUBDIR += mpeg_play
+    SUBDIR += mpeg_stat
+    SUBDIR += mpegedit
+    SUBDIR += mplex
+    SUBDIR += netpbm
+    SUBDIR += p5-GD
+    SUBDIR += p5-Image-Size
+    SUBDIR += pgperl
+    SUBDIR += pgplot
+    SUBDIR += photopc
+    SUBDIR += pixmap
+    SUBDIR += plotmtv
+    SUBDIR += png
+    SUBDIR += povray
+    SUBDIR += qvplay
+    SUBDIR += sced
+    SUBDIR += spigot
+    SUBDIR += splitmpg
+    SUBDIR += tgif
+    SUBDIR += tiff
+    SUBDIR += tiff34
+    SUBDIR += txtmerge
+    SUBDIR += urt
+    SUBDIR += vcg
+    SUBDIR += whirlgif
+    SUBDIR += xanim
+    SUBDIR += xaos
+    SUBDIR += xbmbrowser
+    SUBDIR += xdl
+    SUBDIR += xfig
+    SUBDIR += xfractint
+    SUBDIR += xgrasp
+    SUBDIR += xli
+    SUBDIR += xmandel
+    SUBDIR += xmfract
+    SUBDIR += xmorph
+    SUBDIR += xmountains
+    SUBDIR += xpaint
+    SUBDIR += xpdf
+    SUBDIR += xpm
+    SUBDIR += xv
 
 .include <bsd.port.subdir.mk>

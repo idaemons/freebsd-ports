@@ -1,0 +1,44 @@
+--- Makefile.orig	Thu Aug 28 00:56:21 1997
++++ Makefile	Wed Sep 10 00:56:08 1997
+@@ -12,22 +12,22 @@
+ #
+  
+ # Put the location of your Perl binary here:
+-PERL = /bin/perl
++PERL = /usr/bin/perl
+ 
+ # What do you call your C compiler?
+ CC = cc
+  
+ # Where do you want Majordomo to be installed?  This CANNOT be the
+ # current directory (where you unpacked the distribution)
+-W_HOME = /usr/test/majordomo-$(VERSION)
++W_HOME = ${PREFIX}/majordomo
+  
+ # Where do you want man pages to be installed?
+-MAN = $(W_HOME)/man
++MAN = ${PREFIX}/man
+  
+ # You need to have or create a user and group which majordomo will run as.
+ # Enter the numeric UID and GID (not their names!) here:
+-W_USER = 123
+-W_GROUP = 45
++W_USER = %%MJUID%%
++W_GROUP = %%MJGID%%
+ 
+ # These set the permissions for all installed files and executables (except
+ # the wrapper), respectively.  Some sites may wish to make these more
+@@ -62,11 +62,11 @@
+ # parent process, and without the leading "W_" in the variable names) gets
+ # passed to processes run by "wrapper"
+ W_SHELL = /bin/sh
+-W_PATH = /bin:/usr/bin:/usr/ucb
++W_PATH = /bin:/usr/bin
+ W_MAJORDOMO_CF = $(W_HOME)/majordomo.cf
+ 
+ # A directory for temp files..
+-TMPDIR = /usr/tmp
++TMPDIR ?= /var/tmp
+ 
+ #--------YOU SHOULDN'T HAVE TO CHANGE ANYTHING BELOW THIS LINE.-------------
+ 

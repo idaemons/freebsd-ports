@@ -1,0 +1,34 @@
+bin/analog
+share/doc/analog/Readme.html
+share/doc/analog/Licence
+share/doc/analog/analogform.html
+lib/analog/domains.tab
+lib/analog/primes.tab
+lib/analog/analog.cfg
+www/cgi-bin/analform.cgi
+www/data/images/analogo.gif
+www/data/images/bar1.gif
+www/data/images/bar16.gif
+www/data/images/bar2.gif
+www/data/images/bar32.gif
+www/data/images/bar4.gif
+www/data/images/bar8.gif
+www/data/images/html2.gif
+lib/analog/lang/danisha.lng
+lib/analog/lang/danishh.lng
+lib/analog/lang/englisha.lng
+lib/analog/lang/englishh.lng
+lib/analog/lang/frencha.lng
+lib/analog/lang/frenchh.lng
+lib/analog/lang/germana.lng
+lib/analog/lang/germanh.lng
+lib/analog/lang/italiana.lng
+lib/analog/lang/italianh.lng
+lib/analog/lang/spanisha.lng
+lib/analog/lang/spanishh.lng
+lib/analog/lang/usenga.lng
+lib/analog/lang/usengh.lng
+@dirrm lib/analog/lang
+@dirrm lib/analog
+@dirrm www/data/images
+@dirrm share/doc/analog

@@ -1,0 +1,48 @@
+--- aclocal.m4.orig	Tue Oct 14 20:48:14 1997
++++ aclocal.m4	Tue Oct 14 20:49:02 1997
+@@ -48,7 +48,7 @@
+ 
+ AC_DEFUN(AM_PROG_INSTALL,
+ [AC_REQUIRE([AC_PROG_INSTALL])
+-test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
++test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -c -m 755'
+ AC_SUBST(INSTALL_SCRIPT)dnl
+ ])
+ 
+--- configure.in.orig	Tue Oct 14 20:50:42 1997
++++ configure.in	Tue Oct 14 20:50:51 1997
+@@ -185,7 +185,7 @@
+ fi
+ 
+ gimpdatadir=$datadir/$PACKAGE/$VERSION
+-gimpplugindir=$libdir/$PACKAGE/$VERSION
++gimpplugindir=$libexecdir/$PACKAGE/$VERSION
+ 
+ scriptdata=`ls -1 plug-ins/script-fu/scripts | grep -v Makefile`
+ scriptdata=`echo $scriptdata`
+--- configure.orig	Wed Oct  1 12:51:27 1997
++++ configure	Tue Oct 14 21:28:44 1997
+@@ -615,12 +615,12 @@
+ 
+ # Use test -z because SunOS4 sh mishandles braces in ${var-val}.
+ # It thinks the first close brace ends the variable substitution.
+-test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
++test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL} -c -s -m 755'
+ 
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 
+ 
+-test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
++test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -c -m 755'
+ 
+ 
+ PACKAGE=gimp
+@@ -3692,7 +3692,7 @@
+ fi
+ 
+ gimpdatadir=$datadir/$PACKAGE/$VERSION
+-gimpplugindir=$libdir/$PACKAGE/$VERSION
++gimpplugindir=$libexecdir/$PACKAGE/$VERSION
+ 
+ scriptdata=`ls -1 plug-ins/script-fu/scripts | grep -v Makefile`
+ scriptdata=`echo $scriptdata`

@@ -1,0 +1,137 @@
+*** adcomplain.pl.orig	Wed Oct  8 02:02:29 1997
+--- adcomplain.pl	Wed Oct  8 02:13:15 1997
+***************
+*** 1,4 ****
+! #! /bin/sh -- # -*- perl -*-
+! eval 'exec perl $0 ${1+"$@"}'
+! if 0;
+  
+--- 1,2 ----
+! #!/usr/bin/perl
+  
+***************
+*** 172,178 ****
+  $noinclude = 1;
+  
+  # comment this if your mailer automatically adds your .signature
+! $addsig = 1;
+  
+  # this is the default name of the file to use for the complaint text
+  # if the file name is empty, the default text will be used
+--- 170,176 ----
+  $noinclude = 1;
+  
+  # comment this if your mailer automatically adds your .signature
+! $addsig = 0;
+  
+  # this is the default name of the file to use for the complaint text
+  # if the file name is empty, the default text will be used
+***************
+*** 180,186 ****
+  
+  # this is the name of the mail utility (see sendmail(8) man page)
+  # type "which sendmail" to find out where sendmail is on your system
+! $mailcmd = "/usr/lib/sendmail -t";
+  
+  # this is a list of domain names for your system (e.g., "compuserve.com")
+  # Names in this list are considered "friendly".  Including your own system
+--- 178,184 ----
+  
+  # this is the name of the mail utility (see sendmail(8) man page)
+  # type "which sendmail" to find out where sendmail is on your system
+! $mailcmd = "/usr/sbin/sendmail -t";
+  
+  # this is a list of domain names for your system (e.g., "compuserve.com")
+  # Names in this list are considered "friendly".  Including your own system
+***************
+*** 198,207 ****
+  # If you have external executables that allow you to confirm host
+  # addresses and names (i.e., gethostbyaddr and gethostbyname don't do it),
+  # put them here, otherwise leave them empty.
+! #$GETHOSTBYNAME = "";
+! #$GETHOSTBYADDR = "";
+! $GETHOSTBYNAME = "gethostbyname";
+! $GETHOSTBYADDR = "gethostbyaddr";
+  
+  # Well, it works at GemStone.  Your mileage may vary :-(.
+  #if (-x "/bin/remsh") { # HP-UX
+--- 196,205 ----
+  # If you have external executables that allow you to confirm host
+  # addresses and names (i.e., gethostbyaddr and gethostbyname don't do it),
+  # put them here, otherwise leave them empty.
+! $GETHOSTBYNAME = "";
+! $GETHOSTBYADDR = "";
+! #$GETHOSTBYNAME = "gethostbyname";
+! #$GETHOSTBYADDR = "gethostbyaddr";
+  
+  # Well, it works at GemStone.  Your mileage may vary :-(.
+  #if (-x "/bin/remsh") { # HP-UX
+***************
+*** 315,321 ****
+    }
+  
+  # Make sure critical messages are seen
+! if ($poster eq "" || $complain_to eq "") {
+    print "Press enter to continue.... ";
+    $ans = <STDIN>;
+    }
+--- 313,319 ----
+    }
+  
+  # Make sure critical messages are seen
+! if (!$quiet && ($poster eq "" || $complain_to eq "")) {
+    print "Press enter to continue.... ";
+    $ans = <STDIN>;
+    }
+***************
+*** 381,386 ****
+--- 379,387 ----
+    $cc = "$complain_to$cc";
+    }
+  $header .= "Cc: $cc\n" if $cc ne "";
++ if ($quiet) {
++   print "$header";
++ }
+  $subject = "no subject" if $subject eq "";
+  $header .= "Subject: ";
+  if ($recipient == $complain_to_only) {
+***************
+*** 406,411 ****
+--- 407,413 ----
+  close TEXTFILE;
+  $response = ""; # garbage collection
+  
++ if (!$quiet) {
+  ## print copy of message on terminal
+  print "\n";
+  $pager = $ENV{"PAGER"};
+***************
+*** 440,445 ****
+--- 442,451 ----
+    } # for
+  
+  print "\n";
++ } else {
++     system "$mailcmd <$tempname"; # Unix dependent
++     print "sent\n";
++ }
+  unlink $tempname;
+  close STDIN;
+  exit 0;
+***************
+*** 685,691 ****
+    local ($probe, $each, $result);
+  
+    $probe = $text;
+!   $probe =~ s/^\s*(\S\S\S).*/$1/;
+    foreach $each ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat",  "Sun") {
+      return 1 if $each =~ /$probe/i;
+      }
+--- 691,697 ----
+    local ($probe, $each, $result);
+  
+    $probe = $text;
+!   $probe =~ s/^\s*(\w\w\w).*/$1/;
+    foreach $each ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat",  "Sun") {
+      return 1 if $each =~ /$probe/i;
+      }

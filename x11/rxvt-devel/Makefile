@@ -1,21 +1,23 @@
 # New ports collection Makefile for: rxvt
-# Version required:	2.09
-# Date created:		5th December 1994
-# Whom:			gpalmer@FreeBSD.org
+# Version required:	2.20
+# Date created:         5th December 1994
+# Whom:                 gpalmer@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1995/01/15 06:43:05 gpalmer Exp $
+# $Id: Makefile,v 1.12 1997/03/07 12:24:55 obrien Exp $
 #
 
-DISTNAME=	rxvt-2.09
-USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/rxvt
-PREFIX=		/usr/X11R6
-MASTER_SITES=	ftp://iraun1.ira.uka.de/pub/x11/misc/
-MAINTAINER=	gpalmer@FreeBSD.ORG
+DISTNAME=	rxvt-2.20
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
+		ftp://ftp.nuclecu.unam.mx/linux/local/rxvt/  \
+		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin.X11/
+MASTER_SITE_SUBDIR=	utils/file/managers/mc/rxvt
+#MASTER_SITE_SUBDIR=	X11/xutils/terms
 
-# Get rid of the rclock directory until I can figure out how to patch
-# that up also and make it!
-pre-configure:
-	@/bin/rm -rf ${WRKDIR}/rclock
+MAINTAINER=	winter@jurai.net
+
+USE_X11=	yes
+GNU_CONFIGURE=  yes
+MAN1=		rxvt.1
 
 .include <bsd.port.mk>

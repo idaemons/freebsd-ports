@@ -1,0 +1,4 @@
+bin/tua
+man/man1/tua.1.gz
+info/tua.info
+lib/tua.pcd

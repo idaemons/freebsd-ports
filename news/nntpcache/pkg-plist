@@ -1,0 +1,9 @@
+etc/nntpcache/access
+etc/nntpcache/config
+etc/nntpcache/servers
+etc/nntpcache/spam.filter
+etc/rc.d/nntpcached.sh
+sbin/nntpcached
+man/man8/nntpcache.8.gz
+@dirrm etc/nntpcache
+@unexec rm -rf /var/spool/nntpcache

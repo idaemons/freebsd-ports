@@ -1,0 +1,7 @@
+The GNU ada compiler Gnat 3.09 built on GCC 2.7.2.1.
+
+The libraries supplied with this version of GNAT support tasking if
+minor modifications are made to FreeBSD's libc_r.
+
+Maurice Castro
+maurice@serc.rmit.edu.au

@@ -1,16 +1,23 @@
-This is Wnn4.2, a Japanese/Chinese/Korean input method.  It is
-included primarily so that we can compile mule-2.1, a multilingual
-emacs.
+This has include files (e.g. wnn/commonhd.h) and a library file
+(libwnn.a) to build Wnn6 clients. The files are included in
 
-Since I don't have time to test anything else, only Japanese is built
-at this time.  (Or I won't get it on the 2.0 CDROM!)  Also, jserver
-doesn't seem to work well so it's temporarily disabled too.  Take a
-look at the file patches/patch-aa and change them back if you want to
-try others.
+ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk/FreeBSD-2.2R.tar.gz.
 
-Note that binaries and libraries go to /usr/local, while man pages and 
-includes go to /usr/X11R6.  That's the way it was designed, I don't
-know why.
+It is treated as a free software, so this package is, too. But a
+server of Wnn6, whose name is jserver, is not, and you must buy it
+from Omron Software Co., Ltd.
 
-- Satoshi
-(asami@cs.berkeley.edu)
++------------------------------------------+
+| URL:	   http://www.omronsoft.co.jp      |
+| E-mail:  wnn-info@omronsoft.co.jp        |
+| TEL:     +81-44-246-6006                 |
+| FAX:     +81-44-246-6011                 |
++------------------------------------------+
+
+Wnn6 is one of Japanese input methods. 'Wnn6 for Linux/FreeBSD' is
+supported an only Japanese method. However, Wnn4.2 which is free is
+supported Chinese and Korean ones, too.
+
+
+- S. Taoka
+taoka@infonets.hiroshima-u.ac.jp

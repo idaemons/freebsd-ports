@@ -1,0 +1,35 @@
+# New ports collection makefile for:   xsokoban
+# Version required:    3.3b
+# Date created:        16 November 1996
+# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
+#
+# $Id: Makefile,v 1.1.1.1 1996/11/20 07:06:58 tg Exp $
+#
+
+DISTNAME=	xsokoban-3.3b
+CATEGORIES=	games
+MASTER_SITES=   ftp://ftp.pmg.lcs.mit.edu/pub/xsokoban/
+
+MAINTAINER=     Nakai@Mlab.t.u-tokyo.ac.jp
+
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+
+USE_IMAKE=	yes
+WRKSRC=		${WRKDIR}/xsokoban
+ALL_TARGET=	xsokoban	
+
+post-install:
+	@${MKDIR} ${PREFIX}/lib/X11/xsokoban/scores \
+		${PREFIX}/lib/X11/xsokoban/bitmaps/defaults \
+		${PREFIX}/lib/X11/xsokoban/saves \
+		${PREFIX}/lib/X11/xsokoban/screens
+	@chmod 777 ${PREFIX}/lib/X11/xsokoban/scores
+	@chmod 775 ${PREFIX}/lib/X11/xsokoban/saves
+	@${INSTALL_DATA} ${WRKSRC}/screens/* ${PREFIX}/lib/X11/xsokoban/screens
+	@${INSTALL_DATA} ${WRKSRC}/bitmaps/defaults/* \
+		${PREFIX}/lib/X11/xsokoban/bitmaps/defaults
+	@echo "First, type: 'xsokoban -c' to make score files."
+	@echo "You must be the superuser 'root', and enter password 'score'."
+	@echo
+
+.include <bsd.port.mk>

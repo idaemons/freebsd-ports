@@ -1,0 +1,19 @@
+*** doc/Makefile.orig	Sat Apr  5 03:00:23 1997
+--- doc/Makefile	Sat Apr  5 03:00:48 1997
+***************
+*** 26,32 ****
+  
+  all:
+  
+! doc-all: mgetty.asc mgetty.info mgetty.dvi mgetty.ps fmt-manpages $(MANSRC) 
+  
+  manpages: $(MANSRC)
+  
+--- 26,32 ----
+  
+  all:
+  
+! doc-all: mgetty.asc mgetty.info fmt-manpages $(MANSRC) 
+  
+  manpages: $(MANSRC)
+  

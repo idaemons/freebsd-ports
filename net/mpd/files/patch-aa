@@ -1,0 +1,19 @@
+*** Makefile	Mon Aug 18 02:12:35 1997
+--- /home/andy/tmp/wrk/Makefile	Wed Sep 10 13:06:30 1997
+***************
+*** 15,21 ****
+  
+  # Default configuration directory
+  
+! MPD_CONF_DIR?=	${PREFIX}/etc/ppp
+  
+  # Define supported physical layer types
+  
+--- 15,21 ----
+  
+  # Default configuration directory
+  
+! MPD_CONF_DIR?=	${PREFIX}/etc/mpd
+  
+  # Define supported physical layer types
+  

@@ -1,0 +1,76 @@
+*** analhead.h.orig	Fri Mar 14 20:33:09 1997
+--- analhead.h	Wed May  7 23:27:03 1997
+***************
+*** 14,25 ****
+  /* the name of your organisation or WWW host. This is used for printing
+     at the top of the output */
+  
+! #define HOSTURL "http://www.statslab.cam.ac.uk/"
+  /* the URL of your host's home page, for linking to at the top of the
+     output; use "-" for no linking. */
+  
+! #define HTTPDIR "/usr/local/etc/httpd/"
+! #define ANALOGDIR HTTPDIR "analog/"
+  /* The directories where your HTTP stuff lives and where your analog stuff
+     lives. You don't really need these; they are just used in this file to
+     build up other filenames. Note how you can stick together names by
+--- 14,24 ----
+  /* the name of your organisation or WWW host. This is used for printing
+     at the top of the output */
+  
+! #define HOSTURL "-"
+  /* the URL of your host's home page, for linking to at the top of the
+     output; use "-" for no linking. */
+  
+! #define ANALOGDIR "/usr/local/lib/analog/"
+  /* The directories where your HTTP stuff lives and where your analog stuff
+     lives. You don't really need these; they are just used in this file to
+     build up other filenames. Note how you can stick together names by
+***************
+*** 30,36 ****
+  /* the name of the file where the domain definitions live; see README.html
+     for the format of this file */
+  
+! #define LOGFILE HTTPDIR "logs/access_log"
+  /* The name of the default logfile; use "stdin" for stdin.
+     Can be a list, separated by commas (but no spaces). */
+  
+--- 29,35 ----
+  /* the name of the file where the domain definitions live; see README.html
+     for the format of this file */
+  
+! #define LOGFILE "/var/log/httpd-access.log"
+  /* The name of the default logfile; use "stdin" for stdin.
+     Can be a list, separated by commas (but no spaces). */
+  
+***************
+*** 93,106 ****
+  #define CACHEFILE "none"
+  /* The default file of cached time info. Use "none" for none. */
+  
+! #define REFERRER_LOG HTTPDIR "logs/referer_log"
+  /* The name of the default referrer log (= referer_log). Use "none" for none.
+     Can be a list, separated by commas. */
+  
+! #define BROWSER_LOG HTTPDIR "logs/agent_log"
+  /* The name of the default browser log (= agent_log) similarly. */
+  
+! #define ERROR_LOG HTTPDIR "logs/error_log"
+  /* The name of the default error_log similarly. */
+  
+  #define NUMLOOKUP (OFF)
+--- 92,105 ----
+  #define CACHEFILE "none"
+  /* The default file of cached time info. Use "none" for none. */
+  
+! #define REFERRER_LOG "none"
+  /* The name of the default referrer log (= referer_log). Use "none" for none.
+     Can be a list, separated by commas. */
+  
+! #define BROWSER_LOG "none"
+  /* The name of the default browser log (= agent_log) similarly. */
+  
+! #define ERROR_LOG "/var/log/httpd-error.log"
+  /* The name of the default error_log similarly. */
+  
+  #define NUMLOOKUP (OFF)

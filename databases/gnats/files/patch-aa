@@ -1,0 +1,47 @@
+Use the FSF m4 instead of the BSD m4, because the BSD m4 is reporting problems
+processing config.c.in.
+
+--- Makefile.in	Mon Aug 18 14:52:43 1997
++++ Makefile.in	Tue Aug 26 14:14:44 1997
+@@ -68,7 +68,7 @@
+ HOST_PREFIX_1 = loser-
+ 
+ # These flag values are normally overridden by the configure script.
+-CFLAGS = -g
++CFLAGS+= -g
+ CXXFLAGS = -g -O2
+ 
+ LIBCFLAGS = $(CFLAGS)
+@@ -121,7 +121,7 @@
+ 
+ M4 = `if [ -f $$r/m4/m4 ] ; \
+ 	then echo $$r/m4/m4 ; \
+-	else echo m4 ; fi`
++	else echo gm4 ; fi`
+ 
+ MAKEINFO = `if [ -f $$r/texinfo/makeinfo/Makefile ] ; \
+ 	then echo $$r/texinfo/makeinfo/makeinfo ; \
+
+The top level Makefile overrides the use of BISON to just "bison" instead
+of bison -y, so use YACC, since that's what we're trying to define anyway.
+
+--- gnats/Makefile.in	Mon Aug 18 14:52:44 1997
++++ gnats/Makefile.in	Tue Aug 26 14:45:55 1997
+@@ -118,7 +118,7 @@
+ # Set RANLIB = echo if your system doesn't have or need ranlib.
+ RANLIB = @RANLIB@
+ 
+-BISON = @YACC@
++YACC = @YACC@
+ DIFFOPT = @DIFFOPT@
+ 
+ # These are set by autoconf.
+@@ -435,7 +435,7 @@
+ 
+ getdate.c: getdate.y
+ 	@echo expect 10 shift/reduce conflicts
+-	$(BISON) -d $(srcdir)/getdate.y
++	$(YACC) -d $(srcdir)/getdate.y
+ 	mv y.tab.c getdate.c
+ 	mv y.tab.h getdate.h
+ 

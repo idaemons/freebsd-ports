@@ -1,0 +1,7 @@
+*** vt.tcl.orig	Tue Jun  3 15:28:43 1997
+--- vt.tcl	Tue Jun  3 15:28:58 1997
+***************
+*** 1,1 ****
+! #!/usr/bin/wish -f
+--- 1,1 ----
+! #!/usr/local/bin/wish8.0 -f
