@@ -1,0 +1,11 @@
+--- include/config.h.orig	Mon Jan  6 01:59:44 1997
++++ include/config.h	Sat Jan 25 12:38:37 1997
+@@ -499,7 +499,7 @@
+ /* CF 0.91.6 - SAVE_PLAYER now standard part of game */
+ /*#define SAVE_PLAYER*/
+ 
+-/* #define SAVE_HOMEDIR */
++#define SAVE_HOMEDIR
+ /* #define LOCK_PLAYER */
+ #define USE_CHECKSUM
+ /* #define ENABLE_CHECKSUM */ /* Will be default in distant future versions */

@@ -1,0 +1,12 @@
+sbin/RunCache
+sbin/RunAccel
+sbin/squid
+sbin/client
+sbin/dnsserver
+sbin/ftpget
+sbin/pinger
+sbin/cachemgr.cgi
+etc/squid/squid.conf.default
+etc/rc.d/squid.sh
+@exec mkdir -p %D/squid/cache
+@exec mkdir -p %D/squid/logs

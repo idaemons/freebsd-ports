@@ -1,12 +1,16 @@
-DISTFILES= 1587.Z 1588.Z 1589.Z
-MASTER_SITES=   ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/
-DISTNAME=       g3view
-EXTRACT_CMD=    (cd ${WRKDIR}; gzcat | awk '{if (/^\#!/) x++} {if(x) print $$0'}| /bin/sh)
-EXTRACT_ARGS=   <
-NO_WRKSUBDIR=   YES
+# New ports collection makefile for:    viewfax
+# Version required:     2.2
+# Date created:         16 sept 1995
+# Whom:                 jmz
+#
+# $Id: Makefile,v 1.6 1995/09/28 02:01:52 jmz Exp $
+#
+DISTNAME=        viewfax-2.2
+CATEGORIES=	x11
+MASTER_SITES=	ftp://ftp.leo.org/pub/comp/networking/communication/modem/mgetty/
 
-pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/man/man1
+USE_IMAKE=	yes
+
+MAINTAINER=	jmz@FreeBSD.org
 
 .include <bsd.port.mk>

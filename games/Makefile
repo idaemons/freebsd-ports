@@ -1,6 +1,75 @@
-# $Id: Makefile,v 1.5 1995/01/04 07:48:44 jkh Exp $
+# $Id: Makefile,v 1.61 1997/03/06 09:23:41 tg Exp $
 #
-SUBDIR= golddig jetpack oneko xasteroids xboard xchomp xinvaders xjewel \
-          xmille xmine xminesweep xmj xmris xpipeman xrobots xsol xtetris
+
+    SUBDIR += acm
+    SUBDIR += an
+    SUBDIR += angband
+    SUBDIR += cgoban
+    SUBDIR += crossfire
+    SUBDIR += doom
+    SUBDIR += flying
+    SUBDIR += gnuchess
+    SUBDIR += gnugo
+    SUBDIR += gnushogi
+    SUBDIR += golddig
+    SUBDIR += imaze
+    SUBDIR += jetpack
+    SUBDIR += lincity
+    SUBDIR += nethack
+    SUBDIR += oneko
+    SUBDIR += qcc
+    SUBDIR += quakeserver
+    SUBDIR += spider
+    SUBDIR += tksol
+    SUBDIR += xasteroids
+    SUBDIR += xbat
+    SUBDIR += xbill
+    SUBDIR += xblackjack
+    SUBDIR += xblast
+    SUBDIR += xboard
+    SUBDIR += xboing
+    SUBDIR += xchomp
+    SUBDIR += xcubes
+    SUBDIR += xdino
+    SUBDIR += xemeraldia
+    SUBDIR += xevil
+    SUBDIR += xeyesplus
+    SUBDIR += xgalaga
+    SUBDIR += xgammon
+    SUBDIR += xinvaders
+    SUBDIR += xjewel
+    SUBDIR += xkobo
+    SUBDIR += xlife
+    SUBDIR += xmahjongg
+    SUBDIR += xmille
+    SUBDIR += xmine
+    SUBDIR += xminehunter
+    SUBDIR += xminesweep
+    SUBDIR += xmj
+    SUBDIR += xmris
+    SUBDIR += xneko
+    SUBDIR += xonix
+    SUBDIR += xpacman
+    SUBDIR += xpat2
+    SUBDIR += xpilot
+    SUBDIR += xpipeman
+    SUBDIR += xpuyo
+    SUBDIR += xpuzzletama
+    SUBDIR += xripple
+    SUBDIR += xrisk
+    SUBDIR += xroach
+    SUBDIR += xrobots
+    SUBDIR += xrubik
+    SUBDIR += xshisen
+    SUBDIR += xshogi
+    SUBDIR += xskat
+    SUBDIR += xspringies
+    SUBDIR += xsokoban
+    SUBDIR += xsol
+    SUBDIR += xsoldier
+    SUBDIR += xtetris
+    SUBDIR += xtic
+    SUBDIR += xtriangles
+    SUBDIR += yamsweeper
 
 .include <bsd.port.subdir.mk>

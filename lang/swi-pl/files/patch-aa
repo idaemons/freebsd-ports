@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jan 21 01:23:04 1997
++++ Makefile.in	Mon Feb  3 05:47:28 1997
+@@ -288,7 +288,7 @@
+ 		-$(INSTALL_DATA) $(PLBASE)/man/$(PL).$(mansec) $(mandir)
+ 		-$(INSTALL_DATA) $(PLBASE)/man/chpl.$(mansec) $(mandir)
+ 		-$(INSTALL_DATA) $(PLBASE)/man/plld.$(mansec) $(mandir)
+-		-$(INSTALL_DATA) $(PLBASE)/man/readline.$(lmansec) $(lmandir)
++#		-$(INSTALL_DATA) $(PLBASE)/man/readline.$(lmansec) $(lmandir)
+  
+ #
+ # runtime-only environment installation

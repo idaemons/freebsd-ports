@@ -1,0 +1,41 @@
+--- perl.c.orig	Tue Feb 27 13:30:44 1996
++++ perl.c	Sun Jun  2 09:22:34 1996
+@@ -1606,10 +1606,10 @@
+ 	    (void)setegid(statbuf.st_gid);
+ #else
+ #ifdef HAS_SETREGID
+-           (void)setregid((Gid_t)-1,statbuf.st_gid);
++           (void)setregid((Gid_t)gid,statbuf.st_gid);
+ #else
+ #ifdef HAS_SETRESGID
+-           (void)setresgid((Gid_t)-1,statbuf.st_gid,(Gid_t)-1);
++           (void)setresgid((Gid_t)gid,statbuf.st_gid,(Gid_t)gid);
+ #else
+ 	    setgid(statbuf.st_gid);
+ #endif
+@@ -1624,10 +1624,10 @@
+ 		(void)seteuid(statbuf.st_uid);	/* all that for this */
+ #else
+ #ifdef HAS_SETREUID
+-                (void)setreuid((Uid_t)-1,statbuf.st_uid);
++                (void)setreuid((Uid_t)uid,statbuf.st_uid);
+ #else
+ #ifdef HAS_SETRESUID
+-                (void)setresuid((Uid_t)-1,statbuf.st_uid,(Uid_t)-1);
++                (void)setresuid((Uid_t)uid,statbuf.st_uid,(Uid_t)uid);
+ #else
+ 		setuid(statbuf.st_uid);
+ #endif
+@@ -1641,10 +1641,10 @@
+           (void)seteuid((Uid_t)uid);
+ #else
+ #ifdef HAS_SETREUID
+-          (void)setreuid((Uid_t)-1,(Uid_t)uid);
++          (void)setreuid((Uid_t)uid,(Uid_t)uid);
+ #else
+ #ifdef HAS_SETRESUID
+-          (void)setresuid((Uid_t)-1,(Uid_t)uid,(Uid_t)-1);
++          (void)setresuid((Uid_t)uid,(Uid_t)uid,(Uid_t)uid);
+ #else
+           setuid((Uid_t)uid);
+ #endif

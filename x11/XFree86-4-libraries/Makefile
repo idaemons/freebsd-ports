@@ -1,52 +1,45 @@
-DISTNAME	=	xc
-PKGNAME		= 	XFree86-3.1.1
-WRKDIR?=                ${.CURDIR}/work
-BUILD_COOKIE?=		${WRKDIR}/.build_done
-PATCH_STRIP	=	-p1
+# New ports collection makefile for:    XFree86
+# Version required:     3.2
+# Date created:         5 January 1995
+# Whom:                 jmz
+#
+# $Id: Makefile,v 1.28 1997/02/05 02:57:10 jmz Exp $
+#
 
-# uncomment one of the 2 lines below!
-#X11_ON_CDROM	=	yes
-X11_VIA_FTP	=	yes
+DISTNAME=	xc
+PKGNAME= 	XFree86-3.2
+CATEGORIES=	x11
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.2/source/ \
+		ftp://xfree86.cdrom.com/pub/XFree86/3.2/source/ \
+		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.2/source/ \
+		ftp://ftp.uni-stuttgart.de/pub/X11/Xfree86/3.2/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.2/source/
+DISTFILES=	X32src-1.tgz X32src-2.tgz
 
-#define this if you are short of space - save ~28 Mbytes
-#REMOVE_NOT_ESSENTIAL	=	yes
+PATCH_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.2/fixes/ \
+		ftp://xfree86.cdrom.com/pub/XFree86/3.2/fixes/ \
+		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.2/fixes/ \
+		ftp://ftp.uni-stuttgart.de/pub/X11/Xfree86/3.2/fixes/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.2/fixes/
+PATCHFILES=	3.2-fix-01
+PATCH_DIST_STRIP=	-p1
 
+MAINTAINER=	jmz@FreeBSD.ORG
 
-.if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
-build: configure ${BUILD_COOKIE}
+IS_INTERACTIVE=	yes	# configure script asks questions
+USE_X11=	yes
+ALL_TARGET=	World
+INSTALL_TARGET=	install install.man
+DIST_SUBDIR=	xc
 
-${BUILD_COOKIE}:
-	@echo "===>  Building for ${DISTNAME}"
-	@${MAKE} ${.MAKEFLAGS} pre-build
-.if defined(REMOVE_NOT_ESSENTIAL)
-	@rm -rf ${WRKSRC}/test ${WRKSRC}/doc/hardcopy ${WRKSRC}/doc/specs
-	@find ${WRKSRC}/ -name '*.orig' -exec rm -f {} ';'
-.endif
-	@(cd ${WRKSRC}; echo Good night...; make World)
-	@touch ${WRKDIR}/.build_done
+pre-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL \
+		${PKGNAME} PRE-INSTALL
 
-install:
-	@(cd ${WRKSRC}; make install; make install.man)
-	@touch ${WRKDIR}/.install_done
-.endif
+post-install:
+	if [ -e ${PREFIX}/bin/SuperProbe ]; then \
+		chmod u-s ${PREFIX}/bin/SuperProbe; \
+	fi
+	/sbin/ldconfig -m ${PREFIX}/lib
 
-.if defined(X11_ON_CDROM)
-.include "Makefile.cdrom"
-.elif defined(X11_VIA_FTP)
-.include "Makefile.ftp"
-.else
-all:
-	@echo -n
-fetch:
-	@echo -n
-extract:
-	@echo -n
-configure:
-	@echo -n
-build:
-	@echo -n
-install:
-	@echo -n
-.endif
-
-
+.include <bsd.port.mk>

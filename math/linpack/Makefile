@@ -1,14 +1,23 @@
+# New ports collection makefile for:    linpack
+# Version required:     ?
+# Date created:         31 October 1994
+# Whom:                 ljo
+#
+# $Id: Makefile,v 1.9 1996/03/10 09:01:03 asami Exp $
+#
+
 DISTNAME=	linpack
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
+PKGNAME=	linpack-1.0
+CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.att.com/netlib/linpack/
-.if defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/linpack/
-.undef MASTER_SITE_OVERRIDE
-.endif
-EXTRACT_CMD=scripts/uncomp
+
+DIST_SUBDIR=	${DISTNAME}
+
+EXTRACT_CMD=${.CURDIR}/scripts/uncomp
 EXTRACT_SUFX=.Z
 EXTRACT_ARGS= ${WRKDIR}
-WRKSRC=${WRKDIR}
+
+NO_WRKSUBDIR=	yes
 
 SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 	cgeco.f cgedi.f cgefa.f cgesl.f cgtsl.f chico.f chidi.f chifa.f \
@@ -42,5 +51,7 @@ pre-build:
 pre-extract:
 	chmod +x scripts/uncomp
 
-.include <bsd.port.mk>
+post-install:
+	ldconfig -m ${PREFIX}/lib
 
+.include <bsd.port.mk>

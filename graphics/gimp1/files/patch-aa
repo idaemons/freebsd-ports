@@ -1,0 +1,88 @@
+--- plug-ins/Makefile.in.orig	Thu Feb 27 05:41:52 1997
++++ plug-ins/Makefile.in	Thu Feb 27 08:46:09 1997
+@@ -28,6 +28,7 @@
+ 
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
++pkglibexecdir = $(libexecdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ 
+ top_builddir = ..
+@@ -58,7 +59,7 @@
+ X_LDFLAGS =
+ X_LIBS =
+ 
+-pluginlibdir = $(pkglibdir)/plug-ins
++pluginlibdir = $(pkglibexecdir)/plug-ins
+ 
+ pluginlib_PROGRAMS =	\
+ 	blur		\
+--- ./app/batch.c~	Mon Feb 24 14:38:51 1997
++++ ./app/batch.c	Wed Feb 26 08:51:05 1997
+@@ -3,7 +3,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
+-
++#include <errno.h>
+ #include "appenv.h"
+ #include "app_procs.h"
+ #include "batch.h"
+--- ./app/xcf.c~	Wed Feb 26 05:21:25 1997
++++ ./app/xcf.c	Wed Feb 26 09:07:30 1997
+@@ -1,3 +1,4 @@
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #include <stdarg.h>
+ #include <stdio.h>
+--- configure.orig	Thu Feb 27 09:55:32 1997
++++ configure	Thu Feb 27 09:55:40 1997
+@@ -609,7 +609,7 @@
+ 
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 
+-
++INSTALL_SCRIPT="/usr/bin/install -c -m 755"
+ test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
+ 
+ 
+@@ -2040,7 +2040,7 @@
+ CFLAGS="$OPTFLAG $CFLAGS"
+ 
+ gimpdatadir=$datadir/$PACKAGE
+-gimpplugindir=$libdir/$PACKAGE
++gimpplugindir=$libexecdir/$PACKAGE
+ 
+ 
+ 
+--- gtk+/configure.orig	Sun Mar  2 09:06:35 1997
++++ gtk+/configure	Sun Mar  2 09:06:48 1997
+@@ -570,6 +570,7 @@
+ # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
+ # ./install, which can be erroneously created by make from ./install.sh.
+ echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
++INSTALL="/usr/bin/install -c"
+ echo "configure:574: checking for a BSD compatible install" >&5
+ if test -z "$INSTALL"; then
+ if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
+--- gtk+/glib/configure.orig	Sun Mar  2 09:07:07 1997
++++ gtk+/glib/configure	Sun Mar  2 09:07:22 1997
+@@ -561,6 +561,7 @@
+ # ./install, which can be erroneously created by make from ./install.sh.
+ echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
+ echo "configure:564: checking for a BSD compatible install" >&5
++INSTALL="/usr/bin/install -c"
+ if test -z "$INSTALL"; then
+ if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+--- plug-ins/script-fu/Makefile.in.orig	Thu Feb 27 20:47:10 1997
++++ plug-ins/script-fu/Makefile.in	Thu Feb 27 20:46:30 1997
+@@ -59,7 +59,7 @@
+ 
+ SUBDIRS = scripts
+ 
+-pluginlibdir = $(pkglibdir)/plug-ins
++pluginlibdir = $(gimpplugindir)/plug-ins
+ 
+ pluginlib_PROGRAMS = script-fu
+

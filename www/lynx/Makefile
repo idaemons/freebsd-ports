@@ -1,16 +1,28 @@
 # New ports collection makefile for:    lynx
-# Version required:     2.3.7
+# http://www.crl.com/~subir/lynx.html
+# http://www.wfbr.edu/dir/lynx/
+# Version required:     2.7
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1995/01/13 13:14:51 jkh Exp $
+# $Id: Makefile,v 1.36 1997/02/04 10:17:14 ache Exp $
 #
 
-DISTNAME=       lynx2-3-7
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=   ftp://ukanaix.cc.ukans.edu/pub/lynx/lynx2-3-7/
-ALL_TARGET=     freebsd
-# Do not put USE_GMAKE here
-EXEC_DEPENDS+=               gmake:${PORTSDIR}/devel/gmake
+DISTNAME=       lynx2-7
+PKGNAME=        lynx-2.7
+CATEGORIES=	www
+MASTER_SITES=   http://www.slcc.edu/lynx/fote/ \
+		http://www.wfbr.edu/lynx/
+DISTFILES=      lynx2-7.zip 27bugfixes.zip
+
+MAINTAINER=	ache@FreeBSD.ORG
+
+BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
+
+WRKSRC=         ${WRKDIR}/lynx2-7
+EXTRACT_CMD=    unzip
+EXTRACT_ARGS=   -q -u -o
+ALL_TARGET=     freebsd-ncurses
+MAN1=		lynx.1
 
 .include <bsd.port.mk>

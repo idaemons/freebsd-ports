@@ -1,14 +1,20 @@
 # New ports collection makefile for:	popper
-# Version required:	2.1.3
-# Date created:		06 October 1994
+# Version required:	2.2
+# Date created:		1 April 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.3 1994/12/15 05:38:19 gpalmer Exp $
+# $Id: Makefile,v 1.12 1996/07/05 06:12:45 asami Exp $
 #
 
-DISTNAME=	qpop2.1.3-r5
+DISTNAME=	qpop2.2
+PKGNAME=	qpop-2.2
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qualcomm.com/quest/unix/servers/popper/
 EXTRACT_SUFX=	.tar.Z
-WRKSRC=		${WRKDIR}/qpopper2.1.3
+
+MAINTAINER=	pst@freebsd.org
+
+NO_PACKAGE=	"Needs POP UID"
+WRKSRC=		${WRKDIR}/qpopper2.2
 
 .include <bsd.port.mk>

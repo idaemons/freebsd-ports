@@ -1,16 +1,22 @@
 # New ports collection makefile for:	GNU make
-# Version required:	3.71
+# Version required:     3.75
 # Date created:		11 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.4 1994/10/04 15:47:32 jkh Exp $
+# $Id: Makefile,v 1.13 1996/11/18 13:57:23 asami Exp $
 #
 
-DISTNAME=	make-3.72.1
+DISTNAME=       make-3.75
+PKGNAME=        gmake-3.75
+CATEGORIES=	devel
+MASTER_SITES=   ${MASTER_SITE_GNU}
+
 GNU_CONFIGURE=	yes
-# Commented out, often busy
-# MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
-# Mirror:
-MASTER_SITES= ftp://ftp.uu.net/systems/gnu/
+MAN1=		gmake.1
+
+# joerg@freebsd.org says our getloadavg() no longer requires setgid kmem
+post-install:
+	/bin/chmod g-s ${PREFIX}/bin/gmake
+	/usr/bin/chgrp ${BINGRP} ${PREFIX}/bin/gmake
 
 .include <bsd.port.mk>

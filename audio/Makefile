@@ -1,5 +1,26 @@
-# $Id: Makefile,v 1.8 1995/01/09 01:59:24 pst Exp $
+# $Id: Makefile,v 1.29 1996/11/15 15:21:31 erich Exp $
 #
-SUBDIR=	gmod gsm nas sox tracker xcd xcdplayer
+
+    SUBDIR += cam
+    SUBDIR += gmod
+    SUBDIR += gsm
+    SUBDIR += maplay
+    SUBDIR += mpegaudio
+    SUBDIR += nas
+    SUBDIR += playmidi
+    SUBDIR += radio
+    SUBDIR += rosegarden
+    SUBDIR += rplay
+    SUBDIR += rsynth
+    SUBDIR += s3mod
+    SUBDIR += sox
+    SUBDIR += timidity
+    SUBDIR += tracker
+    SUBDIR += workman
+    SUBDIR += xcd
+    SUBDIR += xcdplayer
+    SUBDIR += xmcd
+    SUBDIR += xmix
+    SUBDIR += xmmix
 
 .include <bsd.port.subdir.mk>

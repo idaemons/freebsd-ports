@@ -1,14 +1,23 @@
+# New ports collection makefile for:    blas
+# Version required:     ?
+# Date created:         27 October 1994
+# Whom:                 ljo
+#
+# $Id: Makefile,v 1.9 1996/03/10 09:00:53 asami Exp $
+#
+
 DISTNAME=	blas
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
+PKGNAME=	blas-1.0
+CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.att.com/netlib/blas/
-.if defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/blas/
-.undef MASTER_SITE_OVERRIDE
-.endif
-EXTRACT_CMD=scripts/uncomp
+
+DIST_SUBDIR=	${DISTNAME}
+
+EXTRACT_CMD=${.CURDIR}/scripts/uncomp
 EXTRACT_SUFX=.Z
 EXTRACT_ARGS= ${WRKDIR}
-WRKSRC=${WRKDIR}
+
+NO_WRKSUBDIR=	yes
 
 SRCS =	caxpy.f cblas1.f cblas2.f ccopy.f cdotc.f cdotu.f cgbmv.f cgemv.f \
 	cgerc.f cgeru.f chbmv.f chemv.f cher.f cher2.f chpmv.f chpr.f \
@@ -37,5 +46,7 @@ pre-build:
 pre-extract:
 	chmod +x scripts/uncomp
 
-.include <bsd.port.mk>
+post-install:
+	ldconfig -m ${PREFIX}/lib
 
+.include <bsd.port.mk>

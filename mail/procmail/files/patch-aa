@@ -1,86 +1,58 @@
-*** Makefile.1.old	Thu Sep  8 20:11:33 1994
---- Makefile.1	Fri Oct  7 04:15:50 1994
-***************
-*** 93,105 ****
-  	@for a in $(MANS1S); \
-  	  do $(INSTALL) new/$$a.1 $(MAN1DIR)/$$a.$(MAN1SUFFIX); \
-  	     if test "X$(MANCOMPRESS)" != "X"; \
-! 	     then $(MANCOMPRESS) <new/$$a.1 >$(MAN1DIR)/$$a.$(MAN1SUFFIX); \
-  	     else :; fi; \
-  	  done
-  	@for a in $(MANS5S); \
-  	  do $(INSTALL) new/$$a.5 $(MAN5DIR)/$$a.$(MAN5SUFFIX); \
-  	     if test "X$(MANCOMPRESS)" != "X"; \
-! 	     then $(MANCOMPRESS) <new/$$a.5 >$(MAN5DIR)/$$a.$(MAN5SUFFIX); \
-  	     else :; fi; \
-  	  done
-  	echo Housekeeping file >install.man
---- 93,105 ----
-  	@for a in $(MANS1S); \
-  	  do $(INSTALL) new/$$a.1 $(MAN1DIR)/$$a.$(MAN1SUFFIX); \
-  	     if test "X$(MANCOMPRESS)" != "X"; \
-! 	     then "$(MANCOMPRESS)" <new/$$a.1 >$(MAN1DIR)/$$a.$(MAN1SUFFIX); \
-  	     else :; fi; \
-  	  done
-  	@for a in $(MANS5S); \
-  	  do $(INSTALL) new/$$a.5 $(MAN5DIR)/$$a.$(MAN5SUFFIX); \
-  	     if test "X$(MANCOMPRESS)" != "X"; \
-! 	     then "$(MANCOMPRESS)" <new/$$a.5 >$(MAN5DIR)/$$a.$(MAN5SUFFIX); \
-  	     else :; fi; \
-  	  done
-  	echo Housekeeping file >install.man
-*** src/formail.c	Mon Oct 31 18:30:09 1994
---- src/formail.c	Sat Nov 19 13:09:22 1994
-***************
-*** 35,41 ****
-   x_[]=			"X-",				/* general extension */
-   old_[]=		OLD_PREFIX,			     /* my extension */
-   xloop[]=		"X-Loop:",				/* ditto ... */
-!  daemon[]="<>",unknown[]=UNKNOWN,re[]=" Re:",fmusage[]=FM_USAGE;
-  
-  static const struct {const char*hedr;int lnr;}cdigest[]=
-  {
---- 35,41 ----
-   x_[]=			"X-",				/* general extension */
-   old_[]=		OLD_PREFIX,			     /* my extension */
-   xloop[]=		"X-Loop:",				/* ditto ... */
-!  mdaemon[]="<>",unknown[]=UNKNOWN,re[]=" Re:",fmusage[]=FM_USAGE;
-  
-  static const struct {const char*hedr;int lnr;}cdigest[]=
-  {
-***************
-*** 275,281 ****
-  	      goto pnewname;
-  	 }
-  	else if(sest[i].head==returnpath)		/* nill Return-Path: */
-! 	 { saddr=(char*)daemon;nowm=maxindex(sest)+2;		 /* override */
-  pnewname:  lastm=nowm;saddr=strcpy(malloc(strlen(saddr)+1),saddr);
-  	   if(namep)
-  	      free(namep);
---- 275,281 ----
-  	      goto pnewname;
-  	 }
-  	else if(sest[i].head==returnpath)		/* nill Return-Path: */
-! 	 { saddr=(char*)mdaemon;nowm=maxindex(sest)+2;		 /* override */
-  pnewname:  lastm=nowm;saddr=strcpy(malloc(strlen(saddr)+1),saddr);
-  	   if(namep)
-  	      free(namep);
-*** src/misc.c.old	Wed Jan 11 18:11:02 1995
---- src/misc.c	Wed Jan 11 17:40:33 1995
-***************
-*** 290,296 ****
-  { if(sp->filled==sp->tspace)			    /* growth limit reached? */
-     { if(!sp->offs)
-  	sp->offs=malloc(1);
-!      sp->offs=realloc(sp->offs,(sp->tspace+=4)*sizeof sp->offs);   /* expand */
-     }
-    sp->offs[sp->filled++]=val;				     /* append to it */
-  }
---- 290,296 ----
-  { if(sp->filled==sp->tspace)			    /* growth limit reached? */
-     { if(!sp->offs)
-  	sp->offs=malloc(1);
-!      sp->offs=realloc(sp->offs,(sp->tspace+=4)*sizeof(off_t));   /* expand */
-     }
-    sp->offs[sp->filled++]=val;				     /* append to it */
-  }
+--- Makefile.bak	Mon Apr 10 14:27:52 1995
++++ Makefile	Sat Apr 22 17:11:43 1995
+@@ -2,7 +2,7 @@
+ 
+ # BASENAME should point to where the whole lot will be installed
+ # change BASENAME to your home directory if need be
+-BASENAME	= /usr/local
++BASENAME	= $(PREFIX)
+ # For display in the man pages
+ VISIBLE_BASENAME= $(BASENAME)
+ 
+@@ -53,7 +53,11 @@
+ 
+ # Makefile.0 - mark, don't (re)move this, a sed script needs it
+ 
++.if defined(PACKAGE_BUILDING)
++LOCKINGTEST=/tmp .
++.else
+ LOCKINGTEST=__defaults__
++.endif
+ 
+ #LOCKINGTEST=/tmp .	# Uncomment and add any directories you see fit.
+ #			If LOCKINGTEST is defined, autoconf will NOT
+@@ -86,7 +86,7 @@
+  -Waggregate-return #-Wuninitialized
+ 
+ # The place to put your favourite extra cc flag
+-CFLAGS0 = -O #$(GCC_WARNINGS)
++CFLAGS0 = #-O #$(GCC_WARNINGS)
+ LDFLAGS0= -s
+ # Read my libs :-)
+ LIBS=
+--- initmake.bak	Mon Apr 10 14:28:00 1995
++++ initmake	Sat Apr 22 17:11:23 1995
+@@ -336,8 +336,8 @@
+ test -z "$MAKE" && echo "MAKE	= make"			>>_Makefile
+ test a"$cc" != a"$CC" && echo "CC	= $cc"		>>_Makefile
+ 
+-echo "CFLAGS	= \$(CFLAGS1)$CFLAGS"			>>_Makefile
+-echo "LDFLAGS	= \$(LDFLAGS1)$LDFLAGS"			>>_Makefile
++echo "CFLAGS	+= \$(CFLAGS1)$CFLAGS"			>>_Makefile
++echo "LDFLAGS	+= \$(LDFLAGS1)$LDFLAGS"			>>_Makefile
+ echo							>>_Makefile
+ 
+ MANSS=""
+--- src/recommend.c.bak	Thu Aug 18 08:45:20 1994
++++ src/recommend.c	Sat Apr 22 17:11:23 1995
+@@ -52,8 +52,10 @@
+      printf("chmod %o %s\n",sgid|PERMIS,argv[2]);
+   else if(chmdir==1)
+      goto nogchmod;
++#ifndef __FreeBSD__
+   if(chmdir)
+      printf("chmod %c+w %s.\n",chmdir==1?'g':'a',systm_mbox);
++#endif
+ nogchmod:
+   return EXIT_SUCCESS;
+ }

@@ -1,51 +1,63 @@
-diff -rc xlockmore.orig/XLock.ad xlockmore/XLock.ad
-*** xlockmore.orig/XLock.ad	Sun Oct 23 22:23:15 1994
---- xlockmore/XLock.ad	Wed Nov  9 15:08:35 1994
-***************
-*** 1,4 ****
-! XLock.mode: blank
-  XLock.font: -b&h-lucida-medium-r-normal-sans-24-*-*-*-*-*-iso8859-1
-  XLock.background: White
-  XLock.foreground: Black
---- 1,4 ----
-! XLock.mode: random
-  XLock.font: -b&h-lucida-medium-r-normal-sans-24-*-*-*-*-*-iso8859-1
-  XLock.background: White
-  XLock.foreground: Black
-diff -rc xlockmore.orig/xlock.c xlockmore/xlock.c
-*** xlockmore.orig/xlock.c	Mon Oct 17 07:41:41 1994
---- xlockmore/xlock.c	Wed Nov  9 14:52:07 1994
-***************
-*** 530,536 ****
-  #else
-      struct passwd *pw;
-  
-! #ifdef __NetBSD__
-      seteuid(0);                       /* Need to be root now on NetBSD */
-  #endif
-      pw = (struct passwd *)getpwnam("root");
---- 530,536 ----
-  #else
-      struct passwd *pw;
-  
-! #if defined(__FreeBSD__) || defined(__NetBSD__)
-      seteuid(0);                       /* Need to be root now on NetBSD */
-  #endif
-      pw = (struct passwd *)getpwnam("root");
-***************
-*** 555,561 ****
-  
-      user = pw->pw_name;
-  #endif
-! #ifdef __NetBSD__
-      seteuid(getuid());                /* Don't need to be root anymore */
-  #endif
-  #endif
---- 555,561 ----
-  
-      user = pw->pw_name;
-  #endif
-! #if defined(__FreeBSD__) || defined(__NetBSD__)
-      seteuid(getuid());                /* Don't need to be root anymore */
-  #endif
-  #endif
+--- Imakefile.orig	Mon Feb 10 18:13:32 1997
++++ Imakefile	Wed Feb 19 18:08:29 1997
+@@ -35,7 +35,7 @@
+ 
+ XCOMM Only the image.c and bat.c modes use this.
+ XCOMM If your system has libXpm, remove the 'XCOMM ' from the next line.
+-XCOMM #define XpmLibrary
++#define XpmLibrary
+ 
+ #ifdef XpmLibrary
+           XPMDEF = -DUSE_XPM
+@@ -50,7 +50,7 @@
+ 
+ XCOMM If you get an error "Cannot find libXpm" while linking, set XPMLIBPATH
+ XCOMM to the directory libXpm.* is in.  Below is a guess.
+-          XPMLIB = -L/usr/local/lib -lXpm
++          XPMLIB = -lXpm
+ 
+ #endif
+ 
+@@ -164,8 +164,8 @@
+ XCOMM SRANDDEF = -DSRAND=srand48
+ XCOMM LRANDDEF = -DLRAND=lrand48
+ 
+-XCOMM SRANDDEF = -DSRAND=srandom
+-XCOMM LRANDDEF = -DLRAND=random
++SRANDDEF = -DSRAND=srandom
++LRANDDEF = -DLRAND=random
+ 
+ XCOMM Least desirable RNG
+ XCOMM SRANDDEF = -DSRAND=srand
+@@ -363,9 +363,9 @@
+ XCOMM  -DSTAFF_NETGROUP=\"/etc/xlock.netgroup\"  Netgroup that is exempt
+ 
+ XCOMM May have to combine in one long line if "+=" does not work
+-        OPTDEF = -DUSE_VROOT -DALWAYS_ALLOW_ROOT -DUSE_BOMB
++XCOMM        OPTDEF = -DUSE_VROOT -DALWAYS_ALLOW_ROOT -DUSE_BOMB
+ XCOMM        OPTDEF += -DUSE_SYSLOG
+-XCOMM        OPTDEF += -DUSE_MOUSE_MOTION
++        OPTDEF += -DUSE_MOUSE_MOTION
+ XCOMM        OPTDEF += -DUSE_MULTIPLE_ROOT
+ XCOMM        OPTDEF += -DUSE_OLD_EVENT_LOOP
+ XCOMM        OPTDEF += -DUSE_XLOCKRC
+@@ -377,7 +377,7 @@
+ XCOMM        OPTDEF += -DSTAFF_NETGROUP=\"/etc/xlock.netgroup\"
+ 
+ XCOMM Here is your chance to override the default icon:
+-       FLAGBITS = $(FLAGTYPE)
++       FLAGBITS = freebsd
+ XCOMM     TINYBITMAP = $(BITMAPTYPE)
+      TINYBITMAP = t-x11
+     SMALLBITMAP = s-$(BITMAPTYPE)
+@@ -390,8 +390,8 @@
+     IMAGEBITMAP = $(MEDIUMBITMAP)
+ XCOMM    IMAGEBITMAP = l-bob
+ XCOMM    IMAGEBITMAP = m-xlock
+-XCOMM     LIFEBITMAP = $(SMALLBITMAP)
+-     LIFEBITMAP = s-grelb
++     LIFEBITMAP = $(SMALLBITMAP)
++XCOMM     LIFEBITMAP = s-grelb
+    LIFE1DBITMAP = $(TINYBITMAP)
+      MAZEBITMAP = $(LARGEBITMAP)
+ XCOMM     MAZEBITMAP = m-xlock

@@ -1,0 +1,57 @@
+# New ports collection makefile for:	tix
+# Version required:	4.1.0
+# Date created:		22 December 1996
+# Whom:			Thomas Gellekum <tg@freebsd.org>
+#
+# $Id: Makefile,v 1.5 1997/02/21 14:54:53 tg Exp $
+#
+
+DISTNAME=	Tix4.1.0
+PKGNAME=	tix-4.1.0
+CATEGORIES=	x11
+MASTER_SITES=	ftp://ftp.xpi.com/pub/
+
+MAINTAINER=	ports@FreeBSD.ORG
+
+LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/unix/tk4.1
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared \
+		--with-tcl=/usr/include/tcl \
+		--with-tk="${PREFIX}/include/tk4.1"
+# this should probably be added to bsd.port.mk
+CONFIGURE_ENV=	PREFIX=${PREFIX}
+MAN1=		tixwish.1 
+MANN=		BtnBox.n Balloon.n ChkList.n Destroy.n ComboBox.n Control.n \
+		DItem.n DirDlg.n DirList.n DirTree.n FileBox.n EFileBox.n \
+		EFileDlg.n FileDlg.n FileEnt.n Form.n GetBool.n GetInt.n \
+		Grid.n HList.n InpOnly.n LabEntry.n Meter.n LabFrame.n \
+		ListNBK.n Mwm.n NBFrame.n NoteBook.n SHList.n PopMenu.n \
+		OptMenu.n PanedWin.n SListBox.n SText.n SWindow.n TList.n \
+		Select.n StdBBox.n TixIntro.n Tree.n Utils.n Wm.n compound.n \
+		pixmap.n tix.n
+
+pre-configure:
+	@(cd ${WRKDIR}/${DISTNAME}/unix && \
+	    CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
+            INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
+            INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+            ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+		
+post-install:
+	@(cd ${WRKDIR}/${DISTNAME}/unix && \
+	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+	@${MKDIR} ${PREFIX}/man/man1
+	@mv ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
+	@ln -sf ${PREFIX}/bin/tixwish4.1.7.5 ${PREFIX}/bin/tixwish
+	/sbin/ldconfig -m ${PREFIX}/lib
+.for dir in generic unix
+	@${MKDIR} ${PREFIX}/include/tix/${dir}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/${dir}/*.h ${PREFIX}/include/tix/${dir}
+.endfor
+	${RM} ${PREFIX}/include/tix/generic/tix.h
+	@# These two files are the same
+	/bin/ln -sf ../../tix.h ${PREFIX}/include/tix/generic
+
+.include <bsd.port.mk>
