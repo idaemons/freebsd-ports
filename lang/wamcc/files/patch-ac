@@ -1,0 +1,31 @@
+--- src/Makefile.orig	Wed Jan 29 03:37:54 1997
++++ src/Makefile	Sat Mar 31 03:01:06 2001
+@@ -19 +19 @@
+-CFLAGS    = -O2
++#CFLAGS    = -O2
+@@ -52 +52 @@
+-	$(WCC) $(CFLAGS) -c machine.c
++	./$(WCC) $(CFLAGS) -c machine.c
+@@ -55 +55 @@
+-	$(WCC) $(CFLAGS) -c wam_engine.c
++	./$(WCC) $(CFLAGS) -c wam_engine.c
+@@ -58 +58 @@
+-	$(WCC) $(CFLAGS) -DWAM_PROFILE -c -o wam_engine_pp.o wam_engine.c
++	./$(WCC) $(CFLAGS) -DWAM_PROFILE -c -o wam_engine_pp.o wam_engine.c
+@@ -61 +61 @@
+-	$(WCC) $(CFLAGS) -c atom_pred.c
++	./$(WCC) $(CFLAGS) -c atom_pred.c
+@@ -64 +64 @@
+-	$(WCC) $(CFLAGS) -c debugger.c
++	./$(WCC) $(CFLAGS) -c debugger.c
+@@ -67 +67 @@
+-	$(WCC) $(CFLAGS) -c hash.c
++	./$(WCC) $(CFLAGS) -c hash.c
+@@ -82 +82 @@
+-	configure
++	./configure
+@@ -98,2 +98,2 @@
+-	$(WCC) $(CFLAGS) -c wamcc*.c
+-	$(WCC) $(CFLAGS) $(LFLAGS) -s -o $(COMPILER) wamcc*.o -l$(COMPILER)
++	./$(WCC) $(CFLAGS) -c wamcc*.c
++	./$(WCC) $(CFLAGS) $(LFLAGS) -s -o $(COMPILER) wamcc*.o -l$(COMPILER)

@@ -1,0 +1,20 @@
+--- configure.orig	Thu Oct 31 18:14:43 2002
++++ configure	Thu Oct 31 18:15:52 2002
+@@ -6157,7 +6157,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpng ${png_LIBS} -lz -lm $LIBS"
++LIBS="-L%%LOCALBASE%%/lib -lpng ${png_LIBS} -lz -lm $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+@@ -6429,7 +6429,7 @@
+ #define HAVE_PNG 1
+ _ACEOF
+ 
+-  png_LIBS="-lpng -lz"
++  png_LIBS="-L%%LOCALBASE%%/lib -lpng -lz"
+   problem_png=""
+ else
+   with_png=no

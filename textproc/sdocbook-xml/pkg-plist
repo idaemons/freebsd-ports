@@ -1,0 +1,14 @@
+share/xml/catalog
+@unexec %%MKCATALOG%% -q -c%%CATALOG%% deinstall sdocbook catalog
+share/xml/sdocbook/catalog
+@exec %%MKCATALOG%% -q -c%%CATALOG%% install sdocbook catalog
+share/xml/sdocbook/sdbcent.mod
+share/xml/sdocbook/sdbhier.mod
+share/xml/sdocbook/sdbpool.mod
+share/xml/sdocbook/sdocbook-custom.dtd
+share/xml/sdocbook/sdocbook.css
+share/xml/sdocbook/sdocbook.dtd
+share/xml/sdocbook/sdocbookref-custom.dtd
+share/xml/sdocbook/sdocbookref.dtd
+share/xml/sdocbook/sinclist.mod
+@dirrm share/xml/sdocbook

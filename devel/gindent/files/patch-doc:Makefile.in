@@ -1,0 +1,15 @@
+--- doc/Makefile.in.orig	Wed May 22 04:01:16 2002
++++ doc/Makefile.in	Sun Sep 15 03:21:16 2002
+@@ -364,9 +364,9 @@
+ 
+ 
+ all-local: html
+-install-data-local: install-html
+-installdirs-local: installdirs-html
+-uninstall-local: uninstall-html
++install-data-local: # install-html
++installdirs-local: # installdirs-html
++uninstall-local: # uninstall-html
+ 
+ html: html-$(HTMLSTYLE)
+ install-html: install-html-$(HTMLSTYLE)

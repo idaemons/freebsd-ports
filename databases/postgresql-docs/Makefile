@@ -1,0 +1,36 @@
+# New ports collection makefile for:	PostgreSQL docs
+# Date created:		August 26, 2002
+# Whom:			Palle Girgensohn <girgen@pingpong.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	postgresql
+PKGNAMESUFFIX=	-docs
+
+MAINTAINER=	girgen@pingpong.net
+COMMENT=	The PostgreSQL documentation set
+
+POSTGRESQL_SUBPORT=	YES
+POSTGRESQL_PORT?=	databases/postgresql7
+.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
+DISTFILES=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
+.undef USE_GMAKE
+.undef GNU_CONFIGURE
+NO_BUILD=	YES
+
+do-install:
+	@ $(MKDIR) ${PREFIX}/share/doc/postgresql/html; \
+	${GZIP_CMD} -dc ${WRKSRC}/doc/postgres.tar.gz | \
+	( cd $(PREFIX)/share/doc/postgresql/html && $(TAR) xf - )
+
+post-install:
+	@ ${TAR} ztf ${WRKSRC}/doc/postgres.tar.gz | ${GREP} -v /$$ | \
+	  ${XARGS} printf "share/doc/postgresql/html/%s\n" >> ${TMPPLIST} ;\
+	for dir in `$(TAR) ztf ${WRKSRC}/doc/postgres.tar.gz | ${GREP} /$$` ; do \
+	  ${ECHO} @dirrm $$dir >> ${TMPPLIST} ;\
+	done ;\
+	${ECHO} @dirrm share/doc/postgresql/html >> ${TMPPLIST} ;\
+	${ECHO} '@unexec rmdir %D/share/postgresql 2> /dev/null || true' >> ${TMPPLIST}
+
+.include <bsd.port.mk>

@@ -1,0 +1,10 @@
+bin/cflow2vcg
+%%PORTDOCS%%share/doc/cflow2vcg/cflow2vcg.cflow
+%%PORTDOCS%%share/doc/cflow2vcg/cflow2vcg.html
+%%PORTDOCS%%share/doc/cflow2vcg/cflow2vcg.jpg
+%%PORTDOCS%%share/doc/cflow2vcg/cflow2vcg.rtf
+%%PORTDOCS%%share/doc/cflow2vcg/cflow2vcg.txt
+%%PORTDOCS%%share/doc/cflow2vcg/cflow2vcg.vcg
+%%PORTDOCS%%share/doc/cflow2vcg/cflow2vcg_ext.jpg
+%%PORTDOCS%%share/doc/cflow2vcg/cflow2vcg_int.jpg
+%%PORTDOCS%%@dirrm share/doc/cflow2vcg

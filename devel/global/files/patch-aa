@@ -1,0 +1,18 @@
+--- doc/Makefile.in.orig	Thu Nov 14 20:04:38 2002
++++ doc/Makefile.in	Thu Nov 14 20:09:05 2002
+@@ -311,14 +311,7 @@
+ 	  done; \
+ 	done
+ 	@$(POST_INSTALL)
+-	@if (install-info --version && \
+-	     install-info --version | fgrep -i -v debian) >/dev/null 2>&1; then \
+-	  list='$(INFO_DEPS)'; \
+-	  for file in $$list; do \
+-	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file";\
+-	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file || :;\
+-	  done; \
+-	else : ; fi
++
+ install-man:
+ 
+ installcheck-am:

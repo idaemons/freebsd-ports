@@ -1,0 +1,20 @@
+--- configure.orig	Tue Jan 28 09:36:19 2003
++++ configure	Tue Jan 28 13:18:31 2003
+@@ -2630,6 +2630,9 @@
+ echo "${ECHO_T}$am_cv_CC_dependencies_compiler_type" >&6
+ CCDEPMODE=depmode=$am_cv_CC_dependencies_compiler_type
+ 
++_CPPFLAGS="$CPPFLAGS"
++CPPFLAGS="$CPPFLAGS `gnome-config --cflags print`"
++
+ 
+ 
+ 
+@@ -2693,6 +2696,7 @@
+ fi
+ 
+ 
++CPPFLAGS="$_CPPFLAGS"
+ 
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'

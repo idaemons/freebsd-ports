@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/_xmms.so
+%%PYTHON_SITELIBDIR%%/xmms.py
+%%PYTHON_SITELIBDIR%%/xmms.pyc
+%%PYTHON_SITELIBDIR%%/xmms.pyo

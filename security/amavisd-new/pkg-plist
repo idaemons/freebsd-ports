@@ -1,0 +1,21 @@
+%%PORTDOCS%%share/doc/amavisd-new/AAAREADME.first
+%%PORTDOCS%%share/doc/amavisd-new/INSTALL
+%%PORTDOCS%%share/doc/amavisd-new/LICENSE
+%%PORTDOCS%%share/doc/amavisd-new/README.customize
+%%PORTDOCS%%share/doc/amavisd-new/README.exim_v3
+%%PORTDOCS%%share/doc/amavisd-new/README.exim_v4
+%%PORTDOCS%%share/doc/amavisd-new/README.exim_v4_app
+%%PORTDOCS%%share/doc/amavisd-new/README.lookups
+%%PORTDOCS%%share/doc/amavisd-new/README.milter
+%%PORTDOCS%%share/doc/amavisd-new/README.old
+%%PORTDOCS%%share/doc/amavisd-new/README.old.scanners
+%%PORTDOCS%%share/doc/amavisd-new/README.performance
+%%PORTDOCS%%share/doc/amavisd-new/README.postfix
+%%PORTDOCS%%share/doc/amavisd-new/README.sendmail
+%%PORTDOCS%%share/doc/amavisd-new/RELEASE_NOTES
+%%PORTDOCS%%@dirrm share/doc/amavisd-new
+etc/amavisd.conf-dist
+etc/rc.d/amavisd.sh
+%%AMAVIS_NOMILTER%%sbin/amavis
+%%AMAVIS_NOMILTER%%sbin/amavis-milter
+sbin/amavisd

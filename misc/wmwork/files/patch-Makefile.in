@@ -1,0 +1,26 @@
+--- Makefile.in.orig	Fri Jan  3 06:02:41 2003
++++ Makefile.in	Sat Jan 11 19:09:30 2003
+@@ -8,9 +8,12 @@
+ mandir      = @mandir@
+ CC          = @CC@
+ CFLAGS      = -I. -Wall @CFLAGS@
++CPPFLAGS    = @CPPFLAGS@
+ LDFLAGS     = @LDFLAGS@
+ LIBS        = @LIBS@
+ INSTALL     = @INSTALL@
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_DATA = @INSTALL_DATA@
+ OBJS        = wmwork.o wmgeneral.o
+ 
+ all: wmwork
+@@ -22,8 +25,8 @@
+ wmgeneral.o: wmgeneral.c wmgeneral.h
+ 
+ install: wmwork wmwork.1
+-	$(INSTALL) -D -m 755 wmwork $(DESTDIR)$(bindir)/wmwork
+-	$(INSTALL) -D -m 644 wmwork.1 $(DESTDIR)$(mandir)/man1/wmwork.1
++	$(INSTALL_PROGRAM) wmwork $(DESTDIR)$(bindir)/wmwork
++	$(INSTALL_DATA) wmwork.1 $(DESTDIR)$(mandir)/man1/wmwork.1
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(bindir)/wmwork

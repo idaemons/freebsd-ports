@@ -1,0 +1,106 @@
+--- configure.in.orig	Tue Feb 18 13:18:11 2003
++++ configure.in	Tue Feb 18 14:34:11 2003
+@@ -66,8 +66,12 @@
+ dnl check for -R, etc. switch
+ CMU_GUESS_RUNPATH_SWITCH
+ dnl let's just link against local.  otherwise we never find anything useful.
+-CPPFLAGS="-I/usr/local/include ${CPPFLAGS}"
+-CMU_ADD_LIBPATH("/usr/local/lib")
++CPPFLAGS="-I${OPENSSLINC}/openssl ${CPPFLAGS}"
++if test "${OPENSSLINC}" != "/usr/include" ; then
++  CPPFLAGS="-I${OPENSSLINC} ${CPPFLAGS}"
++fi
++CMU_ADD_LIBPATH("${OPENSSLLIB}")
++CMU_ADD_LIBPATH("${LOCALBASE}/lib")
+ 
+ AM_DISABLE_STATIC
+ 
+@@ -122,8 +126,6 @@
+ 
+   AC_SUBST(JAVA_INCLUDES)
+   AC_MSG_RESULT(JAVA_INCLUDES)
+-  JAVAC=`echo "$JAVAC" | sed 's,.*/,,'`
+-  JAVAH=`echo "$JAVAH" | sed 's,.*/,,'`
+ fi
+ 
+ AM_CONDITIONAL(SAMPLE, test "$enable_sample" = yes)
+@@ -239,6 +241,13 @@
+   berkeley)
+     SASL_DB_BACKEND="db_${dblib}.lo"
+     AC_DEFINE(SASL_BERKELEYDB)
++    for db3loc in ${prefix} /usr/local /usr
++    do
++      if test -d ${db3loc}/include/db3; then
++       CPPFLAGS="-I${db3loc}/include/db3 $CPPFLAGS"
++       break
++      fi
++    done
+     ;;
+   *)
+     AC_MSG_WARN([Disabling SASL authentication database support])
+@@ -473,16 +482,40 @@
+     CPPFLAGS="$CPPFLAGS -I${with_des}/include"
+     LDFLAGS="$LDFLAGS -L${with_des}/lib"
+   fi
+-  AC_CHECK_LIB(des, des_pcbc_encrypt, [LIB_DES="-ldes";
+-				       with_des=yes], with_des=no)
++
++  dnl check for openssl installing -lcrypto, then make vanilla check
++  AC_CHECK_LIB(crypto, des_cbc_encrypt, [
++      AC_CHECK_HEADER(openssl/des.h, [AC_DEFINE(WITH_SSL_DES)
++                                     LIB_DES="-lcrypto";
++                                     with_des=yes],
++                     with_des=no)],
++      with_des=no, $LIB_RSAREF)
++
++  dnl same test again, different symbol name
++  if test "$with_des" = no; then
++    AC_CHECK_LIB(crypto, DES_cbc_encrypt, [
++      AC_CHECK_HEADER(openssl/des.h, [AC_DEFINE(WITH_SSL_DES)
++                                     LIB_DES="-lcrypto";
++                                     with_des=yes],
++                     with_des=no)],
++      with_des=no, $LIB_RSAREF)
++  fi
++
++  if test "$with_des" = no; then
++    AC_CHECK_LIB(des, des_pcbc_encrypt, [LIB_DES="-ldes";
++				         with_des=yes], with_des=no)
++  fi
++
+   if test "$with_des" = no; then
+     AC_CHECK_LIB(des524, des_pcbc_encrypt, [LIB_DES="-ldes524";
+ 				       with_des=yes], with_des=no)
+   fi
++
+   if test "$with_des" = no; then
+     AC_CHECK_LIB(des425, des_pcbc_encrypt, [LIB_DES="-ldes425";
+ 				       with_des=yes], with_des=no)
+   fi
++
+   if test "$with_des" = no; then
+     dnl if openssl is around, we might be able to use that for des
+ 
+@@ -493,7 +526,7 @@
+                  LIB_RSAREF="-lRSAglue -lrsaref"; cmu_have_rsaref=yes,
+                  cmu_have_rsaref=no)
+ 
+-    AC_CHECK_LIB(crypto, des_pcbc_encrypt, 
++    AC_CHECK_LIB(crypto, des_cbc_encrypt, 
+ 	AC_CHECK_HEADER(openssl/des.h, [AC_DEFINE(WITH_SSL_DES)
+ 					LIB_DES="-lcrypto";
+ 					with_des=yes],
+@@ -502,10 +535,9 @@
+   fi
+ fi
+ 
+-dnl if test "$with_des" != no; then
+-dnl   AC_DEFINE(WITH_DES)
+-dnl  LIB_DES="-ldes"
+-dnl fi
++if test "$with_des" != no; then
++  AC_DEFINE(WITH_DES)
++fi
+ 
+ AC_SUBST(LIB_DES)
+ 

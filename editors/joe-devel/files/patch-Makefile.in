@@ -1,0 +1,33 @@
+--- Makefile.in.orig	Wed Nov  7 17:59:20 2001
++++ Makefile.in	Fri Dec  7 19:44:51 2001
+@@ -238,8 +238,8 @@
+ 	  if test -f $$p \
+ 	  ; then \
+ 	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f"; \
+-	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$p"; \
++	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$p; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -341,8 +341,8 @@
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst"; \
+-	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst; \
++	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$file"; \
++	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$file; \
+ 	done
+ uninstall-man1:
+ 	@$(NORMAL_UNINSTALL)
+@@ -368,7 +368,7 @@
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(sysconfdir)/$$f"; \
+-	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(sysconfdir)/$$f; \
++	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(sysconfdir)/$$f.dist; \
+ 	done
+ 
+ uninstall-sysconfDATA:

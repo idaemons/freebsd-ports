@@ -1,0 +1,22 @@
+--- src/Makefile.in.orig	Sun Feb 16 13:48:17 2003
++++ src/Makefile.in	Sun Feb 16 13:52:33 2003
+@@ -69,16 +69,16 @@
+ 
+ 
+ INCLUDES = -DNDEBUG -DDATA_DIRECTORY='"${pkgdatadir}/"'
+-@USE_SDL_TRUE@SDL_CFLAGS = `sdl-config --cflags` -DUSE_SDL
++@USE_SDL_TRUE@SDL_CFLAGS = `$(SDL_CONFIG) --cflags` -DUSE_SDL
+ @USE_SDL_FALSE@SDL_CFLAGS = 
+-@USE_SDL_TRUE@SDL_LIBS = `sdl-config --libs`
++@USE_SDL_TRUE@SDL_LIBS = `$(SDL_CONFIG) --libs`
+ @USE_SDL_FALSE@SDL_LIBS = 
+ @USE_SDL_TRUE@GLUT_LIBS = 
+ @USE_SDL_FALSE@GLUT_LIBS = -lglut
+ @USE_BUMPREF_TRUE@BUMPREF_CFLAGS = 
+ @USE_BUMPREF_FALSE@BUMPREF_CFLAGS = -DNO_NV_BUMPREF
+ 
+-CFLAGS = -Wall -O3 `freetype-config --cflags` ${SDL_CFLAGS} ${BUMPREF_CFLAGS}
++CFLAGS += -Wall `freetype-config --cflags` ${SDL_CFLAGS} ${BUMPREF_CFLAGS}  -I%%X11BASE%%/include
+ 
+ #LIBS   = -L$(LIBDIR) -lglut -lGLU -lGL -lXext -lXaw -lm -lXi -lpng -lz
+ #LIBS   = -L$(LIBDIR) -lglut -lGLU -lGL -lXext -lXaw -lm -lXi -lpng -lz

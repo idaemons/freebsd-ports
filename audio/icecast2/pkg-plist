@@ -1,0 +1,3 @@
+bin/icecast
+%%PORTDOCS%%share/doc/icecast2/icecast.xml
+%%PORTDOCS%%@dirrm share/doc/icecast2

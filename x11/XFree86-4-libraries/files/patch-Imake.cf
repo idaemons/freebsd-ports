@@ -1,0 +1,13 @@
+--- config/cf/Imake.cf.orig	Tue Mar  4 16:38:16 2003
++++ config/cf/Imake.cf	Tue Mar  4 16:38:18 2003
+@@ -232,6 +232,10 @@
+ #  define Sparc64Architecture
+ #  undef __sparc64__
+ # endif
++# ifdef __ia64__
++#  define ia64Architecture
++#  undef __ia64__
++# endif
+ #endif /* __FreeBSD__ */
+ 
+ #ifdef AMOEBA

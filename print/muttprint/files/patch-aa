@@ -1,0 +1,67 @@
+--- Makefile.orig	Tue Sep 10 20:01:54 2002
++++ Makefile	Wed Sep 11 23:06:32 2002
+@@ -7,27 +7,27 @@
+ 
+ # Change this for local installation, 
+ # e. g. /home/user or /usr/local
+-prefix = /usr/local
++#prefix = /usr/local
+ 
+ # Change this for some distributions (current setting
+ # is OK for SuSE)
+-docdir = /usr/share/doc/packages
++docdir = ${PREFIX}/share/doc
+ 
+ # Change this to $(prefix)/man for older distributions
+ # (current setting is correct according to LSB)
+-mandir = $(prefix)/share/man
++mandir = ${PREFIX}/man
+ 
+ #
+ # Muttprint needs GNU make. If you installed GNU make
+ # as `gmake', you have to change this
+-MAKE = make
++#MAKE = make
+ 
+ # Change this three directories only if you're know
+ # what you do
+-sharedir = $(prefix)/share
+-libdir = $(prefix)/lib
+-bindir = $(prefix)/bin
+-sysconfdir = /etc
++sharedir = ${PREFIX}/share
++libdir = ${PREFIX}/lib
++bindir = ${PREFIX}/bin
++sysconfdir = ${PREFIX}/etc
+ 
+ #####################################################
+ #####################################################
+@@ -42,17 +42,18 @@
+ 
+ 
+ install: 
+-	mkdir -p $(docdir)/muttprint $(bindir) $(sharedir)/muttprint $(mandir)/man1 \
+-		$(mandir)/de/man1 $(mandir)/es/man1 \
+-		$(mandir)/cs/man1 $(mandir)/it/man1 \
++	mkdir -p $(bindir) $(sharedir)/muttprint \
+ 		$(libdir)/muttprint
+-	$(INSTALLBIN) muttprint $(bindir)/
+-	$(INSTALL) CHANGES COPYING INSTALL README* sample-muttprintrc-* \
+-		$(docdir)/muttprint/
+-	$(INSTALL) `find pics -type f -print` $(sharedir)/muttprint/
+-	$(INSTALL) `find translations -type f -print` $(libdir)/muttprint/
+-	$(MAKE) -C doc/manual docdir=$(docdir) install
+-	$(MAKE) -C doc/manpages mandir=$(mandir) install
++	${BSD_INSTALL_SCRIPT} muttprint $(bindir)/
++	${BSD_INSTALL_DATA} `find pics -type f -print` $(sharedir)/muttprint/
++	${BSD_INSTALL_DATA} `find translations -type f -print` $(libdir)/muttprint/
++
++install-with-doc: install
++	mkdir -p $(docdir)/muttprint
++	${BSD_INSTALL_DATA} CHANGES COPYING INSTALL README* \
++		sample-muttprintrc-* $(docdir)/muttprint/
++	${MAKE} -C doc/manual docdir=$(docdir) install
++	${MAKE} -C doc/manpages mandir=$(mandir) install
+ 
+ uninstall:
+ 	rm $(bindir)/muttprint

@@ -1,0 +1,3 @@
+lib/libumfpack.a
+%%PORTDOCS%%share/doc/umfpack/README.gz
+%%PORTDOCS%%@dirrm share/doc/umfpack

@@ -1,0 +1,11 @@
+%%PORTDOCS%%share/doc/PyGreSQL/Announce
+%%PORTDOCS%%share/doc/PyGreSQL/ChangeLog
+%%PORTDOCS%%share/doc/PyGreSQL/README
+%%PYTHON_SITELIBDIR%%/_pgmodule.so
+%%PYTHON_SITELIBDIR%%/pg.py
+%%PYTHON_SITELIBDIR%%/pg.pyc
+%%PYTHON_SITELIBDIR%%/pg.pyo
+%%PYTHON_SITELIBDIR%%/pgdb.py
+%%PYTHON_SITELIBDIR%%/pgdb.pyc
+%%PYTHON_SITELIBDIR%%/pgdb.pyo
+%%PORTDOCS%%@dirrm share/doc/PyGreSQL

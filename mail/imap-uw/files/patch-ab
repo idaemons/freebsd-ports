@@ -1,0 +1,93 @@
+--- src/osdep/unix/Makefile.orig	Wed Apr 11 00:02:06 2001
++++ src/osdep/unix/Makefile	Sat Apr 14 03:20:57 2001
+@@ -28,12 +28,12 @@
+ 
+ # Extended flags needed for SSL.  You may need to modify.
+ 
+-SSLDIR=/usr/local/ssl
+-SSLCERTS=$(SSLDIR)/certs
+-SSLINCLUDE=$(SSLDIR)/include
+-SSLLIB=$(SSLDIR)/lib
++SSLDIR=$(OPENSSLBASE)
++SSLCERTS=$(PREFIX)/certs
++SSLINCLUDE=$(OPENSSLINC)
++SSLLIB=$(OPENSSLLIB)
+ 
+-SSLCRYPTO=-lcrypto
++SSLCRYPTO=-lcrypto -lcrypt
+ 
+ # Older versions of MIT Kerberos also have a libcrypto.  If so, you may need
+ # to use this instead
+@@ -46,7 +46,7 @@
+ 
+ SSLCFLAGS= -I$(SSLINCLUDE) -I$(SSLINCLUDE)/openssl\
+  -DSSL_CERT_DIRECTORY=\"$(SSLCERTS)\"
+-SSLLDFLAGS= -L$(SSLLIB) -lssl $(SSLCRYPTO) $(SSLRSA)
++SSLLDFLAGS= # -L$(SSLLIB) -lssl $(SSLCRYPTO) $(SSLRSA)
+ 
+ 
+ # Extended flags needed for non-standard passwd types.  You may need to modify.
+@@ -60,7 +60,7 @@
+ # AFSLDFLAGS may also need -L/usr/ucblib -lucb
+ DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
+ DCELDFLAGS= -ldce
+-PAMLDFLAGS= -lpam -ldl
++PAMLDFLAGS= # -lpam -lcrypt
+ 
+ 
+ # Build parameters normally set by the individual port
+@@ -97,7 +97,7 @@
+ # Commands possibly overriden by the individual port
+ 
+ ARRC=ar rc
+-CC=cc
++CC?=cc
+ LN=ln -s
+ RANLIB=ranlib
+ 
+@@ -115,7 +115,7 @@
+  dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+  rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+-CFLAGS=-g
++CFLAGS+=$(BASECFLAGS) $(EXTRACFLAGS)
+ 
+ CAT=cat
+ MAKE=make
+@@ -198,6 +198,15 @@
+ 	 BASECFLAGS="-g -B/usr/lib/big/ -Dvoid=char -Dconst=" \
+ 	 RANLIB=true ARRC="ar -rc"
+ 
++bfp:	# FreeBSD Pluggable Authentication Modules
++	$(BUILD) `cat SPECIALS` OS=bsi SIGTYPE=psx CHECKPW=pam \
++	 SPOOLDIR=/var \
++	 ACTIVEFILE=/usr/local/news/lib/active \
++	 RSHPATH=/usr/bin/rsh \
++	 LOCKPGM=$(PREFIX)/libexec/mlock \
++	 BASECFLAGS="-DNFSKLUDGE" \
++	 BASELDFLAGS="-lpam -lcrypt"
++
+ bs3:	# BSD/i386 3.0 or higher
+ 	$(BUILD) `$(CAT) SPECIALS` OS=bsi \
+ 	 CHECKPW=bsi LOGINPW=bsi CRXTYPE=nfs \
+@@ -217,8 +226,9 @@
+ 	 SPOOLDIR=/var \
+ 	 ACTIVEFILE=/usr/local/news/lib/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-g -O -pipe" \
+-	 BASELDFLAGS="-lcrypt"
++	 LOCKPGM=$(PREFIX)/libexec/mlock \
++	 BASECFLAGS="-DNFSKLUDGE" \
++	 BASELDFLAGS=""
+ 
+ bsi:	# BSD/i386
+ 	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
+@@ -764,7 +774,7 @@
+ 
+ build:	clean once $(ARCHIVE)
+ 
+-all:	$(ARCHIVE)
++all:	onceenv
+ 
+ $(ARCHIVE): $(BINARIES)
+ 	sh -c '$(RM) $(ARCHIVE) || true'

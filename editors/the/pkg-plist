@@ -1,0 +1,33 @@
+bin/the
+share/THE/THE_Help.txt
+share/THE/append.the
+share/THE/build.the
+share/THE/comm.the
+share/THE/compile.the
+share/THE/demo.the
+share/THE/l.the
+share/THE/match.the
+share/THE/rm.the
+share/THE/setbuild.the
+share/THE/spell.the
+share/THE/the.man
+share/THE/total.the
+share/THE/uncomm.the
+share/THE/words.the
+%%PORTDOCS%%share/doc/THE/app1.html
+%%PORTDOCS%%share/doc/THE/app2.html
+%%PORTDOCS%%share/doc/THE/app3.html
+%%PORTDOCS%%share/doc/THE/app4.html
+%%PORTDOCS%%share/doc/THE/app5.html
+%%PORTDOCS%%share/doc/THE/app6.html
+%%PORTDOCS%%share/doc/THE/comm.html
+%%PORTDOCS%%share/doc/THE/commset.html
+%%PORTDOCS%%share/doc/THE/commsos.html
+%%PORTDOCS%%share/doc/THE/glossary.html           
+%%PORTDOCS%%share/doc/THE/history.html           
+%%PORTDOCS%%share/doc/THE/index.html           
+%%PORTDOCS%%share/doc/THE/overview.html           
+%%PORTDOCS%%share/doc/THE/query.html           
+%%PORTDOCS%%share/doc/THE/quickref.html           
+%%PORTDOCS%%@dirrm share/doc/THE
+@dirrm share/THE

@@ -1,0 +1,29 @@
+bin/lftp
+bin/lftpget
+@unexec if cmp -s %D/etc/lftp.conf %D/etc/lftp.conf.sample; then rm -f %D/etc/lftp.conf; fi
+etc/lftp.conf.sample
+@exec if [ ! -f %D/etc/lftp.conf ]; then cp %B/%f %D/etc/lftp.conf; fi
+%%PORTDOCS%%share/doc/lftp/COPYING
+%%PORTDOCS%%share/doc/lftp/FAQ
+%%PORTDOCS%%share/doc/lftp/NEWS
+%%PORTDOCS%%share/doc/lftp/README
+%%PORTDOCS%%share/doc/lftp/README.debug-levels
+%%PORTDOCS%%share/doc/lftp/README.modules
+%%PORTDOCS%%share/doc/lftp/THANKS
+%%PORTDOCS%%share/doc/lftp/TODO
+%%PORTDOCS%%share/doc/lftp/FEATURES
+share/lftp/import-ncftp
+share/lftp/import-netscape
+share/locale/de/LC_MESSAGES/lftp.mo
+share/locale/es/LC_MESSAGES/lftp.mo
+share/locale/fr/LC_MESSAGES/lftp.mo
+share/locale/it/LC_MESSAGES/lftp.mo
+share/locale/ja/LC_MESSAGES/lftp.mo
+share/locale/ko/LC_MESSAGES/lftp.mo
+share/locale/pl/LC_MESSAGES/lftp.mo
+share/locale/pt_BR/LC_MESSAGES/lftp.mo
+share/locale/ru/LC_MESSAGES/lftp.mo
+share/locale/zh_CN/LC_MESSAGES/lftp.mo
+share/locale/zh_TW/LC_MESSAGES/lftp.mo
+%%PORTDOCS%%@dirrm share/doc/lftp
+@dirrm share/lftp

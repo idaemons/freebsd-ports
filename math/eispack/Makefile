@@ -1,14 +1,25 @@
-DISTNAME=	eispack
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
-MASTER_SITES=	ftp://netlib.att.com/netlib/eispack/
-.if defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/eispack/
-.undef MASTER_SITE_OVERRIDE
-.endif
-EXTRACT_CMD=scripts/uncomp
-EXTRACT_SUFX=.Z
-EXTRACT_ARGS= ${WRKDIR}
-WRKSRC=${WRKDIR}
+# New ports collection makefile for:	eispack
+# Date created:		31 October 1994
+# Whom:			ljo
+#
+# $FreeBSD$
+#
+
+PORTNAME=	eispack
+PORTVERSION=	1.0
+CATEGORIES=	math
+MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/eispack/ \
+		ftp://www.hensa.ac.uk/mirrors/netlib/eispack/
+DISTFILES=	${SRCS:.f=.f.gz}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Eigenvalue system package
+
+LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
+
+DIST_SUBDIR=	${PORTNAME}
+INSTALLS_SHLIB=	yes
+NO_WRKSUBDIR=	yes
 
 SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
 	bandv.f bisect.f bqr.f cbabk2.f cbal.f cg.f ch.f cinvit.f combak.f \
@@ -21,13 +32,13 @@ SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
 	tql2.f tqlrat.f trbak1.f trbak3.f tred1.f tred2.f tred3.f tridib.f \
 	tsturm.f cdiv.f
 
-DISTFILES=	${SRCS:.f=.f.Z}
+do-extract:
+	@${MKDIR} ${WRKDIR}
+.for file in ${SRCS}
+	@${GZCAT} ${_DISTDIR}/${file:.f=.f.gz} > ${WRKSRC}/${file}
+.endfor
 
 pre-build:
-	cp Makefile.lib ${WRKDIR}/Makefile
-
-pre-extract:
-	chmod +x scripts/uncomp
+	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
-

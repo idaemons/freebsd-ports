@@ -1,0 +1,12 @@
+bin/chemeq
+%%PORTDOCS%%share/doc/chemeq/COPYING
+%%PORTDOCS%%share/doc/chemeq/LISEZMOI
+%%PORTDOCS%%share/doc/chemeq/README
+%%PORTDOCS%%share/examples/chemeq/TODO
+%%PORTDOCS%%share/examples/chemeq/test.1
+%%PORTDOCS%%share/examples/chemeq/chemreport
+%%PORTDOCS%%share/examples/chemeq/chemreport.pl
+%%PORTDOCS%%share/examples/chemeq/chemtest
+%%PORTDOCS%%share/examples/chemeq/chemtest.pl
+%%PORTDOCS%%@dirrm share/doc/chemeq
+%%PORTDOCS%%@dirrm share/examples/chemeq

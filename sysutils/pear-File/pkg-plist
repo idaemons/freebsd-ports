@@ -1,0 +1,4 @@
+%%PEARDIR%%/File/CSV.php
+%%PEARDIR%%/File.php
+%%PEARDIR%%/tests/parser.php
+%%PEARDIR%%/tests/test.csv

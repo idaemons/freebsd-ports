@@ -1,0 +1,11 @@
+--- configure.orig	Mon Mar  3 14:54:16 2003
++++ configure	Mon Mar  3 14:54:37 2003
+@@ -6438,7 +6438,7 @@
+ if test $enable_debug = "yes"; then
+ 	CFLAGS="-Wall -g"
+ else
+-	CFLAGS="-Wall -O2"
++#	CFLAGS="-Wall -O2"
+ fi
+ 
+ MAKE_CLASS="$srcdir/utils/make_class"

@@ -1,0 +1,24 @@
+--- ../configure.orig	Mon Feb  3 23:43:57 2003
++++ ../configure	Wed Feb  5 01:18:24 2003
+@@ -6238,9 +6238,9 @@
+     fi
+   done
+ 
+-GTK_INCLUDES="`gtk-config --cflags`"
++GTK_INCLUDES="`imlib-config --cflags-gdk`"
+ 
+-GTK_LIBRARIES="`gtk-config --libs`"
++GTK_LIBRARIES="`imlib-config --libs-gdk`"
+ if test "${with_gl}" != "yes" ; then
+  GTK_LIBRARIES="${GTK_LIBRARIES} -lgdk_imlib"
+ fi
+@@ -7019,6 +7019,9 @@
+ if test "$with_dav" = "yes" ; then
+     
+     dav_frag=$srcdir/davlib/Makefile.dav
++else
++
++    dav_frag=/dev/null
+ fi
+ 
+ 

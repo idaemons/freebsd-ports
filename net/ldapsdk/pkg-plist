@@ -1,0 +1,23 @@
+include/mozlber.h
+include/mozldap.h
+mozilla/directory/etc/ldapfilter.conf
+mozilla/directory/etc/ldapsearchprefs.conf
+mozilla/directory/etc/ldapfriendly
+mozilla/directory/etc/ldaptemplates.conf
+@dirrm mozilla/directory/etc
+mozilla/directory/include/disptmpl.h
+mozilla/directory/include/mozlber.h
+mozilla/directory/include/mozldap.h
+mozilla/directory/include/srchpref.h
+@dirrm mozilla/directory/include
+@dirrm mozilla/directory/lib
+@dirrm mozilla/directory
+@dirrm mozilla
+lib/libmozlber.so.1
+lib/libmozlber.so
+lib/libmozldap.so.1
+lib/libmozldap.so
+lib/libmozlber.a
+lib/libmozldap.a
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m /usr/local/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

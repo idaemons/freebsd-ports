@@ -1,0 +1,67 @@
+bin/grip
+share/gnome/apps/Multimedia/grip.desktop
+%%PORTDOCS%%share/gnome/help/grip/C/acknowledge.html
+%%PORTDOCS%%share/gnome/help/grip/C/bugs.html
+%%PORTDOCS%%share/gnome/help/grip/C/cddb.html
+%%PORTDOCS%%share/gnome/help/grip/C/cdplayer.html
+%%PORTDOCS%%share/gnome/help/grip/C/configure.html
+%%PORTDOCS%%share/gnome/help/grip/C/discdbconfig.html
+%%PORTDOCS%%share/gnome/help/grip/C/faq.html
+%%PORTDOCS%%share/gnome/help/grip/C/grip.html
+%%PORTDOCS%%share/gnome/help/grip/C/gripswitches.html
+%%PORTDOCS%%share/gnome/help/grip/C/id3config.html
+%%PORTDOCS%%share/gnome/help/grip/C/intro.html
+%%PORTDOCS%%share/gnome/help/grip/C/license.html
+%%PORTDOCS%%share/gnome/help/grip/C/ln14.html
+%%PORTDOCS%%share/gnome/help/grip/C/miscconfig.html
+%%PORTDOCS%%share/gnome/help/grip/C/morehelp.html
+%%PORTDOCS%%share/gnome/help/grip/C/mp3config.html
+%%PORTDOCS%%share/gnome/help/grip/C/proxyconfig.html
+%%PORTDOCS%%share/gnome/help/grip/C/rip-perform.html
+%%PORTDOCS%%share/gnome/help/grip/C/ripconfig.html
+%%PORTDOCS%%share/gnome/help/grip/C/ripping.html
+%%PORTDOCS%%share/gnome/help/grip/C/sect-scsi.html
+%%PORTDOCS%%share/gnome/help/grip/C/sect-trackmode.html
+%%PORTDOCS%%share/gnome/help/grip/C/topic.dat
+%%PORTDOCS%%share/gnome/help/grip/C/x135.html
+share/locale/ca/LC_MESSAGES/grip.mo
+share/locale/de/LC_MESSAGES/grip.mo
+share/locale/es/LC_MESSAGES/grip.mo
+share/locale/fr/LC_MESSAGES/grip.mo
+share/locale/ja/LC_MESSAGES/grip.mo
+share/locale/pt_BR/LC_MESSAGES/grip.mo
+share/locale/ru/LC_MESSAGES/grip.mo
+share/locale/zh_CN/LC_MESSAGES/grip.mo
+share/locale/zh_HK/LC_MESSAGES/grip.mo
+share/locale/zh_TW/LC_MESSAGES/grip.mo
+share/pixmaps/gripicon.png
+%%PORTDOCS%%@exec /bin/mkdir -p %D/share/gnome/help/grip/C/images
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/gnome/help/grip/C/images || true
+@dirrm share/pixmaps
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale/zh_HK/LC_MESSAGES
+@dirrm share/locale/zh_HK
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale
+%%PORTDOCS%%@dirrm share/gnome/help/grip/C
+%%PORTDOCS%%@dirrm share/gnome/help/grip
+%%PORTDOCS%%@dirrm share/gnome/help
+@dirrm share/gnome/apps/Multimedia
+@dirrm share/gnome/apps
+@dirrm share/gnome

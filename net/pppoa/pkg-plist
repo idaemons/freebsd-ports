@@ -1,0 +1,15 @@
+sbin/modem_run
+sbin/pppoa2
+sbin/pppoa3
+etc/rc.d/adsl.sh.sample
+libdata/mgmt.o
+share/doc/speedtouch/FAQ
+share/doc/speedtouch/FAQ-fr
+share/doc/speedtouch/INSTALL
+share/doc/speedtouch/INSTALL-de
+share/doc/speedtouch/INSTALL-fr
+share/doc/speedtouch/INSTALL-it
+share/doc/speedtouch/ppp.conf.sample
+share/doc/speedtouch/quick-install
+@exec cat %D/share/doc/speedtouch/quick-install
+@dirrm share/doc/speedtouch

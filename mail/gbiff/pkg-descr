@@ -1,0 +1,4 @@
+gbiff checks for mail within a file, a qmail or MH style dir,
+or on a POP3 server.
+
+WWW: http://gbiff.sourceforge.net/

@@ -1,0 +1,187 @@
+#
+# MOVED - a list of (recently) moved or removed ports
+#
+# $FreeBSD$
+#
+# Each entry consists of a single line containing the following four
+# fields in the order named, separated with the pipe (`|') character:
+#
+#     Port:	A port that was moved (category/portname).
+#     Moved to:	Where the port was moved to, or which port users
+#		can and should migrate to (category/portname).
+#		Blank indicates that the port was deleted.
+#     Date:	When the moving or the removal was done (YYYY-MM-DD,
+#		in PST/PDT).
+#     Why:	The reason why the port was moved or removed.
+#
+# Keep this list sorted in the chronological order.  New entries must
+# be added at the tail.
+#
+# Port|Moved to|Date|Why
+net/ratoolset|net/irrtoolset|2002-11-16|software was renamed
+chinese/linux-netscape47-communicator||2002-11-17|security vulnerability
+chinese/linux-netscape47-navigator||2002-11-17|security vulnerability
+chinese/netscape47-communicator||2002-11-17|security vulnerability
+chinese/netscape47-navigator||2002-11-17|security vulnerability
+japanese/linux-netscape47-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
+japanese/linux-netscape47-navigator|japanese/netscape48-navigator|2002-11-17|security vulnerability
+japanese/netscape-fonts|japanese/alias-fonts|2002-11-17|obsoleted by alias-fonts
+japanese/netscape3.language||2002-11-17|security vulnerability
+japanese/netscape4-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
+japanese/netscape4-navigator|japanese/netscape48-navigator|2002-11-17|security vulnerability
+japanese/netscape47-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
+japanese/netscape47-navigator|japanese/netscape48-navigator|2002-11-17|security vulnerability
+korean/linux-netscape47-communicator|korean/netscape48-communicator|2002-11-27|security vulnerability
+korean/linux-netscape47-navigator|korean/netscape48-navigator|2002-11-27|security vulnerability
+korean/netscape3||2002-11-17|security vulnerability
+korean/netscape4-communicator|korean/netscape48-communicator|2002-11-27|security vulnerability
+korean/netscape4-navigator|korean/netscape48-navigator|2002-11-27|security vulnerability
+korean/netscape47-communicator|korean/netscape48-communicator|2002-11-27|security vulnerability
+korean/netscape47-navigator|korean/netscape48-navigator|2002-11-27|security vulnerability
+russian/netscape4.language||2002-11-17|security vulnerability
+www/linux-netscape4|www/netscape48-navigator|2002-11-17|security vulnerability
+www/linux-netscape47-communicator|www/netscape48-communicator|2002-11-17|security vulnerability
+www/linux-netscape47-navigator|www/netscape48-navigator|2002-11-17|security vulnerability
+www/netscape3||2002-11-17|security vulnerability
+www/netscape3-gold||2002-11-17|security vulnerability
+www/netscape4-communicator|www/netscape48-communicator|2002-11-17|security vulnerability
+www/netscape4-communicator.us|www/netscape48-communicator|2002-11-17|security vulnerability
+www/netscape4-navigator|www/netscape48-navigator|2002-11-17|security vulnerability
+www/netscape47-communicator|www/netscape48-communicator|2002-11-17|security vulnerability
+www/netscape47-navigator|www/netscape48-navigator|2002-11-17|security vulnerability
+japanese/mhonarc|www/mhonarc|2002-11-17|current www/mhonarc could use Japanese
+graphics/linux_mesa||2002-11-17|Port was broken and out of date
+audio/cdrdao|sysutils/cdrdao|2002-11-18|misfiled, burns data CDs too
+sysutils/pkgview|sysutils/gnome-pkgview|2002-11-20|author has changed the binary and package name
+japanese/tvi||2002-11-21|development discontinued and distfile unavailable
+textproc/pt-aspell|portuguese/aspell|2002-11-21|new category
+math/p5-Math-Financial|finance/p5-Math-Financial|2002-11-21|new category
+graphics/xmms-avi|multimedia/xmms-avi|2002-11-21|new category
+misc/qhacc|finance/qhacc|2002-11-21|new category
+textproc/br-ispell|portuguese/ispell-pt_BR|2002-11-22|new category
+french/cups||2002-11-23|deleted since not supportable under cups 1.1.16
+french/cups-base||2002-11-23|deleted since not supportable under cups 1.1.16
+french/cups-lpr||2002-11-23|deleted since not supportable under cups 1.1.16
+korean/w3m|www/w3m-m17n|2002-11-23|www/w3m-m17n could handle Korean
+korean/gaim|net/gaim|2002-11-24|net/gaim could handle Korean
+palm/xcopilot|ports/pose|2002-11-24|pose supersceded xcopilot
+www/libxpg4-ns||2002-11-24|needless since all native netscapes are removed
+textproc/pspell-ispell||2002-11-28|this plugin was obsoleted by aspell
+audio/linux-realplayer|multimedia/linux-realplayer|2002-11-28|new category
+audio/xmms|multimedia/xmms|2002-11-28|new category
+graphics/avifile|multimedia/avifile|2002-11-28|new category
+graphics/divx4linux4|multimedia/linux-divx4linux4|2002-11-28|new category
+graphics/divx4linux|multimedia/linux-divx4linux|2002-11-28|new category
+graphics/ffmpeg|multimedia/ffmpeg|2002-11-28|new category
+graphics/gstreamer-player|multimedia/gstreamer-player|2002-11-28|new category
+graphics/gstreamer-plugins|multimedia/gstreamer-plugins|2002-11-28|new category
+graphics/gstreamer|multimedia/gstreamer|2002-11-28|new category
+graphics/gsubedit|multimedia/gsubedit|2002-11-28|new category
+graphics/libdivxdecore-devel|multimedia/libdivxdecore-devel|2002-11-28|new category
+graphics/libdivxdecore|multimedia/libdivxdecore|2002-11-28|new category
+graphics/libdivxencore|multimedia/libdivxencore|2002-11-28|new category
+graphics/libdvdcss|multimedia/libdvdcss|2002-11-28|new category
+graphics/libdvdread|multimedia/libdvdread|2002-11-28|new category
+graphics/libdv|multimedia/libdv|2002-11-28|new category
+graphics/libmovtar|multimedia/libmovtar|2002-11-28|new category
+graphics/libmpeg2|multimedia/libmpeg2|2002-11-28|new category
+graphics/linux-divxplayer|multimedia/linux-divxplayer|2002-11-28|new category
+graphics/mjpegtools|multimedia/mjpegtools|2002-11-28|new category
+graphics/mpeg4ip|multimedia/mpeg4ip|2002-11-28|new category
+graphics/mplayer-fonts|multimedia/mplayer-fonts|2002-11-28|new category
+graphics/mplayer-skins|multimedia/mplayer-skins|2002-11-28|new category
+graphics/mplayer|multimedia/mplayer|2002-11-28|new category
+graphics/ogle-gui|multimedia/ogle-gui|2002-11-28|new category
+graphics/ogle|multimedia/ogle|2002-11-28|new category
+graphics/ogmtools|multimedia/ogmtools|2002-11-28|new category
+graphics/okle|multimedia/okle|2002-11-28|new category
+graphics/openquicktime|multimedia/openquicktime|2002-11-28|new category
+graphics/oqtencoder|multimedia/oqtencoder|2002-11-28|new category
+graphics/oqtplayer|multimedia/oqtplayer|2002-11-28|new category
+graphics/win32-codecs|multimedia/win32-codecs|2002-11-28|new category
+graphics/xmps-opendivx-plugin|multimedia/xmps-opendivx-plugin|2002-11-28|new category
+graphics/xmps-win32-plugin|multimedia/xmps-win32-plugin|2002-11-28|new category
+editors/ooodict-pt_BR|portuguese/ooodict-pt_BR|2002-12-06|new category
+editors/ooodict-pt_PT|portuguese/ooodict-pt_PT|2002-12-06|new category
+editors/openoffice-pt|portuguese/openoffice|2002-12-06|new category
+editors/staroffice52-pt|portuguese/staroffice52|2002-12-06|new category
+www/frontpage-pt_BR|portuguese/frontpage-pt_BR|2002-12-06|new category
+audio/kdemultimedia3|multimedia/kdemultimedia3|2002-12-08|new category
+japanese/gn-mnews||2002-12-08|security vulnerability
+japanese/mnews||2002-12-08|security vulnerability
+japanese/mnews-gnspool||2002-12-08|security vulnerability
+japanese/mnews-im||2002-12-08|security vulnerability
+print/pips-sc20||2002-12-08|license problems
+print/pips-sc40||2002-12-08|license problems
+print/pips-sc480||2002-12-08|license problems
+print/pips-sc580||2002-12-08|license problems
+print/pips-sc880||2002-12-08|license problems
+print/pips-sc980||2002-12-08|license problems
+print/pips-sp810_820||2002-12-08|license problems
+print/pips720||2002-12-08|license problems
+print/pips780cs||2002-12-08|license problems
+print/pips790||2002-12-08|license problems
+print/pips820ug||2002-12-08|license problems
+print/pips920||2002-12-08|license problems
+print/pips-sc680_777||2002-12-08|license problems
+x11/launch.app||2002-12-08|security vulnerability
+net/icradius||2002-12-08|security vulnerability
+net/p5-IC-Radius||2002-12-08|security vulnerability
+net/radius||2002-12-08|security vulnerability
+net/xtradius||2002-12-08|security vulnerability
+net/gated||2002-12-13|no longer distributed by vendor
+japanese/gnomecore|x11/gnomecore|2002-12-16|patches integrated into the upstream
+www/comline|www/libwww|2003-01-03|part of libwww
+devel/dbregc||2003-01-05|no longer relevant
+lang/smalleiffel|lang/smarteiffel|2003-01-06|change name
+graphics/tosvcd|multimedia/tosvcd|2003-01-06|new category
+graphics/vcdgear|multimedia/vcdgear|2003-01-06|new category
+graphics/vcdimager|multimedia/vcdimager|2003-01-06|new category
+graphics/vcdpad|multimedia/vcdpad|2003-01-06|new category
+graphics/vcdtools|multimedia/vcdtools|2003-01-06|new category
+devel/autoconf254|devel/autoconf257|2003-01-06|new version from FSF
+devel/ncurses-dialog|devel/cdialog|2003-01-11|renamed by delete+add
+graphics/dvdrip|multimedia/dvdrip|2003-01-17|new category
+misc/pipebench|benchmarks/pipebench|2003-01-18|fix category
+math/xmgr||2003-01-19|removed, obsoleted, successor is grace
+x11/libhelp||2003-01-19|removed, didn't compile on current motif, only used by xmgr
+mail/xfaces||2003-01-19|removed, obsoleted, functionality taken over by faces
+devel/gnustep-devel|devel/gnustep|2003-01-20|merged
+devel/gnustep-devel|devel/gnustep|2003-01-20|merged
+x11-toolkits/gnustep-gui-devel|x11-toolkits/gnustep-gui|2003-01-20|merged
+x11-toolkits/gnustep-xgps|x11-toolkits/gnustep-back|2003-01-20|full substitute
+devel/ruby-unit|devel/ruby-testunit|2003-01-23|succeeded
+mail/p5-Mail-SpamAssassin-devel|mail/p5-Mail-SpamAssassin-snapshot|2003-01-25|directory renamed
+devel/uml|devel/umbrello|2003-01-26|project renamed
+x11-toolkits/qt30|x11-toolkits/qt31|2003-01-28|qt30 replaced by qt31
+misc/kde3-i18n-pt|portuguese/kde3-i18n|2003-01-28|new category
+misc/kde3-i18n-pt_BR|portuguese/kde3-i18n-pt_BR|2003-01-28|new category
+lang/php4||2003-01-29|integrated into www/mod_php4
+biology/gaussian||2003-01-31|deleted maintain is hard and gray in license
+graphics/xine_dvdnav_plugin||2003-02-01|integrated into graphics/libxine
+devel/ossp-mm||2003-02-01|accidental dupe of devel/mm
+archivers/linux_rar||2003-02-03|FreeBSD/i386 binary is available
+security/pam_krb5||2003-02-05|deleted: functionality in base system
+deskutils/gnucash|finance/gnucash|2003-02-05|new category
+x11-toolkits/crux||2003-02-07|deleted: added to GNOME 2.2 desktop
+textproc/ruby-erb||2003-02-09|ERb 1.x is obsolete: use the one included in ruby 1.8 or ruby16-shim-ruby18
+audio/lame-devel||2003-02-09|obsolete
+x11-fm/gnomemc||2003-02-10|obsolete
+x11/wmshutdown|sysutils/wmshutdown|2003-02-13|fix category
+security/kgpgapplet||2003-02-19|merged into kgpg
+net/ip-tun||2003-02-19|obsoleted by gif interfaces
+net/edonkey-gui-gtk-kioslave||2003-02-19|merged into edonkey-gui-gtk
+print/dvipdfm||2003-02-20|merged into teTeX
+net/amcl|net/gnome-mud|2003-02-23|project renamed
+net/openldap|net/openldap12|2003-02-23|port renamed
+net/openldap2|net/openldap20|2003-02-23|port renamed
+www/caudium|www/caudium10|2003-02-23|port renamed
+mail/imp||2003-02-24|security vulnerability
+graphics/libdvdnav|multimedia/libdvdnav|2003-02-24|new category
+graphics/libxine|multimedia/libxine|2003-02-24|new category
+graphics/xine|multimedia/xine|2003-02-24|new category
+net/rdesktop-devel|net/rdesktop|2003-02-24|obsolete beta version
+java/jikes-devel|java/jikes|2003-02-24|stable version caught up with development version
+www/horde||2003-02-25|obsolete
+astro/kstars|misc/kdeedu3|2003-03-02|kstars included in kdeedu package
+devel/ruby-testunit||2003-03-03|integrated into ruby16-shim-ruby18

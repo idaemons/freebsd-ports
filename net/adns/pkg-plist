@@ -1,0 +1,7 @@
+bin/adnslogres
+bin/adnshost
+bin/adnsresfilter
+include/adns.h
+lib/libadns.a
+lib/libadns.so
+lib/libadns.so.%%LIBVERSION%%

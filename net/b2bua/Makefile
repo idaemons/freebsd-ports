@@ -1,0 +1,42 @@
+# New ports collection makefile for:	b2bua
+# Date created:				6 December 2002
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	b2bua
+PORTVERSION=	1.4.0
+PORTREVISION=	1
+CATEGORIES=	net
+MASTER_SITES=	http://www.vovida.org/downloads/b2bua/
+
+MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A back-to-back (B2B) SIP user agent
+
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+
+USE_GMAKE=	yes
+ALL_TARGET=	b2bua
+CFLAGS+=	-I${LOCALBASE}/include/libxml2 \
+		-I${LOCALBASE}/include/libxml2/libxml \
+		-I${LOCALBASE}/include -Wno-deprecated
+MAKE_ENV=	PTHREAD_LDFLAGS="${PTHREAD_LIBS}" \
+		PTHREAD_LIBNAME="${PTHREAD_LIBNAME}"
+
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+PTHREAD_LIBNAME+=	gnugetopt
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/sip/b2b/bin.nodebug.FreeBSD.i386/b2bua \
+		${PREFIX}/bin
+	${MKDIR} ${DOCSDIR}
+.for file in README HOWTO b2bdesign.pdf Doc/B2BUA.pdf
+	${INSTALL_DATA} ${WRKSRC}/sip/b2b/${file} ${DOCSDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/sip/b2b/b2bConfig.xml \
+		${PREFIX}/etc/b2bConfig.xml.sample
+
+.include <bsd.port.mk>

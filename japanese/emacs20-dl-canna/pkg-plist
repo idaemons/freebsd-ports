@@ -1,0 +1,10 @@
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/canna.so.%%DLCANNA_VER%%
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/canna.so
+%%LISPDIR%%/canna/canna.el
+%%LISPDIR%%/canna/canna.elc
+%%LISPDIR%%/canna/canna-leim.el
+%%LISPDIR%%/canna/canna-leim.elc
+%%DOCDIR%%/README.ja
+%%DOCDIR%%/ChangeLog
+@dirrm %%LISPDIR%%/canna
+@dirrm %%DOCDIR%%

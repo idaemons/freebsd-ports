@@ -1,0 +1,38 @@
+@comment $FreeBSD$
+%%FONTSDIR%%/LICENSE
+%%FONTSDIR%%/andalemo.ttf
+%%FONTSDIR%%/arial.ttf
+%%FONTSDIR%%/arialbd.ttf
+%%FONTSDIR%%/arialbi.ttf
+%%FONTSDIR%%/ariali.ttf
+%%FONTSDIR%%/ariblk.ttf
+%%FONTSDIR%%/comic.ttf
+%%FONTSDIR%%/comicbd.ttf
+%%FONTSDIR%%/cour.ttf
+%%FONTSDIR%%/courbd.ttf
+%%FONTSDIR%%/courbi.ttf
+%%FONTSDIR%%/couri.ttf
+%%PKG_NSALIAS%%%%FONTSDIR%%/fonts.alias
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/fonts.scale
+%%FONTSDIR%%/georgia.ttf
+%%FONTSDIR%%/georgiab.ttf
+%%FONTSDIR%%/georgiai.ttf
+%%FONTSDIR%%/georgiaz.ttf
+%%FONTSDIR%%/impact.ttf
+%%FONTSDIR%%/times.ttf
+%%FONTSDIR%%/timesbd.ttf
+%%FONTSDIR%%/timesbi.ttf
+%%FONTSDIR%%/timesi.ttf
+%%FONTSDIR%%/trebuc.ttf
+%%FONTSDIR%%/trebucbd.ttf
+%%FONTSDIR%%/trebucbi.ttf
+%%FONTSDIR%%/trebucit.ttf
+%%FONTSDIR%%/verdana.ttf
+%%FONTSDIR%%/verdanab.ttf
+%%FONTSDIR%%/verdanai.ttf
+%%FONTSDIR%%/verdanaz.ttf
+%%FONTSDIR%%/webdings.ttf
+@dirrm %%FONTSDIR%%
+%%PKG_OLDXF86%%@exec ln -fs %D/%%FONTSDIR%% %D/%%TTFONTSDIR%%/%%FONTNAME%%
+%%PKG_OLDXF86%%@unexec rm -f %D/%%TTFONTSDIR%%/%%FONTNAME%%

@@ -1,0 +1,5 @@
+bin/jam
+%%PORTDOCS%%share/doc/jam/Jam.html
+%%PORTDOCS%%share/doc/jam/Jambase.html
+%%PORTDOCS%%share/doc/jam/Jamfile.html
+%%PORTDOCS%%@dirrm share/doc/jam

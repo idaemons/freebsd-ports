@@ -1,0 +1,54 @@
+--- doc/manpages/Makefile.orig	Wed Sep 11 10:40:24 2002
++++ doc/manpages/Makefile	Wed Sep 11 20:32:04 2002
+@@ -4,14 +4,14 @@
+ 
+ VERSION = 0.63a
+ POD2MAN = pod2man --section=1 --release=$(VERSION)
+-prefix = /usr
+-bindir = $(prefix)/bin
+-tempdir = /tmp
+-sysconfdir = /etc
+-docdir = /usr/share/doc/packages
+-sharedir = $(prefix)/share
+-libdir = $(prefix)/lib
+-mandir = $(prefix)/share/man
++#prefix = /usr
++#bindir = $(prefix)/bin
++#tempdir = /tmp
++#sysconfdir = /etc
++#docdir = /usr/share/doc/packages
++#sharedir = $(prefix)/share
++#libdir = $(prefix)/lib
++#mandir = $(prefix)/share/man
+ INSTALL = install -m 0644 
+ gzip = gzip -f
+ 
+@@ -22,7 +22,7 @@
+ TITLE_CS = "Krátký manuál Muttprintu"
+ 
+ 
+-all: german english spanish italian czech
++all: english
+ german: de/muttprint.1.gz
+ english: en/muttprint.1.gz
+ italian: it/muttprint.1.gz
+@@ -111,13 +111,12 @@
+ 
+ ########################### GENERAL ###################################
+ 
+-install: de/muttprint.1.gz en/muttprint.1.gz es/muttprint.1.gz \
+- 			it/muttprint.1.gz cs/muttprint.1.gz
+-	$(INSTALL) en/muttprint.1.gz $(mandir)/man1/
+-	$(INSTALL) de/muttprint.1.gz $(mandir)/de/man1/
+-	$(INSTALL) es/muttprint.1.gz $(mandir)/es/man1/
+-	$(INSTALL) it/muttprint.1.gz $(mandir)/it/man1/
+-	$(INSTALL) cs/muttprint.1.gz $(mandir)/cs/man1/
++install: en/muttprint.1.gz
++	${BSD_INSTALL_MAN} en/muttprint.1.gz $(mandir)/man1/
++#	$(INSTALL) de/muttprint.1.gz $(mandir)/de/man1/
++#	$(INSTALL) es/muttprint.1.gz $(mandir)/es/man1/
++#	$(INSTALL) it/muttprint.1.gz $(mandir)/it/man1/
++#	$(INSTALL) cs/muttprint.1.gz $(mandir)/cs/man1/
+ 
+ uninstall:
+ 	rm -f $(mandir)/man1/muttprint.1.gz

@@ -1,0 +1,39 @@
+# New ports collection makefile for:	Jetty
+# Date created:				28 August 2000
+# Whom:				Stephane Legrand <stephane@freebsd-fr.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	jetty
+PORTVERSION=	4.2.5
+CATEGORIES=	www java
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://jetty.mortbay.com/pub/
+MASTER_SITE_SUBDIR=	jetty
+DISTNAME=	Jetty-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Extensible Java HTTP Server
+
+USE_JAVA=	1.3+
+
+NO_BUILD=	yes
+
+PLIST_SUB=	JETTY_VERSION=${PORTVERSION}
+
+post-extract:
+	${FIND} ${WRKSRC} -name CVS -delete
+	${FIND} ${WRKSRC} -name .cvsignore -delete
+
+do-install:
+	@${MKDIR} ${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}
+	@(cd ${WRKSRC} && ${TAR} -c --exclude 'src/*' --exclude 'src1.4/*' -f - ./ ) \
+		| (cd ${PREFIX}/share/java/${PORTNAME}-${PORTVERSION} && ${TAR} --unlink -x -f -)
+
+post-install:
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE} \
+		| ${SED} 's|%%PORTVERSION%%|${PORTVERSION}|g'
+
+.include <bsd.port.mk>

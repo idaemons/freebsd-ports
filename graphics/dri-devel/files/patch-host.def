@@ -1,0 +1,32 @@
+--- config/cf/host.def.orig	Fri Aug 30 15:05:13 2002
++++ config/cf/host.def	Fri Aug 30 15:12:10 2002
+@@ -4,16 +4,10 @@
+  */
+ #define XFree86CustomVersion "DRI trunk"
+ 
+-#define DefaultGcc2AxpOpt -O2 -mcpu=ev6
+-#define DefaultGcc2PpcOpt -O2 -mcpu=750
+-#define DefaultGcc2i386Opt -O2
+-#if defined(AlphaArchitecture)
+-#  define LibraryCDebugFlags -O2 -mcpu=ev6
+-#elif defined(PpcArchitecture)
+-#  define LibraryCDebugFlags -O2 -mcpu=750
+-#else
+-#  define LibraryCDebugFlags -O2
+-#endif
++#define DefaultGcc2AxpOpt ${FBSDCFLAGS}
++#define DefaultGcc2PpcOpt ${FBSDCFLAGS}
++#define DefaultGcc2i386Opt ${FBSDCFLAGS}
++#define LibraryCDebugFlags ${FBSDCFLAGS}
+ 
+ #define BuildXFree86ConfigTools YES
+ 
+@@ -32,7 +26,7 @@
+ #define GccWarningOptions -Wall -Wpointer-arith -Wstrict-prototypes \
+                           -Wmissing-prototypes -Wmissing-declarations \
+                           -Wnested-externs
+-#define DefaultCCOptions -ansi GccWarningOptions -pipe -g
++#define DefaultCCOptions -g
+ 
+ #define NormalLibGlx NO
+ 

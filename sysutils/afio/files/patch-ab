@@ -1,0 +1,11 @@
+--- afio.c.orig	Fri Nov 26 01:24:39 1999
++++ afio.c	Thu Jan 27 14:23:28 2000
+@@ -609,7 +609,7 @@
+                aruntil, arbsize);    
+ #else
+       fprintf (stderr, "Media size %ld is less than block size %d\n",
+-	       (ulong) aruntil, arbsize);
++	       (u_long) aruntil, arbsize);
+ #endif
+    usage ();
+     }
