@@ -1,10 +1,26 @@
 # New ports collection makefile for:	acs
-# Version required:	0.16
 # Date created:		01 January 1995
-# Whom:			thomas@ghpc8.ihf.rwth-aachen.de
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
+#
+# $FreeBSD$
 #
 
-DISTNAME=	acs016
-MASTER_SITES=	ftp://ee.rochester.edu/pub/acs/
+PORTNAME=	acs
+PORTVERSION=	0.28
+CATEGORIES=	cad
+MASTER_SITES=	http://www.geda.seul.org/dist/ \
+		http://www.geda.coelacanth.com/dist/ \
+		ftp://ftp.geda.seul.org/pub/geda/dist/
+
+MAINTAINER=	tg@FreeBSD.org
+
+USE_NEWGCC=	yes
+MAKE_ENV=	CCC="${CXX}"
+
+post-extract:
+	${CP} ${FILESDIR}/acs.rc ${FILESDIR}/Makefile ${WRKSRC}
+
+post-patch:
+	${PERL} -pi -e "s;%%PREFIX%%;${PREFIX};g" ${WRKSRC}/src/md.h
 
 .include <bsd.port.mk>

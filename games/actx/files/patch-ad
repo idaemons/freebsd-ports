@@ -1,0 +1,20 @@
+--- samples/sample.actxrc.orig	Tue Sep 25 22:46:27 2001
++++ samples/sample.actxrc	Sat Oct  6 14:02:56 2001
+@@ -10,7 +10,7 @@
+ Actx*titleOfMenuE: ONE - for Bright Season -
+ 
+ 
+-Actx*xpmDir: /usr/local/lib/actx
++Actx*xpmDir: %%ACTXDIR%%
+ 
+ !Actx*balloon.font: -alias-fixed-bold-*-*-*-12-*-*-*-*-*-*-*
+ 
+@@ -24,7 +24,7 @@
+ 
+ Actx*balloon.style: wmaker
+ 
+-!Actx*sndDir: /usr/local/lib/actx/wav
++!Actx*sndDir: %%ACTXDIR%%/wav
+ 
+ !Actx*sndCom: /usr/local/bin/wavplay -q %s
+ 

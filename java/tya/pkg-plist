@@ -1,0 +1,4 @@
+lib/tya/libtya.so
+share/tya/README
+@dirrm share/tya
+@dirrm lib/tya

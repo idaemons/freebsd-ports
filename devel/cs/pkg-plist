@@ -1,0 +1,3 @@
+bin/cs
+%%PORTDOCS%%share/doc/cs/ANNOUNCE
+%%PORTDOCS%%@dirrm share/doc/cs

@@ -1,0 +1,20 @@
+*** make.inc.orig	Wed May 16 15:58:57 2001
+--- make.inc	Sat Jul  7 03:04:53 2001
+***************
+*** 53,59 ****
+  AR=		ar cq
+  RM=		rm -f
+  LN=		ln -s
+! CFLAGS=		-O $(DEFINES) $(INCDIRS) $(ARCH) $(TIMER) $(TERMIO)
+  ARCH=		-DSVR4 -Di386
+  TIMER=		-DUSE_SELECT
+  TERMIO=		-DUSE_TERMIOS
+--- 53,60 ----
+  AR=		ar cq
+  RM=		rm -f
+  LN=		ln -s
+! CFLAGS?=	-O
+! CFLAGS+=	$(DEFINES) $(INCDIRS) $(ARCH) $(TIMER) $(TERMIO)
+  ARCH=		-DSVR4 -Di386
+  TIMER=		-DUSE_SELECT
+  TERMIO=		-DUSE_TERMIOS

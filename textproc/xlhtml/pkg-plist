@@ -1,0 +1,8 @@
+bin/nsopen
+bin/nspptview
+bin/nsxlview
+bin/ppthtml
+bin/xlhtml
+share/doc/xlhtml/README.xlhtml
+share/doc/xlhtml/README.ppthtml
+@dirrm share/doc/xlhtml

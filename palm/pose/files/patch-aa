@@ -1,0 +1,37 @@
+--- configure.orig	Thu Mar 29 10:43:55 2001
++++ configure	Thu Mar 29 10:51:21 2001
+@@ -3105,6 +3105,8 @@
+ *-freebsd*)
+ 	THREAD_FLAGS="-pthread -D_THREAD_SAFE -D_REENTRANT -DPthreadDraftVersion=10"
+ 	THREAD_LIBS=
++	POSER_CFLAGS="$POSER_CFLAGS $CFLAGS $FLAGS $_WARNINGS_CFLAGS"
++	POSER_CXXFLAGS="$POSER_CXXFLAGS $CFLAGS $FLAGS $_WARNINGS_CXXFLAGS"
+ 	;;
+ 
+ *-bsdi4*)
+@@ -3121,7 +3123,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lfltk -L$x_libraries -lXext -lX11 -lm $X_EXTRA_LIBS $LIBS"
++LIBS="-lfltk -lGL -L$x_libraries -lXext -lX11 -lm $X_EXTRA_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3127 "configure"
+ #include "confdefs.h"
+@@ -3155,7 +3157,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lfltk $LIBS"
++  LIBS="-lfltk -lGL $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -3188,7 +3190,6 @@
+ 
+ 
+ 
+-FLAGS_OPTIMIZE="-O2"
+ 
+ 
+ 

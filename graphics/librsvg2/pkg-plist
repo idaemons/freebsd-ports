@@ -1,0 +1,8 @@
+include/librsvg-2/librsvg/librsvg-features.h
+include/librsvg-2/librsvg/rsvg.h
+lib/librsvg-2.a
+lib/librsvg-2.so
+lib/librsvg-2.so.2
+libdata/pkgconfig/librsvg-2.0.pc
+@dirrm include/librsvg-2/librsvg
+@dirrm include/librsvg-2

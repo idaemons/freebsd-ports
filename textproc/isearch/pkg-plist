@@ -1,0 +1,8 @@
+bin/Iindex
+bin/Isearch
+bin/Iutil
+%%PORTDOCS%%share/doc/isearch/QuickStart.html
+%%PORTDOCS%%share/doc/isearch/IsearchFeatures.html
+%%PORTDOCS%%share/doc/isearch/IsearchTutorial.html
+%%PORTDOCS%%share/doc/isearch/Isearch-cgi-tutorial.html
+%%PORTDOCS%%@dirrm share/doc/isearch

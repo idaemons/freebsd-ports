@@ -1,0 +1,3 @@
+bin/jad
+%%PORTDOCS%%share/doc/jad/Readme.txt
+%%PORTDOCS%%@dirrm share/doc/jad

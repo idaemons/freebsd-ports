@@ -1,0 +1,29 @@
+*** xmcd_d/Imakefile.orig	Mon Jul 16 13:52:06 2001
+--- xmcd_d/Imakefile	Tue Jul 17 03:04:47 2001
+***************
+*** 54,60 ****
+  SYS_LIBRARIES= $(LIBCDDB)
+  #endif
+  
+! LOCAL_LIBRARIES= XmClientLibs
+  
+  #if defined(FreeBSDArchitecture)
+  .if exists(/usr/include/camlib.h)
+--- 54,60 ----
+  SYS_LIBRARIES= $(LIBCDDB)
+  #endif
+  
+! LOCAL_LIBRARIES= ${MOTIFLIB} XawClientLibs
+  
+  #if defined(FreeBSDArchitecture)
+  .if exists(/usr/include/camlib.h)
+***************
+*** 98,103 ****
+--- 98,104 ----
+  #endif	/* Linux Sun AIX Ultrix USL SVR4 */
+  #endif	/* BSD Osf sony_news Sun4 */
+  
++ MANSUFFIX=1
+  
+  /*
+   * Add local include path

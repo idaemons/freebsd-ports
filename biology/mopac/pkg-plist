@@ -1,0 +1,19 @@
+bin/MOPAC7
+bin/rmopac
+%%PORTDOCS%%share/doc/mopac/mopac.tex
+%%PORTDOCS%%share/doc/mopac/mopac.dvi
+%%PORTDOCS%%share/examples/mopac/h2o.dat
+%%PORTDOCS%%share/mopac/test/test_cos.dat
+%%PORTDOCS%%share/mopac/test/test_cos.out
+%%PORTDOCS%%share/mopac/test/test_ef_.dat
+%%PORTDOCS%%share/mopac/test/test_ef_.out
+%%PORTDOCS%%share/mopac/test/test_gre.dat
+%%PORTDOCS%%share/mopac/test/test_gre.end
+%%PORTDOCS%%share/mopac/test/test_gre.out
+%%PORTDOCS%%share/mopac/test/test_pol.dat
+%%PORTDOCS%%share/mopac/test/test_pol.out
+%%PORTDOCS%%share/mopac/test/test.csh
+%%PORTDOCS%%@dirrm share/examples/mopac
+%%PORTDOCS%%@dirrm share/doc/mopac
+%%PORTDOCS%%@dirrm share/mopac/test
+%%PORTDOCS%%@dirrm share/mopac

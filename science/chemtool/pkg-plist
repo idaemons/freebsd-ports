@@ -1,0 +1,5 @@
+bin/chemtool
+bin/cht
+share/locale/cs/LC_MESSAGES/chemtool.mo
+share/locale/de/LC_MESSAGES/chemtool.mo
+share/locale/ru/LC_MESSAGES/chemtool.mo

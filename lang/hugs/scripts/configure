@@ -1,0 +1,3 @@
+#!/bin/sh
+cd ${WRKSRC}/unix
+./configure --with-readline --prefix=${PREFIX}

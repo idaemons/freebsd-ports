@@ -1,0 +1,18 @@
+--- Makefile.orig	Wed Apr 28 18:17:54 1999
++++ Makefile	Thu May 25 18:58:23 2000
+@@ -1,11 +1,11 @@
+ 
+-I  = -I/usr/openwin/include -I/usr/local/include
++I  = -I${X11BASE}/include -I${LOCALBASE}/include
+ #L  = -Bstatic -lXpm -Bdynamic -lX11 -lXext
+-L  = -L/usr/local/lib -L/usr/openwin/lib -L/usr/X11/lib -lXpm -lX11 -lXext
++L  = -L${LOCALBASE}/lib -L${X11BASE}/lib -L/usr/lib -lXpm -lX11 -lXext
+ #CC = gcc -O $I -DXLIB_ILLEGAL_ACCESS
+-CC=CC -O $I -DXLIB_ILLEGAL_ACCESS 
++CC+= ${CFLAGS} ${COPT} $I -DXLIB_ILLEGAL_ACCESS 
+ 
+-cyrx2:	cyrx2.o cyrmapper.o
++all:	cyrx2.o cyrmapper.o
+ 	$(CC) cyrx2.o  cyrmapper.o -o cyrx2 $L
+ 
+ cyrx: cyrx.o  cyrmapper.o

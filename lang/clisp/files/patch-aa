@@ -1,0 +1,17 @@
+--- src/makemake.in.orig	Mon Jun 25 07:54:46 2001
++++ src/makemake.in	Sun Aug 26 23:41:48 2001
+@@ -1634,7 +1634,14 @@
+ echol "mandir = \$(exec_prefix)${NEXT_}man"
+ echol "htmldir = \$(exec_prefix)${NEXT_}share${NEXT_}html"
+ echol "dvidir = \$(exec_prefix)${NEXT_}share${NEXT_}dvi"
++fsstnd=freebsd
+ case "$fsstnd" in
++  freebsd)
++    echol "docdir = \$(exec_prefix)${NEXT_}share${NEXT_}doc"
++    echol "lispdocdir = \$(docdir)${NEXT_}clisp"
++    echol "htmldir = \$(lispdocdir)"
++    echol "dvidir = \$(lispdocdir)"
++    ;;
+   gnu_ext)
+     echol "docdir = \$(exec_prefix)${NEXT_}doc"
+     echol "lispdocdir = \$(docdir)${NEXT_}clisp"

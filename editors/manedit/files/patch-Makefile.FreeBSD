@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- Makefile.FreeBSD.orig	Mon Sep  3 06:57:19 2001
++++ Makefile.FreeBSD	Tue Sep  4 15:20:14 2001
+@@ -52,7 +52,7 @@
+ #
+ GTK_CONFIG ?= gtk-config
+ GTK_CFLAGS = `$(GTK_CONFIG) --cflags`
+-CFLAGS += $(GTK_CFLAGS) -O2 -Wall \
++CFLAGS += $(GTK_CFLAGS) -Wall \
+           -DPREFIX=\"$(PREFIX)\" \
+           -DLOCALBASE=\"$(LOCALBASE)\" -DX11BASE=\"$(X11BASE)\"
+ 
+@@ -126,7 +126,7 @@
+ #
+ #   This rule is defined externally.
+ #
+-include Makefile.install.FreeBSD
++include Makefile.install.UNIX
+ 
+ 
+ # ########################################################################

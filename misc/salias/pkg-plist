@@ -1,0 +1,3 @@
+bin/salias
+lib/%%PYTHON_VERSION%%/site-packages/salias.py
+lib/%%PYTHON_VERSION%%/site-packages/salias.pyc

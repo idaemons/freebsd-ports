@@ -1,0 +1,4 @@
+lib/%%PYTHON_VERSION%%/site-packages/pcap.py
+lib/%%PYTHON_VERSION%%/site-packages/pcap.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pcap.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pcapcmodule.so

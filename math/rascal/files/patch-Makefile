@@ -1,0 +1,20 @@
+--- Makefile.orig	Thu Jun 28 02:07:37 2001
++++ Makefile	Thu Jun 28 02:11:27 2001
+@@ -21,4 +21,3 @@
+ 
+-CC=g++
+-CFLAGS=-O0 -g -DVERSION=\"$(VERSION)\"
++CFLAGS+=-DVERSION=\"$(VERSION)\" -I%%LOCALBASE%%/include
+ # With the following options you may generate an optimized version of
+@@ -38,3 +37,3 @@
+ 
+-LIBS=-lm -lreadline -lcurses
++LIBS=-lm -lreadline -lcurses -L%%LOCALBASE%%/lib -lgnugetopt
+ OBJS=y.tab.o lex.yy.o symtab.o value.o
+@@ -42,2 +41,6 @@
+ -include value.mak
++
++.SUFFIXES:	.o .c
++
++.c.o:	;	${CXX} ${CFLAGS} -c $*.c
+ 

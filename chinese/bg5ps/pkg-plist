@@ -1,0 +1,24 @@
+bin/bg5ps
+bin/ttf2psm
+etc/bg5ps.conf.sample
+etc/gb2312-bg5ps.conf.sample
+share/doc/bg5ps/COPYING.txt
+share/doc/bg5ps/bg5ps.sgml
+share/doc/bg5ps/bg5ps.txt
+share/doc/bg5ps/html/bg5ps.html
+share/doc/bg5ps/html/bg5ps-1.html
+share/doc/bg5ps/html/bg5ps-2.html
+share/doc/bg5ps/html/bg5ps-3.html
+share/doc/bg5ps/html/bg5ps-4.html
+share/doc/bg5ps/html/bg5ps-5.html
+share/doc/bg5ps/html/bg5ps-6.html
+share/doc/bg5ps/html/bg5ps-7.html
+share/doc/bg5ps/makeps
+share/doc/bg5ps/ttf2ps.doc
+share/examples/bg5ps/netscape.ps
+share/examples/bg5ps/test.big5
+share/examples/bg5ps/test.gb2312
+share/examples/bg5ps/test.sh
+@dirrm share/doc/bg5ps/html
+@dirrm share/doc/bg5ps
+@dirrm share/examples/bg5ps

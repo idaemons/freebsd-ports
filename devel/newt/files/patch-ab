@@ -1,0 +1,136 @@
+--- Makefile.in.orig	Tue Mar 19 02:31:59 2002
++++ Makefile.in	Sun May  5 01:17:55 2002
+@@ -1,23 +1,25 @@
+-LIBS = -lslang -lm #-lefence
+-SHLIBS = -lslang -lm -lc
++LIBS = -lslang -lm -lpopt -lncurses #-lefence
++SHLIBS = -lslang -lm -lc -lpopt -lncurses
+ 
+ GPM_SUPPORT=@gpm_support@
+ 
+-CFLAGS = $(RPM_OPT_FLAGS) -Wall -I/usr/include/slang
+-ifeq ($(RPM_OPT_FLAGS),)
+-CFLAGS += -g # -O2 -I/usr/include/slang
+-endif
++CFLAGS += -I${LOCALBASE}/include -I${PREFIX}/include
++LDFLAGS += -L${LOCALBASE}/lib -L${PREFIX}/lib
+ 
+-VERSION = @VERSION@
+ CVSTAG = r$(subst .,-,$(VERSION))
+ SONAME = @SONAME@
+ 
+ PYTHONVERS = $(shell ls -d /usr/include/python* | sed "s|/usr/include/||g")
+ 
+-WHIPTCLSO=
+-#WHIPTCLSO=whiptcl.so
++.if defined(WITH_TCL)
++WHIPTCLSO=whiptcl.so
++CFLAGS += -I${LOCALBASE}/include/${TCLVERSION}
++LDFLAGS += -L${LOCALBASE}/lib/${TCLVERSION}
++SHLIBS += -l${TCLVERSION:S,.,,}
++.endif
++TARGET=${LIBNEWT} ${PROGS} ${WHIPTCLSO}
+ 
+-PROGS = test whiptail $(WHIPTCLSO) testgrid testtree
++PROGS = test whiptail testgrid testtree
+ TESTOBJS = test.o
+ NDIALOGOBJS = whiptail.o dialogboxes.o
+ WHIPTCLOBJS = whiptcl.o dialogboxes.o
+@@ -30,7 +32,7 @@
+ 
+ SHCFLAGS = -fPIC
+ 
+-prefix = /usr
++prefix = ${PREFIX}
+ includedir = $(prefix)/include
+ libdir = $(prefix)/lib
+ bindir = $(prefix)/bin
+@@ -41,41 +43,37 @@
+ SOURCES = $(subst .o,.c,$(TESTOBJS) $(NDIALOGOBJS) $(LIBOBJS))
+ 
+ SHAREDDIR = shared
+-SHAREDOBJS = $(patsubst %,$(SHAREDDIR)/%, $(LIBOBJS))
++SHAREDOBJS = ${LIBOBJS}
+ 
+-ifeq (.depend,$(wildcard .depend))
+-TARGET=$(PROGS)
+-else
+-TARGET=depend $(PROGS)
+-endif
+-
+-all:	$(TARGET) _snackmodule.so
++all:	$(TARGET)
+ 
+ test:	$(TESTOBJS) $(LIBNEWT)
+-	gcc -g -o test $(TESTOBJS) $(LIBNEWT) $(LIBS) -static
++	${CC} -g ${LDFLAGS} -o test $(TESTOBJS) $(LIBNEWT) $(LIBS) -static
+ 
+ testgrid:	testgrid.o $(LIBNEWT)
+-	gcc -g -o testgrid testgrid.o $(LIBNEWT) $(LIBS)
++	${CC} -g ${LDFLAGS} -o testgrid testgrid.o $(LIBNEWT) $(LIBS)
+ 
+ testtree:	testtree.o $(LIBNEWT)
+-	gcc -g -o testtree testtree.o $(LIBNEWT) $(LIBS)
++	${CC} -g ${LDFLAGS} -o testtree testtree.o $(LIBNEWT) $(LIBS)
+ 
+ _snackmodule.so:   snackmodule.c $(LIBNEWTSH)
+ 	for ver in $(PYTHONVERS) ; do \
+ 	    if [ ! -f "$$ver/_snackmodule.so" -o $(LIBNEWTSH) -nt "$$ver/_snackmodule.so" ]; then \
+ 	    	mkdir -p $$ver ;\
+-	        gcc $(CFLAGS) -I/usr/include/$$ver -fPIC -c -o $$ver/snackmodule.o snackmodule.c ;\
+-		gcc --shared $(SHCFLAGS) -o $$ver/_snackmodule.so $$ver/snackmodule.o -L . $(LIBNEWTSH) ;\
++	        ${CC} $(CFLAGS) -I/usr/include/$$ver -fPIC -c -o $$ver/snackmodule.o snackmodule.c ;\
++		${CC} --shared $(SHCFLAGS) -o $$ver/_snackmodule.so $$ver/snackmodule.o -L . $(LIBNEWTSH) ;\
+ 	    fi ; \
+ 	done
+ 
+ whiptail: $(NDIALOGOBJS) $(LIBNEWTSH)
+-	gcc -g -o whiptail $(NDIALOGOBJS) -L . $(LIBNEWTSH) $(LIBS) -lpopt
++	${CC} -g ${LDFLAGS} -o whiptail $(NDIALOGOBJS) -L . $(LIBNEWTSH) $(LIBS) -lpopt
+ 
+ whiptcl.so: $(WHIPTCLOBJS) $(LIBNEWTSH)
+-	gcc -shared $(SHCFLAGS) -o whiptcl.so $(WHIPTCLOBJS) -L . $(LIBNEWTSH) -ltcl -lslang -lpopt -lm
++	${CC} -shared ${LDFLAGS} $(SHCFLAGS) -o whiptcl.so $(WHIPTCLOBJS) -L . $(LIBNEWTSH) ${LIBS}
+ 
+-$(LIBNEWT): $(LIBNEWT)($(LIBOBJS))
++$(LIBNEWT): $(LIBOBJS)
++	ar q ${LIBNEWT} ${LIBOBJS}
++	ranlib ${LIBNEWT}
+ 
+ newt.o: newt.c Makefile
+ 	$(CC) $(CFLAGS) -DVERSION=\"$(VERSION)\" -c -o $@ $<
+@@ -96,7 +94,7 @@
+ sharedlib: $(LIBNEWTSH)
+ 
+ $(LIBNEWTSH): $(SHAREDDIR) $(SHAREDOBJS)
+-	gcc -shared -o $(LIBNEWTSH) -Wl,-soname,$(LIBNEWTSONAME) $(SHAREDOBJS) $(SHLIBS)
++	${CC} -shared ${LDFLAGS} -o $(LIBNEWTSH) -Wl,-soname,$(LIBNEWTSONAME) $(SHAREDOBJS) $(SHLIBS)
+ 
+ $(SHAREDDIR)/%.o : %.c
+ 	$(CC) $(SHCFLAGS) -c $(CFLAGS) -o $@ $<
+@@ -113,16 +111,11 @@
+ 	install -m 644 $(LIBNEWT) $(instroot)/$(libdir)
+ 	install -s -m 755 whiptail $(instroot)/$(bindir)
+ 
+-install-sh: sharedlib $(WHIPTCLSO) _snackmodule.so
++install-sh: sharedlib $(WHIPTCLSO)
+ 	[ -d $(instroot)/$(libdir) ] || install -m 755 -d $(instroot)/$(libdir)
+ 	install -s -m 755 $(LIBNEWTSH) $(instroot)/$(libdir)
+ 	ln -sf $(LIBNEWTSH) $(instroot)/$(libdir)/libnewt.so
+ 	[ -n "$(WHIPTCLSO)" ] && install -s -m 755 whiptcl.so $(instroot)/$(libdir) || :
+-	for ver in $(PYTHONVERS) ; do \
+-	   [ -d $(instroot)/$(libdir)/$$ver/site-packages ] || install -m 755 -d $(instroot)/$(libdir)/$$ver/site-packages ;\
+-	   install -s -m 755 $$ver/_snackmodule.so $(instroot)/$(libdir)/$$ver/site-packages ;\
+-	   install -m 755 snack.py $(instroot)/$(libdir)/$$ver/site-packages ;\
+-	done
+ 
+ configure:  configure.in
+ 	autoconf
+@@ -140,7 +133,3 @@
+ 	@rm -f /tmp/newt-$(VERSION).tar.gz
+ 	@echo " "
+ 	@echo "The final archive is ./newt-$(VERSION).tar.gz."
+-
+-ifeq (.depend,$(wildcard .depend))
+-include .depend
+-endif
