@@ -1,0 +1,42 @@
+# New ports collection makefile for:	BasiliskII
+# Date created:				17 April 2000
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	basiliskII
+PORTVERSION=	0.8.1
+CATEGORIES=	emulators
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	basilisk
+DISTNAME=	BasiliskII_src_30012000
+
+MAINTAINER=	sobomax@FreeBSD.org
+
+LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
+
+WRKSRC=		${WRKDIR}/BasiliskII-0.8/src/Unix
+
+USE_X_PREFIX=	yes
+USE_GTK=	yes
+USE_ESOUND=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+CONFIGURE_ARGS=	--disable-fbdev-dga
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include/pthread/linuxthreads
+
+MAN1=		BasiliskII.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 400012
+CFLAGS+=	-fpermissive
+.endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

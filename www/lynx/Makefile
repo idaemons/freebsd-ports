@@ -1,16 +1,35 @@
 # New ports collection makefile for:    lynx
-# Version required:     2.3.7
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1995/01/13 13:14:51 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       lynx2-3-7
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=   ftp://ukanaix.cc.ukans.edu/pub/lynx/lynx2-3-7/
-ALL_TARGET=     freebsd
-# Do not put USE_GMAKE here
-EXEC_DEPENDS+=               gmake:${PORTSDIR}/devel/gmake
+PORTNAME=	lynx
+PORTVERSION=	2.8.3.1
+CATEGORIES=	www
+MASTER_SITES=	http://lynx.isc.org/current/
+DISTNAME=	${PORTNAME}2.8.3rel.1
+
+MAINTAINER=	jseger@FreeBSD.org
+
+USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/lynx2-8-3
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
+		--enable-nsl-fork --enable-persistent-cookies
+MAKE_FLAGS=	helpdir=${L_HELP} docdir=${L_DOC} -f
+MAKEFILE=	makefile
+INSTALL_TARGET=	install-full
+MAN1=		lynx.1
+
+L_LIB=		${PREFIX}/etc
+L_DOC=		${PREFIX}/share/doc/lynx
+L_HELP=		${PREFIX}/share/lynx_help
+
+post-install:
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_DOC}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
+	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${L_LIB}/lynx.cfg
 
 .include <bsd.port.mk>

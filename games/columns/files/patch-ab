@@ -1,0 +1,12 @@
+--- columns.cc.orig	Fri Mar 17 09:52:55 2000
++++ columns.cc	Sat Oct 28 03:29:21 2000
+@@ -22,7 +22,9 @@
+ #include <stdarg.h>
+ #include <stdio.h>
+ #include <string.h>
++#ifndef __STDC__
+ #include <malloc.h>
++#endif
+ #include <stdlib.h>
+ #include <time.h>
+ #include <SDL/SDL.h>

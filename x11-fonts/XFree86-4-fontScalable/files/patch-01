@@ -1,0 +1,14 @@
+--- Imakefile.orig	Thu Nov 30 01:37:41 2000
++++ Imakefile	Wed Jan  3 11:13:47 2001
+@@ -14,7 +14,11 @@
+ PEXDIR = PEX
+ #endif
+ 
++#if defined(FreeBSDBuildXscl) || FreeBSDBuildXscl
++SUBDIRS = $(SCALEDDIR) $(PEXDIR)
++#else
+ SUBDIRS = $(ENCODINGDIR) bdf $(SCALEDDIR) $(PEXDIR) util
++#endif
+ 
+ #if MakeLocalFontDir
+ MakeDirectories(install,$(FONTDIR)/local)

@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+bin/ogg123
+bin/oggenc
+bin/vorbiscomment
+share/doc/vorbis-tools/ogg123rc-example
+@dirrm share/doc/vorbis-tools

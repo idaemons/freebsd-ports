@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.2 1995/01/17 23:44:11 gpalmer Exp $
+# $FreeBSD$
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -7,19 +7,213 @@ of FreeBSD on such mass media, you should be sure and NOT distribute
 the original source tarballs for such ports in your distfiles directory.
 To do so will invite needless problems from the various parties involved.
 
-Since those connected to the net will also be able to automatically fetch
-their own original sources and complete the puzzle, the hardship is not as
-severe as it might otherwise be.
+Since those connected to the net will also be able to use the ports framework
+to automatically fetch their own original sources and thus complete the puzzle,
+the hardship is not as severe as it might otherwise be.
 
 Such ports are listed below:
 
 Dist			Port			Why
 ------------------------------------------------------------------------------
-cku190.tar.gz		ports/comms/kermit	Restrictive copyright
-rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
-xtetris-2.5.2.tar.gz	ports/games/xtetris	Possible trademark violation
-pgp262s.zip		ports/utils/pgp*	Various locality restrictions
-tkman-1.6.tar.Z		ports/x11/tkman		Restrictive copyright
-xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
-
-[please add more to this list]
+actx-*			ports/games/actx	contains commercial
+						character data
+adom-*			ports/games/adom	Copy of CD must be sent to
+						author
+alephone-data		ports/games/alephone-data Don't sell for profit
+aswedit-*		ports/www/aswedit	Commercial software.
+atari800-*		ports/emulators/atari800 xf25 contains copyright ROMs
+						and cannot be distributed.
+bb-*			ports/net/bb		FreeBSD has permission from
+						author to put bb onto CDROM.
+blender			ports/graphics/blender	Can't distribute commercially.
+bro-*			ports/security/bro	No distribution due to
+						alpha status
+bzip-*			ports/archivers/bzip	Some algorithms used may
+						infringe certain US patents.
+						Opinions differ. Commercial 
+						use could render you liable 
+						to unfriendly legal action.
+cap60/*			ports/net/cap		Don't sell for profit
+cfs-*			ports/security/cfs	Crypto; export-controlled
+classes111_01.zip	ports/databases/jdbc-oracle816  This software is 
+						under license and export 
+						controls.
+clibpdf*		ports/print/clibpdf	License required for bundling
+						with other products.  Only
+						free for non-profit personal
+						use, and use by educational,
+						non-profit, and government
+						organizations.
+contool-*		ports/sysutils/contool	Don't incorporate the source
+						code into a product which is
+						subsequently sold.
+cos-*			ports/java/cos		Special conditions apply for
+						commercial use.
+cosmo/*			ports/games/cosmo	Possible copyright infringement
+cryptix-jce-*		ports/java/cryptix-jce	Testing purpose only.
+cs-0.5			ports/devel/cs		License required for
+						redistribution on CDROM.
+csound			ports/audio/csound	Distribution prohibited; may be
+						used for making commercial
+						music but other commercial use
+						is prohibited.
+csound-manual		ports/audio/csound-manual	same as csound
+dc3play-*		ports/graphics/dc3play	No redistribution due to
+						beta status
+dgd/dgd-1.*		ports/net/dgd		License required for commercial
+						use as a server, and even for
+						distribution of sources and/or
+						binaries into a corporate
+						environment.
+dgd/2.4.5-for-1.0.37.tgz ports/net/dgd-lpmud	No monetary gain. No point in
+						distributing a package, since
+						it depends on dgd, which has
+						restrictions on distribution.
+						Source tarball may go on CDROM.
+dgd/net-*		ports/net/dgd-net	Same as dgd
+dnews			ports/news/dnews	Same as dnews3.
+dnews3			ports/news/dnews	Only free for schools and
+						universities, but they have to
+						register as well. 4 weeks of
+						free trial for everybody.
+						We currently ask for permission
+						to put a package on the CD-ROM.
+eijiro*.txt		ports/japanese/eijiro-fpw The original dictionary is not
+						free
+fasta2*			ports/biology/fasta	May not be sold or incorporated
+						into a commercial product
+fasta3*			ports/biology/fasta3	May not be sold or incorporated
+						into a commercial product
+fmsx-*			ports/emulators/fmsx	Unclear legal status of
+						distributed ROMs.
+fnorb-*			ports/devel/fnorb	Cannot use commercially
+freefonts		ports/x11-fonts/freefonts	Some of the fonts are
+						shareware.  Some are freeware.
+						Permission must be obtained
+						before distributing at least
+						four (mazama.license,
+						muriel.license,
+						roosthea.license,
+						shf_____.license).  Two have
+						inconsistent licenses
+						(tempofon.license and
+						tempoita.license say "placed
+						into the public domain and may
+						[not be] sold").
+ftree			ports/misc/ftree	Can't distribute commercially.
+fwtk-*			ports/security/fwtk	No redistribution allowed
+Frisk-*			ports/games/xfrisk	Copyright/trademark violation?
+glimpse-*		ports/textproc/glimpse	Don't sell for profit
+giftool-*		ports/graphics/giftool	Don't redistribute for profit
+GimpUserManual-*-ps.gz	ports/graphics/gimp-manual-ps	too big
+gnupg-*			ports/security/gnupg	Crypto; export-controlled
+graphviz-1.*		ports/graphics/graphviz	Needs license before fetching
+hjb3_0-linux.sfx	ports/www/hotjava	Licensed for individual
+						non-commercial use only.
+jce-aba-*		ports/java/jce-aba	Crypto; export-controlled
+john-*			ports/security/john	crypt(); export-controlled
+JDK-*			ports/java/jdk		Put copyright on packaging!
+jdk*-doc		ports/java/jdk-doc	under license and export control
+jdk*-src.tar.gz		ports/java/jdk12-beta	Redistribution of sources and pre-compiled binaries is prohibited.
+jdk-tutorial-*		ports/java/jdk-tutorial	This software is under license and export control.
+JRE-*			ports/java/jre		Put copyright on packaging!
+kaffe-*			ports/java/kaffe	Restrictive copyright
+linuxq3ademo-*		ports/games/linux-q3ademo	Restrictive license by Loki Software
+l0phtcrack		ports/security/l0phtcrack	Parts are under GPL, so
+						binaries should not be
+						distributed.  Contains crypto
+						from OpenSSL.
+lsh*			ports/security/lsh	Crypto; export-controlled
+mew-*.tar.gz		ports/mail/mew		ITAR export-controlled
+						(hooks to pgp)
+mindfocus-*		ports/games/mindfocus	contains commercial
+						character data
+mmv/*			ports/misc/mmv		Restrictive/unclear copyright
+molden			ports/biology/molden	free for academic,
+						non profit usage
+						do not re-distribute source and
+						 executable
+Mmsaic			ports/www/Mosaic	Do not sell.  Do not distribute
+						binaries.
+mmosaic			ports/www/mmosaic	Do not sell (per NCSA).  Do not
+						distribute binary (GPL/BSD
+						conflict).
+msql-*			ports/databases/msql	Not free for commercial org.
+mupad/*			ports/math/mupad	unsure to sell for profit
+mypaedia		ports/japanese/mypaedia-fpw The original dictionary is not free
+netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
+netshow-*		ports/graphics/netshow	Commercial software
+nte-1.*			ports/mbone/nte		Crypto; export-controlled
+openssl-*		ports/security/openssl	Crypto; export/import-controlled
+Crypt-*			ports/security/p5-Crypt-*	Crypto; export-controlled
+perforce-*		ports/devel/perforce	Restricted distribution
+perltools		ports/java/perltools	No redistribution
+pgp*			ports/security/pgp*	Various locality restrictions
+pklin*			ports/archivers/pkzip	Shareware
+platon-*		ports/biology/platon	US$ 5000 for commercial users,
+						(free for academic)
+prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
+qkmj-*			ports/games/qkmj	Do not sell for profit
+qmail-*			ports/mail/qmail-*	Restricted binary distribution
+						of modified versions
+qvplay-*		ports/graphics/qvplay	No redistribution due to
+						beta status
+quake106.zip		ports/games/quakeserver	Shareware
+radius*			ports/net/radius	Binary redistribution only,
+						no fee allowed
+rarlnx*			ports/archivers/linux_rar	Only unmodified original package can be distributed
+rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
+rman-3.*		ports/textproc/rman	Don't sell for profit
+rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
+rp7_linux20_libc6_i386_*_rpm	ports/audio/linux-realplayer	Redistribution not allowed.
+Scilab-*		ports/math/Scilab	Don't sell for profit.
+sdr-2.7*		ports/mbone/sdr		Crypto; export-controlled
+sharefonts-*		ports/x11-fonts/sharefonts	Shareware.  Cannot be
+						distributed w/o prior
+						authorization.
+shorten-*		ports/audio/shorten	May not be sold. May not be
+						distributed if modified.
+sim-*.tar.gz		ports/emulators/sim	No commercial use
+socks5-*		ports/net/socks5	No commercial use
+srd			ports/japanese/srd-fpw	The original dictionary is not free
+ssh-*			ports/security/ssh*	Crypto; export-controlled
+*mod_ssl*		ports/www/apache13-modssl Crypto; export-controlled
+apache*-ssl		ports/www/apache13-ssl	Crypto; export-controlled
+so51a_lnx_01.tar	ports/editors/staroffice5	May not be distributed.
+stonx-*			ports/emulators/stonx	Contains ROM (C) by Atari
+su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
+swing11.tar.Z		ports/java/jfc		Don't distribute without
+						value-added application.
+timidity-*		ports/audio/timidity	Uses copyrighted patches.
+tkman-1.7.3.tar.Z	ports/misc/tkman	Restrictive copyright
+tkman-2.*		ports/misc/tkman	Don't sell for profit.
+tuc-*			ports/converters/tuc	Author does not allow
+						CD-ROM distribution
+upsmon*			ports/sysutils/upsmon	Redistribute only with
+						original source code.
+uzap.tar.gz             ports/editors/uzap      Restrictive copyright
+vbsd407e.tar.Z		ports/security/vscan	Commercial software
+vice-*			ports/emulators/vice	ROMs are copyrighted by
+						Commodore Business Machines
+vmware*			ports/emulators/vmware*	Commercial software
+vje30/vje-delta-3.0-*	ports/japanese/vje30	Commercial software
+webcopy.tgz		ports/www/webcopy	Don't sell for profit
+webfonts-*		ports/x11-fonts/webfonts Restrictive copyright
+win32-codecs		ports/graphics/win32-codecs Licensing status of the
+						codecs is unknown. 
+wxg/ja-wxg-1.0b-1.tgz	ports/japanese/wxg	Redistribution not allowed
+xbarcode-*.tar.gz	ports/graphics/xbarcode	Must not be sold
+xev*.tar.gz		ports/games/xbat	Possible copyright infringement
+xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
+xhime*.tgz		ports/games/xhime	Contains commercial character
+						data
+xinvaders-*		ports/games/xinvaders	Don't sell for profit
+xmdiary-*		ports/deskutils/xmdiary	Don't sell for profit
+xothello-*		ports/games/xothello	Possible trademark infringement
+xrisk-*			ports/games/xrisk	Copyright/trademark violation?
+xsmbrowser-*		ports/net/xsmbrowser	Commercial software
+xteddy-*		ports/games/xteddy	Don't sell for profit
+zh-moettf/*		ports/chinese/moettf	Contact Taiwan Ministry of
+						Education for commercial use
+ztelnet-*		ports/net/ztelnet	zmodem code has 
+						restrictive copyright

@@ -1,0 +1,15 @@
+bin/gozer
+share/doc/gozer/AUTHORS
+share/doc/gozer/ChangeLog
+share/doc/gozer/README
+share/doc/gozer/TODO
+share/gozer/fonts/20thcent.ttf
+share/gozer/fonts/cinema.ttf
+share/gozer/fonts/goodtime.ttf
+share/gozer/fonts/joystix.ttf
+share/gozer/fonts/morpheus.ttf
+share/gozer/fonts/notepad.ttf
+share/gozer/fonts/soulpapa.ttf
+@dirrm share/doc/gozer
+@dirrm share/gozer/fonts
+@dirrm share/gozer

@@ -1,0 +1,5 @@
+bin/jgrep
+bin/jegrep
+bin/jfgrep
+share/doc/ja/grep/README.MB
+@dirrm share/doc/ja/grep

@@ -1,0 +1,7 @@
+bin/sip
+lib/libsip.a
+lib/libsip.so
+lib/libsip.so.4
+include/sip/sip.h
+include/sip/sipQt.h
+@dirrm include/sip

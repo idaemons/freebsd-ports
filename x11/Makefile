@@ -1,13 +1,124 @@
-# $Id: Makefile,v 1.44 1995/01/06 05:42:02 jkh Exp $
+# $FreeBSD$
 #
-SUBDIR= Xaw3d color_xterm ctwm emu fvwm kterm olvwm piewm rxvt tk \
-	tkhfs tkman tvtwm x3270 xearth xfed xlockmore xsnow \
-	xview-config xview-lib xview-clients
 
-#
-# These depend on tk, so might as well build tk first...
-# (And vic depends on blt.)
-#
-SUBDIR+= blt vic
+    SUBDIR += 9term
+    SUBDIR += XFree86
+    SUBDIR += XFree86-4
+    SUBDIR += XFree86-4-clients
+    SUBDIR += XFree86-4-documents
+    SUBDIR += XFree86-4-libraries
+    SUBDIR += XFree86-4-manuals
+    SUBDIR += XFree86-aoutlibs
+    SUBDIR += XFree86-contrib
+    SUBDIR += accessx
+    SUBDIR += aterm
+    SUBDIR += bgrot
+    SUBDIR += blast
+    SUBDIR += bricons
+    SUBDIR += buttonbox
+    SUBDIR += dgs
+    SUBDIR += dxpc
+    SUBDIR += dynamag
+    SUBDIR += ebuttons
+    SUBDIR += ecore
+    SUBDIR += efancylauncher
+    SUBDIR += emu
+    SUBDIR += erun
+    SUBDIR += eterm
+    SUBDIR += eweather
+    SUBDIR += fbsd-icons
+    SUBDIR += finder
+    SUBDIR += gbackground
+    SUBDIR += gdm
+    SUBDIR += gmessage
+    SUBDIR += gnome
+    SUBDIR += gnomeapplets
+    SUBDIR += gnomecore
+    SUBDIR += gnomelibs
+    SUBDIR += gnomeres_applet
+    SUBDIR += gswitchit_applet
+    SUBDIR += gtk-theme-switch
+    SUBDIR += gvid
+    SUBDIR += gyroscope
+    SUBDIR += imwheel
+    SUBDIR += kb2mb2
+    SUBDIR += kde2
+    SUBDIR += kdebase11
+    SUBDIR += kdebase2
+    SUBDIR += kdelibs11
+    SUBDIR += kdelibs2
+    SUBDIR += kvidtune
+    SUBDIR += kworldwatch
+    SUBDIR += libdnd
+    SUBDIR += libhelp
+    SUBDIR += libsx
+    SUBDIR += login.app
+    SUBDIR += lupe
+    SUBDIR += offix-clipboard
+    SUBDIR += offix-execute
+    SUBDIR += p5-X11-Protocol
+    SUBDIR += portoseguro
+    SUBDIR += powershell
+    SUBDIR += props
+    SUBDIR += qrash
+    SUBDIR += ruby-gnome
+    SUBDIR += ruby-kde
+    SUBDIR += rxvt
+    SUBDIR += rxvt-devel
+    SUBDIR += stockticker_applet
+    SUBDIR += sxpc
+    SUBDIR += tkgoodstuff
+    SUBDIR += tycoon
+    SUBDIR += wdm
+    SUBDIR += wmbutton
+    SUBDIR += wmmatrix
+    SUBDIR += wmmenu
+    SUBDIR += wrapper
+    SUBDIR += wterm
+    SUBDIR += x3270
+    SUBDIR += xaniroc
+    SUBDIR += xantfarm
+    SUBDIR += xautolock
+    SUBDIR += xballoon
+    SUBDIR += xbanner
+    SUBDIR += xcb
+    SUBDIR += xco
+    SUBDIR += xcoloredit
+    SUBDIR += xcolors
+    SUBDIR += xcolorsel
+    SUBDIR += xcut
+    SUBDIR += xdialog
+    SUBDIR += xdtm
+    SUBDIR += xfedor
+    SUBDIR += xfishtank
+    SUBDIR += xgrab
+    SUBDIR += xkbctrl
+    SUBDIR += xkeycaps
+    SUBDIR += xkeywrap
+    SUBDIR += xloadimage
+    SUBDIR += xlockmore
+    SUBDIR += xlogout
+    SUBDIR += xlupe
+    SUBDIR += xmangekyou
+    SUBDIR += xmascot
+    SUBDIR += xmold
+    SUBDIR += xmove
+    SUBDIR += xmsg
+    SUBDIR += xmx
+    SUBDIR += xprompt
+    SUBDIR += xscreensaver
+    SUBDIR += xskyroot
+    SUBDIR += xsnow
+    SUBDIR += xstarroll
+    SUBDIR += xtacy
+    SUBDIR += xtattr
+    SUBDIR += xtermset
+    SUBDIR += xtestpicture
+    SUBDIR += xtoolwait
+    SUBDIR += xtset
+    SUBDIR += xvkbd
+    SUBDIR += xwatchwin
+    SUBDIR += xwit
+    SUBDIR += xzoom
 
 .include <bsd.port.subdir.mk>

@@ -1,0 +1,16 @@
+--- upclient.conf.orig	Wed Dec 27 00:48:16 2000
++++ upclient.conf	Sat Dec 30 06:11:27 2000
+@@ -4,11 +4,11 @@
+ # upclient.conf
+ #
+ 
+-PidFile = /home/alex/.upclient.pid	# Location of pid file
++PidFile = /var/run/upclient.pid		# Location of pid file
+ 
+ AuthKey = <your_authkey>		# Your Authorization key
+ 
+-Interval	= 120			# Transmit interval
++Interval	= 550			# Transmit interval
+ UptimeServer	= data.uptimes.net	# Uptimes Project's data server
+ 
+ SendIdleTime	= 1			# Send your idle time

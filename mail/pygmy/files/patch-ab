@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- msg.py.orig	Mon Apr  2 13:51:06 2001
++++ msg.py	Tue Apr  3 14:13:46 2001
+@@ -13,7 +13,7 @@
+ 
+ ## Fonts
+ BOLD_FONT = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+-NORMAL_FONT = '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
++NORMAL_FONT = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+ 
+ ## Error messages from the GUI
+ err1 = """Error opening destination file"""

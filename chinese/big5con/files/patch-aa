@@ -1,0 +1,42 @@
+--- src/vga.c.orig	Sun Apr 14 16:40:40 1996
++++ src/vga.c	Sun Apr  2 19:03:41 2000
+@@ -205,7 +205,8 @@
+ 	regText.seq[i] = PortInb(VGASEQ_DATA);
+     }
+     regText.mis = PortInb(VGAMISC_IN);
+-    
++
++    PortOutb(PortInb(VGAMISC_IN)|0x01, VGAMISC_OUT);
+     VgaSetRegisters(&regGraph);
+     
+     /* save font data in plane 2 */
+@@ -369,7 +370,7 @@
+ /*    if (!code) return;*/
+     VgaSetColor(fc);
+     if (bc & 0x8) *(vcls - dInfo.glineByte) = 0;
+-    for (x = 0;x < sbFReg->high;x ++, code ++, fm >>= 1) {
++    if (code) for (x = 0;x < sbFReg->high;x ++, code ++, fm >>= 1) {
+ 	if (*code) {
+ 	    VgaOutByte(*code);
+ 	    *gram = *gram;
+@@ -437,7 +438,7 @@
+ 
+ void VgaCursor(struct cursorInfo *ci)
+ {
+-    char	*gram;
++    volatile char	*gram;
+     u_char	x;
+     int	bottom = cursorBtm + 1 <= dInfo.glineChar ?
+ 	cursorBtm + 1 : dInfo.glineChar;
+@@ -607,7 +608,11 @@
+       Perror("ioctl CONSOLE_IO_ENABLE");
+       return FAILURE;
+     }
++#if (__FreeBSD__ <= 3)
+     if ((devMem = open("/dev/vga", O_RDWR|O_NDELAY) ) < 0) {
++#else
++    if ((devMem = open("/dev/mem", O_RDWR|O_NDELAY) ) < 0) {
++#endif
+ 	Perror("/dev/mem");
+ 	return FAILURE;
+     }

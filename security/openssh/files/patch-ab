@@ -1,0 +1,21 @@
+--- Makefile.inc.orig	Fri Feb 11 23:56:29 2000
++++ Makefile.inc	Fri Feb 11 23:57:56 2000
+@@ -2,10 +2,14 @@
+ 
+ .include <bsd.obj.mk>
+ 
+-.if exists(${.CURDIR}/../lib/${__objdir})
+-LDADD+=         -L${.CURDIR}/../lib/${__objdir} -lssh
+-DPADD+=         ${.CURDIR}/../lib/${__objdir}/libssh.a
+-.else
++AFS?=		no
++KERBEROS?=	no
++PAM?=		no
++SKEY?=		no
++TCP_WRAPPERS?=	yes
++.if !defined(MAKEFILE_INC_FIRST_PASS)
++MAKEFILE_INC_FIRST_PASS=	0
++CFLAGS+=	-I${OPENSSLINC} ${INET6FLAGS}
+ LDADD+=         -L${.CURDIR}/../lib -lssh
+ DPADD+=         ${.CURDIR}/../lib/libssh.a
+ .endif

@@ -1,0 +1,32 @@
+--- Makefile.orig	Tue Mar  6 16:37:41 2001
++++ Makefile	Thu Apr  5 23:03:02 2001
+@@ -1,8 +1,8 @@
+ # Where is your Plugin Source Development Kit from Netscape?
+-SDK=/home/hubbe/src/PluginSDK30b5
++SDK=../PluginSDK30b5
+ 
+ # Where is your Xwindows located?
+-X11=/usr/X11/
++X11=${X11BASE}
+ 
+ #
+ # For building rpms
+@@ -10,15 +10,15 @@
+ 
+ # You may want to change this to /usr/ on
+ # some installations.
+-prefix=/usr/local
++prefix=${PREFIX}
+ 
+ #
+ #
+ RPMDIR=/usr/src/redhat
+ 
+ # Choose compiler
+-CC=gcc
+-LD=gcc
++#CC=gcc
++#LD=gcc
+ BINFORMAT=bin
+ 
+ any:

@@ -1,0 +1,10 @@
+--- configure.in.orig	Thu Mar 15 14:20:50 2001
++++ configure.in	Thu Mar 15 14:21:01 2001
+@@ -23,7 +23,5 @@
+ 
+ dnl Checks for library functions.
+ 
+-AC_CONFIG_SUBDIRS(pcre)
+-
+ AC_OUTPUT([Makefile src/Makefile examples/Makefile regexx.spec])
+ 

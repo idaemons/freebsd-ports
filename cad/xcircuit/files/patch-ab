@@ -1,0 +1,27 @@
+*** xcircuit.c.orig	Fri Feb  9 23:51:53 2001
+--- xcircuit.c	Wed Feb 14 04:21:20 2001
+***************
+*** 20,25 ****
+--- 20,28 ----
+  #include <errno.h>
+  #include <limits.h>
+  #include <locale.h>
++ #ifdef __FreeBSD__
++ #include <machine/floatingpoint.h>
++ #endif
+  
+  #include <X11/Intrinsic.h>
+  #include <X11/StringDefs.h>
+***************
+*** 1650,1655 ****
+--- 1653,1662 ----
+     char		*argv0;		/* find root of argv[0] */
+     short initargc = argc;	/* because XtInitialize() absorbs the     */
+     				/* -schem flag and renumbers argc! (bug?) */
++ 
++ #ifdef __FreeBSD__
++    fpsetmask(0);
++ #endif
+  
+     /*-----------------------------------------------------------*/
+     /* Find the root of the command called from the command line */

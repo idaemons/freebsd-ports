@@ -1,21 +1,30 @@
+# New ports collection makefile for:    elm25
+# Date created:				04 Feb 2000
+# Whom:					dhagan@cs.vt.edu
 #
-#	Makefile for ports/mail/elm (FreeBSD)
-#	$Id: Makefile,v 1.1.1.1 1994/10/14 21:59:03 jkh Exp $
+# $FreeBSD$
 #
 
-# Distribution stuff
-DISTNAME=	elm2.4
-EXTRACT_SUFX=	.tar.Z
-MASTER_SITES=	ftp://dsinc.myxa.com/pub/elm/
+PORTNAME=	elm
+PORTVERSION=	2.5.5
+CATEGORIES=	mail
+MASTER_SITES=	ftp://ftp.virginia.edu/pub/elm/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
-# working directory
-WRKDIR=		work
-NO_WRKSUBDIR=	is_set
+MAINTAINER=	toasty@dragondata.com
 
-# Interactive
-IS_INTERACTIVE=	is_set
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
-# Packaging
-NO_PACKAGE=	is_set
+WRKSRC=			${WRKDIR}/elm${PORTVERSION}
+NO_LATEST_LINK=		yes
+IS_INTERACTIVE=		yes
+HAS_CONFIGURE=		yes
+CONFIGURE_SCRIPT=	Configure
+CONFIGURE_ENV=		PREFIX="${PREFIX}"
+MAN1=			answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 \
+			frm.1 listalias.1 messages.1 newalias.1 newmail.1 \
+			printmail.1 readmsg.1 mmencode.1
+MLINKS=			frm.1 nfrm.1 newmail.1 wnewmail.1
 
 .include <bsd.port.mk>

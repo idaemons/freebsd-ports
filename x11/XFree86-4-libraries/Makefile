@@ -1,52 +1,110 @@
-DISTNAME	=	xc
-PKGNAME		= 	XFree86-3.1.1
-WRKDIR?=                ${.CURDIR}/work
-BUILD_COOKIE?=		${WRKDIR}/.build_done
-PATCH_STRIP	=	-p1
+# New ports collection makefile for:	XFree86Xlibraries-4.0
+# Date created:		10 Oct 1999
+# Whom:			taguchi@tohoku.iij.ad.jp
+#
+# $FreeBSD$
+#
 
-# uncomment one of the 2 lines below!
-#X11_ON_CDROM	=	yes
-X11_VIA_FTP	=	yes
+PORTNAME=	libraries
+PORTVERSION=	4.0.3
+PORTREVISION=	1
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITE_SUBDIR=	4.0.2
+PKGNAMEPREFIX=	XFree86-
+DISTFILES=	X402src-1.tgz
 
-#define this if you are short of space - save ~28 Mbytes
-#REMOVE_NOT_ESSENTIAL	=	yes
+PATCH_SITES=	${MASTER_SITE_XFREE:S,%SUBDIR%/source,4.0.3/patches,g}
+PATCHFILES=	4.0.2-4.0.3.diff.gz
+PATCH_DIST_STRIP=	-p1
 
+MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-.if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
-build: configure ${BUILD_COOKIE}
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+RUN_DEPENDS=	mkhtmlindex:${PORTSDIR}/devel/imake-4
 
-${BUILD_COOKIE}:
-	@echo "===>  Building for ${DISTNAME}"
-	@${MAKE} ${.MAKEFLAGS} pre-build
-.if defined(REMOVE_NOT_ESSENTIAL)
-	@rm -rf ${WRKSRC}/test ${WRKSRC}/doc/hardcopy ${WRKSRC}/doc/specs
-	@find ${WRKSRC}/ -name '*.orig' -exec rm -f {} ';'
-.endif
-	@(cd ${WRKSRC}; echo Good night...; make World)
-	@touch ${WRKDIR}/.build_done
+XFREE86_VERSION=	4
+PREFIX?=		${X11BASE}
+MANCOMPRESSED=		yes
+XFREE86_HTML_MAN=	yes
+MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
+INSTALLS_SHLIB=		yes
+DIST_SUBDIR=		xc
+WRKSRC=			${WRKDIR}/xc
+SCRIPTS_ENV=		HasXdmAuth=${HasXdmAuth} \
+			HasSecureRPC=${HasSecureRPC} \
+			BuildPexExt=${BuildPexExt} \
+			BuildXinerama=${BuildXinerama} \
+			BuildXIE=${BuildXIE} \
+			BuildAoutLibraries=${BuildAoutLibraries} \
+			ForceNormalLib=${ForceNormalLib} \
+			DebuggableLibraries=${DebuggableLibraries}
+MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
+			PORTNAME=${PORTNAME} \
+			PORTVERSION=${PORTVERSION}
+ALL_TARGET=		FreeBSDPortsBuild
+INSTALL_TARGET=	FreeBSDPortsInstall FreeBSDPortsInstall.man installXlib
+MAN1=		libxrx.1
+MAN3=		Xaw.3 Xft.3
 
-install:
-	@(cd ${WRKSRC}; make install; make install.man)
-	@touch ${WRKDIR}/.install_done
-.endif
+# XFree86 User Config:
+# ---
+# Name          Default		Meaning
+# ----------------------------------------------------------------------------
+# HasXdmAuth	YES		support XDM-AUTHORIZATION-1.
+# HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
+# BuildPexExt	YES		build PEX extension
+# BuildXinerama	YES		build Xinerama extension
+# BuildXIE	YES		build XIE extension
+# BuildAoutLibraries  NO	build with old Aout libs.
+# ForceNormalLib      YES	build with static libs.
+# DebuggableLibraries NO	build with debug libs (require FreeBSD-4 or later)
+# ----------------------------------------------------------------------------
+# DEFAULT means ports will use values which set by ${PORTSDIR}/devel/imake-4
+#
+HasXdmAuth?=		DEFAULT
+HasSecureRPC?=		DEFAULT
+BuildPexExt?=		DEFAULT
+BuildXinerama?=		DEFAULT
+BuildXIE?=		DEFAULT
+BuildAoutLibraries?=	DEFAULT
+ForceNormalLib?=	DEFAULT
+DebuggableLibraries?=	DEFAULT
+# End of XFree86 User Config
 
-.if defined(X11_ON_CDROM)
-.include "Makefile.cdrom"
-.elif defined(X11_VIA_FTP)
-.include "Makefile.ftp"
+.include <bsd.port.pre.mk>
+
+# BuildXF86DRI is false for FreeBSD < 4.1
+.if ${OSVERSION} < 410000
+PLIST_SUB+=	OSMESA:="@comment "
 .else
-all:
-	@echo -n
-fetch:
-	@echo -n
-extract:
-	@echo -n
-configure:
-	@echo -n
-build:
-	@echo -n
-install:
-	@echo -n
+PLIST_SUB+=	OSMESA:=""
 .endif
 
+.if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+pre-fetch:
+	@${ECHO}
+	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
+.else
+MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
+		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
+EXTRACT_ONLY=	X402src-1.tgz
+DISTFILES+=	Wraphelp.c
+IGNOREFILES=	Wraphelp.c
+.endif
+.endif
 
+do-configure:
+	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+
+post-build:
+	cd ${WRKSRC}/extras/freetype2/builds/unix; \
+	./configure --prefix=${PREFIX}
+
+post-install:
+	cd ${WRKSRC}/extras/freetype2/builds/unix; \
+	${INSTALL_SCRIPT} freetype-config ${PREFIX}/bin
+
+.include <bsd.port.post.mk>

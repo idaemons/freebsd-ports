@@ -1,0 +1,5 @@
+--- makefile.unx.orig	Wed Mar  8 04:58:52 2000
++++ makefile.unx	Sat Mar 10 16:42:01 2001
+@@ -21 +21 @@
+-CFLAGS = -O3 -m486 -fomit-frame-pointer -s -I$(INCDIR)
++CFLAGS += -fomit-frame-pointer -s -I$(INCDIR)

@@ -1,14 +1,46 @@
-DISTFILES=	unzip512.tar.Z
-DISTNAME=	unzip-5.12
-MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
-MAKEFILE=       unix/Makefile
-ALL_TARGET=     bsd
-MAKE_FLAGS=     LOCAL_UNZIP="-O2 -DCHECK_EOF" \
-		INSTALL="install -c -o bin -g bin" \
-		prefix=${PREFIX} -f
+# New ports collection makefile for:	unzip
+# Date created:		17 October 1994
+# Whom:			jmz
+#
+# $FreeBSD$
+#
 
-pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/man/man1
+PORTNAME=	unzip
+PORTVERSION=	5.42
+CATEGORIES=	archivers
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/infozip/src/ \
+		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
+DISTNAME=	${PORTNAME}542
 
-.include <bsd.port.mk>
+MAINTAINER=	ache@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKEFILE=	unix/Makefile
+MAKE_FLAGS=	LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
+MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+ALL_TARGET=	freebsd
+.else
+ALL_TARGET=	bsd
+.endif
+
+do-install:
+.for file in funzip unzip unzipsfx
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+.endfor
+	${LN} -sf unzip ${PREFIX}/bin/zipinfo
+	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${PREFIX}/bin
+.for file in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/man/${file} ${PREFIX}/man/man1
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/unzip
+.for file in README WHERE
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/unzip
+.endfor
+.endif
+
+.include <bsd.port.post.mk>

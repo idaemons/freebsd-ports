@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/IO/AtomicFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/InnerFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/Lines.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/Scalar.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/ScalarArray.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/Stringy.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/Wrap.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/WrapTie.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO-stringy/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO-stringy
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/IO 2>/dev/null || true

@@ -1,0 +1,60 @@
+*** source/unix/makefile.orig	Fri Jun 18 22:52:24 1999
+--- source/unix/makefile	Sat Jun 19 20:24:47 1999
+***************
+*** 51,57 ****
+--- 51,61 ----
+  #CFLAGS      = -O6 -finline-functions -ffast-math -c -ansi -m386 -DCPU=586 -DCOMPILER_VER=\".`uname`.$(CC)\" -DPOV_LIB_DIR=\"$(POVLIBDIR)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC)
+  
+  # Linux compiler flags, Pentium II optimized
++ .if ${MACHINE_ARCH} == "i386"
+  CFLAGS      = -O6 -finline-functions -ffast-math -c -ansi -m386 -DCPU=686 -DCOMPILER_VER=\".`uname`.$(CC)\" -DPOV_LIB_DIR=\"$(POVLIBDIR)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC)
++ .else
++ CFLAGS      = -O6 -finline-functions -ffast-math -c -ansi -DCOMPILER_VER=\".`uname`.$(CC)\" -DPOV_LIB_DIR=\"$(POVLIBDIR)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC)
++ .endif
+  
+  # HPUX compiler flags
+  #CFLAGS      = +O2 -finline-functions -c -Aa -D_HPUX_SOURCE -DCOMPILER_VER=\".`uname`.$(CC)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC)
+***************
+*** 88,97 ****
+  # Use libXXX.a if you want to force static linking of the libraries.
+  #   Use -Llibdir -lXXX if you want to use shared libraries (if they are
+  #   available).  It doesn't matter if you only have libXXX.a libraries.
+! PNGDIR = $(SRCDIR)/libpng
+  LIBPNGINC = -I$(PNGDIR)
+  #LIBPNGLIB = $(PNGDIR)/libpng.a
+! LIBPNGLIB = -L$(PNGDIR) -lpng
+  #LIBPNGLIB = -L/usr/local/lib -lpng
+  
+  # The following options are added at the suggestion of Axel Hecht
+--- 92,101 ----
+  # Use libXXX.a if you want to force static linking of the libraries.
+  #   Use -Llibdir -lXXX if you want to use shared libraries (if they are
+  #   available).  It doesn't matter if you only have libXXX.a libraries.
+! PNGDIR = $(PREFIX)/include
+  LIBPNGINC = -I$(PNGDIR)
+  #LIBPNGLIB = $(PNGDIR)/libpng.a
+! LIBPNGLIB = -L$(PREFIX)/lib -lpng
+  #LIBPNGLIB = -L/usr/local/lib -lpng
+  
+  # The following options are added at the suggestion of Axel Hecht
+***************
+*** 102,110 ****
+  # LIBPNGLIB = -L$(PREFIX)/lib -lpng
+  
+  ZLIBDIR = $(SRCDIR)/zlib
+! ZLIBINC = -I$(ZLIBDIR)
+  #ZLIBLIB = $(ZLIBDIR)/libz.a
+! ZLIBLIB = -L$(ZLIBDIR) -lz
+  #ZLIBLIB = -L/usr/local/lib -lz
+  
+  # The following options are added at the suggestion of Axel Hecht
+--- 106,114 ----
+  # LIBPNGLIB = -L$(PREFIX)/lib -lpng
+  
+  ZLIBDIR = $(SRCDIR)/zlib
+! ZLIBINC = #-I$(ZLIBDIR)
+  #ZLIBLIB = $(ZLIBDIR)/libz.a
+! ZLIBLIB = -lz
+  #ZLIBLIB = -L/usr/local/lib -lz
+  
+  # The following options are added at the suggestion of Axel Hecht

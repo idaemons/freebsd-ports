@@ -1,0 +1,45 @@
+include/uds/action.hh
+include/uds/alloc.hh
+include/uds/auto_ptr.hh
+include/uds/check_ptr.hh
+include/uds/childdiag.hh
+include/uds/collector.hh
+include/uds/dcast.hh
+include/uds/diagnose.hh
+include/uds/errnodiag.hh
+include/uds/exception.hh
+include/uds/exit.hh
+include/uds/flex_func.hh
+include/uds/functional.hh
+include/uds/init.hh
+include/uds/log.hh
+include/uds/md5.h
+include/uds/procstream.hh
+include/uds/random.hh
+include/uds/refcounter.hh
+include/uds/sentinel.hh
+include/uds/socket.hh
+include/uds/stdexcpt.hh
+include/uds/stl_ext.hh
+include/uds/stl_util.hh
+include/uds/strstream.hh
+include/uds/sys_util.hh
+include/uds/thread.hh
+include/uds/time.hh
+include/uds/uds.hh
+@dirrm include/uds
+lib/libuds.a
+lib/libuds.so
+lib/libuds.so.0
+lib/libudsthread.a
+lib/libudsthread.so
+lib/libudsthread.so.0
+%%PORTDOCS%%share/doc/uds/config.html
+%%PORTDOCS%%share/doc/uds/contributing.html
+%%PORTDOCS%%share/doc/uds/download.html
+%%PORTDOCS%%share/doc/uds/features.html
+%%PORTDOCS%%share/doc/uds/index.html
+%%PORTDOCS%%share/doc/uds/relnotes.html
+%%PORTDOCS%%@dirrm share/doc/uds
+share/uds/udsdeff.cc
+@dirrm share/uds

@@ -1,0 +1,29 @@
+%%RUBY_SITELIBDIR%%/drb.rb
+%%RUBY_SITELIBDIR%%/timerholder.rb
+%%RUBY_SITELIBDIR%%/drb/drb.rb
+%%RUBY_SITELIBDIR%%/drb/extserv.rb
+%%RUBY_SITELIBDIR%%/drb/extservm.rb
+%%RUBY_SITELIBDIR%%/drb/timeridconv.rb
+@dirrm %%RUBY_SITELIBDIR%%/drb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darray.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darrayc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dchatc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dchats.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dhasen.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dhasenc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dlogc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dlogd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqlib.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqout.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqueue.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbs-acl.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbs.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/extserv_test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/name.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/holderc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/holders.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/namec.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/rinda.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb

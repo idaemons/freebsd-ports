@@ -1,0 +1,63 @@
+%%RUBY_SITELIBDIR%%/sax.rb
+%%RUBY_SITELIBDIR%%/saxdriver.rb
+%%RUBY_SITELIBDIR%%/wget.rb
+%%RUBY_SITELIBDIR%%/xmldigest.rb
+%%RUBY_SITELIBDIR%%/xmlencoding-ja.rb
+%%RUBY_SITELIBDIR%%/xmlparser.rb
+%%RUBY_SITELIBDIR%%/xmltree.rb
+%%RUBY_SITELIBDIR%%/xmltreebuilder-ja.rb
+%%RUBY_SITELIBDIR%%/xmltreebuilder.rb
+%%RUBY_SITELIBDIR%%/xmltreevisitor.rb
+%%RUBY_SITEARCHLIBDIR%%/xmlparser.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/dtd/ext1.dtd
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/dtd/ext2.dtd
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/dtd/extdtd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/dtd/extdtd.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/namespaces/namespace1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/namespaces/namespace1.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/namespaces/namespace2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/namespaces/namespace2.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/buildertest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/buildertest2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/digesttest2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/document.dtd
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/gtktree.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/index_euc.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/index_jis.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/index_noenc.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/index_sjis.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/index_u16.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/index_u8.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/treetest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/videolist.dtd
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/videolist.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/videolist.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/visitor.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/xmlcheck.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/xmlevent.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/xmlgrep.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/xmliter.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/xpointer.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/ja/xpointertest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/digesttest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/doctype.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/doctype.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/doctypei.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/idattrtest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/my-html.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/saxtest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/visitortest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/writer.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/xmlcomments.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/xmlstats.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlparser/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlparser/namespaces
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlparser/dtd
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlparser
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlparser/ja/README.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlparser/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlparser/xmltree.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlparser/xmltreebuilder.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlparser/xmltreevisitor.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/xmlparser/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/xmlparser

@@ -1,0 +1,27 @@
+diff -urN ../../xzgv-0.6.orig/Makefile ./Makefile
+--- ../../xzgv-0.6.orig/Makefile	Wed Nov  8 21:52:49 2000
++++ ./Makefile	Sat Nov 11 14:28:52 2000
+@@ -24,9 +24,9 @@
+ 
+ 
+ 
+-all: src man infowarn
++all: src man info #infowarn
+ 
+-src: xzgv src/install-info
++src: xzgv #src/install-info
+ 
+ # We try this the whole time, as the dependancies are a bit
+ # complicated to duplicate here.
+@@ -45,9 +45,9 @@
+ # as I don't want to assume everyone has texinfo's `makeinfo' handy.
+ # So the `infowarn' below is mainly to warn me if the info gets
+ # out of date. :-)
+-info: doc/xzgv.gz
++info: doc/xzgv
+ 
+-doc/xzgv.gz: doc/xzgv.texi
++doc/xzgv: doc/xzgv.texi
+ 	cd doc && $(MAKE) info
+ 
+ # Warn if the info is out of date. This *is* automatically done.

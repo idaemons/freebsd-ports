@@ -1,0 +1,10 @@
+--- tkhonyaku.orig	Sun Apr 15 13:47:31 2001
++++ tkhonyaku	Sun Apr 15 13:47:41 2001
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # the next line restart using wish \
+-exec wish "$0" "$@"
++exec wish8.0jp "$0" "$@"
+ 
+ #=============================================================================
+ # ¡ØTkËÝÌõ¡Ùversion 1.6 for Unix/Windows/Macintosh

@@ -1,13 +1,23 @@
 # New ports collection makefile for:	chimera
-# Version required:	1.63
-# Date created:		26 December 1994
-# Whom:			asami
+# Date created:         24 Nov 1997
+# Whom:                 Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.3 1994/12/27 10:43:55 asami Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	chimera-1.63
+PORTNAME=	chimera
+PORTVERSION=	2.0a19
+CATEGORIES=	www
+MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera-alpha/ \
+		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/WWW/chimera/ \
+		ftp://ftp.uni-koeln.de/net/inet/WWW/
+
+MAINTAINER=	bgingery@gtcs.com
+
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.4:${PORTSDIR}/graphics/png
+
+MAN1=		chimera.1
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
 
 .include <bsd.port.mk>

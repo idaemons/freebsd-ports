@@ -1,0 +1,21 @@
+%%RUBY_SITEARCHLIBDIR%%/narray.so
+%%RUBY_SITELIBDIR%%/narray_ext.rb
+%%RUBY_SITELIBDIR%%/nmatrix.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/narray/ja/README.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/narray/ja/SPEC.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/narray/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/narray/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/narray/SPEC.en
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/narray/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/narray
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/add.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/add_int.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/lu.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mat.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mul.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mul2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mul_comp.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mul_int.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mybench.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/solve.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/narray

@@ -1,0 +1,1000 @@
+diff -ru ../linuxthreads/Examples/Makefile ./Examples/Makefile
+--- ../linuxthreads/Examples/Makefile	Wed Mar 11 13:42:23 1998
++++ ./Examples/Makefile	Mon Feb 26 12:36:31 2001
+@@ -1,8 +1,8 @@
+ CC=gcc
+-CFLAGS=-g -O -Wall -I.. -D_REENTRANT
+-LIBPTHREAD=../libpthread.a
++CFLAGS=-g -O -Wall -I/usr/local/include/pthread/linuxthreads -D_REENTRANT
++LIBPTHREAD=-L/usr/local/lib -llthread -llgcc_r
+ 
+-PROGS=ex1 ex2 ex3 ex4 ex5 proxy
++PROGS=ex1 ex2 ex3 ex4 ex5
+ 
+ all: $(PROGS)
+ 
+diff -ru ../linuxthreads/Makefile ./Makefile
+--- ../linuxthreads/Makefile	Wed Nov  3 01:09:36 1999
++++ ./Makefile	Mon Feb 26 12:36:31 2001
+@@ -1,68 +1,74 @@
+-# Copyright (C) 1996, 1997, 1998, 1999 Free Software Foundation, Inc.
+-# This file is part of the GNU C Library.
++LIB=lthread
++SHLIB_MAJOR= 2
++SHLIB_MINOR= 1
++
++.if !defined(MACHINE_ARCH)
++MACHINE_ARCH != /usr/bin/uname -m
++.endif
++
++.if !defined(LIBSRC_BASE)
++LIBSRC_BASE = /usr/src/lib
++.endif
++
++.if !defined(PREFIX)
++PREFIX = /usr/local
++.endif
++
++LIBDIR = ${PREFIX}/lib
++
++CFLAGS +=-g -O2 -Wall
++#CFLAGS +=-g -O0 -Wall -DDEBUG 
++CFLAGS +=-DCOMPILING_LINUXTHREADS
++#CFLAGS += -D__NO_WEAK_PTHREAD_ALIASES
++
++CFLAGS += -I${.CURDIR} 
++CFLAGS += -I${.CURDIR}/sysdeps/${MACHINE_ARCH}
++CFLAGS += -I${.CURDIR}/sysdeps/pthread
++CFLAGS += -I${.CURDIR}/sysdeps/unix/sysv/linux
++CFLAGS += -I${LIBSRC_BASE}/libc/stdtime
++#CFLAGS += -I${LIBSRC_BASE}/libc/${MACHINE_ARCH}
++CFLAGS += -DLIBC_RCS
++CFLAGS += -DLINUXTHREADS 
++CFLAGS += -D__USE_UNIX98
++
++AINC = -I${LIBSRC_BASE}/libc/${MACHINE_ARCH} -I${.CURDIR}/sysdeps/${MACHINE_ARCH}
++
++# Contents of the library.
++SRCS := attr.c cancel.c clone.S condvar.c errno.c getgr_r.c gethostby_r.c \
++	getnetby_r.c getprotoby_r.c getpw_r.c getservby_r.c join.c lclone.c \
++	libc_calls.c libc_thread.c manager.c mutex.c pt-machine.c ptfork.c \
++	pthread.c ptlongjmp.c rwlock.c sched.c semaphore.c signals.c \
++	specific.c spinlock.c uthread_file.c wraputhread.c wrapsyscall.c
++
++SOBJS += libgcc_r/frame.o libgcc_r/_eh.o
++
++beforeinstall:
++	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 \
++		${PREFIX}/include/pthread/linuxthreads
++	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
++		${.CURDIR}/sysdeps/pthread/pthread.h \
++		${PREFIX}/include/pthread/linuxthreads/pthread.h
++	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
++		${.CURDIR}/semaphore.h \
++		${PREFIX}/include/pthread/linuxthreads/semaphore.h
++	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 \
++		${PREFIX}/include/pthread/linuxthreads/bits
++.for hdr in libc-lock.h libc-tsd.h pthreadtypes.h stdio-lock.h
++	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
++		${.CURDIR}/sysdeps/pthread/bits/$(hdr) \
++		${PREFIX}/include/pthread/linuxthreads/bits/$(hdr)
++.endfor
++.for hdr in local_lim.h posix_opt.h sigthread.h
++	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
++		${.CURDIR}/sysdeps/unix/sysv/linux/bits/$(hdr) \
++		${PREFIX}/include/pthread/linuxthreads/bits/$(hdr)
++.endfor
++.for hdr in pt-machine.h useldt.h
++	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
++		${.CURDIR}/sysdeps/i386/$(hdr) \
++		${PREFIX}/include/pthread/linuxthreads/$(hdr)
++.endfor
++	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 ${PREFIX}/lib
+ 
+-# The GNU C Library is free software; you can redistribute it and/or
+-# modify it under the terms of the GNU Library General Public License as
+-# published by the Free Software Foundation; either version 2 of the
+-# License, or (at your option) any later version.
+-
+-# The GNU C Library is distributed in the hope that it will be useful,
+-# but WITHOUT ANY WARRANTY; without even the implied warranty of
+-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+-# Library General Public License for more details.
+-
+-# You should have received a copy of the GNU Library General Public
+-# License along with the GNU C Library; see the file COPYING.LIB.  If not,
+-# write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+-# Boston, MA 02111-1307, USA.
+-
+-#
+-#	Sub-makefile for linuxthreads portion of the library.
+-#
+-subdir	:= linuxthreads
+-
+-linuxthreads-version := $(shell sed -n 's/^.*$(subdir)-\([0-9.]*\).*$$/\1/p' \
+-				    Banner)
+-
+-headers := pthread.h semaphore.h
+-distribute := internals.h queue.h restart.h spinlock.h
+-
+-routines := weaks no-tsd
+-
+-extra-libs := libpthread
+-extra-libs-others := $(extra-libs)
+-
+-libpthread-routines := attr cancel condvar join manager mutex ptfork \
+-		       ptlongjmp pthread signals specific errno lockfile \
+-		       semaphore spinlock wrapsyscall rwlock pt-machine \
+-		       oldsemaphore events
+-
+-vpath %.c Examples
+-tests = ex1 ex2 ex3 ex4 ex5 ex6
+-
+-include ../Rules
+-
+-CFLAGS-mutex.c += -D__NO_WEAK_PTHREAD_ALIASES
+-CFLAGS-specific.c += -D__NO_WEAK_PTHREAD_ALIASES
+-CFLAGS-pthread.c += -D__NO_WEAK_PTHREAD_ALIASES
+-CFLAGS-ptfork.c += -D__NO_WEAK_PTHREAD_ALIASES
+-CFLAGS-cancel.c += -D__NO_WEAK_PTHREAD_ALIASES
+-
+-# Depend on libc.so so a DT_NEEDED is generated in the shared objects.
+-# This ensures they will load libc.so for needed symbols if loaded by
+-# a statically-linked program that hasn't already loaded it.
+-$(objpfx)libpthread.so: $(common-objpfx)libc.so
+-
+-# Make sure we link with the thread library.
+-ifeq ($(build-shared),yes)
+-libpthread = $(objpfx)libpthread.so
+-else
+-libpthread = $(objpfx)libpthread.a
+-endif
+-
+-$(objpfx)ex1: $(libpthread)
+-$(objpfx)ex2: $(libpthread)
+-$(objpfx)ex3: $(libpthread)
+-$(objpfx)ex4: $(libpthread)
+-$(objpfx)ex5: $(libpthread)
+-$(objpfx)ex6: $(libpthread)
++
++.include <bsd.lib.mk>
+diff -ru ../linuxthreads/attr.c ./attr.c
+--- ../linuxthreads/attr.c	Tue Oct 27 14:51:54 1998
++++ ./attr.c	Mon Feb 26 12:36:31 2001
+@@ -27,7 +27,7 @@
+ 
+   attr->__detachstate = PTHREAD_CREATE_JOINABLE;
+   attr->__schedpolicy = SCHED_OTHER;
+-  attr->__schedparam.sched_priority = 0;
++  attr->__schedparam.sched_priority = DEFAULT_PRIORITY;
+   attr->__inheritsched = PTHREAD_EXPLICIT_SCHED;
+   attr->__scope = PTHREAD_SCOPE_SYSTEM;
+   attr->__guardsize = ps;
+diff -ru ../linuxthreads/errno.c ./errno.c
+--- ../linuxthreads/errno.c	Wed Aug 26 17:57:28 1998
++++ ./errno.c	Mon Feb 26 12:53:17 2001
+@@ -19,13 +19,13 @@
+ #include "pthread.h"
+ #include "internals.h"
+ 
+-int * __errno_location()
++int * __error()
+ {
+   pthread_descr self = thread_self();
+   return THREAD_GETMEM (self, p_errnop);
+ }
+ 
+-int * __h_errno_location()
++int * __h_error()
+ {
+   pthread_descr self = thread_self();
+   return THREAD_GETMEM (self, p_h_errnop);
+diff -ru ../linuxthreads/internals.h ./internals.h
+--- ../linuxthreads/internals.h	Fri Jan 21 02:40:19 2000
++++ ./internals.h	Mon Feb 26 12:36:31 2001
+@@ -26,8 +26,8 @@
+ #include <unistd.h>
+ #include <sys/types.h>
+ #include "pt-machine.h"
++#include "freebsd-compat.h"
+ #include "semaphore.h"
+-#include "../linuxthreads_db/thread_dbP.h"
+ 
+ #ifndef THREAD_GETMEM
+ # define THREAD_GETMEM(descr, member) descr->member
+@@ -148,14 +148,19 @@
+   char p_sigwaiting;            /* true if a sigwait() is in progress */
+   struct pthread_start_args p_start_args; /* arguments for thread creation */
+   void ** p_specific[PTHREAD_KEY_1STLEVEL_SIZE]; /* thread-specific data */
++  TAILQ_ENTRY(_pthread_descr_struct) qe;
++  char time_buf[26];
++  struct tm local_tm;
+   void * p_libc_specific[_LIBC_TSD_KEY_N]; /* thread-specific data for libc */
+   int p_userstack;		/* nonzero if the user provided the stack */
+   void *p_guardaddr;		/* address of guard area or NULL */
+   size_t p_guardsize;		/* size of guard area */
+   pthread_descr p_self;		/* Pointer to this structure */
+   int p_nr;                     /* Index of descriptor in __pthread_handles */
++#if (0)
+   int p_report_events;         /* Nonzero if events must be reported.  */
+   td_eventbuf_t p_eventbuf;     /* Data for event.  */
++#endif
+   struct pthread_atomic p_resume_count; /* number of times restart() was
+ 					   called on thread */
+   char p_woken_by_cancel;       /* cancellation performed wakeup */
+@@ -267,11 +272,13 @@
+ 
+ extern volatile int __pthread_threads_debug;
+ 
++#if (0)
+ /* Globally enabled events.  */
+ extern volatile td_thr_events_t __pthread_threads_events;
+ 
+ /* Pointer to descriptor of thread with last event.  */
+ extern volatile pthread_descr __pthread_last_event;
++#endif
+ 
+ /* Return the handle corresponding to a thread id */
+ 
+diff -ru ../linuxthreads/join.c ./join.c
+--- ../linuxthreads/join.c	Thu Jan  6 02:45:15 2000
++++ ./join.c	Mon Feb 26 12:36:31 2001
+@@ -39,6 +39,7 @@
+   THREAD_SETMEM(self, p_retval, retval);
+   /* Say that we've terminated */
+   THREAD_SETMEM(self, p_terminated, 1);
++#if (0)
+   /* See whether we have to signal the death.  */
+   if (THREAD_GETMEM(self, p_report_events))
+     {
+@@ -60,6 +61,7 @@
+ 	  __linuxthreads_death_event();
+ 	}
+     }
++#endif
+   /* See if someone is joining on us */
+   joining = THREAD_GETMEM(self, p_joining);
+   __pthread_unlock(THREAD_GETMEM(self, p_lock));
+diff -ru ../linuxthreads/manager.c ./manager.c
+--- ../linuxthreads/manager.c	Fri Jan 21 02:40:19 2000
++++ ./manager.c	Mon Feb 26 12:36:31 2001
+@@ -52,8 +52,10 @@
+    (set to 1 by gdb) */
+ volatile int __pthread_threads_debug;
+ 
++#if (0)
+ /* Globally enabled events.  */
+ volatile td_thr_events_t __pthread_threads_events;
++#endif
+ 
+ /* Pointer to thread descriptor with last event.  */
+ volatile pthread_descr __pthread_last_event;
+@@ -85,10 +87,10 @@
+ /* Forward declarations */
+ 
+ static int pthread_handle_create(pthread_t *thread, const pthread_attr_t *attr,
+-                                 void * (*start_routine)(void *), void *arg,
+-                                 sigset_t *mask, int father_pid,
++				 void * (*start_routine)(void *), void *arg,
++				 sigset_t * mask, int father_pid/*,
+ 				 int report_events,
+-				 td_thr_events_t *event_maskp);
++				 td_thr_events_t *event_maskp*/);
+ static void pthread_handle_free(pthread_t th_id);
+ static void pthread_handle_exit(pthread_descr issuing_thread, int exitcode);
+ static void pthread_reap_children(void);
+@@ -149,9 +151,10 @@
+                                 request.req_args.create.fn,
+                                 request.req_args.create.arg,
+                                 &request.req_args.create.mask,
+-                                request.req_thread->p_pid,
++                                request.req_thread->p_pid/*,
+ 				request.req_thread->p_report_events,
+-				&request.req_thread->p_eventbuf.eventmask);
++                                &request.req_thread->p_eventbuf.eventmask*/);
++
+         restart(request.req_thread);
+         break;
+       case REQ_FREE:
+@@ -245,6 +248,7 @@
+   return 0;
+ }
+ 
++#if (0)
+ static int pthread_start_thread_event(void *arg)
+ {
+   pthread_descr self = (pthread_descr) arg;
+@@ -263,6 +267,7 @@
+   /* Continue with the real function.  */
+   return pthread_start_thread (arg);
+ }
++#endif
+ 
+ static int pthread_allocate_stack(const pthread_attr_t *attr,
+                                   pthread_descr default_new_thread,
+@@ -295,8 +300,8 @@
+       /* Allocate space for stack and thread descriptor at default address */
+       new_thread = default_new_thread;
+       new_thread_bottom = (char *) (new_thread + 1) - stacksize;
+-      if (mmap((caddr_t)((char *)(new_thread + 1) - INITIAL_STACK_SIZE),
+-               INITIAL_STACK_SIZE, PROT_READ | PROT_WRITE | PROT_EXEC,
++      if (mmap((caddr_t)((char *)(new_thread + 1) - stacksize),
++               stacksize, PROT_READ | PROT_WRITE | PROT_EXEC,
+                MAP_PRIVATE | MAP_ANONYMOUS | MAP_FIXED | MAP_GROWSDOWN,
+                -1, 0) == MAP_FAILED)
+         /* Bad luck, this segment is already mapped. */
+@@ -337,9 +342,9 @@
+ 
+ static int pthread_handle_create(pthread_t *thread, const pthread_attr_t *attr,
+ 				 void * (*start_routine)(void *), void *arg,
+-				 sigset_t * mask, int father_pid,
++				 sigset_t * mask, int father_pid/*,
+ 				 int report_events,
+-				 td_thr_events_t *event_maskp)
++				 td_thr_events_t *event_maskp*/)
+ {
+   size_t sseg;
+   int pid;
+@@ -407,6 +412,12 @@
+     }
+     new_thread->p_priority =
+       new_thread->p_start_args.schedparam.sched_priority;
++  } else {
++    new_thread->p_detached = PTHREAD_CREATE_JOINABLE;
++    new_thread->p_userstack = 0;
++    new_thread->p_start_args.schedpolicy = SCHED_OTHER;
++    new_thread->p_start_args.schedparam.sched_priority = DEFAULT_PRIORITY;
++    new_thread->p_priority = DEFAULT_PRIORITY;
+   }
+   /* Finish setting up arguments to pthread_start_thread */
+   new_thread->p_start_args.start_routine = start_routine;
+@@ -417,6 +428,7 @@
+   /* Do the cloning.  We have to use two different functions depending
+      on whether we are debugging or not.  */
+   pid = 0;     /* Note that the thread never can have PID zero.  */
++#if (0)
+   if (report_events)
+     {
+       /* See whether the TD_CREATE event bit is set in any of the
+@@ -457,6 +469,7 @@
+ 	    }
+ 	}
+     }
++#endif
+   if (pid == 0)
+     pid = __clone(pthread_start_thread, (void **) new_thread,
+ 		  CLONE_VM | CLONE_FS | CLONE_FILES | CLONE_SIGHAND |
+@@ -468,8 +481,8 @@
+       {
+ 	if (new_thread->p_guardsize != 0)
+ 	  munmap(new_thread->p_guardaddr, new_thread->p_guardsize);
+-	munmap((caddr_t)((char *)(new_thread+1) - INITIAL_STACK_SIZE),
+-	       INITIAL_STACK_SIZE);
++	munmap((caddr_t)((char *)(new_thread+1) - STACK_SIZE),
++	       STACK_SIZE);
+       }
+     __pthread_handles[sseg].h_descr = NULL;
+     __pthread_handles[sseg].h_bottom = NULL;
+@@ -555,6 +568,7 @@
+       /* Mark thread as exited, and if detached, free its resources */
+       __pthread_lock(th->p_lock, NULL);
+       th->p_exited = 1;
++#if (0)
+       /* If we have to signal this event do it now.  */
+       if (th->p_report_events)
+ 	{
+@@ -574,6 +588,7 @@
+ 	      __linuxthreads_reap_event();
+ 	    }
+ 	}
++#endif
+       detached = th->p_detached;
+       __pthread_unlock(th->p_lock);
+       if (detached)
+@@ -651,10 +666,14 @@
+ 
+ /* Process-wide exit() */
+ 
++extern int __pthread_exit_requested_bymainthread;
++
+ static void pthread_handle_exit(pthread_descr issuing_thread, int exitcode)
+ {
+   pthread_descr th;
+   __pthread_exit_requested = 1;
++  if (issuing_thread == __pthread_main_thread)
++    __pthread_exit_requested_bymainthread = 1;
+   __pthread_exit_code = exitcode;
+   /* Send the CANCEL signal to all running threads, including the main
+      thread, but excluding the thread from which the exit request originated
+diff -ru ../linuxthreads/pthread.c ./pthread.c
+--- ../linuxthreads/pthread.c	Fri Jan 21 02:40:19 2000
++++ ./pthread.c	Mon Feb 26 13:11:57 2001
+@@ -20,6 +20,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
++#include <signal.h>
+ #include <fcntl.h>
+ #include <sys/wait.h>
+ #include <sys/resource.h>
+@@ -37,7 +38,7 @@
+   NULL,			      /* pthread_descr p_nextlock */
+   PTHREAD_THREADS_MAX,        /* pthread_t p_tid */
+   0,                          /* int p_pid */
+-  0,                          /* int p_priority */
++  DEFAULT_PRIORITY,           /* int p_priority */
+   &__pthread_handles[0].h_lock, /* struct _pthread_fastlock * p_lock */
+   0,                          /* int p_signal */
+   NULL,                       /* sigjmp_buf * p_signal_buf */
+@@ -60,14 +61,19 @@
+   0,                          /* char p_sigwaiting */
+   PTHREAD_START_ARGS_INITIALIZER, /* struct pthread_start_args p_start_args */
+   {NULL},                     /* void ** p_specific[PTHREAD_KEY_1STLEVEL_SIZE] */
++  {NULL, NULL},               /* TAILQ_ENTRY(_pthread_descr_struct) qe */
++  {NULL},                     /* char timebuf[26] */
++  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL}, /* struct tm local_tm */
+   {NULL},                     /* void * p_libc_specific[_LIBC_TSD_KEY_N] */
+   0,                          /* int p_userstack */
+   NULL,                       /* void * p_guardaddr */
+   0,                          /* size_t p_guardsize */
+   &__pthread_initial_thread,  /* pthread_descr p_self */
+   0,                          /* Always index 0 */
++#if (0)
+   0,                          /* int p_report_events */
+   {{{0, }}, 0, NULL},         /* td_eventbuf_t p_eventbuf */
++#endif
+   ATOMIC_INITIALIZER,         /* struct pthread_atomic p_resume_count */
+   0,                          /* char p_woken_by_cancel */
+   NULL,                       /* struct pthread_extricate_if *p_extricate */
+@@ -87,7 +93,7 @@
+   NULL,			      /* pthread_descr p_nextlock */
+   0,                          /* int p_tid */
+   0,                          /* int p_pid */
+-  0,                          /* int p_priority */
++  DEFAULT_PRIORITY,           /* int p_priority */
+   &__pthread_handles[1].h_lock, /* struct _pthread_fastlock * p_lock */
+   0,                          /* int p_signal */
+   NULL,                       /* sigjmp_buf * p_signal_buf */
+@@ -110,14 +116,19 @@
+   0,                          /* char p_sigwaiting */
+   PTHREAD_START_ARGS_INITIALIZER, /* struct pthread_start_args p_start_args */
+   {NULL},                     /* void ** p_specific[PTHREAD_KEY_1STLEVEL_SIZE] */
++  {NULL, NULL},               /* TAILQ_ENTRY(_pthread_descr_struct) qe */
++  {NULL},                     /* char timebuf[26] */
++  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL}, /* struct tm local_tm */
+   {NULL},                     /* void * p_libc_specific[_LIBC_TSD_KEY_N] */
+   0,                          /* int p_userstack */
+   NULL,                       /* void * p_guardaddr */
+   0,                          /* size_t p_guardsize */
+   &__pthread_manager_thread,  /* pthread_descr p_self */
+   1,                          /* Always index 1 */
++#if (0)
+   0,                          /* int p_report_events */
+   {{{0, }}, 0, NULL},         /* td_eventbuf_t p_eventbuf */
++#endif
+   ATOMIC_INITIALIZER,         /* struct pthread_atomic p_resume_count */
+   0,                          /* char p_woken_by_cancel */
+   NULL,                       /* struct pthread_extricate_if *p_extricate */
+@@ -153,6 +164,7 @@
+ /* For process-wide exit() */
+ 
+ int __pthread_exit_requested = 0;
++int __pthread_exit_requested_bymainthread = 0;
+ int __pthread_exit_code = 0;
+ 
+ /* Pointers that select new or old suspend/resume functions
+@@ -171,18 +183,20 @@
+                                             p_pid);
+ 
+ /* These variables are used by the setup code.  */
+-extern int _errno;
++extern int _errno __asm__("errno");
+ extern int _h_errno;
+ 
+ /* Forward declarations */
+ 
+-static void pthread_exit_process(int retcode, void *arg);
++static void pthread_exit_process(void);
+ #ifndef __i386__
+ static void pthread_handle_sigcancel(int sig);
+ static void pthread_handle_sigrestart(int sig);
+ #else
+-static void pthread_handle_sigcancel(int sig, struct sigcontext ctx);
+-static void pthread_handle_sigrestart(int sig, struct sigcontext ctx);
++static void pthread_handle_sigcancel(int sig, int code,
++				     struct sigcontext * ctx);
++static void pthread_handle_sigrestart(int sig, int code,
++				      struct sigcontext * ctx);
+ #endif
+ static void pthread_handle_sigdebug(int sig);
+ 
+@@ -194,8 +208,8 @@
+ #ifndef __SIGRTMIN
+ static int current_rtmin = -1;
+ static int current_rtmax = -1;
+-int __pthread_sig_restart = SIGUSR1;
+-int __pthread_sig_cancel = SIGUSR2;
++int __pthread_sig_restart = SIGUSR2;
++int __pthread_sig_cancel = SIGUSR1;
+ int __pthread_sig_debug = 0;
+ #else
+ static int current_rtmin;
+@@ -206,8 +220,8 @@
+ int __pthread_sig_cancel = __SIGRTMIN + 1;
+ int __pthread_sig_debug = __SIGRTMIN + 2;
+ #else
+-int __pthread_sig_restart = SIGUSR1;
+-int __pthread_sig_cancel = SIGUSR2;
++int __pthread_sig_restart = SIGUSR2;
++int __pthread_sig_cancel = SIGUSR1;
+ int __pthread_sig_debug = 0;
+ #endif
+ 
+@@ -345,7 +359,7 @@
+ #ifndef __i386__
+   sa.sa_handler = pthread_handle_sigrestart;
+ #else
+-  sa.sa_handler = (__sighandler_t) pthread_handle_sigrestart;
++  sa.sa_handler = (__sighandler_t *) pthread_handle_sigrestart;
+ #endif
+   sigemptyset(&sa.sa_mask);
+   sa.sa_flags = 0;
+@@ -353,7 +367,7 @@
+ #ifndef __i386__
+   sa.sa_handler = pthread_handle_sigcancel;
+ #else
+-  sa.sa_handler = (__sighandler_t) pthread_handle_sigcancel;
++  sa.sa_handler = (__sighandler_t *) pthread_handle_sigcancel;
+ #endif
+   sa.sa_flags = 0;
+   __sigaction(__pthread_sig_cancel, &sa, NULL);
+@@ -370,7 +384,7 @@
+   /* Register an exit function to kill all other threads. */
+   /* Do it early so that user-registered atexit functions are called
+      before pthread_exit_process. */
+-  __on_exit(pthread_exit_process, NULL);
++  atexit(pthread_exit_process);
+ }
+ 
+ void __pthread_initialize(void)
+@@ -399,6 +413,7 @@
+   }
+   /* Start the thread manager */
+   pid = 0;
++#if (0)
+   if (__pthread_initial_thread.p_report_events)
+     {
+       /* It's a bit more complicated.  We have to report the creation of
+@@ -436,10 +451,12 @@
+ 	    }
+ 	}
+     }
++#endif
+ 
+   if (pid == 0)
+     pid = __clone(__pthread_manager, (void **) __pthread_manager_thread_tos,
+-		  CLONE_VM | CLONE_FS | CLONE_FILES | CLONE_SIGHAND,
++		  CLONE_VM | CLONE_FS | CLONE_FILES | CLONE_SIGHAND |
++		  __pthread_sig_cancel,
+ 		  (void *)(long)manager_pipe[0]);
+   if (pid == -1) {
+     free(__pthread_manager_thread_bos);
+@@ -568,7 +585,7 @@
+     __pthread_unlock(&handle->h_lock);
+     return errno;
+   }
+-  th->p_priority = policy == SCHED_OTHER ? 0 : param->sched_priority;
++  th->p_priority = param->sched_priority;
+   __pthread_unlock(&handle->h_lock);
+   if (__pthread_manager_request >= 0)
+     __pthread_manager_adjust_prio(th->p_priority);
+@@ -597,7 +614,7 @@
+ 
+ /* Process-wide exit() request */
+ 
+-static void pthread_exit_process(int retcode, void *arg)
++static void pthread_exit_process(void)
+ {
+   struct pthread_request request;
+   pthread_descr self = thread_self();
+@@ -605,7 +622,7 @@
+   if (__pthread_manager_request >= 0) {
+     request.req_thread = self;
+     request.req_kind = REQ_PROCESS_EXIT;
+-    request.req_args.exit.code = retcode;
++    request.req_args.exit.code = 0;
+     __libc_write(__pthread_manager_request,
+ 		 (char *) &request, sizeof(request));
+     suspend(self);
+@@ -625,10 +642,11 @@
+ {
+   pthread_descr self = thread_self();
+ #else
+-static void pthread_handle_sigrestart(int sig, struct sigcontext ctx)
++static void pthread_handle_sigrestart(int sig, int code,
++				      struct sigcontext * ctx)
+ {
+   pthread_descr self;
+-  asm volatile ("movw %w0,%%gs" : : "r" (ctx.gs));
++  asm volatile ("movw %w0,%%gs" : : "r" (ctx->sc_gs));
+   self = thread_self();
+ #endif
+   THREAD_SETMEM(self, p_signal, sig);
+@@ -647,11 +665,11 @@
+   pthread_descr self = thread_self();
+   sigjmp_buf * jmpbuf;
+ #else
+-static void pthread_handle_sigcancel(int sig, struct sigcontext ctx)
++static void pthread_handle_sigcancel(int sig, int code, struct sigcontext * ctx)
+ {
+   pthread_descr self;
+   sigjmp_buf * jmpbuf;
+-  asm volatile ("movw %w0,%%gs" : : "r" (ctx.gs));
++  asm volatile ("movw %w0,%%gs" : : "r" (ctx->sc_gs));
+   self = thread_self();
+ #endif
+ 
+@@ -663,6 +681,9 @@
+   if (__pthread_exit_requested) {
+     /* Main thread should accumulate times for thread manager and its
+        children, so that timings for main thread account for all threads. */
++    if (self == __pthread_main_thread &&
++	__pthread_exit_requested_bymainthread != 0)
++	    return;
+     if (self == __pthread_main_thread)
+       waitpid(__pthread_manager_thread.p_pid, NULL, __WCLONE);
+     _exit(__pthread_exit_code);
+@@ -731,7 +752,7 @@
+ {
+   struct sigaction sa;
+   /* Terminate all other threads and thread manager */
+-  pthread_exit_process(0, NULL);
++  pthread_exit_process();
+   /* Make current thread the main thread in case the calling thread
+      changes its mind, does not exec(), and creates new threads instead. */
+   __pthread_reset_main_thread();
+@@ -838,3 +859,13 @@
+ static const int *const __pthread_require_wrappers =
+   &__pthread_provide_wrappers;
+ #endif
++
++/* Force our version of uthreads stub functions to be linked in */
++extern int _pthread_mutex_init(pthread_mutex_t **mutex, const pthread_mutexattr_t *mattr);
++static int (*unusedref)(pthread_mutex_t **mutex, const pthread_mutexattr_t *mattr) __attribute__ ((unused)) = _pthread_mutex_init;
++
++extern void _flockfile(FILE *fp);
++static void (*unusedref2)(FILE *fp) __attribute__ ((unused)) = _flockfile;
++
++extern int *__error(void);
++static int *(*unusedref3)(void) __attribute__ ((unused)) = __error;
+diff -ru ../linuxthreads/ptlongjmp.c ./ptlongjmp.c
+--- ../linuxthreads/ptlongjmp.c	Tue Oct 27 14:52:00 1998
++++ ./ptlongjmp.c	Mon Feb 26 12:36:31 2001
+@@ -19,13 +19,14 @@
+ #include "pthread.h"
+ #include "internals.h"
+ 
++#if (0)
+ /* These functions are not declared anywhere since they shouldn't be
+    used at another place but here.  */
+ extern void __libc_siglongjmp (sigjmp_buf env, int val)
+      __attribute__ ((noreturn));
+ extern void __libc_longjmp (sigjmp_buf env, int val)
+      __attribute__ ((noreturn));
+-
++#endif
+ 
+ static void pthread_cleanup_upto(__jmp_buf target)
+ {
+@@ -44,12 +45,12 @@
+ 
+ void siglongjmp(sigjmp_buf env, int val)
+ {
+-  pthread_cleanup_upto(env->__jmpbuf);
++  pthread_cleanup_upto((void *) env);
+   __libc_siglongjmp(env, val);
+ }
+ 
+ void longjmp(jmp_buf env, int val)
+ {
+-  pthread_cleanup_upto(env->__jmpbuf);
++  pthread_cleanup_upto((void *) env);
+   __libc_longjmp(env, val);
+ }
+diff -ru ../linuxthreads/semaphore.h ./semaphore.h
+--- ../linuxthreads/semaphore.h	Wed Feb 23 08:02:52 2000
++++ ./semaphore.h	Mon Feb 26 12:36:31 2001
+@@ -15,7 +15,6 @@
+ #ifndef _SEMAPHORE_H
+ #define _SEMAPHORE_H    1
+ 
+-#include <features.h>
+ #include <sys/types.h>
+ 
+ #ifndef _PTHREAD_DESCR_DEFINED
+diff -ru ../linuxthreads/signals.c ./signals.c
+--- ../linuxthreads/signals.c	Mon Oct  4 21:50:04 1999
++++ ./signals.c	Mon Feb 26 12:36:31 2001
+@@ -20,7 +20,6 @@
+ #include "internals.h"
+ #include "spinlock.h"
+ #include <ucontext.h>
+-#include <sigcontextinfo.h>
+ 
+ int pthread_sigmask(int how, const sigset_t * newmask, sigset_t * oldmask)
+ {
+@@ -69,15 +68,15 @@
+ }
+ 
+ /* User-provided signal handlers */
+-typedef void (*arch_sighandler_t) __PMT ((int, SIGCONTEXT));
++typedef void (*arch_sighandler_t) __PMT ((int, int, SIGCONTEXT));
+ static union
+ {
+   arch_sighandler_t old;
+-  void (*rt) (int, struct siginfo *, struct ucontext *);
++  void (*rt) (int, siginfo_t *, ucontext_t *);
+ } sighandler[NSIG];
+ 
+ /* The wrapper around user-provided signal handlers */
+-static void pthread_sighandler(int signo, SIGCONTEXT ctx)
++static void pthread_sighandler(int signo, int code, SIGCONTEXT ctx)
+ {
+   pthread_descr self = thread_self();
+   char * in_sighandler;
+@@ -93,14 +92,14 @@
+   in_sighandler = THREAD_GETMEM(self, p_in_sighandler);
+   if (in_sighandler == NULL)
+     THREAD_SETMEM(self, p_in_sighandler, CURRENT_STACK_FRAME);
+-  sighandler[signo].old(signo, SIGCONTEXT_EXTRA_ARGS ctx);
++  sighandler[signo].old(signo, code, ctx);
+   if (in_sighandler == NULL)
+     THREAD_SETMEM(self, p_in_sighandler, NULL);
+ }
+ 
+ /* The same, this time for real-time signals.  */
+-static void pthread_sighandler_rt(int signo, struct siginfo *si,
+-				  struct ucontext *uc)
++static void pthread_sighandler_rt(int signo, siginfo_t *si,
++				  ucontext_t *uc)
+ {
+   pthread_descr self = thread_self();
+   char * in_sighandler;
+@@ -140,9 +139,9 @@
+ 	  && sig > 0 && sig < NSIG)
+ 	{
+ 	  if (act->sa_flags & SA_SIGINFO)
+-	    newact.sa_handler = (__sighandler_t) pthread_sighandler_rt;
++	    newact.sa_handler = (__sighandler_t *) pthread_sighandler_rt;
+ 	  else
+-	    newact.sa_handler = (__sighandler_t) pthread_sighandler;
++	    newact.sa_handler = (__sighandler_t *) pthread_sighandler;
+ 	}
+       newactp = &newact;
+     }
+@@ -153,7 +152,7 @@
+   if (sig > 0 && sig < NSIG)
+     {
+       if (oact != NULL)
+-	oact->sa_handler = (__sighandler_t) sighandler[sig].old;
++	oact->sa_handler = (__sighandler_t *) sighandler[sig].old;
+       if (act)
+ 	/* For the assignment is does not matter whether it's a normal
+ 	   or real-time signal.  */
+diff -ru ../linuxthreads/spinlock.c ./spinlock.c
+--- ../linuxthreads/spinlock.c	Thu Jan  6 02:47:19 2000
++++ ./spinlock.c	Mon Feb 26 12:36:31 2001
+@@ -137,7 +137,6 @@
+ 
+ #if !defined HAS_COMPARE_AND_SWAP || defined TEST_FOR_COMPARE_AND_SWAP
+ 
+-static void __pthread_acquire(int * spinlock);
+ 
+ int __pthread_compare_and_swap(long * ptr, long oldval, long newval,
+                                int * spinlock)
+@@ -174,7 +173,7 @@
+    - When nanosleep() returns, we try again, doing MAX_SPIN_COUNT
+      sched_yield(), then sleeping again if needed. */
+ 
+-static void __pthread_acquire(int * spinlock)
++void __pthread_acquire(int * spinlock)
+ {
+   int cnt = 0;
+   struct timespec tm;
+diff -ru ../linuxthreads/spinlock.h ./spinlock.h
+--- ../linuxthreads/spinlock.h	Thu Jan  6 02:45:15 2000
++++ ./spinlock.h	Mon Feb 26 12:36:31 2001
+@@ -71,6 +71,8 @@
+   return 0;
+ }
+ 
++void __pthread_acquire(int * spinlock);
++
+ #define LOCK_INITIALIZER {0, 0}
+ 
+ /* Operations on pthread_atomic, which is defined in internals.h */
+diff -ru ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h ./sysdeps/pthread/bits/pthreadtypes.h
+--- ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h	Fri Jan 21 02:40:19 2000
++++ ./sysdeps/pthread/bits/pthreadtypes.h	Mon Feb 26 12:36:31 2001
+@@ -20,7 +20,6 @@
+ #define _BITS_PTHREADTYPES_H	1
+ 
+ #define __need_schedparam
+-#include <bits/sched.h>
+ 
+ /* Fast locks (not abstract because mutexes and conditions aren't abstract). */
+ struct _pthread_fastlock
+@@ -41,7 +40,7 @@
+ {
+   int __detachstate;
+   int __schedpolicy;
+-  struct __sched_param __schedparam;
++  struct sched_param __schedparam;
+   int __inheritsched;
+   int __scope;
+   size_t __guardsize;
+diff -ru ../linuxthreads/sysdeps/pthread/pthread.h ./sysdeps/pthread/pthread.h
+--- ../linuxthreads/sysdeps/pthread/pthread.h	Fri Jan 21 02:40:19 2000
++++ ./sysdeps/pthread/pthread.h	Mon Feb 26 12:36:31 2001
+@@ -15,7 +15,6 @@
+ #ifndef _PTHREAD_H
+ #define _PTHREAD_H	1
+ 
+-#include <features.h>
+ 
+ #include <sched.h>
+ #include <time.h>
+@@ -108,7 +107,7 @@
+ 
+ struct _pthread_cleanup_buffer
+ {
+-  void (*__routine) __PMT ((void *));	  /* Function to call.  */
++  void (*__routine) __P ((void *));	  /* Function to call.  */
+   void *__arg;				  /* Its argument.  */
+   int __canceltype;			  /* Saved cancellation type. */
+   struct _pthread_cleanup_buffer *__prev; /* Chaining of cleanup functions.  */
+diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h ./sysdeps/unix/sysv/linux/bits/local_lim.h
+--- ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h	Thu Nov 12 19:03:14 1998
++++ ./sysdeps/unix/sysv/linux/bits/local_lim.h	Mon Feb 26 12:36:31 2001
+@@ -24,7 +24,7 @@
+ #endif
+ 
+ /* The kernel sources contain a file with all the needed information.  */
+-#include <linux/limits.h>
++#include <limits.h>
+ 
+ /* Have to remove NR_OPEN?  */
+ #ifdef __undef_NR_OPEN
+diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h ./sysdeps/unix/sysv/linux/bits/sigthread.h
+--- ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h	Sat Sep 12 23:33:14 1998
++++ ./sysdeps/unix/sysv/linux/bits/sigthread.h	Mon Feb 26 12:36:31 2001
+@@ -28,8 +28,8 @@
+ 
+ /* Modify the signal mask for the calling thread.  The arguments have
+    the same meaning as for sigprocmask(2). */
+-extern int pthread_sigmask __P ((int __how, __const __sigset_t *__newmask,
+-				 __sigset_t *__oldmask));
++extern int pthread_sigmask __P ((int __how, __const sigset_t *__newmask,
++				 sigset_t *__oldmask));
+ 
+ /* Send signal SIGNO to the given thread. */
+ extern int pthread_kill __P ((pthread_t __thread, int __signo));
+diff -ru ../linuxthreads/wrapsyscall.c ./wrapsyscall.c
+--- ../linuxthreads/wrapsyscall.c	Tue Dec  1 20:34:20 1998
++++ ./wrapsyscall.c	Mon Feb 26 12:36:31 2001
+@@ -29,6 +29,7 @@
+ #include <sys/resource.h>
+ #include <sys/wait.h>
+ #include <sys/socket.h>
++#include "internals.h"
+ 
+ 
+ #ifndef PIC
+@@ -39,20 +40,20 @@
+ 
+ 
+ #define CANCELABLE_SYSCALL(res_type, name, param_list, params) \
+-res_type __libc_##name param_list;					      \
++res_type _##name param_list;						      \
+ res_type								      \
+ name param_list								      \
+ {									      \
+   res_type result;							      \
+   int oldtype;								      \
+   pthread_setcanceltype (PTHREAD_CANCEL_ASYNCHRONOUS, &oldtype);	      \
+-  result = __libc_##name params;					      \
++  result = _##name params;						      \
+   pthread_setcanceltype (oldtype, NULL);				      \
+   return result;							      \
+ }
+ 
+ #define CANCELABLE_SYSCALL_VA(res_type, name, param_list, params, last_arg) \
+-res_type __libc_##name param_list;					      \
++res_type _##name param_list;						      \
+ res_type								      \
+ name param_list								      \
+ {									      \
+@@ -61,7 +62,7 @@
+   va_list ap;								      \
+   pthread_setcanceltype (PTHREAD_CANCEL_ASYNCHRONOUS, &oldtype);	      \
+   va_start (ap, last_arg);						      \
+-  result = __libc_##name params;					      \
++  result = _##name params;						      \
+   va_end (ap);								      \
+   pthread_setcanceltype (oldtype, NULL);				      \
+   return result;							      \
+@@ -83,10 +84,12 @@
+ CANCELABLE_SYSCALL (int, fsync, (int fd), (fd))
+ 
+ 
++#if (0)
+ /* lseek(2).  */
+ CANCELABLE_SYSCALL (off_t, lseek, (int fd, off_t offset, int whence),
+ 		    (fd, offset, whence))
+ strong_alias (lseek, __lseek)
++#endif
+ 
+ 
+ /* msync(2).  */
+@@ -107,7 +110,7 @@
+ 
+ 
+ /* pause(2).  */
+-CANCELABLE_SYSCALL (int, pause, (void), ())
++CANCELABLE_SYSCALL (int, _pause, (void), ())
+ 
+ 
+ /* read(2).  */
+@@ -117,20 +120,21 @@
+ 
+ 
+ /* system(3).  */
+-CANCELABLE_SYSCALL (int, system, (const char *line), (line))
+-
++CANCELABLE_SYSCALL (int, _system, (const char *line), (line))
+ 
+ /* tcdrain(2).  */
+-CANCELABLE_SYSCALL (int, tcdrain, (int fd), (fd))
++CANCELABLE_SYSCALL (int, _tcdrain, (int fd), (fd))
+ 
+ 
+ /* wait(2).  */
+-CANCELABLE_SYSCALL (__pid_t, wait, (__WAIT_STATUS_DEFN stat_loc), (stat_loc))
++#if (1)
++CANCELABLE_SYSCALL (__pid_t, _wait, (__WAIT_STATUS_DEFN stat_loc), (stat_loc))
++#endif
+ strong_alias (wait, __wait)
+ 
+ 
+ /* waitpid(2).  */
+-CANCELABLE_SYSCALL (__pid_t, waitpid, (__pid_t pid, int *stat_loc,
++CANCELABLE_SYSCALL (__pid_t, _waitpid, (__pid_t pid, int *stat_loc,
+ 				       int options),
+ 		    (pid, stat_loc, options))
+ 
+@@ -155,9 +159,11 @@
+ 		    (fd, addr, len))
+ strong_alias (connect, __connect)
+ 
++#if (0)
+ /* recv(2).  */
+ CANCELABLE_SYSCALL (int, recv, (int fd, __ptr_t buf, size_t n, int flags),
+ 		    (fd, buf, n, flags))
++#endif
+ 
+ /* recvfrom(2).  */
+ CANCELABLE_SYSCALL (int, recvfrom, (int fd, __ptr_t buf, size_t n, int flags,
+@@ -168,11 +174,13 @@
+ CANCELABLE_SYSCALL (int, recvmsg, (int fd, struct msghdr *message, int flags),
+ 		    (fd, message, flags))
+ 
++#if (0)
+ /* send(2).  */
+ CANCELABLE_SYSCALL (int, send, (int fd, const __ptr_t buf, size_t n,
+ 				int flags),
+ 		    (fd, buf, n, flags))
+ strong_alias (send, __send)
++#endif
+ 
+ /* sendmsg(2).  */
+ CANCELABLE_SYSCALL (int, sendmsg, (int fd, const struct msghdr *message,

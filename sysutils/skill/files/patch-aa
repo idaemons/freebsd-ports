@@ -1,0 +1,46 @@
+--- Makefile.orig	Mon May 29 23:03:08 2000
++++ Makefile	Thu Sep 14 23:35:11 2000
+@@ -54,28 +54,28 @@
+ SHELL=	/bin/sh
+ 
+ # CONFIGURE: Set location of executable, it's group and mode.
+-BINDIR=	/usr/local/bin
++BINDIR=	${PREFIX}/bin
+ BINGRP=	kmem
+ BINMOD=	2755
+ 
+ # CONFIGURE: Set location of man directory and man page suffix.
+-MANDIR=	/usr/man/manl
+-MANSFX=	l
++MANDIR=	${PREFIX}/man/man1
++MANSFX=	1
+ 
+ # CONFIGURE(Config): Select an OSTYPE for your machine from the list above.
+-OSTYPE=	sys-5r4
++OSTYPE=	bsd-44
+ 
+ # CONFIGURE(Config): Add any OS-specific options here.
+ COPTS=	
+ 
+ # CONFIGURE(Config): Add any special libraries your system needs.
+-LIBS=	
++LIBS=	-lkvm
+ 
+ SRCS=	main.c argparse.c getproc.c
+ OBJS=	main.o argparse.o getproc.o
+ HDRS=	conf.h
+ 
+-CFLAGS=	-O ${COPTS}
++#CFLAGS=	-O ${COPTS}
+ 
+ all:	skill
+ 
+@@ -102,7 +102,7 @@
+ #	install -c -m 644 skill.1 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
+ 	cp skill.1 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
+ 	chmod 644 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
+-	ln ${DESTDIR}/${MANDIR}/skill.${MANSFX}\
++	@# ln ${DESTDIR}/${MANDIR}/skill.${MANSFX}\
+ 		${DESTDIR}/${MANDIR}/snice.${MANSFX}
+ 
+ config Config: FRC

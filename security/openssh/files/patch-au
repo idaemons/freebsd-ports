@@ -1,0 +1,110 @@
+--- /home/bright/ssh/ssh/session.c	Sun Aug 27 20:50:54 2000
++++ session.c	Fri Feb  9 11:19:14 2001
+@@ -28,6 +28,12 @@
+ #include "auth.h"
+ #include "auth-options.h"
+ 
++#ifdef __FreeBSD__
++#include <libutil.h>
++#include <syslog.h>
++#include <time.h>
++#endif /* __FreeBSD__ */
++
+ #ifdef HAVE_LOGIN_CAP
+ #include <login_cap.h>
+ #endif
+@@ -413,6 +419,13 @@
+ 		log_init(__progname, options.log_level, options.log_facility, log_stderr);
+ 
+ 		/*
++		 * Using login and executing a specific "command" are mutually
++		 * exclusive, so turn off use_login if there's a command.
++		 */
++		if (command != NULL)
++			options.use_login = 0;
++		
++		/*
+ 		 * Create a new session and process group since the 4.4BSD
+ 		 * setlogin() affects the entire process group.
+ 		 */
+@@ -516,6 +529,13 @@
+ 		/* Child.  Reinitialize the log because the pid has changed. */
+ 		log_init(__progname, options.log_level, options.log_facility, log_stderr);
+ 
++		/*
++		 * Using login and executing a specific "command" are mutually
++		 * exclusive, so turn off use_login if there's a command.
++		 */
++		if (command != NULL)
++			options.use_login = 0;
++		
+ 		/* Close the master side of the pseudo tty. */
+ 		close(ptyfd);
+ 
+@@ -602,6 +622,7 @@
+ 	time_t last_login_time;
+ 	struct passwd * pw = s->pw;
+ 	pid_t pid = getpid();
++	char *fname;
+ 
+ 	/*
+ 	 * Get IP address of client. If the connection is not a socket, let
+@@ -644,6 +665,20 @@
+ 		else
+ 			printf("Last login: %s from %s\r\n", time_string, buf);
+ 	}
++#ifdef HAVE_LOGIN_CAP
++	if (!options.use_login) {
++		fname = login_getcapstr(lc, "copyright", NULL, NULL);
++		if (fname != NULL && (f = fopen(fname, "r")) != NULL) {
++			while (fgets(buf, sizeof(buf), f) != NULL)
++				fputs(buf, stdout);
++			fclose(f);
++		} else
++			(void)printf("%s\n\t%s %s\n",
++	"Copyright (c) 1980, 1983, 1986, 1988, 1990, 1991, 1993, 1994",
++	    "The Regents of the University of California. ",
++	    "All rights reserved.");
++	}
++#endif /* HAVE_LOGIN_CAP */
+ 	if (options.print_motd) {
+ #ifdef HAVE_LOGIN_CAP
+ 		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
+@@ -949,7 +984,7 @@
+ 	 * initgroups, because at least on Solaris 2.3 it leaves file
+ 	 * descriptors open.
+ 	 */
+-	for (i = 3; i < 64; i++)
++	for (i = 3; i < getdtablesize(); i++)
+ 		close(i);
+ 
+ 	/* Change current directory to the user\'s home directory. */
+@@ -973,7 +1008,27 @@
+ 	 * in this order).
+ 	 */
+ 	if (!options.use_login) {
+-		if (stat(SSH_USER_RC, &st) >= 0) {
++#ifdef __FreeBSD__
++		/*
++		 * If the password change time is set and has passed, give the
++		 * user a password expiry notice and chance to change it.
++		 */
++		if (pw->pw_change != 0) {
++			struct timeval tv;
++
++			(void)gettimeofday(&tv, NULL);
++			if (tv.tv_sec >= pw->pw_change) {
++				(void)printf(
++				    "Sorry -- your password has expired.\n");
++				syslog(LOG_INFO,
++				    "%s Password expired - forcing change",
++				    pw->pw_name);
++				if (system("/usr/bin/passwd") != 0)
++					perror("/usr/bin/passwd");
++			}
++		}
++#endif /* __FreeBSD__ */
++                if (stat(SSH_USER_RC, &st) >= 0) {
+ 			if (debug_flag)
+ 				fprintf(stderr, "Running /bin/sh %s\n", SSH_USER_RC);
+ 

@@ -1,0 +1,22 @@
+%%FONTSDIR%%/mona12aB.pcf.gz
+%%FONTSDIR%%/mona12aI.pcf.gz
+%%FONTSDIR%%/mona12aR.pcf.gz
+%%FONTSDIR%%/mona12kB.pcf.gz
+%%FONTSDIR%%/mona12kI.pcf.gz
+%%FONTSDIR%%/mona12kR.pcf.gz
+%%FONTSDIR%%/mona12rB.pcf.gz
+%%FONTSDIR%%/mona12rI.pcf.gz
+%%FONTSDIR%%/mona12rR.pcf.gz
+%%FONTSDIR%%/mona16aB.pcf.gz
+%%FONTSDIR%%/mona16aI.pcf.gz
+%%FONTSDIR%%/mona16aR.pcf.gz
+%%FONTSDIR%%/mona16kB.pcf.gz
+%%FONTSDIR%%/mona16kI.pcf.gz
+%%FONTSDIR%%/mona16kR.pcf.gz
+%%FONTSDIR%%/mona16rB.pcf.gz
+%%FONTSDIR%%/mona16rI.pcf.gz
+%%FONTSDIR%%/mona16rR.pcf.gz
+@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
+@unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi

@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Tue Dec 12 13:39:43 2000
++++ Makefile.in	Thu Feb  8 22:56:38 2001
+@@ -40,3 +40,3 @@
+ 	if [ ! -d $(includedir) ] ; then mkdir $(includedir) ; fi
+-	$(INSTALL_DATA) include/iconv.h $(includedir)/iconv.h
++	$(INSTALL_DATA) include/iconv.h $(includedir)/giconv.h
+ 
+@@ -49,3 +49,3 @@
+ 	if [ ! -d $(DESTDIR)$(includedir) ] ; then mkdir $(DESTDIR)$(includedir) ; fi
+-	$(INSTALL_DATA) include/iconv.h $(DESTDIR)$(includedir)/iconv.h
++	$(INSTALL_DATA) include/iconv.h $(DESTDIR)$(includedir)/giconv.h
+ 	cd man && $(MAKE) install prefix='$(prefix)' exec_prefix='$(exec_prefix)' mandir='$(mandir)'
+@@ -65,3 +65,3 @@
+ 	cd src && $(MAKE) uninstall prefix='$(prefix)' exec_prefix='$(exec_prefix)' libdir='$(libdir)'
+-	$(RM) $(DESTDIR)$(includedir)/iconv.h
++	$(RM) $(DESTDIR)$(includedir)/giconv.h
+ 	cd man && $(MAKE) uninstall prefix='$(prefix)' exec_prefix='$(exec_prefix)' mandir='$(mandir)'

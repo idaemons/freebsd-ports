@@ -1,13 +1,29 @@
 # New ports collection makefile for:    unrar
-# Version required:     1.00e
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/28 01:55:04 ache Exp $
+# $FreeBSD$
 #
-DISTNAME=       unrar100
-EXTRACT_SUFX=   .tgz
-MASTER_SITES=   ftp://ftp.kiae.su/unix/arcers/
-WRKSRC=         ${WRKDIR}/unrar.100
+
+PORTNAME=	unrar
+PORTVERSION=	2.50
+CATEGORIES=	archivers
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ache
+
+MAINTAINER=	ache@FreeBSD.org
+
+NO_WRKSUBDIR=	Yes
+
+do-build:
+	cd ${WRKSRC} && \
+		${CC} ${CFLAGS} -D_UNIX unrar.c -o unrar
+
+do-install:
+	${INSTALL} -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} \
+		${PREFIX}/share/doc/unrar
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} unrar ${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_MAN} readme.txt license.txt \
+		${PREFIX}/share/doc/unrar
 
 .include <bsd.port.mk>

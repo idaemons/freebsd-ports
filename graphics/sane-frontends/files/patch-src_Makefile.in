@@ -1,0 +1,17 @@
+--- src/Makefile.in.orig	Fri Dec  1 04:58:38 2000
++++ src/Makefile.in	Wed Feb  7 00:14:03 2001
+@@ -59,12 +59,12 @@
+ all: $(PROGRAMS)
+ 
+ install: $(PROGRAMS)
+-	$(MKDIR) $(bindir) $(datadir)
++	$(MKDIR) $(bindir) $(sanedatadir)
+ 	@for program in $(BINPROGS); do \
+ 	  $(INSTALL_PROGRAM) $${program} \
+ 	    $(bindir)/$${program}; \
+ 	done
+-	$(INSTALL_DATA) $(srcdir)/sane-style.rc $(datadir)/sane-style.rc
++	$(INSTALL_DATA) $(srcdir)/sane-style.rc $(sanedatadir)/sane-style.rc
+ 
+ xscanimage: $(XSCAN_OBJS) $(LIBSANEI) $(LIBLIB)
+ 	$(LINK) $(XSCAN_OBJS) $(LIBSANEI) \

@@ -1,4 +1,4 @@
-@cwd /usr/local
 bin/arc
 bin/marc
-man/man1/arc.1
+share/doc/arc/Arc521.doc
+@dirrm share/doc/arc

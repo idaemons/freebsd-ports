@@ -1,0 +1,79 @@
+# ex:ts=8
+# Ports collection makefile for:  lsof
+# Date created:			  Sat July 20, 1996
+# Whom:				  David O'Brien (obrien@FreeBSD.org)
+#
+# $FreeBSD$
+#
+
+PORTNAME=	lsof
+PORTVERSION=	4.55
+CATEGORIES=	sysutils
+MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
+		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
+		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
+		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/NEW/  \
+		ftp://ftp.auscert.org.au/pub/mirrors/vic.cc.purdue.edu/lsof/  \
+		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
+		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/NEW/  \
+		ftp://ftp.sunet.se/pub/unix/admin/lsof/  \
+		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
+DISTNAME=	${PORTNAME}_${PORTVERSION}_W
+#DISTNAME=	${PORTNAME}_4.54C.freebsd
+
+MAINTAINER=	obrien@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	Configure
+CONFIGURE_ARGS=	-n freebsd
+CONFIGURE_ENV=	LSOF_CC="${CC}"
+MAN8=		lsof.8
+
+.if defined(PACKAGE_BUILDING)
+.if !exists(/usr/src/sys/miscfs/fdesc/fdesc.h)
+BROKEN=	'please install kernel source for offical package builds'
+.endif
+.endif
+
+SRCBALL_NAME=	${DISTNAME:S/_W$//}
+
+post-extract:
+	@( cd ${WRKDIR} ; \
+	EXPMD5=`${GREP} MD5 README.${SRCBALL_NAME} | ${SED} 's/^[ ]*//'` ; \
+	CALCMD5=`${MD5} ${SRCBALL_NAME}.tar` ; \
+	if [ "$${EXPMD5}"X != "$${CALCMD5}"X ]; then \
+		${ECHO} "Expected and calculated MD5 signatures don't agree." ; \
+		${ECHO} "($$EXPMD5 != $$CALCMD5)" ; \
+		exit 1 ; \
+	fi ; \
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS:S/z//} ${SRCBALL_NAME}.tar \
+	${EXTRACT_AFTER_ARGS} \
+	)
+	@( cd ${WRKSRC} ; ${ECHO} "y" | ./Inventory || exit 1 )
+
+#pre-patch:
+#	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
+#	@${SED} -e "s|^--- d|--- dialects/freebsd/d|"  \
+#		${DISTDIR}/freebsd_3.0_patch > ${WRKDIR}/p
+#	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/p
+
+do-install:
+	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -m 2755 -g kmem ${WRKSRC}/lsof ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${PREFIX}/man/man8/lsof.8
+	@${MKDIR} ${PREFIX}/share/lsof
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
+	@${CHMOD} 0444 ${PREFIX}/share/lsof/00*
+
+.if !exists(/sys/miscfs/fdesc/fdesc.h) && !exists(/usr/src/miscfs/fdesc/fdesc.h)
+post-install:
+	@${ECHO} "************************************************************"
+	@${ECHO} "*                      W a r n i n g                       *"
+	@${ECHO} "* A more capable version of LSOF is built if you have      *"
+	@${ECHO} "* kernel source installed and /sys exists.                 *"
+	@${ECHO} "* If this is the case, please ensure /sys is consistant    *"
+	@${ECHO} "* with respect to your running kernel (i.e. not new than). *"
+	@${ECHO} "************************************************************"
+.endif
+
+.include <bsd.port.mk>

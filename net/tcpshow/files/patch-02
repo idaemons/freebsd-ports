@@ -1,0 +1,173 @@
+--- tcpshow.c.orig	Fri Mar 23 12:10:23 2001
++++ tcpshow.c	Fri Mar 23 16:53:26 2001
+@@ -362,12 +362,14 @@
+ #if !defined(NOETHERNAMES)
+ // mr980118 ether_ntohost() and related functions aren't prototyped in the
+ // standard include directory.
++#ifndef __FreeBSD__
+ extern struct ether_addr *ether_aton(char *);
+ extern int ether_ntohost(char *, struct ether_addr *);
+ #endif
++#endif
+ 
+ 
+-void main(int, char **);
++int main(int, char **);
+ 
+ 
+ static boolean noBflag = FALSE;
+@@ -1125,7 +1127,9 @@
+ static char *icmpType (uint1 type) {
+ 
+    char *descr;
++   static char unknowntype[80];
+ 
++   snprintf(unknowntype, 80, "%s (%d)", unknown, type);
+ 
+    switch (type) {
+     case ECHO_REPLY:  descr = "echo-reply";              break;
+@@ -1143,7 +1147,7 @@
+     case INFO_REPLY:  descr = "information-reply";       break;
+     case MASK_REQ:    descr = "address-mask-request";    break;
+     case MASK_REPLY:  descr = "address-mask-reply";      break;
+-    default:          descr = unknown;                   break;
++    default:          descr = unknowntype;               break;
+    }
+ 
+    return descr;
+@@ -1248,7 +1252,7 @@
+ /*                                                                          */
+ /****==========------------------------------------------------==========****/
+ 
+-void main (int argc, char **argv) {
++int main (int argc, char **argv) {
+ 
+    /* Command line options.                                                 */
+    while (--argc > 0 && **++argv == '-')
+@@ -1290,6 +1294,7 @@
+    for ( ; ; ) if (!setjmp(jmpBuf)) showPkt(pkt);
+ 
+    exit(0);
++   return 0;
+ 
+ }
+ 
+@@ -1336,7 +1341,7 @@
+ 	 name = number;
+       }
+    /* The crappy manpage doesn't say the port must be in net byte order.    */
+-   elif (service = getservbyport((int)htons(port), proto))
++   elif ( (service = getservbyport((int)htons(port), proto)) )
+       name = service->s_name;
+    elif (!wantNumber)
+       name = unknown;
+@@ -1580,13 +1585,14 @@
+    if (ppFlag) {
+       (void)sscanf(p, "%s", time);
+       etherType = ETHER_PROTO_IP;      /* tcpdump doesn't supply link type  */
+-      if (!noLinkFlag)
++      if (!noLinkFlag) {
+          if (terseFlag)
+ 	    printf("TIME:\t%s%s\n", time, deltaTime(&prevTime, time));
+          else
+ 	    printf(
+ 	       "\tTimestamp:\t\t\t%s%s\n", time, deltaTime(&prevTime, time)
+ 	    );
++	}
+       return getPkt();
+    }
+ 
+@@ -1598,7 +1604,7 @@
+    (void)strcpy(eTo, etherAddr(eTo, 0));
+    (void)strcpy(eToName, etherName(eTo, TRUE));
+ 
+-   if (!noLinkFlag)
++   if (!noLinkFlag) {
+       if (terseFlag) {
+          printf("TIME:\t%s%s\n", time, deltaTime(&prevTime, time));
+          printf(
+@@ -1614,6 +1620,7 @@
+          if (!noEtherNames) printf(" (%s)", etherName(eTo, FALSE));
+          printf("\n\tEncapsulated Protocol:\t\t%s\n", etherProto(eType, 0));
+       }
++   }
+ 
+    return getPkt();
+ 
+@@ -1778,7 +1785,7 @@
+ static void showPkt (reg char *p) {
+ 
+    char *warnMsg = "<*** No decode support for encapsulated protocol ***>";
+-
++   char *warnMsg2 = "<*** No decode support for encap protocol in IPIP packet ***>";
+ 
+    prSep();
+    printf("Packet %d\n", ++nPktsShown);
+@@ -1807,6 +1814,31 @@
+ 	 p = showIcmp(p);
+ 	 p = showData(p);
+ 	 break;
++	 
++	 // IPIP decode support by M. Nowlin (mike@argos.org) 20000321
++       case IPIP:
++	  p = showIp(p);
++	  switch(proto) {
++	   case TCP:
++	     p = showTcp(p);
++	     p = showData(p);
++	     break;
++	   case UDP:
++	     p = showUdp(p);
++	     p = showData(p);
++	     break;
++	   case ICMP:
++	     p = showIcmp(p);
++	     p = showData(p);
++	     break;
++	   default:
++	     printf("\t%s\n", warnMsg2);
++	     nextPkt();
++	     break;
++	 }
++	 
++	 break;
++	  
+        default:
+ 	 printf("\t%s\n", warnMsg);
+ 	 nextPkt();                    /* Doesn't return                    */
+@@ -1826,7 +1858,7 @@
+    }
+    /* Note that if getPkt() returns here, then the line read isn't the      */
+    /* start of a new packet, i.e. there's spurious data.                    */
+-   if (p = getPkt()) {
++   if ( (p = getPkt()) ) {
+       if (sFlag) printf("\t<*** Spurious data at end: \"%s\" ***>\n", p);
+       nextPkt();
+    }
+@@ -1996,10 +2028,10 @@
+ 
+    if (terseFlag) {
+       printf(
+-	 " TCP:\tport %s -> %s seq=%010lu", sPortName, dPortName, seq
++	 " TCP:\tport %s -> %s seq=%010lu", sPortName, dPortName, (u_long)seq
+       );
+-      if (trackFlag) printf(" (expect=%010lu)", expect);
+-      printf(" ack=%010lu\n", ack);
++      if (trackFlag) printf(" (expect=%010lu)", (u_long)expect);
++      printf(" ack=%010lu\n", (u_long)ack);
+       printf(
+          "\thlen=%d (data=%u) UAPRSF=%s%s%s%s%s%s",
+          hLen, dataLen,
+@@ -2016,9 +2048,9 @@
+       if (!noPortNames) printf(" (%s)", portName(sPort, "tcp", FALSE));
+       printf("\n\tDestination Port:\t\t%d", dPort);
+       if (!noPortNames) printf(" (%s)", portName(dPort, "tcp", FALSE));
+-      printf("\n\tSequence Number:\t\t%010lu\n", seq);
+-      if (trackFlag) printf("\tExpect peer ACK:\t\t%010lu\n", expect);
+-      printf("\tAcknowledgement Number:\t\t%010lu\n", ack);
++      printf("\n\tSequence Number:\t\t%010lu\n", (u_long)seq);
++      if (trackFlag) printf("\tExpect peer ACK:\t\t%010lu\n", (u_long)expect);
++      printf("\tAcknowledgement Number:\t\t%010lu\n", (u_long)ack);
+       printf("\tHeader Length:\t\t\t%d bytes (data=%u)\n", hLen, dataLen);
+       printf(
+          "\tFlags:%s%s%s%s%s%s\n%s%s%s%s%s%s\n",

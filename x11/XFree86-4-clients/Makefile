@@ -1,52 +1,87 @@
-DISTNAME	=	xc
-PKGNAME		= 	XFree86-3.1.1
-WRKDIR?=                ${.CURDIR}/work
-BUILD_COOKIE?=		${WRKDIR}/.build_done
-PATCH_STRIP	=	-p1
+# New ports collection makefile for:	XFree86-4-clients
+# Date created:		10 Oct 1999
+# Whom:			taguchi@tohoku.iij.ad.jp
+#
+# $FreeBSD$
+#
 
-# uncomment one of the 2 lines below!
-#X11_ON_CDROM	=	yes
-X11_VIA_FTP	=	yes
+PORTNAME=	clients
+PORTVERSION=	4.0.3
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITE_SUBDIR=	4.0.2
+PKGNAMEPREFIX=	XFree86-
+DISTFILES=	X402src-1.tgz X402src-2.tgz
+EXTRACT_ONLY=	X402src-1.tgz
 
-#define this if you are short of space - save ~28 Mbytes
-#REMOVE_NOT_ESSENTIAL	=	yes
+PATCH_SITES=	${MASTER_SITE_XFREE:S,%SUBDIR%/source,4.0.3/patches,g}
+PATCHFILES=	4.0.2-4.0.3.diff.gz
+PATCH_DIST_STRIP=	-p1
 
+MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-.if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
-build: configure ${BUILD_COOKIE}
+XFREE86_VERSION=	4
+USE_IMAKE=		YES
+DIST_SUBDIR=		xc
+WRKSRC=			${WRKDIR}/xc
+PATCHDIR=		${.CURDIR}/../XFree86-4-libraries/files
+SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
+			InstallXinitConfig=${InstallXinitConfig} \
+			InstallAppDefFiles=${InstallAppDefFiles} \
+			HasXdmAuth=${HasXdmAuth} \
+			HasSecureRPC=${HasSecureRPC} \
+			HasPam=${HasPam}
+MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
+			PORTNAME=${PORTNAME} \
+			PORTVERSION=${PORTVERSION}
+ALL_TARGET=		FreeBSDPortsBuild
+INSTALL_TARGET=		FreeBSDPortsInstall FreeBSDPortsInstall.man
 
-${BUILD_COOKIE}:
-	@echo "===>  Building for ${DISTNAME}"
-	@${MAKE} ${.MAKEFLAGS} pre-build
-.if defined(REMOVE_NOT_ESSENTIAL)
-	@rm -rf ${WRKSRC}/test ${WRKSRC}/doc/hardcopy ${WRKSRC}/doc/specs
-	@find ${WRKSRC}/ -name '*.orig' -exec rm -f {} ';'
-.endif
-	@(cd ${WRKSRC}; echo Good night...; make World)
-	@touch ${WRKDIR}/.build_done
+# ---
+# XFree86 User Config:
+# Name          Default		Meaning
+# ----------------------------------------------------------------------------
+# HasXdmAuth	YES		support XDM-AUTHORIZATION-1.
+# HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
+# HasPam	YES		support PAM (require FreeBSD-3.1 or later)
+# InstallXdmConfig      YES     install config files for xdm.
+# InstallXinitConfig    YES     install config files for xinit.
+# InstallAppDefFiles    YES	install resource files.
+# ----------------------------------------------------------------------------
+# DEFAULT means ports will use values which set by ${PORTSDIR}/devel/imake-4
+#
+InstallXdmConfig?=	DEFAULT
+InstallXinitConfig?=	DEFAULT
+InstallAppDefFiles?=	DEFAULT
+HasXdmAuth?=		DEFAULT
+HasSecureRPC?=		DEFAULT
+HasPam?=		DEFAULT
 
-install:
-	@(cd ${WRKSRC}; make install; make install.man)
-	@touch ${WRKDIR}/.install_done
-.endif
-
-.if defined(X11_ON_CDROM)
-.include "Makefile.cdrom"
-.elif defined(X11_VIA_FTP)
-.include "Makefile.ftp"
+.if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+pre-fetch:
+	@${ECHO}
+	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
 .else
-all:
-	@echo -n
-fetch:
-	@echo -n
-extract:
-	@echo -n
-configure:
-	@echo -n
-build:
-	@echo -n
-install:
-	@echo -n
+MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
+		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
+EXTRACT_ONLY=	X402src-1.tgz
+DISTFILES+=	Wraphelp.c
+IGNOREFILES=	Wraphelp.c
+.endif
 .endif
 
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/manpages"
 
+post-extract:
+	( cd ${WRKDIR} && \
+	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	   ${DISTDIR}/${DIST_SUBDIR}/X402src-2.tgz \
+	    | ${TAR} -xf - xc/fonts/util )
+
+do-configure:
+	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+
+.include <bsd.port.post.mk>

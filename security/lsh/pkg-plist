@@ -1,0 +1,13 @@
+bin/lsh
+bin/lsh_keygen
+bin/lsh_writekey
+bin/sexp-conv
+bin/lsh-authorize
+bin/srp-gen
+bin/lsh-decode-key
+bin/ssh-conv
+sbin/lshd
+sbin/lsh_proxy
+@unexec install-info --delete %D/info/lsh.info %D/info/dir
+info/lsh.info
+@exec install-info --section="Miscellaneous" --entry="* LSH: (lsh).			lsh secure remote shell documentation." %D/info/lsh.info %D/info/dir

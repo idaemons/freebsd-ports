@@ -1,0 +1,33 @@
+bin/xzwrite
+bin/zaway
+bin/zctl
+bin/zleave
+bin/zlocate
+bin/zmailnotify
+bin/znol
+bin/zstat
+bin/zwgc
+bin/zwrite
+etc/rc.d/zhm.sh
+etc/zephyr/default.subscriptions
+include/zephyr/mit-copyright.h
+include/zephyr/zephyr.h
+include/zephyr/zephyr_err.h
+lib/libzephyr.a
+sbin/zephyrd
+sbin/zhm
+sbin/zpopnotify
+sbin/zshutdown_notify
+share/doc/zephyr/INSTALL
+share/doc/zephyr/NOTES
+share/doc/zephyr/OPERATING
+share/doc/zephyr/README
+share/doc/zephyr/USING
+share/zephyr/XZwrite
+share/zephyr/xzwrite.bitmap
+share/zephyr/zwgc.desc
+share/zephyr/zwgc_resources
+@dirrm etc/zephyr
+@dirrm include/zephyr
+@dirrm share/doc/zephyr
+@dirrm share/zephyr

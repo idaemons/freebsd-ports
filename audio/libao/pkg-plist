@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+include/ao/ao.h
+include/ao/os_types.h
+lib/libao.so
+lib/libao.so.1
+%%ARTS%%lib/ao/libarts.so
+lib/ao/liboss.so
+%%ESOUND%%lib/ao/libesd.so
+share/aclocal/ao.m4
+%%PORTDOCS%%share/doc/libao/API
+%%PORTDOCS%%share/doc/libao/DRIVERS
+%%PORTDOCS%%share/doc/libao/USAGE
+%%PORTDOCS%%share/doc/libao/WANTED
+@dirrm include/ao
+@dirrm lib/ao
+%%PORTDOCS%%@dirrm share/doc/libao

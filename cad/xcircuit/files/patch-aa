@@ -1,0 +1,78 @@
+*** Imakefile.orig	Wed Feb 14 04:52:30 2001
+--- Imakefile	Wed Feb 14 05:17:11 2001
+***************
+*** 28,46 ****
+  #CCOPTIONS = -O2
+  #
+  # for debugging purposes uncomment the following line:
+! CDEBUGFLAGS = -g
+! STD_INCLUDES = -I. -I/usr/X11R6/include/X11
+  
+  #------------------------------------------------------------------------
+  # Installation directories:
+  # Change the following as desired to suit your environment:
+  #------------------------------------------------------------------------
+  #
+! PREFIX = /usr/local
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.2.0/psfiles
+! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/xcircuit-2.2
+! XCIRCUIT_BIN_DIR = $(PREFIX)/bin
+! XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
+  
+  #------------------------------------------------------------------------
+  # Support for graphics double-buffering (A memory hog, but yields fastest
+--- 28,47 ----
+  #CCOPTIONS = -O2
+  #
+  # for debugging purposes uncomment the following line:
+! #CDEBUGFLAGS = -g
+! STD_INCLUDES = -I. -I$(INCDIR)/X11
+! EXTRA_DEFINES = -DHAVE_DIRENT_H -DHAVE_PUTENV
+  
+  #------------------------------------------------------------------------
+  # Installation directories:
+  # Change the following as desired to suit your environment:
+  #------------------------------------------------------------------------
+  #
+! #PREFIX = /usr/local
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.2.0/psfiles
+! XCIRCUIT_LIB_DIR = $(LIBDIR)/xcircuit
+! XCIRCUIT_BIN_DIR = $(BINDIR)
+! XCIRCUIT_MAN_DIR = $(MANDIR)
+  
+  #------------------------------------------------------------------------
+  # Support for graphics double-buffering (A memory hog, but yields fastest
+***************
+*** 58,64 ****
+  # Support for background rendering through ghostscript.  Change this
+  # to the path where gs can be found.
+  # GS_EXEC= /usr/local/src/gs5.50/obj/gs
+! GS_EXEC= /usr/bin/gs
+  
+  #------------------------------------------------------------------------
+  # Window manager bug workaround---If you don't like xcircuit grabbing kbd
+--- 59,65 ----
+  # Support for background rendering through ghostscript.  Change this
+  # to the path where gs can be found.
+  # GS_EXEC= /usr/local/src/gs5.50/obj/gs
+! GS_EXEC= ${LOCALBASE}/bin/gs
+  
+  #------------------------------------------------------------------------
+  # Window manager bug workaround---If you don't like xcircuit grabbing kbd
+***************
+*** 85,91 ****
+  #------------------------------------------------------------------------
+  # Support for embedded Python interpreter (requires libpython2.0.a)
+  #
+! #define HAVE_PYTHON
+  
+  #------------------------------------------------------------------------
+  #
+--- 86,92 ----
+  #------------------------------------------------------------------------
+  # Support for embedded Python interpreter (requires libpython2.0.a)
+  #
+! /* #define HAVE_PYTHON */
+  
+  #------------------------------------------------------------------------
+  #

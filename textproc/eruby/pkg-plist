@@ -1,0 +1,10 @@
+bin/eruby
+include/eruby.h
+lib/liberuby.so.1
+lib/liberuby.so
+lib/liberuby.a
+%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/eruby/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/eruby

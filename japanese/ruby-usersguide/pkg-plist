@@ -1,0 +1,29 @@
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/index.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide00.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide01.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide02.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide03.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide04.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide05.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide06.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide07.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide08.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide09.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide10.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide11.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide12.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide13.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide14.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide15.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide16.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide17.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide18.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide19.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide20.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide21.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide22.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide23.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide24.html
+%%RUBY_DOCDIR%%/ruby-usersguide-jp/uguide25.html
+@dirrm %%RUBY_DOCDIR%%/ruby-usersguide-jp
+@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true

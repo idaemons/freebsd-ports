@@ -1,0 +1,11 @@
+--- vfs/extfs/uzip.in	Wed Sep 29 16:39:35 1999
++++ vfs/extfs/uzip.in.new	Fri Dec  3 22:17:45 1999
+@@ -7,7 +7,7 @@
+ #
+ #
+ 
+-DZIP=/usr/bin
++DZIP=@prefix@/bin
+ XZIP="$DZIP/zip -g"
+ XDZIP="$DZIP/zip -d"
+ XUNZIP="$DZIP/unzip"

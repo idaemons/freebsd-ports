@@ -1,0 +1,14 @@
+ami: An X11R6 Input Method Server for the Korean Language
+
+  - OverTheSpot, OffTheSpot
+  - OnTheSpot, Root(incompleted)
+  - 2-bul, 3-bul/390 style Korean keyboard support
+  - qwerty, drorak keyboard support
+  - WindowMaker, enlightenment, KDE 1.x, 2.x dock support
+  - GNOME applet support
+
+by Chi-duck, Hwang <hwang@mizi.com>
+
+--
+CHOI Junho <cjh@kr.freebsd.org>
+WWW: http://www.kr.freebsd.org/~hwang/ami

@@ -1,0 +1,38 @@
+--- Makefile	Tue Feb 27 08:24:14 2001
++++ Makefile	Mon Apr  9 14:05:45 2001
+@@ -1,10 +1,10 @@
+ # You can modify CC variable if you have compiler other than GCC
+ # But the code was designed and tested with GCC
+-CC = gcc
++CC?=		gcc
+ 
+ # compilation flags
+ # You should comment the line below for AIX+native cc
+-FLAGS = -Wall
++CFLAGS?=	-Wall
+ 
+ # libraries
+ LIBS = -lcrypt
+@@ -15,7 +15,8 @@
+ CRYPTED_PASS = APG_USE_CRYPT
+ 
+ # Install dirs
+-INSTALL_PREFIX = /usr/local
++PREFIX?=	/usr/local
++INSTALL_PREFIX = ${PREFIX}
+ APG_BIN_DIR = /bin
+ APG_MAN_DIR = /man/man1
+ APGD_BIN_DIR = /sbin
+@@ -50,10 +51,10 @@
+ cygwin: standalone
+ 
+ cliserv: ${SOURCES} ${HEADERS}
+-	${CC} ${FLAGS} ${CS_LIBS} -DCLISERV -o ${CS_PROGNAME} ${SOURCES}
++	${CC} ${CFLAGS} ${CS_LIBS} -DCLISERV -o ${CS_PROGNAME} ${SOURCES}
+ 
+ standalone: ${SOURCES} ${HEADERS}
+-	${CC} ${FLAGS} ${LIBS} -D${CRYPTED_PASS} -o ${PROGNAME} ${SOURCES}
++	${CC} ${CFLAGS} ${LIBS} -D${CRYPTED_PASS} -o ${PROGNAME} ${SOURCES}
+ 
+ strip:
+ 	strip ${PROGNAME}

@@ -1,61 +1,13 @@
-Received: from freefall.cdrom.com (freefall.cdrom.com [192.216.222.4]) by time.cdrom.com (8.6.9/8.6.9) with ESMTP id LAA01600 for <jkh@time.cdrom.com>; Tue, 27 Dec 1994 11:39:33 -0800
-Received: (from gnats@localhost) by freefall.cdrom.com (8.6.9/8.6.6) id LAA20701; Tue, 27 Dec 1994 11:40:03 -0800
-Date: Tue, 27 Dec 1994 11:40:03 -0800
-Message-Id: <199412271940.LAA20701@freefall.cdrom.com>
-From: Mark Murray <mark@grondar.za>
-Reply-To: Mark Murray <mark@grondar.za>
-To: core@freefall.cdrom.com
-Cc: current@freefall.cdrom.com
-Subject: misc/88: MH has no 'local' shared libraries.
-In-Reply-To: Your message of Tue, 27 Dec 1994 21:34:40 +0200
-	<199412271934.VAA13910@grunt.grondar.za>
+The following patch adds shared library support for FreeBSD to MH
 
-
->Number:         88
->Category:       misc
->Synopsis:       MH has no 'local' shared libraries.
->Confidential:   no
->Severity:       non-critical
->Priority:       low
->Responsible:    core (FreeBSD core team)
->State:          open
->Class:          change-request
->Submitter-Id:   current-users
->Arrival-Date:   Tue Dec 27 11:40:01 1994
->Originator:     Mark Murray
->Organization:
-GTA
->Release:        FreeBSD 2.1.0-Development i386
->Environment:
-
-I use MH as my mailer of choice (I know, I'm a geek ;-), and I used the
-ports-mail port of MH to compile MH on my -current system.
-
->Description:
-
-I noticed at compile time that MH had not been configured to take
-advantage of the SUN/SYS5 shared libraries (in sbr/), so I did it.
-
->How-To-Repeat:
-
-Compile ports/mail/mh.
-
->Fix:
-	
-Please could some kind soul with commit powers commit the following
-as patch-ad in ports-mail/mh/patches? Obviously those already using
-MH will have to re-ldconfig, as the library gets dumped into 
-/usr/local/lib/libmh.so.3.2, and MH will break if it can't find this.
-
-------8<--------------patch-ad-------------------------------------------
 *** ../mh-6.8.3.orig/conf/FreeBSD	Tue Dec 27 20:36:52 1994
 --- conf/FreeBSD	Tue Dec 27 19:10:35 1994
 ***************
-*** 9,14 ****
---- 9,16 ----
-  mts	sendmail/smtp
+*** 10,15 ****
+--- 10,17 ----
   cc	cc
   signal	void
+  remove	rm -f
 + sharedlib fbsd
 + slflags	-fpic
   
@@ -102,7 +54,7 @@ MH will have to re-ldconfig, as the library gets dumped into
   		../mts/libmts.a  ../zotnet/libzot.a
 + @END: SYS5SHLIB
 + @BEGIN: FBSDSHLIB
-+ LDLIBES	=	../config/config.o @(SLDFLAG) -lmh$(SLIBVER) \
++ LDLIBES	=	../config/config.o @(SLDFLAG) -L../sbr -lmh$(SLIBVER) \
 + 		../mts/libmts.a  ../zotnet/libzot.a
 + @END: FBSDSHLIB
 + LIBES	=	../config/config.o ../sbr/libmh.so ../mts/libmts.a \
@@ -110,6 +62,39 @@ MH will have to re-ldconfig, as the library gets dumped into
   LDLIBS	=	$(LDLIBES) ../config/version.o $(LDOPTLIB)
   @END: SHAREDLIB
   LINT	=	lint
+*** ../mh-6.8.3.orig/conf/makefiles/support/pop.orig	Thu Feb 22 13:05:50 1996
+--- conf/makefiles/support/pop	Thu Feb 22 13:10:18 1996
+***************
+*** 59,67 ****
+  @BEGIN: SHAREDLIB
+  LIBES2	=	../../config/config.o ../../sbr/libmh.so $(LIBES1)
+  LDLIBS1	=	$(LIBES1) $(LDOPTLIB)
+  LDLIBS2	=	../../config/config.o ../../config/version.o \
+  		-Bdynamic @(SLDFLAG) -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: SHAREDLIB
+  
+  LINT	=	lint
+  LFLAGS	=	-bhu $(OPTIONS)
+--- 59,77 ----
+  @BEGIN: SHAREDLIB
+  LIBES2	=	../../config/config.o ../../sbr/libmh.so $(LIBES1)
+  LDLIBS1	=	$(LIBES1) $(LDOPTLIB)
++ @END: SHAREDLIB
++ @BEGIN: SUN4SHLIB
+  LDLIBS2	=	../../config/config.o ../../config/version.o \
+  		-Bdynamic @(SLDFLAG) -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: SUN4SHLIB
+! @BEGIN: SYS5SHLIB
+! LDLIBS2	=	../../config/config.o ../../config/version.o \
+! 		-Bdynamic @(SLDFLAG) -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: SYS5SHLIB
+! @BEGIN: FBSDSHLIB
+! LDLIBS2	=	../../config/config.o ../../config/version.o \
+! 		@(SLDFLAG) -L../../sbr -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: FBSDSHLIB
+  
+  LINT	=	lint
+  LFLAGS	=	-bhu $(OPTIONS)
 *** ../mh-6.8.3.orig/conf/mhconfig.c	Wed Dec  1 06:00:24 1993
 --- conf/mhconfig.c	Tue Dec 27 19:08:40 1994
 ***************
@@ -121,11 +106,13 @@ MH will have to re-ldconfig, as the library gets dumped into
   
   #define	NOTOK	(-1)
   
---- 32,38 ----
+--- 32,40 ----
   #define	MHRELEASE	"6.8.3"		/* for version: "Maj.min.pat" */
   #define	MHCENTERFOOT	"MH.6.8"	/* for nroff page footers */
   #define	MHLEFTFOOT	"[mh.6]"	/* [mh.6]    MH.6.6   page# */
+! #ifndef MHSLIBVER
 ! #define	MHSLIBVER	"3.2"		/* Shared library version */
+! #endif
   
   #define	NOTOK	(-1)
   
@@ -178,39 +165,32 @@ MH will have to re-ldconfig, as the library gets dumped into
   #ifdef	SYS5
   #define	u_short	ushort
   #define u_long  ulong
-*** ../mh-6.8.3.orig/support/pop/mmdfII/pop/lock.c	Wed Dec  1 06:01:30 1993
---- support/pop/mmdfII/pop/lock.c	Tue Dec 27 19:58:05 1994
-***************
-*** 47,52 ****
---- 47,56 ----
-  #include <sys/file.h>
-  #endif
-  
-+ #ifdef __FreeBSD__
-+ #include <fcntl.h>
-+ #endif
-+ 
-  #ifdef	SYS5
-  #define	u_short	ushort
-  #define u_long  ulong
-diff -cdr ../mh-6.8.3.orig/zotnet/mts/lock.c ./zotnet/mts/lock.c
-*** ../mh-6.8.3.orig/zotnet/mts/lock.c	Wed Dec  1 06:01:30 1993
---- zotnet/mts/lock.c	Tue Dec 27 19:58:05 1994
-***************
-*** 47,52 ****
---- 47,56 ----
-  #include <sys/file.h>
-  #endif
-  
-+ #ifdef __FreeBSD__
-+ #include <fcntl.h>
-+ #endif
-+ 
-  #ifdef	SYS5
-  #define	u_short	ushort
-  #define u_long  ulong
-------8<--------------patch-ad-------------------------------------------
->Audit-Trail:
->Unformatted:
-
-
+--- conf/makefiles/sbr.orig	Tue Sep 22 16:38:28 1998
++++ conf/makefiles/sbr	Tue Sep 22 16:51:48 1998
+@@ -157,6 +157,7 @@
+ inst-lib:	libmh.so $(LIBSA)
+ 		-rm -f $(SLIBDIR)/libmh.so.$(SLIBVER)
+ 		cp libmh.so.$(SLIBVER) $(SLIBDIR)/libmh.so.$(SLIBVER)
++		ln -s libmh.so.$(SLIBVER) $(SLIBDIR)/libmh.so
+ 		-@chmod $(PGMPROT) $(SLIBDIR)/libmh.so.$(SLIBVER)
+ 		-@ls -l $(SLIBDIR)/libmh.so.*
+ 		-@echo "Shared library installed normally"
+--- conf/Makefile.orig	Wed Sep 23 10:27:39 1998
++++ conf/Makefile	Wed Sep 23 10:27:25 1998
+@@ -6,10 +6,15 @@
+ SHELL	=	/bin/sh
+ 
+ CC      =   	cc
+-CFLAGS  =   	-O
+ LFLAGS  =   	-bhu
+ LDFLAGS =
+ LIBES   =
++
++.if ${PORTOBJFORMAT} == "elf"
++CFLAGS  =   	-O -DMHSLIBVER=\"3\"
++.else
++CFLAGS  =   	-O -DMHSLIBVER=\"3.2\"
++.endif
+ 
+ 
+ ######################################################################

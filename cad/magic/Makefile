@@ -1,25 +1,58 @@
 # New ports collection makefile for:    magic
-# Version required:     6.4.4
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.2 1994/10/06 07:52:04 swallace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       magic-6.4.4
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/magic/6.4/
+PORTNAME=	magic
+PORTVERSION=	6.5.1
+CATEGORIES=	cad
+MASTER_SITES=	http://mos.stanford.edu/group/magic/
+EXTRACT_SUFX=	.tar.Z
 
-install:
-	@echo "===>  Installing for ${DISTNAME}"
-	@${MAKE} ${.MAKEFLAGS} pre-install
-	@(cd ${WRKSRC}; ${MAKE} PREFIX=${PREFIX} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-	@(cd ${PREFIX}; chmod 555 bin/magic bin/ext2dlys bin/ext2sim bin/fsleeper bin/magicusage bin/net2ir bin/extcheck bin/X11Helper)
-	@(cd ${PREFIX}; chmod 444 man/man8/prleak.8 man/man8/prleak.8 man/man1/ext2dlys.1 man/man1/ext2spice.1 man/man1/extcheck.1 man/man1/magic.1 man/man1/magicusage.1 man/man1/grsunprog.1 man/man1/ext2sim.1 man/man1/net2ir.1 man/man1/rsleeper.1 man/man1/sim2spice.1 man/man1/sleeper.1 man/man1/fsleeper.1 man/man5/cmap.5 man/man5/displays.5 man/man5/dlys.5 man/man5/sim.5 man/man5/dstyle.5 man/man5/ext.5 man/man5/glyphs.5 man/man5/magic.5 man/man5/net.5 man/man3/mpack.3 man/man3/dqueue.3 man/man3/extflat.3 man/man3/geometry.3 man/man3/hash.3 man/man3/heap.3 man/man3/libmalloc.3 man/man3/list.3 man/man3/magicutils.3 man/man3/malloc.3 man/man3/path.3 man/man3/runstats.3 man/man3/set.3 man/man3/show.3 man/man3/stack.3 man/man3/string.3 lib/mpack.h lib/libmpack.a)
-	@(cd ${PREFIX}; chmod -R a+rX,go-w lib/magic)
-	@(cd ${PREFIX}; strip bin/magic bin/ext2dlys bin/ext2sim bin/fsleeper bin/magicusage bin/net2ir bin/extcheck bin/X11Helper)
-	@(cd ${PREFIX}; chown bin.bin bin/magic bin/ext2dlys bin/ext2sim bin/fsleeper bin/magicusage bin/net2ir bin/extcheck bin/X11Helper)
-	@(cd ${PREFIX}; chown bin.bin man/man8/prleak.8 man/man8/prleak.8 man/man1/ext2dlys.1 man/man1/ext2spice.1 man/man1/extcheck.1 man/man1/magic.1 man/man1/magicusage.1 man/man1/grsunprog.1 man/man1/ext2sim.1 man/man1/net2ir.1 man/man1/rsleeper.1 man/man1/sim2spice.1 man/man1/sleeper.1 man/man1/fsleeper.1 man/man5/cmap.5 man/man5/displays.5 man/man5/dlys.5 man/man5/sim.5 man/man5/dstyle.5 man/man5/ext.5 man/man5/glyphs.5 man/man5/magic.5 man/man5/net.5 man/man3/mpack.3 man/man3/dqueue.3 man/man3/extflat.3 man/man3/geometry.3 man/man3/hash.3 man/man3/heap.3 man/man3/libmalloc.3 man/man3/list.3 man/man3/magicutils.3 man/man3/malloc.3 man/man3/path.3 man/man3/runstats.3 man/man3/set.3 man/man3/show.3 man/man3/stack.3 man/man3/string.3 lib/mpack.h lib/libmpack.a)
-	@(cd ${PREFIX}; chown -R bin.bin lib/magic)
+MAINTAINER=	ports@FreeBSD.org
+
+USE_XLIB=	yes
+USE_GMAKE=	yes
+
+BINS=	magic ext2sim magicusage net2ir extcheck X11Helper ext2spice
+MAN1=	ext2spice.1 extcheck.1 magic.1 magicusage.1		\
+	ext2sim.1 net2ir.1 rsleeper.1 sleeper.1 fsleeper.1
+MAN3=	mpack.3 dqueue.3 extflat.3 geometry.3 hash.3 heap.3 libmalloc.3	\
+	list.3 magicutils.3 malloc.3 path.3 runstats.3 set.3 show.3	\
+	stack.3 string.3
+MAN5=	cmap.5 displays.5 dlys.5 sim.5 dstyle.5 ext.5 glyphs.5 magic.5 net.5
+MAN8=	prleak.8
+
+post-install:
+	@${CHMOD} ${BINMODE} ${PREFIX}/bin/spice2sim
+	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/spice2sim
+.for f in ${BINS}
+	@${CHMOD} ${BINMODE} ${PREFIX}/bin/$f
+	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/$f
+	@strip ${PREFIX}/bin/$f
+.endfor
+.for f in ${MAN1}
+	@${CHMOD} ${MANMODE} ${PREFIX}/man/man1/$f
+	@${CHOWN} ${MANOWN}.${MANGRP} ${PREFIX}/man/man1/$f
+.endfor
+.for f in ${MAN3}
+	@${CHMOD} ${MANMODE} ${PREFIX}/man/man3/$f
+	@${CHOWN} ${MANOWN}.${MANGRP} ${PREFIX}/man/man3/$f
+.endfor
+.for f in ${MAN5}
+	@${CHMOD} ${MANMODE} ${PREFIX}/man/man5/$f
+	@${CHOWN} ${MANOWN}.${MANGRP} ${PREFIX}/man/man5/$f
+.endfor
+.for f in ${MAN8}
+	@${CHMOD} ${MANMODE} ${PREFIX}/man/man8/$f
+	@${CHOWN} ${MANOWN}.${MANGRP} ${PREFIX}/man/man8/$f
+.endfor
+	@${CHMOD} -R a+rX,go-w ${PREFIX}/lib/magic
+	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/lib/magic
+	@${CHMOD} ${SHAREMODE} ${PREFIX}/lib/mpack.h ${PREFIX}/lib/libmpack.a
+	@${CHOWN} ${SHAREOWN}.${SHAREGRP} ${PREFIX}/lib/mpack.h		\
+	  ${PREFIX}/lib/libmpack.a
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+===================================
+
+To configure webmin you should run
+the following command as root:
+
+  ${LOCALBASE}/lib/webmin/setup.sh
+
+You have to perform this step after
+every webmin upgrade.
+
+===================================

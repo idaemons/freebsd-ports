@@ -1,0 +1,14 @@
+--- GNUmakefile.orig	Thu Jan 11 12:01:03 2001
++++ GNUmakefile	Sat Jan 13 00:00:00 2001
+@@ -128,10 +128,8 @@
+ .PHONY: install.hdr
+ install.hdr:
+ 	$(SRCDIR)/mkinstalldirs $(INSTALLHDRS)
+-	$(INSTALL) -c -m$(INSTALL_PERM_HDR) \
++	${BSD_INSTALL_DATA} \
+ 	    $(SRCDIR)/pbmplus.h $(INSTALLHDRS)
+-	$(INSTALL) -c -m$(INSTALL_PERM_HDR) \
+-	    $(SRCDIR)/shhopt/shhopt.h $(INSTALLHDRS)
+ 	for i in $(SUBDIRS) ; do \
+ 	    $(MAKE) -C $$i -f $(SRCDIR)/$$i/Makefile install.hdr ; \
+ 	done

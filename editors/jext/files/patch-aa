@@ -1,0 +1,19 @@
+--- bin/jext.sh.orig	Tue Aug 22 00:07:57 2000
++++ bin/jext.sh	Tue Aug 22 00:08:38 2000
+@@ -5,11 +5,15 @@
+ # Set the JEXT_HOME to /usr/local/jext and add this to your PATH.
+ # Norbert Seidel
+ 
++JEXT_HOME=%%JEXT_HOME%%
++CLASSPATH=$CLASSPATH:%%JFC%%:$JEXT_HOME/lib/jext.jar
++export CLASSPATH
++export JEXT_HOME
+ # Add links to plugins
+ if [ ! -d "$HOME/.jext" ]; then
+    mkdir -p $HOME/.jext/xinsert
+    ln -s $JEXT_HOME/bin/plugins $HOME/.jext
+ fi
+ 
+-java -classpath $JEXT_HOME/lib/jext.jar com.chez.powerteam.jext.Jext $* &
++exec %%JAVAVM%% com.chez.powerteam.jext.Jext $*
+ 

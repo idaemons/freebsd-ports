@@ -1,0 +1,27 @@
+diff -urN ../dap-2.1.1.orig/libaudio/Makefile.linux ./libaudio/Makefile.linux
+--- ../dap-2.1.1.orig/libaudio/Makefile.linux	Tue Feb 22 09:28:50 2000
++++ ./libaudio/Makefile.linux	Sun Jun 11 13:51:44 2000
+@@ -1,11 +1,11 @@
+-CC      = gcc
+-CXX     = g++
++CC      ?= gcc
++CXX     ?= g++
+ BACKDIR = ../bak/libaudio
+ HOMEDIR = $(HOME)
+ INCDIR  = -I.
+-CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
++CCFLAGS = $(INCDIR) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
+ DEBUG   = -g3
+-OPTIM   = -O1
++OPTIM   = ${CXXFLAGS}
+ 
+ LIBNAME = libaudio.a
+ OBJS    = audio.o
+@@ -21,6 +21,7 @@
+ libaudio.a: $(OBJS)
+ 	rm -f $(LIBNAME)
+ 	ar ruv $(LIBNAME) $(OBJS)
++	ranlib $(LIBNAME)
+ 
+ clean:
+ 	-rm -f $(OBJS) core

@@ -1,0 +1,9 @@
+bin/editcap
+bin/ethereal
+bin/tethereal
+etc/manuf
+lib/ethereal/plugins/%%PORTVERSION%%/gryphon.so
+lib/ethereal/plugins/%%PORTVERSION%%/mgcp.so
+@dirrm lib/ethereal/plugins/%%PORTVERSION%%
+@dirrm lib/ethereal/plugins
+@dirrm lib/ethereal

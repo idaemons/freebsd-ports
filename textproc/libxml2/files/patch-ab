@@ -1,0 +1,26 @@
+--- configure.orig	Thu Mar  1 11:00:11 2001
++++ configure	Thu Mar  8 22:11:26 2001
+@@ -3479,3 +3479,3 @@
+ XML_LIBDIR='-L${libdir}'
+-XML_INCLUDEDIR='-I${includedir}/libxml -I${includedir}'
++XML_INCLUDEDIR='-I${includedir}/libxml2 -I${includedir}/libxml2/libxml'
+ XML_LIBS="-lxml2 $Z_LIBS $M_LIBS $LIBS"
+@@ -3875,3 +3875,3 @@
+     builtin and then its argument prototype would still apply.  */
+-char iconv();
++char libiconv();
+ 
+@@ -3885,3 +3885,3 @@
+ #else
+-iconv();
++libiconv();
+ #endif
+@@ -3921,6 +3921,6 @@
+     builtin and then its argument prototype would still apply.  */
+-char iconv();
++char libiconv();
+ 
+ int main() {
+-iconv()
++libiconv()
+ ; return 0; }

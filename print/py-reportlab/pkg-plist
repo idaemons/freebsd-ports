@@ -1,0 +1,151 @@
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/_rl_accel.so
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/abag.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/abag.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/abag.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/colors.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/colors.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/colors.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/corp.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/corp.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/corp.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/enums.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/enums.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/enums.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/fonts.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/fonts.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/fonts.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/logger.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/logger.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/logger.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/pagesizes.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/pagesizes.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/pagesizes.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/pyHnjmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/sequencer.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/sequencer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/sequencer.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/sgmlop.so
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/styles.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/styles.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/styles.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/tocindex.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/tocindex.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/tocindex.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/units.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/units.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/units.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/utils.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/utils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/utils.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/xmllib.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/xmllib.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/xmllib.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfdoc.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfdoc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfdoc.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfmetrics.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfmetrics.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfmetrics.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfutils.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfutils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase/pdfutils.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/canvas.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/canvas.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/canvas.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pathobject.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pathobject.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pathobject.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfgeom.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfgeom.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfgeom.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfimages.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfimages.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfimages.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/textobject.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/textobject.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/textobject.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/doctemplate.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/doctemplate.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/doctemplate.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/flowables.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/flowables.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/flowables.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/frames.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/frames.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/frames.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/paragraph.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/paragraph.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/paragraph.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/paraparser.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/paraparser.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/paraparser.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/tables.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/tables.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/tables.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/xpreformatted.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/xpreformatted.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus/xpreformatted.pyo
+share/doc/reportlab/reference.pdf
+share/doc/reportlab/userguide.pdf
+share/examples/reportlab/colors/colortest.py
+share/examples/reportlab/gadflypaper/00readme.txt
+share/examples/reportlab/gadflypaper/gfe.py
+share/examples/reportlab/odyssey/00readme.txt
+share/examples/reportlab/odyssey/dodyssey.py
+share/examples/reportlab/odyssey/fodyssey.py
+share/examples/reportlab/odyssey/odyssey.py
+share/examples/reportlab/odyssey/odyssey.txt
+share/examples/reportlab/py2pdf/00readme.txt
+share/examples/reportlab/py2pdf/PyFontify.py
+share/examples/reportlab/py2pdf/demo-config.txt
+share/examples/reportlab/py2pdf/demo.py
+share/examples/reportlab/py2pdf/idle_print.py
+share/examples/reportlab/py2pdf/py2pdf.py
+share/examples/reportlab/py2pdf/vertpython.jpg
+share/examples/reportlab/pythonpoint/00readme.txt
+share/examples/reportlab/pythonpoint/customshapes.py
+share/examples/reportlab/pythonpoint/leftlogo.a85
+share/examples/reportlab/pythonpoint/leftlogo.gif
+share/examples/reportlab/pythonpoint/lj8100.jpg
+share/examples/reportlab/pythonpoint/monterey.xml
+share/examples/reportlab/pythonpoint/outline.gif
+share/examples/reportlab/pythonpoint/python.gif
+share/examples/reportlab/pythonpoint/pythonpoint.py
+share/examples/reportlab/pythonpoint/pythonpoint.xml
+share/examples/reportlab/pythonpoint/spectrum.png
+share/examples/reportlab/pythonpoint/stdparser.py
+share/examples/reportlab/pythonpoint/styles_horrible.py
+share/examples/reportlab/pythonpoint/styles_modern.py
+share/examples/reportlab/pythonpoint/vertpython.gif
+share/examples/reportlab/stdfonts/00readme.txt
+share/examples/reportlab/stdfonts/stdfonts.py
+share/examples/reportlab/tests/testdemos.py
+@dirrm share/examples/reportlab/tests
+@dirrm share/examples/reportlab/stdfonts
+@dirrm share/examples/reportlab/pythonpoint
+@dirrm share/examples/reportlab/py2pdf
+@dirrm share/examples/reportlab/odyssey
+@dirrm share/examples/reportlab/gadflypaper
+@dirrm share/examples/reportlab/colors
+@dirrm share/examples/reportlab
+@dirrm share/doc/reportlab
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/reportlab/platypus
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfbase
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/reportlab

@@ -1,0 +1,25 @@
+--- src/Makefile.in.orig	Fri Dec  8 08:49:16 2000
++++ src/Makefile.in	Thu Feb  8 22:58:33 2001
+@@ -40,8 +40,8 @@
+ 
+-iconv : $(srcdir)/iconv.c ../lib/libiconv.la
+-	$(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -I../lib $(srcdir)/iconv.c ../lib/libiconv.la -o $@
++iconv : $(srcdir)/iconv.c ../lib/libgiconv.la
++	$(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -I../lib $(srcdir)/iconv.c ../lib/libgiconv.la -o $@
+ 
+ # The following rule is necessary to avoid a toplevel "make -n check" failure.
+-../lib/libiconv.la :
+-	cd ../lib && $(MAKE) libiconv.la
++../lib/libgiconv.la :
++	cd ../lib && $(MAKE) libgiconv.la
+ 
+@@ -51,3 +51,3 @@
+ 	if [ ! -d $(DESTDIR)$(bindir) ] ; then mkdir $(DESTDIR)$(bindir) ; fi
+-	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) iconv $(DESTDIR)$(bindir)/iconv
++	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) iconv $(DESTDIR)$(bindir)/giconv
+ 
+@@ -59,3 +59,3 @@
+ uninstall : force
+-	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(bindir)/iconv
++	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(bindir)/giconv
+ 

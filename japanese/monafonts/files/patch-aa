@@ -1,0 +1,17 @@
+--- Makefile.orig	Fri Mar 23 21:07:28 2001
++++ Makefile	Mon Mar 26 00:34:17 2001
+@@ -3,11 +3,11 @@
+ 
+ SED	= sed
+ PERL	= perl
+-X11BIN	= /usr/X11R6/bin
++X11BIN	= ${PREFIX}/bin
+ GZIP	= gzip
+-AWK	= gawk
++AWK	= awk
+ 
+-FONTDIR = /usr/X11R6/lib/X11/fonts/misc
++FONTDIR = ${PREFIX}/lib/X11/fonts/local
+ 
+ BDFTOPCF= $(X11BIN)/bdftopcf
+ MKFONTDIR=$(X11BIN)/mkfontdir

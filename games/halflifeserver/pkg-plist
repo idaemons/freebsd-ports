@@ -1,0 +1,253 @@
+%%HLDSDIR%%engine_i386.so
+%%HLDSDIR%%hlds_run
+%%HLDSDIR%%hlds_run.dat
+%%HLDSDIR%%kver.kp
+%%HLDSDIR%%libhlwon.so
+%%HLDSDIR%%linuxreadme.txt
+%%HLDSDIR%%sierra.inf
+%%HLDSDIR%%tfc/cached.wad
+%%HLDSDIR%%tfc/cl_dlls/client.dll
+%%HLDSDIR%%tfc/decals.wad
+%%HLDSDIR%%tfc/delta.lst
+%%HLDSDIR%%tfc/dlls/tfc_i386.so
+%%HLDSDIR%%tfc/events/door/doorgodown.sc
+%%HLDSDIR%%tfc/events/door/doorgoup.sc
+%%HLDSDIR%%tfc/events/door/doorhitbottom.sc
+%%HLDSDIR%%tfc/events/door/doorhittop.sc
+%%HLDSDIR%%tfc/events/explode/tf_burn.sc
+%%HLDSDIR%%tfc/events/explode/tf_concuss.sc
+%%HLDSDIR%%tfc/events/explode/tf_emp.sc
+%%HLDSDIR%%tfc/events/explode/tf_engrgren.sc
+%%HLDSDIR%%tfc/events/explode/tf_fire.sc
+%%HLDSDIR%%tfc/events/explode/tf_gas.sc
+%%HLDSDIR%%tfc/events/explode/tf_gren.sc
+%%HLDSDIR%%tfc/events/explode/tf_mirv.sc
+%%HLDSDIR%%tfc/events/explode/tf_mirvmain.sc
+%%HLDSDIR%%tfc/events/explode/tf_nailgren.sc
+%%HLDSDIR%%tfc/events/explode/tf_ng.sc
+%%HLDSDIR%%tfc/events/explode/tf_normalgren.sc
+%%HLDSDIR%%tfc/events/explode/tf_pipe.sc
+%%HLDSDIR%%tfc/events/misc/benchmark.sc
+%%HLDSDIR%%tfc/events/misc/gibs.sc
+%%HLDSDIR%%tfc/events/wpn/tf_acfire.sc
+%%HLDSDIR%%tfc/events/wpn/tf_acspin.sc
+%%HLDSDIR%%tfc/events/wpn/tf_acstart.sc
+%%HLDSDIR%%tfc/events/wpn/tf_acwd.sc
+%%HLDSDIR%%tfc/events/wpn/tf_acwu.sc
+%%HLDSDIR%%tfc/events/wpn/tf_ar.sc
+%%HLDSDIR%%tfc/events/wpn/tf_axe.sc
+%%HLDSDIR%%tfc/events/wpn/tf_axedecal.sc
+%%HLDSDIR%%tfc/events/wpn/tf_flame.sc
+%%HLDSDIR%%tfc/events/wpn/tf_gl.sc
+%%HLDSDIR%%tfc/events/wpn/tf_ic.sc
+%%HLDSDIR%%tfc/events/wpn/tf_knife.sc
+%%HLDSDIR%%tfc/events/wpn/tf_mednormal.sc
+%%HLDSDIR%%tfc/events/wpn/tf_medsteam.sc
+%%HLDSDIR%%tfc/events/wpn/tf_medsuper.sc
+%%HLDSDIR%%tfc/events/wpn/tf_nail.sc
+%%HLDSDIR%%tfc/events/wpn/tf_pipel.sc
+%%HLDSDIR%%tfc/events/wpn/tf_rail.sc
+%%HLDSDIR%%tfc/events/wpn/tf_rpg.sc
+%%HLDSDIR%%tfc/events/wpn/tf_sg.sc
+%%HLDSDIR%%tfc/events/wpn/tf_sgpump.sc
+%%HLDSDIR%%tfc/events/wpn/tf_sgreload.sc
+%%HLDSDIR%%tfc/events/wpn/tf_snail.sc
+%%HLDSDIR%%tfc/events/wpn/tf_sniper.sc
+%%HLDSDIR%%tfc/events/wpn/tf_sniperhit.sc
+%%HLDSDIR%%tfc/events/wpn/tf_ssg.sc
+%%HLDSDIR%%tfc/events/wpn/tf_tranq.sc
+%%HLDSDIR%%tfc/liblist.gam
+%%HLDSDIR%%tfc/manual/background.jpg
+%%HLDSDIR%%tfc/manual/bullet.gif
+%%HLDSDIR%%tfc/manual/bullet1.gif
+%%HLDSDIR%%tfc/manual/note.jpg
+%%HLDSDIR%%tfc/manual/regexp.html
+%%HLDSDIR%%tfc/manual/tfcclasses.htm
+%%HLDSDIR%%tfc/manual/tfccontents.htm
+%%HLDSDIR%%tfc/manual/tfcmaps.htm
+%%HLDSDIR%%tfc/manual/tfcserver.htm
+%%HLDSDIR%%tfc/manual/tfcstarting.htm
+%%HLDSDIR%%tfc/manual/tflogo.gif
+%%HLDSDIR%%tfc/manual/tfstats.htm
+%%HLDSDIR%%tfc/manual/tip.jpg
+%%HLDSDIR%%tfc/manual/tips.jpg
+%%HLDSDIR%%tfc/mapcycle.txt
+%%HLDSDIR%%tfc/maps/2fort.bsp
+%%HLDSDIR%%tfc/maps/2fort.txt
+%%HLDSDIR%%tfc/maps/avanti.bsp
+%%HLDSDIR%%tfc/maps/avanti.txt
+%%HLDSDIR%%tfc/maps/badlands.bsp
+%%HLDSDIR%%tfc/maps/badlands.txt
+%%HLDSDIR%%tfc/maps/casbah.bsp
+%%HLDSDIR%%tfc/maps/casbah.txt
+%%HLDSDIR%%tfc/maps/crossover2.bsp
+%%HLDSDIR%%tfc/maps/crossover2.txt
+%%HLDSDIR%%tfc/maps/cz2.bsp
+%%HLDSDIR%%tfc/maps/cz2.txt
+%%HLDSDIR%%tfc/maps/dustbowl.bsp
+%%HLDSDIR%%tfc/maps/dustbowl.txt
+%%HLDSDIR%%tfc/maps/epicenter.bsp
+%%HLDSDIR%%tfc/maps/epicenter.txt
+%%HLDSDIR%%tfc/maps/flagrun.bsp
+%%HLDSDIR%%tfc/maps/flagrun.txt
+%%HLDSDIR%%tfc/maps/hunted.bsp
+%%HLDSDIR%%tfc/maps/hunted.txt
+%%HLDSDIR%%tfc/maps/push.bsp
+%%HLDSDIR%%tfc/maps/push.txt
+%%HLDSDIR%%tfc/maps/rock2.bsp
+%%HLDSDIR%%tfc/maps/rock2.txt
+%%HLDSDIR%%tfc/maps/warpath.bsp
+%%HLDSDIR%%tfc/maps/warpath.txt
+%%HLDSDIR%%tfc/maps/well.bsp
+%%HLDSDIR%%tfc/maps/well.txt
+%%HLDSDIR%%tfc/models/player/civilian/civilian.mdl
+%%HLDSDIR%%tfc/models/player/demo/demo.mdl
+%%HLDSDIR%%tfc/models/player/demo/demo2.mdl
+%%HLDSDIR%%tfc/models/player/engineer/engineer.mdl
+%%HLDSDIR%%tfc/models/player/engineer/engineer2.mdl
+%%HLDSDIR%%tfc/models/player/hvyweapon/hvyweapon.mdl
+%%HLDSDIR%%tfc/models/player/hvyweapon/hvyweapon2.mdl
+%%HLDSDIR%%tfc/models/player/medic/medic.mdl
+%%HLDSDIR%%tfc/models/player/medic/medic2.mdl
+%%HLDSDIR%%tfc/models/player/pyro/pyro.mdl
+%%HLDSDIR%%tfc/models/player/pyro/pyro2.mdl
+%%HLDSDIR%%tfc/models/player/scout/scout.mdl
+%%HLDSDIR%%tfc/models/player/scout/scout2.mdl
+%%HLDSDIR%%tfc/models/player/sniper/sniper.mdl
+%%HLDSDIR%%tfc/models/player/sniper/sniper2.mdl
+%%HLDSDIR%%tfc/models/player/soldier/soldier.mdl
+%%HLDSDIR%%tfc/models/player/soldier/soldier2.mdl
+%%HLDSDIR%%tfc/models/player/spy/spy.mdl
+%%HLDSDIR%%tfc/models/player/spy/spy2.mdl
+%%HLDSDIR%%tfc/models/p_9mmhandgun.mdl
+%%HLDSDIR%%tfc/models/p_9mmhandgun2.mdl
+%%HLDSDIR%%tfc/models/p_crowbar.mdl
+%%HLDSDIR%%tfc/models/p_crowbar2.mdl
+%%HLDSDIR%%tfc/models/p_egon.mdl
+%%HLDSDIR%%tfc/models/p_egon2.mdl
+%%HLDSDIR%%tfc/models/p_glauncher.mdl
+%%HLDSDIR%%tfc/models/p_glauncher2.mdl
+%%HLDSDIR%%tfc/models/p_grenade.mdl
+%%HLDSDIR%%tfc/models/p_grenade2.mdl
+%%HLDSDIR%%tfc/models/p_knife.mdl
+%%HLDSDIR%%tfc/models/p_knife2.mdl
+%%HLDSDIR%%tfc/models/p_medkit.mdl
+%%HLDSDIR%%tfc/models/p_medkit2.mdl
+%%HLDSDIR%%tfc/models/p_mini.mdl
+%%HLDSDIR%%tfc/models/p_mini2.mdl
+%%HLDSDIR%%tfc/models/p_nailgun.mdl
+%%HLDSDIR%%tfc/models/p_nailgun2.mdl
+%%HLDSDIR%%tfc/models/p_rpg.mdl
+%%HLDSDIR%%tfc/models/p_rpg2.mdl
+%%HLDSDIR%%tfc/models/p_shotgun.mdl
+%%HLDSDIR%%tfc/models/p_shotgun2.mdl
+%%HLDSDIR%%tfc/models/p_smallshotgun.mdl
+%%HLDSDIR%%tfc/models/p_snailgun.mdl
+%%HLDSDIR%%tfc/models/p_snailgun2.mdl
+%%HLDSDIR%%tfc/models/p_sniper.mdl
+%%HLDSDIR%%tfc/models/p_sniper2.mdl
+%%HLDSDIR%%tfc/models/p_spanner.mdl
+%%HLDSDIR%%tfc/models/p_spanner2.mdl
+%%HLDSDIR%%tfc/models/p_spygun.mdl
+%%HLDSDIR%%tfc/models/p_srpg.mdl
+%%HLDSDIR%%tfc/models/p_umbrella.mdl
+%%HLDSDIR%%tfc/models/p_umbrella2.mdl
+%%HLDSDIR%%tfc/models/sentry1.mdl
+%%HLDSDIR%%tfc/models/v_tfc_spanner.mdl
+%%HLDSDIR%%tfc/motd.txt
+%%HLDSDIR%%tfc/pak0.pak
+%%HLDSDIR%%tfc/server.cfg
+%%HLDSDIR%%tfc/sound/misc/endgame.wav
+%%HLDSDIR%%tfc/sound/vox/endgame.wav
+%%HLDSDIR%%tfc/sound/vox/stolen.wav
+%%HLDSDIR%%tfc/sound/weapons/asscan2.wav
+%%HLDSDIR%%tfc/sound/weapons/asscan4.wav
+%%HLDSDIR%%tfc/tfc.wad
+%%HLDSDIR%%tfc/tfc2.wad
+%%HLDSDIR%%tfc/tfstats/readme.txt
+%%HLDSDIR%%tfc/tfstats/tfc.2fort.rul
+%%HLDSDIR%%tfc/tfstats/tfc.cz2.rul
+%%HLDSDIR%%tfc/tfstats/tfc.rock2.rul
+%%HLDSDIR%%tfc/tfstats/tfc.rul
+%%HLDSDIR%%tfc/tfstats/tfc.well.rul
+%%HLDSDIR%%tfc/tfstats/tfstats.txt
+%%HLDSDIR%%tfc/tfstats/tfstats_l
+%%HLDSDIR%%valve/cached.wad
+%%HLDSDIR%%valve/cl_dlls/client.dll
+%%HLDSDIR%%valve/credits.txt
+%%HLDSDIR%%valve/decals.wad
+%%HLDSDIR%%valve/default.cfg
+%%HLDSDIR%%valve/delta.lst
+%%HLDSDIR%%valve/dlls/hl_i386.so
+%%HLDSDIR%%valve/events/gauss.sc
+%%HLDSDIR%%valve/events/gaussspin.sc
+%%HLDSDIR%%valve/events/glock1.sc
+%%HLDSDIR%%valve/events/glock2.sc
+%%HLDSDIR%%valve/events/mp5.sc
+%%HLDSDIR%%valve/events/python.sc
+%%HLDSDIR%%valve/events/shotgun1.sc
+%%HLDSDIR%%valve/events/shotgun2.sc
+%%HLDSDIR%%valve/events/train.sc
+%%HLDSDIR%%valve/fonts.wad
+%%HLDSDIR%%valve/gfx.wad
+%%HLDSDIR%%valve/halflife.wad
+%%HLDSDIR%%valve/liblist.gam
+%%HLDSDIR%%valve/liquids.wad
+%%HLDSDIR%%valve/mapcycle.txt
+%%HLDSDIR%%valve/maps/boot_camp.bsp
+%%HLDSDIR%%valve/maps/bounce.bsp
+%%HLDSDIR%%valve/maps/crossfire.bsp
+%%HLDSDIR%%valve/maps/datacore.bsp
+%%HLDSDIR%%valve/maps/frenzy.bsp
+%%HLDSDIR%%valve/maps/gasworks.bsp
+%%HLDSDIR%%valve/maps/lambda_bunker.bsp
+%%HLDSDIR%%valve/maps/rapidcore.bsp
+%%HLDSDIR%%valve/maps/snark_pit.bsp
+%%HLDSDIR%%valve/maps/stalkyard.bsp
+%%HLDSDIR%%valve/maps/subtransit.bsp
+%%HLDSDIR%%valve/maps/undertow.bsp
+%%HLDSDIR%%valve/pak0.pak
+%%HLDSDIR%%valve/server.cfg
+%%HLDSDIR%%valve/skill.cfg
+%%HLDSDIR%%valve/valve.rc
+%%HLDSDIR%%valve/woncomm.lst
+%%HLDSDIR%%valve/xeno.wad
+%%HLDSDIR%%vgui.dll
+%%HLDSDIR%%wonauth.dll
+%%HLDSDIR%%woncrypt.dll
+@dirrm %%HLDSDIR%%valve/maps
+@dirrm %%HLDSDIR%%valve/events
+@dirrm %%HLDSDIR%%valve/dlls
+@dirrm %%HLDSDIR%%valve/cl_dlls
+@dirrm %%HLDSDIR%%valve
+@dirrm %%HLDSDIR%%tfc/tfstats
+@dirrm %%HLDSDIR%%tfc/sound/weapons
+@dirrm %%HLDSDIR%%tfc/sound/vox
+@dirrm %%HLDSDIR%%tfc/sound/misc
+@dirrm %%HLDSDIR%%tfc/sound
+@dirrm %%HLDSDIR%%tfc/models/player/spy
+@dirrm %%HLDSDIR%%tfc/models/player/soldier
+@dirrm %%HLDSDIR%%tfc/models/player/sniper
+@dirrm %%HLDSDIR%%tfc/models/player/scout
+@dirrm %%HLDSDIR%%tfc/models/player/pyro
+@dirrm %%HLDSDIR%%tfc/models/player/medic
+@dirrm %%HLDSDIR%%tfc/models/player/hvyweapon
+@dirrm %%HLDSDIR%%tfc/models/player/engineer
+@dirrm %%HLDSDIR%%tfc/models/player/demo
+@dirrm %%HLDSDIR%%tfc/models/player/civilian
+@dirrm %%HLDSDIR%%tfc/models/player
+@dirrm %%HLDSDIR%%tfc/models
+@dirrm %%HLDSDIR%%tfc/maps
+@dirrm %%HLDSDIR%%tfc/manual
+@dirrm %%HLDSDIR%%tfc/events/wpn
+@dirrm %%HLDSDIR%%tfc/events/misc
+@dirrm %%HLDSDIR%%tfc/events/explode
+@dirrm %%HLDSDIR%%tfc/events/door
+@dirrm %%HLDSDIR%%tfc/events
+@dirrm %%HLDSDIR%%tfc/dlls
+@dirrm %%HLDSDIR%%tfc/cl_dlls
+@dirrm %%HLDSDIR%%tfc
+@dirrm %%HLDSDIR%%
+@mode 0444
+@exec grep -E "^/%%HLDSDIR%%$" %D/etc/ld.so.conf >/dev/null || ( echo /%%HLDSDIR%% >> %D/etc/ld.so.conf ; %%LDCONFIG%% )
+@unexec grep -v -E "^/%%HLDSDIR%%$" %D/etc/ld.so.conf > %D/etc/ld.so.conf.bak; cmp -s %D/etc/ld.so.conf %D/etc/ld.so.conf.bak || ( cp %D/etc/ld.so.conf.bak %D/etc/ld.so.conf ; %%LDCONFIG%% ) ; rm %D/etc/ld.so.conf.bak

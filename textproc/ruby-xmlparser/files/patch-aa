@@ -1,0 +1,13 @@
+--- extconf.rb.orig	Sun Oct 15 15:22:39 2000
++++ extconf.rb	Mon Oct 16 05:40:33 2000
+@@ -22,8 +22,8 @@
+ ##$CFLAGS="-I#{cwd}/expat/xmlparse -I#{cwd}/expat/xmltok" +
+ ##  ' -DXML_ENC_PATH=getenv\(\"XML_ENC_PATH\"\)' +
+ ##  " -DNEW_EXPAT"
+-$CFLAGS = "-I#{cwd}/expat/xmlparse -I#{cwd}/expat/xmltok"
+-$LDFLAGS = "-L#{cwd}/expat/xmlparse"
++#$CFLAGS = "-I#{cwd}/expat/xmlparse -I#{cwd}/expat/xmltok"
++#$LDFLAGS = "-L#{cwd}/expat/xmlparse"
+ dir_config("xmltok")
+ dir_config("xmlparse")
+ if xml_enc_path

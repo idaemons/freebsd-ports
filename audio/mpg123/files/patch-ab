@@ -1,0 +1,69 @@
+--- mpg123.c.orig	Fri Jun 18 05:18:11 1999
++++ mpg123.c	Fri Mar  2 16:08:04 2001
+@@ -27,6 +27,10 @@
+ #include <sched.h>
+ #endif
+ 
++#ifdef __FreeBSD__
++#include <ieeefp.h>
++#endif
++
+ #include "mpg123.h"
+ #include "getlopt.h"
+ #include "buffer.h"
+@@ -223,7 +227,7 @@
+ {
+     int loop, rannum;
+ 
+-    srand(time(NULL));
++    srandomdev();
+     if(shuffleord)
+       free(shuffleord);
+     shuffleord = (int *) malloc((numfiles + 1) * sizeof(int));
+@@ -239,7 +243,7 @@
+     /* now shuffle them */
+     if(numfiles >= 2) {
+       for (loop = 0; loop < numfiles; loop++) {
+-	rannum = (rand() % (numfiles * 4 - 4)) / 4;
++	rannum = (random() % (numfiles * 4 - 4)) / 4;
+         rannum += (rannum >= loop);
+ 	shuffleord[loop] ^= shuffleord[rannum];
+ 	shuffleord[rannum] ^= shuffleord[loop];
+@@ -381,7 +385,7 @@
+         curfile++;
+     }
+     else {
+-       newfile = shufflist[ rand() % shuffle_listsize ];
++       newfile = shufflist[ random() % shuffle_listsize ];
+     }
+ 
+     return newfile;
+@@ -784,6 +788,10 @@
+         _wildcard(&argc,&argv);
+ #endif
+ 
++#ifdef __FreeBSD__
++	fpsetmask(0);
++#endif
++
+ 	if(sizeof(short) != 2) {
+ 		fprintf(stderr,"Ouch SHORT has size of %d bytes (required: '2')\n",(int)sizeof(short));
+ 		exit(1);
+@@ -917,17 +925,6 @@
+ 				&dirname, &filename))
+ 				fprintf(stderr, "\nDirectory: %s", dirname);
+ 			fprintf(stderr, "\nPlaying MPEG stream from %s ...\n", filename);
+-
+-#if !defined(GENERIC)
+-{
+-     const char *term_type;
+-         term_type = getenv("TERM");
+-         if (!strcmp(term_type,"xterm"))
+-         {
+-           fprintf(stderr, "\033]0;%s\007", filename);
+-         }
+-}
+-#endif
+ 
+ 		}
+ 

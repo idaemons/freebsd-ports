@@ -1,0 +1,8 @@
+--- ddd/configure.orig	Fri Feb  2 07:47:25 2001
++++ ddd/configure	Sat Mar 10 17:18:16 2001
+@@ -1003 +1003 @@
+-   MAKEINFO=makeinfo
++   MAKEINFO="makeinfo --no-split"
+@@ -1961 +1961 @@
+-for ac_prog in 'bison -y' byacc
++for ac_prog in byacc

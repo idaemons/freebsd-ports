@@ -1,0 +1,3 @@
+bin/epstool
+%%PORTDOCS%%share/doc/epstool/epstool.htm
+%%PORTDOCS%%@dirrm share/doc/epstool

@@ -1,0 +1,27 @@
+--- autoconf/Makefile.in.orig	Wed Aug 30 19:43:10 2000
++++ autoconf/Makefile.in	Fri Sep  1 04:03:02 2000
+@@ -10,7 +10,7 @@
+ 	cd src; $(MAKE) all
+ elf:
+ 	cd src; $(MAKE) elf
+-	@echo Use make install-elf to install it.
++
+ runtests:
+ 	cd src/test; $(MAKE)
+ demos:
+@@ -23,15 +23,8 @@
+ 	cd src; $(MAKE) install
+ install-elf:
+ 	cd src; $(MAKE) install-elf
+-	@echo ""
+-	@echo "Although not required, consider doing 'make install-links' to extra links"
+-	@echo "On some systems, e.g., linux, you will also have to run ldconfig."
+-	@echo ""
+ install-links:
+ 	cd src; $(MAKE) install-links
+-	@echo ""
+-	@echo "You may also have to run ldconfig to complete the installation."
+-	@echo ""
+ #
+ distclean:
+ 	/bin/rm -f *~ Makefile config.status config.log config.cache files.pck

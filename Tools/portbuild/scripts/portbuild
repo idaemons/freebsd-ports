@@ -1,0 +1,264 @@
+#!/bin/sh
+
+# usage: $0 BRANCH [-noclean] [-norestr] [-noplistcheck] [-nodummy] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
+
+# configurable variables
+pb=/var/portbuild
+
+. ${pb}/portbuild.conf
+
+buildroot=${pb}
+
+export BATCH=t
+export BATCH=t
+#export NO_RESTRICTED=t
+#export FOR_CDROM=t
+export USA_RESIDENT=YES
+#export FORCE_PKG_REGISTER=t
+#export FORCE_PACKAGE=t
+export PARALLEL_PACKAGE_BUILD=t
+export PACKAGE_BUILDING=t
+export WRKDIRPREFIX=/tmp
+#export PKG_NOCOMPRESS=t
+# to catch missing dependencies
+#export DEPENDS_TARGET=/usr/bin/true
+# don't pass -j, -k etc. to sub-makes
+unset MAKEFLAGS
+unset PORTSDIR
+# wait 3600 seconds before killing build with no output
+export TIMEOUT=3600
+# to prevent runaway processes -- 256 meg file size limit, one hour CPU limit
+ulimit -f 524288
+ulimit -t 3600
+
+# directories to clean
+cleandirs="/usr/local /usr/X11R6 /compat"
+
+# 15 minutes
+export FTP_TIMEOUT=900
+export HTTP_TIMEOUT=900
+
+# ssh -x doesn't work on some machines
+unset DISPLAY
+
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:.
+#export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:/usr/pkg/bin:.
+
+branch=$1
+shift
+
+noclean=0
+if [ "x$1" = "x-noclean" ]; then
+  noclean=1
+  shift
+fi
+norestr=0
+if [ "x$1" = "x-norestr" ]; then
+  norestr=1
+  export NO_RESTRICTED=t
+  shift
+fi
+noplistcheck=0
+if [ "x$1" = "x-noplistcheck" ]; then
+  noplistcheck=1
+  export NOPLISTCHECK=t
+  shift
+fi
+nodummy=0
+if [ "x$1" = "x-nodummy" ]; then
+  nodummy=1
+  export NODUMMY=t
+  export MOTIF_OPEN=t
+  export XFREE86_VERSION=4
+  shift
+fi
+
+# these should not be necessary because OSREL is
+# set in bsd.port.mk from uname's output
+case ${branch} in
+  5*)
+#    export OSREL=5.0
+    export OSVERSION=500017
+    # export PORTOBJFORMAT=elf
+    ;;
+  4*)
+    export OSREL=4.3
+    export OSVERSION=430000
+    # export PORTOBJFORMAT=elf
+    ;;
+  3*)
+#    export OSREL=3.5
+    export OSVERSION=350001
+    # export PORTOBJFORMAT=elf
+    ;;
+  *)
+#    export OSREL=2.2.8
+    export OSVERSION=228001
+    export PORTOBJFORMAT=aout
+    ;;
+esac
+
+args="$*"
+
+pkgname=$(basename $1 .tgz)
+dirname=$2
+shift 2
+
+echo "building $pkgname"
+
+chrootdir=${buildroot}/${branch}/chroot
+bakdir=${buildroot}/${branch}/tarballs
+bindist=${bakdir}/bindist.tar
+packages=${buildroot}/${branch}/packages
+
+found=0
+for dir in ${chrootdir}/*; do
+  if [ -d ${dir}/tmp -a ! -e ${dir}/used ]; then
+    mkdir ${dir}/used 2>/dev/null
+    touch ${dir}/used/${pkgname}
+    if [ $(echo $(echo ${dir}/used/* | wc -w)) = 1 ]; then
+      found=1
+      chroot=${dir}
+      break
+    else
+      rm ${dir}/used/${pkgname}
+      rmdir ${dir}/used 2>/dev/null
+    fi
+  fi
+done
+
+if [ ${found} != 1 ]; then
+
+  chroot=${chrootdir}/$$
+  while [ -d ${chroot} ]; do
+    chroot=${chroot}-
+  done
+
+  mkdir -p ${chroot}/used
+  touch ${chroot}/used/${pkgname}
+  tar -C ${chroot} -xpf ${bindist}
+
+  # to be able to run ps and killall inside chroot area
+  cp -p /bin/ps ${chroot}/bin
+  cp -p /usr/bin/killall ${chroot}/usr/bin
+
+fi
+
+rm -rf ${chroot}/tmp/*
+cd ${chroot}/tmp
+mkdir -p depends distfiles packages
+
+echo "building ${pkgname} on $(hostname -s)" | tee ${chroot}/tmp/${pkgname}.log
+echo "in directory ${chroot}" | tee -a ${chroot}/tmp/${pkgname}.log
+echo "with arguments: ${args}" | tee -a ${chroot}/tmp/${pkgname}.log
+
+# intentionally set up ${PORTSDIR} with symlink to catch broken ports
+mkdir -p ${chroot}/a/ports
+rm -rf ${chroot}/usr/ports
+mount -o -2 -r ${master}:${buildroot}/usr/ports ${chroot}/a/ports
+ln -sf ../a/ports ${chroot}/usr/ports
+
+mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
+
+mount -o -2 -r ${master}:${buildroot}/${branch}/src ${chroot}/usr/src
+mount -o -2 -r ${master}:${buildroot}/usr/opt/doc ${chroot}/usr/opt/doc
+
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} \
+  >/dev/null 2>&1
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var \
+  >/dev/null 2>&1
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
+  >/dev/null 2>&1
+
+# just in case...
+for dir in ${cleandirs}; do
+  if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
+    chflags -R noschg ${chroot}${dir}
+    rm -rf ${chroot}${dir} >/dev/null 2>&1
+  fi
+done
+
+rm -rf ${chroot}/var/db/pkg/*
+
+chroot ${chroot} /sbin/ldconfig -m /usr/lib/compat
+chroot ${chroot} /sbin/ldconfig -R
+chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/aout
+chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/compat/aout
+chroot ${chroot} /sbin/ldconfig -aout -R
+
+while [ $# -gt 0 ]; do
+  if ssh -a ${master} [ -f ${packages}/All/$1 ]; then
+    if [ ! -f ${chroot}/tmp/depends/$1 ]; then
+      echo "copying package $1 for ${pkgname}"
+      scp -p $master:${packages}/All/$1 ${chroot}/tmp/depends
+    fi
+  else
+    echo "skipping package $1 for ${pkgname} since it is missing"
+  fi
+  shift
+done
+
+scp -p ${master}:${buildroot}/scripts/{buildscript,pnohang} ${chroot}
+
+#mount_procfs procfs ${chroot}/proc
+
+# phase 1, make checksum
+chroot ${chroot} /buildscript ${dirname} 1 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
+error=$(cat ${chroot}/tmp/status)
+
+if [ "${error}" = 0 ]; then
+# make checksum succeeded
+  ssh -a $master mkdir -p ${buildroot}/distfiles/.pbtmp/${pkgname}
+  tar -C ${chroot}/tmp/distfiles -cf - . | \
+    ssh -a $master tar --unlink -C ${buildroot}/distfiles/.pbtmp/${pkgname} -xvf -
+  ssh -a $master touch ${buildroot}/distfiles/.pbtmp/${pkgname}/.done
+
+# phase 2, make package
+  ln -sf ${pkgname}.log2 ${chroot}/tmp/make.log
+  chroot ${chroot} /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
+  grep pnohang ${chroot}/tmp/${pkgname}.log2
+  cat ${chroot}/tmp/${pkgname}.log2 >> ${chroot}/tmp/${pkgname}.log
+  rm ${chroot}/tmp/${pkgname}.log2
+###  chroot ${chroot} /buildscript ${dirname} 2 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
+  scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
+  error=$(cat ${chroot}/tmp/status)
+
+  if [ "${error}" = 0 ]; then
+    tar -C ${chroot}/tmp -cf - packages | \
+      ssh -a $master tar --unlink -C ${buildroot}/${branch} -xvf -
+    ssh -a $master [ -f ${buildroot}/${branch}/packages/All/${pkgname}.tgz ] '&&' touch ${buildroot}/${branch}/packages/All/${pkgname}.tgz
+    ssh $master rm -f ${buildroot}/${branch}/errors/${pkgname}.log
+  else
+    scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/errors/${pkgname}.log
+  fi
+
+else
+  scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/errors/${pkgname}.log
+  scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
+fi
+
+#umount ${chroot}/proc
+
+umount -f ${chroot}/a/ports
+umount -f ${chroot}/usr/opt/doc
+umount -f ${chroot}/usr/src
+
+if [ $noclean = 0 -o $error = 0 ]; then
+  rm -rf ${chroot}/tmp/*
+  for dir in ${cleandirs}; do
+    if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
+      chflags -R noschg ${chroot}${dir}
+      rm -rf ${chroot}${dir} >/dev/null 2>&1
+    fi
+  done
+  chroot ${chroot} /sbin/ldconfig -R
+  chroot ${chroot} /sbin/ldconfig -aout -R
+  rm -rf ${chroot}/var/db/pkg/*
+  rm ${chroot}/used/${pkgname}
+  rmdir ${chroot}/used
+fi
+
+echo -n "$pkgname done on $(hostname -s) at "
+date
+
+exit $error

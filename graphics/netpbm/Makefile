@@ -1,16 +1,35 @@
 # New ports collection makefile for:	netpbm
-# Version required:	1mar1994
 # Date created:		?
 # Whom:			jmz (original)
 #
-# $Id: Makefile,v 1.3 1995/02/07 01:32:21 asami Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	netpbm
-DISTFILES=	netpbm-1mar1994.tar.gz
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
-USE_IMAKE=	yes
+PORTNAME=	netpbm
+PORTVERSION=	9.12
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
-LIB_DEPENDS=	tiff\\.3\\.:${PORTSDIR}/graphics/tiff
+MAINTAINER=	ports@FreeBSD.org
 
-.include <bsd.port.mk>
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.4:${PORTSDIR}/graphics/png
+
+USE_GMAKE=	yes
+MAKEFILE=	GNUmakefile
+ALL_TARGET=	merge
+INSTALL_TARGET=	install-merge install-dev
+INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
+
+.include "${FILESDIR}/manpages"
+
+post-patch:
+	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/pbmplus.h
+	@${CP} ${FILESDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
+
+.include <bsd.port.post.mk>

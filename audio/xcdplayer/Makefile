@@ -1,13 +1,25 @@
 # New ports collection makefile for:    xcdplayer
-# Version required:     2.2
-# Date created:         30 Sep 1994
-# Whom:                 swallace
+# Date created:		30 Sep 1994
+# Whom:			swallace
 #
-# $Id: Makefile,v 1.3 1994/12/31 04:17:52 swallace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       xcdplayer-2.2
-MASTER_SITES=	ftp://dutepp0.et.tudelft.nl/pub/Unix/Sun/
-USE_IMAKE=      yes
+PORTNAME=	xcdplayer
+PORTVERSION=	2.2
+CATEGORIES=	audio
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
+		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	ports@FreeBSD.org
+
+USE_IMAKE=	yes
+MAN1=		xcdplayer.1
+
+post-extract:
+	${CP} ${FILESDIR}/cdrom_freebsd.c ${WRKSRC}
+	${CP} ${FILESDIR}/cdrom_freebsd.h ${WRKSRC}
+	${CP} ${WRKSRC}/xcdplayer.1 ${WRKSRC}/xcdplayer.man
 
 .include <bsd.port.mk>

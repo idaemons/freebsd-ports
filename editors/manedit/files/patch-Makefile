@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile	2001/03/20 16:46:26	1.1
++++ Makefile	2001/03/20 16:46:37
+@@ -52,7 +52,7 @@
+ #
+ GTK_CONFIG ?= gtk-config
+ GTK_CFLAGS = `$(GTK_CONFIG) --cflags`
+-CFLAGS += $(GTK_CFLAGS) -O2 -Wall \
++CFLAGS += $(GTK_CFLAGS) -Wall \
+           -DPREFIX=\"$(PREFIX)\" \
+           -DLOCALBASE=\"$(LOCALBASE)\" -DX11BASE=\"$(X11BASE)\"
+ 

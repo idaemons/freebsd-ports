@@ -1,0 +1,17 @@
+share/java/classes/gnujsp10.jar
+share/java/classes/servlet-2.0-plus.jar
+@unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true
+@unexec rmdir %D/share/java > /dev/null 2>&1 || true
+share/examples/gnujsp/date.jsp
+share/examples/gnujsp/hello.jsp
+share/examples/gnujsp/snoop.jsp
+@dirrm share/examples/gnujsp
+share/doc/gnujsp/CHANGES
+share/doc/gnujsp/FAQ
+share/doc/gnujsp/INSTALL.apache
+share/doc/gnujsp/INSTALL.jigsaw
+share/doc/gnujsp/INSTALL.vqserver.html
+share/doc/gnujsp/README
+share/doc/gnujsp/install.html
+share/doc/gnujsp/gnujsp.properties
+@dirrm share/doc/gnujsp

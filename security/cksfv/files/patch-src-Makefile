@@ -1,0 +1,20 @@
+--- src/Makefile.orig	Fri Dec 29 02:34:33 2000
++++ src/Makefile	Wed Jan  3 11:28:07 2001
+@@ -17,14 +17,15 @@
+ # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ 
+ PROG=		cksfv
++CC?=		gcc
+ CFLAGS+=	-Wall -Werror -O2 -g
+ SRCS=		cksfv.c print.c crc32.c readsfv.c newsfv.c
+ 
+ cksfv: $(SRCS)
+-	gcc -DVERSION=\"$(VERSION)\" $(CFLAGS) -o $(PROG) $(SRCS)
++	$(CC) -DVERSION=\"$(VERSION)\" $(CFLAGS) -o $(PROG) $(SRCS)
+ 
+ install: cksfv
+-	cp $(PROG) /usr/local/bin
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(PREFIX)/bin
+ 
+ clean:
+ 	rm -f *.o *~ *.core core $(PROG)

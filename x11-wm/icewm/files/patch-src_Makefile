@@ -1,0 +1,15 @@
+--- src/Makefile.orig	Sat Mar 17 05:17:37 2001
++++ src/Makefile	Sat Mar 17 19:09:15 2001
+@@ -14,9 +14,9 @@
+ 	-DPACKAGE='"icewm"' \
+ 	-DVERSION='"$(VERSION)"' \
+ 	-DEXEEXT='"$(EXEEXT)"' \
+-	-DICEWMEXE='"icewm"EXEEXT' \
+-	-DICEHELPEXE='"icehelp"EXEEXT' \
+-	-DICEHELPIDX='"$(DOCDIR)/icewm-$(VERSION)/doc/icewm.html"' \
++	-DICEWMEXE='"icewm$(EXEEXT)"' \
++	-DICEHELPEXE='"icehelp$(EXEEXT)"' \
++	-DICEHELPIDX='"$(DOCDIR)/icewm/icewm.html"' \
+         $(SYS_CFLAGS) $(SYS_INCDIRS)
+ LFLAGS = $(SYS_LIBDIRS) 
+ LIBS = $(SYS_LIBS)
