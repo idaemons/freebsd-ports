@@ -1,0 +1,34 @@
+%%RUBY_SITELIBDIR%%/rexml/attribute.rb
+%%RUBY_SITELIBDIR%%/rexml/cdata.rb
+%%RUBY_SITELIBDIR%%/rexml/child.rb
+%%RUBY_SITELIBDIR%%/rexml/comment.rb
+%%RUBY_SITELIBDIR%%/rexml/doctype.rb
+%%RUBY_SITELIBDIR%%/rexml/document.rb
+%%RUBY_SITELIBDIR%%/rexml/element.rb
+%%RUBY_SITELIBDIR%%/rexml/functions.rb
+%%RUBY_SITELIBDIR%%/rexml/instruction.rb
+%%RUBY_SITELIBDIR%%/rexml/namespace.rb
+%%RUBY_SITELIBDIR%%/rexml/node.rb
+%%RUBY_SITELIBDIR%%/rexml/output.rb
+%%RUBY_SITELIBDIR%%/rexml/parent.rb
+%%RUBY_SITELIBDIR%%/rexml/parseexception.rb
+%%RUBY_SITELIBDIR%%/rexml/quickpath.rb
+%%RUBY_SITELIBDIR%%/rexml/rexml.rb
+%%RUBY_SITELIBDIR%%/rexml/source.rb
+%%RUBY_SITELIBDIR%%/rexml/streamlistener.rb
+%%RUBY_SITELIBDIR%%/rexml/text.rb
+%%RUBY_SITELIBDIR%%/rexml/xmldecl.rb
+%%RUBY_SITELIBDIR%%/rexml/xpath.rb
+%%RUBY_SITELIBDIR%%/rexml/xpath_parser.rb
+%%RUBY_SITELIBDIR%%/rexml/dtd/attlistdecl.rb
+%%RUBY_SITELIBDIR%%/rexml/dtd/dtd.rb
+%%RUBY_SITELIBDIR%%/rexml/dtd/elementdecl.rb
+%%RUBY_SITELIBDIR%%/rexml/dtd/entitydecl.rb
+%%RUBY_SITELIBDIR%%/rexml/dtd/notationdecl.rb
+@dirrm %%RUBY_SITELIBDIR%%/rexml/dtd
+@dirrm %%RUBY_SITELIBDIR%%/rexml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/docs/tutorial.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rexml/docs
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rexml

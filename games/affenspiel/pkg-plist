@@ -1,0 +1,4 @@
+bin/affenspiel
+%%PORTDOCS%%share/doc/affenspiel/COPYRIGHT
+%%PORTDOCS%%share/doc/affenspiel/README
+%%PORTDOCS%%@dirrm share/doc/affenspiel

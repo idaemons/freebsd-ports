@@ -1,0 +1,9 @@
+bin/fam
+etc/fam.conf
+etc/rc.d/fam.sh.sample
+include/fam.h
+lib/fam/editconf.perl
+lib/libfam.a
+lib/libfam.so
+lib/libfam.so.0
+@dirrm lib/fam

@@ -1,0 +1,11 @@
+include/libpng/png.h
+@exec ln -sf libpng/%f %D/include/%f
+@unexec rm -f %D/include/%f
+include/libpng/pngconf.h
+@exec ln -sf libpng/%f %D/include/%f
+@unexec rm -f %D/include/%f
+lib/libpng.a
+lib/libpng.so.%%SHLIB_VER%%
+@exec ln -sf %f %B/libpng.so
+@unexec rm -f %B/libpng.so
+@dirrm include/libpng

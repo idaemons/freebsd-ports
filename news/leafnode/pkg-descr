@@ -1,0 +1,6 @@
+Leafnode v1.4 is a simple NNTP server designed for small sites.
+
+It "learns" which newsgroups should be downloaded based on what's
+accessed.
+
+It expires based on threads rather than articles.

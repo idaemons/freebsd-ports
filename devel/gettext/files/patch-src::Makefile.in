@@ -1,0 +1,40 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig	Tue Mar 12 21:04:19 2002
++++ src/Makefile.in	Tue Apr 30 00:01:24 2002
+@@ -173,7 +173,7 @@
+ -I../lib -I$(top_srcdir)/lib -I../intl -I$(top_srcdir)/intl
+ 
+ DEFS = -DLOCALEDIR=\"$(localedir)\" -DGETTEXTJAR=\"$(jardir)/gettext.jar\" \
+--DLIBDIR=\"$(libdir)\" -DGETTEXTDATADIR=\"$(pkgdatadir)\" \
++-DLIBDIR=\"$(prefix)/libdata\" -DGETTEXTDATADIR=\"$(pkgdatadir)\" \
+ -DPROJECTSDIR=\"$(projectsdir)\" @DEFS@
+ 
+ LDADD = ../lib/libgettextlib.la @LTLIBINTL@
+@@ -240,7 +240,7 @@
+ # use iconv().
+ libgettextsrc_la_LDFLAGS = \
+   -release @VERSION@ \
+-  ../lib/libgettextlib.la @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined
++  ../lib/libgettextlib.la @LTLIBINTL@ @LTLIBICONV@ -no-undefined
+ 
+ 
+ # Link dependencies.
+@@ -726,11 +726,11 @@
+ # Special rules for installation of auxiliary programs.
+ 
+ install-exec-local:
+-	$(mkinstalldirs) $(DESTDIR)$(libdir)/$(PACKAGE)
+-	$(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) hostname$(EXEEXT) $(DESTDIR)$(libdir)/$(PACKAGE)/hostname$(EXEEXT)
+-	$(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) urlget$(EXEEXT) $(DESTDIR)$(libdir)/$(PACKAGE)/urlget$(EXEEXT)
+-	$(INSTALL_SCRIPT) user-email $(DESTDIR)$(libdir)/$(PACKAGE)/user-email
+-	$(INSTALL_SCRIPT) $(srcdir)/project-id $(DESTDIR)$(libdir)/$(PACKAGE)/project-id
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/libdata/$(PACKAGE)
++	$(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) hostname$(EXEEXT) $(DESTDIR)$(prefix)/libdata/$(PACKAGE)/hostname$(EXEEXT)
++	$(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) urlget$(EXEEXT) $(DESTDIR)$(prefix)/libdata/$(PACKAGE)/urlget$(EXEEXT)
++	$(INSTALL_SCRIPT) user-email $(DESTDIR)$(prefix)/libdata/$(PACKAGE)/user-email
++	$(INSTALL_SCRIPT) $(srcdir)/project-id $(DESTDIR)$(prefix)/libdata/$(PACKAGE)/project-id
+ 
+ installdirs-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir)/$(PACKAGE)

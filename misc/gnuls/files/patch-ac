@@ -1,0 +1,57 @@
+*** src/Makefile.in.orig	Thu Feb 18 08:40:27 1999
+--- src/Makefile.in	Thu Feb 18 08:44:15 1999
+***************
+*** 95,103 ****
+  EXTRAdir = $(bindir)
+  EXTRA_PROGRAMS = df mvdir
+  
+! bin_PROGRAMS = chgrp chown chmod cp dd dircolors du \
+! ginstall ln dir vdir ls mkdir \
+! mkfifo mknod mv rm rmdir sync touch @DF_PROG@
+  
+  libexec_PROGRAMS = @MVDIR_PROG@
+  datadir = $(prefix)/@DATADIRNAME@
+--- 95,101 ----
+  EXTRAdir = $(bindir)
+  EXTRA_PROGRAMS = df mvdir
+  
+! bin_PROGRAMS = gnuls dir vdir dircolors
+  
+  libexec_PROGRAMS = @MVDIR_PROG@
+  datadir = $(prefix)/@DATADIRNAME@
+***************
+*** 203,209 ****
+  ls_OBJECTS =  ls$U.o ls-ls$U.o
+  ls_LDADD = $(LDADD)
+  ls_DEPENDENCIES =  ../lib/libfu.a
+! ls_LDFLAGS = 
+  mkdir_SOURCES = mkdir.c
+  mkdir_OBJECTS =  mkdir$U.o
+  mkdir_LDADD = $(LDADD)
+--- 201,207 ----
+  ls_OBJECTS =  ls$U.o ls-ls$U.o
+  ls_LDADD = $(LDADD)
+  ls_DEPENDENCIES =  ../lib/libfu.a
+! ls_LDFLAGS = -o gnuls
+  mkdir_SOURCES = mkdir.c
+  mkdir_OBJECTS =  mkdir$U.o
+  mkdir_LDADD = $(LDADD)
+***************
+*** 412,419 ****
+  	@rm -f vdir
+  	$(LINK) $(vdir_LDFLAGS) $(vdir_OBJECTS) $(vdir_LDADD) $(LIBS)
+  
+! ls: $(ls_OBJECTS) $(ls_DEPENDENCIES)
+! 	@rm -f ls
+  	$(LINK) $(ls_LDFLAGS) $(ls_OBJECTS) $(ls_LDADD) $(LIBS)
+  
+  mkdir: $(mkdir_OBJECTS) $(mkdir_DEPENDENCIES)
+--- 410,417 ----
+  	@rm -f vdir
+  	$(LINK) $(vdir_LDFLAGS) $(vdir_OBJECTS) $(vdir_LDADD) $(LIBS)
+  
+! gnuls: $(ls_OBJECTS) $(ls_DEPENDENCIES)
+! 	@rm -f gnuls
+  	$(LINK) $(ls_LDFLAGS) $(ls_OBJECTS) $(ls_LDADD) $(LIBS)
+  
+  mkdir: $(mkdir_OBJECTS) $(mkdir_DEPENDENCIES)

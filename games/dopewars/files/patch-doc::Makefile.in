@@ -1,0 +1,15 @@
+--- doc/Makefile.in.orig	Sat Mar  2 15:25:02 2002
++++ doc/Makefile.in	Mon Mar 25 09:33:45 2002
+@@ -246,10 +246,12 @@
+ 
+ 
+ install-data-local:
++ifndef NOPORTDOCS
+ 	${INSTALL} -d -m 0755 ${DOCPATH}
+ 	for doc in ${DOCS}; do \
+ 	  ${INSTALL} -m 0644 ${srcdir}/$${doc} ${DOCPATH}; \
+ 	done
++endif
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- ogg123/Makefile.in.orig	Tue Aug 14 19:42:20 2001
++++ ogg123/Makefile.in	Tue Aug 14 19:42:31 2001
+@@ -323,7 +323,7 @@
+ install-exec-am: install-binPROGRAMS
+ install-exec: install-exec-am
+ 
+-install-data-am: install-man install-docDATA
++install-data-am: install-man
+ install-data: install-data-am
+ 
+ install-am: all-am

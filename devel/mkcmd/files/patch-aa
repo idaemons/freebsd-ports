@@ -1,0 +1,11 @@
+--- bin/mkcmd/machine.h.orig	Thu Dec 30 15:41:29 1999
++++ bin/mkcmd/machine.h	Thu Dec 30 15:41:38 1999
+@@ -13,7 +13,7 @@
+ #endif
+ 
+ #if !defined(DEFDIR)
+-#define DEFDIR	"/usr/local/lib/mkcmd:/usr/local/lib/mkcmd/type"
++#define DEFDIR	"%%PREFIX%%/share/mkcmd:%%PREFIX%%/share/mkcmd/type"
+ #endif
+ 
+ #if !defined(TILDEDIR)

@@ -1,12 +1,16 @@
-@cwd /usr/local
 bin/gmake
-man/man1/gmake.1
+@unexec install-info --delete %D/info/make.info %D/info/dir
 info/make.info
-info/make.info-1
-info/make.info-2
-info/make.info-3
-info/make.info-4
-info/make.info-5
-info/make.info-6
-info/make.info-7
-info/make.info-8
+@exec install-info %D/info/make.info %D/info/dir
+share/locale/de/LC_MESSAGES/make.mo
+share/locale/es/LC_MESSAGES/make.mo
+share/locale/fr/LC_MESSAGES/make.mo
+share/locale/ko/LC_MESSAGES/make.mo
+share/locale/ja/LC_MESSAGES/make.mo
+share/locale/nl/LC_MESSAGES/make.mo
+share/locale/pl/LC_MESSAGES/make.mo
+share/locale/pt_BR/LC_MESSAGES/make.mo
+share/locale/ru/LC_MESSAGES/make.mo
+@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/* 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true

@@ -1,0 +1,44 @@
+# ex:ts=8
+# Ports collection makefile for:	ploticus
+# Date created:			Jan 23, 2002
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ploticus
+PORTVERSION=	2.03
+CATEGORIES=	math
+MASTER_SITES=	http://ploticus.sourceforge.net/download/
+DISTNAME=	plsrc${PORTVERSION:S/.//}
+
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
+		png:${PORTSDIR}/graphics/png \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		freetype:${PORTSDIR}/print/freetype2
+
+USE_XLIB=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+ALL_TARGET=	# empty
+MAKE_ENV=	LIBS="-L${LOCALBASE}/lib"
+
+MAN1=	pl.1
+
+post-patch:
+	@${PERL} -pi -e "s,%%X11BASE%%,${X11BASE},g ; \
+		s,%%LOCALBASE%%,${LOCALBASE},g ; \
+		s,^CC,#CC,g" ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pl ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${CP} ${WRKSRC}/../prefabs/* ${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/../man/man1/${MAN1} ${MAN1PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/../doc/* ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

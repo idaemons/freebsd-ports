@@ -1,16 +1,58 @@
 # New ports collection makefile for:	logo
-# Version required:	7.3
 # Date created:		22 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/22 23:05:48 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	ucblogo
-EXTRACT_SUFX=	.tar.Z
-MASTER_SITES=	ftp://anarres.cs.berkeley.edu/pub/ucblogo/
+PORTNAME=	ucblogo
+PORTVERSION=	5.1
+CATEGORIES=	lang
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		ftp://anarres.cs.berkeley.edu/pub/ucblogo/
+
+.if defined(EMACS_LOGO_MODE)
+BUILD_DEPENDS=  emacs:${PORTSDIR}/editors/emacs
+.endif
+.if defined(WITH_FULL_DOCS)
+.undef NOPORTDOCS
+BUILD_DEPENDS+= tex:${PORTSDIR}/print/teTeX \
+		ps2pdf:${PORTSDIR}/print/ghostscript-gnu
+.endif
+
+MAINTAINER=	ports@FreeBSD.org
+
+USE_XLIB=	yes
 MAKEFILE=	makefile
-WRKSRC=	${WRKDIR}
 HAS_CONFIGURE=	yes
+
+ALL_TARGET=	all
+
+.if defined(WITH_FULL_DOCS)
+ALL_TARGET+=	docs
+PLIST_SUB+=	WITH_FULL_DOCS=""
+.else
+PLIST_SUB+=	WITH_FULL_DOCS="@comment "
+.endif
+
+.if defined(EMACS_LOGO_MODE)
+ALL_TARGET+=	logo-mode
+PLIST_SUB+=	EMACS_LOGO_MODE=""
+.else
+PLIST_SUB+=	EMACS_LOGO_MODE="@comment "
+.endif
+
+pre-fetch:
+.if !defined(EMACS_LOGO_MODE)
+	@${ECHO} ""
+	@${ECHO} "      Define EMACS_LOGO_MODE to build the emacs logo mode"
+	@${ECHO} ""
+.endif
+.if !defined(WITH_FULL_DOCS)
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_FULL_DOCS to build ps, pdf and html docs"
+	@${ECHO} "      This requires teTeX and ghostscript !"
+	@${ECHO} ""
+.endif
 
 .include <bsd.port.mk>

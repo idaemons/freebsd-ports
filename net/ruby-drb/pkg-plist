@@ -1,0 +1,58 @@
+%%RUBY_SITELIBDIR%%/drb.rb
+%%RUBY_SITELIBDIR%%/mutexm.rb
+%%RUBY_SITELIBDIR%%/simpletuple.rb
+%%RUBY_SITELIBDIR%%/timerholder.rb
+%%RUBY_SITELIBDIR%%/tuplespace.rb
+%%RUBY_SITELIBDIR%%/drb/drb.rb
+%%RUBY_SITELIBDIR%%/drb/eq.rb
+%%RUBY_SITELIBDIR%%/drb/extserv.rb
+%%RUBY_SITELIBDIR%%/drb/extservm.rb
+%%RUBY_SITELIBDIR%%/drb/observer.rb
+%%RUBY_SITELIBDIR%%/drb/rinda.rb
+%%RUBY_SITELIBDIR%%/drb/timeridconv.rb
+@dirrm %%RUBY_SITELIBDIR%%/drb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/README.rd
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/cgi_drb.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darray.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darrayc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dbiff.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dcdbiff.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dchatc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dchats.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dhasen.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dhasenc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dlogc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dlogd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqlib.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqout.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqueue.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbch.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbs-acl.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbs.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/extserv_test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/holderc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/holders.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/http.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/name.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/namec.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/rindac.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/rindas.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/speedc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/speeds.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/ja/README.rd.ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/changelog.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/changelog.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/drb-ref.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/drb-ref.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/drb-ref.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/drb-ref.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/mutexm.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/mutexm.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/tuplespace-ref.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/tuplespace-ref.rd.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/drb/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/drb

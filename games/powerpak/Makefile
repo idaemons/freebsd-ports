@@ -1,0 +1,44 @@
+# New ports collection makefile for:	PowerPak
+# Date created:				19 August 1999
+# Whom:					Andrey Zakhvatov
+#
+# $FreeBSD$
+#
+
+PORTNAME=	powerpak
+PORTVERSION=	20000511
+CATEGORIES=	games
+MASTER_SITES=	http://www.angelfire.com/va/powerpakgsdk/images/
+DISTNAME=	PowerPak
+
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+		png.5:${PORTSDIR}/graphics/png \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
+
+SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
+
+USE_FREETYPE=	yes
+INSTALLS_SHLIB=	yes
+MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+MAKEFILE=	Makefile.UNIX
+
+post-extract:
+	@ /usr/bin/find ${WRKSRC} -type f | xargs ${PERL} -pi -e 's/\r//g ; \
+		s|"SDL/|"|g ; s|<SDL/|<|g'
+
+do-install:
+	@ ${INSTALL_DATA} ${WRKSRC}/libPP.a ${PREFIX}/lib
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/libPP.so.1 ${PREFIX}/lib
+	@ ${LN} -sf ${PREFIX}/lib/libPP.so.1 ${PREFIX}/lib/libPP.so
+	@ ${MKDIR} ${PREFIX}/include/PowerPak
+.for dir in . Power3D PowerDraw PowerInput PowerMedia PowerSound
+	@ ${INSTALL_DATA} ${WRKSRC}/${dir}/*.h ${PREFIX}/include/PowerPak
+	@ if [ -d ${WRKSRC}/${dir}/examples ]; then \
+		${MKDIR} ${PREFIX}/share/examples/PowerPak/${dir}; \
+		${INSTALL_DATA} ${WRKSRC}/${dir}/examples/* ${PREFIX}/share/examples/PowerPak/${dir}; \
+	  fi
+.endfor
+
+.include <bsd.port.mk>

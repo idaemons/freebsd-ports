@@ -1,0 +1,23 @@
+--- Makefile.orig	Thu Dec  6 19:56:18 2001
++++ Makefile	Thu Dec  6 19:57:58 2001
+@@ -22,12 +22,12 @@
+ CPP =		$(CC) -E
+ #CPP =		/lib/cpp
+ #CFLAGS =	-O2 # -g # -I/usr/local/lib/malloc-debug -DMALLOC_FUNC_CHECK
+-CFLAGS =	-O # -g -Wall -ansi -pedantic
++#CFLAGS =	-O # -g -Wall -ansi -pedantic
+ #-Wall -Wcomment \
+ #-Wtraditional -Wshadow \
+ #-Wpointer-arith -Wcast-qual -Wcast-align -Wconversion \
+ #-Waggregate-return -Wmissing-prototypes -Wnested-externs
+-#LDFLAGS =	-s # -lmalloc # /usr/local/lib/malloc-debug/libmalloc.a
++LDFLAGS =	-s # -lmalloc # /usr/local/lib/malloc-debug/libmalloc.a
+ MAKE =		make
+ 
+ 
+@@ -97,3 +97,5 @@
+ man/nn.1.D: man/nn.1
+ 	sh SPLITNN1
+ 
++install:
++	./inst n

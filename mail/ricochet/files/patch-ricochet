@@ -1,0 +1,146 @@
+--- ricochet.orig	Thu Feb  8 22:23:19 2001
++++ ricochet	Sun May 19 12:24:58 2002
+@@ -128,7 +128,10 @@
+ 										 ## List of receipients at ORIG_DOMAN 
+                                          ## besides the CONTACTS.
+ 
+-    EXTRA_HEADERS     => [qw/from reply-to sender errors-to return-path/], 
++##  Anything there can be easily faked, producing lots of unwanted
++##  complaints. Better will not use it.
++##  EXTRA_HEADERS     => [qw/from reply-to sender errors-to return-path/],
++    EXTRA_HEADERS     => undef,
+                                          ## Headers to analyze besides 
+                                          ## 'Received'
+ 
+@@ -227,13 +230,19 @@
+ 
+      
+     $self->debug (0, "\nANALYZING HEADERS...\n"); 
++    my $ip = $header->get ('X-Originating-IP');
+     grep { 
+         my $header_text = $_;
+         my $hdata = $header->get ($header_text); 
+         unless ($hdata eq '') {
+             $hdata =~ s/\n*$//; 
+             $self->debug (1,"o [$_] -- $hdata"); 
+-            my $host = _host ($hdata); my ($NS, $MX); 
++	    my $host = _host ($hdata);
++	    if ($host =~ /^(.*\.)?hotmail\.(msn\.)?com$/i && $ip eq '') {
++		$self->debug (2,"- FAKE hotmail.com, NO X-Originating-IP.\n");
++		goto EXTFAKE;
++	    }
++	    my ($NS, $MX);
+             if ((_nslookup ($host) && ($NS = 1)) || (_mxlookup ($host) && ($MX = 1))) { 
+                 $self->debug (2,"+ $host EXISTS.\n") if $NS; 
+                 $self->debug (2,"+ $host HAS A MX RECORD.\n") if $MX; 
+@@ -244,6 +253,7 @@
+                 }  
+             } else { $self->debug (2,"- POSSIBLY FAKED HEADER. $host DOESN'T EXIST.\n") } 
+         }
++EXTFAKE:
+     } @{$self->{EXTRA_HEADERS}}; 
+ 
+     while ($match == 0) {
+@@ -379,7 +389,7 @@
+ ## ---------------------------------------------------------------------------
+ 
+ sub authentic { 
+-    my $HOSTRE = '[\dA-Za-z\-\.]+\.[A-Za-z]{2,3}(?=[^A-Za-z\-\d])'; 
++    my $HOSTRE = '[\dA-Za-z\-\.]+\.[A-Za-z]{2,4}(?=[^A-Za-z\-\d])';
+     my $IPRE = '\d{1,3}\.\d{1,3}\.\d{1,3}.\d{1,3}';
+ 
+     my ($self, $received) = @_;
+@@ -401,13 +411,20 @@
+     
+     $received =~ /from\s(.*?)$rfc/s; my $from = " $1 "; 
+     $received =~ /by\s(.*?)$rfc/s; my $by = " $1 "; 
+-    my @orig_hosts = $from =~ /($HOSTRE)/gs; 
++
++    ## Trust only "(host.name [" part, HELO can be fake
++    my @orig_hosts = $from =~ /\([^()\[\]]*?($HOSTRE)[^()\[\]]*?\[/gs;
+     my @orig_ips = $from =~ /($IPRE)/gs; 
+     my @transmit_hosts = $by =~ /($HOSTRE)/gs; 
+-
+     my @ips = $by =~ /($IPRE)/gs; 
++
++    my $header = $self->{MAIL}->head;
++    my $ip = $header->get ('X-Originating-IP');
++
+     grep { 
+-        if (_nslookup ($_)) { 
++	if (/^(.*\.)?hotmail\.(msn\.)?com$/i && $ip eq '') {
++	    $self->debug (2, "- FAKE originating hotmail.com, NO X-Originating-IP.");
++	} elsif (_nslookup ($_)) {
+             $auth = 1;
+             $self->{ORIG_HOSTS}->add ($_); 
+             $self->debug (2,"+ $_ EXISTS."); 
+@@ -417,15 +434,21 @@
+     my $host; 
+     grep { 
+         if ($host = _ptrquery ($_)) { 
+-            $auth = 1;
+             $self->debug (2,"+ $_ RESOLVES TO $host."); 
+-            $self->{ORIG_HOSTS}->add ($host); 
++	    if ($host =~ /^(.*\.)?hotmail\.(msn\.)?com$/i && $ip eq '') {
++		$self->debug (2, "- FAKE originating IP of hotmail.com, NO X-Originating-IP.");
++	    } else {
++		$auth = 1;
++		$self->{ORIG_HOSTS}->add ($host);
++	    }
+         }
+     } @orig_ips;
+ 
+     if ($self->relaxed == 1) {  ## Check the transmit headers too.
+         grep { 
+-            if (_nslookup ($_)) { 
++	    if (/^(.*\.)?hotmail\.(msn\.)?com$/i && $ip eq '') {
++		$self->debug (2, "- FAKE transmitting hotmail.com, NO X-Originating-IP.");
++	    } elsif (_nslookup ($_)) {
+                 $auth = 1; 
+                 $self->{TRANSMIT_HOSTS}->add ($_); 
+                 $self->debug (2,"+ $_ EXISTS.");
+@@ -439,7 +462,13 @@
+     }
+ 
+     unless ($self->relaxed == 1) {    
+-        $self->{TRANSMIT_HOSTS}->add (@transmit_hosts); 
++	grep {
++	    if (/^(.*\.)?hotmail\.(msn\.)?com$/i && $ip eq '') {
++		$self->debug (2, "- FAKE transmitting hotmail.com, NO X-Originating-IP.");
++	    } else {
++                $self->{TRANSMIT_HOSTS}->add ($_); 
++	    }
++	} @transmit_hosts;
+     }
+     
+     $self->debug (2, "+ Seems Authentic.\n"); 
+@@ -574,7 +603,8 @@
+ 
+ sub initialize { 
+     my $self = shift; 
+-    my $rc = "$ENV{RICOCHET}" || "$ENV{HOME}/.ricochet"; $rc .= "/ricochetrc"; 
++    my $rc = "$ENV{RICOCHET}" || -d "$ENV{HOME}/.ricochet" ? "$ENV{HOME}/.ricochet" : "%%PREFIX%%/share/ricochet";
++    $rc .= "/ricochetrc"; 
+     Carp::croak "** Ricochet configuration file $rc doesn't exist. Aborting.\n" unless -e $rc; 
+     open (RC, $rc); 
+     grep { 
+@@ -758,8 +788,8 @@
+ 
+ sub _domain { 
+     my $host = shift; $host =~ y/A-Z/a-z/; my $domain = ''; 
+-    ($domain) = $host =~ /([\da-z\-]+\.[a-z]{2,3}\.[a-z]{2})$/;
+-    ($domain) = $host =~ /([\da-z\-]+\.[a-z]{2,3})$/ unless $domain;  
++    ($domain) = $host =~ /([\da-z\-]+\.(edu?|com?|net?|org?|gov?|int|ac|pp)\.[a-z]{2})$/;
++    ($domain) = $host =~ /([\da-z\-]+\.[a-z]{2,4})$/ unless $domain;
+     return $domain ? $domain : undef; 
+ }
+ 
+@@ -769,7 +799,7 @@
+ ## ---------------------------------------------------------------------------
+ 
+ sub _host { 
+-    my $hostre = '[\dA-Za-z\-\.]+\.[A-Za-z]{2,3}(?=[^A-Za-z\-\d]|$)'; 
++    my $hostre = '[\dA-Za-z\-\.]+\.[A-Za-z]{2,4}(?=[^A-Za-z\-\d]|$)';
+     my $data = shift; 
+     my ($host) = $data =~ /($hostre)/; 
+     return $host if $host ne ''; 

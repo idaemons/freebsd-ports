@@ -1,0 +1,23 @@
+--- sshd_config.orig	Fri Mar  8 06:01:02 2002
++++ sshd_config	Fri Mar  8 06:03:06 2002
+@@ -30,8 +30,10 @@
+ 
+ # Authentication:
+ 
+-#LoginGraceTime 600
+-#PermitRootLogin yes
++#LoginGraceTime 300
++LoginGraceTime 600
++#PermitRootLogin no
++PermitRootLogin yes
+ #StrictModes yes
+ 
+ #RSAAuthentication yes
+@@ -76,6 +78,7 @@
+ #PrintLastLog yes
+ #KeepAlive yes
+ #UseLogin no
++UseLogin yes
+ 
+ #MaxStartups 10
+ # no default banner path
