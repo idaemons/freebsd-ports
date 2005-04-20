@@ -1,0 +1,40 @@
+--- Makefile.orig	Fri Sep 27 00:05:30 1996
++++ Makefile	Tue Apr 29 02:41:08 2003
+@@ -18,8 +18,6 @@
+ 
+ MAN=man
+ 
+-CC= gcc
+-CFLAGS= -O6 -fomit-frame-pointer -Wall -pipe
+ # CFLAGS= -g -fomit-frame-pointer -Wall -pipe
+ 
+ # Look where your install program is
+@@ -32,12 +30,12 @@
+ obj = db_dump.o dbview.o version.o
+ 
+ .c.o:
+-	$(CC) ${CFLAGS} -c $*.c
++	$(CC) ${CFLAGS} $(CPPFLAGS) -c $*.c
+ 
+ all:	dbview
+ 
+ dbview: $(obj)
+-	$(CC) $(CFLAGS) -o dbview $(obj)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o dbview $(obj)
+ 
+ depend:
+ 	makedepend *.c
+@@ -56,13 +54,3 @@
+ 
+ # DO NOT DELETE
+ 
+-db_dump.o: db_dump.h /usr/include/fcntl.h /usr/include/features.h
+-db_dump.o: /usr/include/sys/cdefs.h /usr/include/sys/types.h
+-db_dump.o: /usr/include/linux/types.h /usr/include/asm/types.h
+-db_dump.o: /usr/include/gnu/types.h /usr/include/linux/fcntl.h
+-db_dump.o: /usr/include/sys/stat.h /usr/include/linux/stat.h
+-db_dump.o: /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h
+-db_dump.o: /usr/include/unistd.h /usr/include/posix_opt.h
+-db_dump.o: /usr/include/confname.h /usr/include/malloc.h
+-dbview.o: version.h db_dump.h /usr/include/stdio.h /usr/include/libio.h
+-dbview.o: /usr/include/_G_config.h /usr/include/getopt.h

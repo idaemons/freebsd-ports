@@ -1,0 +1,3 @@
+bin/xdiskusage
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

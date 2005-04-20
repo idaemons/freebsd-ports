@@ -1,0 +1,38 @@
+--- Makefile.in.orig	Sun May 16 01:02:46 2004
++++ Makefile.in	Fri Sep 10 15:03:17 2004
+@@ -30,7 +30,7 @@
+ CC=@CC@
+ LD=@LD@
+ BINFORMAT=bin
+-OPT_FLAGS=-O2
++OPT_FLAGS=@CFLAGS@
+ 
+ @SET_MAKE@
+ 
+@@ -66,7 +66,7 @@
+ DEBUG= # -DDEBUG # -DPLUGIN_TRACE
+ DEFINES=$(STREAM) -DVERSION=\"$(VERSION)\" $(DEBUG)
+ COMMON_CFLAGS=$(OPT_FLAGS) -I$(SDK)/include -I@x_includes@ -DXP_UNIX $(DEFINES)
+-COMMON_LDFLAGS=
++COMMON_LDFLAGS=@LDFLAGS@
+ NORM_CFLAGS=
+ NORM_LDFLAGS=
+ XCFLAGS=@XCFLAGS@ @X_CFLAGS@
+@@ -79,7 +79,7 @@
+ LDFLAGS=$(COMMON_LDFLAGS) $(NORM_LDFLAGS)
+ SHARED_CFLAGS=$(COMMON_CFLAGS) $(XCFLAGS)
+ 
+-## Targes
++## Targets
+ all: plugger.so plugger-$(VERSION) plugger-controller
+ 
+ 
+@@ -132,7 +132,7 @@
+ plugger-helper.o: plugger.h
+ 
+ plugger.o: plugger.c plugger.h
+-	$(CC) -c $(SHARED_CFLAGS) -o plugger.o plugger.c
++	$(CC) -c $(SHARED_CFLAGS) -DSYSCONFDIR=\"$(prefix)/etc\" -o plugger.o plugger.c
+ 
+ plugger-common.o: plugger-common.c plugger.h
+ 	$(CC) -c $(SHARED_CFLAGS) -o plugger-common.o plugger-common.c

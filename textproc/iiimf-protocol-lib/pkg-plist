@@ -1,0 +1,8 @@
+lib/libiiimp.a
+lib/libiiimp.so
+lib/libiiimp.so.0
+include/iiimp-character-subsets.h
+include/iiimp-data.h
+include/iiimp-keycode.h
+include/iiimp-opcode.h
+include/iiimp.h

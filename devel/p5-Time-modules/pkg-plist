@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time-modules/.packlist
+%%SITE_PERL%%/Time/CTime.pm
+%%SITE_PERL%%/Time/DaysInMonth.pm
+%%SITE_PERL%%/Time/JulianDay.pm
+%%SITE_PERL%%/Time/ParseDate.pm
+%%SITE_PERL%%/Time/Timezone.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time-modules
+@unexec rmdir %D/%%SITE_PERL%%/Time 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time 2>/dev/null || true

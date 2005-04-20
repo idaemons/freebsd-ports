@@ -1,0 +1,34 @@
+include/shout/shout.h
+lib/libshout.so.2
+lib/libshout.so
+lib/libshout.la
+lib/libshout.a
+%%DOCSDIR%%-%%PORTVERSION%%/index.html
+%%DOCSDIR%%-%%PORTVERSION%%/overview.html
+%%DOCSDIR%%-%%PORTVERSION%%/initialization.html
+%%DOCSDIR%%-%%PORTVERSION%%/connection.html
+%%DOCSDIR%%-%%PORTVERSION%%/datastreaming.html
+%%DOCSDIR%%-%%PORTVERSION%%/metadata.html
+%%DOCSDIR%%-%%PORTVERSION%%/datastructures.html
+%%DOCSDIR%%-%%PORTVERSION%%/shout_conn_t.html
+%%DOCSDIR%%-%%PORTVERSION%%/shout_connect.html
+%%DOCSDIR%%-%%PORTVERSION%%/shout_disconnect.html
+%%DOCSDIR%%-%%PORTVERSION%%/shout_sleep.html
+%%DOCSDIR%%-%%PORTVERSION%%/shout_init_connection.html
+%%DOCSDIR%%-%%PORTVERSION%%/shout_send_data.html
+%%DOCSDIR%%-%%PORTVERSION%%/shout_update_metadata.html
+%%DOCSDIR%%-%%PORTVERSION%%/style.css
+%%DOCSDIR%%-%%PORTVERSION%%/example.html
+%%DOCSDIR%%-%%PORTVERSION%%/example_c.html
+%%DOCSDIR%%-%%PORTVERSION%%/reference.html
+%%DOCSDIR%%-%%PORTVERSION%%/errorhandling.html
+%%DOCSDIR%%-%%PORTVERSION%%/shout_strerror.html
+%%DOCSDIR%%-%%PORTVERSION%%/README
+%%DOCSDIR%%-%%PORTVERSION%%/AUTHORS
+%%DOCSDIR%%-%%PORTVERSION%%/COPYING
+%%DOCSDIR%%-%%PORTVERSION%%/CHANGES
+share/examples/libshout-%%PORTVERSION%%/Makefile
+share/examples/libshout-%%PORTVERSION%%/example.c
+@dirrm include/shout
+@dirrm %%DOCSDIR%%-%%PORTVERSION%%
+@dirrm share/examples/libshout-%%PORTVERSION%%

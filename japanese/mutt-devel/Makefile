@@ -1,0 +1,154 @@
+# New ports collection makefile for:	ja-mutt
+# Date created:		4 Sep 2000
+# Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
+#
+# $FreeBSD$
+#
+# WITH_MUTT_CYRUS_SASL:	if defined, 'Cyrus sasl' support.
+#
+
+PORTNAME=	mutt-devel
+PORTVERSION=	${VERSION}.j${JP_VERSION}
+PORTREVISION=	2
+CATEGORIES=	japanese mail
+MASTER_SITES=	http://www.emaillab.org/mutt/1.5/ \
+		http://my.reset.jp/~iwashita/mutt/distfiles/ \
+		http://ha4.seikyou.ne.jp/home/Kohtaro.Hitomi/mutt/ \
+		http://mutt-j.sourceforge.jp/ \
+		ftp://ftp.mutt.org/mutt/devel/
+DISTNAME=	mutt-${VERSION}i
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}-ja.${JP_VERSION}${EXTRACT_SUFX} \
+		manual_ja-${MANUALVERSION}i-1${EXTRACT_SUFX} \
+		manual.ja-${MANJADATE}${EXTRACT_SUFX}
+DIST_SUBDIR=	mutt
+
+MAINTAINER=	st@be.to
+COMMENT=	Text-based mail client (Japanised development version)
+
+LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
+RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+.endif
+.if defined(WITH_MUTT_CYRUS_SASL)
+LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+.endif
+.if defined(WITH_MUTT_IDN)
+LIB_DEPENDS+=	idn.16:${PORTSDIR}/devel/libidn
+.endif
+
+.if defined(WITH_MUTT_HEADER_CACHE)
+PATCH_SITES+=	http://wwwcip.informatik.uni-erlangen.de/~sithglan/mutt/:hcache
+PATCHFILES+=	patch-${VERSION}.tg.hcache.12:hcache
+PATCH_DIST_STRIP+=	-p1
+
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+.endif
+
+CONFLICTS=	mutt-* ja-mutt-1.[024]*
+
+VERSION=	1.5.6
+JP_VERSION=	1
+MANUALVERSION=	1.4
+MANJADATE=	20040808
+
+FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
+
+NO_LATEST_LINK=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_ICONV=	yes
+USE_AUTOMAKE_VER=	14
+USE_AUTOCONF_VER=	213
+USE_OPENSSL=	yes
+WRKSRC=		${WRKDIR}/mutt-${VERSION}
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CC="${CC} -D_DONT_USE_CTYPE_INLINE_ ${DB_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang" \
+		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--without-wc-funcs \
+		--enable-flock --disable-fcntl \
+		--with-ssl \
+		--sysconfdir=${PREFIX}/etc \
+		--with-docdir=${DOCSDIR} \
+		--enable-pop --enable-imap \
+		--enable-default-japanese
+.if defined(MUTT_CONFIGURE_ARGS)
+CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
+.endif
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
+.if defined(WITH_MUTT_CYRUS_SASL)
+CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
+.endif
+.if defined(WITH_MUTT_HEADER_CACHE)
+CONFIGURE_ARGS+=	--enable-hcache
+.endif
+.if defined(WITH_MUTT_IDN)
+CONFIGURE_ARGS+=	--with-idn=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-idn
+.endif
+
+NOMANCOMPRESS=	yes
+MAN1=		flea.1 mutt.1 muttbug.1 mutt_dotlock.1
+MAN5=		muttrc.5 mbox.5
+
+DIFFDIR=	${WRKDIR}/${DISTNAME}-ja.${JP_VERSION}
+DIFFNAME=	patch-${VERSION}.tt.ja.${JP_VERSION}
+
+pre-patch:
+	(cd ${WRKSRC}; ${PATCH} -p1 < ${DIFFDIR}/${DIFFNAME})
+
+pre-configure:
+.if defined(NOPORTDOCS)
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extrapatch-nodoc-aa
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extrapatch-nodoc-ab
+.endif
+	(cd ${WRKSRC}; ${ACLOCAL} -I m4; ${AUTOHEADER})
+
+post-configure:
+	@${REINPLACE_CMD} -E "\
+		s|^(s%\@ACLOCAL\@%).+(%g)|\1${ACLOCAL}\2|; \
+		s|^(s%\@AUTOCONF\@%).+(%g)|\1${AUTOCONF}\2|; \
+		s|^(s%\@AUTOMAKE\@%).+(%g)|\1${AUTOMAKE}\2|; \
+		s|^(s%\@AUTOHEADER\@%).+(%g)|\1${AUTOHEADER}\2|" \
+		${BUILD_WRKSRC}/config.status
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/INSTALL.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/NEWS.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/PGP-Notes.ja.txt ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/README.SECURITY.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/README.SSL.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/README.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/applying-patches.ja.txt ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/smime-notes.ja.txt ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/html/INSTALL.JA-PATCH.ja.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/html/README.JA-PATCH.ja.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.en.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.ja.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/html/usage-japanese.ja.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/samples/mutt-en.rc ${DOCSDIR}/samples
+	${INSTALL_DATA} ${DIFFDIR}/samples/mutt-ja.rc ${DOCSDIR}/samples
+	${INSTALL_DATA} ${DIFFDIR}/samples/sample.muttrc-tt ${DOCSDIR}/samples
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.sgml ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual.ja.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual.ja.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual.ja.sgml ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

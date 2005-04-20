@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig	Fri Oct 18 21:56:01 2002
++++ configure	Mon Oct 21 11:56:31 2002
+@@ -13050,7 +13050,7 @@
+     CEFLAGS="$CEFLAGS -I$with_ssl/include"
+   fi
+   LDEFLAGS="$LDEFLAGS -L$with_ssl/lib"
+-  LIBS="$LIBS -lssl -lcrypto"
++  LIBS="$LIBS -lssl -lcrypto $RSAGLUE"
+   cat >>confdefs.h <<\_ACEOF
+ #define SSL_ENABLE 1
+ _ACEOF

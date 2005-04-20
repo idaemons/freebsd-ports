@@ -1,16 +1,22 @@
 # New ports collection makefile for:	xarchie
-# Version required:	2.0.9
 # Date created:		24 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.3 1994/10/06 02:57:01 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	xarchie-2.0.10
-MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/applications/
-MASTER_SITES+=	ftp://ftp.funet.fi/pub/X11/contrib/applications/
+PORTNAME=	xarchie
+PORTVERSION=	2.0.10
+PORTREVISION=	1
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X11 front-end program for the archie network search service
 
 USE_IMAKE=	yes
-DEPENDS=	${PORTSDIR}/net/archie
+USE_GMAKE=	yes
+MAN1=		xarchie.1
 
 .include <bsd.port.mk>

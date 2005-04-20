@@ -1,0 +1,4 @@
+lib/tya/libtya.so
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/tya

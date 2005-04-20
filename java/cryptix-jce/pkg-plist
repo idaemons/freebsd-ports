@@ -1,0 +1,4 @@
+%%JAVAJARDIR%%/cryptix-jce-api.jar
+%%JAVAJARDIR%%/cryptix-jce-compat.jar
+%%JAVAJARDIR%%/cryptix-jce-provider.jar
+%%JAVAJARDIR%%/cryptix-jce-tests.jar

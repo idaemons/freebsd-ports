@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+@exec ln -sf %D/bin/etex %D/bin/jadetex
+@exec ln -sf %D/bin/pdfetex %D/bin/pdfjadetex
+@unexec rm -f %D/bin/jadetex
+@unexec rm -f %D/bin/pdfjadetex
+share/texmf/tex/jadetex/dsssl.def
+share/texmf/tex/jadetex/jadetex.ltx
+share/texmf/web2c/jadetex.fmt
+share/texmf/web2c/pdfjadetex.fmt
+@unexec rmdir %D/share/texmf/tex/jadetex 2> /dev/null || true
+@exec %D/bin/mktexlsr
+@unexec %D/bin/mktexlsr

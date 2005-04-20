@@ -1,0 +1,22 @@
+--- configure.orig	Mon Dec 20 11:39:59 2004
++++ configure	Thu Feb 17 19:07:53 2005
+@@ -24438,8 +24438,10 @@
+   *)
+         PKGTEST="no"
+     EXTRA_SSL=$OPT_SSL
++    if ! [ "$EXTRA_SSL" = "/usr" ]; then
+     LDFLAGS="$LDFLAGS -L$EXTRA_SSL/lib$libsuff"
+     CPPFLAGS="$CPPFLAGS -I$EXTRA_SSL/include/openssl -I$EXTRA_SSL/include"
++    fi
+     ;;
+   esac
+ 
+@@ -31950,7 +31952,7 @@
+ main ()
+ {
+ #ifndef basename
+-  char *p = (char *) basename;
++  char *(*p)(const char *) = basename;
+ #endif
+ 
+   ;

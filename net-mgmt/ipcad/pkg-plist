@@ -1,0 +1,5 @@
+bin/ipcad
+etc/ipcad.conf
+etc/ipcad.conf.default
+etc/ipcad.conf.simple
+etc/rc.d/ipcad.sh

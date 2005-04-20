@@ -1,0 +1,19 @@
+%%SITE_PERL%%/HTMLObject/Base.pm
+%%SITE_PERL%%/HTMLObject/FrameSet.pm
+%%SITE_PERL%%/HTMLObject/GetCookie.pm
+%%SITE_PERL%%/HTMLObject/Normal.pm
+%%SITE_PERL%%/HTMLObject/ReadCookie.pm
+%%SITE_PERL%%/auto/HTMLObject/Base/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/FrameSet/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/GetCookie/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/Normal/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/ReadCookie/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTMLObject/.packlist
+@dirrm %%SITE_PERL%%/HTMLObject
+@dirrm %%SITE_PERL%%/auto/HTMLObject/Base
+@dirrm %%SITE_PERL%%/auto/HTMLObject/FrameSet
+@dirrm %%SITE_PERL%%/auto/HTMLObject/GetCookie
+@dirrm %%SITE_PERL%%/auto/HTMLObject/Normal
+@dirrm %%SITE_PERL%%/auto/HTMLObject/ReadCookie
+@dirrm %%SITE_PERL%%/auto/HTMLObject
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTMLObject

@@ -1,0 +1,30 @@
+bin/tagtool
+share/gnome/applications/tagtool.desktop
+share/gnome/pixmaps/TagTool.png
+share/locale/cs/LC_MESSAGES/tagtool.mo
+share/locale/de/LC_MESSAGES/tagtool.mo
+share/locale/en_GB/LC_MESSAGES/tagtool.mo
+share/locale/es/LC_MESSAGES/tagtool.mo
+share/locale/fr/LC_MESSAGES/tagtool.mo
+share/locale/it/LC_MESSAGES/tagtool.mo
+share/locale/pt/LC_MESSAGES/tagtool.mo
+%%DATADIR%%/TagTool.png
+%%DATADIR%%/edit.png
+%%DATADIR%%/fail.png
+%%DATADIR%%/file.png
+%%DATADIR%%/folder.png
+%%DATADIR%%/graydot.png
+%%DATADIR%%/greendot.png
+%%DATADIR%%/info.png
+%%DATADIR%%/ok.png
+%%DATADIR%%/preferences.dtd
+%%DATADIR%%/tab_clear.png
+%%DATADIR%%/tab_edit.png
+%%DATADIR%%/tab_playlist.png
+%%DATADIR%%/tab_rename.png
+%%DATADIR%%/tab_tag.png
+%%DATADIR%%/tagtool.glade
+%%DATADIR%%/warn.png
+@dirrm %%DATADIR%%
+@unexec rmdir /usr/local/share/locale/en_GB/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir /usr/local/share/locale/en_GB 2>/dev/null || true

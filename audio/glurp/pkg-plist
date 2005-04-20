@@ -1,0 +1,15 @@
+bin/glurp
+%%DATADIR%%/pixmaps/media-audiofile.png
+%%DATADIR%%/pixmaps/media-stream.png
+%%DATADIR%%/pixmaps/player-prev.png
+%%DATADIR%%/pixmaps/player-play.png
+%%DATADIR%%/pixmaps/player-pause.png
+%%DATADIR%%/pixmaps/player-stop.png
+%%DATADIR%%/pixmaps/player-next.png
+%%DATADIR%%/pixmaps/player-repeat.png
+%%DATADIR%%/pixmaps/player-shuffle.png
+%%DATADIR%%/pixmaps/online.png
+%%DATADIR%%/pixmaps/offline.png
+%%DATADIR%%/glurp.glade
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%

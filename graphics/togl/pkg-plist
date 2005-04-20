@@ -1,0 +1,9 @@
+%%TOGL_INSTDIR%%/double.so
+%%TOGL_INSTDIR%%/gears.so
+%%TOGL_INSTDIR%%/index.so
+%%TOGL_INSTDIR%%/overlay.so
+%%TOGL_INSTDIR%%/texture.so
+%%TOGL_INSTDIR%%/togl.so
+%%TOGL_INSTDIR%%/togl.h
+%%TOGL_INSTDIR%%/pkgIndex.tcl
+@dirrm %%TOGL_INSTDIR%%

@@ -1,0 +1,13 @@
+bin/stella
+%%PORTDOCS%%%%DOCSDIR%%/graphics/chucky_cheese.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/circuit.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/console.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/jr_pacman.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/pacman.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/secret_quest.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/space_invaders.png
+%%PORTDOCS%%%%DOCSDIR%%/stella.html
+%%DATADIR%%/stella.pro
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/graphics
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

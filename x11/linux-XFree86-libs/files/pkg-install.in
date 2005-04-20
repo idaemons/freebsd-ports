@@ -1,0 +1,8 @@
+#!/bin/sh
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+export PATH
+
+if [ "$2" = "POST-INSTALL" ]; then
+	chroot %%LINUXBASE%% /sbin/ldconfig
+fi

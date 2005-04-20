@@ -1,0 +1,69 @@
+--- bin/ifort.orig	Thu Nov 25 15:41:18 2004
++++ bin/ifort	Thu Nov 25 15:47:00 2004
+@@ -1,6 +1,11 @@
+ #!/bin/sh
+ 
+-if [ -z INTEL_LICENSE_FILE ]
++ICC_LOCALBASE=%%ICC_LOCALBASE%%
++export ICC_LOCALBASE;
++GXX_ROOT=<INSTALLDIR>/lib
++export GXX_ROOT
++
++if [ -z "$INTEL_LICENSE_FILE" ]
+ then
+ INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
+ else
+@@ -8,7 +13,7 @@
+ fi
+ export INTEL_LICENSE_FILE;
+ 
+-if [ -z LD_LIBRARY_PATH ]
++if [ -z "$LD_LIBRARY_PATH" ]
+ then 
+  LD_LIBRARY_PATH=<INSTALLDIR>/lib;
+ else
+@@ -16,7 +21,7 @@
+ fi
+ export LD_LIBRARY_PATH;
+ 
+-if [ -z PATH ]
++if [ -z "$PATH" ]
+ then
+  PATH=<INSTALLDIR>/bin;
+ else
+@@ -24,11 +29,31 @@
+ fi
+ export PATH;
+ 
+-export -n IA32ROOT; unset IA32ROOT;
+-
+ if [ $# != 0 ]
+ then
+- exec -a "<INSTALLDIR>/bin/ifort" <INSTALLDIR>/bin/ifortbin "$@";
++ i=0
++ argc=$#
++ while [ $i -lt $argc ] ; do
++  val1=$1
++  shift
++  val2=${val1#"-openmp"}
++  if [ ${#val1} -gt ${#val2} ] ; then
++   echo "Sorry, option '$val1' is not supported on FreeBSD."
++   exit 1
++  fi
++  val2=${val1#"-par"}
++  if [ ${#val1} -gt ${#val2} ] ; then
++   echo "Sorry, option '$val1' is not supported on FreeBSD."
++   exit 1
++  fi
++  if [ "${val1}" = "-Kpic" ] || [ "${val1}" = "-KPIC" ] || \
++   [ "${val1}" = "-fpic" ] || [ "${val1}" = "-fPIC" ] ; then
++   set -- "$@" "-Qoption,ld,-PIC"
++  fi
++  set -- "$@" "$val1"
++  i=$(($i+1))
++ done
++ exec <INSTALLDIR>/bin/ifortbin "$@";
+ else
+- exec -a "<INSTALLDIR>/bin/ifort" <INSTALLDIR>/bin/ifortbin;
++ exec <INSTALLDIR>/bin/ifortbin;
+ fi

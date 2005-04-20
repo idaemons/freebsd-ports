@@ -1,0 +1,35 @@
+sbin/cfagent
+sbin/cfdoc
+sbin/cfenvd
+sbin/cfenvgraph
+sbin/cfexecd
+sbin/cfkey
+sbin/cfrun
+sbin/cfservd
+sbin/cfshow
+sbin/vicf
+%%EXAMPLESDIR%%/cf.chflags.example
+%%EXAMPLESDIR%%/cf.freebsd.example
+%%EXAMPLESDIR%%/cf.ftp.example
+%%EXAMPLESDIR%%/cf.groups.example
+%%EXAMPLESDIR%%/cf.linux.example
+%%EXAMPLESDIR%%/cf.main.example
+%%EXAMPLESDIR%%/cf.motd.example
+%%EXAMPLESDIR%%/cf.preconf.example
+%%EXAMPLESDIR%%/cf.services.example
+%%EXAMPLESDIR%%/cf.site.example
+%%EXAMPLESDIR%%/cf.solaris.example
+%%EXAMPLESDIR%%/cf.sun4.example
+%%EXAMPLESDIR%%/cf.users.example
+%%EXAMPLESDIR%%/cfagent.conf-advanced.example
+%%EXAMPLESDIR%%/cfagent.conf.example
+%%EXAMPLESDIR%%/cfengine.el
+%%EXAMPLESDIR%%/cfrc.example
+%%EXAMPLESDIR%%/cfrun.hosts.example
+%%EXAMPLESDIR%%/cfservd.conf.example
+%%EXAMPLESDIR%%/update.conf.example
+%%DOCSDIR%%/cfengine-Anomalies.html
+%%DOCSDIR%%/cfengine-Reference.html
+%%DOCSDIR%%/cfengine-Tutorial.html
+@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%

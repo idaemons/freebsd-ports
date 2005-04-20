@@ -1,0 +1,14 @@
+include/sdts++/builder/sb_Spatial.h
+include/sdts++/logical/sl_Object.h
+include/sdts++/logical/sl_Ring.h
+include/sysutils/fileutils.h
+include/sysutils/stringutils.h
+lib/libsdts++.a
+lib/libsdts++.so
+lib/libsdts++.so.0
+lib/libsysutils.a
+lib/libsdts++.la
+@dirrm include/sysutils
+@dirrm include/sdts++/logical
+@dirrm include/sdts++/builder
+@dirrm include/sdts++

@@ -1,3 +1,10 @@
-@cwd /usr/X11R6
-bin/rxvt
-man/man1/rxvt.1.gz
+bin/urxvt
+bin/urxvtc
+bin/urxvtd
+%%PORTDOCS%%%%EXAMPLESDIR%%/example.menu
+%%PORTDOCS%%%%EXAMPLESDIR%%/jedmenu.sl
+%%PORTDOCS%%%%EXAMPLESDIR%%/menu
+%%PORTDOCS%%%%EXAMPLESDIR%%/rxvt.menu
+%%PORTDOCS%%%%EXAMPLESDIR%%/rxvt.zh-menu
+%%PORTDOCS%%%%EXAMPLESDIR%%/terminal.menu
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

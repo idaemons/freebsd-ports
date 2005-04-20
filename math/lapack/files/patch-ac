@@ -1,0 +1,32 @@
+--- Makefile.orig	Wed May 17 18:33:22 2000
++++ Makefile	Fri Jun  2 17:38:38 2000
+@@ -6,10 +6,17 @@
+ 
+ include make.inc
+ 
++.if defined(ENABLE_TESTING) && ${ENABLE_TESTING} == "YES"
+ all: install lib testing blas_testing timing blas_timing
++.else
++all: install lib
++.endif
+ 
+-lib: lapacklib tmglib
+-#lib: blaslib lapacklib tmglib
++.if defined(ENABLE_TESTING) && ${ENABLE_TESTING} == "YES"
++lib: blaslib lapacklib tmglib fpmclr_.o
++.else
++lib: lapacklib blaslib
++.endif
+ 
+ clean: cleanlib cleantesting cleantiming
+ 
+@@ -18,7 +25,8 @@
+ 	  ./testdlamch; ./testsecond; ./testdsecnd; \
+ 	  cp lsame.f ../BLAS/SRC/; cp lsame.f ../SRC; \
+ 	  cp slamch.f ../SRC/; cp dlamch.f ../SRC/; \
+-	  cp second.f ../SRC/; cp dsecnd.f ../SRC/ )
++	  cp second.f ../SRC/; cp dsecnd.f ../SRC/; \
++	  cp etime_.c ../SRC/ )
+ 
+ blaslib:
+ 	( cd BLAS/SRC; $(MAKE) )

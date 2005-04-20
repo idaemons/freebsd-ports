@@ -1,0 +1,47 @@
+# Ports collection makefile for:  msmtp
+# Date created:                   22 Aug 2003
+# Whom:                           R.I.Pienaar <rip@devco.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	msmtp
+PORTVERSION=	1.2.4
+CATEGORIES=	mail ipv6
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	msmtp
+
+MAINTAINER=	novel@FreeBSD.org
+COMMENT=	SMTP plugin for MUAs
+
+GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAN1=		msmtp.1
+PLIST_FILES=	bin/msmtp
+
+CONFLICTS=	msmtp-devel-*
+
+.if !defined(WITH_OPENSSL)
+WITH_GNUTLS=	yes
+.endif
+
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+.endif
+
+.if defined(WITH_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--with-ssl=openssl
+.endif
+
+.if defined(WITH_GNU_SASL)
+LIB_DEPENDS+=	gsasl.9:${PORTSDIR}/security/gsasl
+.else
+CONFIGURE_ARGS+=	--disable-gsasl
+.endif
+
+.include <bsd.port.mk>

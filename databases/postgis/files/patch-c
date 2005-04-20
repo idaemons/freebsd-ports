@@ -1,0 +1,17 @@
+--- Makefile	Mon Jan 31 12:51:48 2005
++++ Makefile	Mon Jan 31 12:56:14 2005
+@@ -5,8 +5,14 @@
+ #-----------------------------------------------------
+ 
+ all: liblwgeom loaderdumper
++ifneq ($(WITH-DOC),)
++	$(MAKE) -C doc chunked-html
++endif
+ 
+ install: all liblwgeom-install loaderdumper-install
++ifneq ($(WITH-DOC),)
++	$(MAKE) INSTALL_DATA="$(INSTALL_DATA)" DOCSDIR=$(DOCSDIR) -C doc install
++endif
+ 
+ uninstall: liblwgeom-uninstall loaderdumper-uninstall
+ 

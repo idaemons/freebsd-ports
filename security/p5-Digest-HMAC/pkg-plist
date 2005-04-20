@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Digest/HMAC.pm
+%%SITE_PERL%%/Digest/HMAC_MD5.pm
+%%SITE_PERL%%/Digest/HMAC_SHA1.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/HMAC/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/HMAC 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest      2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Digest                         2>/dev/null || true

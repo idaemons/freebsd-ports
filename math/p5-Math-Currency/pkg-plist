@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Math/Currency.pm
+%%SITE_PERL%%/Math/Currency/EUR.pm
+%%SITE_PERL%%/Math/Currency/GBP.pm
+%%SITE_PERL%%/Math/Currency/JPY.pm
+@dirrm %%SITE_PERL%%/Math/Currency
+@unexec rmdir %D/%%SITE_PERL%%/Math 2>/dev/null || true

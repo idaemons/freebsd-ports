@@ -1,0 +1,27 @@
+bin/mimedefang-multiplexor
+bin/mimedefang
+bin/mimedefang.pl
+bin/md-mx-ctrl
+bin/watch-mimedefang
+etc/rc.d/mimedefang.sh-dist
+@unexec if cmp -s %D/etc/mimedefang/mimedefang-filter %D/etc/mimedefang/mimedefang-filter.example; then rm -f %D/etc/mimedefang/mimedefang-filter; fi
+etc/mimedefang/mimedefang-filter.example
+@unexec if cmp -s %D/etc/mimedefang/sa-mimedefang.cf %D/etc/mimedefang/sa-mimedefang.cf.example; then rm -f %D/etc/mimedefang/sa-mimedefang.cf; fi
+etc/mimedefang/sa-mimedefang.cf.example
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.ANOMY
+%%PORTDOCS%%%%DOCSDIR%%/README.SPAMASSASSIN
+%%PORTDOCS%%%%DOCSDIR%%/README.SOPHIE
+%%PORTDOCS%%%%DOCSDIR%%/README.NONROOT
+%%PORTDOCS%%%%DOCSDIR%%/README.SECURITY
+%%PORTDOCS%%%%DOCSDIR%%/README.TRU64
+%%PORTDOCS%%%%DOCSDIR%%/README.IRIX
+%%PORTDOCS%%%%EXAMPLESDIR%%/suggested-minimum-filter-for-windows-clients
+%%PORTDOCS%%%%EXAMPLESDIR%%/stream-by-domain-filter
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm etc/mimedefang
+@cwd /var/spool
+@dirrm MIMEDefang
+@dirrm MD-Quarantine

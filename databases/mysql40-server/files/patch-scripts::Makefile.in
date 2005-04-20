@@ -1,0 +1,38 @@
+--- scripts/Makefile.in.orig	Mon Dec 27 16:29:57 2004
++++ scripts/Makefile.in	Sun Jan  9 10:27:55 2005
+@@ -292,25 +292,7 @@
+ uname_prog = @uname_prog@
+ vio_dir = @vio_dir@
+ vio_libs = @vio_libs@
+-bin_SCRIPTS = @server_scripts@ \
+-			msql2mysql \
+-			mysql_config \
+-			mysql_fix_privilege_tables \
+-                        mysql_fix_extensions \
+-			mysql_setpermission \
+-			mysql_secure_installation \
+-			mysql_zap \
+-			mysqlaccess \
+-			mysqlbug \
+-			mysql_convert_table_format \
+-			mysql_find_rows \
+-			mysqlhotcopy \
+-			mysqldumpslow \
+-			mysql_explain_log \
+-			mysql_tableinfo \
+-			mysqld_multi \
+-			make_win_src_distribution \
+-			make_win_binary_distribution
++bin_SCRIPTS =
+ 
+ EXTRA_SCRIPTS = make_binary_distribution.sh \
+ 			make_sharedlib_distribution.sh \
+@@ -489,7 +471,7 @@
+ uninstall: uninstall-am
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
+ 
+ installcheck: installcheck-am
+ install-strip:

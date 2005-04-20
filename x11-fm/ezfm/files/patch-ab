@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- ezfm.h.orig	Wed Oct  6 00:01:29 1999
++++ ezfm.h	Thu Oct 31 18:05:27 2002
+@@ -52,8 +52,11 @@
+ #define REMOVABLE_DRIVES
+ #endif
+ /*************************************************************/
+-EXTERN   int erron, sys_nerr;
++EXTERN   int erron;
++#ifndef __FreeBSD__
++EXTERN   int sys_nerr;
+ EXTERN   char *sys_errlist[];
++#endif
+ #define syserr(en) (((en) >= 0 && (en) < sys_nerr) ? sys_errlist[(en)] : "Unknown error")
+ #define SECONDS_IN_YEAR         31536000
+ #define SelectionBackground     "yellow"

@@ -1,0 +1,6 @@
+sbin/argus
+@exec mkdir -p %D/argus/archive
+%%PORTDOCS%%share/doc/argus-2.0/html/man/argus.5.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/argus.8.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/argus.conf.5.html
+@unexec rmdir %D/argus/archive %D/argus >/dev/null 2>&1 || true

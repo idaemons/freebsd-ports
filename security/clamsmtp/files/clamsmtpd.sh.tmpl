@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: clamsmtpd
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
+#
+# Add the fellowing line to /etc/rc.conf to enable clamsmtpd:
+#
+# clamsmtpd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=clamsmtpd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/${name}
+sig_stop=-KILL
+
+load_rc_config ${name}
+
+clamsmtpd_enable=${clamsmtpd_enable-"NO"}
+clamsmtpd_conf=${clamsmtpd_conf-"%%PREFIX%%/etc/clamsmtpd.conf"}
+clamsmtpd_pid=${clamsmtpd_pid-"%%CLAMAV_PID_DIR%%/clamsmtpd.pid"}
+clamsmtpd_debug=${clamsmtpd_debug-"0"}
+
+command_args="-f ${clamsmtpd_conf} -p ${clamsmtpd_pid}"
+
+pidfile=${clamsmtpd_pid}
+
+run_rc_command "$1"

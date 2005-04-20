@@ -1,0 +1,4 @@
+libexec/apache%%APACHE%%/mod_fastcgi.so
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.TERMS
+%%PORTDOCS%%%%DOCSDIR%%/mod_fastcgi.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

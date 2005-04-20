@@ -1,0 +1,113 @@
+--- util/fluxbox-generate_menu.in.orig	Mon Jan 17 19:06:02 2005
++++ util/fluxbox-generate_menu.in	Mon Jan 17 19:19:37 2005
+@@ -45,7 +45,7 @@
+ 
+ 
+ WHOAMI=`whoami`
+-[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin/:/usr/local/bin:/usr/X11R6/bin
++[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin/:%%LOCALBASE%%/bin:%%X11BASE%%/bin
+ 
+ # Check for Imlib2-support
+ if ( fluxbox -info 2> /dev/null | grep -- -IMLIB ); then
+@@ -85,8 +85,8 @@
+ 
+   Only for packagers:
+ 
+-    -p  prefix; default is /usr/local
+-    -n  Gnome-prefix; /opt, /usr, /usr/X11R6 and /usr/local autodetected
++    -p  prefix; default is @PREFIX@
++    -n  Gnome-prefix; %%X11BASE%%, %%LOCALBASE%% and /opt autodetected
+     -q  KDE-prefix; idem dito
+ 
+ 
+@@ -116,7 +116,7 @@
+ case `uname` in
+     Linux|*BSD)
+         find_it() {
+-            which $1 > /dev/null 2>&1 && shift && $*
++            which $1 > /dev/null 2>&1 && shift && "$@"
+         }
+ 
+         find_it_options() {
+@@ -825,19 +825,19 @@
+ # FBRUNOPTIONS='-font 10x20 -fg grey -bg black -title run'
+ 
+ # --- PREFIX'es
+-# These are prefixes; So if fluxbox is installed in /usr/bin/fluxbox
+-# your prefix is: /usr
++# These are prefixes; So if fluxbox is installed in @PREFIX@/bin/fluxbox
++# your prefix is: @PREFIX@
+ 
+-# fluxbox-generate already looks in /usr/X11R6, /usr, /usr/local and /opt so
++# fluxbox-generate already looks in %%LOCALBASE%%, %%X11BASE%% and /opt so
+ # there should be no need to specify them.
+ #
+-# PREFIX=/usr
+-# GNOME_PREFIX=/opt/gnome
+-# KDE_PREFIX=/opt/kde
++# PREFIX=@PREFIX@
++# GNOME_PREFIX=%%X11BASE%%
++# KDE_PREFIX=%%LOCALBASE%%
+ 
+ 
+ # Sepparate the list of background-dirs with semicolumns ':'
+-# BACKGROUND_DIRS="${HOME}/.fluxbox/backgrounds/:/usr/local/share/fluxbox/backgrounds/:/usr/share/wallpapers"
++# BACKGROUND_DIRS="${HOME}/.fluxbox/backgrounds/:@PREFIX@/share/fluxbox/backgrounds/:%%X11BASE%%/share/wallpapers"
+ 
+ 
+ # --- Boolean variables.
+@@ -962,7 +962,7 @@
+ 
+ 
+ # gnome prefix
+-for GNOME_PREFIX in "${GNOME_PREFIX}" /usr/local /usr/X11R6 /usr /opt "${PREFIX}"; do
++for GNOME_PREFIX in "${GNOME_PREFIX}" %%X11BASE%% %%LOCALBASE%% /opt "${PREFIX}"; do
+     if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
+         break;
+     fi
+@@ -970,7 +970,7 @@
+ # Will remain $PREFIX if all else fails
+ 
+ # kde prefix
+-for KDE_PREFIX in "${KDE_PREFIX}" /usr/local /usr/X11R6 /usr /opt "${PREFIX}"; do
++for KDE_PREFIX in "${KDE_PREFIX}" %%LOCALBASE%% %%X11BASE%% /opt "${PREFIX}"; do
+     if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
+         break;
+     fi
+@@ -1015,7 +1015,7 @@
+ else
+     [ -n "$MY_BROWSER" ] && echo "Warning: you chose an invalid browser." >&2
+     #The precise order is up for debate.
+-    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird opera skipstone mozilla galeon konqueror dillo netscape w3m links lynx; do
++    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird linux-opera opera skipstone mozilla galeon konqueror dillo netscape w3m links lynx; do
+         if find_it $browser; then
+             DEFAULT_BROWSER=$browser
+             break
+@@ -1055,7 +1055,8 @@
+     links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
+     firefox|firebird|mozilla|phoenix|galeon|dillo|netscape) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
+     konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
+-    opera) append "[exec] (opera) {env QT_XFT=true opera}" ;;
++    linux-opera) append "[exec] (linux-opera) {linux-opera}" ;;
++    opera) append "[exec] (opera) {opera}" ;;
+     MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
+     MozillaFirefox) append "[exec] (firefox) {MozillaFirefox}" ;;
+     *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
+@@ -1073,7 +1074,8 @@
+     append_submenu "${BROWSERMENU}"
+         normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla dillo netscape
+         find_it links       append "[exec]   (links-graphic) {links -driver x ${HOMEPAGE}}"
+-        find_it opera       append "[exec]   (opera) {env QT_XFT=true opera}"
++        find_it linux-opera append "[exec]   (linux-opera) {linux-opera}"
++        find_it opera       append "[exec]   (opera) {opera}"
+         find_it konqueror   append "[exec]   (konqueror) {kfmclient openProfile webbrowsing}"
+         find_it links       append "[exec]   (links) {${DEFAULT_TERM} -e links ${HOMEPAGE}}"
+         find_it w3m         append "[exec]   (w3m) {${DEFAULT_TERM} -e w3m ${HOMEPAGE}}"
+@@ -1241,7 +1243,6 @@
+ 
+     append_menu "[submenu] (${SYSTEMSTYLES}) {${STYLEMENUTITLE}}"
+         append "[stylesdir] (${PREFIX}/share/fluxbox/styles)"
+-        append "[stylesdir] (/usr/share/commonbox/styles/)"
+     append_menu_end
+ 
+     append_menu "[submenu] (${USERSTYLES}) {${STYLEMENUTITLE}}"

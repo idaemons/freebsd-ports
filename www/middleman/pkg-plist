@@ -1,0 +1,10 @@
+bin/mman
+etc/rc.d/mman.sh.sample
+etc/mman.xml.dist
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/filter.pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd /
+@exec mkdir -p %%MMAN_CACHE%%
+@unexec rmdir %D/%%MMAN_CACHE%% 2>/dev/null || true
+@dirrm /var/cache

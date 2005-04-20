@@ -1,0 +1,14 @@
+bin/ldapdiff
+etc/ldapdiff.conf.sample
+share/ldapdiff/plugins/ldapskeleton.c
+share/ldapdiff/samples/addentry
+share/ldapdiff/samples/webtomware.init.ldif
+share/ldapdiff/samples/webtomware.user.ldif
+@dirrm share/ldapdiff/plugins
+@dirrm share/ldapdiff/samples
+@dirrm share/ldapdiff
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,13 +1,21 @@
-# New ports collection makefile for:    xchomp
-# Version required:     1.1
-# Date created:         4 Jan 1995
-# Whom:                 swallace
+# New ports collection makefile for:    xrisk
+# Date created:		4 Jan 1995
+# Whom:			swallace
 #
-# $Id: Makefile,v 1.1.1.1 1995/01/04 08:59:25 swallace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       xrisk-2.13
-MASTER_SITES=   ftp://geocub.greco-prog.fr/pub/Games/
-EXTRACT_SUFX=   .tar.Z
+PORTNAME=	xrisk
+PORTVERSION=	2.15
+CATEGORIES=	games
+MASTER_SITES=	http://my.pages.de/pub/comp/unix/games/xrisk/old/
+
+MAINTAINER=	adam-ports@blacktabby.org
+COMMENT=	A game for X11, much like the popular board game
+
+USE_IMAKE=	yes
+MAN6=		xrisk.6
+
+RESTRICTED=	"Possible trademark infringement"
 
 .include <bsd.port.mk>

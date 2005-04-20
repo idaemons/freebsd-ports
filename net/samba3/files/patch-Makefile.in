@@ -1,0 +1,46 @@
+--- Makefile.in.orig	Sun Nov  7 21:43:23 2004
++++ Makefile.in	Mon Nov  8 17:40:48 2004
+@@ -99,6 +99,7 @@
+ LIBSMBCLIENT_MAJOR=0
+ LIBSMBCLIENT_MINOR=1
+ 
++NSS_VERSION=1
+ 
+ FLAGS1 = $(CFLAGS) @FLAGS1@ -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper  -I. $(CPPFLAGS) -I$(srcdir)
+ FLAGS2 = 
+@@ -989,8 +990,8 @@
+ 		@SONAMEFLAG@`basename $@`
+ 
+ bin/libsmbclient.@SHLIBEXT@: $(LIBSMBCLIENT_PICOBJS)
+-	@echo Linking libsmbclient shared library $@
+-	@$(SHLD) $(LDSHFLAGS) -o $@ $(LIBSMBCLIENT_PICOBJS) $(LDFLAGS) $(LIBS) \
++	@echo Linking libsmbclient shared library $@.$(LIBSMBCLIENT_MAJOR)
++	@$(SHLD) $(LDSHFLAGS) -o $@.$(LIBSMBCLIENT_MAJOR) $(LIBSMBCLIENT_PICOBJS) $(LDFLAGS) $(LIBS) \
+ 		$(KRB5LIBS) $(LDAP_LIBS) \
+ 		@SONAMEFLAG@`basename $@`.$(LIBSMBCLIENT_MAJOR)
+ 
+@@ -1074,13 +1075,13 @@
+ @WINBIND_NSS@: $(WINBIND_NSS_PICOBJS)
+ 	@echo "Linking $@"
+ 	@$(SHLD) $(WINBIND_NSS_LDSHFLAGS) -o $@ $(WINBIND_NSS_PICOBJS) \
+-		@WINBIND_NSS_EXTRA_LIBS@ @SONAMEFLAG@`basename $@`
++		@WINBIND_NSS_EXTRA_LIBS@ @SONAMEFLAG@`basename $@`.$(NSS_VERSION)
+ 
+ @WINBIND_WINS_NSS@: $(WINBIND_WINS_NSS_PICOBJS)
+ 	@echo "Linking $@"
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(WINBIND_WINS_NSS_PICOBJS) \
+ 		$(LDAP_LIBS) $(KRB5LIBS) -lc \
+-		@SONAMEFLAG@`basename $@`
++		@SONAMEFLAG@`basename $@`.$(NSS_VERSION)
+ 
+ nsswitch/pam_winbind.@SHLIBEXT@: $(PAM_WINBIND_PICOBJ) bin/.dummy
+ 	@echo "Linking $@"
+@@ -1276,7 +1277,7 @@
+ 
+ bin/t_snprintf@EXEEXT@: lib/snprintf.c
+ 	$(CC) $(FLAGS) -o $@ $(DYNEXP) -DTEST_SNPRINTF lib/snprintf.c -lm
+-install: installbin installman installscripts installdat installswat installmodules @INSTALLCLIENT@
++install: installbin installscripts installdat installswat installmodules
+ 
+ install-everything: install installmodules
+ 

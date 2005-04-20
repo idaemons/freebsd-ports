@@ -1,0 +1,88 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/.packlist
+%%SITE_PERL%%/POE.pm
+%%SITE_PERL%%/POE/API/Ctl.pm
+%%SITE_PERL%%/POE/API/ResLoader.pm
+%%SITE_PERL%%/POE/Component.pm
+%%SITE_PERL%%/POE/Component/Client/TCP.pm
+%%SITE_PERL%%/POE/Component/Server/TCP.pm
+%%SITE_PERL%%/POE/Driver.pm
+%%SITE_PERL%%/POE/Driver/SysRW.pm
+%%SITE_PERL%%/POE/Filter.pm
+%%SITE_PERL%%/POE/Filter/Block.pm
+%%SITE_PERL%%/POE/Filter/Grep.pm
+%%SITE_PERL%%/POE/Filter/HTTPD.pm
+%%SITE_PERL%%/POE/Filter/Line.pm
+%%SITE_PERL%%/POE/Filter/Map.pm
+%%SITE_PERL%%/POE/Filter/RecordBlock.pm
+%%SITE_PERL%%/POE/Filter/Reference.pm
+%%SITE_PERL%%/POE/Filter/Stackable.pm
+%%SITE_PERL%%/POE/Filter/Stream.pm
+%%SITE_PERL%%/POE/Kernel.pm
+%%SITE_PERL%%/POE/Loop.pm
+%%SITE_PERL%%/POE/Loop/Event.pm
+%%SITE_PERL%%/POE/Loop/Gtk.pm
+%%SITE_PERL%%/POE/Loop/IO_Poll.pm
+%%SITE_PERL%%/POE/Loop/PerlSignals.pm
+%%SITE_PERL%%/POE/Loop/Select.pm
+%%SITE_PERL%%/POE/Loop/Tk.pm
+%%SITE_PERL%%/POE/Loop/TkActiveState.pm
+%%SITE_PERL%%/POE/Loop/TkCommon.pm
+%%SITE_PERL%%/POE/Macro/UseBytes.pm
+%%SITE_PERL%%/POE/NFA.pm
+%%SITE_PERL%%/POE/Pipe.pm
+%%SITE_PERL%%/POE/Pipe/OneWay.pm
+%%SITE_PERL%%/POE/Pipe/TwoWay.pm
+%%SITE_PERL%%/POE/Preprocessor.pm
+%%SITE_PERL%%/POE/Queue.pm
+%%SITE_PERL%%/POE/Queue/Array.pm
+%%SITE_PERL%%/POE/Resource.pm
+%%SITE_PERL%%/POE/Resource/Aliases.pm
+%%SITE_PERL%%/POE/Resource/Controls.pm
+%%SITE_PERL%%/POE/Resource/Events.pm
+%%SITE_PERL%%/POE/Resource/Extrefs.pm
+%%SITE_PERL%%/POE/Resource/FileHandles.pm
+%%SITE_PERL%%/POE/Resource/SIDs.pm
+%%SITE_PERL%%/POE/Resource/Sessions.pm
+%%SITE_PERL%%/POE/Resource/Signals.pm
+%%SITE_PERL%%/POE/Resource/Statistics.pm
+%%SITE_PERL%%/POE/Resources.pm
+%%SITE_PERL%%/POE/Session.pm
+%%SITE_PERL%%/POE/Wheel.pm
+%%SITE_PERL%%/POE/Wheel/Curses.pm
+%%SITE_PERL%%/POE/Wheel/FollowTail.pm
+%%SITE_PERL%%/POE/Wheel/ListenAccept.pm
+%%SITE_PERL%%/POE/Wheel/ReadLine.pm
+%%SITE_PERL%%/POE/Wheel/ReadWrite.pm
+%%SITE_PERL%%/POE/Wheel/Run.pm
+%%SITE_PERL%%/POE/Wheel/SocketFactory.pm
+@unexec rmdir %D/%%SITE_PERL%%/POE/API 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component/Client 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component/Server 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component 2>/dev/null || true
+@dirrm %%SITE_PERL%%/POE/Driver
+@unexec rmdir %D/%%SITE_PERL%%/POE/Filter 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Loop 2>/dev/null || true
+@dirrm %%SITE_PERL%%/POE/Macro
+@dirrm %%SITE_PERL%%/POE/Pipe
+@dirrm %%SITE_PERL%%/POE/Queue
+@dirrm %%SITE_PERL%%/POE/Resource
+@dirrm %%SITE_PERL%%/POE/Wheel
+@unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
+%%PORTDOCS%%%%EXAMPLESDIR%%/README.samples
+%%PORTDOCS%%%%EXAMPLESDIR%%/create.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/fakelogin.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/forkbomb.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/names.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/objmaps.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/objsessions.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/packagesessions.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/queue.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/selects.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/sessions.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/signals.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tcp_watermarks.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/thrash.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/watermarks.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/wheels2.perl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

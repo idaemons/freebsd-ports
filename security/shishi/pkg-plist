@@ -1,0 +1,19 @@
+bin/shisa
+bin/shishi
+etc/shishi/shisa.conf
+etc/shishi/shishi.conf
+etc/shishi/shishi.skel
+include/shisa.h
+include/shishi-int.h
+include/shishi.h
+lib/libshisa.a
+lib/libshisa.so
+lib/libshisa.so.0
+lib/libshishi.a
+lib/libshishi.so
+lib/libshishi.so.0
+libdata/pkgconfig/shishi.pc
+sbin/shishid
+%%NLS%%share/locale/pl/LC_MESSAGES/shishi.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/shishi.mo
+@unexec rmdir %D/etc/shishi 2>/dev/null || true

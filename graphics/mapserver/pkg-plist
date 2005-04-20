@@ -1,0 +1,23 @@
+bin/legend
+bin/scalebar
+bin/shp2img
+bin/shp2mysql
+bin/shp2pdf
+bin/shptree
+bin/shptreetst
+bin/shptreevis
+bin/sortshp
+%%WITH_MAPSERV%%www/cgi-bin/mapserv
+%%WITH_PERL%%%%SITE_PERL%%/mach/auto/mapscript/mapscript.so
+%%WITH_PERL%%%%SITE_PERL%%/mach/auto/mapscript/mapscript.bs
+%%WITH_PERL%%%%SITE_PERL%%/mach/auto/mapscript/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/mach/mapscript.pm
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/mach/auto/mapscript
+%%WITH_PHP%%%%PHP_EXTENSION_DIR%%/php_mapscript.so
+%%WITH_PHP%%@exec mkdir -p %D/etc/php
+%%WITH_PHP%%@exec echo extension=php_mapscript.so >> %D/etc/php/extensions.ini
+%%WITH_PHP%%@unexec cp %D/etc/php/extensions.ini %D/etc/php/extensions.ini.orig
+%%WITH_PHP%%@unexec grep -v php_mapscript\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true
+%%WITH_PHP%%@unexec rm %D/etc/php/extensions.ini.orig
+%%WITH_PHP%%@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini
+%%WITH_PHP%%@unexec rmdir %D/etc/php 2> /dev/null || true

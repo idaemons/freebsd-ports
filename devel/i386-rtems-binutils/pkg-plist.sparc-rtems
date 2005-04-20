@@ -1,0 +1,77 @@
+bin/sparc-rtems-size
+bin/sparc-rtems-objdump
+bin/sparc-rtems-ar
+bin/sparc-rtems-strings
+bin/sparc-rtems-ranlib
+bin/sparc-rtems-objcopy
+bin/sparc-rtems-addr2line
+bin/sparc-rtems-readelf
+bin/sparc-rtems-nm
+bin/sparc-rtems-strip
+bin/sparc-rtems-as
+bin/sparc-rtems-ld
+lib/libiberty.a
+sparc-rtems/bin/nm
+sparc-rtems/bin/strip
+sparc-rtems/bin/ar
+sparc-rtems/bin/ranlib
+sparc-rtems/bin/as
+sparc-rtems/bin/ld
+sparc-rtems/lib/ldscripts/elf32_sparc.x
+sparc-rtems/lib/ldscripts/elf32_sparc.xbn
+sparc-rtems/lib/ldscripts/elf32_sparc.xn
+sparc-rtems/lib/ldscripts/elf32_sparc.xr
+sparc-rtems/lib/ldscripts/elf32_sparc.xs
+sparc-rtems/lib/ldscripts/elf32_sparc.xu
+sparc-rtems/lib/ldscripts/elf32_sparc.xc
+sparc-rtems/lib/ldscripts/elf32_sparc.xsc
+share/locale/fr/LC_MESSAGES/bfd.mo
+share/locale/fr/LC_MESSAGES/opcodes.mo
+share/locale/fr/LC_MESSAGES/binutils.mo
+share/locale/fr/LC_MESSAGES/gas.mo
+share/locale/fr/LC_MESSAGES/ld.mo
+share/locale/tr/LC_MESSAGES/bfd.mo
+share/locale/tr/LC_MESSAGES/opcodes.mo
+share/locale/tr/LC_MESSAGES/binutils.mo
+share/locale/tr/LC_MESSAGES/gas.mo
+share/locale/tr/LC_MESSAGES/ld.mo
+share/locale/ja/LC_MESSAGES/bfd.mo
+share/locale/ja/LC_MESSAGES/binutils.mo
+share/locale/es/LC_MESSAGES/bfd.mo
+share/locale/es/LC_MESSAGES/opcodes.mo
+share/locale/es/LC_MESSAGES/binutils.mo
+share/locale/es/LC_MESSAGES/gas.mo
+share/locale/es/LC_MESSAGES/ld.mo
+share/locale/sv/LC_MESSAGES/bfd.mo
+share/locale/sv/LC_MESSAGES/opcodes.mo
+share/locale/sv/LC_MESSAGES/binutils.mo
+share/locale/sv/LC_MESSAGES/ld.mo
+share/locale/da/LC_MESSAGES/bfd.mo
+share/locale/da/LC_MESSAGES/binutils.mo
+share/locale/da/LC_MESSAGES/opcodes.mo
+share/locale/de/LC_MESSAGES/opcodes.mo
+share/locale/id/LC_MESSAGES/opcodes.mo
+share/locale/pt_BR/LC_MESSAGES/opcodes.mo
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/id/LC_MESSAGES
+@dirrm share/locale/id
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale
+@dirrm sparc-rtems/lib/ldscripts
+@dirrm sparc-rtems/lib
+@dirrm sparc-rtems/bin
+@dirrm sparc-rtems

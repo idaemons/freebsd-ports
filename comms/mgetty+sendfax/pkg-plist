@@ -1,45 +1,99 @@
-@cd /usr/local
-@mode 775
-@owner bin
-@group bin
-bin/faxspool
+bin/autopvf
+bin/basictopvf
 bin/faxq
 bin/faxrm
-bin/g3topbm
-bin/pbmtog3
+bin/faxrunq
+bin/faxspool
+bin/g32pbm
 bin/g3cat
-@mode 700
-bin/faxrunq 
-sbin/mgetty
-sbin/sendfax
-@owner root
-@mode 600
-lib/mgetty+sendfax/dialin.config
-lib/mgetty+sendfax/login.config
-@owner bin
-@mode 644 
-lib/mgetty+sendfax/faxheader 
+bin/g3topbm
+bin/lintopvf
+bin/mg.echo
+bin/newslock
+bin/pbm2g3
+bin/pvfamp
+bin/pvfcut
+bin/pvfecho
+bin/pvffft
+bin/pvffile
+bin/pvffilter
+bin/pvfmix
+bin/pvfnoise
+bin/pvfreverse
+bin/pvfsine
+bin/pvfspeed
+bin/pvftoau
+bin/pvftobasic
+bin/pvftolin
+bin/pvftormd
+bin/pvftovoc
+bin/pvftowav
+bin/rmdfile
+bin/rmdtopvf
+bin/sff2g3
+bin/vm
+bin/voctopvf
+bin/wavtopvf
+@unexec if cmp -s %D/etc/mgetty+sendfax/dialin.config %D/etc/mgetty+sendfax/dialin.config.dist; then rm -f %D/etc/mgetty+sendfax/dialin.config; fi
+etc/mgetty+sendfax/dialin.config.dist
+@exec if [ ! -f %D/etc/mgetty+sendfax/dialin.config ]; then cp %B/%f %D/etc/mgetty+sendfax/dialin.config; fi
+@unexec if cmp -s %D/etc/mgetty+sendfax/faxheader %D/etc/mgetty+sendfax/faxheader.dist; then rm -f %D/etc/mgetty+sendfax/faxheader; fi
+etc/mgetty+sendfax/faxheader.dist
+@exec if [ ! -f %D/etc/mgetty+sendfax/faxheader ]; then cp %B/%f %D/etc/mgetty+sendfax/faxheader; fi
+@unexec if cmp -s %D/etc/mgetty+sendfax/faxrunq.config %D/etc/mgetty+sendfax/faxrunq.config.dist; then rm -f %D/etc/mgetty+sendfax/faxrunq.config; fi
+etc/mgetty+sendfax/faxrunq.config.dist
+@exec if [ ! -f %D/etc/mgetty+sendfax/faxrunq.config ]; then cp %B/%f %D/etc/mgetty+sendfax/faxrunq.config; fi
+@unexec if cmp -s %D/etc/mgetty+sendfax/faxspool.rules %D/etc/mgetty+sendfax/faxspool.rules.sample; then rm -f %D/etc/mgetty+sendfax/faxspool.rules; fi
+etc/mgetty+sendfax/faxspool.rules.sample
+@exec if [ ! -f %D/etc/mgetty+sendfax/faxspool.rules ]; then cp %B/%f %D/etc/mgetty+sendfax/faxspool.rules; fi
+@unexec if cmp -s %D/etc/mgetty+sendfax/login.config %D/etc/mgetty+sendfax/login.config.dist; then rm -f %D/etc/mgetty+sendfax/login.config; fi
+etc/mgetty+sendfax/login.config.dist
+@exec if [ ! -f %D/etc/mgetty+sendfax/login.config ]; then cp %B/%f %D/etc/mgetty+sendfax/login.config; fi
+@unexec if cmp -s %D/etc/mgetty+sendfax/voice.conf %D/etc/mgetty+sendfax/voice.conf.dist; then rm -f %D/etc/mgetty+sendfax/voice.conf; fi
+etc/mgetty+sendfax/voice.conf.dist
+@exec if [ ! -f %D/etc/mgetty+sendfax/voice.conf ]; then cp %B/%f %D/etc/mgetty+sendfax/voice.conf; fi
 lib/mgetty+sendfax/cour25.pbm
 lib/mgetty+sendfax/cour25n.pbm
-man/man1/g3topbm.1
-man/man1/pbmtog3.1
-man/man1/g3cat.1
-man/man1/faxspool.1
-man/man1/faxrunq.1
-man/man1/faxq.1
-man/man1/faxrm.1
-man/man1/fax.1
-man/man1/coverpg.1
-man/man4/mgettydefs.4 
-man/man5/faxqueue.5
-man/man8/sendfax.8
-man/man8/mgetty.8
-info/mgetty.info
-info/mgetty.info-1
-info/mgetty.info-2
-info/mgetty.info-3
-@cd /var/spool
-@exec mkdir -p %D/fax/incoming
-@exec mkdir -p %D/fax/outgoing
-@exec chmod -R 775 %D/fax
-@unexec rm -r %D/fax
+lib/mgetty+sendfax/faxq-helper
+lib/mgetty+sendfax/samples/answer_fax.sh
+lib/mgetty+sendfax/samples/coverpg-pl.ps
+lib/mgetty+sendfax/samples/coverpg.pbm
+lib/mgetty+sendfax/samples/coverpg.ps
+lib/mgetty+sendfax/samples/fax
+lib/mgetty+sendfax/samples/faxmemo
+lib/mgetty+sendfax/samples/faxview.th
+lib/mgetty+sendfax/samples/new_fax.NeXT
+lib/mgetty+sendfax/samples/new_fax.all/INSTALL
+lib/mgetty+sendfax/samples/new_fax.all/README
+lib/mgetty+sendfax/samples/new_fax.all/archive.module
+lib/mgetty+sendfax/samples/new_fax.all/delete.module
+lib/mgetty+sendfax/samples/new_fax.all/fax.module
+lib/mgetty+sendfax/samples/new_fax.all/faxlist
+lib/mgetty+sendfax/samples/new_fax.all/faxlist.dist
+lib/mgetty+sendfax/samples/new_fax.all/list.module
+lib/mgetty+sendfax/samples/new_fax.all/mail.module
+lib/mgetty+sendfax/samples/new_fax.all/new_fax
+lib/mgetty+sendfax/samples/new_fax.all/notify.module
+lib/mgetty+sendfax/samples/new_fax.all/print.module
+lib/mgetty+sendfax/samples/new_fax.all/write.module
+lib/mgetty+sendfax/samples/new_fax.hpa
+lib/mgetty+sendfax/samples/new_fax.lj
+lib/mgetty+sendfax/samples/new_fax.mail
+lib/mgetty+sendfax/samples/new_fax.mime1
+lib/mgetty+sendfax/samples/new_fax.mime3
+lib/mgetty+sendfax/samples/new_fax.mime4
+lib/mgetty+sendfax/samples/new_fax.pbm
+lib/mgetty+sendfax/samples/new_fax.th
+lib/mgetty+sendfax/samples/new_fax.tiff
+lib/mgetty+sendfax/samples/new_fax.vacation
+lib/mgetty+sendfax/samples/printfax
+lib/mgetty+sendfax/samples/printfax.ps
+sbin/callback
+sbin/faxrunqd
+sbin/mgetty
+sbin/sendfax
+sbin/vgetty
+@unexec rmdir %D/etc/mgetty+sendfax 2>/dev/null || true
+@dirrm lib/mgetty+sendfax/samples/new_fax.all
+@dirrm lib/mgetty+sendfax/samples
+@dirrm lib/mgetty+sendfax

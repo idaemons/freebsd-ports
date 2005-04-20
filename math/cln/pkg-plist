@@ -1,0 +1,6 @@
+bin/cln-config
+lib/libcln.a
+lib/libcln.so
+lib/libcln.so.3
+libdata/pkgconfig/cln.pc
+share/aclocal/cln.m4

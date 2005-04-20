@@ -1,0 +1,125 @@
+--- src/Makefile.orig	Sat Nov 20 04:19:58 2004
++++ src/Makefile	Fri Jan 28 22:57:03 2005
+@@ -199,11 +199,11 @@
+ 	$(LIBCOMMAND) $@ $(OBJECTS)
+ 	$(RANLIB) $@
+ 
+-libfltk.so.1.1: $(OBJECTS)
++libfltk.so.1: $(OBJECTS)
+ 	echo $(DSOCOMMAND) $@ ...
+ 	$(DSOCOMMAND) $@ $(OBJECTS)
+ 	$(RM) libfltk.so
+-	$(LN) libfltk.so.1.1 libfltk.so
++	$(LN) libfltk.so.1 libfltk.so
+ 
+ libfltk.sl.1.1: $(OBJECTS)
+ 	echo $(DSOCOMMAND) $@ ...
+@@ -235,11 +235,11 @@
+ 	$(LIBCOMMAND) $@ $(FLOBJECTS)
+ 	$(RANLIB) $@
+ 
+-libfltk_forms.so.1.1: $(FLOBJECTS) libfltk.so.1.1
++libfltk_forms.so.1: $(FLOBJECTS) libfltk.so.1
+ 	echo $(DSOCOMMAND) $@ ...
+ 	$(DSOCOMMAND) $@ $(FLOBJECTS) -L. -lfltk
+ 	$(RM) libfltk_forms.so
+-	$(LN) libfltk_forms.so.1.1 libfltk_forms.so
++	$(LN) libfltk_forms.so.1 libfltk_forms.so
+ 
+ libfltk_forms.sl.1.1: $(FLOBJECTS) libfltk.sl.1.1
+ 	echo $(DSOCOMMAND) $@ ...
+@@ -271,11 +271,11 @@
+ 	$(LIBCOMMAND) $@ $(GLOBJECTS)
+ 	$(RANLIB) $@
+ 
+-libfltk_gl.so.1.1: $(GLOBJECTS) libfltk.so.1.1
++libfltk_gl.so.1: $(GLOBJECTS) libfltk.so.1
+ 	echo $(DSOCOMMAND) $@ ...
+ 	$(DSOCOMMAND) $@ $(GLOBJECTS) -L. -lfltk
+ 	$(RM) libfltk_gl.so
+-	$(LN) libfltk_gl.so.1.1 libfltk_gl.so
++	$(LN) libfltk_gl.so.1 libfltk_gl.so
+ 
+ libfltk_gl.sl.1.1: $(GLOBJECTS) libfltk.sl.1.1
+ 	echo $(DSOCOMMAND) $@ ...
+@@ -307,13 +307,13 @@
+ 	$(LIBCOMMAND) $@ $(IMGOBJECTS)
+ 	$(RANLIB) $@
+ 
+-libfltk_images.so.1.1: $(IMGOBJECTS) libfltk.so.1.1
++libfltk_images.so.1: $(IMGOBJECTS) libfltk.so.1
+ 	echo $(DSOCOMMAND) $@ ...
+ 	$(DSOCOMMAND) $@ $(IMGOBJECTS) $(IMAGELIBS) -L. -lfltk
+ 	$(RM) libfltk_images.so
+-	$(LN) libfltk_images.so.1.1 libfltk_images.so
++	$(LN) libfltk_images.so.1 libfltk_images.so
+ 
+-libfltk_images.sl.1.1: $(IMGOBJECTS) libfltk.sl.1.1
++libfltk_images.sl.1: $(IMGOBJECTS) libfltk.sl.1
+ 	echo $(DSOCOMMAND) $@ ...
+ 	$(DSOCOMMAND) $@ $(IMGOBJECTS) $(IMAGELIBS) -L. -lfltk
+ 	$(RM) libfltk_images.sl
+@@ -429,11 +429,11 @@
+ 		$(RANLIB) $(DESTDIR)$(libdir)/$(GLLIBNAME); \
+ 	fi
+ 	$(RANLIB) $(DESTDIR)$(libdir)/$(IMGLIBNAME)
+-	if test x$(DSONAME) = xlibfltk.so.1.1; then\
++	if test x$(DSONAME) = xlibfltk.so.1; then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk.so*;\
+-		$(CP) libfltk.so.1.1 $(DESTDIR)$(libdir); \
+-		$(CHMOD) 755 $(DESTDIR)$(libdir)/libfltk.so.1.1; \
+-		$(LN) libfltk.so.1.1 $(DESTDIR)$(libdir)/libfltk.so;\
++		$(CP) libfltk.so.1 $(DESTDIR)$(libdir); \
++		$(CHMOD) 755 $(DESTDIR)$(libdir)/libfltk.so.1; \
++		$(LN) libfltk.so.1 $(DESTDIR)$(libdir)/libfltk.so;\
+ 	fi
+ 	if test x$(DSONAME) = xlibfltk.sl.1.1; then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk.sl*;\
+@@ -452,11 +452,11 @@
+ 		$(CP) libfltk_s.a $(DESTDIR)$(libdir); \
+ 		$(CHMOD) 755 $(DESTDIR)$(libdir)/libfltk_s.a; \
+ 	fi
+-	if test x$(FLDSONAME) = xlibfltk_forms.so.1.1; then\
++	if test x$(FLDSONAME) = xlibfltk_forms.so.1; then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_forms.so*;\
+-		$(CP) libfltk_forms.so.1.1 $(DESTDIR)$(libdir); \
+-		$(CHMOD) 755 $(DESTDIR)$(libdir)/libfltk_forms.so.1.1; \
+-		$(LN) libfltk_forms.so.1.1 $(DESTDIR)$(libdir)/libfltk_forms.so;\
++		$(CP) libfltk_forms.so.1 $(DESTDIR)$(libdir); \
++		$(CHMOD) 755 $(DESTDIR)$(libdir)/libfltk_forms.so.1; \
++		$(LN) libfltk_forms.so.1 $(DESTDIR)$(libdir)/libfltk_forms.so;\
+ 	fi
+ 	if test x$(FLDSONAME) = xlibfltk_forms.sl.1.1; then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_forms.sl*;\
+@@ -475,11 +475,11 @@
+ 		$(CP) libfltk_forms_s.a $(DESTDIR)$(libdir); \
+ 		$(CHMOD) 755 $(DESTDIR)$(libdir)/libfltk_forms.a; \
+ 	fi
+-	if test x$(GLDSONAME) = xlibfltk_gl.so.1.1; then\
++	if test x$(GLDSONAME) = xlibfltk_gl.so.1; then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_gl.so*;\
+-		$(CP) libfltk_gl.so.1.1 $(DESTDIR)$(libdir); \
+-		$(CHMOD) 755 $(DESTDIR)$(libdir)/libfltk_gl.so.1.1; \
+-		$(LN) libfltk_gl.so.1.1 $(DESTDIR)$(libdir)/libfltk_gl.so;\
++		$(CP) libfltk_gl.so.1 $(DESTDIR)$(libdir); \
++		$(CHMOD) 755 $(DESTDIR)$(libdir)/libfltk_gl.so.1; \
++		$(LN) libfltk_gl.so.1 $(DESTDIR)$(libdir)/libfltk_gl.so;\
+ 	fi
+ 	if test x$(GLDSONAME) = xlibfltk_gl.sl.1.1; then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_gl.sl*;\
+@@ -498,11 +498,11 @@
+ 		$(CP) libfltk_gl_s.a $(DESTDIR)$(libdir); \
+ 		$(CHMOD) 755 $(DESTDIR)$(libdir)/libfltk_gl.a; \
+ 	fi
+-	if test x$(IMGDSONAME) = xlibfltk_images.so.1.1; then\
++	if test x$(IMGDSONAME) = xlibfltk_images.so.1; then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_images.so*;\
+-		$(CP) libfltk_images.so.1.1 $(DESTDIR)$(libdir); \
+-		$(CHMOD) 755 $(DESTDIR)$(libdir)/libfltk_images.so.1.1; \
+-		$(LN) libfltk_images.so.1.1 $(DESTDIR)$(libdir)/libfltk_images.so;\
++		$(CP) libfltk_images.so.1 $(DESTDIR)$(libdir); \
++		$(CHMOD) 755 $(DESTDIR)$(libdir)/libfltk_images.so.1; \
++		$(LN) libfltk_images.so.1 $(DESTDIR)$(libdir)/libfltk_images.so;\
+ 	fi
+ 	if test x$(IMGDSONAME) = xlibfltk_images.sl.1.1; then\
+ 		$(RM) $(DESTDIR)$(libdir)/libfltk_images.sl*;\

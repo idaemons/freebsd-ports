@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/bitedit
+%%PORTDOCS%%%%DOCSDIR%%/bitedit.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

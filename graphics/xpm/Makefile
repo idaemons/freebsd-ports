@@ -1,13 +1,38 @@
 # New ports collection makefile for:	xpm
-# Version required:	3.4d
 # Date created:		14 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1994/09/14 14:14:09 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	xpm-3.4d
-USE_IMAKE=	yes
-MASTER_SITES=	ftp://avahi.inria.fr/pub/xpm/
+PORTNAME=	xpm
+PORTVERSION=	3.4k
+PORTREVISION=	1
+CATEGORIES=	graphics x11
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	libraries
 
-.include <bsd.port.mk>
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The X Pixmap library
+
+CONFLICTS=	XFree86-libraries-[0-9]* xorg-libraries-[0-9]*
+
+USE_IMAKE=	yes
+INSTALLS_SHLIB=	yes
+
+MAN1=		cxpm.1 sxpm.1
+
+.ifdef USE_XPM
+.error You have `USE_XPM' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+IGNORE=		is included in XFree86 >3.x
+.endif
+
+post-install:
+	@ranlib ${PREFIX}/lib/libXpm.a
+
+.include <bsd.port.post.mk>

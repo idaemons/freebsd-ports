@@ -1,0 +1,22 @@
+%%SITE_PERL%%/Net/ParseWhois.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/BulkRegister.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/CoreNic.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/DomainBank.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/DomainDiscover.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/Dotster.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/Easyspace.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/INameWW.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/Netsol.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/OpenSRS.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/Register.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/Registrars.pm
+%%SITE_PERL%%/Net/ParseWhois/Domain/Registrar/Unknown.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ParseWhois/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ParseWhois
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Net/ParseWhois/Domain/Registrar
+@dirrm %%SITE_PERL%%/Net/ParseWhois/Domain
+@dirrm %%SITE_PERL%%/Net/ParseWhois
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true

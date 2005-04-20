@@ -1,11 +1,7 @@
-@cd /usr/local
-@owner games
-@mode 755
 bin/xjewel
-bin/xjewel_
-@mode 666
-lib/xjewel.scores
-@mode 644
-lib/xjewel.font/fonts.dir
-lib/xjewel.font/seven_seg.pcf.Z
-man/man6/xjewel.6.gz
+lib/X11/xjewel/xjewel.scores
+%%FONTSDIR%%/seven_seg.pcf.gz
+@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
+@dirrm lib/X11/xjewel

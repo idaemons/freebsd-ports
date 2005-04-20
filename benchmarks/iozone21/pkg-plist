@@ -1,6 +1,2 @@
-@cd /usr/local
-@owner bin
-@mode 755
+@comment $FreeBSD$
 bin/iozone
-@mode 644
-man/man1/iozone.1

@@ -1,0 +1,83 @@
+
+$FreeBSD$
+
+--- Makefile.defs.orig
++++ Makefile.defs
+@@ -133,10 +133,11 @@
+ INSTALL-TOUCH = touch          # used to create the file first (good to 
+                                #  make solaris install work)
+ # INSTALL-CFG = $(INSTALL) -m 644
+-INSTALL-BIN = $(INSTALL) -m 755
+-INSTALL-MODULES = $(INSTALL) -m 755
+-INSTALL-DOC = $(INSTALL) -m 644
+-INSTALL-MAN = $(INSTALL) -m 644
++INSTALL-BIN = $(BSD_INSTALL_PROGRAM)
++INSTALL-MODULES = $(BSD_INSTALL_PROGRAM)
++INSTALL-DOC = $(BSD_INSTALL_MAN)
++INSTALL-MAN = $(BSD_INSTALL_MAN)
++INSTALL-SCRIPT = $(BSD_INSTALL_SCRIPT)
+ 
+ #set some vars from the environment (and not make builtins)
+ CC   := $(shell echo "$${CC}")
+@@ -285,10 +286,11 @@
+ 	 -DPKG_MALLOC \
+ 	 -DSHM_MEM  -DSHM_MMAP \
+ 	 -DDNS_IP_HACK \
+-	 -DUSE_IPV6 \
+-	 -DUSE_TCP \
+ 	 -DDISABLE_NAGLE \
+-	 -DF_MALLOC \
++	 -DNO_DEBUG \
++	 -DUSE_IPV6 \
++	 -DUSE_TCP
++	# -DF_MALLOC \
+ 	# -DDBG_QM_MALLOC \
+ 	# -DDBG_QM_MALLOC \
+ 	# -DF_MALLOC \
+@@ -408,8 +410,8 @@
+ 	found_lock_method=yes
+ endif
+ 
+-CFLAGS=
+-LDFLAGS=
++#CFLAGS=
++#LDFLAGS=
+ # setting CFLAGS
+ ifeq ($(mode), release)
+ 	#if i386
+@@ -417,7 +419,7 @@
+ 		# if gcc 
+ ifeq		($(CC_NAME), gcc)
+ 				#common stuff
+-				CFLAGS=-g -O9 -funroll-loops  -Wcast-align $(PROFILE) \
++				CFLAGS+=-funroll-loops  -Wcast-align $(PROFILE) \
+ 					-Wall   \
+ 			#if gcc 3.0
+ ifeq			($(CC_SHORTVER), 3.0)
+@@ -443,7 +445,7 @@
+ 
+ else		# CC_NAME, gcc
+ ifeq		($(CC_NAME), icc)
+-			CFLAGS=-g -O3  -ipo -ipo_obj -unroll  $(PROFILE) \
++			CFLAGS+=-ipo -ipo_obj -unroll  $(PROFILE) \
+ 					 -tpp6 -xK  #-openmp  #optimize for PIII 
+ 				# -prefetch doesn't seem to work
+ 				#( ty to inline acroos files, unroll loops,prefetch,
+@@ -462,7 +464,7 @@
+ 			#if gcc
+ ifeq		($(CC_NAME), gcc)
+ 				#common stuff
+-				CFLAGS=-g -O9 -funroll-loops  $(PROFILE) \
++				CFLAGS+=-funroll-loops  $(PROFILE) \
+ 					-Wall\
+ 					#-Wcast-align \
+ 					#-Wmissing-prototypes 
+@@ -520,7 +522,7 @@
+ 		# if gcc 
+ ifeq		($(CC_NAME), gcc)
+ 				#common stuff
+-				CFLAGS=-O9 -funroll-loops  -Wcast-align $(PROFILE) \
++				CFLAGS+=-funroll-loops  -Wcast-align $(PROFILE) \
+ 					-Wall   \
+ 			#if gcc 3.0
+ ifeq			($(CC_SHORTVER), 3.0)

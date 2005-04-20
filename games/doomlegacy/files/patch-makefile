@@ -1,0 +1,65 @@
+--- makefile.orig	Fri Oct  3 15:11:05 2003
++++ makefile	Sun Mar 28 17:15:39 2004
+@@ -260,7 +260,7 @@
+ 
+ # gcc or g++
+ #CC=@gcc
+-CC=gcc
++CC?=gcc
+ 
+ #if use PGCC or EGCS
+ PGCC=1
+@@ -407,7 +407,8 @@
+ 
+ 	    OPTS := $(OPTS) -DVID_X11 $(POLL_POINTER) -I. -I/usr/X11R6/include
+ 	    LDFLAGS=-L/usr/X11R6/lib
+-	    LIBS=-lXext -lX11 -lm -lXxf86vm -lipx -lkvm -pthread
++	    LIBS=-lXext -lX11 -lm -lXxf86vm -lipx -lkvm ${PTHREAD_LIBS}
++	    CFLAGS+=${PTHREAD_CFLAGS}
+ 	    # name of the exefile
+ 	    EXENAME=llxdoom
+ 	    SFLAGS=-g $(OPTS)
+@@ -428,7 +429,8 @@
+ 	    DEBUGLIBS=$(LIBS)
+ 
+ 	    LDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib
+-	    LIBS=-lm -lSDL-1.1 -lSDL_mixer -lGL -lGLU -lipx -lkvm -pthread
++	    LIBS=-lm -lSDL-1.1 -lSDL_mixer -lGL -lGLU -lipx -lkvm ${PTHREAD_LIBS}
++	    CFLAGS+=${PTHREAD_CFLAGS}
+ 	    DEBUGLIBS=$(LIBS)
+ 
+ 	    # name of the exefile
+@@ -555,13 +557,13 @@
+ 
+ 	# build a normal optimised version
+ 	ifdef PGCC
+-		CFLAGS = $(OPTS) $(M5) -O6 -ffast-math -fomit-frame-pointer -fwritable-strings
++		CFLAGS += $(OPTS) -fwritable-strings
+ 		# -fgcse -fcse-follow-jumps -fcse-skip-blocks -frerun-cse-after-loop -ffunction-cse \
+ 		# -fexpensive-optimizations -fforce-mem -fstrength-reduce -fthread-jumps  \
+ 		# -fregmove -fschedule-insns -fschedule-insns2 -fmove-all-movables \
+ 		# -fcaller-saves -finline-functions -mieee-fp -mfp-ret-in-387 -m80387 -mhard-float -finline
+ 	else
+-		CFLAGS = $(M4) -O3 -ffast-math -fomit-frame-pointer -fwritable-strings $(OPTS)
++		CFLAGS += -fwritable-strings $(OPTS)
+ 	endif
+ endif
+ 
+@@ -735,7 +737,7 @@
+ 
+ #dll
+ dll : $(O)/r_opengl.o $(O)/ogl_x11.o
+-	$(CC) $(M5) -O6 -o $(BIN)/r_opengl.so -shared -nostartfiles $(O)/r_opengl.o $(O)/ogl_x11.o -L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXext -lGL -lGLU -lm
++	$(CC) ${CFLAGS} -o $(BIN)/r_opengl.so -shared -nostartfiles $(O)/r_opengl.o $(O)/ogl_x11.o -L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXext -lGL -lGLU -lm
+ 
+ musserv:
+ 	@mkdir -p $(MUSSERV)/linux
+@@ -763,7 +765,7 @@
+ 	$(CC) $(CFLAGS) $(LDFLAGS) $(WFLAGS) -I/usr/X11R6/include -c $< -o $@
+ else  #FBSD_SDL
+ $(O)/r_opengl.o:	hardware/r_opengl/r_opengl.c hardware/r_opengl/r_opengl.h
+-	$(CC) $(M5) -O6 -o $(O)/r_opengl.o	-DHWRENDER -DVID_X11 -DLINUX -DFREEBSD $(POLL_POINTER) -shared -nostartfiles -I/usr/X11R6/include -c hardware/r_opengl/r_opengl.c
++	$(CC) ${CFLAGS} -o $(O)/r_opengl.o	-DHWRENDER -DVID_X11 -DLINUX -DFREEBSD $(POLL_POINTER) -shared -nostartfiles -I/usr/X11R6/include -c hardware/r_opengl/r_opengl.c
+ endif #FBSD_SDL
+ endif #FREEBSD
+ 

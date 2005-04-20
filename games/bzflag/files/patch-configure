@@ -1,0 +1,19 @@
+--- configure.orig	Tue Jan 18 17:13:36 2005
++++ configure	Tue Jan 18 17:16:43 2005
+@@ -63,7 +63,7 @@
+ prefix=NONE
+ program_prefix=NONE
+ program_suffix=NONE
+-program_transform_name=s,x,x,
++program_transform_name=
+ silent=
+ site=
+ srcdir=
+@@ -4198,6 +4198,7 @@
+   beos*)
+     ;;
+   *)
++    CPPFLAGS="$X_CFLAGS $CPPFLAGS"
+     if test x$no_x = x; then
+       GLIBS="$X_PRE_LIBS -lX11 $EXTRA_LIBS $GLIBS"
+     fi

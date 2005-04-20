@@ -1,0 +1,40 @@
+--- build/gmake/Makefile.orig	Tue Mar  8 08:58:10 2005
++++ build/gmake/Makefile	Tue Mar  8 23:50:24 2005
+@@ -58,8 +58,8 @@
+ PROJECT=tidy
+ 
+ # Installation variables.  Spaces OK, only dir create and file copy operations.
+-runinst_prefix=/usr/local
+-devinst_prefix=/usr/local
++runinst_prefix=${PREFIX}
++devinst_prefix=${PREFIX}
+ 
+ bininst = ${runinst_prefix}/bin
+ libinst = ${devinst_prefix}/lib
+@@ -67,7 +67,7 @@
+ maninst = ${devinst_prefix}/man
+ 
+ # Internal variables. - No spaces allowed: libtool chokes on spaces in directory names.
+-TOPDIR = ../..
++TOPDIR = .
+ INCDIR = ${TOPDIR}/include
+ APPDIR = ${TOPDIR}/console
+ SRCDIR = ${TOPDIR}/src
+@@ -78,12 +78,12 @@
+ # CFLAGS etc..
+ # For optimised builds, flags such as "-O2" should be added and -D_DEBUG=1
+ # disabled.
+-CC= gcc
+-CFLAGS= -g -Wall -Wno-switch -Wno-parentheses -Wno-unused -I $(INCDIR)
++#CC= gcc
++CFLAGS+= -I $(INCDIR)
+ 
+-OTHERCFLAGS=
+-OTHERCFLAGS+= -D_DEBUG=1 -DHAS_VSNPRINTF=1
+-# OTHERCFLAGS+= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1
++#OTHERCFLAGS=
++#OTHERCFLAGS+= -D_DEBUG=1 -DHAS_VSNPRINTF=1
++OTHERCFLAGS= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1 -DHAS_VSNPRINTF=1
+ ifdef SUPPORT_UTF16_ENCODINGS
+ CFLAGS += -DSUPPORT_UTF16_ENCODINGS=$(SUPPORT_UTF16_ENCODINGS)
+ endif

@@ -1,0 +1,6 @@
+bin/lcdheadlines
+bin/lcdmetar.pl
+bin/lcdproc
+etc/LCDd.conf.sample
+etc/rc.d/LCDd.sh.sample
+sbin/LCDd

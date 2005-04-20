@@ -1,0 +1,79 @@
+--- ../MailScanner-install-4.39.6.orig/docs/man/MailScanner.conf.5	Mon Mar 14 23:05:12 2005
++++ docs/man/MailScanner.conf.5	Mon Mar 14 23:05:30 2005
+@@ -1,4 +1,4 @@
+-.TH "MailScanner.conf" "5" "4.38.2" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.39.6" "Julian Field" "Mail"
+ .SH "NAME"
+ .LP 
+ MailScanner.conf \- Main configuration for MailScanner
+@@ -562,6 +562,41 @@
+ 
+ .br 
+ ClamAVModule only: monitor each of these files for changes in size to detect when a ClamAV update has happened. This is only used by the "clamavmodule" virus scanner, not the "clamav" scanner setting.
++
++.TP 
++\fBClamAVmodule Maximum Recursion Level\fR
++Default: 5
++.br 
++
++.br 
++ClamAVModule only: The maximum recursion level of archives. This setting *cannot* be the filename of a ruleset, only a simple number.
++
++.TP 
++\fBClamAVmodule Maximum Files\fR
++Default: 100
++.br 
++
++.br 
++ClamAVModule only: The maximum number of files per batch. This setting *cannot* be the filename of a ruleset, only a simple number.
++
++
++.TP 
++\fBClamAVmodule Maximum File Size\fR
++Default: 10000000
++.br 
++
++.br 
++ClamAVModule only: The maximum file of each file (Default = 10MB). This setting *cannot* be the filename of a ruleset, only a simple number.
++
++
++.TP 
++\fB\fRClamAVmodule Maximum Compression Ratio
++Default: 250
++.br 
++
++.br 
++ClamAVModule only: The maximum compression ration of archives. This setting *cannot* be the filename of a ruleset, only a simple number.
++ 
+ .SH "Removing/Logging dangerous or potentially offensive content"
+ .TP 
+ \fBAllow Partial Messages\fR
+@@ -601,6 +636,15 @@
+ 
+ 
+ .TP 
++\fBPhishing Safe Sites File\fR
++Default: %etc\-dir%/phishing.safe.sites.conf
++.br 
++
++.br 
++There are some companies, such as banks, that insist on sending out email messages with links in them that are caught by the "Find Phishing Fraud" test described above. This is the name of a file which contains a list of link destinations which should be ignored in the test. This may, for example, contain the known websites of some banks. See the file itself for more information. This can only be the name of the file containing the list, it *cannot* be the filename of a ruleset.
++
++
++.TP 
+ \fBAllow IFrame Tags\fR
+ Default: no
+ .br 
+@@ -1753,6 +1797,12 @@
+ 
+ .br 
+ Log all occurrences of "Silent Viruses" as defined above? This can only be a simple yes/no value, not a ruleset.
++
++.TP 
++\fBLog Dangerous HTML Tags\fR
++Default: no
++.br 
++Log all occurrences of HTML tags found in messages, that can be blocked. This will help you build up your whitelist of message sources for which particular HTML tags should be allowed, such as mail from newsletters and daily cartoon strips. This can also be the filename of a ruleset.
+ .SH "Advanced SpamAssassin Settings"
+ If you are using Postfix you may well need to use some of the settings below, as the home directory for the "postfix" user cannot be written to by the "postfix" user. You may also need to use these if you have installed SpamAssassin somewhere other than the default location. 
+ 

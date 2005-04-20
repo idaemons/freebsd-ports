@@ -1,21 +1,34 @@
 # New ports collection makefile for:    ha
-# Version required:     0999
 # Date created:         24 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1995/01/24 16:43:32 ache Exp $
+# $FreeBSD$
 #
-DISTNAME=       ha0999
-EXTRACT_SUFX=   .tgz
-MASTER_SITES=   ftp://ftp.kiae.su/unix/arcers/
-NO_WRKSUBDIR=   YES
-MAKEFILE=       makefile.nix
-MAKE_FLAGS=     CC=cc -f
-ALL_TARGET=     ha
-USE_GMAKE=      YES
 
-install:
+PORTNAME=	ha
+PORTVERSION=	0.999b
+PORTREVISION=	1
+CATEGORIES=	archivers
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
+DISTNAME=	ha0999
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ache@FreeBSD.org
+COMMENT=	The HA archiver using the HSC compression method
+
+NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/ha
+MAKEFILE=	makefile.nix
+ALL_TARGET=	ha
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/c/hsc.c ${WRKSRC}/c/cpy.c \
+		${WRKSRC}/c/asc.c
+
+do-install:
 	cd ${WRKSRC}; ${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ha ${PREFIX}/bin
-	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 
 .include <bsd.port.mk>

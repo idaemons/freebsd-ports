@@ -1,0 +1,32 @@
+# New ports collection makefile for:	RubyGems
+# Date created:		07 July 2004
+# Whom:			Alexander Novitsky <alecn2002@yandex.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gems
+PORTVERSION=	0.8.6
+CATEGORIES=	devel ruby
+MASTER_SITES=	http://rubyforge.org/frs/download.php/3224/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	chero7@telus.net
+COMMENT=	Package management framework for the Ruby language
+
+USE_RUBY=	yes
+RUBY_SETUP=	setup.rb
+RUBY_VER=	1.8
+
+NO_BUILD=	yes
+
+do-install:
+	cd ${WRKSRC}; ${RUBY} ${RUBY_SETUP}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

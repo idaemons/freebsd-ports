@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Lingua/EN/AddressGrammar.pm
+%%SITE_PERL%%/Lingua/EN/AddressParse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/AddressParse/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/AddressParse
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Lingua/EN 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Lingua 2>/dev/null || true
