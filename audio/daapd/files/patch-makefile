@@ -1,0 +1,62 @@
+--- makefile.orig	Sat Aug 21 15:24:06 2004
++++ makefile	Wed Sep  1 23:14:25 2004
+@@ -1,8 +1,6 @@
+ # configure daapd here
+ 
+-HOWL_ENABLE = 1
+ ZLIB_ENABLE = 1
+-MPEG4_ENABLE = 1
+ 
+ 
+ # no need to touch anything below this line
+@@ -11,13 +9,12 @@
+ CC = g++
+ MAKE = $(MAKE_COMMAND)
+ TARGET = daapd
+-DEPS = daaplib_ libhttpd_
+ OBJS = daapd.o db.o dboutput.o songcache.o parsemp3.o
+-LIBS = -ldaaplib -lhttpd-persistent -lid3tag -lz -lpthread 
+-LIBPATH = -L. -L./daaplib/src -L./libhttpd/src  -L/usr/local/lib
+-INCPATH = -I. -I./daaplib/include -I./libhttpd/src  -I/usr/local/include
++LIBS = -ldaaplib -lhttpd-persistent -lid3tag -lz $(PTHREAD_LIBS)
++LIBPATH = -L. -L/usr/local/lib
++INCPATH = -I. -I/usr/local/include
+ DEPLOY = /usr/local
+-CFLAGS = -Wall -Wno-multichar
++CFLAGS = -Wall -Wno-multichar $(PTHREAD_CFLAGS)
+ 
+ # HOWL
+ ifeq ($(HOWL_ENABLE),1)
+@@ -54,28 +51,17 @@
+ .cc.o:
+ 	$(CC) $(CFLAGS) $(INCPATH) -c $<
+ 
+-all: $(DEPS) $(TARGET)
++all: $(TARGET)
+ 
+ $(TARGET): $(OBJS)
+ 	$(CC) $(CFLAGS) $(LIBPATH) -o $(TARGET) $(OBJS) $(LIBS)
+ 
+ $(OBJS): types.h dboutput.h songcache.h parsemp3.h
+ 
+-daaplib_:
+-	cd daaplib/src && $(MAKE)
+-
+-libhttpd_:
+-	if test ! -e libhttpd/Site.mm; then cd libhttpd && ./configure; fi
+-	cd libhttpd && $(MAKE)
+-
+ clean:
+-	if test -e libhttpd/Site.mm; then cd libhttpd && $(MAKE) very-clean; fi
+-	cd daaplib/src && $(MAKE) clean
+ 	rm $(OBJS) $(TARGET)
+ 
+-install: $(DEPS) $(TARGET)
+-	cd libhttpd && $(MAKE) install
+-	cd daaplib/src && $(MAKE) install
+-	cp $(TARGET) $(DEPLOY)/bin
+-	chmod a+rx $(DEPLOY)/bin/$(TARGET)
++install: $(TARGET)
++	cp $(TARGET) $(DEPLOY)/sbin
++	chmod a+rx $(DEPLOY)/sbin/$(TARGET)
+ 	cp $(TARGET).8 $(DEPLOY)/man/man8

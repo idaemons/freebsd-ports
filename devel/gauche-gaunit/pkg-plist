@@ -1,0 +1,22 @@
+share/gauche/site/lib/test/unit.scm
+share/gauche/site/lib/test/unit/assertions.scm
+share/gauche/site/lib/test/unit/autorunner.scm
+share/gauche/site/lib/test/unit/base.scm
+share/gauche/site/lib/test/unit/common.scm
+share/gauche/site/lib/test/unit/result.scm
+share/gauche/site/lib/test/unit/ui.scm
+share/gauche/site/lib/test/unit/ui/gtk.scm
+share/gauche/site/lib/test/unit/ui/text.scm
+@dirrm share/gauche/site/lib/test/unit/ui
+@dirrm share/gauche/site/lib/test/unit
+@unexec rmdir %D/share/gauche/site/lib/test 2>/dev/null || true
+%%EXAMPLESDIR%%/site-lisp/run-test-setting.el
+%%EXAMPLESDIR%%/site-lisp/run-test.el
+%%EXAMPLESDIR%%/symdiff/lib/symdiff.scm
+%%EXAMPLESDIR%%/symdiff/test/run-test.scm
+%%EXAMPLESDIR%%/symdiff/test/test-symdiff.scm
+@dirrm %%EXAMPLESDIR%%/symdiff/test
+@dirrm %%EXAMPLESDIR%%/symdiff/lib
+@dirrm %%EXAMPLESDIR%%/symdiff
+@dirrm %%EXAMPLESDIR%%/site-lisp
+@dirrm %%EXAMPLESDIR%%

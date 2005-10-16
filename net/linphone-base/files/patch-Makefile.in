@@ -1,0 +1,16 @@
+--- Makefile.in.orig	Tue Mar 22 00:53:37 2005
++++ Makefile.in	Wed Mar 23 18:51:15 2005
+@@ -274,9 +274,11 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ @BUILD_TRUESPEECH_TRUE@WIN32ACM_DIR = win32acm
+-SUBDIRS = m4 support pixmaps po ipkg oRTP gsmlib lpc10-1.5 \
++ifndef SUBDIRS
++SUBDIRS = m4 support po ipkg oRTP lpc10-1.5 \
+                 $(WIN32ACM_DIR) mediastreamer mediastreamer2\
+-		media_api exosip coreapi console gnome share developer-docs
++		media_api exosip coreapi console gnome developer-docs
++endif
+ 
+ EXTRA_DIST = linphone2.glade BUGS linphone.kdevprj \
+ 				intltool-extract.in	\

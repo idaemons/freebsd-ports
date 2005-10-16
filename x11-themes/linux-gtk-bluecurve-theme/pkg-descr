@@ -1,0 +1,8 @@
+This is a port of Fedora Core "Bluecurve" theme for GTK/GNOME. It will not
+install RedHat logos and pixmaps, but only the required theme engines.
+
+This is the Linux version, for use with x11-toolkits/linux-gtk and
+x11-toolkits/linux-gtk2.
+
+- Jean-Yves Lefort
+jylefort@FreeBSD.org

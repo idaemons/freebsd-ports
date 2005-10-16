@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Business/OnlinePayment/BankOfAmerica.pm
+%%SITE_PERL%%/auto/Business/OnlinePayment/BankOfAmerica/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/BankOfAmerica/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/BankOfAmerica
+@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/BankOfAmerica
+@unexec rmdir %D/%%SITE_PERL%%/Business/OnlinePayment 2>/dev/null || true

@@ -1,0 +1,91 @@
+--- Makefile.in.orig	Thu Jun 30 15:32:54 2005
++++ Makefile.in	Thu Jun 30 16:00:29 2005
+@@ -82,7 +82,12 @@
+ 
+ man_MANS = nss_ldap.5
+ 
+-nss_ldap_so_SOURCES = ldap-nss.c ldap-pwd.c ldap-grp.c ldap-netgrp.c ldap-rpc.c 	ldap-hosts.c ldap-network.c ldap-proto.c ldap-spwd.c 	ldap-alias.c ldap-service.c ldap-schema.c ldap-ethers.c 	ldap-bp.c util.c ltf.c snprintf.c resolve.c 	dnsconfig.c irs-nss.c pagectrl.c
++nss_ldap_so_SOURCES = ldap-nss.c ldap-pwd.c ldap-grp.c \
++	\
++	ldap-schema.c \
++	util.c ltf.c snprintf.c resolve.c \
++ 	dnsconfig.c irs-nss.c pagectrl.c \
++	bsdnss.c
+ 
+ 
+ nss_ldap_so_LDFLAGS = @nss_ldap_so_LDFLAGS@
+@@ -90,7 +95,10 @@
+ NSS_LDAP_PATH_CONF = @NSS_LDAP_PATH_CONF@
+ NSS_LDAP_PATH_ROOTPASSWD = @NSS_LDAP_PATH_ROOTPASSWD@
+ 
+-NSS_LDAP_SOURCES = ldap-nss.c ldap-grp.c ldap-pwd.c ldap-netgrp.c ldap-schema.c 	util.c ltf.c snprintf.c resolve.c dnsconfig.c 	irs-nss.c pagectrl.c aix_authmeth.c
++NSS_LDAP_SOURCES = ldap-nss.c ldap-grp.c ldap-pwd.c ldap-schema.c \
++ 	util.c ltf.c snprintf.c resolve.c dnsconfig.c \
++ 	irs-nss.c pagectrl.c aix_authmeth.c \
++	bsdnss.c
+ 
+ 
+ NSS_LDAP_LDFLAGS = @NSS_LDAP_LDFLAGS@
+@@ -118,15 +126,17 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-nss_ldap_so_OBJECTS =  ldap-nss.o ldap-pwd.o ldap-grp.o ldap-netgrp.o \
+-ldap-rpc.o ldap-hosts.o ldap-network.o ldap-proto.o ldap-spwd.o \
+-ldap-alias.o ldap-service.o ldap-schema.o ldap-ethers.o ldap-bp.o \
+-util.o ltf.o snprintf.o resolve.o dnsconfig.o irs-nss.o pagectrl.o
++nss_ldap_so_OBJECTS =  ldap-nss.o ldap-pwd.o ldap-grp.o \
++	\
++	ldap-schema.o \
++	util.o ltf.o snprintf.o resolve.o dnsconfig.o irs-nss.o pagectrl.o \
++	bsdnss.o
+ nss_ldap_so_LDADD = $(LDADD)
+ nss_ldap_so_DEPENDENCIES = 
+-NSS_LDAP_OBJECTS =  ldap-nss.o ldap-grp.o ldap-pwd.o ldap-netgrp.o \
+-ldap-schema.o util.o ltf.o snprintf.o resolve.o dnsconfig.o irs-nss.o \
+-pagectrl.o aix_authmeth.o
++NSS_LDAP_OBJECTS =  ldap-nss.o ldap-grp.o ldap-pwd.o \
++	ldap-schema.o util.o ltf.o snprintf.o resolve.o dnsconfig.o irs-nss.o \
++	pagectrl.o aix_authmeth.o \
++	bsdnss.o
+ NSS_LDAP_LDADD = $(LDADD)
+ NSS_LDAP_DEPENDENCIES = 
+ CFLAGS = @CFLAGS@
+@@ -147,31 +157,18 @@
+ TAR = tar
+ GZIP_ENV = --best
+ DEP_FILES =  .deps/aix_authmeth.P .deps/dnsconfig.P .deps/irs-nss.P \
+-.deps/ldap-alias.P .deps/ldap-bp.P .deps/ldap-ethers.P .deps/ldap-grp.P \
+-.deps/ldap-hosts.P .deps/ldap-netgrp.P .deps/ldap-network.P \
+-.deps/ldap-nss.P .deps/ldap-proto.P .deps/ldap-pwd.P .deps/ldap-rpc.P \
+-.deps/ldap-schema.P .deps/ldap-service.P .deps/ldap-spwd.P .deps/ltf.P \
+-.deps/pagectrl.P .deps/resolve.P .deps/snprintf.P .deps/util.P
++.deps/ldap-grp.P \
++\
++.deps/ldap-nss.P .deps/ldap-pwd.P \
++.deps/ldap-schema.P .deps/ltf.P \
++.deps/pagectrl.P .deps/resolve.P .deps/snprintf.P .deps/util.P \
++.deps/bsdnss.P
+ SOURCES = $(nss_ldap_so_SOURCES) $(NSS_LDAP_SOURCES)
+ OBJECTS = $(nss_ldap_so_OBJECTS) $(NSS_LDAP_OBJECTS)
+ 
+ all: all-redirect
+ .SUFFIXES:
+ .SUFFIXES: .S .c .o .s
+-$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+-	cd $(top_srcdir) && $(AUTOMAKE) --gnu Makefile
+-
+-Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
+-	cd $(top_builddir) \
+-	  && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+-
+-$(ACLOCAL_M4):  configure.in 
+-	cd $(srcdir) && $(ACLOCAL)
+-
+-config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+-	$(SHELL) ./config.status --recheck
+-$(srcdir)/configure: $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+-	cd $(srcdir) && $(AUTOCONF)
+ 
+ config.h: stamp-h
+ 	@if test ! -f $@; then \

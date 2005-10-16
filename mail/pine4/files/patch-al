@@ -1,0 +1,11 @@
+--- build.orig	Mon Dec  9 09:54:38 2002
++++ build	Thu Jan 16 00:42:58 2003
+@@ -450,7 +450,7 @@
+         cd "$PHOME"
+         echo ''
+         echo "Links to executables are in bin directory:"
+-        size bin/pine bin/mtest bin/imapd bin/pico bin/pilot bin/rpdump bin/rpload bin/mailutil bin/ipop2d bin/ipop3d
++        size bin/pine bin/pico bin/pilot bin/rpdump bin/rpload
+ 	case $maketarg in
+ 	    mnt)    echo "Fixing stacksizes ..."
+ 		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot

@@ -1,17 +1,40 @@
-# New ports collection makefile for:    xpaint
-# Version required:     2.1.1
-# Date created:         2 Jan 1995
-# Whom:                 swallace
+# New ports collection makefile for:	xpaint
+# Date created:		2 Jan 1995
+# Whom:			swallace
 #
-# $Id: Makefile,v 1.3 1995/01/13 13:14:24 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       xpaint-2.1.1
-MASTER_SITES=	ftp://romulus.ucs.uoknor.edu/X/R5contrib/
-LIB_DEPENDS=	jpeg\\.5\\.:${PORTSDIR}/graphics/jpeg \
-		tiff\\.3\\.:${PORTSDIR}/graphics/tiff \
-		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-USE_IMAKE=      yes
-WRKSRC=		${.CURDIR}/work/xpaint
+PORTNAME=	xpaint
+PORTVERSION=	2.7.7
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://ftp.ac-grenoble.fr/Office/
+MASTER_SITE_SUBDIR=	sf-${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple paint program
+
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
+
+USE_BZIP2=	yes
+USE_IMAKE=	yes
+USE_XPM=	yes
+
+MAN1=		xpaint.1
+
+.if defined(WITH_NEXTAW)
+LIB_DEPENDS+=	neXtaw:${PORTSDIR}/x11-toolkits/neXtaw
+ALL_TARGET=	nextaw
+XAW_INCDIR=	${X11BASE}/include/X11/neXtaw
+.else
+LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+ALL_TARGET=	xaw3d
+XAW_INCDIR=	${X11BASE}/include/X11/Xaw3d
+.endif
+
+pre-configure:
+	@cd ${WRKSRC} && ${LN} -sf ${XAW_INCDIR} xaw_incdir
 
 .include <bsd.port.mk>

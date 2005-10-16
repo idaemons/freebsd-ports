@@ -1,70 +1,74 @@
-PKGNAME=	tex
-DISTFILES=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
-		mf_lib.tar.gz cm_mf.tar.gz      modes.mf 
+# New ports collection makefile for:    tex
+# Date created:         29 September 1994
+# Whom:                 jmz
+#
+# $FreeBSD$
+#
 
-EXTRACT_ONLY=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
+PORTNAME=	tex
+PORTVERSION=	3.14159
+PORTREVISION=	2
+CATEGORIES=	print
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mikeh
+#${MASTER_SITE_TEX_CTAN} XXX distfiles disappeared/moved?
+#MASTER_SITE_SUBDIR=	systems/web2c
+DISTNAME=	web2c-7.2
+DISTFILES=	web2c-7.2b.tar.gz web-7.2a.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
+		mf_lib.tar.gz cm_mf.tar.gz modes.mf
+EXTRACT_ONLY=	web2c-7.2b.tar.gz web-7.2a.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
 
+MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	TeX and METAFONT
 
-FTPGET=		${FILESDIR}/ftpget
+DIST_SUBDIR=	tex
 
-DISTNAME=	web2c-6.1
+CONFLICTS=	teTeX*
 
-#other equivalent sites: ftp.shsu.edu ftp.dante.de
-CTAN=		ftp.tex.ac.uk
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
+MAN1=		access.1 amstex.1 bibtex.1 dmp.1 dvicopy.1 dvitype.1 eplain.1 \
+		etex.1 gftodvi.1 gftopk.1 gftype.1 kpsestat.1 kpsewhich.1 \
+		latex.1 makempx.1 mf.1 mft.1 mktexlsr.1 mktexmf.1 mktexpk.1 \
+		mktextfm.1 mpost.1 mpto.1 newer.1 omega.1 patgen.1 pdftex.1 \
+		pktogf.1 pktype.1 pltotf.1 pooltype.1 readlink.1 tangle.1 \
+		tex.1 tftopl.1 tie.1 vftovp.1 vptovf.1 weave.1
+INFO=		kpathsea web2c
+MAKE_FLAGS=	fmts= all_mems=
 
-BASES=		mf.base cmmf.base 
-FORMATS=	tex.fmt 
+.include <bsd.port.pre.mk>
 
-CFLAGS=		-O2
+.if ${ARCH} == "ia64"
+BROKEN=		"Segfault during build on ia64"
+.endif
 
-BUILD_COOKIE=		${WRKDIR}/.build_done
+pre-configure:
+	cd ${WRKDIR} && ${FIND} . -name \*.gz | ${XARGS} gunzip -f
 
-web2c.tar.gz: 
-	@${FTPGET} ${CTAN} /tex-archive/systems/web2c web2c.tar.gz ${DISTDIR}/$@
-web.tar.gz: 
-	@${FTPGET} ${CTAN} /tex-archive/systems/web2c web.tar.gz ${DISTDIR}/$@
-cm_mf.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/fonts cm/mf.tar.gz ${DISTDIR}/$@
-cm_tfm.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/fonts cm/tfm.tar.gz ${DISTDIR}/$@
-mf_lib.tar.gz: 
-	@${FTPGET} ${CTAN} /tex-archive/systems/knuth lib.tar.gz ${DISTDIR}/$@
-modes.mf:
-	@${FTPGET} ${CTAN} /tex-archive/fonts/modes modes.mf ${DISTDIR}/$@
-tex_base.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/macros plain/base.tar.gz ${DISTDIR}/$@
+post-configure:
+	@cd ${WRKSRC}/web2c; \
+	${LN} -s ../../tfm/*.tfm ../../base/*.tex ../../mf/*.mf ../../lib/*.mf .; \
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/modes.mf .
 
-build: ${BUILD_COOKIE}
+do-build:
+	@(cd ${WRKSRC}; unset `env|${GREP} ^TEX|${SED} -e s/=.*//`; \
+	    ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${ALL_TARGET})
 
-${BUILD_COOKIE}:
-	@echo "===>  Building for ${DISTNAME}"
-	@(cd ${WRKSRC}/web2c; make triptrap)
-	@(cd ${WRKSRC}/web2c; make run-triptrap)
-	@(cd ${WRKSRC}/web2c; make clean-triptrap)
-	@(cd ${WRKSRC}; make CFLAGS="${CFLAGS}" programs)
-	@(cd ${WRKSRC}; MFINPUTS=${WRKDIR}/mf; export MFINPUTS;\
-		make bases="${BASES}" bases)
-	@(cd ${WRKSRC}/web2c; TEXINPUTS=${WRKDIR}/lib:${WRKSRC}; export TEXINPUTS;\
-	  TEXFONTS=${WRKDIR}/cm/tfm:${WRKDIR}/latex/tfm; export TEXFONTS; \
-		make fmts="${FORMATS}" fmts)
-	@touch -f ${BUILD_COOKIE}
+post-install:
+	@for i in kpsewhich dmp bibtex dvicopy dvitomp dvitype gftodvi gftopk \
+	  gftype mf mft patgen pktogf pktype pltotf pooltype tangle tex tftopl \
+	  vftovp vptovf weave; do ${STRIP_CMD} ${PREFIX}/bin/$$i; done
+	@${RM} -f ${PREFIX}/bin/mpostf ${PREFIX}/bin/inimpost ${PREFIX}/bin/virmpost  ${PREFIX}/bin/latex \
+	  ${PREFIX}/share/texmf/web2c/mpost.mem ${PREFIX}/share/texmf/web2c/plain.mem \
+	  ${PREFIX}/share/texmf/web2c/mp.pool ${PREFIX}/bin/mpost ${PREFIX}/bin/mpto
+	@${MKDIR} ${PREFIX}/share/texmf/fonts/tfm
+	@(cd ${WRKDIR}/tfm; ${INSTALL_DATA} *.tfm ${PREFIX}/share/texmf/fonts/tfm)
+	@${MKDIR} ${PREFIX}/share/texmf/metafont
+	@(cd ${WRKDIR}/mf; ${INSTALL_DATA} *.mf ${PREFIX}/share/texmf/metafont)
+	@${MKDIR} ${PREFIX}/share/texmf/tex
+	@(cd ${WRKDIR}/lib; ${INSTALL_DATA} *.tex ${PREFIX}/share/texmf/tex)
+	@(cd ${WRKDIR}/base; ${INSTALL_DATA} *.tex ${PREFIX}/share/texmf/tex)
 
-install:
-	@echo "===>  Installing for ${DISTNAME}"
-	@(cd ${WRKSRC}/web2c; make install-exec INSTALL_PROGRAM="/usr/bin/install -c -s")
-	@(cd ${WRKSRC}/web2c; make install-manpages)
-	@(cd ${WRKSRC}/web2c; make install-data bases="${BASES}" fmts="${FORMATS}")
-	@mkdir -p ${PREFIX}/lib/texmf/fonts/tfm
-	@(cd ${WRKDIR}/cm/tfm; install -c -m 644 *.tfm ${PREFIX}/lib/texmf/fonts/tfm)
-	@mkdir -p ${PREFIX}/lib/texmf/mf
-	@(cd ${WRKDIR}/mf; install -c -m 644 *.mf ${PREFIX}/lib/texmf/mf)
-	@mkdir -p ${PREFIX}/lib/texmf/tex
-	@(cd ${WRKDIR}/lib; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
-	@(cd ${WRKDIR}/plain/base; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
-	@(rm -f ${PREFIX}/bin/latex ${PREFIX}/bin/slitex)
-
-.include "Makefile.inc"
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

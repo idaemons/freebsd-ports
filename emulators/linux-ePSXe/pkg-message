@@ -1,0 +1,21 @@
+===============================================================================
+To do anything useful with the emulator, you need:
+
+  - a GPU (graphical processing unit) plugin, choose between:
+
+      emulators/linux-peops-softgpu
+      emulators/linux-pete-xgl2gpu
+      emulators/linux-pete-mesagpu
+
+  - a SPU (sound processing unit) plugin:
+
+      emulators/linux-peops-spu
+
+  - a Playstation BIOS image:
+
+      The port documentation says: "during testing we found out that the
+      scph1001.bin and scph7502.bin BIOS are compatible, but the scph1000.bin
+      won't work".
+
+      Please keep in mind that the Playstation BIOS is copyrighted software.
+===============================================================================

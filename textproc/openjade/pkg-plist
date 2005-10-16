@@ -1,0 +1,22 @@
+@comment $FreeBSD$
+bin/openjade
+lib/libogrove.a
+lib/libogrove.so
+lib/libogrove.so.0
+lib/libospgrove.a
+lib/libospgrove.so
+lib/libospgrove.so.0
+lib/libostyle.a
+lib/libostyle.so
+lib/libostyle.so.0
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove openjade/catalog
+share/sgml/openjade/README.jadetex
+share/sgml/openjade/builtins.dsl
+share/sgml/openjade/catalog
+share/sgml/openjade/demo.dsl
+share/sgml/openjade/demo.sgm
+share/sgml/openjade/dsssl.dtd
+share/sgml/openjade/extensions.dsl
+share/sgml/openjade/fot.dtd
+share/sgml/openjade/style-sheet.dtd
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG openjade/catalog

@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+bin/ELFDump
+include/ELFI.h
+include/ELFIO.h
+include/ELFO.h
+include/ELFTypes.h
+lib/libELFIO.a
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/elf11g.zip
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.docbook
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

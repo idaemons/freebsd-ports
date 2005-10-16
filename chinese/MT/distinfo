@@ -1,0 +1,6 @@
+MD5 (MT-2.661-full-lib.new.tar.gz) = 6b7f751375964787d174d3b96852a96e
+SIZE (MT-2.661-full-lib.new.tar.gz) = 737453
+MD5 (mt.diff) = af5e5c3ce407f26e0c46d515c09f87b7
+SIZE (mt.diff) = 150698
+MD5 (mt.no-htmlarea.diff) = b94ab12d7c601e6089b8b440b86a1f53
+SIZE (mt.no-htmlarea.diff) = 148199

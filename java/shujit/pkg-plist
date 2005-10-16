@@ -1,0 +1,3 @@
+lib/libshujit.so
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%

@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: amavisd
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable amavisd:
+#
+#amavisd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=amavisd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/amavisd > /dev/null 2>&1
+pidfile=%%AMAVISDIR%%/amavisd.pid
+required_files=%%PREFIX%%/etc/amavisd.conf
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+# set defaults
+
+amavisd_enable=${amavisd_enable:-"NO"}
+amavisd_flags=${amavisd_flags:-"-u %%AMAVISUSER%%"}
+
+load_rc_config $name
+run_rc_command "$1"

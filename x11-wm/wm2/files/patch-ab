@@ -1,0 +1,19 @@
+--- Manager.C.orig	Fri Mar 21 12:12:30 1997
++++ Manager.C	Tue Jan 28 17:45:03 2003
+@@ -368,7 +368,7 @@
+     return m_currentTime;
+ }
+ 
+-void WindowManager::sigHandler()
++void WindowManager::sigHandler(int)
+ {
+     m_signalled = True;
+ }
+@@ -526,6 +526,7 @@
+ extern int putenv(char *);	/* not POSIX */
+ }
+ #endif
++extern "C" int putenv(const char*);
+ 
+ void WindowManager::spawn()
+ {

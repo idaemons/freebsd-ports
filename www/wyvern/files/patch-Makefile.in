@@ -1,0 +1,11 @@
+--- conf/Makefile.in.org	Sun Feb  3 02:30:09 2002
++++ conf/Makefile.in	Sun Feb  3 02:42:02 2002
+@@ -39,7 +39,7 @@
+ 	for file in ${install_conf}; do \
+ 		[ -f $${file} ] || ${CP} $${file}.sample $${file}; \
+ 	done)
+-	@if [ "x${SSL_CMD}" != "x" ]; then ${MAKE} certificate; fi
++#	@if [ "x${SSL_CMD}" != "x" ]; then ${MAKE} certificate; fi
+ 
+ 
+ ###############################################################################

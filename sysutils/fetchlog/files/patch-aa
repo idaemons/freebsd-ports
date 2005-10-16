@@ -1,0 +1,22 @@
+--- Makefile.orig	Mon Mar 29 19:47:03 2004
++++ Makefile	Mon Mar 29 19:48:31 2004
+@@ -23,8 +23,8 @@
+ ### compiler
+ 
+ ### gcc
+-CC=gcc
+-CFLAGS= -O -Wall -Wcast-qual -Wstrict-prototypes \
++CC?=cc
++CFLAGS+= -O -Wall -Wcast-qual -Wstrict-prototypes \
+ 	-Wmissing-prototypes -Wmissing-declarations -Winline -Wcast-align 
+ ### cc
+ #CC=cc
+@@ -57,7 +57,7 @@
+ ### installdir    
+ ###   will use $INSTDIR/bin  and  $INSTDIR/man/man1, 
+ ###   both dirs have to exist for installation
+-INSTDIR=/usr/local
++INSTDIR=${PREFIX}
+ 
+ ### ------------------------------------------------------------------------
+ ### --- end of user settings -----------------------------------------------

@@ -1,0 +1,30 @@
+bin/pmacct
+%%WITH_MYSQL%%bin/pmmyplay
+%%WITH_PGSQL%%bin/pmpgplay
+sbin/nfacctd
+sbin/pmacctd
+sbin/sfacctd
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/EXAMPLES
+%%PORTDOCS%%%%DOCSDIR%%/FAQS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/allow-list.example
+%%EXAMPLESDIR%%/gnuplot-example.sh
+%%EXAMPLESDIR%%/gnuplot.script.example
+%%EXAMPLESDIR%%/mrtg-example.sh
+%%EXAMPLESDIR%%/mrtg.conf.example
+%%EXAMPLESDIR%%/networks.lst.example
+%%EXAMPLESDIR%%/nfacctd-print.conf.example
+%%EXAMPLESDIR%%/nfacctd-sql.conf.example
+%%EXAMPLESDIR%%/nfacctd-sql_v1.conf.example
+%%EXAMPLESDIR%%/nfacctd-sql_v2.conf.example
+%%EXAMPLESDIR%%/pmacctd-imt.conf.example
+%%EXAMPLESDIR%%/pmacctd-multiple-plugins.conf.example
+%%EXAMPLESDIR%%/pmacctd-sql.conf.example
+%%EXAMPLESDIR%%/pmacctd-sql_v1.conf.example
+%%EXAMPLESDIR%%/pmacctd-sql_v2.conf.example
+%%EXAMPLESDIR%%/ports.lst.example
+%%EXAMPLESDIR%%/pretag.map.example
+%%EXAMPLESDIR%%/rrdtool-example.sh
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+bin/afm2tfm
+bin/dvips
+bin/odvips
+bin/udvips
+%%DVIPSDIR%%/base/tex.pro
+%%DVIPSDIR%%/base/texps.pro
+%%DVIPSDIR%%/base/texc.pro
+%%DVIPSDIR%%/base/special.pro
+%%DVIPSDIR%%/base/finclude.pro
+%%DVIPSDIR%%/base/color.pro
+%%DVIPSDIR%%/base/crop.pro
+%%DVIPSDIR%%/base/hps.pro
+%%DVIPSCONFIGDIR%%/config/config.ps
+@dirrm %%DVIPSDIR%%/base
+@dirrm %%DVIPSCONFIGDIR%%/config
+%%FONTSMAPDIR%%/dvips/kanji.map
+@exec %%MKTEXLSR%%
+@exec %%UPDMAP_SYS_PTEX%% --enable Map=kanji.map
+@unexec %%UPDMAP_SYS_PTEX%% --disable kanji.map
+@unexec %%MKTEXLSR%%

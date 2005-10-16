@@ -1,0 +1,21 @@
+bin/munger
+%%DATADIR%%/mbox2munger.munger
+%%DATADIR%%/xml2alist.munger
+%%DATADIR%%/mime2munger.munger
+%%DATADIR%%/google.munger
+%%DATADIR%%/google.template
+%%DATADIR%%/ed.munger
+%%DATADIR%%/xmlquery.munger
+%%DATADIR%%/filter.munger
+%%DATADIR%%/tags.munger
+%%DATADIR%%/fcgi.munger
+%%DATADIR%%/client.fcgi
+%%DATADIR%%/err.munger
+%%DATADIR%%/options.munger
+%%DATADIR%%/fmt.munger
+%%DATADIR%%/cat.munger
+%%DATADIR%%/grep.munger
+%%DATADIR%%/library.munger
+%%DATADIR%%/transform.munger
+%%DATADIR%%/view.munger
+@dirrm %%DATADIR%%/

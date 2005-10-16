@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: pureftpd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable pure-ftpd:
+#
+# pureftpd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=pureftpd
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+command=%%PREFIX%%/sbin/pure-config.pl
+pureftpd_config=${pureftpd_config:-"%%PREFIX%%/etc/pure-ftpd.conf"}
+required_files=${pureftpd_config}
+pidfile=/var/run/pure-ftpd.pid
+procname=pure-ftpd
+
+pureftpd_enable=${pureftpd_enable:-"NO"}
+command_args=${pureftpd_config}
+
+run_rc_command "$1"

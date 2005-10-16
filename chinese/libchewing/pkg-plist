@@ -1,0 +1,21 @@
+include/chewing/char.h
+include/chewing/chewing.h
+include/chewing/chewingio.h
+include/chewing/chewingutil.h
+include/chewing/dict.h
+include/chewing/global.h
+include/chewing/hanyupinying.h
+include/chewing/hash.h
+include/chewing/userphrase.h
+include/chewing/zuin.h
+lib/libchewing.a
+lib/libchewing.so
+lib/libchewing.so.2
+libdata/pkgconfig/chewing.pc
+%%DATADIR%%/ch_index.dat
+%%DATADIR%%/dict.dat
+%%DATADIR%%/fonetree.dat
+%%DATADIR%%/ph_index.dat
+%%DATADIR%%/us_freq.dat
+@dirrm include/chewing
+@dirrm %%DATADIR%%

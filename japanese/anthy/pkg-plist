@@ -1,0 +1,42 @@
+bin/anthy-agent
+bin/anthy-dic-tool
+etc/anthy-conf
+include/anthy/anthy.h
+include/anthy/dicutil.h
+include/anthy/input.h
+lib/libanthy.a
+lib/libanthy.so
+lib/libanthy.so.1
+lib/libanthydic.a
+lib/libanthydic.so
+lib/libanthydic.so.1
+lib/libanthyinput.a
+lib/libanthyinput.so
+lib/libanthyinput.so.0
+libdata/pkgconfig/anthy.pc
+share/anthy/a.depword
+share/anthy/ajv.depword
+share/anthy/anthy.dic
+share/anthy/av.depword
+share/anthy/conjugate.depword
+share/anthy/conjugate.table
+share/anthy/dic-tool-usage.txt
+share/anthy/fix.depword
+share/anthy/indepword.txt
+share/anthy/master.depword
+share/anthy/noun-variant.depword
+share/anthy/noun.depword
+share/anthy/typetab
+share/anthy/v.depword
+%%PORTDOCS%%%%DOCSDIR%%/ELISP
+%%ELISPDIR%%/anthy-azik.el
+%%ELISPDIR%%/anthy-conf.el
+%%ELISPDIR%%/anthy-dic.el
+%%ELISPDIR%%/anthy-isearch.el
+%%ELISPDIR%%/anthy-kyuri.el
+%%ELISPDIR%%/anthy.el
+%%ELISPDIR%%/leim-list.el
+@dirrm share/anthy
+@dirrm include/anthy
+@dirrm %%ELISPDIR%%
+@dirrm %%DOCSDIR%%

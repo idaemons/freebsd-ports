@@ -1,0 +1,106 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+if [ -f ${WRKDIRPREFIX}${CURDIR2}/Makefile.inc ]; then
+	exit
+fi
+
+if [ "${BINDDLZ_OPTIONS}" ]; then
+	set ${BINDDLZ_OPTIONS}
+else
+	dialog --title "configuration options" --clear \
+				--checklist "\n\
+Please select desired options:" -1 -1 12 \
+OldDLZ		"use old Bind9.2.2" OFF \
+OpenSSL		"OpenSSL support" ON \
+Threads		"Thread support" ON \
+PostgreSQL	"PostgreSQL driver" ON \
+MySQL323	"MySQL 3.23 driver" OFF \
+MySQL40	"MySQL 4.0 driver" OFF \
+MySQL41	"MySQL 4.1 driver" OFF \
+OpenLDAP22	"OpenLDAP 2.2 backend" OFF \
+BerkleyDB41	"BerkleyDB 4.1 backend" OFF \
+BerkleyDB42	"BerkleyDB 4.2 backend" OFF \
+FileSystem	"Filesystem driver" ON \
+Stub		"Stub driver" OFF \
+2> /tmp/checklist.tmp.$$
+
+        retval=$?
+	if [ -s /tmp/checklist.tmp.$$ ]; then
+			set `cat /tmp/checklist.tmp.$$`
+	fi
+	rm -f /tmp/checklist.tmp.$$
+
+	case $retval in
+		0)      if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)      echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+
+${MKDIR} ${WRKDIRPREFIX}${CURDIR2}
+exec > ${WRKDIRPREFIX}${CURDIR2}/Makefile.inc
+
+while [ "$1" ]; do
+	case $1 in
+		\"OldDLZ\")
+			echo WITH_OLD_DLZ=YES
+			;;
+		\"OpenSSL\")
+			echo WITH_OPENSSL=YES
+			;;
+		\"Threads\")
+			echo WITH_BIND9_THREADS=YES
+			;;
+		\"PostgreSQL\")
+			echo WITH_POSTGRESQL_DRIVER=YES
+			;;
+		\"MySQL323\")
+			echo WITH_MYSQL_DRIVER=YES
+			echo MYSQL_PORT?=databases/mysql323-client
+			;;
+		\"MySQL40\")
+			echo WITH_MYSQL_DRIVER=YES
+			echo MYSQL_PORT?=databases/mysql40-client
+			;;
+		\"MySQL41\")
+			echo WITH_MYSQL_DRIVER=YES
+			echo MYSQL_PORT?=databases/mysql41-client
+			;;
+		\"OpenLDAP22\")
+			echo WITH_LDAP=YES
+			echo LDAP_PORT?=net/openldap22-client
+			echo OPENLDAP_LIB?=libldap-2.2.so.7
+			;;
+		\"BerkleyDB41\")
+			echo WITH_BERKLEYDB_DRIVER=YES
+			echo BERKLEYDB_LIB?=db41.1
+			echo BERKLEYDB_PORT?=databases/db41
+			;;
+		\"BerkleyDB42\")
+			echo WITH_BERKLEYDB_DRIVER=YES
+			echo BERKLEYDB_LIB?=db-4.2
+			echo BERKLEYDB_PORT?=databases/db42
+			;;
+		\"FileSystem\")
+			echo WITH_FILESYSTEM_DRIVER=YES
+			;;
+		\"Stub\")
+			echo WITH_STUB_DRIVER=YES
+			;;
+		\"nothing\"|true)
+			;;
+		*)
+			echo "Invalid option(s): $*" > /dev/stderr
+			rm -f ${WRKDIRPREFIX}${CURDIR2}/Makefile.inc
+			exit 1
+			;;
+	esac
+    shift
+done
+exec > /dev/stderr

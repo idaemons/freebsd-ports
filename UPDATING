@@ -1,0 +1,2337 @@
+This file documents some of the problems you may encounter when
+upgrading your ports.  We try our best to minimize these disruptions,
+but sometimes they are unavoidable.
+
+You should get into the habit of checking this file for changes each
+time you update your ports collection, before attempting any port
+upgrades.
+
+20050804:
+  AFFECTS: users of sysutils/kdeadmin3
+  AUTHOR: kde@FreeBSD.org
+
+  One data file has been moved from kdeadmin to kdelibs between
+  KDE 3.4.1 and KDE 3.4.2.  This means that 
+  
+  *********if you currently have the kdeadmin port installed*********
+
+  you will have to take some precautions to update your KDE
+  installation.
+
+  We recommend sticking to the following procedure. This procedure requires you
+  to have sysutils/portupgrade installed and to be the superuser (or using sudo).
+
+  1.) Delete installed packages which conflict with the updated KDE
+      ports.
+
+        pkg_deinstall -f kdeadmin-\[0-9\]\*
+
+  2.) Now update the remaining KDE ports.
+
+        portupgrade -O arts\* kde\* \*kde-i18n\*
+
+      or, if you want to update KDE along with other updated ports:
+
+        portupgrade -a
+
+  3.) Reinstall the KDE ports you deleted in step 1.
+
+        portinstall -O kdeadmin
+
+20050728:
+  AFFECTS: users of sysutils/sge and sysutils/sgeee
+  AUTHOR: brooks@FreeBSD.org
+
+  A port of SGE 6 has been installed in sysutils/sge.  SGE 6 is
+  significantly different from SGE 5 and an upgrade is only possible
+  by removing the SGE 5 install and replacing it.  The SGE vs SGEEE
+  distinction has been removed in SGE 6 so the sgeee port was removed.
+  The sge and sgeee ports were repo copied to sge53 and sgeee53
+  respectively and existing installations may continue to use them.
+
+20050727:
+  AFFECTS: users of databases/firebird-server
+  AUTHOR: skv@FreeBSD.org
+
+  Changes in layout:
+  * database directory has changed from /usr/local/firebird to /var/db/firebird
+  * configuration files are placed in /usr/local/etc/firebird
+  * common utilities have been moved to /usr/local/bin
+  * suid-ed binaries have been moved to /usr/local/sbin
+
+  Update inetd.conf/xinetd.conf to reflect new location of "fb_inet_server".
+
+20050722:
+  AFFECTS: All RELENG_6 and HEAD users of ports/packages, maintainers
+	   of ports that interact with the compat libraries.
+  AUTHOR: kensmith@FreeBSD.org
+
+  The shared library version number of all shared libraries built as
+  part of the baseline system has been incremented in both RELENG_6
+  and HEAD.  The overall goal is to make handling of the compat library
+  infrastructure easier.  Each new release branch will have different
+  version numbers for all of the shared libraries and the compat ports
+  can simply include all of the shared libraries from the previous
+  release.
+
+  If you update your system using normal cvsup/rebuild/reinstall
+  mechanisms the old versions of the libraries will still be on your
+  system so your old ports executables will continue to work.
+  But you definitely should plan on recompiling and reinstalling all
+  of your installed ports so they get relinked against the new libraries.
+  If you don't take this step as time goes on "normal" updates and
+  installs run the risk of having executables relying on both the new
+  and old versions of the libraries which would cause big problems.
+
+  It will take some time for the pre-built packages available on the
+  FTP mirror sites to be rebuilt against the new libraries.  If you
+  want to update your ports using the pre-built packages watch the
+  mailing lists for when the rebuilt packages become available.
+
+20050710:
+  AFFECTS: users of x11-toolkits/qt33, x11/kdelibs3
+  AUTHOR: kde@FreeBSD.org
+
+  If you have compiled qt33 with the KDE_OPTIONS option checked (if your
+  installed qt-package is called qt-copy-3.3.4 instead of qt-3.3.4, check
+  with pkg_info), you should cvsup and recompile qt33 and everything
+  depending on it:
+
+  portupgrade -rf qt\*
+
+  Previous versions of the qt33 port contained a patch that
+  introduces binary incompatibility between unpatched qt33 and software
+  compiled against a patched qt33.
+
+  Symptoms of the binary incompatibility: Unresolved symbol warnings from
+  various KDE/Qt applications (both during runtime or compiling/linking),
+  "Could not start kdeinit" dialogs during KDE startup, kicker crashes during
+  exiting KDE.
+
+20050630:
+  AFFECTS: users of x11/nvidia-driver
+  AUTHOR: danfe@FreeBSD.org
+
+  Due to several complaints, new (unsupported) option had been added to port
+  Makefile: WITH_LEGACY_GPU_SUPPORT.  Starting with version 7667, NVidia has
+  dropped support for numerous "legacy" GPUs, while this option allows to go
+  with previous version of driver (this does not apply to older versions of
+  FreeBSD, since you have to use version 6113 of driver (if you did not yet
+  upgraded to FreeBSD 5.3 or later) which has support for those GPUs).
+
+  If you must use WITH_LEGACY_GPU_SUPPORT option, be sure to ``hold'' the
+  package by making appropriate entry in your pkgtools.conf, otherwise
+  portupgrade(1) will upgrade your port to latest NVidia release on the
+  next run, which is probably not what you want.
+
+  Refer to x11/nvidia-driver/Makefile for further details.
+
+20050625:
+  AFFECTS: users of sysutils/nut
+  AUTHOR: Joerg.Pulz@frm2.tum.de
+
+  nut now installs a rcNG script for starting the Network UPS Tools daemons.
+  To enable that at boot time, add the following into /etc/rc.conf[.local]:
+
+  nut_enable="YES"
+
+20050624:
+  AFFECTS: users of lang/perl5.8
+  AUTHOR: tobez@FreeBSD.org
+
+  lang/perl5.8 has been updated to 5.8.7.  You should update everything
+  depending on perl.  The easiest way to do that is to use
+  perl-after-upgrade script supplied with lang/perl5.8.  Please see
+  its manual page for details.
+
+20050622:
+  AFFECTS: users of ftp/proftpd-*
+  AUTHOR: flz@FreeBSD.org
+
+  ProFTPd binary moved from ${PREFIX}/libexec to ${PREFIX}/sbin. People
+  using proftpd with inetd must use ${PREFIX}/sbin/in.proftpd (or
+  ${PREFIX}/sbin/proftpd which is just the same). Read the commit log
+  and diffs for more information.
+
+20050621:
+  AFFECTS: users of net/cacti
+  AUTHOR: sem@FreeBSD.org
+
+  Because of users need to keep their DB configuration but config.php
+  can't be saved on upgrading, I've moved DB settings in db-settings.php.
+  So, you need to change db-settings.php and do not touch config.php
+  anymore.
+
+20050618:
+  AFFECTS: users of alternate linux_base ports
+  AUTHOR: netchild@FreeBSD.org
+
+  The Ports Collection now allows to override the default linux_base port.
+  Specify e.g. OVERRIDE_LINUX_BASE_PORT=rh-9 in /etc/make.conf to use
+  ${PORTSDIR}/emulators/linux_base-rh-9 (the logic is to use
+  ${PORTSDIR}/emulators/linux_base-${OVERRIDE_LINUX_BASE_PORT}).
+
+20050610:
+  AFFECTS: users of ftp/wget built with SSL (default)
+  AUTHOR:  sf@FreeBSD.org
+
+  wget 1.10 now authenticates certificate of remote host before making a
+  SSL connection. To make it work, you should have working CA root
+  certificates list in /etc/ssl/cert.pem.
+
+  If you don't have it there are options:
+  a) install security/ca-roots port and you have done.
+  b) install ftp/curl port and symlink it to /etc/ssl/cert.pem.
+      ln -s /usr/local/share/curl/curl-ca-bundle.crt /etc/ssl/cert.pem
+  c) put your favorite one into certain place.
+
+20050601:
+  AFFECTS: users of devel/perforce
+  AUTHOR: lth@FreeBSD.org
+
+  Upgrading to 2005.1 is straightforward, but it is highly recommended
+  to follow the upgrading instructions in the release notes:
+    http://www.perforce.com/perforce/doc.051/user/relnotes.txt
+
+20050526:
+  AFFECTS: users of mail/sylpheed-claws
+  AUTHOR: netchild@FreeBSD.org
+
+  Sylpheed-claws is updated to the GTK2 version now. This results in a new
+  configuration directory. To keep your configuration from the GTK1 version
+  you can
+      cp -rp ~/.sylpheed .sylpheed-gtk2
+  before starting the GTK2 version for the first time, or
+      cp -Rp ~/.sylpheed .sylpheed-gtk2/
+  when you have run the GTK2 version already.
+
+20050524:
+  AFFECTS: users of multimedia/mpeg4ip and multimedia/mpeg4ip-libmp4v2
+  AUTHOR: ahze@FreeBSD.org
+
+  Starting with version 1.3 mpeg4ip-libmp4v2 installs libmp4av that mpeg4ip
+  previously installed. It is advised to de-install mpeg4ip-libmp4v2 and
+  mpeg4ip before updating to mpeg4ip-1.3 or mpeg4ip-libmp4v2-1.3. If you
+  have already updated mpeg4ip-libmp4v2 and mpeg4ip you should deinstall
+  mpeg4ip and reinstall mpeg4ip-libmp4v2 before updating mpeg4ip.
+
+  This does not affect users who just have mpeg4ip-libmp4v2 installed
+  and not mpeg4ip.
+
+20050523:
+  AFFECTS: users of games/pvpgn
+  AUTHOR: mek@mek.uz.ua
+
+  The following has been changed in the bnetd.conf file (starting with
+  version 1.7.7):
+    - The old config variable `servername' has been renamed to `hostname'.
+    - A new `servername' config variable has been introduced for server
+      identification.
+
+20050519:
+  AFFECTS: users of www/squid
+  AUTHOR: tmseck@netcologne.de
+
+  Starting with 2.5.10, the cachemgr.cgi program uses a configuration file
+  cachemgr.conf to control which hosts this program is allowed to manage.
+  To prevent abuse, the configuration defaults to "localhost" only.
+  Please see cachemgr.cgi(8) for further details.
+
+20050517:
+  AFFECTS: users of www/mod_perl2 and all ports depending on it
+  AUTHOR: lars.eggert@gmx.net.
+
+  API changed for mod_perl2 - existing code will break!
+  The mod_perl2 developers have significantly changed the API
+  in release candidate 2.0.0-RC5. These changes include changed
+  names for core packages, causing software that uses the old API
+  to fail with the new version. You need to update your code as
+  described in http://perl.apache.org/docs/2.0/rename.html
+
+20050517:
+  AFFECTS: users of databases/firebird
+  AUTHOR: freebsd@galle.com.br
+
+  The port was split into a -server and -client parts.
+  The -server contains server binary, UDFs, and install all in
+  ${PREFIX}/firebird. The -client contains libs, includes,
+  client binaries, docs and examples. For migration delete
+  the firebird port and install the -server and/or -client port
+  afterwards.
+
+20050512:
+  AFFECTS: users of devel/svk
+  AUTHOR: rafan@infor.org
+
+  Since SVK 0.30, it is fast enough and PPerl causes some problems.
+  Thus, the SVK port no longer supports WITH_PPERL knob.
+  If you still want to use PPerl with it, please go and read:
+  http://svk.elixus.org/?SVKAndPPerl for details.
+
+20050511:
+  AFFECTS: users of multimedia/ffmpeg{,-devel}
+  AUTHOR: lioux@FreeBSD.org
+
+  The latest FreeBSD CVS snapshot has been committed under
+  multimedia/ffmepg-devel. In order to build it, you need to deinstall
+  any ffmpeg ports first.
+
+  # pkg_deinstall multimedia/ffmpeg
+
+  Furthermore, video capture is no longer working in the latest
+  version. Work is been done to overcome this.
+
+20050511:
+  AFFECTS: users of databases/postgresql??-(server|contrib)
+  AUTHOR: girgen@FreeBSD.org
+
+  The PostgreSQL ports have been updated to latest versions. A
+  security problem in the template database requires a simple SQL
+  command to be run on each database. because these problems are
+  really incorrect system catalog entries. Updating to a new release
+  will NOT by itself solve the problems in an existing
+  installation.
+
+  See http://www.postgresql.org/about/news.315 for details.
+
+20050501:
+  AFFECTS: users of lang/ocaml based applications and libraries
+  AUTHOR: lioux@FreeBSD.org
+
+  With the recent update of ocaml to 3.08.3 some API compatibility
+  has been broken. It is a bit subtle so that some users might not
+  notice it. However, updating all ocaml based applications and
+  libraries are advised using the new compiler/interpreter version.
+  Issue the following command:
+
+  	# portupgrade -rf 'ocaml*'
+
+20050426:
+  AFFECTS: users of mail/courier-authlib
+  AUTHOR: oliver@FreeBSD.org
+
+  mail/courier-authlib has been moved to security/courier-authlib and is
+  now only a meta-port. Installing the meta-port installs security/
+  courier-authlib-base and no, one or more sub-ports regarding to what
+  authentication methods you've chosen. Courier-authlib-base only
+  provides you authentication via PAM. All ports depending on courier-
+  authlib (at the time of writing, courier-imap, sqwebmail and maildrop)
+  giving you the same choice the meta-port provides you.
+
+20050421:
+  AFFECTS: users of www/opera-devel
+  AUTHOR: avleeuwen@piwebs.com
+
+  Opera 8.0 final has been released and can be installed by installing the
+  www/opera port. The opera-devel port is now deprecated. If you want
+  to continue using the personal settings you used with www/opera-devel,
+  issue this command:
+
+	# mv ~/.opera-devel ~/.opera
+
+20050421:
+  AFFECTS: users of www/opera
+  AUTHOR: avleeuwen@piwebs.com
+
+  Opera has been updated to 8.0. If are upgrading from version 7.x or
+  below, it is recommend that you backup your personal "~/.opera"
+  directory and remove it, like this:
+
+        # cp -Rp ~/.opera ~/.opera-bak
+        # rm -rf ~/.opera/*
+
+  After that, you can put your bookmarks, email, contacts, etc. back in
+  ~/.opera/. The most important files are your bookmarks
+  (~/.opera/opera6.adr) and your emails (~/.opera/mail). It is not a good
+  idea to put opera6.ini, userstyle.ini, search.ini, pluginpath.ini and other
+  non-personal stuff back in ~/.opera/. If you need custom settings,
+  reconfigure Opera from the preferences pane or edit the files by hand.
+
+20050420:
+  AFFECTS: users of www/ipython
+  AUTHOR: dryice@liu.com.cn
+
+  This is backward-incompatible changes for pysh.
+
+  1. You must update your pysh profile (~/.ipython/ipythonrc-pysh):
+     a) Add to it the line:
+        import_all IPython.Extensions.InterpreterExec
+     b) Delete the line
+        execfile pysh.py
+  2. You must also delete from ~/.ipython/ the file pysh.py.
+
+20050419:
+  AFFECTS: users of www/linux-opera
+  AUTHOR: mezz@FreeBSD.org
+
+  Opera has been updated to 8.0. If you are upgrade from version 7.x or
+  below, it is recommend for you to backup your personal "~/.linux-opera"
+  directory and remove it. It can be done following from the command line:
+
+	# cp -Rp ~/.linux-opera ~/.linux-opera-bak
+	# rm -rf ~/.linux-opera/*
+
+  After that, you can put your bookmark, email, contacts and etc back in
+  ~/.linux-opera/. The bookmark is ~/.linux-opera/opera6.adr and the email is
+  ~/.linux-opera/mail as you can figure out by view in ~/.linux-opera/. It is
+  probably not good idea to put opera6.ini, userstyle.ini, search.ini,
+  pluginpath.ini and other non-personal stuff back in ~/.linux-opera/. The
+  non-personal stuff should be re-configure on new stuff by either Opera
+  preferences in GUI or hand (manual) in your editor.
+
+20050415:
+  AFFECTS: users of net-mgmt/cricket
+  AUTHOR: ijliao@FreeBSD.org
+
+  As of 2004/11/09 cricket uses a separate user "wwwadm". If you
+  upgrade your installation, make sure you chown your existing data.
+
+20050414:
+  AFFECTS: users of databases/postgresql and any port that depends on it
+  AUTHOR: girgen@FreeBSD.org
+
+  The PostgreSQL ports are updated to 8.0.2. All shared libraries'
+  versions have been bumped, so you will need to recompile all client
+  applications that depend on libpq.so. The recommended way to
+  upgrade from 8.0.x would be something like
+
+  	portupgrade -rf postgresql-client
+
+20050413:
+  AFFECTS: users of mail/spamd
+  AUTHOR: delphij@FreeBSD.org
+
+  spamd now installs a rcNG script for starting the OpenBSD pf spamd daemon.
+  To enable that at boot time, add the following into /etc/rc.conf[.local]:
+
+  pfspamd_enable="YES"
+
+20050413
+  AFFECTS: users of www/quixote
+  AUTHOR: dryice@liu.com.cn
+
+  There are backward-incompatible changes upgrading from 1.2 to
+  2.0. Including renaming quixote.form to quixote.form1 and
+  quixote.form2 to quixote.form. Please refer to upgrading.txt in the
+  docs dir for detail.
+
+20050411:
+  AFFECTS: users of x11/gdm
+  AUTHOR: kwm@FreeBSD.org
+
+  GDM now installs a rcNG script for starting the gdm daemon.
+  To enable that gdm starts a boot time, add the following to /etc/rc.conf:
+
+  gdm_enable="YES"
+
+20050406:
+  AFFECTS: users of databases/mysql50-server
+  AUTHOR: ale@FreeBSD.org
+
+  The base database directory can now be set and changed in rc.conf (default:
+  /var/db/mysql). If you used to set DB_DIR to a different value during port
+  compilation, you must specify it via the new "mysql_dbdir" rc variable.
+  In addition, the "mysqllimits_enable" and "mysqllimits_args" variables
+  have been replaced by "mysql_limits" for consistency.
+
+20050403:
+  AFFECTS: users of net/tac_plus4
+  AUTHOR: marcus@FreeBSD.org
+
+  Tac_plus4 now installs an rcNG script for starting the tac_plus daemon.
+  To enable tac_plus to start at boot time, add the following to /etc/rc.conf:
+
+  tac_plus_enable="YES"
+
+  You can also pass flags to tac_plus by setting the rc.conf variable
+  tac_plus_flags.  The default flags are "-C ${PREFIX}/etc/tac_plus.conf".
+
+  Additionally, the default version of IOS for tac_plus has been changed from
+  11.x to 12.x.
+
+20050324:
+  AFFECTS: users of net/mDNSResponder
+  AUTHOR: brooks@FreeBSD.org
+
+  In mDNSResponder 98_1, mdnsd is no longer started by default due to a
+  switch to an rc.subr startup script.  To start it, you must add add
+  mdnsd_enable="YES" to your /etc/rc.conf or other suitable
+  configuration file.
+
+20050320:
+  AFFECTS: users of x11/kde3, x11/kdelibs3, x11/kdebase3,
+	x11-themes/kdeartwork3, www/akregator, x11-themes/phase,
+	multimedia/kdemultimedia3
+  AUTHOR: kde@freebsd.org
+
+  In KDE 3.4, a number of files were moved between ports, some ports
+  were added, one port has been removed and some applications formerly available
+  in their own ports were incorporated into KDE. This means that you will have
+  to take some precautions to update your KDE installation. A simple
+  portupgrade -a will not work.
+
+  Portupgrade -R kde can fail as well, depending on what parts of KDE you
+  have currently installed. We therefore recommend sticking to the following
+  procedure. The procedure requires you to have sysutils/portupgrade installed
+  and you to be the superuser (or using sudo). We recommend not being logged in
+  to a KDE session on the machine you're performing the upgrade on. If you
+  choose to perform the update while being logged in to KDE, expect erratic
+  behavior and crashes from applications launched until you log out and back
+  in.
+
+  1.) Delete installed packages which conflict with the updated KDE
+      ports.
+
+      	pkg_deinstall -f kdeartwork-\[0-9\]\* kdebase-\[0-9\]\* \
+	kdebase-konqueror-nsplugins-\[0-9\]\* kdewebdev-\[0-9\]\* \
+	kde-\[0-9\]\* akregator\* phase\*
+
+  2.) Now update the remaining KDE ports.
+
+      	portupgrade -O arts\* kde\* \*kde-i18n\*
+
+      or, if you want to update KDE along with other updated ports:
+
+      	portupgrade -a
+
+  3.) Reinstall the KDE ports you deleted in step 1.
+
+      	portinstall -O kdebase kdeartwork kdewebdev
+
+   Changes in detail:
+
+	- www/akregator is now included into deskutils/kdepim3.
+	- x11-themes/phase is now included in x11-themes/kdeartwork3.
+	- www/konqueror-nsplugins has been removed and is now integrated into
+          x11/kdebase3.
+	- Juk has been split out of multimedia/kdemultimedia3 and is now
+          available as audio/juk.
+	- Akode has been split out of multimedia/kdemultimedia3 and is now
+          available as audio/akode and audio/akode-plugins-*. Akode is also
+	  a default dependency of multimedia/kdemultimedia3 now.
+	- audio/mpeglib_artsplug has been demoted to legacy status and is no
+          longer the default decoder backend for kdemultimedia3. It's also not
+          depended on by kdemultimedia3 by default anymore.
+
+  Known post-updating issues:
+
+  - If you're missing acoustic notifications (system sounds) after the update:
+
+    	rm ~/.kde/share/config/knotifyrc
+
+    Then log out of KDE and back in again (also see
+    http://freebsd.kde.org/faq.php#q16).
+
+  - kdm users might get warnings from kdm about obsolete lines in kdmrc.
+    You can migrate your configuration while preserving your customizations
+    by running (as root or with sudo)
+
+    	genkdmconf
+
+    Make sure to backup your old kdm configuration (usually found in
+    /usr/local/share/config/kdm) beforehand in case the merge produces an
+    invalid configuration. Especially note that kdm does not use the Xservers
+    file anymore. A genkdmconf run will merge its contents into kdmrc.
+
+  Extensive information about changes and new features of KDE 3.4 can be found
+  at http://developer.kde.org/development-versions/kde-3.4-features.html. Bugs
+  can be reported at http://bugs.kde.org.
+
+20050320:
+  AFFECTS: users of sysutils/portsnap
+  AUTHOR: cperciva@FreeBSD.org
+
+  As a result of shifting from SHA-1 to SHA-256, the structure of
+  portsnap's configuration file and compressed snapshot have both
+  changed.  After upgrading to portsnap 0.9, you will have to
+  update your configuration file ($PREFIX/etc/portsnap.conf) and
+  delete your existing portsnap compressed snapshot:
+
+  	# cd /usr/local/etc && cp portsnap.conf.sample portsnap.conf
+  	# rm -r /usr/local/portsnap/*
+
+  In addition, be aware that the next runs of "portsnap fetch" and
+  "portsnap update" will take far longer than usual, since they
+  will need to download and extract a complete copy of the ports
+  tree.
+
+20050319:
+  AFFECTS: users of databases/postgresql7[34]-server
+  AUTHOR: girgen@FreeBSD.org
+
+  The startup script has been merged from 8.0 to 7.3 and 7.4. Hence,
+  to start the PostgreSQL server at boot time (regardless of version),
+  add the following to /etc/rc.conf:
+
+  postgresql_enable=yes
+
+20050318:
+  AFFECTS: users of x11-wm/blackbox, x11-wm/boxtools, x11-wm/bbkeys, and
+	x11-wm/bbpager
+  AUTHOR: A.J.Caines@halplant.com
+
+  The new blackbox ports include several changes to use and configuration.
+  Please read the pkg-message files in the respective ports for details.
+
+20050315:
+  AFFECTS: users of databases/mysql323-server
+  AUTHOR: ale@FreeBSD.org
+
+  The MySQL Daemon must now be enabled / disabled in rc.conf.
+  The base database directory can now be set and changed in rc.conf (default:
+  /var/db/mysql). If you used to set DB_DIR to a different value during port
+  compilation, you must specify it via the new "mysql_dbdir" rc variable.
+  See the script for details.
+
+20050314:
+  AFFECTS: users of databases/mysql40-server
+  AUTHOR: ale@FreeBSD.org
+
+  The base database directory can now be set and changed in rc.conf (default:
+  /var/db/mysql). If you used to set DB_DIR to a different value during port
+  compilation, you must specify it via the new "mysql_dbdir" rc variable.
+  In addition, the "mysqllimits_enable" and "mysqllimits_args" variables
+  have been replaced by "mysql_limits" for consistency.
+
+20050313:
+  AFFECTS: users of games/netpanzerdata, games/netpanzer
+  AUTHOR: mad@madpilot.net
+
+  The netpanzerdata port has changed it's name to netpanzer-data,
+  so before installing the new one you will need to remove the old
+  netpanzerdata-0.1.3 port.
+
+20050312:
+  AFFECTS: all users who have glib/gtk/gnome libraries installed
+  AUTHOR: ahze@FreeBSD.org and the FreeBSD gnome team
+
+  Gnome has been upgraded to 2.10 and gtk/glib to 2.6.
+  DO NOT USE portupgrade(1) to update any gnome or gtk
+  or any port that depends on them. Using portupgrade
+  will cause problems and you will have to manually
+  upgrade ports.  Please use the gnome_upgrade.sh
+  script from
+    http://www.FreeBSD.org/gnome/gnome_upgrade.sh
+
+20050309:
+  AFFECTS: users of mail/maildrop
+  AUTHOR: sergei@FreeBSD.org
+
+  maildrop has been recently upgraded to 1.8.0. This version
+  has the following changes:
+
+  - Maildir quota is now enabled by default.
+    The following options were deleted:
+    - WITH_MAILDIRQUOTA
+    - WITH_TRASHQUOTA
+  - New option WITH_AUTHLIB is added, which provides optional support for
+    Courier Auth Library (mail/courier-authlib port).
+  - Userdb authentication, LDAP and MySQL support are provided through
+    courier-authlib now, thus the following options
+    - WITH_USERDB
+    - WITH_LDAP
+    - WITH_MYSQL
+    have been superseded by WITH_AUTHLIB.
+
+20050306:
+  AFFECTS: users of math/ploticus
+  AUTHOR: linimon@FreeBSD.org
+
+  ploticus is now installed as bin/ploticus rather than bin/pl to
+  avoid useless conflicts with other ports.
+
+20050303:
+  AFFECTS: users of net/i2p
+  AUTHOR: lioux@FreeBSD.org
+
+  The newest i2p version 0.5.0.1 is incompatible with all previous
+  versions. Follow these procedures if you are updating from a
+  previous port version. You can ignore these if you are installing
+  i2p for the first time.
+
+  1) Update i2p port to the new one
+  2) Use the i2prouter script to uninstall i2p from user account.
+     You are going to lose all your configuration.
+
+  $ i2prouter uninstall
+
+  3) Install the new i2p version
+
+  $ i2prouter install
+
+20050301:
+  AFFECTS: users of sysutils/ganglia-monitor-core
+  AUTHOR: brooks@FreeBSD.org
+
+  With the move to Ganglia 3.0.0, the configuration file for gmond has
+  changed completely.  The -r or --convert options may be used to
+  emit a file in the new format given one in the old.
+
+  Startup is now controlled by an RC_SUBR script so the gmond_enable and
+  gmetad_enable variables will need to be set for gmond and gmetad to be
+  started.  Existing gmond.sh and gmetad.sh scripts in PREFIX/etc/rc.d
+  should be removed.
+
+  Due to a bug in ganglia's build process, the previous version may need
+  to be removed before ganglia can be upgraded.
+
+20050224:
+  AFFECTS: users of lang/ruby18 and any apps that depend on ruby18
+  AUTHOR: mezz@FreeBSD.org
+
+  The theads support has been disabled again. It causes the more trouble, so
+  it now builds with ${PTHREAD_CFLAGS} and ${PTHREAD_LIBS}. It is recommend
+  you to rebuild any apps that depend on lang/ruby18. Do something like this:
+
+  	portupgrade -rf ruby-1.8.2\*
+
+20050224:
+  AFFECTS: users of www/apache21
+  AUTHOR: clement@FreeBSD.org
+
+  When upgrading from 2.1.2, you need to rebuild all apache modules.
+
+20050215:
+  AFFECTS: users of databases/mysql41-server
+  AUTHOR: ale@FreeBSD.org
+
+  The base database directory can now be set and changed in rc.conf (default:
+  /var/db/mysql). If you used to set DB_DIR to a different value during port
+  compilation, you must specify it via the new "mysql_dbdir" rc variable.
+  In addition, the "mysqllimits_enable" and "mysqllimits_args" variables
+  have been replaced by "mysql_limits" for consistency.
+
+20050214:
+  AFFECTS: users of net-mgmt/nagios
+  AUTHOR: blaz@si.FreeBSD.org
+
+  Nagios has been upgraded to 2.0.b2. Native support for storing various types
+  of data (status, retention, comment, downtime, etc.) in MySQL and PostgreSQL
+  has been dropped. There are also multiple changes to the format of
+  configuration files. Carefully read
+  http://nagios.sourceforge.net/docs/2_0/whatsnew.html before upgrading.
+
+20050213:
+  AFFECTS: users of print/teTeX-*
+  AUTHOR: hrs@FreeBSD.org
+
+  print/teTeX-* are now based on teTeX 3.0.  Although some
+  reliability fixes are also added, here are several common problems
+  which you might fall on.
+
+  1) $PREFIX/bin/pdftex is missing:
+
+   Probably your system has old files included teTeX 2.x which can
+   prevent the new version from working.  Please remove the old
+   files first (see 20050206 in this file) and reinstall.
+
+  2) Some formats are still corrupted (for example, "Fatal format file error;
+     I'm stymied" is displayed) or not updated even after a clean install:
+
+   You might have old or corrupted *.fmt and/or *.map files
+   under /root/.texmf-* or $HOME/.texmf-* directories.  Typically
+   these directories are generated when you invoke the updmap(1),
+   texconfig(1), or fmtutil(1) utility manually.  However, for a period
+   after the first revision of the teTeX-base port erroneously used
+   fmtutil(1) to regenerate *.fmt files, you could have these directories
+   without your intent.  In such a case, please remove these directories
+   and reinstall the ports (it is not needed to rebuild ports/packages).
+   Just for your information, $HOME/.texmf-config and $HOME/.texmf-var
+   can be used for your personal configuration.
+
+  If you have other problems, please contact hrs@FreeBSD.org.
+
+20050212:
+  AFFECTS: users of x11-fonts/mkbold, x11-fonts/mkitalic, and
+	x11-fonts/mkbold-mkitalic
+  AUTHOR: koma2@ms.u-tokyo.ac.jp
+
+  The dependency on x11-fonts/mkbold and x11-fonts/mkitalic has been
+  switched over to x11-fonts/mkbold-mkitalic, which is written in C
+  and has far better performance than the old ones.  There is no
+  functional difference between the two, but they will conflict with
+  each other.  Since other ports which depend on x11-fonts/mkbold or
+  x11-fonts/mkitalic will be updated to depend on x11-fonts/mkbold-mkitalic,
+  you might get an error during upgrading such ports.  In such a case,
+  please pkg_delete the old ones first.
+
+20050206:
+  AFFECTS: users of print/teTeX and japanese/teTeX
+  AUTHOR: hrs@FreeBSD.org
+
+  print/teTeX is now based on a teTeX 3.0 release candidate
+  (2.99.13.20050204) and the other related ports are also updated.
+  Since upgrading from previous versions should be done at a time,
+  you may want to use the portupgrade utility or reinstall
+  print/teTeX after deinstalling all of the related ports.
+
+  If your teTeX environment became broken during the upgrade,
+  please see the following URL which explains how to fix it.
+
+  http://people.freebsd.org/~hrs/tetex-upgrade.txt
+
+  This file also includes notes for people who are familiar
+  with the teTeX distribution to explain structure of the ports.
+
+20050205:
+  AFFECTS: users of lang/ruby16_r, lang/ruby18_r, and lang/ruby18
+  AUTHOR: knu@FreeBSD.org
+
+  The slippery pthread support for systems prior to 502102 has been
+  dropped and lang/ruby16_r and lang/ruby18_r ports have been removed,
+  since no one seems to appreciate the partially working solution.
+
+  Good news is that the pthread support of lang/ruby18 is now enabled
+  by default for newer systems, which means the ruby interpreter is
+  linked with libpthread.  This will allow threaded extension
+  libraries to run and work properly on those systems.
+
+20050201:
+  AFFECTS: users of lang/perl5 and lang/perl5.8
+  AUTHOR: tobez@FreeBSD.org
+
+  lang/perl5 has been updated to 5.6.2, and lang/perl5.8 has been
+  updated to 5.8.6. you should update everything depending on perl, that
+  is:
+
+    * first, upgrade your perl installation (use either lang/perl5 or
+      lang/perl5.8, the latter being recommended);
+    * for FreeBSD 4.X, run "use.perl port", so that the system knows you
+      have 5.8.6 or 5.6.2;  this step is not needed on FreeBSD 5.X and
+      FreeBSD -CURRENT;
+    * run some magic incantations to upgrade all ports depending on perl,
+      that is run something like :
+      portupgrade -f `(pkg_info -R perl-5\* |tail +4; \
+        find /usr/local/lib/perl5/site_perl/5.[68].[1245] -type f -print0 \
+        | xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
+      This is likely to fail for a few ports, you'll have to upgrade them
+      afterwards by hand.
+
+20050130:
+  AFFECTS: users of PostgreSQL
+  AUTHOR: girgen@FreeBSD.org
+
+  Each of the PostgreSQL ports have been split into a server and a
+  client part. Please use postgresqlNN-server and/or
+  postgresqlNN-client as needed. Versions currently supported are 7.3,
+  7.4 and 8.0.
+
+  To start the PostgreSQL server at boot time, add the following to
+  /etc/rc.conf:
+
+  postgresql_enable=yes
+
+  The maintenance script is installed in etc/periodic/daily, and is
+  controlled by a set of new knobs in periodic.conf. Use it for
+  vacuuming your databases and get daily backups. Note that daily
+  vacuuming is on by default. See the script for details.
+
+20050130:
+  AFFECTS: users of net/howl
+  AUTHOR: marcus@FreeBSD.org
+
+  Howl now installs an rcNG script for starting mDNSResponder.  To enable
+  mDNSResponder to start at boot time, add the following to /etc/rc.conf:
+
+  mdnsresponder_enable="YES"
+
+  You can also pass flags to mDNSResponder by setting the rc.conf variable
+  mdnsresponder_flags to the appropriate value.  See the mDNSResponder(8)
+  man page for the list of supported flags.  The default is not to pass
+  any flags to mDNSResponder.
+
+20050126:
+  AFFECTS: users of x11-wm/xfce4
+  AUTHOR: oliver@FreeBSD.org
+
+  If you use Xorg 6.8.1: Make shure there is an /tmp/.ICE-unix with propper
+  rights. For further informations about that, please refer to 20041229
+  Please update all your plugins as well when you update from 4.0.6 to 4.2
+  They all need recompiling to link against the new xfce libraries
+
+20050122:
+  AFFECTS: users of PostgreSQL
+  AUTHOR: seanc@FreeBSD.org
+
+  The -devel port has been updated to contain 8.0 release since
+  postgresql80-server can not be updated until 4.11 is released and the
+  changes in PR ports/75344 are committed.  Users who need 8.0 now can
+  use the -devel port, however, once postgresql80-server has been
+  committed, -devel will begin tracking 8.1.  Please be smart about
+  tracking ports and if used in production, update to
+  databases/postgresql80-server as soon as it becomes available.  No
+  dump/reload will be required when changing from -devel to
+  postgresql80-server.
+
+20050117:
+  AFFECTS: users of mail/spambnc
+  AUTHOR: thierry@FreeBSD.org
+
+The SpamBouncer has been upgraded from version 1.9 to 2.0-RC3, and you
+have to modify your ~/.procmailrc files. Please read upgrading.html in
+/usr/local/share/doc/spambnc.
+
+20050117:
+  AFFECTS: users of cad/astk-client
+  AUTHOR: thierry@FreeBSD.org
+
+  ASTK has been moved; if there exists files $HOME/.astkrc/config_serveurs,
+  you have to update the entry rep_serv from /usr/local/ASTK/ASTK_SERV/bin
+  to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
+
+20050114:
+  AFFECTS: users of security/libgnomesu, esp. on FreeBSD 4.x.
+  AUTHOR: adamw@FreeBSD.org
+
+  If you installed libgnomesu the day it was added to the ports tree,
+  you have a malformed PAM control file in /etc/pam.d/. All libgnomesu
+  users should remove /etc/pam.d/gnomesu-pam, and 5.x users should
+  replace it with the version in the updated libgnomesu port (ensure
+  that you're using the most current revision of the libgnomesu port).
+
+  4.x users: listen up! The presence of the /etc/pam.d/ directory (and
+  anything in that directory) presents a Very Bad Thing. Unless you've
+  manually tweaked your PAM settings, you must run:
+
+  	# rm /etc/pam.d/gnomesu-pam
+  	# rmdir /etc/pam.d/
+
+  or all users will be locked out of your system!
+
+20050110:
+  AFFECTS: users of irc/iip
+  AUTHOR: lioux@FreeBSD.org
+
+  iip has been updated to the new network servers. Therefore, both
+  old configuration files and node reference keys no longer apply.
+
+  Therefore, you need to update the configuration files for each
+  user running the iip isproxy daemon:
+
+  1) Backup configuration files
+
+  cp ~/.iip/isproxy.ini ~/.iip/isproxy.ini.backup
+  cp ~/.iip/node.ref ~/.iip/node.ref.backup
+
+  2) Remove configuration files
+
+  rm ~/.iip/isproxy.ini
+  rm ~/.iip/node.ref
+
+  3) Create new configuration. Fill information as requested. This
+  creates the updated isproxy.ini file
+
+  isproxy -C
+
+  4) Start iip isproxy. This will initialize your updated node.ref
+  file. This file will be automatically updated when you connect
+  to the iip network
+
+  isproxy
+
+20050110:
+  AFFECTS: users of sysutils/nautilus-cd-burner
+  AUTHOR: gnome@FreeBSD.org
+
+  Nautilus-cd-burner now requires cdrtools built with UTF-8 encoding
+  support.  The default sysutils/cdrtools port does not support this
+  encoding, and that will cause nautilus-cd-burner to enter an infinite
+  loop when trying to create CD images.  To workaround this, the cdrtools
+  dependency was changed in nautilus-cd-burner to point to the
+  sysutils/cdrtools-cjk port instead.
+
+  Since sysutils/cdrtools and sysutils/cdrtools-cjk conflict, you must
+  uninstall cdrtools so that the nautilus-cd-burner update can properly
+  pull in cdrtools-cjk.
+
+20050108:
+  AFFECTS: users of mail/courier-imap, mail/sqwebmail
+  AUTHOR: oliver@FreeBSD.org
+
+  Courier-imap and sqwebmail are now dependent on courier-authlib. If
+  you've changed the default authentication config for courier-imap or
+  sqwebmail, you will have to redo the changes for courier-authlib.
+  You may wish to deinstall courier-imap and/or sqwebmail before you
+  install courier-authlib. Since courier-authlib replaces parts of both
+  ports, some of courier-authlib's files are listed as sqwebmail and
+  courier-imap files and deinstalling old courier-imap and/or sqwebmail
+  port may cause the deinstallation of the freshly installed
+  courier-authlib files.
+
+20050108:
+  AFFECTS: users of mail/sqwebmail
+  AUTHOR: oliver@FreeBSD.org
+
+  Sqwebmail now installs it's files directly under PREFIX. That means for
+  instance that files that were formerly found under
+  PREFIX/share/sqwebmail/etc/ are now located under PREFIX/etc/sqwebmail.
+  Furthermore you need to set sqwebmaild_enable=YES in your rc.conf
+  because the rc.d script has been migrated to use the rc.subr Subsystem
+
+20050108:
+  AFFECTS: users of mail/courier-imap
+  AUTHOR: oliver@FreeBSD.org
+
+  The variable courier_imap_imapdssl_enable have been renamed to
+  courier_imap_imapd_ssl_enable.
+  The variable courier_imap_pop3dssl_enable have been renamed to
+  courier_imap_pop3d_ssl_enable.
+  userdb stuff is now located in LOCALBASE/etc/authlib instead of
+  LOCALBASE/etc.
+
+20041231:
+  AFFECTS: users of www/awstats
+  AUTHOR: webmaster@lightningfire.net
+
+  Location of awstats changed from /usr/local/www to /usr/local/www/awstats.
+  Please update configuration according instructions in pkg-message.
+
+20041231:
+  AFFECTS: users of the linux compatibility environment
+  AUTHOR: netchild@FreeBSD.org
+
+  The default linux_base was changed from v7 to v8. You need to update from
+  v7 to v8 and rebuild every linux port. To update run:
+	portupgrade -rf -o emulators/linux_base-8 emulators/linux_base
+
+  In case you already use linux_base-8 you have to run:
+	portupgrade -rf emulators/linux_base-8
+
+20041229:
+  AFFECTS: users of x11/kdebase3, x11-servers/xorg-server
+  AUTHOR: lofi@freebsd.org
+
+  If KDE does not start anymore after upgrading Xorg to version 6.8.1
+  (X restarts when the KDE splash screen has reached the third icon),
+  please check whether the directory /tmp/.ICE-unix exists, is owned by root
+  and has permissions 1777 (read/write/access for everybody + sticky bit).
+
+  To make sure everything is in working order, do (as root):
+  mkdir -p /tmp/.ICE-unix && chmod 1777 /tmp/.ICE-unix &&
+  chown root:wheel /tmp/.ICE-unix
+
+  Also, make sure you do NOT have clear_tmp_enable="YES" set in /etc/rc.conf,
+  as it will remove the directory on every reboot and applications will re-
+  create it with the wrong ownership.
+
+  Users of daily_clean_tmps_enable in /etc/periodic.conf should make sure
+  daily_clean_tmps_ignore contains /tmp/.ICE-unix.
+
+20041227:
+  AFFECTS: users of lang/gambas
+  AUTHOR: thierry@FreeBSD.org
+
+  As of this update, the password of your databases connections are crypted.
+  If you were using the database manager, please remove
+  ~/.gambas/gambas-database-manager.conf before launching the new version.
+
+20041226:
+  AFFECTS: users of Horde and the related ports (Turba, IMP, Nag, Kronolith,
+           Mnemo, Chora)
+  AUTHOR: thierry@FreeBSD.org
+
+  As of this update, the configuration files are generated by the application,
+  with no support for configuration files used in previous versions.
+
+  All data saved in the database, LDAP or MCAL backends will be preserved,
+  considering that you run specific scripts to migrate to this new scheme.
+  Affected ports are www/horde, mail/turba, deskutils/nag, deskutils/kronolith,
+  and deskutils/mnemo. See the UPGRADING documentation of the ports in question
+  for more details.
+
+  The filter system of IMP 3.x has been replaced by a separate application:
+  check the port mail/ingo. Ingo provides a script to migrate the existing
+  filter rules from IMP 3.x, see Ingo's documentation.
+
+20041224:
+  AFFECTS: users of x11-servers/XFree86-4-Server and graphics/dri
+  AUTHOR: lesi@FreeBSD.org
+
+  As of version 4.4.0_6, XFree86-4-Server now depends on
+  graphics/xfree86-dri.  This is due to incompatibilities between
+  XFree86 and the new xorg 6.8.1 DRI.
+
+  Users of XFree86-4-Server are strongly encouraged to switch to
+  the xfree86-dri port as follows:
+
+	portupgrade -fo graphics/xfree86-dri graphics/dri
+
+  which will also fix dependencies.
+
+20041224:
+  AFFECTS: users of sysutils/portupgrade and lang/ruby18
+  AUTHOR: knu@FreeBSD.org
+
+  Please upgrade sysutils/portupgrade prior to lang/ruby18, or
+  pkgdb(1) may coredump with a double free() problem from a misuse (or
+  a "feature") of the DL module.
+
+  In that case, you can reinstall sysutils/portupgrade manually.
+
+20041222:
+  AFFECTS: users of security/clamav, security/clamav-devel
+  AUTHOR: jylefort@brutele.be
+
+  The ClamAV database path has changed from /usr/local/share/clamav to
+  /var/db/clamav. You should update the DatabaseDirectory keyword in
+  /usr/local/etc/clamd.conf and /usr/local/etc/freshclam.conf.
+
+20041221
+  AFFECTS: users of security/gpgme03
+  AUTHOR: clement@FreeBSD.org
+
+  security/gpgme03 has been modified to not conflicts with gpgme 1.x
+  After upgrade, you need to rebuild all ports that depend on it.
+  You should upgrade security/gpgme (if installed) to avoid nasty
+  compile time failures, due to original location of gpgme.h.
+
+20041219:
+  AFFECTS: users of textproc/jdictionary
+  AUTHOR: hq@FreeBSD.org
+
+  The location for JDictionary port installed files has changed. This also
+  affects the various plugins. Hence, users should upgrade all jdictionary
+  related ports at once to avoid inconsistencies:
+
+  $ portupgrade jdictionary\*
+
+20041214:
+  AFFECTS: users of net/freenet6
+  AUTHOR: edwin@FreeBSD.org
+
+  The FreeNet6 Service must now be enabled / disabled in rc.conf:
+    freenet6_enable="YES"
+
+20041213:
+  AFFECTS: users of security/cryptplug, deskutils/kdepim3
+  AUTHOR: lofi@freebsd.org
+
+  The cryptplug port is not compatible with recent versions of gpgme
+  and has been changed to depend on gpgme03 (the last version of gpg-
+  me compatible with cryptplug).
+  Users who have been using cryptplug in order to enable PGP/MIME support
+  in KMail should DEINSTALL BOTH cryptplug and gpgme03 before updating
+  KDE to version 3.3.2. Cryptplug is NOT necessary anymore to enable
+  PGP/MIME support in KMail and will cause the kdepim3 build to fail due
+  to conflicting dependencies.
+
+20041213:
+  AFFECTS: users of databases/postgresql-relay
+  AUTHOR: edwin@FreeBSD.org
+
+  The PostgreSQL Relay must now be enabled / disabled in rc.conf:
+    postgresqlrelay_enable="YES"
+
+20041212:
+  AFFECTS: users of sysutils/bacula
+  AUTHOR: lkoeller@FreeBSD.org
+
+  The port was split into a -server and -client component.
+  The -server part contains the storage and director daemon, the -client
+  part the console, file daemon and the documentation.
+
+  For migration delete the bacula port and install the -server and/or
+  -client port afterwards.
+
+20041208:
+  AFFECTS: users of mail/getmail
+  AUTHOR: question+fbsdports@closedsrc.org
+
+  There is a known quirk when using mail/getmail with Python 2.4
+  where the DeprecationWarning is printed regarding the use of
+  the 'strict' keyword when a message is being retrieved.
+
+  You can redirect stdout/stderr to /dev/null to quelch the warning.
+
+  The quirk may be fixed in a future version of getmail.
+
+20041205:
+  AFFECTS: users of multimedia/ffmpeg
+  AUTHOR: lioux@FreeBSD.org
+
+  multimedia/ffmpeg will not work if previous versions of the port
+  are installed. Also, there is a shared library version bump on
+  this update. Therefore:
+
+  1) Remove old ffmpeg
+
+  pkg_delete -f /var/db/pkg/ffmpeg*
+
+  2) Install updated ffmpeg
+
+  3) Rebuild all ports that depend on ffmpeg due to the shared
+  library version bump
+
+  cd /var/db/pkg && portupgrade -rf ffmpeg* -x ffmpeg*
+
+20041202:
+  AFFECTS: users of any ports which have dependency on lang/python
+  AUTHOR: perky@FreeBSD.org
+
+  After upgrading of lang/python, you must rebuild all its consumer
+  ports to make them get ready to Python 2.4.
+
+  To do this, you will need to:
+    pkgdb -uf && cd /usr/ports/lang/python && make upgrade-site-packages
+
+20041128:
+  AFFECTS: users of mail/dspam and mail/dspam-devel
+  AUTHOR: itetcu@people.tecnik93.com
+
+  When upgrading from previous version, read mail/dspam/files/UPDATING
+  and adjust your options.
+
+20041121:
+  AFFECTS: users of news/rawdog
+  AUTHOR: tim@bishnet.net
+
+  Rawdog 2.x changes the format of the state file used in 1.x. To
+  upgrade from 1.x to 2.x the rawdog author recommends the following:
+
+    cp -R ~/.rawdog ~/.rawdog-old
+    rm ~/.rawdog/state
+    rawdog -u
+    rawdog --upgrade ~/.rawdog-old ~/.rawdog
+    rawdog -w
+
+  Once you're happy with the new version:
+    rm -r ~/.rawdog-old
+
+20041118:
+  AFFECTS: users of sysutils/portupgrade
+  AUTHOR: lofi@freebsd.org
+
+  portsdb(1) is part of the portupgrade suite and is used to convert a ports
+  INDEX file to a binary INDEX.db database. By default, it uses the
+  libc-builtin berkeley db to do so, which has a buggy btree implementation.
+
+  If you see errors like "[BUG] Segmentation fault" while a portsdb update is
+  in progress, adjust the PORTS_DBDRIVER variable (in your environment or in
+  pkgtools.conf) to either bdb1_hash or dbm_hash.
+
+  This problem was fixed in 5.3-RELEASE, but users of 4.10-RELEASE and
+  5.2.1-RELEASE (and older releases) will find fixes by updating to the
+  latest (at least after Sep 20) of RELENG_4 or RELENG_5.
+
+20041116:
+  AFFECTS: users of www/bricolage
+  AUTHOR: ports@rbt.ca
+
+  Bricolage may now be run on mod_perl compiled as a DSO for Apache
+  when following these guidelines:
+
+  http://perl.apache.org/docs/1.0/guide/install.html#When_DSO_can_be_Used
+
+  To do this, you will need to:
+    pkg_delete -f apache-mod_perl
+    pkg_delete -f p5-libapreq-static
+    portupgrade -rR bricolage
+
+  Bricolage will rebuild mod_perl, apache and libapreq using their standard
+  versions.
+
+20041115:
+  AFFECTS: users of sysutils/portupgrade
+  AUTHOR: lofi@FreeBSD.org
+
+  Due to the recent removal of INDEX and INDEX-5 from FreeBSD's CVS,
+  portupgrade with default configuration will run 'make index' if started
+  after cvsup'ing the ports-collection. This may take an undesirably long
+  time.
+
+  There are several ways to work around this, for example:
+
+  - Run 'make fetchindex' after cvsup'ing ports.
+
+  or
+
+  - Adjust the PORTS_INDEX variable in your environment or in
+    pkgtools.conf (see portupgrade(1) or the default pkgtools.conf) to
+    a different value than the default.
+
+  Also remember that 'make index' is only supported on _complete_
+  ports-trees. If you are currently refusing whole categories by means
+  of a cvsup refuse file, use 'make fetchindex' instead (or consider
+  keeping an extra machine/jail with a complete ports-tree around to
+  do INDEX builds on).
+
+20041111:
+  AFFECTS: users of audio/faad, multimedia/mpeg4ip
+  AUTHOR: lioux@FreeBSD.org
+
+  mpeg4ip has been updated and broken down into 2 separate ports:
+  mpeg4ip and mpeg4ip-libmp4v2. Furthermore, mpeg4ip now depends
+  on faad. Moreover, faad now depends on mpeg4ip-libmp4v2 rather
+  than on mpeg4ip which avoids a cyclic dependency (mpeg4ip depends
+  on faad which depends on mpeg4ip).
+
+  If any of the old ports are installed, mpeg4ip will not compile.
+  Therefore,
+
+  1) Remove old faad and mpeg4ip ports which conflict with new
+  mpeg4ip
+
+  pkg_delete -f /var/db/pkg/mpeg4ip*
+  pkg_delete -f /var/db/pkg/faad*
+
+  2) Install faad, mpeg4ip and mpeg4ip-libmp4v2 in the following
+  order
+
+  cd /usr/ports/multimedia/mpeg4ip-libmp4v2 && make install clean
+  cd /usr/ports/audio/faad && make install clean
+  cd /usr/ports/multimedia/mpeg4ip && make install clean
+
+20041111:
+  AFFECTS: users of Java
+  AUTHOR: glewis@FreeBSD.org
+
+  javavmwrapper has been rewritten.  It now creates symbolic links for
+  all executables of the Java VMs that have been registered with it.
+  These symbolic links may impact which version of Java you are using,
+  depending on your PATH, which may need to be adjusted.
+
+  For example, if your path is:
+
+	${LOCALBASE}/bin:${LOCALBASE}/jdk1.4.2/bin
+
+  then previously "java" would resolve to ${LOCALBASE}/jdk1.4.2/bin/java.
+  With the new javavmwrapper it will resolve to ${LOCALBASE}/bin/java.
+  Depending upon the Java VMs that are registered and various environment
+  variables, it may or may not be ${LOCALBASE}/jdk1.4.2/bin/java that is
+  run by javavmwrapper via the symbolic link ${LOCALBASE}/bin/java.
+
+20041107:
+  AFFECTS: users of x11/kdebase3
+  AUTHOR: kde@freebsd.org
+
+  To use GMail in konqueror, you need to set the browser identification for
+  gmail.google.com to 'Safari 1.2.3 on Mac OS X', otherwise you will not be
+  able to click on any links in GMail after logging in.
+
+  You can set site-specific browser identifications via the Settings menu in
+  Konqueror (Configure Konqueror/Browser Identification) or in the KDE Control
+  Center, Internet & Network/Web Browser/Browser Identification.
+
+20041107:
+  AFFECTS: all users who have any GNOME libraries installed
+  AUTHOR: adamw@FreeBSD.org and the rest of the FreeBSD/GNOME crew
+
+  Hey, 2.6! You don't have to be 2.6 anymore!
+  Do NOT use portupgrade(1) to update your GNOME 2.6 desktop to 2.8:
+  it won't work, and you'll have to recompile bunches of ports by hand
+  as a result. Use the gnome_upgrade.sh script to automate the upgrade
+  process. The script is available from
+    http://www.FreeBSD.org/gnome/gnome_upgrade.sh
+
+20041104:
+  AFFECTS: users of security/clamav-devel
+  AUTHOR: rob@debank.tv
+
+  The configuration file was renamed from clamav.conf to clamd.conf,
+  make sure to move your configuration before restarting the server.
+
+20041104:
+  AFFECTS: users of japanese/rskkserv
+  AUTHOR: rushani@FreeBSD.org
+
+  The format of PREFIX/etc/rskkserv.conf has changed in version 2.95.
+  Please update your configuration file before restarting the server
+  using PREFIX/share/examples/rskkserv/conf-o2n.rb and referring to
+  PREFIX/share/examples/rskkserv/rskkserv.conf.sample.
+
+20041031:
+  AFFECTS: users of databases/mysql40-server
+  AUTHOR: ale@FreeBSD.org
+
+  The MySQL Daemon must now be enabled / disabled in rc.conf.
+  See the script for details.
+
+20041028:
+  AFFECTS: users of net/netatalk
+  AUTHOR: marcus@FreeBSD.org
+
+  Please note that the handling of the default type/creator has changed with
+  2.0.1. As a side effect, users upgrading from earlier versions, including
+  2.0.0, will have to remove the default type/creator from the
+  AppleVolumes.System file. The install process will not modify this file
+  automatically. Please remove the line starting with '.         "????"'
+  manually.
+
+  This text was taken from the Netatalk 2.0.1 release notes at
+  https://sourceforge.net/project/shownotes.php?release_id=278320.
+
+20041027:
+  AFFECTS: users of games/pcgen
+  AUTHOR: hq@FreeBSD.org
+
+  The launcher script for PCGen has been renamed to 'pcgen' (formerly
+  'pcgen.sh').
+
+20041024:
+  AFFECTS: users of databases/mysql50-server
+  AUTHOR: ale@FreeBSD.org
+
+  The MySQL Daemon must now be enabled / disabled in rc.conf.
+  See the script for details.
+
+20041024:
+  AFFECTS: users of mail/popfile
+  AUTHOR: matusita@FreeBSD.org
+
+  Since there is a known problem that popfile doesn't work with DBD::SQLite 1.x
+  at this time, you'll be in trouble after upgrading databases/p5-DBD-SQLite
+  to the latest one.  A workaround is committed to 0.22.0_1 which uses
+  databases/p5-DBD-SQLite2 by default.  However, if already installed popfile,
+  please check ${HOME}/.popfile/popfile.cfg, and change the line
+  "bayes_dbconnect dbi:SQLite:dbname=$dbname" to
+  "bayes_dbconnect dbi:SQLite2:dbname=$dbname" then restart popfile.
+
+20041023:
+  AFFECTS: users of mail/dbmail
+  AUTHOR: seanc@FreeBSD.org
+
+  When upgrading from 1.X to 2.X, read the upgrading instructions.
+  The structure of the database has changed, please use the migration
+  scripts provided.  Many of the programs have been renamed and arguments
+  have been changed as well.
+
+20041020:
+  AFFECTS: users of security/antivir-milter
+  AUTHOR: marius@FreeBSD.org
+
+  When updating from previous versions of security/antivir-milter to
+  antivir-milter-1.1 and you had changed PREFIX/etc/avmilter.conf you
+  have to bring over your changes to PREFIX/etc/avmilter/avmilter.conf
+  after installing the new version of this port. Note, however, that
+  some variables have been renamed.
+  If you used AntiVir Milter ignore, scan and/or warn files in /etc
+  you can now move them to PREFIX/etc/avmilter.
+
+20041019:
+  AFFECTS: users of databases/mysql41-server
+  AUTHOR: ale@FreeBSD.org
+
+  The MySQL Daemon must now be enabled / disabled in rc.conf.
+  See the script for details.
+
+20041018:
+  AFFECTS: users of mail/courier-imap
+  AUTHOR: oliver@FreeBSD.org
+
+  The courier-imap port must now be enabled / disabled in rc.conf.
+  See the script for details.
+
+20041015
+  AFFECTS: users of www/apache2 with devel/apr
+  AUTHOR: clement@FreeBSD.org
+
+  WITH_APR_FROM_PORTS knob is no longer supported, since apr > 1.0
+  doesn't conflict with apache2's one. If you use apr 0.9.x you
+  won't be able to upgrade apache2 anymore.
+
+20041014:
+  AFFECTS: users of security/clamav
+  AUTHOR: eik@FreeBSD.org
+
+  The configuration file for the clamd daemon has changed from
+  /usr/local/etc/clamav.conf to /usr/local/etc/clamd.conf.
+
+20041013:
+  AFFECTS: users of mail/getmail
+  AUTHOR: question+fbsdports@closedsrc.org
+
+  If you are using a version of mail/getmail earlier than 4.x and
+  are planning to upgrade to 4.2.2, please note that the configuration file
+  syntax has changed and the existing configuration file(s) will not work.
+  Please refer to the online documentation available at:
+
+    (http://www.qcc.ca/~charlesc/software/getmail-4/documentation.html)
+
+  If you already upgraded to the latest version of getmail, you can refer
+  to the installed documentation under:
+
+    ${PREFIX}/share/docs/getmail
+
+  The 4.x branch of getmail also requires Python 2.3.3 or newer.
+
+  Some mail delivery agents require that the unixfrom parameter to be set to
+  either "true" or "false" in the configuration file.
+
+  A "quick and dirty" guide on setting up, configuring and using getmail is
+  available at:
+
+    (http://www.qnd-guides.org/qnd-getmail.html)
+
+20041012:
+  AFFECTS: users of devel/perforce
+  AUTHOR: marshall@chezmarshall.com
+
+  Upgrading from 2003.2 to 2004.2 is straightforward, it is highly
+  recommended to checkpoint and backup your server as follows:
+    p4 verify //...
+    p4 verify -u //... # possibly redundant
+    p4 admin checkpoint
+    p4 admin stop
+    <backup repository>
+
+  If you are upgrading from a version earlier than 2003.2, you should
+  consult the Perforce documentation
+    (http://www.perforce.com/perforce/technical.html)
+  before proceeding.
+
+  Also, it looks as though Perforce has stopped updating the man pages,
+  so they are no longer included in the port.
+
+20041012:
+  AFFECTS: users of www/firefox
+  AUTHOR: freebsd-gnome@FreeBSD.org
+
+  After upgrading to firefox-1.0.1.p, certain things such as extension/theme
+  [de]installation, and "Find On Page" may no longer work.  You may also
+  notice an infinite loop when starting Firefox.  If this happens, backup
+  ~/.mozilla/firefox/*/bookmarks.html, and remove ~/.mozilla/firefox.
+  Afterward, Firefox should start up.  You can then restore the bookmarks.html
+  file to the new ~/.mozilla/firefox/*.default directory.
+
+20041012:
+  AFFECTS: users of net/netatalk
+  AUTHOR: marcus@FreeBSD.org
+
+  Netatalk has been upgraded to 2.0.0.  There are some important
+  instructions for upgrading from 1.6.x.  Please see
+  http://netatalk.sourceforge.net/2.0/htmldocs/upgrade.html on how
+  to make the transition.
+
+20041011:
+  AFFECTS: users of www/linuxpluginwrapper who are running FreeBSD
+	   5.3-BETA7 or later (including -current)
+  AUTHOR: nork@freebsd.org
+
+  According to UPDATING(20041001), /etc/libmap.conf should be fixed
+  libm.so.2 to libm.so.3.
+
+20041001:
+  AFFECTS: users of ports that require several base system libraries who
+	   are running FreeBSD 5.3-BETA7 or later (including -current)
+  AUTHOR: kensmith@freebsd.org
+
+  As part of the FreeBSD-5.3 release the following system libraries
+  had their version number incremented:
+
+	/lib/libm.so.2 -> libm.so.3
+	/lib/libreadline.so.4 -> libreadline.so.5
+	/usr/lib/libhistory.so.4 -> libhistory.so.5
+	/usr/lib/libopie.so.2 -> libopie.so.3
+	/usr/lib/libpcap.so.2 -> libpcap.so.3
+
+  This should have no effect unless you are using FreeBSD 5.3-BETA7 or
+  higher, or if you are a -current user who upgraded after this date.
+  Assuming you did a from-source upgrade new versions of these libraries
+  will be created but the old versions will be left behind (for example
+  /lib/libm.so.2 will be the old one, /lib/libm.so.3 will be the new one).
+  Any ports or pre-built packages you have currently installed will
+  continue to use the old library, any ports you install after the upgrade
+  will begin to use the new library.  You will need to have all your
+  ports recompiled before the old library goes away.  To help with the
+  migration you could also use /etc/libmap.conf to map libm.so.2 to
+  libm.so.3.
+
+20040903:
+  AFFECTS: users of net/kdenetwork3
+  AUTHOR: kde@freebsd.org
+
+  The lanbrowsing facility of KDE has been removed from the main
+  kdenetwork3 port and is now available via the net/lanbrowsing
+  port.
+
+20040901:
+  AFFECTS: users of www/squid
+  AUTHOR: tmseck@netcologne.de
+
+  www/squid now installs an rcNG script by default. This means you
+  need to explicitly enable squid by setting squid_enable=yes in
+  /etc/rc.conf.
+  The squid.sh script uses the following variables:
+  squid_chdir
+  squid_flags
+  squid_user
+
+  Please see the squid.sh script for further details.
+  If you want to install an old style rc-script, build the port with
+  "WITHOUT_SQUID_RCNG=YES" or by rerunning "make config" and disabling this
+  option.
+
+20040830:
+  AFFECTS: users of x11/kde3, x11/kdelibs3, x11/kdebase3
+  AUTHOR: kde@freebsd.org
+
+  In KDE 3.3, a number of files were moved between ports and some ports
+  were removed. This means that you will have to take some precautions
+  to update your KDE installation. A simple portupgrade -a will not work.
+  portupgrade -R kde can fail as well, depending on what parts of KDE you
+  have currently installed. We therefore recommend sticking to the following
+  procedure. The procedure requires you to have sysutils/portupgrade installed
+  and you to be the superuser (or using sudo). We recommend not being logged in
+  to a KDE session on the machine you're performing the upgrade on. If you
+  choose to perform the update while being logged in to KDE, expect erratic
+  behavior and crashes from applications launched during the update.
+
+  1.) First, make sure your ports index is up to date.
+
+      	cd /usr/ports && make index
+
+      or, if you're using the sysutils/portindex port
+
+      	portindex
+
+  2.) Delete installed packages which conflict with the updated KDE
+      ports.
+
+      	pkg_deinstall -f kdeaddons-kontact-plugins-\* \
+      	kdeaddons-kaddressbook-plugins-\* kdepim-\* kdeutils-\* \
+      	kdeaddons-\[0-9\]\* kde-\[0-9\]\*
+
+      kdegraphics now conflicts with the kolourpaint package and kdeedu now
+      conflicts with the kwordquiz package. If you have kwordquiz and/or
+      kolourpaint installed on your system and you want to use the kdegraphics/
+      kdeedu ports, you should first deinstall the conflicting packages:
+
+      	pkg_deinstall -f kolourpaint\* kwordquiz\*
+
+
+  3.) Now update the remaining KDE ports.
+
+      	portupgrade arts\* kde\* quanta\*
+
+      or, if you want to update KDE along with other updated ports:
+
+      	portupgrade -a
+
+      Note that the quanta port has been renamed to kdewebdev. The commands
+      above will automatically replace quanta with kdewebdev, if you have
+      quanta installed.
+
+  4.) Reinstall any KDE ports you deleted in step 2. Note that the kdeaddons-
+      kontact-plugins (net/kontact-plugins), kdepim-kpilot (palm/kpilot) and
+      quanta (www/quanta) ports/packages do not exist anymore and cannot be
+      reinstalled.
+
+  Known post-updating issues:
+
+  - If you're missing acoustic notifications (system sounds) after the update:
+
+    	rm ~/.kde/share/config/knotifyrc
+
+    Then log out of KDE and back in again.
+
+  - KMail has been heavily modified since KDE 3.2.x. Testing shows that KMail
+    can display erratic behavior and crashes after the update. If you see any
+    such behavior, it is recommended to simply close KMail and start it again
+    until it resumes normal operation.
+
+    The integration of GnuPG and KMail for signing, encrypting and verifying
+    PGP/MIME mail has also changed. A quick howto is available at
+    http://freebsd.kde.org/howtos/gnupg-kmail.php.
+
+  - kdm users might get warnings from kdm about obsolete lines in kdmrc.
+    You can migrate your configuration while preserving your customizations
+    by running
+
+    	genkdmconf
+
+    Make sure to backup your old kdmrc (usually found in
+    /usr/local/share/config/kdm) beforehand in case the merge produces an
+    invalid configuration.
+
+  - Extensive information about changes from KDE 3.2.x can be found at
+    http://www.kde.org/announcements/changelogs/changelog3_2_3to3_3.php
+
+20040829:
+  AFFECTS: users of mail/mutt-devel
+  AUTHOR: udo.schweigert@siemens.com
+
+  The defaults of the port have been changed from WITH_MUTT_NCURSES to
+  WITH_MUTT_SLANG to be in sync with the mail/mutt port. If you really have
+  problems with slang (which should be a very rare case) be sure to have set
+  COLORTERM=yes and COLORFGBG="color1;color2" in your environment, or recompile
+  the port with the WITH_MUTT_NCURSES knob set (e.g. by adding
+  WITH_MUTT_NCURSES=yes to your /etc/make.conf).
+
+20040828:
+  AFFECTS: users of security/samba-vscan
+  AUTHOR: jmelo@freebsdbrasil.com.br
+
+  The default location of the configuration files has been changed
+  from /etc/ to /usr/local/etc and from /etc/samba/ to
+  /usr/local/etc/samba-vscan/; the default location of the data files
+  has been changed from /var/run/clamd to /var/run/clamav/clamd and
+  from /var/opt/f-secure/fsav/databases to /var/db/fsav/databases.
+
+20040820:
+  AFFECTS: users of japanese/ptex-tetex, japanese/xdvik, and japanese/dvipsk
+  AUTHOR: hrs@FreeBSD.org
+
+  japanese/ptex-tetex, japanese/xdvik, and japanese/dvipsk now
+  look for the texmf.cnf file in $TEXMF/web2c-ptex/texmf.cnf first,
+  while some utilities included in the original teTeX distribution
+  such as kpsepath(1) look for the file in $TEXMF/web2c/texmf.cnf
+  first.  This is for separating the pTeX's texmf.cnf and
+  the original TeX's texmf.cnf, and you do not have to copy or
+  link the file $TEXMF/web2c-ptex/texmf.cnf to $TEXMF/web2c/.
+  To lookup pTeX path by using kpsepath(1) and so on, please
+  set TEXMFCNF environment variable as described in
+  $TEXMF/web2c-ptex/texmf.cnf.  For more detail, see
+  $TEXMF/web2c-ptex/texmf.cnf and $TEXMF/web2c/texmf.cnf.
+
+20040820:
+  AFFECTS: users of japanese/platex209-*
+  AUTHOR: hrs@FreeBSD.org
+
+  japanese/platex209-* are renamed to japanese/platex209 and
+  now depend on japanese/ptex-tetex.  While EUC-JP and JIS
+  encoding can be used by default, but Shift JIS is no longer
+  supported because it makes very difficult to maintain other
+  pTeX related ports.  However, "ptex --kanji=sjis" still works,
+  so it can be used if all of macro files under share/texmf are
+  converted to Shift JIS encoding manually.
+
+20040820:
+  AFFECTS: users of japanese/dvipsk-vflib
+  AUTHOR: hrs@FreeBSD.org
+
+  japanese/dvipsk-vflib has been removed because it is not maintained
+  for a long time.  While japanese/dvipsk itself has no support to
+  rendering vector fonts, this and Ghostscript give almost the same
+  functionality.
+
+20040820:
+  AFFECTS: users of japanese/xdvik-vflib
+  AUTHOR: hrs@FreeBSD.org
+
+  japanese/xdvik-vflib has been renamed to japanese/xdvik because
+  it has nothing to do with VFLib now.  It depends on and uses
+  FreeType2 to render vector fonts.
+
+20040817:
+  AFFECTS: users of www/apache2
+  AUTHOR: clement@FreeBSD.org
+
+  Summary of recent changes:
+  - Access to filesystem is denied by default.
+  - mod_proxy* are no longer built by default
+  - Now ${PREFIX}/etc/apache2/Includes/*.conf can be used to store
+    local configuration or sample configurations.
+  - Makefile.modules.3rd contains modules selection for apache 2.x and 1.3.x
+
+20040815:
+  AFFECTS: users of net/openldap22{,-sasl}-server
+  AUTHOR: eik@FreeBSD.org
+
+  The start/stop script has moved to ${PREFIX}/etc/rc.d. Users on 5.x
+  who want to start the daemon early can set WITH_RCORDER=yes.
+
+  Setting WITH_ODBC_TYPE is not sufficient to enable SQL backend
+  support, WITH_ODBC=yes is required.
+
+20040813:
+  AFFECTS: users of x11/kdebase3 (kdm)
+  AUTHOR: kde@freebsd.org
+
+  If you are unable to login to X via kdm after portupgrading to the latest
+  kdebase port and you're getting these or similar messages on the console
+
+  /kernel: Aug 13 17:12:10 kiste kdm: :0[447]: Can't execute
+  "/usr/local/share/config/kdm/Xstartup": No such file or directory
+  /kernel: Aug 13 17:12:10 kiste kdm: :0[432]: Cannot execute startup script
+  "/usr/local/share/config/kdm/Xstartup"
+  /kernel: Aug 13 17:12:10 kiste kdm: :0[448]: Can't execute
+  "/usr/local/share/config/kdm/Xreset": No such file or directory
+  /kernel: Aug 13 17:12:12 kiste kdm: :0[458]: Can't execute
+  "/usr/local/share/config/kdm/Xsetup": No such file or directory
+
+  please do the following:
+
+  1.) Copy /usr/local/share/config/kdm/kdmrc away to a safe place, for example
+  your home directory ( cp /usr/local/share/config/kdm/kdmrc ~/ )
+
+  2.) Run, as root: genkdmconf --no-old
+
+  3.) Put your copy of kdmrc back to /usr/local/share/config/kdm/kdmrc (cp
+  ~/kdmrc /usr/local/share/config/kdm/ )
+
+  Optional step 4.) Run, as root: genkdmconf (without any options) to update
+  your kdmrc to the latest configfile format
+
+  Note for advanced users: Substitute /usr/local with your custom PREFIX if
+  you're using one.
+
+20040730:
+  AFFECTS: users of lang/perl5.8
+  AUTHOR: tobez@FreeBSD.org, mat@FreeBSD.org, marcus@FreeBSD.org
+
+  lang/perl5.8 has been updated to 5.8.5. you should update everything
+  depending on perl, that is:
+    * first, upgrade your perl5.8 installation.
+    * run "use.perl port", so that the system knows you have 5.8.5.
+    * now, run some magic incantations to upgrade all ports depending on perl,
+      that is run something like :
+      portupgrade -f `(pkg_info -R perl-5.8.5 |tail +4; \
+        find /usr/local/lib/perl5/site_perl/5.8.[124] -type f -print0 \
+        | xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
+      This is likely to fail for a few ports, you'll have to upgrade them
+      afterwards.
+      Please note, that this last step is, strictly speaking, not necessary,
+      if you are upgrading from 5.8.4.  But it is cleaner to do so anyway.
+
+20040726:
+  AFFECTS: users of devel/apache-ant
+  AUTHOR: glewis@FreeBSD.org
+
+  The update to Ant 1.6.2 introduces the following changes which may break
+  older environments, according to the 1.6.2 release notes:
+
+  . The import task used the canonical version of a file path. This
+    has been changed to use the absolute path. Bugzilla 28505.
+  . ant-xalan2.jar has been removed since the only class contained
+    in it didn't depend on Xalan-J 2 at all. Its sole dependency has
+    always been TraX and so it has been merged into ant-trax.jar.
+  . All exceptions thrown by tasks are now wrapped in a buildexception
+    giving the location in the buildfile of the task.
+  . Nested elements for namespaced tasks and types may belong to
+    the Ant default namespace as well as the task's or type's namespace.
+  . <junitreport> will very likely no longer work with Xalan-J 1.
+
+20040724:
+  AFFECTS: users for xorg and GNOME
+  AUTHOR: gnome@FreeBSD.org
+
+  After migrating from XFree86 to X.Org, you must rebuild
+  x11-toolkits/libwnck and x11/libxklavier for full GNOME functionality
+  to be restored.
+
+  If you receive an XKB initialization error when starting GNOME, edit
+  your XF86Config or xorg.conf, and remove the line:
+
+Option "XkbRules" "xfree86"
+
+20040723:
+  AFFECTS: users of FreeBSD-current, users of X.Org
+  AUTHOR: anholt@FreeBSD.org
+
+  The XFREE86_VERSION variable is deprecated and has been replaced by the
+  X_WINDOW_SYSTEM variable. X_WINDOW_SYSTEM may be set to xorg, xfree86-4, or
+  xfree86-3.  X_WINDOW_SYSTEM defaults to xorg on FreeBSD-current.  If you are
+  switching to xorg, you should follow this set of commands to cleanly upgrade:
+
+  pkg_delete -f /var/db/pkg/imake-4* /var/db/pkg/XFree86-*
+  cd /usr/ports/x11/xorg && make install
+  pkgdb -F
+
+  Users of -stable or older -current can switch to X.Org by setting
+  X_WINDOW_SYSTEM=xorg in make.conf and following the same process.
+
+  Alternately, FreeBSD 5.x and later users can use portupgrade with packages:
+    cd /var/db/pkg
+    portupgrade -o devel/imake-6  imake-4*
+    portupgrade -o x11/xorg-libraries  XFree86-libraries
+    portupgrade -o x11/xorg-clients  XFree86-clients
+    portupgrade -o x11/xorg-manpages  XFree86-manuals
+    portupgrade -o x11/xorg-documents  XFree86-documents
+    portupgrade -o x11-fonts/xorg-fonts-truetype  XFree86-fontScalable
+    portupgrade -o x11-fonts/xorg-fonts-100dpi  XFree86-font100dpi
+    portupgrade -o x11-fonts/xorg-fonts-75dpi  XFree86-font75dpi
+    portupgrade -o x11-fonts/xorg-fonts-type1  XFree86-fontDefaultBitmaps
+    portupgrade -o x11-fonts/xorg-fonts-cyrillic  XFree86-fontCyrillic
+    portupgrade -o x11-fonts/xorg-fonts-encodings  XFree86-fontEncodings
+    portupgrade -o x11-servers/xorg-server  XFree86-Server
+    portupgrade -o x11/xorg -f XFree86
+
+20040719:
+  AFFECTS: users of PHP
+  AUTHOR: ale@FreeBSD.org
+
+  The old lang/php4 and lang/php5 ports have been split into 'base' PHP,
+  PEAR, and shared extensions to allow more flexibility and add new features.
+  Upgrading your current PHP installation will result in a 'base' PHP
+  installation (no PEAR and no extensions).
+  PEAR can be found in the new devel/php4-pear and devel/php5-pear ports, while
+  the set of PHP extensions to install can be chosen via the meta-ports
+  lang/php4-extensions and lang/php5-extensions, or installing singular
+  extensions individually.
+  If you have a previous php.ini configuration file, be sure to comment out
+  the extension_dir parameter, since the correct path is statically compiled
+  into the PHP binary.
+  For an overview of the modules used with the old PHP binary, use
+  the command "php -m".
+
+20040717:
+  AFFECTS: users of net/openldap21{,-sasl}-client
+  AUTHOR: eik@FreeBSD.org
+
+  OpenLDAP version 2.2 is now the default. To upgrade all ports do
+    portupgrade -rfo net/openldap22-client openldap-client
+  (or a similar command for the SASL variant). If you do not want to
+  upgrade, add the line `WANT_OPENLDAP_VER?=21' to /etc/make.conf
+
+  Note that when you want to upgrade openldap21{,sasl}-server, you have
+  to use slapcat/slapadd to migrate the database, since the internal
+  format is not binary compatible. Simply upgrading the server without
+  doing a slapcat first can corrupt your database.
+
+20040717:
+  AFFECTS: users of mail/exim on FreeBSD 5.x
+  AUTHOR: eik@FreeBSD.org
+
+  The default location of the startup script has been changed to
+  ${PREFIX}/etc/rc.d. When you depend on the previous behavior,
+  build the port with WITH_RCORDER=yes.
+
+  Setting WITH_OPENLDAP_VER and WITH_MYSQL_VER do not automatically
+  imply the corresponding WITH_ variable. The use of these options
+  is discouraged, use the global settings (WANT_OPENLDAP_VER and
+  DEFAULT_MYSQL_VER) to set system wide defaults.
+
+20040709:
+  AFFECTS: users of mail/milter-sender
+  AUTHOR: vs@FreeBSD.org
+
+  Milter-sender version 0.58 released.
+  When updating to version 0.58, beware if you have a personalized
+  configuration file (milter-sender.cf).  The meaning of the
+  MxAcceptsAllAction variable has changed and its default has changed
+  from 4 to 6.  If this variable is not updated, greylisting might be
+  more aggressive than expected.
+
+20040708:
+  AFFECTS: users of www/opera
+  AUTHOR: osa@FreeBSD.org
+
+  Opera 7.52 released.
+  The file search.ini has been changed to ensure correct default
+  addresses for dictionary and encyclopedia searches.  Existing
+  versions will be overwritten on upgrade.  Users who have a
+  customized search.ini file that they would like to keep, should
+  edit its version number to 4 before upgrading.  Note that you
+  have to edit the search.ini file located in the /.opera folder.
+
+  [Version]
+  File Version=4
+
+  Other changes you are may find in changelog, its
+  available at http://www.opera.com/freebsd/changelogs/752/
+
+20040706:
+  AFFECTS: users of Python bindings for textproc/lib{xml2,xslt} libraries
+  AUTHOR: gnome@FreeBSD.org
+
+  Python bindings for libxml2 and libxslt libraries were moved out into
+  separate slave ports. Please install textproc/py-libxml2 and
+  textproc/py-libxslt to get bindings back to your system.
+
+20040703:
+  AFFECTS: users of net/netatalk-devel
+  AUTHOR: marcus@FreeBSD.org
+
+  Netatalk-devel has been converted to use RCng.  That means all of the
+  netatalk daemons must be enabled in /etc/rc.conf before they will start
+  (previously, all netatalk daemons would start by default).  The following
+  variables are used by the new netatalk.sh script:
+
+  atalkd_enable
+  cnid_metad_enable
+  papd_enable
+  afpd_enable
+  timelord_enable
+
+  See the netatalk.sh script for more details.
+
+20040701:
+  AFFECTS: users of security/portaudit
+  AUTHOR: eik@FreeBSD.org
+
+  The preference file format, as well as the periodic(8)
+  names have changed. If you use the default settings,
+  no modifications are necessary.
+
+  new settings in /usr/local/etc/portaudit.conf:
+    portaudit_fetch_env="HTTP_PROXY="
+    portaudit_fetch_cmd="fetch -1amp"
+    portaudit_sites="http://www.FreeBSD.org/ports/"
+
+  new settings in periodic.conf(5):
+    daily_status_security_portaudit_enable="YES"
+    daily_status_security_portaudit_expiry="2"
+    daily_status_security_portaudit_user="nobody"
+
+20040629:
+  AFFECTS: users of audio/daapd
+  AUTHOR: lth@FreeBSD.org
+
+  Daapd must now be enabled in rc.conf. Add this to your /etc/rc.conf:
+  daapd_enable="YES"
+
+20040626:
+  AFFECTS: users of lang/php4 and lang/php5 with the PDFlib extension
+  AUTHOR: ale@FreeBSD.org
+
+  The PDFlib extension has been removed from the archive and moved to PECL.
+  Consequently to enable it you have to install print/pecl-pdflib.
+  Alternatively you may want to try the experimental print/pecl-panda.
+
+20040625:
+  AFFECTS: users of ftp/pure-ftpd
+  AUTHOR: pav@FreeBSD.org
+
+  Pure-ftpd must be enabled in rc.conf now. Add this to your /etc/rc.conf:
+  pureftpd_enable="YES"
+
+20040622:
+  AFFECTS: users of net/openslp
+  AUTHOR: kuriyama@FreeBSD.org
+
+  The openslp port must now be enabled / disabled and configured in
+  rc.conf.  See the script for details.
+
+20040619:
+  AFFECTS: users of sysutils/webmin and sysutils/usermin
+  AUTHOR: olgeni@FreeBSD.org
+
+  The webmin and usermin ports must now be enabled in rc.conf.
+  See the pkg-message or script for details.
+
+20040618:
+  AFFECTS: users of japanese/ptex-tetex
+  AUTHOR: hrs@FreeBSD.org
+
+  The texmf.cnf file for pTeX is now installed in texmf/web2c-ptex.
+
+20040618:
+  AFFECTS: users of japanese/ptex-pkfonts*
+  AUTHOR: hrs@FreeBSD.org
+
+  The japanese/ptex-pkfonts* has been removed because pkfonts are
+  already included in the teTeX distribution.
+
+20040618:
+  AFFECTS: users of japanese/xdvik-vflib*
+  AUTHOR: hrs@FreeBSD.org
+
+  The japanese/xdvik-vflib no longer supports VFlib2, and now depends on
+  print/freetype2.  For the configuration details, see vfontmap file which
+  installed as texmf/xdvi/vfontmap.  japanese/kochi-ttfonts is used for
+  min and goth by default.
+
+  xdvik-vflib-pk* variants has been removed because pkfonts are already included
+  in the teTeX distribution.
+
+20040618:
+  AFFECTS: users of print/teTeX
+  AUTHOR: hrs@FreeBSD.org
+
+  The print/teTeX has been split into print/teTeX-base and print/teTeX-texmf,
+  and print/teTeX is now a meta-port for the two and print/dvipsk-tetex and
+  print/xdvik.  print/teTeX installs dvips and xdvi by default again (via
+  print/dvipsk-tetex and print/xdvik).   For people who want to use teTeX,
+  simply install print/teTeX with options set by default.
+
+  print/teTeX-base has additional options for adding xdvi and dvips included
+  in the teTeX distribution itself, but use of them are not recommended if
+  you do not understand what you are trying to do.  Especially, when the
+  options are set by yourself, do not install ports that match *xdvi* and
+  *dvips* because they break the installed print/teTeX-base's dviware
+  and such conflicts will not be detected.  In most cases, a combination
+  of print/teTeX-base + print/dvipsk-tetex + print/xdvik (which are
+  installed by print/teTeX by default) will be sufficient.
+
+20040615:
+  AFFECTS: users of www/firefox
+  AUTHOR: gnome@FreeBSD.org
+
+  The firefox-0.9 update has a special requirement before you can run it.
+  You must first run firefox as root before running it as another user.
+  The best way to do this is to su - to root or log
+  in as root (i.e. do not su -m to root).  After becoming root, simply run
+  ``firefox''.  You can then quit the browser, then run it as any other
+  user.  If you do not run firefox as root first, the browser window will
+  not appear.
+
+20040608:
+  AFFECTS: users of net/haproxy
+  AUTHOR: clement@FreeBSD.org
+
+  The haproxy port must now be enabled / disabled and configured in
+  rc.conf.  See the pkg-message or script for details.
+
+20040605:
+  AFFECTS: users of www/apache2
+  AUTHOR: clement@FreeBSD.org
+
+  The apache2 port must now be enabled / disabled and configured in
+  rc.conf.  See the pkg-message or script for details.
+
+20040602:
+  AFFECTS: users of sysutils/mkisofs and sysutils/mkisofs-devel
+  AUTHOR: netchild@FreeBSD.org, marius@FreeBSD.org
+
+  sysutils/mkisofs and sysutils/mkisofs-devel were merged into
+  sysutils/cdrtools and sysutils/cdrtools-devel respectively.
+
+  To update them generate ("make index") or fetch ("make fetchindex") a
+  new INDEX/INDEX-5. Run "pkgdb -F" and unregister the mkisofs/-devel
+  port. Then forcefully update the cdrtools port and all of its
+  dependencies (e.g. "portupgrade -rf cdrtools"). After the update
+  it may be necessary to rerun "pkgdb -F" and resolve a stale
+  dependency to cdrtools.
+
+20040531:
+  AFFECTS: users of lang/perl5.8
+  AUTHOR: mat@FreeBSD.org, marcus@FreeBSD.org
+
+  lang/perl5.8 has been updated to 5.8.4. you should update everything
+  depending on perl, that is :
+    * first, upgrade your perl5.8 installation.
+    * run "use.perl port", so that the system knows you have 5.8.4.
+    * now, run some magic incantations to upgrade all ports depending on perl,
+      that is run something like :
+      portupgrade -f `(pkg_info -R perl-5.8.4 |tail +4; \
+        find /usr/local/lib/perl5/site_perl/5.8.2 -type f -print0 \
+        | xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
+      This is likely to fail for a few ports, you'll have to upgrade them
+      afterward.
+
+20040529:
+  AFFECTS: users of mail/mailman and japanese/mailman
+  AUTHOR: nork@FreeBSD.org
+
+  In Mailman 2.1.5, some significant changes have been made to the
+  file formats for qfiles and the pendings database.  See
+  $PREFIX/share/doc/mailman/UPGRADING for details (if you define
+  NOPORTDOCS, refer relevant file in an archive).
+
+20040527:
+  AFFECTS: users of net/openldap22-client
+  AUTHOR: eik@FreeBSD.org
+
+  The OpenLDAP library soname has changed, requiring a recompilation
+  of all dependent ports:
+
+  portupgrade -rf net/openldap22-client
+
+20040525:
+  AFFECTS: users of databases/postgresql-client
+  AUTHOR: mat@FreeBSD.org
+
+  This port was removed because of dependencies problem. If you still want to
+  have it, install databases/postgresql7 with -DWITHOUT_SERVER
+
+20040521:
+  AFFECTS: users of irc/ircd-hybrid-ru
+  AUTHOR: krion@FreeBSD.org
+
+  UID/GID were changed from 6667 to 555, please manually delete
+  old entries from /etc/passwd /etc/master.passwd and /etc/group
+
+20040514:
+  AFFECTS: users of audio/faad
+  AUTHOR: pav@FreeBSD.org
+
+  If the compilation of faad fails, please manually delete older
+  installed version of faad and reinstall from port.
+
+20040512:
+  AFFECTS: users of print/teTeX
+  AUTHOR: hrs@FreeBSD.org
+
+  The print/teTeX no longer installs dvipsk by default.  To build and
+  install dvipsk, you have to specify WITH_DVIPSK, or the dvipsk utility
+  in the print/teTeX is also available print/dvipsk-tetex separately.
+  This change is to resolve conflicts between various versions of dvips.
+
+20040504:
+  AFFECTS: users of mail/drac
+  AUTHOR: nork@FreeBSD.org
+
+  The "drac_flags" rc.conf(5) variable has been renamed to "dracd_flags".
+  See the pkg-message or script for details.
+
+20040501:
+  AFFECTS: users of www/apache13
+  AUTHOR: nork@FreeBSD.org
+
+  The apache13 port must now be enabled / disabled and configured in
+  rc.conf.  See the pkg-message or script for details.
+
+20040429:
+  AFFECTS: users of sysutils/smartmontools
+  AUTHOR: nork@FreeBSD.org
+
+  The smartmontools port must now be enabled / disabled and configured in
+  rc.conf.  See the pkg-message or script for details.
+
+20040420:
+  AFFECTS: users of sysutils/cdrtools
+  AUTHOR: netchild@FreeBSD.org
+
+  The cdrecord program now uses ${PREFIX}/etc (e.g. /usr/local/etc) instead
+  of /etc/default as the location of the global configuration file. If you
+  created such a configuration file you need to copy it over to the new
+  location.
+
+20040420:
+  AFFECTS: users of x11/kdebase3
+  AUTHOR: kde@FreeBSD.org
+
+  If you update KDE from version 3.2.1 or earlier to version 3.2.2 while
+  running a KDE session, newly opened instances of Konqueror might hang
+  or crash, depending on how far the update has progressed.
+
+  If this happens, it is necessary to restart your KDE session in order to
+  restore proper operations.
+
+20040404:
+  AFFECTS: GNOME desktop users
+  AUTHOR: gnome@FreeBSD.org
+
+  GNOME has been updated to 2.6.  Simply portupgrading will cause serious
+  problems if you are using the desktop itself.  If you are a GNOME desktop
+  user, you should carefully read the instructions at:
+
+  http://www.freebsd.org/gnome/docs/faq26.html
+
+  And use the gnome_upgrade.sh script to properly upgrade to GNOME 2.6.  If
+  you are just a casual user of some of the GNOME libraries, portupgrade
+  should be sufficient to update your ports.
+
+20040316:
+  AFFECTS: users of net/isc-dhcp3-*
+  AUTHOR: des@FreeBSD.org
+
+  The isc-dhcp3-* ports must now be enabled / disabled and configured in
+  rc.conf.  See the pkg-message for details.
+
+20040313:
+  AFFECTS: users of textproc/expat2
+  AUTHOR: marcus@FreeBSD.org
+
+  Users of expat2 (and its many dependencies) should do the following to
+  properly update expat2 and all of its dependencies:
+
+  portupgrade -rf textproc/expat2
+
+20040311:
+  AFFECTS: users of databases/postgresql7
+  AUTHOR: osa@FreeBSD.org
+
+  PostgreSQL 7.4.2 Released and release notes available at
+  http://www.postgresql.org/news/173.html
+
+  NOTICE: unlike most minor versions, this version does require some
+  updates to the pg_* system tables. Full instructions for how to do
+  this are included in the full HISTORY file.
+
+  DO NOT UPGRADE WITHOUT READING THESE INSTRUCTIONS.
+
+20040309:
+  AFFECTS: users of x11/kdelibs3 and x11/kdebase3
+  AUTHOR: kde@FreeBSD.org
+
+  If you update kdelibs from version 3.2.0 to version 3.2.1 while running
+  a KDE 3.2.0 session, newly opened instances of Konqueror will silently
+  crash as soon as the new version of kdelibs has been installed, due to
+  mismatching linker symbols.
+
+  It is recommended you quit your KDE session at that point and update
+  kdebase to version 3.2.1, then restart KDE.
+
+20040309:
+  AFFECTS: users of audio/arts and x11/kdebase3
+  AUTHOR: kde@FreeBSD.org
+
+  The arts port, PORTVERSION 1.2.1 does not include artswrapper anymore.
+  Instead, artswrapper is now installed by a new port audio/artswrapper.
+
+  Installation of artswrapper is optional, however:
+
+  If you presently run KDE and you have "Run with the highest possible
+  priority (realtime priority)" checked in Control Center/Sound & Multimedia/
+  Sound System and you choose to NOT install audio/artswrapper, you need to
+
+  - Uncheck "Run with the highest possible priority (realtime priority)"
+    in Control Center/Sound & Multimedia/Sound System BEFORE updating arts
+
+  OR
+
+  - AFTER updating arts and kdebase, go to Control Center/Sound & Multimedia/
+    Sound System, click on the unchecked "Run with the highest possible priority
+    (realtime priority)", dismiss the message telling you that realtime is un-
+    available or artswrapper is missing and then click Apply.
+
+20040305:
+  AFFECTS: users of security/antivir-milter
+  AUTHOR: netchild@FreeBSD.org
+
+  When updating from a previous version of security/antivir-milter you
+  have to do the following after deinstalling the old port:
+      rm <PREFIX>/AntiVir/antivir
+      rm <PREFIX>/AntiVir/antivir.vdf
+      chown root:wheel <PREFIX>/AntiVir
+      chown root:smmsp <PREFIX>/AntiVir/hbedv.key
+    In your SENDMAIL_MC change
+      `S=unix:<PREFIX>/AntiVir/avmilter.sock, F=T, T=S:10m;R:10m;E:5m'
+    to:
+      `S=unix:/var/spool/avmilter/avmilter.sock, F=T, T=S:10m;R:10m;E:10m'
+    and rebuild sendmail.cf.
+    If /var/spool/avmilter exist you have to:
+      chown -R smmsp:smmsp /var/spool/avmilter
+    If you are using a customized <PREFIX>/etc/avmilter.conf the port
+    won't remove it on deinstall and you have to manually change User
+    and Group to smmsp there.
+    Afterwards you can install the new version of this port. You then
+    should run antivirupdater to get a current VDF.
+
+20040226:
+  AFFECTS: i386 users of lang/ruby* and sysutils/portupgrade
+  AUTHOR: knu@FreeBSD.org
+
+  Change the default version of ruby to 1.8 for i386.
+
+  If you are a ruby developer and want to keep ruby 1.6 as default,
+  please add RUBY_DEFAULT_VER=1.6 to /etc/make.conf.
+
+  Otherwise, please run the following series of commands to migrate to
+  ruby 1.8:
+
+  1) Reinstall portupgrade manually (and as a result ruby 1.8 will be
+     installed):
+	pkg_delete portupgrade-\*
+	(cd /usr/ports/sysutils/portupgrade; make install clean)
+
+  2) Reinstall everything that depends on ruby 1.6 to use ruby 1.8
+     instead:
+	portupgrade -fr lang/ruby16
+
+  3) Reinstall ruby 1.8 (because the previous step kills symlinks):
+	portupgrade -f lang/ruby18
+
+  4) Deinstall ruby 1.6 stuff (if you are paranoia):
+	pkg_deinstall -ri lang/ruby16
+
+  5) If the above commands do now work somehow and portupgrade starts
+     causing LoadError, please reinstall portupgrade manually again.
+     Whenever you get confused, you can always deinstall portupgrade
+     and all the ruby stuff (run "pkg_delete -r ruby-\*") and
+     reinstall portupgrade as a last resort.
+
+20040204:
+  AFFECTS: 5.2-CURRENT users who started with a 5.2-RELEASE or older.
+  AUTHOR: obrien@FreeBSD.org
+
+  Change the default version of perl to 5.8.
+
+  1) Force perl-5.6.1 to be upgraded with perl-5.8.
+        portupgrade -o lang/perl5.8 -f perl-5.6.1_15
+
+  2) Update all p5-* modules.
+	portupgrade -f p5-\*
+
+$FreeBSD$

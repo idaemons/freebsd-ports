@@ -1,0 +1,34 @@
+libdata/pkgconfig/dirac.pc
+lib/libdirac_encoder.so.0
+lib/libdirac_encoder.so
+lib/libdirac_encoder.la
+lib/libdirac_encoder.a
+lib/libdirac_decoder.so.0
+lib/libdirac_decoder.so
+lib/libdirac_decoder.la
+lib/libdirac_decoder.a
+include/dirac/libdirac_encoder/dirac_encoder.h
+@dirrm include/dirac/libdirac_encoder
+include/dirac/libdirac_decoder/dirac_parser.h
+include/dirac/libdirac_decoder/decoder_types.h
+@dirrm include/dirac/libdirac_decoder
+include/dirac/libdirac_common/dirac_types.h
+include/dirac/libdirac_common/common_types.h
+@dirrm include/dirac/libdirac_common
+@dirrm include/dirac
+bin/make_header
+bin/dirac_instrumentation
+bin/dirac_encoder
+bin/dirac_decoder
+bin/YUV444toRGB
+bin/YUV422toRGB
+bin/YUV420toRGB
+bin/YUV411toRGB
+bin/UYVYtoRGB
+bin/RGBtoYUV444
+bin/RGBtoYUV422
+bin/RGBtoYUV420
+bin/RGBtoYUV411
+bin/RGBtoUYVY
+bin/RGBtoBMP
+bin/BMPtoRGB

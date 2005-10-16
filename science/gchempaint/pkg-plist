@@ -1,0 +1,78 @@
+bin/gchempaint
+libdata/bonobo/servers/gchempaint.server
+share/gnome/applications/gchempaint.desktop
+share/gnome/gchempaint/glade/arrow1.xpm
+share/gnome/gchempaint/glade/arrow2.xpm
+share/gnome/gchempaint/glade/bond.xpm
+share/gnome/gchempaint/glade/cn.xpm
+share/gnome/gchempaint/glade/cyclentool.glade
+share/gnome/gchempaint/glade/c3.xpm
+share/gnome/gchempaint/glade/c4.xpm
+share/gnome/gchempaint/glade/c5.xpm
+share/gnome/gchempaint/glade/c6.xpm
+share/gnome/gchempaint/glade/c7.xpm
+share/gnome/gchempaint/glade/c8.xpm
+share/gnome/gchempaint/glade/docprop.glade
+share/gnome/gchempaint/glade/downbond.xpm
+share/gnome/gchempaint/glade/eraser.xpm
+share/gnome/gchempaint/glade/fragment.xpm
+share/gnome/gchempaint/glade/charge-.xpm
+share/gnome/gchempaint/glade/charge+.xpm
+share/gnome/gchempaint/glade/mendeleiev.glade
+share/gnome/gchempaint/glade/mesomery.xpm
+share/gnome/gchempaint/glade/plus.xpm
+share/gnome/gchempaint/glade/selection.xpm
+share/gnome/gchempaint/glade/subscript24.png
+share/gnome/gchempaint/glade/superscript24.png
+share/gnome/gchempaint/glade/texttools.glade
+share/gnome/gchempaint/glade/text.xpm
+share/gnome/gchempaint/glade/tools.glade
+share/gnome/gchempaint/glade/upbond.xpm
+share/gnome/gchempaint/glade/xbond.xpm
+share/gnome/gchempaint/pixmaps/gchempaint_logo.png
+share/gnome/gnome-2.0/ui/gchempaint.xml
+share/gnome/help/gchempaint/C/gchempaint.xml
+share/gnome/help/gchempaint/C/legal.xml
+share/gnome/help/gchempaint/C/figures/bond.png
+share/gnome/help/gchempaint/C/figures/charges.png
+share/gnome/help/gchempaint/C/figures/cyclentool.png
+share/gnome/help/gchempaint/C/figures/cycletools.png
+share/gnome/help/gchempaint/C/figures/element.png
+share/gnome/help/gchempaint/C/figures/eraser.png
+share/gnome/help/gchempaint/C/figures/fragment.png
+share/gnome/help/gchempaint/C/figures/main-window.png
+share/gnome/help/gchempaint/C/figures/mendeleiev.png
+share/gnome/help/gchempaint/C/figures/mesomery-arrow.png
+share/gnome/help/gchempaint/C/figures/plus.png
+share/gnome/help/gchempaint/C/figures/properties.png
+share/gnome/help/gchempaint/C/figures/reaction-arrows.png
+share/gnome/help/gchempaint/C/figures/selection.png
+share/gnome/help/gchempaint/C/figures/stereobonds.png
+share/gnome/help/gchempaint/C/figures/text.png
+share/gnome/help/gchempaint/C/figures/texttools-bar.png
+share/gnome/help/gchempaint/C/figures/tools-window.png
+share/gnome/omf/gchempaint/gchempaint-C.omf
+share/icons/hicolor/32x32/apps/gchempaint.png
+share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-gchempaint.png
+share/icons/hicolor/48x48/apps/gchempaint.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-gchempaint.png
+share/icons/hicolor/72x72/apps/gchempaint.png
+share/icons/hicolor/72x72/mimetypes/gnome-mime-application-x-gchempaint.png
+share/icons/hicolor/128x128/apps/gchempaint.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-gchempaint.png
+share/locale/de/LC_MESSAGES/gchempaint.mo
+share/locale/fr/LC_MESSAGES/gchempaint.mo
+share/locale/it/LC_MESSAGES/gchempaint.mo
+share/locale/pl/LC_MESSAGES/gchempaint.mo
+share/locale/zh_CN/LC_MESSAGES/gchempaint.mo
+share/mime/application/x-gchempaint.xml
+share/mime/packages/gchempaint.xml
+@dirrm share/gnome/gchempaint/pixmaps
+@dirrm share/gnome/gchempaint/glade
+@dirrm share/gnome/gchempaint
+@dirrm share/gnome/help/gchempaint/C/figures
+@dirrm share/gnome/help/gchempaint/C
+@dirrm share/gnome/help/gchempaint
+@dirrm share/gnome/omf/gchempaint
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

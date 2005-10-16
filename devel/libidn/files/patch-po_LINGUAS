@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- po/LINGUAS.orig
++++ po/LINGUAS
+@@ -1,7 +1,5 @@
+ da
+ de
+-en@boldquot
+-en@quot
+ eo
+ fr
+ nl

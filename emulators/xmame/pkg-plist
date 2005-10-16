@@ -1,0 +1,69 @@
+bin/%%MAMEMESS%%
+%%MAMEONLY%%bin/xml2info
+%%MAMEONLY%%bin/chdman
+%%MAMEONLY%%bin/romcmp
+%%MESSONLY%%bin/imgtool
+%%MESSONLY%%bin/dat2html
+etc/%%MAMEMESS%%rc.sample
+share/%%MAMEMESS%%/%%MAMEMESS%%rc
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/changes.unix
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/dga2.txt
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame.jpg
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/liesmich.unix
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/multiplayer-readme.txt
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc-2.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc-3.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc-4.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc-5.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc-6.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc-7.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc.lyx
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc.txt
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-gdoc-1.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-gdoc-2.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-gdoc-3.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-gdoc-4.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-gdoc-5.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-gdoc-6.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-gdoc-7.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-gdoc-8.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-gdoc.html
+%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame.css
+%%MESSONLY%%%%PORTDOCS%%share/doc/xmess/credits.htm
+%%MESSONLY%%%%PORTDOCS%%share/doc/xmess/faq.htm
+%%MESSONLY%%%%PORTDOCS%%share/doc/xmess/imgtool.txt
+%%MESSONLY%%%%PORTDOCS%%share/doc/xmess/messnew.txt
+%%MESSONLY%%%%PORTDOCS%%share/doc/xmess/messroms.txt
+%%MESSONLY%%%%PORTDOCS%%share/doc/xmess/sysinfo.dat
+%%MESSONLY%%share/xmess/history.dat
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/simulation.txt
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/whatsnew.txt
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/pinmame.txt
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/gamelist.txt
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/keys.txt
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/sounds.dat
+%%PORTDOCS%%@dirrm share/doc/%%MAMEMESS%%/img
+%%PORTDOCS%%@dirrm share/doc/%%MAMEMESS%%
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmame/cabfront.jpg
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmame/cabtitle.jpg
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmame/glmame.cab
+%%OPENGL%%@dirrm share/%%MAMEMESS%%/cab/glmame
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmamejau/cabfront.jpg
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmamejau/cabside.jpg
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmamejau/cabtitle.jpg
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmamejau/glmamejau.cab
+%%OPENGL%%@dirrm share/%%MAMEMESS%%/cab/glmamejau
+%%OPENGL%%share/%%MAMEMESS%%/cab/trans/trans.cab
+%%OPENGL%%@dirrm share/%%MAMEMESS%%/cab/trans
+%%OPENGL%%@dirrm share/%%MAMEMESS%%/cab
+%%DATFILES%%share/%%MAMEMESS%%/hiscore.dat
+%%DATFILES%%share/%%MAMEMESS%%/history.dat
+%%DATFILES%%share/%%MAMEMESS%%/cheat.dat
+@exec mkdir -p %D/share/%%MAMEMESS%%/roms || true
+@dirrm share/%%MAMEMESS%%/roms
+@dirrm share/%%MAMEMESS%%
+@exec mkdir -p %%SPOOLGAMES%%/%%MAMEMESS%% || true
+@exec chown root:games %%SPOOLGAMES%%/%%MAMEMESS%% || true
+@exec chmod 775 %%SPOOLGAMES%%/%%MAMEMESS%% || true
+@unexec rmdir %%SPOOLGAMES%%/%%MAMEMESS%% 2>/dev/null || true

@@ -1,21 +1,39 @@
 # New ports collection makefile for:    zip
-# Version required:     2.0.1
-# Date created:         22 Dec 1994
-# Whom:                 ache
+# ftp://ftp.info-zip.org/pub/infozip/Info-ZIP.html
+# Date created:		22 Dec 1994
+# Whom:			ache
 #
-# $Id: Makefile,v 1.4 1994/12/17 07:35:01 ache Exp $
+# $FreeBSD$
 #
-DISTNAME=       zip201
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
-ALL_TARGET=     freebsd
 
-pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/man/man1
+PORTNAME=	zip
+PORTVERSION=	2.3
+PORTREVISION=	2
+CATEGORIES=	archivers
+MASTER_SITES=	ftp://ftp.uu.net/pub/archiving/zip/src/ \
+		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
+DISTFILES=	zip23${EXTRACT_SUFX} ${ZCRYPT_SRC}
+EXTRACT_ONLY=	zip23${EXTRACT_SUFX}
 
-install:
-	cd ${WRKSRC}; install -c -o bin -g bin zip.1 zipgrep.1 ${PREFIX}/man/man1
-	cd ${WRKSRC}; install -c -o bin -g bin zip zipnote zipsplit zipcloak zipgrep ${PREFIX}/bin
+MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Create/update ZIP files compatible with pkzip
+
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+
+ZCRYPT_SRC=	zcrypt29-exportable.zip
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKEFILE=	unix/Makefile
+MAKE_FLAGS=	LOCAL_ZIP="-DUSE_CRYPT" -f
+ALL_TARGET=	generic
+MAN1=		zip.1
+
+post-extract:
+	unzip -q -aa -o ${_DISTDIR}${ZCRYPT_SRC} -d ${WRKSRC} -x WHERE
+
+do-install:
+.for file in zip zipcloak zipnote zipsplit
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/man/zip.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

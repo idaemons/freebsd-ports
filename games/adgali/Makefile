@@ -1,0 +1,46 @@
+# ex:ts=8
+# New ports collection makefile for:	adgali
+# Date created:			Sep 23, 2001
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	adgali
+PORTVERSION=	0.2.4
+CATEGORIES=	games devel
+MASTER_SITES=	http://adgali.apiou.org/download/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An open source game library useful for 2D game development
+
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		freetype.9:${PORTSDIR}/print/freetype2
+
+USE_BZIP2=	yes
+USE_SDL=	sdl
+USE_XPM=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-compile-optim=no
+INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Configure fails"
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc/html && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>

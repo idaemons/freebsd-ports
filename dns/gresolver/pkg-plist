@@ -1,0 +1,8 @@
+bin/gresolver
+share/gnome/applications/gresolver.desktop
+share/gnome/pixmaps/gresolver.png
+%%DATADIR%%/gresolver.glade
+@dirrm %%DATADIR%%
+@unexec rmdir %D/share/gnome/applications 2>/dev/null || true
+@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/gnome 2>/dev/null || true

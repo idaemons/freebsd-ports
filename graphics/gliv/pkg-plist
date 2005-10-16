@@ -1,0 +1,19 @@
+bin/gliv
+share/gnome/applications/gliv.desktop
+share/gnome/pixmaps/gliv.png
+share/locale/de/LC_MESSAGES/gliv.mo
+share/locale/fr/LC_MESSAGES/gliv.mo
+share/locale/nl/LC_MESSAGES/gliv.mo
+share/locale/pt_BR/LC_MESSAGES/gliv.mo
+share/locale/ro/LC_MESSAGES/gliv.mo
+share/locale/ru/LC_MESSAGES/gliv.mo
+share/locale/rw/LC_MESSAGES/gliv.mo
+share/locale/sk/LC_MESSAGES/gliv.mo
+share/locale/tr/LC_MESSAGES/gliv.mo
+share/locale/vi/LC_MESSAGES/gliv.mo
+@unexec rmdir %D/man/ru/man1 2>/dev/null || true
+@unexec rmdir %D/man/ru 2>/dev/null || true
+@unexec rmdir %D/man/fr/man1 2>/dev/null || true
+@unexec rmdir %D/man/fr 2>/dev/null || true
+@unexec rmdir %D/man/de/man1 2>/dev/null || true
+@unexec rmdir %D/man/de 2>/dev/null || true

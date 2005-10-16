@@ -1,0 +1,19 @@
+--- configure.orig	Fri Feb  4 23:30:08 2005
++++ configure	Mon Feb 14 23:05:09 2005
+@@ -4930,13 +4930,13 @@
+ fi
+ 
+ #CFLAGS="-ansi -Wall -Wstrict-prototypes -W"
+-ADDCFLAGS="-Wall -fPIC"
++ADDCFLAGS="$CFLAGS -Wall -fPIC"
+ # Check whether --enable-debug or --disable-debug was given.
+ if test "${enable_debug+set}" = set; then
+   enableval="$enable_debug"
+   ADDCFLAGS="$ADDCFLAGS -g -DDEBUG -DDEBUG_OUT"
+-else
+-  ADDCFLAGS="$ADDCFLAGS -O2"
++#else
++#  ADDCFLAGS="$ADDCFLAGS -O2"
+ fi;
+ 
+ # Check whether --enable-xrandr or --disable-xrandr was given.

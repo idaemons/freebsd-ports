@@ -1,0 +1,137 @@
+#!/bin/sh
+#
+# pdispatch <arch> <branch> <command> <package.tgz> [<args> ...]
+#
+# Choose a random machine from ${buildroot}/ulist and dispatch the
+# job to it via the ptimeout script.
+
+pb=/var/portbuild
+arch=$1
+shift
+. ${pb}/${arch}/portbuild.conf
+. ${pb}/scripts/buildenv
+
+# Increase timeout on slow build machines
+if [ "$arch" = "alpha" -o "$arch" = "sparc64" ]; then
+	# wait 16 hours maximum
+	timeout=57600
+else
+	# wait 80 hours maximum
+	timeout=288000
+fi
+
+branch=$1
+command=$2
+shift 2
+
+buildenv ${pb} ${arch} ${branch}
+
+# ssh -x doesn't work on some machines
+unset DISPLAY
+
+pkgname=$(basename $1 ${PKGSUFFIX})
+
+if grep -qxF ${pkgname} ${pb}/${arch}/${branch}/duds; then
+  echo "skipping ${pkgname}"
+  exit 1
+fi
+
+if [ -z "${pkgname}" ]; then
+  echo "null packagename"
+  exit 1
+fi
+
+args=${1+"$@"}
+flags=""
+noclean=0
+if [ "x$NOCLEAN" != "x" ]; then
+  flags="${flags} -noclean"
+  noclean=1
+fi
+if [ "x$NO_RESTRICTED" != "x" ]; then
+  flags="${flags} -norestr"
+fi
+if [ "x$PLISTCHECK" != "x" ]; then
+  flags="${flags} -plistcheck"
+fi
+if [ "x$NODUMMY" != "x" ]; then
+  flags="${flags} -nodummy"
+fi
+if [ "x$WANT_DISTFILES" != "x" ]; then
+  flags="${flags} -distfiles"
+fi
+if [ "x$FETCH_ORIGINAL" != "x" ]; then
+  flags="${flags} -fetch-original"
+fi
+if [ "x$TRYBROKEN" != "x" ]; then
+  flags="${flags} -trybroken"
+fi
+
+host=
+chroot=
+while [ -z "${host}" -o -z "${chroot}" ]; do
+  chroot=
+  host=$(lockf ${pb}/${arch}/queue/.lock ${pb}/scripts/getmachine ${pb} ${arch} ${branch})
+  # If ulist is empty, then all build machines are busy, so try again in 15 seconds.
+  if [ -z "${host}" ]; then
+    sleep 15
+  else
+    . ${pb}/${arch}/portbuild.conf
+    test -f ${pb}/${arch}/portbuild.${host} && . ${pb}/${arch}/portbuild.${host}
+    chroot=$(ssh -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/claim-chroot ${arch} ${branch} ${pkgname})
+    if [ -z "${chroot}" ]; then
+      echo "Failed to claim chroot on ${host}"
+      lockf ${pb}/${arch}/queue/.lock ${pb}/scripts/releasemachine ${arch} ${host}
+    fi
+  fi
+done
+echo ${chroot}@${host}
+
+. ${pb}/${arch}/portbuild.conf
+test -f ${pb}/${arch}/portbuild.${host} && . ${pb}/${arch}/portbuild.${host}
+
+echo "dispatching: ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}"
+${pb}/scripts/ptimeout.host $timeout ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}
+error=$?
+
+# Pull in the results of the build from the client
+
+scp ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${pb}/${arch}/${branch}/logs/${pkgname}.log
+(ssh -a -n ${client_user}@${host} test -f ${chroot}/tmp/work.tbz ) && scp ${client_user}@${host}:${chroot}/tmp/work.tbz ${pb}/${arch}/${branch}/wrkdirs/${pkgname}.tbz
+
+if [ "x$WANT_DISTFILES" != "x" ]; then
+  mkdir -p ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}
+  ssh -a -n ${client_user}@${host} tar -C ${chroot}/tmp/distfiles -cf - . | \
+    tar --unlink -C ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname} -xvf -
+  touch ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}/.done
+fi
+
+if [ "${error}" = 0 ]; then
+  ssh -a -n ${client_user}@${host} tar -C ${chroot}/tmp -cf - packages | \
+    tar --unlink -C ${pb}/${arch}/${branch} -xvf -
+  test -f ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX} && \
+    touch ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX}
+  rm -f ${pb}/${arch}/${branch}/errors/${pkgname}.log
+  lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildsuccess ${arch} ${branch} ${pkgname}
+  log=${pb}/${arch}/${branch}/logs/$pkgname.log
+  if grep -q "even though it is marked BROKEN" ${log}; then
+    echo | mail -s "${pkgname} BROKEN but built on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
+  fi
+  if grep -q "^list of .*file" ${log}; then
+    buildlogdir=$(realpath ${pb}/${arch}/${branch}/logs/)
+    baselogdir=$(basename ${buildlogdir})
+    (sed -e '/^build started/,$d' $log;echo;echo "For the full build log, see"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '1,/^=== Checking filesystem state/d' $log) | mail -s "${pkgname} pkg-plist errors on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
+  fi
+else
+  log=${pb}/${arch}/${branch}/errors/${pkgname}.log
+  scp ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${log} || (echo ${chroot}@${host}; ssh -a -n ${client_user}@${host} ls -laR ${chroot}/tmp) | mail -s "${pkgname} logfile not found" kris@FreeBSD.org krion@FreeBSD.org
+  if ! grep -q "even though it is marked BROKEN" ${log}; then
+    tail -1000 ${log} | mail -s "${pkgname} failed on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
+  fi
+  lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${pkgname}
+fi
+
+ssh -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/clean-chroot ${arch} ${branch} ${chroot} ${noclean}
+
+lockf ${pb}/${arch}/queue/.lock ${pb}/scripts/releasemachine ${arch} ${host}
+exit ${error}

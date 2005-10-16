@@ -1,0 +1,29 @@
+--- src/Makefile.in.orig	Sat Jan  8 16:17:58 2005
++++ src/Makefile.in	Sun Jan  9 19:21:49 2005
+@@ -107,7 +107,7 @@
+ install_sh = @install_sh@
+ 
+ localedir = $(datadir)/locale
+-INCLUDES = -I$(top_srcdir) -I$(includedir) -I../intl -DLOCALEDIR=\"$(localedir)\" -DPIXMAPS_DIR="\"$(datadir)/pixmaps/grisbi\"" -DLOGO_PATH="\"$(datadir)/pixmaps/grisbi/grisbi-logo.png\"" -DANIM_PATH="\"$(datadir)/pixmaps/grisbi/euro.gif\"" -DHELP_PATH="\"$(datadir)/doc/grisbi/help\"" -Wall 
++INCLUDES = -I$(top_srcdir) -I$(includedir) -I../intl -DLOCALEDIR=\"$(localedir)\" -DPIXMAPS_DIR="\"$(pkgdatadir)/pixmaps\"" -DLOGO_PATH="\"$(pkgdatadir)/pixmaps/grisbi-logo.png\"" -DANIM_PATH="\"$(pkgdatadir)/pixmaps/euro.gif\"" -DHELP_PATH="\"$(datadir)/doc/grisbi/help\"" -Wall 
+ bin_PROGRAMS = grisbi
+ 
+ sources = \
+@@ -241,7 +241,7 @@
+ 	search_glist.h
+ 
+ 
+-EXTRA_DIST = grisbi.desktop grisbi.keys grisbi.mime $(grisbi_INCLUDES)
++EXTRA_DIST = grisbi.desktop $(grisbi_INCLUDES)
+ 
+ mimedir = $(datadir)/mime-info
+ mime_DATA = grisbi.keys grisbi.mime
+@@ -601,7 +601,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-mimeDATA
++install-data-am:
+ 
+ install-exec-am: install-binPROGRAMS
+ 

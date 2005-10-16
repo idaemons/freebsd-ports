@@ -1,0 +1,38 @@
+Index: server/Makefile
+diff -u server/Makefile.orig server/Makefile
+--- server/Makefile.orig	Mon Apr 12 22:30:48 2004
++++ server/Makefile	Tue Apr 13 14:15:40 2004
+@@ -27,18 +27,18 @@
+ PKG_INCLUDE = `$(PKG_CONFIG) --cflags glib-2.0 gthread-2.0`
+ PKG_LIB = `$(PKG_CONFIG) --libs glib-2.0 gmodule-2.0 gthread-2.0`
+ 
+-GLIB12_INCLUDE = `glib-config --cflags`
+-GLIB12_LIB = `glib-config --libs glib gmodule`
++GLIB12_INCLUDE = `$(GLIB_CONFIG) --cflags`
++GLIB12_LIB = `$(GLIB_CONFIG) --libs glib gmodule`
+ 
+-FLAGS = -O2 -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
++FLAGS = -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
+ ifeq ($(glib12),1)
+-FLAGS = -O2 -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
++FLAGS = -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
+ endif
+ ifeq ($(glib12),yes)
+-FLAGS = -O2 -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
++FLAGS = -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
+ endif
+ 
+-FLAGS+= $(PTHREAD_INC)
++FLAGS+= $(PTHREAD_INC) -I$(LOCALBASE)/include
+ 
+ LIBS = $(PKG_LIB) $(GTOP_LIBS_D) $(SYS_LIBS) 
+ ifeq ($(glib12),1)
+@@ -133,7 +133,7 @@
+ 	$(INSTALL) -d -m $(INCLUDEDIRMODE) $(INCLUDEDIR)/gkrellm2
+ 	$(INSTALL) -c -m $(INCLUDEMODE) $(GKRELLMD_INCLUDES) $(INCLUDEDIR)/gkrellm2
+ 	$(INSTALL) -d -m $(MANDIRMODE) $(SMANDIR)
+-	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(SMANDIR)/$(PACKAGE_D).1
++	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(SMANDIR)/$(PACKAGE_D).8
+ 
+ uninstall:
+ 	rm -f $(SINSTALLDIR)/$(PACKAGE_D)

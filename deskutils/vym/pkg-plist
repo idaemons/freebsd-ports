@@ -1,0 +1,24 @@
+bin/vym
+%%DATADIR%%/scripts/exportvym
+%%DATADIR%%/scripts/vym2html.sh
+%%DATADIR%%/scripts/vym2txt.sh
+%%DATADIR%%/styles/wiki/answer.gif
+%%DATADIR%%/styles/wiki/point.gif
+%%DATADIR%%/styles/wiki/question.gif
+%%DATADIR%%/styles/cm.xsl
+%%DATADIR%%/styles/tm.xsl
+%%DATADIR%%/styles/vym.css
+%%DATADIR%%/styles/vym2html.xsl
+%%DATADIR%%/styles/vym2txt.xsl
+%%DATADIR%%/styles/vym2xhtml.xsl
+%%PORTDOCS%%%%DOCSDIR%%/vym.pdf
+%%PORTDOCS%%%%EXAMPLESDIR%%/liveform.vym
+%%PORTDOCS%%%%EXAMPLESDIR%%/math.vym
+%%PORTDOCS%%%%EXAMPLESDIR%%/time-management.vym
+%%PORTDOCS%%%%EXAMPLESDIR%%/todo.vym
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/styles/wiki
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%

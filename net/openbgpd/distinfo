@@ -1,0 +1,6 @@
+MD5 (openbgpd/openbgpd-3.7.tgz) = 4d9d933a705a9b4154a86344e6eae437
+SIZE (openbgpd/openbgpd-3.7.tgz) = 114980
+MD5 (openbgpd/if_media.h) = 4ff9297f5c133425dafe3ca565c0f811
+SIZE (openbgpd/if_media.h) = 23762
+MD5 (openbgpd/pfkey_compat.c) = 8c3bdf02fd308b327bd30e09674c1858
+SIZE (openbgpd/pfkey_compat.c) = 360

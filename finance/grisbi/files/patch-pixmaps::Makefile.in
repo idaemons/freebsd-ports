@@ -1,0 +1,11 @@
+--- pixmaps/Makefile.in.orig	Thu Jun  2 22:59:56 2005
++++ pixmaps/Makefile.in	Mon Jun  6 20:50:17 2005
+@@ -109,7 +109,7 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+-grisbi_pixmapsdir = $(datadir)/pixmaps/grisbi
++grisbi_pixmapsdir = $(pkgdatadir)/pixmaps
+ 
+ grisbi_pixmaps_DATA = \
+ 	addresses.png \

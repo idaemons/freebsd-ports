@@ -1,0 +1,303 @@
+$FreeBSD$
+
+This file documents some of the problems you may encounter when
+upgrading dspam port.  I will try my best to minimize these disruptions,
+but sometimes they are unavoidable.
+
+You should get into the habit of checking this file for changes each
+time before attempting any port upgrade.
+
+This file concetrate on the FreeBSD / port specific changes and one should read
+also the UPGRADING enclosed in the dspam distribution. You can see it by doing
+in the port directory:
+make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
+
+###########################################################################
+# dspam-devel-3.5.2.20050725.0800
+#
+
+Please read carefully distributed docs like README, UPGRADING and CHANGES.
+Notable new features:
+ LDAP Verification
+ Unified Spam Alias / UID in Signature Support
+ Integrated Clam A/V Support
+ Markovian Discrimination (CRM114)
+ CRM Sparse Spectra Storage Driver (css_drv)
+
+- drop local patch to put X-DSPAM-User in all emails.
+- some performance changes in PGSQL schema
+- BUGFIX: SQLITE purge scrip for 3.x
+
+
+###########################################################################
+# dspam-devel-3.5.0.20050512.1145
+#
+
+BUGFIX: fixed signature embedding on malformatted boundary bug
+
+
+###########################################################################
+# dspam-devel-3.5.0.20050506.0930
+#
+
+- Support for clamd virus checking via TCP (see ClamAVHost, ClamAVPort and
+ClamAVResponse in dspam.conf)
+- Support "user+detail" inbound emails and "+quarantine" outbound emails
+(see EnablePlusedDetail and QuarantineMailbox in dspam.conf)
+
+- BUG FIX: "obscure" [1] bug causing dspam to crash under certain conditions 
+when the loose signature was provided without the appropriate delimiter
+- BUG FIX: fix sqlite3 dependency check [2]
+- BUG FIX: don't strip binary if we want GDB suport
+- BUG FIX: DOMAIN_SCALE and LARGE_SCALE are incompatible catch this before
+./cofigure fails [3]
+
+[1] "Obscure" = it took me about 4 hours and a 500 queue processed one by
+one by hand to catch and reproduce the problem after 7 days of mail
+processing w/o error
+[2] Pointed out by vanilla@ for mail/dspam but true here also
+[3] Pointed out by Arvinn Løkkebakken <arvinn@whitebird.no> for mail/dspam
+but true here also
+
+###########################################################################
+# dspam-devel-3.5.0.20050428.1100
+#
+
+This is the post-3.4 devel branch. A lot of things have changed and your
+existing dspam.conf won't probably work anymore. Please compare it with the
+dspam.conf.sample located in the same etc/ directory.
+
+Most notable addition is the SMTP delivery which together with "standard"
+inbound LMTP make a very nice content and light (e.g. it's the fastest setup
+I've had so far) filter.
+
+Database structure is roughly the same but you may wish to check your
+existing database structure with the *.sql corresponding to you database
+driver from EXAMPLESDIR (Mysql 4.1.x is now default as it's _much_ faster).
+Please read carefully distributed docs like README, UPGRADING and CHANGES.
+
+
+###########################################################################
+# dspam-devel-3.4.r2.20050305.0930 (this is post RC2A)
+#
+
+- BUGFIX: fix dspamc hanging when using --stdout
+- BUGFIX: fixed TOE auto whitelisting
+- BUGFIX: individual logging
+- BUGFIX: parsetoheaders and daemon mode combo
+- BUGFIX: autodetect bugs in cgi
+- BUGFIXES for stats
+- BUGFIXES for some un-standard mails segfaults
+
+- NEW FEATURES: LMTP delivery, "standard" LMTP inbound support;
+see CHANGELOG, README and dspam.conf for details (tested slightly on BSD)
+
+- note (very late) SBL query support and SBL queue logging support
+(both SBL client and server ports are WIP)
+
+- As of 3.4 Beta 2, the PostgreSQL driver uses BIGINT instead of NUMERIC(20)
+type to store tokens in database (fully backward compatible). This change
+speedup driver and reduce storage space used by dspam. Use:
+dspam_pg2int8 /tmp/dspam_pg_mig.sql
+and follow the instructions.
+
+
+###########################################################################
+# dspam-devel-3.4.r1.20050216.0945
+#
+
+- if dspam --daemon SIGBUS please send your sources date, CFLAGS and other
+relevant information; this version is believed to be working; tested on:
+i386 5.2.1-RELEASE-p1, i386 5.3-STABLE, amd64 5.3-RELEASE with help from Erwin Lansing <erwin@lansing.dk>,
+"Daniel S. Haischt" <me@daniel.stefan.haischt.name> and Joey Freeland <joeyfreeland@gmail.com>
+- patch dspam.c for bug causing signature to not get written to message
+body (obtained from dspam cvs)
+- patch dspam.c to write X-DSPAM-User also in innocent messages headers
+- drop WITH_WHITELIST, it's not supported by ./configure but by dspam.conf
+- (added post-factum) change POSTGRESQL* to POSTGRESQL because of "Split the
+postgresql ports into a server and a client part"
+
+
+###########################################################################
+# dspam-devel-3.3.4
+#
+
+The daemon mode seems to be completead now, so the port act like it should:
+- if enabled with WITH_DEAMON we install the rc script; to start it at
+boot put 'dspam_enable="YES"' in /etc/rc.conf and set the appropriate
+options in dspam.conf
+- read section "2.3 Client/Server Mode" from dspam README to learn how to
+use dspam in daemon mode
+- a simple portupgrade from previous versions will work with no problems
+with your current setup, even if compiled with WITH_DEAMON (default)
+
+- change default DB back-end to MySQL to make daemon mode work for package
+building
+- add MySQL v5.0.x support -- MYSQL50
+(based on ports/74761 by Gea-Suan Lin <gslin@netnews.NCTU.edu.tw>)
+- USE_MYSQL and have make describe output right
+
+- change of name: SQLITE --> SQLITE2, as we now have sqlite3 support
+- add Sqlite v3.x support -- SQLITE3
+- add BNR_DEBUG option
+- drop QUARANTINE_AGENT as is not supported by ./configure anymore and
+set in dspam.conf UntrustedDeliveryAgent and QuarantineAgent to default to
+TrustedDeliveryAgent, but leave them commented out
+(ports/75548 by Julien Gabel)
+- change default DSPAM_HOME_MODE to 0770
+(ports/75549 by Julien Gabel <jpeg@thilelli.net>)
+- DSPAM_HOME_{OWNER,GROUP} default to DSPAM_{OWNER,GROUP}
+- default maximum message size to 300KB in dspam.conf
+- correct long-standing copy/paste bug (DSPAM_{GROUP,MODE} were set to
+DSPAM_HOME_{GROUP,MODE})
+- USE_MYSQL and have make describe output right
+- add support for exim [2] which we build with the same database back-end
+as dspam if possible ( suggested, incorrectly, in ports/74762 by
+Shahbaz Javeed <sjaveed@adderpit.com> )
+- fix PREF_EXT and BDB4 cases as well in our Makefile
+
+
+#############################################################################
+# dspam-devel=3.3.0.a.20041203.1245_1 (entry added post-factum, it was an
+#                   automated update approved by me but not under my control)
+#
+
+- chase dependecy for sqlite
+
+
+############################################################################
+# dspam-devel-3.3.0.a.20041201.1330
+#
+
+Say hello to the daemonized dspam! Enble it at compile-time with DAEMON option.
+
+- it speaks LMTP:
+LHLO
+MAIL FROM: [password]@[server id]
+RCPT TO: [list of DSPAM users] [DSPAM parameters] [delivery agent parameters]
+DATA
+[message]
+.
+
+- daemon processes *and* delivers at the moment (including to stdout).
+- For client-side delivery, use --stdout and configure your MTA to deliver.
+- it may be necessary to perform all delivery in the client, as using fork &&
+  pipe in a MT app may be bad
+- implemented multiple responses per recipient
+- changed storage driver layer to use a driver context (for caching connections)
+- stateful db connections done for mysql driver
+- to do next: client
+
+- remember that all this is experimental and it may change at any time.
+
+
+############################################################################
+# dspam-devel-3.3.0.a.20041125.0945
+#
+
+- changed the naming scheme because of to many upstream modification in
+tarball naming - right now it lacks any version (for the same reason the
+distfile is renamed from snapshot.tar.gz to PKGNAME and sits on my server);
+\ it is now made up of:
+PORTNAME:		dspam-devel
+next MINOR_VERSION:	3.3.0
+we're in pre-beta:	a
+SNAPSHOT_DATE:		20041125.0945
+\ the strange ``a'' is necessary for pkg_version to work correctly when we will
+have the 3.3.0 beta's, rc's and release (tested with pkg_version -t)
+
+- follow the update procedure from the entry bellow
+
+- there is a new and very useful dspam.conf option:
+ MaxMessageSize - specify a maximum message size to process
+\ I suggest setting it somewhere between 100 and 300 KB, it is unlikely the
+spam you are receiving is bigger and this will improve performance as big
+messages won't stuck the database
+
+- tum mode has been enhanced and it should outperform teft
+
+###############################################################################
+# dspam-devel-3.2.0-20041027.0930 (never comited in the cvs, don't ask me why):
+#
+
+- dspam configuration is now done via dspam.conf
+
+- please remove any OPTION
+
+- the following OPTIONS should be set now in dspam.conf
+OPTION                  .conf name                      def. value
+-------------------------------------------------------------------------------
+DSPAM_HOME              Home                            /var/dspam
+WITH_*_LDA              TrustedDeliveryAgent            mail.local
+                        UntrustedDeliveryAgent          /usr/libexec/mail.local d %u
+QUARANTINE_AGENT        QuarantineAgent                 #
+
+WITH_SPAM_SUBJ          Preference "spamAction=tag"     #
+                        Preference "spamSubject=SPAM"   #
+USER_LOGGING            UserLog                         on
+SYSTEM_LOGGING          SystemLog                       on
+WEBMAIL                 TrainPristine                   off
+WITH_OPT_IN             Opt                             out
+SAT                     TrackSources spam ham           #
+PARSE_TO_HEADERS        ParseToHeaders                  on
+BROKEN_MTA              Broken lineStripping            #
+BROKEN_ERR_CODES        Broken returnCodes              #
+SIGNATURE_HEADERS       Preference "signatureLocation=  message" # headers
+
+- the following OPTIONS should does not exist anymore:
+SIGNATURE_ATACH WITH_HOMEDIR_DOT
+
+- the following OPTIONS have their name changed to follow vedor names
+TRAD_BAYES              GRAHAM_BAYES
+ALT_BAYES               BURTON_BAYES
+WITH_SIGNATURE_LIFE     SIGNATURE_LIFE
+
+- new OPTIONS
+OPTION                       port default
+----------------------------------------------
+LOG_DIR                         /var/log/dspam
+WITH_USER_HOMEDIR
+DSPAM_HOME_OWNER
+DSPAM_HOME_GROUP
+DSPAM_HOME_MODE
+DSPAM_MODE
+DSPAM_OWNER
+DSPAM_GROUP
+
+To upgrade you should:
+
+0. Read docs enclosed with teh dpsam distribution, beginnig with UPGRADING and
+README
+
+1. Adjust your OPTIONs
+( make rmconfig config in dspam port dir, command line, pkg_tools.conf )
+
+2. make VARs.......
+in dspam port dir with appropiate OPTIONS adn VARs (see changes above)
+
+3. stop you MTA or deactivate dspam from it
+
+5. make VARs........ install
+
+4.a) If using MySQL 4.0.xx or PostgreSQL:
+- back-up the database
+- use the appropiate migration script from files dir of dspam port dir
+(if using MySQL 4.1.x or 3.xx you're on your own for now)
+
+5. Back-up and them move the files from the old DSPAM_HOME
+(defaulted: /usr/loca/etc/dspam) to the new DSPAM_HOME (default /vad/db/dspam)
+or where ever you defined DSPA_HOME in 2 above.
+
+6. Adjust you new dspam.conf according with your setup OPTIONS and VARs defined
+on make / mak install step.
+
+7. Remove the old setup files (you have them in the back-up, right ?)
+
+7. Enable dspam in the MTA setup, but only locally or something and start testing.
+
+If something ain't working is one of:
+- permissions problems (hint: with what UID
+is dspam called from your MTA vs. DSPAM_HOME and DSPAM_LOG_DIR)
+- something wrong in dspam.conf (hint: you didn't remove old config files
+and they are still used ?)
+

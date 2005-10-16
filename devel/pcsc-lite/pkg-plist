@@ -1,0 +1,34 @@
+bin/formaticc
+etc/rc.d/pcscd.sh.sample
+etc/reader.conf.d/reader.conf.sample
+include/PCSC/debuglog.h
+include/PCSC/dyn_generic.h
+include/PCSC/ifdhandler.h
+include/PCSC/parser.h
+include/PCSC/pcsclite.h
+include/PCSC/sys_generic.h
+include/PCSC/thread_generic.h
+include/PCSC/winscard.h
+include/PCSC/wintypes.h
+lib/libpcsclite.a
+lib/libpcsclite.so
+lib/libpcsclite.so.1
+lib/pcsc/drivers/.keep_me
+lib/pcsc/services/.keep_me
+libdata/pkgconfig/libpcsclite.pc
+sbin/installifd
+sbin/pcscd
+sbin/update-reader.conf
+%%PORTDOCS%%%%DOCSDIR%%/README.DAEMON
+%%PORTDOCS%%%%DOCSDIR%%/pcsc-lite.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ifdhandler-3.pdf
+%%EXAMPLESDIR%%/Makefile.am
+%%EXAMPLESDIR%%/Makefile.in
+%%EXAMPLESDIR%%/pcsc_demo.c
+@dirrm etc/reader.conf.d
+@dirrm include/PCSC
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
+@dirrm lib/pcsc/drivers
+@dirrm lib/pcsc/services
+@dirrm lib/pcsc

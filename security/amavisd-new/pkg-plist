@@ -1,0 +1,40 @@
+@comment $FreeBSD$
+%%AMAVIS_NOMILTER%%@unexec %%RC_DIR%%/amavis-milter%%RC_SUFX%% stop > /dev/null 2>&1 || true
+@unexec %%RC_DIR%%/amavisd%%RC_SUFX%% stop > /dev/null 2>&1 || true
+%%PORTDOCS%%%%DOCSDIR%%/AAAREADME.first
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LDAP.schema
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.banned
+%%PORTDOCS%%%%DOCSDIR%%/README.chroot
+%%PORTDOCS%%%%DOCSDIR%%/README.contributed
+%%PORTDOCS%%%%DOCSDIR%%/README.courier
+%%PORTDOCS%%%%DOCSDIR%%/README.customize
+%%PORTDOCS%%%%DOCSDIR%%/README.exim_v3
+%%PORTDOCS%%%%DOCSDIR%%/README.exim_v3_app
+%%PORTDOCS%%%%DOCSDIR%%/README.exim_v4
+%%PORTDOCS%%%%DOCSDIR%%/README.exim_v4_app
+%%PORTDOCS%%%%DOCSDIR%%/README.exim_v4_app2
+%%PORTDOCS%%%%DOCSDIR%%/README.lookups
+%%PORTDOCS%%%%DOCSDIR%%/README.milter
+%%PORTDOCS%%%%DOCSDIR%%/README.old.scanners
+%%PORTDOCS%%%%DOCSDIR%%/README.performance
+%%PORTDOCS%%%%DOCSDIR%%/README.policy-on-notifications
+%%PORTDOCS%%%%DOCSDIR%%/README.postfix
+%%PORTDOCS%%%%DOCSDIR%%/README.protocol
+%%PORTDOCS%%%%DOCSDIR%%/README.sendmail
+%%PORTDOCS%%%%DOCSDIR%%/README.sendmail-dual
+%%PORTDOCS%%%%DOCSDIR%%/README.sql
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/amavisd-new-docs.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+etc/amavisd.conf-default
+@unexec if cmp -s %D/etc/amavisd.conf %D/etc/amavisd.conf-dist; then rm -f %D/etc/amavisd.conf; fi
+etc/amavisd.conf-dist
+@exec [ ! -f %B/amavisd.conf ] && cp %B/%f %B/amavisd.conf
+etc/amavisd.conf-sample
+%%AMAVIS_NOAMAVIS%%sbin/amavis
+%%AMAVIS_NOMILTER%%sbin/amavis-milter
+sbin/amavisd
+sbin/amavisd-agent
+sbin/amavisd-nanny

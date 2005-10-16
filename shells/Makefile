@@ -1,5 +1,37 @@
-# $Id: Makefile,v 1.4 1994/08/28 10:49:45 jkh Exp $
+# $FreeBSD$
 #
-SUBDIR=	bash pdksh tcsh
+
+    COMMENT = Shells
+
+    SUBDIR += 44bsd-csh
+    SUBDIR += bash
+    SUBDIR += bash-completion
+    SUBDIR += bash2
+    SUBDIR += bush
+    SUBDIR += es
+    SUBDIR += esh
+    SUBDIR += fd
+    SUBDIR += flash
+    SUBDIR += gscommander
+    SUBDIR += ksh93
+    SUBDIR += mudsh
+    SUBDIR += nologinmsg
+    SUBDIR += osh
+    SUBDIR += pash
+    SUBDIR += pdksh
+    SUBDIR += perlsh
+    SUBDIR += rc
+    SUBDIR += rssh
+    SUBDIR += sash
+    SUBDIR += scponly
+    SUBDIR += tcshrc
+    SUBDIR += v7sh
+    SUBDIR += viewglob
+    SUBDIR += vshnu
+    SUBDIR += wapsh
+    SUBDIR += zoidberg
+    SUBDIR += zsh
+    SUBDIR += zsh+euc_hack
+    SUBDIR += zsh-devel
 
 .include <bsd.port.subdir.mk>

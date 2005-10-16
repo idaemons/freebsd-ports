@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Data/UUID.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/UUID/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/UUID/UUID.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/UUID/UUID.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/UUID/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/UUID
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Data 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true

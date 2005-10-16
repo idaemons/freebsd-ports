@@ -1,0 +1,33 @@
+bin/comprex-config
+include/libcomprex/archive.h
+include/libcomprex/archive_io.h
+include/libcomprex/comprex.h
+include/libcomprex/directory.h
+include/libcomprex/file.h
+include/libcomprex/fp.h
+include/libcomprex/fsiter.h
+include/libcomprex/fsnode.h
+include/libcomprex/io.h
+include/libcomprex/module.h
+include/libcomprex/types.h
+include/libcomprex/utils.h
+lib/comprex/archive/libar.so
+lib/comprex/archive/libbzip2.so
+lib/comprex/archive/libcab.so
+lib/comprex/archive/libcpio.so
+lib/comprex/archive/libtar.so
+lib/comprex/archive/libzip.so
+lib/comprex/archive/libzlib.so
+@comment lib/comprex/scheme/libcurlscm.la
+@comment lib/comprex/scheme/libcurlscm.so
+lib/libcomprex.a
+lib/libcomprex.so
+lib/libcomprex.so.3
+libdata/pkgconfig/libcomprex.pc
+share/aclocal/libcomprex.m4
+%%NLS%%share/locale/it/LC_MESSAGES/libcomprex.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/libcomprex.mo
+@comment @dirrm lib/comprex/scheme
+@dirrm lib/comprex/archive
+@dirrm lib/comprex
+@dirrm include/libcomprex

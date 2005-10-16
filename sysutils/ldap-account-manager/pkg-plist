@@ -1,0 +1,133 @@
+@comment $FreeBSD$
+%%WWWROOT%%/config/.htaccess
+@unexec if cmp -s %D/%%WWWROOT%%/config/config.cfg %D/%%WWWROOT%%/config/config.cfg_sample; then rm -f %D/%%WWWROOT%%/config/config.cfg ; fi
+%%WWWROOT%%/config/config.cfg_sample
+@exec [ -f %B/config.cfg ] || cp %B/%f %B/config.cfg
+@unexec if cmp -s %D/%%WWWROOT%%/config/lam.conf %D/%%WWWROOT%%/config/lam.conf_sample; then rm -f %D/%%WWWROOT%%/config/lam.conf; fi
+%%WWWROOT%%/config/lam.conf_sample
+@exec [ -f %B/lam.conf ] || cp %B/%f %B/lam.conf
+%%WWWROOT%%/config/language
+%%WWWROOT%%/config/profiles/groups/default.prg
+%%WWWROOT%%/config/profiles/hosts/default.prh
+%%WWWROOT%%/config/profiles/users/default.pru
+%%WWWROOT%%/config/shells
+%%WWWROOT%%/graphics/banner.jpg
+%%WWWROOT%%/graphics/error.png
+%%WWWROOT%%/graphics/info.png
+%%WWWROOT%%/graphics/lam.png
+%%WWWROOT%%/graphics/printLogo.jpg
+%%WWWROOT%%/graphics/select.png
+%%WWWROOT%%/graphics/warn.png
+%%WWWROOT%%/help/help.inc
+%%WWWROOT%%/index.html
+%%WWWROOT%%/lib/.htaccess
+%%WWWROOT%%/lib/account.inc
+%%WWWROOT%%/lib/blowfish.inc
+%%WWWROOT%%/lib/config.inc
+%%WWWROOT%%/lib/createntlm.pl
+%%WWWROOT%%/lib/font/courier.php
+%%WWWROOT%%/lib/font/helvetica.php
+%%WWWROOT%%/lib/font/helveticab.php
+%%WWWROOT%%/lib/font/helveticabi.php
+%%WWWROOT%%/lib/font/helveticai.php
+%%WWWROOT%%/lib/font/symbol.php
+%%WWWROOT%%/lib/font/times.php
+%%WWWROOT%%/lib/font/timesb.php
+%%WWWROOT%%/lib/font/timesbi.php
+%%WWWROOT%%/lib/font/timesi.php
+%%WWWROOT%%/lib/font/zapfdingbats.php
+%%WWWROOT%%/lib/fpdf.php
+%%WWWROOT%%/lib/functions.js
+%%WWWROOT%%/lib/lamdaemon.pl
+%%WWWROOT%%/lib/ldap.inc
+%%WWWROOT%%/lib/pdf.inc
+%%WWWROOT%%/lib/profiles.inc
+%%WWWROOT%%/lib/status.inc
+%%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.mo
+%%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.po
+%%WWWROOT%%/locale/fr_FR/LC_MESSAGES/messages.mo
+%%WWWROOT%%/locale/fr_FR/LC_MESSAGES/messages.po
+%%WWWROOT%%/locale/hu_HU/LC_MESSAGES/messages.mo
+%%WWWROOT%%/locale/hu_HU/LC_MESSAGES/messages.po
+%%WWWROOT%%/locale/ja_JP/LC_MESSAGES/messages.mo
+%%WWWROOT%%/locale/ja_JP/LC_MESSAGES/messages.po
+%%WWWROOT%%/sess/.htaccess
+%%WWWROOT%%/style/layout.css
+%%WWWROOT%%/templates/account/groupedit.php
+%%WWWROOT%%/templates/account/hostedit.php
+%%WWWROOT%%/templates/account/useredit.php
+%%WWWROOT%%/templates/config/conflogin.php
+%%WWWROOT%%/templates/config/confmain.php
+%%WWWROOT%%/templates/config/confsave.php
+%%WWWROOT%%/templates/config/profmanage.php
+%%WWWROOT%%/templates/confwiz/final.php
+%%WWWROOT%%/templates/confwiz/ldaptest.php
+%%WWWROOT%%/templates/confwiz/o_daemon.php
+%%WWWROOT%%/templates/confwiz/o_lang.php
+%%WWWROOT%%/templates/confwiz/o_lists.php
+%%WWWROOT%%/templates/confwiz/o_ranges.php
+%%WWWROOT%%/templates/confwiz/optional.php
+%%WWWROOT%%/templates/confwiz/server.php
+%%WWWROOT%%/templates/confwiz/server2.php
+%%WWWROOT%%/templates/confwiz/start.php
+%%WWWROOT%%/templates/delete.php
+%%WWWROOT%%/templates/domain.php
+%%WWWROOT%%/templates/help.php
+%%WWWROOT%%/templates/initsuff.php
+%%WWWROOT%%/templates/lists/listdomains.php
+%%WWWROOT%%/templates/lists/listgroups.php
+%%WWWROOT%%/templates/lists/listhosts.php
+%%WWWROOT%%/templates/lists/listusers.php
+%%WWWROOT%%/templates/lists/userlink.php
+%%WWWROOT%%/templates/login.php
+%%WWWROOT%%/templates/logout.php
+%%WWWROOT%%/templates/main.php
+%%WWWROOT%%/templates/main_header.php
+%%WWWROOT%%/templates/masscreate.php
+%%WWWROOT%%/templates/massdetail.php
+%%WWWROOT%%/templates/ou_edit.php
+%%WWWROOT%%/templates/profedit/profilecreate.php
+%%WWWROOT%%/templates/profedit/profiledelete.php
+%%WWWROOT%%/templates/profedit/profilegroup.php
+%%WWWROOT%%/templates/profedit/profilehost.php
+%%WWWROOT%%/templates/profedit/profilemain.php
+%%WWWROOT%%/templates/profedit/profileuser.php
+%%WWWROOT%%/tmp/.htaccess
+@dirrm %%WWWROOT%%/config/profiles/groups
+@dirrm %%WWWROOT%%/config/profiles/hosts
+@dirrm %%WWWROOT%%/config/profiles/users
+@dirrm %%WWWROOT%%/config/profiles
+@dirrm %%WWWROOT%%/graphics
+@dirrm %%WWWROOT%%/config
+@dirrm %%WWWROOT%%/help
+@dirrm %%WWWROOT%%/lib/font
+@dirrm %%WWWROOT%%/lib
+@dirrm %%WWWROOT%%/locale/de_DE/LC_MESSAGES
+@dirrm %%WWWROOT%%/locale/de_DE
+@dirrm %%WWWROOT%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%WWWROOT%%/locale/fr_FR
+@dirrm %%WWWROOT%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%WWWROOT%%/locale/hu_HU
+@dirrm %%WWWROOT%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%WWWROOT%%/locale/ja_JP
+@dirrm %%WWWROOT%%/locale
+@dirrm %%WWWROOT%%/sess
+@dirrm %%WWWROOT%%/style
+@dirrm %%WWWROOT%%/templates/account
+@dirrm %%WWWROOT%%/templates/config
+@dirrm %%WWWROOT%%/templates/confwiz
+@dirrm %%WWWROOT%%/templates/lists
+@dirrm %%WWWROOT%%/templates/profedit
+@dirrm %%WWWROOT%%/templates
+@dirrm %%WWWROOT%%/tmp
+@dirrm %%WWWROOT%%
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/LGPL-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.fpdf.htm
+%%PORTDOCS%%%%DOCSDIR%%/README.hosts.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.lamdaemon.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.openldap.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.security.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

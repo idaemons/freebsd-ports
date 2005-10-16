@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Mar 18 13:16:31 2005
++++ src/Makefile.in	Thu Jun 23 10:07:58 2005
+@@ -54,7 +54,7 @@
+ 	@mkdir -p ${DESTDIR}${sysconfdir}/hdup
+ 	@mkdir -p ${DESTDIR}${mandir}/man1
+ 	@mkdir -p ${DESTDIR}${mandir}/man5
+-	@[ -f ${DESTDIR}${sysconfdir}/hdup/hdup.conf ] || ${INSTALL} -m 600 ../hdup.conf.distr ${DESTDIR}${sysconfdir}/hdup/hdup.conf
++	@${INSTALL} -m 600 ../hdup.conf.distr ${DESTDIR}${sysconfdir}/hdup/hdup.conf-dist
+ 	@${INSTALL} hdup ${DESTDIR}${sbindir}/hdup
+ 	@${INSTALL_DATA} ../doc/hdup.1 ${DESTDIR}${mandir}/man1/hdup.1
+ 	@${INSTALL_DATA} ../doc/hdup.conf.5 ${DESTDIR}${mandir}/man5/hdup.conf.5

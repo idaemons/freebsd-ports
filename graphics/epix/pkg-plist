@@ -1,0 +1,36 @@
+bin/elaps
+bin/epix
+bin/flix
+bin/keywords
+bin/laps
+include/epix.h
+lib/libepix.a
+%%DATADIR%%/config/bash_completions
+%%DATADIR%%/config/epix.el
+%%DATADIR%%/config/epix.spec
+%%DATADIR%%/config/update_figs.sh
+%%DATADIR%%/notes/BUGS
+%%DATADIR%%/notes/CHANGELOG
+%%DATADIR%%/notes/INSTALL
+%%DATADIR%%/notes/POST-INSTALL
+%%DATADIR%%/notes/README
+%%DATADIR%%/notes/README-changes
+%%DATADIR%%/notes/THANKS
+%%DATADIR%%/notes/TODO
+%%DATADIR%%/samples/epix-%%VERSION%%_samples.tar
+%%DATADIR%%/tutorial/contrib/CartesianCoord.cc
+%%DATADIR%%/tutorial/contrib/CoordAxis.cc
+%%DATADIR%%/tutorial/contrib/CoordSystem.cc
+%%DATADIR%%/tutorial/contrib/DoubleLogCoord.cc
+%%DATADIR%%/tutorial/contrib/Hatch.cc
+%%DATADIR%%/tutorial/contrib/LinearAxis.cc
+%%DATADIR%%/tutorial/contrib/LogaritmicAxis.cc
+%%DATADIR%%/tutorial/contrib/Makefile
+%%DATADIR%%/tutorial/contrib/PicCommand.cc
+%%DATADIR%%/tutorial/contrib/SingleLogCoord.cc
+@dirrm %%DATADIR%%/tutorial/contrib
+@dirrm %%DATADIR%%/samples
+@dirrm %%DATADIR%%/notes
+@dirrm %%DATADIR%%/config
+@unexec rmdir %D/%%DATADIR%%/tutorial 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true

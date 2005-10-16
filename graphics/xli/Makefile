@@ -1,16 +1,35 @@
 # New ports collection makefile for:	xli
-# Version required:	1.16
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $id:$
+# $FreeBSD$
 #
 
-DISTNAME=	xli.1.16
+PORTNAME=	xli
+PORTVERSION=	1.17.0
+PORTREVISION=	2
+CATEGORIES=	graphics
+MASTER_SITES=	http://pantransit.reptiles.org/prog/xli/ \
+		${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
+DISTNAME=	xli-${XLI_SNAPVER}
+
+MAINTAINER=	jkoshy@FreeBSD.org
+COMMENT=	Xli, xsetbg, xview, xlito - utilities to display images on X11
+
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
+
+WRKSRC=		${WRKDIR}/xli-${XLI_SNAPVER}
+
+USE_XLIB=	yes
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/applications/
-EXTRACT_SUFX=	.tar.gz
-NO_WRKSUBDIR=	yes
-# PKG_CMD=	pkg_create -N
+USE_PERL5_BUILD=yes
+MAN1=		xli.1 xlito.1
+
+XLI_SNAPVER=	2005-02-27
+
+post-patch:
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>

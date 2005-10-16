@@ -1,0 +1,26 @@
+--- configure.orig	Thu Apr  1 05:40:47 2004
++++ configure	Thu Apr 15 03:28:18 2004
+@@ -22220,23 +22220,6 @@
+ fi
+ 
+ 
+-cat >>confdefs.h <<_ACEOF
+-#define PACKAGE_LOCALE_DIR "${realprefix}/${DATADIRNAME}/locale"
+-_ACEOF
+-
+-
+-
+-cat >>confdefs.h <<_ACEOF
+-#define PACKAGE_DATA_DIR "${realprefix}/${DATADIRNAME}"
+-_ACEOF
+-
+-
+-
+-cat >>confdefs.h <<_ACEOF
+-#define PACKAGE_SOUND_DIR "${realprefix}/${DATADIRNAME}/sounds/linphone"
+-_ACEOF
+-
+-
+ found_sound=no
+ 
+ 

@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: distccd
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable distccd:
+#
+# distccd_enable="YES"
+#
+
+distccd_enable=${distccd_enable-"NO"}
+distccd_flags=${distccd_flags-"-a 127.0.0.0/8 --user distcc --daemon -P %%DISTCCD_PIDFILE%%"}
+
+. %%RC_SUBR%%
+
+name=distccd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=%%DISTCCD_PIDFILE%%
+
+load_rc_config ${name}
+run_rc_command "$1"

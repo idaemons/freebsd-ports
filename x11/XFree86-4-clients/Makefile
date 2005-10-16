@@ -1,52 +1,96 @@
-DISTNAME	=	xc
-PKGNAME		= 	XFree86-3.1.1
-WRKDIR?=                ${.CURDIR}/work
-BUILD_COOKIE?=		${WRKDIR}/.build_done
-PATCH_STRIP	=	-p1
+# New ports collection makefile for:	XFree86-clients
+# Date created:		10 Oct 1999
+# Whom:			taguchi@tohoku.iij.ad.jp
+#
+# $FreeBSD$
+#
 
-# uncomment one of the 2 lines below!
-#X11_ON_CDROM	=	yes
-X11_VIA_FTP	=	yes
+PORTNAME=	clients
+PORTVERSION=	4.5.0
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITE_SUBDIR= ${PORTVERSION}
+PKGNAMEPREFIX=	XFree86-
+DISTFILES=	XFree86-${PORTVERSION}-src-1.tgz \
+		XFree86-${PORTVERSION}-src-2.tgz \
+		XFree86-${PORTVERSION}-src-3.tgz \
+		XFree86-${PORTVERSION}-src-4.tgz
 
-#define this if you are short of space - save ~28 Mbytes
-#REMOVE_NOT_ESSENTIAL	=	yes
+MAINTAINER=	x11@FreeBSD.org
+COMMENT=	XFree86-4 client programs and related files
 
+RUN_DEPENDS=	xterm-static:${PORTSDIR}/x11/xterm
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		expat.5:${PORTSDIR}/textproc/expat2 \
+		Xcursor.1:${PORTSDIR}/x11/XFree86-4-libraries \
+		png.5:${PORTSDIR}/graphics/png \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-.if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
-build: configure ${BUILD_COOKIE}
+CONFLICTS=	xorg-clients-[0-9]*
 
-${BUILD_COOKIE}:
-	@echo "===>  Building for ${DISTNAME}"
-	@${MAKE} ${.MAKEFLAGS} pre-build
-.if defined(REMOVE_NOT_ESSENTIAL)
-	@rm -rf ${WRKSRC}/test ${WRKSRC}/doc/hardcopy ${WRKSRC}/doc/specs
-	@find ${WRKSRC}/ -name '*.orig' -exec rm -f {} ';'
+SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
+			InstallXinitConfig=${InstallXinitConfig} \
+			InstallAppDefFiles=${InstallAppDefFiles}
+
+MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
+			PORTNAME=${PORTNAME} \
+			PORTVERSION=${PORTVERSION}
+XBUILD_DIRS=		lib/xtrans lib/lbxutil programs fonts/util
+XINSTALL_DIRS=		programs fonts/util
+XINSTALL_MAN_DIRS=	programs
+
+.for pf in patch-bdftruncate.pl patch-ucs2any.pl \
+	   patch-programs::fonttosfnt::read.c \
+	   patch-programs::Imakefile
+EXTRA_PATCHES+=		${FILESDIR}/${pf}
+.endfor
+
+# ---
+# XFree86 User Config:
+# Name          Default		Meaning
+# ----------------------------------------------------------------------------
+# HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
+# HasPam	YES		support PAM (require FreeBSD-3.1 or later)
+# InstallXdmConfig      YES     install config files for xdm.
+# InstallXinitConfig    YES     install config files for xinit.
+# InstallAppDefFiles    YES	install resource files.
+# ----------------------------------------------------------------------------
+# DEFAULT means ports will use values which set by ${PORTSDIR}/devel/imake-4
+#
+InstallXdmConfig?=	DEFAULT
+InstallXinitConfig?=	DEFAULT
+InstallAppDefFiles?=	DEFAULT
+
+.if !defined(WITH_SETUID_LUIT)
+pre-everything::
+	@${ECHO_MSG} "If you want to use xterm with locales in a secure manner, luit must be installed"
+	@${ECHO_MSG} "setuid.  If you want to do this, define WITH_SETUID_LUIT when installing this"
+	@${ECHO_MSG} "port (either in /etc/make.conf or on command line with install target)."
 .endif
-	@(cd ${WRKSRC}; echo Good night...; make World)
-	@touch ${WRKDIR}/.build_done
 
-install:
-	@(cd ${WRKSRC}; make install; make install.man)
-	@touch ${WRKDIR}/.install_done
+post-install:
+	@${LN} -sf ${X11BASE}/bin/resize-static ${X11BASE}/bin/resize
+	@${LN} -sf ${X11BASE}/bin/xterm-static ${X11BASE}/bin/xterm
+	@${LN} -sf ${X11BASE}/bin/uxterm-static ${X11BASE}/bin/uxterm
+	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/UXTerm-static \
+		   ${X11BASE}/lib/X11/app-defaults/UXTerm
+	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-static \
+		   ${X11BASE}/lib/X11/app-defaults/XTerm
+	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-color-static \
+		   ${X11BASE}/lib/X11/app-defaults/XTerm-color
+.if defined(WITH_SETUID_LUIT)
+	${CHOWN} root:wheel ${PREFIX}/bin/luit
+	${CHMOD} 04711 ${PREFIX}/bin/luit
+.endif
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+IGNORE=	is part of XFree86-4
 .endif
 
-.if defined(X11_ON_CDROM)
-.include "Makefile.cdrom"
-.elif defined(X11_VIA_FTP)
-.include "Makefile.ftp"
-.else
-all:
-	@echo -n
-fetch:
-	@echo -n
-extract:
-	@echo -n
-configure:
-	@echo -n
-build:
-	@echo -n
-install:
-	@echo -n
-.endif
+.include "${FILESDIR}/manpages"
 
-
+.include <bsd.port.post.mk>

@@ -1,5 +1,9 @@
-@cwd /usr/X11R6
-@mode 755
-bin/kterm
+bin/kterm16c
 lib/X11/app-defaults/KTerm
-man/man1/kterm.1.gz
+lib/X11/fonts/misc/vga.pcf.gz
+@exec /usr/X11R6/bin/mkfontdir %B
+@unexec if [ `wc -c %B/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %B/fonts.dir; fi
+share/doc/kterm16c/dot.termcap
+share/doc/kterm16c/kterm16c.doc
+@dirrm share/doc/kterm16c
+@unexec rmdir %D/lib/X11/fonts/misc 2>/dev/null || true

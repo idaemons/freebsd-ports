@@ -1,0 +1,35 @@
+%%GTK%%bin/libquicktime_config
+bin/lqt-config
+bin/lqt_transcode
+bin/lqtplay
+bin/lqtvrplay
+bin/qtdechunk
+bin/qtdump
+bin/qtinfo
+bin/qtrechunk
+bin/qtstreamize
+bin/qtyuv4toyuv
+include/lqt/colormodels.h
+include/lqt/lqt.h
+include/lqt/lqt1394_config.h
+include/lqt/lqt_codecapi.h
+include/lqt/lqt_codecinfo.h
+include/lqt/lqt_version.h
+include/lqt/qtprivate.h
+include/lqt/quicktime.h
+lib/libquicktime.a
+lib/libquicktime.so
+lib/libquicktime.so.0
+lib/libquicktime/lqt_audiocodec.so
+lib/libquicktime/lqt_dv.so
+%%LAME%%lib/libquicktime/lqt_lame.so
+lib/libquicktime/lqt_mjpeg.so
+lib/libquicktime/lqt_opendivx.so
+lib/libquicktime/lqt_png.so
+lib/libquicktime/lqt_rtjpeg.so
+lib/libquicktime/lqt_videocodec.so
+lib/libquicktime/lqt_vorbis.so
+libdata/pkgconfig/libquicktime.pc
+share/aclocal/lqt.m4
+@dirrm lib/libquicktime
+@dirrm include/lqt

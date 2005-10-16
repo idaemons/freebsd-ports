@@ -1,0 +1,26 @@
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS.html
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/releasenotes.html
+%%PORTDOCS%%%%DOCSDIR%%/specifications.html
+%%JAVAJARDIR%%/bcmail-jdk13-129.jar
+%%JAVAJARDIR%%/bcmail-jdk14-129.jar
+%%JAVAJARDIR%%/bcmail-jdk15-129.jar
+%%JAVAJARDIR%%/bcpg-jdk12-129.jar
+%%JAVAJARDIR%%/bcpg-jdk13-129.jar
+%%JAVAJARDIR%%/bcpg-jdk14-129.jar
+%%JAVAJARDIR%%/bcpg-jdk15-129.jar
+%%JAVAJARDIR%%/bcprov-jdk12-129.jar
+%%JAVAJARDIR%%/bcprov-jdk13-129.jar
+%%JAVAJARDIR%%/bcprov-jdk14-129.jar
+%%JAVAJARDIR%%/bcprov-jdk15-129.jar
+%%JAVAJARDIR%%/bctest-jdk12-129.jar
+%%JAVAJARDIR%%/bctest-jdk13-129.jar
+%%JAVAJARDIR%%/bctest-jdk14-129.jar
+%%JAVAJARDIR%%/bctest-jdk15-129.jar
+%%JAVAJARDIR%%/bctsp-jdk13-129.jar
+%%JAVAJARDIR%%/bctsp-jdk14-129.jar
+%%JAVAJARDIR%%/bctsp-jdk15-129.jar
+%%JAVAJARDIR%%/jce-jdk12-129.jar
+%%JAVAJARDIR%%/jce-jdk13-129.jar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

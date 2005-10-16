@@ -1,0 +1,37 @@
+%%SITE_PERL%%/Heap.pm
+%%SITE_PERL%%/Heap/Binary.pm
+%%SITE_PERL%%/Heap/Binomial.pm
+%%SITE_PERL%%/Heap/Elem.pm
+%%SITE_PERL%%/Heap/Elem/Num.pm
+%%SITE_PERL%%/Heap/Elem/NumRev.pm
+%%SITE_PERL%%/Heap/Elem/Ref.pm
+%%SITE_PERL%%/Heap/Elem/RefRev.pm
+%%SITE_PERL%%/Heap/Elem/Str.pm
+%%SITE_PERL%%/Heap/Elem/StrRev.pm
+%%SITE_PERL%%/Heap/Fibonacci.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/.packlist
+%%SITE_PERL%%/auto/Heap/Binary/autosplit.ix
+%%SITE_PERL%%/auto/Heap/Binomial/autosplit.ix
+%%SITE_PERL%%/auto/Heap/Elem/Num/autosplit.ix
+%%SITE_PERL%%/auto/Heap/Elem/NumRev/autosplit.ix
+%%SITE_PERL%%/auto/Heap/Elem/Ref/autosplit.ix
+%%SITE_PERL%%/auto/Heap/Elem/RefRev/autosplit.ix
+%%SITE_PERL%%/auto/Heap/Elem/Str/autosplit.ix
+%%SITE_PERL%%/auto/Heap/Elem/StrRev/autosplit.ix
+%%SITE_PERL%%/auto/Heap/Elem/autosplit.ix
+%%SITE_PERL%%/auto/Heap/Fibonacci/autosplit.ix
+%%SITE_PERL%%/auto/Heap/autosplit.ix
+@dirrm %%SITE_PERL%%/Heap/Elem
+@unexec rmdir %D/%%SITE_PERL%%/Heap 2>/dev/null || true
+@dirrm %%SITE_PERL%%/auto/Heap/Binary
+@dirrm %%SITE_PERL%%/auto/Heap/Binomial
+@dirrm %%SITE_PERL%%/auto/Heap/Fibonacci
+@dirrm %%SITE_PERL%%/auto/Heap/Elem/Num
+@dirrm %%SITE_PERL%%/auto/Heap/Elem/NumRev
+@dirrm %%SITE_PERL%%/auto/Heap/Elem/Ref
+@dirrm %%SITE_PERL%%/auto/Heap/Elem/RefRev
+@dirrm %%SITE_PERL%%/auto/Heap/Elem/Str
+@dirrm %%SITE_PERL%%/auto/Heap/Elem/StrRev
+@unexec rmdir %D/%%SITE_PERL%%/auto/Heap/Elem 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Heap 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap 2>/dev/null || true

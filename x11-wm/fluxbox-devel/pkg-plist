@@ -1,0 +1,182 @@
+bin/fbrun
+bin/fbsetbg
+bin/fluxbox
+bin/fluxbox-generate_menu
+bin/startfluxbox
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DOCHTML:%%%%DOCSDIR%%/html/app-artwiz.html
+%%DOCHTML:%%%%DOCSDIR%%/html/app-debugging.html
+%%DOCHTML:%%%%DOCSDIR%%/html/app-setup.html
+%%DOCHTML:%%%%DOCSDIR%%/html/app-themeref.html
+%%DOCHTML:%%%%DOCSDIR%%/html/book1.html
+%%DOCHTML:%%%%DOCSDIR%%/html/bsetroot-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c152.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c28.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c287.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c289.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c722.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c724.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c728.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c740.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c98.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-bg.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-slit.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-tabs.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-themes.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-toolbar.html
+%%DOCHTML:%%%%DOCSDIR%%/html/docbook.css
+%%DOCHTML:%%%%DOCSDIR%%/html/faq.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fbrun-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fbsetbg-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fluxbox-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fluxboxstyle-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fluxstyle-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/index.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-fbgm.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-fluxspace.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-pager.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-wmctrl.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x160.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x231.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x233.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x315.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x317.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x321.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x346.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x348.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x352.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x47.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x739.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x741.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x745.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x757.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x795.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x812.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x813.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x814.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x817.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x820.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x824.html
+%%DOCPDF:%%%%DOCSDIR%%/pdf/fluxbook.pdf
+%%DATADIR%%/init
+%%DATADIR%%/keys
+%%DATADIR%%/menu
+%%NLS:%%%%DATADIR%%/nls/C/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/bg_BG/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/cs_CZ/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/da_DK/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/de_DE/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/es_ES/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/et_EE/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/fr_FR/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/it_IT/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ja_JP/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ko_KR/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/lv_LV/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/nl_NL/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pl_PL/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pt_BR/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pt_PT/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ru_RU/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/sl_SI/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/sv_SE/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/tr_TR/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/vi_VN/fluxbox.cat
+%%DATADIR%%/styles/Artwiz
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_close_active.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_close_pressed.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_close_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_max_active.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_max_pressed.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_max_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_min_active.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_min_pressed.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_min_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_stick_active.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_stick_pressed.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_stick_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_stuck.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_stuck_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_toolbar.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_toolbar_pressed.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/menu_frame.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/title_bar.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/title_bar_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/toolbar.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/toolbar_label.xpm
+%%DATADIR%%/styles/BlueFlux/theme.cfg
+%%DATADIR%%/styles/BlueNight
+%%DATADIR%%/styles/Carbondioxide
+%%DATADIR%%/styles/Clean
+%%DATADIR%%/styles/Cthulhain
+%%DATADIR%%/styles/Emerge/pixmaps/bullet.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/close-pressed.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/close-unfocus.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/close.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/icon-pressed.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/icon-unfocus.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/icon.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/max-pressed.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/max-unfocus.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/max.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/selected.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stick-pressed.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stick-unfocus.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stick.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stuck-pressed.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stuck-unfocus.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stuck.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/unselected.xpm
+%%DATADIR%%/styles/Emerge/theme.cfg
+%%DATADIR%%/styles/Flux
+%%DATADIR%%/styles/LemonSpace
+%%DATADIR%%/styles/Makro
+%%DATADIR%%/styles/MerleyKay
+%%DATADIR%%/styles/Meta
+%%DATADIR%%/styles/Minimal
+%%DATADIR%%/styles/Nyz
+%%DATADIR%%/styles/Operation
+%%DATADIR%%/styles/Outcomes
+%%DATADIR%%/styles/Rampage
+%%DATADIR%%/styles/Results
+%%DATADIR%%/styles/Shade
+%%DATADIR%%/styles/Spiff
+%%DATADIR%%/styles/Twice
+%%DATADIR%%/styles/qnx-photon
+@dirrm %%DATADIR%%/styles/Emerge/pixmaps
+@dirrm %%DATADIR%%/styles/Emerge
+@dirrm %%DATADIR%%/styles/BlueFlux/pixmaps
+@dirrm %%DATADIR%%/styles/BlueFlux
+@dirrm %%DATADIR%%/styles
+%%NLS:%%@dirrm %%DATADIR%%/nls/vi_VN
+%%NLS:%%@dirrm %%DATADIR%%/nls/tr_TR
+%%NLS:%%@dirrm %%DATADIR%%/nls/sv_SE
+%%NLS:%%@dirrm %%DATADIR%%/nls/sl_SI
+%%NLS:%%@dirrm %%DATADIR%%/nls/ru_RU
+%%NLS:%%@dirrm %%DATADIR%%/nls/pt_PT
+%%NLS:%%@dirrm %%DATADIR%%/nls/pt_BR
+%%NLS:%%@dirrm %%DATADIR%%/nls/pl_PL
+%%NLS:%%@dirrm %%DATADIR%%/nls/nl_NL
+%%NLS:%%@dirrm %%DATADIR%%/nls/lv_LV
+%%NLS:%%@dirrm %%DATADIR%%/nls/ko_KR
+%%NLS:%%@dirrm %%DATADIR%%/nls/ja_JP
+%%NLS:%%@dirrm %%DATADIR%%/nls/it_IT
+%%NLS:%%@dirrm %%DATADIR%%/nls/fr_FR
+%%NLS:%%@dirrm %%DATADIR%%/nls/et_EE
+%%NLS:%%@dirrm %%DATADIR%%/nls/es_ES
+%%NLS:%%@dirrm %%DATADIR%%/nls/de_DE
+%%NLS:%%@dirrm %%DATADIR%%/nls/da_DK
+%%NLS:%%@dirrm %%DATADIR%%/nls/cs_CZ
+%%NLS:%%@dirrm %%DATADIR%%/nls/bg_BG
+%%NLS:%%@dirrm %%DATADIR%%/nls/C
+%%NLS:%%@dirrm %%DATADIR%%/nls
+@dirrm %%DATADIR%%
+%%DOCPDF:%%@dirrm %%DOCSDIR%%/pdf
+%%DOCHTML:%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

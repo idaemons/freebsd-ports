@@ -1,0 +1,29 @@
+--- Makefile.orig	Tue May  4 01:31:00 1999
++++ Makefile	Thu May 11 19:44:50 2000
+@@ -10,11 +10,11 @@
+ ###
+ 
+ # destination directory for final executables
+-DESTDIR = /usr/local/bin/tw
+-DATADIR = /var/tripwire
++DESTDIR = /usr/local/bin
++DATADIR = /var/adm/tcheck
+ 
+ # destination for man pages
+-MANDIR  = /usr/man		# This needs to change to reflect the path
++MANDIR  = /usr/local/man	# This needs to change to reflect the path
+                         # on your system
+ 
+ # system utilities
+@@ -109,10 +109,8 @@
+ 	$(INSTALL) -d $(DESTDIR)
+ 	(cd src; make INSTALL=$(INSTALL) DESTDIR=$(DESTDIR) install)
+ 	(cd man; make INSTALL=$(INSTALL) MANDIR=$(MANDIR) install)
+-	(cd configs; $(INSTALL) -m 444 tw.config $(DESTDIR))
+-	chmod 555 $(DESTDIR)
+ 	$(INSTALL) -m 0755 -d $(DATADIR)
+-	$(INSTALL) -m 444 tests/tw.db_TEST $(DATADIR)
++	(cd configs; $(INSTALL) -m 444 tw.config $(DATADIR))
+ 
+ test:	all
+ 	(cd tests; make HOSTNAME=$(HOSTNAME) DIST=$(DIST) SHELL=$(SHELL) \

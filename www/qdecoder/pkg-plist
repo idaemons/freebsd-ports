@@ -1,0 +1,30 @@
+include/qDecoder.h
+lib/libqDecoder.a
+lib/libqDecoder.so.2
+@exec ln -sf %f %B/libqDecoder.so
+@unexec rm -f %B/libqDecoder.so
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/doc/qDecoder/AUTHORS
+share/doc/qDecoder/DISCLAIMER
+share/doc/qDecoder/README
+share/doc/qDecoder/REFERENCE
+share/doc/qDecoder/qDecoder.jpg
+@dirrm share/doc/qDecoder
+share/examples/qDecoder/Makefile
+share/examples/qDecoder/arglist.c
+share/examples/qDecoder/confparser.c
+share/examples/qDecoder/confparser.conf
+share/examples/qDecoder/cookie.c
+share/examples/qDecoder/download.c
+share/examples/qDecoder/examples.html
+share/examples/qDecoder/fetch.c
+share/examples/qDecoder/multivalue.c
+share/examples/qDecoder/session.c
+share/examples/qDecoder/streamedit-header.html.in
+share/examples/qDecoder/streamedit-tailer.html.in
+share/examples/qDecoder/streamedit.c
+share/examples/qDecoder/streamedit.html
+share/examples/qDecoder/streamedit.html.in
+share/examples/qDecoder/upload.c
+@dirrm share/examples/qDecoder

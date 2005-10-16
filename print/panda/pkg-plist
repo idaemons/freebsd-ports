@@ -1,0 +1,34 @@
+include/panda/constants.h
+include/panda/functions.h
+include/panda/legacy.h
+include/panda/objects.h
+lib/libpanda.a
+lib/libpanda.so
+lib/libpanda.so.0
+libdata/pkgconfig/panda.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/DEV-HINTS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UNDERWAY
+%%PORTDOCS%%%%EXAMPLESDIR%%/IMAGES
+%%PORTDOCS%%%%EXAMPLESDIR%%/RedbrushAlpha.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/circles.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/empty.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/exercise.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/gnu-head.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/gnu.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/gnu_box.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/input.tif
+%%PORTDOCS%%%%EXAMPLESDIR%%/input2.tif
+%%PORTDOCS%%%%EXAMPLESDIR%%/legacymain.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/libpng.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/main.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/morecircles.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/pandaexample.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/template.c
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/panda

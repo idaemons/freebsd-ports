@@ -1,0 +1,12 @@
+include/mpcdec/config_types.h
+include/mpcdec/decoder.h
+include/mpcdec/huffman.h
+include/mpcdec/math.h
+include/mpcdec/mpcdec.h
+include/mpcdec/reader.h
+include/mpcdec/requant.h
+include/mpcdec/streaminfo.h
+lib/libmpcdec.a
+lib/libmpcdec.so
+lib/libmpcdec.so.3
+@dirrm include/mpcdec

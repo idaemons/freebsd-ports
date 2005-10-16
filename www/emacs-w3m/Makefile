@@ -1,0 +1,112 @@
+# New ports collection makefile for:   emacs-w3m
+# Date Created:			24 Mar 2001
+# Whom:				MANTANI Nobutaka <nobutaka@nobutaka.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	emacs-w3m
+PORTVERSION=	1.4.4
+CATEGORIES=	www elisp
+MASTER_SITES=	http://emacs-w3m.namazu.org/
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+
+MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT?=	Simple front-end to w3m for emacs21
+
+EMACS_PORT_NAME?=	emacs21
+
+CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \
+			--with-lispdir=${PREFIX}/${LISPDIR} \
+			--with-icondir=${PREFIX}/${ICONDIR}
+LISPDIR?=	${EMACS_VERSION_SITE_LISPDIR}/w3m
+ICONDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m/icons
+ETCDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m
+INFODIR?=	info
+
+USE_AUTOCONF_VER=	213
+ALL_TARGET=	default
+
+PLIST_SUB+=	LISPDIR=${LISPDIR} \
+		ICONDIR=${ICONDIR} \
+		INFODIR=${INFODIR} \
+		ETCDIR=${ETCDIR} \
+		SHIMBUN=${SHIMBUN}
+
+DOCS=		README
+DOCS_JA=	README.ja
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
+DOCSDIR_JA=	${PREFIX}/share/doc/ja/${PORTNAME}
+
+.if defined(WITHOUT_SHIMBUN)
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.in
+SHIMBUN=	"@comment "
+WITHOUT_OCTET_VIEWER=	yes
+.else
+SHIMBUN=	""
+.endif
+
+.if (${EMACS_PORT_NAME} == "emacs21")
+FLIM_PORT=	${PORTSDIR}/editors/flim
+SEMI_PORT=	${PORTSDIR}/editors/semi
+MULE_UCS_PORT=	${PORTSDIR}/converters/mule-ucs
+INSTALL_TARGET=	install install-icons
+.endif
+
+FLIM_TRUNK=	1.14
+FLIM_COOKIE=	${LOCALBASE}/share/flim/flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
+FLIM_PORT?=	${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}
+
+SEMI_TRUNK=	1.14
+SEMI_COOKIE=	${LOCALBASE}/share/semi/semi-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
+SEMI_PORT?=	${PORTSDIR}/editors/semi-${EMACS_PORT_NAME}
+
+MULE_UCS_PORT?=	${PORTSDIR}/converters/mule-ucs-${EMACS_PORT_NAME}
+MULE_UCS_ELISP_FILE=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mule-ucs/un-define.el
+
+BUILD_DEPENDS=	w3m:${PORTSDIR}/www/w3m-m17n
+RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m-m17n
+.if !defined(WITHOUT_SHIMBUN)
+BUILD_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
+RUN_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
+.endif
+.if !defined(WITHOUT_OCTET_VIEWER)
+RUN_DEPENDS+=	${SEMI_COOKIE}:${SEMI_PORT} \
+		wvHtml:${PORTSDIR}/textproc/wv \
+		xlhtml:${PORTSDIR}/textproc/xlhtml \
+		${MULE_UCS_ELISP_FILE}:${MULE_UCS_PORT}
+.endif
+
+pre-everything::
+.if !defined(WITHOUT_SHIMBUN)
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===>  If you don't use the shimbun modules, please define WITHOUT_SHIMBUN."
+	@${ECHO_MSG} "===>"
+.endif
+.if !defined(WITHOUT_OCTET_VIEWER)
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===>  If you don't use the octet stream viewer,"
+	@${ECHO_MSG} "===>  please define WITHOUT_OCTET_VIEWER."
+	@${ECHO_MSG} "===>"
+.endif
+
+post-extract:
+.if defined(EMACS_PACKAGESDIR)
+	@${CP} ${FILESDIR}/_pkg.el ${WRKSRC}
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR_JA}
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.for i in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR_JA}
+.endfor
+.endif
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

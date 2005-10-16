@@ -1,0 +1,79 @@
+etc/openradius/behaviour.sample
+etc/openradius/configuration.sample
+etc/openradius/dictionary.sample
+
+etc/openradius/legacy/clients.sample
+etc/openradius/legacy/nases.sample
+etc/openradius/legacy/users.sample
+etc/openradius/legacy/realms.sample
+@dirrm etc/openradius/legacy
+
+etc/openradius/modules/radldap.attrmap
+@dirrm etc/openradius/modules
+
+etc/openradius/subdicts/dict.ascend
+etc/openradius/subdicts/dict.cisco
+etc/openradius/subdicts/dict.erx
+etc/openradius/subdicts/dict.garderos
+etc/openradius/subdicts/dict.internal
+etc/openradius/subdicts/dict.microsoft
+etc/openradius/subdicts/dict.nomadix
+etc/openradius/subdicts/dict.rfc2869
+etc/openradius/subdicts/dict.stdacct
+etc/openradius/subdicts/dict.stdauth
+etc/openradius/subdicts/dict.str-ldap
+etc/openradius/subdicts/dict.tnova
+etc/openradius/subdicts/dict.tunnel
+etc/openradius/subdicts/dict.usr
+etc/openradius/subdicts/dict.vendors
+etc/openradius/subdicts/dict.wispr
+@dirrm etc/openradius/subdicts
+
+@dirrm etc/openradius
+
+lib/openradius/ascfile
+lib/openradius/delay
+lib/openradius/radclient
+%%LDAP%%lib/openradius/radldap
+lib/openradius/radlogger
+lib/openradius/radsql
+lib/openradius/unixpasswd
+@dirrm lib/openradius
+
+bin/ascenddatafilter
+bin/genmd5hexpasswd
+bin/radaccttest
+bin/radclient
+bin/radtest
+
+sbin/radiusd
+etc/rc.d/openradiusd.sh
+
+%%PORTDOCS%%%%DOCSDIR%%/async-iface-notes
+%%PORTDOCS%%%%DOCSDIR%%/language.html
+%%PORTDOCS%%%%DOCSDIR%%/module-interface.html
+%%PORTDOCS%%%%DOCSDIR%%/note-struct-ownership
+%%PORTDOCS%%%%DOCSDIR%%/using-openradius.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+
+%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/accounts.mysql
+%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/behaviour
+%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/configuration
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/accounts
+
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-ldap
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-ldap-authbind
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-mysql
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-postgres
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-unixpass
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-usersfile
+%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-usersfile-longpass
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-ldap
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-ldap-authbind
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-mysql
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-postgres
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-unixpass
+%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-usersfile
+%%PORTDOCS%%%%EXAMPLESDIR%%/redhat-sysv-init-script
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

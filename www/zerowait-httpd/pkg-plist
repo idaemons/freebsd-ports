@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+@unexec %D/etc/rc.d/0W-httpd.sh stop
+bin/update-countries.sh
+bin/convert-ranges
+bin/convert-geoip
+sbin/0W-httpd
+etc/0W-httpd/countries
+etc/0W-httpd/countries.ips
+etc/0W-httpd/countries.rus
+etc/0W-httpd/httpd.conf.sample
+etc/rc.d/0W-httpd.sh
+@dirrm etc/0W-httpd/
+@dirrm 0W-httpd/pids
+@dirrm 0W-httpd/data
+@unexec rm -fr %D/0W-httpd/logs/ > /dev/null 2>&1 || true
+@dirrm 0W-httpd/

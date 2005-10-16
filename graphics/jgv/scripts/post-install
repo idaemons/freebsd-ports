@@ -1,0 +1,30 @@
+#!/bin/sh
+
+installdir=${PREFIX}/JDE/JGV; export installdir
+
+case ${LANGUAGE} in
+    Japanese)
+	for f in JGV.app; do
+	    ${REINPLACE_CMD} -i "" -E -e \
+		"s/^(exec[[:space:]]+)wishstep[[:space:]]*([[:space:]]+.*)\$/\1wishstep${VERSION}jp\2/" \
+		${installdir}/bin/${f}
+	done
+    ;;
+    *)
+    ;;
+esac
+for f in JGV JGV.app; do
+    case ${f} in
+	JGV.app)
+	    target=${installdir}/bin/${f}
+	;;
+	JGV)
+	    target=${installdir}/defaults/${f}
+	;;
+    esac
+    ${REINPLACE_CMD} -i "" -E -e \
+	"s@^([[:space:]]*set[[:space:]]+Jlib[[:space:]]+)\"[^\"]*\"\$@\1\"${installdir}/\"@" \
+	${target}
+done
+
+${LN} -sf ${installdir}/bin/JGV.app ${PREFIX}/bin

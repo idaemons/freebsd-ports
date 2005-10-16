@@ -1,0 +1,23 @@
+--- ./Makefile.in.orig	Thu Jan  6 21:51:56 2005
++++ Makefile.in	Thu Jan  6 23:01:59 2005
+@@ -276,13 +276,18 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ ACLOCAL_AMFLAGS = -I m4
++
++ifndef NOPORTDOCS
++DOCS = doc
++endif
++
+ SUBDIRS = bin blitz random lib testsuite \
+-	examples benchmarks doc
++	examples benchmarks $(DOCS) 
+ 
+ EXTRA_DIST = LEGAL LICENSE README.binutils README-VS.NET.txt Blitz-VS.NET.zip \
+ 	ChangeLog.1 
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = libdata/pkgconfig
+ pkgconfig_DATA = blitz.pc blitz-uninstalled.pc
+ all: all-recursive
+ 

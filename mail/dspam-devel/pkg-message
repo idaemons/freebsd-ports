@@ -1,0 +1,39 @@
+
+-------------------------------------------------------------------------------
+ Reporting problems, asking questions:
+ - FreeBSD specific port-related problems/questions/paches: maintainer
+(and ports@ if you fell the need); send-pr only if you get no timely reply
+ - dspam specific questions: dspam/dspam-dev mailling list (maintainer cc'ed)
+ - dspam specific patches: dspam/dspam-dev mailling list (maintainer cc'ed if)
+ Please be sure to include in your email/pr relevant information such as:
+ uname -a, dspam --version, /var/db/ports/dspam-devel/options, MTA setup.
+
+%%CGI%% The CGI files had been installed in
+%%CGI%% %%CGI_PATH%%
+%%CGI%% Copy
+%%CGI%% %%CGI_PATH%%/default.prefs.sample
+%%CGI%% to
+%%CGI%% %%CGI_PATH%%/default.prefs
+%%CGI%% and edit it to your needs.
+%%CGI%% Copy
+%%CGI%% %%CGI_PATH%%/configure.pl.sample
+%%CGI%% to
+%%CGI%% %%CGI_PATH%%/configure.pl
+%%CGI%% and edit it to your needs.
+%%CGI%% If you symlink this file in %%DSPAM_HOME%%/
+%%CGI%% an administrator can edit these options in the DSPAM Admin Suite.
+%%CGI%% Define administrators by copying 
+%%CGI%% %%CGI_PATH%%/admins.sample
+%%CGI%% to
+%%CGI%% %%CGI_PATH%%/admins 
+%%CGI%% and edit the file to your needs. 
+%%CGI%% If you have problems (after upgrading) check permissions.
+%%DAEMON%%
+%%DAEMON%% To enable the dspam deamon put dspam_enable="YES" in your
+%%DAEMON%% /etc/rc.conf
+
+ You'll find additionl setup instructions under
+ %%DOCSDIR%%
+and
+ %%EXAMPLESDIR%%
+------------------------------------------------------------------------------

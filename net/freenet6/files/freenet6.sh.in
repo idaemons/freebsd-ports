@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+#
+# PROVIDE: freenet6
+# REQUIRE: NETWORKING
+# BEFORE: SERVERS
+# KEYWORD: FreeBSD shutdown
+#
+
+#
+# Start or stop the IPv6 tunnel to Freenet6.net
+#
+# Add the following lines to /etc/rc.conf to enable freenet6:
+#
+# freenet6_enable="YES"
+# freenet6_flags="-f %%PREFIX%%/etc/tspc.conf"
+#
+
+. %%RC_SUBR%%
+
+name=freenet6
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/tspc
+required_files=%%PREFIX%%/etc/tspc.conf
+
+# set defaults
+
+freenet6_enable=${freenet6_enable:-"NO"}
+freenet6_flags=${freenet6_flags:-"-f %%PREFIX%%/etc/tspc.conf"}
+
+load_rc_config $name
+run_rc_command "$1"

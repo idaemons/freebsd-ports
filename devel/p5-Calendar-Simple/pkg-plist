@@ -1,0 +1,2 @@
+%%SITE_PERL%%/Calendar/Simple.pm
+@unexec rmdir %D/%%SITE_PERL%%/Calendar 2>/dev/null || true

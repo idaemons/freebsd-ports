@@ -1,0 +1,12 @@
+sbin/%%DRIVERNAME%%control
+%%DATADIR%%/LICENSE
+%%DATADIR%%/%%DRIVERNAME%%-boot.fw
+%%DATADIR%%/%%DRIVERNAME%%-bss.fw
+%%DATADIR%%/%%DRIVERNAME%%-ucode-bss.fw
+%%DATADIR%%/%%DRIVERNAME%%-ibss.fw
+%%DATADIR%%/%%DRIVERNAME%%-ucode-ibss.fw
+%%DATADIR%%/%%DRIVERNAME%%-sniffer.fw
+%%DATADIR%%/%%DRIVERNAME%%-ucode-sniffer.fw
+@dirrm %%DATADIR%%
+%%WITH_MODULE%%@cwd /
+%%WITH_MODULE%%%%KMODDIR%%/if_%%DRIVERNAME%%.ko

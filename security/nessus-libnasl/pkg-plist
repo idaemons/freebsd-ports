@@ -1,0 +1,10 @@
+bin/nasl
+bin/nasl-config
+include/nessus/nasl.h
+lib/libnasl.a
+lib/libnasl.la
+lib/libnasl.so
+lib/libnasl.so.4
+var/nessus/nessus_org.pem
+@unexec rmdir %D/var/nessus 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true

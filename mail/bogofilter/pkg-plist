@@ -1,0 +1,9 @@
+bin/bf_compact
+bin/bf_copy
+bin/bf_tar
+bin/bogofilter
+bin/bogolexer
+bin/bogotune
+bin/bogoutil
+bin/bogoupgrade
+etc/bogofilter.cf.example

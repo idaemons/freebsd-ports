@@ -1,0 +1,93 @@
+bin/pl
+bin/plld
+bin/plrc
+include/SWI-Prolog.h
+include/SWI-Stream.h
+lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/pl
+lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plld
+lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plrc
+lib/%%DISTNAME%%/bin/swipl
+lib/%%DISTNAME%%/boot/attvar.pl
+lib/%%DISTNAME%%/boot/apply.pl
+lib/%%DISTNAME%%/boot/autoload.pl
+lib/%%DISTNAME%%/boot/bags.pl
+lib/%%DISTNAME%%/boot/dwim.pl
+lib/%%DISTNAME%%/boot/history.pl
+lib/%%DISTNAME%%/boot/init.pl
+lib/%%DISTNAME%%/boot/license.pl
+lib/%%DISTNAME%%/boot/load.pl
+lib/%%DISTNAME%%/boot/menu.pl
+lib/%%DISTNAME%%/boot/messages.pl
+lib/%%DISTNAME%%/boot/parms.pl
+lib/%%DISTNAME%%/boot/qlf.pl
+lib/%%DISTNAME%%/boot/rc.pl
+lib/%%DISTNAME%%/boot/sort.pl
+lib/%%DISTNAME%%/boot/syspred.pl
+lib/%%DISTNAME%%/boot/toplevel.pl
+lib/%%DISTNAME%%/boot/topvars.pl
+lib/%%DISTNAME%%/boot/writef.pl
+lib/%%DISTNAME%%/boot%%BITS%%.prc
+lib/%%DISTNAME%%/dotfiles/README
+lib/%%DISTNAME%%/dotfiles/dotplrc
+lib/%%DISTNAME%%/dotfiles/dotxpcerc
+lib/%%DISTNAME%%/dotfiles/edit
+lib/%%DISTNAME%%/include/SWI-Prolog.h
+lib/%%DISTNAME%%/include/SWI-Stream.h
+lib/%%DISTNAME%%/include/stub.c
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libpl.a
+lib/%%DISTNAME%%/library/clp/bounds.pl
+lib/%%DISTNAME%%/library/option.pl
+lib/%%DISTNAME%%/library/assoc.pl
+lib/%%DISTNAME%%/library/dif.pl
+lib/%%DISTNAME%%/library/when.pl
+lib/%%DISTNAME%%/library/operators.pl
+lib/%%DISTNAME%%/library/prolog_stack.pl
+lib/%%DISTNAME%%/library/INDEX.pl
+lib/%%DISTNAME%%/library/MANUAL
+lib/%%DISTNAME%%/library/am_match.pl
+lib/%%DISTNAME%%/library/backcomp.pl
+lib/%%DISTNAME%%/library/bim.pl
+lib/%%DISTNAME%%/library/check.pl
+lib/%%DISTNAME%%/library/checkselect.pl
+lib/%%DISTNAME%%/library/checklast.pl
+lib/%%DISTNAME%%/library/ctypes.pl
+lib/%%DISTNAME%%/library/debug.pl
+lib/%%DISTNAME%%/library/edinburgh.pl
+lib/%%DISTNAME%%/library/edit.pl
+lib/%%DISTNAME%%/library/emacs_interface.pl
+lib/%%DISTNAME%%/library/explain.pl
+lib/%%DISTNAME%%/library/files.pl
+lib/%%DISTNAME%%/library/gensym.pl
+lib/%%DISTNAME%%/library/help.pl
+lib/%%DISTNAME%%/library/helpidx.pl
+lib/%%DISTNAME%%/library/listing.pl
+lib/%%DISTNAME%%/library/lists.pl
+lib/%%DISTNAME%%/library/main.pl
+lib/%%DISTNAME%%/library/make.pl
+lib/%%DISTNAME%%/library/netscape.pl
+lib/%%DISTNAME%%/library/occurs.pl
+lib/%%DISTNAME%%/library/ordsets.pl
+lib/%%DISTNAME%%/library/oset.pl
+lib/%%DISTNAME%%/library/qpforeign.pl
+lib/%%DISTNAME%%/library/qsave.pl
+lib/%%DISTNAME%%/library/quintus.pl
+lib/%%DISTNAME%%/library/readln.pl
+lib/%%DISTNAME%%/library/readutil.pl
+lib/%%DISTNAME%%/library/shell.pl
+lib/%%DISTNAME%%/library/shlib.pl
+lib/%%DISTNAME%%/library/statistics.pl
+lib/%%DISTNAME%%/library/system.pl
+lib/%%DISTNAME%%/library/threadutil.pl
+lib/%%DISTNAME%%/library/tty.pl
+lib/%%DISTNAME%%/library/url.pl
+lib/%%DISTNAME%%/swipl
+@dirrm lib/%%DISTNAME%%/library/clp
+@dirrm lib/%%DISTNAME%%/library
+@dirrm lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%
+@dirrm lib/%%DISTNAME%%/lib
+@dirrm lib/%%DISTNAME%%/include
+@dirrm lib/%%DISTNAME%%/dotfiles
+@dirrm lib/%%DISTNAME%%/boot
+@dirrm lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%
+@dirrm lib/%%DISTNAME%%/bin
+@dirrm lib/%%DISTNAME%%

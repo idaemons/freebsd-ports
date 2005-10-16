@@ -1,0 +1,66 @@
+--- makefile.orig	Wed May 18 12:13:52 2005
++++ makefile	Wed May 18 12:40:23 2005
+@@ -33,11 +33,11 @@
+ SUFF=
+ else
+ ifneq (,$(findstring FreeBSD,$(OSTYPE)))
+-TFLAGS=-pthread
+-THRLIBS=
++TFLAGS=-D_REENTRANT ${PTHREAD_CFLAGS}
++THRLIBS=${PTHREAD_LIBS}
+ else 
+-TFLAGS=-D_REENTRANT -D_THREAD_SAFE
+-THRLIBS=-lpthread
++TFLAGS=-D_REENTRANT ${PTHREAD_CFLAGS}
++THRLIBS=${PTHREAD_LIBS}
+ endif
+ SUFF=_r
+ endif
+@@ -66,21 +66,21 @@
+ 
+ WEB_EXAMPLES = cgistub bugdb clidb
+ 
+-CC = g++
++CC = ${CXX}
+ 
+ # DEFS macro is deprecatred, edit config.h file instead
+ DEFS = 
+ 
+ #CFLAGS = $(TFLAGS) -Iinc -c -Wall -O5 -g  -fPIC $(DEFS) 
+-CFLAGS = -c -Iinc -Wall -O0 -g -fPIC $(DEFS) $(TFLAGS)
++CFLAGS = -c -Iinc ${CXXFLAGS} $(DEFS) $(TFLAGS) -fPIC
+ #CFLAGS = -c -Iinc -Wall -O0 -fPIC -DFASTDB_DEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
+ 
+-#SHFLAGS=-shared -Wl,-soname,$@
+-SHFLAGS=-shared
++SHFLAGS=-shared -Wl,-soname,$@
++#SHFLAGS=-shared
+ 
+ 
+ LD = $(CC)
+-LDFLAGS = -g $(TFLAGS)
++LDFLAGS = $(TFLAGS)
+ 
+ AR = ar
+ ARFLAGS = -cru
+@@ -326,16 +326,14 @@
+ 
+ install: subsql cleanupsem installlib
+ 	mkdir -p $(BINSPATH)
+-	cp subsql $(BINSPATH)
+-	strip $(BINSPATH)/subsql
+-	cp cleanupsem $(BINSPATH)
+-	strip $(BINSPATH)/cleanupsem
++	${BSD_INSTALL_PROGRAM} subsql $(BINSPATH)
++	${BSD_INSTALL_PROGRAM} cleanupsem $(BINSPATH)
+ 
+ installlib: $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED)
+ 	mkdir -p $(INCSPATH)
+-	cp $(INCS) $(INCSPATH)
++	${BSD_INSTALL_DATA} $(INCS) $(INCSPATH)
+ 	mkdir -p $(LIBSPATH)
+-	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
++	${BSD_INSTALL_PROGRAM} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
+ 	cd $(LIBSPATH); ln -f -s $(FASTDB_SHARED) libfastdb$(SUFF).so
+ 	cd $(LIBSPATH); ln -f -s $(CLI_SHARED) libcli$(SUFF).so
+ 

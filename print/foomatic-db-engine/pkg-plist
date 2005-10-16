@@ -1,0 +1,30 @@
+bin/foomatic-combo-xml
+bin/foomatic-compiledb
+bin/foomatic-configure
+bin/foomatic-datafile
+bin/foomatic-perl-data
+bin/foomatic-ppd-options
+bin/foomatic-ppdfile
+bin/foomatic-printjob
+%%SITE_PERL%%/Foomatic/DB.pm
+%%SITE_PERL%%/Foomatic/Defaults.pm
+%%SITE_PERL%%/Foomatic/PPD.pm
+%%SITE_PERL%%/Foomatic/UIElem.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Foomatic/.packlist
+sbin/foomatic-addpjloptions
+sbin/foomatic-fix-xml
+sbin/foomatic-getpjloptions
+sbin/foomatic-kitload
+sbin/foomatic-nonumericalids
+sbin/foomatic-preferred-driver
+sbin/foomatic-printermap-to-gimp-print-xml
+sbin/foomatic-replaceoldprinterids
+share/foomatic/templates/pjl_enum_choice.xml
+share/foomatic/templates/pjl_enum_option.xml
+share/foomatic/templates/pjl_num_option.xml
+@dirrm %%SITE_PERL%%/Foomatic
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Foomatic
+@dirrm share/foomatic/templates
+@unexec rmdir %D/share/foomatic 2>/dev/null || true
+@unexec rmdir %D/etc/foomatic
+@exec mkdir -p %D/etc/foomatic

@@ -1,0 +1,39 @@
+bin/gnome-osd-client
+bin/gnome-osd-properties
+bin/rbosd.py
+libdata/bonobo/servers/GNOME_OSD.server
+%%PYTHON_SITELIBDIR%%/gnomeosd/__init__.py
+%%PYTHON_SITELIBDIR%%/gnomeosd/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gnomeosd/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gnomeosd/capplet.py
+%%PYTHON_SITELIBDIR%%/gnomeosd/capplet.pyc
+%%PYTHON_SITELIBDIR%%/gnomeosd/capplet.pyo
+%%PYTHON_SITELIBDIR%%/gnomeosd/client.py
+%%PYTHON_SITELIBDIR%%/gnomeosd/client.pyc
+%%PYTHON_SITELIBDIR%%/gnomeosd/client.pyo
+%%PYTHON_SITELIBDIR%%/gnomeosd/gconfsync.py
+%%PYTHON_SITELIBDIR%%/gnomeosd/gconfsync.pyc
+%%PYTHON_SITELIBDIR%%/gnomeosd/gconfsync.pyo
+%%PYTHON_SITELIBDIR%%/gnomeosd/gnome_osd_conf.py
+%%PYTHON_SITELIBDIR%%/gnomeosd/gnome_osd_conf.pyc
+%%PYTHON_SITELIBDIR%%/gnomeosd/gnome_osd_conf.pyo
+%%PYTHON_SITELIBDIR%%/gnomeosd/gosd.py
+%%PYTHON_SITELIBDIR%%/gnomeosd/gosd.pyc
+%%PYTHON_SITELIBDIR%%/gnomeosd/gosd.pyo
+%%PYTHON_SITELIBDIR%%/gnomeosd/server.py
+%%PYTHON_SITELIBDIR%%/gnomeosd/server.pyc
+%%PYTHON_SITELIBDIR%%/gnomeosd/server.pyo
+libexec/gnome-osd-server
+share/gnome/applications/gnome-osd-properties.desktop
+share/gnome/gnome-osd/xchatosd.py
+share/gnome/pixmaps/gnome-osd.png
+share/locale/ja/LC_MESSAGES/gnome-osd.mo
+share/locale/pt/LC_MESSAGES/gnome-osd.mo
+@dirrm share/gnome/gnome-osd
+@dirrm %%PYTHON_SITELIBDIR%%/gnomeosd
+@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

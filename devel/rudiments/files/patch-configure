@@ -1,0 +1,42 @@
+--- configure.orig	Mon Aug  9 03:23:18 2004
++++ configure	Thu Aug 26 16:17:40 2004
+@@ -19632,8 +19632,8 @@
+ then
+ 
+ 	HAVE_PTHREAD=""
+-	PTHREADINCLUDES=""
+-	PTHREADLIB=""
++	#PTHREADINCLUDES=""
++	#PTHREADLIB=""
+ 
+ 	if ( test "$cross_compiling" = "yes" )
+ 	then
+@@ -19667,9 +19667,6 @@
+ STATIC=""
+ HEADERSANDLIBSPATH=""
+ 
+-eval "PTHREADINCLUDES=\"\""
+-eval "PTHREADLIB=\"\""
+-eval "PTHREADLIBPATH=\"\""
+ eval "PTHREADSTATIC=\"\""
+ if ( test -n "" )
+ then
+@@ -20293,9 +20290,6 @@
+ INCLUDESTRING=`echo $INCLUDESTRING | sed -e "s|-I/usr/include$||g" -e "s|-I/usr/include ||g"`
+ LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib$||g" -e "s|-L/lib$||g" -e "s|-L/usr/lib ||g" -e "s|-L/lib ||g"`
+ 
+-eval "PTHREADINCLUDES=\"$INCLUDESTRING\""
+-eval "PTHREADLIB=\"$LIBSTRING\""
+-eval "PTHREADLIBPATH=\"$LIBPATH\""
+ eval "PTHREADSTATIC=\"$STATIC\""
+ if ( test -n "" )
+ then
+@@ -30503,7 +30497,7 @@
+ #define RUDIMENTS_VERSION "$RUDIMENTS_VERSION"
+ _ACEOF
+ 
+-SONAME_VERSION_INFO="1:0:0"
++SONAME_VERSION_INFO="0:0:0"
+ 
+ 
+ 

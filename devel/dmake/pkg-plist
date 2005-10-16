@@ -1,0 +1,10 @@
+bin/dmake
+share/dmake/startup/startup.mk
+share/dmake/startup/template.mk
+share/dmake/startup/unix/linux/macros.mk
+share/dmake/startup/unix/macros.mk
+share/dmake/startup/unix/recipes.mk
+@dirrm share/dmake/startup/unix/linux
+@dirrm share/dmake/startup/unix
+@dirrm share/dmake/startup
+@dirrm share/dmake

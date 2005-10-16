@@ -1,0 +1,166 @@
+#
+# FreeBSD Project Committers
+#
+# In case you don't know the exact coordinates, you might find it at 
+# http://www.heavens-above.com/
+#
+# Style (sorted from east to west): sort -n -r -k 2
+# Lat,		Long,		"name"	opt			# location
+
+-34.05,		151.15,		"edwin"				# Cronulla, Australia
+-33.55,		151.1,		"bde"				# Sydney, Australia.
+-37.7,		144.9,		"jb,danny,thepish,benno"	# Melbourne, Vic Australia
+ 35.16,		139.67,		"            ,tanimura"		# Yokosuka, Kanagawa, Japan
+ 35.7,		139.6,		"     knu"			# Tokyo, Japan
+ 35.54,		139.53,		"        ,ume"			# Yokohama, Kanagawa, Japan
+ 35.36,		139.31,		"                     ,daichi"	# Kawasaki, Kanagawa, Japan
+-34.14,		138.77,		"grog"				# (CORE) Echunga, SA Australia
+-34.53,		138.35,		"newton, markp"	align=left	# Adelaide, SA Australia
+ 35.02,		137.07,		"sada   " align=left		# Toyota, Aichi, Japan
+ 35.0,		135.47,		"maho"				# Kyoto, Kyoto, Japan 
+ 34.47,		135.26,		"matusita"			# Ikeda, Osaka, Japan
+ 37.56,		126.98,		"cjh,perky"			# Seoul, South Korea
+ 25.017,	121.450,	"avatar,clive,foxfair,keith,kevlo,vanilla,leeym,clsung"	# Taipei, Taiwan
+ 24.80,		120.97,		"ijliao"			# HsinChu, Taiwan
+ 55.033,	82.917,		"danfe,fjoe"			# Novosibirsk, Russia
+ 12.58,		77.35,		"jkoshy"			# Bangalore, India
+ 55.8,		37.6,		"ache,demon,marck,osa,sergei"	# Moscow, Russia
+ 44.95,		34.1,		"phantom"			# Simferopol, Ukraine
+ 50.4,		30.5,		"sobomax"			# Kiev, Ukraine
+ 60.16,		24.87,		"scop"				# Helsinki, Finland
+ 37.98,		23.73,		"dds"				# Athens, Greece
+ 65.58,		22.17,		"johan"				# Lulea, Sweden
+ 38.15,		21.45,		"keramida"			# Patras, Greece
+ 52.14,		21.03,		"abial"				# Warsaw, Poland
+ 59.33,		18.05,		"girgen"			# Stockholm, Sweden
+-34,		18,		"sheldonh"			# Cape Town, South Africa
+ 48,		16,		"arved"				# Vienna, Austria
+ 46.055,	14.514,		"lesi"				# Ljubljana, Slovenia
+ 50.083,	14.467,		"pav"				# Prague, Czech Republic
+ 51.0383,	13.7206,	"joerg"				# Dresden, Germany
+ 52.51,		13.33,		" dirk"				# Berlin, Germany
+ 52.56,		13.27,		"chm"		align=left	# Berlin, Germany
+ 55.667,	12.583,		"simon"				# Copenhagen, Denmark
+ 48.20,		11.62,		"barner"			# Munich, Germany
+ 48.09,		11.34,		"obraun"			# Munich, Germany
+ 55.406124,	11.3397291,	"phk"				# Slagelse, Denmark
+ 59.92,		10.75,		"eivind,des,tegge,anders"	# Oslo, Norway
+ 43.71,		10.40,		"luigi"				# Pisa, Italy
+ 56.150,	10.217,		"erwin"				# Aarhus, Denmark
+ 57.2,		10.2,		"sos"				# Klokkerholm, Denmark
+ 53.56,		10.02,		"cracauer"			# Hamburg, Germany
+ 53.64,		9.84,		"hm"		align=left	# Rellingen, Germany
+ 53.33,		9.59,		"stb"				# Hamburg, Germany
+ 49.00,		9.5,		"schweikh"			# Weinstadt, Germany
+ 51.20,		9.20,		"dinoex"			# Habichtswald, Germany
+ 45.27,		9.17,		"olgeni"			# Milano, Italy
+ 45.458,	9.169,		"ale"		align=left	# Milano, Italy
+ 50.1025,	8.6841,		"tomsoft"			# Frankfurt, Hessen, Germany
+ 51.32,		7.27,		"ue"				# Dortmund, Germany
+ 43.6,		7.00,		"clement"	align=left	# Mougins, France
+ 49.404722,	6.950555,	"netchild"			# Eppelborn, Germany
+ 50.92,		6.95,		"se"				# Cologne, Germany
+ 51.3,		6.75,		"alex"		align=left	# Meerbusch, Germany
+ 51.13,		6.56		"oliver"			# Erkrath, Germany
+ 51.13,		6.47,		"krion"				# Duesseldorf, Germany
+ 50.47,		6.42,		"brueffer"			# Aachen, Germany
+ 50.70,		6.2,		"tg"				# Aachen, Germany
+ 50.7797,	6.0982,		"markus"			# Aachen, Germany
+ 50.46,		6.03,		"vs"				# Aachen, Germany
+ 51.98,		5.96,		"wilko"				# Arnhem, The Netherlands
+ 43.27357,	5.40153,	"hq"		align=left	# Marseille, France
+ 51.25,		5.30,		"guido"		align=left	# Eindhoven, the Netherlands
+ 45.62,		4.93,		"thierry"	align=left	# Chaponnay, France
+ 50.9349,	4.4548		"philip"	align=left	# Kampenhout, Belgium
+ 50.383,	4.36,		"jylefort"	align=left	# Charleroi, Belgium
+ 48.36,		2.99,		"charnier"	align=left	# Cannes Ecluse, France
+ 48.87,		2.33,		"roberto"	align=left	# Paris, France
+ 48.847135,	2.28514,	"mat,dumbbell"			# Paris, France
+ 48.912,	2.256,		"mich"		align=left	# La Garenne-Colombes, France
+ 49.005858,	2.267550,	"flz"				# Saint Prix, France
+ 51.27615,	1.0071,		"jesper"			# Reading, United Kingdom
+ 50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
+ 52.2035,	0.1200,		"fanf"				# Cambridge, UK
+ 51.5,		0.0,		" dfr"				# London, UK
+ 51.0,		0.0,		"greid"		align=left	# Farnborough, Hampshire, UK
+ 51.53,		-0.18,		"n_hibma"	align=above	# London, UK
+ 51.50,		-0.48,		"nik"		align=left	# West Drayton, Middx., UK
+ 51.67,		-0.61,		"markm"		align=left	# (CORE) Amersham, Bucks, UK
+ 51.67,		-0.61,		"brian"		align=left	# Amersham, Bucks, UK
+ 52.01,		-0.75,		"tom"		align=left	# Milton Keynes, UK
+ 53.22,		-1.29,		"ben"				# Sheffield, Yorkshire, UK
+ 51.44,		-2.06,		"marko"		align=left	# Chippenham, Wiltshire, UK
+ 51.49,		-3.16,		"ceri"				# Cardiff, UK
+ 55.87,		-4.26,		"roger"				# Glasgow, UK
+ 56.0,		-4.5,		"gary"		align=left	# Glasgow, UK
+ 53.20,		-6.15,		"dwmalone"	align=left	# Dublin, Ireland
+ 53.65,		-6.67,		"peadar"	align=above	# Navan, Co. Meath, Ireland
+-15.8,		-47.9,		"lioux"				# Brasilia, DF, Brazil
+-15.8,		-47.9,		"dcs"				# Brasilia, DF, Brazil
+-20.950,	-47.917,	"garga"				# Limeira, SP, Brazil
+ 42.1411,	-70.8453,	"jeh"				# Hanover, MA, USA
+ 42.34,		-71.19,		"wollman"			# Brighton, MA, USA
+ 42.727,	-73.676,	"dec,jon,gad"			# RPI @ Troy, NY, USA
+ 40.893,	-73.973,	"jkim"				# Englewood, NJ, USA
+ 45.3991,	-75.6942,	"jake"				# Ottawa, ON, Canada
+ 45.3526,	-75.7286,	"adamw"				# Ottawa, ON, Canada
+ 42.26785,	-76.28954,	"pat"				# Ithaca, NY, USA
+ 39.00,		-76.88,		"         ,chuckr"		# Greenbelt, MD, USA
+ 39.2,		-77.0,		"jmb,gpalmer"			# Silver Spring, MD, USA
+ 38.981024,	-77.119791,	"rwatson"			# (CORE) Bethesda, MD, USA
+ 39.128555,	-77.203029,	"   ,green"			# Gaithersburg, MD, USA
+ 43.09,		-77.68,		"jseger"			# Rochester, NY, USA
+ 35.791,	-78.781,	"marcus"			# Cary, NC, USA
+ 35.73,		-78.91,		"bsd"				# Apex, NC, USA
+ 43.37,		-79.79,		"hoek"				# Burlington, ON, Canada
+#37.23,		-80.41,		"jhb"				# (CORE) Blacksburg, VA, USA
+ 35.74,		-81.7,		"ahze"				# Morganton, NC, USA
+ 29.16,		-82.18,		"jedgar"			# Ocala, FL, USA
+ 34.81095,	-86.70977,	"steve"				# Huntsville, AL, USA
+ 43.19,		-89.38,		"jlemon"			# Madison, WI, USA
+ 44.59556,	-93.15372,	"       ,nectar"		# Minneapolis, MN, USA
+ 44.99,		-93.25,		"mpp,mks"			# Minneapolis, MN, USA
+ 42.02,		-93.67,		"ghelmer"			# Ames, IA, USA
+ 29.834,	-95.00,		"     ,chris"			# Houston, TX, USA
+ 29.7,		-95.4,		"rich        ,dwcjr"		# Houston, TX, USA
+ 41.259,	-95.938,	"smkelly"			# Omaha, NE, USA
+ 30.427,	-97.753,	"   ,dbaker"			# Austin, TX, USA
+ 30.343,	-97.881,	"          ,linimon"		# Austin, TX, USA
+ 30.192,	-97.881,	"ade"				# Austin, TX, USA
+ 40.1,		-105.3,		"imp"				# (CORE) Boulder, CO, USA
+ 40.1,		-105.3,		"    ,gibbs,ken,fsmp,will"	# Boulder, CO, USA
+ 40.4047,	-111.7508,	"glewis"			# Cedar Hills, UT, USA
+ 46.59,		-112.04,	"nate"				# Helena, MT, USA
+ 51.09,		-114.12,	"cpiazza"			# Calgary, AB, Canada
+ 33.05,		-117.09,	"wes"				# (CORE) San Diego, CA, USA
+ 33.66,		-117.80,	"dd"				# Irvine, CA, USA
+ 34.13637,	-118.12704,	"mph"				# Pasadena, CA, USA
+ 33.83,		-118.22,	"             ,trevor"		# Dominguez, CA, USA
+ 34.11,		-118.29,	"       ,kris"			# Los Angeles, CA, USA
+ 39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
+ 38.54,		-121.76,	"obrien,mharo"			# Davis, CA, USA
+ 37.40,		-121.94,	"alfred"			# Santa Clara, CA, USA
+ 37.32,		-121.94,	"jmg"				# San Jose, CA, USA
+ 37.75573,	-121.947116,	"peter"				# (CORE) San Ramon, CA, USA
+ 37.4014,	-121.9544,	"cjc"				# Santa Clara, CA, USA
+ 37.329278,	-121.962306,	"nsayer"			# Santa Clara, CA, USA
+ 37.4,		-122.0,		"asami"				# Santa Clara, CA, USA
+ 37.68,		-122.03,	"bmah"				# Castro Valley, CA, USA
+ 37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
+ 37.38,		-122.08,	"petef"				# Mountain View, CA, USA
+ 47.756,	-122.14,	"seanc"				# Shoreline, WA, USA
+ 37.55,		-122.26,	"terry"				# Foster City, CA, USA
+ 37.887398,	-122.264896,	"gsutter"			# Berkeley, CA, USA
+ 37.843858,	-122.294535,	"gshapiro"			# Emeryville, CA, USA
+ 37.51,		-122.30,	"kbyanc"			# Belmont, CA, USA
+ 47.70,		-122.34,	"brooks"			# Seattle, WA, USA
+ 37.781,	-122.398,	"billf"				# SOMA, San Francisco, CA, USA
+ 47.5,		-122.4,		"jdp"				# Seattle, WA, USA
+#37.80,		-122.43,	"julian"			# Downtown San Francisco, CA, USA
+ 37.80,		-122.43,	"njl"				# Downtown San Francisco, CA, USA
+ 37.77,		-122.44,	"archie"			# Haight, San Francisco, CA, USA
+ 45.5,		-122.6,		"dg"				# near Portland, OR, USA
+ 44.04, 	-123.06,	"anholt"			# Eugene, OR, USA
+ 48.3898,	-123.4875,	"cy"				# Victoria, BC, Canada
+ 40.0,		-123.5,		"jkh"				# Miranda, CA, USA
+ 21.32,		-157.83,	"jmallett"			# Honolulu, HI, USA

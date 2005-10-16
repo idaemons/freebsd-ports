@@ -1,0 +1,9 @@
+include/lrdf.h
+include/lrdf_types.h
+lib/liblrdf.a
+lib/liblrdf.so
+lib/liblrdf.so.2
+libdata/pkgconfig/lrdf.pc
+share/ladspa/rdf/ladspa.rdfs
+@unexec rmdir %D/share/ladspa/rdf 2>/dev/null || true
+@unexec rmdir %D/share/ladspa 2>/dev/null || true

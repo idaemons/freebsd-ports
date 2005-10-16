@@ -1,0 +1,11 @@
+--- makefile.orig	Wed May 18 15:06:46 2005
++++ makefile	Wed May 18 15:07:19 2005
+@@ -42,7 +42,7 @@
+ 	install -d $(docdir)/mathomatic
+ 	install -m 0755 $(AOUT) $(bindir)
+ 	install -m 0644 doc/mathomatic.1 $(mandir)/man1
+-	install -m 0644 changes.txt doc/*.htm doc/*.html $(docdir)/mathomatic
++#%%PORTDOCS%%install -m 0644 changes.txt doc/*.htm doc/*.html $(docdir)/mathomatic
+ 	@echo Install completed.
+ 
+ uninstall:

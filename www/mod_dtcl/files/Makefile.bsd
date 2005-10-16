@@ -1,0 +1,24 @@
+TCL_VERSION?=8.3
+TCL_NDVER?=${TCL_VERSION:S/.//}	# same, but without the dot
+
+PREFIX?=	/usr/local
+
+INCLUDES=-I${PREFIX}/include/apache -I${PREFIX}/include/tcl${TCL_VERSION}
+
+DTCL_VERSION!=	cat ${.CURDIR}/VERSION
+
+CC!=		${PREFIX}/sbin/apxs -q CC
+CFLAGS!=	${PREFIX}/sbin/apxs -q CFLAGS CFLAGS_SHLIB
+CFLAGS+=	${INCLUDES} -DDTCL_VERSION="\"${DTCL_VERSION}\""
+
+SHLIB_NAME=	libmod_dtcl.so.1
+
+LDADD=	-L${PREFIX}/lib -ltcl${TCL_NDVER} -lm
+
+SRCS=	mod_dtcl.c
+SRCS+=	apache_cookie.c apache_multipart_buffer.c apache_request.c \
+	channel.c parser.c tcl_commands.c
+
+NOMAN=	True	# don't bother with the man-page here, let the port handle it
+
+.include <bsd.lib.mk>

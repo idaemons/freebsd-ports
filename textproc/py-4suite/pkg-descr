@@ -1,0 +1,21 @@
+4Suite is a suite of Python modules for XML and RDF processing.
+Its major components include the following:
+
+ * Ft.Xml.Domlette: A very fast, lightweight XPath-oriented DOM.
+ * Ft.Xml.XPath: An XPath 1.0 implementation for Domlette documents.
+ * Ft.Xml.Xslt: A robust XSLT 1.0 processor.
+ * Ft.Rdf: RDF processing tools, including a query/inference language.
+ * Ft.Server: An integrated document & RDF repository with web access.
+ * Ft.Lib: Various support libraries that can be used independently.
+
+4Suite also includes convenient command-line tools:
+ * 4xml: XML document parsing and reserialization.
+ * 4xpath: XPath expression evaluation.
+ * 4xslt: XSLT processing engine.
+ * 4rdf: RDF/XML parsing, persistence, querying and reserialization.
+ * 4ss_manager: Document/RDF repository administration.
+ * 4ss: Document/RDF repository user commands.
+
+WWW: http://4suite.org/
+
+-- Mike Brown <mike@skew.org>

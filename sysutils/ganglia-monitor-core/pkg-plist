@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+%%LIBGANGLIA%%bin/ganglia-config
+bin/gstat
+bin/gmetric
+@unexec if cmp -s %D/etc/gmond.conf %D/etc/gmond.conf.sample; then rm -f %D/etc/gmond.conf; fi
+etc/gmond.conf.sample
+%%GMETAD%%@unexec if cmp -s %D/etc/gmetad.conf %D/etc/gmetad.conf.sample; then rm -f %D/etc/gmetad.conf; fi
+%%GMETAD%%etc/gmetad.conf.sample
+%%LIBGANGLIA%%include/ganglia.h
+%%LIBGANGLIA%%lib/libganglia-3.0.0.so.0
+%%LIBGANGLIA%%lib/libganglia-3.0.0.so
+%%LIBGANGLIA%%lib/libganglia.so
+%%LIBGANGLIA%%lib/libganglia.la
+%%LIBGANGLIA%%lib/libganglia.a
+%%GMETAD%%sbin/gmetad
+%%GMETAD%%sbin/gmetasnap
+sbin/gmond
+@unexec rmdir %D/var/db/ganglia/rrds 2>/dev/null || true
+@unexec rmdir %D/var/db/ganglia 2>/dev/null || true

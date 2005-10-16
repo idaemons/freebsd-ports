@@ -1,0 +1,7 @@
+include/fxscintilla/FXScintilla.h
+include/fxscintilla/SciLexer.h
+include/fxscintilla/Scintilla.h
+lib/libfxscintilla.a
+lib/libfxscintilla.so
+lib/libfxscintilla.so.17
+@dirrm include/fxscintilla

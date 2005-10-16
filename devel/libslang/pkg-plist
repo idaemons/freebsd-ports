@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+include/slang.h
+include/slcurses.h
+lib/libslang.a
+lib/libslang.so
+lib/libslang.so.1

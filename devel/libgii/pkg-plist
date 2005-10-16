@@ -1,0 +1,65 @@
+bin/mhub
+%%WITH_X%%bin/xsendbut
+@unexec if cmp -s %D/etc/ggi/filter/keytrans %D/etc/ggi/filter/keytrans.dist; then rm -f %D/etc/ggi/filter/keytrans; fi
+etc/ggi/filter/keytrans.dist
+@exec [ -f %B/keytrans ] || cp %B/%f %B/keytrans
+@unexec if cmp -s %D/etc/ggi/filter/mouse %D/etc/ggi/filter/mouse.dist; then rm -f %D/etc/ggi/filter/mouse; fi
+etc/ggi/filter/mouse.dist
+@exec [ -f %B/mouse ] || cp %B/%f %B/mouse
+@unexec if cmp -s %D/etc/ggi/libgii.conf %D/etc/ggi/libgii.conf.dist; then rm -f %D/etc/ggi/libgii.conf; fi
+etc/ggi/libgii.conf.dist
+@exec [ -f %B/libgii.conf ] || cp %B/%f %B/libgii.conf
+include/ggi/errors.h
+include/ggi/events.h
+include/ggi/gg-defs.h
+include/ggi/gg.h
+include/ggi/gii-defs.h
+include/ggi/gii-unix.h
+include/ggi/gii.h
+include/ggi/input/cocoa.h
+include/ggi/input/directx.h
+include/ggi/input/kii.h
+include/ggi/input/lin_kbd.h
+include/ggi/input/xwin.h
+include/ggi/internal/gii-dl.h
+include/ggi/internal/gii.h
+include/ggi/keyboard.h
+include/ggi/system.h
+lib/ggi/filter/keytrans.so
+lib/ggi/filter/mouse.so
+lib/ggi/filter/save.so
+lib/ggi/filter/tcp.so
+lib/ggi/input/file.so
+%%KII%%lib/ggi/input/kii.so
+lib/ggi/input/linux_mouse.so
+lib/ggi/input/mouse.so
+lib/ggi/input/null.so
+lib/ggi/input/spaceorb.so
+lib/ggi/input/stdin.so
+lib/ggi/input/tcp.so
+%%VGL%%lib/ggi/input/vgl.so
+%%WITH_X%%lib/ggi/input/x.so
+%%WITH_X%%lib/ggi/input/xwin.so
+lib/libgg.a
+lib/libgg.so
+lib/libgg.so.0
+lib/libgii.a
+lib/libgii.so
+lib/libgii.so.0
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/filter.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/mhub.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/xsendbut.c
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/ggi/input
+@dirrm lib/ggi/filter
+@dirrm lib/ggi
+@dirrm include/ggi/internal
+@dirrm include/ggi/input
+@dirrm include/ggi
+@unexec rmdir %D/etc/ggi/filter 2>/dev/null || true
+@unexec rmdir %D/etc/ggi 2>/dev/null || true

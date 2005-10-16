@@ -1,0 +1,10 @@
+--- doc/indent.texinfo.orig	Tue May 21 14:40:06 2002
++++ doc/indent.texinfo	Sun Jul 14 23:20:41 2002
+@@ -13,7 +13,7 @@
+ 
+ @dircategory Indent Code Formatter
+ @direntry
+-* Indent: (indent).		C code formatter.
++* GNU indent: (indent).		C code formatter.
+ @end direntry
+ 

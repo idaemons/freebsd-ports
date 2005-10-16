@@ -1,0 +1,202 @@
+@comment $FreeBSD$
+include/bglibs/adt/common.h
+include/bglibs/adt/ghash.h
+include/bglibs/adt/gqueue.h
+include/bglibs/adt/gstack.h
+include/bglibs/base64/base64.h
+include/bglibs/cdb/cdb.h
+include/bglibs/cdb/make.h
+include/bglibs/cdb/str.h
+include/bglibs/cli/cli.h
+include/bglibs/crc/crc16_arc.h
+include/bglibs/crc/crc16_ccitt.h
+include/bglibs/crc/crc16_xmodem.h
+include/bglibs/crc/crc32.h
+include/bglibs/crc/crc32c.h
+include/bglibs/crc/crc64.h
+include/bglibs/crc/gcrc.h
+include/bglibs/crypto/md5.h
+include/bglibs/crypto/sha1.h
+include/bglibs/crypto/sha256.h
+include/bglibs/crypto/sha384.h
+include/bglibs/crypto/sha512.h
+include/bglibs/crypto/surf.h
+include/bglibs/dict/dict.h
+include/bglibs/dict/load.h
+include/bglibs/fmt/number.h
+include/bglibs/installer.h
+include/bglibs/iobuf/common.h
+include/bglibs/iobuf/ibuf.h
+include/bglibs/iobuf/iobuf.h
+include/bglibs/iobuf/obuf.h
+include/bglibs/misc/misc.h
+include/bglibs/misc/ucspi.h
+include/bglibs/msg/msg.h
+include/bglibs/msg/wrap.h
+include/bglibs/net/ipv4.h
+include/bglibs/net/ipv6.h
+include/bglibs/net/resolve.h
+include/bglibs/net/socket.h
+include/bglibs/path/path.h
+include/bglibs/pwcmp/client.h
+include/bglibs/pwcmp/hex.h
+include/bglibs/pwcmp/module.h
+include/bglibs/str/env.h
+include/bglibs/str/iter.h
+include/bglibs/str/str.h
+include/bglibs/sysdeps.h
+include/bglibs/systime.h
+include/bglibs/uint16.h
+include/bglibs/uint32.h
+include/bglibs/uint64.h
+include/bglibs/uintnn.h
+include/bglibs/unix/cloexec.h
+include/bglibs/unix/fcntl.h
+include/bglibs/unix/nonblock.h
+include/bglibs/unix/selfpipe.h
+include/bglibs/unix/sig.h
+include/bglibs/unix/trigger.h
+include/bglibs/vmailmgr/client.h
+include/bglibs/vmailmgr/vpwentry.h
+lib/libbase64/base64.a
+lib/libbg-adt.a
+lib/libbg-base64.a
+lib/libbg-cdb.a
+lib/libbg-cli.a
+lib/libbg-crc.a
+lib/libbg-crypto.a
+lib/libbg-dict.a
+lib/libbg-fmt.a
+lib/libbg-installer.a
+lib/libbg-instcheck.a
+lib/libbg-instshow.a
+lib/libbg-iobuf.a
+lib/libbg-misc.a
+lib/libbg-msg.a
+lib/libbg-net.a
+lib/libbg-path.a
+lib/libbg-str.a
+lib/libbg-sysdeps.a
+lib/libbg-unix.a
+lib/libbg.a
+lib/libcdb/cdb.a
+lib/libcdb/make.a
+lib/libcdb/str.a
+lib/libcli/cli.a
+lib/libcrypto/md5.a
+lib/libcrypto/sha1.a
+lib/libcrypto/sha256.a
+lib/libcrypto/sha512a.a
+lib/libdict/dict.a
+lib/libdict/load.a
+lib/libinstaller.a
+lib/libinstcheck.a
+lib/libinstshow.a
+lib/libiobuf/iobuf.a
+lib/libiobuf/str.a
+lib/libmisc/misc.a
+lib/libmsg/msg.a
+lib/libmsg/wrap.a
+lib/libnet/ipv4.a
+lib/libnet/resolve.a
+lib/libnet/socket.a
+lib/libpath/path.a
+lib/libpwcmp-module.a
+lib/libpwcmp.a
+lib/libpwcmp/client.a
+lib/libpwcmp/hex.a
+lib/libpwcmp/module.a
+lib/libstr/iter.a
+lib/libstr/str.a
+lib/libsysdeps.a
+lib/libunix/nonblock.a
+lib/libunix/sig.a
+lib/libvmailmgr.a
+lib/libvmailmgr/client.a
+lib/libvmailmgr/vpwentry.a
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/classes.html
+%%PORTDOCS%%%%DOCSDIR%%/cloexec_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/cmsg_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/common_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/deprecated.html
+%%PORTDOCS%%%%DOCSDIR%%/djb_2sig_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/env_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/fcntl_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/files.html
+%%PORTDOCS%%%%DOCSDIR%%/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/group__envstr.html
+%%PORTDOCS%%%%DOCSDIR%%/group__fmt.html
+%%PORTDOCS%%%%DOCSDIR%%/group__iobuf.html
+%%PORTDOCS%%%%DOCSDIR%%/group__ipv4.html
+%%PORTDOCS%%%%DOCSDIR%%/group__ipv6.html
+%%PORTDOCS%%%%DOCSDIR%%/group__resolve.html
+%%PORTDOCS%%%%DOCSDIR%%/group__selfpipe.html
+%%PORTDOCS%%%%DOCSDIR%%/group__socket.html
+%%PORTDOCS%%%%DOCSDIR%%/group__str.html
+%%PORTDOCS%%%%DOCSDIR%%/group__striter.html
+%%PORTDOCS%%%%DOCSDIR%%/group__trigger.html
+%%PORTDOCS%%%%DOCSDIR%%/ibuf_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/iobuf_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/ipv4_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/ipv6_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/iter_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/modules.html
+%%PORTDOCS%%%%DOCSDIR%%/nonblock_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/number_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/obuf_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/pages.html
+%%PORTDOCS%%%%DOCSDIR%%/resolve_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/selfpipe_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/sig_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/socket_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/str_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/structibuf.html
+%%PORTDOCS%%%%DOCSDIR%%/structiobuf.html
+%%PORTDOCS%%%%DOCSDIR%%/structipv4addr.html
+%%PORTDOCS%%%%DOCSDIR%%/structipv6addr.html
+%%PORTDOCS%%%%DOCSDIR%%/structobuf.html
+%%PORTDOCS%%%%DOCSDIR%%/structstr.html
+%%PORTDOCS%%%%DOCSDIR%%/structstr__sortentry.html
+%%PORTDOCS%%%%DOCSDIR%%/structstriter.html
+%%PORTDOCS%%%%DOCSDIR%%/trigger_8h-source.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/bglibs/adt
+@dirrm include/bglibs/base64
+@dirrm include/bglibs/cdb
+@dirrm include/bglibs/cli
+@dirrm include/bglibs/crc
+@dirrm include/bglibs/crypto
+@dirrm include/bglibs/dict
+@dirrm include/bglibs/fmt
+@dirrm include/bglibs/iobuf
+@dirrm include/bglibs/misc
+@dirrm include/bglibs/msg
+@dirrm include/bglibs/net
+@dirrm include/bglibs/path
+@dirrm include/bglibs/pwcmp
+@dirrm include/bglibs/str
+@dirrm include/bglibs/unix
+@dirrm include/bglibs/vmailmgr
+@dirrm include/bglibs
+@dirrm lib/libbase64
+@dirrm lib/libcdb
+@dirrm lib/libcli
+@dirrm lib/libcrypto
+@dirrm lib/libdict
+@dirrm lib/libiobuf
+@dirrm lib/libmisc
+@dirrm lib/libmsg
+@dirrm lib/libnet
+@dirrm lib/libpath
+@dirrm lib/libpwcmp
+@dirrm lib/libstr
+@dirrm lib/libunix
+@dirrm lib/libvmailmgr

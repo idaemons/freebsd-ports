@@ -1,0 +1,26 @@
+bin/sagasu
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/THANKS
+%%DOCSDIR%%/TODO
+share/gnome/applications/sagasu.desktop
+share/gnome/help/sagasu/C/sagasu.html
+share/gnome/help/sagasu/fr/sagasu.html
+share/gnome/pixmaps/close.xpm
+share/gnome/pixmaps/sagasu.png
+share/gnome/sagasu/COPYING
+share/gnome/sagasu/sagasu-helper.pl
+share/gnome/sounds/sagasu/sagasu.wav
+share/locale/fr/LC_MESSAGES/sagasu.mo
+share/locale/ja/LC_MESSAGES/sagasu.mo
+share/locale/ru/LC_MESSAGES/sagasu.mo
+share/locale/sr/LC_MESSAGES/sagasu.mo
+@dirrm share/gnome/sounds/sagasu
+@dirrm share/gnome/sagasu
+@dirrm share/gnome/help/sagasu/fr
+@dirrm share/gnome/help/sagasu/C
+@dirrm share/gnome/help/sagasu
+@dirrm %%DOCSDIR%%

@@ -1,0 +1,191 @@
+--- configure.orig	Wed Apr 13 07:46:35 2005
++++ configure	Thu Jun  2 23:54:17 2005
+@@ -29,9 +29,9 @@
+   echo >> "$TMPLOG"
+   cat "$TMPC" >> "$TMPLOG"
+   echo >> "$TMPLOG"
+-  echo "$_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra $TMPC -o $TMPO $@" >> "$TMPLOG"
++  echo "$_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra $TMPC -o $TMPO $@" >> "$TMPLOG"
+   rm -f "$TMPO"
+-  ( $_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra "$TMPC" -o "$TMPO" "$@" ) >> "$TMPLOG" 2>&1
++  ( $_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra "$TMPC" -o "$TMPO" "$@" ) >> "$TMPLOG" 2>&1
+   TMP="$?"
+   echo >> "$TMPLOG"
+   echo "ldd $TMPO" >> "$TMPLOG"
+@@ -369,7 +369,7 @@
+ 
+ 
+ # 1st pass checking for vital options
+-_install=install
++_install=@${BSD_INSTALL_PROGRAM}
+ _ranlib=ranlib
+ _cc=cc
+ test "$CC" && _cc="$CC"
+@@ -471,14 +471,7 @@
+       case "`( uname -m ) 2>&1`" in
+       i[3-9]86*|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686|BePC) host_arch=i386 ;;
+       ia64) host_arch=ia64 ;;
+-      x86_64|amd64)
+-        if [ "`$_cc -dumpmachine | grep x86_64 | cut -d- -f1`" = "x86_64" -a \
+-             -z "`echo $CFLAGS | grep -- -m32`"  ]; then
+-          host_arch=x86_64
+-        else
+-          host_arch=i386
+-        fi
+-      ;;
++      x86_64|amd64) host_arch=x86_64 ;;
+       macppc|ppc) host_arch=ppc ;;
+       alpha) host_arch=alpha ;;
+       sparc) host_arch=sparc ;;
+@@ -691,22 +684,10 @@
+ _cpuinfo="echo"
+ # Cygwin has /proc/cpuinfo, but only supports Intel CPUs
+ # FIXME: Remove the cygwin check once AMD CPUs are supported
+-if test -r /proc/cpuinfo && not cygwin; then
+-  # Linux with /proc mounted, extract CPU information from it
+-  _cpuinfo="cat /proc/cpuinfo"
+-elif test -r /compat/linux/proc/cpuinfo && not x86 ; then
+-  # FreeBSD with Linux emulation /proc mounted,
+-  # extract CPU information from it
+-  _cpuinfo="cat /compat/linux/proc/cpuinfo"
+-elif darwin ; then
+-  # use hostinfo on Darwin
+-  _cpuinfo="hostinfo"
+-elif x86; then
+   # all other OSes try to extract CPU information from a small helper
+   # program TOOLS/cpuinfo instead
+   $_cc -o TOOLS/cpuinfo TOOLS/cpuinfo.c
+   _cpuinfo="TOOLS/cpuinfo"
+-fi
+ 
+ x86_exts_check()
+ {
+@@ -1878,8 +1859,8 @@
+     ;;
+ 
+   *)
+-    echo "Unknown parameter: $ac_option"
+-    exit 1
++    echo -n "Unknown parameter: $ac_option"
++    echo " (ignoring)."
+     ;;
+ 
+   esac
+@@ -1889,7 +1870,7 @@
+ test -z "$_bindir" && _bindir="$_prefix/bin"
+ test -z "$_datadir" && _datadir="$_prefix/share/mplayer"
+ test -z "$_mandir" && _mandir="$_prefix/man"
+-test -z "$_confdir" && _confdir="$_prefix/etc/mplayer"
++test -z "$_confdir" && _confdir="$_prefix/share/mplayer"
+ test -z "$_libdir" && _libdir="$_prefix/lib"
+ test -z "$_mlibdir" && _mlibdir="$MLIBHOME"
+ 
+@@ -2591,13 +2572,7 @@
+ 
+ 
+ echocheck "memalign()"
+-# XXX restrict to x86 ? extend to other CPUs/cacheline sizes ?
+-cat > $TMPC << EOF
+-#include <malloc.h>
+-int main (void) { (void) memalign(64, sizeof(char)); return 0; }
+-EOF
+ _memalign=no
+-cc_check && _memalign=yes
+ if test "$_memalign" = yes ; then
+  _def_memalign='#define HAVE_MEMALIGN 1'
+ else
+@@ -2699,47 +2674,11 @@
+ _def_threads='#undef HAVE_THREADS'
+ 
+ echocheck "pthread"
+-cat > $TMPC << EOF
+-#include <pthread.h>
+-void* func(void *arg) { return arg; }
+-int main(void) { pthread_t tid; return pthread_create (&tid, 0, func, 0) == 0 ? 0 : 1; }
+-EOF
+-if mingw32 ; then
+-  _ld_pthread=''
+-elif hpux ; then
+-  _ld_pthread=''
+-elif ( cc_check && $TMPO ) ; then              # QNX
+-  _ld_pthread=' ' # _ld_pthread='' would disable pthreads, but the test worked
+-elif ( cc_check -lpthread && $TMPO ) ; then
+-  _ld_pthread='-lpthread'
+-elif ( cc_check -pthread && $TMPO ) ; then
+-  _ld_pthread='-pthread'
+-else
+-  if test "$_ld_static" ; then
+-    # for crosscompilation, we cannot execute the program, be happy if we can link statically
+-    if ( cc_check -lpthread ) ; then
+-      _ld_pthread='-lpthread'
+-    elif ( cc_check -pthread ) ; then
+-     _ld_pthread='-pthread'
+-    else
+-      echores "no static pthread found (v4l, vo_gl, ao_alsa, ao_nas, ao_macosx, Win32 loader disabled)"
+-      _ld_pthread='' ; _nas=no ; _tv_v4l=no ; _macosx=no ; _win32=no
+-    fi
+-  else
+-    echores "no (v4l, vo_gl, ao_alsa, ao_nas, ao_macosx, win32 loader disabled)"
+-    _ld_pthread='' ; _nas=no ; _tv_v4l=no ; _macosx=no ; _win32=no
+-  fi
+-fi
+-if test "$_ld_pthread" != '' ; then
++_ld_pthread="${PTHREAD_LIBS}"
+   echores "yes (using $_ld_pthread)"
+   _pthreads='yes'
+   _def_pthreads='#define HAVE_PTHREADS 1'
+   _def_threads='#define HAVE_THREADS 1'
+-else
+-  echores "no"
+-  _pthreads=''
+-  _def_pthreads='#undef HAVE_PTHREADS'
+-fi
+ 
+ 
+ echocheck "sys/soundcard.h"
+@@ -5323,7 +5262,7 @@
+ if test "$_faad_internal" = auto ; then
+   # the faad check needs a config.h file
+   if not test -f "config.h" ; then
+-    > config.h
++    echo "$_def_lrintf" > config.h
+   fi
+   # internal faad: check if our dear gcc is able to compile it...
+   cp "`pwd`/libfaad2/cfft.c" $TMPC
+@@ -5935,7 +5874,7 @@
+ cat > $TMPC << EOF
+ #include <inttypes.h>
+ #include <x264.h>
+-#if X264_BUILD < 22
++#if X264_BUILD < 29
+ #error We do not support old versions of x264. Get the latest from SVN.
+ #endif
+ int main(void) { x264_encoder_open((void*)0); return 0; }
+@@ -6477,7 +6416,7 @@
+   fi
+   _stripbinaries=no
+ elif test -z "$CFLAGS" ; then
+-    CFLAGS="-O4 $_march $_mcpu $_pipe -ffast-math -fomit-frame-pointer"
++    CFLAGS="-O $_pipe"
+   # always compile with '-g' if .developer:
+   if test -f ".developer" ; then
+     CFLAGS="-g $CFLAGS"
+@@ -6487,6 +6426,9 @@
+     _stripbinaries=no
+   fi
+ else
++  if test "$_runtime_cpudetection" = no ; then
++    CFLAGS="$CFLAGS $_march $_mcpu"
++  fi
+   cat <<EOF
+ 
+ MPlayer compilation will use the CFLAGS set by you, but:
+@@ -6526,7 +6468,7 @@
+   CFLAGS="$CFLAGS -D_REENTRANT"
+ elif bsd ; then
+   # FIXME bsd needs this so maybe other OS'es
+-  CFLAGS="$CFLAGS -D_THREAD_SAFE"
++  CFLAGS="$CFLAGS ${PTHREAD_CFLAGS}"
+ fi
+ # 64 bit file offsets?
+ if test "$_largefiles" = yes || freebsd ; then

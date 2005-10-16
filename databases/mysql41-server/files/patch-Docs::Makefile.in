@@ -1,0 +1,11 @@
+--- Docs/Makefile.in.orig	Fri May 13 13:33:27 2005
++++ Docs/Makefile.in	Fri Jun  3 16:54:40 2005
+@@ -481,7 +481,7 @@
+ 	uninstall-info-am
+ 
+ 
+-all:			txt_files
++all:
+ 
+ txt_files:		../INSTALL-SOURCE ../INSTALL-WIN-SOURCE ../EXCEPTIONS-CLIENT \
+ 			INSTALL-BINARY ../support-files/MacOSX/ReadMe.txt

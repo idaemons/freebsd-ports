@@ -1,0 +1,6 @@
+bin/nmapfe
+bin/xnmap
+@cwd %%X11BASE%%
+share/applications/nmapfe.desktop
+@unexec rmdir %D/share/applications 2>/dev/null || true
+@cwd %%REALPREFIX%%

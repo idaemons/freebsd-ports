@@ -1,0 +1,92 @@
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-gl.so
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-glut.so
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-math3d.so
+lib/gauche/%%VERSION%%/include/gauche/math3d.h
+share/gauche/%%VERSION%%/lib/gl.scm
+share/gauche/%%VERSION%%/lib/gl/glut.scm
+share/gauche/%%VERSION%%/lib/gl/math3d.scm
+@dirrm share/gauche/%%VERSION%%/lib/gl
+%%PORTDOCS%%@unexec install-info --delete %D/info/gauche-gl-refe.info %D/info/dir
+%%PORTDOCS%%@unexec install-info --delete %D/info/gauche-gl-refj.info %D/info/dir
+%%PORTDOCS%%info/gauche-gl-refe.info
+%%PORTDOCS%%info/gauche-gl-refj.info
+%%PORTDOCS%%@exec install-info %D/info/gauche-gl-refe.info %D/info/dir
+%%PORTDOCS%%@exec install-info %D/info/gauche-gl-refj.info %D/info/dir
+%%PORTDOCS%%%%EXAMPLESDIR%%/gears.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example1-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example1-3.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example13-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example13-3.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example13-6.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example13-7.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example2-5.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example2-6.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example2-9.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-5.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-6.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-7.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-8.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example4-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example5-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example5-6.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example5-8.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example5-9.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-3.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-4.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-5.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-7.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example7-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example7-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example7-5.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example8-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example8-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example8-4.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-3.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-4.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-5.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-7.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-8.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/run
+%%PORTDOCS%%%%EXAMPLESDIR%%/mandelbrot.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2brick/3Dlabs-License.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2brick/brick.frag
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2brick/brick.vert
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2brick/ogl2brick.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2brick/run.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2brick/README.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2particle/3Dlabs-License.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2particle/ogl2particle.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2particle/run.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2particle/particle.frag
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2particle/particle.vert
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2particle/README.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/slbook/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/images/foo.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/images/noturn.rgb
+%%PORTDOCS%%%%EXAMPLESDIR%%/images/flower.rgb
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example8-6.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example10-3.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example10-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example8-8.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example10-5.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example10-4.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/cg/cg-gl-vertex-example.cg
+%%PORTDOCS%%%%EXAMPLESDIR%%/cg/cg-gl-vertex-example.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/cg/checkered-sphere-cg.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/cg/run
+%%PORTDOCS%%%%EXAMPLESDIR%%/cg/README
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/slbook/ogl2particle
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/slbook/ogl2brick
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/slbook
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/images
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/glbook
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cg
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

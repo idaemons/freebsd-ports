@@ -1,12 +1,8 @@
-@cd /usr/local
-@owner bin
-@mode 755
-bin/funzip
 bin/unzip
+bin/funzip
 bin/unzipsfx
+bin/zipgrep
 bin/zipinfo
-@mode 644
-man/man1/funzip.1
-man/man1/unzip.1
-man/man1/unzipsfx.1
-man/man1/zipinfo.1
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/WHERE
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,5 @@
+bin/smtpmap
+%%DATADIR%%/fingerprints-conf
+%%DATADIR%%/fingerprints-return
+%%DATADIR%%/fingerprints-rfc
+@dirrm %%DATADIR%%

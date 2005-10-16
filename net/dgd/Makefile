@@ -1,61 +1,95 @@
 # New ports collection makefile for:	dgd
-# Version required:	1.0.8
 # Date created:		23 August 1994
-# Whom:			adam
+# Whom:			adam@veda.is
+#
+# $FreeBSD$
 #
 
-DISTNAME=	dgd-1.0.8
-DISTFILES=	${DISTNAME}.tar.gz
+PORTNAME=	dgd
+PORTVERSION=	1.2p4
+PORTREVISION=	2
+CATEGORIES=	net lang games
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|} \
+		ftp://ftp.dworkin.nl/pub/dgd/ \
+		ftp://ftp.imaginary.com/pub/LPC/servers/DGD/
 
-PATCHFILES=	1.0.8-1.0.8.1.gz 1.0.8.1-1.0.8.2.gz 1.0.8.2-1.0.8.3.gz \
-		1.0.8.3-1.0.8.4.gz 1.0.8.4-1.0.8.5.gz 1.0.8.5-1.0.8.6.gz \
-		1.0.8.6-1.0.8.7.gz 1.0.8.7-1.0.8.8.gz
-PATCHSITE=	epsilon.me.chalmers.se
-NCFTPFLAGS=	-P
-_PATCH_COOKIE=	${.CURDIR}/work/._patch_done
-PATCHLIST=	${.CURDIR}/work/.patchlist
-PATCHLEVEL=	`tail -1 ${PATCHLIST} | sed 's/^.*\.\(.*\)\.gz$$/\1/'`
+MAINTAINER=	glewis@FreeBSD.org
+COMMENT=	Dworkin's Generic Driver (network server)
+
+NO_CDROM=	"no distribution to corporate environment"
+RESTRICTED=	"license required for commercial use"
+
+OPTIONS=	NETWORKING	"With networking kfuns"		off \
+		ANSI		"Allow ANSI escape codes"	off
+
+DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
-PKG_ARGS=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
-		-r ${PKGDIR}/REQ
+PATCH_WRKSRC=	${WRKDIR}/dgd
+ALL_TARGET=	install
+USE_REINPLACE=	yes
 
-pre-fetch:
-	@if [ ! -d ${DISTDIR}/${DISTNAME} ]; then mkdir -p ${DISTDIR}/${DISTNAME}; fi
-	@if [ ! -f ${DISTDIR}/${DISTNAME}.tar.gz ]; then \
-		echo ">> Fetching distribution file from remote site..."; \
-		${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}:${DISTNAME}.tar.gz \
-        		&& mv ${DISTNAME}.tar.gz ${DISTDIR}; \
-	fi
-	@for file in ${PATCHFILES}; do \
-		if [ ! -f ${DISTDIR}/${DISTNAME}/$$file ]; then \
-			echo ">> Fetching patch $$file from remote site...";  \
-			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}:patches/$$file \
-				&& mv patches/$$file ${DISTDIR}/${DISTNAME}; \
-	    	fi \
-	 done
+.include <bsd.port.pre.mk>
 
-# Need to determine whether all author-supplied patches are correctly applied
-### not yet implemented
+.if defined(WITH_NETWORKING)
+PATCH_SITES+=	ftp://noname.franken.de/pub/dgd/
+PATCHFILES+=	Network-1-DGD-1.2p3-patch.gz
+PLIST_SUB+=	NETWORKING=""
+.else
+PLIST_SUB+=	NETWORKING="@comment "
+.endif
 
-pre-patch: extract ${_PATCH_COOKIE}
-	@find -X ${WRKDIR}/dgd -name '*.orig' -print | xargs rm -f
+.ifdef (WITH_ANSI)
+PATCH_SITES+=	http://www.eyesbeyond.com/dgd/
+PATCHFILES+=	ansi.diff
+.endif
 
-${PATCHLIST}:
-	@cd ${DISTDIR}/${DISTNAME}; \
-		ls *.[0-9].gz *.[0-9][0-9].gz \
-		2>/dev/null >${PATCHLIST}
+.if defined(WITH_NETWORKING) || defined(WITH_ANSI)
+PATCH_SITES+=		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|}
+PATCH_DIST_STRIP=	-p1
+PATCH_STRIP=		-p0 -F 3
+.endif
 
-${_PATCH_COOKIE}: ${PATCHLIST}
-	@if [ -s ${PATCHLIST} ]; then \
-		echo "===>  Updating to ${DISTNAME}.${PATCHLEVEL}"; \
-		cd ${DISTDIR}/${DISTNAME}; \
-		gzcat `cat ${PATCHLIST}` | patch -d ${WRKDIR} --quiet -E -p0; \
-	fi
-	@touch -f ${_PATCH_COOKIE};
+do-configure:
+	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:" ${WRKDIR}/dgd/mud.dgd
 
-install: all
-	@chown -R mud.mud ${WRKDIR}/dgd
-	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
-		| tar -C /usr/local -xpf -
+.ifdef (WITH_NETWORKING)
+post-configure:
+	cd ${WRKDIR}/dgd/ && ${FIND} . -name '*.orig' -delete
+.endif
 
-.include <bsd.port.mk>
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/dgd/bin/driver ${PREFIX}/sbin/dgd
+	${INSTALL_PROGRAM} ${WRKDIR}/dgd/bin/precomp ${PREFIX}/bin/precomp
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/dgd/mud.dgd \
+		${PREFIX}/etc/${PORTNAME}/kernel.dgd
+	${MKDIR} ${DATADIR}/kernel
+	cd ${WRKDIR}/dgd/mud && ${FIND} . \
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/kernel
+	# Install an RC script for DGD
+	${CAT} ${FILESDIR}/dgd.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
+		-e "s:%%DATADIR%%:${DATADIR}:" > \
+		${PREFIX}/etc/rc.d/dgd.sh.sample
+	${CHMOD} a+x ${PREFIX}/etc/rc.d/dgd.sh.sample
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/dgd/Copyright ${DOCSDIR}
+.ifdef (WITH_NETWORKING)
+	${INSTALL_DATA} ${WRKDIR}/dgd/Copyright.NETWORK-PACKAGE ${DOCSDIR}
+.endif
+	${INSTALL_DATA} ${WRKDIR}/dgd/Credits ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/dgd/README ${DOCSDIR}
+	cd ${WRKDIR}/dgd/doc && ${FIND} . \
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+.endif
+
+post-install:
+	# Need a temporary directory for certain files
+	${MKDIR} ${DATADIR}/tmp
+	# Run package installation script
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} \
+		POST-INSTALL
+	# Set mudlib ownership
+	-@${CHOWN} -h -R mud:mud ${DATADIR}
+
+.include <bsd.port.post.mk>

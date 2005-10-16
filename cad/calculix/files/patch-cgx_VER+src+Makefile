@@ -1,0 +1,29 @@
+--- cgx_1.3/src/Makefile.orig	Fri Feb 25 22:06:01 2005
++++ cgx_1.3/src/Makefile	Sat Feb 26 20:40:28 2005
+@@ -1,13 +1,13 @@
+ CFLAGS = -O2 -Wall \
+   -I./ \
+   -I/usr/include \
+-  -I/usr/include/GL \
++  -I%%X11BASE%%/include/GL \
+   -I../../libSNL/src \
+-  -I/usr/X11/include 
++  -I%%X11BASE%%/include 
+ 
+ LFLAGS = \
+-  -L/usr/lib -lGL -lGLU -lglut \
+-  -L/usr/X11/lib -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
++  -L%%X11BASE%%/lib -lGL -lGLU -lglut \
++  -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
+   -lm 
+ 
+ # -L/usr/X11/lib64 -lpthread -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
+@@ -121,7 +121,7 @@
+ OLIB = $(SLIB:.c=.o)
+ 
+ cgx: $(OLIB)
+-	g++   $(OLIB)  $(CFLAGS) $(LFLAGS) -o  $@
++	$(CXX)   $(OLIB)  $(CFLAGS) $(LFLAGS) -o  $@
+ 
+ 
+ 

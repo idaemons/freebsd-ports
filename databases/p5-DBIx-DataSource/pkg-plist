@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DataSource/.packlist
+%%SITE_PERL%%/DBIx/DataSource.pm
+%%SITE_PERL%%/DBIx/DataSource/Driver.pm
+%%SITE_PERL%%/DBIx/DataSource/mysql.pm
+%%SITE_PERL%%/DBIx/DataSource/Pg.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DataSource
+@dirrm %%SITE_PERL%%/DBIx/DataSource
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DBIx 2>/dev/null || true

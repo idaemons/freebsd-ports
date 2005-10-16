@@ -1,0 +1,67 @@
+%%SITE_PERL%%/Apache/Gallery.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery/.packlist
+%%DATADIR%%/templates/default/dircomment.tpl
+%%DATADIR%%/templates/default/directory.tpl
+%%DATADIR%%/templates/default/error.tpl
+%%DATADIR%%/templates/default/file.tpl
+%%DATADIR%%/templates/default/gallery.css
+%%DATADIR%%/templates/default/index.tpl
+%%DATADIR%%/templates/default/info.tpl
+%%DATADIR%%/templates/default/interval.tpl
+%%DATADIR%%/templates/default/intervalactive.tpl
+%%DATADIR%%/templates/default/layout.tpl
+%%DATADIR%%/templates/default/navpicture.tpl
+%%DATADIR%%/templates/default/nodircomment.tpl
+%%DATADIR%%/templates/default/nopictureinfo.tpl
+%%DATADIR%%/templates/default/orig.tpl
+%%DATADIR%%/templates/default/picture.tpl
+%%DATADIR%%/templates/default/scale.tpl
+%%DATADIR%%/templates/default/pictureinfo.tpl
+%%DATADIR%%/templates/default/refresh.tpl
+%%DATADIR%%/templates/default/scaleactive.tpl
+%%DATADIR%%/templates/default/showpicture.tpl
+%%DATADIR%%/templates/default/slideshowisoff.tpl
+%%DATADIR%%/templates/default/slideshowoff.tpl
+%%DATADIR%%/templates/new/dircomment.tpl
+%%DATADIR%%/templates/new/directory.tpl
+%%DATADIR%%/templates/new/error.tpl
+%%DATADIR%%/templates/new/file.tpl
+%%DATADIR%%/templates/new/gallery.css
+%%DATADIR%%/templates/new/index.tpl
+%%DATADIR%%/templates/new/info.tpl
+%%DATADIR%%/templates/new/interval.tpl
+%%DATADIR%%/templates/new/intervalactive.tpl
+%%DATADIR%%/templates/new/layout.tpl
+%%DATADIR%%/templates/new/navpicture.tpl
+%%DATADIR%%/templates/new/nodircomment.tpl
+%%DATADIR%%/templates/new/nopictureinfo.tpl
+%%DATADIR%%/templates/new/orig.tpl
+%%DATADIR%%/templates/new/picture.tpl
+%%DATADIR%%/templates/new/scale.tpl
+%%DATADIR%%/templates/new/pictureinfo.tpl
+%%DATADIR%%/templates/new/refresh.tpl
+%%DATADIR%%/templates/new/scaleactive.tpl
+%%DATADIR%%/templates/new/showpicture.tpl
+%%DATADIR%%/templates/new/slideshowisoff.tpl
+%%DATADIR%%/templates/new/slideshowoff.tpl
+www/icons/gallery/agfolder.png
+www/icons/gallery/application-doc.png
+www/icons/gallery/application-pdf.png
+www/icons/gallery/application-rtf.png
+www/icons/gallery/c.png
+www/icons/gallery/sound-mp3.png
+www/icons/gallery/sound-ogg.png
+www/icons/gallery/sound-wav.png
+www/icons/gallery/video-asf.png
+www/icons/gallery/video-avi.png
+www/icons/gallery/video-mov.png
+www/icons/gallery/video-mpeg.png
+www/icons/gallery/video-mpg.png
+www/icons/gallery/video-wmv.png
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@dirrm %%DATADIR%%/templates/default
+@dirrm %%DATADIR%%/templates/new
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%
+@dirrm www/icons/gallery

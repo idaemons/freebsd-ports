@@ -1,0 +1,17 @@
+bin/nethirc
+bin/nethirc.pl
+%%SITE_PERL%%/NetHirc/Channel.pm
+%%SITE_PERL%%/NetHirc/Handlers.pm
+%%SITE_PERL%%/NetHirc/Helpers.pm
+%%SITE_PERL%%/NetHirc/State.pm
+%%SITE_PERL%%/NetHirc/Terminal.pm
+%%SITE_PERL%%/NetHirc/Formats.pm
+%%SITE_PERL%%/NetHirc/Server.pm
+%%SITE_PERL%%/NetHirc/StatsDB.pm
+%%SITE_PERL%%/NetHirc/TerminalEvent.pm
+%%SITE_PERL%%/NetHirc/BigBrother.pm
+%%SITE_PERL%%/NetHirc.pm
+%%SITE_PERL%%/nethirc.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetHirc/.packlist
+@dirrm %%SITE_PERL%%/NetHirc
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetHirc

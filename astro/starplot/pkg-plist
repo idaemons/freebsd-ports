@@ -1,0 +1,27 @@
+bin/starconvert
+bin/starpkg
+bin/starplot
+%%DOCSDIR%%/html/ch1.html
+%%DOCSDIR%%/html/images/bayerdes.png
+%%DOCSDIR%%/html/images/coords.png
+%%DOCSDIR%%/html/images/gcoords.png
+%%DOCSDIR%%/html/images/hrdiagram.png
+%%DOCSDIR%%/html/index.html
+%%DOCSDIR%%/html/starplot.css
+%%EXAMPLESDIR%%/example.spec
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/starplot.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/starplot.mo
+%%NLS%%share/locale/es/LC_MESSAGES/starplot.mo
+share/starplot/sample.stars
+share/starplot/test.stars
+@dirrm share/starplot
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%/html/images
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/locale/en@boldquot/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/en@boldquot 2> /dev/null || true
+@unexec rmdir %D/share/locale/en@quot/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/en@quot 2> /dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/es 2> /dev/null || true

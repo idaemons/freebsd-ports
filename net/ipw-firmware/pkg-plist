@@ -1,0 +1,8 @@
+sbin/%%DRIVERNAME%%control
+%%DATADIR%%/LICENSE
+%%DATADIR%%/%%DRIVERNAME%%-i.fw
+%%DATADIR%%/%%DRIVERNAME%%-p.fw
+%%DATADIR%%/%%DRIVERNAME%%.fw
+@dirrm %%DATADIR%%
+%%WITH_MODULE%%@cwd /
+%%WITH_MODULE%%%%KMODDIR%%/if_%%DRIVERNAME%%.ko

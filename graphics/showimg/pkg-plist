@@ -1,0 +1,230 @@
+bin/showimg
+lib/kde3/libshowimgpart.la
+lib/kde3/libshowimgpart.so
+lib/libshowimgcore.la
+lib/libshowimgcore.so
+lib/libshowimgcore.so.0
+share/applnk/Graphics/showimg.desktop
+share/apps/konqueror/servicemenus/konqshowimg.desktop
+share/apps/showimg/convert2png.pl
+share/apps/showimg/icons/crystalsvg/16x16/actions/viewmag_bis+.png
+share/apps/showimg/icons/crystalsvg/16x16/actions/viewmag_bis-.png
+share/apps/showimg/icons/crystalsvg/16x16/actions/viewmag_full.png
+share/apps/showimg/icons/crystalsvg/16x16/actions/viewmag_lock.png
+share/apps/showimg/icons/crystalsvg/16x16/actions/viewmag_no.png
+share/apps/showimg/icons/crystalsvg/22x22/actions/viewmag_bis+.png
+share/apps/showimg/icons/crystalsvg/22x22/actions/viewmag_bis-.png
+share/apps/showimg/icons/crystalsvg/22x22/actions/viewmag_full.png
+share/apps/showimg/icons/crystalsvg/22x22/actions/viewmag_lock.png
+share/apps/showimg/icons/crystalsvg/22x22/actions/viewmag_no.png
+share/apps/showimg/icons/crystalsvg/32x32/actions/viewmag_bis+.png
+share/apps/showimg/icons/crystalsvg/32x32/actions/viewmag_bis-.png
+share/apps/showimg/icons/crystalsvg/32x32/actions/viewmag_full.png
+share/apps/showimg/icons/crystalsvg/32x32/actions/viewmag_lock.png
+share/apps/showimg/icons/crystalsvg/32x32/actions/viewmag_no.png
+share/apps/showimg/icons/hicolor/16x16/actions/flip.png
+share/apps/showimg/icons/hicolor/16x16/actions/item_rename.png
+share/apps/showimg/icons/hicolor/16x16/actions/miror.png
+share/apps/showimg/icons/hicolor/16x16/actions/rotation_acw.png
+share/apps/showimg/icons/hicolor/16x16/actions/rotation_cw.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_bis+.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_bis-.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_factor.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_full.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_h.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_lock.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_no.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_w.png
+share/apps/showimg/icons/hicolor/22x22/actions/flip.png
+share/apps/showimg/icons/hicolor/22x22/actions/largethumbnails.png
+share/apps/showimg/icons/hicolor/22x22/actions/medthumbnails.png
+share/apps/showimg/icons/hicolor/22x22/actions/miror.png
+share/apps/showimg/icons/hicolor/22x22/actions/rotation_acw.png
+share/apps/showimg/icons/hicolor/22x22/actions/rotation_cw.png
+share/apps/showimg/icons/hicolor/22x22/actions/smallthumbnails.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_bis+.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_bis-.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_factor.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_full.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_lock.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_no.png
+share/apps/showimg/icons/hicolor/22x22/mimetypes/psd.png
+share/apps/showimg/icons/hicolor/32x32/actions/flip.png
+share/apps/showimg/icons/hicolor/32x32/actions/miror.png
+share/apps/showimg/icons/hicolor/32x32/actions/rotation_acw.png
+share/apps/showimg/icons/hicolor/32x32/actions/rotation_cw.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_bis+.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_bis-.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_enlarge.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_factor.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_full.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_h.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_lock.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_no.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_shrink.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_w.png
+share/apps/showimg/icons/hicolor/32x32/mimetypes/psd.png
+share/apps/showimg/icons/hicolor/48x48/mimetypes/psd.png
+share/apps/showimg/icons/hicolor/64x64/mimetypes/psd.png
+share/apps/showimg/pics/No-Ones-Laughing-3.jpg
+share/apps/showimg/pics/bgxpm.png
+share/apps/showimg/pics/border.png
+share/apps/showimg/pics/gradient.png
+share/apps/showimg/pics/layout1.png
+share/apps/showimg/pics/layout2.png
+share/apps/showimg/pics/layout3.png
+share/apps/showimg/pics/layout4.png
+share/apps/showimg/pics/logo.png
+share/apps/showimg/showimgui.rc
+share/apps/showimg/tips
+share/apps/showimgpart/showimgpart.rc
+share/doc/HTML/da/showimg/common
+share/doc/HTML/da/showimg/index.cache.bz2
+share/doc/HTML/da/showimg/index.docbook
+share/doc/HTML/en/showimg/but-back.png
+share/doc/HTML/en/showimg/but-copy.png
+share/doc/HTML/en/showimg/but-cut.png
+share/doc/HTML/en/showimg/but-forward.png
+share/doc/HTML/en/showimg/but-fullscreen.png
+share/doc/HTML/en/showimg/but-go_up.png
+share/doc/HTML/en/showimg/but-home.png
+share/doc/HTML/en/showimg/but-horiz-flip.png
+share/doc/HTML/en/showimg/but-horizontal_flip.png
+share/doc/HTML/en/showimg/but-next-image.png
+share/doc/HTML/en/showimg/but-next_image.png
+share/doc/HTML/en/showimg/but-original_size.png
+share/doc/HTML/en/showimg/but-paste.png
+share/doc/HTML/en/showimg/but-prev-image.png
+share/doc/HTML/en/showimg/but-previous_image.png
+share/doc/HTML/en/showimg/but-refresh.png
+share/doc/HTML/en/showimg/but-reload.png
+share/doc/HTML/en/showimg/but-rotate-left.png
+share/doc/HTML/en/showimg/but-rotate-right.png
+share/doc/HTML/en/showimg/but-rotate_left.png
+share/doc/HTML/en/showimg/but-rotate_right.png
+share/doc/HTML/en/showimg/but-slide-show.png
+share/doc/HTML/en/showimg/but-slide_show.png
+share/doc/HTML/en/showimg/but-stop-thumbs.png
+share/doc/HTML/en/showimg/but-stop.png
+share/doc/HTML/en/showimg/but-toggle-thumbs.png
+share/doc/HTML/en/showimg/but-toggle_thumbnails.png
+share/doc/HTML/en/showimg/but-vert-flip.png
+share/doc/HTML/en/showimg/but-vertical_flip.png
+share/doc/HTML/en/showimg/but-zoom-fit-screen.png
+share/doc/HTML/en/showimg/but-zoom-in.png
+share/doc/HTML/en/showimg/but-zoom-original.png
+share/doc/HTML/en/showimg/but-zoom-out.png
+share/doc/HTML/en/showimg/but-zoom_in.png
+share/doc/HTML/en/showimg/but-zoom_out.png
+share/doc/HTML/en/showimg/but-zoom_to_fit.png
+share/doc/HTML/en/showimg/common
+share/doc/HTML/en/showimg/comparison.png
+share/doc/HTML/en/showimg/index.cache.bz2
+share/doc/HTML/en/showimg/index.docbook
+share/doc/HTML/en/showimg/main-window.png
+share/doc/HTML/es/showimg/common
+share/doc/HTML/es/showimg/index.cache.bz2
+share/doc/HTML/es/showimg/index.docbook
+share/doc/HTML/et/showimg/common
+share/doc/HTML/et/showimg/index.cache.bz2
+share/doc/HTML/et/showimg/index.docbook
+share/doc/HTML/fr/showimg/common
+share/doc/HTML/fr/showimg/index.cache.bz2
+share/doc/HTML/fr/showimg/index.docbook
+share/doc/HTML/it/showimg/common
+share/doc/HTML/it/showimg/index.cache.bz2
+share/doc/HTML/it/showimg/index.docbook
+share/doc/HTML/pt/showimg/common
+share/doc/HTML/pt/showimg/index.cache.bz2
+share/doc/HTML/pt/showimg/index.docbook
+share/doc/HTML/sv/showimg/common
+share/doc/HTML/sv/showimg/index.cache.bz2
+share/doc/HTML/sv/showimg/index.docbook
+share/icons/hicolor/32x32/apps/showimg.png
+share/icons/hicolor/48x48/apps/showimg.png
+share/icons/hicolor/64x64/apps/showimg.png
+share/locale/br/LC_MESSAGES/showimg.mo
+share/locale/cs/LC_MESSAGES/showimg.mo
+share/locale/cy/LC_MESSAGES/showimg.mo
+share/locale/da/LC_MESSAGES/showimg.mo
+share/locale/de/LC_MESSAGES/showimg.mo
+share/locale/en_GB/LC_MESSAGES/showimg.mo
+share/locale/es/LC_MESSAGES/showimg.mo
+share/locale/et/LC_MESSAGES/showimg.mo
+share/locale/fr/LC_MESSAGES/showimg.mo
+share/locale/ga/LC_MESSAGES/showimg.mo
+share/locale/hu/LC_MESSAGES/showimg.mo
+share/locale/it/LC_MESSAGES/showimg.mo
+share/locale/ja/LC_MESSAGES/showimg.mo
+share/locale/nl/LC_MESSAGES/showimg.mo
+share/locale/pl/LC_MESSAGES/showimg.mo
+share/locale/pt/LC_MESSAGES/showimg.mo
+share/locale/pt_BR/LC_MESSAGES/showimg.mo
+share/locale/ro/LC_MESSAGES/showimg.mo
+share/locale/ru/LC_MESSAGES/showimg.mo
+share/locale/sk/LC_MESSAGES/showimg.mo
+share/locale/sr/LC_MESSAGES/showimg.mo
+share/locale/sv/LC_MESSAGES/showimg.mo
+share/locale/ta/LC_MESSAGES/showimg.mo
+share/locale/tr/LC_MESSAGES/showimg.mo
+share/locale/zh_CN/LC_MESSAGES/showimg.mo
+share/mimelnk/image/x-psd.desktop
+share/mimelnk/image/x-sia.desktop
+share/services/showimgpart.desktop
+@unexec rmdir %D/share/mimelnk/image 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/showimg
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/da/showimg
+@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
+@dirrm share/doc/HTML/es/showimg
+@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
+@dirrm share/doc/HTML/et/showimg
+@unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
+@dirrm share/doc/HTML/fr/showimg
+@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
+@dirrm share/doc/HTML/it/showimg
+@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@dirrm share/doc/HTML/pt/showimg
+@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrm share/doc/HTML/sv/showimg
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/showimg/pics
+@dirrm share/apps/showimg/icons/hicolor/64x64/mimetypes
+@dirrm share/apps/showimg/icons/hicolor/64x64
+@dirrm share/apps/showimg/icons/hicolor/48x48/mimetypes
+@dirrm share/apps/showimg/icons/hicolor/48x48
+@dirrm share/apps/showimg/icons/hicolor/32x32/mimetypes
+@dirrm share/apps/showimg/icons/hicolor/32x32/actions
+@dirrm share/apps/showimg/icons/hicolor/32x32
+@dirrm share/apps/showimg/icons/hicolor/22x22/mimetypes
+@dirrm share/apps/showimg/icons/hicolor/22x22/actions
+@dirrm share/apps/showimg/icons/hicolor/22x22
+@dirrm share/apps/showimg/icons/hicolor/16x16/actions
+@dirrm share/apps/showimg/icons/hicolor/16x16
+@dirrm share/apps/showimg/icons/hicolor
+@dirrm share/apps/showimg/icons/crystalsvg/32x32/actions
+@dirrm share/apps/showimg/icons/crystalsvg/32x32
+@dirrm share/apps/showimg/icons/crystalsvg/22x22/actions
+@dirrm share/apps/showimg/icons/crystalsvg/22x22
+@dirrm share/apps/showimg/icons/crystalsvg/16x16/actions
+@dirrm share/apps/showimg/icons/crystalsvg/16x16
+@dirrm share/apps/showimg/icons/crystalsvg
+@dirrm share/apps/showimg/icons
+@dirrm share/apps/showimg
+@unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
+@unexec rmdir %D/share/apps/konqueror 2>/dev/null || true
+@unexec rmdir %D/share/apps/showimgpart 2>/dev/null || true
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Graphics 2>/dev/null || true
+
+@unexec rmdir %D/share/applnk 2>/dev/null || true

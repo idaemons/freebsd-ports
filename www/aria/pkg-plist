@@ -1,0 +1,22 @@
+bin/aria
+share/aria/command.aria
+share/aria/command.aria.template.gz
+share/aria/rc.aria
+share/aria/server.aria
+share/aria/server.aria.template.euc.gz
+share/aria/server.aria.template.gz
+share/aria/useragent.aria
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.euc
+share/locale/cs/LC_MESSAGES/aria.mo
+share/locale/de/LC_MESSAGES/aria.mo
+share/locale/es/LC_MESSAGES/aria.mo
+share/locale/fr/LC_MESSAGES/aria.mo
+share/locale/hu/LC_MESSAGES/aria.mo
+share/locale/it/LC_MESSAGES/aria.mo
+share/locale/ja/LC_MESSAGES/aria.mo
+share/locale/pl/LC_MESSAGES/aria.mo
+share/locale/ru/LC_MESSAGES/aria.mo
+share/locale/zh_TW/LC_MESSAGES/aria.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/aria

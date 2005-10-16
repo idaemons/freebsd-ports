@@ -1,0 +1,23 @@
+@cwd /usr/X11R6
+lib/X11/app-defaults/TiMidity
+lib/X11/%%EUCJP_LOCALE%%/app-defaults/TiMidity
+@cwd /usr/local
+bin/xawmidi
+lib/timidity/bitmaps/back.xbm
+lib/timidity/bitmaps/fwrd.xbm
+lib/timidity/bitmaps/next.xbm
+lib/timidity/bitmaps/pause.xbm
+lib/timidity/bitmaps/play.xbm
+lib/timidity/bitmaps/prev.xbm
+lib/timidity/bitmaps/quit.xbm
+lib/timidity/bitmaps/random.xbm
+lib/timidity/bitmaps/repeat.xbm
+lib/timidity/bitmaps/stop.xbm
+lib/timidity/bitmaps/timidity.xbm
+lib/timidity/interface_a.so
+%%PORTDOCS%%%%DOCSDIR%%/README.xaw
+%%PORTDOCS%%share/doc/ja/timidity++/README.xaw
+@dirrm lib/timidity/bitmaps
+@cwd /usr/X11R6
+@unexec rmdir %D/lib/X11/%%EUCJP_LOCALE%%/app-defaults 2>/dev/null || true
+@unexec rmdir %D/lib/X11/%%EUCJP_LOCALE%% 2>/dev/null || true

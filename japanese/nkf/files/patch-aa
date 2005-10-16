@@ -1,0 +1,34 @@
+--- Makefile.orig	Sun Apr 10 06:01:54 2005
++++ Makefile	Tue May 10 17:03:31 2005
+@@ -1,19 +1,27 @@
+-CC = cc
+-CFLAGS = -O
++PREFIX?= /usr/local
++CC?= cc
++CFLAGS?= -O
+ # CFLAGS = -O3
+ SHAR = shar 
+ # SHAR = shar -T
+-PERL = perl
+-RM = rm -rf
++PERL?= perl
++RM?= rm -rf
++INSTALL?= /usr/bin/install
+ VERSION = 205
+ EXIST = test -f
+ #EXIST = exist #nmake
+ 
+ nkf : nkf.c config.h utf8tbl.o
+ 	$(CC) $(CFLAGS) -o nkf nkf.c utf8tbl.o
++	./nkf -e nkf.1j > nkf.1j.euc
+ 
+ utf8tbl.o : utf8tbl.c config.h
+ 	$(CC) $(CFLAGS) -c utf8tbl.c
++
++install:
++	${INSTALL} -c -o root -g wheel -m 555 nkf ${PREFIX}/bin
++	${INSTALL} -c -o root -g wheel -m 444 nkf.1 ${PREFIX}/man/man1/nkf.1
++	${INSTALL} -c -o root -g wheel -m 444 nkf.1j.euc ${PREFIX}/man/ja/man1/nkf.1
+ 
+ clean:
+ 	-$(RM) nkf.o nkf nkf.in nkf.out nkf$(VERSION) *~ *.bad utf8tbl.o

@@ -1,0 +1,14 @@
+bin/htcobol
+lib/libhtcobol.a
+share/htcobol/htcobolrc
+share/htcobol/htrtconf
+share/htcobol/copybooks/screen.cpy
+%%PORTDOCS%%%%DOCSDIR%%/Comments.old.txt
+%%PORTDOCS%%%%DOCSDIR%%/Compiler-Overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/GAS.asm-i386.Info.txt
+%%PORTDOCS%%%%DOCSDIR%%/ProgramHeaders.Info.txt
+%%PORTDOCS%%%%DOCSDIR%%/VarStructure.Info.txt
+%%PORTDOCS%%%%DOCSDIR%%/compiler-design-future.txt
+@dirrm share/htcobol/copybooks
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/htcobol

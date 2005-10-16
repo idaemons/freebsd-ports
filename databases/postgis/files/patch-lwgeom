@@ -1,0 +1,41 @@
+--- lwgeom/Makefile	Mon Apr  4 06:48:57 2005
++++ lwgeom/Makefile	Thu Apr 21 17:08:37 2005
+@@ -21,10 +21,10 @@
+ 
+ ifeq (${USE_VERSION},71) 
+ 	MODULE_FILENAME = $(LPATH)/$(shlib)
+-	MODULE_INSTALLDIR = $(libdir)
++	MODULE_INSTALLDIR = $(LIBDIR)
+ else
+ 	MODULE_FILENAME = $(LPATH)/$(shlib)
+-	MODULE_INSTALLDIR = $(pkglibdir)
++	MODULE_INSTALLDIR = $(LIBDIR)
+ endif
+ 
+ #---------------------------------------------------------------
+@@ -143,9 +143,9 @@
+ install: all installdirs install-lwgeom-lib install-lwgeom-scripts
+ 
+ install-lwgeom-scripts:
+-	$(INSTALL_DATA) lwpostgis.sql $(DESTDIR)$(datadir)/contrib/lwpostgis.sql
+-	$(INSTALL_DATA) ../spatial_ref_sys.sql $(DESTDIR)$(datadir)/contrib/spatial_ref_sys.sql
+-	$(INSTALL_DATA) ../README.postgis $(DESTDIR)$(docdir)/contrib/README.postgis
++	$(INSTALL_DATA) lwpostgis.sql $(DESTDIR)$(DATADIR)/lwpostgis.sql.default
++	$(INSTALL_DATA) ../spatial_ref_sys.sql $(DESTDIR)$(DATADIR)/spatial_ref_sys.sql
++	$(INSTALL_DATA) ../README.postgis $(DESTDIR)$(DATADIR)/README.postgis
+ 	$(INSTALL_DATA) ../doc/man/pgsql2shp.1 $(DESTDIR)$(mandir)/man1/pgsql2shp.1
+ 	$(INSTALL_DATA) ../doc/man/shp2pgsql.1 $(DESTDIR)$(mandir)/man1/shp2pgsql.1
+ 
+@@ -171,9 +171,9 @@
+ 	sh ../geos_version.sh $(GEOS_DIR) > postgis_geos_version.h
+ 
+ installdirs:
+-	$(mkinstalldirs) $(DESTDIR)$(MODULE_INSTALLDIR)
+-	$(mkinstalldirs) $(DESTDIR)$(datadir)/contrib
+-	$(mkinstalldirs) $(DESTDIR)$(docdir)/contrib
++	$(mkinstalldirs) $(LIBDIR)
++	$(mkinstalldirs) $(DATADIR)
++	$(mkinstalldirs) $(DOCSDIR)
+ 
+ uninstall-lwgeom-scripts:
+ 	rm -f $(DESTDIR)$(datadir)/contrib/lwpostgis.sql

@@ -1,21 +1,27 @@
 # New ports collection makefile for:	tcpblast
-# Version required:	<self contained>
 # Date created:		22 August 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.5 1994/11/21 10:39:08 ats Exp $
+# $FreeBSD$
 #
+# port's source files are in src dir in portball
 
-DISTNAME=	tcpblast
-NO_EXTRACT=	yes
-NO_WRKDIR=	yes
+PORTNAME=	tcpblast
+PORTVERSION=	1.1
+PORTREVISION=	1
+CATEGORIES=	benchmarks net ipv6
+DISTFILES=	# none
 
-fetch:
-	@${DO_NADA}
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Measures the throughput of a tcp connection
 
-pre-clean:
-	@echo "===>  Pre-clean for ${DISTNAME}"
-	@(rm -f ${.CURDIR}/tcpblast)
-	@(cd ${.CURDIR}/src; make clean)
+PLIST_FILES=	bin/tcpblast
+
+WRKSRC=		${WRKDIR}/src
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	${CP} -RP ${.CURDIR}/src ${WRKDIR}
 
 .include <bsd.port.mk>

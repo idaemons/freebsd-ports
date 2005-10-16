@@ -1,0 +1,1 @@
+@unexec sh %D/etc/rc.d/ltmdm.sh stop || true

@@ -1,0 +1,31 @@
+# New ports collection makefile for:	gconf
+# Date created:				28th June 2000
+# Whom:					Ade Lovett <ade@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gconf
+PORTVERSION=	1.0.9
+PORTREVISION=	7
+CATEGORIES=	devel gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/GConf/1.0
+DISTNAME=	GConf-${PORTVERSION}
+DIST_SUBDIR=	gnome
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A configuration database system for GNOME
+
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_X_PREFIX=	yes
+USE_GNOME=	gnomeprefix gnomehack gnometarget glib12 gtk12 oaf libxml orbit
+INSTALLS_SHLIB=	yes
+USE_INC_LIBTOOL_VER=	13
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.mk>
