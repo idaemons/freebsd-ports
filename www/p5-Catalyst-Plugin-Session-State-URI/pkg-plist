@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Catalyst/Plugin/Session/State/URI.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/State
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

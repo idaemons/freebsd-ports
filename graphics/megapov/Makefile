@@ -1,0 +1,64 @@
+# New ports collection makefile for:    MegaPov
+# Date created:         25 July 2003
+# Whom:                 maho@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	megapov
+PORTVERSION=	1.2.1
+CATEGORIES=	graphics
+MASTER_SITES=	http://megapov.inetart.net/packages/unix/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	maho@FreeBSD.org
+COMMENT=	Unofficial extensions of POV-Ray
+
+USE_BZIP2=	yes
+RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
+		vga:${PORTSDIR}/graphics/svgalib
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_XLIB=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+ALL_TARGET=	# empty
+CONFIGURE_ARGS+=	COMPILED_BY="ports@FreeBSD.org"
+LDFLAGS+= -L${LOCALBASE}/lib -L${X11BASE}/lib
+CFLAGS+= -I${LOCALBASE}/include -I${X11BASE}/include
+CXXFLAGS+= -I${LOCALBASE}/include -I${X11BASE}/include
+
+.if defined(WITH_OPTIMIZED_FLAGS)
+CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -Wunused-variable
+CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wunused-variable -Wno-multichar
+.if (${MACHINE_ARCH} == "i386")
+CFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387
+CXXFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387
+.endif # i386
+.endif
+
+pre-build:
+.if !defined(WITH_OPTIMIZED_FLAGS)
+	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
+.endif
+
+do-install:
+	@(cd ${WRKSRC}/unix    ; ${GMAKE} install)
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	@${TAR} -C ${WRKSRC}/doc -cf - . | \
+		${TAR} -C ${DOCSDIR} -xf -
+	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${TAR} -C ${WRKSRC} -cf - include scenes  | \
+		${TAR} -C ${EXAMPLESDIR} -xf -
+	@${FIND} ${EXAMPLESDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+.endif
+
+.include <bsd.port.mk>

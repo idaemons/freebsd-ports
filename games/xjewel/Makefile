@@ -1,21 +1,36 @@
-DISTNAME=	xjewel-1.6
-DISTFILES=	xjewel-1.6.tar.z
-MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
+# New ports collection makefile for:    xjewel
+# Date created:         22 November 1994
+# Whom:                 jmz
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xjewel
+PORTVERSION=	1.6
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/ \
+		ftp://ftp.x.org/R5contrib/
+EXTRACT_SUFX=	.tar.z
+
+MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	X11 dropping jewels game
+
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_IMAKE=	yes
 
+MAN6=		xjewel.6
+
+FONTSDIR=	lib/X11/fonts/local
+PLIST_SUB=	FONTSDIR=${FONTSDIR}
+
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/lib/xjewel.font
-	@mkdir -p ${PREFIX}/man/man6
-	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
-	@(cd ${WRKSRC}/bitmaps/; install -c seven_seg.pcf.Z fonts.dir \
-		${PREFIX}/lib/xjewel.font)
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGREQ} ${PKGNAME} INSTALL
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/bitmaps/seven_seg.pcf.gz ${PREFIX}/${FONTSDIR}
+	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
 
 .include <bsd.port.mk>
-
-install:
-	@(mv ${PREFIX}/bin/xjewel ${PREFIX}/bin/xjewel_; \
-	  echo "#!/bin/sh" >${PREFIX}/bin/xjewel; \
-	  echo "xset +fp ${PREFIX}/lib/xjewel.font" >>${PREFIX}/bin/xjewel; \
-	  echo "xjewel_" >>${PREFIX}/bin/xjewel; \
-	  chmod ugo+x ${PREFIX}/bin/xjewel)

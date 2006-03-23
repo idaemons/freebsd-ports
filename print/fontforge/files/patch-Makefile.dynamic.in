@@ -1,0 +1,34 @@
+--- Makefile.dynamic.in.orig	Thu Nov 17 05:56:25 2005
++++ Makefile.dynamic.in	Sun Dec  4 16:19:03 2005
+@@ -52,17 +52,17 @@
+ 	$(LIBTOOL) --mode=install $(INSTALL) -c libgunicode.la $(libdir)/libgunicode.la
+ 	#cp .libs/*.so.*.* $(libdir)
+ 	$(LIBTOOL) --mode=finish $(libdir)
+-	mkdir -p $(libdir)/pkgconfig
+-	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge.pc $(libdir)/pkgconfig
++	mkdir -p ${PREFIX}/libdata/pkgconfig
++	${BSD_INSTALL_DATA} -c fontforge.pc ${PREFIX}/libdata/pkgconfig
+ 
+ install_docs:
+ 	mkdir -p $(docdir)
+ 	mkdir -p $(docdir)/flags $(docdir)/ja
+ #explicit use of sh to make sure we don't invoke csh with different "if" syntax
+ 	-sh -c "if test -d htdocs/ja >/dev/null ; then mkdir -p $(docdir)/ja ; fi"
+-	-cp htdocs/*.{html,png,gif,pdf} $(docdir)
+-	-cp htdocs/flags/* $(docdir)/flags
+-	-cp htdocs/ja/* $(docdir)/ja
++	${BSD_INSTALL_DATA} htdocs/*.{html,png,gif,pdf} $(docdir)
++	${BSD_INSTALL_DATA} htdocs/flags/* $(docdir)/flags
++	${BSD_INSTALL_DATA} htdocs/ja/* $(docdir)/ja
+ 
+ install_po:
+ 	( cd po ; make install )
+@@ -73,7 +73,7 @@
+ 	mkdir -p $(mandir)/man1
+ 	mkdir -p $(sharedir)
+ 	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge/fontforge $(bindir)
+-	-$(LIBTOOL) --mode=install $(INSTALL) -c fontforge/sfddiff $(bindir)
++	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge/sfddiff $(bindir)
+ #	-rm -f $(bindir)/pfaedit
+ #	(cd $(bindir) ; ln -s fontforge pfaedit)
+ #	cp fontforge/pfaedit-*.ui $(sharedir)

@@ -1,0 +1,25 @@
+
+*******************************************************************
+ To use amavisd-new, you need to install at least one virus scanner.
+ The following virus scanners are available in the FreeBSD ports
+ collection:
+ 
+ /usr/ports/security/vscan	McAfee VirusScan
+ /usr/ports/security/clamav	Clam Antivirus
+ /usr/ports/security/f-prot	F-Prot Antivirus
+ /usr/ports/security/drweb	DrWeb antivirus suite
+
+ Enable amavisd-new in /etc/rc.conf with the following line:
+
+    amavisd_enable="YES"
+
+ If you want to use the amavis sendmail milter interface,
+ you need the following additional line in /etc/rc.conf
+
+    amavis_milter_enable="YES"
+
+ Configuration templates are available in %%PREFIX%%/etc
+ as amavisd.conf-dist, amavisd.conf-sample and amavisd.conf-default.
+ Documentation is available in %%DOCSDIR%%.
+*******************************************************************
+

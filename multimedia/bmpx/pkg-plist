@@ -1,0 +1,231 @@
+bin/bmpx-enqueue-uris
+bin/bmpx-enqueue-files
+bin/bmpx-play-files
+bin/bmpx-web
+bin/bmpx-web-ajax
+bin/bmpx-dbus-introspect
+bin/bmpx-dbus-system-control
+bin/bmpx-dbus-query-list
+bin/bmpx-medialib-browser
+bin/bmpx
+%%PYTHON%%bin/bmpx-client-pygtk
+%%PYTHON%%bin/bmpty
+include/bmpx/dbus.h
+include/libchroma/chroma-list-selection.h
+include/libchroma/chroma-list-column.h
+include/libchroma/chroma-list.h
+include/libchroma/chroma-vscrollbar.h
+include/libchroma/dnd.h
+include/libhrel/libhrel/attr_map.h
+include/libhrel/libhrel/avl_tree_index.h
+include/libhrel/libhrel/btree.h
+include/libhrel/libhrel/hash_index.h
+include/libhrel/libhrel/hash_table.h
+include/libhrel/libhrel/misc.h
+include/libhrel/libhrel/relation.h
+include/libhrel/libhrel/relation_base.h
+include/libhrel/libhrel/relation_diff.h
+include/libhrel/libhrel/relation_intersect.h
+include/libhrel/libhrel/relation_project.h
+include/libhrel/libhrel/relation_restrict.h
+include/libhrel/libhrel/relation_sort.h
+include/libhrel/libhrel/relation_union.h
+include/libhrel/libhrel/stack.h
+include/libhrel/libhrel/tuple.h
+include/libhrel/libhrel/types.h
+libexec/bmpx-bin
+lib/bmpx/plugins/container/libcontainer_folder.a
+lib/bmpx/plugins/container/libcontainer_folder.so
+lib/bmpx/plugins/container/libcontainer_folder.so.0
+lib/bmpx/plugins/container/libcontainer_m3u.a
+lib/bmpx/plugins/container/libcontainer_m3u.so
+lib/bmpx/plugins/container/libcontainer_m3u.so.0
+lib/bmpx/plugins/container/libcontainer_pls.a
+lib/bmpx/plugins/container/libcontainer_pls.so
+lib/bmpx/plugins/container/libcontainer_pls.so.0
+lib/bmpx/plugins/container/libcontainer_query.a
+lib/bmpx/plugins/container/libcontainer_query.so
+lib/bmpx/plugins/container/libcontainer_query.so.0
+lib/bmpx/plugins/container/libcontainer_xspf.a
+lib/bmpx/plugins/container/libcontainer_xspf.so
+lib/bmpx/plugins/container/libcontainer_xspf.so.0
+lib/bmpx/plugins/flow/libflow_linear.a
+lib/bmpx/plugins/flow/libflow_linear.so
+lib/bmpx/plugins/flow/libflow_linear.so.0
+lib/bmpx/plugins/flow/libflow_shuffle.a
+lib/bmpx/plugins/flow/libflow_shuffle.so
+lib/bmpx/plugins/flow/libflow_shuffle.so.0
+lib/bmpx/plugins/transport/libtransport_cdda.a
+lib/bmpx/plugins/transport/libtransport_cdda.so
+lib/bmpx/plugins/transport/libtransport_cdda.so.0
+lib/bmpx/plugins/transport/libtransport_file.a
+lib/bmpx/plugins/transport/libtransport_file.so
+lib/bmpx/plugins/transport/libtransport_file.so.0
+lib/bmpx/plugins/transport/libtransport_http.a
+lib/bmpx/plugins/transport/libtransport_http.so
+lib/bmpx/plugins/transport/libtransport_http.so.0
+lib/bmpx/plugins/transport/libtransport_query.a
+lib/bmpx/plugins/transport/libtransport_query.so
+lib/bmpx/plugins/transport/libtransport_query.so.0
+lib/libchroma.a
+lib/libchroma.so
+lib/libchroma.so.0
+lib/libhrel.a
+lib/libhrel.so
+lib/libhrel.so.1
+@comment %%PYTHON_XCHAT%%lib/xchat/plugins/bmpx-xchat.py
+libdata/pkgconfig/hrel.pc
+share/libhrel/examples/hrel-demo
+share/applications/bmpx.desktop
+share/applications/bmpx_enqueue.desktop
+share/applications/bmpx_play.desktop
+%%PYTHON%%share/bmpx-clients/pygtk/bmpx-client-image.png
+%%PYTHON%%share/bmpx-clients/pygtk/bmpx_client.glade
+%%PYTHON%%share/bmpx-clients/pygtk/bmpx-medialib-browser.in
+%%PYTHON%%share/bmpx-clients/pygtk/bmpx_medialib_browser.glade
+%%DATADIR%%/bmpx-web/functions.js
+%%DATADIR%%/bmpx-web/header.png
+%%DATADIR%%/data/GPL.txt
+%%DATADIR%%/glade/dialog_add_files.glade
+%%DATADIR%%/glade/dialog_bookmarks.glade
+%%DATADIR%%/glade/dialog_export_tracklist.glade
+%%DATADIR%%/glade/dialog_file_info.glade
+%%DATADIR%%/glade/dialog_jump_to_track.glade
+%%DATADIR%%/glade/dialog_library.glade
+%%DATADIR%%/glade/dialog_preferences.glade
+%%DATADIR%%/glade/dialog_streams.glade
+%%DATADIR%%/icons/themes/darksphere/icon_player_128.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_16.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_32.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_48.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_64.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_128.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_16.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_32.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_48.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_64.png
+%%DATADIR%%/icons/themes/display/icon_player_128.png
+%%DATADIR%%/icons/themes/display/icon_player_16.png
+%%DATADIR%%/icons/themes/display/icon_player_32.png
+%%DATADIR%%/icons/themes/display/icon_player_48.png
+%%DATADIR%%/icons/themes/display/icon_player_64.png
+%%DATADIR%%/icons/themes/display/icon_playlist_128.png
+%%DATADIR%%/icons/themes/display/icon_playlist_16.png
+%%DATADIR%%/icons/themes/display/icon_playlist_32.png
+%%DATADIR%%/icons/themes/display/icon_playlist_48.png
+%%DATADIR%%/icons/themes/display/icon_playlist_64.png
+%%DATADIR%%/icons/themes/plastic/icon_player_128.png
+%%DATADIR%%/icons/themes/plastic/icon_player_16.png
+%%DATADIR%%/icons/themes/plastic/icon_player_32.png
+%%DATADIR%%/icons/themes/plastic/icon_player_48.png
+%%DATADIR%%/icons/themes/plastic/icon_player_64.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_128.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_16.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_32.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_48.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_64.png
+%%DATADIR%%/icons/themes/red/icon_library_128.png
+%%DATADIR%%/icons/themes/red/icon_library_16.png
+%%DATADIR%%/icons/themes/red/icon_library_32.png
+%%DATADIR%%/icons/themes/red/icon_library_48.png
+%%DATADIR%%/icons/themes/red/icon_library_64.png
+%%DATADIR%%/icons/themes/red/icon_player_128.png
+%%DATADIR%%/icons/themes/red/icon_player_16.png
+%%DATADIR%%/icons/themes/red/icon_player_32.png
+%%DATADIR%%/icons/themes/red/icon_player_48.png
+%%DATADIR%%/icons/themes/red/icon_player_64.png
+%%DATADIR%%/icons/themes/red/icon_playlist_128.png
+%%DATADIR%%/icons/themes/red/icon_playlist_16.png
+%%DATADIR%%/icons/themes/red/icon_playlist_32.png
+%%DATADIR%%/icons/themes/red/icon_playlist_48.png
+%%DATADIR%%/icons/themes/red/icon_playlist_64.png
+%%DATADIR%%/icons/tray-icons/tray-icon-default.png
+%%DATADIR%%/icons/tray-icons/tray-icon-exit.png
+%%DATADIR%%/icons/tray-icons/tray-icon-paused.png
+%%DATADIR%%/icons/tray-icons/tray-icon-playing.png
+%%DATADIR%%/images/preferences/appearance.png
+%%DATADIR%%/images/preferences/eq.png
+%%DATADIR%%/images/preferences/playback.png
+%%DATADIR%%/images/preferences/playlist.png
+%%DATADIR%%/images/preferences/plugins.png
+%%DATADIR%%/images/about-logo.png
+%%DATADIR%%/images/audio.png
+%%DATADIR%%/images/header-bookmarks.png
+%%DATADIR%%/images/header-library.png
+%%DATADIR%%/images/header-streams.png
+%%DATADIR%%/images/icon-bookmark.png
+%%DATADIR%%/images/icon-playlist.png
+%%DATADIR%%/images/shoutcast.png
+%%DATADIR%%/images/splash.png
+%%DATADIR%%/images/wait.gif
+%%DATADIR%%/images/xiph.png
+%%DATADIR%%/skins/default/README
+%%DATADIR%%/skins/default/balance.bmp
+%%DATADIR%%/skins/default/cbuttons.bmp
+%%DATADIR%%/skins/default/eq_ex.bmp
+%%DATADIR%%/skins/default/eqmain.bmp
+%%DATADIR%%/skins/default/main.bmp
+%%DATADIR%%/skins/default/monoster.bmp
+%%DATADIR%%/skins/default/nums_ex.bmp
+%%DATADIR%%/skins/default/playpaus.bmp
+%%DATADIR%%/skins/default/pledit.bmp
+%%DATADIR%%/skins/default/pledit.txt
+%%DATADIR%%/skins/default/posbar.bmp
+%%DATADIR%%/skins/default/shufrep.bmp
+%%DATADIR%%/skins/default/text.bmp
+%%DATADIR%%/skins/default/titlebar.bmp
+%%DATADIR%%/skins/default/viscolor.txt
+%%DATADIR%%/skins/default/volume.bmp
+%%DATADIR%%/ui/main.ui
+%%DATADIR%%/ui/plmanager.ui
+%%DATADIR%%/ui/tracklist.ui
+%%DATADIR%%/ui/trayicon.ui
+share/icons/hicolor/48x48/apps/bmpx.png
+share/locale/af/LC_MESSAGES/bmpx.mo
+share/locale/bg/LC_MESSAGES/bmpx.mo
+share/locale/cs/LC_MESSAGES/bmpx.mo
+share/locale/de/LC_MESSAGES/bmpx.mo
+share/locale/el/LC_MESSAGES/bmpx.mo
+share/locale/es/LC_MESSAGES/bmpx.mo
+share/locale/fi/LC_MESSAGES/bmpx.mo
+share/locale/fr/LC_MESSAGES/bmpx.mo
+share/locale/hu/LC_MESSAGES/bmpx.mo
+share/locale/ja/LC_MESSAGES/bmpx.mo
+share/locale/lt/LC_MESSAGES/bmpx.mo
+share/locale/pl/LC_MESSAGES/bmpx.mo
+share/locale/pt_BR/LC_MESSAGES/bmpx.mo
+share/locale/ru/LC_MESSAGES/bmpx.mo
+share/locale/sv/LC_MESSAGES/bmpx.mo
+share/locale/zh_CN/LC_MESSAGES/bmpx.mo
+@dirrm %%DATADIR%%/bmpx-web
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/skins/default
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/images/preferences
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/icons/tray-icons
+@dirrm %%DATADIR%%/icons/themes/red
+@dirrm %%DATADIR%%/icons/themes/plastic
+@dirrm %%DATADIR%%/icons/themes/display
+@dirrm %%DATADIR%%/icons/themes/darksphere
+@dirrm %%DATADIR%%/icons/themes
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+@dirrm lib/bmpx/plugins/transport
+@dirrm lib/bmpx/plugins/flow
+@dirrm lib/bmpx/plugins/container
+@dirrm lib/bmpx/plugins
+@dirrm lib/bmpx
+@dirrm include/libchroma
+@dirrm include/libhrel/libhrel
+@dirrm include/libhrel
+@dirrm include/bmpx
+@dirrm share/libhrel/examples
+@dirrm share/libhrel
+%%PYTHON%%@dirrm share/bmpx-clients/pygtk
+%%PYTHON%%@dirrm share/bmpx-clients
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

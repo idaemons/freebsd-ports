@@ -1,0 +1,75 @@
+# $FreeBSD$
+#
+
+    COMMENT = Scientific ports
+
+    SUBDIR += 2dhf
+    SUBDIR += abinit
+    SUBDIR += afni
+    SUBDIR += at
+    SUBDIR += bblimage
+    SUBDIR += buddy
+    SUBDIR += cdcl
+    SUBDIR += cdf
+    SUBDIR += chemtool
+    SUBDIR += chemtool-devel
+    SUBDIR += clhep
+    SUBDIR += dcl
+    SUBDIR += devisor
+    SUBDIR += dft++
+    SUBDIR += euler
+    SUBDIR += felt
+    SUBDIR += flounder
+    SUBDIR += gave
+    SUBDIR += gchempaint
+    SUBDIR += gchemutils
+    SUBDIR += gdis
+    SUBDIR += gerris
+    SUBDIR += getdp
+    SUBDIR += ghemical
+    SUBDIR += gnudatalanguage
+    SUBDIR += gramps
+    SUBDIR += gromacs
+    SUBDIR += gsystem
+    SUBDIR += hdf
+    SUBDIR += hdf5
+    SUBDIR += isaac-cfd
+    SUBDIR += kmovisto
+    SUBDIR += kst
+    SUBDIR += lamprop
+    SUBDIR += libctl
+    SUBDIR += libsvm
+    SUBDIR += libsvm-python
+    SUBDIR += mayavi
+    SUBDIR += mbdyn
+    SUBDIR += mcstas
+    SUBDIR += minc
+    SUBDIR += mmtk
+    SUBDIR += mpb
+    SUBDIR += mpqc
+    SUBDIR += mpqc-mpich
+    SUBDIR += netcdf
+    SUBDIR += oases
+    SUBDIR += omnetpp
+    SUBDIR += openbabel
+    SUBDIR += openfoam
+    SUBDIR += ovt
+    SUBDIR += p5-Chemistry-Elements
+    SUBDIR += paraview
+    SUBDIR += psi3
+    SUBDIR += py-paida
+    SUBDIR += py-scipy
+    SUBDIR += qcl
+    SUBDIR += ruby-dcl
+    SUBDIR += ruby-gphys
+    SUBDIR += simlib
+    SUBDIR += szip
+    SUBDIR += udunits
+    SUBDIR += v_sim
+    SUBDIR += vis5d+
+    SUBDIR += vmd
+    SUBDIR += x11iraf
+    SUBDIR += xloops-ginac
+    SUBDIR += xmakemol
+
+.include <bsd.port.subdir.mk>

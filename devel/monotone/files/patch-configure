@@ -1,0 +1,11 @@
+--- configure.orig	Fri Dec 31 03:17:44 2004
++++ configure	Wed Jan 26 22:20:17 2005
+@@ -5143,7 +5143,7 @@
+ #ifdef __cplusplus
+ "C"
+ #endif
+-const char *_nl_expand_alias ();
++const char *_nl_expand_alias (int);
+ int
+ main ()
+ {

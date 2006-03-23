@@ -1,0 +1,14 @@
+--- wshare/Makefile.common.orig	Sat Mar 27 14:22:02 2004
++++ wshare/Makefile.common	Wed Mar 31 23:33:57 2004
+@@ -15,9 +15,9 @@
+ 
+ .SUFFIXES:	.cxx .o
+ 
+-DDEBUG      = -DDEBUG
++DDEBUG      = $(DEBUG_FLAGS)
+ INCDIR      = ../include
+-CXXOPTS     = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -Wall -O2
++CXXOPTS     = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -Wall $(CFLAGS)
+ LDLIBS      = $(OS_LDLIBS)
+ 
+ BINDEST     = ../bin

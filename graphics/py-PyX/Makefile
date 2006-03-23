@@ -1,0 +1,40 @@
+# ex:ts=8
+# Ports collection makefile for:	PyX
+# Date created:			Jun 8, 2004
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	PyX
+PORTVERSION=	0.8
+CATEGORIES=	graphics python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Python package for the creation of encapsulated PostScript figures
+
+BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX
+
+USE_PYTHON=	2.1+
+USE_PYDISTUTILS=	yes
+USE_REINPLACE=	yes
+
+PLIST_FILES=	etc/pyxrc
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc|etc|g' ${WRKSRC}/setup.py
+
+post-install:
+	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/pyx ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/pyx -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/share/pyx ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/share/pyx -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+
+.include <bsd.port.mk>

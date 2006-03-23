@@ -1,0 +1,23 @@
+--- Makefile.orig	Thu Mar 14 14:03:49 2002
++++ Makefile	Sun Jan 22 20:15:17 2006
+@@ -1,10 +1,7 @@
+-FREETYPE_BASE=/usr/include/freetype2
+-FREETYPE_INCL=-I$(FREETYPE_BASE)/.
+-FREETYPE_LIB=/usr/lib/libfreetype.so
+-
+-DEBUG=-ggdb
+-CXX=g++
+-CXXFLAGS=-Wall -pedantic $(FREETYPE_INCL) $(DEBUG)
++FREETYPE_INCL=`freetype-config --cflags`
++FREETYPE_LIB=`freetype-config --libs`
+ 
+-LDFLAGS=$(FREETYPE_LIB) $(DEBUG)
++CXXFLAGS+=$(FREETYPE_INCL)
++
++LDFLAGS+=$(FREETYPE_LIB)
+ 
+@@ -21,3 +18,3 @@
+ parser.cpp: encoding.l
+-	    flex -i -8 -o$@ $<
++	    lex -i -8 -o$@ $<
+ 

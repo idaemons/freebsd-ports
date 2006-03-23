@@ -1,0 +1,22 @@
+--- vm/Makefile	Thu Aug 21 04:23:17 2003
++++ vm/Makefile.patch	Thu Sep 25 00:26:25 2003
+@@ -19,8 +19,8 @@
+ #LDASMOPT		= -lasm
+ 
+ # Uncommant that to use libreadline
+-#READLNOPT		= -DUSE_READLN
+-#LDREADLNOPT		= -lreadline -ltermcap
++READLNOPT		= -DUSE_READLN
++LDREADLNOPT		= -lreadline -ltermcap
+ 
+ 
+ # End of configurable Makefile
+@@ -40,7 +40,7 @@
+ RM			= rm -f
+ NAME			= elfsh
+ 
+-CFLAGS			= -rdynamic -fPIC -g3 -O2 -Wall -Iinclude \
++CFLAGS			+= -rdynamic -fPIC -g3 -Wall -Iinclude \
+ 			-I../libhash/include/ -I../libelfsh/include/ \
+ 			-DELFSH_INTERN $(DLOPT) $(ASMOPT) $(READLNOPT)
+ 

@@ -1,0 +1,31 @@
+--- asterisk-driver/Makefile.orig	Wed Jan 18 11:43:28 2006
++++ asterisk-driver/Makefile	Wed Jan 18 11:55:34 2006
+@@ -90,7 +90,7 @@
+ LIBH323=$(LIBH323NAME)
+ 
+ ifndef SKIP_EXTLIBS
+-	EXTLIBS=$(shell $(PWLIBDIR)/make/ptlib-config --libs)
++	EXTLIBS=$(shell $(PWLIBDIR)/make/ptlib-config --ldflags --libs)
+ endif
+ 
+ CFLAGS += -pipe -Wstrict-prototypes -Wmissing-prototypes \
+@@ -110,14 +110,15 @@
+ 
+ install:
+ 	if [ ! -d $(DESTDIR)$(ASTERISKMODDIR) ]; then \
+-		$(INSTALL) -d $(DESTDIR)$(ASTERISKMODDIR); \
++		$(MKDIR) $(DESTDIR)$(ASTERISKMODDIR); \
+ 	fi
+-	$(INSTALL) $(TARGET) $(DESTDIR)$(ASTERISKMODDIR)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(ASTERISKMODDIR)
+ 	if [ ! -d $(DESTDIR)$(ASTERISKETCDIR) ]; then \
+-		$(INSTALL) -d $(DESTDIR)$(ASTERISKETCDIR); \
++		$(MKDIR) $(DESTDIR)$(ASTERISKETCDIR); \
+ 	fi
++	$(BSD_INSTALL_DATA) oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf.sample; \
+ 	if [ ! -f $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf ]; then \
+-		$(INSTALL) -m 0644 oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf; \
++		$(BSD_INSTALL_DATA) oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf; \
+ 	fi
+ 	@echo
+ 	@echo " +----------   Asterisk-oh323 Installation Complete   ----------+ "

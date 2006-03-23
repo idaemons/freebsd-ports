@@ -1,0 +1,12 @@
+bin/fcronsighup
+bin/fcrontab
+bin/fcrondyn
+etc/fcron.allow.dist
+etc/fcron.conf.dist
+etc/fcron.deny.dist
+sbin/fcron
+%%EXAMPLESDIR%%/fcron.pam
+%%EXAMPLESDIR%%/fcrontab-operator
+%%EXAMPLESDIR%%/fcrontab-root
+%%EXAMPLESDIR%%/fcrontab.pam
+@dirrm %%EXAMPLESDIR%%

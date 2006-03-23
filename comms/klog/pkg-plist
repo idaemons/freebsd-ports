@@ -1,0 +1,14 @@
+bin/klog
+share/applnk/Applications/klog.desktop
+share/doc/HTML/en/klog/common
+share/doc/HTML/en/klog/index.cache.bz2
+share/doc/HTML/en/klog/index.docbook
+share/icons/locolor/16x16/apps/klog.png
+share/icons/locolor/32x32/apps/klog.png
+@dirrm share/doc/HTML/en/klog
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
+@dirrmtry share/applnk/Applications

@@ -1,0 +1,5 @@
+include/GL/gle.h
+lib/libgle.a
+lib/libgle.la
+lib/libgle.so
+lib/libgle.so.3

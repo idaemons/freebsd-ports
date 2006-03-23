@@ -1,0 +1,8 @@
+bin/ggiterm
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/README
+%%DATADIR%%/ggiterm.png
+%%DATADIR%%/ggiterm.svg
+%%DATADIR%%/ggiterm.termcap
+@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

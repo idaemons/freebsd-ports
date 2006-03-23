@@ -1,0 +1,4 @@
+bin/openmcu
+share/doc/openh323/openmcu/ReadMe.txt
+@dirrmtry share/doc/openh323/openmcu
+@dirrmtry share/doc/openh323

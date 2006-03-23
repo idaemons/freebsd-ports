@@ -1,0 +1,3 @@
+etc/rc.d/matrix_saver.sh
+modules/matrix_saver.ko
+@unexec rmdir -p %D/modules 2>/dev/null || true

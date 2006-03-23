@@ -1,0 +1,15 @@
+--- Makefile.orig	Sat May  7 05:50:48 2005
++++ Makefile	Sun Oct  9 12:45:33 2005
+@@ -9,10 +9,9 @@
+ INSTALL_DIR=/usr/local/share
+ INSTALL_BIN_DIR=/usr/local/bin
+ 
+-CXX = g++
+-CXXFLAGS = $(shell sdl-config --cflags) -O3
++CXXFLAGS = $(CFLAGS) -O3 $(shell sdl-config --cflags) $(shell freetype-config --cflags)
+ DEFINES = -D__linux__
+-LDFLAGS = $(shell sdl-config --libs) -lSDL_image -lSDL_mixer -lSDL_gfx -lboost_filesystem
++LDFLAGS = $(shell sdl-config --libs) -lSDL_image -lSDL_mixer -lSDL_gfx -lboost_filesystem $(shell freetype-config --libs)
+ 
+ OBJS = AIInterpreter.o AutoFireUnit.o BCCompiler.o DerivedGroups.o DragWindow.o \
+ 	ForceSelect.o ForceSelectWin.o GenWindow.o GenWindow_Base.o Globals.o \

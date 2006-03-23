@@ -1,0 +1,45 @@
+@comment $FreeBSD$
+bin/snort
+etc/snort/classification.config-sample
+etc/snort/gen-msg.map-sample
+etc/snort/generators-sample
+etc/snort/reference.config-sample
+etc/snort/sid-sample
+etc/snort/sid-msg.map-sample
+etc/snort/snort.conf-sample
+etc/snort/threshold.conf-sample
+etc/snort/unicode.map-sample
+@dirrmtry etc/snort
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP
+%%PORTDOCS%%%%DOCSDIR%%/README.INLINE
+%%PORTDOCS%%%%DOCSDIR%%/README.PLUGINS
+%%PORTDOCS%%%%DOCSDIR%%/README.UNSOCK
+%%PORTDOCS%%%%DOCSDIR%%/README.WIN32
+%%PORTDOCS%%%%DOCSDIR%%/README.alert_order
+%%PORTDOCS%%%%DOCSDIR%%/README.asn1
+%%PORTDOCS%%%%DOCSDIR%%/README.csv
+%%PORTDOCS%%%%DOCSDIR%%/README.database
+%%PORTDOCS%%%%DOCSDIR%%/README.event_queue
+%%PORTDOCS%%%%DOCSDIR%%/README.flow
+%%PORTDOCS%%%%DOCSDIR%%/README.flowbits
+%%PORTDOCS%%%%DOCSDIR%%/README.flow-portscan
+%%PORTDOCS%%%%DOCSDIR%%/README.frag3
+%%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
+%%PORTDOCS%%%%DOCSDIR%%/README.sfportscan
+%%PORTDOCS%%%%DOCSDIR%%/README.thresholding
+%%PORTDOCS%%%%DOCSDIR%%/README.wireless
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
+%%PORTDOCS%%%%DOCSDIR%%/USAGE
+%%PORTDOCS%%%%DOCSDIR%%/faq.pdf
+%%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/snort_schema_v106.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/create_mssql
+%%EXAMPLESDIR%%/create_mysql
+%%EXAMPLESDIR%%/create_oracle.sql
+%%EXAMPLESDIR%%/create_postgresql
+@dirrm %%EXAMPLESDIR%%

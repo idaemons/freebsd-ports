@@ -1,0 +1,22 @@
+--- configure.orig	Fri Sep  2 20:22:43 2005
++++ configure	Fri Sep  2 20:37:36 2005
+@@ -24917,8 +24917,10 @@
+         PKGTEST="no"
+     PREFIX_OPENSSL=$OPT_SSL
+     LIB_OPENSSL="$PREFIX_OPENSSL/lib$libsuff"
++    if ! [ "$PREFIX_OPENSSL" = "/usr" ]; then
+     LDFLAGS="$LDFLAGS -L$LIB_OPENSSL"
+     CPPFLAGS="$CPPFLAGS -I$PREFIX_OPENSSL/include/openssl -I$PREFIX_OPENSSL/include"
++    fi
+     ;;
+   esac
+ 
+@@ -32576,7 +32578,7 @@
+ main ()
+ {
+ #ifndef basename
+-  char *p = (char *) basename;
++  char *(*p)(const char *) = basename;
+ #endif
+ 
+   ;

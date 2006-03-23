@@ -1,0 +1,38 @@
+--- Makefile.in.orig	Mon Aug  9 11:32:55 2004
++++ Makefile.in	Thu Dec 23 11:22:02 2004
+@@ -182,7 +182,7 @@
+ 		chown "$(DEFANGUSER)" $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-ip-key > /dev/null 2>&1 || true; \
+ 		mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ > /dev/null 2>&1 || true; \
+ 		chown "$(DEFANGUSER)" $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || true; \
+-		chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || exit 1; \
++		chmod 710 $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || exit 1; \
+ 		mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ > /dev/null 2>&1 || true; \
+ 		chown "$(DEFANGUSER)" $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ || true; \
+ 		chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ || exit 1; \
+@@ -196,12 +196,11 @@
+ 	-mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man5 && chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man5
+ 	-mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man7 && chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man7
+ 	-mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man8 && chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man8
+-	-test ! -d $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || true
++	-test ! -d $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && chmod 710 $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || true
+ 	-test ! -d $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ && mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ && chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ || true
+ 
+-	if test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter ; then \
+-		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter.example || exit 1; \
+-	else \
++	@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter.example
++	if !(test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter) ; then \
+ 		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter || exit 1; \
+ 	fi
+ 
+@@ -221,9 +220,8 @@
+ 	if test "$(HAVE_SPAM_ASSASSIN)" = "yes" ; then \
+ 		mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR} > /dev/null 2>&1 ; \
+ 		chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR} ;\
+-		if test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf ; then \
+ 			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf.example || exit 1; \
+-		else \
++		if !(test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf) ; then \
+ 			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf || exit 1; \
+ 		fi \
+ 	fi

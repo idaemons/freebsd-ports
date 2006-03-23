@@ -1,103 +1,187 @@
-@cd /usr/X11R6
-@mode 755
-@owner bin
-@group bin
+@comment $FreeBSD$
+%%DATADIR%%/CreateLibrary.sh
+%%DATADIR%%/CreateLibraryContents.sh
+%%DATADIR%%/ListLibraryContents.sh
+%%DATADIR%%/Pcb
+%%DATADIR%%/QueryLibrary.sh
+%%DATADIR%%/default_font
+%%DATADIR%%/examples/LED
+%%DATADIR%%/examples/LED.NET
+%%DATADIR%%/examples/LED2
+%%DATADIR%%/examples/libraries/example.inc
+%%DATADIR%%/examples/libraries/example.list
+%%DATADIR%%/examples/libraries/example.m4
+%%DATADIR%%/m4/TTL_74xx_DIL.list
+%%DATADIR%%/m4/TTL_74xx_DIL.m4
+%%DATADIR%%/m4/amp.inc
+%%DATADIR%%/m4/amp.list
+%%DATADIR%%/m4/amp.m4
+%%DATADIR%%/m4/amphenol.inc
+%%DATADIR%%/m4/amphenol.list
+%%DATADIR%%/m4/amphenol.m4
+%%DATADIR%%/m4/bga.inc
+%%DATADIR%%/m4/bourns.inc
+%%DATADIR%%/m4/bourns.list
+%%DATADIR%%/m4/bourns.m4
+%%DATADIR%%/m4/common.m4
+%%DATADIR%%/m4/connector.inc
+%%DATADIR%%/m4/connector.list
+%%DATADIR%%/m4/connector.m4
+%%DATADIR%%/m4/crystal.list
+%%DATADIR%%/m4/crystal.m4
+%%DATADIR%%/m4/cts.inc
+%%DATADIR%%/m4/cts.list
+%%DATADIR%%/m4/cts.m4
+%%DATADIR%%/m4/dil.inc
+%%DATADIR%%/m4/geda.inc
+%%DATADIR%%/m4/geda.list
+%%DATADIR%%/m4/geda.m4
+%%DATADIR%%/m4/generic.list
+%%DATADIR%%/m4/generic.m4
+%%DATADIR%%/m4/genericsmt.inc
+%%DATADIR%%/m4/genericsmt.list
+%%DATADIR%%/m4/genericsmt.m4
+%%DATADIR%%/m4/gtag.list
+%%DATADIR%%/m4/gtag.m4
+%%DATADIR%%/m4/jerry.list
+%%DATADIR%%/m4/jerry.m4
+%%DATADIR%%/m4/johnstech.inc
+%%DATADIR%%/m4/johnstech.list
+%%DATADIR%%/m4/johnstech.m4
+%%DATADIR%%/m4/linear.list
+%%DATADIR%%/m4/linear.m4
+%%DATADIR%%/m4/logic.list
+%%DATADIR%%/m4/logic.m4
+%%DATADIR%%/m4/lsi.list
+%%DATADIR%%/m4/lsi.m4
+%%DATADIR%%/m4/memory.list
+%%DATADIR%%/m4/memory.m4
+%%DATADIR%%/m4/minicircuits.inc
+%%DATADIR%%/m4/minicircuits.list
+%%DATADIR%%/m4/minicircuits.m4
+%%DATADIR%%/m4/misc.inc
+%%DATADIR%%/m4/optical.list
+%%DATADIR%%/m4/optical.m4
+%%DATADIR%%/m4/panasonic.inc
+%%DATADIR%%/m4/panasonic.list
+%%DATADIR%%/m4/panasonic.m4
+%%DATADIR%%/m4/pci.inc
+%%DATADIR%%/m4/pci.list
+%%DATADIR%%/m4/pci.m4
+%%DATADIR%%/m4/plcc.inc
+%%DATADIR%%/m4/qfn.inc
+%%DATADIR%%/m4/qfp.inc
+%%DATADIR%%/m4/qfp2.inc
+%%DATADIR%%/m4/qfpdj.inc
+%%DATADIR%%/m4/resistor_0.25W.list
+%%DATADIR%%/m4/resistor_0.25W.m4
+%%DATADIR%%/m4/resistor_adjust.inc
+%%DATADIR%%/m4/resistor_adjust.list
+%%DATADIR%%/m4/resistor_adjust.m4
+%%DATADIR%%/m4/resistor_array.list
+%%DATADIR%%/m4/resistor_array.m4
+%%DATADIR%%/m4/rules.inc
+%%DATADIR%%/m4/smt.inc
+%%DATADIR%%/m4/texas_inst_amplifier.list
+%%DATADIR%%/m4/texas_inst_amplifier.m4
+%%DATADIR%%/m4/texas_inst_voltage_reg.list
+%%DATADIR%%/m4/texas_inst_voltage_reg.m4
+%%DATADIR%%/m4/to.inc
+%%DATADIR%%/m4/transistor.list
+%%DATADIR%%/m4/transistor.m4
+%%DATADIR%%/m4/zif.inc
+%%DATADIR%%/newlib/2_pin_thru-hole_packages/0.125W_Carbon_Resistor
+%%DATADIR%%/newlib/2_pin_thru-hole_packages/1W_Carbon_Resistor
+%%DATADIR%%/newlib/2_pin_thru-hole_packages/CK05_type_Capacitor
+%%DATADIR%%/newlib/2_pin_thru-hole_packages/CK06_type_capacitor
+%%DATADIR%%/newlib/2_pin_thru-hole_packages/IRU1015-33CT_3.3V_reg_TO220
+%%DATADIR%%/newlib/2_pin_thru-hole_packages/RN55_type_0.1W_Resistor
+%%DATADIR%%/newlib/2_pin_thru-hole_packages/T1.75_LED
+%%DATADIR%%/newlib/analog-devices/ADC12138CIMSA
+%%DATADIR%%/newlib/burr-brown/OPA340_SOT23-5
+%%DATADIR%%/newlib/connectors/100_Pin_jack
+%%DATADIR%%/newlib/connectors/16x1_SMD_jack
+%%DATADIR%%/newlib/connectors/3terminal_screw_block
+%%DATADIR%%/newlib/connectors/72pin45degreeSIMMconnector
+%%DATADIR%%/newlib/connectors/MOLEX_miniFitJr-12pin
+%%DATADIR%%/newlib/connectors/Power_Jack
+%%DATADIR%%/newlib/connectors/RightAngleSMA
+%%DATADIR%%/newlib/connectors/SJ-3523-SMT_3.5mm_stereo_jack
+%%DATADIR%%/newlib/crystal/CTX169_oscillator
+%%DATADIR%%/newlib/electro-optics/IRF_optical_switch
+%%DATADIR%%/newlib/generic_SMD_packages/0805_reflow_solder
+%%DATADIR%%/newlib/generic_SMD_packages/0805_wave_solder
+%%DATADIR%%/newlib/generic_SMD_packages/1206_reflow_solder
+%%DATADIR%%/newlib/generic_SMD_packages/SOT-23_Transistor
+%%DATADIR%%/newlib/headers/0.1_inch_10pin
+%%DATADIR%%/newlib/headers/0.1_inch_2pin
+%%DATADIR%%/newlib/headers/2mm_8pin_header
+%%DATADIR%%/newlib/msp430/MSP430F1121
+%%DATADIR%%/newlib/msp430/MSP430F1121+jtag
+%%DATADIR%%/newlib/not_vetted_ingo/pc104+.ele
+%%DATADIR%%/newlib/not_vetted_ingo/pc104.ele
+%%DATADIR%%/newlib/not_vetted_ingo/pq100.ele
+%%DATADIR%%/newlib/not_vetted_ingo/pq128.ele
+%%DATADIR%%/newlib/not_vetted_ingo/pq144.ele
+%%DATADIR%%/newlib/not_vetted_ingo/pq160.ele
+%%DATADIR%%/newlib/not_vetted_ingo/pq208.ele
+%%DATADIR%%/newlib/not_vetted_ingo/pq240.ele
+%%DATADIR%%/newlib/not_vetted_ingo/pq304.ele
+%%DATADIR%%/newlib/not_vetted_ingo/pq32.ele
+%%DATADIR%%/newlib/not_vetted_ingo/pq44.ele
+%%DATADIR%%/newlib/not_vetted_ingo/smt0402.ele
+%%DATADIR%%/newlib/not_vetted_ingo/smt0603.ele
+%%DATADIR%%/newlib/not_vetted_ingo/smt0805.ele
+%%DATADIR%%/newlib/not_vetted_ingo/smt1206.ele
+%%DATADIR%%/newlib/not_vetted_ingo/smt1210.ele
+%%DATADIR%%/newlib/not_vetted_ingo/smt1913.ele
+%%DATADIR%%/newlib/not_vetted_ingo/smt2416.ele
+%%DATADIR%%/newlib/tests/14DIP_oval_pad
+%%DATADIR%%/newlib/tests/Generic_TSOP48_Flash
+%%DATADIR%%/newlib/tests/MONOBLOCK_large
+%%DATADIR%%/newlib/tests/StrongARM_CPU
+%%DATADIR%%/newlib/tests/TK11950
+%%DATADIR%%/newlib/tests/TO99fromLED
+%%DATADIR%%/newlib/tests/UART
+%%DATADIR%%/newlib/tests/monoblock_small
+%%DATADIR%%/pcb-menu.res
+%%DATADIR%%/pcblib
+%%DATADIR%%/pcblib.contents
+%%DATADIR%%/qfp-ui
+%%DATADIR%%/qfp.dat
+%%DATADIR%%/tools/MergePCBPS
+%%DATADIR%%/tools/Merge_dimPCBPS
+%%DATADIR%%/tools/PCB2HPGL
+%%DATADIR%%/tools/apctools.zip
+%%DATADIR%%/tools/gerbertotk.c
+%%DATADIR%%/tools/pcb2ncap.tgz
+%%DATADIR%%/tools/tgo2pcb.tcl
+%%DATADIR%%/tutorial/tut1.pcb
+bin/MergePCBPS
+bin/Merge_dimPCBPS
 bin/pcb
-@cd /usr/X11R6/lib/X11
-@mode 644
-@owner bin
-@group bin
-pcb/default_font
-pcb/circuits
-pcb/circuits/27512
-pcb/circuits/ti34010_plcc
-pcb/circuits/scsi_connector_50pin
-pcb/circuits/rtc62421
-pcb/circuits/r_tr_400
-pcb/circuits/r_sil_1x8
-pcb/circuits/r_sil_1x4
-pcb/circuits/r_400
-pcb/circuits/plcc84
-pcb/circuits/plcc68
-pcb/circuits/plcc52
-pcb/circuits/oscillator
-pcb/circuits/mc68hc11_plcc
-pcb/circuits/mc68882_pga
-pcb/circuits/mc68030_pga
-pcb/circuits/mc68008_plcc
-pcb/circuits/mc68000_dil
-pcb/circuits/max691
-pcb/circuits/max690
-pcb/circuits/max680
-pcb/circuits/max667
-pcb/circuits/max233
-pcb/circuits/max232
-pcb/circuits/max222
-pcb/circuits/jumper
-pcb/circuits/dil8
-pcb/circuits/dil64
-pcb/circuits/dil40
-pcb/circuits/dil32
-pcb/circuits/dil28
-pcb/circuits/dil24wide
-pcb/circuits/dil24small
-pcb/circuits/dil20
-pcb/circuits/dil18
-pcb/circuits/dil16
-pcb/circuits/d_300
-pcb/circuits/crystal_300
-pcb/circuits/connector_50pin
-pcb/circuits/connector_20pin
-pcb/circuits/connector_10pin
-pcb/circuits/c_uni_100_small
-pcb/circuits/c_uni_100_med
-pcb/circuits/c_bi_100_small
-pcb/circuits/c_bi_100_med
-pcb/circuits/bt484_plcc
-pcb/circuits/82077_plcc
-pcb/circuits/7485
-pcb/circuits/74688
-pcb/circuits/74645
-pcb/circuits/74592
-pcb/circuits/74574
-pcb/circuits/74573
-pcb/circuits/74541
-pcb/circuits/74538
-pcb/circuits/74519
-pcb/circuits/74373
-pcb/circuits/74367
-pcb/circuits/7432
-pcb/circuits/74292
-pcb/circuits/74245
-pcb/circuits/74244
-pcb/circuits/74157
-pcb/circuits/74148
-pcb/circuits/74145
-pcb/circuits/74139
-pcb/circuits/74138
-pcb/circuits/7410
-pcb/circuits/7407
-pcb/circuits/7404
-pcb/circuits/7401
-pcb/circuits/7400
-pcb/circuits/68681
-pcb/circuits/628128
-pcb/circuits/62256
-pcb/circuits/514100
-pcb/circuits/511000
-pcb/circuits/wd33c93a_dil
-pcb/packages/dil14.pkg
-pcb/packages/plcc68.pkg
-pcb/packages/plcc52.pkg
-pcb/packages/dil8.pkg
-pcb/packages/dil64.pkg
-pcb/packages/dil40.pkg
-pcb/packages/dil32.pkg
-pcb/packages/dil28.pkg
-pcb/packages/dil24wide.pkg
-pcb/packages/dil24small.pkg
-pcb/packages/dil20.pkg
-pcb/packages/dil18.pkg
-pcb/packages/dil16.pkg
-pcb/packages/plcc84.pkg
-app-defaults/Pcb
+bin/pcb-bin
+@exec /bin/mkdir -p %D/%%DATADIR%%/newlib/toko
+@exec /bin/mkdir -p %D/%%DATADIR%%/newlib/sockets
+@exec /bin/mkdir -p %D/%%DATADIR%%/newlib/cypress
+@dirrm %%DATADIR%%/tutorial
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%/newlib/toko
+@dirrm %%DATADIR%%/newlib/tests
+@dirrm %%DATADIR%%/newlib/sockets
+@dirrm %%DATADIR%%/newlib/not_vetted_ingo
+@dirrm %%DATADIR%%/newlib/msp430
+@dirrm %%DATADIR%%/newlib/headers
+@dirrm %%DATADIR%%/newlib/generic_SMD_packages
+@dirrm %%DATADIR%%/newlib/electro-optics
+@dirrm %%DATADIR%%/newlib/cypress
+@dirrm %%DATADIR%%/newlib/crystal
+@dirrm %%DATADIR%%/newlib/connectors
+@dirrm %%DATADIR%%/newlib/burr-brown
+@dirrm %%DATADIR%%/newlib/analog-devices
+@dirrm %%DATADIR%%/newlib/2_pin_thru-hole_packages
+@dirrm %%DATADIR%%/newlib
+@dirrm %%DATADIR%%/m4
+@dirrm %%DATADIR%%/examples/libraries
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%

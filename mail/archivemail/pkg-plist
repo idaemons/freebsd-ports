@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+bin/archivemail
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/archivemail_all
+%%EXAMPLESDIR%%/test_archivemail.py
+@dirrm %%EXAMPLESDIR%%

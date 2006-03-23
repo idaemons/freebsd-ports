@@ -1,0 +1,19 @@
+bin/createPYMB
+bin/fcitx
+bin/mb2txt
+bin/txt2mb
+%%DATADIR%%/data/cj.mb
+%%DATADIR%%/data/erbi.mb
+%%DATADIR%%/data/punc.mb
+%%DATADIR%%/data/pySym.mb
+%%DATADIR%%/data/pybase.mb
+%%DATADIR%%/data/pyphrase.mb
+%%DATADIR%%/data/sp.dat
+%%DATADIR%%/data/tables.conf
+%%DATADIR%%/data/wbx.mb
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+%%DOCSDIR%%/cjkvinput.txt
+%%DOCSDIR%%/fcitx3.pdf
+%%DOCSDIR%%/wb_fh.htm
+@dirrm %%DOCSDIR%%

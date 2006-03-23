@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Fri Sep 23 14:22:12 2005
++++ Makefile.in	Fri Jan 27 09:45:18 2006
+@@ -32,7 +32,7 @@
+ MAKE = @MAKE@
+ 
+ #this is the standard CFLAGS options, this is what most people should use
+-CFLAGS = -Wall $(DEFINES) @BIG5@
++CFLAGS += -Wall $(DEFINES) @BIG5@
+ 
+ #this is the debugging CFLAGS options, should only be used if you want to
+ #debug/code tintin
+@@ -49,7 +49,7 @@
+ #Since readline and history are required, I'll hard code it in here.
+ #Guess we'll add zlib as well - Scandum
+ 
+-LIBS = @MYLIB@ -lreadline -lhistory -lz -lncurses -lpthread @LIBS@
++LIBS += @MYLIB@ -lreadline -lhistory -lz -lncurses -lpthread @LIBS@
+ 
+ # If you prefer to be able to enter ISO latin-1 characters instead
+ # of being able to use the meta key for special emacs-like commands

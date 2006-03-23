@@ -1,0 +1,4 @@
+etc/rc.d/couriergraph.sh
+www/cgi-bin/couriergraph.cgi
+sbin/couriergraph.pl
+@dirrmtry www/cgi-bin

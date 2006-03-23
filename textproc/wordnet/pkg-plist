@@ -1,0 +1,33 @@
+bin/wnb
+bin/wn
+include/WordNet/wn.h
+include/WordNet/wngrind.h
+lib/libWN.a
+lib/libWN.so.2
+lib/libWN.so
+lib/libtclwn2.so.0
+lib/libtclwn2.so
+lib/tcl%%TCL_DVER%%/Wordnet/pkgIndex.tcl
+share/WordNet/adj.exc
+share/WordNet/adv.exc
+share/WordNet/cntlist
+share/WordNet/cntlist.rev
+share/WordNet/data.adj
+share/WordNet/data.adv
+share/WordNet/data.noun
+share/WordNet/data.verb
+share/WordNet/frames.vrb
+share/WordNet/index.adj
+share/WordNet/index.adv
+share/WordNet/index.noun
+share/WordNet/index.sense
+share/WordNet/index.verb
+share/WordNet/noun.exc
+share/WordNet/sentidx.vrb
+share/WordNet/sents.vrb
+share/WordNet/verb.exc
+share/WordNet/verb.Framestext
+share/WordNet/wn.xbm
+@dirrm include/WordNet
+@dirrm lib/tcl%%TCL_DVER%%/Wordnet
+@dirrm share/WordNet

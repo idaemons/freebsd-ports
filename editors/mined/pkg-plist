@@ -1,0 +1,24 @@
+bin/mined
+%%DATADIR%%/CHANGES
+%%DATADIR%%/README
+%%DATADIR%%/Xdefaults.mined
+%%DATADIR%%/bdf18to20
+%%DATADIR%%/bdf18to20.sed
+%%DATADIR%%/configure-xterm
+%%DATADIR%%/installfonts
+%%DATADIR%%/lmined
+%%DATADIR%%/makeprint
+%%DATADIR%%/mined.desktop
+%%DATADIR%%/mined.hlp
+%%DATADIR%%/minedmar
+%%DATADIR%%/mlterm_key
+%%DATADIR%%/mlterm_main
+%%DATADIR%%/mterm
+%%DATADIR%%/profile.mined
+%%DATADIR%%/umined
+%%DATADIR%%/uprint
+%%DATADIR%%/uterm
+%%DATADIR%%/wmined
+%%DATADIR%%/xinitrc.mined
+%%DATADIR%%/xmined
+@dirrm %%DATADIR%%

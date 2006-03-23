@@ -1,0 +1,19 @@
+bin/gmpc
+%%DATADIR%%/gmpc-tray.png
+%%DATADIR%%/gmpc.png
+%%DATADIR%%/media-album.png
+%%DATADIR%%/media-artist.png
+%%DATADIR%%/media-audiofile.png
+%%DATADIR%%/media-next.png
+%%DATADIR%%/media-pause.png
+%%DATADIR%%/media-play.png
+%%DATADIR%%/media-prev.png
+%%DATADIR%%/media-stop.png
+%%DATADIR%%/media-stream.png
+%%DATADIR%%/player-repeat.png
+%%DATADIR%%/player-shuffle.png
+%%DATADIR%%/gmpc.glade
+%%DATADIR%%/playlist.glade
+%%DATADIR%%/open-location.glade
+%%DATADIR%%/add-browser.glade
+@dirrm %%DATADIR%%

@@ -1,0 +1,35 @@
+# New ports collection makefile for:	super-smack
+# Date created:		2005-12-10
+# Whom:			Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	super-smack
+PORTVERSION=	1.3
+CATEGORIES=	benchmarks databases
+MASTER_SITES=	http://vegan.net/tony/supersmack/
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	A benchmarking, stress testing, and load generation tool for Databases
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-smacks-dir=${DATADIR}
+USE_GETOPT_LONG=	yes
+
+OPTIONS=	MYSQL "Enable MySQL support" on \
+		POSTGRESQL "Enable PostgreSQL support" off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_MYSQL)
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=	--with-mysql
+.endif
+
+.if defined(WITH_POSTGRESQL)
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=	--with-pgsql
+.endif
+
+.include <bsd.port.post.mk>

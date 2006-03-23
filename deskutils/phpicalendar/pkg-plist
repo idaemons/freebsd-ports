@@ -1,0 +1,137 @@
+%%PHPICALENDAR%%/AUTHORS
+%%PHPICALENDAR%%/COPYING
+%%PHPICALENDAR%%/README
+%%PHPICALENDAR%%/TIMEZONES
+%%PHPICALENDAR%%/admin/index.php
+%%PHPICALENDAR%%/calendars/Home.ics
+%%PHPICALENDAR%%/calendars/US Holidays.ics
+%%PHPICALENDAR%%/calendars/Work.ics
+%%PHPICALENDAR%%/calendars/publish.ical.php
+%%PHPICALENDAR%%/calendars/publish.mozilla.php
+%%PHPICALENDAR%%/config.inc.php-default
+%%PHPICALENDAR%%/day.php
+%%PHPICALENDAR%%/error.php
+%%PHPICALENDAR%%/functions/admin_functions.php
+%%PHPICALENDAR%%/functions/calendar_functions.php
+%%PHPICALENDAR%%/functions/date_functions.php
+%%PHPICALENDAR%%/functions/draw_functions.php
+%%PHPICALENDAR%%/functions/event.js
+%%PHPICALENDAR%%/functions/ical_parser.php
+%%PHPICALENDAR%%/functions/init.inc.php
+%%PHPICALENDAR%%/functions/list_functions.php
+%%PHPICALENDAR%%/functions/overlapping_events.php
+%%PHPICALENDAR%%/functions/template.php
+%%PHPICALENDAR%%/functions/timezones.php
+%%PHPICALENDAR%%/functions/userauth_functions.php
+%%PHPICALENDAR%%/images/cancelled.gif
+%%PHPICALENDAR%%/images/completed.gif
+%%PHPICALENDAR%%/images/confirmed.gif
+%%PHPICALENDAR%%/images/important.gif
+%%PHPICALENDAR%%/images/not_completed.gif
+%%PHPICALENDAR%%/images/phpical-logo.gif
+%%PHPICALENDAR%%/images/recurring.gif
+%%PHPICALENDAR%%/images/spacer.gif
+%%PHPICALENDAR%%/images/tentative.gif
+%%PHPICALENDAR%%/images/valid-rss.png
+%%PHPICALENDAR%%/includes/event.php
+%%PHPICALENDAR%%/includes/login.php
+%%PHPICALENDAR%%/includes/todo.php
+%%PHPICALENDAR%%/index.php
+%%PHPICALENDAR%%/languages/afrikaans.inc.php
+%%PHPICALENDAR%%/languages/brazilian.inc.php
+%%PHPICALENDAR%%/languages/catalan.inc.php
+%%PHPICALENDAR%%/languages/czech.inc.php
+%%PHPICALENDAR%%/languages/danish.inc.php
+%%PHPICALENDAR%%/languages/dutch.inc.php
+%%PHPICALENDAR%%/languages/english.inc.php
+%%PHPICALENDAR%%/languages/esperanto.inc.php
+%%PHPICALENDAR%%/languages/finnish.inc.php
+%%PHPICALENDAR%%/languages/french.inc.php
+%%PHPICALENDAR%%/languages/german.inc.php
+%%PHPICALENDAR%%/languages/italian.inc.php
+%%PHPICALENDAR%%/languages/japanese.inc.php
+%%PHPICALENDAR%%/languages/korean.inc.php
+%%PHPICALENDAR%%/languages/lithuanian.inc.php
+%%PHPICALENDAR%%/languages/norwegian.inc.php
+%%PHPICALENDAR%%/languages/polish.inc.php
+%%PHPICALENDAR%%/languages/portuguese.inc.php
+%%PHPICALENDAR%%/languages/spanish.inc.php
+%%PHPICALENDAR%%/languages/swedish.inc.php
+%%PHPICALENDAR%%/languages/traditional_chinese.inc.php
+%%PHPICALENDAR%%/month.php
+%%PHPICALENDAR%%/preferences.php
+%%PHPICALENDAR%%/print.php
+%%PHPICALENDAR%%/rss/index.php
+%%PHPICALENDAR%%/rss/rss.php
+%%PHPICALENDAR%%/search.php
+%%PHPICALENDAR%%/templates/default/admin.tpl
+%%PHPICALENDAR%%/templates/default/calendar_nav.tpl
+%%PHPICALENDAR%%/templates/default/day.tpl
+%%PHPICALENDAR%%/templates/default/default.css
+%%PHPICALENDAR%%/templates/default/error.tpl
+%%PHPICALENDAR%%/templates/default/event.tpl
+%%PHPICALENDAR%%/templates/default/footer.tpl
+%%PHPICALENDAR%%/templates/default/header.tpl
+%%PHPICALENDAR%%/templates/default/images/allday_1.gif
+%%PHPICALENDAR%%/templates/default/images/allday_2.gif
+%%PHPICALENDAR%%/templates/default/images/allday_3.gif
+%%PHPICALENDAR%%/templates/default/images/allday_4.gif
+%%PHPICALENDAR%%/templates/default/images/allday_5.gif
+%%PHPICALENDAR%%/templates/default/images/allday_6.gif
+%%PHPICALENDAR%%/templates/default/images/allday_7.gif
+%%PHPICALENDAR%%/templates/default/images/allday_bg.gif
+%%PHPICALENDAR%%/templates/default/images/allday_dot.gif
+%%PHPICALENDAR%%/templates/default/images/back.gif
+%%PHPICALENDAR%%/templates/default/images/day_on.gif
+%%PHPICALENDAR%%/templates/default/images/day_title.gif
+%%PHPICALENDAR%%/templates/default/images/download_arrow.gif
+%%PHPICALENDAR%%/templates/default/images/event_dot.gif
+%%PHPICALENDAR%%/templates/default/images/left_arrows.gif
+%%PHPICALENDAR%%/templates/default/images/left_day.gif
+%%PHPICALENDAR%%/templates/default/images/month_on.gif
+%%PHPICALENDAR%%/templates/default/images/monthdot_1.gif
+%%PHPICALENDAR%%/templates/default/images/monthdot_2.gif
+%%PHPICALENDAR%%/templates/default/images/monthdot_3.gif
+%%PHPICALENDAR%%/templates/default/images/monthdot_4.gif
+%%PHPICALENDAR%%/templates/default/images/monthdot_5.gif
+%%PHPICALENDAR%%/templates/default/images/monthdot_6.gif
+%%PHPICALENDAR%%/templates/default/images/monthdot_7.gif
+%%PHPICALENDAR%%/templates/default/images/printer.gif
+%%PHPICALENDAR%%/templates/default/images/right_arrows.gif
+%%PHPICALENDAR%%/templates/default/images/right_day.gif
+%%PHPICALENDAR%%/templates/default/images/search.gif
+%%PHPICALENDAR%%/templates/default/images/shadow_l.gif
+%%PHPICALENDAR%%/templates/default/images/shadow_m.gif
+%%PHPICALENDAR%%/templates/default/images/shadow_r.gif
+%%PHPICALENDAR%%/templates/default/images/side_bg.gif
+%%PHPICALENDAR%%/templates/default/images/smallicon.gif
+%%PHPICALENDAR%%/templates/default/images/spacer.gif
+%%PHPICALENDAR%%/templates/default/images/time_bg.gif
+%%PHPICALENDAR%%/templates/default/images/week_on.gif
+%%PHPICALENDAR%%/templates/default/images/year_on.gif
+%%PHPICALENDAR%%/templates/default/month.tpl
+%%PHPICALENDAR%%/templates/default/month_large.tpl
+%%PHPICALENDAR%%/templates/default/month_medium.tpl
+%%PHPICALENDAR%%/templates/default/month_small.tpl
+%%PHPICALENDAR%%/templates/default/preferences.tpl
+%%PHPICALENDAR%%/templates/default/print.tpl
+%%PHPICALENDAR%%/templates/default/rss_index.tpl
+%%PHPICALENDAR%%/templates/default/search.tpl
+%%PHPICALENDAR%%/templates/default/search_box.tpl
+%%PHPICALENDAR%%/templates/default/sidebar.tpl
+%%PHPICALENDAR%%/templates/default/todo.tpl
+%%PHPICALENDAR%%/templates/default/week.tpl
+%%PHPICALENDAR%%/templates/default/year.tpl
+%%PHPICALENDAR%%/week.php
+%%PHPICALENDAR%%/year.php
+@dirrm %%PHPICALENDAR%%/templates/default/images
+@dirrm %%PHPICALENDAR%%/templates/default
+@dirrm %%PHPICALENDAR%%/templates
+@dirrm %%PHPICALENDAR%%/rss
+@dirrm %%PHPICALENDAR%%/languages
+@dirrm %%PHPICALENDAR%%/includes
+@dirrm %%PHPICALENDAR%%/images
+@dirrm %%PHPICALENDAR%%/functions
+@dirrm %%PHPICALENDAR%%/calendars
+@dirrm %%PHPICALENDAR%%/admin
+@dirrm %%PHPICALENDAR%%

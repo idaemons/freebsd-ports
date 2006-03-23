@@ -1,0 +1,22 @@
+--- src/kscope.h.orig	Tue May 10 07:41:32 2005
++++ src/kscope.h	Thu Jul 28 09:00:22 2005
+@@ -142,7 +142,7 @@
+ 	bool getSymbol(uint&, QString&, bool bPrompt = true);
+ 	EditorPage* addEditor(const QString&s);
+ 	EditorPage* createEditorPage();
+-	inline bool isAutoRebuildEnabled();
++	bool isAutoRebuildEnabled();
+ 	void loadOpenFiles();
+ 	
+ private slots:
+--- src/kscope.cpp.orig	Tue May 10 07:41:32 2005
++++ src/kscope.cpp	Thu Jul 28 08:59:22 2005
+@@ -1118,7 +1118,7 @@
+  * @return	true if database auto-rebuild is enabled for the current project,
+  *			false otherwise
+  */
+-inline bool KScope::isAutoRebuildEnabled()
++bool KScope::isAutoRebuildEnabled()
+ {
+ 	return (m_pProjMgr->getAutoRebuildTime() >= 0);
+ }

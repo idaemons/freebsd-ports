@@ -1,0 +1,23 @@
+--- fontforge/Makefile.dynamic.in.orig	Fri Nov 11 11:41:01 2005
++++ fontforge/Makefile.dynamic.in	Sun Dec  4 16:59:47 2005
+@@ -45,16 +45,16 @@
+ DIFFOBJS = sfddiff.o sfd.o diffstubs.o stamp.o
+ ACORNOBJS = acorn2sfd.o sfd.o diffstubs.o psunicodenames.o stamp.o
+ 
+-_CFLAGS = -I$(top_srcdir)/inc -I$(srcdir) -I. @WFLAGS@ $(X_CFLAGS) \
++_CFLAGS = -I$(LOCALBASE)/include -I$(top_srcdir)/inc -I$(srcdir) -I. @WFLAGS@ $(X_CFLAGS) \
+     @DEFS@ '-DSHAREDIR="$(sharedir)"' -DLIBDIR='"$(libdir)"' \
+     @CPPFLAGS@ '-DPREFIX="@prefix@"'
+ CFLAGS = @CFLAGS@ $(_CFLAGS)
+ 
+ LIBS = -rpath $(libdir) $(X_LIBS) ../libgdraw.la ../libgunicode.la \
+-    $(X_PRE_LIBS) $(X_11LIB) $(X_EXTRA_LIBS) @LIBS@ $(STATIC_LIBS) -L/usr/lib -lm
+-DLIBS = -rpath $(libdir) ../libgunicode.la @LIBS@ $(STATIC_LIBS) -lm
++    $(X_PRE_LIBS) $(X_11LIB) $(X_EXTRA_LIBS) @LIBS@ $(STATIC_LIBS) -L/usr/lib -lm -lintl
++DLIBS = -rpath $(libdir) ../libgunicode.la @LIBS@ $(STATIC_LIBS) -lm -lintl
+ 
+-all: fontforge
++all: fontforge sfddiff
+ 
+ fontforge: main.o $(fontforge_LIBOBJECTS)
+ 	$(LIBTOOL) --mode=link $(CC) -export-dynamic -o fontforge main.o $(fontforge_LIBOBJECTS) $(LIBS)

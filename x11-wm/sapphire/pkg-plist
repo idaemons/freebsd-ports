@@ -1,0 +1,14 @@
+bin/sapphire
+bin/sapphire.inst
+share/doc/sapphire/README
+share/sapphire/menu/default
+share/sapphire/menu/default.orig
+share/sapphire/themes/darkblue.theme
+share/sapphire/themes/default.theme
+share/sapphire/themes/gray.theme
+share/sapphire/themes/rose.theme
+share/sapphire/themes/slate.theme
+@dirrm share/doc/sapphire
+@dirrm share/sapphire/menu
+@dirrm share/sapphire/themes
+@dirrm share/sapphire

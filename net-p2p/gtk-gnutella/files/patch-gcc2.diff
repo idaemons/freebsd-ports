@@ -1,0 +1,12 @@
+--- src/lib/override.hoverride.h	Mon Feb  6 14:44:46 2006
++++ src/lib/override.h	Tue Jan 24 22:18:42 2006
+@@ -91,8 +91,8 @@
+ 		eject_("\nAssertion failure \"" STRINGIFY(x) "\" in " G_STRLOC "\n"); \
+ } G_STMT_END
+ 
++#define g_assert_not_reached()												\
++	eject_("\nCode should not have been reached in " G_STRLOC "\n");		\
+-#define g_assert_not_reached(x)												\
+-	eject_("\nCode should not be reached in " G_STRLOC "\n");				\
+ 
+ #endif /* FAST_ASSERTIONS */

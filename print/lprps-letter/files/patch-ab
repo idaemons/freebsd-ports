@@ -1,0 +1,38 @@
+--- lprps.c.orig	Mon Feb 22 06:46:10 1993
++++ lprps.c	Sat Jun 19 17:55:56 1999
+@@ -17,6 +17,10 @@
+ #include <syslog.h>
+ #include <errno.h>
+ 
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__)
++#include <sys/param.h>
++#endif
++
+ #ifndef errno
+ extern int errno;
+ #endif
+@@ -27,7 +31,13 @@
+ #define VOLATILE /* as nothing */
+ #endif
+ 
+-#define SENDMAIL "/usr/lib/sendmail"
++#ifndef SENDMAIL
++#    if (defined(BSD) && (BSD >= 199103))
++#	define SENDMAIL "/usr/sbin/sendmail"
++#    else
++#	define SENDMAIL "/usr/lib/sendmail"
++#    endif
++#endif
+ 
+ #define EXIT_SUCCESS 0
+ #define EXIT_REPRINT 1
+@@ -346,7 +356,9 @@
+ char *strsignal(n)
+ int n;
+ {
++# if !(defined(BSD) && (BSD >= 199103))
+   extern char *sys_siglist[];
++# endif
+   static char buf[32];
+   if (n >= 0 && n < NSIG)
+     return sys_siglist[n];

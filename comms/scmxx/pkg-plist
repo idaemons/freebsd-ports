@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+bin/scmxx
+share/locale/de/LC_MESSAGES/scmxx.mo
+share/locale/fr/LC_MESSAGES/scmxx.mo
+share/locale/it/LC_MESSAGES/scmxx.mo
+share/locale/ru/LC_MESSAGES/scmxx.mo
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README_WIN32.txt
+%%PORTDOCS%%%%DOCSDIR%%/gsmcharset.txt
+%%PORTDOCS%%%%DOCSDIR%%/gsm0338.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc_sources.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/sms.txt
+%%EXAMPLESDIR%%/vCalendar.vcs
+%%EXAMPLESDIR%%/vCard.vcf
+@dirrm %%EXAMPLESDIR%%
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry man/de/man1
+@dirrmtry man/de/
+@dirrmtry man/ru/man1
+@dirrmtry man/ru/

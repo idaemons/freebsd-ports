@@ -1,0 +1,18 @@
+# Makefile for defining variables used by other Quake II related ports.
+
+# Set variables.
+
+Q2PKGNAMEPREFIX?=quake2-
+Q2DIR?=		${LOCALBASE}/share/quake2
+
+# Add them to the environment.
+
+MAKE_ENV+=	Q2DIR="${Q2DIR}"
+PLIST_SUB+=	Q2DIR="${Q2DIR:S/${LOCALBASE}\///}"
+SUB_LIST+=	Q2DIR="${Q2DIR}"
+
+# Add the dependency.
+
+.if ${PORTNAME} != "data"
+RUN_DEPENDS+=	${Q2DIR}:${PORTSDIR}/games/quake2-data
+.endif

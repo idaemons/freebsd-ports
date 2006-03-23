@@ -1,0 +1,3 @@
+%%SITE_PERL%%/dTemplate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/dTemplate/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/dTemplate

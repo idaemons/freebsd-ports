@@ -1,0 +1,14 @@
+bin/sip
+%%DOCS%%%%DOCSDIR%%/NEWS
+%%DOCS%%%%DOCSDIR%%/LICENSE
+%%DOCS%%%%DOCSDIR%%/default.css
+%%DOCS%%%%DOCSDIR%%/sipref.txt
+%%PYTHON_INCLUDEDIR%%/sip.h
+%%PYTHON_SITELIBDIR%%/sip.so
+%%PYTHON_SITELIBDIR%%/sipconfig.py
+%%PYTHON_SITELIBDIR%%/sipconfig.pyc
+%%PYTHON_SITELIBDIR%%/sipconfig.pyo
+%%PYTHON_SITELIBDIR%%/sipdistutils.py
+%%DOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/%%DATADIR%%
+@dirrm %%DATADIR%%
