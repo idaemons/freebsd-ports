@@ -1,0 +1,6 @@
+MD5 (spca5xx-20060101.tar.gz) = 2a4dc191262c16c14bfd2fd563c3e8a1
+SHA256 (spca5xx-20060101.tar.gz) = cda84e3f31a004149505982f18bdf5c71995a3776e9275b6e4ffec4a605c9b50
+SIZE (spca5xx-20060101.tar.gz) = 184897
+MD5 (spca5xx-bsd-0.4.patch.gz) = c5cc69c2901963fc5f5b557c8018f513
+SHA256 (spca5xx-bsd-0.4.patch.gz) = 423cda5b5141150b150387cf6d961ebb486d0cbf24d0f939502e1645ff311036
+SIZE (spca5xx-bsd-0.4.patch.gz) = 30214

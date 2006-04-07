@@ -1,0 +1,5 @@
+bin/mozplugger-helper
+bin/mozplugger-controller
+etc/mozpluggerrc
+lib/browser_plugins/mozplugger.so
+@dirrmtry lib/browser_plugins

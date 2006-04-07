@@ -1,0 +1,26 @@
+# New ports collection makefile for:   p5-Net-SCP
+# Date created:                                12 May 2002
+# Whom:                                        Erich Zigler <erich@tacni.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Net-SCP
+PORTVERSION=	0.07
+CATEGORIES=	net perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 module to access and use scp protocol
+
+BUILD_DEPENDS=	${SITE_PERL}/Net/SSH.pm:${PORTSDIR}/net/p5-Net-SSH \
+		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Net::SCP.3
+
+.include <bsd.port.mk>

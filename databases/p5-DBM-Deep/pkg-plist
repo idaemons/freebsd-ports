@@ -1,0 +1,5 @@
+%%SITE_PERL%%/DBM/Deep.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM
+@dirrmtry %%SITE_PERL%%/DBM

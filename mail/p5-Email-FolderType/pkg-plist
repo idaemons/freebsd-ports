@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Email/FolderType.pm
+%%SITE_PERL%%/Email/FolderType/Ezmlm.pm
+%%SITE_PERL%%/Email/FolderType/MH.pm
+%%SITE_PERL%%/Email/FolderType/Maildir.pm
+%%SITE_PERL%%/Email/FolderType/Mbox.pm
+@dirrmtry %%SITE_PERL%%/Email/FolderType
+@dirrmtry %%SITE_PERL%%/Email

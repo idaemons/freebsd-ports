@@ -1,0 +1,9 @@
+include/dcdflib.h
+lib/libdcdflib.a
+lib/libdcdflib_p.a
+lib/libdcdflib.so
+lib/libdcdflib.so.1.1
+share/doc/dcdflib/README
+share/doc/dcdflib/dcdflib.chs
+share/doc/dcdflib/dcdflib.fdoc
+@dirrm share/doc/dcdflib

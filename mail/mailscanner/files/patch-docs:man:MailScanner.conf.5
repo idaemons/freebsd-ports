@@ -1,0 +1,87 @@
+--- ../MailScanner-install-4.50.15.orig/docs/man/MailScanner.conf.5	Tue Feb  7 13:45:33 2006
++++ docs/man/MailScanner.conf.5	Tue Feb  7 13:58:52 2006
+@@ -1,4 +1,4 @@
+-.TH "MailScanner.conf" "5" "4.50.1" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.50.15" "Julian Field" "Mail"
+ .SH "NAME"
+ .LP 
+ MailScanner.conf \- Main configuration for MailScanner
+@@ -423,6 +423,12 @@
+ The maximum length of time the "unrar" command is allowed to run for 1 RAR archive (in seconds)
+ 
+ .TP 
++\fBFind UU\-Encoded Files\fR
++Default: no
++.br 
++A few viruses store their infected data in UU\-encoded files, to try to catch out virus scanners. This rarely succeeds at all. Setting this option to yes means that you can apply filename and filetype checks to the contents of UU\-encoded files. This may occasionally be  useful, in which case you should set to yes. This can also be the filename of a ruleset.
++
++.TP 
+ \fBBlock Encrypted Messages\fR
+ Default: no
+ .br 
+@@ -521,7 +527,7 @@
+ .SH "Virus scanning and vulnerability testing"
+ .TP 
+ \fBVirus Scanning\fR
+-Default: yes
++Default: auto
+ .br 
+ 
+ .br 
+@@ -529,7 +535,7 @@
+ .br 
+ NOTE: Switching this to no completely disables all virus\-scanning functionality. If you just want to switch of actual virus scanning, then set "Virus Scanners = none" instead.
+ .br 
+-If you want to be able to switch scanning on/off for different users or different domains, set this to the filename of a ruleset.
++If you want to be able to switch scanning on/off for different users or different domains, set this to the filename of a ruleset. If you set this to auto then it searches for and uses every available installed virus scanner.
+ 
+ .TP 
+ \fBVirus Scanners\fR
+@@ -1682,7 +1688,7 @@
+ .SH "SpamAssassin"
+ .TP 
+ \fBUse SpamAssassin\fR
+-Default: no
++Default: yes
+ .br 
+ 
+ .br 
+@@ -2113,6 +2119,22 @@
+ .RE
+ 
+ .TP 
++\fBSpamAssassin Cache Timings\fR
++Default: 1800,300,10800,172800,600
++.br 
++Do not change this unless you absolutely have to, these numbers have been carefully calculated. They affect the length of time that different types of message are stored in the SpamAssassin cache which can be configured earlier in this file (look for "Cache"). The numbers are all set in seconds. They are:
++.br 
++1. Non\-Spam cache lifetime                           = 30 minutes
++.br 
++2. Spam (low scoring) cache lifetime                 = 5 minutes
++.br 
++3. High\-Scoring spam cache lifetime                  = 3 hours
++.br 
++4. Viruses cache lifetime                            = 2 days
++.br 
++5. How often to check the cache for expired messages = 10 minutes
++
++.TP 
+ \fBDebug\fR
+ Default: no
+ .br 
+@@ -2167,6 +2189,15 @@
+ 
+ .br 
+ The value of the option is actually never used, but it is evaluated at the end of processing a batch of messages. It is designed to be used in conjunction with a Custom Function. The Custom Function should then be written to have a "side effect" of doing something useful such as logging lots of information about the batch of messages to a file or an SQL database. 
++
++
++.TP 
++\fBAlways Looked Up Last After Batch\fR
++Default: no
++.br 
++
++.br 
++This option is intended for people who want to log per\-batch information. This is evaluated after the "Always Looked Up Last" configuration option for each message in the batch. This is looked up once for the entire batch. Its value is completely ignored, it is purely there to have side effects. If you want to use it, read CustomConfig.pm. 
+ 
+ .TP 
+ \fBDeliver in Background\fR

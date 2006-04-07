@@ -1,0 +1,41 @@
+# New ports collection makefile for:	devel/p5-IPC-Run3
+# Date created:				Apr 27 2004
+# Whom:					Autrijus Tang <autrijus@autrijus.org>
+#
+# $FreeBSD$
+
+PORTNAME=	IPC-Run3
+PORTVERSION=	0.034
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	IPC
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Run a subprocess in batch mode
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		IPC::Run3.3 \
+		IPC::Run3::ProfArrayBuffer.3 \
+		IPC::Run3::ProfLogger.3 \
+		IPC::Run3::ProfLogReader.3 \
+		IPC::Run3::ProfPP.3 \
+		IPC::Run3::ProfReporter.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${FIND} ${WRKSRC}/lib -type f | ${XARGS} ${REINPLACE_CMD} -e '/warnings/d'
+	@${FIND} ${WRKSRC}/lib -name "*.bak" | ${XARGS} ${RM} -f
+.endif
+
+.include <bsd.port.post.mk>

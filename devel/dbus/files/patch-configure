@@ -1,0 +1,51 @@
+--- configure.orig	Sat Dec 31 13:22:23 2005
++++ configure	Sat Dec 31 13:30:51 2005
+@@ -1053,6 +1053,7 @@
+   --enable-python       build python bindings
+   --enable-selinux      build with SELinux support
+   --enable-dnotify      build with dnotify support (linux only)
++  --enable-kqueue       build with kqueue support (FreeBSD only)
+   --enable-shared[=PKGS]
+                           build shared libraries [default=yes]
+   --enable-static[=PKGS]
+@@ -4500,7 +4501,7 @@
+ 
+   case " $CFLAGS " in
+   *[\ \	]-Wfloat-equal[\ \	]*) ;;
+-  *) CFLAGS="$CFLAGS -Wfloat-equal" ;;
++  *) CFLAGS="$CFLAGS" ;;
+   esac
+ 
+   case " $CFLAGS " in
+@@ -28240,6 +28241,31 @@
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define DBUS_BUS_ENABLE_DNOTIFY_ON_LINUX 1
++_ACEOF
++
++fi
++
++# kqueue checks
++case "${target_os}" in
++    freebsd*)
++    	# Check whether --enable-kqueue or --disable-kqueue was given.
++    if test "${enable_kqueue+set}" = set; then
++        enableval="$enable_kqueue"
++        enable_kqueue=$enableval
++    else
++        enable_kqueue=auto
++    fi;
++    if test x$enable_kqueue = xno ; then
++	have_kqueue=no;
++    else
++	have_kqueue=yes;
++    fi
++;;
++esac
++if test x$have_kqueue = xyes; then
++
++cat >>confdefs.h <<\_ACEOF
++#define DBUS_BUS_ENABLE_KQUEUE_ON_FREEBSD 1
+ _ACEOF
+ 
+ fi

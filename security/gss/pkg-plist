@@ -1,0 +1,18 @@
+bin/gss
+include/gss/api.h
+include/gss/ext.h
+include/gss.h
+lib/libgss.a
+lib/libgss.la
+lib/libgss.so
+lib/libgss.so.0
+libdata/pkgconfig/gss.pc
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/gss.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/gss.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gss.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gss.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gss.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/gss.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gss.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/gss.mo
+@dirrm include/gss

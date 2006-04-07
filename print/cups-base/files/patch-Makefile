@@ -1,0 +1,31 @@
+--- Makefile.orig	Mon Jan  3 11:29:44 2005
++++ Makefile	Fri Jan 27 00:04:20 2006
+@@ -28,8 +28,8 @@
+ # Directories to make...
+ #
+ 
+-DIRS	=	cups backend berkeley cgi-bin filter man pdftops \
+-		scheduler systemv
++DIRS	=	cups backend cgi-bin filter man pdftops \
++		scheduler
+ 
+ #
+ # Make all targets...
+@@ -72,8 +72,6 @@
+ 		echo Installing in $$dir... ;\
+ 		(cd $$dir; $(MAKE) $(MFLAGS) install) || exit 1;\
+ 	done
+-	echo Installing in conf...
+-	(cd conf; $(MAKE) $(MFLAGS) install)
+ 	echo Installing in data...
+ 	(cd data; $(MAKE) $(MFLAGS) install)
+ 	echo Installing in doc...
+@@ -109,8 +107,6 @@
+ 			$(INSTALL_DATA) cups.plist $(BUILDROOT)$(INITDDIR)/StartupParameters.plist; \
+ 			$(INSTALL_DIR) $(BUILDROOT)$(INITDDIR)/Resources/English.lproj; \
+ 			$(INSTALL_DATA) cups.strings $(BUILDROOT)$(INITDDIR)/Resources/English.lproj/Localizable.strings; \
+-		else \
+-			$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDDIR)/cups; \
+ 		fi \
+ 	fi
+ 

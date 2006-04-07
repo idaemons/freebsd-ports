@@ -1,0 +1,31 @@
+--- makefile.orig	Thu Aug 11 01:33:48 2005
++++ makefile	Sun Aug 21 22:58:52 2005
+@@ -6,6 +6,7 @@
+ ALL: all
+ LOCDIR	 = . 
+ DIRS	 = src include 
++DOCS_DIR = ${INSTALL_DIR}/../share/doc/petsc
+ CFLAGS	 = 
+ FFLAGS	 = 
+ 
+@@ -247,14 +248,14 @@
+ 	-@if [ "${INSTALL_DIR}" = "${PETSC_DIR}" ]; then \
+ 	  echo "You did not set a directory to install to";\
+         else \
+-	  echo Installing PETSc documentation at ${INSTALL_DIR};\
+-          if [ ! -d `dirname ${INSTALL_DIR}` ]; then \
+-	    ${MKDIR} `dirname ${INSTALL_DIR}` ; \
++	  echo Installing PETSc documentation at ${DOCS_DIR};\
++          if [ ! -d `dirname ${DOCS_DIR}` ]; then \
++	    ${MKDIR} `dirname ${DOCS_DIR}` ; \
+           fi;\
+-          if [ ! -d ${INSTALL_DIR} ]; then \
+-	    ${MKDIR} ${INSTALL_DIR} ; \
++          if [ ! -d ${DOCS_DIR} ]; then \
++	    ${MKDIR} ${DOCS_DIR} ; \
+           fi;\
+-          cp -fr docs ${INSTALL_DIR};\
++          cp -fr docs/* ${DOCS_DIR};\
+           ${RM} -fr docs/tex;\
+         fi;
+ # ------------------------------------------------------------------

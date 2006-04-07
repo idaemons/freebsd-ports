@@ -1,0 +1,38 @@
+bin/curlpp-config
+include/curlpp/CurlHandle.hpp
+include/curlpp/CurlHandle.inl
+include/curlpp/Easy.hpp
+include/curlpp/Exception.hpp
+include/curlpp/Form.hpp
+include/curlpp/NonCopyable.hpp
+include/curlpp/Option.hpp
+include/curlpp/Option.inl
+include/curlpp/OptionBase.hpp
+include/curlpp/OptionContainer.hpp
+include/curlpp/OptionContainer.inl
+include/curlpp/OptionContainerType.hpp
+include/curlpp/OptionList.hpp
+include/curlpp/OptionSetter.hpp
+include/curlpp/OptionSetter.inl
+include/curlpp/Options.hpp
+include/curlpp/SList.hpp
+include/curlpp/StorageOptions.hpp
+include/curlpp/StorageOptions.inl
+include/curlpp/TypeTrait.hpp
+include/curlpp/cURL.hpp
+include/curlpp/cURLpp.hpp
+include/curlpp/dllfct.h
+@dirrm include/curlpp
+lib/libcurlpp.a
+lib/libcurlpp.so
+lib/libcurlpp.so.0
+libdata/pkgconfig/curlpp.pc
+%%PORTDOCS%%%%DOCSDIR%%/guide.pdf
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/example01.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example02.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example03.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example04.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example05.cpp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

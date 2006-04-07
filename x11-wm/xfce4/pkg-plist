@@ -1,0 +1,4 @@
+%%GDM%%etc/dm/Sessions/XFce4.desktop
+%%GDM%%etc/gdm/Sessions/XFce4
+%%GDM%%@dirrmtry etc/gdm/Sessions
+%%GDM%%@dirrmtry etc/gdm

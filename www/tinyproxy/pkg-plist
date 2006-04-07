@@ -1,0 +1,12 @@
+etc/rc.d/tinyproxy.sh
+etc/tinyproxy/tinyproxy.conf-dist
+sbin/tinyproxy
+%%DATADIR%%/HTML_VARIABLES
+%%DATADIR%%/debug.html
+%%DATADIR%%/debug.html.dist
+%%DATADIR%%/default.html
+%%DATADIR%%/default.html.dist
+%%DATADIR%%/stats.html
+%%DATADIR%%/stats.html.dist
+@dirrm %%DATADIR%%
+@dirrm etc/tinyproxy

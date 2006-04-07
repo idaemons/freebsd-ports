@@ -1,0 +1,40 @@
+#! /bin/sh
+#
+# taken from devel/perforce
+
+PATH=/bin:/usr/sbin
+
+TOR_USER=${TOR_USER:-_tor}
+TOR_GROUP=${TOR_GROUP:-_tor}
+
+case $2 in
+PRE-INSTALL)
+	USER=${TOR_USER}
+	GROUP=${TOR_GROUP}
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} ; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if pw useradd ${USER} -g ${GROUP} -h - \
+			-d /nonexistent -c "Tor Daemon" -s /bin/sh
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	;;
+esac

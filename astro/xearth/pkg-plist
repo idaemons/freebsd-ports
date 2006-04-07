@@ -1,3 +1,5 @@
-@cwd /usr/X11R6
 bin/xearth
-man/man1/xearth.1x
+lib/X11/xearth/freebsd.committers.markers
+lib/X11/xearth/freebsd.submitters.markers
+lib/X11/xearth/freebsd.ftp.markers
+@dirrm lib/X11/xearth

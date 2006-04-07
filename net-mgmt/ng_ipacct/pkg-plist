@@ -1,0 +1,6 @@
+include/netgraph/ng_ipacct.h
+etc/ng_ipacct.conf
+sbin/ipacctctl
+@dirrmtry include/netgraph
+@cwd /
+%%KMODDIR%%/ng_ipacct.ko

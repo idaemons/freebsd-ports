@@ -1,0 +1,30 @@
+--- configure.orig	Sat Dec 17 16:14:03 2005
++++ configure	Tue Dec 20 03:13:45 2005
+@@ -1021,6 +1021,8 @@
+ builtin_vector=no
+ if $cc -msse -o $TMPO $TMPC 2> /dev/null ; then
+   builtin_vector=yes
++else
++  builtin_vector=no
+ fi
+ 
+ # dlopen/dlfcn.h probing
+@@ -1457,13 +1459,13 @@
+ if test "$lshared" = "yes" ; then
+   echo "BUILD_SHARED=yes" >> config.mak
+   echo "PIC=-fPIC -DPIC" >> config.mak
+-  echo "SPPMAJOR=${lavc_version/.*/}" >> config.mak
+-  echo "SPPVERSION=$lavc_version" >> config.mak
+-  echo "LAVCMAJOR=${lavc_version/.*/}" >> config.mak
++  echo "SPPMAJOR=1" >> config.mak
++  echo "SPPVERSION=1" >> config.mak
++  echo "LAVCMAJOR=1" >> config.mak
+   echo "LAVCVERSION=$lavc_version" >> config.mak
+-  echo "LAVFMAJOR=${lavf_version/.*/}" >> config.mak
++  echo "LAVFMAJOR=1" >> config.mak
+   echo "LAVFVERSION=$lavf_version" >> config.mak
+-  echo "LAVUMAJOR=${lavu_version/.*/}" >> config.mak
++  echo "LAVUMAJOR=1" >> config.mak
+   echo "LAVUVERSION=$lavu_version" >> config.mak
+ fi
+ echo "EXTRALIBS=$extralibs" >> config.mak

@@ -1,0 +1,38 @@
+# New ports collection makefile for:	stellarium
+# Date created:			26 Jan 2004
+# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	stellarium
+PORTVERSION=	0.7.1
+CATEGORIES=	astro
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	jylefort@FreeBSD.org
+COMMENT=	A 3D photo-realistic sky renderer
+
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
+USE_GCC=	3.3+
+USE_GETTEXT=	yes
+USE_GL=		yes
+USE_SDL=	sdl mixer
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+MAN1=		stellarium.1
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,5 @@
+bin/pprofp
+%%EXTDIR%%/apd.so
+%%PKGREGDIR%%/package.xml
+@dirrm %%PKGREGDIR%%
+@dirrmtry %%PEARDIR%%/packages

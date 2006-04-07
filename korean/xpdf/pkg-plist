@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%DATADIR%%/korean/Adobe-Korea1.cidToUnicode
+%%DATADIR%%/korean/ISO-2022-KR.unicodeMap
+%%DATADIR%%/korean/README
+@unexec cp %D/etc/xpdfrc %D/etc/xpdfrc.korea
+@unexec (umask 222; /usr/bin/sed '/^#Korean PDF resources$/,/^#Korean PDF resources$/d' < %D/etc/xpdfrc.korea > %D/etc/xpdfrc && rm -f %D/etc/xpdfrc.korea)
+%%DATADIR%%/korean/dot.xpdfrc
+@dirrm %%DATADIR%%/korean
+@dirrmtry %%DATADIR%%

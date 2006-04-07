@@ -1,0 +1,32 @@
+# New ports collection Makefile for:	p5-Crypt-X509
+# Date created:				18 Dec 2006
+# Whom:	      				Gabor Kovesdan
+# $FreeBSD$
+
+PORTNAME=	Crypt-X509
+PORTVERSION=	0.21
+CATEGORIES=	security perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Crypt
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	gkovesdan@t-hosting.hu
+COMMENT=	Perl extension to parse X.509 certificates
+
+BUILD_DEPENDS=	${SITE_PERL}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Crypt::X509.3
+
+WRKSRC=		${WRKDIR}/Crypt-X509
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/lib/Crypt/X509.pm
+	${PERL} -pi -e '$$_="" if m{warnings}' ${WRKSRC}/lib/Crypt/X509.pm
+.endif
+
+.include <bsd.port.post.mk>

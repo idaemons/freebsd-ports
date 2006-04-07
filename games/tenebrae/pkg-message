@@ -1,0 +1,4 @@
+*******************************************************************************
+* Tenebrae Quake requires data files (id1 directory) from original game.
+* Before running Tenebrae install them using games/quake-data port.
+*******************************************************************************

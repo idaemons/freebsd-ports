@@ -1,0 +1,20 @@
+# New ports collection Makefile for:	p5-Crypt-Enigma
+# Date created:				20 Dec 2006
+# Whom:	      				Gabor Kovesdan
+# $FreeBSD$
+
+PORTNAME=	Crypt-Enigma
+PORTVERSION=	1.3
+CATEGORIES=	security perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Crypt
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	gkovesdan@t-hosting.hu
+COMMENT=	Perl extension for the Enigma cipher
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Crypt::Enigma.3
+
+.include <bsd.port.mk>

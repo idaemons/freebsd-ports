@@ -1,0 +1,7 @@
+bin/svnnotify
+%%SITE_PERL%%/SVN/Notify.pm
+%%SITE_PERL%%/SVN/Notify/HTML.pm
+%%SITE_PERL%%/SVN/Notify/HTML/ColorDiff.pm
+@dirrmtry %%SITE_PERL%%/SVN/Notify/HTML
+@dirrmtry %%SITE_PERL%%/SVN/Notify
+@dirrmtry %%SITE_PERL%%/SVN

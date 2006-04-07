@@ -1,0 +1,21 @@
+--- configure.ac.orig	Fri Oct 14 10:18:06 2005
++++ configure.ac	Fri Oct 14 10:19:33 2005
+@@ -248,13 +248,13 @@
+         ])
+ fi
+      
+-CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS"
+-CXXFLAGS="$CXXFLAGS $WX_CXXFLAGS_ONLY"
+-CFLAGS="$CFLAGS $WX_CFLAGS_ONLY"
++CPPFLAGS="$WX_CPPFLAGS $CPPFLAGS"
++CXXFLAGS="$WX_CXXFLAGS_ONLY $CXXFLAGS"
++CFLAGS="$WX_CFLAGS_ONLY $CFLAGS"
+ if test x"$use_static_wx" = x"yes"; then
+-	LIBS="$LIBS $WX_LIBS_STATIC"
++	LIBS="$WX_LIBS_STATIC $LIBS"
+ else
+-	LIBS="$LIBS $WX_LIBS"
++	LIBS="$WX_LIBS $LIBS"
+ fi
+ 
+ dnl Check for FreeType2

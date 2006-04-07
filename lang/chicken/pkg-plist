@@ -1,0 +1,28 @@
+bin/chicken
+bin/chicken-config
+bin/chicken-profile
+bin/chicken-setup
+bin/chicken-static
+bin/csc
+bin/csi
+bin/csi-static
+include/c_defaults.h
+include/chicken-config.h
+include/chicken.h
+lib/libchicken.a
+lib/libchicken.la
+lib/libchicken.so
+lib/libchicken.so.0
+lib/libuchicken.a
+lib/libuchicken.la
+lib/libuchicken.so
+lib/libuchicken.so.0
+%%DATADIR%%/banner.scm
+%%DATADIR%%/chicken-default-entry-points.scm
+%%DATADIR%%/chicken-entry-points.scm
+%%DATADIR%%/chicken-ffi-macros.scm
+%%DATADIR%%/chicken-match-macros.scm
+%%DATADIR%%/chicken-more-macros.scm
+@dirrm %%DATADIR%%
+@exec mkdir -p %D/lib/chicken
+@dirrm lib/chicken

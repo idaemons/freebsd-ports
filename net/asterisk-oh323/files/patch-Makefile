@@ -1,0 +1,54 @@
+--- Makefile.orig	Wed Jan 18 10:54:59 2006
++++ Makefile	Wed Jan 18 11:50:59 2006
+@@ -41,7 +41,7 @@
+ # Install everything under this directory. If this is empty, then everything
+ # will be installed under /
+ #
+-DESTDIR=
++DESTDIR=$(PREFIX)
+ 
+ #
+ # Set PWLIBDIR variable to the directory containing the sources of 
+@@ -51,7 +51,7 @@
+ # compile asterisk-oh323. Do not use the installed library of your
+ # distribution. It won't work.
+ #
+-PWLIBDIR=/usr/src/pwlib
++PWLIBDIR?=/usr/src/pwlib
+ 
+ #
+ # Set OPENH323LIBDIR variable to the directory containing the sources of
+@@ -61,13 +61,13 @@
+ # compile asterisk-oh323. Do not use the installed library of your
+ # distribution. It won't work.
+ #
+-OPENH323DIR=/usr/src/openh323
++OPENH323DIR?=/usr/src/openh323
+ 
+ #
+ # Set ASTERISKINCDIR variable to the directory containing the include files of
+ # Asterisk PBX.
+ #
+-ASTERISKINCDIR=/usr/src/asterisk/include
++ASTERISKINCDIR=$(LOCALBASE)/include
+ 
+ #
+ # Set ASTERISKMODDIR variable to the directory where ASTERISK's modules reside.
+@@ -75,7 +75,7 @@
+ #
+ # Note: This directory is created under $DESTDIR.
+ #
+-ASTERISKMODDIR=/usr/lib/asterisk/modules
++ASTERISKMODDIR=/lib/asterisk/modules
+ 
+ #
+ # Set ASTERISKETCDIR variable to the directory where ASTERISK's configuration
+@@ -93,7 +93,7 @@
+ #
+ # Note: This directory is created under $DESTDIR.
+ #
+-OH323WRAPLIBDIR=/usr/local/lib
++OH323WRAPLIBDIR=/lib
+ 
+ #
+ # Set WRAPTRACING to 1 to enable tracing information from the OpenH323Wrap

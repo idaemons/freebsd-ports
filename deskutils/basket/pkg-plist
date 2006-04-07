@@ -1,0 +1,46 @@
+bin/basket
+share/applnk/Utilities/basket.desktop
+share/apps/basket/basketui.rc
+share/doc/HTML/en/basket/common
+share/doc/HTML/en/basket/index.cache.bz2
+share/doc/HTML/en/basket/index.docbook
+share/icons/crystalsvg/128x128/apps/basket.png
+share/icons/crystalsvg/16x16/apps/basket.png
+share/icons/crystalsvg/22x22/apps/basket.png
+share/icons/crystalsvg/32x32/apps/basket.png
+share/icons/crystalsvg/48x48/apps/basket.png
+share/icons/crystalsvg/64x64/apps/basket.png
+share/icons/crystalsvg/scalable/apps/basket.svg
+share/locale/de/LC_MESSAGES/basket.mo
+share/locale/es/LC_MESSAGES/basket.mo
+share/locale/fr/LC_MESSAGES/basket.mo
+share/locale/nl/LC_MESSAGES/basket.mo
+share/locale/pl_PL/LC_MESSAGES/basket.mo
+share/locale/zh_TW/LC_MESSAGES/basket.mo
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/pl_PL/LC_MESSAGES
+@dirrmtry share/locale/pl_PL
+@dirrmtry share/icons/crystalsvg/scalable/apps
+@dirrmtry share/icons/crystalsvg/scalable
+@dirrmtry share/icons/crystalsvg/64x64/apps
+@dirrmtry share/icons/crystalsvg/64x64
+@dirrmtry share/icons/crystalsvg/48x48/apps
+@dirrmtry share/icons/crystalsvg/48x48
+@dirrmtry share/icons/crystalsvg/32x32/apps
+@dirrmtry share/icons/crystalsvg/32x32
+@dirrmtry share/icons/crystalsvg/22x22/apps
+@dirrmtry share/icons/crystalsvg/22x22
+@dirrmtry share/icons/crystalsvg/16x16/apps
+@dirrmtry share/icons/crystalsvg/16x16
+@dirrmtry share/icons/crystalsvg/128x128/apps
+@dirrmtry share/icons/crystalsvg/128x128
+@dirrmtry share/icons/crystalsvg
+@dirrmtry share/icons
+@dirrm share/doc/HTML/en/basket
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML
+@dirrm share/apps/basket
+@dirrmtry share/apps
+@dirrmtry share/applnk/Utilities
+@dirrmtry share/applnk

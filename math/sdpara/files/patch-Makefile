@@ -1,0 +1,43 @@
+--- Makefile.orig	Fri Oct  8 15:08:59 2004
++++ Makefile	Thu May 12 14:02:57 2005
+@@ -18,11 +18,10 @@
+ # This file is Makefile of SDPARA
+ # $Id: Makefile,v 1.2 2004/10/08 05:57:48 makoto Exp $
+ 
+-LAPACK = $(HOME)/lapack
++LAPACK = %%LOCALBASE%%
+ RSDPA  = .
+ 
+-LAPACK_LIB =  -llapack -lcblaswr -lcblas \
+-              -lf77blas -lI77 -lF77 -latlas
++LAPACK_LIB = -lalapack -lcblas -lf77blas -latlas -lg2c
+ 
+ # if you use BLAS in clapack.tgz, use next line
+ # and set NON_ATLAS_SDPA in rsdpa_include.h to 1.
+@@ -36,10 +35,12 @@
+ #RSDPA_LIB_NAME = rsdpa
+ RSDPA_LIB = -l$(RSDPA_LIB_NAME)
+ 
+-MPIBIN=
+-CC = $(MPIBIN)mpicxx
++MPIBIN= %%LOCALBASE%%/mpich/bin/
++CC = $(MPIBIN)mpiCC
+ F77 = $(MPIBIN)mpif77
+ OPTION = -O3  #-g
++FFLAGS = %%FFLAGS%%
++CXXFLAGS = %%CXXFLAGS%%
+ 
+ TARGET_EXE = $(RSDPA_LIB_NAME)
+ #TARGET_EXE = rsdpa_main.exe
+@@ -60,9 +61,9 @@
+ 	  -L$(LAPACK)/lib $(SCALAPACK_LIB) $(LAPACK_LIB)
+ 
+ .cpp.o:
+-	$(CC) $(OPTION) -c -I$(RSDPA) -I$(LAPACK)/include $<
++	$(CC) $(CXXFLAGS) -c -I$(RSDPA) -I$(LAPACK)/include $<
+ .f.o:
+-	$(F77) $(OPTION) -c $<
++	$(F77) $(FFLAGS) -c $<
+ 
+ force: clean now
+ forceall: clean all

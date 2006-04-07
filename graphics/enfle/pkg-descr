@@ -1,0 +1,20 @@
+    This program aims to view many variously formated pictures
+easily. So far, it can treat below formats:
+
+  - archivers:
+      bz2 dri exe gz (libarc) misc one pak tar
+  - loaders:
+      ald bmp grp jpeg lfg mag (mng) p2 pic pms png pnm (ungif) xbm xpm
+  - savers:
+      jpeg pms png
+
+    It has been implemented plug-in mechanism so that each user
+can choose each format support linked in main program or separated
+as plugin. Moreover, you can make your own plugins to extend
+supported formats.
+
+WWW: http://enfle.fennel.org/
+WWW: http://www3.big.or.jp/~sian/linux/products/enfle/
+
+-- 
+Yuki Sawada <samy@goldmoon.org>

@@ -1,0 +1,21 @@
+bin/ggz-config
+bin/ggz-wrapper
+etc/xdg/menus/applications-merged/ggz.merge.menu
+etc/xdg/menus/ggz.menu
+include/ggzcore.h
+include/ggzmod.h
+lib/libggzcore.a
+lib/libggzcore.la
+lib/libggzcore.so
+lib/libggzcore.so.8
+lib/libggzmod.a
+lib/libggzmod.la
+lib/libggzmod.so
+lib/libggzmod.so.4
+share/desktop-directories/ggz-games.directory
+share/desktop-directories/ggz.directory
+share/locale/de/LC_MESSAGES/ggz-config.mo
+@dirrmtry share/desktop-directories
+@dirrmtry etc/xdg/menus/applications-merged
+@dirrmtry etc/xdg/menus
+@dirrmtry etc/xdg

@@ -1,0 +1,73 @@
+# $FreeBSD$
+#
+
+    COMMENT = Astronomical ports
+
+    SUBDIR += accrete
+    SUBDIR += boinc-setiathome
+    SUBDIR += celestia
+    SUBDIR += cfitsio
+    SUBDIR += dgpsip
+    SUBDIR += ephem
+    SUBDIR += gdesklets-goodweather
+    SUBDIR += gkrellmoon
+    SUBDIR += gkrellmoon2
+    SUBDIR += gkrellsun
+    SUBDIR += glunarclock
+    SUBDIR += gpsd
+    SUBDIR += gpsdrive
+    SUBDIR += gpsman
+    SUBDIR += jday
+    SUBDIR += libnova
+    SUBDIR += luna
+    SUBDIR += match
+    SUBDIR += mymoon
+    SUBDIR += nightfall
+    SUBDIR += nova
+    SUBDIR += openmap
+    SUBDIR += openuniverse
+    SUBDIR += orsa
+    SUBDIR += p5-Astro-ADS
+    SUBDIR += p5-Astro-Catalog
+    SUBDIR += p5-Astro-DSS
+    SUBDIR += p5-Astro-FITS-Header
+    SUBDIR += p5-Astro-MoonPhase
+    SUBDIR += p5-Astro-SIMBAD
+    SUBDIR += p5-Astro-SunTime
+    SUBDIR += p5-Astro-Sunrise
+    SUBDIR += p5-GPS
+    SUBDIR += p5-Geo-METAR
+    SUBDIR += phoon
+    SUBDIR += planets
+    SUBDIR += pp3
+    SUBDIR += py-metar
+    SUBDIR += pyweather
+    SUBDIR += rmap
+    SUBDIR += roadmap
+    SUBDIR += saoimage
+    SUBDIR += sattrack
+    SUBDIR += sky2000
+    SUBDIR += spacechart
+    SUBDIR += sscalc
+    SUBDIR += stardates
+    SUBDIR += starplot
+    SUBDIR += stars
+    SUBDIR += stellarium
+    SUBDIR += sunclock
+    SUBDIR += wmglobe
+    SUBDIR += wmjupiter
+    SUBDIR += wmmoonclock
+    SUBDIR += wmsolar
+    SUBDIR += wmspaceweather
+    SUBDIR += wmsun
+    SUBDIR += xearth
+    SUBDIR += xephem
+    SUBDIR += xglobe
+    SUBDIR += xmoontool
+    SUBDIR += xphoon
+    SUBDIR += xplanet
+    SUBDIR += xtide
+    SUBDIR += xrmap
+    SUBDIR += xworld
+
+.include <bsd.port.subdir.mk>

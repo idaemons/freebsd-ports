@@ -1,0 +1,25 @@
+@comment $FreeBSD$
+bin/fetchmail
+bin/fetchmailconf
+libexec/fetchmailconf.py
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%NTLMDOCS%%%%DOCSDIR%%/README.NTLM
+%%PORTDOCS%%%%DOCSDIR%%/README.SSL
+%%PORTDOCS%%%%DOCSDIR%%/design-notes.html
+%%PORTDOCS%%%%DOCSDIR%%/esrs-design-notes.html
+%%PORTDOCS%%%%DOCSDIR%%/fetchmail-FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/fetchmail-features.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NLS%%share/locale/ca/LC_MESSAGES/fetchmail.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/fetchmail.mo
+%%NLS%%share/locale/de/LC_MESSAGES/fetchmail.mo
+%%NLS%%share/locale/es/LC_MESSAGES/fetchmail.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/fetchmail.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/fetchmail.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/fetchmail.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/fetchmail.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/fetchmail.mo

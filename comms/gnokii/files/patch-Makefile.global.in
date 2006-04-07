@@ -1,0 +1,20 @@
+--- Makefile.global.in.orig	Wed May 18 15:08:43 2005
++++ Makefile.global.in	Wed May 18 15:11:40 2005
+@@ -21,14 +21,14 @@
+ 
+ bindir         = @bindir@
+ sbindir        = @sbindir@
+-xbindir        = @XGNOKIIDIR@/bin/
++xbindir        = ${prefix}/bin/
+ libdir         = @libdir@
+-xgnokii_libdir = @XGNOKIIDIR@/share/@XPACKAGE@
++xgnokii_libdir = ${prefix}/share/@XPACKAGE@
+ includedir     = @includedir@
+ mandir         = @mandir@
+ man1dir        = ${mandir}/man1/
+ man8dir        = ${mandir}/man8/
+-xmandir        = @XGNOKIIDIR@/man/man1/
++xmandir        = ${prefix}/man/man1/
+ docdir         = ${prefix}/share/doc/${PACKAGE}
+ locdir         = @datadir@/locale
+ 

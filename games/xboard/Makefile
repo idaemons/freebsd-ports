@@ -1,14 +1,36 @@
 # New ports collection makefile for:    xboard
-# Version required:     3.2 patchlevel 0
-# Date created:         2 Jan 1995
-# Whom:                 swallace
+# Date created:         5 Jan 1997
+# Whom:                 xaa@stack.nl
 #
-# $Id: Makefile,v 1.3 1994/12/31 04:17:52 swallace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       xboard-3.2.pl0
-MASTER_SITES=	ftp://ftp.x.org/contrib/games/
-HAS_CONFIGURE=  yes
-CONFIGURE_ARGS= --prefix=${PREFIX}
+PORTNAME=	xboard
+PORTVERSION=	4.2.7
+CATEGORIES=	games
+MASTER_SITES=	http://www.tim-mann.org/xboard/ \
+		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	xboard
+
+MAINTAINER=	xaa+ports@timewasters.nl
+COMMENT=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
+
+BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
+
+USE_XLIB=	yes
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+STRIP=
+MAN6=		xboard.6 zic2xpm.6
+INFO=		xboard
+
+.if defined(WITH_XAW3D)
+CONFIGURE_ARGS+=	"--with-Xaw3d"
+LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+.endif
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's,$$(prefix)/share/info,@infodir@,' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

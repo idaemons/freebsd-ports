@@ -1,0 +1,34 @@
+@comment $FreeBSD$
+bin/preps
+share/gnome/apps/Development/PRepS.desktop
+share/gnome/omf/preps/preps-C.omf
+share/pixmaps/preps.png
+%%DATADIR%%/preps_logo.xpm
+%%DATADIR%%/gnome/help/preps/C/legal.xml
+%%DATADIR%%/gnome/help/preps/C/preps.xml
+%%DATADIR%%/gnome/help/preps/C/figures/arch_dlg.png
+%%DATADIR%%/gnome/help/preps/C/figures/attriblist.png
+%%DATADIR%%/gnome/help/preps/C/figures/editpr.png
+%%DATADIR%%/gnome/help/preps/C/figures/findpr.png
+%%DATADIR%%/gnome/help/preps/C/figures/gentab.png
+%%DATADIR%%/gnome/help/preps/C/figures/login.png
+%%DATADIR%%/gnome/help/preps/C/figures/main_win_arch.png
+%%DATADIR%%/gnome/help/preps/C/figures/mainwin.png
+%%DATADIR%%/gnome/help/preps/C/figures/mainwintab.png
+%%DATADIR%%/gnome/help/preps/C/figures/newpr.png
+%%DATADIR%%/gnome/help/preps/C/figures/printdlg.png
+%%DATADIR%%/gnome/help/preps/C/figures/prjedit.png
+%%DATADIR%%/gnome/help/preps/C/figures/prjvers.png
+%%DATADIR%%/gnome/help/preps/C/figures/prquery.png
+%%DATADIR%%/gnome/help/preps/C/figures/ptedit.png
+%%DATADIR%%/gnome/help/preps/C/figures/rawsql.png
+%%DATADIR%%/gnome/help/preps/C/figures/sevredit.png
+%%DATADIR%%/gnome/help/preps/C/figures/statedit.png
+%%DATADIR%%/gnome/help/preps/C/figures/useredit.png
+@dirrm share/gnome/omf/preps
+@dirrm %%DATADIR%%/gnome/help/preps/C/figures
+@dirrm %%DATADIR%%/gnome/help/preps/C
+@dirrm %%DATADIR%%/gnome/help/preps
+@dirrm %%DATADIR%%/gnome/help
+@dirrm %%DATADIR%%/gnome
+@dirrm %%DATADIR%%

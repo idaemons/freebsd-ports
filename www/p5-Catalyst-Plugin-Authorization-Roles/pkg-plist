@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Catalyst/Plugin/Authorization/Roles.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authorization
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

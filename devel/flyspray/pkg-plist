@@ -1,0 +1,244 @@
+%%DATADIR%%/.htaccess
+%%DATADIR%%/adodb
+%%DATADIR%%/attachments
+%%DATADIR%%/docs/licences/gnu_lgpl.html
+%%DATADIR%%/favicon.ico
+%%DATADIR%%/flyspray.conf.php
+%%DATADIR%%/flyspray.conf.php-dist
+%%DATADIR%%/header.php
+%%DATADIR%%/includes/archive_tar.php
+%%DATADIR%%/includes/backend.inc.php
+%%DATADIR%%/includes/class.jabber.php
+%%DATADIR%%/includes/class.phpmailer.php
+%%DATADIR%%/includes/class.smtp.php
+%%DATADIR%%/includes/db.inc.php
+%%DATADIR%%/includes/functions.inc.php
+%%DATADIR%%/includes/functions.js
+%%DATADIR%%/includes/gzip_compress.php
+%%DATADIR%%/includes/ie_hover.js
+%%DATADIR%%/includes/jscalendar/calendar-blue.css
+%%DATADIR%%/includes/jscalendar/calendar-blue2.css
+%%DATADIR%%/includes/jscalendar/calendar-brown.css
+%%DATADIR%%/includes/jscalendar/calendar-green.css
+%%DATADIR%%/includes/jscalendar/calendar-setup.js
+%%DATADIR%%/includes/jscalendar/calendar-setup_stripped.js
+%%DATADIR%%/includes/jscalendar/calendar-system.css
+%%DATADIR%%/includes/jscalendar/calendar-tas.css
+%%DATADIR%%/includes/jscalendar/calendar-win2k-1.css
+%%DATADIR%%/includes/jscalendar/calendar-win2k-2.css
+%%DATADIR%%/includes/jscalendar/calendar-win2k-cold-1.css
+%%DATADIR%%/includes/jscalendar/calendar-win2k-cold-2.css
+%%DATADIR%%/includes/jscalendar/calendar.js
+%%DATADIR%%/includes/jscalendar/calendar.php
+%%DATADIR%%/includes/jscalendar/calendar_stripped.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-af.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-al.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-bg.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-big5-utf8.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-big5.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-br.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-ca.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-cs-utf8.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-cs-win.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-da.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-de.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-du.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-el.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-en.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-es.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-fi.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-fr.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-he-utf8.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-hr-utf8.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-hr.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-hu.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-it.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-jp.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-ko-utf8.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-ko.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-lt-utf8.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-lt.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-lv.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-nl.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-no.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-pl-utf8.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-pl.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-pt.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-ro.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-ru.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-ru_win_.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-si.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-sk.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-sp.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-sv.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-tr.js
+%%DATADIR%%/includes/jscalendar/lang/calendar-zh.js
+%%DATADIR%%/includes/jscalendar/lang/cn_utf8.js
+%%DATADIR%%/includes/jscalendar/menuarrow.gif
+%%DATADIR%%/includes/jscalendar/menuarrow2.gif
+%%DATADIR%%/includes/jscalendar/skins/aqua/active-bg.gif
+%%DATADIR%%/includes/jscalendar/skins/aqua/dark-bg.gif
+%%DATADIR%%/includes/jscalendar/skins/aqua/hover-bg.gif
+%%DATADIR%%/includes/jscalendar/skins/aqua/menuarrow.gif
+%%DATADIR%%/includes/jscalendar/skins/aqua/normal-bg.gif
+%%DATADIR%%/includes/jscalendar/skins/aqua/rowhover-bg.gif
+%%DATADIR%%/includes/jscalendar/skins/aqua/status-bg.gif
+%%DATADIR%%/includes/jscalendar/skins/aqua/theme.css
+%%DATADIR%%/includes/jscalendar/skins/aqua/title-bg.gif
+%%DATADIR%%/includes/jscalendar/skins/aqua/today-bg.gif
+%%DATADIR%%/includes/markdown.php
+%%DATADIR%%/includes/notify.inc.php
+%%DATADIR%%/includes/regexp.php
+%%DATADIR%%/includes/styleswitcher.js
+%%DATADIR%%/includes/tabs.js
+%%DATADIR%%/includes/template.php
+%%DATADIR%%/includes/version.php
+%%DATADIR%%/includes/xmlrpc.inc
+%%DATADIR%%/includes/xmlrpcs.inc
+%%DATADIR%%/index.php
+%%DATADIR%%/lang/en/admin.php
+%%DATADIR%%/lang/en/authenticate.php
+%%DATADIR%%/lang/en/chpass.php
+%%DATADIR%%/lang/en/details.php
+%%DATADIR%%/lang/en/functions.inc.php
+%%DATADIR%%/lang/en/index.php
+%%DATADIR%%/lang/en/loginbox.php
+%%DATADIR%%/lang/en/main.php
+%%DATADIR%%/lang/en/modify.php
+%%DATADIR%%/lang/en/newgroup.php
+%%DATADIR%%/lang/en/newproject.php
+%%DATADIR%%/lang/en/newtask.php
+%%DATADIR%%/lang/en/newuser.php
+%%DATADIR%%/lang/en/notify.inc.php
+%%DATADIR%%/lang/en/pm.php
+%%DATADIR%%/lang/en/priority.php
+%%DATADIR%%/lang/en/register.php
+%%DATADIR%%/lang/en/reports.php
+%%DATADIR%%/lang/en/severity.php
+%%DATADIR%%/lang/en/status.php
+%%DATADIR%%/lang/langdiff.php
+%%DATADIR%%/remote-client.php
+%%DATADIR%%/remote.php
+%%DATADIR%%/scripts/admin.php
+%%DATADIR%%/scripts/authenticate.php
+%%DATADIR%%/scripts/chproject.php
+%%DATADIR%%/scripts/daemon.php
+%%DATADIR%%/scripts/depends.php
+%%DATADIR%%/scripts/details.php
+%%DATADIR%%/scripts/editcomment.php
+%%DATADIR%%/scripts/error.php
+%%DATADIR%%/scripts/index.php
+%%DATADIR%%/scripts/loginbox.php
+%%DATADIR%%/scripts/lostpw.php
+%%DATADIR%%/scripts/modify.php
+%%DATADIR%%/scripts/myprofile.php
+%%DATADIR%%/scripts/newgroup.php
+%%DATADIR%%/scripts/newtask.php
+%%DATADIR%%/scripts/newuser.php
+%%DATADIR%%/scripts/pm.php
+%%DATADIR%%/scripts/register.php
+%%DATADIR%%/scripts/reports.php
+%%DATADIR%%/scripts/rss.php
+%%DATADIR%%/scripts/rss2.php
+%%DATADIR%%/scripts/schedule.php
+%%DATADIR%%/setup/images/exclamation.png
+%%DATADIR%%/setup/images/title.png
+%%DATADIR%%/setup/index.php
+%%DATADIR%%/setup/styles/setup.css
+%%DATADIR%%/setup/styles/theme.css
+%%DATADIR%%/setup/templates/administration.tpl.php
+%%DATADIR%%/setup/templates/complete_install.tpl.php
+%%DATADIR%%/setup/templates/database.tpl.php
+%%DATADIR%%/setup/templates/license.tpl.php
+%%DATADIR%%/setup/templates/pre_install.tpl.php
+%%DATADIR%%/setup/templates/structure.tpl.php
+%%DATADIR%%/sql/flyspray-0.9.8.mysql
+%%DATADIR%%/sql/flyspray-0.9.8.pgsql
+%%DATADIR%%/sql/flyspray.conf.skel
+%%DATADIR%%/sql/upgrade_0.9.7_to_0.9.8.mysql
+%%DATADIR%%/sql/upgrade_0.9.7_to_0.9.8.pgsql
+%%DATADIR%%/themes/Bluey/asc.png
+%%DATADIR%%/themes/Bluey/attachment.png
+%%DATADIR%%/themes/Bluey/button-over.png
+%%DATADIR%%/themes/Bluey/button.png
+%%DATADIR%%/themes/Bluey/calendar.png
+%%DATADIR%%/themes/Bluey/comment.png
+%%DATADIR%%/themes/Bluey/desc.png
+%%DATADIR%%/themes/Bluey/frown.png
+%%DATADIR%%/themes/Bluey/index.html
+%%DATADIR%%/themes/Bluey/menu/comment.png
+%%DATADIR%%/themes/Bluey/menu/editmydetails.png
+%%DATADIR%%/themes/Bluey/menu/lists.png
+%%DATADIR%%/themes/Bluey/menu/logout.png
+%%DATADIR%%/themes/Bluey/menu/newtask.png
+%%DATADIR%%/themes/Bluey/menu/options.png
+%%DATADIR%%/themes/Bluey/menu/projectprefs.png
+%%DATADIR%%/themes/Bluey/menu/reports.png
+%%DATADIR%%/themes/Bluey/menu/search.png
+%%DATADIR%%/themes/Bluey/menu/usersandgroups.png
+%%DATADIR%%/themes/Bluey/mime/application.png
+%%DATADIR%%/themes/Bluey/mime/application/octet-stream.png
+%%DATADIR%%/themes/Bluey/mime/application/pdf.png
+%%DATADIR%%/themes/Bluey/mime/application/x-gzip.png
+%%DATADIR%%/themes/Bluey/mime/audio.png
+%%DATADIR%%/themes/Bluey/mime/image.png
+%%DATADIR%%/themes/Bluey/mime/text.png
+%%DATADIR%%/themes/Bluey/mime/text/html.png
+%%DATADIR%%/themes/Bluey/mime/video.png
+%%DATADIR%%/themes/Bluey/next.png
+%%DATADIR%%/themes/Bluey/percent-0.png
+%%DATADIR%%/themes/Bluey/percent-10.png
+%%DATADIR%%/themes/Bluey/percent-100.png
+%%DATADIR%%/themes/Bluey/percent-20.png
+%%DATADIR%%/themes/Bluey/percent-30.png
+%%DATADIR%%/themes/Bluey/percent-40.png
+%%DATADIR%%/themes/Bluey/percent-50.png
+%%DATADIR%%/themes/Bluey/percent-60.png
+%%DATADIR%%/themes/Bluey/percent-70.png
+%%DATADIR%%/themes/Bluey/percent-80.png
+%%DATADIR%%/themes/Bluey/percent-90.png
+%%DATADIR%%/themes/Bluey/prev.png
+%%DATADIR%%/themes/Bluey/smile.png
+%%DATADIR%%/themes/Bluey/tab-active.png
+%%DATADIR%%/themes/Bluey/tab-notactive.png
+%%DATADIR%%/themes/Bluey/theme.css
+%%DATADIR%%/themes/Bluey/title.png
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/QA_CHECKLIST.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING.txt
+%%PORTDOCS%%%%DOCSDIR%%/ADOdb.licence.txt
+%%PORTDOCS%%%%DOCSDIR%%/Flyspray.licence.txt
+%%PORTDOCS%%%%DOCSDIR%%/class.jabber.php.licence.txt
+%%PORTDOCS%%%%DOCSDIR%%/NuvolaIcons.licence.txt
+%%PORTDOCS%%%%DOCSDIR%%/jsCalendar.licence.txt
+%%PORTDOCS%%%%DOCSDIR%%/phpMarkdown.licence.txt
+%%PORTDOCS%%%%DOCSDIR%%/phpmailer.licence.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/docs/licences
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/includes/jscalendar/lang
+@dirrm %%DATADIR%%/includes/jscalendar/skins/aqua
+@dirrm %%DATADIR%%/includes/jscalendar/skins
+@dirrm %%DATADIR%%/includes/jscalendar
+@dirrm %%DATADIR%%/includes
+@dirrm %%DATADIR%%/lang/en
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/setup/styles
+@dirrm %%DATADIR%%/setup/images
+@dirrm %%DATADIR%%/setup/templates
+@dirrm %%DATADIR%%/setup
+@dirrm %%DATADIR%%/sql
+@dirrm %%DATADIR%%/themes/Bluey/mime/application
+@dirrm %%DATADIR%%/themes/Bluey/mime/text
+@dirrm %%DATADIR%%/themes/Bluey/mime
+@dirrm %%DATADIR%%/themes/Bluey/menu
+@dirrm %%DATADIR%%/themes/Bluey
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%

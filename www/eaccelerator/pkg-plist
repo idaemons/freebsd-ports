@@ -1,0 +1,7 @@
+%%ENCODER%%bin/encoder
+lib/php/%%PHP_EXT_DIR%%/eaccelerator.so
+@dirrmtry lib/php/%%PHP_EXT_DIR%%
+%%EXAMPLESDIR%%/eaccelerator.ini
+%%EXAMPLESDIR%%/eaccelerator.php
+%%EXAMPLESDIR%%/eaccelerator_password.php
+@dirrm %%EXAMPLESDIR%%

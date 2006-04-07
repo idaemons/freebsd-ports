@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Wed Jul  7 16:33:12 2004
++++ doc/Makefile.in	Wed Jul  7 16:34:27 2004
+@@ -161,7 +161,7 @@
+ # and an extra copy or two in the install-data-hook.  
+ # However, the manpages do not appear to be tremendously useful, so
+ # let's not bother.
+-@DOC_TRUE@htmldir = $(pkgdatadir)/html
++@DOC_TRUE@htmldir = $(prefix)/share/doc/cppunit
+ @DOC_TRUE@html_DATA = $(static_pages) html/index.html
+ subdir = doc
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

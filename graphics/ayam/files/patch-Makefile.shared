@@ -1,0 +1,171 @@
+
+$FreeBSD$
+
+--- Makefile.shared.orig
++++ Makefile.shared
+@@ -4,7 +4,7 @@
+ # Makefile for Ayam (shared version)
+ 
+ # Choose an installation prefix.
+-PREFIX = /usr/local/ayam
++#PREFIX = /usr/local/ayam
+ #PREFIX = /opt/ayam
+ # if you use one of the following, be sure to change LIBDIR
+ # and DOCDIR to a more suitable (Ayam specific) path
+@@ -31,14 +31,14 @@
+ 
+ INSTALL = ./ninstall
+ #INSTALL = install
+-MKDIR = mkdir -p
++#MKDIR = mkdir -p
+ 
+ # the C compiler
+-#CC = cc
++CC ?= cc
+ #CC = gcc
+ 
+ # the C++ compiler (just in use for the AyCSG and onio plugin)
+-#CXX = CC
++CXX = ${CC}
+ #CXX = g++
+ 
+ # the linker
+@@ -77,7 +77,10 @@
+ # the default configuration is to build with Affine as RIB writer without
+ # any shader parsing library (i.e. you will have to build and load a
+ # plugin for shader parsing)
+-CFLAGS = -O -DAYUSEAFFINE
++#CFLAGS = -O -DAYUSEAFFINE
++
++# make amd64 happy with fPIC
++CFLAGS += -O -fPIC -DAYUSESLXARGS -DAYUSEAQSISRIB -DAYENABLEWAIT
+ 
+ # simple configuration using BMRT
+ #CFLAGS = -O -DAYUSESLCARGS -DAYUSEBMRTRIBOUT
+@@ -128,49 +131,53 @@
+ TOGLOBJECT = togl/togl.o
+ 
+ # OpenGL
+-GLINCDIR = /usr/X11R6/include/
++GLINCDIR = ${X11BASE}/include/
+ # link options for linking with OpenGL libraries
+ GLLIBS = -lGLU -lGL
+ 
+ # TIFF
+-TIFFINCDIR = /usr/include/
++TIFFINCDIR = ${LOCALBASE}/include/
+ # link options for linking with TIFF library
+ TIFFLIB = -ltiff
+ 
+ # Tcl/Tk
+ # Tcl directory
+-TCLDIR = ../../tcl8.2.2
++#TCLDIR = ../../tcl8.2.2
+ #TCLDIR = ../../tcl8.0
+ 
+ # Tcl includes
+-TCLINC = -I$(TCLDIR)/generic
++#TCLINC = -I$(TCLDIR)/generic
++TCLINC = -I${LOCALBASE}/include/tcl8.2/generic
+ 
+ # Tcl library
+ # link options for linking with Tcl library
+-TCLLIB = -L$(TCLDIR)/unix -ltcl8.2
++#TCLLIB = -L$(TCLDIR)/unix -ltcl8.2
+ #TCLLIB = -L$(TCLDIR)/unix -ltcl8.0
+ # if you have an installed Tcl/Tk, you probably just want:
+ #TCLLIB = -ltcl
++TCLLIB = -L${LOCALBASE}/lib -ltcl82
+ 
+ # Tk sources directory
+ # Note: You really need the Tk _sources_ in order to compile Ayam!
+-TKDIR = ../../tk8.2.2
++#TKDIR = ../../tk8.2.2
+ #TKDIR = ../../tk8.0
+ 
+ # Tk includes
+-TKINC = -I$(TKDIR)/generic -I$(TKDIR)/unix
++#TKINC = -I$(TKDIR)/generic -I$(TKDIR)/unix
++TKINC = -I${LOCALBASE}/include/tk8.2/generic -I${LOCALBASE}/include/tk8.2/unix
+ 
+ # Tk library
+ # link options for linking with Tk library
+-TKLIB = -L$(TKDIR)/unix -ltk8.2
++#TKLIB = -L$(TKDIR)/unix -ltk8.2
+ #TKLIB = -L$(TKDIR)/unix -ltk8.0
+ # if you have an installed Tcl/Tk, you probably just want:
+ #TKLIB = -ltk
++TKLIB = -L${LOCALBASE}/lib -ltk82
+ 
+ 
+ # X11-libs
+ # link options for linking with X11
+-X11LIBS = -L/usr/X11R6/lib -lXmu -lXext -lX11
++X11LIBS = -L${X11BASE}/lib -lXmu -lXext -lX11
+ #X11LIBS = -L/usr/X11R6/lib -lXmu -lXext -lX11
+ 
+ 
+@@ -179,23 +186,23 @@
+ AFFINEINCDIR = ./affine/include
+ # if you use Affine as BMRT libribout replacement
+ # (also add -DAYUSEAFFINE to CFLAGS!):
+-AFFINEOBJS = ./affine/src/write.o ./affine/src/constant.o
++#AFFINEOBJS = ./affine/src/write.o ./affine/src/constant.o
+ # if you do not use Affine as BMRT libribout replacement:
+-#AFFINEOBJS = 
++AFFINEOBJS = 
+ 
+ # Aqsis
+-AQSISDIR = /usr/local/aqsis
+-AQSISINCDIR = $(AQSISDIR)/include
++AQSISDIR = ${LOCALBASE}
++AQSISINCDIR = $(AQSISDIR)/include/aqsis
+ AQSISLIBDIR = $(AQSISDIR)/lib
+ # if you do not use Aqsis libslxargs as libslcargs replacement:
+-AQSISOBJS = 
++#AQSISOBJS = 
+ # if you use Aqsis libslxargs (add -DAYUSESLXARGS to CFLAGS!):
+-#AQSISOBJS = $(AQSISLIBDIR)/rcdummy.o $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L /usr/local/lib -llog4cpp
++AQSISOBJS = $(AQSISLIBDIR)/libaqsis.a $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L ${LOCALBASE}/lib $(AQSISLIBDIR)/libraytrace.so -lstdc++
+ 
+ # if you do not use Aqsis libri2rib as BMRT libribout replacement:
+-AQSISRI2RIB =
++#AQSISRI2RIB =
+ # if you use Aqsis libri2rib (add -DAYUSEAQSISRIB to CFLAGS above!):
+-#AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L /usr/local/lib -llog4cpp
++AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L${AQSISLIBDIR} -lstdc++ ${PTHREAD_LIBS}
+ 
+ 
+ # BMRT
+@@ -220,9 +227,9 @@
+ # IRIX, Solaris, (MacOSX: get libdl from Fink!):
+ #DL = -ldl
+ # Linux:
+-DL = -ldl -lpthread
++#DL = -ldl -lpthread
+ # NetBSD:
+-#DL =
++DL =
+ 
+ # linker flags to produce shared modules:
+ # Linux, Solaris, IRIX:
+@@ -236,8 +243,8 @@
+ RRIBLIBS = -L$(AFFINEDIR)/lib -lribrdr -lribhash -lribnop -lm
+ 
+ # Ayslx Plugin (Aqsis)
+-AYSLXINCDIR = $(AQSISDIR)/include
+-AYSLXLIBS = $(AQSISDIR)/lib/rcdummy.o $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libshaderexecenv.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L/usr/local/lib -llog4cpp
++AYSLXINCDIR = ${AQSISINCDIR}
++AYSLXLIBS = -L${AQSISLIBDIR} $(AQSISDIR)/lib/libaqsis.so $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libshaderexecenv.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L${LOCALBASE}/lib
+ 
+ # Ayso Plugin (RenderDotC, RDC)
+ RDCDIR = /usr/local/rdc
+@@ -431,7 +438,7 @@
+ .cpp.o:
+ 	$(CXX) -c $(CFLAGS) $*.cpp -o $@ -I. -IMF3D -I$(TOGLINCDIR) $(TCLINC) $(TKINC) -I$(BMRTINCDIR) -I$(GLINCDIR) -I$(AFFINEINCDIR) -I$(AQSISINCDIR) -I$(OPENCSGINCDIR) -I$(GLEWINCDIR) -Iplugins
+ 
+-all: ayamsh csphere.so mfio.so metaobj.so
++all: ayamsh csphere.so mfio.so metaobj.so ayslx.so
+ 
+ ayamsh: $(AYAMOBJS) $(TOGLOBJECT) $(AFFINEOBJS)
+ 	$(LD) $(AYAMOBJS) $(TOGLOBJECT) $(EXLDFLAGS) -o ayamsh $(TKLIB) $(TCLLIB) $(GLLIBS) $(X11LIBS) $(RIBOUTLIB) $(AQSISRI2RIB) $(SLCARGSLIB) $(AFFINEOBJS) $(AQSISOBJS) $(TIFFLIB) -lm $(DL)

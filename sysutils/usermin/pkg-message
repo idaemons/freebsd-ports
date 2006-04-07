@@ -1,0 +1,15 @@
+===================================
+
+To reconfigure usermin you should
+run the following command as root:
+
+  ${LOCALBASE}/lib/usermin/setup.sh
+
+You won't have to perform this step
+after every usermin upgrade.
+
+Since 1.080_2, to run usermin from
+startup, add usermin_enable="YES"
+in your /etc/rc.conf.
+
+===================================

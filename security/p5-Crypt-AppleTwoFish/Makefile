@@ -1,0 +1,28 @@
+# New ports collection Makefile for:	p5-Crypt-AppleTwoFish
+# Date created:				18 Dec 2006
+# Whom:	      				Gabor Kovesdan
+# $FreeBSD$
+
+PORTNAME=	Crypt-AppleTwoFish
+PORTVERSION=	0.02
+CATEGORIES=	security perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Crypt
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	gkovesdan@t-hosting.hu
+COMMENT=	Perl extension for Apple iTMS internal key descrambling algorithm
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Crypt::AppleTwoFish.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+post-patch:
+	${PERL} -pi -e '$$_="" if m{5.008|warnings}' ${WRKSRC}/t/*.t \
+		${WRKSRC}/lib/Crypt/AppleTwoFish.pm ${WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+
+.include <bsd.port.post.mk>

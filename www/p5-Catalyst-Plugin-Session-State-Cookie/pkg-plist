@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Catalyst/Plugin/Session/State/Cookie.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/State/Cookie
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/State
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

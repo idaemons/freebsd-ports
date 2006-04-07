@@ -1,17 +1,28 @@
 # New ports collection makefile for:	ctwm
-# Version required:	3.2 patchlevel 1
 # Date created:		13 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.4 1995/01/13 12:48:46 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	ctwm-3.2p1
-MASTER_SITES=	ftp://ftp.x.org/contrib/window_managers/
-USE_IMAKE=	YES
-EXTRACT_SUFX=	.tar.Z
-.if !exists(/usr/X11R6/lib/libXpm.a)
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
+PORTNAME=	ctwm
+PORTVERSION=	3.7
+CATEGORIES=	x11-wm
+MASTER_SITES=	http://ctwm.free.lp.se/dist/
+
+MAINTAINER=	fullermd@over-yonder.net
+COMMENT=	An extension to twm, with support for multiple virtual screens, etc
+
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+
+USE_IMAKE=	yes
+USE_XPM=	yes
+MAN1=		ctwm.1
+
+pre-configure:
+	${CP} ${WRKSRC}/Imakefile.local-template ${WRKSRC}/Imakefile.local
+	${CAT} ${FILESDIR}/Imakefile.local-additional >> ${WRKSRC}/Imakefile.local
 
 .include <bsd.port.mk>

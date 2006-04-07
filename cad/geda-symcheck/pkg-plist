@@ -1,0 +1,4 @@
+bin/gsymcheck
+share/doc/geda-doc/man/gsymcheck.html
+share/gEDA/system-gsymcheckrc
+@dirrmtry share/doc/geda-doc/man

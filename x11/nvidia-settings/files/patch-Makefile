@@ -1,0 +1,44 @@
+--- Makefile.orig	Thu Dec 15 09:57:49 2005
++++ Makefile	Mon Jan 16 22:06:37 2006
+@@ -79,12 +79,11 @@
+   ifndef STRIP
+     STRIP = strip
+   endif
+-  CFLAGS += -O
+ endif
+ 
+ # default prefix
+ ifdef ROOT
+-  prefix = $(ROOT)/usr
++  prefix = $(ROOT)
+ else
+   prefix = /usr/local
+ endif
+@@ -102,16 +101,14 @@
+ else
+ ECHO=echo
+ define INSTALL_RULE
+-	$(INSTALL) -m 755 $(NVIDIA_SETTINGS) $(bindir)/$(NVIDIA_SETTINGS)
+-	mkdir -p $(mandir)
+-	$(INSTALL) -m 644 doc/$(MANPAGE) $(mandir)
+-	gzip -9f $(mandir)/$(MANPAGE)
++	$(BSD_INSTALL_PROGRAM) $(NVIDIA_SETTINGS) $(bindir)/$(NVIDIA_SETTINGS)
++	$(BSD_INSTALL_MAN) doc/$(MANPAGE) $(mandir)
+ endef
+ endif
+ 
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+-mandir = $(exec_prefix)/share/man/man1
++mandir = $(MANPREFIX)/man/man1
+ 
+ X11R6_CFLAGS = -I $(X11R6_INC_DIR)
+ 
+@@ -192,7 +189,6 @@
+ all: $(NVIDIA_SETTINGS) doc/$(MANPAGE)
+ 
+ install: all
+-	$(STRIP) $(NVIDIA_SETTINGS)
+ 	$(INSTALL_RULE)
+ 
+ $(OBJS_DIR)/%.o: %.c
