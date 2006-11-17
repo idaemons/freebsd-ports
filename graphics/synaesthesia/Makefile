@@ -1,0 +1,42 @@
+# New ports collection makefile for:	synaesthesia
+# Date created:				25 May 2001
+# Whom:					petef@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	synaesthesia
+PORTVERSION=	2.4
+PORTREVISION=	1
+CATEGORIES=	graphics audio
+MASTER_SITES=	http://www.logarithmic.net/pfh-files/synaesthesia/ CSME
+
+MAINTAINER=	infofarmer@FreeBSD.org
+COMMENT=	Graphically represents sound in real time
+
+USE_SDL=	sdl
+USE_GMAKE=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE}
+PORTDOCS=	README
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	Does not build on 4.x
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,' ${WRKSRC}/*.c?
+	@${REINPLACE_CMD} -e 's,int16_t,u_int16_t,' ${WRKSRC}/sound.cc
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/synaesthesia ${PREFIX}/bin/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+.endif
+
+.include <bsd.port.post.mk>

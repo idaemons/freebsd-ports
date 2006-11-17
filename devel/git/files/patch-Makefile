@@ -1,0 +1,23 @@
+--- Makefile.orig	Sat Jun 10 12:41:54 2006
++++ Makefile	Thu Jul  6 16:59:27 2006
+@@ -85,8 +85,8 @@
+ 
+ # CFLAGS and LDFLAGS are for the users to override from the command line.
+ 
+-CFLAGS = -g -O2 -Wall
+-LDFLAGS =
++#CFLAGS = -g -O2 -Wall
++#LDFLAGS =
+ ALL_CFLAGS = $(CFLAGS)
+ ALL_LDFLAGS = $(LDFLAGS)
+ STRIP ?= strip
+@@ -135,7 +135,8 @@
+ 	git-send-email.perl
+ 
+ SCRIPT_PYTHON = \
+-	git-merge-recursive.py
++	git-merge-recursive.py \
++	git-p4import.py
+ 
+ SCRIPTS = $(patsubst %.sh,%,$(SCRIPT_SH)) \
+ 	  $(patsubst %.perl,%,$(SCRIPT_PERL)) \

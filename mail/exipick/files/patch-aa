@@ -1,0 +1,11 @@
+--- exipick.20060307.1.orig	Mon May  1 17:45:32 2006
++++ exipick.20060307.1	Mon May  1 17:45:54 2006
+@@ -1,7 +1,7 @@
+ #!/usr/bin/perl
+ 
+ # SET THIS TO THE PATH TO YOUR SPOOL DIR!
+-my $spool = '/local/exim/spool';
++my $spool = '/var/spool/exim';
+ 
+ use strict;
+ use Getopt::Long;

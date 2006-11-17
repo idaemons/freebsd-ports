@@ -1,0 +1,73 @@
+# New ports collection makefile for:	radrails
+# Date created:		2006-04-13
+# Whom:			Alexander Novitsky <alecn2002@yandex.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	radrails
+PORTVERSION=	0.7.1
+CATEGORIES=	devel ruby java
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-gtk
+
+MAINTAINER=	alecn2002@yandex.ru
+COMMENT=	IDE for Ruby On Rails
+
+RUN_DEPENDS=	${LINUXBASE}/usr/bin/gtk-demo:${PORTSDIR}/x11-toolkits/linux-gtk2 \
+		${LOCALBASE}/bin/rails:${PORTSDIR}/www/rubygem-rails
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+NO_BUILD=	yes
+ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+JAVA_OS=	linux
+
+ICONDIR=	icons
+ICON=		${ICONDIR}/radrails.png
+
+DESKTOP_ENTRIES=	\
+	"RADRails" \
+	"Integrated Developement Environment for Ruby On Rails" \
+	"${DATADIR}/${ICON}" \
+	"radrails" \
+	"Development;IDE;" \
+	true
+
+PLIST_FILES=	%%DATADIR%%/${ICON} bin/radrails
+PLIST_DIRS=	%%DATADIR%%/${ICONDIR}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	does not build
+.endif
+
+#do-configure:
+
+pre-install:
+	(cd ${WRKDIR}; jar -xf ${WRKSRC}/plugins/org.radrails.ide.ui_${PORTVERSION}.jar ${ICON})
+	${CP} ${FILESDIR}/radrails.sh ${WRKDIR}/radrails.sh
+	${REINPLACE_CMD} -E -e "s|%%DATADIR%%|${DATADIR}|g; s|%%JAVA%%|${JAVA}|g" ${WRKDIR}/radrails.sh
+
+do-install:
+	${MKDIR} ${DATADIR}
+	( cd ${WRKSRC} \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/\{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DATADIR}/\{} \; )
+	${MKDIR} ${DATADIR}/${ICONDIR}
+	${INSTALL_DATA} ${WRKDIR}/${ICON} ${DATADIR}/${ICON}
+	${INSTALL_SCRIPT} ${WRKDIR}/radrails.sh ${PREFIX}/bin/radrails
+
+post-install:
+	@cd ${WRKSRC} \
+	  && ${FIND} -s . -type f \
+	    | ${SED} 's,^\.,${DATADIR:S,^${PREFIX}/,,},' >>${TMPPLIST} \
+	  && ${FIND} -s -d . -type d \
+	    | ${SED} 's,^\.,@dirrm ${DATADIR:S,^${PREFIX}/,,},' >>${TMPPLIST}
+
+.include <bsd.port.post.mk>

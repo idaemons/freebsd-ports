@@ -1,0 +1,25 @@
+%%MASTER%%sbin/dnet
+%%MASTER%%bin/dnet-config
+%%MASTER%%lib/libdnet
+%%MASTER%%lib/libdnet.1
+%%MASTER%%lib/libdnet.a
+%%MASTER%%lib/libdnet.la
+%%MASTER%%lib/libdnet.so
+%%MASTER%%lib/libdnet.so.1
+%%MASTER%%include/dnet.h
+%%MASTER%%include/dnet/addr.h
+%%MASTER%%include/dnet/arp.h
+%%MASTER%%include/dnet/blob.h
+%%MASTER%%include/dnet/eth.h
+%%MASTER%%include/dnet/fw.h
+%%MASTER%%include/dnet/icmp.h
+%%MASTER%%include/dnet/intf.h
+%%MASTER%%include/dnet/ip.h
+%%MASTER%%include/dnet/ip6.h
+%%MASTER%%include/dnet/os.h
+%%MASTER%%include/dnet/rand.h
+%%MASTER%%include/dnet/route.h
+%%MASTER%%include/dnet/tcp.h
+%%MASTER%%include/dnet/tun.h
+%%MASTER%%include/dnet/udp.h
+%%MASTER%%@dirrm include/dnet

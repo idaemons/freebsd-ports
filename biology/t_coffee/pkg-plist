@@ -1,0 +1,57 @@
+bin/t_coffee
+%%PORTDOCS%%%%DOCSDIR%%/README4T-COFFEE
+%%PORTDOCS%%%%DOCSDIR%%/aln_compare.doc.txt
+%%PORTDOCS%%%%DOCSDIR%%/seq_reformat.doc.txt
+%%PORTDOCS%%%%DOCSDIR%%/t_coffee.pdf
+%%PORTDOCS%%%%DOCSDIR%%/t_coffee_doc.doc
+%%PORTDOCS%%%%DOCSDIR%%/t_coffee_doc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/t_coffee_doc.txt
+%%EXAMPLESDIR%%/3d.fasta
+%%EXAMPLESDIR%%/3d_sample2.fasta
+%%EXAMPLESDIR%%/3d_sample3.fasta
+%%EXAMPLESDIR%%/clustalw_method.tc_method
+%%EXAMPLESDIR%%/command_line.txt
+%%EXAMPLESDIR%%/error_report.T-COFFEE.3752
+%%EXAMPLESDIR%%/sample_aln1.aln
+%%EXAMPLESDIR%%/sample_aln1.fasta
+%%EXAMPLESDIR%%/sample_aln1.tc_lib
+%%EXAMPLESDIR%%/sample_aln1_1.aln
+%%EXAMPLESDIR%%/sample_aln1_2.aln
+%%EXAMPLESDIR%%/sample_aln2.aln
+%%EXAMPLESDIR%%/sample_aln2.fasta
+%%EXAMPLESDIR%%/sample_aln2.msf
+%%EXAMPLESDIR%%/sample_aln3.aln
+%%EXAMPLESDIR%%/sample_aln4.aln
+%%EXAMPLESDIR%%/sample_dnaseq1.fasta
+%%EXAMPLESDIR%%/struc1.pdb
+%%EXAMPLESDIR%%/sample_lib1.mocca_lib
+%%EXAMPLESDIR%%/sample_lib1.tc_lib
+%%EXAMPLESDIR%%/sample_lib2.tc_lib
+%%EXAMPLESDIR%%/sample_lib3.tc_lib
+%%EXAMPLESDIR%%/sample_lib4.tc_lib02
+%%EXAMPLESDIR%%/sample_list1.lib_list
+%%EXAMPLESDIR%%/sample_param_file.param
+%%EXAMPLESDIR%%/sample_profile1.aln
+%%EXAMPLESDIR%%/sample_profile2.aln
+%%EXAMPLESDIR%%/sample_seq1.aln
+%%EXAMPLESDIR%%/sample_seq1.fasta
+%%EXAMPLESDIR%%/sample_seq2.fasta
+%%EXAMPLESDIR%%/sample_seq3.fasta
+%%EXAMPLESDIR%%/sample_seq4.fasta
+%%EXAMPLESDIR%%/sample_seq5.fasta
+%%EXAMPLESDIR%%/sample_tree.dnd
+%%EXAMPLESDIR%%/struc2.pdb
+%%EXAMPLESDIR%%/struc3.pdb
+%%EXAMPLESDIR%%/struc4.pdb
+%%EXAMPLESDIR%%/t_coffee.log
+%%EXAMPLESDIR%%/template_file.template
+%%EXAMPLESDIR%%/test.lib
+%%EXAMPLESDIR%%/test.tc_lib
+%%EXAMPLESDIR%%/test_lib.tc_lib
+%%DATADIR%%/license.txt
+%%DATADIR%%/html/t_coffee.html
+%%DATADIR%%/html/t_coffee4html.cgi
+@dirrmtry %%DOCSDIR%%
+@dirrmtry %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/html
+@dirrmtry %%DATADIR%%

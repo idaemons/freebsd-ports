@@ -1,0 +1,75 @@
+@comment $FreeBSD$
+www/pnews/.htaccess
+www/pnews/auth.php
+www/pnews/auth/ftp.inc.php
+www/pnews/auth/ftps.inc.php
+www/pnews/auth/ldap.inc.php
+www/pnews/auth/mail.inc.php
+www/pnews/auth/mysql.inc.php
+www/pnews/auth/nntp.inc.php
+www/pnews/auth/nntps.inc.php
+www/pnews/auth/pgsql.inc.php
+www/pnews/auth/phpbb.inc.php
+www/pnews/auth/pop3.inc.php
+www/pnews/auth/pop3s.inc.php
+www/pnews/auth/sample.inc.php
+www/pnews/chg-lang.php
+www/pnews/clear-cache.php
+www/pnews/css/standard.css
+www/pnews/delete.php
+www/pnews/doc/acknowlege.php
+www/pnews/doc/copying.php
+www/pnews/doc/download.php
+www/pnews/doc/guide.php
+www/pnews/doc/header.php
+www/pnews/doc/history.php
+www/pnews/doc/index.php
+www/pnews/doc/requirement.php
+www/pnews/doc/style.css
+www/pnews/doc/url_rewrite.php
+www/pnews/download.php
+www/pnews/examples/config.inc.php
+www/pnews/examples/dot_htaccess
+www/pnews/examples/newsgroups-twbbs.lst
+www/pnews/examples/newsgroups.lst
+www/pnews/examples/nntp-test.php
+www/pnews/examples/robots.txt
+www/pnews/favicon.ico
+www/pnews/form-login.php
+www/pnews/forward.php
+www/pnews/html.inc.php
+www/pnews/index.php
+www/pnews/indexing.php
+www/pnews/language.inc.php
+www/pnews/language/big5-gb.tab
+www/pnews/language/big5-unicode.tab
+www/pnews/language/chinese.inc.php
+www/pnews/language/chinese_gb.inc.php
+www/pnews/language/english.inc.php
+www/pnews/language/finnish.inc.php
+www/pnews/language/fix-b2g.php
+www/pnews/language/fix-g2b.php
+www/pnews/language/french.inc.php
+www/pnews/language/gb-big5.tab
+www/pnews/language/gb-unicode.tab
+www/pnews/language/german.inc.php
+www/pnews/language/italian.inc.php
+www/pnews/language/slovak.inc.php
+www/pnews/language/unicode-big5.tab
+www/pnews/language/unicode-gb.tab
+www/pnews/nnrpclass.php
+www/pnews/post.php
+www/pnews/read-art.php
+www/pnews/read.php
+www/pnews/readcfg.inc.php
+www/pnews/reply.php
+www/pnews/utils.inc.php
+www/pnews/utils.js
+www/pnews/version.inc.php
+www/pnews/xpost.php
+@dirrmtry www/pnews/auth
+@dirrmtry www/pnews/css
+@dirrmtry www/pnews/doc
+@dirrmtry www/pnews/examples
+@dirrmtry www/pnews/language
+@dirrmtry www/pnews

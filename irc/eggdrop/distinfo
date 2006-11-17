@@ -1,0 +1,6 @@
+MD5 (eggdrop1.6.18.tar.bz2) = 0cfc13dcc84cd4e9d4a23d23d9429ee7
+SHA256 (eggdrop1.6.18.tar.bz2) = e5d0794ee7b819f8c12ff10f521e5cb453fc531ac990867c6bf228f018d38a9e
+SIZE (eggdrop1.6.18.tar.bz2) = 783676
+MD5 (eggdrop-1.6.18-ssl.patch.gz) = fe69490a40b19e35c80f4fa1ecac7610
+SHA256 (eggdrop-1.6.18-ssl.patch.gz) = 5b3934cc70e2aae939d75baa24c064b14f75954f53bac7f156d7a483b67c3b89
+SIZE (eggdrop-1.6.18-ssl.patch.gz) = 9251

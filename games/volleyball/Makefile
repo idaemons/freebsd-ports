@@ -1,0 +1,47 @@
+# New ports collection makefile for:	volleyball
+# Date created:		09 Oct 2005
+# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	volleyball
+PORTVERSION=	0.8.5
+PORTREVISION=	1
+CATEGORIES=	games
+MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/volleyball/descargas/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
+
+MAINTAINER=	amdmi3@mail.ru
+COMMENT=	A game similar to GNU Arcade Volleyball
+
+USE_SDL=	sdl image
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ARGS=	--disable-nls # strangeness in nls support
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GCC=	3.4+
+
+PORTDOCS=	README
+MAN6=		volleyball.6
+
+DATAVERSION=	0.8.4
+
+post-configure:
+	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
+		${SETENV} ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+
+post-install:
+	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+	
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,34 @@
+--- Makefile.orig	Sat Aug  5 02:33:20 2006
++++ Makefile	Sun Aug 27 15:00:42 2006
+@@ -56,11 +56,11 @@
+ DEVICE_CFLAGS = -I device/ -I device/net -I device/lcd -I device/flash
+ UTILS_CFLAGS = -I utils/share -I utils/main -I utils/config -I utils/debugger
+ SIM_EXTRA_CFLAGS = -DMODET $(ARCH_ARM_CFLAGS) $(ARCH_BLACKFIN_CFLAGS) $(ARCH_COLDFIRE_CFLAGS) $(DEVICE_CFLAGS) $(UTILS_CFLAGS) 
+-SIM_EXTRA_LIBS = `pkg-config gtk+-2.0 --libs`
++SIM_EXTRA_LIBS = `pkg-config gtk+-2.0 --libs` -L$(LOCALBASE)/lib
+ #for debug
+ #CFLAGS = -g    -DSTANDALONE -DDEFAULT_INLINE=0  -DMODET $(SIM_EXTRA_CFLAGS) $(SUPPORT_ARCH_DEF) -I. -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/X11R6/include -I/usr/include/atk-1.0 -I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
+ #for speed
+-CFLAGS = -g -O2 -DSTANDALONE -DDEFAULT_INLINE=0  -DMODET $(SIM_EXTRA_CFLAGS) $(SUPPORT_ARCH_DEF) -I. -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/X11R6/include -I/usr/include/atk-1.0 -I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
++CFLAGS = -g -O2 -fno-strict-aliasing -DSTANDALONE -DDEFAULT_INLINE=0  -DMODET $(SIM_EXTRA_CFLAGS) $(SUPPORT_ARCH_DEF) -I. -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/X11R6/include -I/usr/include/atk-1.0 -I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I$(LOCALBASE)/include 
+ 
+ ARM_COMMON_PATH= arch/arm/common
+ ARM_DBCT_PATH= arch/arm/dbct
+@@ -161,7 +161,7 @@
+ 	rm -f binary/*.o
+ 	rm -f binary/*.a
+ 	rm -f binary/skyeye
+-	make -C arch/coldfire clean
++	$(MAKE) -C arch/coldfire clean
+ 
+ distclean mostlyclean maintainer-clean realclean: clean
+ 	rm -f TAGS tags
+@@ -193,7 +193,7 @@
+ CF_COMMON_PATH = arch/coldfire/common/
+ COLDFIRE_FLAG = -I arch/coldire/tracer
+ binary/libcoldfire.a:$(SIM_CF_OBJS) 
+-	make -C arch/coldfire
++	$(MAKE) -C arch/coldfire
+ 	$(AR) $(AR_FLAGS) binary/libcoldfire.a $(SIM_CF_OBJS) $(CF_COMMON_PATH)/*.o $(CF_PATH)/tracer/tracer.o $(CF_PATH)/i_5206/i.o
+ 	$(RANLIB) binary/libcoldfire.a
+ 

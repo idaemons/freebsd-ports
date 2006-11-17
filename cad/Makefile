@@ -1,5 +1,77 @@
-# $Id: Makefile,v 1.1.1.1 1995/01/13 11:10:43 jkh Exp $
+# $FreeBSD$
 #
-SUBDIR=	acs irsim magic pcb
+
+    COMMENT = CAD tools
+
+    SUBDIR += admesh
+    SUBDIR += adms
+    SUBDIR += alliance
+    SUBDIR += astk-client
+    SUBDIR += astk-serveur
+    SUBDIR += atlc
+    SUBDIR += brlcad
+    SUBDIR += calculix
+    SUBDIR += cascade
+    SUBDIR += chipmunk
+    SUBDIR += chipvault
+    SUBDIR += cider
+    SUBDIR += dinotrace
+    SUBDIR += dxf2fig
+    SUBDIR += electric
+    SUBDIR += electric-ng
+    SUBDIR += fandango
+    SUBDIR += feappv
+    SUBDIR += geda
+    SUBDIR += geda-docs
+    SUBDIR += geda-examples
+    SUBDIR += geda-gattrib
+    SUBDIR += geda-gschem
+    SUBDIR += geda-netlist
+    SUBDIR += geda-projectmanager
+    SUBDIR += geda-symbols
+    SUBDIR += geda-symcheck
+    SUBDIR += geda-utils
+    SUBDIR += gerbv
+    SUBDIR += gmsh
+    SUBDIR += gnucap
+    SUBDIR += gplcver
+    SUBDIR += gspiceui
+    SUBDIR += gtkwave
+    SUBDIR += gwave
+    SUBDIR += impact
+    SUBDIR += irsim
+    SUBDIR += iverilog
+    SUBDIR += jspice3
+    SUBDIR += kicad
+    SUBDIR += leocad
+    SUBDIR += libgeda
+    SUBDIR += linux-eagle
+    SUBDIR += linux-gid
+    SUBDIR += magic
+    SUBDIR += mars
+    SUBDIR += netgen
+    SUBDIR += ngspice_rework
+    SUBDIR += oregano
+    SUBDIR += pcb
+    SUBDIR += pdnmesh
+    SUBDIR += pythoncad
+    SUBDIR += qcad
+    SUBDIR += qcad-partslib
+    SUBDIR += qfsm
+    SUBDIR += qmls
+    SUBDIR += qucs
+    SUBDIR += sceptre
+    SUBDIR += scotch
+    SUBDIR += slffea
+    SUBDIR += spice
+    SUBDIR += systemc
+    SUBDIR += tclspice
+    SUBDIR += tkgate
+    SUBDIR += tochnog
+    SUBDIR += transcalc
+    SUBDIR += varkon
+    SUBDIR += vipec
+    SUBDIR += xcircuit
+    SUBDIR += z88
 
 .include <bsd.port.subdir.mk>

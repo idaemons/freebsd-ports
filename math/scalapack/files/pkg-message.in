@@ -1,0 +1,25 @@
+***********************************************************************
+ Please test your scalapack installation
+ Example programs are located at %%EXAMPLESDIR%%
+
+ Test programs are located at %%DATADIR%%/TESTING
+
+ Example:
+  % cd %%DATADIR%%/TESTING
+  % %%LOCALBASE%%/mpich2/bin/mpd &
+  % %%LOCALBASE%%/mpich2/bin/mpirun -np 4 ./xcbrd
+  % %%LOCALBASE%%/mpich2/bin/mpirun -np 4 ./xcdblu
+   etc., etc. ...
+
+  to perform all the tests,
+  % cd %%DATADIR%%/TESTING
+  % %%LOCALBASE%%/mpich2/bin/mpd &
+  % csh
+  % foreach i (x*)
+  ? %%LOCALBASE%%/mpich2/bin/mpirun -np 4 ./$i >& ~/$i.log
+  ? end
+  % %%LOCALBASE%%/mpich2/bin/mpdallexit
+
+You can change -np 4 to any number to meet your environment.
+See files at %%DOCSDIR%% for detail.
+**********************************************************************

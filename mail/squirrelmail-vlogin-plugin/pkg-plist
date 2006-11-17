@@ -1,0 +1,32 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin vlogin; fi
+%%SQUIRRELDIR%%/plugins/vlogin/data/service_levels/.htaccess
+%%SQUIRRELDIR%%/plugins/vlogin/data/service_levels/index.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/service_levels/premium.php.sample
+%%SQUIRRELDIR%%/plugins/vlogin/data/domains/.htaccess
+%%SQUIRRELDIR%%/plugins/vlogin/data/domains/domain.com.vlogin.config.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/domains/index.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/.htaccess
+%%SQUIRRELDIR%%/plugins/vlogin/data/index.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/config.php.sample
+%%SQUIRRELDIR%%/plugins/vlogin/data/config.php.sample.per_user_functions_only
+%%SQUIRRELDIR%%/plugins/vlogin/data/config.php.sample.service_level_functions_only
+%%SQUIRRELDIR%%/plugins/vlogin/data/config.php.sample.typical
+%%SQUIRRELDIR%%/plugins/vlogin/data/hostmap.dat.sample
+%%SQUIRRELDIR%%/plugins/vlogin/data/users.dat.sample
+%%SQUIRRELDIR%%/plugins/vlogin/data/service_levels.dat.sample
+%%SQUIRRELDIR%%/plugins/vlogin/COPYING
+%%SQUIRRELDIR%%/plugins/vlogin/INSTALL
+%%SQUIRRELDIR%%/plugins/vlogin/README
+%%SQUIRRELDIR%%/plugins/vlogin/functions.php
+%%SQUIRRELDIR%%/plugins/vlogin/index.php
+%%SQUIRRELDIR%%/plugins/vlogin/per_user_functions.php
+%%SQUIRRELDIR%%/plugins/vlogin/service_level_functions.php
+%%SQUIRRELDIR%%/plugins/vlogin/setup.php
+%%SQUIRRELDIR%%/plugins/vlogin/sql_settings_lookup.php
+%%SQUIRRELDIR%%/plugins/vlogin/make_release.sh
+%%SQUIRRELDIR%%/plugins/vlogin/version
+@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data/service_levels
+@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data/domains
+@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data
+@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin vlogin; fi

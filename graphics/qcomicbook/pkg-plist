@@ -1,0 +1,32 @@
+bin/qcomicbook
+%%DATADIR%%/bestfit.png
+%%DATADIR%%/bookmark.png
+%%DATADIR%%/fbackward.png
+%%DATADIR%%/fforward.png
+%%DATADIR%%/fitheight.png
+%%DATADIR%%/fitwidth.png
+%%DATADIR%%/help/en/index.html
+%%DATADIR%%/help/en/internals.html
+%%DATADIR%%/help/en/intro.html
+%%DATADIR%%/help/en/keyboard.html
+%%DATADIR%%/help/en/menu.html
+%%DATADIR%%/info.png
+%%DATADIR%%/japanese.png
+%%DATADIR%%/nextpage.png
+%%DATADIR%%/openarch.png
+%%DATADIR%%/opendir.png
+%%DATADIR%%/orgsize.png
+%%DATADIR%%/pagebottom.png
+%%DATADIR%%/pagetop.png
+%%DATADIR%%/prevpage.png
+%%DATADIR%%/qcomicbook-splash.png
+%%DATADIR%%/qcomicbook.png
+%%DATADIR%%/rleft.png
+%%DATADIR%%/rright.png
+%%DATADIR%%/settings.png
+%%DATADIR%%/thumbnails.png
+%%DATADIR%%/twopages.png
+%%DATADIR%%/wholepage.png
+@dirrm %%DATADIR%%/help/en
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%

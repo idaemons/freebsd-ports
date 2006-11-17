@@ -1,0 +1,8 @@
+bin/prboom
+bin/prboom-game-server
+%%DATADIR%%/prboom.wad
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.compat
+%%PORTDOCS%%%%DOCSDIR%%/README.demos
+%%PORTDOCS%%%%DOCSDIR%%/boom.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

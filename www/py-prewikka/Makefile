@@ -1,0 +1,31 @@
+# New ports collection makefile for:	prewikka
+# Date created:				2006-03-13
+# Whom:					Robin Gruyters <r.gruyters@yirdis.nl>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	prewikka
+PORTVERSION=	0.9.7.1
+PORTREVISION=	1
+CATEGORIES=	www security python
+MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
+		http://www.prelude-ids.org/download/releases/old/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	r.gruyters@yirdis.nl
+COMMENT=	Frontend for the Prelude IDS
+
+BUILD_DEPENDS=	cheetah-compile:${PORTSDIR}/devel/py-cheetah
+LIB_DEPENDS=	prelude.[6-?]:${PORTSDIR}/security/libprelude \
+		preludedb.4:${PORTSDIR}/security/libpreludedb
+
+USE_PYTHON=		2.3+
+USE_PYDISTUTILS=	yes
+
+post-patch:
+	${MV} ${WRKSRC}/conf/prewikka.conf ${WRKSRC}/conf/prewikka.conf-dist
+	${REINPLACE_CMD} 's,conf/prewikka.conf,conf/prewikka.conf-dist,' \
+	   ${WRKSRC}/setup.py
+
+.include <bsd.port.mk>

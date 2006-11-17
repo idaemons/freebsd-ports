@@ -1,0 +1,62 @@
+# Ports collection makefile for:	cc65
+# Date created:			8 May 2000
+# Whom:				Tim Vanderhoek <hoek@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cc65
+PORTVERSION=	2.11.0
+CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
+		http://www.funet.fi/pub/cbm/programming/cc65/ \
+		http://www.acc.umu.se/~arvid/cc65_mirror/ \
+		http://bj.spline.de/cc65/
+DISTNAME=	${PORTNAME}-sources-${PORTVERSION}
+
+MAINTAINER=	ssedov@mbsd.msk.ru
+COMMENT=	Cross-compiler for 6502-based systems, includes 65816 assembler
+
+USE_SUBMAKE=	yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}
+MAKEFILE=	${WRKSRC}/make/gcc.mak
+
+SUB_FILES=	pkg-message
+
+# XXX: exists untill it will be committed to bsd.port.mk
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+		2>&1) && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
+		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
+post-patch:
+#
+# CFLAGS safety
+#
+	@(${FIND} ${WRKSRC}/ -name gcc.mak -type f|${XARGS} ${REINPLACE_CMD} -E\
+		-e "s,=[[:space:]]*-g -O2 -Wall -W(.*),+=\1,"\
+		-e "s,=[[:space:]]*-g -O2 -Wall(.*),+=\1,"\
+		-e "s,=[[:space:]]*-O2 -g -Wall -W(.*),+=\1,"\
+		-e "s,CC[[:space:]]*=.*,#&,")
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -E -e "s,(install:.*)install-docs(.*)$,\1\2," \
+		${WRKSRC}/make/gcc.mak
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+.endif
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

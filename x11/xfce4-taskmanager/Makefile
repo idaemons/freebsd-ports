@@ -1,0 +1,20 @@
+# New ports collection makefile for:	xfce4-taskbar-plugin
+# Date created:		5 May 2005
+# Whom:			DaJoob
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xfce4-taskmanager
+PORTVERSION=	0.2.1
+CATEGORIES=	x11 xfce
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+
+MAINTAINER=	DaJoob@dajoob.com
+COMMENT=	A task manager for XFCE
+
+BUILD_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm
+
+USE_AUTOTOOLS=	automake:19 autoconf:259
+
+.include <bsd.port.mk>

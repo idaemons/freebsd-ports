@@ -1,0 +1,28 @@
+# New ports collection makefile for:	p5-FFmpeg-Command
+# Date created:		2006-08-24
+# Whom:			sumikawa
+#
+# $FreeBSD$
+#
+
+PORTNAME=	FFmpeg-Command
+PORTVERSION=	0.05
+CATEGORIES=	multimedia perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIZZY
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	A wrapper class for ffmpeg command line utility
+
+PERL_CONFIGURE=	yes
+
+MAN3=		FFmpeg::Command.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>

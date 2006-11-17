@@ -1,0 +1,45 @@
+# $FreeBSD$
+#
+
+    COMMENT = Russian support
+
+    SUBDIR += apache13
+    SUBDIR += apache13-modssl
+    SUBDIR += artwiz-ru
+    SUBDIR += aspell
+    SUBDIR += cyrproxy
+    SUBDIR += d1489
+    SUBDIR += elm.language
+    SUBDIR += fortuneru
+    SUBDIR += kde3-i18n
+    SUBDIR += koffice-i18n
+    SUBDIR += koi2koi
+    SUBDIR += koi8r-ps
+    SUBDIR += ksocrat
+    SUBDIR += libcyrillic
+    SUBDIR += messarge
+    SUBDIR += mueller-dic
+    SUBDIR += muttprint
+    SUBDIR += napster
+    SUBDIR += p5-Lingua-RU-Charset
+    SUBDIR += p5-XML-Parser-encodings
+    SUBDIR += p5-cyrillic
+    SUBDIR += pgp.language
+    SUBDIR += php_doc
+    SUBDIR += pine.language
+    SUBDIR += prawda
+    SUBDIR += pscyr
+    SUBDIR += rispell
+    SUBDIR += rus-ispell
+    SUBDIR += rux
+    SUBDIR += tac+ia
+    SUBDIR += tidyup-mail
+    SUBDIR += unzip
+    SUBDIR += wmcyrx
+    SUBDIR += xcode
+    SUBDIR += xcyrBGR
+    SUBDIR += xmms
+    SUBDIR += xpi-tabextensions
+    SUBDIR += xruskb
+
+.include <bsd.port.subdir.mk>

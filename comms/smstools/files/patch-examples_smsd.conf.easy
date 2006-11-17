@@ -1,0 +1,11 @@
+--- examples/smsd.conf.easy	Fri Apr 21 11:25:01 2006
++++ examples/smsd.conf.easy	Fri Apr 21 12:32:59 2006
+@@ -5,6 +5,7 @@
+ loglevel = 7
+ 
+ [GSM1]
+-device = /dev/ttyS0
++device = /dev/cuad0 
+ incoming = yes
++#baudrate = 9600
+ #pin = 1111

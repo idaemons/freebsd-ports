@@ -1,0 +1,45 @@
+# New ports collection makefile for:    arpwatch
+# Date created:         March 24 1997
+# Whom:                 Brian Somers <brian@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	arpwatch
+PORTVERSION=	2.1.a15
+PORTREVISION=	3
+CATEGORIES=	net-mgmt
+MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
+		http://www.mirrors.wiretapped.net/security/network-monitoring/arpwatch/ \
+		ftp://ftp.riken.go.jp/pub/net/lbl/ \
+		http://www.goodking.ca/pub/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/\1/}
+
+MAINTAINER=	thomas@goodking.ca
+COMMENT=	Monitor arp & rarp requests
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--quiet
+INSTALL_TARGET=	install install-man
+MAN8=		arpwatch.8 arpsnmp.8
+
+USE_RC_SUBR=	arpwatch.sh
+
+.ifdef ARPDIR
+MAKE_ARGS=	ARPDIR=${ARPDIR}
+.endif
+
+post-install:
+	if [ ! -d ${PREFIX}/arpwatch ]; then				\
+		${MKDIR} ${PREFIX}/arpwatch;				\
+		${CHMOD} 755 ${PREFIX}/arpwatch;			\
+		${CHOWN} root:operator ${PREFIX}/arpwatch;		\
+	fi
+	${TOUCH} ${PREFIX}/arpwatch/arp.dat
+	${CHMOD} 644 ${PREFIX}/arpwatch/arp.dat
+	for files in ethercodes.dat d.awk e.awk p.awk; do		\
+		${INSTALL_DATA} ${WRKSRC}/$$files ${PREFIX}/arpwatch;	\
+	done
+	${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${PREFIX}/arpwatch
+
+.include <bsd.port.mk>

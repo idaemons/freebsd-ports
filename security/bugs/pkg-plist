@@ -1,0 +1,64 @@
+bugs-%%PORTVERSION%%/bchat
+bugs-%%PORTVERSION%%/bcrypt
+bugs-%%PORTVERSION%%/bhide
+bugs-%%PORTVERSION%%/bkey
+bugs-%%PORTVERSION%%/block
+bugs-%%PORTVERSION%%/blogin
+bugs-%%PORTVERSION%%/bmore
+bugs-%%PORTVERSION%%/bpass
+bugs-%%PORTVERSION%%/bpassdel
+bugs-%%PORTVERSION%%/bunlock
+bugs-%%PORTVERSION%%/bugscrypt.a
+bugs-%%PORTVERSION%%/doc/CHANGES
+bugs-%%PORTVERSION%%/doc/HOWTO
+bugs-%%PORTVERSION%%/doc/README
+bugs-%%PORTVERSION%%/doc/index.html
+bugs-%%PORTVERSION%%/doc/cv/cv.html
+bugs-%%PORTVERSION%%/doc/cv/note.html
+bugs-%%PORTVERSION%%/doc/fulldoc/bssl.txt
+bugs-%%PORTVERSION%%/doc/fulldoc/bugs_intro.html
+bugs-%%PORTVERSION%%/doc/fulldoc/bugs_intro_main.html
+bugs-%%PORTVERSION%%/doc/fulldoc/bugs_intro_menu.html
+bugs-%%PORTVERSION%%/doc/fulldoc/bugs_tech.html
+bugs-%%PORTVERSION%%/doc/fulldoc/bugs_tech_main.html
+bugs-%%PORTVERSION%%/doc/fulldoc/bugs_tech_menu.html
+bugs-%%PORTVERSION%%/doc/fulldoc/contest2.txt
+bugs-%%PORTVERSION%%/doc/fulldoc/contest3.txt
+bugs-%%PORTVERSION%%/doc/fulldoc/dev_english.txt
+bugs-%%PORTVERSION%%/doc/fulldoc/dev_french.txt
+bugs-%%PORTVERSION%%/doc/fulldoc/history_unix.txt
+bugs-%%PORTVERSION%%/doc/fulldoc/history_win.txt
+bugs-%%PORTVERSION%%/doc/fulldoc/index.html
+bugs-%%PORTVERSION%%/doc/fulldoc/lib_hist.txt
+bugs-%%PORTVERSION%%/doc/fulldoc/images/2_1.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/2_2.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/2_3.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/3_1.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/3_10.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/3_11.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/3_2.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/3_3.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/3_4.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/3_5.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/3_6.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/3_7.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/3_8.gif
+bugs-%%PORTVERSION%%/doc/fulldoc/images/3_9.gif
+bugs-%%PORTVERSION%%/doc/history/old_french.txt
+bugs-%%PORTVERSION%%/include/bstandard.h
+bugs-%%PORTVERSION%%/include/extra.h
+bugs-%%PORTVERSION%%/include/fpos_t.h
+bugs-%%PORTVERSION%%/include/isaac.h
+bugs-%%PORTVERSION%%/include/main.h
+bugs-%%PORTVERSION%%/include/misc.h
+bugs-%%PORTVERSION%%/include/seed.h
+bugs-%%PORTVERSION%%/include/shuffle.h
+bugs-%%PORTVERSION%%/include/utils.h
+bugs-%%PORTVERSION%%/include/wrapper.h
+@dirrm bugs-%%PORTVERSION%%/doc/fulldoc/images/
+@dirrm bugs-%%PORTVERSION%%/doc/fulldoc/
+@dirrm bugs-%%PORTVERSION%%/doc/cv
+@dirrm bugs-%%PORTVERSION%%/doc/history
+@dirrm bugs-%%PORTVERSION%%/doc
+@dirrm bugs-%%PORTVERSION%%/include
+@dirrm bugs-%%PORTVERSION%%

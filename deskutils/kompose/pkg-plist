@@ -1,0 +1,11 @@
+bin/kompose
+share/applnk/Utilities/kompose.desktop
+share/apps/kompose/komposeui.rc
+share/icons/hicolor/16x16/apps/kompose.png
+share/icons/hicolor/32x32/apps/kompose.png
+%%NLS%%share/locale/da/LC_MESSAGES/kompose.mo
+%%NLS%%share/locale/de/LC_MESSAGES/kompose.mo
+%%NLS%%share/locale/es/LC_MESSAGES/kompose.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/kompose.mo
+%%NLS%%share/locale/it/LC_MESSAGES/kompose.mo
+@dirrm share/apps/kompose

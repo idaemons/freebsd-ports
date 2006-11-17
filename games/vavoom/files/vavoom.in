@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# The executable needs to run from its data directory, so we mirror it to
+# ~/.vavoom (with symlinks) and run it from there.
+
+if [ "$1" = "-s" ]
+then
+	CMD="vavoom-dedicated"
+	shift
+else
+	CMD="vavoom"
+fi
+
+if [ -d ~/.vavoom ]
+then
+	echo "Using existing ~/.vavoom directory."
+else
+	echo "Creating ~/.vavoom directory."
+	cd %%DATADIR%%/basev || exit 1
+	find * -type d -exec mkdir -p ~/.vavoom/basev/{} \;
+	find * -type f -exec ln -sf %%DATADIR%%/basev/{} ~/.vavoom/basev/{} \;
+fi
+
+cd ~/.vavoom || exit 1
+exec %%PREFIX%%/libexec/vavoom/${CMD} -iwaddir %%DMDIR%% "$@"

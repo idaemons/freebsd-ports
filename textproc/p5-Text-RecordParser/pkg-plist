@@ -1,0 +1,6 @@
+bin/tablify
+bin/tabmerge
+%%SITE_PERL%%/Text/RecordParser.pm
+%%SITE_PERL%%/Text/RecordParser/Tab.pm
+@dirrm %%SITE_PERL%%/Text/RecordParser
+@dirrmtry %%SITE_PERL%%/Text

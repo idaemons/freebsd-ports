@@ -1,0 +1,55 @@
+# New ports collection makefile for:	arpack
+# Date created:         31 Jan 2003
+# Whom:			Pedro F. Giffuni
+#
+# $FreeBSD$
+#
+
+PORTNAME=	arpack
+PORTVERSION=	96
+CATEGORIES=	math
+MASTER_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
+DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz patch.tar.gz
+.ifndef NOPORTDOCS
+DISTFILES+=	ug.ps.gz
+.endif
+DIST_SUBDIR=	arpack
+EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.gz
+
+PATCH_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
+
+CONFLICTS=	elmer-mathlibs-1*
+
+WRKSRC=		${WRKDIR}/ARPACK
+ALL_TARGET=	lib
+
+BLAS_LIBS?=	${LOCALBASE}/lib/libblas.a
+
+USE_LDCONFIG=	yes
+
+pre-patch:
+	@(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/patch.tar.gz)
+
+pre-build:
+	@${REINPLACE_CMD} -e 's+%FC%+${FC}+g ; s+%FFLAGS%+${FFLAGS}+g ; \
+	s+%%WRKDIR%%+${WRKDIR}+ ; \
+	s+%%BLAS_LIBS%%+${BLAS_LIBS}+' ${WRKSRC}/ARmake.inc
+
+do-install:
+	${INSTALL} ${WRKSRC}/libarpack.a ${PREFIX}/lib
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${FILESDIR}/arpack.h ${PREFIX}/include
+	${MKDIR} ${DOCSDIR}
+	-${GZIP_CMD} ${GZIP} ${WRKSRC}/DOCUMENTS/ex-*.doc
+	${CP} ${WRKSRC}/DOCUMENTS/ex-*.doc.gz ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ug.ps.gz ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

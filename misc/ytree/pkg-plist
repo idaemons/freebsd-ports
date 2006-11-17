@@ -1,0 +1,6 @@
+bin/ytree
+etc/ytree.conf.sample
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/README
+%%DOCSDIR%%/THANKS
+@dirrm %%DOCSDIR%%

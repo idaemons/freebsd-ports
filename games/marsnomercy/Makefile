@@ -1,0 +1,70 @@
+# New ports collection makefile for:	Mars Land of No Mercy
+# Date created:		2006-03-21
+# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	marsnomercy
+PORTVERSION=	0.1.2
+PORTREVISION=	1
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mars
+DISTNAME=	mars-${PORTVERSION}-src
+
+MAINTAINER=	acm@FreeBSD.org
+COMMENT=	A turn-based strategy game setting on Mars
+
+BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
+
+USE_GL=		yes
+USE_SDL=	sdl image ttf
+MAKE_ENV=	CC="${CC}" CXX="${CXX}"
+
+PLIST=		${WRKDIR}/pkg-plist
+PLIST_FILES=	bin/mars-nomercy libexec/mars
+PLIST_DIRS=	%%DATADIR%%
+SUB_FILES=	mars-nomercy pkg-message
+WRKSRC=		${WRKDIR}/mars-${PORTVERSION}
+
+OPTIONS=	DEBUG	"With additional debug information"	off \
+		OPENGL	"Install binary with opengl support"	off
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		does not build on FreeBSD 4.x
+.endif
+
+.if defined(WITH_DEBUG)
+SCONS_ARGS+=	debug=1
+.else
+SCONS_ARGS+=	debug=0
+.endif
+
+do-build:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons ${SCONS_ARGS}
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@cd ${WRKSRC}/data && \
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
+		${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
+
+do-install:
+	@${MKDIR} ${DATADIR}
+	@cd ${WRKSRC}/data && \
+		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	@${INSTALL_SCRIPT} ${WRKDIR}/mars-nomercy ${PREFIX}/bin
+.if defined(WITH_OPENGL)
+	@${INSTALL_PROGRAM} ${WRKSRC}/mars_gl ${PREFIX}/libexec/mars
+.else
+	@${INSTALL_PROGRAM} ${WRKSRC}/mars_sdl ${PREFIX}/libexec/mars
+.endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

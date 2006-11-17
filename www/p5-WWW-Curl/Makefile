@@ -1,0 +1,30 @@
+# New ports collection makefile for:	p5-WWW-Curl
+# Date created:				24 July 2003
+# Whom:					Chris Larsen <darth@vader.dk>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	WWW-Curl
+PORTVERSION=	3.02
+CATEGORIES=	www ftp perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+		http://curl.haxx.se/libcurl/perl/
+MASTER_SITE_SUBDIR=	WWW
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	roam@FreeBSD.org
+COMMENT=	Perl binding interface for curl
+
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl:install
+
+PERL_CONFIGURE=	yes
+
+MAN3=		WWW::Curl.3 \
+		WWW::Curl::Easy.3 \
+		WWW::Curl::Multi.3
+
+post-patch:
+		${FIND} ${WRKSRC} -type f -name \*.orig -delete
+
+.include <bsd.port.mk>

@@ -1,0 +1,48 @@
+--- configure.orig	Sun Mar 19 01:31:55 2006
++++ configure	Thu Sep 28 20:27:49 2006
+@@ -138,7 +138,7 @@
+     cpu="x86"
+   ;;
+   x86_64|amd64)
+-    cpu="x86"
++    cpu="x86_64"
+     canon_arch="`cc -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
+     if [ x"$canon_arch" = x"x86_64" -o x"$canon_arch" = x"amd64" ]; then
+       if [ -z "`echo $CFLAGS | grep -- -m32`"  ]; then
+@@ -1107,6 +1107,8 @@
+ builtin_vector=no
+ if $cc -msse -o $TMPO $TMPC 2> /dev/null ; then
+   builtin_vector=yes
++else
++  builtin_vector=no
+ fi
+ 
+ # test for mm3dnow.h
+@@ -1597,13 +1599,13 @@
+   echo "#define BUILD_SHARED_AV 1" >> $TMPH
+   echo "BUILD_SHARED=yes" >> config.mak
+   echo "PIC=-fPIC -DPIC" >> config.mak
+-  echo "SPPMAJOR=${lavc_version%%.*}" >> config.mak
+-  echo "SPPVERSION=$lavc_version" >> config.mak
+-  echo "LAVCMAJOR=${lavc_version%%.*}" >> config.mak
++  echo "SPPMAJOR=1" >> config.mak
++  echo "SPPVERSION=1" >> config.mak
++  echo "LAVCMAJOR=1" >> config.mak
+   echo "LAVCVERSION=$lavc_version" >> config.mak
+-  echo "LAVFMAJOR=${lavf_version%%.*}" >> config.mak
++  echo "LAVFMAJOR=1" >> config.mak
+   echo "LAVFVERSION=$lavf_version" >> config.mak
+-  echo "LAVUMAJOR=${lavu_version%%.*}" >> config.mak
++  echo "LAVUMAJOR=1" >> config.mak
+   echo "LAVUVERSION=$lavu_version" >> config.mak
+   echo "SLIBNAME=${SLIBNAME}" >> config.mak
+   echo "SLIBNAME_WITH_VERSION=${SLIBNAME_WITH_VERSION}" >> config.mak
+@@ -2075,7 +2077,7 @@
+ Requires:
+ Conflicts:
+ Libs: -L\${libdir} -lpostproc
+-Cflags: -I\${includedir} -I\${includedir}/postproc
++Cflags: -I\${includedir} -I\${includedir}/ffmpeg/postproc
+ EOF
+ 
+ cat <<EOF >libpostproc-uninstalled.pc

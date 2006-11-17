@@ -1,0 +1,34 @@
+# New ports collection makefile for:	Number::Format
+# Date created:				27 Oct 2001
+# Whom:					Seamus Venasse <svenasse@polaris.ca>
+#
+# $FreeBSD$
+#
+
+PORTNAME=		Number-Format
+PORTVERSION=		1.52
+PORTREVISION=		1
+CATEGORIES=		textproc perl5
+MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Number
+PKGNAMEPREFIX=		p5-
+
+MAINTAINER=		clsung@FreeBSD.org
+COMMENT=		Perl extension for formatting numbers
+
+PERL_CONFIGURE=		yes
+
+MAN3=			Number::Format.3
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${PERL} -pi -e 's/en_US/en_US.US-ASCII/' ${WRKSRC}/t/*.t
+.if ${PERL_LEVEL} < 500800
+	${PERL} -pi -e '$$_="" if m{5.008}' ${WRKSRC}/Format.pm
+.endif
+.if ${PERL_LEVEL} < 500600
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' ${WRKSRC}/Format.pm
+.endif
+
+.include <bsd.port.post.mk>

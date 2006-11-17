@@ -1,0 +1,9 @@
+%%SITE_PERL%%/POE/Filter/XML.pm
+%%SITE_PERL%%/POE/Filter/XML/Handler.pm
+%%SITE_PERL%%/POE/Filter/XML/Meta.pm
+%%SITE_PERL%%/POE/Filter/XML/NS.pm
+%%SITE_PERL%%/POE/Filter/XML/Node.pm
+%%SITE_PERL%%/POE/Filter/XML/Utils.pm
+@dirrm %%SITE_PERL%%/POE/Filter/XML
+@dirrmtry %%SITE_PERL%%/POE/Filter
+@dirrmtry %%SITE_PERL%%/POE

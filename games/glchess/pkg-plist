@@ -1,0 +1,134 @@
+bin/glchess
+%%PYTHON_SITELIBDIR%%/glchess/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ai.py
+%%PYTHON_SITELIBDIR%%/glchess/ai.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ai.pyo
+%%PYTHON_SITELIBDIR%%/glchess/cecp.py
+%%PYTHON_SITELIBDIR%%/glchess/cecp.pyc
+%%PYTHON_SITELIBDIR%%/glchess/cecp.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/board.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/board.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/board.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/pgn.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/pgn.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/pgn.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/san.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/san.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/san.pyo
+%%PYTHON_SITELIBDIR%%/glchess/game.py
+%%PYTHON_SITELIBDIR%%/glchess/game.pyc
+%%PYTHON_SITELIBDIR%%/glchess/game.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui-new.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui-new.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui-new.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/glchess/main.py
+%%PYTHON_SITELIBDIR%%/glchess/main.pyc
+%%PYTHON_SITELIBDIR%%/glchess/main.pyo
+%%PYTHON_SITELIBDIR%%/glchess/network/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/network/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/network/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/network/announce.py
+%%PYTHON_SITELIBDIR%%/glchess/network/announce.pyc
+%%PYTHON_SITELIBDIR%%/glchess/network/announce.pyo
+%%PYTHON_SITELIBDIR%%/glchess/network/protocol.py
+%%PYTHON_SITELIBDIR%%/glchess/network/protocol.pyc
+%%PYTHON_SITELIBDIR%%/glchess/network/protocol.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ntest.py
+%%PYTHON_SITELIBDIR%%/glchess/ntest.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ntest.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/pieces.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/pieces.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/pieces.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/human.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/human.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/human.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/builtin_models.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/builtin_models.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/builtin_models.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/new_models.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/new_models.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/new_models.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/opengl.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/opengl.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/opengl.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/png.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/png.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/png.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/texture.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/texture.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/texture.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ui/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/ui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ui/ui.py
+%%PYTHON_SITELIBDIR%%/glchess/ui/ui.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ui/ui.pyo
+share/applications/glchess.desktop
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/gui/about.glade
+%%DATADIR%%/gui/ai.glade
+%%DATADIR%%/gui/chess_view.glade
+%%DATADIR%%/gui/error_dialog.glade
+%%DATADIR%%/gui/glchess.glade
+%%DATADIR%%/gui/glchess.svg
+%%DATADIR%%/gui/load_game.glade
+%%DATADIR%%/gui/network_game.glade
+%%DATADIR%%/gui/new_game.glade
+%%DATADIR%%/gui/save_game.glade
+%%DATADIR%%/textures/board.png
+%%DATADIR%%/textures/piece.png
+share/locale/de/LC_MESSAGES/glchess.mo
+share/locale/en/LC_MESSAGES/glchess.mo
+share/locale/en_AU/LC_MESSAGES/glchess.mo
+share/locale/en_NZ/LC_MESSAGES/glchess.mo
+share/locale/en_US/LC_MESSAGES/glchess.mo
+share/locale/it/LC_MESSAGES/glchess.mo
+share/mime/packages/glchess.xml
+share/pixmaps/glchess.svg
+@dirrmtry share/pixmaps
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
+@dirrmtry share/locale/en_NZ/LC_MESSAGES
+@dirrmtry share/locale/en_NZ
+@dirrmtry share/locale/en_AU/LC_MESSAGES
+@dirrmtry share/locale/en_AU
+@dirrm %%DATADIR%%/textures
+@dirrm %%DATADIR%%/gui
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/ui
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/opengl
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/cairo
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/scene
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/network
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/gtkui
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/chess
+@dirrm %%PYTHON_SITELIBDIR%%/glchess
+@exec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime

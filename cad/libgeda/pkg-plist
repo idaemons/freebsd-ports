@@ -1,0 +1,18 @@
+include/libgeda/colors.h
+include/libgeda/defines.h
+include/libgeda/funcs.h
+include/libgeda/globals.h
+include/libgeda/i_vars.h
+include/libgeda/libgeda.h
+include/libgeda/o_types.h
+include/libgeda/papersizes.h
+include/libgeda/prototype.h
+include/libgeda/struct.h
+lib/libgeda.a
+lib/libgeda.la
+lib/libgeda.so
+lib/libgeda.so.26
+libdata/pkgconfig/libgeda.pc
+share/geda/prolog.ps
+@dirrm share/geda
+@dirrm include/libgeda

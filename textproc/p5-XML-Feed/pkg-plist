@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/XML/Feed.pm
+%%SITE_PERL%%/XML/Feed/Atom.pm
+%%SITE_PERL%%/XML/Feed/Content.pm
+%%SITE_PERL%%/XML/Feed/Entry.pm
+%%SITE_PERL%%/XML/Feed/RSS.pm
+@dirrmtry %%SITE_PERL%%/XML/Feed
+@dirrmtry %%SITE_PERL%%/XML

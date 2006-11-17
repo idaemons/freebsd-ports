@@ -1,0 +1,22 @@
+# New ports collection makefile for:	py-ctypes
+# Date created:		12 May 2003
+# Whom:			Hye-Shik Chang <perky@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ctypes
+PORTVERSION=	1.0.0
+CATEGORIES=	devel python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,ctypes/,g}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python module allowing to create and manipulate C data types
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
+
+ONLY_FOR_ARCHS=	i386 amd64 alpha powerpc sparc64
+
+.include <bsd.port.mk>

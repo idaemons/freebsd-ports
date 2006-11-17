@@ -1,0 +1,5 @@
+%%SITE_PERL%%/mach/auto/Sub/Uplevel/.packlist
+%%SITE_PERL%%/Sub/Uplevel.pm
+@dirrm %%SITE_PERL%%/mach/auto/Sub/Uplevel
+@dirrmtry %%SITE_PERL%%/mach/auto/Sub
+@dirrmtry %%SITE_PERL%%/Sub

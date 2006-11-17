@@ -1,0 +1,69 @@
+# New ports collection makefile for:	linphone
+# Date created:				30 December 2002
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	${LINPHONE_PORTNAME}
+PORTVERSION=	${LINPHONE_PORTVERSION}
+PORTREVISION=	${LINPHONE_PORTREVISION}
+PORTREVISION=	${LINPHONE_PORTREVISION}
+PORTEPOCH=	${LINPHONE_PORTEPOCH}
+CATEGORIES=	net
+MASTER_SITES=	${LINPHONE_MASTER_SITES}
+PKGNAMESUFFIX=	-base
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A web phone that supports SIP protocol
+
+BROKEN=		broken by latest update to libosip2
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
+
+LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
+		jack.0:${PORTSDIR}/audio/jack \
+		samplerate.1:${PORTSDIR}/audio/libsamplerate \
+		speex.3:${PORTSDIR}/audio/speex \
+		osip2.3:${PORTSDIR}/net/libosip2
+
+USE_GNOME=	glib20 gnomehack gnometarget intlhack pkgconfig
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+LIBTOOLFILES=	configure oRTP/configure
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-ipv6 --disable-gtk-doc --enable-gnome_ui=no \
+		--disable-ewarning --without-ilbc --disable-strict \
+		--with-speex=${LOCALBASE} --with-osip=${LOCALBASE} \
+		--with-html-dir=${DOCSDIR}
+USE_LDCONFIG=	yes
+
+MAN1=		linphonec.1 sipomatic.1
+
+CFLAGS+=	-DPACKAGE_LOCALE_DIR='\"${PREFIX}/share/locale\"' \
+		-DPACKAGE_DATA_DIR='\"${PREFIX}/share\"' \
+		-DPACKAGE_SOUND_DIR='\"${DATADIR}/sounds\"'
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+.include "Makefile.common"
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+LIB_DEPENDS+=	readline.[5-9]:${PORTSDIR}/devel/readline
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|docs||g' ${WRKSRC}/oRTP/Makefile.in
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/share/C/linphonec.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/share/C/sipomatic.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/share/linphone.pc ${PREFIX}/libdata/pkgconfig
+	@${MKDIR} ${DATADIR}/sounds
+	${INSTALL_DATA} ${WRKSRC}/share/*.wav ${DATADIR}/sounds
+	@${MKDIR} ${DATADIR}/sounds/rings
+	${INSTALL_DATA} ${WRKSRC}/share/rings/*.wav ${DATADIR}/sounds/rings
+
+.include <bsd.port.post.mk>

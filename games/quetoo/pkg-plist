@@ -1,0 +1,16 @@
+bin/quetoo
+%%GAME%%%%LIBDIR%%/baseq2/game.so
+%%CTF%%%%LIBDIR%%/ctf/game.so
+%%QMASS%%%%LIBDIR%%/qmass/game.so
+%%LIBDIR%%/vid_glsdl.so
+%%LIBDIR%%/vid_glx.so
+%%LIBDIR%%/vid_softsdl.so
+%%LIBDIR%%/vid_softx.so
+%%LIBDIR%%/snd_sdl.so
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%QMASS%%%%PORTDOCS%%%%DOCSDIR%%/qmass-README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%GAME%%@dirrm %%LIBDIR%%/baseq2
+%%CTF%%@dirrm %%LIBDIR%%/ctf
+%%QMASS%%@dirrm %%LIBDIR%%/qmass
+@dirrm %%LIBDIR%%

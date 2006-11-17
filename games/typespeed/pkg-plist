@@ -1,0 +1,19 @@
+bin/typespeed
+bin/typespeed-hs-conv
+@unexec if cmp -s %D/etc/typespeedrc %D/etc/typespeedrc.dist; then rm -f %D/etc/typespeedrc; fi
+etc/typespeedrc.dist
+@exec [ -f %B/typespeedrc ] || cp %B/%f %B/typespeedrc
+%%DATADIR%%/words.dos
+%%DATADIR%%/words.dut
+%%DATADIR%%/words.eng
+%%DATADIR%%/words.fin
+%%DATADIR%%/words.fra
+%%DATADIR%%/words.ger
+%%DATADIR%%/words.ita
+%%DATADIR%%/words.portuguese
+%%DATADIR%%/words.prog
+%%DATADIR%%/words.spanish
+%%DATADIR%%/words.test
+%%DATADIR%%/words.thai
+%%DATADIR%%/words.unix
+@dirrm  %%DATADIR%%

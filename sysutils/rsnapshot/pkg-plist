@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/rsnapshot
+bin/rsnapshot-diff
+etc/rsnapshot.conf.default

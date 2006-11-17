@@ -1,0 +1,5 @@
+bin/gotmail
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/README
+%%DOCSDIR%%/sample.gotmailrc
+@dirrm %%DOCSDIR%%

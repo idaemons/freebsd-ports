@@ -1,0 +1,11 @@
+bin/gq
+share/applications/gq.desktop
+%%DATADIR%%/bomb.xpm
+%%DATADIR%%/hide.xpm
+%%DATADIR%%/line.xpm
+%%DATADIR%%/logo.xpm
+%%DATADIR%%/new.xpm
+%%DATADIR%%/textarea.xpm
+%%DATADIR%%/warning.xpm
+@dirrm %%DATADIR%%
+@dirrmtry share/applications

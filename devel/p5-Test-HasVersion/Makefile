@@ -1,0 +1,30 @@
+# New ports collection makefile for:	p5-Test-HasVersion
+# Date created:		2006-07-16
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Test-HasVersion
+PORTVERSION=	0.01.1
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../authors/id/F/FE/FERREIRA
+PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-0.011
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	Check Perl modules have version numbers
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Test::HasVersion.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${PERL} -pi -e '$$_ = "" if /^use warnings/' ${WRKSRC}/HasVersion.pm
+.endif
+
+.include <bsd.port.post.mk>

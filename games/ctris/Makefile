@@ -1,0 +1,32 @@
+# New ports collection makefile for:	ctetris
+# Date created:			14 Aug 2004
+# Whom:				Travis Poppe <tlp@liquidx.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ctris
+PORTVERSION=	0.41
+CATEGORIES=	games
+MASTER_SITES=	http://www.liquidx.org/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
+
+MAINTAINER=	tlp@liquidx.org
+COMMENT=	Colorized, small and flexible Tetris(TM)-clone for the console
+
+USE_BZIP2=	yes
+
+MAN6=		ctris.6
+MANCOMPRESSED=	yes
+PLIST_FILES=	bin/ctris
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|gcc|${CC}|" -e "s|CFLAGS=.*|CFLAGS+=-Wall|" \
+		 ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_MAN} ${WRKSRC}/ctris.6.gz ${PREFIX}/man/man6/ctris.6.gz
+	${INSTALL_PROGRAM} ${WRKSRC}/ctris ${PREFIX}/bin/ctris
+
+.include <bsd.port.mk>

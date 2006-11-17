@@ -1,0 +1,54 @@
+@unexec if [ -f /var/drweb/run/drwebd.pid ] ; then %D/etc/rc.d/001.drwebd.sh stop ; fi
+drweb/drweb
+drweb/drwebd
+drweb/drwebdc
+drweb/getkey.HOWTO
+drweb/getkey.rus.HOWTO
+drweb/lib/drweb32.dll
+drweb/lib/ru_daemon.dwl
+drweb/lib/ru_scanner.dwl
+drweb/read_signed
+drweb/update/update.pl
+@unexec if [ -f %D/etc/drweb/drweb32.ini ] && cmp -s %D/etc/drweb/drweb32.ini %D/etc/drweb/drweb32.ini-distr; then rm -f %D/etc/drweb/drweb32.ini ; fi
+etc/drweb/drweb32.ini-distr
+@exec if [ ! -f %B/drweb32.ini ] ; then cp -p %B/%F %B/drweb32.ini ; fi
+@unexec if [ -f %D/etc/drweb/email.ini ] && cmp -s %D/etc/drweb/email.ini %D/etc/drweb/email.ini-distr; then rm -f %D/etc/drweb/email.ini ; fi
+etc/drweb/email.ini-distr
+@exec if [ ! -f %B/email.ini ] ; then cp -p %B/%F %B/email.ini ; fi
+etc/rc.d/001.drwebd.sh
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.rus
+%%PORTDOCS%%%%DOCSDIR%%/daemon/readme.daemon
+%%PORTDOCS%%%%DOCSDIR%%/daemon/readme.daemon.rus
+%%PORTDOCS%%%%DOCSDIR%%/readme.eicar
+%%PORTDOCS%%%%DOCSDIR%%/readme.eicar.rus
+%%PORTDOCS%%%%DOCSDIR%%/readme.license
+%%PORTDOCS%%%%DOCSDIR%%/readme.license.rus
+%%PORTDOCS%%%%DOCSDIR%%/scanner/readme.scanner
+%%PORTDOCS%%%%DOCSDIR%%/scanner/readme.scanner.rus
+%%PORTDOCS%%%%DOCSDIR%%/update/readme.update
+%%PORTDOCS%%%%DOCSDIR%%/update/readme.update.rus
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/update
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/scanner
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/daemon
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/drweb
+@dirrm drweb/update
+@dirrm drweb/lib
+@dirrm drweb
+@cwd /var
+drweb/bases/drw43300.vdb
+drweb/bases/drw43301.vdb
+drweb/bases/drw43302.vdb
+drweb/bases/drwebase.vdb
+drweb/bases/drwnasty.vdb
+drweb/bases/drwrisky.vdb
+drweb/bases/update.drl
+@dirrm drweb/bases
+@dirrm drweb/infected
+@dirrm drweb/log
+@dirrm drweb/run
+@dirrm drweb/spool
+@dirrm drweb/updates
+@dirrm drweb

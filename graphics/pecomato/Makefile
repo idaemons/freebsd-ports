@@ -1,0 +1,38 @@
+# New ports collection makefile for:	pecomato
+# Date created:				16 Sep 2005
+# Whom:					Emanuel Haupt <ehaupt@critical.ch>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pecomato
+PORTVERSION=	0.0.13
+CATEGORIES=	graphics
+MASTER_SITES=	http://www.mollux.org/projects/pecomato/download/sources/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
+
+MAINTAINER=	ehaupt@FreeBSD.org
+COMMENT=	A command-line picture metadata processor
+
+USE_GMAKE=		yes
+USE_PYTHON_BUILD=	yes
+
+MAKEFILE=	Makefile.unix
+MAKE_ENV=	CC="${CC}"
+
+MAN1=		pecomato.1
+PLIST_FILES=	bin/pecomato
+
+post-build:
+	${PYTHON} ${WRKSRC}/devtools/txt2tags.py --no-rc -t man \
+		-i ${WRKSRC}/doc/manpage.t2t -o ${WRKSRC}/doc/${MAN1}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^CC/d' ${WRKSRC}/${MAKEFILE}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MANPREFIX}/man/man1
+
+.include <bsd.port.mk>

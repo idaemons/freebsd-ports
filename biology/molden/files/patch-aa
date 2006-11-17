@@ -1,0 +1,67 @@
+--- makefile.orig	Mon Jul 10 13:48:03 2006
++++ makefile	Sun Sep 17 14:53:34 2006
+@@ -12,9 +12,27 @@
+ #
+ #	Disregard compiler warnings on rdmolf.f
+ #
+-CC = cc
++#CC = cc
+ LIBS =  -lX11 -lm
+-LIBSG = -L/usr/X11R6/lib -lGLU -lGL -lXmu -lX11 -lm
++LIBSG = -L${X11BASE}/lib -lGLU -lGL -lXmu -lX11 -lm
++
++###
++# FreeBSD
++#CC = gcc
++CFLAGS += -c -DDOBACK -DHASTIMER -I${X11BASE}/include
++#FC = f77
++.if ${MACHINE_ARCH} == i386
++FFLAGS += -malign-double
++CFLAGS += -malign-double
++.endif
++.if ${OSVERSION} < 400005
++FFLAGS += -Nn802 -Nx400
++.else
++FFLAGS += -Wno-globals -fno-globals
++.endif
++LIBS =  -L${X11BASE}/lib -lX11 -lm
++LDR = ${FC}
++###
+ 
+ # Silicon Graphics
+ #CFLAGS = -c -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
+@@ -46,11 +64,11 @@
+ # when using gfortran, replace g77 with gfortran and comment out the line
+ # 'external iargc' in molden.f
+ #
+-CFLAGS = -c -I/usr/X11R6/include -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
+-FC = g77
+-FFLAGS =
+-LIBS =  -L/usr/X11R6/lib -lX11 -lm
+-LDR = g77   
++#CFLAGS = -c -I/usr/X11R6/include -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
++#FC = g77
++#FFLAGS =
++#LIBS =  -L/usr/X11R6/lib -lX11 -lm
++#LDR = g77   
+ # 64 bit machines:
+ #LIBS =  -L/usr/X11R6/lib64 -lX11 -lm
+ #
+@@ -176,7 +194,7 @@
+ # For The OpenGL Graphics library molden helper 'moldenogl'
+ # (make moldenogl)
+ #
+-LIBSOGL = -lglut -lGLU -lGL -lXmu -lX11 -lm
++LIBSOGL = -L${X11BASE}/lib -lglut -lGLU -lGL -lXmu -lX11 -lm
+ #
+ # on linux :
+ #
+@@ -195,6 +213,8 @@
+ #
+ #LIBSG = -L/usr/X11R6/lib -framework GLUT -framework OpenGL -framework Cocoa
+ #
++
++all: molden moldenogl
+ 
+ molden:	$(OBJS) mpdum.o xwin.o 
+ 	$(LDR) -o molden $(OBJS) $(SOBJ) mpdum.o xwin.o $(LIBS)

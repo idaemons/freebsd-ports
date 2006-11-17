@@ -1,0 +1,17 @@
+--- freenx-0.4.4/nxserver.orig	Fri Aug  5 12:38:44 2005
++++ freenx-0.4.4/nxserver	Tue Aug  9 15:24:19 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ # Free implementation of nxserver components
+ #
+@@ -1133,7 +1133,7 @@
+ 	
+ 	[ ${#CMD_CHUSER} -ge 32 ] && cmd_abort "Error: User $CMD_CHUSER must be shorter than 32 characters."
+ 	egrep -q "^$CMD_CHUSER:" $NX_ETC_DIR/passwords && cmd_abort "Error: User $CMD_CHUSER already in database."
+-	getent passwd "$CMD_CHUSER" >/dev/null || cmd_abort "Error: User $CMD_CHUSER not existing on local system. Can't add."
++	cat /etc/passwd | egrep -q "^$CMD_CHUSER:" || cmd_abort "Error: User $CMD_CHUSER not existing on local system. Can't add."
+ 	passdb_add_user "$CMD_CHUSER"
+ }
+ 

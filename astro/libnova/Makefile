@@ -1,0 +1,37 @@
+# ex:ts=8
+# Ports collection makefile for:	libnova
+# Date created:			Oct 23, 2002
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libnova
+PORTVERSION=	0.12.0
+CATEGORIES=	astro
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}_${PORTVERSION}-1
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Astronomical Calculation Library
+
+USE_GNOME=	gnometarget lthack
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 503000
+IGNORE=		requires FreeBSD 5.3 or higher
+.endif
+
+post-extract:
+	@${TAR} xf ${WRKDIR}/${PORTNAME}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} -C ${WRKDIR}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>

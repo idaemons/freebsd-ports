@@ -1,0 +1,15 @@
+The Wen Quan Yi bitmap font includes complete CJK Unified 
+Ideograph (U4E00 - U9FA5) glyphs at four different sizes 
+(9pt-12X12 pixel, 10pt-13X13 pixel, 11pt-15X15 pixel, 
+12pt-16x16 pixel) and two weights (medium and bold). 
+Use of this bitmap font for on-screen display of Chinese 
+(traditional and simplified) in web pages and elsewhere 
+eliminates the annoying "blurring" problems caused by 
+the high stroke density of many Chinese characters and 
+insufficient "hinting" of anti-aliased Chinese fonts. 
+This font also provides bitmap glyphs for Japanese 
+Hiragana (U3040 - U309F), Katakana (U30A0 - U30FF) 
+and for Korean Hangul (UAC00 - UD7A3).
+
+WWW: http://wqy.sourceforge.net/en/
+WWW: http://sitaphi.com/pub/song_jian_biao/

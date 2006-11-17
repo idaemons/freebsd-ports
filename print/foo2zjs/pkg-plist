@@ -1,0 +1,47 @@
+bin/arm2hpdl
+bin/foo2hp
+bin/foo2hp2600-wrapper
+bin/foo2oak-wrapper
+bin/foo2zjs
+bin/foo2zjs-icc2ps
+bin/foo2zjs-wrapper
+bin/getweb
+bin/msexpand
+bin/zjsdecode
+share/cups/model/Generic-OAKT_Printer.ppd.gz
+share/cups/model/Generic-ZjStream_Printer.ppd.gz
+share/cups/model/HP-Color_LaserJet_1500.ppd.gz
+share/cups/model/HP-Color_LaserJet_1600.ppd.gz
+share/cups/model/HP-Color_LaserJet_2600n.ppd.gz
+share/cups/model/HP-LaserJet_1000.ppd.gz
+share/cups/model/HP-LaserJet_1005.ppd.gz
+share/cups/model/HP-LaserJet_1018.ppd.gz
+share/cups/model/HP-LaserJet_1020.ppd.gz
+share/cups/model/HP-LaserJet_1022.ppd.gz
+share/cups/model/Minolta-Color_PageWorks_Pro_L.ppd.gz
+share/cups/model/Minolta-magicolor_2200_DL.ppd.gz
+share/cups/model/Minolta-magicolor_2300_DL.ppd.gz
+share/cups/model/Minolta-magicolor_2430_DL.ppd.gz
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
+%%DATADIR%%/crd/2300w-1200@150-l250-kx,ucr100,0-per.crd
+%%DATADIR%%/crd/2300w-1200@150-l250-kx,ucr100,50-per.crd
+%%DATADIR%%/crd/2300w-1200@150-l250-kx,ucr100,75-per.crd
+%%DATADIR%%/crd/2300w-1200@150-l250-kx,ucr125,75-per.crd
+%%DATADIR%%/crd/kh.crd
+%%DATADIR%%/crd/kx.crd
+%%DATADIR%%/crd/prolog.ps
+%%DATADIR%%/crd/screen1200.ps
+%%DATADIR%%/crd/screen2400.ps
+%%DATADIR%%/gamma-lookup.ps
+%%DATADIR%%/gamma.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/icm
+@dirrmtry %%DATADIR%%/firmware
+@dirrmtry %%DATADIR%%/crd
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || echo "Note: %D/%%DATADIR%%: icm and firmware directories not empty, remove it manually"
+@dirrmtry share/foo2oak/icm
+@unexec rmdir %D/share/foo2oak 2>/dev/null || echo "Note: %D/share/foo2oak: icm directory not empty, remove it manually"
+@dirrmtry share/foo2hp/icm
+@unexec rmdir %D/share/foo2hp 2>/dev/null || echo "Note: %D/share/foo2hp: icm directory not empty, remove it manually"

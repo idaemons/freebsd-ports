@@ -1,0 +1,7 @@
+bin/stowES
+share/doc/stowES/NEWS
+share/doc/stowES/README
+share/doc/stowES/stowES.html
+share/doc/stowES/stowES.pod
+share/doc/stowES/stowES.txt
+@dirrm share/doc/stowES

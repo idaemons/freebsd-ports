@@ -1,13 +1,22 @@
 # New ports collection makefile for:	hexcalc
-# Version required:	?
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/06 11:55:00 asami Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	hexcalc
+PORTNAME=	hexcalc
+PORTVERSION=	1.11
+CATEGORIES=	math
+MASTER_SITES=	ftp://aixpdslib.seas.ucla.edu/pub/hexcalc/RISC/3.2/src/
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	..tar.Z
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A multi-radix calculator for x11
+
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://ftp.cs.columbia.edu/archives/X11R5/contrib/
+MAN1=		hexcalc.1
+PLIST_FILES=	bin/hexcalc
 
 .include <bsd.port.mk>

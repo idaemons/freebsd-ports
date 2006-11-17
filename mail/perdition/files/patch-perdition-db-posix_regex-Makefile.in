@@ -1,0 +1,18 @@
+--- perdition/db/posix_regex/Makefile.in.orig	Tue Dec  6 16:05:43 2005
++++ perdition/db/posix_regex/Makefile.in	Tue Dec  6 16:08:04 2005
+@@ -269,11 +269,11 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(confdir)
+ 	@list='$(conf_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(confdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(confdir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(confdir)/$$p-dist"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(confdir)/$$p-dist; \
+ 	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(confdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(confdir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(confdir)/$$p-dist"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(confdir)/$$p-dist; \
+ 	  fi; fi; \
+ 	done
+ 

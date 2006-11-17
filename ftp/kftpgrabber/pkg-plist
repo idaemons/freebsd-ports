@@ -1,0 +1,59 @@
+bin/kftpgrabber
+include/kftpgrabber/kftpbookmarkimportplugin.h
+lib/kde3/kftpimportplugin_gftp.a
+lib/kde3/kftpimportplugin_gftp.la
+lib/kde3/kftpimportplugin_gftp.so
+lib/kde3/kftpimportplugin_ncftp.a
+lib/kde3/kftpimportplugin_ncftp.la
+lib/kde3/kftpimportplugin_ncftp.so
+lib/libkftpinterfaces.a
+lib/libkftpinterfaces.la
+lib/libkftpinterfaces.so
+lib/libkftpinterfaces.so.0
+share/applications/kde/kftpgrabber.desktop
+share/apps/kftpgrabber/kftpgrabber-bi-wizard.png
+share/apps/kftpgrabber/kftpgrabber-logo.png
+share/apps/kftpgrabber/kftpgrabberui.rc
+share/icons/hicolor/16x16/apps/kftpgrabber.png
+share/icons/hicolor/22x22/apps/kftpgrabber.png
+share/icons/hicolor/32x32/apps/kftpgrabber.png
+share/icons/hicolor/48x48/apps/kftpgrabber.png
+share/icons/hicolor/64x64/apps/kftpgrabber.png
+share/locale/br/LC_MESSAGES/kftpgrabber.mo
+share/locale/cs/LC_MESSAGES/kftpgrabber.mo
+share/locale/de/LC_MESSAGES/kftpgrabber.mo
+share/locale/el/LC_MESSAGES/kftpgrabber.mo
+share/locale/es/LC_MESSAGES/kftpgrabber.mo
+share/locale/fr/LC_MESSAGES/kftpgrabber.mo
+share/locale/ga/LC_MESSAGES/kftpgrabber.mo
+share/locale/hu/LC_MESSAGES/kftpgrabber.mo
+share/locale/sv/LC_MESSAGES/kftpgrabber.mo
+share/locale/zh_CN/LC_MESSAGES/kftpgrabber.mo
+share/services/kftpimportplugin_gftp.desktop
+share/services/kftpimportplugin_ncftp.desktop
+share/servicetypes/kftpbookmarkimportplugin.desktop
+@dirrmtry share/servicetypes
+@dirrmtry share/services
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm share/apps/kftpgrabber
+@dirrmtry share/apps
+@dirrmtry share/applications/kde
+@dirrmtry share/applications
+@dirrm include/kftpgrabber

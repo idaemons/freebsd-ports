@@ -1,0 +1,15 @@
+%%EXAMPLESDIR%%/money.h
+%%EXAMPLESDIR%%/money.c
+%%EXAMPLESDIR%%/check_money.c
+%%EXAMPLESDIR%%/configure.in.money
+%%EXAMPLESDIR%%/Makefile.am.money
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.sgml
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogOld
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/aclocal/check.m4
+include/check.h
+lib/libcheck.a
+@dirrm %%EXAMPLESDIR%%

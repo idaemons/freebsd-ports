@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%FONTSDIR%%/code2000.html
+%%FONTSDIR%%/code2000.ttf
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/fonts.scale
+@unexec rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || true
+@dirrm %%FONTSDIR%%

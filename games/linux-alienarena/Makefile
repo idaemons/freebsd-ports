@@ -1,0 +1,76 @@
+# New ports collection makefile for:	Alien Arena 2006
+# Date created:		2005-11-12
+# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	alienarena
+PORTVERSION=	2007
+PORTEPOCH=	1
+CATEGORIES=	games linux
+MASTER_SITES=	http://www.alienarena.org/downloads/ \
+		http://www.forsakenweb.com/gamepage/loaders/games/
+PKGNAMEPREFIX=	linux-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-x86
+EXTRACT_SUFX=	.run
+
+MAINTAINER=	acm@FreeBSD.org
+COMMENT=	Alien Arena 2006 (Linux version)
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri \
+		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
+		${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
+
+ONLY_FOR_ARCHS=	i386 amd64
+USE_LINUX=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+SUB_FILES=	linux-alienarena linux-alienarena-ded
+SUB_LIST=	LIBDIR="${LIBDIR}"
+PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
+
+LIBDIR=		${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
+
+DESKTOP_ENTRIES="Alien Arena 2006 (Linux version)" \
+		"Play Alien Arena 2006 (Linux version)" \
+		"alienarena.xpm" \
+		"linux-alienarena" \
+		"Application;Game;" \
+		false
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_NVIDIA_GL)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.endif
+
+.if ${ARCH} == "i386"
+ENGINE_ARCH=	x86
+.elif ${ARCH} == "amd64"
+ENGINE_ARCH=	x86_64
+.endif
+
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	@cd ${WRKDIR} && \
+		${TAIL} +377 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+		${TAR} zxf -
+
+do-install:
+	${MKDIR} ${LIBDIR}/arena ${LIBDIR}/data1
+	cd ${WRKSRC}/engine/${ENGINE_ARCH} && \
+		${INSTALL_PROGRAM} arena/gamei386.so ${LIBDIR}/arena && \
+		${INSTALL_PROGRAM} data1/gamei386.so ${LIBDIR}/data1
+	${LN} -sf ${DATADIR}/arena/* ${LIBDIR}/arena
+	${LN} -sf ${DATADIR}/botinfo ${LIBDIR}
+	${LN} -sf ${DATADIR}/data1/* ${LIBDIR}/data1
+.for f in crx.sdl crded
+	${INSTALL_PROGRAM} ${WRKSRC}/engine/${ENGINE_ARCH}/${f} ${LIBDIR}
+.endfor
+.for f in linux-alienarena linux-alienarena-ded
+	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${PREFIX}/bin
+.endfor
+
+.include <bsd.port.post.mk>

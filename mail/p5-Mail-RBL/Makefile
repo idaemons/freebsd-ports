@@ -1,0 +1,35 @@
+# New ports collection makefile for:	p5-Mail-RBL
+# Date created:				July 24th 2002
+# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Mail-RBL
+PORTVERSION=	1.04
+CATEGORIES=	mail perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Mail
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	erwin@FreeBSD.org
+COMMENT=	Perl extension to access RBL-style host verification services
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-NetAddr-IP>0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Mail::RBL.3
+
+FILES=		Makefile.PL RBL.pm
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.x or higher. Please install lang/perl5.8 and try again.
+.endif
+
+.include <bsd.port.post.mk>

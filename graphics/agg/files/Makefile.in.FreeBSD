@@ -1,0 +1,7 @@
+AGGLIBS= -lagg 
+#CXX = 
+#C = gcc
+#CXX = icc
+LIB = ar cr
+
+.PHONY : clean

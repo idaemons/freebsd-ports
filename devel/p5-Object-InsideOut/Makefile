@@ -1,0 +1,33 @@
+# New ports collection makefile for:	devel/p5-Object-InsideOut
+# Date created:				15 January 2006
+# Whom:					Geraud Continsouzas <geraud@gcu.info>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Object-InsideOut
+PORTVERSION=	2.05
+PORTREVISION=	1
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Object
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	geraud@gcu.info
+COMMENT=	Object::InsideOut - Comprehensive inside-out object support module
+
+RUN_DEPENDS=	p5-Exception-Class>=1.22:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-Want>=0.12:${PORTSDIR}/devel/p5-Want
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=	Object::InsideOut.3 Object::InsideOut::Metadata.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800 # inherited from p5-Exception-Class
+IGNORE=		requires perl 5.8 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>

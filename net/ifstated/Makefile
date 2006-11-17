@@ -1,0 +1,36 @@
+# New ports collection makefile for: ifstated
+# Date created:         18 November 2004
+# Whom:                 Matthew George <mdg@secureworks.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ifstated
+PORTVERSION=	20050505
+CATEGORIES=	net
+MASTER_SITES=	ftp://ftp.secureworks.net/pub/ifstated/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Interface State daemon
+
+INSTALL_TARGET=	install install-man
+MAN8=		ifstated.8
+
+PLIST_FILES=	sbin/ifstated etc/ifstated.conf
+SUB_FILES=	pkg-message
+
+USE_RC_SUBR=	ifstated
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/ifstated.c ${WRKSRC}/ifstated.8
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 502113
+IGNORE=		need link state change notification changes from May 2004
+.endif
+
+.include <bsd.port.post.mk>

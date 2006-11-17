@@ -1,0 +1,6 @@
+bin/glest
+%%GLESTDIRE%%/glest
+%%GLESTDIRE%%/glest.ini
+%%PORTDOCS%%%%DOCSDIR%%/license-game.txt
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%GLESTDIRE%%

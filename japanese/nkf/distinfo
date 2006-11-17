@@ -1,3 +1,3 @@
-MD5 (nkf-1.4.tar.gz) = 502f058f92999c5783f19ae3583f793c
-MD5 (nkf-patches.tar.gz) = 2dcb866ad3dfa20996c2337c1a36a891
-MD5 (nkf-speedup-patch.gz) = f25d1e7ae508ab59bec786bc7c28fe95
+MD5 (nkf207.tar.gz) = af11dcd3fe71d67831c020e3bfd5073b
+SHA256 (nkf207.tar.gz) = 71d2ba992df209a00bb1dca45e3336729dc16e51b71526bd20f897cc6127a275
+SIZE (nkf207.tar.gz) = 150501

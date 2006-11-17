@@ -1,0 +1,189 @@
+bin/FreeDoko
+bin/freedoko
+%%PORTDOCS%%%%DOCSDIR%%/Bugs
+%%PORTDOCS%%%%DOCSDIR%%/GPL
+%%PORTDOCS%%%%DOCSDIR%%/Implementation/HIG.txt
+%%PORTDOCS%%%%DOCSDIR%%/Implementation/Schweine.txt
+%%PORTDOCS%%%%DOCSDIR%%/Implementation/Zugriff.html
+%%PORTDOCS%%%%DOCSDIR%%/Roadmap
+%%PORTDOCS%%%%DOCSDIR%%/de/DDV_Kurzregeln.tex
+%%PORTDOCS%%%%DOCSDIR%%/de/DDV_Turnierregeln.tex
+%%PORTDOCS%%%%DOCSDIR%%/de/FreeDoko_Konzept.tex
+%%PORTDOCS%%%%DOCSDIR%%/de/FreeDoko_Regeln.tex
+%%PORTDOCS%%%%DOCSDIR%%/de/GPL.de
+%%PORTDOCS%%%%DOCSDIR%%/de/Kurzregeln.tex
+%%PORTDOCS%%%%DOCSDIR%%/de/LiesMich.html
+%%PORTDOCS%%%%DOCSDIR%%/de/LiesMich.txt
+%%PORTDOCS%%%%DOCSDIR%%/de/SuSE
+%%PORTDOCS%%%%DOCSDIR%%/de/Windows
+%%PORTDOCS%%%%DOCSDIR%%/de/Windows.kompilieren
+%%PORTDOCS%%%%DOCSDIR%%/de/subversion
+%%PORTDOCS%%%%DOCSDIR%%/en/FreeDoko_concept.tex
+%%PORTDOCS%%%%DOCSDIR%%/en/FreeDoko_rules.tex
+%%PORTDOCS%%%%DOCSDIR%%/en/README.html
+%%PORTDOCS%%%%DOCSDIR%%/en/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/Windows
+%%PORTDOCS%%%%DOCSDIR%%/en/shortrules.tex
+%%PORTDOCS%%%%DOCSDIR%%/hpux.required_libs.txt
+%%DATADIR%%/backgrounds/table.png
+%%DATADIR%%/cardsets/Altenburg/License
+%%DATADIR%%/cardsets/Altenburg/french/backs/penguin.png
+%%DATADIR%%/cardsets/Altenburg/french/backs/xaos.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/club/ace.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/club/jack.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/club/king.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/club/nine.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/club/queen.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/club/ten.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/ace.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/jack.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/king.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/nine.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/queen.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/ten.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/heart/ace.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/heart/jack.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/heart/king.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/heart/nine.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/heart/queen.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/heart/ten.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/spade/ace.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/spade/jack.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/spade/king.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/spade/nine.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/spade/queen.png
+%%DATADIR%%/cardsets/Altenburg/french/cards/spade/ten.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/contra.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/dollen.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/doppelkopf.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/fox_highest_trump.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/genscher.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.club.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.diamond.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.heart.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.king.club.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.king.diamond.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.king.heart.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.king.spade.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.spade.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.club.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.color.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.foreign.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.heart.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.spade.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.trump.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/no_0.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/no_0_reply.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/no_120.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/no_120_reply.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/no_30.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/no_30_reply.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/no_60.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/no_60_reply.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/no_90.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/no_90_reply.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/poverty.0.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/poverty.1.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/poverty.2.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/poverty.3.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/poverty.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/re.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.club.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.diamond.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.heart.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.jack.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.king-jack.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.king-queen.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.king.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.koehler.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.meatless.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.queen-jack.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.queen.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/solo.spade.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.club.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.diamond.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.heart.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.king.club.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.king.diamond.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.king.heart.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.king.spade.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.spade.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines.club.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines.diamond.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines.heart.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/swines.spade.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/thrown_kings.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/thrown_nines.png
+%%DATADIR%%/cardsets/Altenburg/french/icons/thrown_nines_and_kings.png
+%%DATADIR%%/rules/beginner
+%%DATADIR%%/rules/standard
+%%DATADIR%%/rules/tournament
+%%DATADIR%%/translations/de-alt/text
+%%DATADIR%%/translations/de/aiconfig
+%%DATADIR%%/translations/de/basistypes
+%%DATADIR%%/translations/de/bug_report
+%%DATADIR%%/translations/de/cards
+%%DATADIR%%/translations/de/chat
+%%DATADIR%%/translations/de/gui
+%%DATADIR%%/translations/de/help
+%%DATADIR%%/translations/de/menu
+%%DATADIR%%/translations/de/messages
+%%DATADIR%%/translations/de/network
+%%DATADIR%%/translations/de/rules
+%%DATADIR%%/translations/de/settings
+%%DATADIR%%/translations/de/text
+%%DATADIR%%/translations/de/versions
+%%DATADIR%%/translations/en/aiconfig
+%%DATADIR%%/translations/en/aiconfig.heuristics.description
+%%DATADIR%%/translations/en/basistypes
+%%DATADIR%%/translations/en/bug_report
+%%DATADIR%%/translations/en/cards
+%%DATADIR%%/translations/en/chat
+%%DATADIR%%/translations/en/gtkmm.menu
+%%DATADIR%%/translations/en/gui
+%%DATADIR%%/translations/en/help
+%%DATADIR%%/translations/en/menu
+%%DATADIR%%/translations/en/messages
+%%DATADIR%%/translations/en/network
+%%DATADIR%%/translations/en/rules
+%%DATADIR%%/translations/en/settings
+%%DATADIR%%/translations/en/text
+%%DATADIR%%/translations/en/versions
+%%DATADIR%%/translations/fr/aiconfig
+%%DATADIR%%/translations/fr/basistypes
+%%DATADIR%%/translations/fr/bug_report
+%%DATADIR%%/translations/fr/cards
+%%DATADIR%%/translations/fr/chat
+%%DATADIR%%/translations/fr/gui
+%%DATADIR%%/translations/fr/help
+%%DATADIR%%/translations/fr/menu
+%%DATADIR%%/translations/fr/messages
+%%DATADIR%%/translations/fr/network
+%%DATADIR%%/translations/fr/rules
+%%DATADIR%%/translations/fr/settings
+%%DATADIR%%/translations/fr/text
+%%DATADIR%%/translations/fr/versions
+%%DATADIR%%/translations/wiki.fr.html
+@dirrm %%DATADIR%%/translations/fr
+@dirrm %%DATADIR%%/translations/en
+@dirrm %%DATADIR%%/translations/de-alt
+@dirrm %%DATADIR%%/translations/de
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/rules
+@dirrm %%DATADIR%%/cardsets/Altenburg/french/icons
+@dirrm %%DATADIR%%/cardsets/Altenburg/french/cards/spade
+@dirrm %%DATADIR%%/cardsets/Altenburg/french/cards/heart
+@dirrm %%DATADIR%%/cardsets/Altenburg/french/cards/diamond
+@dirrm %%DATADIR%%/cardsets/Altenburg/french/cards/club
+@dirrm %%DATADIR%%/cardsets/Altenburg/french/cards
+@dirrm %%DATADIR%%/cardsets/Altenburg/french/backs
+@dirrm %%DATADIR%%/cardsets/Altenburg/french
+@dirrm %%DATADIR%%/cardsets/Altenburg
+@dirrm %%DATADIR%%/cardsets
+@dirrm %%DATADIR%%/backgrounds
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Implementation
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

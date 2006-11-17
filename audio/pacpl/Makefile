@@ -1,0 +1,68 @@
+# New ports collection makefile for:	pacpl
+# Date created:		21 July 2006
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pacpl
+PORTVERSION=	3.2.4
+CATEGORIES=	audio
+MASTER_SITES=	SF
+
+MAINTAINER=	infofarmer@FreeBSD.org
+COMMENT=	Perl Audio Converter
+
+RUN_DEPENDS=	${SITE_PERL}/MP3/Tag.pm:${PORTSDIR}/audio/p5-MP3-Tag \
+		${SITE_PERL}/MP4/Info.pm:${PORTSDIR}/multimedia/p5-MP4-Info \
+		${SITE_PERL}/Audio/WMA.pm:${PORTSDIR}/audio/p5-Audio-WMA \
+		${SITE_PERL}/${PERL_ARCH}/Ogg/Vorbis/Header.pm:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header \
+		${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm:${PORTSDIR}/audio/p5-Audio-FLAC-Header \
+		${SITE_PERL}/Audio/Musepack.pm:${PORTSDIR}/audio/p5-Audio-Musepack \
+		lame:${PORTSDIR}/audio/lame \
+		oggenc:${PORTSDIR}/audio/vorbis-tools \
+		flac:${PORTSDIR}/audio/flac \
+		mac:${PORTSDIR}/audio/mac \
+		shorten:${PORTSDIR}/audio/shorten \
+		faac:${PORTSDIR}/audio/faac \
+		faad:${PORTSDIR}/audio/faad \
+		mppenc:${PORTSDIR}/audio/musepack \
+		wavpack:${PORTSDIR}/audio/wavpack \
+		ttaenc:${PORTSDIR}/audio/tta \
+		kexis:${PORTSDIR}/audio/kexis \
+		sox:${PORTSDIR}/audio/sox \
+		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
+		bonk:${PORTSDIR}/audio/bonk \
+		mplayer:${PORTSDIR}/multimedia/mplayer \
+		cdparanoia:${PORTSDIR}/audio/cdparanoia \
+		mpg123:${PORTSDIR}/audio/mpg123 \
+		laudio:${PORTSDIR}/audio/laudio \
+		ofr:${PORTSDIR}/audio/optimfrog \
+		lpac:${PORTSDIR}/audio/lpac
+
+ONLY_FOR_ARCHS=	i386 amd64
+NO_BUILD=	yes
+PACPL_LNG_FILES=	help long_help rip_help tag_help video_help
+PACPL_LNGS=	FR PT
+PLIST_FILES=	bin/pacpl etc/pacpl/pacpl.conf \
+		${PACPL_LNG_FILES:S,^,etc/pacpl/lang/FR/,:S,$,.FR,} \
+		${PACPL_LNG_FILES:S,^,etc/pacpl/lang/PT/,:S,$,.PT,}
+PLIST_DIRS=	etc/pacpl/lang/FR etc/pacpl/lang/PT etc/pacpl/lang etc/pacpl
+MAN1=		pacpl.1
+
+post-extract:
+	@${GUNZIP_CMD} ${WRKSRC}/man/pacpl.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#/etc#${PREFIX}/etc#' ${WRKSRC}/pacpl
+	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#' ${WRKSRC}/pacpl.conf
+
+do-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/pacpl ${PREFIX}/bin/
+	@${INSTALL} -d ${PACPL_LNGS:S,^,${PREFIX}/etc/pacpl/lang/,}
+	@${INSTALL_DATA} ${PACPL_LNG_FILES:S,^,${WRKSRC}/lang/FR/,:S,$,.FR,} ${PREFIX}/etc/pacpl/lang/FR/
+	@${INSTALL_DATA} ${PACPL_LNG_FILES:S,^,${WRKSRC}/lang/PT/,:S,$,.PT,} ${PREFIX}/etc/pacpl/lang/PT/
+	@${INSTALL_DATA} ${WRKSRC}/pacpl.conf ${PREFIX}/etc/pacpl/
+	@${INSTALL_MAN} ${WRKSRC}/man/pacpl.1 ${MAN1PREFIX}/man/man1/
+
+.include <bsd.port.mk>

@@ -1,8 +1,19 @@
-DISTNAME=	calc-2.9.3t6
-MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/misc/4.4BSD-Lite/contrib/
+# New ports collection makefile for:    calc
+# Date created:         3 October 1994
+# Whom:                 jmz
+#
+# $FreeBSD$
+#
 
-pre-install:
-	@mkdir -p ${PREFIX}/lib/calc/help
-	@mkdir -p ${PREFIX}/man/man1
+PORTNAME=	calc
+PORTVERSION=	2.11.11
+CATEGORIES=	math
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Arbitrary precision calculator
+
+MAN1=		calc.1
 
 .include <bsd.port.mk>

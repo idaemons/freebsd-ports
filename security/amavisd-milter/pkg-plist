@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+@unexec %%RC_DIR%%/etc/rc.d/amavisd-milter%%RC_SUFX%% stop 2>&1 >/dev/null || true
+sbin/amavisd-milter

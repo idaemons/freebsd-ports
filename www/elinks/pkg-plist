@@ -1,0 +1,53 @@
+bin/elinks
+%%NLS%%share/locale/be/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/da/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/de/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/el/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/es/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/et/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/id/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/is/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/it/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/elinks.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/elinks.mo
+%%NLS%%@dirrmtry share/locale/be/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/be
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk

@@ -1,0 +1,10 @@
+bin/dnswalk
+%%EXAMPLESDIR%%/do-dnswalk
+%%EXAMPLESDIR%%/makereports
+%%EXAMPLESDIR%%/sendreports
+%%DOCSDIR%%/README
+%%DOCSDIR%%/dnswalk.errors
+@exec mkdir -p %D/%%EXAMPLESDIR%%
+@exec mkdir -p %D/%%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%

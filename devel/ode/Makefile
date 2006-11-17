@@ -1,0 +1,67 @@
+# New ports collection makefile for:	ode
+# Date created:				11 Oct 2003
+# Whom:					David Yeske <dyeske@yahoo.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ode
+PORTVERSION=	0.7
+PORTEPOCH=	1
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	opende
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+
+MAINTAINER=	acm@FreeBSD.org
+COMMENT=	Articulated rigid body dynamics library
+
+CONFLICTS=	ode-devel-[0-9].*
+
+USE_ZIP=	yes
+USE_X_PREFIX=	yes
+USE_GL=		yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LIBS="-L${X11BASE}/lib"
+
+OPTIONS=	OPCODE	"Enable code required by TriList (trimesh) class" on \
+		GYROSCOPIC "Configure ODE to work with gyroscopic term" on \
+		DOUBLE	"Enable double precision" off
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_OPCODE)
+CONFIGURE_ARGS+=	--disable-opcode
+.endif
+
+.if defined(WITHOUT_GYROSCOPIC)
+CONFIGURE_ARGS+=	--disable-gyroscopic
+.endif
+
+.if defined(WITH_DOUBLE)
+CONFIGURE_ARGS+=	--enable-double-precision
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/if test/ s|==|=|' -e 's|^\( *CFLAGS=\)|#\1|;' \
+		-e 's|^\( *CPPFLAGS=\)|#\1|' -e 's|^\( *CXXFLAGS=\)|#\1|' \
+		-e 's|__isnanf||g; s|__isnan||g' -e 's|-lpthread|-pthread|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^traplib_PROGRAMS / d' ${WRKSRC}/ode/src/Makefile.in
+	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
+		-e '/^DEFAULT_INCLUDES/ s|$$| -I$$(top_builddir)/include|' \
+		-e '/CFLAGS/ s|-O[12]||'
+	@${FIND} ${WRKSRC} -type f -name "*.h" -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
+		-i "" -e 's|<malloc.h>|<stdlib.h>|g'
+
+post-install:
+	${SED} -e '/PACKAGE/ s|^|//|; /VERSION/ s|^|//|' ${WRKSRC}/include/ode/config.h \
+		> ${PREFIX}/include/ode/config.h
+
+.include <bsd.port.post.mk>

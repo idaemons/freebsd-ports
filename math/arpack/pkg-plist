@@ -1,0 +1,7 @@
+lib/libarpack.a
+%%PORTDOCS%%include/arpack.h
+%%PORTDOCS%%%%DOCSDIR%%/ex-complex.doc.gz
+%%PORTDOCS%%%%DOCSDIR%%/ex-nonsym.doc.gz
+%%PORTDOCS%%%%DOCSDIR%%/ex-sym.doc.gz
+%%PORTDOCS%%%%DOCSDIR%%/ug.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,252 @@
+bin/Mercury_Messenger
+%%INSTDIR%%/Mercury_Messenger
+%%INSTDIR%%/lib/JFlash.jar
+%%INSTDIR%%/lib/Skins.jar
+%%INSTDIR%%/lib/commons-jxpath-1.1.jar
+%%INSTDIR%%/lib/dMSN.jar
+%%INSTDIR%%/lib/dllStuff.jar
+%%INSTDIR%%/lib/jdom1_0.jar
+%%INSTDIR%%/lib/sbbi-upnplib-1.0.2.jar
+%%INSTDIR%%/lib/xmlpull.jar
+%%INSTDIR%%/resources/AppData/Backgrounds/Default.png
+%%INSTDIR%%/resources/AppData/CustomEmoticons/MSN6.zip
+%%INSTDIR%%/resources/AppData/Games/.keep_me
+%%INSTDIR%%/resources/AppData/LoginImages/Default.gif
+%%INSTDIR%%/resources/AppData/Plugins/.keep_me
+%%INSTDIR%%/resources/AppData/Skins/Aqua.zip
+%%INSTDIR%%/resources/AppData/Skins/BBJ2.zip
+%%INSTDIR%%/resources/AppData/Skins/Barbie.zip
+%%INSTDIR%%/resources/AppData/Skins/BeOS.zip
+%%INSTDIR%%/resources/AppData/Skins/Cell.zip
+%%INSTDIR%%/resources/AppData/Skins/MacOS.zip
+%%INSTDIR%%/resources/AppData/Skins/Mozilla.zip
+%%INSTDIR%%/resources/AppData/Skins/Simple.zip
+%%INSTDIR%%/resources/AppData/Skins/Toxic.zip
+%%INSTDIR%%/resources/AppData/Skins/Whistler.zip
+%%INSTDIR%%/resources/AppData/Skins/XP.zip
+%%INSTDIR%%/resources/AppData/Sounds/ICQ Chat request.wav
+%%INSTDIR%%/resources/AppData/Sounds/ICQ Contact.wav
+%%INSTDIR%%/resources/AppData/Sounds/ICQ Email.wav
+%%INSTDIR%%/resources/AppData/Sounds/ICQ File.wav
+%%INSTDIR%%/resources/AppData/Sounds/ICQ Message Sent.wav
+%%INSTDIR%%/resources/AppData/Sounds/ICQ Message.wav
+%%INSTDIR%%/resources/AppData/Sounds/ICQ Online.wav
+%%INSTDIR%%/resources/AppData/Sounds/ICQ Ring.wav
+%%INSTDIR%%/resources/AppData/Sounds/MSN Email.wav
+%%INSTDIR%%/resources/AppData/Sounds/MSN Message.wav
+%%INSTDIR%%/resources/AppData/Sounds/MSN Online.wav
+%%INSTDIR%%/resources/AppData/SplashWindow/Default.zip
+%%INSTDIR%%/resources/AppData/SplashWindow/Girl.zip
+%%INSTDIR%%/resources/AppData/SplashWindow/Mercury.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/away.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/chat.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/dnd.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/icondef.xml
+%%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/invisible.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/offline.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/online.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ/xa.gif
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Danny.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Dave.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Henk.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN 16b.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN default.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Maarten.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MacOS-New.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MacOS-Old.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Ranch 24p.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Roy.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Scarecrow 24p.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Scarecrow 32p.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_jMSN.zip
+%%INSTDIR%%/resources/AppData/Themes/.keep_me
+%%INSTDIR%%/resources/AppData/Views/MSN/ColorExample_GroupView/Example.html
+%%INSTDIR%%/resources/AppData/Views/MSN/ColorExample_GroupView/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/Alias_DP.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/Alias_MSNName.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/Alias_SI.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/D1.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/DP_SI.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/Email.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/LargeDP_Alias_PM_Song.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/LargeDP_MsnName_PM_Song.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/MSN7.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/MSN7_Full.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/MSNName.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup/Default.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup/collapsed.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup/expanded.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_Chat/Default.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_Chat/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/close_button.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/dpimg_border.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/index.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/left_arrow.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_back.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_back_bot.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_back_left.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_back_right.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_left.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_left_bot.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_right.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_right_bot.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_shadow.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/right_arrow.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_General/Alias.txt
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_General/Alias_MSNName.txt
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_General/Email.txt
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_General/MSNName.txt
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_General/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_IM/Colors1.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_IM/Colors2.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_IM/Default.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_IM/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_MultiConvoList/Default.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_MultiConvoList/View.xml
+%%INSTDIR%%/resources/AppData/Views/XMPP/Default_CLContact/D1.html
+%%INSTDIR%%/resources/AppData/Views/XMPP/Default_CLContact/JID.html
+%%INSTDIR%%/resources/AppData/Views/XMPP/Default_CLContact/View.xml
+%%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/crying.png
+%%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/crying.swf
+%%INSTDIR%%/resources/AppData/Winks/NVNZQXpvRkwyR3VtL0VOMnVMc2tPaURNMGFFPQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/NVNZQXpvRkwyR3VtL0VOMnVMc2tPaURNMGFFPQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/NVNZQXpvRkwyR3VtL0VOMnVMc2tPaURNMGFFPQ==/snowboarder_girl.png
+%%INSTDIR%%/resources/AppData/Winks/NVNZQXpvRkwyR3VtL0VOMnVMc2tPaURNMGFFPQ==/snowboarder_girl.swf
+%%INSTDIR%%/resources/AppData/Winks/Ny9qcUswYi96RmtiSldaK0JsTXMxT3hRcHJJPQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/Ny9qcUswYi96RmtiSldaK0JsTXMxT3hRcHJJPQ==/bouncy_ball.png
+%%INSTDIR%%/resources/AppData/Winks/Ny9qcUswYi96RmtiSldaK0JsTXMxT3hRcHJJPQ==/bouncy_ball.swf
+%%INSTDIR%%/resources/AppData/Winks/Ny9qcUswYi96RmtiSldaK0JsTXMxT3hRcHJJPQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/QXpCWER4ZitUY2R2Y2FuczJUQ1Jub1hoL2pnPQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/QXpCWER4ZitUY2R2Y2FuczJUQ1Jub1hoL2pnPQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/QXpCWER4ZitUY2R2Y2FuczJUQ1Jub1hoL2pnPQ==/guitar_smash.png
+%%INSTDIR%%/resources/AppData/Winks/QXpCWER4ZitUY2R2Y2FuczJUQ1Jub1hoL2pnPQ==/guitar_smash.swf
+%%INSTDIR%%/resources/AppData/Winks/U2dqNjRHUytReVZ5Vnhrc2x4WS9Gc1JBUmtnPQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/U2dqNjRHUytReVZ5Vnhrc2x4WS9Gc1JBUmtnPQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/U2dqNjRHUytReVZ5Vnhrc2x4WS9Gc1JBUmtnPQ==/heart.png
+%%INSTDIR%%/resources/AppData/Winks/U2dqNjRHUytReVZ5Vnhrc2x4WS9Gc1JBUmtnPQ==/heart.swf
+%%INSTDIR%%/resources/AppData/Winks/U3JKSm03WUpBY0ExNVZvd0FoQldYcmk1eUxjPQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/U3JKSm03WUpBY0ExNVZvd0FoQldYcmk1eUxjPQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/U3JKSm03WUpBY0ExNVZvd0FoQldYcmk1eUxjPQ==/stars.png
+%%INSTDIR%%/resources/AppData/Winks/U3JKSm03WUpBY0ExNVZvd0FoQldYcmk1eUxjPQ==/stars.swf
+%%INSTDIR%%/resources/AppData/Winks/Wmg5Y1pzT2RWWEFLNGZBdWxpakxxUEdnZ2NBPQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/Wmg5Y1pzT2RWWEFLNGZBdWxpakxxUEdnZ2NBPQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/Wmg5Y1pzT2RWWEFLNGZBdWxpakxxUEdnZ2NBPQ==/water_balloon.png
+%%INSTDIR%%/resources/AppData/Winks/Wmg5Y1pzT2RWWEFLNGZBdWxpakxxUEdnZ2NBPQ==/water_balloon.swf
+%%INSTDIR%%/resources/AppData/Winks/Y1ZTY2lJVnN1dkFwLzJOUk10VGZxRkxiSjBZPQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/Y1ZTY2lJVnN1dkFwLzJOUk10VGZxRkxiSjBZPQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/Y1ZTY2lJVnN1dkFwLzJOUk10VGZxRkxiSjBZPQ==/sunflower.png
+%%INSTDIR%%/resources/AppData/Winks/Y1ZTY2lJVnN1dkFwLzJOUk10VGZxRkxiSjBZPQ==/sunflower.swf
+%%INSTDIR%%/resources/AppData/Winks/YWx4R0gvRmJtVHplTEVkdFJIbXY2R0JVemR3PQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/YWx4R0gvRmJtVHplTEVkdFJIbXY2R0JVemR3PQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/YWx4R0gvRmJtVHplTEVkdFJIbXY2R0JVemR3PQ==/kiss.png
+%%INSTDIR%%/resources/AppData/Winks/YWx4R0gvRmJtVHplTEVkdFJIbXY2R0JVemR3PQ==/kiss.swf
+%%INSTDIR%%/resources/AppData/Winks/ZW5NcXdsWUxONEF2cG1hT3JJZllMV3NWQWRBPQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/ZW5NcXdsWUxONEF2cG1hT3JJZllMV3NWQWRBPQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/ZW5NcXdsWUxONEF2cG1hT3JJZllMV3NWQWRBPQ==/eyeball.png
+%%INSTDIR%%/resources/AppData/Winks/ZW5NcXdsWUxONEF2cG1hT3JJZllMV3NWQWRBPQ==/eyeball.swf
+%%INSTDIR%%/resources/AppData/Winks/aW9BZkNkQTZLbjBoS3N1K0dhMWpISjFVQ0c4PQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/aW9BZkNkQTZLbjBoS3N1K0dhMWpISjFVQ0c4PQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/aW9BZkNkQTZLbjBoS3N1K0dhMWpISjFVQ0c4PQ==/lipstick_girl.png
+%%INSTDIR%%/resources/AppData/Winks/aW9BZkNkQTZLbjBoS3N1K0dhMWpISjFVQ0c4PQ==/lipstick_girl.swf
+%%INSTDIR%%/resources/AppData/Winks/bG5IVzJzMHpISXNnS1ZqT2lpcmsxWkJaNTRnPQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/bG5IVzJzMHpISXNnS1ZqT2lpcmsxWkJaNTRnPQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/bG5IVzJzMHpISXNnS1ZqT2lpcmsxWkJaNTRnPQ==/silly_face.png
+%%INSTDIR%%/resources/AppData/Winks/bG5IVzJzMHpISXNnS1ZqT2lpcmsxWkJaNTRnPQ==/silly_face.swf
+%%INSTDIR%%/resources/AppData/Winks/dG4rZE9oemlCWitFNHpvVVM3ZnJjZ2x4b3owPQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/dG4rZE9oemlCWitFNHpvVVM3ZnJjZ2x4b3owPQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/dG4rZE9oemlCWitFNHpvVVM3ZnJjZ2x4b3owPQ==/love_letter.png
+%%INSTDIR%%/resources/AppData/Winks/dG4rZE9oemlCWitFNHpvVVM3ZnJjZ2x4b3owPQ==/love_letter.swf
+%%INSTDIR%%/resources/AppData/Winks/eHV6bWRQcm1xQXpVN0ViZDBUV3FCcWNHb0tBPQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/eHV6bWRQcm1xQXpVN0ViZDBUV3FCcWNHb0tBPQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/eHV6bWRQcm1xQXpVN0ViZDBUV3FCcWNHb0tBPQ==/dancer.png
+%%INSTDIR%%/resources/AppData/Winks/eHV6bWRQcm1xQXpVN0ViZDBUV3FCcWNHb0tBPQ==/dancer.swf
+%%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==/Wink.cab
+%%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==/content.xml
+%%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==/ufo.png
+%%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==/ufo.swf
+%%INSTDIR%%/resources/Images.zip
+%%INSTDIR%%/resources/UI/dialogs/AddGroup.xml
+%%INSTDIR%%/resources/UI/dialogs/Jabber_ContactSubscribed.xml
+%%INSTDIR%%/resources/UI/dialogs/Jabber_JoinMUC.xml
+%%INSTDIR%%/resources/UI/dialogs/RemoveContact.xml
+%%INSTDIR%%/resources/UI/dialogs/RemovedContact.xml
+%%INSTDIR%%/resources/UI/dialogs/RenameGroup.xml
+%%INSTDIR%%/resources/UI/panels/ConferencePanel.xml
+%%INSTDIR%%/resources/lang/en.xml
+%%INSTDIR%%/resources/menu/FirstTab.xml
+%%INSTDIR%%/resources/menu/MSN.xml
+%%INSTDIR%%/resources/menu/RSS.xml
+%%INSTDIR%%/resources/menu/Tray.xml
+%%INSTDIR%%/resources/menu/XMPP.xml
+%%INSTDIR%%/resources/scripts/xmms-info.sh
+%%INSTDIR%%/resources/settings/Default_Account.xml
+%%INSTDIR%%/resources/settings/Default_Global.xml
+%%INSTDIR%%/resources/settings/Window_Advanced_Account.xml
+%%INSTDIR%%/resources/settings/Window_Advanced_Global.xml
+%%INSTDIR%%/resources/settings/Window_Basic_Account.xml
+%%INSTDIR%%/resources/settings/Window_Basic_Global.xml
+%%INSTDIR%%/resources/settings/Window_View.xml
+%%INSTDIR%%/resources/settings/Wizard_FirstTime_Account.xml
+%%INSTDIR%%/resources/text/EventExampleLog.xml
+%%INSTDIR%%/resources/text/EventLog.xsl
+%%INSTDIR%%/resources/text/JabberServers.xml
+%%INSTDIR%%/resources/text/Locations.xml
+%%INSTDIR%%/resources/text/MessageLog.xsl
+%%INSTDIR%%/resources/text/RSSFeeds.xml
+%%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
+@dirrm %%INSTDIR%%/resources/text
+@dirrm %%INSTDIR%%/resources/settings
+@dirrm %%INSTDIR%%/resources/scripts
+@dirrm %%INSTDIR%%/resources/menu
+@dirrm %%INSTDIR%%/resources/lang
+@dirrm %%INSTDIR%%/resources/UI/panels
+@dirrm %%INSTDIR%%/resources/UI/dialogs
+@dirrm %%INSTDIR%%/resources/UI
+@dirrm %%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/eHV6bWRQcm1xQXpVN0ViZDBUV3FCcWNHb0tBPQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/dG4rZE9oemlCWitFNHpvVVM3ZnJjZ2x4b3owPQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/bG5IVzJzMHpISXNnS1ZqT2lpcmsxWkJaNTRnPQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/aW9BZkNkQTZLbjBoS3N1K0dhMWpISjFVQ0c4PQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/ZW5NcXdsWUxONEF2cG1hT3JJZllMV3NWQWRBPQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/YWx4R0gvRmJtVHplTEVkdFJIbXY2R0JVemR3PQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/Y1ZTY2lJVnN1dkFwLzJOUk10VGZxRkxiSjBZPQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/Wmg5Y1pzT2RWWEFLNGZBdWxpakxxUEdnZ2NBPQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/U3JKSm03WUpBY0ExNVZvd0FoQldYcmk1eUxjPQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/U2dqNjRHUytReVZ5Vnhrc2x4WS9Gc1JBUmtnPQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/QXpCWER4ZitUY2R2Y2FuczJUQ1Jub1hoL2pnPQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/Ny9qcUswYi96RmtiSldaK0JsTXMxT3hRcHJJPQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/NVNZQXpvRkwyR3VtL0VOMnVMc2tPaURNMGFFPQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==
+@dirrm %%INSTDIR%%/resources/AppData/Winks
+@dirrm %%INSTDIR%%/resources/AppData/Views/XMPP/Default_CLContact
+@dirrm %%INSTDIR%%/resources/AppData/Views/XMPP
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_MultiConvoList
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_IM
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_General
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_Chat
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/ColorExample_GroupView
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN
+@dirrm %%INSTDIR%%/resources/AppData/Views
+@dirrm %%INSTDIR%%/resources/AppData/Themes
+@dirrm %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ
+@dirrm %%INSTDIR%%/resources/AppData/StatusIcons
+@dirrm %%INSTDIR%%/resources/AppData/SplashWindow
+@dirrm %%INSTDIR%%/resources/AppData/Sounds
+@dirrm %%INSTDIR%%/resources/AppData/Skins
+@dirrm %%INSTDIR%%/resources/AppData/Plugins
+@dirrm %%INSTDIR%%/resources/AppData/LoginImages
+@dirrm %%INSTDIR%%/resources/AppData/Games
+@dirrm %%INSTDIR%%/resources/AppData/CustomEmoticons
+@dirrm %%INSTDIR%%/resources/AppData/Backgrounds
+@dirrm %%INSTDIR%%/resources/AppData
+@dirrm %%INSTDIR%%/resources
+@dirrm %%INSTDIR%%/lib
+@dirrm %%INSTDIR%%

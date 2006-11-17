@@ -1,0 +1,20 @@
+# New ports collection makefile for:	zh-tw-irssi
+# Date created:				April 26 2001
+# Whom:					vanilla
+#
+# $FreeBSD$
+#
+
+PORTREVISION=	3
+CATEGORIES=	chinese
+
+MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	A zh-tw cursor movement friendly, wrapping clean irssi
+
+MASTERDIR=	${.CURDIR}/../../irc/irssi
+
+EXTRA_PATCHES=	${.CURDIR}/files/patch-irssi.conf \
+		${.CURDIR}/files/patch-utf8_break \
+		${.CURDIR}/files/patch-eaw
+
+.include "${MASTERDIR}/Makefile"

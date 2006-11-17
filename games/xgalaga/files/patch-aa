@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Fri Sep 20 03:24:43 2002
++++ Makefile.in	Fri Sep 20 03:25:29 2002
+@@ -46,7 +46,9 @@
+ 	./mkinstalldirs $(bindir)
+ 	./mkinstalldirs $(prefix)
+ 	$(INSTALL) $(TARGET) $(bindir)/$(TARGET)
+-	$(INSTALL) $(SOUNDSRV) $(prefix)/$(SOUNDSRV)
++	if [ "X$(SOUNDSRV)" != "X" ]; then \
++		$(INSTALL) $(SOUNDSRV) $(prefix)/$(SOUNDSRV); \
++	fi
+ 	./mkinstalldirs $(prefix)/sounds
+ 	./mkinstalldirs $(prefix)/levels
+ 	for i in levels/*.xgl; do $(INSTALL) $$i $(prefix)/$$i ; done

@@ -1,0 +1,32 @@
+# New ports collection makefile for:	p5-Email-MIME-Attachment-Stripper
+# Date created:				2004-08-30
+# Whom:					Lars Thegler <lth@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Email-MIME-Attachment-Stripper
+PORTVERSION=	1.31.1
+CATEGORIES=	mail perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-1.311
+
+MAINTAINER=	lth@FreeBSD.org
+COMMENT=	Strip the attachments from a mail
+
+RUN_DEPENDS=	p5-Email-MIME>=1.82:${PORTSDIR}/mail/p5-Email-MIME \
+		p5-Email-MIME-ContentType>=1.0:${PORTSDIR}/mail/p5-Email-MIME-ContentType \
+		p5-Email-MIME-Modifier>=1.41:${PORTSDIR}/mail/p5-Email-MIME-Modifier
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Email::MIME::Attachment::Stripper.3
+
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} < 500600
+# inherited from mail/p5-Email-MIME
+IGNORE=		requires Perl 5.6. Install lang/perl5 or lang/perl5.8, and try again
+.endif
+.include <bsd.port.post.mk>

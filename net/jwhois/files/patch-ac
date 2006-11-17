@@ -1,0 +1,11 @@
+--- Makefile.in.dist	Thu Nov 10 16:40:08 2005
++++ Makefile.in	Thu Nov 10 16:40:27 2005
+@@ -174,7 +174,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ EXTRA_DIST = m4/ChangeLog config.rpath include/*.h example/jwhois.conf m4/*.m4 jwhois.spec.in jwhois.spec debian/*
+-SUBDIRS = doc src example po
++SUBDIRS = doc src po
+ ACLOCAL_AMFLAGS = -I m4
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive

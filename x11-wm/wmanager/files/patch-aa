@@ -1,0 +1,62 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Mon Nov 15 00:29:24 1999
++++ Makefile	Sat Oct 26 06:02:46 2002
+@@ -29,17 +29,21 @@
+ SHELL     = /bin/sh
+ MAKEFLAGS = --print-directory
+ 
++# base settings
++bindir	= $(PREFIX)/bin
++incdir	= ./inc
++srcdir	= ./src
++fltkinc	= $(X11BASE)/include
++x11lib	= $(X11BASE)/lib
+ 
+ # compiler settings
+-CXX       = g++ 
+-CXXFLAGS  = -I$(incdir) -O2 -Wall -pedantic #-DDEBUG=1 -g3
+-
++CXX      ?= g++
++CXXFLAGS+= -I$(fltkinc) -I$(incdir) $(PTHREAD_CFLAGS) #-DDEBUG=1 -g3
+ 
+ # linker settings
+-LD        = g++
+-LDFLAGS   = -lfltk -lXext -lX11 -lm
+-LDDIRS    = -L/usr/X11R6/lib -L/usr/lib -L/usr/local/lib
+-
++LD        = $(CXX)
++LDFLAGS   = -lGL -lfltk -lXext -lX11 -lm $(PTHREAD_LIBS)
++LDDIRS    = -L$(x11lib)
+ 
+ # install settings
+ INSTALL       = /usr/bin/install
+@@ -50,17 +54,6 @@
+ DOCTOOL      = perceps
+ DOCTOOL_FLAGS = -a -b -f -h -m -r
+ 
+-# base locations
+-prefix      = /usr/local
+-exec_prefix = $(prefix)
+-bindir      = $(exec_prefix)/bin
+-
+-
+-# include files and sources
+-incdir      = ./inc
+-srcdir      = ./src
+-
+-
+ # documentational files for developer
+ docdir    = ./doc
+ templates = $(docdir)/templates
+@@ -82,8 +75,7 @@
+ # project version
+ VERSION = 0.1.1
+ 
+-
+-all: wmanager TAGS
++all: wmanager
+ 
+ wmanager: $(OBJ)
+ 	$(LD) -o $@ $^ $(LDDIRS) $(LDFLAGS) 

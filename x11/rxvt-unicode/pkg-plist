@@ -1,3 +1,23 @@
-@cwd /usr/X11R6
-bin/rxvt
-man/man1/rxvt.1.gz
+bin/urxvt
+bin/urxvtc
+bin/urxvtd
+%%PERL%%lib/urxvt/perl/automove-background
+%%PERL%%lib/urxvt/perl/block-graphics-to-ascii
+%%PERL%%lib/urxvt/perl/digital-clock
+%%PERL%%lib/urxvt/perl/example-refresh-hooks
+%%PERL%%lib/urxvt/perl/kuake
+%%PERL%%lib/urxvt/perl/mark-urls
+%%PERL%%lib/urxvt/perl/option-popup
+%%PERL%%lib/urxvt/perl/readline
+%%PERL%%lib/urxvt/perl/remote-clipboard
+%%PERL%%lib/urxvt/perl/searchable-scrollback
+%%PERL%%lib/urxvt/perl/selection
+%%PERL%%lib/urxvt/perl/selection-autotransform
+%%PERL%%lib/urxvt/perl/selection-pastebin
+%%PERL%%lib/urxvt/perl/selection-popup
+%%PERL%%lib/urxvt/perl/tabbed
+%%PERL%%lib/urxvt/perl/urxvt-popup
+%%PERL%%lib/urxvt/perl/xim-onthespot
+%%PERL%%lib/urxvt/urxvt.pm
+%%PERL%%@dirrm lib/urxvt/perl
+%%PERL%%@dirrm lib/urxvt

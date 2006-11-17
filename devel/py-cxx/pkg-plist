@@ -1,0 +1,16 @@
+include/%%PYTHON_VERSION%%/CXX/Config.hxx
+include/%%PYTHON_VERSION%%/CXX/Exception.hxx
+include/%%PYTHON_VERSION%%/CXX/Extensions.hxx
+include/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.hxx
+include/%%PYTHON_VERSION%%/CXX/Objects.hxx
+include/%%PYTHON_VERSION%%/CXX/Version.hxx
+@dirrm include/%%PYTHON_VERSION%%/CXX
+%%PYTHON_SITELIBDIR%%/CXX/__init__.py
+%%PYTHON_SITELIBDIR%%/CXX/__init__.pyc
+%%PYTHON_SITELIBDIR%%/CXX/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/CXX
+share/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.cxx
+share/%%PYTHON_VERSION%%/CXX/cxx_extensions.cxx
+share/%%PYTHON_VERSION%%/CXX/cxxextensions.c
+share/%%PYTHON_VERSION%%/CXX/cxxsupport.cxx
+@dirrm share/%%PYTHON_VERSION%%/CXX

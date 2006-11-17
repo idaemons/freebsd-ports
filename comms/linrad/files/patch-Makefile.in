@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Fri Jul 14 17:35:38 2006
++++ Makefile.in	Fri Jul 28 13:12:35 2006
+@@ -4,17 +4,14 @@
+ # Name the output files *.ol instead of *.o 
+ # so we definitely know it is for Linux. 
+ # (*.o files can be present by mistake) 
+-LCC	= gcc
++LCC	= ${CC}
+ # Use the mingw cross compiler for Windows
+ # Name the output files *.ow instead of *.o 
+ # so we definitely know it is for Windows.
+ # (*.o files can be present by mistake) 
+ WCC	= /usr/bin/i586-mingw32msvc-gcc
+ # Always use the same flags.
+-CFL	= -g -O -DOSNUM=1 -W -Wimplicit -Wreturn-type -Wformat \
+--Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
+--Wparentheses -Wstrict-prototypes -Werror -ffast-math \
+--fomit-frame-pointer -c -o
++CFL	= ${CFLAGS} -I%%LOCALBASE%%/include -I%%X11BASE%%/include -L%%LOCALBASE%%/lib -L%%X11BASE%%/lib -DOSNUM=1 -ffast-math -fomit-frame-pointer -c -o 
+ CFW	= -g -O -DOSNUM=2 -W -Wimplicit -Wreturn-type -Wformat \
+ -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
+ -Wparentheses -Wstrict-prototypes -Werror -ffast-math \

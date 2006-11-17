@@ -1,0 +1,27 @@
+bin/vym
+%%DATADIR%%/scripts/exportvym
+%%DATADIR%%/scripts/niceXML
+%%DATADIR%%/scripts/update-bookmarks
+%%DATADIR%%/scripts/vym2html.sh
+%%DATADIR%%/scripts/vym2txt.sh
+%%DATADIR%%/styles/cm.xsl
+%%DATADIR%%/styles/kdebookmarks2vym.xsl
+%%DATADIR%%/styles/mmap2vym.xsl
+%%DATADIR%%/styles/tm.xsl
+%%DATADIR%%/styles/vym.css
+%%DATADIR%%/styles/vym2html.xsl
+%%DATADIR%%/styles/vym2kdebookmarks.xsl
+%%DATADIR%%/styles/vym2taskjuggler.xsl
+%%DATADIR%%/styles/vym2txt.xsl
+%%DATADIR%%/styles/vym2xhtml.xsl
+%%PORTDOCS%%%%DOCSDIR%%/vym.pdf
+%%PORTDOCS%%%%EXAMPLESDIR%%/liveform.vym
+%%PORTDOCS%%%%EXAMPLESDIR%%/math.vym
+%%PORTDOCS%%%%EXAMPLESDIR%%/time-management.vym
+%%PORTDOCS%%%%EXAMPLESDIR%%/todo.vym
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/styles/wiki
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%

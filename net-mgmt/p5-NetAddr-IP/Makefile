@@ -1,0 +1,36 @@
+# New ports collection makefile for:	p5-NetAddr-IP
+# Date created:				12 July 2000
+# Whom:					Christopher N. Harrell <cnh@ivmg.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	NetAddr-IP
+PORTVERSION=	4.00.4
+CATEGORIES=	net-mgmt perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../authors/id/L/LU/LUISMUNOZ
+PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9])$/\1/}
+
+MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl module for working with IP addresses and blocks thereof
+
+PERL_CONFIGURE=	yes
+
+MAN3=		NetAddr::IP.3 \
+	NetAddr::IP::Lite.3 \
+	NetAddr::IP::Util.3 \
+	NetAddr::IP::UtilPP.3
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${PERL} -ni -e 'print unless /^=head1/../^=cut/' ${WRKSRC}/Lite/Util/Makefile.PL
+
+.if ${PERL_LEVEL} < 500700
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+RUN_DEPENDS=	${BUILD_DEPENDS}
+.endif
+
+.include <bsd.port.post.mk>

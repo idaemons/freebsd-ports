@@ -1,0 +1,14 @@
+bin/toppler
+share/locale/de/LC_MESSAGES/toppler.mo
+share/locale/fi/LC_MESSAGES/toppler.mo
+share/locale/fr/LC_MESSAGES/toppler.mo
+share/toppler/abc.ttm
+share/toppler/ball1.ttm
+share/toppler/ball2.ttm
+share/toppler/ball3.ttm
+share/toppler/m1.ttm
+share/toppler/m2.ttm
+share/toppler/pasi2.ttm
+share/toppler/toppler.dat
+share/toppler/toppler.xpm
+@dirrm share/toppler

@@ -1,0 +1,39 @@
+--- freenx-0.4.4/nxloadconfig.orig	Sat Aug  6 09:53:27 2005
++++ freenx-0.4.4/nxloadconfig	Tue Aug  9 15:15:01 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ #
+ # Copyright (c) 2005 by Fabian Franz <freenx@fabian-franz.de>
+ #           (c) 2005 by Jon Severinsson <jonno@users.berlios.de>
+@@ -53,12 +53,12 @@
+ NX_LICENSE="OS (GPL)"
+ 
+ # Where can different nx components be found
+-NX_DIR=/usr
++NX_DIR=/usr/X11R6/NX/
+ PATH_BIN=$NX_DIR/bin # if you change that, be sure to also change the public keys
+ PATH_LIB=$NX_DIR/lib
+-NX_ETC_DIR=/etc/nxserver
+-NX_SESS_DIR=/var/lib/nxserver/db
+-NX_HOME_DIR=/var/lib/nxserver/home
++NX_ETC_DIR=/usr/X11R6/NX/etc/nxserver/
++NX_SESS_DIR=/var/lib/nxserver/
++NX_HOME_DIR=/home/nx/
+ 
+ # Advanced users ONLY
+ AGENT_LIBRARY_PATH="" #Calculated
+@@ -153,11 +153,11 @@
+ COMMAND_XAUTH=/usr/X11R6/bin/xauth
+ COMMAND_SMBMOUNT=smbmount
+ COMMAND_SMBUMOUNT=smbumount
+-COMMAND_NETCAT=netcat
++COMMAND_NETCAT=nc
+ COMMAND_SSH=ssh
+ COMMAND_SSH_KEYGEN=ssh-keygen
+ COMMAND_CUPSD=/usr/sbin/cupsd
+-COMMAND_MD5SUM=md5sum
++COMMAND_MD5SUM=md5
+ 
+ 
+ # Misc directives

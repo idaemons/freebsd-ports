@@ -1,6 +1,5 @@
-xpm-3.4d
 
-Here is an extract from the source distribution xpm-3.4d README file:
+Here is an extract from the README file:
 
  * Copyright (C) 1989-94 GROUPE BULL
 
@@ -18,4 +17,4 @@ respectively including, storing, reading and writing this format, plus four
 other: XpmCreateImageFromData, XpmCreateDataFromImage, XpmReadFileToImage and
 XpmWriteFileFromImage for working with images instead of pixmaps.
 
-
+WWW: http://koala.ilog.fr/lehors/xpm.html

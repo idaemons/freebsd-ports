@@ -1,0 +1,13 @@
+lib/libsage.a
+lib/libsage.la
+lib/libsage.so
+lib/libsage.so.1
+include/sage/sage.h
+include/sage/utility.h
+include/sage/undefs.h
+include/sage/glext_sage.h
+include/sage/GL.h
+include/sage/GLU.h
+include/sage/header.h
+@dirrm include/sage
+libdata/pkgconfig/sage.pc

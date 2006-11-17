@@ -1,0 +1,45 @@
+# New ports collection makefile for:	xdrawchem
+# Date created:				13 April 2000
+# Whom:					Trevor Johnson
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xdrawchem
+PORTVERSION=	1.9.9
+PORTREVISION=	1
+CATEGORIES=	biology
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xdrawchem
+
+MAINTAINER=	hemi@puresimplicity.net
+COMMENT=	Chemical drawing program
+
+LIB_DEPENDS=	openbabel.1:${PORTSDIR}/science/openbabel
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_QT_VER=	3
+USE_X_PREFIX=	yes
+
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+CONFIGURE_ENV=	QTINCDIR="${X11BASE}/include" \
+	QTLIBDIR="${X11BASE}/lib" \
+	LDFLAGS="${LDFLAGS} -lm"
+
+MAKE_ARGS+=	LDFLAGS+="-lqt-mt ${PTHREAD_LIBS}"
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}==sparc64
+BROKEN=		does not compile on ${ARCH}
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|malloc\.h|stdlib.h|g' ${WRKSRC}/xdrawchem/application_ob.cpp
+	@${REINPLACE_CMD} -e \
+		's|lround|(long int)rint|g' ${WRKSRC}/xdrawchem/*.cpp
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,22 @@
+# New ports collection makefile for:	poppwd
+# Date created:		12 Jan 2001
+# Whom:			Andrew Stevenson <andrew@ugh.net.au>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	poppwd
+PORTVERSION=	1.0
+CATEGORIES=	mail
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Implementation of the Eudora (compatible) password changing protocol
+
+WRKSRC=		${WRKDIR}/poppwd
+
+MAN8=		poppwd.8
+MANCOMPRESSED=	maybe
+PLIST_FILES=	libexec/poppwd
+
+.include <bsd.port.mk>

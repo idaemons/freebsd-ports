@@ -1,0 +1,6 @@
+MD5 (asterisk-1.2.7.1.tar.gz) = 5c4b473eee2fbc2cb9e346f0564ef970
+SHA256 (asterisk-1.2.7.1.tar.gz) = c561ec886a779a59c78cbeffda457f2a07535ddceb371561c54adc6ee60d984a
+SIZE (asterisk-1.2.7.1.tar.gz) = 10554037
+MD5 (asterisk-1.2.7.1-bristuff-0.3.0-PRE-1p.patch.gz) = d6351c368f76cb8adf9ff2467f56b160
+SHA256 (asterisk-1.2.7.1-bristuff-0.3.0-PRE-1p.patch.gz) = 470c880cd2b856963871c40e2bbf7a52b2a2fa8c76dff03c9e40a3b282965cce
+SIZE (asterisk-1.2.7.1-bristuff-0.3.0-PRE-1p.patch.gz) = 101554

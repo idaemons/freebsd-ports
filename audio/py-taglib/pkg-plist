@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/TagLib.py
+%%PYTHON_SITELIBDIR%%/TagLib.pyc
+%%PYTHON_SITELIBDIR%%/TagLib.pyo
+%%PYTHON_SITELIBDIR%%/_TagLib.so
+lib/libpython_taglib.so
+lib/libpython_taglib.la

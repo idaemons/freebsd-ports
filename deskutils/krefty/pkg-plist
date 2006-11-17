@@ -1,0 +1,34 @@
+bin/krefty
+lib/kde3/libkreftypart.a
+lib/kde3/libkreftypart.la
+lib/kde3/libkreftypart.so
+share/applnk/Utilities/krefty.desktop
+share/apps/krefty/data/krefty-intro.xml
+share/apps/krefty/data/krefty.css
+share/apps/krefty/data/krefty.dtd
+share/apps/krefty/data/krefty.xsl
+share/apps/krefty/data/note.png
+share/apps/krefty/krefty_shell.rc
+share/doc/HTML/en/krefty/common
+share/doc/HTML/en/krefty/index.cache.bz2
+share/doc/HTML/en/krefty/index.docbook
+share/doc/HTML/en/krefty/krefty01.png
+share/icons/hicolor/16x16/apps/krefty.png
+share/icons/hicolor/32x32/apps/krefty.png
+share/services/krefty_part.desktop
+@dirrmtry share/services
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm share/doc/HTML/en/krefty
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML
+@dirrm share/apps/krefty/data
+@dirrm share/apps/krefty
+@dirrmtry share/apps
+@dirrmtry share/applnk/Utilities
+@dirrmtry share/applnk
+@dirrmtry lib/kde3

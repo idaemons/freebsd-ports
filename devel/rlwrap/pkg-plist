@@ -1,0 +1,4 @@
+bin/rlwrap
+%%DATADIR%%/ftp
+%%DATADIR%%/testclient
+@dirrm %%DATADIR%%
