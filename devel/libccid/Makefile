@@ -1,0 +1,35 @@
+# New ports collection Makefile for:		libccid
+# Date created:					2005-01-20
+# Whom:						arved
+#
+# $FreeBSD$
+
+PORTNAME=	ccid
+PORTVERSION=	1.2.0
+CATEGORIES=	devel
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/1867/
+
+MAINTAINER=	arved@FreeBSD.org
+COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
+
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
+		pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+
+GNU_CONFIGURE=	yes
+USE_PERL5_BUILD=yes
+CONFIGURE_ARGS=	--enable-usbdropdir=${LOCALBASE}/lib/pcsc/drivers \
+		--enable-ccidtwindir=${LOCALBASE}/lib/pcsc/drivers/serial \
+		--enable-udev
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
+		LIBUSB_CFLAGS="-I${LOCALBASE}/include" \
+		LIBUSB_LIBS="-L${LOCALBASE}/lib -lusb"
+
+PLIST_SUB=	VER=${PORTVERSION}
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s,use warnings;,," ${WRKSRC}/src/create_Info_plist.pl
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,4 @@
+bin/gman
+bin/gman.cgi
+www/cgi-bin/gman.pl
+@dirrmtry www/cgi-bin

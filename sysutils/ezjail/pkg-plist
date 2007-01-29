@@ -1,0 +1,15 @@
+etc/ezjail.conf.sample
+etc/rc.d/ezjail.sh
+bin/ezjail-admin
+%%EXAMPLESDIR%%/default/etc/make.conf
+%%EXAMPLESDIR%%/default/etc/periodic.conf
+%%EXAMPLESDIR%%/default/etc/rc.conf
+%%EXAMPLESDIR%%/default/ezjail.flavour
+%%EXAMPLESDIR%%/default/usr/local/etc/sudoers
+@dirrm etc/ezjail/
+@dirrm %%EXAMPLESDIR%%/default/usr/local/etc/
+@dirrm %%EXAMPLESDIR%%/default/usr/local/
+@dirrm %%EXAMPLESDIR%%/default/usr/
+@dirrm %%EXAMPLESDIR%%/default/etc/
+@dirrm %%EXAMPLESDIR%%/default/
+@dirrm %%EXAMPLESDIR%%

@@ -1,0 +1,17 @@
+bin/fbpanel
+%%DATADIR%%/default
+%%DATADIR%%/images/Desktop2.png
+%%DATADIR%%/images/Editor.png
+%%DATADIR%%/images/Emacs.png
+%%DATADIR%%/images/GNOME-Terminal.png
+%%DATADIR%%/images/Menu.png
+%%DATADIR%%/images/Networking.png
+%%DATADIR%%/images/bottom-left.xpm
+%%DATADIR%%/images/bottom-right.xpm
+%%DATADIR%%/images/default.xpm
+%%DATADIR%%/images/settings.png
+%%DATADIR%%/images/top-left.xpm
+%%DATADIR%%/images/top-right.xpm
+%%DATADIR%%/pager
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%

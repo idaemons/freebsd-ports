@@ -1,0 +1,11 @@
+bin/file
+include/magic.h
+lib/libmagic.a
+lib/libmagic.la
+lib/libmagic.so
+lib/libmagic.so.1
+%%DATADIR%%/magic
+%%DATADIR%%/magic.mime
+%%DATADIR%%/magic.mgc
+%%DATADIR%%/magic.mime.mgc
+@dirrm %%DATADIR%%

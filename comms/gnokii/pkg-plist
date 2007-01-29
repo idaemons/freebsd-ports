@@ -1,0 +1,172 @@
+bin/gnokii
+bin/ppm2nokia
+bin/sendsms
+bin/todologo
+bin/waitcall
+%%X11%%bin/xgnokii
+etc/gnokiirc.sample
+include/gnokii.h
+include/gnokii/bitmaps.h
+include/gnokii/call.h
+include/gnokii/common.h
+include/gnokii/data.h
+include/gnokii/encoding.h
+include/gnokii/error.h
+include/gnokii/networks.h
+include/gnokii/ringtones.h
+include/gnokii/rlp-common.h
+include/gnokii/sms.h
+include/gnokii/statemachine.h
+include/gnokii/virtmodem.h
+include/gnokii/wappush.h
+@dirrm include/gnokii
+lib/libgnokii.a
+lib/libgnokii.la
+lib/libgnokii.so
+lib/libgnokii.so.3
+libdata/pkgconfig/gnokii.pc
+libdata/pkgconfig/xgnokii.pc
+sbin/gnokiid
+sbin/mgnokiidev
+%%SMSD%%sbin/smsd
+%%NLS%%share/locale/cs/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/et/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gnokii.mo
+%%SMSD%%share/smsd/README
+%%SMSD%%share/smsd/action
+%%SMSD%%lib/smsd/libfile.a
+%%SMSD%%lib/smsd/libfile.la
+%%SMSD%%lib/smsd/libfile.so
+%%MSM%%lib/smsd/libmysql.a
+%%MSM%%lib/smsd/libmysql.la
+%%MSM%%lib/smsd/libmysql.so
+%%MSM%%share/smsd/sms.tables.mysql.sql
+%%PGM%%lib/smsd/libpq.a
+%%PGM%%lib/smsd/libpq.la
+%%PGM%%lib/smsd/libpq.so
+%%PGM%%share/smsd/sms.tables.pq.sql
+%%SMSD%%@dirrm lib/smsd
+%%SMSD%%@dirrm share/smsd
+%%X11%%share/xgnokii/help/C
+%%X11%%share/xgnokii/help/POSIX
+%%X11%%share/xgnokii/help/en_US/COPYING
+%%X11%%share/xgnokii/help/en_US/CREDITS
+%%X11%%share/xgnokii/help/en_US/faq.html
+%%X11%%share/xgnokii/help/en_US/firmware/firmware.html
+%%X11%%share/xgnokii/help/en_US/index.html
+%%X11%%share/xgnokii/help/en_US/netmon/faq_net0.html
+%%X11%%share/xgnokii/help/en_US/netmon/faq_net1.html
+%%X11%%share/xgnokii/help/en_US/netmon/faq_net2.html
+%%X11%%share/xgnokii/help/en_US/netmon/faq_net3.html
+%%X11%%share/xgnokii/help/en_US/netmon/faq_net4.html
+%%X11%%share/xgnokii/help/en_US/netmon/faq_net5.html
+%%X11%%share/xgnokii/help/en_US/netmon/faq_net6.html
+%%X11%%share/xgnokii/help/en_US/netmon/net_mon1.png
+%%X11%%share/xgnokii/help/en_US/netmon/net_mon2.png
+%%X11%%share/xgnokii/help/en_US/netmon/net_mon3.png
+%%X11%%share/xgnokii/help/en_US/netmon/nm2_5110.png
+%%X11%%share/xgnokii/help/en_US/netmon/nm_3210.png
+%%X11%%share/xgnokii/help/en_US/netmon/nm_5110.png
+%%X11%%share/xgnokii/help/en_US/netmon/nm_9110.png
+%%X11%%share/xgnokii/help/en_US/netmon/tip.png
+%%X11%%share/xgnokii/help/en_US/sample/gnokiirc
+%%X11%%share/xgnokii/help/en_US/styl.css
+%%X11%%share/xgnokii/help/pl_PL/calendar.html
+%%X11%%share/xgnokii/help/pl_PL/contacts.html
+%%X11%%share/xgnokii/help/pl_PL/dtmf.html
+%%X11%%share/xgnokii/help/pl_PL/index.html
+%%X11%%share/xgnokii/help/pl_PL/netmon.html
+%%X11%%share/xgnokii/help/pl_PL/netmon/dir0.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/dir1.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/glowna.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/f2mbus.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/f2mbus2.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/faq_loga.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/faq_net0.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/faq_net1.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/faq_net2.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/faq_net3.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/faq_net4.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/faq_net5.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/faq_net6.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/faqkable.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/firmware.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/index.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/net_mon1.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/net_mon2.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/net_mon3.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/net_spis.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/nm2_5110.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/nm_3210.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/nm_5110.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/nm_9110.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/gsm/tip.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/htm.png
+%%X11%%share/xgnokii/help/pl_PL/netmon/index.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/konw.js
+%%X11%%share/xgnokii/help/pl_PL/netmon/spis.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/spis_d.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/spis_d2.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/spis_g.htm
+%%X11%%share/xgnokii/help/pl_PL/netmon/styl.css
+%%X11%%share/xgnokii/help/pl_PL/sms.html
+%%X11%%share/xgnokii/help/pl_PL/speeddial.html
+%%X11%%share/xgnokii/help/pl_PL/xkeyb.html
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/calendar
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/contacts
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/dtmf
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/main
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/netmon/gsm
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/sms
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/speeddial
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/xkeyb
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/cables
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/irda
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows
+%%X11%%@dirrm share/xgnokii/help/en_US/cables
+%%X11%%@dirrm share/xgnokii/help/en_US/calendar
+%%X11%%@dirrm share/xgnokii/help/en_US/contacts
+%%X11%%@dirrm share/xgnokii/help/en_US/dtmf
+%%X11%%@dirrm share/xgnokii/help/en_US/firmware
+%%X11%%@dirrm share/xgnokii/help/en_US/irda
+%%X11%%@dirrm share/xgnokii/help/en_US/main
+%%X11%%@dirrm share/xgnokii/help/en_US/netmon/gsm
+%%X11%%@dirrm share/xgnokii/help/en_US/netmon
+%%X11%%@dirrm share/xgnokii/help/en_US/sms
+%%X11%%@dirrm share/xgnokii/help/en_US/speeddial
+%%X11%%@dirrm share/xgnokii/help/en_US/windows/calendar
+%%X11%%@dirrm share/xgnokii/help/en_US/windows/contacts
+%%X11%%@dirrm share/xgnokii/help/en_US/windows/dtmf
+%%X11%%@dirrm share/xgnokii/help/en_US/windows/main
+%%X11%%@dirrm share/xgnokii/help/en_US/windows/netmon
+%%X11%%@dirrm share/xgnokii/help/en_US/windows/sms
+%%X11%%@dirrm share/xgnokii/help/en_US/windows/speeddial
+%%X11%%@dirrm share/xgnokii/help/en_US/windows/xkeyb
+%%X11%%@dirrm share/xgnokii/help/en_US/windows
+%%X11%%@dirrm share/xgnokii/help/en_US/xkeyb
+%%X11%%@dirrm share/xgnokii/help/en_US/sample
+%%X11%%@dirrm share/xgnokii/help/en_US
+%%X11%%@dirrm share/xgnokii/help/pl_PL/netmon/gsm
+%%X11%%@dirrm share/xgnokii/help/pl_PL/netmon
+%%X11%%@dirrm share/xgnokii/help/pl_PL
+%%X11%%@dirrm share/xgnokii/help
+%%X11%%@dirrm share/xgnokii
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl

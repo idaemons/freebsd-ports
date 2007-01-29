@@ -1,0 +1,6 @@
+MD5 (libpri-1.2.3.tar.gz) = f365d9ee29a7253d605729a6d07ebfff
+SHA256 (libpri-1.2.3.tar.gz) = f4ca5d72aa4b5e5c99c4e1a9de7235af5ed12b51a20dd757f071f5d7cf9d0fd0
+SIZE (libpri-1.2.3.tar.gz) = 76348
+MD5 (libpri-1.2.3-bristuff-0.3.0-PRE-1s.patch.gz) = 022c92a5a2a6e87872528b46ef466b74
+SHA256 (libpri-1.2.3-bristuff-0.3.0-PRE-1s.patch.gz) = acdfad15687a0c14708be3f58e05b757b76cd83683354702a6bd8c74ba1012c8
+SIZE (libpri-1.2.3-bristuff-0.3.0-PRE-1s.patch.gz) = 45664

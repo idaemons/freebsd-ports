@@ -1,0 +1,11 @@
+bin/qbrew
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/LICENSE
+%%DATADIR%%/README
+%%DATADIR%%/paleale.qbrew
+%%DATADIR%%/qbrew.png
+%%DATADIR%%/qbrew.svg
+%%DATADIR%%/qbrewdata
+%%DATADIR%%/splash.png
+%%DATADIR%%/stout.qbrew
+@dirrm %%DATADIR%%

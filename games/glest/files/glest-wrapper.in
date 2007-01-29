@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd %%PREFIX%%/lib/glest || exit 1
+exec ./glest "$@"

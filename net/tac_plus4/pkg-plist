@@ -1,0 +1,6 @@
+bin/tac_plus
+bin/tac_pwd
+etc/tac_plus.conf.example
+%%PORTDOCS%%%%DOCSDIR%%/tac_convert
+%%PORTDOCS%%%%DOCSDIR%%/users_guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

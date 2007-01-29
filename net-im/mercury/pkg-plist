@@ -1,0 +1,109 @@
+bin/Mercury_Messenger
+%%INSTDIR%%/Mercury_Messenger
+%%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
+%%INSTDIR%%/lib/dMSN.jar
+%%INSTDIR%%/lib/idle.jar
+%%INSTDIR%%/lib/jdom1_0.jar
+%%INSTDIR%%/lib/winflash.jar
+%%INSTDIR%%/lib/xmlpull.jar
+%%INSTDIR%%/resources/AppData/Backgrounds/.keep_me
+%%INSTDIR%%/resources/AppData/CustomEmoticons/MSN7.zip
+%%INSTDIR%%/resources/AppData/Games/.keep_me
+%%INSTDIR%%/resources/AppData/Images/Default.zip
+%%INSTDIR%%/resources/AppData/LoginImages/Default.gif
+%%INSTDIR%%/resources/AppData/Plugins/.keep_me
+%%INSTDIR%%/resources/AppData/Skins/Aqua.zip
+%%INSTDIR%%/resources/AppData/Skins/BBJ2.zip
+%%INSTDIR%%/resources/AppData/Skins/Barbie.zip
+%%INSTDIR%%/resources/AppData/Skins/BeOS.zip
+%%INSTDIR%%/resources/AppData/Skins/Cell.zip
+%%INSTDIR%%/resources/AppData/Skins/MacOS.zip
+%%INSTDIR%%/resources/AppData/Skins/Mozilla.zip
+%%INSTDIR%%/resources/AppData/Skins/Simple.zip
+%%INSTDIR%%/resources/AppData/Skins/Toxic.zip
+%%INSTDIR%%/resources/AppData/Skins/Whistler.zip
+%%INSTDIR%%/resources/AppData/Skins/XP.zip
+%%INSTDIR%%/resources/AppData/Sounds/MSN Email.wav
+%%INSTDIR%%/resources/AppData/Sounds/MSN Message.wav
+%%INSTDIR%%/resources/AppData/Sounds/MSN Online.wav
+%%INSTDIR%%/resources/AppData/SplashWindow/Default.zip
+%%INSTDIR%%/resources/AppData/SplashWindow/Mercury.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Danny.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Dave.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN 16b.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MSN default.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Maarten.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MacOS-New.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_MacOS-Old.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Ranch 24p.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Roy.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Scarecrow 24p.zip
+%%INSTDIR%%/resources/AppData/StatusIcons/M_Scarecrow 32p.zip
+%%INSTDIR%%/resources/AppData/Views/Global/Default_EventBox.zip
+%%INSTDIR%%/resources/AppData/Views/Global/Default_OSD.zip
+%%INSTDIR%%/resources/AppData/Views/Global/Rob_EventBox.zip
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact.zip
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup.zip
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_Chat.zip
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard.zip
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactTooltip.zip
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_General.zip
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_IM.zip
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_MultiConvoList.zip
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_Participants.zip
+%%INSTDIR%%/resources/AppData/Views/MSN/RobsDroneV3.zip
+%%INSTDIR%%/resources/AppData/Winks/BouncyBall.zip
+%%INSTDIR%%/resources/AppData/Winks/Crying.zip
+%%INSTDIR%%/resources/AppData/Winks/Dancer.zip
+%%INSTDIR%%/resources/AppData/Winks/Eyeball.zip
+%%INSTDIR%%/resources/AppData/Winks/GuitarSmash.zip
+%%INSTDIR%%/resources/AppData/Winks/Heart.zip
+%%INSTDIR%%/resources/AppData/Winks/Kiss.zip
+%%INSTDIR%%/resources/AppData/Winks/LipstickGirl.zip
+%%INSTDIR%%/resources/AppData/Winks/LoveLetter.zip
+%%INSTDIR%%/resources/AppData/Winks/SillyFace.zip
+%%INSTDIR%%/resources/AppData/Winks/SnowboarderGirl.zip
+%%INSTDIR%%/resources/AppData/Winks/Stars.zip
+%%INSTDIR%%/resources/AppData/Winks/Sunflower.zip
+%%INSTDIR%%/resources/AppData/Winks/Ufo.zip
+%%INSTDIR%%/resources/AppData/Winks/WaterBalloon.zip
+%%INSTDIR%%/resources/lang/en.xml
+%%INSTDIR%%/resources/menu/FirstTab.xml
+%%INSTDIR%%/resources/menu/MSN.xml
+%%INSTDIR%%/resources/menu/RSS.xml
+%%INSTDIR%%/resources/menu/Tray.xml
+%%INSTDIR%%/resources/settings/Default_Account.xml
+%%INSTDIR%%/resources/settings/Default_Global.xml
+%%INSTDIR%%/resources/settings/Window_Advanced_Account.xml
+%%INSTDIR%%/resources/settings/Window_Advanced_Global.xml
+%%INSTDIR%%/resources/settings/Window_Basic_Account.xml
+%%INSTDIR%%/resources/settings/Window_Basic_Global.xml
+%%INSTDIR%%/resources/settings/Window_View.xml
+%%INSTDIR%%/resources/settings/Wizard_FirstTime_Account.xml
+%%INSTDIR%%/resources/text/EventExampleLog.xml
+%%INSTDIR%%/resources/text/EventLog.xsl
+%%INSTDIR%%/resources/text/Locations.xml
+%%INSTDIR%%/resources/text/MessageLog.xsl
+%%INSTDIR%%/resources/text/RSSFeeds.xml
+@dirrm %%INSTDIR%%/resources/text
+@dirrm %%INSTDIR%%/resources/settings
+@dirrm %%INSTDIR%%/resources/menu
+@dirrm %%INSTDIR%%/resources/lang
+@dirrm %%INSTDIR%%/resources/AppData/Winks
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN
+@dirrm %%INSTDIR%%/resources/AppData/Views/Global
+@dirrm %%INSTDIR%%/resources/AppData/Views
+@dirrm %%INSTDIR%%/resources/AppData/StatusIcons
+@dirrm %%INSTDIR%%/resources/AppData/SplashWindow
+@dirrm %%INSTDIR%%/resources/AppData/Sounds
+@dirrm %%INSTDIR%%/resources/AppData/Skins
+@dirrm %%INSTDIR%%/resources/AppData/Plugins
+@dirrm %%INSTDIR%%/resources/AppData/LoginImages
+@dirrm %%INSTDIR%%/resources/AppData/Images
+@dirrm %%INSTDIR%%/resources/AppData/Games
+@dirrm %%INSTDIR%%/resources/AppData/CustomEmoticons
+@dirrm %%INSTDIR%%/resources/AppData/Backgrounds
+@dirrm %%INSTDIR%%/resources/AppData
+@dirrm %%INSTDIR%%/resources
+@dirrm %%INSTDIR%%/lib
+@dirrm %%INSTDIR%%

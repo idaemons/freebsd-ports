@@ -1,0 +1,31 @@
+# New ports collection makefile for:    hatari
+# Date created:         15 March 2004
+# Whom:                 Michael Neumann <mneumann@ntecs.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	hatari
+PORTVERSION=	0.90
+CATEGORIES=	emulators
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An Atari ST emulator
+
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GMAKE=	yes
+USE_SDL=	yes
+
+PLIST_FILES=	bin/hatari %%DATADIR%%/tos.img
+PLIST_DIRS=	%%DATADIR%%
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>

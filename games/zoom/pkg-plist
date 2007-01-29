@@ -1,0 +1,3 @@
+bin/zoom
+%%DATADIR%%/zoomrc
+@dirrm %%DATADIR%%

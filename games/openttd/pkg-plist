@@ -1,0 +1,45 @@
+bin/openttd
+%%DATADIR%%/data/autorail.grf
+%%DATADIR%%/data/canalsw.grf
+%%DATADIR%%/data/dosdummy.grf
+%%DATADIR%%/data/nsignalsw.grf
+%%DATADIR%%/data/openttd.grf
+%%DATADIR%%/data/opntitle.dat
+%%DATADIR%%/data/trkfoundw.grf
+@dirrm %%DATADIR%%/data
+%%DATADIR%%/lang/american.lng
+%%DATADIR%%/lang/brazilian_portuguese.lng
+%%DATADIR%%/lang/catalan.lng
+%%DATADIR%%/lang/czech.lng
+%%DATADIR%%/lang/danish.lng
+%%DATADIR%%/lang/dutch.lng
+%%DATADIR%%/lang/english.lng
+%%DATADIR%%/lang/estonian.lng
+%%DATADIR%%/lang/finnish.lng
+%%DATADIR%%/lang/french.lng
+%%DATADIR%%/lang/galician.lng
+%%DATADIR%%/lang/german.lng
+%%DATADIR%%/lang/hungarian.lng
+%%DATADIR%%/lang/icelandic.lng
+%%DATADIR%%/lang/italian.lng
+%%DATADIR%%/lang/norwegian.lng
+%%DATADIR%%/lang/origveh.lng
+%%DATADIR%%/lang/polish.lng
+%%DATADIR%%/lang/portuguese.lng
+%%DATADIR%%/lang/romanian.lng
+%%DATADIR%%/lang/slovak.lng
+%%DATADIR%%/lang/spanish.lng
+%%DATADIR%%/lang/swedish.lng
+%%DATADIR%%/lang/turkish.lng
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/Howto_compile_lng_files_from_CLI.txt
+%%PORTDOCS%%%%DOCSDIR%%/Manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/console.txt
+%%PORTDOCS%%%%DOCSDIR%%/landscape.html
+%%PORTDOCS%%%%DOCSDIR%%/landscape_grid.html
+%%PORTDOCS%%%%DOCSDIR%%/multiplayer.txt
+%%PORTDOCS%%%%DOCSDIR%%/ottd-colour-palette.gif
+%%PORTDOCS%%%%DOCSDIR%%/ottd-colourtext-palette.png
+%%PORTDOCS%%%%DOCSDIR%%/tileh.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

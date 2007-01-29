@@ -1,0 +1,17 @@
+bin/hattrib
+bin/hcd
+bin/hcopy
+bin/hdel
+bin/hdir
+bin/hformat
+bin/hfs
+bin/hfssh
+bin/hls
+bin/hmkdir
+bin/hmount
+bin/hpwd
+bin/hrename
+bin/hrmdir
+bin/humount
+bin/hvol
+bin/xhfs

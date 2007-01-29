@@ -1,20 +1,28 @@
 # New ports collection makefile for:	inn
-# Version required:	1.4
-# Date created:		20 Oct 1994
+# Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1), 14 Feb 1999 (2.2)
 # Whom:			torstenb
 #
-# $Id:$
+# $FreeBSD$
 #
 
-DISTNAME=	inn1.4sec
-NO_WRKSUBDIR=	YES
-MASTER_SITES=	ftp://ftp.uu.net/networking/news/nntp/inn/
-EXTRACT_SUFX=	.tar.Z
+PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	0			# Ensure master is overridden
+MASTER_SITE_ISC?=			# Empty
+MASTER_SITES=	${MASTER_SITE_ISC:C/$/ ${MASTER_SITE_LOCAL:C/%SUBDIR%/shaun/g}/1}
+MASTER_SITE_SUBDIR=	inn/snapshots
+PKGNAMESUFFIX=	-${BRANCH}
+DISTNAME=	${PORTNAME}-${BRANCH:U}-${SNAPSHOT}
 
-pre-install:
-	mkdir -p ${PREFIX}/etc
-	mkdir -p ${PREFIX}/bin
-	mkdir -p ${PREFIX}/man
-	mkdir -p ${PREFIX}/news
+BRANCH=		stable
+SNAPSHOT=	20061024
 
-.include <bsd.port.mk>
+CONFLICTS=	inn-2.[0-9]* inn-current-[0-9]
+
+PATCHDIR=	${.CURDIR}/files
+MD5_FILE=	${.CURDIR}/distinfo
+
+MASTERDIR=	${.CURDIR}/../inn
+
+BROKEN=		Fails to patch
+
+.include "${MASTERDIR}/Makefile"

@@ -1,0 +1,40 @@
+--- gnome/Makefile.in.orig	Sat Mar  4 01:55:42 2006
++++ gnome/Makefile.in	Sat Mar 11 01:04:15 2006
+@@ -70,8 +70,7 @@
+ linphone_OBJECTS = $(am_linphone_OBJECTS)
+ am__DEPENDENCIES_1 =
+ @BUILD_GNOME_TRUE@linphone_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-@BUILD_GNOME_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-@BUILD_GNOME_TRUE@	$(top_builddir)/coreapi/liblinphone.la
++@BUILD_GNOME_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ am__linphone_applet_SOURCES_DIST = linphone.c linphone.h gui_utils.c \
+ 	gui_utils.h support.c support.h interface.c interface.h \
+ 	callbacks.c callbacks.h presence.c presence.h propertybox.c \
+@@ -91,8 +90,7 @@
+ @BUILD_GNOME_APPLET_TRUE@	linphone_applet-applet.$(OBJEXT)
+ linphone_applet_OBJECTS = $(am_linphone_applet_OBJECTS)
+ @BUILD_GNOME_APPLET_TRUE@linphone_applet_DEPENDENCIES =  \
+-@BUILD_GNOME_APPLET_TRUE@	$(am__DEPENDENCIES_1) \
+-@BUILD_GNOME_APPLET_TRUE@	$(top_builddir)/coreapi/liblinphone.la
++@BUILD_GNOME_APPLET_TRUE@	$(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -363,7 +361,7 @@
+ 
+ @BUILD_GNOME_TRUE@linphone_LDADD = $(LIBGNOMEUI_LIBS) $(INTLLIBS) \
+ @BUILD_GNOME_TRUE@				$(LIBGNOME_LIBS) \
+-@BUILD_GNOME_TRUE@				$(top_builddir)/coreapi/liblinphone.la 							
++@BUILD_GNOME_TRUE@				-llinphone
+ 
+ AM_CFLAGS = $(STRICT_OPTIONS) $(LIBGNOMEUI_CFLAGS) $(LIBGNOME_CFLAGS) $(GNOME_APPLETS_CFLAGS) $(IPV6_CFLAGS)	
+ @BUILD_GNOME_APPLET_TRUE@gnome_appletdir = $(libexecdir)
+@@ -374,7 +372,7 @@
+ @BUILD_GNOME_APPLET_TRUE@linphone_applet_CFLAGS = $(AM_CFLAGS) -DLINPHONE_APPLET
+ @BUILD_GNOME_APPLET_TRUE@linphone_applet_LDADD = \
+ @BUILD_GNOME_APPLET_TRUE@				$(GNOME_APPLETS_LIBS) \
+-@BUILD_GNOME_APPLET_TRUE@				$(top_builddir)/coreapi/liblinphone.la
++@BUILD_GNOME_APPLET_TRUE@				-llinphone
+ 
+ 
+ #uidir		= $(datadir)/gnome-2.0/ui

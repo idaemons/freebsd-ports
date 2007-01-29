@@ -1,0 +1,26 @@
+--- Makefile.orig	Wed Sep 13 07:59:12 2006
++++ Makefile	Wed Sep 13 08:09:36 2006
+@@ -113,8 +113,8 @@
+ 	D_BUILD_ENV	= -DBUILD_ENV_UNIX
+ 	PCAL		= pcal
+ 	PCALINIT	= pcalinit
+-	CC		= /usr/bin/gcc
+-	PCALINIT_CC	= /usr/bin/gcc
++	CC		= ${HOST_CC}
++	PCALINIT_CC	= ${CC}
+ 	PACK		= compress
+ 	# PACK		= pack
+ 	# PACK		= gzip
+@@ -144,9 +144,9 @@
+ 	MANDIR = $(DJDIR)/man/man1
+ 	CATDIR = $(DJDIR)/man/cat1
+ else   # Unix
+-	BINDIR = /usr/local/bin
+-	MANDIR = /usr/man/man1
+-	CATDIR = /usr/man/cat1
++	BINDIR = ${PREFIX}/bin
++	MANDIR = ${PREFIX}/man/man1
++	CATDIR = ${PREFIX}/cat1
+ endif
+ 
+ OBJECTS = $(OBJDIR)/pcal.o \

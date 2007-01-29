@@ -1,0 +1,19 @@
+--- parse/glob.c.orig	Tue Oct 11 00:16:38 2005
++++ parse/glob.c	Tue Oct 11 00:24:51 2005
+@@ -51,6 +51,7 @@
+ #include "al.h"
+ #include "parse.h"
+ #include "ox.h"
++#include "version.h"
+ #if defined(PARI)
+ #include "genpari.h"
+ #endif
+@@ -767,7 +768,7 @@
+ char *get_pariversion() 
+ {
+ #if PARI
+-#if 0
++#if 1
+ 	return PARIVERSION", Copyright (C) 2000-2005 The PARI Group.\n";
+ #else
+ 	return "PARI 2.0.17, copyright 1989-1999, C. Batut, K. Belabas, D. Bernardi,\n   H. Cohen and M. Olivier.\n";

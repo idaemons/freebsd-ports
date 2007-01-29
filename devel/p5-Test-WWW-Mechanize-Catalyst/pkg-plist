@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Test/WWW/Mechanize/Catalyst.pm
+@dirrmtry %%SITE_PERL%%/Test/WWW/Mechanize
+@dirrmtry %%SITE_PERL%%/Test/WWW
+@dirrmtry %%SITE_PERL%%/Test

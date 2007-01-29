@@ -1,0 +1,37 @@
+--- SConstruct.orig	Mon Jan  1 12:17:39 2007
++++ SConstruct	Mon Jan  1 12:19:12 2007
+@@ -62,7 +62,7 @@
+ # Initialization
+ # ----------------------------------------------------------------------
+ 
+-env = Environment(ENV = os.environ, options = opts)
++env = Environment(ENV = os.environ, options = opts, CC = '%%CC%%', CXX = '%%CXX%%')
+ 
+ conf = Configure(env,
+ 	custom_tests =
+@@ -128,11 +128,6 @@
+ 	print '\tHeader file unistd.h not found'
+ 	Exit(1)
+ 
+-if not conf.CheckLibWithHeader('pthread', 'pthread.h', 'c'):
+-	print '\tpthread library not found'
+-	print '\tNote: You might have the lib but not the headers'
+-	Exit(1)
+-
+ if not conf.CheckLibWithHeader('z', 'zlib.h', 'c'):
+ 	print '\tz library (gzip/z compression) not found'
+ 	print '\tNote: You might have the lib but not the headers'
+@@ -159,11 +154,11 @@
+ env.Append(LINKFLAGS = ['-Wl,--as-needed'])
+ 
+ if env.has_key('debug') and env['debug']:
+-	env.Append(CXXFLAGS = Split('-g -ggdb -D_DEBUG -Wall'))
++	env.Append(CXXFLAGS = Split('%%CXXFLAGS%% -g -ggdb -D_DEBUG -Wall'))
+ 	env.Append(LINKFLAGS = Split('-g -ggdb -Wall'))
+ 
+ if env.has_key('release') and env['release']:
+-	env.Append(CXXFLAGS = '-O3')
++	env.Append(CXXFLAGS = '%%CXXFLAGS%%')
+ 
+ if env.has_key('profile') and env['profile']:
+ 	env.Append(CXXFLAGS = '-pg')

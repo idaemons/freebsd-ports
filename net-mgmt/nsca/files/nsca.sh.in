@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# Add the following lines to /etc/rc.conf to enable nsca:
+# nsca_enable (bool):    Set to "NO" by default.
+#                          Set it to "YES" to enable nsca.
+# nsca_flags (str):      Set to "--single" by default.
+# nsca_configfile (str): Set to "%%PREFIX%%/etc/nagios/nsca.cfg" by default.
+#
+
+. %%RC_SUBR%%
+
+name="nsca"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/nsca"
+pidfile="/var/run/nsca.pid"
+extra_commands=reload
+
+nsca_enable=${nsca_enable:-"NO"}
+nsca_flags=${nsca_flags:-"--single"}
+nsca_configfile=${nsca_configfile:-"%%PREFIX%%/etc/nagios/nsca.cfg"}
+
+load_rc_config "${name}"
+
+required_files="${nsca_configfile}"
+command_args="-c ${nsca_configfile}"
+
+run_rc_command "$1"

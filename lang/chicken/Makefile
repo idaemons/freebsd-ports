@@ -1,0 +1,56 @@
+# New ports collection makefile for:	CHICKEN
+# Date created:				31 December 2002
+# Whom:					Kimura Fuyuki <fuyuki@hadaly.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	chicken
+PORTVERSION=	2.5
+CATEGORIES=	lang scheme
+MASTER_SITES=	http://www.call-with-current-continuation.org/
+
+MAINTAINER=	alepulver@FreeBSD.org
+COMMENT=	A Scheme-to-C compiler
+
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+
+MAN1=		chicken-profile.1 chicken-setup.1 chicken.1 csc.1 csi.1
+
+OPTIONS=	PCRE "With PCRE support" off
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	ChangeLog INSTALL LICENSE NEWS README
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		coredump during build on ia64
+.endif
+
+.if defined(WITH_PCRE)
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+.else
+CONFIGURE_ENV+=	ac_cv_header_pcre_h=no
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/\(install-data-am: \)install-data-local/\1/' \
+		${WRKSRC}/Makefile.in
+
+post-install:
+	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	@${MKDIR} ${EXAMPLESDIR}/benchmarks
+	@${MKDIR} ${EXAMPLESDIR}/benchmarks/options
+	@${MKDIR} ${EXAMPLESDIR}/benchmarks/others
+	${CP} -R ${WRKSRC}/benchmarks/* ${EXAMPLESDIR}/benchmarks/
+.endif
+
+.include <bsd.port.post.mk>

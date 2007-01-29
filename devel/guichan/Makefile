@@ -1,0 +1,69 @@
+# New ports collection makefile for:	guichan
+# Date created:				2005-10-03
+# Whom:					Tobias Gion <freebsd@gionet.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	guichan
+PORTVERSION=	0.5.0
+CATEGORIES=	devel games
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+
+MAINTAINER=	mva@sysfault.org
+COMMENT=	A small, efficient C++ GUI library designed for games
+
+USE_GMAKE=	yes
+USE_GCC=	3.2+
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+
+OPTIONS=	SDL	"Enable SDL support" On \
+		ALLEGRO	"Enable Allegro support" Off \
+		GL	"Enable OpenGL support" On \
+		GLUT	"Enable Glut support" Off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_SDL)
+USE_SDL+=	sdl image
+CONFIGURE_ARGS+=--enable-sdl --enable-sdlimage
+PLIST_SUB+=	SDL=""
+.else
+CONFIGURE_ARGS+=--disable-sdl --disable-sdlimage
+PLIST_SUB+=	SDL="@comment "
+.endif
+
+.if defined(WITH_ALLEGRO)
+LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
+CONFIGURE_ARGS+=--enable-allegro
+PLIST_SUB+=	ALLEGRO=""
+.else
+CONFIGURE_ARGS+=--disable-allegro
+PLIST_SUB+=	ALLEGRO="@comment "
+.endif
+
+.if !defined(WITHOUT_GL)
+USE_GL=		yes
+CONFIGURE_ARGS+=--enable-opengl
+PLIST_SUB+=	GL=""
+.else
+CONFIGURE_ARGS+=--disable-opengl
+PLIST_SUB+=	GL="@comment "
+.endif
+
+.if defined(WITH_GLUT)
+CONFIGURE_ARGS+=--enable-glut
+LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
+PLIST_SUB+=	GLUT=""
+.else
+CONFIGURE_ARGS+=--disable-glut
+PLIST_SUB+=	GLUT="@comment "
+.endif
+
+.include <bsd.port.post.mk>

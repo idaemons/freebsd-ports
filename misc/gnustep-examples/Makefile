@@ -1,0 +1,26 @@
+# New ports collection makefile for:    gnustep-examples
+# Date created:         15 Mar 2003
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnustep-examples
+PORTVERSION=	1.1.0
+CATEGORIES=	misc
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
+MASTER_SITE_SUBDIR=	core
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	GNUstep example applications
+
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+USE_GNUSTEP_MAKE_DIRS+=	. gui/Finger gui/GFractal gui/HostAddress
+
+.include <bsd.port.mk>

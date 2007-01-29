@@ -1,0 +1,31 @@
+--- Makefile.orig	Thu Oct  5 06:03:59 2006
++++ Makefile	Sat Nov 18 22:32:11 2006
+@@ -13,13 +13,12 @@
+ 	@./check.py $(DESTDIR)$(PREFIX)/$(TO)
+ 
+ make-install-dirs:
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
+ 	mkdir -p $(DESTDIR)$(PREFIX)/bin
+ 	mkdir -p $(DESTDIR)$(PREFIX)/$(TO)
+ 
+ install: make-install-dirs install-dirs install-programs
+ 	install -m 644 $(MODULES) audio-*.png media-*.png device-*.png $(DESTDIR)$(PREFIX)/$(TO)
+-	for E in $(EXTENSIONS); do (test -e $$E && install -m 755 -D $$E $(DESTDIR)$(PREFIX)/$(TODEP)/$$E); done
++	-for E in $(EXTENSIONS); do (test -e $$E && install -m 755 $$E $(DESTDIR)$(PREFIX)/$(TODEP)/$$E); done
+ 	cd po && make install-po DESTDIR=$(DESTDIR)
+ 
+ install-dirs: $(addprefix dir-install-, $(MODULE_DIRS))
+@@ -32,10 +31,10 @@
+ 
+ app-install-%: make-install-dirs %.desktop
+ 	install -m 755 $*.py $(DESTDIR)$(PREFIX)/$(TO)
+-	install -m 644 $*.1 $(DESTDIR)$(PREFIX)/share/man/man1/$*.1
+-	install -D -m 644 $*.png $(DESTDIR)$(PREFIX)/share/pixmaps/$*.png
++	install -m 644 $*.1 $(DESTDIR)$(PREFIX)/man/man1/$*.1
++	install -m 644 $*.png $(DESTDIR)$(PREFIX)/share/pixmaps/$*.png
+ 	install -m 644 $*.svg $*.png $(DESTDIR)$(PREFIX)/$(TO)
+-	-install -D -m 644 $*.desktop $(DESTDIR)$(PREFIX)/share/applications/$*.desktop
++	-install -m 644 $*.desktop $(DESTDIR)$(PREFIX)/share/applications/$*.desktop
+ 	ln -sf ../$(TO)/$*.py $(DESTDIR)$(PREFIX)/bin/$*
+ 
+ clean:

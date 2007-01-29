@@ -1,0 +1,25 @@
+bin/starconvert
+bin/starpkg
+bin/starplot
+%%DOCSDIR%%/html/ch1.html
+%%DOCSDIR%%/html/images/bayerdes.png
+%%DOCSDIR%%/html/images/coords.png
+%%DOCSDIR%%/html/images/gcoords.png
+%%DOCSDIR%%/html/images/hrdiagram.png
+%%DOCSDIR%%/html/index.html
+%%DOCSDIR%%/html/starplot.css
+%%EXAMPLESDIR%%/example.spec
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/starplot.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/starplot.mo
+%%NLS%%share/locale/es/LC_MESSAGES/starplot.mo
+%%DATADIR%%/sample.stars
+%%DATADIR%%/test.stars
+@dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%/html/images
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
+@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+@dirrmtry share/locale/en@boldquot
+@dirrmtry share/locale/en@quot/LC_MESSAGES
+@dirrmtry share/locale/en@quot

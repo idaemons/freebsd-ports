@@ -1,0 +1,27 @@
+# New ports collection makefile for:	xfce-systemload-plugin
+# Date created:		31 June 2003
+# Whom:			Thorsten Greiner <thorsten.greiner@web.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xfce4-systemload-plugin
+PORTVERSION=	0.4.2
+CATEGORIES=	sysutils xfce
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+DIST_SUBDIR=	xfce4
+
+MAINTAINER=	thorsten.greiner@web.de
+COMMENT=	System Load plugin for XFce4
+
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv panel
+USE_XLIB=	yes
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

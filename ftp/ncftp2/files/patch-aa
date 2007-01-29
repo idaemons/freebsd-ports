@@ -1,31 +1,19 @@
-*** Makefile.in.orig	Mon Jan 23 00:06:14 1995
---- Makefile.in	Mon Jan 23 20:47:43 1995
+*** Makefile.in.orig	Thu Oct 17 04:37:03 1996
+--- Makefile.in	Fri Oct 18 02:12:57 1996
 ***************
 *** 34,40 ****
   VPATH=@srcdir@
-  CPPFLAGS=@CPPFLAGS@ -I.
+  CPPFLAGS=-I. -I@srcdir@ @CPPFLAGS@
   
 ! LIBS=@LIBS@
-  LDFLAGS=@LDFLAGS@
+  SHARED_LDFLAGS=@LDFLAGS@
+  STATIC_LDFLAGS=@LDFLAGS@ @SLDFLAGS@
   
-  # Any -D definitions:
 --- 34,40 ----
   VPATH=@srcdir@
-  CPPFLAGS=@CPPFLAGS@ -I.
+  CPPFLAGS=-I. -I@srcdir@ @CPPFLAGS@
   
-! LIBS= -lreadline -lncurses -lmytinfo
-  LDFLAGS=@LDFLAGS@
+! LIBS=@LIBS@ -lmytinfo
+  SHARED_LDFLAGS=@LDFLAGS@
+  STATIC_LDFLAGS=@LDFLAGS@ @SLDFLAGS@
   
-  # Any -D definitions:
-***************
-*** 182,186 ****
---- 182,190 ----
-  WGets.o: $(GLOBAL_H) Curses.h WGets.h
-  
-  Xfer.o: $(GLOBAL_H) Main.h Xfer.h RCmd.h FTP.h Progress.h Poll.h
-+ 
-+ install:
-+ 	$(INSTALL) $(COPY) $(STRIP) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) $(PROG) $(PREFIX)/bin/ncftp2
-+ 	$(INSTALL) -c -o $(BINOWN) -g $(BINGRP) -m 644 $(PROG).1 $(PREFIX)/man/man1/ncftp2.1
-  
-  # eof

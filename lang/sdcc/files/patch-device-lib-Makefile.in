@@ -1,0 +1,41 @@
+--- device/lib/Makefile.in.orig	Sat Jun 17 16:43:52 2006
++++ device/lib/Makefile.in	Wed Jun 28 19:08:03 2006
+@@ -337,23 +337,6 @@
+ # ---------------------------------------------------
+ install: all installdirs
+ 	$(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
+-	$(CP_U) -r $(MODELS) $(srcdir)/mcs51 $(srcdir)/ds390 $(srcdir)/ds400 \
+-	                     $(srcdir)/gbz80 $(srcdir)/z80 $(srcdir)/hc08 \
+-	                     $(srcdir)/pic $(srcdir)/pic16 $(srcdir)/*.c $(sdcc_libdir)/src
+-	$(CP_U) -r $(MODELS) mcs51 ds390 ds400 gbz80 z80 hc08 $(sdcc_libdir)/src
+-
+-	for src in $(MODELS) ds390 ds400 gbz80 z80 hc08 pic pic16; do \
+-	  find $(sdcc_libdir)/src/$$src -depth \
+-	    \( -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lib' -o \
+-	    -name '*.lst' -o -name '*.asm' -o -name '.svn' -o -name 'build' -o -name 'bin' -o \
+-	    -name 'Makefile*' \) \
+-	    -exec rm -r {} \; ; \
+-	done
+-	find $(sdcc_libdir)/src/mcs51 -depth \
+-	  \( -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lib' -o \
+-	  -name '*.lst' -o -name '.svn' -o -name 'build' -o -name 'bin' -o \
+-	  -name 'Makefile*' \) \
+-	  -exec rm -r {} \;
+ 
+ # Deleting all the installed files
+ # --------------------------------
+@@ -374,14 +357,6 @@
+ # ---------------------------------
+ installdirs:
+ 	[ -d $(sdcc_libdir) ] || mkdir -p $(sdcc_libdir)
+-	for model in $(MODELS); do \
+-	  [ -d $(sdcc_libdir)/$$model ] || \
+-	  mkdir -p $(sdcc_libdir)/$$model; \
+-	done
+-	for libdir in small-stack-auto ds390 ds400 hc08 pic16 pic; do \
+-	  [ -d $(sdcc_libdir)/$$libdir ] || mkdir -p $(sdcc_libdir)/$$libdir; \
+-	done
+-	mkdir -p $(sdcc_libdir)/src
+ 
+ # Creating dependencies
+ # ---------------------

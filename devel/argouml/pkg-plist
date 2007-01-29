@@ -1,0 +1,34 @@
+bin/argouml
+%%DATADIR%%/antlrall.jar
+%%DATADIR%%/argouml-mdr.jar
+%%DATADIR%%/argouml-model.jar
+%%DATADIR%%/argouml.jar
+%%DATADIR%%/commons-logging.jar
+%%DATADIR%%/gef.jar
+%%DATADIR%%/java-interfaces.jar
+%%DATADIR%%/jmi.jar
+%%DATADIR%%/jmiutils.jar
+%%DATADIR%%/log4j.jar
+%%DATADIR%%/mdrapi.jar
+%%DATADIR%%/mof.jar
+%%DATADIR%%/nbmdr.jar
+%%DATADIR%%/ocl-argo.jar
+%%DATADIR%%/openide-util.jar
+%%DATADIR%%/swidgets.jar
+%%DATADIR%%/toolbar.jar
+%%DATADIR%%/ext/argo_classfile.jar
+%%DATADIR%%/ext/argo_cpp.jar
+%%DATADIR%%/ext/argo_idl.jar
+%%DATADIR%%/ext/argo_php.jar
+%%DATADIR%%/ext/argouml-csharp.jar
+%%DATADIR%%/ext/argouml-i18n-de.jar
+%%DATADIR%%/ext/argouml-i18n-en_GB.jar
+%%DATADIR%%/ext/argouml-i18n-es.jar
+%%DATADIR%%/ext/argouml-i18n-fr.jar
+%%DATADIR%%/ext/argouml-i18n-it.jar
+%%DATADIR%%/ext/argouml-i18n-nb.jar
+%%DATADIR%%/ext/argouml-i18n-pt.jar
+%%DATADIR%%/ext/argouml-i18n-ru.jar
+%%DATADIR%%/ext/argouml-i18n-zh.jar
+@dirrm %%DATADIR%%/ext
+@dirrm %%DATADIR%%

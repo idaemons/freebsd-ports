@@ -1,0 +1,16 @@
+To finish installation please follow these steps:
+
+1. Edit /usr/local/etc/mimedefang/mimedefang-filter
+
+2. Reconfigure sendmail to use MIMEDefang, for example add this lines to
+   your sendmail.mc:
+
+   MAIL_FILTER(`mimedefang', `S=local:/var/spool/MIMEDefang/mimedefang.sock, F=T, T=C:15m;S:4m;R:4m;E:10m')dnl
+   define(`confINPUT_MAIL_FILTERS', `mimedefang')dnl
+
+   rebuild sendmail.cf and install it.
+
+Also, you can install some anti-virus software to check your mail, for example:
+
+	security/p5-File-Scan (Perl5 anti-virus file scanning package)
+	security/vscan (Evaluation version of a DOS/Windows/Linux file virus scanner)

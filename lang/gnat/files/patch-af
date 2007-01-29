@@ -1,0 +1,11 @@
+--- gcc/ada/gnatlink.adb.orig	Mon May 22 02:06:11 2006
++++ gcc/ada/gnatlink.adb	Mon Dec 25 11:13:08 2006
+@@ -136,7 +136,7 @@
+    --  This table collects the arguments to be passed to compile the binder
+    --  generated file.
+ 
+-   Gcc : String_Access := Program_Name ("gcc");
++   Gcc : String_Access := Program_Name ("gnatgcc");
+ 
+    Read_Mode  : constant String := "r" & ASCII.Nul;
+ 

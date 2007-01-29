@@ -1,0 +1,36 @@
+# New ports collection makefile for:	Devil's Pie
+# Date created:			08 Jun 2004
+# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	devilspie
+PORTVERSION=	0.20.1
+CATEGORIES=	x11-wm
+MASTER_SITES=	http://www.burtonini.com/computing/
+
+MAINTAINER=	jylefort@FreeBSD.org
+COMMENT=	A window manipulation tool
+
+USE_XLIB=	yes
+USE_GNOME=	libwnck
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--mandir="${PREFIX}/man"
+
+MAN1=		devilspie.1
+PORTDOCS=	AUTHORS NEWS README TODO
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||' \
+		${WRKSRC}/src/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

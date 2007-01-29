@@ -1,19 +1,18 @@
-*** Imakefile.orig	Sun Nov 13 23:04:28 1994
---- Imakefile	Sun Nov 13 23:04:41 1994
-***************
-*** 10,16 ****
-  #undef  IMCONV
-  #undef  USE_SOUND
-  #define XPM
-! #define USEM4
-  
-           YFLAGS = -d
-          DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
---- 10,16 ----
-  #undef  IMCONV
-  #undef  USE_SOUND
-  #define XPM
-! #undef  USEM4
-  
-           YFLAGS = -d
-          DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
+$FreeBSD$
+
+--- Imakefile.orig	Thu May  5 08:22:40 2005
++++ Imakefile	Mon May  9 19:30:45 2005
+@@ -67,10 +67,12 @@
+ #endif
+ 
+ #if defined USE_M4 || defined USEM4
++ M4PROGNAME = gm4
++     M4PROG = $(LOCALBASE)/bin/$(M4PROGNAME)
+    M4LIBDIR =
+    M4INCDIR =
+ 
+-  M4DEFINES = -DUSEM4
++  M4DEFINES = -DUSEM4 -DM4PROG=\"$(M4PROG)\" -DM4PROGNAME=\"$(M4PROGNAME)\"
+       M4LIB = $(M4LIBDIR)
+ #else
+    M4LIBDIR = 

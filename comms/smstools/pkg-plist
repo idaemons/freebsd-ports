@@ -1,0 +1,25 @@
+bin/sendsms
+bin/sms2html
+bin/sms2unicode
+bin/sms2xml
+bin/smsd
+bin/unicode2sms
+etc/smsd.conf.sample
+%%EXAMPLESDIR%%/email2sms
+%%EXAMPLESDIR%%/mysmsd
+%%EXAMPLESDIR%%/operator_logo1.sms
+%%EXAMPLESDIR%%/operator_logo2.sms
+%%EXAMPLESDIR%%/received_report.sms
+%%EXAMPLESDIR%%/received_sms.sms
+%%EXAMPLESDIR%%/send_sms.sms
+%%EXAMPLESDIR%%/send_sms_unicode.sms
+%%EXAMPLESDIR%%/smsd.conf.easy
+%%EXAMPLESDIR%%/smsd.conf.full
+%%EXAMPLESDIR%%/smsevent
+%%EXAMPLESDIR%%/sql_demo
+@dirrm share/examples/smstools
+@cwd /
+@dirrm var/spool/sms/outgoing
+@dirrm var/spool/sms/incoming
+@dirrm var/spool/sms/checked
+@dirrm var/spool/sms

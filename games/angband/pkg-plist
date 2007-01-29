@@ -1,0 +1,109 @@
+bin/angband
+share/angband/lib/apex/delete.me
+share/angband/lib/apex/scores.raw
+share/angband/lib/bone/delete.me
+share/angband/lib/data/artifact.raw
+share/angband/lib/data/cost_adj.raw
+share/angband/lib/data/delete.me
+share/angband/lib/data/ego_item.raw
+share/angband/lib/data/flavor.raw
+share/angband/lib/data/limits.raw
+share/angband/lib/data/monster.raw
+share/angband/lib/data/object.raw
+share/angband/lib/data/p_class.raw
+share/angband/lib/data/p_hist.raw
+share/angband/lib/data/p_race.raw
+share/angband/lib/data/prices.raw
+share/angband/lib/data/shop_own.raw
+share/angband/lib/data/terrain.raw
+share/angband/lib/data/vault.raw
+share/angband/lib/edit/artifact.txt
+share/angband/lib/edit/cost_adj.txt
+share/angband/lib/edit/ego_item.txt
+share/angband/lib/edit/flavor.txt
+share/angband/lib/edit/limits.txt
+share/angband/lib/edit/monster.txt
+share/angband/lib/edit/object.txt
+share/angband/lib/edit/p_class.txt
+share/angband/lib/edit/p_hist.txt
+share/angband/lib/edit/p_race.txt
+share/angband/lib/edit/shop_own.txt
+share/angband/lib/edit/terrain.txt
+share/angband/lib/edit/vault.txt
+share/angband/lib/file/dead.txt
+share/angband/lib/file/news.txt
+share/angband/lib/help/attack.txt
+share/angband/lib/help/birth.txt
+share/angband/lib/help/command.txt
+share/angband/lib/help/dungeon.txt
+share/angband/lib/help/general.txt
+share/angband/lib/help/help.hlp
+share/angband/lib/help/option.txt
+share/angband/lib/help/playing.txt
+share/angband/lib/help/version.txt
+share/angband/lib/info/delete.me
+share/angband/lib/pref/flvr-dvg.prf
+share/angband/lib/pref/flvr-new.prf
+share/angband/lib/pref/flvr-xxx.prf
+share/angband/lib/pref/font-ami.prf
+share/angband/lib/pref/font-dos.prf
+share/angband/lib/pref/font-ibm.prf
+share/angband/lib/pref/font-mac.prf
+share/angband/lib/pref/font-win.prf
+share/angband/lib/pref/font-x11.prf
+share/angband/lib/pref/font-xxx.prf
+share/angband/lib/pref/font.prf
+share/angband/lib/pref/graf-ami.prf
+share/angband/lib/pref/graf-dvg.prf
+share/angband/lib/pref/graf-gcu.prf
+share/angband/lib/pref/graf-ibm.prf
+share/angband/lib/pref/graf-lsl.prf
+share/angband/lib/pref/graf-mac.prf
+share/angband/lib/pref/graf-new.prf
+share/angband/lib/pref/graf-win.prf
+share/angband/lib/pref/graf-x11.prf
+share/angband/lib/pref/graf-xxx.prf
+share/angband/lib/pref/graf.prf
+share/angband/lib/pref/message.prf
+share/angband/lib/pref/pref-acn.prf
+share/angband/lib/pref/pref-ami.prf
+share/angband/lib/pref/pref-dos.prf
+share/angband/lib/pref/pref-emx.prf
+share/angband/lib/pref/pref-gcu.prf
+share/angband/lib/pref/pref-mac.prf
+share/angband/lib/pref/pref-win.prf
+share/angband/lib/pref/pref-x11.prf
+share/angband/lib/pref/pref.prf
+share/angband/lib/pref/user-mac.prf
+share/angband/lib/pref/user.prf
+share/angband/lib/pref/xtra-dvg.prf
+share/angband/lib/pref/xtra-new.prf
+share/angband/lib/pref/xtra-xxx.prf
+share/angband/lib/save/delete.me
+share/angband/lib/script/birth.lua
+share/angband/lib/script/event.lua
+share/angband/lib/script/init.lua
+share/angband/lib/script/object.lua
+share/angband/lib/script/player.lua
+share/angband/lib/script/spell.lua
+share/angband/lib/script/store.lua
+share/angband/lib/script/test.lua
+share/angband/lib/script/trace.lua
+share/angband/lib/user/delete.me
+share/angband/lib/xtra/delete.me
+share/angband/lib/xtra/font/16x16.txt
+@dirrm share/angband/lib/apex
+@dirrm share/angband/lib/bone
+@dirrm share/angband/lib/data
+@dirrm share/angband/lib/edit
+@dirrm share/angband/lib/file
+@dirrm share/angband/lib/help
+@dirrm share/angband/lib/info
+@dirrm share/angband/lib/pref
+@dirrm share/angband/lib/save
+@dirrm share/angband/lib/script
+@dirrm share/angband/lib/user
+@dirrm share/angband/lib/xtra/font
+@dirrm share/angband/lib/xtra
+@dirrm share/angband/lib
+@dirrm share/angband

@@ -1,0 +1,24 @@
+--- src/Makefile.orig	Tue Oct 17 12:17:20 2006
++++ src/Makefile	Wed Nov 15 19:14:19 2006
+@@ -23,7 +23,7 @@
+ PROG = gspiceui
+ 
+ # wxWidgets configuration utility
+-WXCFG = wx-config
++WXCFG = %%WX_CONFIG%%
+ 
+ # Directories
+ #ROOT := $(shell cd .. ; pwd)
+@@ -45,10 +45,10 @@
+ endif
+ 
+ # Includes
+-INCLUDES =-I/usr/include -I/usr/X11R6/include -I.
++INCLUDES =-I/usr/include -I${X11BASE}/include -I. $(shell %%WX_CONFIG%% --cxxflags)
+ 
+ # Libraries
+-LIB := $(shell wx-config --libs) $(shell pkg-config --libs pangox)
++LIB := $(shell %%WX_CONFIG%% --libs) $(shell pkg-config --libs pangox)
+ 
+ # Sources & headers
+ SRCS = *.cpp

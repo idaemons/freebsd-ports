@@ -1,0 +1,47 @@
+bin/gtkpod
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODOandBUGS.txt
+%%DATADIR%%/gtkpod.glade
+%%DATADIR%%/gtkpod.gladep
+%%DATADIR%%/pixmaps/gtkpod-add-dirs.png
+%%DATADIR%%/pixmaps/gtkpod-add-files.png
+%%DATADIR%%/pixmaps/gtkpod-add-playlists.png
+%%DATADIR%%/pixmaps/gtkpod-icon-32.png
+%%DATADIR%%/pixmaps/gtkpod-icon-32x32-2.png
+%%DATADIR%%/pixmaps/gtkpod-icon-32x32.png
+%%DATADIR%%/pixmaps/gtkpod-icon-48.png
+%%DATADIR%%/pixmaps/gtkpod-icon-48x48.png
+%%DATADIR%%/pixmaps/gtkpod-icon-64x64.png
+%%DATADIR%%/pixmaps/gtkpod-logo.png
+%%DATADIR%%/pixmaps/gtkpod-new-playlist.png
+%%DATADIR%%/pixmaps/gtkpod-read.png
+%%DATADIR%%/pixmaps/gtkpod-sync.png
+%%DATADIR%%/pixmaps/gtkpod.glade
+%%DATADIR%%/pixmaps/gtkpod.gladep
+%%DATADIR%%/scripts/ldif2vcf.sh
+%%DATADIR%%/scripts/mab2vcard
+%%DATADIR%%/scripts/sync-abook.sh
+%%DATADIR%%/scripts/sync-evocalendar.sh
+%%DATADIR%%/scripts/sync-evolution.sh
+%%DATADIR%%/scripts/sync-kaddressbook.sh
+%%DATADIR%%/scripts/sync-knotes.sh
+%%DATADIR%%/scripts/sync-korganizer.sh
+%%DATADIR%%/scripts/sync-ldif.sh
+%%DATADIR%%/scripts/sync-notes.sh
+%%DATADIR%%/scripts/sync-palm-jppy.py
+%%DATADIR%%/scripts/sync-thunderbird.sh
+%%DATADIR%%/scripts/sync-thunderbird-nano.sh
+%%DATADIR%%/scripts/sync-tomboy.sh
+%%DATADIR%%/scripts/sync-webcalendar.sh
+share/locale/de/LC_MESSAGES/gtkpod.mo
+share/locale/es/LC_MESSAGES/gtkpod.mo
+share/locale/fr/LC_MESSAGES/gtkpod.mo
+share/locale/he/LC_MESSAGES/gtkpod.mo
+share/locale/it/LC_MESSAGES/gtkpod.mo
+share/locale/ja/LC_MESSAGES/gtkpod.mo
+share/locale/sv/LC_MESSAGES/gtkpod.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DATADIR%%/pixmaps
+%%PORTDOCS%%@dirrm %%DATADIR%%/scripts
+%%PORTDOCS%%@dirrm %%DATADIR%%

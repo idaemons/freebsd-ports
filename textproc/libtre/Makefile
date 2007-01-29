@@ -1,0 +1,67 @@
+# ex:ts=8
+# Ports collection makefile for:	libtre
+# Date created:			Oct 14, 2002
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libtre
+PORTVERSION=	0.7.4
+CATEGORIES=	textproc
+MASTER_SITES=	http://laurikari.net/tre/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jkoshy
+DISTNAME=	tre-${PORTVERSION}
+
+MAINTAINER=	jkoshy@FreeBSD.org
+COMMENT=	A lightweight fully POSIX compliant regexp matching library
+
+CONFLICTS=	glimpse-4*	# agrep(1)
+
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GETOPT_LONG=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+USE_LDCONFIG=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+MAN1=		agrep.1
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=	-Wuninitialized -ffast-math -finline-functions \
+		-fomit-frame-pointer -fexpensive-optimizations \
+		-fforce-mem -fforce-addr -O3
+.endif
+
+pre-everything::
+.ifndef(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS'
+	@${ECHO_MSG} "===> For example, 'make WITH_OPTIMIZED_CFLAGS=yes'"
+.endif
+	@${ECHO_MSG} '===>'
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in tre-api.html tre-syntax.html
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>

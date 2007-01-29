@@ -1,0 +1,6 @@
+etc/arpalert/arpalert.conf
+etc/arpalert/maclist.allow
+etc/arpalert/maclist.deny
+etc/arpalert/oui.txt
+sbin/arpalert
+@dirrmtry etc/arpalert

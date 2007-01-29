@@ -1,0 +1,17 @@
+bin/audio_rename
+bin/typeset_audio_dir
+bin/mp3info2
+%%SITE_PERL%%/MP3/Tag.pm
+%%SITE_PERL%%/MP3/Tag/CDDB_File.pm
+%%SITE_PERL%%/MP3/Tag/ParseData.pm
+%%SITE_PERL%%/MP3/Tag/File.pm
+%%SITE_PERL%%/MP3/Tag/ID3v1.pm
+%%SITE_PERL%%/MP3/Tag/ID3v2.pm
+%%SITE_PERL%%/MP3/Tag/LastResort.pm
+%%SITE_PERL%%/MP3/Tag/Inf.pm
+%%SITE_PERL%%/MP3/ID3v2-Data.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag/.packlist
+@dirrm %%SITE_PERL%%/MP3/Tag
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
+@dirrmtry %%SITE_PERL%%/MP3

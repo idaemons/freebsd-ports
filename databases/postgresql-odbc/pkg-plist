@@ -1,0 +1,6 @@
+lib/psqlodbc.a
+lib/psqlodbc.la
+lib/psqlodbc.so
+share/psqlodbc/odbc-drop.sql
+share/psqlodbc/odbc.sql
+@dirrm share/psqlodbc

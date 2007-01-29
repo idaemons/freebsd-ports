@@ -1,0 +1,36 @@
+# New ports collection makefile for:	gscan2pdf
+# Date created:		4 September 2006
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gscan2pdf
+PORTVERSION=	0.9.1
+CATEGORIES=	graphics
+MASTER_SITES=	SFE
+
+MAINTAINER=	infofarmer@FreeBSD.org
+COMMENT=	Produce PDF from scanned documents
+
+RUN_DEPENDS=	tiff2pdf:${PORTSDIR}/graphics/tiff \
+		scanimage:${PORTSDIR}/graphics/sane-backends \
+		scanadf:${PORTSDIR}/graphics/sane-frontends \
+		p5-Gtk2>=1.112:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-Gtk2-Ex-PodViewer>=0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
+		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
+#		gocr:${PORTSDIR}/graphics/gocr \
+#		xdg-email:${PORTSDIR}/devel/xdg-utils \
+
+USE_PERL5=	yes
+USE_GETTEXT=	yes
+PERL_CONFIGURE=	yes
+USE_GMAKE=	yes
+MAN1=		${PORTNAME}.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/--parents/-p/g;s|/usr/share/man|${MANPREFIX}/man|g;s|1p|1|g'\
+		-e '/SITEPREFIX/s|/usr|${PREFIX}|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

@@ -1,7 +1,12 @@
-@cwd /usr/local
-bin/chkconf
-bin/ircd
-lib/ircd/example.conf
-lib/ircd/ircd.m4
-lib/ircd/ircd.motd
-man/man8/ircd.8
+etc/ircd/ircd.conf.example
+etc/ircd/iauth.conf.example
+etc/ircd/iauth.conf
+etc/ircd/ircd.motd
+etc/rc.d/ircd.sh
+etc/ircd/ircd.m4
+sbin/chkconf
+sbin/ircd
+sbin/iauth
+sbin/ircd-mkpasswd
+sbin/ircdwatch
+@dirrm etc/ircd

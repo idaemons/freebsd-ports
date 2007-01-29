@@ -1,0 +1,95 @@
+%%DATADIR%%/2x.svg
+%%DATADIR%%/3x.svg
+%%DATADIR%%/4x.svg
+%%DATADIR%%/ball1.svg
+%%DATADIR%%/ball2.svg
+%%DATADIR%%/cassette.dae
+%%DATADIR%%/cassette.svg
+%%DATADIR%%/crunch1.ogg
+%%DATADIR%%/crunch2.ogg
+%%DATADIR%%/crunch3.ogg
+%%DATADIR%%/default.ttf
+%%DATADIR%%/editor.svg
+%%DATADIR%%/fiba1.ogg
+%%DATADIR%%/fiba2.ogg
+%%DATADIR%%/fiba3.ogg
+%%DATADIR%%/fiba4.ogg
+%%DATADIR%%/fiba5.ogg
+%%DATADIR%%/fiba6.ogg
+%%DATADIR%%/flame1.svg
+%%DATADIR%%/flame2.svg
+%%DATADIR%%/ghmidimap.txt
+%%DATADIR%%/glow.svg
+%%DATADIR%%/icon.png
+%%DATADIR%%/in.ogg
+%%DATADIR%%/international.ttf
+%%DATADIR%%/jurgen1.ogg
+%%DATADIR%%/jurgen2.ogg
+%%DATADIR%%/jurgen3.ogg
+%%DATADIR%%/jurgen4.ogg
+%%DATADIR%%/jurgen5.ogg
+%%DATADIR%%/key.dae
+%%DATADIR%%/keyboard.svg
+%%DATADIR%%/label.dae
+%%DATADIR%%/left.svg
+%%DATADIR%%/logo.svg
+%%DATADIR%%/menu.ogg
+%%DATADIR%%/mods/Chilly/flame1.svg
+%%DATADIR%%/mods/Chilly/flame2.svg
+%%DATADIR%%/mods/Chilly/logo.svg
+%%DATADIR%%/mods/Chilly/neck.svg
+%%DATADIR%%/mods/Chilly/theme.ini
+%%DATADIR%%/myhero.ogg
+%%DATADIR%%/neck.svg
+%%DATADIR%%/note.dae
+%%DATADIR%%/out.ogg
+%%DATADIR%%/perfect1.ogg
+%%DATADIR%%/perfect2.ogg
+%%DATADIR%%/perfect3.ogg
+%%DATADIR%%/pose.svg
+%%DATADIR%%/right.svg
+%%DATADIR%%/songs/bangbang/guitar.ogg
+%%DATADIR%%/songs/bangbang/label.png
+%%DATADIR%%/songs/bangbang/notes.mid
+%%DATADIR%%/songs/bangbang/song.ini
+%%DATADIR%%/songs/bangbang/song.ogg
+%%DATADIR%%/songs/defy/guitar.ogg
+%%DATADIR%%/songs/defy/label.png
+%%DATADIR%%/songs/defy/notes.mid
+%%DATADIR%%/songs/defy/song.ini
+%%DATADIR%%/songs/defy/song.ogg
+%%DATADIR%%/songs/tutorial/esc.svg
+%%DATADIR%%/songs/tutorial/guitar.ogg
+%%DATADIR%%/songs/tutorial/keyboard.svg
+%%DATADIR%%/songs/tutorial/notes.mid
+%%DATADIR%%/songs/tutorial/pose.svg
+%%DATADIR%%/songs/tutorial/script.txt
+%%DATADIR%%/songs/tutorial/song.ini
+%%DATADIR%%/songs/tutorial/song.ogg
+%%DATADIR%%/songs/twibmpg/guitar.ogg
+%%DATADIR%%/songs/twibmpg/label.png
+%%DATADIR%%/songs/twibmpg/notes.mid
+%%DATADIR%%/songs/twibmpg/song.ini
+%%DATADIR%%/songs/twibmpg/song.ogg
+%%DATADIR%%/star1.svg
+%%DATADIR%%/star2.svg
+%%DATADIR%%/start.ogg
+%%DATADIR%%/title.ttf
+%%DATADIR%%/translations/brazilian_portuguese.mo
+%%DATADIR%%/translations/french.mo
+%%DATADIR%%/translations/german.mo
+%%DATADIR%%/translations/hebrew.mo
+%%DATADIR%%/translations/italian.mo
+%%DATADIR%%/translations/polish.mo
+%%DATADIR%%/translations/russian.mo
+%%DATADIR%%/translations/spanish.mo
+%%DATADIR%%/translations/swedish.mo
+@dirrm %%DATADIR%%/mods/Chilly
+@dirrm %%DATADIR%%/mods
+@dirrm %%DATADIR%%/songs/defy
+@dirrm %%DATADIR%%/songs/bangbang
+@dirrm %%DATADIR%%/songs/twibmpg
+@dirrm %%DATADIR%%/songs/tutorial
+@dirrm %%DATADIR%%/songs
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%

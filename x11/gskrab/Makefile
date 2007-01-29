@@ -1,0 +1,27 @@
+# New ports collection makefile for:    gskrab
+# Date created:         17 Nov 2006
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gskrab
+PORTVERSION=	0.0.1
+CATEGORIES=	x11
+MASTER_SITES=	http://organact.mine.nu/~wolfgang/gskrab/
+DISTNAME=	GSKrab-${PORTVERSION}
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	GNUstep Keyboard Grabber
+
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
+
+ADDITIONAL_OBJCFLAGS+=	-I${X11BASE}/include ${LOCALBASE}/include
+ADDITIONAL_LDFLAGS+=	-L${X11BASE}/lib
+
+.include <bsd.port.mk>

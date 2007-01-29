@@ -1,0 +1,41 @@
+# New ports collection makefile for:	sdlsand
+# Date created:		22 Apr 2006
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sdlsand
+PORTVERSION=	20061017
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	amdmi3@amdmi3.ru
+COMMENT=	Simulation of falling sand and other materials
+
+USE_ZIP=	yes
+USE_SDL=	sdl
+USE_X_PREFIX=	yes
+
+WRKSRC=		${WRKDIR}/SDL\ Sand/SDL\ Sand
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	readme.txt
+
+post-patch:
+	@${REINPLACE_CMD} -e '/crtdbg/ d' ${WRKSRC}/CmdLine.cpp
+
+do-build:
+	cd ${WRKSRC} && ${CXX} -o ${PORTNAME} ${CXXFLAGS} \
+		`${SDL_CONFIG} --cflags --libs` main.cpp CmdLine.cpp
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

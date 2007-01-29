@@ -1,0 +1,42 @@
+# New ports collection makefile for:	festvox-hvs
+# Date created:        			2000-06-20
+# Whom:					Trevor Johnson
+# based on the NetBSD port
+#
+# $NetBSD: Makefile,v 1.10 2000/02/15 09:26:14 agc Exp $
+# $FreeBSD$
+#
+
+PORTNAME=	festvox-hvs
+PORTVERSION=	2.1
+CATEGORIES=	audio accessibility spanish
+MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
+DISTNAME=	voice_hvs_di-2.1
+DIST_SUBDIR=	festival
+
+MAINTAINER=	araujo@bsdmail.org
+COMMENT=	Mexican Spanish female voice for Festival
+
+RESTRICTED=	no-commercial-use
+
+RUN_DEPENDS=	${PORTSDIR}/audio/festival+OGI \
+		${PORTSDIR}/audio/festlex-poslex \
+		${PORTSDIR}/audio/festlex-ogi \
+		${PORTSDIR}/audio/festogi-spanish
+
+WRKSRC=		${WRKDIR}/festival
+
+NO_BUILD=	yes
+
+FHOME=		${PREFIX}/share/festival
+
+post-extract:
+	@ ${CHMOD} -R a+r ${WRKSRC}
+	@ ${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@ ${FIND} ${WRKSRC} -type d -name CVS | ${XARGS} ${RM} -fr
+
+do-install:
+	${MKDIR} ${FHOME}
+	cd ${WRKSRC} && ${CP} -pPR * ${FHOME}
+
+.include <bsd.port.mk>

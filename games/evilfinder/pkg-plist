@@ -1,0 +1,7 @@
+bin/ef
+%%WRAPPER%%bin/evilfinder
+bin/shuffle
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/evilnumbers.dat
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

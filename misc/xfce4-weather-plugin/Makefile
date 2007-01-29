@@ -1,0 +1,28 @@
+# New ports collection makefile for:	xfce4-weather-plugin
+# Date created:		04 April 2004
+# Whom:			Filippo Natali <filippo@widestore.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xfce4-weather-plugin
+PORTVERSION=	0.6.0
+CATEGORIES=	misc xfce
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+DIST_SUBDIR=	xfce4
+
+MAINTAINER=	filippo.natali@gmail.com
+COMMENT=	XFce 4 weather module for xfce4-panel
+
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS= yes
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget glib20 gtk20 intltool intlhack libxml2 pkgconfig
+USE_XFCE=	configenv libgui libutil panel
+USE_XLIB=	yes
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.include <bsd.port.post.mk>

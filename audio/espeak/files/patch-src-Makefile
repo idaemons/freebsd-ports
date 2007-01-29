@@ -1,0 +1,63 @@
+--- src/Makefile	Fri Jan 26 10:20:06 2007
++++ src/Makefile.port	Fri Jan 26 23:38:04 2007
+@@ -1,7 +1,7 @@
+-BINDIR=/usr/bin
+-INCDIR=/usr/include/espeak
+-LIBDIR=/usr/lib
+-DATADIR=/usr/share/espeak-data
++BINDIR=%%PREFIX%%/bin
++INCDIR=%%PREFIX%%/include/espeak
++LIBDIR=%%PREFIX%%/lib
++DATADIR=%%DATADIR%%/espeak-data
+ 
+ RELEASE = 1.19
+ BIN_NAME = speak
+@@ -28,17 +28,17 @@
+ 
+ SRCS1=$(speak_SOURCES)
+ OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
+-LIBS1=-lstdc++ -lportaudio -lpthread
++LIBS1=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio -lpthread
+ 
+ SRCS2=$(libespeak_SOURCES)
+ OBJS2=$(patsubst %.cpp,x_%.o,$(SRCS2))
+-LIBS2=-lstdc++ -lportaudio -lpthread
++LIBS2=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio -lpthread
+ 
+ SRCS3 = espeak.cpp
+ OBJS3=$(patsubst %.cpp,%.o,$(SRCS3))
+ LIBS3=-lstdc++ ./libespeak.so
+ 
+-CXXFLAGS=-O2
++#CXXFLAGS=-O2
+ ifeq ($(shell uname -m), ppc)
+ 	CXXFLAGS += -D ARCH_BIG
+ endif
+@@ -48,22 +48,22 @@
+ 	mv $(LIB_NAME) $(LIB_NAME).$(LIBTAG)
+ 
+ .cpp.o:
+-	$(CXX) $(CXXFLAGS) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions $<
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions $<
+ 
+ $(BIN_NAME): $(OBJS1)
+-	$(CXX) -o $@ $(OBJS1) $(LIBS1)
++	$(CXX) $(PTHREAD_LIB) -o $@ $(OBJS1) $(LIBS1)
+ 
+ $(BIN2_NAME): $(OBJS3) $(LIB_NAME)
+-	$(CXX) -o $@ $(OBJS3) $(LIBS3)
++	$(CXX) $(PTHREAD_LIBS) -o $@ $(OBJS3) $(LIBS3)
+ 
+ 
+ 
+ x_%.o: %.cpp
+-	$(CXX) $(CXXFLAGS) -Wall -fpic -fvisibility=hidden -pedantic \
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -Wall -fPIC -pedantic \
+ 	-I. -D LIBRARY -c -fno-exceptions $<  -o x_$*.o
+ 
+ $(LIB_NAME): $(OBJS2)
+-	$(CXX) -shared -Wl,-soname,$(LIB_NAME).$(LIB_VERSION) -o $@ $(OBJS2) $(LIBS2)
++	$(CXX) $(PTHREAD_LIBS) -shared -Wl,-soname,$(LIB_NAME).$(LIB_VERSION) -o $@ $(OBJS2) $(LIBS2)
+ 
+ clean:
+ 	rm -f *.o *~

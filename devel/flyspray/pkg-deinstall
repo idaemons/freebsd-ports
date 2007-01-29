@@ -1,0 +1,18 @@
+#!/bin/sh
+
+case $2 in
+DEINSTALL)
+#	/bin/rm -f ${PKG_PREFIX}/share/flyspray/flyspray.conf.php
+#	/bin/rmdir ${PKG_PREFIX}/share/flyspray/
+	echo "--"
+	echo "The Flyspray program has been deleted but the bug tracking database has"
+	echo "not been touched. To delete all the bug tracking information, execute the"
+	echo "following commands:"
+	echo ""
+	echo "# rm -rf /var/db/flyspray"
+	echo "# mysqladmin -u root -p drop flyspray"
+	echo ""
+	echo "Thanks for using Flyspray!"
+	echo "--"
+;;
+esac

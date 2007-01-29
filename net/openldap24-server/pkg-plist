@@ -1,0 +1,81 @@
+@comment $FreeBSD$
+@unexec %%RC_DIR%%/etc/rc.d/slapd%%RC_SUFX%% stop 2>&1 >/dev/null || true
+%%SLURPD%%@unexec %%RC_DIR%%/etc/rc.d/slurpd%%RC_SUFX%% stop 2>&1 >/dev/null || true
+etc/openldap/schema/README
+etc/openldap/schema/core.ldif
+etc/openldap/schema/openldap.ldif
+@unexec if cmp -s %D/etc/openldap/slapd.conf %D/etc/openldap/slapd.conf.default; then rm -f %D/etc/openldap/slapd.conf; fi
+etc/openldap/slapd.conf.default
+@exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
+etc/openldap/DB_CONFIG.example
+%%SLAPI%%lib/libslapi.a
+%%SLAPI%%lib/libslapi.la
+%%SLAPI%%lib/libslapi.so
+%%SLAPI%%lib/libslapi-2.4.so
+%%SLAPI%%lib/libslapi-2.4.so.1
+%%MODULES%%@exec mkdir -p %D/libexec/openldap
+%%BACK_BDB%%libexec/openldap/back_bdb-2.4.so
+%%BACK_BDB%%libexec/openldap/back_bdb-2.4.so.1
+%%BACK_BDB%%libexec/openldap/back_bdb.la
+%%BACK_BDB%%libexec/openldap/back_bdb.so
+%%BACK_HDB%%libexec/openldap/back_hdb-2.4.so
+%%BACK_HDB%%libexec/openldap/back_hdb-2.4.so.1
+%%BACK_HDB%%libexec/openldap/back_hdb.la
+%%BACK_HDB%%libexec/openldap/back_hdb.so
+%%BACKEND%%libexec/openldap/back_ldap-2.4.so
+%%BACKEND%%libexec/openldap/back_ldap-2.4.so.1
+%%BACKEND%%libexec/openldap/back_ldap.la
+%%BACKEND%%libexec/openldap/back_ldap.so
+%%BACKEND%%libexec/openldap/back_meta-2.4.so
+%%BACKEND%%libexec/openldap/back_meta-2.4.so.1
+%%BACKEND%%libexec/openldap/back_meta.la
+%%BACKEND%%libexec/openldap/back_meta.so
+%%BACKEND%%libexec/openldap/back_monitor-2.4.so
+%%BACKEND%%libexec/openldap/back_monitor-2.4.so.1
+%%BACKEND%%libexec/openldap/back_monitor.la
+%%BACKEND%%libexec/openldap/back_monitor.so
+%%BACKEND%%libexec/openldap/back_null-2.4.so
+%%BACKEND%%libexec/openldap/back_null-2.4.so.1
+%%BACKEND%%libexec/openldap/back_null.la
+%%BACKEND%%libexec/openldap/back_null.so
+%%BACK_DNSSRV%%libexec/openldap/back_dnssrv-2.4.so
+%%BACK_DNSSRV%%libexec/openldap/back_dnssrv-2.4.so.1
+%%BACK_DNSSRV%%libexec/openldap/back_dnssrv.la
+%%BACK_DNSSRV%%libexec/openldap/back_dnssrv.so
+%%BACK_PASSWD%%libexec/openldap/back_passwd-2.4.so
+%%BACK_PASSWD%%libexec/openldap/back_passwd-2.4.so.1
+%%BACK_PASSWD%%libexec/openldap/back_passwd.la
+%%BACK_PASSWD%%libexec/openldap/back_passwd.so
+%%BACK_PERL%%libexec/openldap/back_perl-2.4.so
+%%BACK_PERL%%libexec/openldap/back_perl-2.4.so.1
+%%BACK_PERL%%libexec/openldap/back_perl.la
+%%BACK_PERL%%libexec/openldap/back_perl.so
+%%BACK_RELAY%%libexec/openldap/back_relay-2.4.so
+%%BACK_RELAY%%libexec/openldap/back_relay-2.4.so.1
+%%BACK_RELAY%%libexec/openldap/back_relay.la
+%%BACK_RELAY%%libexec/openldap/back_relay.so
+%%BACK_SHELL%%libexec/openldap/back_shell-2.4.so
+%%BACK_SHELL%%libexec/openldap/back_shell-2.4.so.1
+%%BACK_SHELL%%libexec/openldap/back_shell.la
+%%BACK_SHELL%%libexec/openldap/back_shell.so
+%%BACK_SQL%%libexec/openldap/back_sql-2.4.so
+%%BACK_SQL%%libexec/openldap/back_sql-2.4.so.1
+%%BACK_SQL%%libexec/openldap/back_sql.la
+%%BACK_SQL%%libexec/openldap/back_sql.so
+libexec/slapd
+%%SLURPD%%libexec/slurpd
+@dirrmtry libexec/openldap
+sbin/slapacl
+sbin/slapadd
+sbin/slapauth
+sbin/slapcat
+sbin/slapdn
+sbin/slapindex
+sbin/slappasswd
+sbin/slaptest
+@exec mkdir -p %%LDAP_RUN_DIR%%
+@dirrmtry %%LDAP_RUN_DIR%%
+@exec mkdir -p %%DATABASEDIR%%
+@dirrmtry %%DATABASEDIR%%
+%%SLURPD%%@exec mkdir -p %%SLURPDIR%%
+%%SLURPD%%@dirrmtry %%SLURPDIR%%

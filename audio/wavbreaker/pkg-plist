@@ -1,0 +1,10 @@
+bin/wavbreaker
+bin/wavinfo
+bin/wavmerge
+%%DATADIR%%/images/break.png
+%%DATADIR%%/images/break2.png
+%%DATADIR%%/images/del-break.png
+%%DATADIR%%/images/play.png
+%%DATADIR%%/images/stop.png
+@dirrm share/wavbreaker/images
+@dirrm share/wavbreaker

@@ -1,0 +1,27 @@
+# ex:ts=8
+# Ports collection makefile for:	sdl_gui
+# Date created:			Aug 13, 2002
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sdl_gui
+PORTVERSION=	0.10.3
+PORTREVISION=	5
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	http://www.newimage.com/~rhk/SDL_gui/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+DISTNAME=	SDL_gui-${PORTVERSION}
+
+MAINTAINER=	shaun@FreeBSD.org
+COMMENT=	A Graphical User Interface library for SDL
+
+USE_SDL=	sdl image ttf
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+
+post-configure:
+	${REINPLACE_CMD} -e "s/^CC=\"cc\"/CC=\"${CXX}\"/" ${WRKSRC}/libtool
+
+.include <bsd.port.mk>

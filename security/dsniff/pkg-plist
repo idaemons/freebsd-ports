@@ -1,0 +1,16 @@
+lib/dsniff.magic
+lib/dsniff.services
+lib/dnsspoof.hosts
+sbin/arpspoof
+sbin/dnsspoof
+sbin/dsniff
+sbin/filesnarf
+sbin/macof
+sbin/mailsnarf
+sbin/msgsnarf
+sbin/sshmitm
+sbin/tcpkill
+sbin/tcpnice
+sbin/urlsnarf
+sbin/webmitm
+%%X11%%sbin/webspy

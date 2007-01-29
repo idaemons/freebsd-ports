@@ -1,54 +1,53 @@
-# New ports collection makefile for:	mule
-# Version required:	2.2
-# Date created:		22 November 1994
-# Whom:			Satoshi Asami (asami)
+# New ports collection makefile for:   coco
+# Date created:     2 December 2001
+# Whom:             Teruaki Ata <PFA03027@nifty.ne.jp>
 #
-# $Id: Makefile,v 1.5 1994/12/23 06:56:00 asami Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	mule-2.2
-DISTFILES=	emacs-19.28.tar.gz
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+PORTNAME=       coco
+PORTVERSION=    ${MULE_VERSION}
+PORTREVISION=	1
+CATEGORIES=     textproc
+MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/ \
+		ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \
+		http://www.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/mule/
+DISTFILES=	mule-${MULE_VERSION}-${EMACS_VERSION}.tar.gz \
+		mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz
+
+MAINTAINER=     PFA03027@nifty.ne.jp
+COMMENT=	Code converter for any of Mule's code
+
+MAN1=           coco.1 m2ps.1
+MANCOMPRESSED=  no
+
+WRKSRC=		${WRKDIR}/mule-${MULE_VERSION}-${EMACS_VERSION}
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} --with-x-toolkit \
-		  --wnn --wnn-libraries=/usr/X11R6/lib \
-		  --wnn-includes=/usr/X11R6/include/wnn --terminal-face
-WRKSRC=		${WRKDIR}/emacs-19.28
-PATCHFILES=	diff-19.28-2.2.gz
-.if !defined(MASTER_SITE_OVERRIDE)
-# PATCHSITE=	sh.wide.ad.jp:/JAPAN/mule/
-PATCHSITE=	ftp.cs.buffalo.edu:/pub/mule/
-.else
-PATCHSITE=	${MASTER_SITE_OVERRIDE}
+EMACS_PREFIX=	mule
+MULE_VERSION=	2.3
+EMACS_VERSION=	19.34
+
+INSTALL_TARGET=	install-coco install-m2ps
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
 .endif
-DEPENDS=	${PORTSDIR}/utils/Wnn
-PREPATCH_COOKIE=	${.CURDIR}/work/.prepatch_done
-PREBUILD_COOKIE=	${.CURDIR}/work/.prebuild_done
 
-pre-fetch:
-	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi
-	@(cd ${DISTDIR}; \
-	 for file in ${PATCHFILES}; do \
-		if [ ! -f $$file ]; then \
-			echo ">> Fetching patch $$file from remote site...";  \
-			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}$$file; \
-	    	fi \
-	 done)
+# extract patches for mule2.3 based on emacs-19.34b
+post-extract:
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
+	${CP} ${FILESDIR}/unexfreebsd.c ${WRKSRC}/src
 
-pre-patch:	${PREPATCH_COOKIE}
+# apply patches to mule2.3 before appling FreeBSD patches
+pre-patch:
+	cd ${WRKSRC}; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/Mule-${MULE_VERSION}-${EMACS_VERSION}.patch
 
-${PREPATCH_COOKIE}:
-	@echo "===>  Applying emacs -> mule patch"
-	@for file in ${PATCHFILES}; do \
-		gzip -c -d ${DISTDIR}/$$file | patch -d ${WRKSRC} -p1 -s; \
-	done
-	@${TOUCH} ${TOUCH_FLAGS} ${PREPATCH_COOKIE}
+# delete dust files before build
+pre-build:
+	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
+	${RM} -f ${WRKSRC}/etc/DOC* ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VERSION}.*
 
-pre-build:	${PREBUILD_COOKIE}
-
-${PREBUILD_COOKIE}:
-	find ${WRKSRC} -name \*.orig -exec /bin/rm -f \{} \;
-	@${TOUCH} ${TOUCH_FLAGS} ${PREBUILD_COOKIE}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

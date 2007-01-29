@@ -1,0 +1,66 @@
+--- Makefile.in.orig	Mon Mar  8 22:53:50 1999
++++ Makefile.in	Mon Aug 23 12:50:30 2004
+@@ -58,3 +58,5 @@
+ # Directory in which to install the include file tk.h:
+-INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
++INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include/tk$(VERSION)
++GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
+ 
+@@ -114,3 +116,3 @@
+ # configure script.
+-LIBS = @TCL_BUILD_LIB_SPEC@ @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
++LIBS = -L${PREFIX}/lib -ltcl80 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
+ 
+@@ -150,3 +152,3 @@
+ 
+-INSTALL = @srcdir@/install-sh -c
++INSTALL = install -c
+ INSTALL_PROGRAM =	${INSTALL}
+@@ -313,2 +315,7 @@
+ 
++libtk80.a: ${OBJS}
++	rm -f libtk80.a
++	ar cr libtk80.a ${OBJS}
++	ranlib libtk80.a
++
+ # Make target which outputs the list of the .o contained in the Tk lib
+@@ -367,3 +374,3 @@
+ 
+-install-binaries: $(TK_LIB_FILE) wish
++install-binaries: $(TK_LIB_FILE) libtk80.a wish
+ 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
+@@ -381,2 +388,6 @@
+ 	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
++	@echo "Installing libtk80.a"
++	@$(INSTALL_DATA) libtk80.a $(LIB_INSTALL_DIR)/libtk80.a
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk80.a)
++	@chmod 555 $(LIB_INSTALL_DIR)/libtk80.a
+ 	@echo "Installing wish"
+@@ -384,3 +395,4 @@
+ 	@echo "Installing tkConfig.sh"
+-	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tkConfig.sh
++	@mkdir -p $(LIB_INSTALL_DIR)/tk$(VERSION)
++	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tk$(VERSION)/tkConfig.sh
+ 
+@@ -388,2 +400,3 @@
+ 	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
++		$(GENERIC_INCLUDE_INSTALL_DIR) $(UNIX_INCLUDE_INSTALL_DIR) \
+ 		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
+@@ -397,4 +410,14 @@
+ 	    done;
+-	@echo "Installing tk.h"
+-	@$(INSTALL_DATA) $(GENERIC_DIR)/tk.h $(INCLUDE_INSTALL_DIR)/tk.h
++	@echo "Installing headers"
++	@for i in $(GENERIC_DIR)/*.h ; \
++	    do \
++	    echo "Installing $$i"; \
++	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
++	    done;
++	@for i in $(UNIX_DIR)/*.h ; \
++	    do \
++	    echo "Installing $$i"; \
++	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
++	    done;
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tk.h $(INCLUDE_INSTALL_DIR)/tk.h
+ 	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/tclIndex $(SRC_DIR)/library/prolog.ps $(UNIX_DIR)/tkAppInit.c; \

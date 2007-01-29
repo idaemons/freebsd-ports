@@ -1,0 +1,67 @@
+bin/epic5
+bin/epic5-0.2.0
+libexec/wserv4
+%%PORTDOCS%%%%DOCSDIR%%/BUG_FORM
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/KNOWNBUGS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/UPDATES
+%%PORTDOCS%%%%DOCSDIR%%/VOTES
+%%DATADIR%%/script/2.8script
+%%DATADIR%%/script/activity
+%%DATADIR%%/script/addset
+%%DATADIR%%/script/altchan
+%%DATADIR%%/script/autoget
+%%DATADIR%%/script/builtins
+%%DATADIR%%/script/commandqueues
+%%DATADIR%%/script/country
+%%DATADIR%%/script/data_array
+%%DATADIR%%/script/data_struct
+%%DATADIR%%/script/debug.irc
+%%DATADIR%%/script/dump
+%%DATADIR%%/script/edit_topic
+%%DATADIR%%/script/epic-crypt-gpg
+%%DATADIR%%/script/epic-crypt-gpg-aa
+%%DATADIR%%/script/files
+%%DATADIR%%/script/functions
+%%DATADIR%%/script/global
+%%DATADIR%%/script/grep
+%%DATADIR%%/script/guh
+%%DATADIR%%/script/help
+%%DATADIR%%/script/highlight
+%%DATADIR%%/script/history
+%%DATADIR%%/script/hold_mode
+%%DATADIR%%/script/ison
+%%DATADIR%%/script/less
+%%DATADIR%%/script/less-pipe
+%%DATADIR%%/script/loadformats
+%%DATADIR%%/script/local.examp
+%%DATADIR%%/script/mail
+%%DATADIR%%/script/man
+%%DATADIR%%/script/map
+%%DATADIR%%/script/meta-compat
+%%DATADIR%%/script/motd
+%%DATADIR%%/script/netsplit
+%%DATADIR%%/script/newaway
+%%DATADIR%%/script/newnick
+%%DATADIR%%/script/nopaste
+%%DATADIR%%/script/notify
+%%DATADIR%%/script/paste
+%%DATADIR%%/script/pipe
+%%DATADIR%%/script/reconnect
+%%DATADIR%%/script/revdcc
+%%DATADIR%%/script/save
+%%DATADIR%%/script/scan
+%%DATADIR%%/script/screen
+%%DATADIR%%/script/setmail
+%%DATADIR%%/script/slowcat
+%%DATADIR%%/script/sping
+%%DATADIR%%/script/suppressmotd
+%%DATADIR%%/script/tabkey.ce
+%%DATADIR%%/script/tabkey.jm
+%%DATADIR%%/script/utime
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/%%DATADIR%%/help
+@dirrmtry %%DATADIR%%/help
+@dirrm %%DATADIR%%/script
+@dirrm %%DATADIR%%

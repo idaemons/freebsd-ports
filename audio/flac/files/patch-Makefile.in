@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -258,7 +258,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = doc include man src test build flac.pbproj obj
++SUBDIRS = $(DOC) include man src test build flac.pbproj
+ DISTCLEANFILES = libtool-disable-static
+ EXTRA_DIST = \
+ 	COPYING.FDL \

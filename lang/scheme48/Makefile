@@ -1,16 +1,33 @@
 # New ports collection makefile for:    scheme48
-# Version required:     0.36
-# Date created:         2 Jan 1995
-# Whom:                 jmacd@uclink.berkeley.edu
+# Date created:         25 Aug 1997
+# Whom:                 jmacd
 #
-# $Id: Makefile,v 1.2 1994/12/31 03:48:02 swallace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	scheme48-0.36
-MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/s48/
-GNU_CONFIGURE=  yes
-CONFIGURE_ARGS= --prefix=${PREFIX}
-ALL_TARGET = 	enough
-NO_WRKSUBDIR=	yes
+PORTNAME=	scheme48
+PORTVERSION=	1.3
+CATEGORIES=	lang scheme
+MASTER_SITES=	http://s48.org/${PORTVERSION}/
+EXTRACT_SUFX=	.tgz
 
-.include <bsd.port.mk>
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Scheme Underground's implementation of R5RS
+
+CONFLICTS=	scsh-*
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"fails to install on ${ARCH}"
+.endif
+
+GNU_CONFIGURE=	yes
+ALL_TARGET=	enough
+STRIP=
+MAN1=		scheme48.1
+
+test:
+	cd ${WRKSRC}; ${MAKE} check
+
+.include <bsd.port.post.mk>

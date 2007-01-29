@@ -1,0 +1,29 @@
+--- Makefile.orig	Sun May  7 22:29:14 2006
++++ Makefile	Sun May  7 22:30:52 2006
+@@ -2,14 +2,14 @@
+ # for SGI also use: -signed
+ #
+ 
+-CC= cc -O
++#CC= cc -O
+ #CC=cc -g
+ #CC=insure -g
+ 
+-CFLAGS= -DUNIX -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS -DGAP_OPEN
++CFLAGS+= -DUNIX -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS -DGAP_OPEN
+ LFLAGS= -lm -o
+ 
+-BIN = /seqprg/bin
++BIN = $(PREFIX)/bin
+ #NRAND= nrand
+ #IBM RS/6000
+ #NRAND= nrand48
+@@ -29,7 +29,7 @@
+ all : $(PROGS)
+ 
+ install : 
+-	cp $(PROGS) $(BIN)
++	$(BSD_INSTALL_PROGRAM) $(PROGS) $(BIN)
+ 
+ clean-up : 
+ 	rm *.o $(PROGS)

@@ -1,0 +1,57 @@
+# New ports collection makefile for:	zoneinfo
+# Date created:				27 March 2006
+# Whom:					Edwin Groothuis <edwin@mavetju.org>
+#
+# $FreeBSD$
+
+PORTNAME=	zoneinfo
+DISTVERSION=	2007a
+PORTREVISION=	1
+CATEGORIES=	misc
+MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
+DISTNAME=	tzdata${DISTVERSION}
+
+MAINTAINER=	edwin@mavetju.org
+COMMENT=	Updated timezone definitions
+
+WRKSRC=		${WRKDIR}
+PREFIX=		/usr
+
+TZFILES=	africa antarctica asia australasia etcetera europe \
+		factory northamerica southamerica systemv
+POSIXRULES=	America/New_York
+
+# Prevent packages if on the FreeBSD building cluster. This because
+# it overwrites system files and directories.
+.if defined(PACKAGE_BUILDING)
+NO_PACKAGE=	yes
+.endif
+
+.include <bsd.port.pre.mk>
+
+# The following country codes can be missing from /usr/share/misc/iso3166 and
+# shouldn't appear in the zoneinfo file.
+MISSING=	ax gg im je me rs
+
+.for M in ${MISSING}
+HAS_${M:U}!=	${GREP} -c ^${M:U} /usr/share/misc/iso3166 || ${TRUE}
+.if ${HAS_${M:U}} == "0"
+EXTRA_PATCHES+=	${FILESDIR}/patchremove-${M}
+.endif
+.endfor
+
+do-build:
+	umask 022; \
+	cd ${WRKSRC}; \
+	zic -d ${WRKSRC}/zoneinfo -p ${POSIXRULES} -m ${NOBINMODE} \
+		${LEAPFILE} -y ${.OBJDIR}/yearistype ${TZFILES}
+
+do-install:
+	${MKDIR} ${PREFIX}/share/zoneinfo
+	${CP} -R -p ${WRKSRC}/zoneinfo/ ${PREFIX}/share/zoneinfo
+	${INSTALL_DATA} ${WRKSRC}/zone.tab ${PREFIX}/share/zoneinfo
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,20 @@
+--- configure.orig	Sun Dec 24 11:48:17 2006
++++ configure	Sun Dec 24 11:50:32 2006
+@@ -26586,7 +26586,7 @@
+ else
+   USE_DEBUG="no"
+ fi;
+-if test "x$USE_DEBUG" == "xyes" ; then
++if test "x$USE_DEBUG" = "xyes" ; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define DEBUG 1
+@@ -26693,7 +26693,7 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}"
++#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}/gnome"
+ _ACEOF
+ 
+ 

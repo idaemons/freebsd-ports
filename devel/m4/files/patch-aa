@@ -1,0 +1,7 @@
+--- doc/Makefile.in.orig	Mon Nov 20 06:25:48 2006
++++ doc/Makefile.in	Sun Dec  3 17:13:56 2006
+@@ -158,3 +158,3 @@
+ M4_LTLIBOBJS = @M4_LTLIBOBJS@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ MKDIR_P = @MKDIR_P@

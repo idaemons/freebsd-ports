@@ -1,0 +1,3 @@
+bin/sformat
+%%DATADIR%%/sformat.dat
+@dirrm %%DATADIR%%

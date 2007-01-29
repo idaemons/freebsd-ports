@@ -1,0 +1,39 @@
+# New ports collection makefile for:    gtk-sharp
+# Date created:         2003-01-01
+# Whom:                 Juli Mallett
+#
+# $FreeBSD$
+#   $Id: Makefile,v 1.17 2006/08/15 02:31:49 tmclau02 Exp $
+#
+
+PORTNAME=	gtk-sharp
+PORTVERSION=	2.8.2
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	http://go-mono.com/sources/gtk-sharp-2.0/
+
+MAINTAINER=	bsd-sharp-list@forge.novell.com
+COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
+
+BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
+		monodocer:${PORTSDIR}/devel/monodoc
+RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
+		monodocer:${PORTSDIR}/devel/monodoc \
+		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+
+USE_X_PREFIX=	yes
+LATEST_LINK=	gtk-sharp20
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+USE_GMAKE=	yes
+USE_PERL5_RUN=	yes
+USE_GNOME=	gnomehack librsvg2 gnomepanel gtkhtml3 vte
+
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^#!/usr/bin/perl|#!${PERL}|'
+
+pre-su-install:
+	${MKDIR} ${LOCALBASE}/share/gapi-2.0
+
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
+.include <bsd.port.mk>

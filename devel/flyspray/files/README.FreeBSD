@@ -1,0 +1,52 @@
+Configuration Instructions for Flyspray
+=======================================
+
+0) If you are upgrading from a previous version of flyspray, please skip to
+   the Upgrading section below.
+
+1) Create a mysql database for Flyspray to use.  Here is one way to do that,
+   from the unix/linux command line, entering your mysql root password when
+   prompted:
+
+# mysqladmin -u root -p create flyspray
+
+2) Insert the following configuration command into your Apache httpd.conf:
+
+	Alias "/flyspray/" "%%FLYSPRAYDIR%%/"
+        <Directory %%FLYSPRAYDIR%%>
+                AllowOverride All
+                Options Indexes FollowSymLinks
+                Order allow,deny
+                Allow from all
+        </Directory>
+
+3) Point your browser to http://yourserver.com/flyspray/ and you should
+   see the Flyspray setup script!
+
+4) Click on the admin links to set up your Options and lists.
+
+5) Close the sample task, and begin adding your own.
+
+6) Report any bugs you find back to http://flyspray.rocks.cc/bts/ or the
+   mailing list linked from the Flyspray homepage.
+
+
+Upgrading from Flyspray 0.9.7
+=============================
+
+You can upgrade from a previous version of Flyspray by doing the following:
+
+0) read %%DOCSDIR%%/UPGRADING.txt.
+
+1) back up your old flyspray task database using "mysqldump".  No, really,
+   you seriously run the risk of losing data if you don't do this.
+
+2) load http://yourserver.com/flyspray/ in your browser and follow the
+   installation instructions.  On the "Database setup" page, set the
+   "Install/Upgrade" field to "Upgrade 0.9.7 - 0.9.8" and enter your
+   database parameters.
+
+5) That's it! flyspray has been upgraded to 0.9.8.  If you messed up the
+   sequence of commands, you will probably have lost data in the process,
+   and may need to re-install your database from your backup.  You did
+   take a backup, right?

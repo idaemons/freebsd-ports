@@ -1,0 +1,45 @@
+bin/crimson
+share/applications/crimson.desktop
+%%DATADIR%%/Bepa-Roman.ttf
+%%DATADIR%%/cf.dat
+%%DATADIR%%/default.tiles
+%%DATADIR%%/default.units
+%%DATADIR%%/levels/Anthill.lev
+%%DATADIR%%/levels/ArmsRace.lev
+%%DATADIR%%/levels/BeachRaid.lev
+%%DATADIR%%/levels/Foxhole.lev
+%%DATADIR%%/levels/General.lev
+%%DATADIR%%/levels/GreatBattle.lev
+%%DATADIR%%/levels/HeavyMetal.lev
+%%DATADIR%%/levels/IslandHoppers.lev
+%%DATADIR%%/levels/LankhValley.lev
+%%DATADIR%%/levels/LostFactories.lev
+%%DATADIR%%/levels/MountainDefense.lev
+%%DATADIR%%/levels/OmyarGorge.lev
+%%DATADIR%%/levels/Plowshares.lev
+%%DATADIR%%/levels/RadioSilence.lev
+%%DATADIR%%/levels/Revelation.lev
+%%DATADIR%%/levels/Tutorial1.lev
+%%DATADIR%%/levels/Tutorial2.lev
+%%DATADIR%%/levels/Tutorial3.lev
+%%DATADIR%%/levels/Uprising.lev
+%%DATADIR%%/locale/de.dat
+%%DATADIR%%/locale/en.dat
+%%DATADIR%%/locale/fr.dat
+%%DATADIR%%/locale/pl.dat
+%%DATADIR%%/locale/sk.dat
+%%DATADIR%%/music/default.mid
+%%DATADIR%%/sound/ask.wav
+%%DATADIR%%/sound/clicked.wav
+%%DATADIR%%/sound/error.wav
+%%DATADIR%%/sound/menu.wav
+%%DATADIR%%/sound/repair.wav
+%%DATADIR%%/sound/select.wav
+%%DATADIR%%/title.bmp
+share/pixmaps/crimson.png
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%
+@dirrmtry share/applications

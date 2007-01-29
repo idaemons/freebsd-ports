@@ -1,0 +1,29 @@
+bin/alex
+bin/alex-%%PORTVERSION%%
+lib/alex-%%PORTVERSION%%/alex.bin
+lib/alex-%%PORTVERSION%%/AlexTemplate
+lib/alex-%%PORTVERSION%%/AlexTemplate-ghc
+lib/alex-%%PORTVERSION%%/AlexTemplate-ghc-debug
+lib/alex-%%PORTVERSION%%/AlexTemplate-debug
+lib/alex-%%PORTVERSION%%/AlexWrapper-basic
+lib/alex-%%PORTVERSION%%/AlexWrapper-posn
+lib/alex-%%PORTVERSION%%/AlexWrapper-monad
+lib/alex-%%PORTVERSION%%/AlexWrapper-gscan
+@dirrm lib/alex-%%PORTVERSION%%
+%%PORTDOCS%%%%DOCSDIR%%/alex.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/Tokens.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/Tokens_gscan.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/Tokens_posn.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/examples.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/haskell.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/lit.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/pp.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/state.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/tiny.y
+%%PORTDOCS%%%%EXAMPLESDIR%%/tkns.hs
+%%PORTDOCS%%%%EXAMPLESDIR%%/words.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/words_monad.x
+%%PORTDOCS%%%%EXAMPLESDIR%%/words_posn.x
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
