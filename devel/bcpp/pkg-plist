@@ -1,0 +1,5 @@
+bin/bcpp
+etc/bcpp.cfg.sample
+%%PORTDOCS%%%%DOCSDIR%%/hirachy.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

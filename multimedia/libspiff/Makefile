@@ -1,0 +1,27 @@
+# New ports collection makefile for:	libspiff
+# Date Created:				19 Mar 2007
+# Whom:					Ed Schouten <ed@fxq.nl>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libspiff
+PORTVERSION=	0.6.5
+CATEGORIES=	multimedia
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	libspiff
+
+MAINTAINER=	ed@fxq.nl
+COMMENT=	An XSPF parsing library
+
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		uriparser.0:${PORTSDIR}/net/uriparser
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-expat=${LOCALBASE}
+
+USE_BZIP2=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_LDCONFIG=	yes
+
+.include <bsd.port.mk>

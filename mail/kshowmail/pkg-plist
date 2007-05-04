@@ -1,0 +1,60 @@
+bin/kshowmail
+share/applnk/Internet/kshowmail.desktop
+share/apps/kshowmail/kshowmailui.rc
+share/apps/kshowmail/pics/eraser.png
+share/apps/kshowmail/pics/kshowmail.png
+share/apps/kshowmail/pics/kshowmail24.png
+share/apps/kshowmail/pics/letter-closed.png
+share/apps/kshowmail/pics/letter-open.png
+share/apps/kshowmail/pics/ok.png
+share/apps/kshowmail/pics/spam.png
+share/apps/kshowmail/pics/tool.png
+share/apps/kshowmail/sounds/neuepost.wav
+share/apps/kshowmail/sounds/newmail.wav
+share/doc/HTML/de/kshowmail/common
+share/doc/HTML/de/kshowmail/index.cache.bz2
+share/doc/HTML/de/kshowmail/index.docbook
+share/doc/HTML/en/kshowmail/common
+share/doc/HTML/en/kshowmail/index.cache.bz2
+share/doc/HTML/en/kshowmail/index.docbook
+share/doc/HTML/es/kshowmail/common
+share/doc/HTML/es/kshowmail/index.cache.bz2
+share/doc/HTML/es/kshowmail/index.docbook
+share/doc/HTML/fr/kshowmail/common
+share/doc/HTML/fr/kshowmail/index.cache.bz2
+share/doc/HTML/fr/kshowmail/index.docbook
+share/doc/HTML/hu/kshowmail/common
+share/doc/HTML/hu/kshowmail/index.cache.bz2
+share/doc/HTML/hu/kshowmail/index.docbook
+share/doc/HTML/sv/kshowmail/common
+share/doc/HTML/sv/kshowmail/index.cache.bz2
+share/doc/HTML/sv/kshowmail/index.docbook
+share/icons/hicolor/16x16/apps/kshowmail.png
+share/locale/de/LC_MESSAGES/kshowmail.mo
+share/locale/es/LC_MESSAGES/kshowmail.mo
+share/locale/fr/LC_MESSAGES/kshowmail.mo
+share/locale/hu/LC_MESSAGES/kshowmail.mo
+share/locale/sv/LC_MESSAGES/kshowmail.mo
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm share/doc/HTML/sv/kshowmail
+@dirrmtry share/doc/HTML/sv
+@dirrm share/doc/HTML/hu/kshowmail
+@dirrmtry share/doc/HTML/hu
+@dirrm share/doc/HTML/fr/kshowmail
+@dirrmtry share/doc/HTML/fr
+@dirrm share/doc/HTML/es/kshowmail
+@dirrmtry share/doc/HTML/es
+@dirrm share/doc/HTML/en/kshowmail
+@dirrmtry share/doc/HTML/en
+@dirrm share/doc/HTML/de/kshowmail
+@dirrmtry share/doc/HTML/de
+@dirrmtry share/doc/HTML
+@dirrm share/apps/kshowmail/sounds
+@dirrm share/apps/kshowmail/pics
+@dirrm share/apps/kshowmail
+@dirrmtry share/apps
+@dirrmtry share/applnk/Internet
+@dirrmtry share/applnk

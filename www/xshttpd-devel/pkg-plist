@@ -1,0 +1,71 @@
+bin/clearxs
+bin/httpd
+bin/httpdc
+bin/readxs
+bin/xsindex
+bin/xspasswd
+%%WWWDIR%%/cgi-bin/error
+%%WWWDIR%%/cgi-bin/gfxcount
+%%WWWDIR%%/cgi-bin/imagemap
+%%WWWDIR%%/contrib/SSL-Makefile
+%%WWWDIR%%/contrib/agentstats.pl
+%%WWWDIR%%/contrib/caroot.pem
+%%WWWDIR%%/contrib/logrotate.sh
+%%WWWDIR%%/contrib/persistent.pl
+%%WWWDIR%%/contrib/powered-by-xs.gif
+%%WWWDIR%%/contrib/wwwstats.pl
+%%WWWDIR%%/compress.methods.sample
+%%WWWDIR%%/gfxcount/digital0.ppm
+%%WWWDIR%%/gfxcount/digital1.ppm
+%%WWWDIR%%/gfxcount/digital2.ppm
+%%WWWDIR%%/gfxcount/digital3.ppm
+%%WWWDIR%%/gfxcount/digital4.ppm
+%%WWWDIR%%/gfxcount/digital5.ppm
+%%WWWDIR%%/gfxcount/digital6.ppm
+%%WWWDIR%%/gfxcount/digital7.ppm
+%%WWWDIR%%/gfxcount/digital8.ppm
+%%WWWDIR%%/gfxcount/digital9.ppm
+%%WWWDIR%%/gfxcount/large0.ppm
+%%WWWDIR%%/gfxcount/large1.ppm
+%%WWWDIR%%/gfxcount/large2.ppm
+%%WWWDIR%%/gfxcount/large3.ppm
+%%WWWDIR%%/gfxcount/large4.ppm
+%%WWWDIR%%/gfxcount/large5.ppm
+%%WWWDIR%%/gfxcount/large6.ppm
+%%WWWDIR%%/gfxcount/large7.ppm
+%%WWWDIR%%/gfxcount/large8.ppm
+%%WWWDIR%%/gfxcount/large9.ppm
+%%WWWDIR%%/gfxcount/largecol0.ppm
+%%WWWDIR%%/gfxcount/largecol1.ppm
+%%WWWDIR%%/gfxcount/largecol2.ppm
+%%WWWDIR%%/gfxcount/largecol3.ppm
+%%WWWDIR%%/gfxcount/largecol4.ppm
+%%WWWDIR%%/gfxcount/largecol5.ppm
+%%WWWDIR%%/gfxcount/largecol6.ppm
+%%WWWDIR%%/gfxcount/largecol7.ppm
+%%WWWDIR%%/gfxcount/largecol8.ppm
+%%WWWDIR%%/gfxcount/largecol9.ppm
+%%WWWDIR%%/httpd.conf.sample
+%%WWWDIR%%/htdocs/icons/xs-audio.gif
+%%WWWDIR%%/htdocs/icons/xs-back.gif
+%%WWWDIR%%/htdocs/icons/xs-base.gif
+%%WWWDIR%%/htdocs/icons/xs-bin.gif
+%%WWWDIR%%/htdocs/icons/xs-dir.gif
+%%WWWDIR%%/htdocs/icons/xs-gif.gif
+%%WWWDIR%%/htdocs/icons/xs-html.gif
+%%WWWDIR%%/htdocs/icons/xs-image.gif
+%%WWWDIR%%/htdocs/icons/xs-jpeg.gif
+%%WWWDIR%%/htdocs/icons/xs-ps.gif
+%%WWWDIR%%/htdocs/icons/xs-tar.gif
+%%WWWDIR%%/htdocs/icons/xs-txt.gif
+%%WWWDIR%%/htdocs/icons/xs-unknown.gif
+%%WWWDIR%%/htdocs/icons/xs-video.gif
+%%WWWDIR%%/htdocs/icons/xs-zip.gif
+%%WWWDIR%%/mime.index
+%%WWWDIR%%/script.methods.sample
+@dirrm %%WWWDIR%%/contrib
+@dirrm %%WWWDIR%%/gfxcount
+@dirrmtry %%WWWDIR%%/cgi-bin
+@dirrmtry %%WWWDIR%%/htdocs/icons
+@dirrmtry %%WWWDIR%%/htdocs
+@dirrmtry %%WWWDIR%%/logs

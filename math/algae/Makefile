@@ -1,0 +1,51 @@
+# New ports collection makefile for:    algae
+# Date created:         18 May 2003
+# Whom:                 Michael Neumann <mneumann@ntecs.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	algae
+PORTVERSION=	4.3.6
+CATEGORIES=	math
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	laszlof@FreeBSD.org
+COMMENT=	A programming language for numerical analysis
+
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:259
+
+ALGAE_VERSION=	${PORTVERSION}
+PLIST_SUB=	ALGAE_VERSION=${ALGAE_VERSION}
+
+MAN1=	algae.1
+INFO=	algae
+
+WANT_FORTRAN=	yes #dummy but future use
+BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
+CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}" LDFLAGS="${LDFLAGS} -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -L`${CAT} ${WRKSRC}/LIBDIR` -L${LOCALBASE}/lib"
+FORTRANLIBS=	gfortranbegin gfortran
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,g' \
+		${WRKSRC}/src/mem.h \
+		${WRKSRC}/superlu/sp_coletree.c \
+		${WRKSRC}/superlu/util.h
+
+	@${REINPLACE_CMD} -e 's,%%FORTRANLIBS%%,${FORTRANLIBS},g' \
+		${WRKSRC}/configure.in
+
+pre-configure:
+	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+
+.include <bsd.port.pre.mk>
+
+.if ( ${ARCH} == "alpha" && ${OSVERSION} > 502102 ) || ${ARCH} == "sparc64"
+BROKEN=		Configure fails on alpha 5.x and sparc64
+.endif
+
+.include <bsd.port.post.mk>

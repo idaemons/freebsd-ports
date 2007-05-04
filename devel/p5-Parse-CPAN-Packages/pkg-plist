@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Parse/CPAN/Packages.pm
+%%SITE_PERL%%/Parse/CPAN/Packages/Distribution.pm
+%%SITE_PERL%%/Parse/CPAN/Packages/Package.pm
+@dirrm %%SITE_PERL%%/Parse/CPAN/Packages
+@dirrmtry %%SITE_PERL%%/Parse/CPAN
+@dirrmtry %%SITE_PERL%%/Parse

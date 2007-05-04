@@ -1,0 +1,5 @@
+bin/acrosslite_conv
+bin/krosswordplayer
+share/applnk/Utilities/krosswordplayer.desktop
+@dirrm share/applnk/Utilities
+@dirrm share/applnk

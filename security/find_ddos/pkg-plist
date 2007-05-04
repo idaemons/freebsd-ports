@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+sbin/find_ddos
+%%PORTDOCS%%share/doc/find_ddos/README
+%%PORTDOCS%%@dirrm share/doc/find_ddos

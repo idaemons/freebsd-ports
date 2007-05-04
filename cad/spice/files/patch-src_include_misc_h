@@ -1,0 +1,24 @@
+--- src/include/misc.h.orig	Sun Apr 25 16:37:48 1993
++++ src/include/misc.h	Mon Apr  3 23:04:51 2006
+@@ -86,8 +86,10 @@
+ extern char *realloc();
+ extern char *getenv();
+ extern int errno;
++#ifndef __FreeBSD__
+ extern char *sys_errlist[];
+ extern char *getenv();
++#endif
+ extern char *getwd();
+ extern int rand();
+ extern int srand();
+@@ -154,7 +156,9 @@
+ 
+ #ifndef HAS_MEMAVL
+ #  ifdef HAS_RLIMIT_
+-extern char *sbrk();
++#include <sys/types.h>
++#include <sys/time.h>
++#include <sys/resource.h>
+ #  endif
+ #endif
+ 

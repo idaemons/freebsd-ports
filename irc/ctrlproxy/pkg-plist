@@ -1,0 +1,26 @@
+bin/ctrlproxy
+lib/ctrlproxy/libauto_away.so
+lib/ctrlproxy/liblistener.so
+lib/ctrlproxy/liblog_custom.so
+lib/ctrlproxy/liblog_irssi.so
+lib/ctrlproxy/librepl_highlight.so
+lib/ctrlproxy/librepl_lastdisconnect.so
+lib/ctrlproxy/librepl_simple.so
+lib/ctrlproxy/libsocks.so
+%%DATADIR%%/default/config
+%%DATADIR%%/default/networks/admin
+%%DATADIR%%/motd
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/user-guide.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+lib/pkgconfig
+@dirrm %%DATADIR%%/default/networks
+@dirrm %%DATADIR%%/default
+@dirrm %%DATADIR%%
+@dirrm lib/ctrlproxy
+@dirrm include/ctrlproxy-3.0

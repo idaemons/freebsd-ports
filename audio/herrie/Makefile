@@ -1,0 +1,88 @@
+# New ports collection makefile for:	herrie
+# Date created:				01 August 2006
+# Whom:					Ed Schouten <ed@fxq.nl>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	herrie
+PORTVERSION=	1.6.1
+CATEGORIES=	audio
+MASTER_SITES=	http://herrie.info/distfiles/ \
+		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
+		http://www.stack.nl/~ed/projects/herrie/distfiles/
+
+MAINTAINER=	ed@fxq.nl
+COMMENT=	A small command line interface music player
+
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV+=	PREFIX=${PREFIX}
+
+USE_BZIP2=	yes
+USE_OPENSSL=	yes
+USE_GNOME=	glib20
+
+OPTIONS=	MAD "MAD MP3 support" on \
+		VORBIS "Ogg Vorbis support" on \
+		SNDFILE "libsndfile support" on \
+		MODPLUG "libmodplug support" off \
+		LIBAO "LibAO support (breaks chroot)" off \
+		XCURSES "Build XCurses version" off \
+		XSPF "Support for XSPF playlists" on
+
+MAN1=		herrie.1
+MANCOMPRESSED=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
+CONFIGURE_ARGS+=ncurses
+.endif
+
+.if !defined(WITHOUT_MAD)
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad \
+		id3tag.0:${PORTSDIR}/audio/libid3tag
+.else
+CONFIGURE_ARGS+=no_mp3
+.endif
+.if !defined(WITHOUT_VORBIS)
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+.else
+CONFIGURE_ARGS+=no_vorbis
+.endif
+.if !defined(WITHOUT_SNDFILE)
+LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+.else
+CONFIGURE_ARGS+=no_sndfile
+.endif
+.if !defined(WITHOUT_MODPLUG)
+LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
+.else
+CONFIGURE_ARGS+=no_modplug
+.endif
+.if !defined(WITHOUT_LIBAO)
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+CONFIGURE_ARGS+=ao
+.endif
+.if !defined(WITHOUT_XCURSES)
+LIB_DEPENDS+=	XCurses.2:${PORTSDIR}/devel/pdcurses
+CONFIGURE_ARGS+=xcurses
+.endif
+.if !defined(WITHOUT_XSPF)
+# We need 0.6.3, which has proper C bindings
+BUILD_DEPENDS+=	libspiff>=0.6.3:${PORTSDIR}/multimedia/libspiff
+RUN_DEPENDS+=	libspiff>=0.6.3:${PORTSDIR}/multimedia/libspiff
+.else
+CONFIGURE_ARGS+=no_xspf
+.endif
+.if !defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS=""
+USE_GETTEXT=	yes
+.else
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=no_nls
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,4 @@
+lib/pgpsendmail
+bin/pgpdaemon
+bin/pgppipe
+bin/sendpgppass

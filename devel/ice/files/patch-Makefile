@@ -1,0 +1,19 @@
+--- Makefile.orig	Tue Jul 26 23:32:00 2005
++++ Makefile	Thu Nov 17 10:15:57 2005
+@@ -43,12 +43,14 @@
+ 	@( cd doc && $(MAKE) ) || exit 1
+ 
+ install::
++ifndef NOPORTDOCS
+ 	@if test -d doc ; \
+ 	then \
+ 	    ( cd doc && $(MAKE) install ) || exit 1 ; \
+ 	fi
+-	$(call installdata,ICE_LICENSE,$(prefix))
+-	$(call installdata,LICENSE,$(prefix))
++	$(call installdata,ICE_LICENSE,$(install_docdir))
++	$(call installdata,LICENSE,$(install_docdir))
++endif
+ 
+ clean::
+ 	@if test -d doc ; \

@@ -1,0 +1,10 @@
+--- src/config.h.in.orig	Tue Dec 19 19:07:07 2006
++++ src/config.h.in	Sat Apr  7 04:00:39 2007
+@@ -107,3 +107,7 @@
+ 
+ /* Define for large files, on AIX-style hosts. */
+ #undef _LARGE_FILES
++
++#if defined (HAVE_UNISTD_H)
++#include <unistd.h>
++#endif

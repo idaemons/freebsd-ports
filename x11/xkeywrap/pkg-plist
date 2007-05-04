@@ -1,0 +1,5 @@
+bin/xkeywrap
+%%DOCSDIR%%/README
+%%DOCSDIR%%/demo.dat
+%%DOCSDIR%%/xkeywrap_demo.c
+@dirrm %%DOCSDIR%%

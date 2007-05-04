@@ -1,0 +1,8 @@
+sbin/ndpmon
+%%DATADIR%%/config_ndpmon.dtd
+%%DATADIR%%/neighbor_list.dtd
+%%DATADIR%%/demopipeprogram.pl
+@dirrmtry %%DATADIR%%
+var/ndpmon_neighbor_list.xml
+@dirrmtry var
+etc/config_ndpmon.xml-dist

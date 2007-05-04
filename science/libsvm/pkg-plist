@@ -1,0 +1,7 @@
+bin/svm-predict
+bin/svm-scale
+bin/svm-train
+%%DATADIR%%/grid.py
+%%DATADIR%%/easy.py
+%%DATADIR%%/subset.py
+@dirrm %%DATADIR%%

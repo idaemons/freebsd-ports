@@ -1,0 +1,118 @@
+# New ports collection makefile for:	Free Pascal Compiler
+# Date created: 			28 November 2001
+# Whom: 				John Merryweather Cooper et al
+#
+# $FreeBSD$
+#
+
+PORTNAME=	fpc
+PORTVERSION=	2.0.4
+PORTREVISION?=	1
+CATEGORIES?=	lang
+MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
+		ftp://planetmirror.com/pub/fpc/dist/source-${PORTVERSION}/:source \
+		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/source-${PORTVERSION}/:source \
+		ftp://freepascal.stack.nl/pub/fpc/dist/source-${PORTVERSION}/:source \
+		ftp://ftp.no.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
+		ftp://ftp.us.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
+		${MASTER_SITE_SOURCEFORGE}:source \
+		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:bin|}
+MASTER_SITE_SUBDIR=	freepascal
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTFILES=	${PORTNAME:S/$/build/}-${PORTVERSION}${EXTRACT_SUFX}:source
+DIST_SUBDIR=	freepascal
+
+MAINTAINER?=	acm@FreeBSD.org
+COMMENT?=	Free Pascal compiler with Turbo and Delphi
+
+USE_GMAKE=	yes
+ONLY_FOR_ARCHS=	i386
+BUILDNAME=	${ARCH}-freebsd
+OPT?=-CX
+MAKE_ENV=	PREFIX=${PREFIX} \
+		FPCTARGET=${BUILDNAME} \
+		OPT="${OPT}" \
+		BSDHIER=1
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
+		BUILDNAME=${BUILDNAME}
+SUB_FILES=	pkg-message
+FPCSRCDIR=	${PORTNAME:S/$/build_/}${PORTVERSION:S/$/_exp/}/${PORTNAME:S/$/src/}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
+.if !defined(PKGNAMESUFFIX)
+DISTFILES+=	${DISTNAME:S/$/.bin/}${EXTRACT_SUFX}:bin
+MAKE_ENV+=	PP=${WRKDIR}/${PORTNAME:S/$/-bin/}/lib/${PORTNAME}/${PORTVERSION}/ppc386 \
+		FPCMAKE=${WRKDIR}/${PORTNAME:S/$/-bin/}/bin/fpcmake
+MAN1=	bin2obj.1 \
+	data2inc.1 \
+	delp.1 \
+	fd2pascal.1 \
+	fp.1 \
+	fpc.1 \
+	fpcmake.1 \
+	fpdoc.1 \
+	fprcp.1 \
+	grab_vcsa.1 \
+	h2pas.1 \
+	h2paspp.1 \
+	makeskel.1 \
+	plex.1 \
+	postw32.1 \
+	ppc386.1 \
+	ppcarm.1 \
+	ppcppc.1 \
+	ppcsparc.1 \
+	ppcx64.1 \
+	ppdep.1 \
+	ppudump.1 \
+	ppufiles.1 \
+	ppumove.1 \
+	ptop.1 \
+	pyacc.1 \
+	rstconv.1 \
+	unitdiff.1
+MAN5=	fpc.cfg.5 fpcmake.5 ptop.cfg.5
+
+# only need misc/compat4x if using the pre-built ppc386
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+.endif
+
+do-extract:
+# unpack binary distribution
+	@${MKDIR} ${WRKDIR}
+	@${TAR} xfz ${_DISTDIR}/${DISTNAME:S/$/.bin/}${EXTRACT_SUFX} --directory \
+		${WRKDIR}
+# unpack source distribution
+	@cd ${WRKDIR} && \
+		${GZIP_CMD} -dc ${_DISTDIR}/${PORTNAME:S/$/build/}-${PORTVERSION}${EXTRACT_SUFX} \
+			| ${TAR} xf - ${FPCSRCDIR}/compiler ${FPCSRCDIR}/rtl
+
+do-build:
+# build fpc compiler
+	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} cycle ${MAKE_ENV}
+
+do-install:
+	# Installing fpc compiler
+	@cd ${WRKDIR}/${FPCSRCDIR}/rtl && ${GMAKE} install ${MAKE_ENV}
+      	# Installing fpc runtime
+	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} install ${MAKE_ENV}
+	# Installing manpages
+	${INSTALL_DATA} ${WRKDIR}/fpc-bin/man/man1/* ${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKDIR}/fpc-bin/man/man5/* ${MAN1PREFIX}/man/man5
+
+post-install:
+	if [ -e "${PREFIX}/bin/ppc386" ]; then ${RM} -f "${PREFIX}/bin/ppc386"; fi
+	${LN} -s "${PREFIX}/lib/fpc/${PORTVERSION}/ppc386" "${PREFIX}/bin"
+	${SH} "${PREFIX}/lib/fpc/${PORTVERSION}/samplecfg" "${PREFIX}/lib/fpc/${PORTVERSION}" "${PREFIX}/etc"
+	@${CAT} ${PKGMESSAGE}
+
+.else
+.include "${MASTERDIR}/Makefile.units"
+.endif
+.include <bsd.port.post.mk>

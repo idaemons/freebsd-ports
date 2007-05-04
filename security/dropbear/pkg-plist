@@ -1,0 +1,5 @@
+bin/dbclient
+bin/dropbearkey
+bin/dropbearconvert
+sbin/dropbear
+@unexec rmdir %D/etc/dropbear 2>/dev/null || echo "===> You can safely remove %D/etc/dropbear directory, if you don't want to use dropbear anymore."

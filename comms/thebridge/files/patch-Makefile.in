@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon May  8 15:47:37 2006
++++ Makefile.in	Mon May  8 15:47:49 2006
+@@ -138,7 +138,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ 
+-SUBDIRS = common zlib src inc tbdcmd
++SUBDIRS = common src inc tbdcmd
+ EXTRA_DIST = theBridge.dsp tbd.conf.sample README.txt FreeBSD RedHat config SCRIPTING.txt
+ 
+ sysconf_DATA = tbd.conf.sample

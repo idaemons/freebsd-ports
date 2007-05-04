@@ -1,0 +1,169 @@
+@cwd %%LOCALBASE%%
+etc/rc.d/wyvern.sh
+sbin/wyvern
+wyvern/bin/wpasswd
+wyvern/include/functions.h
+wyvern/include/mesg.h
+wyvern/include/module.h
+wyvern/include/status.h
+wyvern/include/version.h
+wyvern/include/wpath.h
+wyvern/include/wyvern.h
+wyvern/cgi-bin/README.html
+wyvern/cgi-bin/dic-tools.cgi
+wyvern/cgi-bin/file-upload.cgi
+wyvern/cgi-bin/gateway.rb
+wyvern/cgi-bin/location.cgi
+wyvern/cgi-bin/printenv.cgi
+wyvern/cgi-bin/printenv.rb
+@unexec if cmp -s %D/wyvern/conf/mime.types %D/wyvern/conf/mime.types.sample; then rm -f %D/wyvern/conf/mime.types; fi
+wyvern/conf/mime.types.sample
+@exec [ ! -f %B/mime.types ] && cp %B/%f %B/mime.types
+@unexec if cmp -s %D/wyvern/conf/wyvern.conf %D/wyvern/conf/wyvern.conf.sample; then rm -f %D/wyvern/conf/wyvern.conf; fi
+wyvern/conf/wyvern.conf.sample
+@exec [ ! -f %B/wyvern.conf ] && cp %B/%f %B/wyvern.conf
+@unexec if cmp -s %D/wyvern/conf/wyvern.conf.ja %D/wyvern/conf/wyvern.conf.ja.sample; then rm -f %D/wyvern/conf/wyvern.conf.ja; fi
+wyvern/conf/wyvern.conf.ja.sample
+@exec [ ! -f %B/wyvern.conf.ja ] && cp %B/%f %B/wyvern.conf.ja
+@unexec if cmp -s %D/wyvern/conf/ssl.cnf %D/wyvern/conf/ssl.cnf.sample; then rm -f %D/wyvern/conf/ssl.cnf; fi
+wyvern/conf/ssl.cnf.sample
+@exec [ ! -f %B/ssl.cnf ] && cp %B/%f %B/ssl.cnf
+wyvern/docs/AUTHORS
+wyvern/docs/LICENSE
+wyvern/docs/LICENSE.ja
+wyvern/docs/NEWS
+wyvern/docs/README
+wyvern/docs/README.ja
+wyvern/docs/README.module
+wyvern/docs/README.module.ja
+wyvern/docs/SECURITY
+wyvern/docs/UPDATING
+@unexec if cmp -s %D/wyvern/htdocs/index.html %D/wyvern/htdocs/index.html-dist; then rm -f %D/wyvern/htdocs/index.html; fi
+wyvern/htdocs/index.html-dist
+@exec [ ! -f %B/index.html ] && cp %B/%f %B/index.html
+wyvern/icons/a.gif
+wyvern/icons/alert.black.gif
+wyvern/icons/alert.red.gif
+wyvern/icons/ball.blue.gif
+wyvern/icons/ball.gray.gif
+wyvern/icons/ball.green.gif
+wyvern/icons/ball.orange.gif
+wyvern/icons/ball.pink.gif
+wyvern/icons/ball.purple.gif
+wyvern/icons/ball.red.gif
+wyvern/icons/ball.white.gif
+wyvern/icons/ball.yellow.gif
+wyvern/icons/binary.gif
+wyvern/icons/binhex.gif
+wyvern/icons/bomb.gif
+wyvern/icons/box.gif
+wyvern/icons/broken.gif
+wyvern/icons/c.gif
+wyvern/icons/comp.gray.gif
+wyvern/icons/compressed.gif
+wyvern/icons/dir.gif
+wyvern/icons/dvi.gif
+wyvern/icons/f.gif
+wyvern/icons/folder.gif
+wyvern/icons/folder.open.gif
+wyvern/icons/folder.sec.gif
+wyvern/icons/generic.gif
+wyvern/icons/generic.red.gif
+wyvern/icons/generic.sec.gif
+wyvern/icons/image1.gif
+wyvern/icons/image2.gif
+wyvern/icons/index.gif
+wyvern/icons/layout.gif
+wyvern/icons/link.gif
+wyvern/icons/movie.gif
+wyvern/icons/p.gif
+wyvern/icons/patch.gif
+wyvern/icons/pdf.gif
+wyvern/icons/portal.gif
+wyvern/icons/ps.gif
+wyvern/icons/quill.gif
+wyvern/icons/screw.gif
+wyvern/icons/script.gif
+wyvern/icons/sound1.gif
+wyvern/icons/sound2.gif
+wyvern/icons/sphere2.gif
+wyvern/icons/tar.gif
+wyvern/icons/tex.gif
+wyvern/icons/text.gif
+wyvern/icons/transfer.gif
+wyvern/icons/unknown.gif
+wyvern/icons/uuencoded.gif
+wyvern/images/mwx-wyvern-banner.png
+wyvern/images/wyvern-banner.png
+wyvern/manual/Wyvern-Manual.png
+wyvern/manual/acknowledgement.html
+wyvern/manual/appendix-A.html
+wyvern/manual/appendix-B.html
+wyvern/manual/bibliography.html
+wyvern/manual/commercial.html
+wyvern/manual/conclusion.html
+wyvern/manual/contents.html
+wyvern/manual/copyright.html
+wyvern/manual/dbm.html
+wyvern/manual/faq.html
+wyvern/manual/features.html
+wyvern/manual/index.html
+wyvern/manual/install.html
+wyvern/manual/introduction.html
+wyvern/manual/license.html
+wyvern/manual/mwx-wyvern-banner.png
+wyvern/manual/module.html
+wyvern/manual/mod_access.html
+wyvern/manual/mod_auth.html
+wyvern/manual/mod_autoindex.html
+wyvern/manual/mod_cgi.html
+wyvern/manual/mod_env.html
+wyvern/manual/mod_gzip.html
+wyvern/manual/mod_log.html
+wyvern/manual/mod_md5.html
+wyvern/manual/mod_ssi.html
+wyvern/manual/setup.html
+wyvern/manual/security.html
+wyvern/manual/ssl.html
+wyvern/manual/vhost.html
+wyvern/manual/wyvern-manual.png
+wyvern/manual/wyvern.css
+wyvern/manual/wyvern.html
+wyvern/modules/mod_access.so
+wyvern/modules/mod_auth_db.so
+wyvern/modules/mod_auth_dbm.so
+wyvern/modules/mod_autoindex.so
+wyvern/modules/mod_cgi.so
+wyvern/modules/mod_env.so
+wyvern/modules/mod_gzip.so
+wyvern/modules/mod_log.so
+wyvern/modules/mod_md5.so
+wyvern/modules/mod_rcgi.so
+wyvern/modules/mod_ssi.so
+wyvern/samples/dot.waccess
+wyvern/samples/dot.wpasswd
+wyvern/samples/hosts.allow
+wyvern/samples/missing.html
+wyvern/style/default.css
+wyvern/sbin/wyvern
+wyvern/sbin/wyvernctl
+wyvern/sbin/suexec
+@comment @dirrm wyvern/bin
+@comment @dirrm wyvern/cache
+@comment @dirrm wyvern/cgi-bin
+@comment @dirrm wyvern/conf
+@comment @dirrm wyvern/docs
+@comment @dirrm wyvern/etc
+@comment @dirrm wyvern/htdocs
+@comment @dirrm wyvern/icons
+@comment @dirrm wyvern/images
+@comment @dirrm wyvern/include
+@comment @dirrm wyvern/libexec
+@comment @dirrm wyvern/logs
+@comment @dirrm wyvern/manual
+@comment @dirrm wyvern/modules
+@comment @dirrm wyvern/samples
+@comment @dirrm wyvern/sbin
+@comment @dirrm wyvern/style
+@comment @dirrm wyvern
+@unexec find %D/wyvern -type d | sort -r | xargs rmdir || true

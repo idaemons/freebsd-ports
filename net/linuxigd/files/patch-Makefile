@@ -1,0 +1,34 @@
+--- Makefile.orig	Sat Dec 14 06:16:22 2002
++++ Makefile	Mon Apr  2 14:54:39 2007
+@@ -1,6 +1,5 @@
+-CC=g++
+-INCLUDES= -I/usr/include/upnp 
+-LIBS= -lpthread  /usr/lib/libupnp.so
++INCLUDES= -I$(LOCALBASE)/include 
++LIBS= $(PTHREAD_LIBS) $(LOCALBASE)/lib/libupnp.so
+ 
+ 
+ ifeq ($(DEBUG),1)
+@@ -16,17 +15,17 @@
+ all: $(APPS)
+ 
+ upnpd:  gate.o gateway.o sample_util.o ipcon.o portmap.o pmlist.o
+-	$(CC)  $(CFLAGS) gate.o gateway.o sample_util.o ipcon.o portmap.o pmlist.o $(LIBS) -o  $@ 
++	$(CXX)  $(CFLAGS) gate.o gateway.o sample_util.o ipcon.o portmap.o pmlist.o $(LIBS) -o  $@ 
+ 	@echo "make $@ finished on `date`"
+ 
+ %.o:	%.cpp
+-	$(CC) $(CFLAGS) $(INCLUDES) -c $<
++	$(CXX) $(CFLAGS) $(INCLUDES) -c $<
+ 
+ clean:
+ 	rm -f *.o $(APPS)
+ 
+ install: upnpd
+-	@install -d /etc/linuxigd
+-	@install etc/* /etc/linuxigd
+-	@install upnpd /usr/bin
++	@install -d $(PREFIX)/etc/linuxigd
++	@$(BSD_INSTALL_DATA) etc/* $(PREFIX)/etc/linuxigd
++	@$(BSD_INSTALL_PROGRAM) upnpd $(PREFIX)/bin
+ 

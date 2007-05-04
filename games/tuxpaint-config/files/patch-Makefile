@@ -1,0 +1,57 @@
+--- ./Makefile.orig	Thu Oct 19 04:42:09 2006
++++ ./Makefile	Mon Nov  6 16:05:08 2006
+@@ -19,7 +19,6 @@
+ 
+ # Where to install things:
+ 
+-PREFIX=/usr/local
+ 
+ 
+ # Program:
+@@ -36,7 +35,7 @@
+ # Docs and man page:
+ 
+ DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-config/
+-MAN_PREFIX=$(PREFIX)/share/man/
++MAN_PREFIX=$(PREFIX)/man/
+ 
+ 
+ # Tux Paint's 'System-wide' Config file:
+@@ -74,7 +73,7 @@
+ FLTK_LIBS=`fltk-config --ldstaticflags`
+ 
+ # Default CFLAGS:
+-CFLAGS=-O2 -Wall
++CFLAGS+=-O2 -Wall
+ 
+ # The entire set of CFLAGS:
+ ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
+@@ -143,8 +142,7 @@
+ # to do this as superuser ("root"))
+ 
+ install:	install-bin install-data install-man install-doc \
+-		install-gnome install-kde install-kde-icons \
+-		install-icon install-gettext
++		install-gettext
+ 	@echo
+ 	@echo "All done! Now (preferably NOT as 'root' superuser),"
+ 	@echo "you can type the command 'tuxpaint-config' to run the"
+@@ -233,9 +231,6 @@
+ 	install -d $(ICON_PREFIX)
+ 	cp data/images/icon.png $(ICON_PREFIX)tuxpaint-config.png
+ 	chmod 644 $(ICON_PREFIX)tuxpaint-config.png
+-	install -d $(X11_ICON_PREFIX)
+-	cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)tuxpaint-config.xpm
+-	chmod 644 $(X11_ICON_PREFIX)tuxpaint-config.xpm
+ 
+ 
+ # Install the program:
+@@ -299,7 +294,7 @@
+ 			obj/defaults.o $(ARCH_LIBS)
+ 	$(CXX) $(ALL_CFLAGS) -o tuxpaint-config obj/tuxpaint-config.o 	\
+ 			obj/tuxpaint-config2.o obj/defaults.o $(ARCH_LIBS) \
+-			$(FLTK_LIBS) $(ARCH_LINKS)
++			$(FLTK_LIBS) $(ARCH_LINKS) -lintl
+ 
+ 
+ # Build the object for the program!

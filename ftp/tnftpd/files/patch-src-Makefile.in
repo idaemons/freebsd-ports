@@ -1,0 +1,16 @@
+
+FreeBSD does have support for utmp/wtmp, so include relevant files into
+a build.
+
+--- src/Makefile.in.orig	Wed Dec 13 13:03:12 2006
++++ src/Makefile.in	Wed Dec 13 13:03:47 2006
+@@ -23,8 +23,7 @@
+ INSTALL	= @INSTALL@
+ 
+ PROG	= tnftpd
+-OBJS	= cmds.o conf.o ftpd.o ftpcmd.o popen.o @LSOBJS@
+-# removed: logutmp.o logwtmp.o
++OBJS	= cmds.o conf.o ftpd.o ftpcmd.o popen.o logutmp.o logwtmp.o @LSOBJS@
+ 
+ all:	${PROG}
+ 

@@ -1,0 +1,8 @@
+bin/tcb
+%%PORTDOCS%%share/doc/tcb/CHANGES
+%%PORTDOCS%%share/doc/tcb/COPYING
+%%PORTDOCS%%share/doc/tcb/README
+share/tcb/HELP
+share/tcb/tcbrc
+%%PORTDOCS%%@dirrm share/doc/tcb
+@dirrm share/tcb

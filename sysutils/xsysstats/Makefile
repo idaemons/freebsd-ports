@@ -1,13 +1,32 @@
-# New ports collection makefile for:	xsysstats
-# Version required:	1.32
-# Date created:		12 December 1994
-# Whom:			asami
+# ex:ts=8
+# Ports collection makefile for:  xsysstats
+# Date created:			  12 December 1994
+# Whom:				  asami
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/13 09:07:02 asami Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	xsysstats1.32
-USE_IMAKE=	yes
-MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/utilities/
+PORTNAME=	xsysstats
+PORTVERSION=	1.51
+PORTREVISION=	1
+CATEGORIES=	sysutils
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	utilities
+DISTNAME=	${PORTNAME}${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A system information display tool
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_XLIB=	yes
+MAN1=		xsysstats.1
+
+ALL_TARGET=	xsysstats
+
+PLIST_FILES=	bin/xsysstats
+
+pre-patch:
+	${RM} ${WRKSRC}/headers.h && ${TOUCH} ${WRKSRC}/headers.h
 
 .include <bsd.port.mk>

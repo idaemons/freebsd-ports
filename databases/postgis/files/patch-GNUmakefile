@@ -1,0 +1,31 @@
+--- GNUmakefile.orig	Thu Jan  4 22:52:57 2007
++++ GNUmakefile	Fri Jan 12 13:50:19 2007
+@@ -4,9 +4,16 @@
+ #
+ #-----------------------------------------------------
+ 
+-all: Makefile.config liblwgeom loaderdumper utils templategis
++all: Makefile.config liblwgeom loaderdumper utils
++ifneq ($(WITH-DOC),)
++	$(MAKE) -C doc
++endif
+ 
+-install: all liblwgeom-install loaderdumper-install templategis-install
++
++install: all liblwgeom-install loaderdumper-install utils-install
++ifneq ($(WITH-DOC),)
++	$(MAKE) -C doc install
++endif
+ 
+ uninstall: liblwgeom-uninstall loaderdumper-uninstall docs-uninstall templategis-uninstall
+ 
+@@ -86,6 +93,9 @@
+ 
+ utils:
+ 	$(MAKE) -C utils
++
++utils-install:
++	$(MAKE) -C utils install
+ 
+ configure: configure.in
+ 	./autogen.sh

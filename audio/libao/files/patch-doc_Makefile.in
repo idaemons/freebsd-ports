@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/Makefile.in.orig	Mon Aug 13 13:39:39 2001
++++ doc/Makefile.in	Tue Aug 14 17:39:32 2001
+@@ -88,7 +88,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ 
+ doc_DATA = *.html ao_example.c style.css
+ 

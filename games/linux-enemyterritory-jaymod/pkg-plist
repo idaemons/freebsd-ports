@@ -1,0 +1,4 @@
+bin/et-jaymod
+bin/etded-jaymod
+%%DATADIR%%/qagame.mp.i386.so
+@dirrm %%DATADIR%%

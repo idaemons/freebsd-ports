@@ -1,0 +1,6 @@
+MD5 (mingw/mingw-runtime-3.9.tar.gz) = 0cb66b1071da224ea2174f960c593e2e
+SHA256 (mingw/mingw-runtime-3.9.tar.gz) = 75b9fe8535fcf8d64aac5dfa9d11faeaeedc85bd17d7aafc6a2f13e33d78b983
+SIZE (mingw/mingw-runtime-3.9.tar.gz) = 348713
+MD5 (mingw/w32api-3.6.tar.gz) = 2f86ec42cafd774ec82162fbc6e6808d
+SHA256 (mingw/w32api-3.6.tar.gz) = e37fdc487d705f5f95ffe06d56a52614f5554cc63c29ce29ca3a1930261dd789
+SIZE (mingw/w32api-3.6.tar.gz) = 1536427

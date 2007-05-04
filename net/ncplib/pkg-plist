@@ -1,0 +1,9 @@
+bin/ipxping
+bin/ncpasswd
+bin/ncplpd
+bin/ncprint
+bin/ncpsend
+bin/ncpurge
+sbin/ncpsvc
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

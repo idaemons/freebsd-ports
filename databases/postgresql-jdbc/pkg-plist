@@ -1,0 +1,3 @@
+%%DOCSDIR%%/README-jdbc
+%%JAVAJARDIR%%/postgresql.jar
+@dirrmtry %%DOCSDIR%%

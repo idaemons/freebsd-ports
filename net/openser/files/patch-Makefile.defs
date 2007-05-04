@@ -1,0 +1,43 @@
+--- Makefile.defs.orig	Mon Apr  9 12:01:20 2007
++++ Makefile.defs	Mon Apr  9 11:59:14 2007
+@@ -128,7 +128,7 @@
+ ifeq ($(ARCH_B),64b)
+ 	LIBDIR ?= lib64
+ else
+-	LIBDIR ?= lib
++	LIBDIR = lib
+ 	# assume 32b - it is not really used further
+ 	ARCH_B=32b
+ endif
+@@ -208,13 +208,13 @@
+ TAR ?= tar
+ endif
+ 
+-INSTALL-TOUCH = touch          # used to create the file first (good to 
+-                               #  make solaris install work)
+-INSTALL-CFG = $(INSTALL) -m 644
+-INSTALL-BIN = $(INSTALL) -m 755
+-INSTALL-MODULES = $(INSTALL) -m 755
+-INSTALL-DOC = $(INSTALL) -m 644
+-INSTALL-MAN = $(INSTALL) -m 644
++INSTALL-TOUCH = :		# used to create the file first (good to 
++				#  make solaris install work)
++INSTALL-CFG = $(BSD_INSTALL_DATA)
++INSTALL-BIN = $(BSD_INSTALL_PROGRAM)
++INSTALL-MODULES = $(BSD_INSTALL_PROGRAM)
++INSTALL-DOC = $(BSD_INSTALL_DATA)
++INSTALL-MAN = $(BSD_INSTALL_MAN)
+ 
+ #set some vars from the environment (and not make builtins)
+ CC   := $(shell echo "$${CC}")
+@@ -1196,8 +1196,8 @@
+ 
+ #add libssl if needed
+ ifneq ($(TLS),)
+-DEFS+= -I$(LOCALBASE)/ssl/include
+-LIBS+= -L$(LOCALBASE)/lib -L$(LOCALBASE)/ssl/lib -lssl  -lcrypto
++DEFS+= -I$(OPENSSLINC)
++LIBS+= -L$(OPENSSLLIB) -lssl  -lcrypto
+ endif
+ 
+ ifneq ($(found_lock_method), yes)

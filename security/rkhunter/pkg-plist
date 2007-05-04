@@ -1,0 +1,22 @@
+bin/rkhunter
+@unexec if cmp -s %D/etc/rkhunter.conf %D/etc/rkhunter.conf.sample; then rm -f %D/etc/rkhunter.conf; fi
+etc/rkhunter.conf.sample
+etc/periodic/security/415.rkhunter
+lib/rkhunter/db/backdoorports.dat
+lib/rkhunter/db/defaulthashes.dat
+lib/rkhunter/db/md5blacklist.dat
+lib/rkhunter/db/mirrors.dat
+lib/rkhunter/db/os.dat
+lib/rkhunter/db/programs_bad.dat
+lib/rkhunter/db/programs_good.dat
+lib/rkhunter/scripts/check_modules.pl
+lib/rkhunter/scripts/check_port.pl
+lib/rkhunter/scripts/check_update.sh
+lib/rkhunter/scripts/filehashmd5.pl
+lib/rkhunter/scripts/filehashsha1.pl
+lib/rkhunter/scripts/showfiles.pl
+@dirrm lib/rkhunter/scripts
+@dirrm lib/rkhunter/db
+@dirrm lib/rkhunter
+@dirrmtry etc/periodic/security
+@dirrmtry etc/periodic

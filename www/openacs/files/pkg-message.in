@@ -1,0 +1,34 @@
+Congratulations! You have just installed %%OPENACSNAME%%
+
+To create a sample default database, you first need a PostgreSQL server
+installed and configured on your system. If the PostgreSQL server is started 
+and running, you can run the script:
+%%EXAMPLESDIR%%/create_sampledb.sh
+
+The create_sampledb.sh script works with the following servers with their
+default configurations:
+databases/postgresql74-server (7.4.x)
+databases/postgresql80-server (8.0.x)
+
+For PostgreSQL 8.1.x and 8.2.x, the database server configuration
+needs to be adjusted. Please visit the following webpage for more information:
+http://openacs.org/xowiki/How_to_install_in_Postgres_8.x
+
+You can start %%OPENACSNAME%% with the startup script:
+%%LOCALBASE%%/etc/rc.d/%%PORTNAME%%
+
+If you are using another AOLserver on the default port 8000, 
+please change the port number in the configuration file.
+Default config: %%OPENACSBASE%%/etc/%%PORTNAME%%-config.tcl
+ 
+Then use your browser to view the welcome page (http://<your-ip>:<port>)
+- default port is 8000 and follow the instructions.
+
+Errors, if any, are in:
+%%OPENACSBASE%%/log/error.log
+
+If you want to use keepalive via cron, you might want to look here:
+%%EXAMPLESDIR%%/keepalive/
+
+-Martin Matuska
+mm@FreeBSD.org

@@ -1,15 +1,22 @@
 # New ports collection makefile for:	xfm
-# Version required:	1.3
 # Date created:		28 December 1994
 # Whom:			jc@irbs.com John Capo
 #
-# $Id: Makefile,v 1.2 1995/01/13 12:49:39 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	xfm-1.3
-DISTFILES=	xfm-1.3.tar.gz
+PORTNAME=	xfm
+PORTVERSION=	1.4.3
+CATEGORIES=	x11-fm
+MASTER_SITES=	http://www.musikwissenschaft.uni-mainz.de/~ag/xfm/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The X File Manager
+
+LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/applications/
-LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+USE_XPM=	yes
+MAN1=		xfm.1 xfmtype.1
 
 .include <bsd.port.mk>

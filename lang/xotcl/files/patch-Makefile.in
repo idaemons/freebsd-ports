@@ -1,0 +1,65 @@
+--- Makefile.in.orig	Thu Sep 28 11:19:12 2006
++++ Makefile.in	Tue Dec 12 15:58:50 2006
+@@ -262,11 +262,11 @@
+ #========================================================================
+ # This rule installs platform-independent files, such as header files.
+ #========================================================================
+-install-libraries: libraries $(DESTDIR)$(includedir) $(DESTDIR)$(pkglibdir)
+-	@echo "Installing header files in $(DESTDIR)$(includedir)"
++install-libraries: libraries $(DESTDIR)$(pkgincludedir) $(DESTDIR)$(pkglibdir)
++	@echo "Installing header files in $(DESTDIR)$(pkgincludedir)"
+ 	@for i in $(PKG_HEADERS) ; do \
+ 	    echo "    Installing $$i" ; \
+-	    $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(includedir) ; \
++	    $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(pkgincludedir) ; \
+ 	done;
+ 	@echo "Installing Libraries to $(DESTDIR)$(pkglibdir)/"
+ 	@for i in $(libdirs) ; do \
+@@ -284,7 +284,7 @@
+ 	    $(INSTALL_DATA) $(src_lib_dir)/$$i $(DESTDIR)$(pkglibdir)/$$i ; \
+ 	done;
+ 	cat unix/pkgIndex.unix >> $(DESTDIR)$(pkglibdir)/pkgIndex.tcl
+-	$(INSTALL_DATA) xotclConfig.sh $(DESTDIR)$(libdir)/
++	$(INSTALL_DATA) xotclConfig.sh $(DESTDIR)$(pkglibdir)/
+ 	@echo "Installing Applications to $(DESTDIR)$(pkglibdir)/apps/"
+ 	@for i in $(appdirs) ; do \
+ 	    echo "    Installing $$i/" ; \
+@@ -292,7 +292,15 @@
+ 	    mkdir -p $(DESTDIR)$(pkglibdir)/apps/$$i; \
+ 	    chmod 755 $(DESTDIR)$(pkglibdir)/apps/$$i; \
+ 	    for j in $(src_app_dir)/$$i/* ; do \
++		if test -d $$j; then \
++		    mkdir -p $(DESTDIR)$(pkglibdir)/$$j; \
++		    chmod 755 $(DESTDIR)$(pkglibdir)/$$j; \
++		    for k in $$j/* ; do \
++			$(INSTALL) $$k $(DESTDIR)$(pkglibdir)/$$j ; \
++		    done; \
++		else \
+ 		$(INSTALL) $$j $(DESTDIR)$(pkglibdir)/apps/$$i/; \
++		fi; \
+ 	    done; \
+ 	done;
+ 	@for i in $(appsrc) ; do \
+@@ -535,7 +543,6 @@
+ 	    else \
+ 		echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
+ 		$(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
+-		ln -s $(DESTDIR)$(pkglibdir)/$$p $(DESTDIR)$(libdir)/$$p; \
+ 	    fi; \
+ 	    ext=`echo $$p|sed -e "s/.*\.//"`; \
+ 	    if test "x$$ext" = "xdll"; then \
+@@ -592,12 +599,12 @@
+ 	  rm -f $(DESTDIR)$(bindir)/$$p; \
+ 	done
+ 
+-$(DESTDIR)$(includedir):
+-	$(mkinstalldirs) $@
+ $(DESTDIR)$(bindir):
+ 	$(mkinstalldirs)  $@
+ $(DESTDIR)$(libdir):
+ 	$(mkinstalldirs)  $@
++$(DESTDIR)$(pkgincludedir):
++	$(mkinstalldirs) $@
+ $(DESTDIR)$(pkglibdir):
+ 	$(mkinstalldirs)  $@
+ $(DESTDIR)$(pkglibdir)/apps: $(DESTDIR)$(pkglibdir)

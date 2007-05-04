@@ -1,0 +1,49 @@
+--- psys/src/Makefile.orig	Sat Mar  2 06:39:14 2002
++++ psys/src/Makefile	Sat May 18 13:25:17 2002
+@@ -30,8 +30,8 @@
+ ## to be made for different systems. Its a good idea to look over each
+ ## block and make necessary changes before doing a "make install"
+ 
+-LIBDIR = ../../lib
+-BINDIR = ../../bin
++LIBDIR = ${PREFIX}/share/chipmunk
++BINDIR = ${PREFIX}/bin
+ 
+ 
+ LIB = ../libp2c.a
+@@ -51,7 +51,7 @@
+ ## or some other directory, depending on your installation.
+ ##
+ 
+-XINCLUDEDIR = . 
++XINCLUDEDIR = ${X11BASE}/include
+ 
+ ##
+ ##  (1) Choosing your compiler
+@@ -101,7 +101,7 @@
+ LIBSTUFF = texstuff.ps untilstuff.ps plot.font
+ 
+ 
+-CC = $(CHIPMUNKCC)
++CC ?= $(CHIPMUNKCC)
+ 
+ 
+ ##
+@@ -149,7 +149,7 @@
+ 
+ CHIPMUNKFLAGS = 
+ 
+-CFLAGS = $(CHIPMUNKFLAGS) -I$(LOCINC) -I$(XINCLUDEDIR) -DCHIPLIB=\"`$(CD) $(LIBDIR); pwd`\"
++CFLAGS += -DBSD -DF_OK -I$(LOCINC) -I$(XINCLUDEDIR) -DCHIPLIB=\"$(LIBDIR)\"
+ 
+ P2CFLAGS = -DLOCAL_INIT=_local_p2c_init
+ 
+@@ -165,7 +165,7 @@
+ ## below; however the "-" allows this to be non-fatal and thus not essential
+ ## to delete
+ 
+-all: setup libp2c.a
++all: libp2c.a
+ 
+ setup:
+ 	-if [ ! -d $(LIBDIR) ] ; then mkdir $(LIBDIR) ; fi

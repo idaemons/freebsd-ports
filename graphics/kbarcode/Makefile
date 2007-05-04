@@ -1,0 +1,25 @@
+# New ports collection makefile for:	kbarcode
+# Date created:				05 July 2002
+# Whom:					Andy Raffle <andy@digitalspecies.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	kbarcode
+PORTVERSION=	2.0.5
+CATEGORIES=	graphics kde
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A barcode and label printing application for KDE
+
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
+USE_KDELIBS_VER=	3
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+INSTALLS_ICONS=	yes
+
+.include <bsd.port.mk>

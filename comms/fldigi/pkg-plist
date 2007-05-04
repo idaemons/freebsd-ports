@@ -1,0 +1,5 @@
+bin/fldigi
+%%DATADIR%%/macros.mdf
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

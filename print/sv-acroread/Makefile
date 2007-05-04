@@ -1,0 +1,17 @@
+# New ports collection makefile for:	sv-acroread
+# Date created:			2005-08-08
+# Whom:				chinsan <chinsan.tw@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTVERSION=	7.0.9
+PORTREVISION=	0
+PKGNAMEPREFIX=	sv-
+
+MASTERDIR=	${.CURDIR}/../../print/acroread7
+MD5_FILE=	${.CURDIR}/distinfo
+
+ADOBE_LANG=	SVE
+
+.include "${MASTERDIR}/Makefile"

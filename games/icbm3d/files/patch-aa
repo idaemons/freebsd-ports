@@ -1,0 +1,22 @@
+--- makefile	Fri Jul 31 04:41:20 1998
++++ /home/andy/tmp/wrk/makefile	Mon Aug 10 18:40:01 1998
+@@ -9,14 +9,16 @@
+ 
+ # Makefile user-definable variables------------------------------------------
+ 
+-CC=gcc
++CC?=gcc
++PREFIX?=/usr/X11R6
++X11BASE?=/usr/X11R6
+ MATHLIB=-lm
+ 
+ INSTALLROOT=$(PREFIX)
+ LANGUAGE=english
+ 
+-XLIB=-L$(PREFIX)/lib -lX11 #-lcompat
+-CFLAGS=-I$(PREFIX)/include -O2
++XLIB=-L$(X11BASE)/lib -lX11 #-lcompat
++CFLAGS+=-I$(X11BASE)/include
+ 
+ 
+ # End of makefile user-definable variables-----------------------------------

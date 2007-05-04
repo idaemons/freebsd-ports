@@ -1,12 +1,26 @@
 # New ports collection makefile for:	rman
-# Version required:     2.0
 # Date created:         27 Dec 1994
-# Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
+#
+# $FreeBSD$
 #
 
-DISTNAME=       rman
-EXTRACT_SUFX=	.tar.Z
-MASTER_SITES=   ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
-WRKSRC=         ${WRKDIR}/rman-2.0
+PORTNAME=	rman
+PORTVERSION=	3.2
+CATEGORIES=	textproc
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	polyglotman
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Reverse compile man pages from formatted form
+
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		BINDIR="${PREFIX}/bin" MANDIR="${MAN1PREFIX}/man/man1"
+
+MAN1=		rman.1
+PLIST_FILES=	bin/rman
+
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/rman
 
 .include <bsd.port.mk>

@@ -1,0 +1,6 @@
+bin/Atlas
+bin/Map
+bin/MapPS
+bin/buildmaps.sh
+@cwd %%X11BASE%%
+share/FlightGear/AtlasPalette

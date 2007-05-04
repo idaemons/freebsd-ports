@@ -1,0 +1,35 @@
+@unexec if cmp -s %D/etc/sampsvr.cfg %D/etc/sampsvr.cfg.dist; then rm -f %D/etc/sampsvr.cfg; fi
+etc/sampsvr.cfg.dist
+@exec [ -f %B/sampsvr.cfg ] || cp %B/%f %B/sampsvr.cfg
+%%SAMPDIR%%/sampd
+%%SAMPDIR%%/announce
+%%SAMPDIR%%/server.cfg
+%%SAMPDIR%%/filterscripts
+%%SAMPDIR%%/gamemodes
+%%DATADIR%%/filterscripts/admingivecash.amx
+%%DATADIR%%/gamemodes/src/sftdm.pwn
+%%DATADIR%%/gamemodes/src/rivershell.pwn
+%%DATADIR%%/gamemodes/src/lvdm.pwn
+%%DATADIR%%/gamemodes/src/lyse.pwn
+%%DATADIR%%/gamemodes/src/ls-parachute.pwn
+%%DATADIR%%/gamemodes/src/manhunt-lv.pwn
+%%DATADIR%%/gamemodes/src/minigunmadness.pwn
+%%DATADIR%%/gamemodes/src/area51.pwn
+%%DATADIR%%/gamemodes/src/cng.pwn
+%%DATADIR%%/gamemodes/src/monster.pwn
+%%DATADIR%%/gamemodes/src/freighter.pwn
+%%DATADIR%%/gamemodes/lyse.amx
+%%DATADIR%%/gamemodes/ls-parachute.amx
+%%DATADIR%%/gamemodes/sftdm.amx
+%%DATADIR%%/gamemodes/lvdm.amx
+%%DATADIR%%/gamemodes/monster.amx
+%%DATADIR%%/gamemodes/rivershell.amx
+%%DATADIR%%/gamemodes/freighter.amx
+%%DATADIR%%/gamemodes/manhunt-lv.amx
+%%DATADIR%%/gamemodes/area51.amx
+%%DATADIR%%/gamemodes/minigunmadness.amx
+@dirrmtry %%DATADIR%%/gamemodes/src
+@dirrmtry %%DATADIR%%/gamemodes
+@dirrmtry %%DATADIR%%/filterscripts
+@dirrmtry %%DATADIR%%
+@dirrmtry %%SAMPDIR%%

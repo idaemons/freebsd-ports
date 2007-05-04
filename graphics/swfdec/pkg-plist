@@ -1,0 +1,28 @@
+include/swfdec-%%VERSION%%/libswfdec/swfdec.h
+include/swfdec-%%VERSION%%/libswfdec/swfdec_audio.h
+include/swfdec-%%VERSION%%/libswfdec/swfdec_buffer.h
+include/swfdec-%%VERSION%%/libswfdec/swfdec_enums.h
+include/swfdec-%%VERSION%%/libswfdec/swfdec_loader.h
+include/swfdec-%%VERSION%%/libswfdec/swfdec_player.h
+lib/libswfdec-%%VERSION%%.a
+lib/libswfdec-%%VERSION%%.la
+lib/libswfdec-%%VERSION%%.so
+lib/libswfdec-%%VERSION%%.so.1
+libdata/pkgconfig/swfdec-%%VERSION%%.pc
+share/gtk-doc/html/swfdec/SwfdecAudio.html
+share/gtk-doc/html/swfdec/SwfdecLoader.html
+share/gtk-doc/html/swfdec/SwfdecPlayer.html
+share/gtk-doc/html/swfdec/ch01.html
+share/gtk-doc/html/swfdec/home.png
+share/gtk-doc/html/swfdec/index.html
+share/gtk-doc/html/swfdec/index.sgml
+share/gtk-doc/html/swfdec/left.png
+share/gtk-doc/html/swfdec/right.png
+share/gtk-doc/html/swfdec/style.css
+share/gtk-doc/html/swfdec/swfdec-SwfdecBuffer.html
+share/gtk-doc/html/swfdec/swfdec.devhelp
+share/gtk-doc/html/swfdec/swfdec.devhelp2
+share/gtk-doc/html/swfdec/up.png
+@dirrm share/gtk-doc/html/swfdec
+@dirrm include/swfdec-%%VERSION%%/libswfdec
+@dirrm include/swfdec-%%VERSION%%

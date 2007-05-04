@@ -1,0 +1,21 @@
+%%MYADMDIR%%/docs/COPYING
+%%MYADMDIR%%/docs/ChangeLog
+%%MYADMDIR%%/docs/INSTALL
+%%MYADMDIR%%/docs/README
+%%MYADMDIR%%/docs/TODO
+%%MYADMDIR%%/docs/UPGRADE
+%%MYADMDIR%%/config.inc.php-example
+%%MYADMDIR%%/index.php
+%%MYADMDIR%%/style.css
+%%MYADMDIR%%/libs/admin.lib.php
+%%MYADMDIR%%/libs/auth.lib.php
+%%MYADMDIR%%/libs/common.lib.php
+%%MYADMDIR%%/pages/change.inc.php
+%%MYADMDIR%%/pages/register.inc.php
+%%MYADMDIR%%/pages/admin.inc.php
+%%MYADMDIR%%/pages/main.inc.php
+@dirrm %%MYADMDIR%%/docs
+@dirrm %%MYADMDIR%%/pages
+@dirrm %%MYADMDIR%%/libs
+@dirrm %%MYADMDIR%%
+@dirrmtry www/data

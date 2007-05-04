@@ -1,0 +1,44 @@
+
+$FreeBSD$
+
+--- configure.in.orig
++++ configure.in
+@@ -328,14 +328,17 @@
+           rel=`uname -r`
+           case "$rel" in
+             4*)
+-              CFLAGS="$CFLAGS -pthread"
+-              ;;
+-            5*)
+-              LIBS="-lc_r $LEXLIB $LIBS"
++              CFLAGS="$CFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
+               ;;
+-            *)
+-              CFLAGS="$CFLAGS -pthread"
+-              LIBS="-lc_r $LEXLIB $LIBS"
++ 	    5.[[012]]*)
++ 	      LIBS="$PTHREAD_LIBS $LEXLIB $LIBS"
++ 	      ;;
++ 	    [[567]]*)
++ 	      CFLAGS="$CFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
++ 	      ;;
++              *)
++               CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
++               LIBS="$PTHREAD_LIBS $LEXLIB $LIBS"
+               ;;
+           esac
+ 	  RPATH_OPTION="-rpath"
+@@ -430,10 +433,10 @@
+ esac
+ 
+ if test "X$MYSQL_PATH" != "X" ; then
+-    LIBS="-L$MYSQL_PATH/lib -lmysqlclient $LIBS"
++    LIBS="-L$MYSQL_PATH/lib/mysql -lmysqlclient $LIBS"
+     AC_DEFINE(HAVE_MYSQL)
+-    CFLAGS="$CFLAGS -I$MYSQL_PATH/include"
+-    MYSQL_LIB="-L$MYSQL_PATH/lib -lmysqlclient"
++    CFLAGS="$CFLAGS -I$MYSQL_PATH/include/mysql"
++    MYSQL_LIB="-L$MYSQL_PATH/lib/mysql -lmysqlclient"
+ fi
+ 
+ if test "X$PGSQL_PATH" != "X" ; then

@@ -1,0 +1,13 @@
+--- vpnc-script.orig	Tue Mar 13 16:03:06 2007
++++ vpnc-script	Tue Mar 13 16:03:24 2007
+@@ -31,8 +31,8 @@
+ 		;;
+ esac
+ 
+-DEFAULT_ROUTE_FILE=/var/run/vpnc/defaultroute
+-RESOLV_CONF_BACKUP=/var/run/vpnc/resolv.conf-backup
++DEFAULT_ROUTE_FILE=/var/run/vpnc.defaultroute
++RESOLV_CONF_BACKUP=/var/run/vpnc.resolv.conf-backup
+ 
+ # some systems, eg. Darwin & FreeBSD, prune /var/run on boot
+ if ! [ -d "/var/run/vpnc" ]; then

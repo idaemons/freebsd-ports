@@ -1,0 +1,23 @@
+--- gcc/Makefile.in.orig	Wed Aug  4 10:53:58 2004
++++ gcc/Makefile.in	Wed Aug  4 10:54:42 2004
+@@ -2680,7 +2680,7 @@
+ doc/gccinstall.dvi: $(TEXI_GCCINSTALL_FILES)
+ 	$(TEXI2DVI) -I $(abs_docdir) -I $(abs_docdir)/include -o $@ $<
+ 
+-MANFILES = doc/gcov.1 doc/cpp.1 doc/gcc.1 doc/gfdl.7 doc/gpl.7 doc/fsf-funding.7
++MANFILES = doc/gcov.1 doc/cpp.1 doc/gcc.1
+ 
+ generated-manpages: man 
+ 
+@@ -2962,10 +2962,7 @@
+ install-man: installdirs lang.install-man \
+ 	$(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext) \
+ 	$(DESTDIR)$(man1dir)/$(CPP_INSTALL_NAME)$(man1ext) \
+-	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext) \
+-	$(DESTDIR)$(man7dir)/fsf-funding$(man7ext) \
+-	$(DESTDIR)$(man7dir)/gfdl$(man7ext) \
+-	$(DESTDIR)$(man7dir)/gpl$(man7ext)
++	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext)
+ 
+ $(DESTDIR)$(man7dir)/%$(man7ext): doc/%.7
+ 	-rm -f $@

@@ -1,0 +1,23 @@
+--- SConstruct.orig	Fri Apr 23 07:51:57 2004
++++ SConstruct	Fri Apr 27 12:47:07 2007
+@@ -53,8 +53,10 @@
+ env.make_so = None
+ env.detect = detect.Detect()
+ 
+-if os.environ.has_key('DISTCC_HOSTS'):
++if os.environ.has_key('CXX'):
+ 	env['CXX'] = os.environ['CXX']
++
++if os.environ.has_key('DISTCC_HOSTS'):
+ 	env['ENV']['DISTCC_HOSTS'] = os.environ['DISTCC_HOSTS']
+ 	env['ENV']['HOME'] = os.environ['HOME']
+ 
+@@ -87,7 +89,7 @@
+ env.optimize_resampler_hack=0
+ 
+ if (env['optimize']):
+-	env.Append(CXXFLAGS=['-O3','-ffast-math']);
++	env.Append(CXXFLAGS="%%CFLAGS%%");
+ 	env.optimize_resampler_hack=0
+ 
+ profile=0;

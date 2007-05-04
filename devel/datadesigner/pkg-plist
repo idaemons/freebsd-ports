@@ -1,0 +1,9 @@
+bin/datadesigner
+%%NLS%%share/locale/cs/LC_MESSAGES/datadesigner.mo
+%%DATADIR%%/pgsql.xsl
+%%DATADIR%%/mysql.xsl
+%%DATADIR%%/db2.xsl
+%%DATADIR%%/gen2pgsql.xsl
+@dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
