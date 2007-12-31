@@ -1,0 +1,16 @@
+bin/ezmlm-web.cgi
+%%CGI_BIN%%/ezmlm-web
+etc/ezmlm/ezmlmwebrc.sample
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.clearsilver
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/changelog
+%%PORTDOCS%%%%DOCSDIR%%/copyright
+%%EXAMPLESDIR%%/htaccess.sample
+%%EXAMPLESDIR%%/index.c
+%%EXAMPLESDIR%%/webusers.sample
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%CGI_BIN%%

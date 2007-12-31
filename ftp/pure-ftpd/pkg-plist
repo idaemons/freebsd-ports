@@ -1,0 +1,20 @@
+bin/pure-pw
+bin/pure-pwconvert
+bin/pure-statsdecode
+etc/pure-ftpd.conf.sample
+etc/pureftpd-ldap.conf.sample
+etc/pureftpd-mysql.conf.sample
+etc/pureftpd-pgsql.conf.sample
+sbin/pure-authd
+sbin/pure-config.pl
+sbin/pure-ftpd
+sbin/pure-ftpwho
+sbin/pure-mrtginfo
+sbin/pure-quotacheck
+sbin/pure-uploadscript
+%%EXAMPLESDIR%%/pam/pure-ftpd
+%%EXAMPLESDIR%%/pure-stat.pl
+%%EXAMPLESDIR%%/pure-vpopauth.pl
+%%EXAMPLESDIR%%/xml_python_processors.txt
+@dirrm %%EXAMPLESDIR%%/pam
+@dirrm %%EXAMPLESDIR%%

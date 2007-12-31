@@ -1,0 +1,21 @@
+==============================================================================
+
+Vavoom has been installed.
+
+The wrapper script is named "vavoom" and accepts a "-s" argument to run the
+dedicated server instead of the client. It creates/enters ~/.vavoom (if it
+does not exist creates symlinks) and runs the programs from there, looking for
+additional IWAD files in "%%DMDIR%%".
+
+The real executables (and utils) are in "%%PREFIX%%/libexec/vavoom".
+
+If you enabled the EDITING option the VavoomC source code of the supported
+games has been installed to "%%DATADIR%%/progs".
+
+To run in OpenGL mode add the "-opengl" parameter, and "-openal" for OpenAL.
+
+If you want to install enhaced textures, models or soundtracks use the
+"games/vavoom-extras" port. Note that textures require OPENGL and soundtracks
+need VORBIS (build options).
+
+==============================================================================

@@ -1,0 +1,31 @@
+bin/eperl
+%%SSSL%%www/cgi-bin/nph-eperl
+%%SSSL%%@exec echo "AddType  application/x-httpd-eperl  .phtml .eperl .epl" >>%D/etc/apache/srm.conf
+%%SSSL%%@exec echo "Action   application/x-httpd-eperl  /cgi-bin/nph-eperl" >>%D/etc/apache/srm.conf
+%%SSSL%%@unexec grep -v "application/x-httpd-eperl" %D/etc/apache/srm.conf >%D/etc/apache/srm.conf.bak; mv %D/etc/apache/srm.conf.bak %D/etc/apache/srm.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/00README
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.cgipm.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.cgipm.iphtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.env.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.env.iphtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.errout.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.errout.iphtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.errsyn.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.errsyn.iphtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.func.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.func.iphtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.html.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.html.iphtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.image.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.image.iphtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.lwp.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.lwp.iphtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.net.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.net.iphtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.pp.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.pp.iphtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.table.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.table.iphtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.text.phtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.text.iphtml
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

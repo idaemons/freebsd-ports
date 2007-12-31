@@ -1,0 +1,3 @@
+usr/bin/PTStitcher
+usr/lib/libpano12.so
+@unexec rm %%LOCALBASE%%/bin/PTStitcher

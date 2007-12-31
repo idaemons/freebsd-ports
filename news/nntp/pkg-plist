@@ -1,7 +1,19 @@
-@cwd /usr/local
-libexec/nntpd
-man/man8/nntpd.8c
-man/man8/mkgrdates.8c
-man/man1/nntpxmit.1
-bin/nntpxmit
-bin/shlock	#just in case anyone wants it
+sbin/nntpd
+%%NEWSBIN%%/acttimes
+%%NEWSBIN%%/nntpxmit
+%%NEWSBIN%%/nntpxfer
+@comment     just in case anyone wants it
+%%NEWSBIN%%/shlock
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORIZE
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-conf.h
+%%PORTDOCS%%%%DOCSDIR%%/SYSLOG
+%%PORTDOCS%%%%DOCSDIR%%/rfc977
+%%PORTDOCS%%%%DOCSDIR%%/server-README
+%%PORTDOCS%%%%DOCSDIR%%/support-README
+%%PORTDOCS%%%%DOCSDIR%%/xfer-README
+%%PORTDOCS%%%%DOCSDIR%%/xmit-README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd %%VARBASE%%
+%%NEWSCTL%%/overview.fmt

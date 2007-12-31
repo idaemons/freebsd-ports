@@ -1,0 +1,20 @@
+--- configure.orig	Sun May  2 17:53:17 2004
++++ configure	Fri Dec 29 17:54:22 2006
+@@ -22733,7 +22733,7 @@
+ int
+ main ()
+ {
+-void *(*foo)(size_t) = alloca;
++void *foo = alloca(sizeof(void));
+   ;
+   return 0;
+ }
+@@ -32304,7 +32304,7 @@
+ 
+ 
+ if test "x$BUILD_SW" = xyes; then
+-	VID_REND_NOINST_TARGETS="$VID_REND_NOINST_TARGETS libQFrenderer_sw.la"
++	VID_REND_TARGETS="$VID_REND_TARGETS libQFrenderer_sw.la"
+ 	VID_MODEL_TARGETS="$VID_MODEL_TARGETS libQFmodels_sw.la"
+ fi
+ if test "x$BUILD_SW32" = xyes; then

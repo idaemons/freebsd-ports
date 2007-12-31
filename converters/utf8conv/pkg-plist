@@ -1,0 +1,3 @@
+bin/utf8conv
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

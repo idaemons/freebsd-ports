@@ -1,0 +1,21 @@
+bin/xfractint
+share/fractint/altern.map
+share/fractint/cellular.par
+share/fractint/default.map
+share/fractint/demo.par
+share/fractint/fract18.par
+share/fractint/fract19.par
+share/fractint/fract200.frm
+share/fractint/fract200.par
+share/fractint/fractint.frm
+share/fractint/fractint.hlp
+share/fractint/fractint.ifs
+share/fractint/fractint.l
+share/fractint/fractint.par
+share/fractint/icons.par
+share/fractint/lyapunov.par
+share/fractint/music.par
+share/fractint/penrose.l
+share/fractint/phoenix.par
+share/fractint/tiling.l
+@dirrm share/fractint

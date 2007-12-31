@@ -1,23 +1,12 @@
-*** command.c.old	Mon Dec  5 01:07:33 1994
---- command.c	Mon Dec  5 01:07:49 1994
-***************
-*** 373,381 ****
-        {
-  	int pgrp = getpid();
-  	ioctl(0, TIOCSPGRP, (char *)&pgrp);
-! 	setpgrp();
-  	close(open(ttynam, O_WRONLY, 0));
-! 	setpgrp ();
-        }
-  
-        /* init of termios structure		*/
---- 373,381 ----
-        {
-  	int pgrp = getpid();
-  	ioctl(0, TIOCSPGRP, (char *)&pgrp);
-! 	setpgrp(0,pgrp);
-  	close(open(ttynam, O_WRONLY, 0));
-! 	setpgrp (0,pgrp);
-        }
-  
-        /* init of termios structure		*/
+--- doc/Makefile.in.orig	Mon Aug 21 23:32:21 2000
++++ doc/Makefile.in	Mon Aug 21 23:32:44 2000
+@@ -41,9 +41,6 @@
+ 
+ all: rxvt.1
+ 
+-rxvt.1: Makefile
+-	@if test x$(TBL) = x; then : ; else echo "$(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1 ; fi
+-
+ SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
+ 	     -e 's%@RXVT_LSMDATE@%$(LSMDATE)%g;'\
+ 	     -e 's%@RXVT_DATE@%$(DATE)%g;'\

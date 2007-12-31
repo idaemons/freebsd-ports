@@ -1,0 +1,5 @@
+bin/uudeview
+bin/uuenview
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/porting.notes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

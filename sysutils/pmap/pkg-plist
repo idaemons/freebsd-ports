@@ -1,0 +1,4 @@
+bin/dump_vmspace
+bin/pmap
+@cwd /
+%%KMODDIR%%/pmap_helper.ko

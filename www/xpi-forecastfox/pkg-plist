@@ -1,0 +1,18 @@
+%%XPI_XPIDIR%%/chrome/forecastfox.jar
+%%XPI_XPIDIR%%/components/nsForecastfox.js
+%%XPI_XPIDIR%%/components/nsForecastfox.xpt
+%%XPI_XPIDIR%%/defaults/.autoreg
+%%XPI_XPIDIR%%/defaults/converters.js
+%%XPI_XPIDIR%%/defaults/default.jar
+%%XPI_XPIDIR%%/defaults/parser.js
+%%XPI_XPIDIR%%/defaults/upgrade.js
+%%XPI_XPIDIR%%/defaults/preferences/forecastfox.js
+%%XPI_XPIDIR%%/install.js
+%%XPI_XPIDIR%%/install.locales
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/license.txt
+%%XPI_XPIDIR%%/chrome.manifest
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults

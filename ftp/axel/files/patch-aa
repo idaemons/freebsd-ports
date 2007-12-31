@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig	Wed Jan 23 02:03:07 2002
++++ configure	Wed Jun 25 18:58:36 2003
+@@ -19,7 +19,7 @@
+ arch=`uname -s`
+ 
+ while [ -n "$1" ]; do
+-	e="`expr "$1" : '--\(.*=.*\)'`"
++	e=`expr "X$1" : 'X--\(.*=.*\)'`
+ 	if [ -z "$e" ]; then
+ 		cat<<EOF
+ Axel configure

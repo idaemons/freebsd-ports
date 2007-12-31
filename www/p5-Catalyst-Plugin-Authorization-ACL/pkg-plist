@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Catalyst/Plugin/Authorization/ACL/Engine.pm
+%%SITE_PERL%%/Catalyst/Plugin/Authorization/ACL.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authorization/ACL
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authorization
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

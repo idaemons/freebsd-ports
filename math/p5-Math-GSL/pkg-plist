@@ -1,0 +1,7 @@
+%%SITE_PERL%%/mach/auto/Math/GSL/GSL.so
+%%SITE_PERL%%/mach/auto/Math/GSL/GSL.bs
+%%SITE_PERL%%/mach/auto/Math/GSL/.packlist
+%%SITE_PERL%%/mach/Math/GSL.pm
+@dirrm %%SITE_PERL%%/mach/auto/Math/GSL
+@dirrmtry %%SITE_PERL%%/mach/auto/Math
+@dirrmtry %%SITE_PERL%%/mach/Math

@@ -1,0 +1,37 @@
+--- Makefile.orig	2007-06-04 09:27:25.000000000 -0400
++++ Makefile	2007-07-18 06:51:33.000000000 -0400
+@@ -8,17 +8,16 @@
+ INCLUDE = -Ilibopenjpeg
+ 
+ # General configuration variables:
+-CC = gcc
+-AR = ar
+ 
+-PREFIX = /usr
+ INSTALL_LIBDIR = $(PREFIX)/lib
+ INSTALL_INCLUDE = $(PREFIX)/include
+ 
++SUBDIRS=	jpwl mj2
++
+ # Converts cr/lf to just lf
+ DOS2UNIX = dos2unix
+ 
+-COMPILERFLAGS = -O3 -fPIC
++COMPILERFLAGS := $(CFLAGS) -fPIC
+ LIBRARIES = -lstdc++
+ 
+ MODULES = $(SRCS:.c=.o)
+@@ -33,7 +32,12 @@
+ 
+ default: all
+ 
+-all: OpenJPEG
++all: OpenJPEG subdirs
++
++subdirs:
++	for dir in $(SUBDIRS); do \
++		$(MAKE) -C $$dir; \
++	done
+ 
+ dist: OpenJPEG
+ 	install -d dist

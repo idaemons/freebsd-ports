@@ -1,0 +1,32 @@
+# New ports collection makefile for:	mod_auth_cookie_mysql2
+# Date created:				Sun Aug 8 2004
+# Whom:					clement
+#
+# $FreeBSD$
+
+PORTNAME=	mod_auth_cookie_mysql2
+PORTVERSION=	0.7
+CATEGORIES=	www
+MASTER_SITES=	http://home.digithi.de/digithi/dev/mod_auth_cookie_mysql/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+DIST_SUBDIR=	apache20
+
+MAINTAINER=	apache@FreeBSD.org
+COMMENT=	Allows authentication against a MySQL database via a secure cookie
+
+USE_MYSQL=	YES
+
+USE_APACHE=	20+
+
+AP_FAST_BUILD=	YES
+AP_GENPLIST=	YES
+AP_INC?=	${LOCALBASE}/include/mysql
+AP_LIB?=	${LOCALBASE}/lib/mysql -lmysqlclient -lz
+PORTDOCS=	mod_auth_cookie_mysql.html
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+.endif
+.include <bsd.port.mk>

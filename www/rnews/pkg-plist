@@ -1,0 +1,50 @@
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/add.php
+%%WWWDIR%%/add_user.php
+%%WWWDIR%%/ajax.js
+%%WWWDIR%%/ajax.php
+%%WWWDIR%%/auth.php
+%%WWWDIR%%/export.php
+%%WWWDIR%%/foot.php
+%%WWWDIR%%/img/add.gif
+%%WWWDIR%%/img/edit.gif
+%%WWWDIR%%/img/info.gif
+%%WWWDIR%%/img/mark.gif
+%%WWWDIR%%/img/markall.gif
+%%WWWDIR%%/img/more.gif
+%%WWWDIR%%/img/rnews-logo.gif
+%%WWWDIR%%/img/update.gif
+%%WWWDIR%%/img/x.gif
+%%WWWDIR%%/img/xml.png
+%%WWWDIR%%/inc/.htaccess
+%%WWWDIR%%/inc/cat.php
+%%WWWDIR%%/inc/config.php
+%%WWWDIR%%/inc/db.php
+%%WWWDIR%%/inc/feed.php
+%%WWWDIR%%/inc/feedlink.php
+%%WWWDIR%%/inc/functions.php
+%%WWWDIR%%/inc/kses.php
+%%WWWDIR%%/inc/opml.php
+%%WWWDIR%%/inc/output.php
+%%WWWDIR%%/inc/rss.php
+%%WWWDIR%%/inc/security.php
+%%WWWDIR%%/inc/user.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/install.php
+%%WWWDIR%%/magpierss/extlib/Snoopy.class.inc
+%%WWWDIR%%/magpierss/rss_cache.inc
+%%WWWDIR%%/magpierss/rss_fetch.inc
+%%WWWDIR%%/magpierss/rss_parse.inc
+%%WWWDIR%%/magpierss/rss_utils.inc
+%%WWWDIR%%/prefs.php
+%%WWWDIR%%/redirect.php
+%%WWWDIR%%/rnews-side.css
+@exec /usr/bin/touch %D/%%WWWDIR%%/inc/config_user.php;/usr/sbin/chown www %D/%%WWWDIR%%/inc/config_user.php
+@unexec if [ ! -s %D/%%WWWDIR%%/inc/config_user.php ];then /bin/rm -f %D/%%WWWDIR%%/inc/config_user.php;fi
+@dirrm %%WWWDIR%%/img/feeds
+@dirrm %%WWWDIR%%/img
+@dirrm %%WWWDIR%%/inc
+@dirrm %%WWWDIR%%/magpierss/cache
+@dirrm %%WWWDIR%%/magpierss/extlib
+@dirrm %%WWWDIR%%/magpierss
+@dirrm %%WWWDIR%%

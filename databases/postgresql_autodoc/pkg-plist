@@ -1,0 +1,9 @@
+bin/postgresql_autodoc
+%%DATADIR%%/postgresql_autodoc/dia.tmpl
+%%DATADIR%%/postgresql_autodoc/dot.tmpl
+%%DATADIR%%/postgresql_autodoc/html.tmpl
+%%DATADIR%%/postgresql_autodoc/neato.tmpl
+%%DATADIR%%/postgresql_autodoc/xml.tmpl
+%%DATADIR%%/postgresql_autodoc/zigzag.dia.tmpl
+@dirrm %%DATADIR%%/postgresql_autodoc
+@dirrm %%DATADIR%%

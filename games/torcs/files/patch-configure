@@ -1,0 +1,19 @@
+--- configure.orig	Sat Oct  7 23:02:55 2006
++++ configure	Mon Oct  9 22:24:36 2006
+@@ -4931,13 +4931,13 @@
+ fi
+ 
+ #CFLAGS="-ansi -Wall -Wstrict-prototypes -W"
+-ADDCFLAGS="-Wall -fPIC -fno-strict-aliasing"
++ADDCFLAGS="$CFLAGS -Wall -fPIC -fno-strict-aliasing"
+ # Check whether --enable-debug or --disable-debug was given.
+ if test "${enable_debug+set}" = set; then
+   enableval="$enable_debug"
+   ADDCFLAGS="$ADDCFLAGS -g -DDEBUG -DDEBUG_OUT"
+-else
+-  ADDCFLAGS="$ADDCFLAGS -O2"
++#else
++#  ADDCFLAGS="$ADDCFLAGS -O2"
+ fi;
+ 
+ # Check whether --enable-xrandr or --disable-xrandr was given.

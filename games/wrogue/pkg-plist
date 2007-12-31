@@ -1,0 +1,72 @@
+bin/wrogue
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/sc_guide.txt
+%%DATADIR%%/engine/config/keys.rdb
+%%DATADIR%%/engine/config/options.rdb
+%%DATADIR%%/engine/desc/charflag.rdb
+%%DATADIR%%/engine/desc/ob_attr.rdb
+%%DATADIR%%/engine/desc/perks.rdb
+%%DATADIR%%/engine/desc/powers.rdb
+%%DATADIR%%/engine/desc/tr_attr.rdb
+%%DATADIR%%/engine/graphics/back.bmp
+%%DATADIR%%/engine/graphics/cursor.bmp
+%%DATADIR%%/engine/graphics/icon.bmp
+%%DATADIR%%/engine/graphics/symbols.bmp
+%%DATADIR%%/engine/help/advance.txt
+%%DATADIR%%/engine/help/combat.txt
+%%DATADIR%%/engine/help/credits.txt
+%%DATADIR%%/engine/help/evoke.txt
+%%DATADIR%%/engine/help/macro.txt
+%%DATADIR%%/engine/help/modes.txt
+%%DATADIR%%/engine/help/morale.txt
+%%DATADIR%%/engine/help/movement.txt
+%%DATADIR%%/engine/help/parties.txt
+%%DATADIR%%/engine/help/rating.txt
+%%DATADIR%%/engine/help/stats.txt
+%%DATADIR%%/engine/help/tactics.txt
+%%DATADIR%%/engine/help/timing.txt
+%%DATADIR%%/engine/psybolts/psybolts.rdb
+%%DATADIR%%/scenario/careers/careers.rdb
+%%DATADIR%%/scenario/info/intro.txt
+%%DATADIR%%/scenario/info/scenario.rdb
+%%DATADIR%%/scenario/npcs/aliens.rdb
+%%DATADIR%%/scenario/npcs/beasts.rdb
+%%DATADIR%%/scenario/npcs/chaos.rdb
+%%DATADIR%%/scenario/npcs/deco.wca
+%%DATADIR%%/scenario/npcs/doomb.wca
+%%DATADIR%%/scenario/npcs/imperium.rdb
+%%DATADIR%%/scenario/npcs/rand_npc.wca
+%%DATADIR%%/scenario/npcs/rebels.rdb
+%%DATADIR%%/scenario/npcs/schweitz.wca
+%%DATADIR%%/scenario/objects/atad.rdb
+%%DATADIR%%/scenario/objects/bio.rdb
+%%DATADIR%%/scenario/objects/chaos.rdb
+%%DATADIR%%/scenario/objects/env.rdb
+%%DATADIR%%/scenario/objects/imperium.rdb
+%%DATADIR%%/scenario/objects/nimrod.rdb
+%%DATADIR%%/scenario/objects/ratkin.rdb
+%%DATADIR%%/scenario/race/female.nam
+%%DATADIR%%/scenario/race/male.nam
+%%DATADIR%%/scenario/race/race.rdb
+%%DATADIR%%/scenario/terrain/terrain.rdb
+%%DATADIR%%/scenario/user/keep.me
+%%DATADIR%%/scenario/world/h_cruor.wca
+%%DATADIR%%/scenario/world/world.rdb
+@dirrm %%DATADIR%%/scenario/world
+@dirrm %%DATADIR%%/scenario/user
+@dirrm %%DATADIR%%/scenario/terrain
+@dirrm %%DATADIR%%/scenario/race
+@dirrm %%DATADIR%%/scenario/objects
+@dirrm %%DATADIR%%/scenario/npcs
+@dirrm %%DATADIR%%/scenario/info
+@dirrm %%DATADIR%%/scenario/careers
+@dirrm %%DATADIR%%/scenario
+@dirrm %%DATADIR%%/engine/psybolts
+@dirrm %%DATADIR%%/engine/help
+@dirrm %%DATADIR%%/engine/graphics
+@dirrm %%DATADIR%%/engine/desc
+@dirrm %%DATADIR%%/engine/config
+@dirrm %%DATADIR%%/engine
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

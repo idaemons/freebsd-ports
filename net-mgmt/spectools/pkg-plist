@@ -1,0 +1,3 @@
+%%GTK%%bin/spectool_gtk
+bin/spectool_net
+bin/spectool_raw

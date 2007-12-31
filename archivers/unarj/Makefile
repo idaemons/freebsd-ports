@@ -1,15 +1,34 @@
 # New ports collection makefile for:    unarj
-# Version required:     2.41
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/26 09:10:32 ache Exp $
+# $FreeBSD$
 #
-DISTFILES=      unarj241.tar.Z
-DISTNAME=       unarj
-MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
 
-install:
-	cd ${WRKSRC}; install -cs -o bin -g bin -m755 ${DISTNAME} ${PREFIX}/bin
+PORTNAME=	unarj
+PORTVERSION=	2.65
+PORTREVISION=	2
+CATEGORIES=	archivers
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ache
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Allows files to be extracted from ARJ archives
+
+PLIST_FILES=	bin/unarj
+PORTDOCS=	unarj.txt technote.txt
+
+post-patch:
+	${CP} ${FILESDIR}/sanitize.c ${WRKSRC}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/unarj ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} ${DOCSDIR}
+.for i in ${PORTDOCS}	
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

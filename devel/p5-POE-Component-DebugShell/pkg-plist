@@ -1,0 +1,3 @@
+%%SITE_PERL%%/POE/Component/DebugShell.pm
+@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE

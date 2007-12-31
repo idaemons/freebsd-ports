@@ -1,0 +1,25 @@
+--- libntfs-3g/Makefile.in.orig	Sat Aug 25 18:23:50 2007
++++ libntfs-3g/Makefile.in	Mon Sep 10 14:38:59 2007
+@@ -82,7 +82,7 @@
+ am__installdirs = "$(DESTDIR)$(libdir)"
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
+-libntfs_3g_la_LIBADD =
++libntfs_3g_la_LIBADD = -lublio
+ am_libntfs_3g_la_OBJECTS = libntfs_3g_la-attrib.lo \
+ 	libntfs_3g_la-attrlist.lo libntfs_3g_la-bitmap.lo \
+ 	libntfs_3g_la-bootsect.lo libntfs_3g_la-collate.lo \
+--- ./src/ntfs-3g.c.orig	Sun Apr 15 20:52:01 2007
++++ ./src/ntfs-3g.c	Mon Apr 30 14:12:57 2007
+@@ -1603,7 +1603,11 @@
+ 	.mkdir		= ntfs_fuse_mkdir,
+ 	.rmdir		= ntfs_fuse_rmdir,
+ 	.utime		= ntfs_fuse_utime,
++#ifdef __linux__
+ 	.bmap		= ntfs_fuse_bmap,
++#else
++	.bmap		= NULL,
++#endif
+ 	.destroy        = ntfs_fuse_destroy2,
+ #ifdef HAVE_SETXATTR
+ 	.getxattr	= ntfs_fuse_getxattr,

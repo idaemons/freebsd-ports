@@ -1,0 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DBILogger/.packlist
+%%SITE_PERL%%/Apache/DBILogger.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DBILogger
+@dirrm %%SITE_PERL%%/Apache

@@ -1,0 +1,84 @@
+bin/free-sa
+etc/free-sa/downloads-archives.sample
+etc/free-sa/downloads-cddvd.sample
+etc/free-sa/downloads-office.sample
+etc/free-sa/downloads-audio.sample
+etc/free-sa/downloads-code.sample
+etc/free-sa/downloads-video.sample
+etc/free-sa/downloads.sample
+etc/free-sa/free-sa.conf.sample
+share/free-sa/be.cp1251
+share/free-sa/cs.iso88592
+share/free-sa/de.iso88591
+share/free-sa/en.iso88591
+share/free-sa/et.iso88591
+share/free-sa/fr.iso88591
+share/free-sa/it.iso88591
+share/free-sa/ru.koi8r
+share/free-sa/sk.iso88592
+share/free-sa/es.iso88591
+share/doc/free-sa-1.4.0/COPYING
+share/doc/free-sa-1.4.0/INSTALL
+share/doc/free-sa-1.4.0/README
+share/doc/free-sa-1.4.0/README.DEV
+share/doc/free-sa-1.4.0/ChangeLog     
+share/doc/free-sa-1.4.0/FAQ
+share/doc/free-sa-1.4.0/THANKS
+www/data/free-sa/sa.js
+www/data/free-sa/c.png
+www/data/free-sa/d.png
+www/data/free-sa/g.png
+www/data/free-sa/s.png
+www/data/free-sa/gsa.css
+www/data/free-sa/lsa.css
+www/data/free-sa/rsa.css
+www/data/free-sa/cgi-bin/free-sa.cgi
+www/data/free-sa/themes/default
+www/data/free-sa/themes/rbsec/c.png
+www/data/free-sa/themes/rbsec/d.png
+www/data/free-sa/themes/rbsec/g.png
+www/data/free-sa/themes/rbsec/s.png
+www/data/free-sa/themes/rbsec/gsa.css
+www/data/free-sa/themes/rbsec/lsa.css
+www/data/free-sa/themes/rbsec/rsa.css
+www/data/free-sa/themes/sarg/c.png
+www/data/free-sa/themes/sarg/d.png
+www/data/free-sa/themes/sarg/g.png
+www/data/free-sa/themes/sarg/s.png
+www/data/free-sa/themes/sarg/gsa.css
+www/data/free-sa/themes/sarg/lsa.css
+www/data/free-sa/themes/sarg/rsa.css
+www/data/free-sa/themes/silver/c.png
+www/data/free-sa/themes/silver/d.png
+www/data/free-sa/themes/silver/g.png
+www/data/free-sa/themes/silver/s.png
+www/data/free-sa/themes/silver/gsa.css
+www/data/free-sa/themes/silver/lsa.css
+www/data/free-sa/themes/silver/rsa.css
+www/data/free-sa/themes/qbiq/c.png
+www/data/free-sa/themes/qbiq/d.png
+www/data/free-sa/themes/qbiq/g.png
+www/data/free-sa/themes/qbiq/s.png
+www/data/free-sa/themes/qbiq/gsa.css
+www/data/free-sa/themes/qbiq/lsa.css
+www/data/free-sa/themes/qbiq/rsa.css
+www/data/free-sa/themes/blues/c.png
+www/data/free-sa/themes/blues/d.png
+www/data/free-sa/themes/blues/g.png
+www/data/free-sa/themes/blues/s.png
+www/data/free-sa/themes/blues/gsa.css
+www/data/free-sa/themes/blues/lsa.css
+www/data/free-sa/themes/blues/rsa.css
+www/data/free-sa/themes/sa.js
+@dirrm etc/free-sa
+@dirrm share/free-sa
+@dirrm share/doc/free-sa-1.4.0
+@dirrm www/data/free-sa/themes/rbsec
+@dirrm www/data/free-sa/themes/sarg
+@dirrm www/data/free-sa/themes/silver
+@dirrm www/data/free-sa/themes/qbiq
+@dirrm www/data/free-sa/themes/blues
+@dirrm www/data/free-sa/themes
+@dirrm www/data/free-sa/cgi-bin
+@dirrm www/data/free-sa
+@dirrmtry www/data

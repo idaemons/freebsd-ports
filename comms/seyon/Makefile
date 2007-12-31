@@ -1,16 +1,24 @@
 # New ports collection makefile for:	seyon
-# Version required:	2.14b or 2.14c
 # Date created:		3 October 1994
 # Whom:			Michael Elbel (me)
 #
-# $$
+# $FreeBSD$
 #
 
-DISTNAME=	Seyon-2.14b
-DISTFILES=	Seyon-2.14b-tar.Z
+PORTNAME=	seyon
+PORTVERSION=	2.14b
+PORTREVISION=	1
+CATEGORIES=	comms
+MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
+DISTNAME=	Seyon-${PORTVERSION}
+EXTRACT_SUFX=	-tar.Z
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A communications package for the X Window system
+
 WRKSRC=		${WRKDIR}/seyon
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 
+MAN1=		seyon.1
 
 .include <bsd.port.mk>

@@ -1,0 +1,8 @@
+bin/jless
+bin/jlesskey
+bin/jlessecho
+%%PORTDOCS%%share/doc/less/README.iso
+%%PORTDOCS%%share/doc/less/README.iso.jp
+%%PORTDOCS%%share/doc/less/README.regex
+%%PORTDOCS%%share/doc/less/README.regex.jp
+@dirrm share/doc/less

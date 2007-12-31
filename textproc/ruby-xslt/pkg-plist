@@ -1,0 +1,4 @@
+%%RUBY_SITEARCHLIBDIR%%/xml/xslt.so
+@unexec /bin/rmdir %D/%%RUBY_SITEARCHLIBDIR%%/xml 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

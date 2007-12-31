@@ -1,0 +1,26 @@
+bin/nmbquery
+bin/smbcp
+bin/smbdu
+bin/smblistshare
+%%PYTHON_SITELIBDIR%%/nmb.py
+%%PYTHON_SITELIBDIR%%/smb.py
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/nmb.html
+%%PORTDOCS%%%%DOCSDIR%%/nmb_nbhostentry.html
+%%PORTDOCS%%%%DOCSDIR%%/nmb_nbnodeentry.html
+%%PORTDOCS%%%%DOCSDIR%%/nmb_netbios.html
+%%PORTDOCS%%%%DOCSDIR%%/nmb_netbiossession.html
+%%PORTDOCS%%%%DOCSDIR%%/return.gif
+%%PORTDOCS%%%%DOCSDIR%%/smb.html
+%%PORTDOCS%%%%DOCSDIR%%/smb_shareddevice.html
+%%PORTDOCS%%%%DOCSDIR%%/smb_sharedfile.html
+%%PORTDOCS%%%%DOCSDIR%%/smb_smb.html
+%%PORTDOCS%%%%DOCSDIR%%/smb_smbmachine.html
+%%DATADIR%%/NT4_PlainPassword.reg
+%%DATADIR%%/Win2000_PlainPassword.reg
+%%DATADIR%%/Win95_PlainPassword.reg
+%%DATADIR%%/Win98_PlainPassword.reg
+%%DATADIR%%/WinME_PlainPassword.reg
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

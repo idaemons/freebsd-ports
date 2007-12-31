@@ -1,0 +1,38 @@
+#! /bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-INSTALL" ]; then
+        exit 0
+fi
+
+OPENACS_GROUP=%%OPENACS_GROUP%%
+OPENACS_USER=%%OPENACS_USER%%
+OPENACSBASE=%%OPENACSBASE%%
+
+CHMOD=%%CHMOD%%
+CHOWN=%%CHOWN%%
+PW=%%PW%%
+
+if ! ${PW} groupshow "${OPENACS_GROUP}" 2>/dev/null 1>&2; then
+	if ${PW} groupadd ${OPENACS_GROUP}; then
+		echo "Added group \"${OPENACS_GROUP}\"."
+	else
+		echo "Adding group \"${OPENACS_GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if ! ${PW} usershow "${OPENACS_USER}" 2>/dev/null 1>&2; then
+	if ${PW} useradd ${OPENACS_USER} -g ${OPENACS_GROUP} -h - \
+		-s "/bin/sh" -d "${OPENACSBASE}" \
+		-c "OpenACS instance pseudo-user"; \
+	then
+		echo "Added user \"${OPENACS_USER}\"."
+	else
+		echo "Adding user \"${OPENACS_USER}\" failed..."
+		exit 1
+	fi
+fi
+	echo "Seting permissions of files"
+	${CHMOD} -R 770 ${OPENACSBASE}
+	${CHOWN} -R ${OPENACS_USER}:${OPENACS_GROUP} ${OPENACSBASE}

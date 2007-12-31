@@ -1,0 +1,6 @@
+bin/quotes
+bin/quotesmailer
+etc/quotesrc.sample
+%%DOCSDIR%%/quotes.txt
+%%DOCSDIR%%/QuExample.pm
+@dirrm %%DOCSDIR%%

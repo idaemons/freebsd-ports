@@ -1,0 +1,2 @@
+MD5 (PEAR/apd-1.0.1.tgz) = 470ea75cde09f7504c83441911c86f29
+SIZE (PEAR/apd-1.0.1.tgz) = 36643

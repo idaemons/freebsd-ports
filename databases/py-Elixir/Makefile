@@ -1,0 +1,25 @@
+# New ports collection makefile for:	py-Elixir
+# Date created:		2007-02-13
+# Whom:			Nicola Vitale <nivit@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Elixir
+PORTVERSION=	0.3.0
+#PORTREVISION=	0
+CATEGORIES=	databases python
+MASTER_SITES=	http://cheeseshop.python.org/packages/source/E/Elixir/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	nivit@FreeBSD.org
+COMMENT=	Declarative Mapper for SQLAlchemy
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.3.10:${PORTSDIR}/databases/py-sqlalchemy
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	easy_install
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+
+.include <bsd.port.mk>

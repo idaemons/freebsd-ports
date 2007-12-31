@@ -1,0 +1,19 @@
+sbin/ncidd
+sbin/ncidsip
+bin/ncid
+bin/cidalias
+bin/cidcall
+bin/cidupdate
+bin/yac2ncid
+etc/rc.d/ncidd.sh
+etc/rc.d/ncid.sh
+etc/rc.d/ncidsip.sh
+share/ncid/ncidrotate
+share/ncid/ncid-mythtv
+share/ncid/ncid-page
+share/ncid/ncid-samba
+share/ncid/ncid-speak
+share/ncid/ncid-tivo
+share/ncid/ncid-yac
+share/ncid/README
+@dirrm share/ncid

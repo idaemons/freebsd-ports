@@ -1,0 +1,43 @@
+bin/alephone
+%%DATADIR%%/Fonts
+%%DATADIR%%/MML/Interface_Rects.mml
+%%DATADIR%%/MML/Transparent_Liquids.mml
+%%DATADIR%%/MML/Transparent_Sprites.mml
+%%DATADIR%%/Themes/Default/button_c.bmp
+%%DATADIR%%/Themes/Default/button_l.bmp
+%%DATADIR%%/Themes/Default/button_r.bmp
+%%DATADIR%%/Themes/Default/frame_b.bmp
+%%DATADIR%%/Themes/Default/frame_bl.bmp
+%%DATADIR%%/Themes/Default/frame_br.bmp
+%%DATADIR%%/Themes/Default/frame_l.bmp
+%%DATADIR%%/Themes/Default/frame_r.bmp
+%%DATADIR%%/Themes/Default/frame_t.bmp
+%%DATADIR%%/Themes/Default/frame_tl.bmp
+%%DATADIR%%/Themes/Default/frame_tr.bmp
+%%DATADIR%%/Themes/Default/list_b.bmp
+%%DATADIR%%/Themes/Default/list_bl.bmp
+%%DATADIR%%/Themes/Default/list_br.bmp
+%%DATADIR%%/Themes/Default/list_l.bmp
+%%DATADIR%%/Themes/Default/list_r.bmp
+%%DATADIR%%/Themes/Default/list_t.bmp
+%%DATADIR%%/Themes/Default/list_tl.bmp
+%%DATADIR%%/Themes/Default/list_tr.bmp
+%%DATADIR%%/Themes/Default/resources
+%%DATADIR%%/Themes/Default/slider.bmp
+%%DATADIR%%/Themes/Default/slider_c.bmp
+%%DATADIR%%/Themes/Default/slider_l.bmp
+%%DATADIR%%/Themes/Default/slider_r.bmp
+%%DATADIR%%/Themes/Default/theme.mml
+%%DATADIR%%/Themes/Default/thumb_b.bmp
+%%DATADIR%%/Themes/Default/thumb_bc.bmp
+%%DATADIR%%/Themes/Default/thumb_c.bmp
+%%DATADIR%%/Themes/Default/thumb_t.bmp
+%%DATADIR%%/Themes/Default/thumb_tc.bmp
+%%PORTDOCS%%%%DOCSDIR%%/Cheat_Codes
+%%PORTDOCS%%%%DOCSDIR%%/MML.html
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/Themes/Default
+@dirrm %%DATADIR%%/Themes
+@dirrm %%DATADIR%%/MML
+@dirrm %%DATADIR%%

@@ -1,0 +1,109 @@
+# New ports collection makefile for:	fusefs-kmod
+# Date created:				08 October 2005
+# Whom:					Anish Mistry <amistry@am-productions.biz>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	fusefs
+DISTVERSION=	0.3.9-pre1
+PORTREVISION=	2
+CATEGORIES=	sysutils kld
+MASTER_SITES=	http://fuse4bsd.creo.hu/downloads/ \
+		http://am-productions.biz/docs/
+PKGNAMESUFFIX=	-kmod
+DISTNAME=	fuse4bsd-${DISTVERSION}
+
+MAINTAINER=	amistry@am-productions.biz
+COMMENT=	Kernel module for fuse
+
+USE_BZIP2=	yes
+BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
+
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	deplate:${PORTSDIR}/textproc/ruby-deplate
+.endif
+
+MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
+
+SRC_BASE?=	/usr/src
+KMODDIR=	${PREFIX}/modules
+MAKE_ARGS=	KMODDIR=${KMODDIR}
+MODULE_PATH=	`/sbin/sysctl -n kern.module_path`;${KMODDIR}
+USE_RC_SUBR=	fusefs
+SETUP=		setup.sh
+
+MAN8=		mount_fusefs.8
+TXT_DOCS=	doc.text
+HTML_DOCS=	Faq.html \
+		Implementation.html \
+		Quickstart.html \
+		article.css \
+		deplate-mini.png \
+		deplate.css \
+		doc.html \
+		heading-navbar.css \
+		home-grey.png \
+		mailto.png \
+		next-grey.png \
+		prev-grey.png \
+		remote.png \
+		serif.css \
+		tabbar-right.css
+
+OPTIONS=	AUTOSETUP "Automatic global config file setup" off
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		requires FreeBSD 6 or above. Please consider porting it to 5.x or even 4.x
+.endif
+
+.if !exists(${SRC_BASE}/sys/Makefile)
+IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not in /usr/src
+.endif
+.if !exists(${SRC_BASE}/sbin/mount)
+IGNORE=		requires the userland sources to be installed. Set SRC_BASE if it is not in /usr/src
+.endif
+
+.if !defined(WITH_AUTOSETUP)
+SUB_FILES=	pkg-message
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/deplate.rb/deplate/g' \
+		${WRKSRC}/doc/Makefile
+
+post-configure:
+	@${CP} ${LOCALBASE}/include/fuse/fuse_kernel.h ${WRKSRC}/fuse_module
+
+post-build:
+.if !defined(NOPORTDOCS)
+	@cd ${WRKSRC}/doc && make plaintext html_chunked
+.endif
+
+pre-install:
+	@${MKDIR} ${KMODDIR}
+
+post-install:
+	@${LN} -fs ${PREFIX}/sbin/mount_fusefs /usr/sbin
+.if defined(WITH_AUTOSETUP) && !defined(PACKAGE_BUILDING)
+	@${SED} -e 's|@@PREFIX@@|${PREFIX}|g' \
+		${FILESDIR}/${SETUP} > ${WRKDIR}/${SETUP}
+	@${ECHO} "Modifying global startup config files and loading module...";
+	${SH} ${WRKDIR}/${SETUP}
+.else
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+.endif
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/kmod/html
+.for i in ${TXT_DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/plaintext_out/$i ${DOCSDIR}/kmod
+.endfor
+.for i in ${HTML_DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/html_chunked_out/$i ${DOCSDIR}/kmod/html
+.endfor
+.endif
+
+.include <bsd.port.post.mk>

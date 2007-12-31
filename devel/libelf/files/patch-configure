@@ -1,0 +1,54 @@
+--- configure.orig	Tue Sep 26 10:18:31 2006
++++ configure	Tue Sep 26 10:19:11 2006
+@@ -1144,7 +1144,7 @@
+ 
+ fi
+ 
+-for ac_hdr in unistd.h stdint.h fcntl.h
++for ac_hdr in unistd.h stdint.h fcntl.h elf.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+@@ -3256,7 +3256,7 @@
+ fi
+ 
+     case "$host" in
+-      *-linux*|*-gnu*)
++      *-linux*|*-gnu*|*-freebsd*)
+ 	if test "$GCC" = yes; then
+ 	  
+   
+@@ -3311,13 +3311,12 @@
+ 	    PICFLAGS='-fPIC -DPIC'
+ 	    if test "$mr_enable_gnu_names" = yes
+ 	    then SHLIB_SFX='-$(VERSION).so'
+-	    else SHLIB_SFX='.so.$(VERSION)'
++	    else SHLIB_SFX='.so.$(MAJOR)'
+ 	    fi
+ 	    SHLINK_SFX='.so'
+ 	    SONAME_SFX='.so.$(MAJOR)'
+-	    LINK_SHLIB='$(CC) -shared -Wl,-soname,$(SONAME)'
++	    LINK_SHLIB='$(CC) -shared -Wl,-soname,$(SONAME) $(LDFLAGS)'
+ 	    INSTALL_SHLIB='$(INSTALL_PROGRAM)'
+-	    DEPSHLIBS='-lc'
+ 	  else
+ 	    echo "configure: warning: shared libraries not supported for $host" 1>&2
+ 	    mr_enable_shared=no
+@@ -3507,7 +3506,7 @@
+ ac_given_srcdir=$srcdir
+ ac_given_INSTALL="$INSTALL"
+ 
+-trap 'rm -fr `echo "Makefile lib/Makefile po/Makefile w32/Makefile libelf.pc config.h lib/sys_elf.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
++trap 'rm -fr `echo "Makefile lib/Makefile po/Makefile libelf.pc config.h lib/sys_elf.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
+ EOF
+ cat >> $CONFIG_STATUS <<EOF
+ 
+@@ -3622,7 +3621,7 @@
+ 
+ cat >> $CONFIG_STATUS <<EOF
+ 
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile lib/Makefile po/Makefile w32/Makefile libelf.pc"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile lib/Makefile po/Makefile libelf.pc"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then

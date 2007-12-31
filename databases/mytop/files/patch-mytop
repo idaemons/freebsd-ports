@@ -1,0 +1,77 @@
+--- mytop.orig	Thu Apr 12 07:42:22 2007
++++ mytop	Thu Apr 12 07:42:24 2007
+@@ -369,6 +369,10 @@
+         require Data::Dumper;
+         print Data::Dumper::Dumper([\%config]);
+         ReadKey(0);
++
++		if (-M $0) { # restart application, if it was modified - for debugging
++			exec('perl', $0, @ARGV);
++		}
+     }
+ 
+     ## m - mode swtich to qps
+@@ -377,7 +381,7 @@
+     {
+         $config{mode} = 'qps';
+         Clear() unless $config{batchmode};
+-        print "Queries Per Second [hit q to exit this mode]\n";
++        print "Queries Per Second [hit q to exit, hit t for top mode]\n";
+         next;
+     }
+ 
+@@ -889,8 +893,42 @@
+                make_short(($STATUS{Bytes_received} - $OLD_STATUS{Bytes_received}) / $t_delta ),
+                make_short(($STATUS{Bytes_sent} - $OLD_STATUS{Bytes_sent}) / $t_delta ))
+           if ($t_delta);
+-        print "\n\n";
++        print "\n";
++
++        my @master_status = Hashes("show master status");
++        if (@master_status)
++        {
++			foreach my $m (@master_status) {
++				print " Master: $m->{File}/$m->{Position} ",
++					"do: ", GREEN(), "$m->{Binlog_Do_DB} ", RESET(),
++					 "ign: ", MAGENTA(), $m->{Binlog_Ignore_DB}, RESET(), "\n";
++				#$line_prefix = ' ' x length($line_prefix);
++				$lines_left--;
++			}
++		}
++
++        my @slave_status = Hashes("show slave status");
++        if (@slave_status)
++        {
++			my $line_prefix = "  Slave: ";
++			foreach my $s (@slave_status) {
++				print $line_prefix, BOLD(),
++					($s->{Slave_IO_Running} eq 'Yes'
++						&& $s->{Slave_SQL_Running} eq 'Yes'
++						&& $s->{Last_Errno} == 0
++						? ($s->{Seconds_Behind_Master} > 60 ? BOLD('WARN') : GREEN('OK  ')) : RED('ERR ')
++					), RESET(),
++					" Delay: ",
++					defined($s->{Seconds_Behind_Master}) ? sprintf('%03d:%02d', int($s->{Seconds_Behind_Master} / 60), $s->{Seconds_Behind_Master} % 60) : '---:--',
++					" $s->{Master_User}\@$s->{Master_Host}: ",
++					"$s->{Master_Log_File}/$s->{Read_Master_Log_Pos} ",
++					"\n";
++				#$line_prefix = ' ' x length($line_prefix);
++				$lines_left--;
++			}
++		}
+ 
++        print "\n";
+         $lines_left--;
+     }
+ 
+@@ -1099,8 +1137,8 @@
+     my @data = Hashes("SHOW INNODB STATUS");
+ 
+     open P, "|$config{pager}" or die "$!";
+-    print keys %{$data[0]};
+-    print $data[0]->{Status},"\n";
++    print P keys %{$data[0]};
++    print P $data[0]->{Status},"\n";
+     close P;
+ }
+ 

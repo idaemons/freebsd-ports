@@ -1,0 +1,3 @@
+bin/c4
+%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

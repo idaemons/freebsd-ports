@@ -1,0 +1,29 @@
+# New ports collection makefile for:	aacplusenc
+# Date created:				28 July 2007
+# Whom:					Pav Lucistnik <pav@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	aacplusenc
+PORTVERSION=	0.8
+CATEGORIES=	audio
+MASTER_SITES=	http://teknoraver.campuslife.it/software/mp4tools/
+
+MAINTAINER=	pav@FreeBSD.org
+COMMENT=	aacPlus v2 command-line encoder
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+
+RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
+
+# produces broken encodes in 64-bit mode
+ONLY_FOR_ARCHS=	i386
+
+PLIST_FILES=	bin/aacplusenc
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O3 -ftree-vectorize|${CFLAGS}|' ${WRKSRC}/Makefile
+
+.include <bsd.port.mk>

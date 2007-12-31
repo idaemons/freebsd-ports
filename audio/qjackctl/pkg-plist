@@ -1,0 +1,4 @@
+bin/qjackctl
+share/pixmaps/qjackctl.png
+share/applications/qjackctl.desktop
+@dirrmtry share/applications

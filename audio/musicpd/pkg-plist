@@ -1,0 +1,7 @@
+bin/mpd
+%%PORTDOCS%%%%DOCSDIR%%/COMMANDS
+%%PORTDOCS%%%%DOCSDIR%%/mpdconf.example
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@unexec %D/%%DOCSDIR%% 2>/dev/null || true

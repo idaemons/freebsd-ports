@@ -1,0 +1,5 @@
+lib/qt4/plugins/codecs/libqtwcodecs.so
+%%DEBUG%%lib/qt4/plugins/codecs/libqtwcodecs.so.debug
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm lib/qt4/plugins/codecs

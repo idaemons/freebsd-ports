@@ -1,0 +1,14 @@
+bin/ots_gui
+bin/taxsolve_US_1040_2006
+bin/taxsolve_US_1040_Sched_C_2006
+share/ots/otslogo.ppm
+share/ots/examples_and_templates/US_1040/README_US_1040.txt
+share/ots/examples_and_templates/US_1040/US_1040_example.dat
+share/ots/examples_and_templates/US_1040/US_1040_template.dat
+share/ots/examples_and_templates/US_1040_Sched_C/README_US_1040_Sched_C.txt
+share/ots/examples_and_templates/US_1040_Sched_C/US_1040Sched_C_2005_example.dat
+share/ots/examples_and_templates/US_1040_Sched_C/US_1040Sched_C_2005_template.dat
+@dirrm share/ots/examples_and_templates/US_1040_Sched_C
+@dirrm share/ots/examples_and_templates/US_1040
+@dirrm share/ots/examples_and_templates
+@dirrm share/ots
