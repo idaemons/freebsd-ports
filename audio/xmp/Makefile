@@ -1,0 +1,47 @@
+# New ports collection makefile for: 	xmp
+# Date created:		18 September 1999
+# Whom:			Anders Nordby <anders@fix.no>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xmp
+PORTVERSION=	2.0.4
+PORTREVISION=	4
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	anders@FreeBSD.org
+COMMENT=	A player for many different Amiga and PC module formats
+
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_GNOME=	esound
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	autoconf:213
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-alsa --disable-oss --enable-esd
+
+MAN1=		xmp.1
+MLINKS=		xmp.1 xxmp.1
+
+CFLAGS+=	-fPIC
+
+.if !defined(WITHOUT_XMMS)
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+.else
+CONFIGURE_ARGS+=--disable-xmms
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/docs/xmp.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>

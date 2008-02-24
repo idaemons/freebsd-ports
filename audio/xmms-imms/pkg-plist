@@ -1,0 +1,4 @@
+bin/analyzer
+bin/immsremote
+bin/immstool
+lib/xmms/General/libimms.so

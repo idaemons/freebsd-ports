@@ -1,0 +1,13 @@
+bin/e17setroot
+bin/entangle
+bin/exige
+%%DATADIR%%/data/entangle/default.edj
+%%DATADIR%%/data/exige/default.edj
+share/enlightenment/config-apps/entangle.eap
+@dirrmtry share/enlightenment
+@dirrmtry share/enlightenment/config-apps
+@dirrm %%DATADIR%%/data/exige
+@dirrm %%DATADIR%%/data/entangle
+@dirrm %%DATADIR%%/data/e17genmenu
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%

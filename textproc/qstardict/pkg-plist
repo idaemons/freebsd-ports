@@ -1,0 +1,4 @@
+bin/qstardict
+share/applications/qstardict.desktop
+share/pixmaps/qstardict.png
+@dirrmtry share/applications

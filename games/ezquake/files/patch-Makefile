@@ -1,0 +1,97 @@
+--- Makefile.orig	Sat Nov 25 15:28:35 2006
++++ Makefile	Tue Dec 19 20:41:59 2006
+@@ -6,7 +6,7 @@
+ 
+ # compilation tool and detection of targets/achitecture
+ _E = @
+-CC = gcc
++CC ?= gcc
+ CC_BASEVERSION = $(shell $(CC) -dumpversion | sed -e 's/\..*//g')
+ 
+ # TYPE = release debug
+@@ -16,25 +16,18 @@
+ 
+ # ARCH = x86 ppc
+ # OS = linux darwin
+-ARCH = $(shell uname -m | sed -e 's/i.86/x86/g' -e 's/Power Macintosh/ppc/g')
++ARCH ?= $(shell uname -m | sed -e 's/i.86/x86/g' -e 's/Power Macintosh/ppc/g')
+ OS = $(shell uname -s | tr A-Z a-z)
+ 
+-# add special architecture based flags
+-ifeq ($(ARCH),x86_64)
+-	ARCH_CFLAGS = -march=k8 -D__LITTLE_ENDIAN__Q__
+-endif
+-ifeq ($(ARCH),x86)
+-	ARCH_CFLAGS = -march=i686 -D__LITTLE_ENDIAN__Q__ -Did386
+-endif
+-ifeq ($(ARCH),ppc)
+-	ARCH_CFLAGS = -arch ppc -faltivec -maltivec -mcpu=7450 -mtune=7450 -mpowerpc -mpowerpc-gfxopt -D__BIG_ENDIAN__Q__
+-endif
+-
+ # TODO: LIB_PREFIX must be $(OS)-$(ARCH)
+ ifeq ($(OS),linux)
+ 	DEFAULT_TARGET = glx
+ 	OS_GL_CFLAGS = -DWITH_DGA -DWITH_EVDEV -DWITH_VMODE
+ endif
++ifeq ($(OS),freebsd)
++	DEFAULT_TARGET = glx
++	OS_GL_CFLAGS = -DWITH_DGA -DWITH_VMODE -I$(X11BASE)/include
++endif
+ ifeq ($(OS),darwin)
+ 	DEFAULT_TARGET = mac
+ 	OS_GL_CFLAGS = -I/opt/local/include/ -I/Developer/Headers/FlatCarbon -I/sw/include -FOpenGL -FAGL
+@@ -50,19 +43,19 @@
+ # Directories for object files #
+ ################################
+ 
+-GLX_DIR	= $(TYPE)-$(ARCH)/glx
+-X11_DIR	= $(TYPE)-$(ARCH)/x11
+-SVGA_DIR = $(TYPE)-$(ARCH)/svga
+-MAC_DIR	= $(TYPE)-$(ARCH)/mac
++GLX_DIR	= $(TYPE)/glx
++X11_DIR	= $(TYPE)/x11
++SVGA_DIR = $(TYPE)/svga
++MAC_DIR	= $(TYPE)/mac
+ 
+ ################
+ # Binary files #
+ ################
+ 
+-GLX_TARGET = $(TYPE)-$(ARCH)/ezquake-gl.glx
+-X11_TARGET = $(TYPE)-$(ARCH)/ezquake.x11
+-SVGA_TARGET = $(TYPE)-$(ARCH)/ezquake.svga
+-MAC_TARGET = $(TYPE)-$(ARCH)/ezquake-gl.mac
++GLX_TARGET = $(TYPE)/ezquake-gl.glx
++X11_TARGET = $(TYPE)/ezquake.x11
++SVGA_TARGET = $(TYPE)/ezquake.svga
++MAC_TARGET = $(TYPE)/ezquake-gl.mac
+ 
+ ################
+ 
+@@ -78,9 +71,12 @@
+ 
+ # compiler flags
+ PRJ_CFLAGS = -DWITH_ZLIB -DWITH_PNG -DEMBED_TCL -DJSS_CAM
+-BASE_CFLAGS = -Wall -funsigned-char $(ARCH_CFLAGS) $(PRJ_CFLAGS) -I ./libs
++XMMS_CFLAGS= -DWITH_XMMS `xmms-config --cflags` `glib-config --cflags`
++BASE_CFLAGS := $(CFLAGS) -I$(LOCALBASE)/include `pcre-config --cflags` -I$(TCL_INCLUDEDIR) -DDATADIR='"$(Q1DIR)"' -Wall -funsigned-char $(PRJ_CFLAGS) $(XMMS_CFLAGS)
+ 
++ifeq ($(USE_OPTIMIZED_CFLAGS),YES)
+ RELEASE_CFLAGS = -pipe -O2 -fno-strict-aliasing -ffast-math -fomit-frame-pointer -fexpensive-optimizations -funroll-loops
++endif
+ DEBUG_CFLAGS = -ggdb
+ 
+ # opengl builds
+@@ -92,9 +88,9 @@
+ CFLAGS = $(BASE_CFLAGS) $(DEBUG_CFLAGS) -D_DEBUG
+ endif
+ 
+-LDFLAGS = -lm -lpthread
+-COMMON_LIBS = libs/$(LIB_PREFIX)/libpng.a libs/$(LIB_PREFIX)/libz.a libs/$(LIB_PREFIX)/libpcre.a libs/$(LIB_PREFIX)/libexpat.a libs/$(LIB_PREFIX)/libtcl8.4.a
+-GL_LIBS = libs/$(LIB_PREFIX)/libjpeg.a
++LDFLAGS = -L$(LOCALBASE)/lib -L$(X11BASE)/lib
++COMMON_LIBS = -lm -lpng -lz `pcre-config --libs` `glib-config --libs` -lexpat -ltcl$(TCL_SUFX) $(PTHREAD_LIBS)
++GL_LIBS = -ljpeg
+ 
+ include Makefile.list
+ 

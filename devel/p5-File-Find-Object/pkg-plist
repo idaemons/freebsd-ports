@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/File/Find/Object.pm
+%%SITE_PERL%%/File/Find/Object/Base.pm
+@dirrmtry %%SITE_PERL%%/File/Find/Object
+@dirrmtry %%SITE_PERL%%/File/Find
+@dirrmtry %%SITE_PERL%%/File

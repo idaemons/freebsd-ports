@@ -1,0 +1,81 @@
+@unexec %%EASY_INSTALL_CMD%% -q -m -S %D/%%PYTHON_SITELIBDIR%% %%PYLXML_EGG_VER%%
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/native_libs.txt
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/ElementInclude.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/ElementInclude.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/ElementInclude.pyo
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/_elementpath.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/_elementpath.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/_elementpath.pyo
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/etree.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/etree.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/etree.pyo
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/etree.so
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/objectify.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/objectify.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/objectify.pyo
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/objectify.so
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/sax.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/sax.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/sax.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%
+@exec %%EASY_INSTALL_CMD%% -q -N -S %D/%%PYTHON_SITELIBDIR%% %%PYLXML_EGG_VER%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSES.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/api.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/build.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/capi.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/compatibility.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/element_classes.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/extensions.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/build.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/capi.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-1.2.1.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/compatibility.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/element_classes.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/objectify.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/performance.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/pubkey.asc
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/resolvers.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/sax.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/style.css
+%%PORTDOCS%%%%DOCSDIR%%/doc/intro.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/licenses/BSD.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/licenses/GPL.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/licenses/ZopePublicLicense.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/licenses/elementtree.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/lxml.mgp
+%%PORTDOCS%%%%DOCSDIR%%/doc/main.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/memorymanagement.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/mkhtml.py
+%%PORTDOCS%%%%DOCSDIR%%/doc/objectify.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/performance.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/pubkey.asc
+%%PORTDOCS%%%%DOCSDIR%%/doc/resolvers.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/rest2html.py
+%%PORTDOCS%%%%DOCSDIR%%/doc/sax.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/test.xml
+%%PORTDOCS%%%%DOCSDIR%%/doc/valgrind.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/licenses
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

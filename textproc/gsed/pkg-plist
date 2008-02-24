@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/gsed
+%%EXAMPLESDIR%%/binary.sed
+%%EXAMPLESDIR%%/binary2.sed
+%%EXAMPLESDIR%%/binary3.sed
+%%EXAMPLESDIR%%/dc.sed
+@dirrm %%EXAMPLESDIR%%

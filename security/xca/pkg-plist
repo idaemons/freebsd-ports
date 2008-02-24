@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+bin/xca
+share/xca/CA.xca
+share/xca/HTTPS_client.xca
+share/xca/HTTPS_server.xca
+share/xca/aia.txt
+share/xca/dn.txt
+share/xca/eku.txt
+share/xca/oids.txt
+share/xca/xca_de.qm
+share/xca/xca_es.qm
+share/xca/xca.html
+share/applications/xca.desktop
+@dirrm share/xca
+@dirrmtry share/applications

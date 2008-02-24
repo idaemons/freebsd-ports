@@ -1,0 +1,16 @@
+--- Makefile.in.orig	Mon Jul  7 17:23:47 2003
++++ Makefile.in	Fri Feb 11 03:23:16 2005
+@@ -9,11 +9,11 @@
+ 
+ # where to install the style file
+ BASETEXDIR = $(prefix)/share/texmf
+-TEXDIR = $(BASETEXDIR)/tex/latex/misc 
++TEXDIR = $(BASETEXDIR)/tex/latex/ocamlweb
+ 
+ # command to update TeX' kpathsea database
+ MKTEXLSR = @MKTEXLSR@
+-UPDATETEX = $(MKTEXLSR) /usr/share/texmf /var/spool/texmf $(BASETEXDIR) > /dev/null
++UPDATETEX = $(MKTEXLSR) > /dev/null
+ 
+ # Version
+ MAJORVN=1

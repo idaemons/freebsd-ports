@@ -1,0 +1,32 @@
+# New ports collection makefile for:	thinglaunch
+# Date created:				22 Jul 2005
+# Whom:					Emanuel Haupt <ehaupt@critical.ch>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	thinglaunch
+PORTVERSION=	1.03
+PORTREVISION=	1
+CATEGORIES=	x11
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
+
+MAINTAINER=	ehaupt@FreeBSD.org
+COMMENT=	A very fast launcher program for X
+
+USE_X_PREFIX=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include -lX11
+LDFLAGS=	-L${LOCALBASE}/lib
+
+PLIST_FILES=	bin/thinglaunch
+
+do-build:
+	${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c \
+		-o ${WRKSRC}/${PORTNAME}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
+.include <bsd.port.mk>

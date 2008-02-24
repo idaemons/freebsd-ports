@@ -1,0 +1,306 @@
+bin/pgadmin3
+bin/pgagent
+%%DATADIR%%/branding/branding.ini
+%%DATADIR%%/docs/Docs.vcproj
+%%DATADIR%%/docs/builddocs.bat
+%%DATADIR%%/docs/de_DE/hints/autovacuum.html
+%%DATADIR%%/docs/de_DE/hints/conn-hba.html
+%%DATADIR%%/docs/de_DE/hints/conn-ident.html
+%%DATADIR%%/docs/de_DE/hints/conn-listen.html
+%%DATADIR%%/docs/de_DE/hints/encoding-ascii.html
+%%DATADIR%%/docs/de_DE/hints/encoding-unicode.html
+%%DATADIR%%/docs/de_DE/hints/fki.html
+%%DATADIR%%/docs/de_DE/hints/instrumentation.html
+%%DATADIR%%/docs/de_DE/hints/multiple.html
+%%DATADIR%%/docs/de_DE/hints/pk.html
+%%DATADIR%%/docs/de_DE/hints/vacuum.html
+%%DATADIR%%/docs/de_DE/hints/view-without-pk.html
+%%DATADIR%%/docs/de_DE/tips.txt
+%%DATADIR%%/docs/en_US/appendices.html
+%%DATADIR%%/docs/en_US/backup.html
+%%DATADIR%%/docs/en_US/bugreport.html
+%%DATADIR%%/docs/en_US/commandline.html
+%%DATADIR%%/docs/en_US/connect-error.html
+%%DATADIR%%/docs/en_US/connect.html
+%%DATADIR%%/docs/en_US/control-server.html
+%%DATADIR%%/docs/en_US/debugger.html
+%%DATADIR%%/docs/en_US/default-xsl.html
+%%DATADIR%%/docs/en_US/editgrid.html
+%%DATADIR%%/docs/en_US/export.html
+%%DATADIR%%/docs/en_US/extend.html
+%%DATADIR%%/docs/en_US/grantwiz.html
+%%DATADIR%%/docs/en_US/gridopts.html
+%%DATADIR%%/docs/en_US/guruhints.html
+%%DATADIR%%/docs/en_US/hints/autovacuum.html
+%%DATADIR%%/docs/en_US/hints/conn-hba.html
+%%DATADIR%%/docs/en_US/hints/conn-ident.html
+%%DATADIR%%/docs/en_US/hints/conn-listen.html
+%%DATADIR%%/docs/en_US/hints/encoding-ascii.html
+%%DATADIR%%/docs/en_US/hints/encoding-unicode.html
+%%DATADIR%%/docs/en_US/hints/fki.html
+%%DATADIR%%/docs/en_US/hints/instrumentation.html
+%%DATADIR%%/docs/en_US/hints/multiple.html
+%%DATADIR%%/docs/en_US/hints/object-editing.html
+%%DATADIR%%/docs/en_US/hints/pk.html
+%%DATADIR%%/docs/en_US/hints/saving-passwords.html
+%%DATADIR%%/docs/en_US/hints/vacuum.html
+%%DATADIR%%/docs/en_US/hints/view-without-pk.html
+%%DATADIR%%/docs/en_US/images/backup.png
+%%DATADIR%%/docs/en_US/images/connect.png
+%%DATADIR%%/docs/en_US/images/debugger.png
+%%DATADIR%%/docs/en_US/images/editgrid.png
+%%DATADIR%%/docs/en_US/images/export.png
+%%DATADIR%%/docs/en_US/images/grantwiz.png
+%%DATADIR%%/docs/en_US/images/gridopt-filter.png
+%%DATADIR%%/docs/en_US/images/gridopt-sort.png
+%%DATADIR%%/docs/en_US/images/guru-connect.png
+%%DATADIR%%/docs/en_US/images/locks.png
+%%DATADIR%%/docs/en_US/images/logfile.png
+%%DATADIR%%/docs/en_US/images/main.png
+%%DATADIR%%/docs/en_US/images/maintenance.png
+%%DATADIR%%/docs/en_US/images/manage-macros.png
+%%DATADIR%%/docs/en_US/images/no-hba.png
+%%DATADIR%%/docs/en_US/images/not-running.png
+%%DATADIR%%/docs/en_US/images/options-display.png
+%%DATADIR%%/docs/en_US/images/options-general.png
+%%DATADIR%%/docs/en_US/images/options-logging.png
+%%DATADIR%%/docs/en_US/images/options-pref.png
+%%DATADIR%%/docs/en_US/images/options-query.png
+%%DATADIR%%/docs/en_US/images/password.png
+%%DATADIR%%/docs/en_US/images/pgagent-jobdetails.png
+%%DATADIR%%/docs/en_US/images/pgagent-jobproperties.png
+%%DATADIR%%/docs/en_US/images/pgagent-jobstats.png
+%%DATADIR%%/docs/en_US/images/pgagent-scheduledetails1.png
+%%DATADIR%%/docs/en_US/images/pgagent-scheduledetails2.png
+%%DATADIR%%/docs/en_US/images/pgagent-scheduledetails3.png
+%%DATADIR%%/docs/en_US/images/pgagent-scheduleproperties.png
+%%DATADIR%%/docs/en_US/images/pgagent-stepdetails.png
+%%DATADIR%%/docs/en_US/images/pgagent-stepstats.png
+%%DATADIR%%/docs/en_US/images/query-analyze.png
+%%DATADIR%%/docs/en_US/images/query-connect.png
+%%DATADIR%%/docs/en_US/images/query.png
+%%DATADIR%%/docs/en_US/images/reporttool-html.png
+%%DATADIR%%/docs/en_US/images/reporttool-xml.png
+%%DATADIR%%/docs/en_US/images/restore-content.png
+%%DATADIR%%/docs/en_US/images/restore.png
+%%DATADIR%%/docs/en_US/images/server.png
+%%DATADIR%%/docs/en_US/images/slony-create.png
+%%DATADIR%%/docs/en_US/images/slony-execute.png
+%%DATADIR%%/docs/en_US/images/slony-join.png
+%%DATADIR%%/docs/en_US/images/slony-listen.png
+%%DATADIR%%/docs/en_US/images/slony-overview.png
+%%DATADIR%%/docs/en_US/images/slony-path.png
+%%DATADIR%%/docs/en_US/images/slony-sequence.png
+%%DATADIR%%/docs/en_US/images/slony-set.png
+%%DATADIR%%/docs/en_US/images/slony-subscription.png
+%%DATADIR%%/docs/en_US/images/slony-table.png
+%%DATADIR%%/docs/en_US/images/slony-upgrade.png
+%%DATADIR%%/docs/en_US/images/status.png
+%%DATADIR%%/docs/en_US/images/transaction.png
+%%DATADIR%%/docs/en_US/index.html
+%%DATADIR%%/docs/en_US/kerberos.html
+%%DATADIR%%/docs/en_US/licence.html
+%%DATADIR%%/docs/en_US/macros.html
+%%DATADIR%%/docs/en_US/main.html
+%%DATADIR%%/docs/en_US/maintenance.html
+%%DATADIR%%/docs/en_US/openssl.html
+%%DATADIR%%/docs/en_US/options-tab1.html
+%%DATADIR%%/docs/en_US/options-tab2.html
+%%DATADIR%%/docs/en_US/options-tab3.html
+%%DATADIR%%/docs/en_US/options-tab4.html
+%%DATADIR%%/docs/en_US/options-tab5.html
+%%DATADIR%%/docs/en_US/options.html
+%%DATADIR%%/docs/en_US/password.html
+%%DATADIR%%/docs/en_US/pgadmin3.css
+%%DATADIR%%/docs/en_US/pgadmin3.hhc
+%%DATADIR%%/docs/en_US/pgadmin3.hhp
+%%DATADIR%%/docs/en_US/pgadmin3.hhp.cached
+%%DATADIR%%/docs/en_US/pgagent-install.html
+%%DATADIR%%/docs/en_US/pgagent-jobs.html
+%%DATADIR%%/docs/en_US/pgagent-schedules.html
+%%DATADIR%%/docs/en_US/pgagent-steps.html
+%%DATADIR%%/docs/en_US/pgagent.html
+%%DATADIR%%/docs/en_US/query.html
+%%DATADIR%%/docs/en_US/reports.html
+%%DATADIR%%/docs/en_US/restore.html
+%%DATADIR%%/docs/en_US/sample-xml.html
+%%DATADIR%%/docs/en_US/slony-example.html
+%%DATADIR%%/docs/en_US/slony-execute.html
+%%DATADIR%%/docs/en_US/slony-functions.html
+%%DATADIR%%/docs/en_US/slony-install.html
+%%DATADIR%%/docs/en_US/slony-overview.html
+%%DATADIR%%/docs/en_US/slony-path.html
+%%DATADIR%%/docs/en_US/slony-set.html
+%%DATADIR%%/docs/en_US/slony.html
+%%DATADIR%%/docs/en_US/status.html
+%%DATADIR%%/docs/en_US/team.html
+%%DATADIR%%/docs/en_US/tips.txt
+%%DATADIR%%/docs/en_US/translation_team.html
+%%DATADIR%%/docs/en_US/using.html
+%%DATADIR%%/docs/es_ES/hints/autovacuum.html
+%%DATADIR%%/docs/es_ES/hints/conn-hba.html
+%%DATADIR%%/docs/es_ES/hints/conn-ident.html
+%%DATADIR%%/docs/es_ES/hints/conn-listen.html
+%%DATADIR%%/docs/es_ES/hints/encoding-ascii.html
+%%DATADIR%%/docs/es_ES/hints/encoding-unicode.html
+%%DATADIR%%/docs/es_ES/hints/fki.html
+%%DATADIR%%/docs/es_ES/hints/instrumentation.html
+%%DATADIR%%/docs/es_ES/hints/multiple.html
+%%DATADIR%%/docs/es_ES/hints/object-editing.html
+%%DATADIR%%/docs/es_ES/hints/pk.html
+%%DATADIR%%/docs/es_ES/hints/vacuum.html
+%%DATADIR%%/docs/es_ES/hints/view-without-pk.html
+%%DATADIR%%/docs/es_ES/tips.txt
+%%DATADIR%%/docs/fi_FI/hints/autovacuum.html
+%%DATADIR%%/docs/fi_FI/hints/conn-hba.html
+%%DATADIR%%/docs/fi_FI/hints/conn-ident.html
+%%DATADIR%%/docs/fi_FI/hints/conn-listen.html
+%%DATADIR%%/docs/fi_FI/hints/encoding-ascii.html
+%%DATADIR%%/docs/fi_FI/hints/encoding-unicode.html
+%%DATADIR%%/docs/fi_FI/hints/fki.html
+%%DATADIR%%/docs/fi_FI/hints/instrumentation.html
+%%DATADIR%%/docs/fi_FI/hints/multiple.html
+%%DATADIR%%/docs/fi_FI/hints/object-editing.html
+%%DATADIR%%/docs/fi_FI/hints/pk.html
+%%DATADIR%%/docs/fi_FI/hints/saving-passwords.html
+%%DATADIR%%/docs/fi_FI/hints/vacuum.html
+%%DATADIR%%/docs/fi_FI/hints/view-without-pk.html
+%%DATADIR%%/docs/fi_FI/tips.txt
+%%DATADIR%%/docs/fr_FR/bugreport.html
+%%DATADIR%%/docs/fr_FR/hints/autovacuum.html
+%%DATADIR%%/docs/fr_FR/hints/conn-hba.html
+%%DATADIR%%/docs/fr_FR/hints/conn-ident.html
+%%DATADIR%%/docs/fr_FR/hints/conn-listen.html
+%%DATADIR%%/docs/fr_FR/hints/encoding-ascii.html
+%%DATADIR%%/docs/fr_FR/hints/encoding-unicode.html
+%%DATADIR%%/docs/fr_FR/hints/fki.html
+%%DATADIR%%/docs/fr_FR/hints/instrumentation.html
+%%DATADIR%%/docs/fr_FR/hints/multiple.html
+%%DATADIR%%/docs/fr_FR/hints/pk.html
+%%DATADIR%%/docs/fr_FR/hints/vacuum.html
+%%DATADIR%%/docs/fr_FR/hints/view-without-pk.html
+%%DATADIR%%/docs/fr_FR/tips.txt
+%%DATADIR%%/docs/it_IT/tips.txt
+%%DATADIR%%/docs/sl_SI/hints/autovacuum.html
+%%DATADIR%%/docs/sl_SI/hints/conn-hba.html
+%%DATADIR%%/docs/sl_SI/hints/conn-ident.html
+%%DATADIR%%/docs/sl_SI/hints/conn-listen.html
+%%DATADIR%%/docs/sl_SI/hints/encoding-ascii.html
+%%DATADIR%%/docs/sl_SI/hints/encoding-unicode.html
+%%DATADIR%%/docs/sl_SI/hints/fki.html
+%%DATADIR%%/docs/sl_SI/hints/instrumentation.html
+%%DATADIR%%/docs/sl_SI/hints/multiple.html
+%%DATADIR%%/docs/sl_SI/hints/pk.html
+%%DATADIR%%/docs/sl_SI/hints/vacuum.html
+%%DATADIR%%/docs/sl_SI/hints/view-without-pk.html
+%%DATADIR%%/docs/sl_SI/tips.txt
+%%DATADIR%%/docs/zh_CN/hints/autovacuum.html
+%%DATADIR%%/docs/zh_CN/hints/conn-hba.html
+%%DATADIR%%/docs/zh_CN/hints/conn-ident.html
+%%DATADIR%%/docs/zh_CN/hints/conn-listen.html
+%%DATADIR%%/docs/zh_CN/hints/encoding-ascii.html
+%%DATADIR%%/docs/zh_CN/hints/encoding-unicode.html
+%%DATADIR%%/docs/zh_CN/hints/fki.html
+%%DATADIR%%/docs/zh_CN/hints/instrumentation.html
+%%DATADIR%%/docs/zh_CN/hints/multiple.html
+%%DATADIR%%/docs/zh_CN/hints/object-editing.html
+%%DATADIR%%/docs/zh_CN/hints/pk.html
+%%DATADIR%%/docs/zh_CN/hints/saving-passwords.html
+%%DATADIR%%/docs/zh_CN/hints/vacuum.html
+%%DATADIR%%/docs/zh_CN/hints/view-without-pk.html
+%%DATADIR%%/docs/zh_CN/tips.txt
+%%DATADIR%%/docs/zh_TW/hints/autovacuum.html
+%%DATADIR%%/docs/zh_TW/hints/conn-hba.html
+%%DATADIR%%/docs/zh_TW/hints/conn-ident.html
+%%DATADIR%%/docs/zh_TW/hints/conn-listen.html
+%%DATADIR%%/docs/zh_TW/hints/encoding-ascii.html
+%%DATADIR%%/docs/zh_TW/hints/encoding-unicode.html
+%%DATADIR%%/docs/zh_TW/hints/fki.html
+%%DATADIR%%/docs/zh_TW/hints/instrumentation.html
+%%DATADIR%%/docs/zh_TW/hints/multiple.html
+%%DATADIR%%/docs/zh_TW/hints/object-editing.html
+%%DATADIR%%/docs/zh_TW/hints/pk.html
+%%DATADIR%%/docs/zh_TW/hints/saving-passwords.html
+%%DATADIR%%/docs/zh_TW/hints/vacuum.html
+%%DATADIR%%/docs/zh_TW/hints/view-without-pk.html
+%%DATADIR%%/docs/zh_TW/tips.txt
+%%DATADIR%%/i18n/af_ZA/pgadmin3.mo
+%%DATADIR%%/i18n/af_ZA/wxstd.mo
+%%DATADIR%%/i18n/bg_BG/pgadmin3.mo
+%%DATADIR%%/i18n/bg_BG/wxstd.mo
+%%DATADIR%%/i18n/ca_ES/pgadmin3.mo
+%%DATADIR%%/i18n/ca_ES/wxstd.mo
+%%DATADIR%%/i18n/de_DE/pgadmin3.mo
+%%DATADIR%%/i18n/de_DE/wxstd.mo
+%%DATADIR%%/i18n/es_ES/pgadmin3.mo
+%%DATADIR%%/i18n/es_ES/wxstd.mo
+%%DATADIR%%/i18n/fi_FI/pgadmin3.mo
+%%DATADIR%%/i18n/fi_FI/wxstd.mo
+%%DATADIR%%/i18n/fr_FR/pgadmin3.mo
+%%DATADIR%%/i18n/fr_FR/wxstd.mo
+%%DATADIR%%/i18n/gl_ES/pgadmin3.mo
+%%DATADIR%%/i18n/gl_ES/wxstd.mo
+%%DATADIR%%/i18n/it_IT/pgadmin3.mo
+%%DATADIR%%/i18n/it_IT/wxstd.mo
+%%DATADIR%%/i18n/ja_JP/pgadmin3.mo
+%%DATADIR%%/i18n/ja_JP/wxstd.mo
+%%DATADIR%%/i18n/nl_NL/pgadmin3.mo
+%%DATADIR%%/i18n/nl_NL/wxstd.mo
+%%DATADIR%%/i18n/pg_settings.csv
+%%DATADIR%%/i18n/pgadmin3.lng
+%%DATADIR%%/i18n/pl_PL/pgadmin3.mo
+%%DATADIR%%/i18n/pl_PL/wxstd.mo
+%%DATADIR%%/i18n/pt_BR/pgadmin3.mo
+%%DATADIR%%/i18n/pt_BR/wxstd.mo
+%%DATADIR%%/i18n/pt_PT/pgadmin3.mo
+%%DATADIR%%/i18n/pt_PT/wxstd.mo
+%%DATADIR%%/i18n/ru_RU/pgadmin3.mo
+%%DATADIR%%/i18n/ru_RU/wxstd.mo
+%%DATADIR%%/i18n/sr_YU/pgadmin3.mo
+%%DATADIR%%/i18n/sr_YU/wxstd.mo
+%%DATADIR%%/i18n/wxstd.mo
+%%DATADIR%%/i18n/zh_CN/pgadmin3.mo
+%%DATADIR%%/i18n/zh_CN/wxstd.mo
+%%DATADIR%%/i18n/zh_TW/pgadmin3.mo
+%%DATADIR%%/i18n/zh_TW/wxstd.mo
+%%DATADIR%%/pgagent.sql
+@dirrm %%DATADIR%%/i18n/zh_TW
+@dirrm %%DATADIR%%/i18n/zh_CN
+@dirrm %%DATADIR%%/i18n/sr_YU
+@dirrm %%DATADIR%%/i18n/ru_RU
+@dirrm %%DATADIR%%/i18n/pt_PT
+@dirrm %%DATADIR%%/i18n/pt_BR
+@dirrm %%DATADIR%%/i18n/pl_PL
+@dirrm %%DATADIR%%/i18n/nl_NL
+@dirrm %%DATADIR%%/i18n/ja_JP
+@dirrm %%DATADIR%%/i18n/it_IT
+@dirrm %%DATADIR%%/i18n/gl_ES
+@dirrm %%DATADIR%%/i18n/fr_FR
+@dirrm %%DATADIR%%/i18n/fi_FI
+@dirrm %%DATADIR%%/i18n/es_ES
+@dirrm %%DATADIR%%/i18n/de_DE
+@dirrm %%DATADIR%%/i18n/ca_ES
+@dirrm %%DATADIR%%/i18n/bg_BG
+@dirrm %%DATADIR%%/i18n/af_ZA
+@dirrm %%DATADIR%%/i18n
+@dirrm %%DATADIR%%/docs/zh_TW/hints
+@dirrm %%DATADIR%%/docs/zh_TW
+@dirrm %%DATADIR%%/docs/zh_CN/hints
+@dirrm %%DATADIR%%/docs/zh_CN
+@dirrm %%DATADIR%%/docs/sl_SI/hints
+@dirrm %%DATADIR%%/docs/sl_SI
+@dirrm %%DATADIR%%/docs/it_IT
+@dirrm %%DATADIR%%/docs/fr_FR/hints
+@dirrm %%DATADIR%%/docs/fr_FR
+@dirrm %%DATADIR%%/docs/fi_FI/hints
+@dirrm %%DATADIR%%/docs/fi_FI
+@dirrm %%DATADIR%%/docs/es_ES/hints
+@dirrm %%DATADIR%%/docs/es_ES
+@dirrm %%DATADIR%%/docs/en_US/images
+@dirrm %%DATADIR%%/docs/en_US/hints
+@dirrm %%DATADIR%%/docs/en_US
+@dirrm %%DATADIR%%/docs/de_DE/hints
+@dirrm %%DATADIR%%/docs/de_DE
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/branding
+@dirrm %%DATADIR%%

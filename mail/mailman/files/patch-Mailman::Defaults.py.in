@@ -1,0 +1,44 @@
+--- Mailman/Defaults.py.in.orig	2006-08-04 20:20:33.000000000 +0800
++++ Mailman/Defaults.py.in	2007-10-03 08:09:00.678284951 +0800
+@@ -107,7 +107,7 @@
+ # Command that is used to convert text/html parts into plain text.  This
+ # should output results to standard output.  %(filename)s will contain the
+ # name of the temporary file that the program should operate on.
+-HTML_TO_PLAIN_TEXT_COMMAND = '/usr/bin/lynx -dump %(filename)s'
++HTML_TO_PLAIN_TEXT_COMMAND = '%%LOCALBASE%%/bin/lynx -dump %(filename)s'
+ 
+ 
+ 
+@@ -392,8 +392,8 @@
+ # and virtual-mailman.db files, respectively, from the associated plain text
+ # files.  The file being updated will be appended to this string (with a
+ # separating space), so it must be appropriate for os.system().
+-POSTFIX_ALIAS_CMD = '/usr/sbin/postalias'
+-POSTFIX_MAP_CMD = '/usr/sbin/postmap'
++POSTFIX_ALIAS_CMD = '%%LOCALBASE%%/sbin/postalias'
++POSTFIX_MAP_CMD = '%%LOCALBASE%%/sbin/postmap'
+ 
+ # Ceiling on the number of recipients that can be specified in a single SMTP
+ # transaction.  Set to 0 to submit the entire recipient list in one
+@@ -427,7 +427,7 @@
+ 
+ # Command for direct command pipe delivery to sendmail compatible program,
+ # when DELIVERY_MODULE is 'Sendmail'.
+-SENDMAIL_CMD = '/usr/lib/sendmail'
++SENDMAIL_CMD = '/usr/sbin/sendmail'
+ 
+ # Set these variables if you need to authenticate to your NNTP server for
+ # Usenet posting or reading.  If no authentication is necessary, specify None
+@@ -661,6 +661,12 @@
+ # debugging).
+ MAX_AUTORESPONSES_PER_DAY = 10
+ 
++# This FreeBSD port of Mailman can utilize Postfix SMTP server's VERP ability.
++# You may set VERP_STYLE = 'Postfix' to enable it.
++VERP_STYLE = 'Manual'
++
++# When using Postfix style VERP you will need the following setting.
++POSTFIX_XVERP_OPTS = '+='
+ 
+ 
+ #####

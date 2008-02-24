@@ -1,0 +1,92 @@
+# New ports collection makefile for:	crafty
+# Date created:				31 May 1998
+# Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	crafty
+PORTVERSION=	20.14
+PORTREVISION=	2
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/:data \
+		ftp://ftp.cis.uab.edu/pub/hyatt/documentation/:doc \
+		ftp://ftp.cis.uab.edu/pub/hyatt/source/:src
+DISTFILES=	crafty-${PORTVERSION}.zip:src \
+		start.pgn:data
+DIST_SUBDIR=	crafty
+EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
+
+MAINTAINER=	shoemaker@bluebottle.com
+COMMENT=	A chess programm for playing and analyzing games
+
+USE_ZIP=        yes
+USE_GMAKE=	yes
+
+.if !defined(NOPORTDOCS)
+DOCFILES=	crafty.doc.ascii crafty.doc.ps
+DISTFILES+=	${DOCFILES:S/$/:doc/}
+.endif
+
+ALL_TARGET=	freebsd
+
+.if !defined(WITH_BOOKDIR)
+WITH_BOOKDIR=	${PREFIX}/lib/crafty
+.endif
+.if !defined(WITH_LOGDIR)
+WITH_LOGDIR=	/tmp
+.endif
+.if !defined(WITH_RCDIR)
+WITH_RCDIR=	~/
+.endif
+.if !defined(WITH_TBDIR)
+WITH_TBDIR=	${PREFIX}/lib/crafty/TB
+.endif
+.if !defined(WITH_PERSDIR)
+WITH_PERSDIR=	${PREFIX}/lib/crafty/cpf
+.endif
+OPT=		-DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
+		-DLOGDIR=\\\"${WITH_LOGDIR}\\\" \
+	       	-DRCDIR=\\\"${WITH_RCDIR}\\\" \
+		-DTBDIR=\\\"${WITH_TBDIR}\\\" \
+		-DPERSDIR=\\\"${WITH_PERSDIR}\\\"
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+OPT+=		-DINLINE32
+.endif
+
+MAKE_ENV+=	opt="${OPT}" target=${OPSYS} CXFLAGS="${CXXFLAGS}"
+
+post-extract:
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/start.pgn ${WRKSRC}/start.pgn
+
+post-build:
+	(cd ${WRKSRC}; ./crafty bookpath=. <${FILESDIR}/books-building)
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/crafty ${PREFIX}/bin/crafty
+	${CHOWN} root:nogroup ${PREFIX}/bin/crafty
+	${CHMOD} 2555 ${PREFIX}/bin/crafty
+	${MKDIR} ${PREFIX}/lib/crafty/cpf
+	${CHOWN} -R root:nogroup ${PREFIX}/lib/crafty
+	${CHMOD} 775 ${PREFIX}/lib/crafty ${PREFIX}/lib/crafty/cpf
+	${INSTALL_DATA} ${WRKSRC}/books.bin ${PREFIX}/lib/crafty/books.bin
+	${INSTALL_DATA} ${WRKSRC}/book.lrn ${PREFIX}/lib/crafty/book.lrn
+	${INSTALL_DATA} ${WRKSRC}/position.bin ${PREFIX}/lib/crafty/position.bin
+	${INSTALL_DATA} ${WRKSRC}/position.lrn ${PREFIX}/lib/crafty/position.lrn
+	${INSTALL_DATA} ${WRKSRC}/crafty.hlp ${PREFIX}/lib/crafty/crafty.hlp
+	${CHOWN} root:nogroup ${PREFIX}/lib/crafty/book*
+	${CHOWN} root:nogroup ${PREFIX}/lib/crafty/position*
+	${CHMOD} 664 ${PREFIX}/lib/crafty/book*
+	${CHMOD} 664 ${PREFIX}/lib/crafty/position*
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
+.endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

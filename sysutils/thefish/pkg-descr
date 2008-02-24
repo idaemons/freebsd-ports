@@ -1,0 +1,7 @@
+The Fish provides a graphical tool (with GTK+, Qt and ncurses frotends) to 
+manage and edit system variables stored in /etc/defaults/rc.conf and 
+/etc/rc.conf. 
+
+WWW: http://www.energyhq.es.eu.org/thefish.html
+
+-Miguel Mendez <flynn@energyhq.es.eu.org>

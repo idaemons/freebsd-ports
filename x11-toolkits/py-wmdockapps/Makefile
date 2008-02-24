@@ -1,0 +1,27 @@
+# New ports collection makefile for:	pywmdockapps
+# Date created:		2007-05-09
+# Whom:			David Thiel <lx@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	wmdockapps
+PORTVERSION=	1.21
+CATEGORIES=	x11-toolkits python windowmaker
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pywmdockapps
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	py${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	lx@FreeBSD.org
+COMMENT=	Tools for making dockapps in Python
+
+USE_XLIB=	yes
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pywmdockapps
+
+post-patch:
+	${REINPLACE_CMD} 's|/usr/X11R6|${X11BASE}|' ${WRKSRC}/setup.py
+
+.include <bsd.port.mk>

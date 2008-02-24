@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+include/acx/if_acxioctl.h
+@dirrm include/acx
+@cwd /boot/kernel
+if_acx.ko

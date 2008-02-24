@@ -1,0 +1,10 @@
+--- tac_plus.h.orig	Tue Dec 12 19:43:08 2006
++++ tac_plus.h	Sat Jun 30 02:07:03 2007
+@@ -731,6 +731,7 @@ int sendpass_fn(struct authen_data *data
+ int enable_fn(struct authen_data *data);
+ int default_v0_fn(struct authen_data *data);
+ int skey_fn(struct authen_data *data);
++int opie_fn(struct authen_data *data);
+ 
+ #ifdef MAXSESS
+ extern void loguser(struct acct_rec *);

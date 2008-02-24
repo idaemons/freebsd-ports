@@ -1,0 +1,17 @@
+$FreeBSD$
+
+--- lpmud.dgd.orig	Thu Dec 12 17:57:25 1996
++++ lpmud.dgd	Thu Aug 28 14:52:40 2003
+@@ -1,10 +1,10 @@
+ telnet_port	= 2000;			/* telnet port number */
+ binary_port	= 1999;			/* binary port number */
+-directory	= "/usr/local/mud/2.4.5";/* base directory (MUST be absolute) */
++directory	= "%%DATADIR%%/lpmud";/* base directory (MUST be absolute) */
+ users		= 40;			/* max # of users */
+ editors		= 41;			/* max # of editor sessions */
+ ed_tmpfile	= "../tmp/ed";		/* proto editor tmpfile */
+-swap_file	= "../tmp/swap";	/* swap file */
++swap_file	= "../tmp/dgd-lpmud.swap";/* swap file */
+ swap_size	= 20960;		/* # sectors in swap file */
+ cache_size	= 100;			/* # sectors in swap cache */
+ sector_size	= 1024;			/* swap sector size */

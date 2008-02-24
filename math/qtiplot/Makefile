@@ -1,0 +1,125 @@
+# New ports collection makefile for:	qtiplot
+# Date created:			9 May 2005
+# Whom:				Jie Gao <gaoj@cpsc.ucalgary.ca>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	qtiplot
+DISTVERSION=	0.9
+CATEGORIES=	math science
+MASTER_SITES=	http://soft.proindependent.com/src/
+
+MAINTAINER=	makc@issp.ac.ru
+COMMENT=	An Origin clone for data analysis and scientific plotting
+
+LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl \
+		muparser.0:${PORTSDIR}/math/muparser \
+		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4 \
+		qwt.5:${PORTSDIR}/x11-toolkits/qwt-devel
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	gui moc qmake opengl svg qt3support network assistantclient
+HAS_CONFIGURE=	yes
+USE_DOS2UNIX=	qtiplot/qtiplot.pro
+
+DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
+		"${DATADIR}/qtiplot.png" \
+		"qtiplot" "" false
+
+OPTIONS=	DOCS "Install the QtiPlot Handbook" on \
+		PYTHON "Python scripting support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+# manually include this, because USE_PYTHON is defined
+# after including bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+PLIST_SUB+=	PYTHON=""
+MAKE_ENV+=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR} \
+		PYTHON_VERSION=${PYTHON_VERSION}
+.else
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
+.if !defined(WITHOUT_DOCS)
+RUN_DEPENDS+=	qtiplot-doc>=0:${PORTSDIR}/math/qtiplot-doc
+.endif
+
+.if !defined(WITHOUT_NLS)
+#QT_COMPONENTS+=	linguist
+BUILD_DEPENDS+=	${LOCALBASE}/bin/lupdate-qt4:${PORTSDIR}/devel/qt4-linguist
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+QPRO_DIRS=	. \
+		fitPlugins/fitRational0 \
+		fitPlugins/fitRational1 \
+		qtiplot
+
+post-patch:
+.if defined(WITH_PYTHON)
+	@${REINPLACE_CMD} -e \
+		's|loadInitFile("qtiplotrc")|loadInitFile("${DATADIR}/qtiplotrc")|' \
+		${WRKSRC}/${PORTNAME}/src/PythonScripting.cpp
+	${REINPLACE_CMD} -e \
+		'/^sys.path.append/s|"\."|"${DATADIR}"|' \
+		${WRKSRC}/${PORTNAME}/qtiplotrc.py
+.else
+	@${REINPLACE_CMD} \
+		-e "s/^SCRIPTING_LANGS += Python//" \
+		${WRKSRC}/${PORTNAME}/qtiplot.pro
+.endif
+	@${REINPLACE_CMD} -e \
+		's|/usr/share/doc/qtiplot/manual-%1|${DATADIR}/manual|; \
+		 s|/usr/lib/qtiplot/plugins|${DATADIR}/fitPlugins|' \
+		${WRKSRC}/qtiplot/src/ApplicationWindow.cpp
+
+do-configure:
+.if !defined(WITHOUT_NLS)
+	cd ${WRKSRC}/qtiplot && ${LOCALBASE}/bin/lrelease-qt4 -verbose qtiplot.pro
+.endif
+.for d in ${QPRO_DIRS}
+	(cd ${WRKSRC}/${d} && ${SETENV} ${MAKE_ENV} ${QMAKE})
+.endfor
+
+post-configure:
+.for d in ${QPRO_DIRS}
+	@${REINPLACE_CMD} -e \
+		's|^CC .*|CC=${CC}|; \
+		 s|^CXX .*|CXX=${CXX}|; \
+		 s|^LINK .*|LINK=${CXX}|' \
+		${WRKSRC}/${d}/Makefile
+.endfor
+	${REINPLACE_CMD} -e 's|^\(INCPATH.*=\)|\1-I../3rdparty/liborigin|' ${WRKSRC}/qtiplot/Makefile
+
+do-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/qtiplot/qtiplot ${DATADIR}/qtiplot
+	${LN} -fs ${DATADIR}/qtiplot ${PREFIX}/bin/qtiplot
+	${MKDIR} ${DATADIR}/fitPlugins
+	${INSTALL_PROGRAM} ${WRKSRC}/fitPlugins/libfitRational0.so.1.0.0 \
+				${DATADIR}/fitPlugins/libfitRational0.so
+	${INSTALL_PROGRAM} ${WRKSRC}/fitPlugins/libfitRational1.so.1.0.0 \
+				${DATADIR}/fitPlugins/libfitRational1.so
+	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${DATADIR}/qtiplot.png
+.if defined(WITH_PYTHON)
+.for s in qtiplotrc.py qtiUtil.py
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s} ${DATADIR}/${s}
+	@cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('${s}')"
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s}c ${DATADIR}/${s}c
+.endfor
+.endif
+.if !defined(WITHOUT_NLS)
+	(cd ${WRKSRC}/qtiplot/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations)
+.endif
+
+.include <bsd.port.post.mk>

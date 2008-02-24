@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Sep 13 19:55:14 2007
++++ Makefile	Thu Sep 13 19:55:30 2007
+@@ -52,7 +52,7 @@
+    LOCALBASE?=/usr/local
+    CFLAGS+=-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libelf \
+ 	$(PTHREAD_CFLAGS) -D_FILE_OFFSET_BITS=64
+-   LIBS=-L$(LOCALBASE)/lib -L. -ldl -lelf $(PTHREAD_LIBS) $(LDFLAGS)
++   LIBS=-L$(LOCALBASE)/lib -L. -lelf $(PTHREAD_LIBS) $(LDFLAGS)
+ else
+ ifeq ($(shell uname), Linux)
+    PTHREAD_LIBS?=-lpthread

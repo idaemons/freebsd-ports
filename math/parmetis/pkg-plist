@@ -1,0 +1,8 @@
+include/parmetis/parmetis.h
+lib/parmetis/libmetis.a
+lib/parmetis/libparmetis.a
+%%DOCSDIR%%/manual.ps
+%%DOCSDIR%%/manual.pdf
+@dirrm include/parmetis
+@dirrm lib/parmetis
+@dirrm %%DOCSDIR%%

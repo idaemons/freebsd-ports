@@ -1,0 +1,25 @@
+# $FreeBSD$
+#
+
+    COMMENT = Polish language support
+
+    SUBDIR += aspell
+    SUBDIR += ekg
+    SUBDIR += ekg2
+    SUBDIR += fortunepl
+    SUBDIR += gnugadu
+    SUBDIR += gnugadu2
+    SUBDIR += ispell
+    SUBDIR += kadu
+    SUBDIR += kde3-i18n
+    SUBDIR += koffice-i18n
+    SUBDIR += libgadu
+    SUBDIR += libtlen
+    SUBDIR += php_doc
+    SUBDIR += sap
+    SUBDIR += sms2
+    SUBDIR += tleenx2
+    SUBDIR += trf
+    SUBDIR += webalizer2
+
+.include <bsd.port.subdir.mk>

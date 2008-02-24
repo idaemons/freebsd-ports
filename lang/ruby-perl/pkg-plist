@@ -1,0 +1,16 @@
+%%RUBY_SITEARCHLIBDIR%%/perl.so
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/htmlparse.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/http.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/perllib.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ping.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmlparser.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%SITE_PERL%%/%%PERL_ARCH%%/Ruby.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ruby/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ruby/Ruby.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ruby/Ruby.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ruby

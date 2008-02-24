@@ -1,0 +1,13 @@
+--- wshare/Makefile.FreeBSD.orig	Sat Mar 27 14:22:01 2004
++++ wshare/Makefile.FreeBSD	Wed Mar 31 23:33:45 2004
+@@ -14,8 +14,8 @@
+ 
+ CXX = g++
+ 
+-OS_CXXOPTS = -pthread
+-OS_LDLIBS = -lc_r
++OS_CXXOPTS = $(PTHREAD_CFLAGS)
++OS_LDLIBS = $(PTHREAD_LIBS)
+ 
+ include Makefile.common
+ 

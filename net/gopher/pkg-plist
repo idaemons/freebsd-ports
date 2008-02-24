@@ -1,11 +1,6 @@
-@cwd /usr/local
 bin/gopher
 bin/gophfilt
-etc/gopherd.conf
-etc/gopherd
-etc/gindexd
-etc/gopderdlocal.conf
-etc/gopherls
-lib/gopher.rc
-lib/gopher.hlp
-lib/gopherremote.rc
+etc/gopher/gopher.rc
+etc/gopher/gopherremote.rc
+etc/gopher/gopher.hlp
+@dirrm etc/gopher

@@ -1,0 +1,31 @@
+# New ports collection makefile for:	py-cheetah
+# Date created:		26 November 2003
+# Whom:	      		Hye-Shik Chang <perky@FreeBSD.org>
+#
+# $FreeBSD$
+
+PORTNAME=	cheetah
+DISTVERSION=	2.0
+CATEGORIES=	devel textproc www python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	cheetahtemplate
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Cheetah-2.0
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	HTML template engine for Python
+
+BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+.if defined(PACKAGE_BUILDING)
+IGNORE=		cannot package: will depend on 2 pythons until py-cheetah is converted to easy_install support
+.endif
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=easy_install
+PYDISTUTILS_PKGNAME=	Cheetah
+PYEASYINSTALL_ARCHDEP=	yes
+MAKE_ENV=	CHEETAH_USE_SETUPTOOLS=yes
+
+.include <bsd.port.mk>

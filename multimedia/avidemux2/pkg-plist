@@ -1,0 +1,8 @@
+bin/avidemux2
+share/locale/es/LC_MESSAGES/avidemux.mo
+share/locale/fr/LC_MESSAGES/avidemux.mo
+share/locale/ru/LC_MESSAGES/avidemux.mo
+share/locale/cs/LC_MESSAGES/avidemux.mo
+share/locale/klingon/LC_MESSAGES/avidemux.mo
+@dirrmtry share/locale/klingon/LC_MESSAGES
+@dirrmtry share/locale/klingon

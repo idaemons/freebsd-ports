@@ -1,0 +1,5 @@
+%%PYTHON_SITELIBDIR%%/PyLucene.py
+%%PYTHON_SITELIBDIR%%/_PyLucene.so
+%%PYTHON_SITELIBDIR%%/security/classpath.security
+%%PYTHON_SITELIBDIR%%/security/libgcj.security
+@dirrmtry %%PYTHON_SITELIBDIR%%/security

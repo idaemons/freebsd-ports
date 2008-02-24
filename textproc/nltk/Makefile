@@ -1,0 +1,28 @@
+# ex:ts=8
+# Ports collection makefile for:	nltk
+# Date created:				Oct 30, 2003
+# Whom:					clsung
+#
+# $FreeBSD$
+#
+
+PORTNAME=	nltk
+PORTVERSION=	1.4.4
+CATEGORIES=	textproc python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	clsung@FreeBSD.org
+COMMENT=	Natural language toolkit written in python
+
+USE_PYTHON=	2.3+
+USE_PYDISTUTILS=	yes
+USE_PYTHON_PREFIX=	yes
+
+post-install:
+	@${FIND} ${PYTHON_SITELIBDIR}/nltk ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/nltk -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+
+.include <bsd.port.mk>

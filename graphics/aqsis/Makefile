@@ -1,0 +1,47 @@
+# ex:ts=8
+# Ports collection Makefile for:	aqsis
+# Date created:			Sep 12, 2002
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	aqsis
+PORTVERSION=	1.0.1
+PORTREVISION=	2
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A photorealistic rendering system
+
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk
+
+USE_GCC=	3.4+
+USE_GNOME=	gnometarget
+USE_BISON=	build
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-static
+USE_LDCONFIG=	yes
+
+MAN1=		aqsis.1
+
+CFLAGS+=	-fPIC
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|PLUGIN_FLAGS=|#PLUGIN_FLAGS=|g' ${WRKSRC}/configure
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700029
+BROKEN=		Incorrect pkg-plist (bad objformat handling)
+.endif
+
+.include <bsd.port.post.mk>

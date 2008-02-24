@@ -1,0 +1,25 @@
+# New ports collection makefile for:	p5-Net-MAC-Vendor
+# Date created:				25 May 2006
+# Whom:					Aaron Dalton <aaron@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Net-MAC-Vendor
+PORTVERSION=	1.17
+CATEGORIES=	net perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	aaron@FreeBSD.org
+COMMENT=	Look up the vendor for a MAC
+
+BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+MAN3=	Net::MAC::Vendor.3
+
+PERL_CONFIGURE=	yes
+
+.include <bsd.port.mk>

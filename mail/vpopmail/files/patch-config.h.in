@@ -1,0 +1,12 @@
+--- ../../vendor/vpopmail/config.h.in	2007-10-07 19:56:55.000000000 +0300
++++ config.h.in	2007-10-07 22:24:54.000000000 +0300
+@@ -277,6 +277,9 @@
+ #undef SPAMC_PROG
+ 
+ /* "" */
++#undef SPAM_THRESHOLD
++
++/* "" */
+ #undef SQWEBMAIL_PASS
+ 
+ /* Define to 1 if you have the ANSI C header files. */

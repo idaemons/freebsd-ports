@@ -1,0 +1,4 @@
+bin/%%CPPFILE%%
+%%PORTDOCS%%%%DOCSDIR%%/%%CPPFILE%%.cpp
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

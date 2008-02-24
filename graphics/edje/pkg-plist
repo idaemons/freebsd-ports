@@ -1,0 +1,27 @@
+bin/edje-config
+bin/edje_cc
+bin/edje_decc
+bin/edje_recc
+include/Edje.h
+lib/libedje.a
+lib/libedje.la
+lib/libedje.so
+lib/libedje.so.5
+libdata/pkgconfig/edje.pc
+%%DATADIR%%/include/edje.inc
+@dirrmtry %%DATADIR%%/include
+@dirrmtry %%DATADIR%%/data/test/images
+@dirrmtry %%DATADIR%%/data/test/fonts
+@dirrmtry %%DATADIR%%/data/test
+@dirrmtry %%DATADIR%%/data/template/programs
+@dirrmtry %%DATADIR%%/data/template/parts
+@dirrmtry %%DATADIR%%/data/template/macros
+@dirrmtry %%DATADIR%%/data/template/images
+@dirrmtry %%DATADIR%%/data/template/hashes
+@dirrmtry %%DATADIR%%/data/template/fonts
+@dirrmtry %%DATADIR%%/data/template/embryo
+@dirrmtry %%DATADIR%%/data/template
+@dirrmtry %%DATADIR%%/data/src
+@dirrmtry %%DATADIR%%/data/images
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%
