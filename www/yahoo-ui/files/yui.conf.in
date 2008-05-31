@@ -1,0 +1,8 @@
+Alias /yahoo/docs %%DOCSDIR%%
+Alias /yahoo/examples %%EXAMPLESDIR%%
+Alias /yahoo %%WWWDIR%%
+
+<Location /yahoo>
+    Order deny,allow
+    Allow from all
+</Location>

@@ -1,0 +1,14 @@
+--- configure.orig	Wed Jul 26 05:28:54 2006
++++ configure	Thu Oct  5 11:28:54 2006
+@@ -1676,6 +1676,11 @@
+       done
+     done
+     ;;
++ i?86-*-freebsd[[123]].*)
++    ;;
++ i?86-*-freebsd*)
++    ans=yes
++    ;;
+ esac
+ done
+ 

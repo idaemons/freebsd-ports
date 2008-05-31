@@ -1,0 +1,71 @@
+# New ports collection makefile for:	JRuby
+# Date created:			20 September 2001
+# Whom:				Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	jruby
+PORTVERSION=	1.1.1
+CATEGORIES=	lang ruby java
+MASTER_SITES=	http://dist.codehaus.org/jruby/ \
+		http://repo2.maven.org/maven/jruby/ \
+		http://repo1.maven.org/maven/jruby/ \
+		http://dist.codehaus.org/jruby/previous/
+DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
+
+MAINTAINER=	nemoliu@FreeBSD.org
+COMMENT=	An implementation of Ruby Interpreter in Pure Java
+
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+NO_BUILD=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
+
+WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
+JRUBY_HOME?=	${PREFIX}/share/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+REPLACE_FILES=	${WRKSRC}/bin/jruby \
+		${WRKSRC}/bin/jrubyc
+REPLACE_LIST=	JRUBY_HOME=${JRUBY_HOME} \
+		JAVA_HOME=${JAVA_HOME}
+REPLACE_LIST_TEMP=	${REPLACE_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
+
+.include <bsd.port.pre.mk>
+
+pre-patch:
+	@${ECHO_MSG} "Installation settings:"
+	@${ECHO_MSG} "   JRUBY_HOME:    ${JRUBY_HOME}"
+	@${ECHO_MSG} "   JAVA_HOME:     ${JAVA_HOME}"
+
+post-patch:
+	@${ECHO_MSG} -n ">> Removing unneeded files..."
+	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
+	@${ECHO_MSG} " [ DONE ]"
+.for file in ${REPLACE_FILES}
+	@${ECHO_MSG} -n ">> Customizing `basename ${file}`..."
+	@${SED} ${REPLACE_LIST_TEMP} ${file} > ${WRKDIR}/`basename ${file}`
+	@${ECHO_MSG} " [ DONE ]"
+.endfor
+
+do-install:
+	@${ECHO_MSG} -n ">> Installation JRuby files..."
+	@${INSTALL_SCRIPT} ${WRKDIR}/jruby ${PREFIX}/bin/jruby
+	@${INSTALL_SCRIPT} ${WRKDIR}/jrubyc ${PREFIX}/bin/jrubyc
+	@cd ${WRKSRC}/lib \
+	  && ${FIND} . -type d -exec ${MKDIR} ${JRUBY_HOME}/lib/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${JRUBY_HOME}/lib/{} \;
+	@${ECHO_MSG} " [ DONE ]"
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} -n ">> Installation Documents files..."
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/docs \
+	  && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/samples \
+	  && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@${ECHO_MSG} " [ DONE ]"
+.endif
+
+.include <bsd.port.post.mk>

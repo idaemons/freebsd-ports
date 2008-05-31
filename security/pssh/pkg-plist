@@ -1,0 +1,6 @@
+bin/prsync
+bin/pnuke
+bin/pslurp
+bin/pssh
+bin/pscp
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

@@ -1,0 +1,32 @@
+# New ports collection makefile for:	ts
+# Date created:		3 April 2007
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ts
+PORTVERSION=	0.5.4
+CATEGORIES=	sysutils
+MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/ts/ CENKES
+
+MAINTAINER=	infofarmer@FreeBSD.org
+COMMENT=	Serial task spooler
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	OBJECTIVES PROTOCOL README TRICKS Changelog
+MAN1=		${PORTNAME}.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$^|$${.ALLSRC}|;/^GLIBCFLAGS/d;/^CFLAGS/d'\
+		${WRKSRC}/Makefile
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
+.ifndef NOPORTDOCS
+	@${INSTALL} -d ${DOCSDIR}/
+	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,31 @@
+@comment $FreeBSD$
+bin/wbar
+%%DATADIR%%/dot.wbar
+%%DATADIR%%/iconpack/comic.ttf
+%%DATADIR%%/iconpack/wbar.osx/acroread.png
+%%DATADIR%%/iconpack/wbar.osx/beagle.png
+%%DATADIR%%/iconpack/wbar.osx/blender.png
+%%DATADIR%%/iconpack/wbar.osx/cedega.png
+%%DATADIR%%/iconpack/wbar.osx/firefox.png
+%%DATADIR%%/iconpack/wbar.osx/font.ttf
+%%DATADIR%%/iconpack/wbar.osx/gearth.png
+%%DATADIR%%/iconpack/wbar.osx/gimp.png
+%%DATADIR%%/iconpack/wbar.osx/gmplayer.png
+%%DATADIR%%/iconpack/wbar.osx/gnucash.png
+%%DATADIR%%/iconpack/wbar.osx/gqview.png
+%%DATADIR%%/iconpack/wbar.osx/inkscape.png
+%%DATADIR%%/iconpack/wbar.osx/mlgui.png
+%%DATADIR%%/iconpack/wbar.osx/nautilus.png
+%%DATADIR%%/iconpack/wbar.osx/ooffice.png
+%%DATADIR%%/iconpack/wbar.osx/osxbarback.png
+%%DATADIR%%/iconpack/wbar.osx/picasa.png
+%%DATADIR%%/iconpack/wbar.osx/psi.png
+%%DATADIR%%/iconpack/wbar.osx/skype.png
+%%DATADIR%%/iconpack/wbar.osx/thunderbird.png
+%%DATADIR%%/iconpack/wbar.osx/vmware.png
+%%DATADIR%%/iconpack/wbar.osx/xmms.png
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%DATADIR%%/iconpack/wbar.osx
+@dirrm %%DATADIR%%/iconpack
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

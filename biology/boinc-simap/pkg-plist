@@ -1,0 +1,5 @@
+@cwd %%BOINC_HOME%%
+projects/%%SIMAP_SITE%%/app_info.xml
+projects/%%SIMAP_SITE%%/%%SIMAP_BINARY%%
+projects/%%SIMAP_SITE%%/%%HMMER_BINARY%%
+@dirrmtry projects/%%SIMAP_SITE%%

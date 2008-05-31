@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	2007-11-19 21:40:21.000000000 +0100
++++ src/Makefile.in	2007-11-23 19:09:06.000000000 +0100
+@@ -219,8 +219,9 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
++# FreeBSD patch: don't install bamg, which is available as math/bamg
+ SUBDIRS = bamglib femlib  Graphics Algo lglib fflib std x11	\
+-nw mpi agl glx ide bamg bin-win32 
++nw mpi agl glx ide bin-win32 
+ 
+ EXTRA_DIST = FreeFem++-CoCoa Carbon.r
+ all: all-recursive

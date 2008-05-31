@@ -1,0 +1,24 @@
+--- libntfs-3g/Makefile.in.orig	Mon Jan 28 16:08:09 2008
++++ libntfs-3g/Makefile.in	Fri Feb  8 15:58:37 2008
+@@ -249,6 +249,7 @@
+ libntfs_3g_la_CFLAGS = $(AM_CFLAGS) -I$(top_srcdir)/include/ntfs-3g
+ libntfs_3g_la_LDFLAGS = -version-info $(LIBNTFS_3G_VERSION) -no-undefined
+ @FUSE_INTERNAL_TRUE@libntfs_3g_la_LIBADD = $(top_srcdir)/libfuse-lite/libfuse-lite.la
++libntfs_3g_la_LIBADD = -lublio
+ libntfs_3g_la_SOURCES = attrib.c attrlist.c bitmap.c bootsect.c \
+ 	collate.c compat.c compress.c debug.c device.c dir.c index.c \
+ 	inode.c lcnalloc.c logfile.c logging.c mft.c misc.c mst.c \
+--- ./src/ntfs-3g.c.orig	Sun Apr 15 20:52:01 2007
++++ ./src/ntfs-3g.c	Mon Apr 30 14:12:57 2007
+@@ -1603,7 +1603,11 @@
+ 	.mkdir		= ntfs_fuse_mkdir,
+ 	.rmdir		= ntfs_fuse_rmdir,
+ 	.utime		= ntfs_fuse_utime,
++#ifdef __linux__
+ 	.bmap		= ntfs_fuse_bmap,
++#else
++	.bmap		= NULL,
++#endif
+ 	.destroy        = ntfs_fuse_destroy2,
+ #ifdef HAVE_SETXATTR
+ 	.getxattr	= ntfs_fuse_getxattr,

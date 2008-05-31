@@ -1,0 +1,11 @@
+#!/bin/sh 
+
+JAR=%%JAVASHAREDIR%%/%%PORTNAME%%/uppaal.jar
+ENGINE=%%JAVASHAREDIR%%/%%PORTNAME%%
+
+if [ "$DISPLAY" = ":0.0" -o "$DISPLAY" = ":0" ]; then 
+  java -jar $JAR -enginePath $ENGINE $* 
+else
+  java -jar $JAR -enginePath $ENGINE -antialias off $* 
+fi
+

@@ -1,0 +1,4 @@
+@exec mkdir -p /var/db/vnstat
+bin/vnstat
+etc/vnstat.conf.sample
+@dirrmtry /var/db/vnstat

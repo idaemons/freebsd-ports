@@ -1,0 +1,11 @@
+--- makedefs.orig	2007-08-19 11:28:11.000000000 -0300
++++ makedefs	2007-10-22 16:37:52.000000000 -0200
+@@ -132,6 +132,8 @@
+ 		;;
+   FreeBSD.7*)	SYSTYPE=FREEBSD7
+ 		;;
++  FreeBSD.8*)	SYSTYPE=FREEBSD7
++		;;
+   OpenBSD.2*)	SYSTYPE=OPENBSD2
+ 		;;
+   OpenBSD.3*)	SYSTYPE=OPENBSD3

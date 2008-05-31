@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Term/Menus.pm
+@dirrmtry %%SITE_PERL%%/Term/Menus
+@dirrmtry %%SITE_PERL%%/Term

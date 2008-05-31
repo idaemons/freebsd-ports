@@ -1,0 +1,20 @@
+--- configure.orig	2007-12-09 18:11:07.000000000 +0100
++++ configure	2007-12-13 21:12:14.000000000 +0100
+@@ -5988,7 +5988,7 @@
+ 
+ 	if test "$_wi_pthreads_found" != yes ; then
+ 		OLD_LIBS="$LIBS"
+-		LIBS="-lpthread $LIBS"
++		LIBS="-pthread $LIBS"
+ 
+ 		if test "$cross_compiling" = yes; then
+ 
+@@ -6125,7 +6125,7 @@
+ 
+ 		if test "$_wi_pthreads_test" = yes ; then
+ 			_wi_pthreads_found=yes
+-			_wi_pthreads_libs="-lpthread"
++			_wi_pthreads_libs="-pthread"
+ 		fi
+ 	fi
+ 

@@ -1,65 +1,37 @@
-*** Makefile.orig	Thu Feb  9 17:36:13 1995
---- Makefile	Thu Feb  9 23:57:16 1995
-***************
-*** 11,21 ****
-  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix, next.
-  # gmake needed to handle this file in FreeBSD and NeXTStep
-! MACHINE = sparc
-  
-  # The name of your C compiler. For most machines this will be
-  # either 'cc' or 'gcc'.
-! CC = acc
-  
-  OPTS=-c
-  
---- 11,21 ----
-  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix, next.
-  # gmake needed to handle this file in FreeBSD and NeXTStep
-! MACHINE = freebsd
-  
-  # The name of your C compiler. For most machines this will be
-  # either 'cc' or 'gcc'.
-! CC = cc
-  
-  OPTS=-c
-  
-***************
-*** 31,37 ****
-  MAN_DIR = $(PREFIX)/man
-  
-  # Where to put the compression methods description
-! COMPRESSION_FILE=$(PREFIX)/lib/compression_methods
-  
-  # How to install the binaries and manpage. If you have a unix system,
-  # use the GNU install program if you have it, otherwise try 'cp'. For
---- 31,37 ----
-  MAN_DIR = $(PREFIX)/man
-  
-  # Where to put the compression methods description
-! COMPRESSION_FILE=$(PREFIX)/etc/compression_methods
-  
-  # How to install the binaries and manpage. If you have a unix system,
-  # use the GNU install program if you have it, otherwise try 'cp'. For
-***************
-*** 52,59 ****
-  #
-  # If you don't wish to use the 'make install' and 'make install.man'
-  # commands, you can ignore these.
-! INST_BIN_OPT = -c -s -m 755 -o root -g root
-! INST_MAN_OPT = -c -m 644 -o root -g root
-  ###############################################################################
-  #
-  # C compiler flags and libraries for each machine.
---- 52,61 ----
-  #
-  # If you don't wish to use the 'make install' and 'make install.man'
-  # commands, you can ignore these.
-! #INST_BIN_OPT = -c -s -m 755 -o root -g root
-! #INST_MAN_OPT = -c -m 644 -o root -g root
-! INST_BIN_OPT = -c -s -m 555 -o bin -g bin
-! INST_MAN_OPT = -c -m 644 -o bin -g bin
-  ###############################################################################
-  #
-  # C compiler flags and libraries for each machine.
+--- Makefile.orig	Tue May  7 10:20:50 1996
++++ Makefile	Wed Sep  3 19:55:42 2003
+@@ -250,7 +250,7 @@
+ display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
+ st_virt$O automaton$O
+ 
+-all:    tracker${EXE} randomize${EXE} splitmod${EXE} Docs/tracker.text
++all:    tracker${EXE} randomize${EXE} Docs/tracker.info
+ 
+ config.h: $(CONFIG)config.h 
+ 	rm -f config.h
+@@ -270,11 +270,10 @@
+ 	echo >version.c char \*VERSION=\"${VERSION}\"\;
+ 
+ install: 
+-	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
+-	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
+-	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
++	${BSD_INSTALL_PROGRAM} tracker $(BIN_DIR)
++	${BSD_INSTALL_PROGRAM} randomize $(BIN_DIR)
+ 	[ -f ${COMPRESSION_FILE} ] || \
+-		$(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
++		${BSD_INSTALL_MAN} Lib/compression_methods ${COMPRESSION_FILE}
+ 
+ # no manpage available, use the texinfo manual.
+ install.man:
+@@ -284,8 +283,8 @@
+ 
+ install.info: Docs/tracker.info
+ 	(cd Docs; \
+-          for f in tracker.info tracker.info-* ; do \
+-            $(INSTALL) $(INST_INFO_OPT) $$f $(INFO_DIR)/$$f; \
++          for f in tracker.info ; do \
++            ${BSD_INSTALL_DATA} $$f $(INFO_DIR)/$$f; \
+           done)
+ 
+ devel: 

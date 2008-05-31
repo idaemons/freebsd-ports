@@ -1,0 +1,31 @@
+# New ports collection makefile for:	py-cups
+# Date created:		2008-03-20
+# Whom:			Michael Johnson <ahze@FreeBSD.org>
+#
+# $FreeBSD$
+#    $MCom: ports/print/py-cups/Makefile,v 1.1 2008/03/20 13:55:32 ahze Exp $
+
+PORTNAME=	cups
+PORTVERSION=	1.9.38
+PORTREVISION=	1
+CATEGORIES=	print
+MASTER_SITES=	http://cyberelk.net/tim/data/pycups/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	py${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	ahze@FreeBSD.org
+COMMENT=	CUPS bindings for Python
+
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
+
+USE_PYTHON=	yes
+USE_ICONV=	yes
+USE_BZIP2=	yes
+USE_PYDISTUTILS=	yes
+CFLAGS+=	-I${LOCALBASE}/include -DVERSION=\\\"${PORTVERSION}\\\"
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+MAKE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+PYDISTUTILS_EGGINFO=${PORTNAME}-1.0-py2.5.egg-info
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/cups.so
+
+.include <bsd.port.mk>

@@ -1,0 +1,15 @@
+************************************************************************
+
+In order to run this port, please add the following lines to
+${PREFIX}/etc/mail/main.cf:
+
+smtpd_milters = unix:/var/run/milterdkim/filter
+
+And to run the milter from startup, add milterdkim_enable="YES" in
+your /etc/rc.conf.
+Extra options can be found in startup script.
+
+Note: milter sockets must be accessible from postfix/smtpd;
+  using inet sockets might be preferred.
+
+************************************************************************

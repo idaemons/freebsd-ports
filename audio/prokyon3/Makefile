@@ -1,0 +1,62 @@
+# New ports collection makefile for:           prokyon3
+# Date created:                                11 November 2002
+# Whom:                                        Kay Lehmann
+#
+# $FreeBSD$
+#
+
+PORTNAME=	prokyon3
+PORTVERSION=	0.9.2
+PORTREVISION=	5
+CATEGORIES=	audio
+MASTER_SITES=	SF
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Prokyon3 is a multithreaded MP3 manager and tag editor
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
+LIB_DEPENDS=	id3-3.8:${PORTSDIR}/audio/id3lib \
+		vorbis.4:${PORTSDIR}/audio/libvorbis
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+
+USE_XORG=	x11 xft
+USE_QT_VER=	3
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
+USE_MYSQL=	yes
+USE_PERL5_BUILD=yes
+CONFIGURE_ARGS+=--with-qtdir=${LOCALBASE} --with-id3-libs=${LOCALBASE}\
+		--with-ogg-libs=${LOCALBASE} --with-vorbis-libs=${LOCALBASE}
+QT_NONSTANDARD=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include \
+		-I${QT_PREFIX}/include" LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+.if defined(WITH_BURN)
+USE_CDRTOOLS=	yes
+RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123 \
+		ogg123:${PORTSDIR}/audio/vorbis-tools \
+		normalize:${PORTSDIR}/audio/normalize \
+		bash:${PORTSDIR}/shells/bash
+PLIST_FILES+=	bin/prokburn
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-g -O2|${CFLAGS}|; s|-lqt-mt|-lqt-mt ${PTHREAD_LIBS}|' ${WRKSRC}/configure
+.if defined(WITH_BURN)
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/prokburn
+.else
+	@${REINPLACE_CMD} -e 's|prokburn||' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|prokburn||' ${WRKSRC}/Makefile.in
+.endif
+	@${REINPLACE_CMD} -E 's|[[:alpha:]]+::||' ${WRKSRC}/src/gui.h \
+		${WRKSRC}/src/configuration.h
+	@${REINPLACE_CMD} -e 's|QProgressDialogScroll::||' \
+		${WRKSRC}/src/jobbase.cpp
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+	@sleep 5
+
+.include <bsd.port.mk>

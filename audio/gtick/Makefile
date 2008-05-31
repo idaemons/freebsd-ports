@@ -1,0 +1,30 @@
+# New ports collection makefile for:	gtick
+# Date created:		10 February 2004
+# Whom:			Liam J. Foy <liamfoy@sepulcrum.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gtick
+PORTVERSION=	0.4.2
+CATEGORIES=	audio
+MASTER_SITES=	http://www.antcom.de/gtick/download/ CENKES
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A metronome application
+
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
+
+GNU_CONFIGURE=	yes
+USE_GNOME=	gtk20
+USE_GETTEXT=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN1=		gtick.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' ${WRKSRC}/src/dsp.c
+	@${REINPLACE_CMD} -e 's|-O3||' ${WRKSRC}/configure
+
+.include <bsd.port.mk>

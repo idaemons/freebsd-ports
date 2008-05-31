@@ -1,0 +1,144 @@
+# New ports collection makefile for:    xine
+# Date created:         14 Oct 2000
+# Whom:                 alex
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xine
+PORTVERSION=	0.99.5
+CATEGORIES=	multimedia
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
+
+MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	An X11 multimedia player
+
+LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
+		png.5:${PORTSDIR}/graphics/png
+
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+INSTALLS_ICONS=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		THREAD_LIBS="${PTHREAD_LIBS}"
+
+MANLANG=	"" de es fr pl
+MAN1=		aaxine.1 xine-bugreport.1 xine-check.1 xine-remote.1 xine.1
+
+OPTIONS=	CACA "Enable libcaca output" off \
+		AALIB "Enable aalib output" off \
+		LIRC "Enable lirc support" off \
+		CURL "Enable curl support" on \
+		WIN32_CODECS "Enable win32 codecs (for i386 only)" on \
+		NLS "Enable Native Language Support" on \
+		XFT "Enable Xft support" on
+
+DOCSDIR=	${PREFIX}/share/doc/xine-ui
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+.if !defined(WITHOUT_WIN32_CODECS)
+RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
+
+CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
+CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
+.endif
+.endif
+
+.if ${OSVERSION} == 500043
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src:xitk:common.h
+.endif
+
+# PRIi64 macro is not defined
+.if ${OSVERSION} < 500040
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src:xitk:common.h-1
+.endif
+
+# mbrtowc() is not implemented
+.if ${OSVERSION} < 500039
+CONFIGURE_ARGS+=	--disable-mbs
+# Xft support requires --enable-mbs configure option
+WITHOUT_XFT=	yes
+.endif
+
+.if ${OSVERSION} < 502000
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
+.endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
+.if !defined(WITHOUT_XFT)
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+.else
+CONFIGURE_ARGS+=	--disable-xft
+.endif
+
+.if !defined(WITHOUT_CURL)
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+.else
+CONFIGURE_ARGS+=	--without-curl
+.endif
+
+.if defined(WITH_LIRC)
+LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
+CONFIGURE_ARGS+=	--enable-lirc
+.else
+CONFIGURE_ARGS+=	--disable-lirc
+.endif
+
+.if defined(WITH_CACA)
+LIBXINE_VER=	1.21
+.if !exists(${LOCALBASE}/lib/xine/plugins/${LIBXINE_VER}/xineplug_vo_out_caca.so)
+IGNORE=libxine should be compiled with caca support
+.endif
+LIB_DEPENDS+=   caca.0:${PORTSDIR}/graphics/libcaca
+PLIST_SUB+=	WITH_CACA=""
+.else
+PLIST_SUB+=	WITH_CACA="@comment "
+CONFIGURE_ARGS+=	--without-caca --disable-cacatest
+.endif
+
+.if defined(WITH_AALIB)
+LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+PLIST_SUB+=	WITH_AALIB=""
+CONFIGURE_ARGS+=	--with-aalib
+.else
+PLIST_SUB+=	WITH_AALIB="@comment "
+CONFIGURE_ARGS+=	--without-aalib --disable-aalibtest
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|THREAD_LIBS=.*$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
+		s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g' \
+		${WRKSRC}/configure
+
+post-install:
+.for l in es fr
+	@${CP} ${PREFIX}/man/man1/aaxine.1 ${PREFIX}/man/${l}/man1/aaxine.1
+.endfor
+.for l in es fr pl
+	@${CP} ${PREFIX}/man/man1/xine-bugreport.1 ${PREFIX}/man/${l}/man1/xine-bugreport.1
+.endfor
+.for l in es fr pl
+	@${CP} ${PREFIX}/man/man1/xine-check.1 ${PREFIX}/man/${l}/man1/xine-check.1
+.endfor
+.for l in es fr
+	@${CP} ${PREFIX}/man/man1/xine-remote.1 ${PREFIX}/man/${l}/man1/xine-remote.1
+.endfor
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

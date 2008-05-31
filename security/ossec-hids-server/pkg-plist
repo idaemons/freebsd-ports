@@ -1,0 +1,98 @@
+%%PORTNAME%%/active-response/bin/disable-account.sh
+%%PORTNAME%%/active-response/bin/firewall-drop.sh
+%%PORTNAME%%/active-response/bin/host-deny.sh
+%%PORTNAME%%/active-response/bin/ipfw_mac.sh
+%%PORTNAME%%/active-response/bin/ipfw.sh
+%%PORTNAME%%/active-response/bin/pf.sh
+%%PORTNAME%%/active-response/bin/route-null.sh
+%%PORTNAME%%/bin/clear_stats
+%%PORTNAME%%/bin/list_agents
+%%PORTNAME%%/bin/manage_agents
+%%PORTNAME%%/bin/ossec-agentd
+%%PORTNAME%%/bin/ossec-analysisd
+%%PORTNAME%%/bin/ossec-dbd
+%%PORTNAME%%/bin/ossec-control
+%%PORTNAME%%/bin/ossec-execd
+%%PORTNAME%%/bin/ossec-logcollector
+%%PORTNAME%%/bin/ossec-maild
+%%PORTNAME%%/bin/ossec-monitord
+%%PORTNAME%%/bin/ossec-remoted
+%%PORTNAME%%/bin/ossec-syscheckd
+%%PORTNAME%%/bin/syscheck_update
+%%PORTNAME%%/etc/decoder.xml
+%%PORTNAME%%/etc/internal_options.conf
+@unexec if cmp -s %D/%%PORTNAME%%/etc/ossec.conf %D/%%PORTNAME%%/etc/ossec.conf.sample; then rm -f %D/%%PORTNAME%%/etc/ossec.conf; fi
+%%PORTNAME%%/etc/ossec.conf.sample
+%%PORTNAME%%/etc/shared/rootkit_files.txt
+%%PORTNAME%%/etc/shared/rootkit_trojans.txt
+%%PORTNAME%%/etc/shared/system_audit_rcl.txt
+%%PORTNAME%%/etc/shared/win_applications_rcl.txt
+%%PORTNAME%%/etc/shared/win_audit_rcl.txt
+%%PORTNAME%%/etc/shared/win_malware_rcl.txt
+%%PORTNAME%%/logs/ossec.log
+%%PORTNAME%%/rules/apache_rules.xml
+%%PORTNAME%%/rules/arpwatch_rules.xml
+%%PORTNAME%%/rules/attack_rules.xml
+%%PORTNAME%%/rules/cisco-ios_rules.xml
+%%PORTNAME%%/rules/courier_rules.xml
+%%PORTNAME%%/rules/firewall_rules.xml
+%%PORTNAME%%/rules/ftpd_rules.xml
+%%PORTNAME%%/rules/hordeimp_rules.xml
+%%PORTNAME%%/rules/ids_rules.xml
+%%PORTNAME%%/rules/imapd_rules.xml
+%%PORTNAME%%/rules/local_rules.xml
+%%PORTNAME%%/rules/mailscanner_rules.xml
+%%PORTNAME%%/rules/ms-exchange_rules.xml
+%%PORTNAME%%/rules/ms_ftpd_rules.xml
+%%PORTNAME%%/rules/msauth_rules.xml
+%%PORTNAME%%/rules/mysql_rules.xml
+%%PORTNAME%%/rules/named_rules.xml
+%%PORTNAME%%/rules/netscreenfw_rules.xml
+%%PORTNAME%%/rules/ossec_rules.xml
+%%PORTNAME%%/rules/pam_rules.xml
+%%PORTNAME%%/rules/pix_rules.xml
+%%PORTNAME%%/rules/policy_rules.xml
+%%PORTNAME%%/rules/postfix_rules.xml
+%%PORTNAME%%/rules/postgresql_rules.xml
+%%PORTNAME%%/rules/proftpd_rules.xml
+%%PORTNAME%%/rules/pure-ftpd_rules.xml
+%%PORTNAME%%/rules/racoon_rules.xml
+%%PORTNAME%%/rules/rules_config.xml
+%%PORTNAME%%/rules/sendmail_rules.xml
+%%PORTNAME%%/rules/smbd_rules.xml
+%%PORTNAME%%/rules/sonicwall_rules.xml
+%%PORTNAME%%/rules/spamd_rules.xml
+%%PORTNAME%%/rules/squid_rules.xml
+%%PORTNAME%%/rules/sshd_rules.xml
+%%PORTNAME%%/rules/symantec-av_rules.xml
+%%PORTNAME%%/rules/symantec-ws_rules.xml
+%%PORTNAME%%/rules/syslog_rules.xml
+%%PORTNAME%%/rules/telnetd_rules.xml
+%%PORTNAME%%/rules/vpn_concentrator_rules.xml
+%%PORTNAME%%/rules/vpopmail_rules.xml
+%%PORTNAME%%/rules/vsftpd_rules.xml
+%%PORTNAME%%/rules/web_rules.xml
+%%PORTNAME%%/rules/zeus_rules.xml
+@dirrmtry %%PORTNAME%%/var/run
+@dirrmtry %%PORTNAME%%/var
+@dirrmtry %%PORTNAME%%/tmp
+@dirrmtry %%PORTNAME%%/stats
+@dirrmtry %%PORTNAME%%/rules
+@dirrmtry %%PORTNAME%%/queue/syscheck
+@dirrmtry %%PORTNAME%%/queue/rootcheck
+@dirrmtry %%PORTNAME%%/queue/rids
+@dirrmtry %%PORTNAME%%/queue/ossec
+@dirrmtry %%PORTNAME%%/queue/fts
+@dirrmtry %%PORTNAME%%/queue/alerts
+@dirrmtry %%PORTNAME%%/queue/agent-info
+@dirrmtry %%PORTNAME%%/queue
+@dirrmtry %%PORTNAME%%/logs/firewall
+@dirrmtry %%PORTNAME%%/logs/archives
+@dirrmtry %%PORTNAME%%/logs/alerts
+@dirrmtry %%PORTNAME%%/logs
+@dirrmtry %%PORTNAME%%/etc/shared
+@dirrmtry %%PORTNAME%%/etc
+@dirrmtry %%PORTNAME%%/bin
+@dirrmtry %%PORTNAME%%/active-response/bin
+@dirrmtry %%PORTNAME%%/active-response
+@dirrmtry %%PORTNAME%%

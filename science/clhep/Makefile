@@ -1,0 +1,33 @@
+# New ports collection makefile for:	clhep
+# Date created:				6 May 2001
+# Whom:					will
+#
+# $FreeBSD$
+#
+
+PORTNAME=	clhep
+PORTVERSION=	2.0.3.3
+CATEGORIES=	science
+MASTER_SITES=	http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/distributions/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Object-oriented toolkit for particle physics applications by CERN
+
+WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:U}
+
+USE_GNOME=	gnometarget
+USE_PERL5_BUILD=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-gmake
+USE_LDCONFIG=	yes
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
+		 '/AM_CXXFLAGS=/s|-O ||g'
+
+.include <bsd.port.mk>

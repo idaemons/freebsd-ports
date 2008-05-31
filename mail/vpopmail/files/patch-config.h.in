@@ -1,0 +1,16 @@
+diff -urN -x .svn ../../vendor/vpopmail/config.h.in ./config.h.in
+--- ../../vendor/vpopmail/config.h.in	2007-12-25 00:51:28.000000000 +0200
++++ ./config.h.in	2007-12-25 04:13:39.000000000 +0200
+@@ -277,6 +277,12 @@
+ #undef SPAMC_PROG
+ 
+ /* "" */
++#undef SPAM_THRESHOLD
++
++/* "" */
++#undef SPAM_JUNKFOLDER
++
++/* "" */
+ #undef SQWEBMAIL_PASS
+ 
+ /* Define to 1 if you have the ANSI C header files. */

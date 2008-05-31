@@ -1,0 +1,77 @@
+Index: src/Makefile
+diff -u src/Makefile.orig src/Makefile
+--- src/Makefile.orig	2007-05-29 04:12:20.000000000 +0900
++++ src/Makefile	2008-02-19 18:45:50.000000000 +0900
+@@ -41,17 +41,19 @@
+ endif
+ 
+ 
+-DUMMY_VAR := $(shell ./configure $(CONFIGURE_ARGS))
++DUMMY_VAR := $(shell env OPENSSLINC=$(OPENSSLINC) OPENSSLLIB=$(OPENSSLLIB) \
++		GNUTLSINC=$(GNUTLSINC) GNUTLSLIB=$(GNUTLSLIB) \
++		./configure $(CONFIGURE_ARGS))
+ 
+ HAVE_GNUTLS = $(shell grep -c HAVE_GNUTLS configure.h)
+ HAVE_SSL = $(shell grep -c HAVE_SSL configure.h)
+ HAVE_LIBSENSORS = $(shell grep -c HAVE_LIBSENSORS configure.h)
+ 
+ ifeq ($(HAVE_GNUTLS),1)
+-    SSL_LIBS ?= -lgnutls-openssl
++    SSL_LIBS ?= -L$(GNUTLSLIB) -lgnutls-openssl
+ else
+ ifeq ($(HAVE_SSL),1)
+-    SSL_LIBS ?= -lssl -lcrypto
++    SSL_LIBS ?= -L$(OPENSSLLIB) -lssl -lcrypto
+ else
+     EXTRAOBJS ?= md5c.o
+ endif
+@@ -70,9 +72,17 @@
+ 
+ PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
+ 
+-FLAGS = -O2 -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
++FLAGS = -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
+ FLAGS+= $(PTHREAD_INC)
+ 
++ifeq ($(HAVE_GNUTLS),1)
++    FLAGS+= -I$(GNUTLSINC)
++else
++ifeq ($(HAVE_SSL),1)
++    FLAGS+= -I$(OPENSSLINC)
++endif
++endif
++
+ LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS) $(SSL_LIBS) $(SENSORS_LIBS)
+ 
+ ifeq ($(debug),1)
+@@ -98,7 +108,7 @@
+ endif
+ 
+ 
+-override CC += -Wall $(FLAGS)
++CFLAGS += -Wall $(FLAGS)
+ 
+ OBJS =	main.o alerts.o battery.o base64.o clock.o cpu.o disk.o fs.o \
+ 	hostname.o inet.o mail.o mem.o net.o proc.o sensors.o uptime.o \
+@@ -124,13 +134,20 @@
+ 	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -lmd" gkrellm
+ endif
+ 
+-freebsd3 freebsd:
++freebsd3 freebsd4:
+ ifeq ($(HAVE_SSL),1)
+ 	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -ldevstat" gkrellm
+ else
+ 	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -ldevstat -lmd" gkrellm
+ endif
+ 
++freebsd5 freebsd6 freebsd7 freebsd:
++ifeq ($(HAVE_SSL),1)
++	$(MAKE) EXTRAOBJS= SYS_LIBS="-ldevstat" gkrellm
++else
++	$(MAKE) EXTRAOBJS= SYS_LIBS="-ldevstat -lmd" gkrellm
++endif
++
+ darwin: 
+ ifeq ($(HAVE_SSL),1)
+ 	$(MAKE) GTK_CONFIG=gtk-config STRIP= \

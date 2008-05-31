@@ -1,0 +1,30 @@
+# New ports collection makefile for:	xf86-video-openchrome
+# Date Created:				17 Sep 2007
+# Whom:					Florent Thoumie <flz@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xf86-video-openchrome
+PORTVERSION=	0.2.901
+CATEGORIES=	x11-drivers
+MASTER_SITES=	http://www.openchrome.org/releases/
+
+MAINTAINER=	x11@FreeBSD.org
+COMMENT=	X.Org openChrome display driver
+
+USE_GL=		gl
+
+XORG_CAT=	driver
+USE_XORG=	videoproto xf86driproto xextproto xvmc glproto
+MAN4=		openchrome.4x
+
+MAKE_ARGS+=	drivermandir=${LOCALBASE}/man/man4
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile on 5.X
+.endif
+
+.include <bsd.port.post.mk>

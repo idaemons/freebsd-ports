@@ -1,0 +1,17 @@
+--- gr-audio-oss/Makefile.in.orig	2008-03-24 12:50:02.000000000 -0400
++++ gr-audio-oss/Makefile.in	2008-03-24 16:20:01.000000000 -0400
+@@ -543,12 +543,11 @@
+ 
+ # Base directory for example applications
+ exampledir = $(datadir)/gnuradio/examples
+-EXTRA_DIST = \
+-	gr-audio-oss.conf
++EXTRA_DIST =
+ 
+ SUBDIRS = src
+ etcdir = $(sysconfdir)/gnuradio/conf.d
+-etc_DATA = gr-audio-oss.conf
++etc_DATA =
+ all: all-recursive
+ 
+ .SUFFIXES:

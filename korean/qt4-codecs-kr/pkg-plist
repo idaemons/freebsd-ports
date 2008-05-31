@@ -1,0 +1,3 @@
+lib/qt4/plugins/codecs/libqkrcodecs.so
+%%DEBUG%%lib/qt4/plugins/codecs/libqkrcodecs.so.debug
+@dirrm lib/qt4/plugins/codecs

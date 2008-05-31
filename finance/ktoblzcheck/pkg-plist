@@ -1,0 +1,19 @@
+bin/ktoblzcheck
+include/iban.h
+include/ktoblzcheck.h
+lib/libktoblzcheck.a
+lib/libktoblzcheck.la
+lib/libktoblzcheck.so
+lib/libktoblzcheck.so.6
+%%PYTHON_SITELIBDIR%%/ktoblzcheck.py
+%%PYTHON_SITELIBDIR%%/ktoblzcheck.pyc
+%%PYTHON_SITELIBDIR%%/ktoblzcheck.pyo
+libdata/pkgconfig/ktoblzcheck.pc
+%%DATADIR%%/bankdata.txt
+%%DATADIR%%/bankdata_20071203.txt
+%%DATADIR%%/bankdata_20080303.txt
+%%DATADIR%%/bankdata_20080609.txt
+%%DATADIR%%/bundesbank.pl
+%%DATADIR%%/ibandata.txt
+%%DATADIR%%/online_update.pl
+@dirrm %%DATADIR%%

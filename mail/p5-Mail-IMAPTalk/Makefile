@@ -1,0 +1,21 @@
+# New ports collection makefile for:	p5-Mail-IMAPTalk
+# Date created:				24 May 2006
+# Whom:					Aaron Dalton <aaron@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Mail-IMAPTalk
+PORTVERSION=	1.03
+CATEGORIES=	mail perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	pgollucci@p6m7g8.com
+COMMENT=	IMAP client interface with lots of features
+
+MAN3=	Mail::IMAPTalk.3
+
+PERL_CONFIGURE=	yes
+
+.include <bsd.port.mk>

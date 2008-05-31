@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+sbin/queso
+etc/queso.conf
+share/doc/queso/Documentation.txt
+@dirrm share/doc/queso

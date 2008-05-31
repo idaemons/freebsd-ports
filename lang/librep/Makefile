@@ -1,0 +1,46 @@
+# New ports collection makefile for:   librep
+# Date created:        13 September 1999
+# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
+#
+# $FreeBSD$
+#    $MCom: ports/lang/librep/Makefile,v 1.2 2006/09/10 00:51:12 mezz Exp $
+
+PORTNAME=	librep
+PORTVERSION=	0.17
+CATEGORIES=	lang elisp gnome
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	librep
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An Emacs Lisp like runtime library
+
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+    		gmp.7:${PORTSDIR}/math/libgmp4
+
+PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}
+
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal
+CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
+
+INFO=		librep
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == ia64
+BROKEN=		Does not build on ia64
+.endif
+
+post-extract:
+	@${RM} ${WRKSRC}/test
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    	${WRKSRC}/configure
+
+.include <bsd.port.post.mk>

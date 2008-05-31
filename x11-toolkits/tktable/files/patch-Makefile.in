@@ -1,0 +1,43 @@
+--- Makefile.in.orig	2004-07-20 22:49:05.000000000 +0200
++++ Makefile.in	2007-08-20 14:47:36.000000000 +0200
+@@ -44,7 +44,7 @@
+ 
+ PKG_HEADERS	= @PKG_HEADERS@
+ 
+-PKG_EXTRA_FILES = license.txt README.txt
++PKG_EXTRA_FILES =
+ 
+ PKG_MAN_PAGES	= tkTable.n
+ 
+@@ -70,6 +70,7 @@
+ datadir		= @datadir@
+ mandir		= @mandir@
+ includedir	= @includedir@
++docsdir		= /usr/local/share/doc/tktable
+ 
+ DESTDIR		=
+ 
+@@ -204,7 +205,7 @@
+ 
+ doc:
+ 
+-install: all install-binaries install-libraries install-doc
++install: all install-binaries install-libraries
+ 
+ install-binaries: binaries install-lib-binaries install-bin-binaries
+ 	@mkdir -p $(DESTDIR)$(pkglibdir)
+@@ -229,10 +230,12 @@
+ #========================================================================
+ 
+ install-doc: doc
+-	@mkdir -p $(DESTDIR)$(pkglibdir)/html
++	@mkdir -p $(docsdir)/html
++	$(INSTALL_DATA) $(srcdir)/README.txt $(docsdir)
++	$(INSTALL_DATA) $(srcdir)/license.txt $(docsdir)
+ 	@list='$(PKG_MAN_PAGES)'; for p in $$list; do \
+ 		html=`basename $$p|sed -e 's/.[^.]*$$//'`.html; \
+-	  	$(INSTALL_DATA) $(srcdir)/doc/$$html $(DESTDIR)$(pkglibdir)/html/; \
++		$(INSTALL_DATA) $(srcdir)/doc/$$html $(docsdir)/html/; \
+ 	done
+ 
+ html:

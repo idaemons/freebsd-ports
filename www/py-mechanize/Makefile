@@ -1,0 +1,45 @@
+# ex:ts=8
+# Ports collection makefile for:	py-mechanize
+# Date created:			Apr 29, 2005
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mechanize
+PORTVERSION=	0.1.7.b
+CATEGORIES=	www python
+MASTER_SITES=	http://wwwsearch.sourceforge.net/mechanize/src/ \
+		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
+
+MAINTAINER=	lwhsu@FreeBSD.org
+COMMENT=	Stateful programmatic web browsing in Python
+
+BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
+		${PYTHON_SITELIBDIR}/${PYCLIENTFORM_EGG}:${PORTSDIR}/www/py-clientform
+RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
+		${PYTHON_SITELIBDIR}/${PYCLIENTFORM_EGG}:${PORTSDIR}/www/py-clientform
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	0.1.6b
+PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
+
+EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
+PYDISTUTILS_BUILD_TARGET=	bdist_egg
+PYDISTUTILS_INSTALL_TARGET=	easy_install
+PYDISTUTILS_INSTALLARGS=	-N -s ${PREFIX}/bin -S ${PYTHON_SITELIBDIR} dist/${PYMECHANIZE_EGG}
+
+PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
+		PYMECHANIZE_EGG=${PYMECHANIZE_EGG} \
+		PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
+
+PYMECHANIZE_EGG=	${DISTNAME}-py${PYTHON_VER}.egg
+
+.include <bsd.port.pre.mk>
+
+PYCLIENTFORM_EGG!=	${MAKE} -f ${PORTSDIR}/www/py-clientform/Makefile -V PYCLIENTFORM_EGG
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,26 @@
+# New ports collection makefile for:	xmountains
+# Date created:		16 November 1996
+# Whom:			proff@iq.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xmountains
+PORTVERSION=	2.7
+PORTREVISION=	1
+CATEGORIES=	graphics
+MASTER_SITES=	http://www2.epcc.ed.ac.uk/~spb/xmountains/ \
+		GENTOO/distfiles
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X11 based fractal landscape generator
+
+NO_WRKSUBDIR=	yes
+
+USE_IMAKE=	yes
+USE_XORG=	xbitmaps x11 xext
+MAN6=		xmountains.6
+PLIST_FILES=	bin/xmountains
+
+.include <bsd.port.mk>

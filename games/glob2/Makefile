@@ -1,0 +1,51 @@
+# New ports collection makefile for:	glob2
+# Date created:		Wed 21 apr 2004
+# Whom:			thierry@pompo.net
+#
+# $FreeBSD$
+#
+
+PORTNAME=		glob2
+PORTVERSION=		0.9.3
+CATEGORIES=		games
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
+
+MAINTAINER=		thierry@FreeBSD.org
+COMMENT=		Globulation 2 - a free and innovative strategy game
+
+BUILD_DEPENDS=		${LOCALBASE}/include/boost/rational.hpp:${PORTSDIR}/devel/boost
+LIB_DEPENDS=		vorbis.4:${PORTSDIR}/audio/libvorbis	\
+			speex.1:${PORTSDIR}/audio/speex		\
+			fribidi.0:${PORTSDIR}/converters/fribidi\
+			freetype.9:${PORTSDIR}/print/freetype2
+
+USE_SDL=		image net sdl ttf
+USE_GL=			gl
+USE_GMAKE=		yes
+USE_SCONS=		yes
+INSTALLS_ICONS=		yes
+SCONS_BUILDENV=		${SCONS_ENV}
+LINKFLAGS=		${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CFLAGS+=		${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=			Does not build on ${ARCH}
+.endif
+
+post-install:
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
+
+manual-regression-test:
+# Don't enable these tests on pointyhat, they take too long.
+.if defined(MAINTAINER_MODE)
+	(cd ${WRKSRC}/src && ./glob2 -test-games)
+.else
+	(cd ${WRKSRC}/src && ./glob2 -test-games-nox)
+.endif
+
+.include <bsd.port.post.mk>

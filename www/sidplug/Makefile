@@ -1,0 +1,40 @@
+# New ports collection makefile for:	sidplug
+# Date created:				14 December 2001
+# Whom:				John Merryweather Cooper <jmcoopr@webmail.bmi.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sidplug
+PORTVERSION=	1.1.5
+PORTREVISION=	2
+CATEGORIES=	www audio
+MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Commodore 64 psid audio plugin for Mozilla or Opera
+
+RUN_DEPENDS=	xsidplay:${PORTSDIR}/audio/xsidplay
+
+MAKE_ARGS=	CC="${CC}" OPTIMIZER="${CFLAGS} -I${LOCALBASE}/include"
+USE_XORG=	x11
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
+.endif
+
+do-install:
+	@${MKDIR} ${PREFIX}/lib/browser_plugins
+	@${INSTALL_PROGRAM} ${WRKSRC}/npsidplug.so ${PREFIX}/lib/browser_plugins
+	@${LN} -sf ${LOCALBASE}/bin/xsidplay ${PREFIX}/bin/sidplug
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Lazy_Fast.sid ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README.html ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/sidplug.png ${EXAMPLESDIR}
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,30 @@
+# New ports collection makefile for:	quick-lounge-applet
+# Date created:				01 March 2003
+# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
+#
+# $FreeBSD$
+#   $MCom: ports/misc/quick-lounge-applet/Makefile,v 1.11 2007/05/19 21:36:14 marcus Exp $
+#
+
+PORTNAME=	quick-lounge-applet
+PORTVERSION=	2.12.5
+CATEGORIES=	misc gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
+DIST_SUBDIR=	gnome2
+
+MAINTAINER=	marcus@FreeBSD.org
+COMMENT=	Applet to orginize your preferred applications on the GNOME Panel
+
+USE_BZIP2=	yes
+INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+GCONF_SCHEMAS=	quick-lounge.schemas
+
+.include <bsd.port.mk>

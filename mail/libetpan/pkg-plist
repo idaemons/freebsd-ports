@@ -1,0 +1,5 @@
+bin/libetpan-config
+lib/libetpan.so
+lib/libetpan.so.13
+lib/libetpan.la
+lib/libetpan.a

@@ -1,0 +1,10 @@
+include/miniupnpc/igd_desc_parse.h
+include/miniupnpc/miniupnpc.h
+include/miniupnpc/miniwget.h
+include/miniupnpc/upnpcommands.h
+include/miniupnpc/upnpreplyparse.h
+include/miniupnpc/upnperrors.h
+lib/libminiupnpc.a
+lib/libminiupnpc.so
+lib/libminiupnpc.so.2
+@dirrm include/miniupnpc

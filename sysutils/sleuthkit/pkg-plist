@@ -1,0 +1,74 @@
+bin/dcalc
+bin/dcat
+bin/disk_sreset
+bin/disk_stat
+bin/dls
+bin/dstat
+bin/ffind
+bin/fls
+bin/fsstat
+bin/hfind
+bin/icat
+bin/ifind
+bin/ils
+bin/img_cat
+bin/img_stat
+bin/istat
+bin/jcat
+bin/jls
+bin/mactime
+bin/mmls
+bin/mmstat
+bin/sigfind
+bin/sorter
+bin/srch_strings
+include/tsk/base/tsk_base.h
+include/tsk/base/tsk_os.h
+include/tsk/fs/tsk_ext2fs.h
+include/tsk/fs/tsk_fatfs.h
+include/tsk/fs/tsk_ffs.h
+include/tsk/fs/tsk_fs.h
+include/tsk/fs/tsk_hfs.h
+include/tsk/fs/tsk_iso9660.h
+include/tsk/fs/tsk_ntfs.h
+include/tsk/hashdb/tsk_hashdb.h
+include/tsk/img/tsk_img.h
+include/tsk/vs/tsk_bsd.h
+include/tsk/vs/tsk_dos.h
+include/tsk/vs/tsk_gpt.h
+include/tsk/vs/tsk_mac.h
+include/tsk/vs/tsk_sun.h
+include/tsk/vs/tsk_vs.h
+include/tsk/libtsk.h
+include/tsk/tsk_incs.h
+@dirrm include/tsk/vs
+@dirrm include/tsk/img
+@dirrm include/tsk/hashdb
+@dirrm include/tsk/fs
+@dirrm include/tsk/base
+@dirrm include/tsk
+lib/libtsk.a
+lib/libtsk.la
+lib/libtsk.so
+lib/libtsk.so.1
+%%DATADIR%%/sorter/default.sort
+%%DATADIR%%/sorter/freebsd.sort
+%%DATADIR%%/sorter/images.sort
+%%DATADIR%%/sorter/linux.sort
+%%DATADIR%%/sorter/openbsd.sort
+%%DATADIR%%/sorter/solaris.sort
+%%DATADIR%%/sorter/windows.sort
+@dirrm %%DATADIR%%/sorter
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/library-api.txt
+%%PORTDOCS%%%%DOCSDIR%%/nsrl.txt
+%%PORTDOCS%%%%DOCSDIR%%/other.txt
+%%PORTDOCS%%%%DOCSDIR%%/ref_fs.txt
+%%PORTDOCS%%%%DOCSDIR%%/ref_timeline.txt
+%%PORTDOCS%%%%DOCSDIR%%/skins_fat.txt
+%%PORTDOCS%%%%DOCSDIR%%/skins_iso9660.txt
+%%PORTDOCS%%%%DOCSDIR%%/skins_ntfs.txt
+%%PORTDOCS%%%%DOCSDIR%%/skins_windows.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

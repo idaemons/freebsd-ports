@@ -1,0 +1,23 @@
+# Ports collection makefile for:	thin
+# Date created:				24 Jan 2008
+# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
+#
+# $FreeBSD$
+
+PORTNAME=	thin
+PORTVERSION=	0.8.1
+CATEGORIES=	www rubygems
+MASTER_SITES=	RF
+
+MAINTAINER=	clsung@FreeBSD.org
+COMMENT=	A fast and very simple Ruby web server
+
+BUILD_DEPENDS=	rackup:${PORTSDIR}/www/rubygem-rack \
+		rubygem-eventmachine>=0.8.1:${PORTSDIR}/devel/rubygem-eventmachine \
+		rubygem-daemons>=1.0.9:${PORTSDIR}/devel/rubygem-daemons
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

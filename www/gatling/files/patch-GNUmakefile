@@ -1,0 +1,114 @@
+--- GNUmakefile.orig	Wed Jan 31 18:05:38 2007
++++ GNUmakefile	Mon Aug 27 16:49:36 2007
+@@ -1,21 +1,26 @@
+ #DEBUG=1
+-ZLIB=1
+-prefix=/opt/diet
++prefix=${PREFIX}
+ BINDIR=${prefix}/bin
+ MANDIR=${prefix}/man
+ man1dir=$(MANDIR)/man1
+ 
+-TARGETS=gatling httpbench bindbench dl ioerr bench tlsgatling \
+-pthreadbench cgi getlinks rellink acc hcat
+-TARGETS2=mktestdata mmapbench manymapbench forkbench forksbench
++TARGETS=cgi dl gatling getlinks rellink acc hcat referrer
++TARGETS2=
++ifdef BENCHMARKS
++TARGETS+=httpbench bindbench ioerr pthreadbench
++TARGETS2+=mktestdata mmapbench manymapbench forkbench forksbench
++endif
++ifdef TLSGATLING
++TARGETS+=tlsgatling
++endif
+ 
+-all: $(TARGETS) $(TARGETS2)
++all: checklibs $(TARGETS) $(TARGETS2)
+ 
+-CROSS=
++#CROSS=
+ #CROSS=i686-mingw32-
+-CC=$(CROSS)gcc
+-CFLAGS=-pipe -Wall
+-LDFLAGS=
++#CC=$(CROSS)gcc
++#CFLAGS=-pipe -Wall
++#LDFLAGS=
+ 
+ path = $(subst :, ,$(PATH))
+ diet_path = $(foreach dir,$(path),$(wildcard $(dir)/diet))
+@@ -32,15 +37,11 @@
+ # to build without diet libc support, use $ make DIET=
+ # see http://www.fefe.de/dietlibc/ for details about the diet libc
+ 
++DIET=
++
+ ifneq ($(DEBUG),)
+ CFLAGS+=-g
+ LDFLAGS+=-g
+-else
+-CFLAGS+=-O2 -fomit-frame-pointer
+-LDFLAGS+=-s
+-ifneq ($(DIET),)
+-DIET+=-Os
+-endif
+ endif
+ 
+ LDLIBS=-lowfat
+@@ -66,7 +67,7 @@
+ CC:=$(DIET) $(CC)
+ 
+ pthreadbench: pthreadbench.o
+-	$(CC) $< -o $@ -I. $(CFLAGS) $(LDFLAGS) $(LDLIBS) -lpthread
++	$(CC) $< -o $@ -I. $(CFLAGS) $(LDFLAGS) $(LDLIBS) $(PTHREAD_LIBS)
+ 
+ forksbench: forkbench.o
+ 	$(CC) -static -o $@ forkbench.o $(LDFLAGS) $(LDLIBS)
+@@ -74,7 +75,7 @@
+ gatling.o: version.h havesetresuid.h
+ 
+ tlsgatling: gatling.c ssl.o mime.o
+-	-$(CC) -o $@ gatling.c ssl.o mime.o $(CFLAGS) -DSUPPORT_HTTPS $(LDFLAGS) -lssl -lcrypto $(LDLIBS)
++	$(CC) -o $@ gatling.c ssl.o mime.o $(CFLAGS) -DSUPPORT_HTTPS $(LDFLAGS) -lssl -lcrypto $(LDLIBS)
+ 
+ gatling: gatling.o mime.o
+ 	$(CC) $(LDFLAGS) $@.o mime.o -o $@ $(LDLIBS)
+@@ -107,9 +108,13 @@
+ 	rm -f trysocket
+ 
+ libiconv: tryiconv.c
+-	if $(CC) $(CFLAGS) -o tryiconv tryiconv.c >/dev/null 2>&1; then echo ""; else \
+-	if $(CC) $(CFLAGS) -o tryiconv tryiconv.c -liconv >/dev/null 2>&1; then echo "-liconv"; \
+-	fi; fi > libiconv
++ifdef ICONV
++	if $(CC) $(CFLAGS) -L$(LOCALBASE)/lib -o tryiconv tryiconv.c -liconv >/dev/null 2>&1; then echo "-L$(LOCALBASE)/lib -liconv"; else \
++	echo ""; \
++	fi > libiconv
++else
++	echo "" > libiconv
++endif
+ 	rm -f tryiconv
+ 
+ libcrypt: trycrypt.c
+@@ -130,9 +135,11 @@
+ 	ar q $@ dummy.o
+ 	-ranlib $@
+ 
++checklibs: libsocket libiconv libcrypt
++
+ LDLIBS+=`cat libsocket libiconv libcrypt`
+ 
+-$(TARGETS): libsocketkludge.a libsocket libiconv libcrypt
++$(TARGETS): libsocketkludge.a
+ 
+ install: gatling dl getlinks
+ 	install -d $(DESTDIR)$(BINDIR) $(man1dir)
+@@ -144,7 +151,7 @@
+ 	rm -f $(DESTDIR)$(BINDIR)/gatling $(DESTDIR)$(BINDIR)/tlsgatling $(DESTDIR)$(man1dir)/gatling.1 $(DESTDIR)$(man1dir)/bench.1
+ 
+ clean:
+-	rm -f $(TARGETS) *.o version.h core *.core libsocket libsocketkludge.a dummy.c libiconv libcrypt havesetresuid.h
++	rm -f $(TARGETS) $(TARGETS2) *.o version.h core *.core libsocket libsocketkludge.a dummy.c libiconv libcrypt havesetresuid.h
+ 
+ VERSION=gatling-$(shell head -n 1 CHANGES|sed 's/://')
+ CURNAME=$(notdir $(shell pwd))

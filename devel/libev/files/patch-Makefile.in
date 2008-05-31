@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2007-12-25 10:11:59.000000000 +0300
++++ Makefile.in	2008-01-21 14:39:26.649768099 +0300
+@@ -149,7 +149,7 @@
+ 
+ man_MANS = ev.3
+ 
+-include_HEADERS = ev.h ev++.h event.h
++include_HEADERS = ev.h ev++.h 
+ 
+ lib_LTLIBRARIES = libev.la
+ 

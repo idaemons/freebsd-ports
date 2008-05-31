@@ -1,0 +1,34 @@
+--- Makefile.in.orig	Sun Jul 29 14:43:49 2001
++++ Makefile.in	Thu Mar 18 22:27:35 2004
+@@ -5,19 +5,19 @@
+ #  initial_directory is now set in the config file
+ mpg123_location   := "mpg123"
+ ogg123_location   := "ogg123"
+-install_directory := "$(HOME)/bin"
++install_directory := "$(PREFIX)/bin"
+ 
+ #
+ #  Location of config file - Please edit this file before installing
+ #
+-config_file       := "$(HOME)/.cmp3rc"
++#config_file       := "$(HOME)/.cmp3rc"
+ 
+ #
+ #  Uncomment and set if desired
+ #
+ 
+ ## An ass repository is a nice thing to have. See README
+-ass_repository := "$(HOME)/.cmp3ass"
++#ass_repository := "$(HOME)/.cmp3ass"
+ 
+ ## Define this for bufferring or add other parameters to mpg123 and ogg123
+ mpg123_params := -b 320
+@@ -42,7 +42,7 @@
+ # stands. Change the code to do something else you want it to do...
+ #PARAMS +=-DMY_CD
+ LIBS= -lform -lncurses
+-CFLAGS= -g -O -Inevlib
++CFLAGS= @CFLAGS@ -Inevlib
+ CC= @CC@
+ OBJS= cmp3common.o cmp3fileio.o cmp3manager.o cmp3curses.o \
+       cmp3llist.o cmp3main.o cmp3listfiles.o cmp3playlist.o cmp3volume.o \

@@ -1,0 +1,39 @@
+# New ports collection makefile for:	p5-Apache-DBI
+# Date created:				21 December 1999
+# Whom:					Igor Vinokurov <igor@zynaps.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Apache-DBI
+PORTVERSION=	1.06
+CATEGORIES=	www databases perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	pgollucci@p6m7g8.com
+COMMENT=	DBI persistent connection, authentication and authorization
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+
+MAN3=		Apache::DBI.3 Apache::AuthDBI.3
+
+PERL_CONFIGURE=	yes
+
+.if defined(WITH_MODPERL2)
+USE_APACHE=	2.0+
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS+=	${RUN_DEPENDS}
+.else
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
+BUILD_DEPENDS+=	${RUN_DEPENDS}
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

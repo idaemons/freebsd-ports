@@ -1,0 +1,71 @@
+--- src/Makefile.orig	2008-03-09 12:22:06.000000000 -0700
++++ src/Makefile	2008-03-17 16:12:11.322174163 -0700
+@@ -1,10 +1,9 @@
+ # remove -fno-exceptions  if it causes problems with stdio library on some platforms (ARM)
+ 
+-PREFIX=/
+-BINDIR=$(PREFIX)/usr/bin
+-INCDIR=$(PREFIX)/usr/include/espeak
+-LIBDIR=$(PREFIX)/usr/lib
+-DATADIR=$(PREFIX)/usr/share/espeak-data
++BINDIR=%%PREFIX%%/bin
++INCDIR=%%PREFIX%%/include/espeak
++LIBDIR=%%PREFIX%%/lib
++DATADIR=%%DATADIR%%/espeak-data
+ 
+ RELEASE = 1.36
+ BIN_NAME = speak
+@@ -53,24 +52,23 @@
+ 
+ SRCS1=$(speak_SOURCES)
+ OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
+-LIBS1=-lstdc++ $(LIB_AUDIO) -lpthread $(EXTRA_LIBS)
++LIBS1=-lstdc++ -L%%LOCALBASE%%/lib $(LIB_AUDIO) $(PTHREAD_LIBS) $(EXTRA_LIBS)
+ 
+ SRCS2=$(libespeak_SOURCES)
+ OBJS2=$(patsubst %.cpp,x_%.o,$(SRCS2))
+-LIBS2=-lstdc++ $(LIB_AUDIO) -lpthread
++LIBS2=-lstdc++ -L%%LOCALBASE%%/lib $(LIB_AUDIO) $(PTHREAD_LIBS)
+ 
+ SRCS3 = espeak.cpp
+ OBJS3=$(patsubst %.cpp,%.o,$(SRCS3))
+-LIBS3=-lstdc++ -L . -lespeak
+ 
+-CXXFLAGS=-O2
++LIBS3=-lstdc++ -L . -lespeak $(PTHREAD_LIBS)
+ 
+ 
+ all: $(BIN_NAME) $(LIB_NAME) $(STATIC_LIB_NAME) $(BIN2_NAME)
+ 	mv $(LIB_NAME) $(LIB_NAME).$(LIBTAG)
+ 
+ .cpp.o:
+-	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions  $<
++	$(CXX) $(CXXFLAGS) $(PTHREAD_CFLAGS) $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions  $<
+ 
+ $(BIN_NAME): $(OBJS1)
+ 	$(CXX) -o $@ $(OBJS1) $(LIBS1)
+@@ -81,7 +79,7 @@
+ 
+ 
+ x_%.o: %.cpp
+-	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -Wall -fpic -pedantic \
++	$(CXX) $(CXXFLAGS) $(PTHREAD_CFLAGS) $(USE_AUDIO) -Wall -fpic -pedantic \
+ 	-I. -D LIBRARY -c -fno-exceptions  $<  -o x_$*.o
+ 
+ $(LIB_NAME): $(OBJS2)
+@@ -100,7 +98,7 @@
+ 
+ install: all
+ 	# Create directories
+-	rm -rf $(DESTDIR)$(DATADIR)
++	#rm -rf $(DESTDIR)$(DATADIR)
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+ 	$(MKDIR) $(DESTDIR)$(LIBDIR)
+ 	$(MKDIR) $(DESTDIR)$(INCDIR)
+@@ -116,5 +114,5 @@
+ 	# Install development headers
+ 	$(INSTALL) -pm 644 speak_lib.h $(DESTDIR)$(INCDIR)
+ 	# Install data files
+-	cp -prf ../espeak-data/* $(DESTDIR)$(DATADIR)
++	cp -pRf ../espeak-data/* $(DESTDIR)$(DATADIR)
+ 

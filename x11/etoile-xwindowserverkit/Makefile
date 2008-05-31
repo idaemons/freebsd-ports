@@ -1,0 +1,31 @@
+# New ports collection makefile for:    etoile-xwindowserverkit
+# Date created:         18 Nov 2006
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xwindowserverkit
+PORTVERSION=	0.2
+CATEGORIES=	x11 gnustep
+MASTER_SITES=	http://download.gna.org/etoile/
+PKGNAMEPREFIX=	etoile-
+DISTNAME=	etoile-${PORTVERSION}
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Etoile Project XWindowServerKit frameowrk
+
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
+
+WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
+USE_GNUSTEP_MAKE_DIRS+=	Frameworks/XWindowServerKit
+ADDITIONAL_OBJCFLAGS+=	-I${LOCALBASE}/include
+ADDITIONAL_LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR="${GNUSTEP_SYSTEM_ROOT}"
+
+.include <bsd.port.mk>

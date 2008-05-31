@@ -1,0 +1,4 @@
+%%SITE_PERL%%/mach/auto/Text/Quoted/.packlist
+%%SITE_PERL%%/Text/Quoted.pm
+@dirrm %%SITE_PERL%%/mach/auto/Text/Quoted
+@dirrmtry %%SITE_PERL%%/Text

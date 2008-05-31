@@ -1,0 +1,6 @@
+bin/vdccm
+bin/proxyclient
+bin/triggerconnection
+lib/libdescriptor.la
+lib/libdescriptor.so
+lib/libdescriptor.so.0

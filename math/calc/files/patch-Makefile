@@ -1,0 +1,39 @@
+--- Makefile.orig	2008-05-10 08:04:43.000000000 -0700
++++ Makefile	2008-05-10 08:05:39.000000000 -0700
+@@ -585,7 +585,7 @@
+ 
+ #INCDIR= /usr/local/include
+ #INCDIR= /dev/env/DJDIR/include
+-INCDIR= /usr/include
++INCDIR= ${PREFIX}/include
+ 
+ # Where to install calc realted things
+ #
+@@ -612,15 +612,15 @@
+ #
+ #BINDIR= /usr/local/bin
+ #BINDIR= /dev/env/DJDIR/bin
+-BINDIR= /usr/bin
++BINDIR= ${PREFIX}/bin
+ 
+ #LIBDIR= /usr/local/lib
+ #LIBDIR= /dev/env/DJDIR/lib
+-LIBDIR= /usr/lib
++LIBDIR= ${PREFIX}/lib
+ 
+ #CALC_SHAREDIR= /usr/local/lib/calc
+ #CALC_SHAREDIR= /dev/env/DJDIR/share/calc
+-CALC_SHAREDIR= /usr/share/calc
++CALC_SHAREDIR= ${PREFIX}/share/calc
+ 
+ # NOTE: Do not set CALC_INCDIR to /usr/include or /usr/local/include!!!
+ #	Always be sure that the CALC_INCDIR path ends in /calc to avoid
+@@ -698,7 +698,7 @@
+ #MANDIR=
+ #MANDIR= /usr/local/man/man1
+ #MANDIR= /usr/man/man1
+-MANDIR= /usr/share/man/man1
++MANDIR= ${PREFIX}/man/man1
+ #MANDIR= /dev/env/DJDIR/man/man1
+ #MANDIR= /usr/man/u_man/man1
+ #MANDIR= /usr/contrib/man/man1

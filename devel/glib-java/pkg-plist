@@ -1,0 +1,71 @@
+include/%%PORTNAME%%/glib_java.h
+include/%%PORTNAME%%/jg_jnu.h
+lib/libglibjni-%%GLIB_API_VERSION%%.so
+lib/libglibjni-%%GLIB_API_VERSION%%.so.1
+libdata/pkgconfig/%%PORTNAME%%.pc
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/api/allclasses-frame.html
+%%DOCSDIR%%/api/allclasses-noframe.html
+%%DOCSDIR%%/api/constant-values.html
+%%DOCSDIR%%/api/deprecated-list.html
+%%DOCSDIR%%/api/help-doc.html
+%%DOCSDIR%%/api/index-all.html
+%%DOCSDIR%%/api/index.html
+%%DOCSDIR%%/api/org/gnu/glib/Boxed.html
+%%DOCSDIR%%/api/org/gnu/glib/Config.html
+%%DOCSDIR%%/api/org/gnu/glib/Enum.html
+%%DOCSDIR%%/api/org/gnu/glib/Error.html
+%%DOCSDIR%%/api/org/gnu/glib/EventMap.html
+%%DOCSDIR%%/api/org/gnu/glib/EventType.html
+%%DOCSDIR%%/api/org/gnu/glib/Fireable.html
+%%DOCSDIR%%/api/org/gnu/glib/Flags.html
+%%DOCSDIR%%/api/org/gnu/glib/GEvent.html
+%%DOCSDIR%%/api/org/gnu/glib/GListString.html
+%%DOCSDIR%%/api/org/gnu/glib/GObject.html
+%%DOCSDIR%%/api/org/gnu/glib/Handle.html
+%%DOCSDIR%%/api/org/gnu/glib/Handle32Bits.html
+%%DOCSDIR%%/api/org/gnu/glib/Handle64Bits.html
+%%DOCSDIR%%/api/org/gnu/glib/Idle.html
+%%DOCSDIR%%/api/org/gnu/glib/JGException.html
+%%DOCSDIR%%/api/org/gnu/glib/List.html
+%%DOCSDIR%%/api/org/gnu/glib/MainLoop.html
+%%DOCSDIR%%/api/org/gnu/glib/MemStruct.html
+%%DOCSDIR%%/api/org/gnu/glib/ParmFlags.html
+%%DOCSDIR%%/api/org/gnu/glib/PropertyNotificationListener.html
+%%DOCSDIR%%/api/org/gnu/glib/Quark.html
+%%DOCSDIR%%/api/org/gnu/glib/Struct.html
+%%DOCSDIR%%/api/org/gnu/glib/Timer.html
+%%DOCSDIR%%/api/org/gnu/glib/Type.html
+%%DOCSDIR%%/api/org/gnu/glib/TypeInterface.html
+%%DOCSDIR%%/api/org/gnu/glib/Value.html
+%%DOCSDIR%%/api/org/gnu/glib/package-frame.html
+%%DOCSDIR%%/api/org/gnu/glib/package-summary.html
+%%DOCSDIR%%/api/org/gnu/glib/package-tree.html
+%%DOCSDIR%%/api/overview-tree.html
+%%DOCSDIR%%/api/package-list
+%%DOCSDIR%%/api/packages.html
+%%DOCSDIR%%/api/resources/inherit.gif
+%%DOCSDIR%%/api/serialized-form.html
+%%DOCSDIR%%/api/stylesheet.css
+%%DATADIR%%/macros/ac_prog_jar.m4
+%%DATADIR%%/macros/ac_prog_javac.m4
+%%DATADIR%%/macros/ac_prog_javac_works.m4
+%%DATADIR%%/macros/ac_prog_javadoc.m4
+%%DATADIR%%/macros/am_path_docbook.m4
+%%DATADIR%%/macros/am_path_gcj.m4
+%%DATADIR%%/macros/jg_check_nativecompile.m4
+%%DATADIR%%/macros/jg_common.m4
+%%DATADIR%%/macros/jg_lib.m4
+share/java/classes/glib%%GLIB_API_VERSION%%.jar
+@dirrm %%DATADIR%%/macros
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/api/resources
+@dirrm %%DOCSDIR%%/api/org/gnu/glib
+@dirrm %%DOCSDIR%%/api/org/gnu
+@dirrm %%DOCSDIR%%/api/org
+@dirrm %%DOCSDIR%%/api
+@dirrm %%DOCSDIR%%
+@dirrm include/%%PORTNAME%%

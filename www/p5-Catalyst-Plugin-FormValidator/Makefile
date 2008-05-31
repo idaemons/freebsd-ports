@@ -1,0 +1,26 @@
+# New ports collection makefile for:	www/p5-Catalyst-Plugin-FormValidator
+# Date created:				07 May 2005
+# Whom:					Lars Thegler <lth@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Catalyst-Plugin-FormValidator
+PORTVERSION=	0.02
+CATEGORIES=	www perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	lth@FreeBSD.org
+COMMENT=	FormValidator for Catalyst
+
+BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=	Catalyst::Plugin::FormValidator.3
+
+.include <bsd.port.mk>

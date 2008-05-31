@@ -1,0 +1,6 @@
+MD5 (postfix/postfix-2.3.14.tar.gz) = 58f0507c12ffc58e3b94c907ec367635
+SHA256 (postfix/postfix-2.3.14.tar.gz) = fe368c97889faaeb12cbddca2696c72684021ed032b9db49e06b179cb6e0a67c
+SIZE (postfix/postfix-2.3.14.tar.gz) = 2793343
+MD5 (postfix/postfix-2.3.7-vda.patch.gz) = 93ad21258bcde55f39792b5b753aed4b
+SHA256 (postfix/postfix-2.3.7-vda.patch.gz) = b353c82ecb2b35a5edba38180b683a4ad08895c94e3def0d1a4eeac58ac91061
+SIZE (postfix/postfix-2.3.7-vda.patch.gz) = 8003

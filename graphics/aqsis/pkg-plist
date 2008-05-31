@@ -1,0 +1,111 @@
+bin/aqsis
+bin/aqsl
+bin/aqsltell
+bin/miqser
+bin/teqser
+etc/aqsis/aqsisrc
+include/aqsis/aqsis.h
+include/aqsis/aqsis_types.h
+include/aqsis/bitvector.h
+include/aqsis/color.h
+include/aqsis/exception.h
+include/aqsis/file.h
+include/aqsis/list.h
+include/aqsis/matrix.h
+include/aqsis/ndspy.h
+include/aqsis/random.h
+include/aqsis/refcount.h
+include/aqsis/ri.h
+include/aqsis/ri.inl
+include/aqsis/shadeop.h
+include/aqsis/slx.h
+include/aqsis/sstring.h
+include/aqsis/vector2d.h
+include/aqsis/vector3d.h
+include/aqsis/vector4d.h
+lib/aqsis/libd_bmp.so
+lib/aqsis/libd_exr.so
+lib/aqsis/libd_xpm.so
+lib/aqsis/libdisplay.so
+lib/aqsis/plugins/libbake2tif.so
+lib/aqsis/plugins/libbmp2tif.so
+lib/aqsis/plugins/libdbo_plane.so
+lib/aqsis/plugins/libexr2tif.so
+lib/aqsis/plugins/libgif2tif.so
+lib/aqsis/plugins/libjpg2tif.so
+lib/aqsis/plugins/libpcx2tif.so
+lib/aqsis/plugins/libpng2tif.so
+lib/aqsis/plugins/libppm2tif.so
+lib/aqsis/plugins/libtga2tif.so
+lib/libaqsis.so.1.2
+lib/libaqsis.so
+lib/libaqsis.so.1
+lib/libaqsistypes.so.1.2
+lib/libaqsistypes.so
+lib/libaqsistypes.so.1
+lib/libri2rib.so.1.2
+lib/libri2rib.so
+lib/libri2rib.so.1
+lib/libshadervm.so.1.2
+lib/libshadervm.so
+lib/libshadervm.so.1
+lib/libslxargs.so.1.2
+lib/libslxargs.so
+lib/libslxargs.so.1
+share/aqsis/shaders/ambientlight.sl
+share/aqsis/shaders/ambientlight.slx
+share/aqsis/shaders/background.sl
+share/aqsis/shaders/background.slx
+share/aqsis/shaders/bumpy.sl
+share/aqsis/shaders/bumpy.slx
+share/aqsis/shaders/constant.sl
+share/aqsis/shaders/constant.slx
+share/aqsis/shaders/depthcue.sl
+share/aqsis/shaders/depthcue.slx
+share/aqsis/shaders/distantlight.sl
+share/aqsis/shaders/distantlight.slx
+share/aqsis/shaders/fog.sl
+share/aqsis/shaders/fog.slx
+share/aqsis/shaders/matte.sl
+share/aqsis/shaders/matte.slx
+share/aqsis/shaders/metal.sl
+share/aqsis/shaders/metal.slx
+share/aqsis/shaders/paintedplastic.sl
+share/aqsis/shaders/paintedplastic.slx
+share/aqsis/shaders/plastic.sl
+share/aqsis/shaders/plastic.slx
+share/aqsis/shaders/pointlight.sl
+share/aqsis/shaders/pointlight.slx
+share/aqsis/shaders/shinymetal.sl
+share/aqsis/shaders/shinymetal.slx
+share/aqsis/shaders/spotlight.sl
+share/aqsis/shaders/spotlight.slx
+share/aqsis/content/ribs/features/layeredshaders/grid.tif
+share/aqsis/content/ribs/features/layeredshaders/layered.rib
+share/aqsis/content/ribs/features/layeredshaders/render.bat
+share/aqsis/content/ribs/features/layeredshaders/render.sh
+share/aqsis/content/ribs/features/layeredshaders/texmap.sl
+share/aqsis/content/ribs/scenes/vase/render.bat
+share/aqsis/content/ribs/scenes/vase/render.sh
+share/aqsis/content/ribs/scenes/vase/vase.rib
+share/aqsis/content/shaders/displacement/dented.sl
+share/aqsis/content/shaders/displacement/dented.slx
+share/aqsis/content/shaders/light/shadowspot.sl
+share/aqsis/content/shaders/light/shadowspot.slx
+share/aqsis/scripts/mpanalyse.py
+@dirrm etc/aqsis
+@dirrm include/aqsis
+@dirrm lib/aqsis/plugins
+@dirrm lib/aqsis
+@dirrm share/aqsis/content/ribs/features/layeredshaders
+@dirrm share/aqsis/content/ribs/features
+@dirrm share/aqsis/content/ribs/scenes/vase
+@dirrm share/aqsis/content/ribs/scenes
+@dirrm share/aqsis/content/ribs
+@dirrm share/aqsis/content/shaders/displacement
+@dirrm share/aqsis/content/shaders/light
+@dirrm share/aqsis/content/shaders
+@dirrm share/aqsis/content
+@dirrm share/aqsis/shaders
+@dirrm share/aqsis/scripts
+@dirrm share/aqsis

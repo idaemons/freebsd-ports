@@ -1,0 +1,13 @@
+----------------------------------------------------------------------------
+
+The NeTAMS package has been successfully installed.
+
+Check %%DATADIR%% and http://www.netams.com for examples.
+
+A sample configuration file has been installed to %%PREFIX%%/etc as
+"netams.conf.sample". This may be renamed to "netams.conf" and edited.
+
+In order to use the netamsctl programs, 
+you may copy %%DATADIR%%/.netamsctl.rc to your 
+home directory and edit it.
+

@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	2008-02-16 14:14:31.000000000 -0300
++++ src/Makefile.in	2008-02-18 18:31:40.000000000 -0300
+@@ -638,7 +638,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-man \
++install-data-am: install-man \
+ 	install-rootbinPROGRAMS install-rootsbinDATA
+ 
+ install-exec-am: install-binPROGRAMS install-exec-local
+@@ -696,7 +696,7 @@
+ 
+ install-exec-local:
+ 	$(INSTALL) -d "$(DESTDIR)$(rootsbindir)"
+-	$(LN_S) -f "$(rootbindir)/ntfs-3g" "$(DESTDIR)/sbin/mount.ntfs-3g"
++	$(LN_S) -f "$(rootbindir)/ntfs-3g" "/usr/sbin/mount_ntfs-3g"
+ 
+ install-data-local:
+ 	$(INSTALL) -d "$(DESTDIR)$(man8dir)"

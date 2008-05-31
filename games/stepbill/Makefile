@@ -1,0 +1,26 @@
+# New ports collection makefile for:    stepbill
+# Date created:         28 Aug 2006
+# Whom:                 gurkan@phys.ethz.ch
+#
+# $FreeBSD$
+#
+
+PORTNAME=	stepbill
+PORTVERSION=	2.4
+PORTREVISION=	1
+CATEGORIES=	games gnustep
+MASTER_SITES=	http://www.linuks.mine.nu/stepbill/ \
+		${MASTER_SITE_GNUSTEP_CH}
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Get rid of those nasty Wingdows viruses
+
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.include <bsd.port.mk>

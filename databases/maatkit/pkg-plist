@@ -1,0 +1,20 @@
+%%SITE_PERL%%/maatkit.pm
+bin/mk-archiver
+bin/mk-checksum-filter
+bin/mk-deadlock-logger
+bin/mk-duplicate-key-checker
+bin/mk-find
+bin/mk-heartbeat
+bin/mk-parallel-dump
+bin/mk-parallel-restore
+bin/mk-profile-compact
+bin/mk-query-profiler
+bin/mk-show-grants
+bin/mk-slave-delay
+bin/mk-slave-prefetch
+bin/mk-slave-restart
+bin/mk-table-checksum
+bin/mk-table-sync
+bin/mk-visual-explain
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/maatkit/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/maatkit

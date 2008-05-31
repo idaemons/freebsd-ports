@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# configurable variables
+pb=/var/portbuild
+arch=$1
+branch=$(echo $(basename $0) | cut -d'.' -f2)
+shift
+
+. ${pb}/${arch}/portbuild.conf
+
+lock=${pb}/${arch}/${branch}/lock
+status=${pb}/${arch}/status
+date=$(date '+%Y%m%d%H')
+shortdate=$(date '+%Y%m%d')
+
+if [ -e ${lock} ]; then
+  echo "Already locked."
+  exit 1
+fi
+
+rm -f ${status}
+mkdir -p ${pb}/${arch}/archive/buildlogs
+
+trap "exit 1" 1 2 3 9 10 11 15
+
+dorun() {
+  branch=$1
+  shift 1
+
+  ln -sf ${pb}/${arch}/archive/buildlogs/log.${branch}.${date} ${pb}/${arch}/${branch}/build.log
+  ln -sf log.${branch}.${date} ${pb}/${arch}/archive/buildlogs/log.${branch}.${shortdate}
+  lockf -t 0 ${lock} ${pb}/scripts/dopackages ${arch} $@ ${branch} ${date} 2>&1 \
+    > ${pb}/${arch}/archive/buildlogs/log.${branch}.${date}
+  if [ -f ${status} ]; then
+    error=$(cat ${status})
+    exit ${error}
+  fi
+
+}
+
+dorun ${branch} $@ &
+wait
+
+exit 0

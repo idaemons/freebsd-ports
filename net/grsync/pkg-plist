@@ -1,0 +1,28 @@
+bin/grsync
+bin/grsync-batch
+share/applications/grsync.desktop
+share/pixmaps/grsync.png
+%%NLS%%share/locale/de_DE/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/it_IT/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/nl_NL/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/ru_RU/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/sv_SE/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/tr_TR/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/grsync.mo
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
+%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it_IT
+%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb_NO
+%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl_NL
+%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU
+%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv_SE
+%%NLS%%@dirrmtry share/locale/tr_TR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tr_TR
+@dirrmtry share/applications

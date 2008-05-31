@@ -1,0 +1,281 @@
+%%WWWDIR%%/COPYING
+%%WWWDIR%%/admin_admins.php
+%%WWWDIR%%/admin_configfiles.php
+%%WWWDIR%%/admin_customers.php
+%%WWWDIR%%/admin_domains.php
+%%WWWDIR%%/admin_index.php
+%%WWWDIR%%/admin_ipsandports.php
+%%WWWDIR%%/admin_settings.php
+%%WWWDIR%%/admin_templates.php
+%%WWWDIR%%/admin_tickets.php
+%%WWWDIR%%/customer_domains.php
+%%WWWDIR%%/customer_email.php
+%%WWWDIR%%/customer_extras.php
+%%WWWDIR%%/customer_ftp.php
+%%WWWDIR%%/customer_index.php
+%%WWWDIR%%/customer_mysql.php
+%%WWWDIR%%/customer_tickets.php
+%%WWWDIR%%/images/ball.gif
+%%WWWDIR%%/images/changelanguage.gif
+%%WWWDIR%%/images/endsection.gif
+%%WWWDIR%%/images/error.gif
+%%WWWDIR%%/images/footer.gif
+%%WWWDIR%%/images/header.gif
+%%WWWDIR%%/images/header_r.gif
+%%WWWDIR%%/images/login.gif
+%%WWWDIR%%/images/logininternal.gif
+%%WWWDIR%%/images/order_asc.gif
+%%WWWDIR%%/images/order_desc.gif
+%%WWWDIR%%/images/section.gif
+%%WWWDIR%%/images/shadow.gif
+%%WWWDIR%%/images/subsection.gif
+%%WWWDIR%%/images/title.gif
+%%WWWDIR%%/images/valid-css.gif
+%%WWWDIR%%/images/valid-xhtml10.gif
+%%WWWDIR%%/index.php
+%%WWWDIR%%/install/install.php
+%%WWWDIR%%/install/lng/english.lng.php
+%%WWWDIR%%/install/lng/french.lng.php
+%%WWWDIR%%/install/lng/german.lng.php
+%%WWWDIR%%/install/scripts/htpasswd-htaccess-remover.php
+%%WWWDIR%%/install/scripts/language-check.php
+%%WWWDIR%%/install/syscp.sql
+%%WWWDIR%%/install/updatesql.php
+%%WWWDIR%%/install/updatesql_1.0-1.2.inc.php
+%%WWWDIR%%/install/updatesql_1.0.inc.php
+%%WWWDIR%%/install/updatesql_1.2.inc.php
+%%WWWDIR%%/lib/class_idna_convert_wrapper.php
+%%WWWDIR%%/lib/class_mysqldb.php
+%%WWWDIR%%/lib/class_paging.php
+%%WWWDIR%%/lib/class_ticket.php
+%%WWWDIR%%/lib/configfiles_index.inc.php
+%%WWWDIR%%/lib/cron_init.php
+%%WWWDIR%%/lib/cron_shutdown.php
+%%WWWDIR%%/lib/functions.php
+%%WWWDIR%%/lib/idna_convert.class.php
+%%WWWDIR%%/lib/init.php
+%%WWWDIR%%/lib/npdata.ser
+%%WWWDIR%%/lib/tables.inc.php
+@unexec if cmp -s %D/www/syscp/lib/userdata.inc.php.dist %D/www/syscp/lib/userdata.inc.php; then rm -f %D/www/syscp/lib/userdata.inc.php; fi
+%%WWWDIR%%/lib/userdata.inc.php.dist
+@exec if [ ! -f %D/www/syscp/lib/userdata.inc.php ] ; then cp -p %D/%F %B/userdata.inc.php; fi
+%%WWWDIR%%/lng/bulgarian.lng.php
+%%WWWDIR%%/lng/catalan.lng.php
+%%WWWDIR%%/lng/danish.lng.php
+%%WWWDIR%%/lng/dutch.lng.php
+%%WWWDIR%%/lng/english.lng.php
+%%WWWDIR%%/lng/french.lng.php
+%%WWWDIR%%/lng/german.lng.php
+%%WWWDIR%%/lng/hungarian.lng.php
+%%WWWDIR%%/lng/italian.lng.php
+%%WWWDIR%%/lng/portugues.lng.php
+%%WWWDIR%%/lng/russian.lng.php
+%%WWWDIR%%/lng/slovak.lng.php
+%%WWWDIR%%/lng/spanish.lng.php
+%%WWWDIR%%/lng/zh-cn.lng.php
+%%WWWDIR%%/scripts/cron_legacy.php
+%%WWWDIR%%/scripts/cron_tasks.inc.fcgi_create.php
+%%WWWDIR%%/scripts/cron_tasks.php
+%%WWWDIR%%/scripts/cron_ticketarchive.php
+%%WWWDIR%%/scripts/cron_traffic.inc.functions.php
+%%WWWDIR%%/scripts/cron_traffic.php
+%%WWWDIR%%/scripts/cron_traffic_report.php
+%%WWWDIR%%/templates/admin/admins/admins.tpl
+%%WWWDIR%%/templates/admin/admins/admins_add.tpl
+%%WWWDIR%%/templates/admin/admins/admins_admin.tpl
+%%WWWDIR%%/templates/admin/admins/admins_edit.tpl
+%%WWWDIR%%/templates/admin/configfiles/choose.tpl
+%%WWWDIR%%/templates/admin/configfiles/choose_daemon.tpl
+%%WWWDIR%%/templates/admin/configfiles/choose_distribution.tpl
+%%WWWDIR%%/templates/admin/configfiles/choose_service.tpl
+%%WWWDIR%%/templates/admin/configfiles/configfiles.tpl
+%%WWWDIR%%/templates/admin/configfiles/configfiles_file.tpl
+%%WWWDIR%%/templates/admin/configfiles/wizard.tpl
+%%WWWDIR%%/templates/admin/customers/customers.tpl
+%%WWWDIR%%/templates/admin/customers/customers_add.tpl
+%%WWWDIR%%/templates/admin/customers/customers_customer.tpl
+%%WWWDIR%%/templates/admin/customers/customers_edit.tpl
+%%WWWDIR%%/templates/admin/domains/domains.tpl
+%%WWWDIR%%/templates/admin/domains/domains_add.tpl
+%%WWWDIR%%/templates/admin/domains/domains_domain.tpl
+%%WWWDIR%%/templates/admin/domains/domains_edit.tpl
+%%WWWDIR%%/templates/admin/index/change_language.tpl
+%%WWWDIR%%/templates/admin/index/change_password.tpl
+%%WWWDIR%%/templates/admin/index/index.tpl
+%%WWWDIR%%/templates/admin/ipsandports/ipsandports.tpl
+%%WWWDIR%%/templates/admin/ipsandports/ipsandports_add.tpl
+%%WWWDIR%%/templates/admin/ipsandports/ipsandports_edit.tpl
+%%WWWDIR%%/templates/admin/ipsandports/ipsandports_ipandport.tpl
+%%WWWDIR%%/templates/admin/settings/settings.tpl
+%%WWWDIR%%/templates/admin/settings/updatecounters.tpl
+%%WWWDIR%%/templates/admin/settings/updatecounters_row_admin.tpl
+%%WWWDIR%%/templates/admin/settings/updatecounters_row_customer.tpl
+%%WWWDIR%%/templates/admin/templates/templates.tpl
+%%WWWDIR%%/templates/admin/templates/templates_add_1.tpl
+%%WWWDIR%%/templates/admin/templates/templates_add_2.tpl
+%%WWWDIR%%/templates/admin/templates/templates_edit.tpl
+%%WWWDIR%%/templates/admin/templates/templates_template.tpl
+%%WWWDIR%%/templates/admin/ticket/archive.tpl
+%%WWWDIR%%/templates/admin/ticket/archived_tickets.tpl
+%%WWWDIR%%/templates/admin/ticket/archivesearch.tpl
+%%WWWDIR%%/templates/admin/ticket/categories.tpl
+%%WWWDIR%%/templates/admin/ticket/tickets.tpl
+%%WWWDIR%%/templates/admin/ticket/tickets_categories.tpl
+%%WWWDIR%%/templates/admin/ticket/tickets_customer.tpl
+%%WWWDIR%%/templates/admin/ticket/tickets_editcategory.tpl
+%%WWWDIR%%/templates/admin/ticket/tickets_new.tpl
+%%WWWDIR%%/templates/admin/ticket/tickets_newcategory.tpl
+%%WWWDIR%%/templates/admin/ticket/tickets_reply.tpl
+%%WWWDIR%%/templates/admin/ticket/tickets_tickets.tpl
+%%WWWDIR%%/templates/admin/ticket/tickets_tickets_list.tpl
+%%WWWDIR%%/templates/admin/ticket/tickets_tickets_main.tpl
+%%WWWDIR%%/templates/admin/ticket/tickets_view.tpl
+%%WWWDIR%%/templates/customer/domains/domainlist.tpl
+%%WWWDIR%%/templates/customer/domains/domains.tpl
+%%WWWDIR%%/templates/customer/domains/domains_add.tpl
+%%WWWDIR%%/templates/customer/domains/domains_delimiter.tpl
+%%WWWDIR%%/templates/customer/domains/domains_domain.tpl
+%%WWWDIR%%/templates/customer/domains/domains_edit.tpl
+%%WWWDIR%%/templates/customer/email/account_add.tpl
+%%WWWDIR%%/templates/customer/email/account_changepw.tpl
+%%WWWDIR%%/templates/customer/email/email.tpl
+%%WWWDIR%%/templates/customer/email/emails.tpl
+%%WWWDIR%%/templates/customer/email/emails_add.tpl
+%%WWWDIR%%/templates/customer/email/emails_domain.tpl
+%%WWWDIR%%/templates/customer/email/emails_edit.tpl
+%%WWWDIR%%/templates/customer/email/emails_edit_forwarder.tpl
+%%WWWDIR%%/templates/customer/email/emails_email.tpl
+%%WWWDIR%%/templates/customer/email/forwarder_add.tpl
+%%WWWDIR%%/templates/customer/extras/extras.tpl
+%%WWWDIR%%/templates/customer/extras/htaccess.tpl
+%%WWWDIR%%/templates/customer/extras/htaccess_add.tpl
+%%WWWDIR%%/templates/customer/extras/htaccess_edit.tpl
+%%WWWDIR%%/templates/customer/extras/htaccess_htaccess.tpl
+%%WWWDIR%%/templates/customer/extras/htpasswds.tpl
+%%WWWDIR%%/templates/customer/extras/htpasswds_add.tpl
+%%WWWDIR%%/templates/customer/extras/htpasswds_edit.tpl
+%%WWWDIR%%/templates/customer/extras/htpasswds_htpasswd.tpl
+%%WWWDIR%%/templates/customer/ftp/accounts.tpl
+%%WWWDIR%%/templates/customer/ftp/accounts_account.tpl
+%%WWWDIR%%/templates/customer/ftp/accounts_add.tpl
+%%WWWDIR%%/templates/customer/ftp/accounts_edit.tpl
+%%WWWDIR%%/templates/customer/ftp/ftp.tpl
+%%WWWDIR%%/templates/customer/index/change_language.tpl
+%%WWWDIR%%/templates/customer/index/change_password.tpl
+%%WWWDIR%%/templates/customer/index/index.tpl
+%%WWWDIR%%/templates/customer/mysql/mysql.tpl
+%%WWWDIR%%/templates/customer/mysql/mysqls.tpl
+%%WWWDIR%%/templates/customer/mysql/mysqls_add.tpl
+%%WWWDIR%%/templates/customer/mysql/mysqls_database.tpl
+%%WWWDIR%%/templates/customer/mysql/mysqls_edit.tpl
+%%WWWDIR%%/templates/customer/ticket/ticket.tpl
+%%WWWDIR%%/templates/customer/ticket/tickets.tpl
+%%WWWDIR%%/templates/customer/ticket/tickets_new.tpl
+%%WWWDIR%%/templates/customer/ticket/tickets_reply.tpl
+%%WWWDIR%%/templates/customer/ticket/tickets_tickets.tpl
+%%WWWDIR%%/templates/customer/ticket/tickets_tickets_list.tpl
+%%WWWDIR%%/templates/customer/ticket/tickets_tickets_main.tpl
+%%WWWDIR%%/templates/footer.tpl
+%%WWWDIR%%/templates/header.tpl
+%%WWWDIR%%/templates/login/login.tpl
+%%WWWDIR%%/templates/main.css
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/courier/etc_courier_authdaemonrc
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/courier/etc_courier_authmysqlrc
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/cron/etc_cron.d_syscp
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/dovecot/etc_dovecot_dovecot-sql.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/dovecot/etc_dovecot_dovecot.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/postfix/etc_postfix_main.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/postfix/etc_postfix_sasl_smtpd.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/proftpd/etc_proftpd_modules.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_etch/proftpd/etc_proftpd_proftpd.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_sarge/courier/etc_courier_authdaemonrc
+%%WWWDIR%%/templates/misc/configfiles/debian_sarge/courier/etc_courier_authmysqlrc
+%%WWWDIR%%/templates/misc/configfiles/debian_sarge/cron/etc_cron.d_syscp
+%%WWWDIR%%/templates/misc/configfiles/debian_sarge/postfix/etc_postfix_main.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_sarge/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_sarge/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_sarge/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/debian_sarge/postfix/etc_postfix_sasl_smtpd.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_sarge/proftpd/etc_proftpd.conf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/cron/cron_syscp
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot-sql.conf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot.conf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_master.cf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf
+%%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/courier/etc_authlib_authdaemonrc
+%%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/courier/etc_authlib_authmysqlrc
+%%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/cron/etc_cron.d_syscp
+%%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_main.cf
+%%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+%%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/postfix/usr_lib_sasl2_smtpd.conf
+%%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/proftpd/etc_proftpd_modules.conf
+%%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/proftpd/etc_proftpd_proftpd.conf
+%%WWWDIR%%/templates/misc/error.tpl
+%%WWWDIR%%/templates/misc/question_yesno.tpl
+%%WWWDIR%%/templates/misc/standardcustomer/index.html
+%%WWWDIR%%/templates/navigation_element.tpl
+%%WWWDIR%%/templates/navigation_link.tpl
+@dirrm %%WWWDIR%%/templates/misc/standardcustomer
+@dirrm %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/proftpd
+@dirrm %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/postfix
+@dirrm %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/cron
+@dirrm %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/courier
+@dirrm %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0/bind
+@dirrm %%WWWDIR%%/templates/misc/configfiles/suse_linux_10_0
+@dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release/proftpd
+@dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release/postfix
+@dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release/dovecot
+@dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release/cron
+@dirrm %%WWWDIR%%/templates/misc/configfiles/freebsd_release
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_sarge/proftpd
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_sarge/postfix
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_sarge/cron
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_sarge/courier
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_sarge/bind
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_sarge
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/proftpd
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/postfix
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/dovecot
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/cron
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/courier
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch/bind
+@dirrm %%WWWDIR%%/templates/misc/configfiles/debian_etch
+@dirrm %%WWWDIR%%/templates/misc/configfiles
+@dirrm %%WWWDIR%%/templates/misc
+@dirrm %%WWWDIR%%/templates/login
+@dirrm %%WWWDIR%%/templates/customer/ticket
+@dirrm %%WWWDIR%%/templates/customer/mysql
+@dirrm %%WWWDIR%%/templates/customer/index
+@dirrm %%WWWDIR%%/templates/customer/ftp
+@dirrm %%WWWDIR%%/templates/customer/extras
+@dirrm %%WWWDIR%%/templates/customer/email
+@dirrm %%WWWDIR%%/templates/customer/domains
+@dirrm %%WWWDIR%%/templates/customer
+@dirrm %%WWWDIR%%/templates/admin/ticket
+@dirrm %%WWWDIR%%/templates/admin/templates
+@dirrm %%WWWDIR%%/templates/admin/settings
+@dirrm %%WWWDIR%%/templates/admin/ipsandports
+@dirrm %%WWWDIR%%/templates/admin/index
+@dirrm %%WWWDIR%%/templates/admin/domains
+@dirrm %%WWWDIR%%/templates/admin/customers
+@dirrm %%WWWDIR%%/templates/admin/configfiles
+@dirrm %%WWWDIR%%/templates/admin/admins
+@dirrm %%WWWDIR%%/templates/admin
+@dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/scripts
+@dirrm %%WWWDIR%%/lng
+@dirrmtry %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/install/scripts
+@dirrm %%WWWDIR%%/install/lng
+@dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/images
+@dirrmtry %%WWWDIR%%

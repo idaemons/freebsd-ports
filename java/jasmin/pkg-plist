@@ -1,0 +1,31 @@
+bin/jasmin
+%%DOCSDIR%%/about.html
+%%DOCSDIR%%/guide.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/instructions.html
+%%DOCSDIR%%/jasmin_icon.jpg
+%%DOCSDIR%%/javavm.gif
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/syntax.bnf
+%%EXAMPLESDIR%%/ANewArray.j
+%%EXAMPLESDIR%%/AnInterface.j
+%%EXAMPLESDIR%%/Arrays.j
+%%EXAMPLESDIR%%/Catch.j
+%%EXAMPLESDIR%%/Checkcast.j
+%%EXAMPLESDIR%%/Count.j
+%%EXAMPLESDIR%%/HelloWeb.html
+%%EXAMPLESDIR%%/HelloWeb.j
+%%EXAMPLESDIR%%/HelloWorld.class
+%%EXAMPLESDIR%%/HelloWorld.j
+%%EXAMPLESDIR%%/Implementor.j
+%%EXAMPLESDIR%%/InvokeInterface.j
+%%EXAMPLESDIR%%/MultiANewArray.j
+%%EXAMPLESDIR%%/MultiArrays.j
+%%EXAMPLESDIR%%/NewArray.j
+%%EXAMPLESDIR%%/Switch.j
+%%EXAMPLESDIR%%/Uncaught.j
+%%EXAMPLESDIR%%/VerifyTest.j
+%%EXAMPLESDIR%%/VerifyTest1.j
+share/java/classes/jasmin.jar
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%

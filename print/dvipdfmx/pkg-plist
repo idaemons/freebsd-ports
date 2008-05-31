@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+bin/dvipdfmx
+%%FONTMAPDIR%%/cid-x.map
+%%DVIPDFMDIR%%/dvipdfmx.cfg
+%%DVIPDFMDIR%%/EUC-UCS2
+%%DVIPDFMDIR%%/UniKSCms-UCS2-H
+%%DVIPDFMDIR%%/UniKSCms-UCS2-V
+%%FONTMAPDIR%%/glyphlist.txt
+%%FONTCMAPDIR%%/adobe-cmaps
+%%FONTCMAPDIR%%/CMap
+@dirrm %%FONTCMAPDIR%%
+@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%

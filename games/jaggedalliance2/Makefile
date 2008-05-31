@@ -1,0 +1,77 @@
+# New ports collection makefile for: Jagged Alliance 2
+# Date created:         16 Nov 2006
+# Whom:                 Christoph Mallon <christoph.mallon@gmx.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ja2
+PORTVERSION=	0.9
+CATEGORIES=	games
+MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
+		http://ja2.dragonriders.de/files/
+
+MAINTAINER=	christoph.mallon@gmx.de
+COMMENT=	A port of "Jagged Alliance 2" using SDL
+
+DISTVERSIONSUFFIX=	-source
+
+# There are still many endianness and data size issues
+# Ignore this if you feel adventurous
+ONLY_FOR_ARCHS=	i386
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_SDL=	sdl
+NO_CDROM=	License only permits non-commerical use
+NO_PACKAGE=	Language of the datafiles must be hardcoded in the game binary
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+OPTIONS=	DUTCH	"Compile for Dutch version (choose ONE)"	Off \
+		ENGLISH	"Compile for English version (choose ONE)"	Off \
+		FRENCH	"Compile for French version (choose ONE)"	Off \
+		GERMAN	"Compile for German version (choose ONE)"	Off \
+		ITALIAN	"Compile for Italian version (choose ONE)"	Off \
+		POLISH	"Compile for Polish version (choose ONE)"	Off \
+		RUSSIAN	"Compile for Russian version (choose ONE)"	Off
+
+.include <bsd.port.pre.mk>
+
+.ifdef WITH_ENGLISH
+MAKE_ARGS+=	LNG=ENGLISH
+.elifdef WITH_DUTCH
+MAKE_ARGS+=	LNG=DUTCH
+.elifdef WITH_FRENCH
+MAKE_ARGS+=	LNG=FRENCH
+.elifdef WITH_GERMAN
+MAKE_ARGS+=	LNG=GERMAN
+.elifdef WITH_ITALIAN
+MAKE_ARGS+=	LNG=ITALIAN
+.elifdef WITH_POLISH
+MAKE_ARGS+=	LNG=POLISH
+.elifdef WITH_RUSSIAN
+MAKE_ARGS+=	LNG=RUSSIAN
+.else
+IGNORE=	no language has been chosen. Please choose the appropriate language for your game CD
+.endif
+
+MAKE_ARGS+=	NO_DEPS=yes # For a single full build dependency calculation is unnecessary
+
+MAKE_ARGS+=	SGPDATADIR=${DATADIR}
+
+MAN6=	ja2.6
+
+post-install:
+	@${MKDIR} ${DATADIR}/Data/TILECACHE
+	@${SED} -e 's|$${DATADIR}|${DATADIR}|' ${PKGMESSAGE}
+
+lowercase:
+	@for i in \
+		${DATADIR}/Data/*.[Ss][Ll][Ff] \
+		${DATADIR}/Data/TILECACHE/*.[Jj][Ss][Dd] \
+		${DATADIR}/Data/TILECACHE/*.[Ss][Tt][Ii]; \
+	do \
+		${MV} -n $$i `${DIRNAME} $$i`/`${BASENAME} $$i | ${TR} '[A-Z]' '[a-z]'`; \
+	done
+
+.include <bsd.port.post.mk>

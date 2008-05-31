@@ -1,0 +1,3 @@
+bin/agrep
+%%PORTDOCS%%%%DOCSDIR%%/agrep.algorithms
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

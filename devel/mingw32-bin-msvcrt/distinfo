@@ -1,0 +1,6 @@
+MD5 (mingw/mingw-runtime-3.14.tar.gz) = 44a42fc00ccaa50f1dd17f465078cc61
+SHA256 (mingw/mingw-runtime-3.14.tar.gz) = 7d273e2afba32d798bbf150ac2e1e9ad2ea449331b86c859df53f2a3e7f3646f
+SIZE (mingw/mingw-runtime-3.14.tar.gz) = 506843
+MD5 (mingw/w32api-3.11.tar.gz) = 3cb523f58ea5d12f81397cf85f3b7011
+SHA256 (mingw/w32api-3.11.tar.gz) = 06ca168f02dbb4ed87f39a2e4c280e6495de94b3b1e397d71204c0ae03db0013
+SIZE (mingw/w32api-3.11.tar.gz) = 1628397

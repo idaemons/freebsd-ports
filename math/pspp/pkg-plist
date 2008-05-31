@@ -1,0 +1,7 @@
+bin/pspp
+share/locale/en_GB/LC_MESSAGES/pspp.mo
+etc/pspp/devices
+etc/pspp/html-prologue
+etc/pspp/papersize
+etc/pspp/ps-prologue
+@dirrmtry etc/pspp

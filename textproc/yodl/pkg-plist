@@ -1,0 +1,13 @@
+bin/yodl
+bin/yodl2whatever
+bin/yodl2dvi
+bin/yodl2manless
+bin/yodl2msless
+bin/yodl2msps
+bin/yodl2tex
+bin/yodl2html
+bin/yodl2sgml
+bin/yodl2txt
+bin/yodl2man
+bin/yodl2ms
+bin/striproff

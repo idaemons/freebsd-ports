@@ -1,0 +1,6 @@
+MD5 (motion-3.2.10.tar.gz) = 8bbdfb794b8e55f0a7085c348381baa5
+SHA256 (motion-3.2.10.tar.gz) = ecebe3b9ab597aa906c64a4bf49eda9b9e24a20f8975146b34b4a69da3565e64
+SIZE (motion-3.2.10.tar.gz) = 402715
+MD5 (motion-3.2.10.port-freebsd.diff.gz) = 6ec2dae13d2d6821449c1520415d5975
+SHA256 (motion-3.2.10.port-freebsd.diff.gz) = 045b538b97f89ed5edb8d5067450169248128455c8d090f60671946e7975872d
+SIZE (motion-3.2.10.port-freebsd.diff.gz) = 2430

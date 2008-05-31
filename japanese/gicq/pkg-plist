@@ -1,0 +1,5 @@
+bin/gicq
+share/doc/gicq/C/index.html
+share/doc/gicq/C/topic.dat
+@dirrm share/doc/gicq/C
+@dirrm share/doc/gicq
