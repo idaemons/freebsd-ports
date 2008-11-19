@@ -1,0 +1,13 @@
+--- evolution/Makefile.in.orig	2008-03-26 20:44:07.000000000 -0500
++++ evolution/Makefile.in	2008-03-26 20:45:49.000000000 -0500
+@@ -463,8 +463,8 @@
+ 
+ install-data-local:
+ 	@if test -n '$(TARGET)'; then									\
+-	  echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /root $(DESTDIR)$(libdir)";		\
+-	  $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /root $(DESTDIR)$(libdir) || exit 1;		\
++	  echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(prefix)/lib";		\
++	  $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(prefix)/lib || exit 1;		\
+ 	fi
+ 
+ uninstall-local:

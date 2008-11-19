@@ -1,1 +1,6 @@
-MD5 (ncftp-2.0b17.tgz) = 99c01b5ad3d687d7ee91b90782f3c647
+MD5 (ncftp-3.2.2-src.tar.bz2) = c33da134e5e53b5a3b340e0de5456137
+SHA256 (ncftp-3.2.2-src.tar.bz2) = c369e913bc7e9f0b0794e12ace714d211d00f80a7011d4ec1b4f90a6195df260
+SIZE (ncftp-3.2.2-src.tar.bz2) = 422824
+MD5 (ncftp-322-v6-20080821.diff.gz) = 2fd87a9abe028aac265f8acb43edee45
+SHA256 (ncftp-322-v6-20080821.diff.gz) = e35028709f62eb4aa2cd7ae827b4134461f7ad995d6d360d5b78e3494df4e194
+SIZE (ncftp-322-v6-20080821.diff.gz) = 39856

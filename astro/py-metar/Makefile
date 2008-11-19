@@ -1,0 +1,23 @@
+# New ports collection makefile for:	py-metar
+# Date created:		26 July 2002
+# Whom:			Hye-Shik Chang <perky@fallin.lv>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	metar
+PORTVERSION=	0.13
+CATEGORIES=	astro python geography
+MASTER_SITES=	http://www.schwarzvogel.de/pkgs/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pymetar-${PORTVERSION}
+
+MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python module that provides access to NOAA's METAR weather reports
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	pymetar
+PLIST_SUB=	VER=${PORTVERSION}
+
+.include <bsd.port.mk>

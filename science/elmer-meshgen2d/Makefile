@@ -1,0 +1,26 @@
+# New ports collection makefile for:	elmer-meshgen2d
+# Date created:		5 Jan 2006
+# Whom:			Pedro Giffuni <giffunip@asme.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	meshgen2d
+PORTVERSION=	5.0.0
+PORTREVISION=	4
+CATEGORIES=	science
+MASTER_SITES=	SF/elmerfem
+PKGNAMEPREFIX=	elmer-
+
+MAINTAINER=	araujo@FreeBSD.org
+COMMENT=	A Mesh Generation Utility for use with the ELMER FEM package
+
+USE_FORTRAN=	yes
+
+GNU_CONFIGURE=	yes
+ALL_TARGET=
+
+PLIST_FILES=	bin/ElmerMesh2D \
+		bin/Mesh2D
+
+.include <bsd.port.mk>

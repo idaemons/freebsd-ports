@@ -1,0 +1,10 @@
+--- ant/compile.xml.orig	2008-03-19 18:26:17.000000000 +0100
++++ ant/compile.xml	2008-04-08 08:19:52.000000000 +0200
+@@ -85,6 +85,7 @@
+                 <include name="**/*.txt"/>
+             </fileset>
+         </copy>
++	<mkdir dir="${itext.lib}" />
+         <jar jarfile="${itext.jar}" basedir="${itext.bin}">
+             <manifest>
+                 <attribute name="Main-Class" value="com.lowagie.tools.ToolboxAvailable"/>

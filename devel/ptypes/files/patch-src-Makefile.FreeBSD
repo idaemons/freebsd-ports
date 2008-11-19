@@ -1,0 +1,28 @@
+--- src/Makefile.FreeBSD.orig	2007-06-27 17:05:49.000000000 +0400
++++ src/Makefile.FreeBSD	2007-12-14 18:43:29.000000000 +0300
+@@ -12,20 +12,20 @@
+ # Makefile for FreeBSD, called from ../Makefile
+ #
+ 
+-CXX = g++
++#CXX = g++
+ 
+ OS_CXXOPTS_ST = -Wall
+-OS_CXXOPTS = $(OS_CXXOPTS_ST) -pthread -fPIC
++OS_CXXOPTS = $(OS_CXXOPTS_ST) $(PTHREAD_CFLAGS) -fPIC
+ 
+-# OS_LDLIBS = -lc_r
++OS_LDLIBS = $(PTHREAD_LIBS)
+ 
+-LIBTOOL = $(CXX) -shared -pthread
++LIBTOOL = $(CXX) -shared $(PTHREAD_LIBS)
+ SOSTRIP = strip
+ 
+ SOEXT = so
+ SOINSTOPT = -h $(SOREALNAME)
+ 
+-PREFIX = /usr/local
++PREFIX = $(PREFIX)
+ 
+ include Makefile.common
+ 

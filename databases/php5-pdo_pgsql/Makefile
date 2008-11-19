@@ -1,0 +1,15 @@
+# New ports collection makefile for:	php5-pdo_pgsql
+# Date created:			7 Feb 2007
+# Whom:				Alex Dupre <ale@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTREVISION=	1
+CATEGORIES=	databases
+
+MASTERDIR=	${.CURDIR}/../../lang/php5
+
+PKGNAMESUFFIX=	-pdo_pgsql
+
+.include "${MASTERDIR}/Makefile"

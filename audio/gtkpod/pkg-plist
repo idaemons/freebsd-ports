@@ -1,0 +1,72 @@
+bin/gtkpod
+%%DATADIR%%/data/gtkpod.glade
+%%DATADIR%%/data/cdshine.png
+%%DATADIR%%/data/cdshine_main.png
+%%DATADIR%%/data/default-cover.png
+%%DATADIR%%/data/gphoto_album_menuitem-32.png
+%%DATADIR%%/data/gphoto_album_menuitem-48.png
+%%DATADIR%%/data/gphoto_images_menuitem-32.png
+%%DATADIR%%/data/gphoto_images_menuitem-48.png
+%%DATADIR%%/data/gphoto_tools_menuitem-32.png
+%%DATADIR%%/data/gphoto_tools_menuitem-48.png
+%%DATADIR%%/data/gphoto_playlist_icon-48.png
+%%DATADIR%%/data/gtkpod-add-dirs.png
+%%DATADIR%%/data/gtkpod-add-files.png
+%%DATADIR%%/data/gtkpod-add-playlists.png
+%%DATADIR%%/data/gtkpod-icon-32.png
+%%DATADIR%%/data/gtkpod-icon-32-2.png
+%%DATADIR%%/data/gtkpod-icon-48.png
+%%DATADIR%%/data/gtkpod-logo.png
+%%DATADIR%%/data/gtkpod-new-playlist.png
+%%DATADIR%%/data/gtkpod-read.png
+%%DATADIR%%/data/gtkpod-read-16.png
+%%DATADIR%%/data/gtkpod-sync.png
+%%DATADIR%%/data/tunes_playlist_icon-48.png
+%%DATADIR%%/scripts/convert-2m4a.sh
+%%DATADIR%%/scripts/convert-2mp3.sh
+%%DATADIR%%/scripts/gtkpod-convert-common.sh
+%%DATADIR%%/scripts/ldif2vcf.sh
+%%DATADIR%%/scripts/mab2vcard
+%%DATADIR%%/scripts/sync-abook.sh
+%%DATADIR%%/scripts/sync-evocalendar.sh
+%%DATADIR%%/scripts/sync-evolution.sh
+%%DATADIR%%/scripts/sync-kaddressbook.sh
+%%DATADIR%%/scripts/sync-knotes.sh
+%%DATADIR%%/scripts/sync-korganizer.sh
+%%DATADIR%%/scripts/sync-ldif.sh
+%%DATADIR%%/scripts/sync-notes.sh
+%%DATADIR%%/scripts/sync-palm-jppy.py
+%%DATADIR%%/scripts/sync-thunderbird.sh
+%%DATADIR%%/scripts/sync-thunderbird-nano.sh
+%%DATADIR%%/scripts/sync-tomboy.sh
+%%DATADIR%%/scripts/sync-webcalendar.sh
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+share/icons/hicolor/32x32/apps/gtkpod.png
+share/icons/hicolor/48x48/apps/gtkpod.png
+share/icons/hicolor/64x64/apps/gtkpod.png
+share/applications/gtkpod.desktop
+@dirrmtry share/applications
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+share/locale/de/LC_MESSAGES/gtkpod.mo
+share/locale/es/LC_MESSAGES/gtkpod.mo
+share/locale/fr/LC_MESSAGES/gtkpod.mo
+share/locale/he/LC_MESSAGES/gtkpod.mo
+share/locale/it/LC_MESSAGES/gtkpod.mo
+share/locale/ja/LC_MESSAGES/gtkpod.mo
+share/locale/ro/LC_MESSAGES/gtkpod.mo
+share/locale/ru/LC_MESSAGES/gtkpod.mo
+share/locale/sv/LC_MESSAGES/gtkpod.mo
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODOandBUGS.txt
+%%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTING
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

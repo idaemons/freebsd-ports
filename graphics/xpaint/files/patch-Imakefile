@@ -1,0 +1,20 @@
+--- Imakefile.orig	Fri Jun  3 21:26:03 2005
++++ Imakefile	Thu Aug 18 19:25:01 2005
+@@ -102,7 +102,7 @@
+ #endif
+ 
+ DEPLIBS = always xpaint.man XPaint.ad
+-LOCAL_LIBRARIES = -Lrw -lrw $(XPM_LIB) $(TIFF_LIB) $(SGI_LIB) $(JPEG_LIB) $(PNG_LIB) -ldl -rdynamic
++LOCAL_LIBRARIES = -Lrw -lrw $(XPM_LIB) $(TIFF_LIB) $(SGI_LIB) $(JPEG_LIB) $(PNG_LIB)
+ 
+ SUBDIRS = rw
+ 
+@@ -199,7 +199,7 @@
+ 		    XPAINT_PRINT_COMMAND "$(PRINT_COMMAND)" \
+ 		    XPAINT_POSTSCRIPT_VIEWER "$(POSTSCRIPT_VIEWER)" \
+ 		    XPAINT_EXTERN_VIEWER "$(EXTERN_VIEWER)"
+-	cp -p app-defaults/out/XPaint XPaint.ad
++	cp -f app-defaults/out/XPaint XPaint.ad
+ 
+ XPaint.ad.h:	XPaint.ad
+ 	./substads -ad2c $? $@

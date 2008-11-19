@@ -1,0 +1,24 @@
+# New ports collection makefile for: xye
+# Date created:        3 May 2006
+# Whom:                Robert Gogolok <gogo@cs.uni-sb.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xye
+PORTVERSION=	0.8.0
+PORTREVISION=	1
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
+
+MAINTAINER=	gogo@cs.uni-sb.de
+COMMENT=	A puzzle game for X
+
+USE_SDL=	sdl image ttf
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc
+USE_GMAKE=	yes
+
+.include <bsd.port.mk>

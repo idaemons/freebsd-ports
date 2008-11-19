@@ -1,0 +1,47 @@
+# New ports collection makefile for:    thinkingrock
+# Date created:                         02 Jan 2008
+# Whom:                                 Beat Gaetzi <beat@chruetertee.ch>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	thinkingrock
+PORTVERSION=	2.0.1
+PORTREVISION=	1
+CATEGORIES=	deskutils java
+MASTER_SITES=	SF
+DISTNAME=	tr-${PORTVERSION}
+
+MAINTAINER=	beat@chruetertee.ch
+COMMENT=	Application for collecting and processing your thoughts
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.5+
+NO_BUILD=	yes
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/bin/tr
+	@${RM} ${WRKSRC}/install.html~
+	@${RM} ${WRKSRC}/etc/tr.conf~
+	@${RM} ${WRKSRC}/bin/tr.bak
+	@${RM} ${WRKSRC}/bin/tr.orig
+	@${RM} ${WRKSRC}/bin/tr.exe
+	@${RM} ${WRKSRC}/bin/tr_w.exe
+
+do-install:
+	@${MKDIR} ${PREFIX}/${PORTNAME}
+	@${CP} -r ${WRKSRC}/* ${PREFIX}/${PORTNAME}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${PORTNAME}
+	@${LN} -sf ${PREFIX}/${PORTNAME}/bin/tr ${PREFIX}/bin/${PORTNAME}
+	@${LN} -sf ${PREFIX}/${PORTNAME}/bin/xdg-email ${PREFIX}/bin/xdg-email
+	@${LN} -sf ${PREFIX}/${PORTNAME}/bin/xdg-open ${PREFIX}/bin/xdg-open
+	@${ECHO} bin/${PORTNAME} >> ${TMPPLIST}
+	@${ECHO} bin/xdg-email >> ${TMPPLIST}
+	@${ECHO} bin/xdg-open >> ${TMPPLIST}
+	@(cd ${WRKSRC}; ${FIND} . ! -type d) | ${SORT} | ${SED} "s|^.|${PORTNAME}|" >> ${TMPPLIST}
+	@(cd ${WRKSRC}; ${FIND} . -type d) | ${SORT} -r | ${SED} "s|^.|@dirrm ${PORTNAME}|" >> ${TMPPLIST}
+	@(cd ${WRKSRC}; ${FIND} . -type d -empty) | ${SORT} -r | ${SED} "s|^.|@exec mkdir -p ${PORTNAME}|" >> ${TMPPLIST}
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,22 @@
+sbin/cgi-wrapper
+sbin/hiawatha
+sbin/newroot
+sbin/php-fcgi
+sbin/wigwam
+%%ETCDIR%%/cgi-wrapper.conf
+%%ETCDIR%%/httpd.conf
+%%ETCDIR%%/mimetype.conf
+%%ETCDIR%%/php-fcgi.conf
+%%WWWDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%EXAMPLESDIR%%/hiawatha
+%%PORTDOCS%%%%EXAMPLESDIR%%/mkcert
+%%PORTDOCS%%%%EXAMPLESDIR%%/newroot
+%%PORTDOCS%%%%EXAMPLESDIR%%/php-fcgi
+@dirrm %%ETCDIR%%
+@dirrm %%WWWDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

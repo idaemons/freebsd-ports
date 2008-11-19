@@ -1,0 +1,22 @@
+bin/migrate
+bin/migrate-n
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO-PARALLEL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/graphics/librarian.gif
+%%PORTDOCS%%%%DOCSDIR%%/graphics/mail.gif
+%%PORTDOCS%%%%DOCSDIR%%/graphics/migrate.gif
+%%PORTDOCS%%%%DOCSDIR%%/graphics/packet.gif
+%%PORTDOCS%%%%DOCSDIR%%/migrate.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/infile.ep
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/infile.msat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/infile.seq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/outfile-bayes-saved
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/outfile-ml-saved
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parmfile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parmfile.testbayes
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parmfile.testml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/graphics
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

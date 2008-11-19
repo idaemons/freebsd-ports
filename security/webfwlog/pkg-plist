@@ -1,0 +1,74 @@
+bin/wfwl_syslog
+etc/webfwlog.conf.sample
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/CREDITS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/README
+%%DOCSDIR%%/ReleaseNotes
+%%DOCSDIR%%/mysql/README
+%%DOCSDIR%%/mysql/setup
+%%DOCSDIR%%/mysql/scripts/temp_grants
+%%DOCSDIR%%/mysql/scripts/ulog_copy
+%%DOCSDIR%%/mysql/scripts/ulog_local
+%%DOCSDIR%%/mysql/scripts/ulogd_grants
+%%DOCSDIR%%/mysql/scripts/wfwl_grants
+%%DOCSDIR%%/mysql/scripts/wfwl_hostnames_create
+%%DOCSDIR%%/mysql/scripts/wfwl_reports_addcol
+%%DOCSDIR%%/mysql/scripts/wfwl_reports_altercol
+%%DOCSDIR%%/mysql/scripts/wfwl_reports_create
+%%DOCSDIR%%/mysql/scripts/wfwl_services_create
+%%DOCSDIR%%/pgsql/README
+%%DOCSDIR%%/pgsql/setup
+%%DOCSDIR%%/pgsql/scripts/ulog_copy
+%%DOCSDIR%%/pgsql/scripts/ulog_local
+%%DOCSDIR%%/pgsql/scripts/ulogd_73_grants
+%%DOCSDIR%%/pgsql/scripts/ulogd_grants
+%%DOCSDIR%%/pgsql/scripts/wfwl_73_grants
+%%DOCSDIR%%/pgsql/scripts/wfwl_functions
+%%DOCSDIR%%/pgsql/scripts/wfwl_grants
+%%DOCSDIR%%/pgsql/scripts/wfwl_hostnames_create
+%%DOCSDIR%%/pgsql/scripts/wfwl_reports_addcol
+%%DOCSDIR%%/pgsql/scripts/wfwl_reports_create
+%%DOCSDIR%%/pgsql/scripts/wfwl_services_create
+%%EXAMPLESDIR%%/basic
+%%EXAMPLESDIR%%/current_count
+%%EXAMPLESDIR%%/current_dport
+%%EXAMPLESDIR%%/last20hosts
+%%EXAMPLESDIR%%/latest_logged_packets
+%%EXAMPLESDIR%%/recent_active
+%%EXAMPLESDIR%%/tcpports
+%%EXAMPLESDIR%%/tcpsyn
+%%EXAMPLESDIR%%/udpports
+%%WWWDIR%%/include/config.php
+%%WWWDIR%%/include/criteria.php
+%%WWWDIR%%/include/debug.php
+%%WWWDIR%%/include/delete_report.php
+%%WWWDIR%%/include/edit_doc.php
+%%WWWDIR%%/include/edit_report.php
+%%WWWDIR%%/include/functions.php
+%%WWWDIR%%/include/home.php
+%%WWWDIR%%/include/html_out.php
+%%WWWDIR%%/include/import.php
+%%WWWDIR%%/include/orders.php
+%%WWWDIR%%/include/packet.php
+%%WWWDIR%%/include/save_report.php
+%%WWWDIR%%/include/selection.php
+%%WWWDIR%%/include/sorting.php
+%%WWWDIR%%/include/sql.php
+%%WWWDIR%%/include/state.php
+%%WWWDIR%%/include/static.php
+%%WWWDIR%%/include/syslog.php
+%%WWWDIR%%/include/update_cache.php
+%%WWWDIR%%/include/config.php.in
+%%WWWDIR%%/style.css
+%%WWWDIR%%/index.php
+@dirrm %%DOCSDIR%%/pgsql/scripts
+@dirrm %%DOCSDIR%%/pgsql
+@dirrm %%DOCSDIR%%/mysql/scripts
+@dirrm %%DOCSDIR%%/mysql
+@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%WWWDIR%%/include
+@dirrmtry %%WWWDIR%%

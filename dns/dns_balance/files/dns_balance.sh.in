@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dns_balance
+# REQUIRE: DAEMON
+
+. %%RC_SUBR%%
+
+name=dns_balance
+rcvar=`set_rcvar`
+
+load_rc_config ${name}
+: ${dns_balance_enable="NO"}
+: ${dns_balance_logfile="/var/log/${name}.log"}
+: ${dns_balance_pidfile="/var/log/${name}.pid"}
+: ${dns_balance_flags=""}
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="-l ${dns_balance_logfile} -p ${dns_balance_pidfile}"
+command_interpreter=%%RUBY%%
+pidfile=${dns_balance_pidfile}
+
+run_rc_command "$1"

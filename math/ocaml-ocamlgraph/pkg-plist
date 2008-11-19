@@ -1,0 +1,6 @@
+%%OCAML_LIBDIR%%/graph.a
+%%OCAML_LIBDIR%%/graph.cma
+%%OCAML_LIBDIR%%/graph.cmi
+%%OCAML_LIBDIR%%/graph.cmo
+%%OCAML_LIBDIR%%/graph.cmx
+%%OCAML_LIBDIR%%/graph.cmxa

@@ -1,0 +1,79 @@
+#!/bin/sh
+PKG_PREFIX=${PKG_PREFIX:-/usr/local}
+
+ask() {
+        local question default answer
+
+        question=$1
+        default=$2
+        if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
+                read -t120 -p "${question} [${default}]? " answer
+        fi
+        echo ${answer:-${default}}
+}
+
+yesno() {
+        local question default answer
+
+        question=$1
+        default=$2
+        while :; do
+                answer=$(ask "${question}" "${default}")
+                case "${answer}" in
+                [Yy]*)  return 0;;
+                [Nn]*)  return 1;;
+                esac
+                echo "Please answer yes or no."
+        done
+}
+
+if [ "$2" = "POST-INSTALL" ];then
+
+   if yesno "Do you wish to run sa-update to fetch new rules" "N";then
+       ${PKG_PREFIX}/bin/sa-update
+   fi
+   grep '^load.*Rule2XSBody' ${PKG_PREFIX}/etc/mail/spamassassin/v320.pre > /dev/null
+   if [ $? -eq 0 ];then
+     if yesno "Do you with to compile rules with re2c (will take a long time)" "N";then
+       ${PKG_PREFIX}/bin/sa-compile
+     fi
+   fi
+   exit 0
+fi  # post-install
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+USER=spamd
+GROUP=${USER}
+UID=58
+GID=${UID}
+HOME=/var/spool/${USER}
+
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${GROUP} -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		-s "/sbin/nologin" -d "${HOME}" \
+		-c "SpamAssassin user"; \
+	then
+		echo "Added user \"${USER}\"."
+		mkdir ${HOME} && chown ${USER}:${GROUP} ${HOME}
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+
+# Create pid directory
+mkdir /var/run/spamd 2> /dev/null && chown ${USER}:${GROUP} /var/run/spamd
+
+exit 0

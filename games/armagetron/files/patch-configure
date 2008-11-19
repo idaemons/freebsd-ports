@@ -1,0 +1,11 @@
+--- configure.orig	2006-08-05 03:15:57.000000000 +0800
++++ configure	2008-06-08 14:32:47.000000000 +0800
+@@ -17362,7 +17362,7 @@
+ echo "     Static data will be installed in   : `eval echo ${aa_datadir}`"
+ echo "     Configuration will be installed in : `eval echo ${aa_sysconfdir}`"
+ echo "     Documentation will be installed in : `eval echo ${aa_docdir}`"
+-test "x$enable_etc" = "xyes" && echo "     Link to configuration will go to   : /etc/${progname}"
++test "x$enable_etc" = "xyes" && echo "     Link to configuration will go to   : $prefix/etc/${progname}"
+ echo "     Music support: $enable_music"
+ echo "     Build with Krawall authentication support: $enable_krawall"
+ echo "     Use dirty SDL initialization: $enable_dirty"

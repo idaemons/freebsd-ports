@@ -1,0 +1,26 @@
+@comment $FreeBSD$
+bin/tcamgr
+bin/tcatest
+bin/tcbmgr
+bin/tcbmttest
+bin/tcbtest
+bin/tcfmgr
+bin/tcfmttest
+bin/tcftest
+bin/tchmgr
+bin/tchmttest
+bin/tchtest
+bin/tcucodec
+bin/tcumttest
+bin/tcutest
+include/tcadb.h
+include/tcbdb.h
+include/tcfdb.h
+include/tchdb.h
+include/tcutil.h
+lib/libtokyocabinet.a
+lib/libtokyocabinet.so
+lib/libtokyocabinet.so.4
+lib/libtokyocabinet.so.4.5.0
+libdata/pkgconfig/tokyocabinet.pc
+libexec/tcawmgr.cgi

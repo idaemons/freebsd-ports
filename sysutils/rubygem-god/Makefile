@@ -1,0 +1,21 @@
+# Ports collection makefile for:	rubygem-god
+# Date created:				23 July 2007
+# Whom:					Robert Gogolok <gogo@cs.uni-sb.de>
+#
+# $FreeBSD$
+
+PORTNAME=	god
+PORTVERSION=	0.6.0
+CATEGORIES=	sysutils rubygems
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	gogo@cs.uni-sb.de
+COMMENT=	Monitoring framework written in Ruby
+
+BUILD_DEPENDS=	rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

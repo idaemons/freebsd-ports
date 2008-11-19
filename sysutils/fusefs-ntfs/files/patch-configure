@@ -1,0 +1,29 @@
+--- configure.orig	2008-05-28 16:07:58.000000000 -0300
++++ configure	2008-06-23 17:39:29.000000000 -0300
+@@ -2671,7 +2671,7 @@
+ else
+ 
+ 		case "${target_os}" in
+-			linux*) enable_mount_helper="yes" ;;
++			linux*|freebsd*) enable_mount_helper="yes" ;;
+ 			*) enable_mount_helper="no" ;;
+ 		esac
+ 
+@@ -19822,7 +19822,7 @@
+ fi
+ 
+ 	;;
+-darwin*|netbsd*)
++darwin*|netbsd*|freebsd*)
+ 	with_fuse="external"
+ 	;;
+ freebsd*)
+@@ -23285,7 +23285,7 @@
+ fi
+ 
+ # Settings
+-pkgconfigdir="\$(libdir)/pkgconfig"
++pkgconfigdir="\$(prefix)/libdata/pkgconfig"
+ ntfs3gincludedir="\$(includedir)/ntfs-3g"
+ # Executables should be installed to the root filesystem, otherwise
+ # automounting NTFS volumes can fail during boot if the driver binaries

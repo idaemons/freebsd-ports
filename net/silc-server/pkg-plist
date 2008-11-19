@@ -1,0 +1,15 @@
+sbin/silcd
+@unexec if cmp -s %D/etc/silc/silcd.conf.sample %D/etc/silc/silcd.conf; then rm -f %D/etc/silc/silcd.conf; fi
+etc/silc/silcd.conf.sample
+@exec if [ ! -f %D/etc/silc/silcd.conf ] ; then cp -p %D/%F %B/silcd.conf; fi
+@unexec if cmp -s %D/etc/silc/silcalgs.conf.sample %D/etc/silc/silcalgs.conf; then rm -f %D/etc/silc/silcalgs.conf; fi
+etc/silc/silcalgs.conf.sample
+@exec if [ ! -f %D/etc/silc/silcalgs.conf ] ; then cp -p %D/%F %B/silcalgs.conf; fi
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/cell_backup.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/cell_router.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/cell_server1.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/cell_server2.conf
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry etc/silc
+@dirrmtry var/log/silc

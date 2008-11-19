@@ -1,0 +1,24 @@
+# New ports collection makefile for:	py-pyutil
+# Date created:		2007-5-31
+# Whom:			Chao Shin <quakelee@cn.FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pyutil
+PORTVERSION=	1.3.7
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	quakelee@cn.FreeBSD.org
+COMMENT=	A collection of mature utilities for Python programmers
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0.8.0:${PORTSDIR}/devel/py-argparse
+
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=easy_install
+PYEASYINSTALL_ARCHDEP=	yes
+
+.include <bsd.port.mk>

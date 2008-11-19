@@ -1,0 +1,6 @@
+MD5 (rsync-3.0.4.tar.gz) = 2b2d159c9bd1b5f8adfd8b13da3a1f3f
+SHA256 (rsync-3.0.4.tar.gz) = 743a49cf01d2e4cf57be7bfbb02e04c0b20e7b7ec58195c20df710b991cede51
+SIZE (rsync-3.0.4.tar.gz) = 773083
+MD5 (rsync-patches-3.0.4.tar.gz) = a7697d7002f7789faede7109b420b94c
+SHA256 (rsync-patches-3.0.4.tar.gz) = 5d654231fbf38ec0cec76989d466c7e8eaa72caacae2758817ca842a21777d2e
+SIZE (rsync-patches-3.0.4.tar.gz) = 159292
