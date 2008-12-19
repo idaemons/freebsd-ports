@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Locale/SubCountry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/SubCountry/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/SubCountry
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
+@dirrmtry %%SITE_PERL%%/Locale

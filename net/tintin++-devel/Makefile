@@ -1,15 +1,41 @@
 # New ports collection makefile for:    tintin++
-# Version required:     1.5pl6
 # Date created:         15 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/07 17:29:02 ache Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       tintin++v1.5pl6
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=   ftp://princeton.edu/pub/tintin++/dist/
-WRKSRC=         ${WRKDIR}/tintin++/src
-GNU_CONFIGURE=	YES
+PORTNAME=	tintin
+PORTVERSION=	1.98.5
+CATEGORIES+=	net games
+MASTER_SITES=	SFE
 
-.include <bsd.port.mk>
+MAINTAINER=	sunpoet@sunpoet.net
+COMMENT=	A client program to help playing MUDs (devel version)
+
+LATEST_LINK=	${PORTNAME}-devel
+
+WRKSRC=		${WRKDIR}/tt/src
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+PLIST_FILES=	bin/tt++
+
+.include <bsd.port.pre.mk>
+
+DOCS=		BUGS CREDITS FAQ README TODO \
+		docs/chat_protocol.txt docs/tintin19.txt
+PORTDOCS=	${DOCS:T}
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC}/.. && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>

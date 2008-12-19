@@ -1,0 +1,14 @@
+include/cc++/audio2.h
+lib/ccaudio2-0.9/adpcm.codec
+lib/ccaudio2-0.9/g.711.codec
+lib/ccaudio2-0.9/oki.codec
+lib/libccaudio2-0.9.so
+lib/libccaudio2-0.9.so.0
+lib/libccaudio2.a
+lib/libccaudio2.la
+lib/libccaudio2.so
+libdata/pkgconfig/libccaudio2.pc
+bin/audiotool
+bin/tonetool
+@dirrmtry include/cc++
+@dirrm lib/ccaudio2-0.9

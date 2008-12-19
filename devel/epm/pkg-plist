@@ -1,0 +1,8 @@
+bin/epm
+bin/epminstall
+bin/mkepmlist
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README
+%%DOCSDIR%%/epm-manual.html
+%%DOCSDIR%%/epm-manual.pdf
+@dirrm %%DOCSDIR%%

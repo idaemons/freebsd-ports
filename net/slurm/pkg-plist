@@ -1,0 +1,10 @@
+bin/slurm
+share/slurm/blue.theme
+share/slurm/cyan.theme
+share/slurm/foo.theme
+share/slurm/black.theme
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/KEYS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/slurm

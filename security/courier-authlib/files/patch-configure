@@ -1,0 +1,367 @@
+--- configure.orig	2008-07-12 21:41:09.000000000 +0200
++++ configure	2008-07-16 08:38:29.000000000 +0200
+@@ -898,6 +898,9 @@
+ SHADOWLIBS
+ LIBAUTHSHADOW
+ LIBAUTHPWD
++vpopmail_home
++VPOPMAILLIBS
++LIBAUTHVCHKPW
+ authpgsqlrc
+ PG_CONFIG
+ PGSQL_LIBS
+@@ -928,7 +931,11 @@
+ HAVE_SGML_FALSE
+ subdirs
+ LIBOBJS
+-LTLIBOBJS'
++LTLIBOBJS
++HAVE_BASE_TRUE
++HAVE_BASE_FALSE
++HAVE_USERDB_TRUE
++HAVE_USERDB_FALSE'
+ ac_subst_files=''
+       ac_precious_vars='build_alias
+ host_alias
+@@ -1552,6 +1559,7 @@
+  --with-authldaprc=filename         Expect to find authldaprc here
+  --without-authpwd                  Do not include the authpwd module
+  --without-authshadow               Do not include the authshadow module
++ --without-authvchkpw               Do not include the authvchkpw module
+  --with-authpgsqlrc=filename        Expect to find authpgsql here
+  --without-authpgsql               Do not include the authpgsql module
+  --with-pgsql-libs=DIR		Look for pgsql libs in this dir
+@@ -2493,7 +2501,7 @@
+ fi
+ 
+ fi
+-INSTALL_STRIP_PROGRAM="\$(install_sh) -c -s"
++INSTALL_STRIP_PROGRAM="${INSTALL_PROGRAM} -s"
+ 
+ # We need awk for the "check" target.  The system "awk" is bad on
+ # some platforms.
+@@ -21188,8 +21196,12 @@
+ 
+ if test "$doauthuserdb" = "no"
+ then
++	HAVE_USERDB_TRUE='#'
++	HAVE_USERDB_FALSE=
+ 	AUTHUSERDB=""
+ else
++	HAVE_USERDB_TRUE=
++	HAVE_USERDB_FALSE='#'
+ 	AUTHUSERDB="authuserdb"
+ 	LIBAUTHUSERDB="libauthuserdb.la"
+ 
+@@ -22867,6 +22879,20 @@
+ fi
+ 
+ 
++if test "${with_base+set}" = set; then
++	withval="$with_base"
++	dobase="$withval"
++else
++	dobase="yes"
++fi;
++
++if test "$dobase" = "no"; then
++	HAVE_BASE_TRUE='#'
++	HAVE_BASE_FALSE=
++else
++	HAVE_BASE_TRUE=
++	HAVE_BASE_FALSE='#'
++fi
+ 
+  if test "$HAVE_LDAP" = 1; then
+   HAVE_LDAP_TRUE=
+@@ -23515,6 +23541,256 @@
+ 
+ 
+ 
++
++vpopmail_home=`$PERL -e '@a=getpwnam("vpopmail"); print "$a[7]";'`
++
++
++
++
++# Check whether --with-authvchkpw was given.
++if test "${with_authvchkpw+set}" = set; then
++  withval=$with_authvchkpw; doauthvchkpw="$withval"
++else
++  doauthvchkpw=no
++	if test "$vpopmail_home" != ""
++	then
++		doauthvchkpw=yes
++	fi
++fi
++
++
++if test "$doauthvchkpw" = "no"
++then
++	HAVE_VCHKPW=0
++	vpopmail_home=.
++else
++	HAVE_VCHKPW=1
++
++
++	cat  <<EOF
++----------------------------------------------------
++                     NOTE
++
++
++All questions regarding ANY vpopmail-related problems,
++such as compiling/building failures, or login errors
++should be referred to the vpopmail mailing list.
++Vpopmail questions sent to the Courier mailing lists
++will be IGNORED.
++----------------------------------------------------
++
++EOF
++	sleep 5
++
++	if test -f ${vpopmail_home}/etc/lib_deps
++	then
++		CFLAGS="`cat ${vpopmail_home}/etc/inc_deps` $CFLAGS"
++		VPOPMAILLIBS="`cat ${vpopmail_home}/etc/lib_deps`"
++	else
++		{ { echo "$as_me:$LINENO: error: ${vpopmail_home}/etc/lib_deps does not exist - upgrade vpopmail to the current version or fix the permissions on this file" >&5
++echo "$as_me: error: ${vpopmail_home}/etc/lib_deps does not exist - upgrade vpopmail to the current version or fix the permissions on this file" >&2;}
++   { (exit 1); exit 1; }; }
++	fi
++fi
++
++
++
++LIBAUTHVCHKPW=""
++if test "$HAVE_VCHKPW" = 1
++then
++	LIBAUTHVCHKPW="libauthvchkpw.la"
++	HAVE_VCHKPW="1"
++
++
++	_SAVE_LIBS=$LIBS
++	LIBS="$VPOPMAILLIBS $CRYPTLIBS $LIBS"
++	{ echo "$as_me:$LINENO: checking for open_smtp_relay" >&5
++echo $ECHO_N "checking for open_smtp_relay... $ECHO_C" >&6; }
++if test "${ac_cv_func_open_smtp_relay+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++/* Define open_smtp_relay to an innocuous variant, in case <limits.h> declares open_smtp_relay.
++   For example, HP-UX 11i <limits.h> declares gettimeofday.  */
++#define open_smtp_relay innocuous_open_smtp_relay
++
++/* System header to define __stub macros and hopefully few prototypes,
++    which can conflict with char open_smtp_relay (); below.
++    Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
++    <limits.h> exists even on freestanding compilers.  */
++
++#ifdef __STDC__
++# include <limits.h>
++#else
++# include <assert.h>
++#endif
++
++#undef open_smtp_relay
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char open_smtp_relay ();
++/* The GNU C library defines this for functions which it implements
++    to always fail with ENOSYS.  Some functions are actually named
++    something starting with __ and the normal name is an alias.  */
++#if defined __stub_open_smtp_relay || defined __stub___open_smtp_relay
++choke me
++#endif
++
++int
++main ()
++{
++return open_smtp_relay ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (ac_try="$ac_link"
++case "(($ac_try" in
++  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
++  *) ac_try_echo=$ac_try;;
++esac
++eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
++  (eval "$ac_link") 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } && {
++	 test -z "$ac_c_werror_flag" ||
++	 test ! -s conftest.err
++       } && test -s conftest$ac_exeext &&
++       $as_test_x conftest$ac_exeext; then
++  ac_cv_func_open_smtp_relay=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++	ac_cv_func_open_smtp_relay=no
++fi
++
++rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
++      conftest$ac_exeext conftest.$ac_ext
++fi
++{ echo "$as_me:$LINENO: result: $ac_cv_func_open_smtp_relay" >&5
++echo "${ECHO_T}$ac_cv_func_open_smtp_relay" >&6; }
++if test $ac_cv_func_open_smtp_relay = yes; then
++
++cat >>confdefs.h <<\_ACEOF
++#define HAVE_OPEN_SMTP_RELAY 1
++_ACEOF
++
++fi
++
++	{ echo "$as_me:$LINENO: checking for vset_lastauth" >&5
++echo $ECHO_N "checking for vset_lastauth... $ECHO_C" >&6; }
++if test "${ac_cv_func_vset_lastauth+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++/* Define vset_lastauth to an innocuous variant, in case <limits.h> declares vset_lastauth.
++   For example, HP-UX 11i <limits.h> declares gettimeofday.  */
++#define vset_lastauth innocuous_vset_lastauth
++
++/* System header to define __stub macros and hopefully few prototypes,
++    which can conflict with char vset_lastauth (); below.
++    Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
++    <limits.h> exists even on freestanding compilers.  */
++
++#ifdef __STDC__
++# include <limits.h>
++#else
++# include <assert.h>
++#endif
++
++#undef vset_lastauth
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char vset_lastauth ();
++/* The GNU C library defines this for functions which it implements
++    to always fail with ENOSYS.  Some functions are actually named
++    something starting with __ and the normal name is an alias.  */
++#if defined __stub_vset_lastauth || defined __stub___vset_lastauth
++choke me
++#endif
++
++int
++main ()
++{
++return vset_lastauth ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (ac_try="$ac_link"
++case "(($ac_try" in
++  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
++  *) ac_try_echo=$ac_try;;
++esac
++eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
++  (eval "$ac_link") 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } && {
++	 test -z "$ac_c_werror_flag" ||
++	 test ! -s conftest.err
++       } && test -s conftest$ac_exeext &&
++       $as_test_x conftest$ac_exeext; then
++  ac_cv_func_vset_lastauth=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++	ac_cv_func_vset_lastauth=no
++fi
++
++rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
++      conftest$ac_exeext conftest.$ac_ext
++fi
++{ echo "$as_me:$LINENO: result: $ac_cv_func_vset_lastauth" >&5
++echo "${ECHO_T}$ac_cv_func_vset_lastauth" >&6; }
++if test $ac_cv_func_vset_lastauth = yes; then
++
++cat >>confdefs.h <<\_ACEOF
++#define HAVE_VSET_LASTAUTH 1
++_ACEOF
++
++fi
++
++	LIBS=$_SAVE_LIBS
++fi
++
++
++
++
++
++
++
+ # Check whether --with-authpgsqlrc was given.
+ if test "${with_authpgsqlrc+set}" = set; then
+   withval=$with_authpgsqlrc; authpgsqlrc="$withval"
+@@ -26486,9 +26762,13 @@
+ CXXFLAGS!$CXXFLAGS$ac_delim
+ ac_ct_CXX!$ac_ct_CXX$ac_delim
+ CXXDEPMODE!$CXXDEPMODE$ac_delim
++HAVE_BASE_TRUE!$HAVE_BASE_TRUE$ac_delim
++HAVE_BASE_FALSE!$HAVE_BASE_FALSE$ac_delim
++HAVE_USERDB_TRUE!$HAVE_USERDB_TRUE$ac_delim
++HAVE_USERDB_FALSE!$HAVE_USERDB_FALSE$ac_delim
+ _ACEOF
+ 
+-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 97; then
++  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 101; then
+     break
+   elif $ac_last_try; then
+     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
+@@ -26559,6 +26839,9 @@
+ SHADOWLIBS!$SHADOWLIBS$ac_delim
+ LIBAUTHSHADOW!$LIBAUTHSHADOW$ac_delim
+ LIBAUTHPWD!$LIBAUTHPWD$ac_delim
++vpopmail_home!$vpopmail_home$ac_delim
++VPOPMAILLIBS!$VPOPMAILLIBS$ac_delim
++LIBAUTHVCHKPW!$LIBAUTHVCHKPW$ac_delim
+ authpgsqlrc!$authpgsqlrc$ac_delim
+ PG_CONFIG!$PG_CONFIG$ac_delim
+ PGSQL_LIBS!$PGSQL_LIBS$ac_delim
+@@ -26592,7 +26875,7 @@
+ LTLIBOBJS!$LTLIBOBJS$ac_delim
+ _ACEOF
+ 
+-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 63; then
++  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 66; then
+     break
+   elif $ac_last_try; then
+     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5

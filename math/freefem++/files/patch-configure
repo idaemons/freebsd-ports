@@ -1,0 +1,11 @@
+--- configure.orig	2007-11-19 21:40:20.000000000 +0100
++++ configure	2007-11-23 19:06:25.000000000 +0100
+@@ -9600,7 +9600,7 @@
+ 
+ 
+ 
+-for ac_header in mpicxx.h mpi/cxx/mpicxx.h ompi/mpi/cxx/mpicxx.h openmpi/ompi/mpi/cxx/mpicxx.h mpi++.h
++for ac_header in mpi.h mpicxx.h mpi/cxx/mpicxx.h ompi/mpi/cxx/mpicxx.h openmpi/ompi/mpi/cxx/mpicxx.h mpi++.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then

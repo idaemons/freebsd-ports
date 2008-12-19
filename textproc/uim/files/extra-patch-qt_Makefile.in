@@ -1,0 +1,153 @@
+--- qt/Makefile.in.orig	2008-05-17 12:42:12.000000000 +0900
++++ qt/Makefile.in	2008-05-18 23:56:08.000000000 +0900
+@@ -107,10 +107,6 @@
+ extraLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(applet_LTLIBRARIES) $(extra_LTLIBRARIES) \
+ 	$(noinst_LTLIBRARIES)
+-@QT_IMMODULE_TRUE@@QT_TRUE@libquiminputcontextplugin_la_DEPENDENCIES = $(top_builddir)/uim/libuim-counted-init.la \
+-@QT_IMMODULE_TRUE@@QT_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@QT_IMMODULE_TRUE@@QT_TRUE@	$(top_builddir)/uim/libuim.la \
+-@QT_IMMODULE_TRUE@@QT_TRUE@	$(am__append_10)
+ am__libquiminputcontextplugin_la_SOURCES_DIST =  \
+ 	immodule-candidatewindow.cpp immodule-qhelpermanager.cpp \
+ 	immodule-plugin.cpp immodule-plugin.h \
+@@ -141,9 +137,6 @@
+ 	$(libquiminputcontextplugin_la_LDFLAGS) $(LDFLAGS) -o $@
+ @QT_IMMODULE_TRUE@@QT_TRUE@am_libquiminputcontextplugin_la_rpath =  \
+ @QT_IMMODULE_TRUE@@QT_TRUE@	-rpath $(extradir)
+-@QT_TRUE@libtoolbarcommon_la_DEPENDENCIES =  \
+-@QT_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@QT_TRUE@	$(top_builddir)/uim/libuim.la
+ am__libtoolbarcommon_la_SOURCES_DIST =  \
+ 	toolbar-common-quimhelpertoolbar.cpp \
+ 	toolbar-common-uimstateindicator.cpp qtgettext.h \
+@@ -158,8 +151,6 @@
+ 	$(libtoolbarcommon_la_LDFLAGS) $(LDFLAGS) -o $@
+ @QT_TRUE@am_libtoolbarcommon_la_rpath =
+ @APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_DEPENDENCIES =  \
+-@APPLET_KDE_TRUE@@QT_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@APPLET_KDE_TRUE@@QT_TRUE@	$(top_builddir)/uim/libuim.la \
+ @APPLET_KDE_TRUE@@QT_TRUE@	libtoolbarcommon.la
+ am__uim_panelapplet_la_SOURCES_DIST = toolbar-applet-kde.cpp \
+ 	toolbar-applet-kde.h qtgettext.h \
+@@ -183,8 +174,8 @@
+ @QT_TRUE@	uim_candwin_qt-candwin-qt.$(OBJEXT)
+ uim_candwin_qt_OBJECTS = $(am_uim_candwin_qt_OBJECTS)
+ @QT_TRUE@uim_candwin_qt_DEPENDENCIES =  \
+-@QT_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@QT_TRUE@	$(top_builddir)/uim/libuim.la
++@QT_TRUE@	-luim-scm \
++@QT_TRUE@	-luim
+ uim_candwin_qt_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(uim_candwin_qt_CXXFLAGS) $(CXXFLAGS) \
+@@ -195,8 +186,8 @@
+ @QT_TRUE@	uim_im_switcher_qt-switcher-qt.$(OBJEXT)
+ uim_im_switcher_qt_OBJECTS = $(am_uim_im_switcher_qt_OBJECTS)
+ @QT_TRUE@uim_im_switcher_qt_DEPENDENCIES =  \
+-@QT_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@QT_TRUE@	$(top_builddir)/uim/libuim.la
++@QT_TRUE@	-luim-scm \
++@QT_TRUE@	-luim
+ uim_im_switcher_qt_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(uim_im_switcher_qt_CXXFLAGS) $(CXXFLAGS) \
+@@ -212,10 +203,6 @@
+ @PREF_TRUE@@QT_TRUE@	uim_pref_qt-pref-keyeditformbase.$(OBJEXT)
+ uim_pref_qt_OBJECTS = $(am_uim_pref_qt_OBJECTS) \
+ 	$(nodist_uim_pref_qt_OBJECTS)
+-@PREF_TRUE@@QT_TRUE@uim_pref_qt_DEPENDENCIES = $(top_builddir)/uim/libuim-counted-init.la \
+-@PREF_TRUE@@QT_TRUE@	$(top_builddir)/uim/libuim-custom.la \
+-@PREF_TRUE@@QT_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@PREF_TRUE@@QT_TRUE@	$(top_builddir)/uim/libuim.la
+ uim_pref_qt_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(uim_pref_qt_CXXFLAGS) \
+ 	$(CXXFLAGS) $(uim_pref_qt_LDFLAGS) $(LDFLAGS) -o $@
+@@ -226,9 +213,6 @@
+ @QT_TRUE@am_uim_toolbar_qt_OBJECTS =  \
+ @QT_TRUE@	uim_toolbar_qt-toolbar-standalone-qt.$(OBJEXT)
+ uim_toolbar_qt_OBJECTS = $(am_uim_toolbar_qt_OBJECTS)
+-@QT_TRUE@uim_toolbar_qt_DEPENDENCIES =  \
+-@QT_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@QT_TRUE@	$(top_builddir)/uim/libuim.la ./libtoolbarcommon.la
+ uim_toolbar_qt_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(uim_toolbar_qt_CXXFLAGS) $(CXXFLAGS) \
+@@ -579,8 +563,8 @@
+ @QT_IMMODULE_TRUE@@QT_TRUE@libquiminputcontextplugin_la_CXXFLAGS = $(QT_CXXFLAGS) @X_CFLAGS@
+ @QT_IMMODULE_TRUE@@QT_TRUE@libquiminputcontextplugin_la_LDFLAGS = $(QT_LDFLAGS) -avoid-version
+ @QT_IMMODULE_TRUE@@QT_TRUE@libquiminputcontextplugin_la_LIBADD = $(top_builddir)/uim/libuim-counted-init.la \
+-@QT_IMMODULE_TRUE@@QT_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@QT_IMMODULE_TRUE@@QT_TRUE@	$(top_builddir)/uim/libuim.la \
++@QT_IMMODULE_TRUE@@QT_TRUE@	-luim-scm \
++@QT_IMMODULE_TRUE@@QT_TRUE@	-luim \
+ @QT_IMMODULE_TRUE@@QT_TRUE@	$(am__append_10)
+ 
+ # Toolbar Common
+@@ -590,8 +574,8 @@
+ 
+ @QT_TRUE@libtoolbarcommon_la_CXXFLAGS = $(QT_CXXFLAGS)
+ @QT_TRUE@libtoolbarcommon_la_LDFLAGS = $(QT_LDFLAGS) -avoid-version
+-@QT_TRUE@libtoolbarcommon_la_LIBADD = $(top_builddir)/uim/libuim-scm.la \
+-@QT_TRUE@			       $(top_builddir)/uim/libuim.la
++@QT_TRUE@libtoolbarcommon_la_LIBADD = -luim-scm \
++@QT_TRUE@			      -luim
+ 
+ 
+ # Toolbar Standalone
+@@ -600,8 +584,8 @@
+ 
+ @QT_TRUE@uim_toolbar_qt_CXXFLAGS = $(QT_CXXFLAGS)
+ @QT_TRUE@uim_toolbar_qt_LDFLAGS = $(QT_LDFLAGS)
+-@QT_TRUE@uim_toolbar_qt_LDADD = $(top_builddir)/uim/libuim-scm.la \
+-@QT_TRUE@			  $(top_builddir)/uim/libuim.la ./libtoolbarcommon.la
++@QT_TRUE@uim_toolbar_qt_LDADD = -luim-scm \
++@QT_TRUE@			-luim ./libtoolbarcommon.la
+ 
+ 
+ # Toolbar applet
+@@ -610,8 +594,8 @@
+ 
+ @APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_CXXFLAGS = -I@KDE_INCLUDE_DIR@ $(QT_CXXFLAGS)
+ @APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_LDFLAGS = -avoid-version -module -no-undefined -Wl,--no-undefined -Wl,--allow-shlib-undefined -L@KDE_LIB_DIR@ $(QT_LDFLAGS)
+-@APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_LIBADD = $(top_builddir)/uim/libuim-scm.la \
+-@APPLET_KDE_TRUE@@QT_TRUE@			      $(top_builddir)/uim/libuim.la \
++@APPLET_KDE_TRUE@@QT_TRUE@uim_panelapplet_la_LIBADD = -luim-scm \
++@APPLET_KDE_TRUE@@QT_TRUE@			      -luim \
+ @APPLET_KDE_TRUE@@QT_TRUE@			      libtoolbarcommon.la  -lkdeui -lkdecore 
+ 
+ 
+@@ -619,16 +603,16 @@
+ @QT_TRUE@uim_candwin_qt_SOURCES = candwin-qt.cpp candwin-qt.h qtgettext.h
+ @QT_TRUE@uim_candwin_qt_CXXFLAGS = $(QT_CXXFLAGS)
+ @QT_TRUE@uim_candwin_qt_LDFLAGS = $(QT_LDFLAGS)
+-@QT_TRUE@uim_candwin_qt_LDADD = $(top_builddir)/uim/libuim-scm.la \
+-@QT_TRUE@		       $(top_builddir)/uim/libuim.la
++@QT_TRUE@uim_candwin_qt_LDADD = -luim-scm \
++@QT_TRUE@		        -luim
+ 
+ 
+ # Switcher
+ @QT_TRUE@uim_im_switcher_qt_SOURCES = switcher-qt.cpp switcher-qt.h qtgettext.h
+ @QT_TRUE@uim_im_switcher_qt_CXXFLAGS = $(QT_CXXFLAGS)
+ @QT_TRUE@uim_im_switcher_qt_LDFLAGS = $(QT_LDFLAGS)
+-@QT_TRUE@uim_im_switcher_qt_LDADD = $(top_builddir)/uim/libuim-scm.la \
+-@QT_TRUE@			      $(top_builddir)/uim/libuim.la
++@QT_TRUE@uim_im_switcher_qt_LDADD = -luim-scm \
++@QT_TRUE@			    -luim
+ 
+ 
+ # Pref
+@@ -646,9 +630,9 @@
+ @PREF_TRUE@@QT_TRUE@uim_pref_qt_CXXFLAGS = $(QT_CXXFLAGS)
+ @PREF_TRUE@@QT_TRUE@uim_pref_qt_LDFLAGS = $(QT_LDFLAGS)
+ @PREF_TRUE@@QT_TRUE@uim_pref_qt_LDADD = $(top_builddir)/uim/libuim-counted-init.la \
+-@PREF_TRUE@@QT_TRUE@		       $(top_builddir)/uim/libuim-custom.la \
+-@PREF_TRUE@@QT_TRUE@		       $(top_builddir)/uim/libuim-scm.la \
+-@PREF_TRUE@@QT_TRUE@		       $(top_builddir)/uim/libuim.la
++@PREF_TRUE@@QT_TRUE@		       -luim-custom \
++@PREF_TRUE@@QT_TRUE@		       -luim-scm \
++@PREF_TRUE@@QT_TRUE@		       -luim
+ 
+ @QT_TRUE@CLEANFILES = \
+ @QT_TRUE@	$(MOC_FILES) \

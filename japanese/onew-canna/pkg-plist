@@ -1,0 +1,3 @@
+lib/libonew-canna.a
+%%PORTDOCS%%share/doc/ja-onew-canna/README.ONEW
+%%PORTDOCS%%@dirrm share/doc/ja-onew-canna

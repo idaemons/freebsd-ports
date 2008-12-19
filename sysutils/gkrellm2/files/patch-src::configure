@@ -1,0 +1,35 @@
+Index: src/configure
+diff -u src/configure.orig src/configure
+--- src/configure.orig	Mon May  7 08:45:55 2007
++++ src/configure	Sun Jul 22 03:01:53 2007
+@@ -61,8 +62,8 @@
+ 	}
+ EOF
+ 
+-$CC ${CFLAGS} ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
+-$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -lgnutls-openssl 2>& 5
++$CC ${PKG_INCLUDE} -I${GNUTLSINC} -c test.c -o test.o 2>& 5
++$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -L${GNUTLSLIB} -lgnutls-openssl 2>& 5
+ 
+ if [ -x ./test ] && ./test
+ then
+@@ -101,8 +102,8 @@
+ 	}
+ EOF
+ 
+-$CC ${CFLAGS} ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
+-$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -lssl -lcrypto 2>& 5
++$CC ${PKG_INCLUDE} -I${OPENSSLINC} -c test.c -o test.o 2>& 5
++$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -L${OPENSSLLIB} -lssl -lcrypto 2>& 5
+ 
+ if [ -x ./test ] && ./test
+ then
+@@ -141,7 +142,7 @@
+ 	}
+ EOF
+ 
+-$CC ${CFLAGS} ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
++$CC ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
+ $CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -lsensors 2>& 5
+ 
+ if [ -x ./test ] && ./test

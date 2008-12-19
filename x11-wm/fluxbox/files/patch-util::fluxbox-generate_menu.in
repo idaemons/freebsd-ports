@@ -1,0 +1,148 @@
+--- util/fluxbox-generate_menu.in.orig	2008-09-02 15:13:53.000000000 -0500
++++ util/fluxbox-generate_menu.in	2008-09-02 15:32:52.000000000 -0500
+@@ -45,7 +45,7 @@
+ 
+ 
+ WHOAMI=`whoami`
+-[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
++[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin:%%LOCALBASE%%/bin
+ 
+ # Check for Imlib2-support
+ if @pkgprefix@fluxbox@pkgsuffix@ -info 2> /dev/null | grep -q "^IMLIB"; then
+@@ -79,7 +79,7 @@
+     -d  Other path(s) to recursively search for *.desktop files
+     -ds Wider search for *.desktop files (takes more time)
+     -i  Other path(s) to search for icons
+-        e.g., "/usr/kde/3.3/share/icons/crystalsvg/16x16/*"
++        e.g., "%%LOCALBASE%%/share/icons/crystalsvg/16x16/*"
+     -is Wider search for icons (worth the extra time)
+     -in Skip icon search
+ 
+@@ -96,7 +96,7 @@
+   Only for packagers:
+ 
+     -p  Prefix; default is @PREFIX@
+-    -n  Gnome-prefix; /opt, /usr, /usr/X11R6 and /usr/local autodetected
++    -n  Gnome-prefix; %%LOCALBASE%% autodetected
+     -q  KDE-prefix; idem dito
+ 
+ 
+@@ -253,7 +253,7 @@
+     # echo -n "for $temp_icon"
+     eval doSearchLoop $USER_ICONPATHS \
+       "$FB_ICONDIR" \
+-      "/usr/share/${execname%% *}" \
++      "%%LOCALBASE%%/share/${execname%% *}" \
+       ${OTHER_ICONPATHS} \
+ 
+ 
+@@ -1236,16 +1236,16 @@
+ # These are prefixes; So if fluxbox is installed in @PREFIX@/bin/fluxbox
+ # your prefix is: @PREFIX@
+ 
+-# fluxbox-generate already looks in /usr/X11R6, /usr, /usr/local and /opt so
++# fluxbox-generate already looks in %%LOCALBASE%% so
+ # there should be no need to specify them.
+ #
+ # PREFIX=@PREFIX@
+-# GNOME_PREFIX=/opt/gnome
+-# KDE_PREFIX=/opt/kde
++# GNOME_PREFIX=%%LOCALBASE%%
++# KDE_PREFIX=%%LOCALBASE%%
+ 
+ 
+ # Separate the list of background dirs with colons ':'
+-# BACKGROUND_DIRS="${USERFLUXDIR}/backgrounds/:@PREFIX@/share/fluxbox/backgrounds/:/usr/share/wallpapers"
++# BACKGROUND_DIRS="${USERFLUXDIR}/backgrounds/:@PREFIX@/share/fluxbox/backgrounds/:%%LOCALBASE%%/share/wallpapers"
+ 
+ 
+ # --- Boolean variables.
+@@ -1317,29 +1317,21 @@
+         -g) GNOMEMENU=yes; shift;;
+         -in) NO_ICON=yes; shift;;
+         -is) OTHER_ICONPATHS="
+-                /usr/share/icons
+-                /usr/share/icons/mini
+-                /usr/share/pixmaps
+-                /usr/local/share/icons
+-                /usr/local/share/icons/mini
+-                /usr/local/share/pixmaps
+-                /usr/share/xclass/icons
+-                /usr/share/xclass/pixmaps
+-                /usr/local/share/xclass/icons
+-                /usr/local/share/xclass/pixmaps
+-                /usr/X11R6/share/icons/default/16x16
+-                /usr/X11R6/share/icons/kde/16x16
+-                /usr/X11R6/share/icons/hicolor/16x16
+-                /usr/local/X11R6/share/icons/default/16x16
+-                /usr/local/X11R6/share/icons/kde/16x16
+-                /usr/local/X11R6/share/icons/hicolor/16x16
++                %%LOCALBASE%%/share/icons
++                %%LOCALBASE%%/share/icons/mini
++                %%LOCALBASE%%/share/pixmaps
++                %%LOCALBASE%%/share/xclass/icons
++                %%LOCALBASE%%/share/xclass/pixmaps
++                %%LOCALBASE%%/share/icons/default/16x16
++                %%LOCALBASE%%/share/icons/kde/16x16
++                %%LOCALBASE%%/share/icons/hicolor/16x16
+             "
+             shift;;
+         -ds) OTHER_DESKTOP_PATHS="
+-                /usr/share/mimelnk 
+-                /usr/share/applications
+-                /usr/share/xsessions 
+-                /usr/share/services 
++                %%LOCALBASE%%/share/mimelnk
++                %%LOCALBASE%%/share/applications
++                %%LOCALBASE%%/share/xsessions
++                %%LOCALBASE%%/share/services
+             "
+             # /usr/share/apps \
+             shift;;
+@@ -1416,7 +1408,7 @@
+ 
+ 
+ # gnome prefix
+-for GNOME_PREFIX in "${GNOME_PREFIX}" /usr/local /usr/X11R6 /usr /opt "${PREFIX}"; do
++for GNOME_PREFIX in "${GNOME_PREFIX}" %%LOCALBASE%% "${PREFIX}"; do
+     if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
+         break;
+     fi
+@@ -1424,7 +1416,7 @@
+ # Will remain $PREFIX if all else fails
+ 
+ # kde prefix
+-for KDE_PREFIX in "${KDE_PREFIX}" /usr/local /usr/X11R6 /usr /opt "${PREFIX}"; do
++for KDE_PREFIX in "${KDE_PREFIX}" %%LOCALBASE%% "${PREFIX}"; do
+     if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
+         break;
+     fi
+@@ -1512,7 +1504,7 @@
+ else
+     [ -n "$MY_BROWSER" ] && echo "Warning: you chose an invalid browser." >&2
+     #The precise order is up for debate.
+-    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird opera skipstone mozilla seamonkey galeon konqueror dillo netscape w3m amaya links lynx; do
++    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird linux-opera opera skipstone mozilla seamonkey galeon konqueror dillo netscape w3m amaya links lynx; do
+         if find_it_options $browser; then
+             DEFAULT_BROWSER=$browser
+             break
+@@ -1559,7 +1551,8 @@
+     links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
+     firefox|firebird|mozilla|seamonkey|phoenix|galeon|dillo|netscape|amaya) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
+     konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
+-    opera) append "[exec] (opera) {env QT_XFT=true opera}" ;;
++    linux-opera) append "[exec] (linux-opera) {linux-opera}" ;;
++    opera) append "[exec] (opera) {opera}" ;;
+     MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
+     MozillaFirefox) append "[exec] (firefox) {MozillaFirefox}" ;;
+     *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
+@@ -1578,7 +1571,8 @@
+     append_submenu "${BROWSERMENU}"
+         normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla seamonkey dillo netscape vncviewer
+         find_it links       append "[exec]   (links-graphic) {links -driver x ${HOMEPAGE}}"
+-        find_it opera       append "[exec]   (opera) {env QT_XFT=true opera}"
++        find_it linux-opera append "[exec]   (linux-opera) {linux-opera}"
++        find_it opera       append "[exec]   (opera) {opera}"
+         find_it konqueror   append "[exec]   (konqueror) {kfmclient openProfile webbrowsing}"
+         find_it links       append "[exec]   (links) {${DEFAULT_TERM} -e links ${HOMEPAGE}}"
+         find_it w3m         append "[exec]   (w3m) {${DEFAULT_TERM} -e w3m ${HOMEPAGE}}"

@@ -1,0 +1,30 @@
+bin/structuresynth
+%%DATADIR%%/Examples/Arc Sphere.es
+%%DATADIR%%/Examples/Ball.es
+%%DATADIR%%/Examples/BinaryKite.es
+%%DATADIR%%/Examples/Boxes II.es
+%%DATADIR%%/Examples/City of Glass.es
+%%DATADIR%%/Examples/Default.es
+%%DATADIR%%/Examples/Frame In Frame.es
+%%DATADIR%%/Examples/Grinder.es
+%%DATADIR%%/Examples/Invader.es
+%%DATADIR%%/Examples/Jugend2D.es
+%%DATADIR%%/Examples/Menger.es
+%%DATADIR%%/Examples/Mondrian.es
+%%DATADIR%%/Examples/Octopod II.es
+%%DATADIR%%/Examples/RoundTree.es
+%%DATADIR%%/Examples/SpiralTree2D.es
+%%DATADIR%%/Examples/Torus2.es
+%%DATADIR%%/Examples/Torus3.es
+%%DATADIR%%/Examples/Trees 3d.es
+%%DATADIR%%/Examples/Tube.es
+%%DATADIR%%/Misc/about.html
+%%DATADIR%%/Misc/icon.jpg
+%%DATADIR%%/Misc/povray.rendertemplate
+%%DATADIR%%/Misc/splash.png
+%%DATADIR%%/Misc/sunflow.rendertemplate
+%%DATADIR%%/Misc/sunflowcolored.rendertemplate
+%%DATADIR%%/Misc/sunflowmulticolored.rendertemplate
+@dirrm %%DATADIR%%/Misc
+@dirrm %%DATADIR%%/Examples
+@dirrm %%DATADIR%%

@@ -1,0 +1,2 @@
+bin/rdfpipe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

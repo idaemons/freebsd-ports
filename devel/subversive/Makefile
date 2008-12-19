@@ -1,0 +1,41 @@
+# New ports collection makefile for:	subversive
+# Date created:			14 Feb 2007
+# Whom:				Alex Dupre <ale@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	subversive
+PORTVERSION=	0.7.3
+PORTEPOCH=	1
+CATEGORIES=	devel java
+MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,%SUBDIR%,technology/subversive/0.7/builds,:S,$,:core,} \
+		http://www.polarion.org/projects/subversive/download/eclipse/2.0/update-site/plugins/:connectors
+DISTNAME=	Subversive-incubation-${PORTVERSION}.I20080814-1500
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:core ${SVNKITJAR}:connectors
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=	ale@FreeBSD.org
+COMMENT=	An Eclipse plug-in that provides Subversion support
+
+RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+
+SVNKITJAR=	org.polarion.eclipse.team.svn.connector.svnkit15_2.0.3.I20080814-1500.jar
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+USE_ZIP=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.5+
+JAVA_OS=	native
+
+post-extract:
+	@${CP} ${_DISTDIR}/${SVNKITJAR} ${WRKSRC}/plugins
+
+do-install:
+	@${MKDIR} ${PREFIX}/eclipse
+	@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse
+	@${CP} -r ${WRKSRC}/features ${PREFIX}/eclipse
+	@(cd ${WRKSRC}; ${FIND} -s features plugins -not -type d) | \
+		${SED} -ne 's,^,eclipse/,p' >> ${TMPPLIST}
+
+.include <bsd.port.mk>

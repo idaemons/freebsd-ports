@@ -1,0 +1,12 @@
+--- py/python/Makefile.orig	2008-08-01 16:33:15.000000000 +0800
++++ py/python/Makefile	2008-08-01 16:33:45.000000000 +0800
+@@ -230,7 +230,8 @@
+ 	$(INSTALL_DATA) *.py $(install_pythondir)
+ 	@for i in $(PACKAGES) ; \
+ 	do \
+-	    $(INSTALL_DATA) -r $$i $(install_pythondir) ; \
++	    $(INSTALL_DATA) -d $(install_pythondir)/$$i ; \
++	    $(INSTALL_DATA) $$i/*.py $(install_pythondir)/$$i ; \
+ 	done
+ 
+ clean::

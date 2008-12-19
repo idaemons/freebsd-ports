@@ -1,0 +1,40 @@
+# New ports collection makefile for:   terminus-font
+# Date Created:                         04 Nov 2002
+# Whom:                                 Michael Hsin <mhsin@mhsin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	terminus-font
+PORTVERSION=	4.20
+PORTREVISION=	5
+CATEGORIES=	x11-fonts
+MASTER_SITES=	http://www.is-vn.bg/hamster/
+
+MAINTAINER=	vlad@vlad.uz.ua
+COMMENT=	Terminus Font - a clean fixed width font
+
+BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
+		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+
+USE_PERL5=	yes
+ALL_TARGET=	pcf
+SHAREMODE=	644
+FONTDIR=	lib/X11/fonts/${PORTNAME}
+PLIST_SUB+=	FONTDIR=${FONTDIR}
+
+post-build:
+	@${GZIP_CMD} ${WRKSRC}/*.pcf
+
+do-install:
+	@${MKDIR} ${LOCALBASE}/${FONTDIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${LOCALBASE}/${FONTDIR}
+
+post-install:
+	@cd ${LOCALBASE}/${FONTDIR}; mkfontdir
+	@${CP} ${LOCALBASE}/${FONTDIR}/fonts.dir ${LOCALBASE}/${FONTDIR}/fonts.scale || true
+	@command fc-cache -f -v ${LOCALBASE}/${FONTDIR} || true
+
+.include <bsd.port.mk>

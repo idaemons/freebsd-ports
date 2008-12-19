@@ -1,0 +1,37 @@
+# New ports collection makefile for:	plib
+# Date created:		26 June 1999
+# Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	plib
+PORTVERSION=	1.8.5
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	http://plib.sourceforge.net/dist/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A portable library for joystick/sound/OpenGL GUI/3D math
+
+USE_GNOME=	gnometarget
+USE_GL=		glu
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+CXXFLAGS+=	-fPIC
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread||g ; \
+		 s|-ldl||g ; \
+		 s|-lc_r||g' ${WRKSRC}/configure
+
+post-build:
+	${CC} ${CFLAGS} -o ${WRKDIR}/plib-jscal ${FILESDIR}/jsBSDCal.c
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/plib-jscal ${PREFIX}/bin
+
+.include <bsd.port.mk>

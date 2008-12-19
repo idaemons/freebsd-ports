@@ -1,0 +1,27 @@
+--- Makefile.orig	2008-03-23 05:32:08.000000000 +0100
++++ Makefile	2008-03-28 13:15:14.000000000 +0100
+@@ -26,12 +26,12 @@
+ 
+ # gcc with basic optimization (-march flag could
+ # get overridden by architecture-specific builds)
+-CC = gcc
++#CC = gcc
+ WARN_FLAGS = -Wall -W -Wconversion
+-OPT_FLAGS = -O3 -fomit-frame-pointer -march=athlon -D_FILE_OFFSET_BITS=64
++#OPT_FLAGS = -O3 -fomit-frame-pointer -march=athlon -D_FILE_OFFSET_BITS=64
+ #OPT_FLAGS = -O3 -fomit-frame-pointer -march=k8
+ 
+-CFLAGS = $(OPT_FLAGS) $(MACHINE_FLAGS) $(WARN_FLAGS) -Iinclude -Ignfs/poly
++CFLAGS += $(WARN_FLAGS) -Iinclude -Ignfs/poly $(CPPFLAGS)
+ 
+ LIBS = -lm
+ 
+@@ -50,7 +50,7 @@
+ endif
+ 
+ # Note to MinGW users: comment out the next line, you don't need it
+-LIBS += -lpthread
++LIBS += $(PTHREAD_LIBS)
+ 
+ #---------------------------------- Generic file lists -------------------
+ 
