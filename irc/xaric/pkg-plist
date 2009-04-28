@@ -1,0 +1,6 @@
+bin/xaric
+%%DATADIR%%/help/copying
+%%DATADIR%%/help/help
+%%DATADIR%%/help/warranty
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%

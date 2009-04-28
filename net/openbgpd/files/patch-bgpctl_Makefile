@@ -1,0 +1,10 @@
+--- bgpctl/Makefile	2007-03-03 12:45:30.000000000 +0100
++++ bgpctl/Makefile	2008-03-18 13:27:29.000000000 +0100
+@@ -6,6 +6,7 @@
+ SRCS=	bgpctl.c parser.c buffer.c imsg.c util.c
+ SRCS+=	irrfilter.c whois.c irr_asset.c irr_prefix.c irr_output.c
+ SRCS+=	irr_parser.c
++SRCS+=	fmt_scaled.c
+ CFLAGS+= -Wall
+ CFLAGS+= -Wstrict-prototypes -Wmissing-prototypes
+ CFLAGS+= -Wmissing-declarations

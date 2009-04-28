@@ -1,0 +1,136 @@
+bin/couchdb
+bin/couchjs
+%%ETCDIR%%/couch.ini
+etc/logrotate.d/couchdb
+etc/default/couchdb
+etc/rc.d/couchdb
+lib/couchdb/bin/couchjs
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/cjson.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch.app
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_btree.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_db.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_db_update_notifier.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_db_updater.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_doc.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_event_sup.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_file.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_ft_query.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_httpd.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_key_tree.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_log.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_query_servers.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_rep.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_server.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_server_sup.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_stream.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_util.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin/couch_view.beam
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/include/couch_db.hrl
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/priv/lib/couch_erl_driver.a
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/priv/lib/couch_erl_driver.la
+lib/couchdb/erlang/lib/%%COUCHVERSION%%/priv/lib/couch_erl_driver.so
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb.app
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_request.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_response.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_util.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_charref.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_app.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochifmt_std.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_skel.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_sup.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochinum.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_http.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_multipart.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_socket_server.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochijson2.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochifmt_records.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_headers.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochihex.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_echo.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_cookies.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_html.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/reloader.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochifmt.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochijson.beam
+%%DATADIR%%/server/main.js
+%%DATADIR%%/www/browse/_create_document.html
+%%DATADIR%%/www/browse/_create_database.html
+%%DATADIR%%/www/browse/_delete_database.html
+%%DATADIR%%/www/browse/_compact_database.html
+%%DATADIR%%/www/browse/_delete_document.html
+%%DATADIR%%/www/browse/_save_view_as.html
+%%DATADIR%%/www/browse/database.html
+%%DATADIR%%/www/browse/document.html
+%%DATADIR%%/www/browse/index.html
+%%DATADIR%%/www/couch_tests.html
+%%DATADIR%%/www/favicon.ico
+%%DATADIR%%/www/image/add.gif
+%%DATADIR%%/www/image/apply.gif
+%%DATADIR%%/www/image/bg.png
+%%DATADIR%%/www/image/cancel.gif
+%%DATADIR%%/www/image/compact.gif
+%%DATADIR%%/www/image/delete-mini.gif
+%%DATADIR%%/www/image/delete.gif
+%%DATADIR%%/www/image/grippie.gif
+%%DATADIR%%/www/image/hgrad.gif
+%%DATADIR%%/www/image/load.gif
+%%DATADIR%%/www/image/logo.png
+%%DATADIR%%/www/image/order-asc.gif
+%%DATADIR%%/www/image/order-desc.gif
+%%DATADIR%%/www/image/path.gif
+%%DATADIR%%/www/image/progress.gif
+%%DATADIR%%/www/image/run-mini.gif
+%%DATADIR%%/www/image/run.gif
+%%DATADIR%%/www/image/running.gif
+%%DATADIR%%/www/image/save.gif
+%%DATADIR%%/www/image/spinner.gif
+%%DATADIR%%/www/image/test_failure.gif
+%%DATADIR%%/www/image/test_success.gif
+%%DATADIR%%/www/image/thead-key.gif
+%%DATADIR%%/www/image/thead.gif
+%%DATADIR%%/www/image/toggle-collapse.gif
+%%DATADIR%%/www/image/toggle-expand.gif
+%%DATADIR%%/www/image/twisty.gif
+%%DATADIR%%/www/index.html
+%%DATADIR%%/www/replicator.html
+%%DATADIR%%/www/script/browse.js
+%%DATADIR%%/www/script/couch.js
+%%DATADIR%%/www/script/couch_tests.js
+%%DATADIR%%/www/script/jquery.dialog.js
+%%DATADIR%%/www/script/jquery.suggest.js
+%%DATADIR%%/www/script/jquery.couch.js
+%%DATADIR%%/www/script/jquery.cookies.js
+%%DATADIR%%/www/script/jquery.resizer.js
+%%DATADIR%%/www/script/jquery.js
+%%DATADIR%%/www/script/json2.js
+%%DATADIR%%/www/script/pprint.js
+%%DATADIR%%/www/style/layout.css
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.gz
+%%PORTDOCS%%%%DOCSDIR%%/BUGS.gz
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.gz
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.gz
+%%PORTDOCS%%%%DOCSDIR%%/THANKS.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/www/style
+@dirrm %%DATADIR%%/www/script
+@dirrm %%DATADIR%%/www/image
+@dirrm %%DATADIR%%/www/browse
+@dirrm %%DATADIR%%/www
+@dirrm %%DATADIR%%/server
+@dirrm %%DATADIR%%
+@dirrm lib/couchdb/erlang/lib/%%COUCHVERSION%%/priv/lib
+@dirrm lib/couchdb/erlang/lib/%%COUCHVERSION%%/priv
+@dirrm lib/couchdb/erlang/lib/%%COUCHVERSION%%/include
+@dirrm lib/couchdb/erlang/lib/%%COUCHVERSION%%/ebin
+@dirrm lib/couchdb/erlang/lib/mochiweb-r82/ebin
+@dirrm lib/couchdb/erlang/lib/mochiweb-r82
+@dirrm lib/couchdb/erlang/lib/%%COUCHVERSION%%
+@dirrm lib/couchdb/erlang/lib
+@dirrm lib/couchdb/erlang
+@dirrm lib/couchdb/bin
+@dirrm lib/couchdb
+@dirrm etc/default
+@dirrm etc/logrotate.d
+@dirrm %%ETCDIR%%

@@ -1,0 +1,6 @@
+%%SITE_PERL%%/TeX/Encode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX/Encode/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX/Encode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX
+@dirrmtry %%SITE_PERL%%/auto/TeX
+@dirrmtry %%SITE_PERL%%/TeX

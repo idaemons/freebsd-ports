@@ -1,0 +1,15 @@
+
+$FreeBSD: /tmp/pcvs/ports/archivers/gtar/files/Attic/patch-tests_gzip.at,v 1.1 2008-12-30 17:41:11 naddy Exp $
+
+--- tests/gzip.at.orig
++++ tests/gzip.at
+@@ -32,8 +32,7 @@
+ ],
+ [0],
+ [],
+-[
+-gzip: stdin: unexpected end of file
++[gzip: (stdin): unexpected end of file
+ tar: Child returned status 1
+ tar: Error exit delayed from previous errors
+ ],

@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -162,7 +162,7 @@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
+@@ -249,7 +249,7 @@
+ # FIXME: also needed here
+ #	white-xifish.png 
+ built_docs = Vorbis_I_spec.html Vorbis_I_spec.pdf
+-@BUILD_DOCS_FALSE@doc_DATA = $(static_docs) $(SPEC_PNG)
++@BUILD_DOCS_FALSE@doc_DATA = $(static_docs) $(SPEC_PNG) $(built_docs)
+ 
+ # conditionally make the generated documentation
+ @BUILD_DOCS_TRUE@doc_DATA = $(static_docs) $(SPEC_PNG) $(built_docs)

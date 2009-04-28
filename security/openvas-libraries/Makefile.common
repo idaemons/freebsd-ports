@@ -1,0 +1,3 @@
+CONFIGURE_ARGS+=	--includedir=${PREFIX}/include \
+					--localstatedir=${PREFIX}/openvas \
+					--sharedstatedir=${PREFIX}/openvas/com

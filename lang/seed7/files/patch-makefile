@@ -1,0 +1,16 @@
+--- makefile.orig	2008-07-07 22:39:27.000000000 +0200
++++ makefile	2008-07-17 00:20:55.000000000 +0200
+@@ -7,11 +7,11 @@
+ # CFLAGS =
+ # CFLAGS = -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
+ # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
+-CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
++CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -I%%LOCALBASE%%/include
+ # CFLAGS = -O2 -g -pg -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
+ # CFLAGS = -O2 -fomit-frame-pointer -funroll-loops -Wall
+ # CFLAGS = -O2 -funroll-loops -Wall -pg
+-LFLAGS =
++LFLAGS = -L%%LOCALBASE%%/lib
+ # LFLAGS = -pg
+ # LFLAGS = -pg -lc_p
+ # LIBS = /usr/Xlib/libX11.so -lncurses -lm

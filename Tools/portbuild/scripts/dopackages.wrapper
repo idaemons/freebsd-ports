@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# configurable variables
+pb=/var/portbuild
+
+if [ $# -lt 2 ]; then
+    echo "usage: $0 <arch> <buildid> [<args> ...]"
+    exit 1
+fi
+
+arch=$1
+buildid=$2
+branch=$(echo $(basename $0) | cut -d'.' -f2)
+shift 2
+
+. ${pb}/scripts/buildenv
+if ! validate_env ${arch} ${branch} ; then
+    echo "Invalid environment: ${arch}/${branch}"
+    exit 1
+fi
+
+buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
+if [ -z "${buildid}" ]; then
+    echo "Invalid build ID ${buildid}"
+    exit 1
+fi
+
+# XXX move to per-build
+lock=${pb}/${arch}/${branch}/lock
+
+date=$(date '+%Y%m%d%H%M%S')
+
+dorun() {
+
+    lockf -k -t 0 ${lock} ${pb}/scripts/dopackages ${arch} ${branch} ${buildid} ${date} $@ 2>&1 \
+	| tee ${pb}/${arch}/archive/buildlogs/log.${branch}.${date}
+}
+
+dorun $@ || (echo "Build failed."; exit 1)

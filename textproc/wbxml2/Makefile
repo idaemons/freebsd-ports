@@ -1,0 +1,34 @@
+# New ports collection makefile for:	wbxml
+# Date created:			Nov 04, 2005
+# Whom:				Clemens Zauner <czauner+ports@onlineloop.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	wbxml2
+PORTVERSION=	0.10.0
+PORTREVISION=	1
+CATEGORIES=	textproc devel
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	libwbxml
+DISTNAME=	libwbxml-${PORTVERSION}
+
+MAINTAINER=	czauner+ports@onlineloop.com
+COMMENT=	Library & tools for converting wbxml<->xml
+
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+
+USE_BZIP2=	YES
+USE_CMAKE=	YES
+
+WRKSRC=		${WRKDIR}/libwbxml-${PORTVERSION}/build
+CMAKE_SOURCE_PATH=..
+PATCH_WRKSRC=	${WRKDIR}/libwbxml-${PORTVERSION}
+
+pre-patch:
+	@cd ${PATCH_WRKSRC}
+
+post-extract:
+	${MKDIR} ${WRKSRC}
+
+.include <bsd.port.mk>

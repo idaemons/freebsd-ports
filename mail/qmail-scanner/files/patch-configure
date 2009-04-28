@@ -1,0 +1,25 @@
+--- configure.old       Tue Aug 14 13:03:10 2007
++++ configure   Tue Aug 14 13:04:29 2007
+@@ -1,13 +1,6 @@
+ #!/bin/sh
+ #
+ 
+-#Pipe into bash if it's present
+-
+-if [ "`bash --version 2>&1|grep 'GNU bash'`" != "" -a "$BASH_VERSION" = "" ]; then
+-    exec bash $0 $*
+-    exit
+-fi
+-
+ umask 007
+ 
+ OLD_LANG="$LANG" 
+@@ -73,7 +66,7 @@
+ LANGUAGES="`ls  -d locale/[a-z]*|sed 's?^locale\/??g'`"
+ LANGUAGES=`echo $LANGUAGES`
+ 
+-SPOOLDIR="/var/spool/qscan"
++SPOOLDIR="/var/spool/qscand"
+ QMAILDIR="/var/qmail"
+ 
+ BINDIR="$QMAILDIR/bin"

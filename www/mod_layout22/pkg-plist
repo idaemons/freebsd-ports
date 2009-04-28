@@ -1,0 +1,5 @@
+@unexec /usr/bin/sed -i '' '/LoadModule layout_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+%%APACHEMODDIR%%/mod_layout.so
+@exec %D/sbin/apxs -e -A -n %%layout%% %D/%F
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

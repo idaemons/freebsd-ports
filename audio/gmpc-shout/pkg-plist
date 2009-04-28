@@ -1,0 +1,4 @@
+lib/gmpc/plugins/shoutplugin.la
+lib/gmpc/plugins/shoutplugin.so
+@dirrmtry lib/gmpc/plugins
+@dirrmtry lib/gmpc

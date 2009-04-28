@@ -1,0 +1,4 @@
+lib/gmpc/plugins/osdplugin.la
+lib/gmpc/plugins/osdplugin.so
+@dirrmtry lib/gmpc/plugins
+@dirrmtry lib/gmpc

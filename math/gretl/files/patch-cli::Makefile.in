@@ -1,0 +1,34 @@
+--- cli/Makefile.in.orig	2008-03-24 21:46:11.000000000 +0900
++++ cli/Makefile.in	2008-06-18 16:22:11.000000000 +0900
+@@ -16,6 +16,10 @@
+ READLINE_LIBS = @READLINE_LIBS@
+ READLINE_CFLAGS = @READLINE_CFLAGS@
+ 
++CPPFLAGS = @CPPFLAGS@
++LDFLAGS = @LDFLAGS@
++INTL_LIBS = @LTLIBINTL@
++
+ ifeq ($(CC),)
+   CC = gcc
+ endif
+@@ -41,17 +45,17 @@
+ 
+ DEFS = -DLOCALEDIR=\"$(localedir)\" -DHAVE_CONFIG_H
+ 
+-override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(READLINE_CFLAGS) $(DEFS)
++override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(READLINE_CFLAGS) $(DEFS) $(CPPFLAGS)
+ 
+ CLI = gretlcli
+-LIBTOOL = ../libtool
++LIBTOOL = @LIBTOOL@
+ 
+ %.o: %.c
+ 	$(CC) -c $(CFLAGS) $<
+ 	$(CC) $(CFLAGS) -MM $< > .deps/$*.d 
+ 
+ $(CLI): .deps $(OBJS)
+-	$(LIBTOOL) --mode=link $(CC) -o $@ $(OBJS) $(GRETLLIB) $(READLINE_LIBS) 
++	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ $(OBJS) $(GRETLLIB) $(READLINE_LIBS) $(INTL_LIBS)
+ 
+ .deps:
+ 	mkdir $@

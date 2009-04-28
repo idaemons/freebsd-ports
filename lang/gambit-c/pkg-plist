@@ -1,0 +1,43 @@
+bin/six
+bin/gsc-cc-o.bat
+bin/gsc-gambit
+bin/gsc-script
+bin/gsi
+bin/gsi-script
+bin/scheme-ieee-1178-1990
+bin/scheme-r4rs
+bin/scheme-r5rs
+bin/scheme-srfi-0
+bin/six-script
+share/doc/Gambit-C/gambit-c.html
+share/doc/Gambit-C/gambit-c.pdf
+share/doc/Gambit-C/gambit-c.txt
+include/Gambit-C/gambit.h
+include/Gambit-C/gambit-not402008.h
+lib/Gambit-C/_gambc.c
+lib/Gambit-C/_kernel#.scm
+lib/Gambit-C/_system#.scm
+lib/Gambit-C/_num#.scm
+lib/Gambit-C/_std#.scm
+lib/Gambit-C/_eval#.scm
+lib/Gambit-C/_io#.scm
+lib/Gambit-C/_nonstd#.scm
+lib/Gambit-C/_thread#.scm
+lib/Gambit-C/_repl#.scm
+lib/Gambit-C/_gambit#.scm
+lib/Gambit-C/digest#.scm
+lib/Gambit-C/digest.scm
+lib/Gambit-C/gambit#.scm
+lib/_gambcgsi.c
+lib/libgambcgsi.a
+lib/_gambcgsc.c
+lib/libgambcgsc.a
+lib/Gambit-C/libgambc.a
+lib/Gambit-C/r4rs#.scm
+lib/Gambit-C/r5rs#.scm
+share/emacs/site-lisp/gambit.el
+share/Gambit-C/syntax-case.scm
+@dirrm include/Gambit-C
+@dirrm share/doc/Gambit-C
+@dirrm share/Gambit-C
+@dirrm lib/Gambit-C

@@ -1,0 +1,19 @@
+# Ports collection makefile for:	gem-activesupport
+# Date created:				27 May 2005
+# Whom:					Jonathan Weiss (<jw@innerewut.de>)
+#
+# $FreeBSD$
+
+PORTNAME=	activesupport
+PORTVERSION=	2.2.2
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RF
+
+MAINTAINER=	jw@innerewut.de
+COMMENT=	Utility classes and extension that are required by Rails MVC Framework
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+.include <bsd.port.mk>

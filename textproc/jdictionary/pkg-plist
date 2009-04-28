@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/jdictionary
+%%DATADIR%%/jdictionary.jar
+@dirrm %%DATADIR%%

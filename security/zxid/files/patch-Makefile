@@ -1,0 +1,64 @@
+--- Makefile.orig	2008-04-17 09:47:50.000000000 +0800
++++ Makefile	2008-04-18 15:30:13.000000000 +0800
+@@ -26,13 +26,13 @@
+ 
+ default: seehelp zxid zxidsp zxidhlo zxidhlowsf zxidsimple zxidwsctool zxlogview zxidhrxmlwsc zxidhrxmlwsp
+ 
+-all: seehelp zxid zxidsp zxidhlo zxidsimple zxlogview samlmod phpzxid javazxid apachezxid
++all: seehelp zxid zxidsp zxidhlo zxidsimple zxlogview
+ 
+ ZXIDREL=0.25
+ ZXIDVERSION=0x000025
+ 
+ ### Where package is installed (use `make PREFIX=/your/path' to change)
+-PREFIX=/usr/local/zxid/$(ZXIDREL)
++PREFIX?=/usr/local/zxid/$(ZXIDREL)
+ 
+ ### Where runtime configuration and temporary data is kept.
+ ### If you change the following, be sure to edit zxidconf.h as well. N.B. Trailing / is needed.
+@@ -60,8 +60,8 @@
+ ###
+ 
+ TOP=$(shell pwd)
+-CURL_ROOT=/usr/local
+-OPENSSL_ROOT=/usr/local/ssl
++CURL_ROOT?=/usr/local
++OPENSSL_ROOT?=/usr/local/ssl
+ PHP_CONFIG=php-config
+ APACHE_ROOT=/usr/local/httpd
+ 
+@@ -75,11 +75,11 @@
+ SWIG=swig
+ AR=ar -crs
+ ARX=ar -x
+-CC=gcc
+-LD=gcc
+-SHARED_FLAGS=-shared --export-all-symbols -Wl,-whole-archive -Wl,--allow-multiple-definition
+-SHARED_CLOSE=-Wl,-no-whole-archive
+-CFLAGS=-g -fpic -fmessage-length=0 -Wno-unused-label -Wno-unknown-pragmas -fno-strict-aliasing
++CC?=gcc
++LD?=gcc
++SHARED_FLAGS+=-shared --export-all-symbols -Wl,-whole-archive -Wl,--allow-multiple-definition
++SHARED_CLOSE+=-Wl,-no-whole-archive
++CFLAGS+=-g -fpic -fmessage-length=0 -Wno-unused-label -Wno-unknown-pragmas -fno-strict-aliasing
+ #CFLAGS += -Os    # gcc-3.4.6 miscompiles with -Os on ix86
+ CFLAGS += -Wall -Wno-parentheses -DMAYBE_UNUSED='__attribute__ ((unused))'
+ 
+@@ -112,7 +112,7 @@
+ CDEF+= -DUSE_CURL
+ # Without OpenSSL signing and signature verification are not possible
+ CDEF+= -DUSE_OPENSSL
+-LIBS=-lpthread -L$(CURL_ROOT)/lib -L$(OPENSSL_ROOT)/lib -lcrypto -ldl -lcurl -lz
++LIBS=-lpthread -L$(CURL_ROOT)/lib -L$(OPENSSL_ROOT)/lib -lcrypto -lcurl -lz
+ 
+ # Following ld flags as well as C flag -ffunction-sections are a quest to
+ # eliminate unused functions from final link.
+@@ -848,7 +848,7 @@
+ 	@$(ECHO)
+ 	@$(ECHO) "to make sure the zxid CGI script can write to the $(ZXID_PATH)"
+ 	@$(ECHO) "directory (substitute nobody with the user your web server runs as)."
+-	@$(ECHO)/
++	@$(ECHO)
+ 
+ install: zxid libzxid.a libzxid.so.0.0 dir
+ 	@$(ECHO) "===== Installing in $(PREFIX) (to change do make install PREFIX=/your/path)"

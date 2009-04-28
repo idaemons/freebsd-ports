@@ -1,0 +1,46 @@
+# New ports collection makefile for:    libvmime
+# Date created:				September 17, 2005
+# Whom:					delphij@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libvmime
+PORTVERSION=	0.9.0
+PORTREVISION=	2
+CATEGORIES=	mail
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	vmime
+
+MAINTAINER=	delphij@FreeBSD.org
+COMMENT=	An all-in-one Internet mail library
+
+LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gsasl.13:${PORTSDIR}/security/gsasl
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_ICONV=	yes
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CFLAGS+=	-I${LOCALBASE}/include -D_GLIBCXX__PTHREADS
+CXXFLAGS+=	${CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+.ifndef	DEBUG
+CONFIGURE_ARGS+=--disable-debug
+.endif
+
+CONFIGURE_ENV+=	EXTRA_CFLAGS="${CFLAGS}" EXTRA_CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
+
+DOCSDIR=	${PREFIX}/share/doc/vmime
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,21 @@
+--- configure.orig	2008-03-12 17:28:51.000000000 +0200
++++ configure	2008-03-12 17:32:16.000000000 +0200
+@@ -19439,7 +19439,8 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -22065,7 +22066,7 @@
+ fi
+ 
+ 
+-THREADFLAGS="-D_REENTRANT"
++THREADFLAGS="-D_REENTRANT -pthread"
+ 
+ if test "$have_kos" = "no"; then
+   if test "$need_libc_r" = "yes"; then

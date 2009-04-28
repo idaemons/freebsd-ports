@@ -1,0 +1,11 @@
+--- README.orig	2008-07-06 16:51:23.000000000 +0800
++++ README	2008-07-06 16:54:11.000000000 +0800
+@@ -3,7 +3,7 @@
+ The perl module WWW::Curl provides an interface to the cURL library "libcurl".
+ See http://curl.haxx.se/ for more information on cURL and libcurl.
+ 
+-This module requires libcurl and the corresponding headerfiles to be
++This module requires libcurl and the corresponding header files to be
+ installed. You then may install this module via the usual way
+ (for installation on Windows please see README.Win32):
+ 

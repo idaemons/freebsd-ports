@@ -1,0 +1,15 @@
+--- extern/Makefile.orig	2008-10-22 18:38:21.000000000 +0200
++++ extern/Makefile	2009-03-20 23:17:59.000000000 +0100
+@@ -30,11 +30,7 @@
+ 
+ SOURCEDIR = extern
+ DIR = $(OCGDIR)/extern
+-DIRS = qhull/src solid glew/src
+-
+-ifeq ($(WITH_FREETYPE2), true)
+-    DIRS += bFTGL/src
+-endif
++DIRS = qhull/src solid
+ 
+ ifeq ($(WITH_FFMPEG), true)
+ ifeq ($(NAN_FFMPEG), $(LCGDIR)/ffmpeg)

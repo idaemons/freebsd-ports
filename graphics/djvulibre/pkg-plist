@@ -1,0 +1,23 @@
+bin/djview
+bin/djview3
+lib/djvulibre/plugins/nsdejavu.so
+share/djvu/djview3/cs/djview.qm
+share/djvu/djview3/cs/qt.qm
+share/djvu/djview3/de/djview.qm
+share/djvu/djview3/de/qt.qm
+share/djvu/djview3/desktop/djvulibre-djview3.desktop
+share/djvu/djview3/desktop/hi32-djview3.png
+share/djvu/djview3/desktop/register-djview-menu
+share/djvu/djview3/fr/djview.qm
+share/djvu/djview3/fr/qt.qm
+share/djvu/djview3/ja/djview.qm
+share/djvu/djview3/ja/qt.qm
+@dirrm share/djvu/djview3/ja
+@dirrm share/djvu/djview3/fr
+@dirrm share/djvu/djview3/desktop
+@dirrm share/djvu/djview3/de
+@dirrm share/djvu/djview3/cs
+@dirrm share/djvu/djview3
+@dirrmtry share/djvu
+@dirrm lib/djvulibre/plugins
+@dirrm lib/djvulibre

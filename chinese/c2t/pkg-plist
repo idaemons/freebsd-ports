@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+bin/c2t
+share/chinese/gb/TONEPY.tit
+@dirrmtry share/chinese/gb
+@dirrmtry share/chinese

@@ -1,0 +1,46 @@
+# New ports collection makefile for:	le
+# Date created:				16 October 1997
+# Whom:					Andrey Zakhvatov
+#
+# $FreeBSD$
+#
+
+PORTNAME=	le
+PORTVERSION=	1.14.0
+PORTREVISION=	1
+CATEGORIES=	editors
+MASTER_SITES=	ftp://ftp.yar.ru/pub/source/le/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Text editor with block and binary operations
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+
+MAN1=		le.1
+PORTDOCS=	FEATURES HISTORY NEWS README TODO
+PORTDATA=	${MISC_DATA} ${SRC_DATA}
+PLIST_FILES=	bin/le
+
+MISC_DATA=	colors-black colors-blue colors-defbg colors-green \
+		colors-white keymap-emacs mainmenu mainmenu-ru syntax syntax.d
+SRC_DATA=	le.hlp
+
+do-install:
+	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} le ${PREFIX}/bin
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} le.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDATA)
+	cd ${WRKSRC}/misc && ${MAKE} install
+.for file in ${SRC_DATA}
+	cd ${WRKSRC}/src && ${INSTALL_DATA} ${file} ${DATADIR}
+.endfor
+.endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${file} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>

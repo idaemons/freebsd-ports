@@ -1,0 +1,4 @@
+lib/gmpc/plugins/lastfmplugin.la
+lib/gmpc/plugins/lastfmplugin.so
+@dirrmtry lib/gmpc/plugins
+@dirrmtry lib/gmpc

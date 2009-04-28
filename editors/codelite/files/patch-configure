@@ -1,0 +1,19 @@
+--- configure.orig	2008-05-14 19:24:35.000000000 +0200
++++ configure	2008-05-15 21:48:27.000000000 +0200
+@@ -381,12 +383,10 @@
+ 
+ createEndMessage() 
+ {
+-	if [ "$os_name" = "Linux" ]; then
+-		echo "post_build_msg:" >> Makefile
+-		echo "	@echo ==========================================================" >> Makefile
+-		echo "	@echo Done, please run \"sudo make install\"." >> Makefile
+-		echo "	@echo ==========================================================" >> Makefile
+-	fi
++	    echo "post_build_msg:" >> Makefile
++	    echo "	@echo ==========================================================" >> Makefile
++	    echo "	@echo Done, please run \"sudo make install\"." >> Makefile
++	    echo "	@echo ==========================================================" >> Makefile
+ }
+ 
+ ## main

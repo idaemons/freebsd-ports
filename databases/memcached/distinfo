@@ -1,0 +1,6 @@
+MD5 (memcached-1.2.6.tar.gz) = 200d22f7ac2d114f74a6904552e9eb70
+SHA256 (memcached-1.2.6.tar.gz) = 365c5719997af9477aedf4ff0435fbd83aadf5fa9b1c7a2e0d744f865aac578e
+SIZE (memcached-1.2.6.tar.gz) = 217651
+MD5 (repcached-2.2-1.2.6.patch.gz) = 4ce1411efae1eac79c69c1c590ecd8fe
+SHA256 (repcached-2.2-1.2.6.patch.gz) = 5b848a8c0c5c39df6b92e9521773ecac92185bf516cdd12ddce1408ef7fa8fd5
+SIZE (repcached-2.2-1.2.6.patch.gz) = 16682

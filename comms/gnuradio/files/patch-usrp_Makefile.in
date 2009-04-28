@@ -1,0 +1,13 @@
+--- usrp/Makefile.in.orig	2008-08-23 20:37:44.000000000 -0400
++++ usrp/Makefile.in	2008-08-24 07:05:02.000000000 -0400
+@@ -473,8 +473,8 @@
+ 	usrp.iss.in \
+ 	usrp.inf
+ 
+-SUBDIRS = host firmware fpga doc
+-pkgconfigdir = $(libdir)/pkgconfig
++SUBDIRS = host firmware fpga
++pkgconfigdir = %%LIBDATA%%/pkgconfig
+ pkgconfig_DATA = \
+ 	usrp.pc
+ 

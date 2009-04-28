@@ -1,0 +1,109 @@
+--- SConstruct.orig	2008-12-02 11:02:40.000000000 +0100
++++ SConstruct	2009-02-11 19:13:27.000000000 +0100
+@@ -48,7 +48,7 @@
+     BoolOption('FPU_OPTIMIZATION', 'Build runtime checked assembler code', 1),
+     BoolOption('LIBLO', 'Compile with support for liblo library', 1),
+     BoolOption('NLS', 'Set to turn on i18n support', 1),
+-    PathOption('PREFIX', 'Set the install "prefix"', '/usr/local'),
++    PathOption('PREFIX', 'Set the install "prefix"', '/usr/local', PathOption.PathIsDirCreate),
+     BoolOption('SURFACES', 'Build support for control surfaces', 1),
+     BoolOption('WIIMOTE', 'Build the wiimote control surface', 0),
+     BoolOption('SYSLIBS', 'USE AT YOUR OWN RISK: CANCELS ALL SUPPORT FROM ARDOUR AUTHORS: Use existing system versions of various libraries instead of internal ones', 0),
+@@ -398,7 +398,7 @@
+ # Make sure they know what they are doing
+ #
+ 
+-if env['VST']:
++if False:
+     if os.path.isfile('.personal_use_only'):
+         print "Enabling VST support. Note that distributing a VST-enabled ardour\nis a violation of several different licences.\nBuild with VST=false if you intend to distribute ardour to others."
+     else:
+@@ -702,9 +702,9 @@
+     opt_flags.extend (["-mhard-float", "-mpowerpc-gfxopt"])
+     opt_flags.extend (["-Os"])
+ 
+-elif ((re.search ("i[0-9]86", config[config_cpu]) != None) or (re.search ("x86_64", config[config_cpu]) != None)) and env['DIST_TARGET'] != 'none':
++elif ((re.search ("i[0-9]86", env['DIST_TARGET']) != None) or (re.search ("x86_64", env['DIST_TARGET']) != None)):
+     
+-    build_host_supports_sse = 0
++    build_host_supports_sse = 1
+     
+     #
+     # ARCH_X86 means anything in the x86 family from i386 to x86_64
+@@ -755,12 +755,7 @@
+             print "\nWarning: you are building Ardour with SSE support even though your system does not support these instructions. (This may not be an error, especially if you are a package maintainer)"
+ # end optimization section
+ 
+-# handle x86/x86_64 libdir properly
+-
+-if env['DIST_TARGET'] == 'x86_64':
+-    env['LIBDIR']='lib64'
+-else:
+-    env['LIBDIR']='lib'
++env['LIBDIR']='lib'
+ 
+ #
+ # a single way to test if we're on OS X
+@@ -798,13 +793,7 @@
+ # prepend boiler plate optimization flags
+ #
+ 
+-opt_flags[:0] = [
+-    "-O3",
+-    "-fomit-frame-pointer",
+-    "-ffast-math",
+-    "-fstrength-reduce",
+-    "-pipe"
+-    ]
++opt_flags[:0] = [ "%%CFLAGS%%" ];
+ 
+ if env['DEBUG'] == 1:
+     env.Append(CCFLAGS=" ".join (debug_flags))
+@@ -896,6 +885,7 @@
+ 
+ libraries['usb'] = LibraryInfo ()
+ prep_libcheck(env, libraries['usb'])
++libraries['usb'].Append(CCFLAGS="-I/usr/local/include", LINKFLAGS="-L/usr/local/lib")
+ 
+ conf = Configure (libraries['usb'])
+ if conf.CheckLib ('usb', 'usb_interrupt_write'):
+@@ -968,6 +958,7 @@
+ if env['LIBLO']:
+     libraries['lo'] = LibraryInfo ()
+     prep_libcheck(env, libraries['lo'])
++    libraries['lo'].Append(CCFLAGS="-I/usr/local/include", LINKFLAGS="-L/usr/local/lib")
+ 
+     conf = Configure (libraries['lo'])
+     if conf.CheckLib ('lo', 'lo_server_new') == False:
+@@ -981,6 +972,7 @@
+ 
+ libraries['dmalloc'] = LibraryInfo ()
+ prep_libcheck(env, libraries['dmalloc'])
++libraries['dmalloc'].Append(CCFLAGS="-I/usr/local/include", LINKFLAGS="-L/usr/local/lib")
+ 
+ #
+ # look for the threaded version
+@@ -1038,8 +1030,10 @@
+     subst_dict['%MIDITAG%'] = "ardour"
+     subst_dict['%MIDITYPE%'] = "coremidi"
+ else:
+-    print "It appears you don't have the required MIDI libraries installed. For Linux this means you are missing the development package for ALSA libraries."
+-    sys.exit (1)
++    libraries['sysmidi'] = LibraryInfo ()
++    env['SYSMIDI'] = 'none'
++    subst_dict['%MIDITAG%'] = "none"
++    subst_dict['%MIDITYPE%'] = "none"
+ 
+ env = conf.Finish()
+ 
+@@ -1328,8 +1322,8 @@
+     subst_dict['%JACK_INPUT%'] = "coreaudio:Built-in Audio:in"
+     subst_dict['%JACK_OUTPUT%'] = "coreaudio:Built-in Audio:out"
+ else:
+-    subst_dict['%JACK_INPUT%'] = "alsa_pcm:playback_"
+-    subst_dict['%JACK_OUTPUT%'] = "alsa_pcm:capture_"
++    subst_dict['%JACK_INPUT%'] = "oss:playback_"
++    subst_dict['%JACK_OUTPUT%'] = "oss:capture_"
+ 
+ # posix_memalign available
+ if not conf.CheckFunc('posix_memalign'):

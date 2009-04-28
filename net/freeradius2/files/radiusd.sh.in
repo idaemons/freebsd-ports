@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: radiusd
+# REQUIRE: %%REQUIRE%%
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable radiusd:
+#
+# radiusd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=radiusd
+rcvar=`set_rcvar`
+load_rc_config $name
+
+command=%%PREFIX%%/sbin/radiusd
+
+# In debug mode, radiusd doesn't create a pid file, so comment pidfile and
+# let rc.subr use a process check on procname (which defaults to command).
+#pidfile=/var/run/radiusd/radiusd.pid
+
+extra_commands="reload debug"
+debug_cmd="radiusd_debug"
+
+
+# The radiusd_config parameter is now obsolete. Instead, derive the
+# configuration directory name from radiusd_flags if possible, otherwise
+# default to %%PREFIX%%/etc/raddb
+required_dirs=`echo ${radiusd_flags} | sed -Ee 's:.*\-[^[:space:]d]*d[[:space:]]*([^[:space:]]+).*:\1:'`
+required_dirs=${required_dirs:-"%%PREFIX%%/etc/raddb"}
+
+required_files="${required_dirs}/radiusd.conf"
+
+radiusd_enable=${radiusd_enable-"NO"}
+
+
+radiusd_debug()
+{
+    radiusd_flags="-X ${radiusd_flags}"
+    run_rc_command start
+}
+
+
+run_rc_command "$1"

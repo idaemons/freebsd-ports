@@ -1,0 +1,3 @@
+%%APACHE_MODULES%%/mod_webapp.so
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

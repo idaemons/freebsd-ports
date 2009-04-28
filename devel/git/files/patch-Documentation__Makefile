@@ -1,0 +1,34 @@
+--- Documentation/Makefile.orig	2009-04-10 23:21:10.776122378 -0400
++++ Documentation/Makefile	2009-04-10 23:22:01.915148428 -0400
+@@ -12,8 +12,6 @@
+ MAN_XML=$(patsubst %.txt,%.xml,$(MAN_TXT))
+ MAN_HTML=$(patsubst %.txt,%.html,$(MAN_TXT))
+ 
+-DOC_HTML=$(MAN_HTML)
+-
+ ARTICLES = howto-index
+ ARTICLES += everyday
+ ARTICLES += git-tools
+@@ -29,10 +27,10 @@
+ DOC_MAN5=$(patsubst %.txt,%.5,$(MAN5_TXT))
+ DOC_MAN7=$(patsubst %.txt,%.7,$(MAN7_TXT))
+ 
+-prefix?=$(HOME)
++prefix?=$(PREFIX)
+ bindir?=$(prefix)/bin
+-htmldir?=$(prefix)/share/doc/git-doc
+-pdfdir?=$(prefix)/share/doc/git-doc
++htmldir?=$(prefix)/share/doc/git
++pdfdir?=$(prefix)/share/doc/git
+ mandir?=$(prefix)/share/man
+ man1dir=$(mandir)/man1
+ man5dir=$(mandir)/man5
+@@ -76,7 +74,7 @@
+ # yourself - yes, all 6 characters of it!
+ #
+ 
+-all: html man
++all: html
+ 
+ html: $(DOC_HTML)
+ 

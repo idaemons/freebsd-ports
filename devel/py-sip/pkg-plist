@@ -1,0 +1,16 @@
+bin/sip
+%%PYTHON_INCLUDEDIR%%/sip.h
+%%PYTHON_SITELIBDIR%%/sip.so
+%%PYTHON_SITELIBDIR%%/sipconfig.py
+%%PYTHON_SITELIBDIR%%/sipconfig.pyc
+%%PYTHON_SITELIBDIR%%/sipconfig.pyo
+%%PYTHON_SITELIBDIR%%/sipdistutils.py
+%%PYTHON_SITELIBDIR%%/sipdistutils.pyc
+%%PYTHON_SITELIBDIR%%/sipdistutils.pyo
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/sipref.html
+%%PORTDOCS%%%%DOCSDIR%%/sipref.txt
+@exec mkdir -p %D/%%DATADIR%%
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

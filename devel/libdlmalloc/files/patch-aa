@@ -1,0 +1,11 @@
+--- malloc-2.8.3.c.orig	Tue Mar 21 18:15:49 2006
++++ malloc-2.8.3.c	Tue Mar 21 18:19:15 2006
+@@ -1200,7 +1200,7 @@
+ #  ifdef _SC_PAGE_SIZE
+ #    define malloc_getpagesize sysconf(_SC_PAGE_SIZE)
+ #  else
+-#    if defined(BSD) || defined(DGUX) || defined(HAVE_GETPAGESIZE)
++#    if (defined(BSD) && (BSD < 199306)) || defined(DGUX) || defined(HAVE_GETPAGESIZE)
+        extern size_t getpagesize();
+ #      define malloc_getpagesize getpagesize()
+ #    else

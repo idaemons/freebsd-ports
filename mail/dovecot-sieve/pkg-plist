@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+lib/dovecot/lda/lib90_cmusieve_plugin.a
+lib/dovecot/lda/lib90_cmusieve_plugin.la
+lib/dovecot/lda/lib90_cmusieve_plugin.so
+libexec/dovecot/sievec
+libexec/dovecot/sieved
+@dirrmtry libexec/dovecot
+@dirrmtry lib/dovecot/lda
+@dirrmtry lib/dovecot

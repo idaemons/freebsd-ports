@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Apr 29 16:50:55 2004
++++ Makefile.in	Sun Jun 13 22:08:51 2004
+@@ -56,7 +56,7 @@
+ 
+ install-lisp: lisp
+ 	@$(SHELL) $(srcdir)/mkinstalldirs $(lispdir);\
+-	for p in ChangeLog* *.el; do\
++	for p in *.el; do\
+ 	  case "$$p" in\
+ 	    $(IGNORES)) ;;\
+ 	    *) echo " $(INSTALL_DATA) $$p $(lispdir)/$$p";\

@@ -1,0 +1,28 @@
+bin/subtitlecomposer
+share/applications/kde4/subtitlecomposer.desktop
+share/apps/subtitlecomposer/input.conf
+share/apps/subtitlecomposer/pics/current-line-follows-video.png
+share/apps/subtitlecomposer/pics/flags.png
+share/apps/subtitlecomposer/pics/logo-gstreamer.png
+share/apps/subtitlecomposer/pics/logo-mplayer.png
+share/apps/subtitlecomposer/pics/logo-xine.png
+share/apps/subtitlecomposer/pics/player.png
+share/apps/subtitlecomposer/pics/set-hide-time.png
+share/apps/subtitlecomposer/pics/set-show-time.png
+share/apps/subtitlecomposer/pics/time-from-video.png
+share/apps/subtitlecomposer/subtitlecomposerui.rc
+share/config/subtitlecomposerrc
+share/icons/hicolor/128x128/apps/subtitlecomposer.png
+share/icons/hicolor/16x16/apps/subtitlecomposer.png
+share/icons/hicolor/32x32/apps/subtitlecomposer.png
+share/icons/hicolor/64x64/apps/subtitlecomposer.png
+share/locale/el/LC_MESSAGES/subtitlecomposer.mo
+share/locale/es/LC_MESSAGES/subtitlecomposer.mo
+share/locale/pl/LC_MESSAGES/subtitlecomposer.mo
+share/locale/sr/LC_MESSAGES/subtitlecomposer.mo
+share/locale/sr@latin/LC_MESSAGES/subtitlecomposer.mo
+share/mime/packages/subtitlecomposer.xml
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrm share/apps/subtitlecomposer/pics
+@dirrm share/apps/subtitlecomposer

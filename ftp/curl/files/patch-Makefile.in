@@ -1,0 +1,30 @@
+Build and install the documentation as usual, no special handling.
+
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -273,9 +273,9 @@
+  libcurl.pc.in vc6curl.dsw
+ 
+ bin_SCRIPTS = curl-config
+-SUBDIRS = lib src
+-DIST_SUBDIRS = $(SUBDIRS) tests include packages docs
+-pkgconfigdir = $(libdir)/pkgconfig
++SUBDIRS = lib src docs
++DIST_SUBDIRS = $(SUBDIRS) tests include packages
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libcurl.pc
+ all: all-recursive
+ 
+@@ -835,12 +835,10 @@
+ # We extend the standard install with a custom hook:
+ install-data-hook:
+ 	cd include && $(MAKE) install
+-	cd docs && $(MAKE) install
+ 
+ # We extend the standard uninstall with a custom hook:
+ uninstall-hook:
+ 	cd include && $(MAKE) uninstall
+-	cd docs && $(MAKE) uninstall
+ 
+ ca-bundle: lib/mk-ca-bundle.pl
+ 	@echo "generate a fresh ca-bundle.crt"

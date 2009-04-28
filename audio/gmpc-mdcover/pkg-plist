@@ -1,0 +1,4 @@
+lib/gmpc/plugins/mdcaplugin.la
+lib/gmpc/plugins/mdcaplugin.so
+@dirrmtry lib/gmpc/plugins
+@dirrmtry lib/gmpc
