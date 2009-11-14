@@ -1,0 +1,4 @@
+bin/bmf
+bin/bmfconv
+%%DATADIR%%/README
+@dirrm %%DATADIR%%

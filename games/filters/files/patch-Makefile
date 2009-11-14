@@ -1,0 +1,22 @@
+--- ./Makefile.orig	2008-04-14 19:22:29.000000000 +0200
++++ ./Makefile	2008-04-29 15:59:17.000000000 +0200
+@@ -2,8 +2,9 @@
+ BUILD	= jethro kraut cockney jive nyc ken ky00te newspeak nethackify
+ OTHER	= eleet b1ff chef jibberish upside-down rasterman studly fudd \
+ 	  censor spammer uniencode pirate kenny scottish fanboy
+-CFLAGS	= -O2 -lfl
++LDFLAGS+=	-lfl
+ export CFLAGS
++export LDFLAGS
+ INSTALL_PROGRAM = install
+ 
+ # DEB_BUILD_OPTIONS suport, to control binary stripping.
+@@ -42,7 +43,7 @@
+ .l:
+ 	$(RM) $*.c
+ 	$(LEX) -t $< > $*.c
+-	$(CC) -o $@ $*.c $(CFLAGS)
++	$(CC) -o $@ $*.c $(CFLAGS) $(LDFLAGS)
+ 	$(RM) $*.c
+ 
+ .SUFFIXES: .dir

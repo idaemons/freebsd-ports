@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+include/canna/RK.h
+include/canna/jrkanji.h
+include/canna/keydef.h
+include/canna/mfdef.h
+include/canna/pubconf.h
+include/canna/sysdep.h
+lib/libRKC.a
+lib/libRKC.so
+lib/libRKC.so.1
+lib/libRKC16.a
+lib/libRKC16.so
+lib/libRKC16.so.1
+lib/libcanna.a
+lib/libcanna.so
+lib/libcanna.so.1
+lib/libcanna16.a
+lib/libcanna16.so
+lib/libcanna16.so.1
+@dirrm include/canna

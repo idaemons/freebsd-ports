@@ -1,0 +1,10 @@
+@unexec %D/etc/rc.d/chillispot forcestop 2>/dev/null || true
+sbin/chilli
+%%PORTDATA%%%%DATADIR%%/chilli.conf.sample
+%%PORTDATA%%%%DATADIR%%/dictionary.chillispot
+%%PORTDATA%%%%DATADIR%%/freeradius.users
+%%PORTDATA%%%%DATADIR%%/hotspotlogin.cgi
+%%PORTDATA%%%%DATADIR%%/pf.conf.sample
+%%PORTDATA%%%%DATADIR%%/ipfw-config.sample
+%%PORTDATA%%%%DATADIR%%/installguide.txt
+%%PORTDATA%%@dirrm %%DATADIR%%

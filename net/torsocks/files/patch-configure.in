@@ -1,0 +1,102 @@
+--- configure.in.orig	2009-09-07 18:59:08.000000000 +0200
++++ configure.in	2009-09-07 18:58:52.000000000 +0200
+@@ -123,11 +123,9 @@
+ dnl Checks for libraries.
+ dnl Replace `main' with a function in -ldl:
+ 
+-AC_CHECK_LIB(dl, dlsym, [ tempdso="yes" ],tempdso="no")
+-if test "$tempdso" = "no"; then
+-  AC_CHECK_LIB(c, dlsym,,AC_MSG_ERROR("dlsym() not found in libc or libdl." \
+-               "Check your system for libc.so and/or libdl.so."))
+-fi
++dnl Checks for libraries.
++AC_CHECK_LIB(c, dlsym,,AC_MSG_ERROR(""dlsym() not found in libc." \
++               "Check your system for libc.so."))
+ 
+ AC_CHECK_LIB(resolv, res_query, [ tempres="no" ],tempres="yes")
+ if test "$tempres" = "no"; then
+@@ -356,11 +354,13 @@
+ dnl Find the correct res_querydomain prototype on this machine
+ AC_MSG_CHECKING(for correct res_querydomain prototype)
+ PROTO=
+-PROTO1='const char *name, const char *domain, int class, int type, unsigned char *answer, int anslen'
+-for testproto in "${PROTO1}"
++PROTO1='const char *name, const char *domain, int class, int type, u_char *answer, int anslen'
++for PROTO in "${PROTO1}"
+ do
+   if test "${PROTO}" = ""; then
+     AC_TRY_COMPILE([
++      #include <sys/types.h>  
++      #include <netinet/in.h>
+       #include <resolv.h>
+       int res_querydomain($testproto);
+     ],,[PROTO="$testproto";],)
+@@ -376,12 +376,14 @@
+ AC_MSG_CHECKING(for correct res_send prototype)
+ PROTO=
+ PROTO1='const char *msg, int msglen, char *answer, int anslen'
+-PROTO2='const unsigned char *msg, int msglen, unsigned char *answer, int anslen'
+-for testproto in "${PROTO1}" \
++PROTO2='const u_char *msg, int msglen, u_char *answer, int anslen'
++for PROTO in "${PROTO1}" \
+                  "${PROTO2}"
+ do
+   if test "${PROTO}" = ""; then
+     AC_TRY_COMPILE([
++      #include <sys/types.h>
++      #include <netinet/in.h>
+       #include <resolv.h>
+       int res_send($testproto);
+     ],,[PROTO="$testproto";],)
+@@ -397,11 +399,13 @@
+ dnl Find the correct res_search prototype on this machine
+ AC_MSG_CHECKING(for correct res_search prototype)
+ PROTO=
+-PROTO1='const char *dname, int class, int type,unsigned char *answer, int anslen'
+-for testproto in "${PROTO1}" 
++PROTO1='const char *dname, int class, int type, u_char *answer, int anslen'
++for PROTO in "${PROTO1}" 
+ do
+   if test "${PROTO}" = ""; then
+     AC_TRY_COMPILE([
++      #include <sys/types.h>
++      #include <netinet/in.h>
+       #include <resolv.h>
+       int res_search($testproto);
+     ],,[PROTO="$testproto";],)
+@@ -417,11 +421,13 @@
+ dnl Find the correct res_query prototype on this machine
+ AC_MSG_CHECKING(for correct res_query prototype)
+ PROTO=
+-PROTO1='const char *dname, int class, int type,unsigned char *answer, int anslen'
+-for testproto in "${PROTO1}" 
++PROTO1='const char *dname, int class, int type, u_char *answer, int anslen'
++for PROTO in "${PROTO1}" 
+ do
+   if test "${PROTO}" = ""; then
+     AC_TRY_COMPILE([
++      #include <sys/types.h>
++      #include <netinet/in.h>
+       #include <resolv.h>
+       int res_query($testproto);
+     ],,[PROTO="$testproto";],)
+@@ -447,6 +453,7 @@
+ do
+   if test "${PROTO}" = ""; then
+     AC_TRY_COMPILE([
++      #include <sys/types.h>
+       #include <sys/socket.h>
+       int getpeername($testproto);
+     ],,[PROTO="$testproto";],)
+@@ -462,8 +469,9 @@
+ dnl Find the correct poll prototype on this machine 
+ AC_MSG_CHECKING(for correct poll prototype)
+ PROTO=
+-for testproto in 'struct pollfd *ufds, unsigned long nfds, int timeout' \
+-                 'struct pollfd *ufds, nfds_t nfds, int timeout'
++for testproto in 'struct pollfd *ufds, u_long nfds, int timeout' \
++                 'struct pollfd *ufds, nfds_t nfds, int timeout' \
++                 'struct pollfd *pfd, unsigned int nfds, int timeout'
+ do
+   if test "${PROTO}" = ""; then
+     AC_TRY_COMPILE([

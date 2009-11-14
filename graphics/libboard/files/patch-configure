@@ -1,0 +1,54 @@
+--- configure.orig	2009-02-02 12:12:55.000000000 +0100
++++ configure	2009-02-23 18:56:43.000000000 +0100
+@@ -109,23 +109,23 @@
+ ##
+ ## Are we on a 64 bits arch
+ ##
+-${ECHO} -n "Checking for 64 bits architecture..."
+-cat > is64.c <<EOF
+-int main() {
+- unsigned long n = 0;
+- n = ~n;
+- return n == 0xFFFFFFFF;
+-}
+-EOF
+-gcc -o is64 is64.c
+-if is64; then
+-CXX64FLAGS="-fPIC"
+-echo yes
+-else
+-CXX64FLAGS=""
+-echo no
+-fi
+-rm -f is64 is64.c
++#${ECHO} -n "Checking for 64 bits architecture..."
++#cat > is64.c <<EOF
++#int main() {
++# unsigned long n = 0;
++# n = ~n;
++# return n == 0xFFFFFFFF;
++#}
++#EOF
++#$(CXX) -o is64 is64.c
++#if is64; then
++#CXX64FLAGS="-fPIC"
++#echo yes
++#else
++#CXX64FLAGS=""
++#echo no
++#fi
++#rm -f is64 is64.c
+ 
+ cat > Makefile <<EOF
+ 
+@@ -204,10 +204,6 @@
+ 	cp include/board/*.h \$(PREFIX)/include/board
+ 	chmod 644 \$(PREFIX)/include/Board.h
+ 	chmod 644 \$(PREFIX)/include/board/*.h
+-	install -d \$(PREFIX)/share/libboard/examples
+-	cp examples/*.cpp \$(PREFIX)/share/libboard/examples
+-	cp examples/README \$(PREFIX)/share/libboard/examples
+-	cp ${LICENSE} \$(PREFIX)/share/libboard/
+ 
+ doc: doc/html/index.html
+ 

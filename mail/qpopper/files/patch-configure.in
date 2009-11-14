@@ -1,0 +1,10 @@
+--- configure.in.orig	Sat May  5 14:32:51 2001
++++ configure.in	Sat May  5 14:33:32 2001
+@@ -1257,7 +1257,6 @@
+ )
+ 
+ AC_CHECK_HEADER( ndbm.h, NDBM_H="yes"; AC_DEFINE(HAVE_NDBM_H), NDBM_H="no" )
+-AC_CHECK_HEADER( gdbm.h, GDBM_H="yes"; AC_DEFINE(HAVE_GDBM_H), GDBM_H="no" )
+ AC_CHECK_HEADER(  dbm.h,  DBM_H="yes"; AC_DEFINE(HAVE_DBM_H),   DBM_H="no" )
+ 
+ 

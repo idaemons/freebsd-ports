@@ -1,0 +1,4 @@
+bin/asWedit
+lib/asWedit.hlp
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

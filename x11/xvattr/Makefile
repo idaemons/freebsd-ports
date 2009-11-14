@@ -1,0 +1,25 @@
+# ex:ts=8
+# Ports collection makefile for:	xvattr
+# Date created:			Jan 15, 2002
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xvattr
+PORTVERSION=	1.3
+PORTREVISION=	5
+CATEGORIES=	x11
+MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Getting and setting Xv attributes
+
+USE_PERL5_BUILD=	yes
+USE_GNOME=		gtk12
+USE_XORG=	x11 xv
+GNU_CONFIGURE=		yes
+
+MAN1=		xvattr.1
+
+.include <bsd.port.mk>

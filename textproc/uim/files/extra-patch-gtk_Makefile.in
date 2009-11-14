@@ -1,0 +1,23 @@
+--- gtk/Makefile.in.orig	2008-05-06 14:23:14.000000000 +0900
++++ gtk/Makefile.in	2008-05-06 20:11:03.000000000 +0900
+@@ -65,8 +65,6 @@
+ am__installdirs = "$(DESTDIR)$(moduledir)"
+ moduleLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(module_LTLIBRARIES)
+-@GTK2_TRUE@im_uim_la_DEPENDENCIES = $(top_builddir)/uim/libuim-scm.la \
+-@GTK2_TRUE@	$(top_builddir)/uim/libuim.la $(am__append_1)
+ am__im_uim_la_SOURCES_DIST = gtk-im-uim.c gtk-im-uim.h key-util-gtk.c \
+ 	key-util-gtk.h uim-cand-win-gtk.c uim-cand-win-gtk.h \
+ 	caret-state-indicator.c caret-state-indicator.h compose.c \
+@@ -378,9 +376,8 @@
+ @GTK2_TRUE@im_uim_la_LDFLAGS = -module -avoid-version @GTK2_LIBS@ \
+ @GTK2_TRUE@		   @EBCONF_PTHREAD_LDFLAGS@
+ 
+-@GTK2_TRUE@im_uim_la_LIBADD = $(top_builddir)/uim/libuim-scm.la \
+-@GTK2_TRUE@	$(top_builddir)/uim/libuim.la @EBCONF_EBLIBS@ \
+-@GTK2_TRUE@	@EBCONF_ZLIBLIBS@ @EBCONF_INTLLIBS@ $(am__append_1)
++@GTK2_TRUE@im_uim_la_LIBADD = -luim-scm -luim @EBCONF_EBLIBS@ \
++@GTK2_TRUE@	@EBCONF_ZLIBLIBS@ @EBCONF_INTLLIBS@ $(am__append_1)
+ @GTK2_TRUE@IM_UIM_SOURCES = gtk-im-uim.c gtk-im-uim.h key-util-gtk.c \
+ @GTK2_TRUE@	key-util-gtk.h uim-cand-win-gtk.c \
+ @GTK2_TRUE@	uim-cand-win-gtk.h caret-state-indicator.c \

@@ -1,0 +1,24 @@
+%%PYTHON_SITELIBDIR%%/twisted/runner/__init__.py
+%%PYTHON_SITELIBDIR%%/twisted/runner/__init__.pyc
+%%PYTHON_SITELIBDIR%%/twisted/runner/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/runner/_version.py
+%%PYTHON_SITELIBDIR%%/twisted/runner/_version.pyc
+%%PYTHON_SITELIBDIR%%/twisted/runner/_version.pyo
+%%PYTHON_SITELIBDIR%%/twisted/runner/inetd.py
+%%PYTHON_SITELIBDIR%%/twisted/runner/inetd.pyc
+%%PYTHON_SITELIBDIR%%/twisted/runner/inetd.pyo
+%%PYTHON_SITELIBDIR%%/twisted/runner/inetdconf.py
+%%PYTHON_SITELIBDIR%%/twisted/runner/inetdconf.pyc
+%%PYTHON_SITELIBDIR%%/twisted/runner/inetdconf.pyo
+%%PYTHON_SITELIBDIR%%/twisted/runner/inetdtap.py
+%%PYTHON_SITELIBDIR%%/twisted/runner/inetdtap.pyc
+%%PYTHON_SITELIBDIR%%/twisted/runner/inetdtap.pyo
+%%PYTHON_SITELIBDIR%%/twisted/runner/portmap.c
+%%PYTHON_SITELIBDIR%%/twisted/runner/portmap.so
+%%PYTHON_SITELIBDIR%%/twisted/runner/procmon.py
+%%PYTHON_SITELIBDIR%%/twisted/runner/procmon.pyc
+%%PYTHON_SITELIBDIR%%/twisted/runner/procmon.pyo
+%%PYTHON_SITELIBDIR%%/twisted/runner/procutils.py
+%%PYTHON_SITELIBDIR%%/twisted/runner/procutils.pyc
+%%PYTHON_SITELIBDIR%%/twisted/runner/procutils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/twisted/runner

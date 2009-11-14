@@ -1,0 +1,17 @@
+Add two SpamAssassin-related definitions.
+
+--- a/config.h.in
++++ b/config.h.in
+@@ -277,6 +277,12 @@
+ #undef SPAMC_PROG
+ 
+ /* "" */
++#undef SPAM_THRESHOLD
++
++/* "" */
++#undef SPAM_JUNKFOLDER
++
++/* "" */
+ #undef SQWEBMAIL_PASS
+ 
+ /* Define to 1 if you have the ANSI C header files. */

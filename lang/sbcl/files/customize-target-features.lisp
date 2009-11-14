@@ -1,0 +1,8 @@
+(lambda (features)
+  (flet ((enable (x)
+           (pushnew x features))
+         (disable (x)
+           (setf features (remove x features))))
+    (enable :sb-thread)
+    (enable :sb-lutex)
+    features))

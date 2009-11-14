@@ -1,0 +1,34 @@
+--- Makefile.orig	Fri Nov 14 15:28:17 2008
++++ Makefile	Fri Nov 14 15:30:48 2008
+@@ -1,6 +1,6 @@
+ all: library all_samples 
+ 
+-CFLAGS=-O4  -I. -w
++CFLAGS+=-I. -w -fPIC
+ 
+ # OpenMP support
+ #CFLAGS=-O4  -I. -w -fopenmp
+@@ -13,7 +13,7 @@
+ DCRAW_LIB_OBJECTS=object/dcraw_common.o object/foveon.o object/libraw_cxx.o object/libraw_c_api.o
+ DCRAW_LIB_MT_OBJECTS=object/dcraw_common_mt.o object/foveon_mt.o object/libraw_cxx_mt.o object/libraw_c_api_mt.o
+ 
+-library: lib/libraw.a lib/libraw_r.a
++library: lib/libraw.a lib/libraw_r.a lib/libraw.so.0 lib/libraw_r.so.0
+ 
+ all_samples: bin/identify bin/simple_dcraw  bin/dcraw_emu bin/dcraw_half bin/half_mt bin/mem_image
+ 
+@@ -75,6 +75,14 @@
+ 	rm -f lib/libraw_r.a
+ 	ar crv lib/libraw_r.a ${DCRAW_LIB_MT_OBJECTS}
+ 	ranlib lib/libraw_r.a
++
++lib/libraw.so.0: ${DCRAW_LIB_OBJECTS}
++	rm -f lib/libraw.so.0
++	${CC} ${CFLAGS} -shared -Wl,-soname,libraw.so.0 -o lib/libraw.so.0 ${DCRAW_LIB_OBJECTS}
++
++lib/libraw_r.so.0: ${DCRAW_LIB_MT_OBJECTS}
++	rm -f lib/libraw_r.so.0
++	${CC} ${CFLAGS} -shared -Wl,-soname,libraw_r.so.0 -o lib/libraw_r.so.0 ${DCRAW_LIB_MT_OBJECTS}
+ 
+ object/dcraw_common_mt.o: internal/dcraw_common.cpp
+ 	g++ -c -pthread ${LCMS_DEF}  ${CFLAGS} -o object/dcraw_common_mt.o internal/dcraw_common.cpp

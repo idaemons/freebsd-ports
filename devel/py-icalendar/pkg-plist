@@ -1,0 +1,11 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PORTDOCS%%%%DOCSDIR%%/example.txt
+%%PORTDOCS%%%%DOCSDIR%%/groupscheduled.ics
+%%PORTDOCS%%%%DOCSDIR%%/groupscheduled.txt
+%%PORTDOCS%%%%DOCSDIR%%/multiple.ics
+%%PORTDOCS%%%%DOCSDIR%%/multiple.txt
+%%PORTDOCS%%%%DOCSDIR%%/recurrence.ics
+%%PORTDOCS%%%%DOCSDIR%%/recurrence.txt
+%%PORTDOCS%%%%DOCSDIR%%/small.ics
+%%PORTDOCS%%%%DOCSDIR%%/small.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

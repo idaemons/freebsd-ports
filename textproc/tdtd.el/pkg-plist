@@ -1,0 +1,6 @@
+share/emacs/site-lisp/tdtd.el
+share/emacs/site-lisp/tdtd-font.el
+lib/xemacs/site-lisp/tdtd.el
+lib/xemacs/site-lisp/tdtd-font.el
+@dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs

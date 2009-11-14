@@ -1,0 +1,4 @@
+libexec/antivirus
+etc/antivirus.conf-dist
+@exec mkdir -p %%ANTIVIRUS%%/spool %%ANTIVIRUS%%/run %%ANTIVIRUS%%/run/quarantine
+@exec chown -R nobody:nobody %%ANTIVIRUS%%/

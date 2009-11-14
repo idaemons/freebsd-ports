@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2008-11-03 21:32:20.000000000 +0100
++++ src/Makefile.am	2009-05-07 19:59:17.554226281 +0200
+@@ -35,7 +35,7 @@
+ # fix for annoying automake naming problems.
+ tora_CXXFLAGS  = $(AM_CXXFLAGS)
+ 
+-tora_LDADD = $(ORACLE_LIBS) $(PQ_LIBS) $(@TORA_LINK_OTHERS@)
++tora_LDADD = $(ORACLE_LIBS) $(PQ_LIBS) $(@TORA_LINK_OTHERS@) $(LIBCOMPAT)
+ 
+ if HAVE_ORACLE
+ EXTRA_ORACLE_MONO_SOURCE = tooracleconnection.cpp tooraclesetting.h \

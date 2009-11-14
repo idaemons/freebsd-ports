@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Feb 23 09:33:44 2007
++++ Makefile	Fri Feb 23 09:34:09 2007
+@@ -24,7 +24,7 @@
+ JAVAC_CLASSPATH	=	$(JAVA_HOME)/jre/lib/ext/comm.jar
+ JAVAH		=	$(JAVA_HOME)/bin/javah
+ JARFILE		=	jar/CommDriver.jar
+-CFLAGS		= 	-O1 -fPIC -shared -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/freebsd -I$(JAVA_HOME)/include/bsd
++CFLAGS		+= 	-fPIC -shared -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/freebsd -I$(JAVA_HOME)/include/bsd
+ MACHINE_ARCH	?=	i386
+ 
+ .SUFFIXES:	.java .class

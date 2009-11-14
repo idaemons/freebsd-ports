@@ -1,0 +1,11 @@
+--- tables/zh/Makefile.in.old	Mon Apr 30 09:56:00 2007
++++ tables/zh/Makefile.in	Mon Apr 30 09:56:30 2007
+@@ -247,7 +247,7 @@
+ subdirs = @subdirs@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
++SCIM_MAKE_TABLE = scim-make-table
+ scim_tables_source = \
+ 		Array30.txt.in		\
+ 		CangJie.txt.in		\

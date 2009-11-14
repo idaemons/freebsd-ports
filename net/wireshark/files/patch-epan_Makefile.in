@@ -1,0 +1,20 @@
+--- epan/Makefile.in.orig	2009-06-16 00:04:18.000000000 -0400
++++ epan/Makefile.in	2009-06-20 18:40:38.000000000 -0400
+@@ -770,7 +770,7 @@ MAINTAINERCLEANFILES = \
+ # Add the object files for missing routines, if any.
+ #
+ libwireshark_la_LIBADD = \
+-	@INET_ATON_LO@ @INET_PTON_LO@ @INET_NTOP_LO@ libwireshark_generated.la \
++	@INET_ATON_LO@ @INET_PTON_LO@ libwireshark_generated.la \
+ 	libwireshark_asmopt.la crc/libcrc.la crypt/libairpdcap.la \
+ 	ftypes/libftypes.la dfilter/libdfilter.la dissectors/libdissectors.la \
+ 	dissectors/libdirtydissectors.la $(wslua_lib) @SOCKET_LIBS@ @NSL_LIBS@ \
+@@ -779,7 +779,7 @@ libwireshark_la_LIBADD = \
+ 	${top_builddir}/wsutil/libwsutil.la -lm
+ 
+ libwireshark_la_DEPENDENCIES = \
+-	@INET_ATON_LO@ @INET_PTON_LO@ @INET_NTOP_LO@ libwireshark_generated.la \
++	@INET_ATON_LO@ @INET_PTON_LO@ libwireshark_generated.la \
+ 	libwireshark_asmopt.la crc/libcrc.la crypt/libairpdcap.la \
+ 	ftypes/libftypes.la dfilter/libdfilter.la dissectors/libdissectors.la \
+ 	dissectors/libdirtydissectors.la $(wslua_lib) \

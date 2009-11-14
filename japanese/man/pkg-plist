@@ -1,0 +1,9 @@
+bin/jmanpath
+@unexec chflags noschg %B/jman
+bin/jman
+bin/japropos
+bin/jwhatis
+bin/jmakewhatis
+bin/jcatman
+libexec/jmakewhatis.local
+libexec/jcatman.local

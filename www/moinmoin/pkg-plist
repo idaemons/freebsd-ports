@@ -1,0 +1,3082 @@
+bin/moin
+%%PYTHON_SITELIBDIR%%/MoinMoin/Page.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/Page.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/Page.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/PageEditor.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/PageEditor.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/PageEditor.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/PageGraphicalEditor.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/PageGraphicalEditor.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/PageGraphicalEditor.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/_template.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/_template.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/_template.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/AttachFile.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/AttachFile.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/AttachFile.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/CopyPage.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/CopyPage.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/CopyPage.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/DeletePage.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/DeletePage.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/DeletePage.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/Despam.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/Despam.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/Despam.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/LikePages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/LikePages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/LikePages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/Load.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/Load.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/Load.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/LocalSiteMap.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/LocalSiteMap.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/LocalSiteMap.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/MyPages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/MyPages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/MyPages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/PackagePages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/PackagePages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/PackagePages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/RenamePage.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/RenamePage.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/RenamePage.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/RenderAsDocbook.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/RenderAsDocbook.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/RenderAsDocbook.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/Save.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/Save.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/Save.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/SpellCheck.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/SpellCheck.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/SpellCheck.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/SubscribeUser.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/SubscribeUser.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/SubscribeUser.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/SyncPages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/SyncPages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/SyncPages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/backup.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/backup.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/backup.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/bookmark.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/bookmark.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/bookmark.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/cache.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/cache.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/cache.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/chart.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/chart.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/chart.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/diff.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/diff.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/diff.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/dumpform.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/dumpform.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/dumpform.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/edit.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/edit.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/edit.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/fckdialog.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/fckdialog.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/fckdialog.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/fullsearch.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/fullsearch.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/fullsearch.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/info.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/info.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/info.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/links.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/links.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/links.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/login.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/login.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/login.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/logout.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/logout.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/logout.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/newaccount.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/newaccount.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/newaccount.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/newpage.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/newpage.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/newpage.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/pollsistersites.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/pollsistersites.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/pollsistersites.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/quicklink.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/quicklink.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/quicklink.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/quickunlink.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/quickunlink.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/quickunlink.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/recoverpass.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/recoverpass.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/recoverpass.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/refresh.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/refresh.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/refresh.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/revert.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/revert.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/revert.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/rss_rc.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/rss_rc.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/rss_rc.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/serveopenid.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/serveopenid.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/serveopenid.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/showtags.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/showtags.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/showtags.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/sisterpages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/sisterpages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/sisterpages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/sitemap.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/sitemap.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/sitemap.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/subscribe.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/subscribe.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/subscribe.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/supplementation.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/supplementation.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/supplementation.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/thread_monitor.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/thread_monitor.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/thread_monitor.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/titleindex.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/titleindex.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/titleindex.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/unsubscribe.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/unsubscribe.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/unsubscribe.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprefs.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprefs.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprefs.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprofile.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprofile.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprofile.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/_PHPsessionParser.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/_PHPsessionParser.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/_PHPsessionParser.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/botbouncer.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/botbouncer.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/botbouncer.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/http.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/http.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/http.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/interwiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/interwiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/interwiki.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/ldap_login.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/ldap_login.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/ldap_login.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/log.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/log.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/log.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/mysql_group.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/mysql_group.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/mysql_group.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/openidrp.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/openidrp.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/openidrp.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/php_session.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/php_session.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/php_session.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/smb_mount.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/smb_mount.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/smb_mount.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/sslclientcert.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/sslclientcert.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/sslclientcert.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/caching.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/caching.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/caching.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/config/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/config/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/config/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/config/multiconfig.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/config/multiconfig.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/config/multiconfig.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/conftest.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/conftest.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/conftest.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/converter/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/converter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/converter/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/converter/text_html_text_moin_wiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/converter/text_html_text_moin_wiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/converter/text_html_text_moin_wiki.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/error.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/error.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/error.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/emailnotify.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/emailnotify.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/emailnotify.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/jabbernotify.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/jabbernotify.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/jabbernotify.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/notification.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/notification.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/notification.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/wikidictsrescan.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/wikidictsrescan.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/wikidictsrescan.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/xapian_index.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/xapian_index.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/xapian_index.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/failure.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/failure.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/failure.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/EXIF.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/EXIF.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/EXIF.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_msword.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_msword.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_msword.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_octet_stream.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_octet_stream.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_octet_stream.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_pdf.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_pdf.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_pdf.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_ms_excel.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_ms_excel.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_ms_excel.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument_presentation.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument_presentation.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument_presentation.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument_spreadsheet.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument_spreadsheet.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument_spreadsheet.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument_text.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument_text.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_oasis_opendocument_text.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_calc.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_calc.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_calc.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_writer.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_writer.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/application_vnd_sun_xml_writer.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/audio.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/audio.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/audio.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image_jpeg.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image_jpeg.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/image_jpeg.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_html.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_html.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_html.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_rtf.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_rtf.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_rtf.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_xml.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_xml.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/text_xml.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/video.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/video.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/filter/video.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/dom_xml.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/dom_xml.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/dom_xml.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/pagelinks.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/pagelinks.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/pagelinks.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_docbook.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_docbook.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_docbook.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_gedit.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_gedit.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_gedit.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_html.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_html.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_html.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_html_percent.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_html_percent.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_html_percent.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_plain.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_plain.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_plain.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_python.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_python.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_python.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_xml.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_xml.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_xml.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/Makefile
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/MoinMoin.pot
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/POTFILES
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/POTFILES.in
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/README
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ar.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/bg.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ca.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/cs.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/da.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/de.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/dummy.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/dummy.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/dummy.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/el.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/en.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/es.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/fa.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/fi.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/fr.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/gl.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/he.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hi.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hr.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hu.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/id.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/it.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ja.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/jabberbot/JabberBot.pot
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/jabberbot/Makefile
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/jabberbot/pl.JabberBot.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ko.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ku.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/lt.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/lv.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/mk.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/mn.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/msgfmt.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/msgfmt.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/msgfmt.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/nb.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/nl.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/pl.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/pt-br.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/pt.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ro.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ru.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/sk.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/sl.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/sr.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/sv.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/check_i18n.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/check_i18n.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/check_i18n.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/mail_i18n-maintainers.txt
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/mail_i18n-maintainers2.txt
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/markup15to16.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/markup15to16.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/markup15to16.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/mk_POTFILES.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/mk_POTFILES.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/mk_POTFILES.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/po2wiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/po2wiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/po2wiki.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/prepend.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/prepend.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/prepend.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/recode.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/recode.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/recode.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/wiki2po.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/wiki2po.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools/wiki2po.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tr.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/uk.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/vi.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/zh-tw.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/zh.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/log.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/log.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/log.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/logfile/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/logfile/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/logfile/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/logfile/editlog.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/logfile/editlog.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/logfile/editlog.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/logfile/eventlog.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/logfile/eventlog.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/logfile/eventlog.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AbandonedPages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AbandonedPages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AbandonedPages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Action.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Action.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Action.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AdvancedSearch.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AdvancedSearch.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AdvancedSearch.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AttachInfo.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AttachInfo.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AttachInfo.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AttachList.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AttachList.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/AttachList.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/BR.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/BR.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/BR.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EditTemplates.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EditTemplates.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EditTemplates.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EditedSystemPages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EditedSystemPages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EditedSystemPages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EmbedObject.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EmbedObject.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EmbedObject.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/FootNote.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/FootNote.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/FootNote.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/FullSearch.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/FullSearch.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/FullSearch.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/FullSearchCached.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/FullSearchCached.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/FullSearchCached.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText2.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText2.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText2.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Hits.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Hits.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Hits.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Include.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Include.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Include.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/InterWiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/InterWiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/InterWiki.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/LikePages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/LikePages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/LikePages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Navigation.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Navigation.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Navigation.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/NewPage.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/NewPage.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/NewPage.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/OrphanedPages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/OrphanedPages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/OrphanedPages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageCount.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageCount.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageCount.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageHits.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageHits.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageHits.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageList.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageList.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageList.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageSize.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageSize.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageSize.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/RandomPage.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/RandomPage.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/RandomPage.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/RandomQuote.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/RandomQuote.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/RandomQuote.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/RecentChanges.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/RecentChanges.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/RecentChanges.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/ShowSmileys.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/ShowSmileys.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/ShowSmileys.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/StatsChart.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/StatsChart.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/StatsChart.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/SystemAdmin.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/SystemAdmin.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/SystemAdmin.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/SystemInfo.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/SystemInfo.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/SystemInfo.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/TableOfContents.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/TableOfContents.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/TableOfContents.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/TeudView.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/TeudView.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/TeudView.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Verbatim.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Verbatim.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Verbatim.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/WantedPages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/WantedPages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/WantedPages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/WikiConfig.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/WikiConfig.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/WikiConfig.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/WikiConfigHelp.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/WikiConfigHelp.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/WikiConfigHelp.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/mail/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/mail/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/mail/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/mail/mailimport.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/mail/mailimport.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/mail/mailimport.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/mail/sendmail.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/mail/sendmail.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/mail/sendmail.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/multiconfig.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/multiconfig.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/multiconfig.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/packages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/packages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/packages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/_ParserBase.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/_ParserBase.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/_ParserBase.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/_creole.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/_creole.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/_creole.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_cplusplus.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_cplusplus.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_cplusplus.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_creole.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_creole.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_creole.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_csv.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_csv.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_csv.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_diff.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_diff.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_diff.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_docbook.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_docbook.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_docbook.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_html.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_html.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_html.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_irssi.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_irssi.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_irssi.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_java.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_java.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_java.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_moin_wiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_moin_wiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_moin_wiki.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_pascal.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_pascal.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_pascal.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_python.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_python.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_python.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_rst.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_rst.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_rst.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_xslt.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_xslt.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/parser/text_xslt.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_cgi.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_cgi.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_cgi.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_cli.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_cli.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_cli.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_fcgi.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_fcgi.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_fcgi.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_modpython.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_modpython.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_modpython.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_standalone.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_standalone.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_standalone.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_twisted.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_twisted.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_twisted.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_wsgi.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_wsgi.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/request/request_wsgi.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/check.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/check.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/check.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/create.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/create.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/create.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/disable.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/disable.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/disable.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/resetpw.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/resetpw.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/resetpw.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/show.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/show.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/show.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/dump.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/dump.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/dump.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/package.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/package.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/export/package.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/irclog.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/irclog.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/irclog.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/index/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/index/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/index/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/index/build.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/index/build.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/index/build.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleancache.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleancache.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleancache.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleanpage.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleanpage.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/cleanpage.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/globaledit.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/globaledit.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/globaledit.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mailtranslators.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mailtranslators.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mailtranslators.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/makecache.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/makecache.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/makecache.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mkpagepacks.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mkpagepacks.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mkpagepacks.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/reducewiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/reducewiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/reducewiki.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050300.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050300.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050300.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050301.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050301.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050301.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050400.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050400.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050400.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050500.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050500.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050500.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050600.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050600.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050600.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050700.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050700.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050700.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050800.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050800.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050800.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1059997.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1059997.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1059997.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1059998.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1059998.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1059998.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1059999.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1059999.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1059999.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060000.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060000.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060000.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060100.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060100.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060100.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060200.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060200.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060200.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060300.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060300.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060300.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060400.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060400.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060400.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060500.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060500.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060500.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060600.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060600.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060600.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060700.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060700.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060700.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060800.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060800.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060800.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060900.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060900.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060900.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1069999.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1069999.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1069999.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070000.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070000.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070000.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070100.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070100.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070100.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070200.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070200.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070200.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070300.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070300.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070300.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080000.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080000.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080000.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080100.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080100.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080100.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080200.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080200.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080200.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080300.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080300.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080300.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080400.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080400.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080400.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160_wiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160_wiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160_wiki.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160a.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160a.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160a.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160a_wiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160a_wiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/_conv160a_wiki.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/data.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/data.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/data.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/migutil.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/migutil.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/migutil.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/text_moin158_wiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/text_moin158_wiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/text_moin158_wiki.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/text_moin160a_wiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/text_moin160a_wiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/text_moin160a_wiki.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/wikiutil160a.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/wikiutil160a.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/wikiutil160a.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/moin.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/moin.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/moin.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig01.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig01.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig01.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig02.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig02.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig02.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig03.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig03.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig03.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig04.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig04.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig04.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig05.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig05.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig05.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig06.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig06.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig06.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig07.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig07.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig07.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig08.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig08.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig08.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig09.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig09.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig09.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig10.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig10.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig10.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig11.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig11.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/12_to_13_mig11.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/152_to_1050300.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/152_to_1050300.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/152_to_1050300.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/print_stats.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/print_stats.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/print_stats.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/repair_language.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/repair_language.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/repair_language.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/HelloWorld.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/HelloWorld.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/HelloWorld.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/UpdateGroupTest.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/UpdateGroupTest.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/UpdateGroupTest.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/WhoAmI.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/WhoAmI.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/WhoAmI.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikibackup.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikibackup.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikibackup.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikirestore.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikirestore.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikirestore.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/standalone.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/standalone.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/standalone.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/mailimport.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/mailimport.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/mailimport.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/remote.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/remote.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/remote.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/retrieve.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/retrieve.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/retrieve.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/write.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/write.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/write.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/Xapian.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/Xapian.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/Xapian.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/builtin.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/builtin.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/builtin.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/queryparser.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/queryparser.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/queryparser.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/results.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/results.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/search/results.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/antispam.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/antispam.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/antispam.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/autoadmin.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/autoadmin.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/autoadmin.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/textcha.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/textcha.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/security/textcha.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/daemon.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/daemon.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/daemon.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_cgi.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_cgi.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_cgi.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_fastcgi.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_fastcgi.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_fastcgi.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_modpython.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_modpython.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_modpython.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_standalone.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_standalone.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_standalone.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_twisted.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_twisted.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_twisted.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_wsgi.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_wsgi.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/server/server_wsgi.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/session.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/session.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/session.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/chart.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/chart.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/chart.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/hitcounts.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/hitcounts.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/hitcounts.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/languages.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/languages.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/languages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/pagesize.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/pagesize.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/pagesize.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/useragents.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/useragents.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/stats/useragents.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/BasicAuthTransport.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/BasicAuthTransport.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/BasicAuthTransport.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/HeaderFixed.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/HeaderFixed.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/HeaderFixed.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/cgitb.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/cgitb.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/cgitb.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/difflib.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/difflib.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/difflib.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/htmlmarkup.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/htmlmarkup.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/htmlmarkup.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/multicall.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/multicall.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/multicall.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime/parsedatetime.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime/parsedatetime.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime/parsedatetime.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime/parsedatetime_consts.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime/parsedatetime_consts.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime/parsedatetime_consts.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/python_compatibility.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/python_compatibility.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/python_compatibility.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/tarfile.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/tarfile.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/tarfile.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/thfcgi.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/thfcgi.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/thfcgi.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/xapwrap/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/xapwrap/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/xapwrap/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/xapwrap/document.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/xapwrap/document.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/xapwrap/document.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/xapwrap/index.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/xapwrap/index.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/xapwrap/index.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/classic.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/classic.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/classic.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modern.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modern.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modern.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized_cms.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized_cms.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/modernized_cms.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/rightsidebar.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/rightsidebar.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/theme/rightsidebar.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/user.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/user.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/user.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/admin.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/admin.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/admin.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/login.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/login.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/login.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/changepass.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/changepass.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/changepass.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/notification.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/notification.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/notification.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oid.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oid.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oid.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oidserv.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oidserv.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oidserv.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/prefs.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/prefs.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/prefs.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/suid.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/suid.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/suid.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/bdiff.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/bdiff.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/bdiff.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes_create.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes_create.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes_create.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/clock.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/clock.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/clock.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/dataset.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/dataset.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/dataset.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/diff3.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/diff3.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/diff3.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/diff_html.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/diff_html.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/diff_html.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/diff_text.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/diff_text.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/diff_text.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/filesys.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/filesys.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/filesys.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/lock.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/lock.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/lock.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/moinoid.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/moinoid.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/moinoid.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/profile.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/profile.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/profile.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/pysupport.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/pysupport.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/pysupport.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/rpc_aggregator.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/rpc_aggregator.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/rpc_aggregator.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/thread_monitor.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/thread_monitor.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/thread_monitor.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/timefuncs.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/timefuncs.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/timefuncs.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/web.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/web.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/web.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/version.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/version.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/version.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/base.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/base.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/base.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/browser.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/browser.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/browser.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/dialog.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/dialog.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/dialog.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/html.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/html.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/widget/html.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikidicts.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikidicts.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikidicts.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikisync.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikisync.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikisync.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikiutil.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikiutil.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikiutil.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikixml/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikixml/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikixml/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikixml/marshal.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikixml/marshal.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikixml/marshal.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikixml/util.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikixml/util.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/wikixml/util.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/HelloWorld.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/HelloWorld.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/HelloWorld.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/ProcessMail.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/ProcessMail.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/ProcessMail.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/RemoteScript.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/RemoteScript.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/RemoteScript.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/UpdateGroup.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/UpdateGroup.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/UpdateGroup.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/WhoAmI.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/WhoAmI.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/WhoAmI.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/putClientInfo.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/putClientInfo.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/putClientInfo.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/__init__.py
+%%PYTHON_SITELIBDIR%%/jabberbot/__init__.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/__init__.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/bot.py
+%%PYTHON_SITELIBDIR%%/jabberbot/bot.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/bot.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/capat.py
+%%PYTHON_SITELIBDIR%%/jabberbot/capat.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/capat.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/commands.py
+%%PYTHON_SITELIBDIR%%/jabberbot/commands.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/commands.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/config.py
+%%PYTHON_SITELIBDIR%%/jabberbot/config.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/config.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/i18n.py
+%%PYTHON_SITELIBDIR%%/jabberbot/i18n.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/i18n.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/multicall.py
+%%PYTHON_SITELIBDIR%%/jabberbot/multicall.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/multicall.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/oob.py
+%%PYTHON_SITELIBDIR%%/jabberbot/oob.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/oob.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/xmlrpcbot.py
+%%PYTHON_SITELIBDIR%%/jabberbot/xmlrpcbot.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/xmlrpcbot.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/xmppbot.py
+%%PYTHON_SITELIBDIR%%/jabberbot/xmppbot.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/xmppbot.pyo
+%%DATADIR%%/config/logging/README
+%%DATADIR%%/config/logging/logfile
+%%DATADIR%%/config/logging/logfile_debug_auth
+%%DATADIR%%/config/logging/stderr
+%%DATADIR%%/config/more_samples/README
+%%DATADIR%%/config/more_samples/auth_session_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/http_auth_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/jabber_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/ldap_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/mail_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/mailimportconf.py
+%%DATADIR%%/config/more_samples/secrets_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/security_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/smb_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/ui_wikiconfig_snippet
+%%DATADIR%%/config/more_samples/user_wikiconfig_snippet
+%%DATADIR%%/config/wikiconfig.py
+%%DATADIR%%/config/wikifarm/farmconfig.py
+%%DATADIR%%/config/wikifarm/mywiki.py
+%%DATADIR%%/data/cache/README
+%%DATADIR%%/data/dict/dummy_dict
+%%DATADIR%%/data/edit-log
+%%DATADIR%%/data/event-log
+%%DATADIR%%/data/intermap.txt
+%%DATADIR%%/data/meta
+%%DATADIR%%/data/pages/BadContent/current
+%%DATADIR%%/data/pages/BadContent/revisions/00000001
+%%DATADIR%%/data/plugin/__init__.py
+%%DATADIR%%/data/plugin/action/__init__.py
+%%DATADIR%%/data/plugin/converter/__init__.py
+%%DATADIR%%/data/plugin/events/__init__.py
+%%DATADIR%%/data/plugin/filter/__init__.py
+%%DATADIR%%/data/plugin/formatter/__init__.py
+%%DATADIR%%/data/plugin/macro/__init__.py
+%%DATADIR%%/data/plugin/parser/__init__.py
+%%DATADIR%%/data/plugin/theme/__init__.py
+%%DATADIR%%/data/plugin/userprefs/__init__.py
+%%DATADIR%%/data/plugin/xmlrpc/__init__.py
+%%DATADIR%%/data/user/README
+%%DATADIR%%/htdocs/applets/FCKeditor/_documentation.html
+%%DATADIR%%/htdocs/applets/FCKeditor/_upgrade.html
+%%DATADIR%%/htdocs/applets/FCKeditor/_whatsnew.html
+%%DATADIR%%/htdocs/applets/FCKeditor/_whatsnew_history.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckcontextmenu.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckdataprocessor.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckdocumentfragment_gecko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckdocumentfragment_ie.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckdomrange.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckdomrange_gecko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckdomrange_ie.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckdomrangeiterator.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckeditingarea.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckelementpath.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckenterkey.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckevents.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckhtmliterator.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckicon.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckiecleanup.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckimagepreloader.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckkeystrokehandler.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckmenublock.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckmenublockpanel.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckmenuitem.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckpanel.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckplugin.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckspecialcombo.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckstyle.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fcktoolbar.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fcktoolbarbreak_gecko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fcktoolbarbreak_ie.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fcktoolbarbutton.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fcktoolbarbuttonui.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fcktoolbarfontformatcombo.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fcktoolbarfontscombo.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fcktoolbarfontsizecombo.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fcktoolbarpanelbutton.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fcktoolbarspecialcombo.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fcktoolbarstylecombo.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckw3crange.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckxml.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckxml_gecko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes/fckxml_ie.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fck_othercommands.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckblockquotecommand.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckcorestylecommand.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckfitwindow.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckindentcommands.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckjustifycommands.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fcklistcommands.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fcknamedcommand.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckpasteplaintextcommand.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckpastewordcommand.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckremoveformatcommand.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckshowblocks.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckspellcheckcommand_gecko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckspellcheckcommand_ie.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fckstylecommand.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fcktablecommand.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses/fcktextcolorcommand.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/fckconstants.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/fckeditorapi.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/fckjscoreextensions.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/fckscriptloader.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fck.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fck_contextmenu.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fck_gecko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fck_ie.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckbrowserinfo.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckcodeformatter.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckcommands.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckconfig.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckdebug.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckdebug_empty.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckdialog.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckdocumentprocessor.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckdomtools.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fcklanguagemanager.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fcklisthandler.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fcklistslib.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckplugins.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckregexlib.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckselection.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckselection_gecko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckselection_ie.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckstyles.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fcktablehandler.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fcktablehandler_gecko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fcktablehandler_ie.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fcktoolbaritems.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fcktoolbarset.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fcktools.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fcktools_gecko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fcktools_ie.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckundo.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckurlparams.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckxhtml.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckxhtml_gecko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckxhtml_ie.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals/fckxhtmlentities.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/behaviors/disablehandles.htc
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/behaviors/showtableborders.htc
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/fck_editorarea.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/fck_internal.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/fck_showtableborders_gecko.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/block_address.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/block_blockquote.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/block_div.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/block_h1.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/block_h2.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/block_h3.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/block_h4.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/block_h5.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/block_h6.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/block_p.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/block_pre.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/fck_anchor.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/fck_flashlogo.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/fck_hiddenfield.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/fck_pagebreak.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images/fck_plugin.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/common/fck_dialog_common.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/common/fck_dialog_common.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/common/images/locked.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/common/images/reset.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/common/images/unlocked.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_about.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_about/logo_fckeditor.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_about/logo_fredck.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_about/sponsors/spellchecker_net.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_anchor.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_button.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_checkbox.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_colorselector.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_div.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_docprops.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_docprops/fck_document_preview.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_flash.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_flash/fck_flash.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_flash/fck_flash_preview.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_form.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_hiddenfield.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_image.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_image/fck_image.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_image/fck_image_preview.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_link.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_link/fck_link.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_listprop.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_paste.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_radiobutton.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_replace.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_select.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_select/fck_select.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_smiley.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_source.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_specialchar.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/blank.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/controlWindow.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/controls.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.php
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.pl
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellChecker.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellchecker.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellerStyle.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/wordWindow.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_table.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_tablecell.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_template.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_template/images/template1.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_template/images/template2.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_template/images/template3.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_textarea.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_textfield.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dtd/fck_dtd_test.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dtd/fck_xhtml10strict.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/dtd/fck_xhtml10transitional.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/fckdebug.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/fckdialog.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/fckeditor.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/fckeditor.original.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/browser.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/browser.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/frmactualfolder.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/frmcreatefolder.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/frmfolders.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/frmresourceslist.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/frmresourcetype.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/frmupload.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/ButtonArrow.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/Folder.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/Folder32.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/FolderOpened.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/FolderOpened32.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/FolderUp.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/ai.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/avi.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/bmp.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/cs.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/default.icon.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/dll.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/doc.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/exe.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/fla.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/gif.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/htm.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/html.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/jpg.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/js.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/mdb.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/mp3.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/pdf.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/png.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/ppt.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/rdp.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/swf.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/swt.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/txt.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/vsd.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/xls.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/xml.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32/zip.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/ai.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/avi.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/bmp.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/cs.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/default.icon.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/dll.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/doc.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/exe.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/fla.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/gif.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/htm.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/html.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/jpg.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/js.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/mdb.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/mp3.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/pdf.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/png.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/ppt.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/rdp.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/swf.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/swt.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/txt.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/vsd.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/xls.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/xml.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/zip.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/spacer.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/js/common.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/js/fckxml.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/asp/basexml.asp
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/asp/class_upload.asp
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/asp/commands.asp
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/asp/config.asp
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/asp/connector.asp
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/asp/io.asp
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/asp/upload.asp
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/asp/util.asp
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/aspx/config.ascx
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/aspx/connector.aspx
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/aspx/upload.aspx
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/ImageObject.cfc
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/cf5_connector.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/cf5_upload.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/cf_basexml.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/cf_commands.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/cf_connector.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/cf_io.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/cf_upload.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/cf_util.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/config.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/connector.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/image.cfc
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm/upload.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/lasso/config.lasso
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/lasso/connector.lasso
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/lasso/upload.lasso
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/perl/basexml.pl
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/perl/commands.pl
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/perl/connector.cgi
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/perl/io.pl
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/perl/upload.cgi
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/perl/upload_fck.pl
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/perl/util.pl
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/php/basexml.php
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/php/commands.php
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/php/config.php
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/php/connector.php
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/php/io.php
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/php/phpcompat.php
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/php/upload.php
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/php/util.php
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/py/config.py
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/py/connector.py
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/py/fckcommands.py
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/py/fckconnector.py
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/py/fckoutput.py
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/py/fckutil.py
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/py/htaccess.txt
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/py/upload.py
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/py/wsgi.py
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/py/zope.py
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/test.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/uploadtest.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/anchor.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/arrow_ltr.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/arrow_rtl.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/angel_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/angry_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/broken_heart.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/cake.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/confused_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/cry_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/devil_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/embaressed_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/envelope.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/heart.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/kiss.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/lightbulb.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/omg_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/regular_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/sad_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/shades_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/teeth_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/thumbs_down.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/thumbs_up.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/tounge_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/whatchutalkingabout_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn/wink_smile.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/images/spacer.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/js/fckadobeair.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/js/fckeditorcode_gecko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/js/fckeditorcode_ie.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/_translationstatus.txt
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/af.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/ar.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/bg.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/bn.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/bs.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/ca.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/cs.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/da.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/de.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/el.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/en-au.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/en-ca.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/en-uk.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/en.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/eo.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/es.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/et.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/eu.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/fa.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/fi.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/fo.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/fr-ca.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/fr.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/gl.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/gu.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/he.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/hi.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/hr.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/hu.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/is.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/it.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/ja.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/km.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/ko.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/lt.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/lv.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/mn.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/ms.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/nb.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/nl.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/no.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/pl.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/pt-br.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/pt.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/ro.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/ru.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/sk.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/sl.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/sr-latn.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/sr.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/sv.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/th.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/tr.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/uk.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/vi.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/zh-cn.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/lang/zh.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/autogrow/fckplugin.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/bbcode/_sample/sample.config.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/bbcode/_sample/sample.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/bbcode/fckplugin.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/dragresizetable/fckplugin.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/placeholder/fck_placeholder.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/placeholder/fckplugin.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/placeholder/lang/de.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/placeholder/lang/en.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/placeholder/lang/es.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/placeholder/lang/fr.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/placeholder/lang/it.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/placeholder/lang/pl.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/placeholder/placeholder.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/simplecommands/fckplugin.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/tablecommands/fckplugin.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/_fckviewstrips.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/fck_dialog.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/fck_dialog_ie6.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/fck_editor.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/fck_strip.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/dialog.sides.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/dialog.sides.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/dialog.sides.rtl.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/sprites.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/sprites.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/toolbar.arrowright.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/toolbar.buttonarrow.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/toolbar.collapse.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/toolbar.end.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/toolbar.expand.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/toolbar.separator.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images/toolbar.start.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/fck_dialog.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/fck_dialog_ie6.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/fck_editor.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/fck_strip.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/dialog.sides.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/dialog.sides.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/dialog.sides.rtl.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/sprites.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/sprites.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/toolbar.arrowright.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/toolbar.bg.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/toolbar.buttonarrow.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/toolbar.collapse.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/toolbar.end.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/toolbar.expand.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/toolbar.separator.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images/toolbar.start.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/fck_dialog.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/fck_dialog_ie6.js
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/fck_editor.css
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/fck_strip.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/dialog.sides.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/dialog.sides.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/dialog.sides.rtl.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/sprites.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/sprites.png
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.arrowright.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.buttonarrow.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.buttonbg.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.collapse.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.end.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.expand.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.separator.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.start.gif
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/wsc/ciframe.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/wsc/tmpFrameset.html
+%%DATADIR%%/htdocs/applets/FCKeditor/editor/wsc/w.html
+%%DATADIR%%/htdocs/applets/FCKeditor/fckconfig.js
+%%DATADIR%%/htdocs/applets/FCKeditor/fckeditor.afp
+%%DATADIR%%/htdocs/applets/FCKeditor/fckeditor.asp
+%%DATADIR%%/htdocs/applets/FCKeditor/fckeditor.cfc
+%%DATADIR%%/htdocs/applets/FCKeditor/fckeditor.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/fckeditor.js
+%%DATADIR%%/htdocs/applets/FCKeditor/fckeditor.lasso
+%%DATADIR%%/htdocs/applets/FCKeditor/fckeditor.php
+%%DATADIR%%/htdocs/applets/FCKeditor/fckeditor.pl
+%%DATADIR%%/htdocs/applets/FCKeditor/fckeditor.py
+%%DATADIR%%/htdocs/applets/FCKeditor/fckeditor_php4.php
+%%DATADIR%%/htdocs/applets/FCKeditor/fckeditor_php5.php
+%%DATADIR%%/htdocs/applets/FCKeditor/fckpackager.xml
+%%DATADIR%%/htdocs/applets/FCKeditor/fckstyles.xml
+%%DATADIR%%/htdocs/applets/FCKeditor/fcktemplates.xml
+%%DATADIR%%/htdocs/applets/FCKeditor/fckutils.cfm
+%%DATADIR%%/htdocs/applets/FCKeditor/license.txt
+%%DATADIR%%/htdocs/applets/TWikiDrawPlugin/README
+%%DATADIR%%/htdocs/applets/TWikiDrawPlugin/twikidraw.jar
+%%DATADIR%%/htdocs/applets/moinFCKplugins/macro/fckplugin.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/macro/lang/en.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/macro/lang/it.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/macro/macro.gif
+%%DATADIR%%/htdocs/applets/moinFCKplugins/moinattachment/attachment.gif
+%%DATADIR%%/htdocs/applets/moinFCKplugins/moinattachment/fck_attachment.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/moinattachment/fckplugin.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/moinbehaviour/fckplugin.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/moinformat/fckplugin.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/moinimage/fck_image.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/moinimage/fckplugin.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/moinlink/fck_link.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/moinlink/fckplugin.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/moinunlink/fckplugin.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/moinurllib.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/placeholder/fck_placeholder.html
+%%DATADIR%%/htdocs/applets/moinFCKplugins/placeholder/fckplugin.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/placeholder/lang/en.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/placeholder/lang/it.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/placeholder/placeholder.gif
+%%DATADIR%%/htdocs/applets/moinFCKplugins/restrict_actions/fckplugin.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/selection/fckplugin.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/smiley/fck_smiley.html
+%%DATADIR%%/htdocs/applets/moinFCKplugins/smiley/fckplugin.js
+%%DATADIR%%/htdocs/applets/moinFCKplugins/smiley/smile.png
+%%DATADIR%%/htdocs/applets/moinfckconfig.js
+%%DATADIR%%/htdocs/applets/moinfckstyles.xml
+%%DATADIR%%/htdocs/classic/css/common.css
+%%DATADIR%%/htdocs/classic/css/msie.css
+%%DATADIR%%/htdocs/classic/css/print.css
+%%DATADIR%%/htdocs/classic/css/projection.css
+%%DATADIR%%/htdocs/classic/css/screen.css
+%%DATADIR%%/htdocs/classic/img/PythonPowered.png
+%%DATADIR%%/htdocs/classic/img/alert.png
+%%DATADIR%%/htdocs/classic/img/angry.png
+%%DATADIR%%/htdocs/classic/img/attach.png
+%%DATADIR%%/htdocs/classic/img/attention.png
+%%DATADIR%%/htdocs/classic/img/biggrin.png
+%%DATADIR%%/htdocs/classic/img/checkmark.png
+%%DATADIR%%/htdocs/classic/img/devil.png
+%%DATADIR%%/htdocs/classic/img/draft.png
+%%DATADIR%%/htdocs/classic/img/frown.png
+%%DATADIR%%/htdocs/classic/img/icon-error.png
+%%DATADIR%%/htdocs/classic/img/icon-info.png
+%%DATADIR%%/htdocs/classic/img/idea.png
+%%DATADIR%%/htdocs/classic/img/moin-attach.png
+%%DATADIR%%/htdocs/classic/img/moin-bottom.png
+%%DATADIR%%/htdocs/classic/img/moin-conflict.png
+%%DATADIR%%/htdocs/classic/img/moin-deleted.png
+%%DATADIR%%/htdocs/classic/img/moin-diff.png
+%%DATADIR%%/htdocs/classic/img/moin-edit.png
+%%DATADIR%%/htdocs/classic/img/moin-email.png
+%%DATADIR%%/htdocs/classic/img/moin-ftp.png
+%%DATADIR%%/htdocs/classic/img/moin-help.png
+%%DATADIR%%/htdocs/classic/img/moin-home.png
+%%DATADIR%%/htdocs/classic/img/moin-icon.png
+%%DATADIR%%/htdocs/classic/img/moin-info.png
+%%DATADIR%%/htdocs/classic/img/moin-inter.png
+%%DATADIR%%/htdocs/classic/img/moin-new.png
+%%DATADIR%%/htdocs/classic/img/moin-news.png
+%%DATADIR%%/htdocs/classic/img/moin-parent.png
+%%DATADIR%%/htdocs/classic/img/moin-print.png
+%%DATADIR%%/htdocs/classic/img/moin-raw.png
+%%DATADIR%%/htdocs/classic/img/moin-renamed.png
+%%DATADIR%%/htdocs/classic/img/moin-rss.png
+%%DATADIR%%/htdocs/classic/img/moin-search.png
+%%DATADIR%%/htdocs/classic/img/moin-show.png
+%%DATADIR%%/htdocs/classic/img/moin-subscribe.png
+%%DATADIR%%/htdocs/classic/img/moin-telnet.png
+%%DATADIR%%/htdocs/classic/img/moin-top.png
+%%DATADIR%%/htdocs/classic/img/moin-unsubscribe.png
+%%DATADIR%%/htdocs/classic/img/moin-up.png
+%%DATADIR%%/htdocs/classic/img/moin-updated.png
+%%DATADIR%%/htdocs/classic/img/moin-www.png
+%%DATADIR%%/htdocs/classic/img/moin-xml.png
+%%DATADIR%%/htdocs/classic/img/moin-xml2.png
+%%DATADIR%%/htdocs/classic/img/ohwell.png
+%%DATADIR%%/htdocs/classic/img/prio1.png
+%%DATADIR%%/htdocs/classic/img/prio2.png
+%%DATADIR%%/htdocs/classic/img/prio3.png
+%%DATADIR%%/htdocs/classic/img/redface.png
+%%DATADIR%%/htdocs/classic/img/sad.png
+%%DATADIR%%/htdocs/classic/img/smile.png
+%%DATADIR%%/htdocs/classic/img/smile2.png
+%%DATADIR%%/htdocs/classic/img/smile3.png
+%%DATADIR%%/htdocs/classic/img/smile4.png
+%%DATADIR%%/htdocs/classic/img/star_off.png
+%%DATADIR%%/htdocs/classic/img/star_on.png
+%%DATADIR%%/htdocs/classic/img/thumbs-up.png
+%%DATADIR%%/htdocs/classic/img/tired.png
+%%DATADIR%%/htdocs/classic/img/tongue.png
+%%DATADIR%%/htdocs/common/js/common.js
+%%DATADIR%%/htdocs/common/js/countdown.js
+%%DATADIR%%/htdocs/common/js/infobox.js
+%%DATADIR%%/htdocs/common/moindude.png
+%%DATADIR%%/htdocs/common/moinmoin.png
+%%DATADIR%%/htdocs/common/moinmoin_alpha.png
+%%DATADIR%%/htdocs/common/openid.png
+%%DATADIR%%/htdocs/favicon.ico
+%%DATADIR%%/htdocs/index.html
+%%DATADIR%%/htdocs/modern/css/common.css
+%%DATADIR%%/htdocs/modern/css/msie.css
+%%DATADIR%%/htdocs/modern/css/print.css
+%%DATADIR%%/htdocs/modern/css/projection.css
+%%DATADIR%%/htdocs/modern/css/screen.css
+%%DATADIR%%/htdocs/modern/img/PythonPowered.png
+%%DATADIR%%/htdocs/modern/img/admon-caution.png
+%%DATADIR%%/htdocs/modern/img/admon-important.png
+%%DATADIR%%/htdocs/modern/img/admon-note.png
+%%DATADIR%%/htdocs/modern/img/admon-tip.png
+%%DATADIR%%/htdocs/modern/img/admon-warning.png
+%%DATADIR%%/htdocs/modern/img/alert.png
+%%DATADIR%%/htdocs/modern/img/angry.png
+%%DATADIR%%/htdocs/modern/img/attach.png
+%%DATADIR%%/htdocs/modern/img/attention.png
+%%DATADIR%%/htdocs/modern/img/biggrin.png
+%%DATADIR%%/htdocs/modern/img/checkmark.png
+%%DATADIR%%/htdocs/modern/img/devil.png
+%%DATADIR%%/htdocs/modern/img/draft.png
+%%DATADIR%%/htdocs/modern/img/frown.png
+%%DATADIR%%/htdocs/modern/img/icon-error.png
+%%DATADIR%%/htdocs/modern/img/icon-info.png
+%%DATADIR%%/htdocs/modern/img/idea.png
+%%DATADIR%%/htdocs/modern/img/moin-attach.png
+%%DATADIR%%/htdocs/modern/img/moin-bottom.png
+%%DATADIR%%/htdocs/modern/img/moin-conflict.png
+%%DATADIR%%/htdocs/modern/img/moin-deleted.png
+%%DATADIR%%/htdocs/modern/img/moin-diff.png
+%%DATADIR%%/htdocs/modern/img/moin-edit.png
+%%DATADIR%%/htdocs/modern/img/moin-email.png
+%%DATADIR%%/htdocs/modern/img/moin-ftp.png
+%%DATADIR%%/htdocs/modern/img/moin-help.png
+%%DATADIR%%/htdocs/modern/img/moin-home.png
+%%DATADIR%%/htdocs/modern/img/moin-icon.png
+%%DATADIR%%/htdocs/modern/img/moin-info.png
+%%DATADIR%%/htdocs/modern/img/moin-inter.png
+%%DATADIR%%/htdocs/modern/img/moin-new.png
+%%DATADIR%%/htdocs/modern/img/moin-news.png
+%%DATADIR%%/htdocs/modern/img/moin-parent.png
+%%DATADIR%%/htdocs/modern/img/moin-print.png
+%%DATADIR%%/htdocs/modern/img/moin-raw.png
+%%DATADIR%%/htdocs/modern/img/moin-renamed.png
+%%DATADIR%%/htdocs/modern/img/moin-rss.png
+%%DATADIR%%/htdocs/modern/img/moin-search.png
+%%DATADIR%%/htdocs/modern/img/moin-show.png
+%%DATADIR%%/htdocs/modern/img/moin-subscribe.png
+%%DATADIR%%/htdocs/modern/img/moin-telnet.png
+%%DATADIR%%/htdocs/modern/img/moin-top.png
+%%DATADIR%%/htdocs/modern/img/moin-unsubscribe.png
+%%DATADIR%%/htdocs/modern/img/moin-up.png
+%%DATADIR%%/htdocs/modern/img/moin-updated.png
+%%DATADIR%%/htdocs/modern/img/moin-www.png
+%%DATADIR%%/htdocs/modern/img/moin-xml.png
+%%DATADIR%%/htdocs/modern/img/moin-xml2.png
+%%DATADIR%%/htdocs/modern/img/ohwell.png
+%%DATADIR%%/htdocs/modern/img/prio1.png
+%%DATADIR%%/htdocs/modern/img/prio2.png
+%%DATADIR%%/htdocs/modern/img/prio3.png
+%%DATADIR%%/htdocs/modern/img/redface.png
+%%DATADIR%%/htdocs/modern/img/sad.png
+%%DATADIR%%/htdocs/modern/img/smile.png
+%%DATADIR%%/htdocs/modern/img/smile2.png
+%%DATADIR%%/htdocs/modern/img/smile3.png
+%%DATADIR%%/htdocs/modern/img/smile4.png
+%%DATADIR%%/htdocs/modern/img/star_off.png
+%%DATADIR%%/htdocs/modern/img/star_on.png
+%%DATADIR%%/htdocs/modern/img/thumbs-up.png
+%%DATADIR%%/htdocs/modern/img/tired.png
+%%DATADIR%%/htdocs/modern/img/tongue.png
+%%DATADIR%%/htdocs/modernized/css/common.css
+%%DATADIR%%/htdocs/modernized/css/msie.css
+%%DATADIR%%/htdocs/modernized/css/print.css
+%%DATADIR%%/htdocs/modernized/css/projection.css
+%%DATADIR%%/htdocs/modernized/css/screen.css
+%%DATADIR%%/htdocs/modernized/img/PythonPowered.png
+%%DATADIR%%/htdocs/modernized/img/admon-caution.png
+%%DATADIR%%/htdocs/modernized/img/admon-important.png
+%%DATADIR%%/htdocs/modernized/img/admon-note.png
+%%DATADIR%%/htdocs/modernized/img/admon-tip.png
+%%DATADIR%%/htdocs/modernized/img/admon-warning.png
+%%DATADIR%%/htdocs/modernized/img/alert.png
+%%DATADIR%%/htdocs/modernized/img/angry.png
+%%DATADIR%%/htdocs/modernized/img/attach.png
+%%DATADIR%%/htdocs/modernized/img/attention.png
+%%DATADIR%%/htdocs/modernized/img/biggrin.png
+%%DATADIR%%/htdocs/modernized/img/checkmark.png
+%%DATADIR%%/htdocs/modernized/img/devil.png
+%%DATADIR%%/htdocs/modernized/img/draft.png
+%%DATADIR%%/htdocs/modernized/img/frown.png
+%%DATADIR%%/htdocs/modernized/img/icon-error.png
+%%DATADIR%%/htdocs/modernized/img/icon-info.png
+%%DATADIR%%/htdocs/modernized/img/idea.png
+%%DATADIR%%/htdocs/modernized/img/moin-attach.png
+%%DATADIR%%/htdocs/modernized/img/moin-bottom.png
+%%DATADIR%%/htdocs/modernized/img/moin-conflict.png
+%%DATADIR%%/htdocs/modernized/img/moin-deleted.png
+%%DATADIR%%/htdocs/modernized/img/moin-diff.png
+%%DATADIR%%/htdocs/modernized/img/moin-download.png
+%%DATADIR%%/htdocs/modernized/img/moin-edit.png
+%%DATADIR%%/htdocs/modernized/img/moin-email.png
+%%DATADIR%%/htdocs/modernized/img/moin-ftp.png
+%%DATADIR%%/htdocs/modernized/img/moin-help.png
+%%DATADIR%%/htdocs/modernized/img/moin-home.png
+%%DATADIR%%/htdocs/modernized/img/moin-icon.png
+%%DATADIR%%/htdocs/modernized/img/moin-info.png
+%%DATADIR%%/htdocs/modernized/img/moin-inter.png
+%%DATADIR%%/htdocs/modernized/img/moin-jabber.png
+%%DATADIR%%/htdocs/modernized/img/moin-new.png
+%%DATADIR%%/htdocs/modernized/img/moin-news.png
+%%DATADIR%%/htdocs/modernized/img/moin-parent.png
+%%DATADIR%%/htdocs/modernized/img/moin-print.png
+%%DATADIR%%/htdocs/modernized/img/moin-raw.png
+%%DATADIR%%/htdocs/modernized/img/moin-readonly.png
+%%DATADIR%%/htdocs/modernized/img/moin-renamed.png
+%%DATADIR%%/htdocs/modernized/img/moin-rss.png
+%%DATADIR%%/htdocs/modernized/img/moin-search.png
+%%DATADIR%%/htdocs/modernized/img/moin-show.png
+%%DATADIR%%/htdocs/modernized/img/moin-subscribe.png
+%%DATADIR%%/htdocs/modernized/img/moin-telnet.png
+%%DATADIR%%/htdocs/modernized/img/moin-top.png
+%%DATADIR%%/htdocs/modernized/img/moin-unsubscribe.png
+%%DATADIR%%/htdocs/modernized/img/moin-up.png
+%%DATADIR%%/htdocs/modernized/img/moin-updated.png
+%%DATADIR%%/htdocs/modernized/img/moin-www.png
+%%DATADIR%%/htdocs/modernized/img/ohwell.png
+%%DATADIR%%/htdocs/modernized/img/prio1.png
+%%DATADIR%%/htdocs/modernized/img/prio2.png
+%%DATADIR%%/htdocs/modernized/img/prio3.png
+%%DATADIR%%/htdocs/modernized/img/redface.png
+%%DATADIR%%/htdocs/modernized/img/sad.png
+%%DATADIR%%/htdocs/modernized/img/smile.png
+%%DATADIR%%/htdocs/modernized/img/smile2.png
+%%DATADIR%%/htdocs/modernized/img/smile3.png
+%%DATADIR%%/htdocs/modernized/img/smile4.png
+%%DATADIR%%/htdocs/modernized/img/star_off.png
+%%DATADIR%%/htdocs/modernized/img/star_on.png
+%%DATADIR%%/htdocs/modernized/img/thumbs-up.png
+%%DATADIR%%/htdocs/modernized/img/tired.png
+%%DATADIR%%/htdocs/modernized/img/tongue.png
+%%DATADIR%%/htdocs/rightsidebar/css/common.css
+%%DATADIR%%/htdocs/rightsidebar/css/msie.css
+%%DATADIR%%/htdocs/rightsidebar/css/print.css
+%%DATADIR%%/htdocs/rightsidebar/css/projection.css
+%%DATADIR%%/htdocs/rightsidebar/css/screen.css
+%%DATADIR%%/htdocs/rightsidebar/img/PythonPowered.png
+%%DATADIR%%/htdocs/rightsidebar/img/alert.png
+%%DATADIR%%/htdocs/rightsidebar/img/angry.png
+%%DATADIR%%/htdocs/rightsidebar/img/attach.png
+%%DATADIR%%/htdocs/rightsidebar/img/attention.png
+%%DATADIR%%/htdocs/rightsidebar/img/biggrin.png
+%%DATADIR%%/htdocs/rightsidebar/img/checkmark.png
+%%DATADIR%%/htdocs/rightsidebar/img/devil.png
+%%DATADIR%%/htdocs/rightsidebar/img/draft.png
+%%DATADIR%%/htdocs/rightsidebar/img/frown.png
+%%DATADIR%%/htdocs/rightsidebar/img/icon-error.png
+%%DATADIR%%/htdocs/rightsidebar/img/icon-info.png
+%%DATADIR%%/htdocs/rightsidebar/img/idea.png
+%%DATADIR%%/htdocs/rightsidebar/img/logout.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-attach.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-bottom.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-conflict.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-deleted.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-diff.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-edit.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-email.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-ftp.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-help.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-home.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-icon.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-info.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-inter.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-new.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-news.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-parent.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-print.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-raw.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-renamed.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-rss.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-search.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-show.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-subscribe.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-telnet.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-top.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-unsubscribe.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-up.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-updated.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-www.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-xml.png
+%%DATADIR%%/htdocs/rightsidebar/img/moin-xml2.png
+%%DATADIR%%/htdocs/rightsidebar/img/ohwell.png
+%%DATADIR%%/htdocs/rightsidebar/img/prio1.png
+%%DATADIR%%/htdocs/rightsidebar/img/prio2.png
+%%DATADIR%%/htdocs/rightsidebar/img/prio3.png
+%%DATADIR%%/htdocs/rightsidebar/img/redface.png
+%%DATADIR%%/htdocs/rightsidebar/img/sad.png
+%%DATADIR%%/htdocs/rightsidebar/img/smile.png
+%%DATADIR%%/htdocs/rightsidebar/img/smile2.png
+%%DATADIR%%/htdocs/rightsidebar/img/smile3.png
+%%DATADIR%%/htdocs/rightsidebar/img/smile4.png
+%%DATADIR%%/htdocs/rightsidebar/img/star_off.png
+%%DATADIR%%/htdocs/rightsidebar/img/star_on.png
+%%DATADIR%%/htdocs/rightsidebar/img/thumbs-up.png
+%%DATADIR%%/htdocs/rightsidebar/img/tired.png
+%%DATADIR%%/htdocs/rightsidebar/img/tongue.png
+%%DATADIR%%/htdocs/robots.txt
+%%DATADIR%%/server/moin
+%%DATADIR%%/server/moin.cgi
+%%DATADIR%%/server/moin.fcg
+%%DATADIR%%/server/moin.wsgi
+%%DATADIR%%/server/moin_flup_wsgi.py
+%%DATADIR%%/server/moinmodpy.htaccess
+%%DATADIR%%/server/moinmodpy.py
+%%DATADIR%%/server/mointwisted
+%%DATADIR%%/server/mointwisted.cmd
+%%DATADIR%%/server/mointwisted.py
+%%DATADIR%%/server/test.wsgi
+%%DATADIR%%/server/wikiserver.py
+%%DATADIR%%/server/wikiserverconfig.py
+%%DATADIR%%/underlay/pages/AbandonedPages/current
+%%DATADIR%%/underlay/pages/AbandonedPages/revisions/00000001
+%%DATADIR%%/underlay/pages/AutoAdminGroup/current
+%%DATADIR%%/underlay/pages/AutoAdminGroup/revisions/00000001
+%%DATADIR%%/underlay/pages/BadContent/current
+%%DATADIR%%/underlay/pages/BadContent/revisions/00000001
+%%DATADIR%%/underlay/pages/CamelCase/current
+%%DATADIR%%/underlay/pages/CamelCase/revisions/00000001
+%%DATADIR%%/underlay/pages/CategoryCategory/current
+%%DATADIR%%/underlay/pages/CategoryCategory/revisions/00000001
+%%DATADIR%%/underlay/pages/CategoryHomepage/current
+%%DATADIR%%/underlay/pages/CategoryHomepage/revisions/00000001
+%%DATADIR%%/underlay/pages/CategoryTemplate/current
+%%DATADIR%%/underlay/pages/CategoryTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/DesktopEdition/current
+%%DATADIR%%/underlay/pages/DesktopEdition/revisions/00000001
+%%DATADIR%%/underlay/pages/EditedSystemPages/current
+%%DATADIR%%/underlay/pages/EditedSystemPages/revisions/00000001
+%%DATADIR%%/underlay/pages/EventStats(2f)HitCounts/current
+%%DATADIR%%/underlay/pages/EventStats(2f)HitCounts/revisions/00000001
+%%DATADIR%%/underlay/pages/EventStats(2f)Languages/current
+%%DATADIR%%/underlay/pages/EventStats(2f)Languages/revisions/00000001
+%%DATADIR%%/underlay/pages/EventStats(2f)UserAgents/current
+%%DATADIR%%/underlay/pages/EventStats(2f)UserAgents/revisions/00000001
+%%DATADIR%%/underlay/pages/EventStats/current
+%%DATADIR%%/underlay/pages/EventStats/revisions/00000001
+%%DATADIR%%/underlay/pages/FindPage/current
+%%DATADIR%%/underlay/pages/FindPage/revisions/00000001
+%%DATADIR%%/underlay/pages/FortuneCookies/current
+%%DATADIR%%/underlay/pages/FortuneCookies/revisions/00000001
+%%DATADIR%%/underlay/pages/FrontPage/current
+%%DATADIR%%/underlay/pages/FrontPage/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpContents/current
+%%DATADIR%%/underlay/pages/HelpContents/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpForAdministrators/current
+%%DATADIR%%/underlay/pages/HelpForAdministrators/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpForBeginners/current
+%%DATADIR%%/underlay/pages/HelpForBeginners/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpForDevelopers/current
+%%DATADIR%%/underlay/pages/HelpForDevelopers/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpForUsers/current
+%%DATADIR%%/underlay/pages/HelpForUsers/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpIndex/current
+%%DATADIR%%/underlay/pages/HelpIndex/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpMiscellaneous(2f)ExperimentalFeatures/current
+%%DATADIR%%/underlay/pages/HelpMiscellaneous(2f)ExperimentalFeatures/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpMiscellaneous(2f)FrequentlyAskedQuestions/current
+%%DATADIR%%/underlay/pages/HelpMiscellaneous(2f)FrequentlyAskedQuestions/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpMiscellaneous/current
+%%DATADIR%%/underlay/pages/HelpMiscellaneous/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnAccessControlLists/current
+%%DATADIR%%/underlay/pages/HelpOnAccessControlLists/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnAcl/current
+%%DATADIR%%/underlay/pages/HelpOnAcl/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/move_example1.png
+%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/move_example2.png
+%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip1.png
+%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip2.png
+%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip3a.png
+%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip3b.png
+%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip5.png
+%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip6.png
+%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip7.png
+%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/current
+%%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnActions/current
+%%DATADIR%%/underlay/pages/HelpOnActions/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnAdministration/current
+%%DATADIR%%/underlay/pages/HelpOnAdministration/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnAdmonitions/current
+%%DATADIR%%/underlay/pages/HelpOnAdmonitions/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnAuthentication(2f)ExternalCookie/current
+%%DATADIR%%/underlay/pages/HelpOnAuthentication(2f)ExternalCookie/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnAuthentication/current
+%%DATADIR%%/underlay/pages/HelpOnAuthentication/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnAutoAdmin/current
+%%DATADIR%%/underlay/pages/HelpOnAutoAdmin/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnCategories/current
+%%DATADIR%%/underlay/pages/HelpOnCategories/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnComments/current
+%%DATADIR%%/underlay/pages/HelpOnComments/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)ApacheVoodoo/current
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)ApacheVoodoo/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)EmailSupport/current
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)EmailSupport/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)FileAttachments/current
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)FileAttachments/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)IntegratingWithApache/current
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)IntegratingWithApache/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SecurityPolicy/current
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SecurityPolicy/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SupplementationPage/current
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SupplementationPage/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SurgeProtection/current
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SurgeProtection/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)UserPreferences/current
+%%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)UserPreferences/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnConfiguration/current
+%%DATADIR%%/underlay/pages/HelpOnConfiguration/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnCreoleSyntax/current
+%%DATADIR%%/underlay/pages/HelpOnCreoleSyntax/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnDictionaries/current
+%%DATADIR%%/underlay/pages/HelpOnDictionaries/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnEditLocks/current
+%%DATADIR%%/underlay/pages/HelpOnEditLocks/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnEditing(2f)SubPages/current
+%%DATADIR%%/underlay/pages/HelpOnEditing(2f)SubPages/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnEditing/current
+%%DATADIR%%/underlay/pages/HelpOnEditing/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnFormatting/current
+%%DATADIR%%/underlay/pages/HelpOnFormatting/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnGraphicalEditor/current
+%%DATADIR%%/underlay/pages/HelpOnGraphicalEditor/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnHeadlines/current
+%%DATADIR%%/underlay/pages/HelpOnHeadlines/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)AolServer/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)AolServer/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/attachments/explore.py
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withDomainAuthentication/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withDomainAuthentication/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withFastCgi/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withFastCgi/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModWSGI/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModWSGI/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)BasicInstallation/attachments/pythontest.cgi
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)BasicInstallation/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)BasicInstallation/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)FastCgi/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)FastCgi/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)InternetInformationServer/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)InternetInformationServer/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)MinimalWiki/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)MinimalWiki/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)StandaloneServer/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)StandaloneServer/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TroubleShooting/attachments/is_python_here.sh
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TroubleShooting/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TroubleShooting/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb/attachments/servicerunner.py
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WebLogic/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WebLogic/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation/attachments/createinstance.sh
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)Win32MoinEasyBackup/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling(2f)Win32MoinEasyBackup/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnInstalling/current
+%%DATADIR%%/underlay/pages/HelpOnInstalling/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnLanguages/current
+%%DATADIR%%/underlay/pages/HelpOnLanguages/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnLinking(2f)NotesLinks/attachments/docprop.jpg
+%%DATADIR%%/underlay/pages/HelpOnLinking(2f)NotesLinks/current
+%%DATADIR%%/underlay/pages/HelpOnLinking(2f)NotesLinks/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnLinking/current
+%%DATADIR%%/underlay/pages/HelpOnLinking/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnLists/current
+%%DATADIR%%/underlay/pages/HelpOnLists/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnLogin/current
+%%DATADIR%%/underlay/pages/HelpOnLogin/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnMacros(2f)EmbedObject/current
+%%DATADIR%%/underlay/pages/HelpOnMacros(2f)EmbedObject/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnMacros(2f)ImageLink/current
+%%DATADIR%%/underlay/pages/HelpOnMacros(2f)ImageLink/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnMacros(2f)Include/current
+%%DATADIR%%/underlay/pages/HelpOnMacros(2f)Include/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnMacros(2f)MailTo/current
+%%DATADIR%%/underlay/pages/HelpOnMacros(2f)MailTo/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnMacros(2f)MonthCalendar/current
+%%DATADIR%%/underlay/pages/HelpOnMacros(2f)MonthCalendar/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnMacros/current
+%%DATADIR%%/underlay/pages/HelpOnMacros/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnMoinCommand(2f)ExportDump/current
+%%DATADIR%%/underlay/pages/HelpOnMoinCommand(2f)ExportDump/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnMoinCommand/current
+%%DATADIR%%/underlay/pages/HelpOnMoinCommand/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnMoinWikiSyntax/attachments/myexample.draw
+%%DATADIR%%/underlay/pages/HelpOnMoinWikiSyntax/attachments/myexample.png
+%%DATADIR%%/underlay/pages/HelpOnMoinWikiSyntax/current
+%%DATADIR%%/underlay/pages/HelpOnMoinWikiSyntax/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnNavigation/current
+%%DATADIR%%/underlay/pages/HelpOnNavigation/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnNotification/current
+%%DATADIR%%/underlay/pages/HelpOnNotification/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnOpenIDProvider/current
+%%DATADIR%%/underlay/pages/HelpOnOpenIDProvider/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnPackageInstaller/current
+%%DATADIR%%/underlay/pages/HelpOnPackageInstaller/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnPageCreation/current
+%%DATADIR%%/underlay/pages/HelpOnPageCreation/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnPageDeletion/current
+%%DATADIR%%/underlay/pages/HelpOnPageDeletion/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnParsers(2f)ReStructuredText(2f)RstPrimer/current
+%%DATADIR%%/underlay/pages/HelpOnParsers(2f)ReStructuredText(2f)RstPrimer/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnParsers(2f)ReStructuredText/current
+%%DATADIR%%/underlay/pages/HelpOnParsers(2f)ReStructuredText/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnParsers/current
+%%DATADIR%%/underlay/pages/HelpOnParsers/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnPatchCreation/current
+%%DATADIR%%/underlay/pages/HelpOnPatchCreation/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnProcessingInstructions/current
+%%DATADIR%%/underlay/pages/HelpOnProcessingInstructions/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnRules/current
+%%DATADIR%%/underlay/pages/HelpOnRules/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSearching/current
+%%DATADIR%%/underlay/pages/HelpOnSearching/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSessions/current
+%%DATADIR%%/underlay/pages/HelpOnSessions/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)000(20)Introduction/current
+%%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)000(20)Introduction/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)100(20)Creating(20)the(20)slides/current
+%%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)100(20)Creating(20)the(20)slides/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)900(20)Last(20)but(20)not(20)least(3a20)Running(20)your(20)presentation/current
+%%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)900(20)Last(20)but(20)not(20)least(3a20)Running(20)your(20)presentation/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSlideShows/current
+%%DATADIR%%/underlay/pages/HelpOnSlideShows/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSmileys/current
+%%DATADIR%%/underlay/pages/HelpOnSmileys/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSpam/current
+%%DATADIR%%/underlay/pages/HelpOnSpam/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSpellCheck/current
+%%DATADIR%%/underlay/pages/HelpOnSpellCheck/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSubscribing/current
+%%DATADIR%%/underlay/pages/HelpOnSubscribing/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSuperUser/current
+%%DATADIR%%/underlay/pages/HelpOnSuperUser/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnSynchronisation/current
+%%DATADIR%%/underlay/pages/HelpOnSynchronisation/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnTables/attachments/MiniPage.png
+%%DATADIR%%/underlay/pages/HelpOnTables/current
+%%DATADIR%%/underlay/pages/HelpOnTables/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnTemplates/current
+%%DATADIR%%/underlay/pages/HelpOnTemplates/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnTextChas/current
+%%DATADIR%%/underlay/pages/HelpOnTextChas/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnThemes/current
+%%DATADIR%%/underlay/pages/HelpOnThemes/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnUpdating/current
+%%DATADIR%%/underlay/pages/HelpOnUpdating/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnUpdatingPython/current
+%%DATADIR%%/underlay/pages/HelpOnUpdatingPython/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnUserHandling/current
+%%DATADIR%%/underlay/pages/HelpOnUserHandling/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnUserPreferences/current
+%%DATADIR%%/underlay/pages/HelpOnUserPreferences/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnVariables/current
+%%DATADIR%%/underlay/pages/HelpOnVariables/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnXapian/current
+%%DATADIR%%/underlay/pages/HelpOnXapian/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpOnXmlPages/current
+%%DATADIR%%/underlay/pages/HelpOnXmlPages/revisions/00000001
+%%DATADIR%%/underlay/pages/HelpTemplate/current
+%%DATADIR%%/underlay/pages/HelpTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/HomepageGroupsTemplate/current
+%%DATADIR%%/underlay/pages/HomepageGroupsTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/HomepagePrivatePageTemplate/current
+%%DATADIR%%/underlay/pages/HomepagePrivatePageTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/HomepageReadPageTemplate/current
+%%DATADIR%%/underlay/pages/HomepageReadPageTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/HomepageReadWritePageTemplate/current
+%%DATADIR%%/underlay/pages/HomepageReadWritePageTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/HomepageTemplate/current
+%%DATADIR%%/underlay/pages/HomepageTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/InterWiki/current
+%%DATADIR%%/underlay/pages/InterWiki/revisions/00000001
+%%DATADIR%%/underlay/pages/LocalBadContent/current
+%%DATADIR%%/underlay/pages/LocalBadContent/revisions/00000001
+%%DATADIR%%/underlay/pages/LocalSpellingWords/current
+%%DATADIR%%/underlay/pages/LocalSpellingWords/revisions/00000001
+%%DATADIR%%/underlay/pages/MissingHomePage/current
+%%DATADIR%%/underlay/pages/MissingHomePage/revisions/00000001
+%%DATADIR%%/underlay/pages/MissingPage/current
+%%DATADIR%%/underlay/pages/MissingPage/revisions/00000001
+%%DATADIR%%/underlay/pages/MoinMoin(2f)InstallDocs/current
+%%DATADIR%%/underlay/pages/MoinMoin(2f)InstallDocs/revisions/00000001
+%%DATADIR%%/underlay/pages/MoinMoin(2f)TextFormatting/current
+%%DATADIR%%/underlay/pages/MoinMoin(2f)TextFormatting/revisions/00000001
+%%DATADIR%%/underlay/pages/MoinMoin/current
+%%DATADIR%%/underlay/pages/MoinMoin/revisions/00000001
+%%DATADIR%%/underlay/pages/OrphanedPages/current
+%%DATADIR%%/underlay/pages/OrphanedPages/revisions/00000001
+%%DATADIR%%/underlay/pages/PageHits/current
+%%DATADIR%%/underlay/pages/PageHits/revisions/00000001
+%%DATADIR%%/underlay/pages/PageSize/current
+%%DATADIR%%/underlay/pages/PageSize/revisions/00000001
+%%DATADIR%%/underlay/pages/PermissionDeniedPage/current
+%%DATADIR%%/underlay/pages/PermissionDeniedPage/revisions/00000001
+%%DATADIR%%/underlay/pages/ProjectGroupsTemplate/current
+%%DATADIR%%/underlay/pages/ProjectGroupsTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/ProjectTemplate/current
+%%DATADIR%%/underlay/pages/ProjectTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/RandomPage/current
+%%DATADIR%%/underlay/pages/RandomPage/revisions/00000001
+%%DATADIR%%/underlay/pages/RecentChanges/current
+%%DATADIR%%/underlay/pages/RecentChanges/revisions/00000001
+%%DATADIR%%/underlay/pages/SiteNavigation/current
+%%DATADIR%%/underlay/pages/SiteNavigation/revisions/00000001
+%%DATADIR%%/underlay/pages/SlideShowHandOutTemplate/current
+%%DATADIR%%/underlay/pages/SlideShowHandOutTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/SlideShowTemplate/current
+%%DATADIR%%/underlay/pages/SlideShowTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/SlideTemplate/current
+%%DATADIR%%/underlay/pages/SlideTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/SyncJobTemplate/current
+%%DATADIR%%/underlay/pages/SyncJobTemplate/revisions/00000001
+%%DATADIR%%/underlay/pages/SyntaxReference/current
+%%DATADIR%%/underlay/pages/SyntaxReference/revisions/00000001
+%%DATADIR%%/underlay/pages/SystemAdmin/current
+%%DATADIR%%/underlay/pages/SystemAdmin/revisions/00000001
+%%DATADIR%%/underlay/pages/SystemInfo/current
+%%DATADIR%%/underlay/pages/SystemInfo/revisions/00000001
+%%DATADIR%%/underlay/pages/SystemPagesGroup/current
+%%DATADIR%%/underlay/pages/SystemPagesGroup/revisions/00000001
+%%DATADIR%%/underlay/pages/SystemPagesInEnglishGroup/current
+%%DATADIR%%/underlay/pages/SystemPagesInEnglishGroup/revisions/00000001
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Bulgarian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Croatian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Czech.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Danish.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Dutch.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/BrazilianPortuguese.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Finnish.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/French.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/German.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Hebrew.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Hungarian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Indonesian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Italian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Japanese.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Korean.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Latvian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Lithuanian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Mongolian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/NorwegianBokmal.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Persian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Polish.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Portuguese.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Romanian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Russian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Serbian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/SimplifiedChinese.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Slovenian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Spanish.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Swedish.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/TraditionalChinese.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Turkish.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/Ukrainian.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/all_languages.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/attachments/extra.zip
+%%DATADIR%%/underlay/pages/SystemPagesSetup/current
+%%DATADIR%%/underlay/pages/SystemPagesSetup/revisions/00000001
+%%DATADIR%%/underlay/pages/TitleIndex/current
+%%DATADIR%%/underlay/pages/TitleIndex/revisions/00000001
+%%DATADIR%%/underlay/pages/WantedPages/current
+%%DATADIR%%/underlay/pages/WantedPages/revisions/00000001
+%%DATADIR%%/underlay/pages/WhyWikiWorks/current
+%%DATADIR%%/underlay/pages/WhyWikiWorks/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)01(20)What(20)is(20)a(20)MoinMoin(20)wiki(3f)/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)01(20)What(20)is(20)a(20)MoinMoin(20)wiki(3f)/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)02(20)Finding(20)information/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)02(20)Finding(20)information/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)03(20)Staying(20)up(20)to(20)date/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)03(20)Staying(20)up(20)to(20)date/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)04(20)Creating(20)a(20)wiki(20)account/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)04(20)Creating(20)a(20)wiki(20)account/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)05(20)User(20)preferences/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)05(20)User(20)preferences/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)06(20)Your(20)own(20)wiki(20)homepage/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)06(20)Your(20)own(20)wiki(20)homepage/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)07(20)The(20)text(20)editor/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)07(20)The(20)text(20)editor/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)08(20)Hot(20)Keys/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)08(20)Hot(20)Keys/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)10(20)Text(20)layout(20)with(20)wiki(20)markup/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)10(20)Text(20)layout(20)with(20)wiki(20)markup/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)11(20)Paragraphs/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)11(20)Paragraphs/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)12(20)Headlines/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)12(20)Headlines/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)13(20)Lists/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)13(20)Lists/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)14(20)Text(20)styles/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)14(20)Text(20)styles/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)15(20)Tables/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)15(20)Tables/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)16(20)Wiki(20)internal(20)links/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)16(20)Wiki(20)internal(20)links/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)17(20)External(20)links/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)17(20)External(20)links/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)18(20)Attachments/attachments/letter.txt
+%%DATADIR%%/underlay/pages/WikiCourse(2f)18(20)Attachments/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)18(20)Attachments/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)19(20)Symbols/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)19(20)Symbols/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)20(20)Dynamic(20)content/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)20(20)Dynamic(20)content/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)21(20)Macros/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)21(20)Macros/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)22(20)Parsers/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)22(20)Parsers/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)23(20)Actions/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)23(20)Actions/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)30(20)The(20)graphical(20)editor/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)30(20)The(20)graphical(20)editor/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)40(20)Creating(20)more(20)pages/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)40(20)Creating(20)more(20)pages/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)50(20)Wiki(20)etiquette/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)50(20)Wiki(20)etiquette/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)51(20)Applications/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)51(20)Applications/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse(2f)52(20)Structure(20)in(20)the(20)wiki/current
+%%DATADIR%%/underlay/pages/WikiCourse(2f)52(20)Structure(20)in(20)the(20)wiki/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourse/current
+%%DATADIR%%/underlay/pages/WikiCourse/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiCourseHandOut/current
+%%DATADIR%%/underlay/pages/WikiCourseHandOut/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiHomePage/current
+%%DATADIR%%/underlay/pages/WikiHomePage/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiName/current
+%%DATADIR%%/underlay/pages/WikiName/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiSandBox/attachments/mytest.draw
+%%DATADIR%%/underlay/pages/WikiSandBox/attachments/mytest.png
+%%DATADIR%%/underlay/pages/WikiSandBox/current
+%%DATADIR%%/underlay/pages/WikiSandBox/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiTipOfTheDay/current
+%%DATADIR%%/underlay/pages/WikiTipOfTheDay/revisions/00000001
+%%DATADIR%%/underlay/pages/WikiWikiWeb/current
+%%DATADIR%%/underlay/pages/WikiWikiWeb/revisions/00000001
+%%DATADIR%%/underlay/pages/WordIndex/current
+%%DATADIR%%/underlay/pages/WordIndex/revisions/00000001
+%%DATADIR%%/underlay/pages/XsltVersion/current
+%%DATADIR%%/underlay/pages/XsltVersion/revisions/00000001
+@dirrm %%DATADIR%%/underlay/pages/XsltVersion/revisions
+@dirrm %%DATADIR%%/underlay/pages/XsltVersion
+@dirrm %%DATADIR%%/underlay/pages/WordIndex/revisions
+@dirrm %%DATADIR%%/underlay/pages/WordIndex
+@dirrm %%DATADIR%%/underlay/pages/WikiWikiWeb/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiWikiWeb
+@dirrm %%DATADIR%%/underlay/pages/WikiTipOfTheDay/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiTipOfTheDay
+@dirrm %%DATADIR%%/underlay/pages/WikiSandBox/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiSandBox/attachments
+@dirrm %%DATADIR%%/underlay/pages/WikiSandBox
+@dirrm %%DATADIR%%/underlay/pages/WikiName/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiName
+@dirrm %%DATADIR%%/underlay/pages/WikiHomePage/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiHomePage
+@dirrm %%DATADIR%%/underlay/pages/WikiCourseHandOut/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourseHandOut
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)52(20)Structure(20)in(20)the(20)wiki/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)52(20)Structure(20)in(20)the(20)wiki
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)51(20)Applications/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)51(20)Applications
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)50(20)Wiki(20)etiquette/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)50(20)Wiki(20)etiquette
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)40(20)Creating(20)more(20)pages/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)40(20)Creating(20)more(20)pages
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)30(20)The(20)graphical(20)editor/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)30(20)The(20)graphical(20)editor
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)23(20)Actions/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)23(20)Actions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)22(20)Parsers/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)22(20)Parsers
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)21(20)Macros/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)21(20)Macros
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)20(20)Dynamic(20)content/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)20(20)Dynamic(20)content
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)19(20)Symbols/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)19(20)Symbols
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)18(20)Attachments/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)18(20)Attachments/attachments
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)18(20)Attachments
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)17(20)External(20)links/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)17(20)External(20)links
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)16(20)Wiki(20)internal(20)links/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)16(20)Wiki(20)internal(20)links
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)15(20)Tables/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)15(20)Tables
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)14(20)Text(20)styles/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)14(20)Text(20)styles
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)13(20)Lists/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)13(20)Lists
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)12(20)Headlines/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)12(20)Headlines
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)11(20)Paragraphs/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)11(20)Paragraphs
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)10(20)Text(20)layout(20)with(20)wiki(20)markup/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)10(20)Text(20)layout(20)with(20)wiki(20)markup
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)08(20)Hot(20)Keys/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)08(20)Hot(20)Keys
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)07(20)The(20)text(20)editor/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)07(20)The(20)text(20)editor
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)06(20)Your(20)own(20)wiki(20)homepage/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)06(20)Your(20)own(20)wiki(20)homepage
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)05(20)User(20)preferences/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)05(20)User(20)preferences
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)04(20)Creating(20)a(20)wiki(20)account/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)04(20)Creating(20)a(20)wiki(20)account
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)03(20)Staying(20)up(20)to(20)date/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)03(20)Staying(20)up(20)to(20)date
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)02(20)Finding(20)information/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)02(20)Finding(20)information
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)01(20)What(20)is(20)a(20)MoinMoin(20)wiki(3f)/revisions
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse(2f)01(20)What(20)is(20)a(20)MoinMoin(20)wiki(3f)
+@dirrm %%DATADIR%%/underlay/pages/WikiCourse
+@dirrm %%DATADIR%%/underlay/pages/WhyWikiWorks/revisions
+@dirrm %%DATADIR%%/underlay/pages/WhyWikiWorks
+@dirrm %%DATADIR%%/underlay/pages/WantedPages/revisions
+@dirrm %%DATADIR%%/underlay/pages/WantedPages
+@dirrm %%DATADIR%%/underlay/pages/TitleIndex/revisions
+@dirrm %%DATADIR%%/underlay/pages/TitleIndex
+@dirrm %%DATADIR%%/underlay/pages/SystemPagesSetup/revisions
+@dirrm %%DATADIR%%/underlay/pages/SystemPagesSetup/attachments
+@dirrm %%DATADIR%%/underlay/pages/SystemPagesSetup
+@dirrm %%DATADIR%%/underlay/pages/SystemPagesInEnglishGroup/revisions
+@dirrm %%DATADIR%%/underlay/pages/SystemPagesInEnglishGroup
+@dirrm %%DATADIR%%/underlay/pages/SystemPagesGroup/revisions
+@dirrm %%DATADIR%%/underlay/pages/SystemPagesGroup
+@dirrm %%DATADIR%%/underlay/pages/SystemInfo/revisions
+@dirrm %%DATADIR%%/underlay/pages/SystemInfo
+@dirrm %%DATADIR%%/underlay/pages/SystemAdmin/revisions
+@dirrm %%DATADIR%%/underlay/pages/SystemAdmin
+@dirrm %%DATADIR%%/underlay/pages/SyntaxReference/revisions
+@dirrm %%DATADIR%%/underlay/pages/SyntaxReference
+@dirrm %%DATADIR%%/underlay/pages/SyncJobTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/SyncJobTemplate
+@dirrm %%DATADIR%%/underlay/pages/SlideTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/SlideTemplate
+@dirrm %%DATADIR%%/underlay/pages/SlideShowTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/SlideShowTemplate
+@dirrm %%DATADIR%%/underlay/pages/SlideShowHandOutTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/SlideShowHandOutTemplate
+@dirrm %%DATADIR%%/underlay/pages/SiteNavigation/revisions
+@dirrm %%DATADIR%%/underlay/pages/SiteNavigation
+@dirrm %%DATADIR%%/underlay/pages/RecentChanges/revisions
+@dirrm %%DATADIR%%/underlay/pages/RecentChanges
+@dirrm %%DATADIR%%/underlay/pages/RandomPage/revisions
+@dirrm %%DATADIR%%/underlay/pages/RandomPage
+@dirrm %%DATADIR%%/underlay/pages/ProjectTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/ProjectTemplate
+@dirrm %%DATADIR%%/underlay/pages/ProjectGroupsTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/ProjectGroupsTemplate
+@dirrm %%DATADIR%%/underlay/pages/PermissionDeniedPage/revisions
+@dirrm %%DATADIR%%/underlay/pages/PermissionDeniedPage
+@dirrm %%DATADIR%%/underlay/pages/PageSize/revisions
+@dirrm %%DATADIR%%/underlay/pages/PageSize
+@dirrm %%DATADIR%%/underlay/pages/PageHits/revisions
+@dirrm %%DATADIR%%/underlay/pages/PageHits
+@dirrm %%DATADIR%%/underlay/pages/OrphanedPages/revisions
+@dirrm %%DATADIR%%/underlay/pages/OrphanedPages
+@dirrm %%DATADIR%%/underlay/pages/MoinMoin/revisions
+@dirrm %%DATADIR%%/underlay/pages/MoinMoin(2f)TextFormatting/revisions
+@dirrm %%DATADIR%%/underlay/pages/MoinMoin(2f)TextFormatting
+@dirrm %%DATADIR%%/underlay/pages/MoinMoin(2f)InstallDocs/revisions
+@dirrm %%DATADIR%%/underlay/pages/MoinMoin(2f)InstallDocs
+@dirrm %%DATADIR%%/underlay/pages/MoinMoin
+@dirrm %%DATADIR%%/underlay/pages/MissingPage/revisions
+@dirrm %%DATADIR%%/underlay/pages/MissingPage
+@dirrm %%DATADIR%%/underlay/pages/MissingHomePage/revisions
+@dirrm %%DATADIR%%/underlay/pages/MissingHomePage
+@dirrm %%DATADIR%%/underlay/pages/LocalSpellingWords/revisions
+@dirrm %%DATADIR%%/underlay/pages/LocalSpellingWords
+@dirrm %%DATADIR%%/underlay/pages/LocalBadContent/revisions
+@dirrm %%DATADIR%%/underlay/pages/LocalBadContent
+@dirrm %%DATADIR%%/underlay/pages/InterWiki/revisions
+@dirrm %%DATADIR%%/underlay/pages/InterWiki
+@dirrm %%DATADIR%%/underlay/pages/HomepageTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/HomepageTemplate
+@dirrm %%DATADIR%%/underlay/pages/HomepageReadWritePageTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/HomepageReadWritePageTemplate
+@dirrm %%DATADIR%%/underlay/pages/HomepageReadPageTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/HomepageReadPageTemplate
+@dirrm %%DATADIR%%/underlay/pages/HomepagePrivatePageTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/HomepagePrivatePageTemplate
+@dirrm %%DATADIR%%/underlay/pages/HomepageGroupsTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/HomepageGroupsTemplate
+@dirrm %%DATADIR%%/underlay/pages/HelpTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpTemplate
+@dirrm %%DATADIR%%/underlay/pages/HelpOnXmlPages/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnXmlPages
+@dirrm %%DATADIR%%/underlay/pages/HelpOnXapian/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnXapian
+@dirrm %%DATADIR%%/underlay/pages/HelpOnVariables/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnVariables
+@dirrm %%DATADIR%%/underlay/pages/HelpOnUserPreferences/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnUserPreferences
+@dirrm %%DATADIR%%/underlay/pages/HelpOnUserHandling/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnUserHandling
+@dirrm %%DATADIR%%/underlay/pages/HelpOnUpdatingPython/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnUpdatingPython
+@dirrm %%DATADIR%%/underlay/pages/HelpOnUpdating/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnUpdating
+@dirrm %%DATADIR%%/underlay/pages/HelpOnThemes/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnThemes
+@dirrm %%DATADIR%%/underlay/pages/HelpOnTextChas/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnTextChas
+@dirrm %%DATADIR%%/underlay/pages/HelpOnTemplates/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnTemplates
+@dirrm %%DATADIR%%/underlay/pages/HelpOnTables/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnTables/attachments
+@dirrm %%DATADIR%%/underlay/pages/HelpOnTables
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSynchronisation/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSynchronisation
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSuperUser/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSuperUser
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSubscribing/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSubscribing
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSpellCheck/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSpellCheck
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSpam/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSpam
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSmileys/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSmileys
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSlideShows/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)900(20)Last(20)but(20)not(20)least(3a20)Running(20)your(20)presentation/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)900(20)Last(20)but(20)not(20)least(3a20)Running(20)your(20)presentation
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)100(20)Creating(20)the(20)slides/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)100(20)Creating(20)the(20)slides
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)000(20)Introduction/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSlideShows(2f)000(20)Introduction
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSlideShows
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSessions/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSessions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSearching/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnSearching
+@dirrm %%DATADIR%%/underlay/pages/HelpOnRules/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnRules
+@dirrm %%DATADIR%%/underlay/pages/HelpOnProcessingInstructions/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnProcessingInstructions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnPatchCreation/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnPatchCreation
+@dirrm %%DATADIR%%/underlay/pages/HelpOnParsers/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnParsers(2f)ReStructuredText/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnParsers(2f)ReStructuredText(2f)RstPrimer/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnParsers(2f)ReStructuredText(2f)RstPrimer
+@dirrm %%DATADIR%%/underlay/pages/HelpOnParsers(2f)ReStructuredText
+@dirrm %%DATADIR%%/underlay/pages/HelpOnParsers
+@dirrm %%DATADIR%%/underlay/pages/HelpOnPageDeletion/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnPageDeletion
+@dirrm %%DATADIR%%/underlay/pages/HelpOnPageCreation/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnPageCreation
+@dirrm %%DATADIR%%/underlay/pages/HelpOnPackageInstaller/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnPackageInstaller
+@dirrm %%DATADIR%%/underlay/pages/HelpOnOpenIDProvider/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnOpenIDProvider
+@dirrm %%DATADIR%%/underlay/pages/HelpOnNotification/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnNotification
+@dirrm %%DATADIR%%/underlay/pages/HelpOnNavigation/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnNavigation
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMoinWikiSyntax/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMoinWikiSyntax/attachments
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMoinWikiSyntax
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMoinCommand/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMoinCommand(2f)ExportDump/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMoinCommand(2f)ExportDump
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMoinCommand
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros(2f)MonthCalendar/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros(2f)MonthCalendar
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros(2f)MailTo/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros(2f)MailTo
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros(2f)Include/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros(2f)Include
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros(2f)ImageLink/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros(2f)ImageLink
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros(2f)EmbedObject/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros(2f)EmbedObject
+@dirrm %%DATADIR%%/underlay/pages/HelpOnMacros
+@dirrm %%DATADIR%%/underlay/pages/HelpOnLogin/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnLogin
+@dirrm %%DATADIR%%/underlay/pages/HelpOnLists/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnLists
+@dirrm %%DATADIR%%/underlay/pages/HelpOnLinking/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnLinking(2f)NotesLinks/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnLinking(2f)NotesLinks/attachments
+@dirrm %%DATADIR%%/underlay/pages/HelpOnLinking(2f)NotesLinks
+@dirrm %%DATADIR%%/underlay/pages/HelpOnLinking
+@dirrm %%DATADIR%%/underlay/pages/HelpOnLanguages/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnLanguages
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)Win32MoinEasyBackup/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)Win32MoinEasyBackup
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation/attachments
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WebLogic/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)WebLogic
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb/attachments
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TwistedWeb
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TroubleShooting/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TroubleShooting/attachments
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)TroubleShooting
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)StandaloneServer/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)StandaloneServer
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)MinimalWiki/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)MinimalWiki
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)InternetInformationServer/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)InternetInformationServer
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)FastCgi/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)FastCgi
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)BasicInstallation/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)BasicInstallation/attachments
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)BasicInstallation
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModWSGI/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModWSGI
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withFastCgi/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withFastCgi
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withDomainAuthentication/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withDomainAuthentication
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/attachments
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)AolServer/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling(2f)AolServer
+@dirrm %%DATADIR%%/underlay/pages/HelpOnInstalling
+@dirrm %%DATADIR%%/underlay/pages/HelpOnHeadlines/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnHeadlines
+@dirrm %%DATADIR%%/underlay/pages/HelpOnGraphicalEditor/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnGraphicalEditor
+@dirrm %%DATADIR%%/underlay/pages/HelpOnFormatting/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnFormatting
+@dirrm %%DATADIR%%/underlay/pages/HelpOnEditing/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnEditing(2f)SubPages/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnEditing(2f)SubPages
+@dirrm %%DATADIR%%/underlay/pages/HelpOnEditing
+@dirrm %%DATADIR%%/underlay/pages/HelpOnEditLocks/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnEditLocks
+@dirrm %%DATADIR%%/underlay/pages/HelpOnDictionaries/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnDictionaries
+@dirrm %%DATADIR%%/underlay/pages/HelpOnCreoleSyntax/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnCreoleSyntax
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)UserPreferences/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)UserPreferences
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SurgeProtection/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SurgeProtection
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SupplementationPage/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SupplementationPage
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SecurityPolicy/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)SecurityPolicy
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)IntegratingWithApache/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)IntegratingWithApache
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)FileAttachments/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)FileAttachments
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)EmailSupport/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)EmailSupport
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)ApacheVoodoo/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration(2f)ApacheVoodoo
+@dirrm %%DATADIR%%/underlay/pages/HelpOnConfiguration
+@dirrm %%DATADIR%%/underlay/pages/HelpOnComments/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnComments
+@dirrm %%DATADIR%%/underlay/pages/HelpOnCategories/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnCategories
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAutoAdmin/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAutoAdmin
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAuthentication/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAuthentication(2f)ExternalCookie/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAuthentication(2f)ExternalCookie
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAuthentication
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAdmonitions/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAdmonitions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAdministration/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAdministration
+@dirrm %%DATADIR%%/underlay/pages/HelpOnActions/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile/attachments
+@dirrm %%DATADIR%%/underlay/pages/HelpOnActions(2f)AttachFile
+@dirrm %%DATADIR%%/underlay/pages/HelpOnActions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAcl/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAcl
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAccessControlLists/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpOnAccessControlLists
+@dirrm %%DATADIR%%/underlay/pages/HelpMiscellaneous/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpMiscellaneous(2f)FrequentlyAskedQuestions/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpMiscellaneous(2f)FrequentlyAskedQuestions
+@dirrm %%DATADIR%%/underlay/pages/HelpMiscellaneous(2f)ExperimentalFeatures/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpMiscellaneous(2f)ExperimentalFeatures
+@dirrm %%DATADIR%%/underlay/pages/HelpMiscellaneous
+@dirrm %%DATADIR%%/underlay/pages/HelpIndex/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpIndex
+@dirrm %%DATADIR%%/underlay/pages/HelpForUsers/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpForUsers
+@dirrm %%DATADIR%%/underlay/pages/HelpForDevelopers/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpForDevelopers
+@dirrm %%DATADIR%%/underlay/pages/HelpForBeginners/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpForBeginners
+@dirrm %%DATADIR%%/underlay/pages/HelpForAdministrators/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpForAdministrators
+@dirrm %%DATADIR%%/underlay/pages/HelpContents/revisions
+@dirrm %%DATADIR%%/underlay/pages/HelpContents
+@dirrm %%DATADIR%%/underlay/pages/FrontPage/revisions
+@dirrm %%DATADIR%%/underlay/pages/FrontPage
+@dirrm %%DATADIR%%/underlay/pages/FortuneCookies/revisions
+@dirrm %%DATADIR%%/underlay/pages/FortuneCookies
+@dirrm %%DATADIR%%/underlay/pages/FindPage/revisions
+@dirrm %%DATADIR%%/underlay/pages/FindPage
+@dirrm %%DATADIR%%/underlay/pages/EventStats/revisions
+@dirrm %%DATADIR%%/underlay/pages/EventStats(2f)UserAgents/revisions
+@dirrm %%DATADIR%%/underlay/pages/EventStats(2f)UserAgents
+@dirrm %%DATADIR%%/underlay/pages/EventStats(2f)Languages/revisions
+@dirrm %%DATADIR%%/underlay/pages/EventStats(2f)Languages
+@dirrm %%DATADIR%%/underlay/pages/EventStats(2f)HitCounts/revisions
+@dirrm %%DATADIR%%/underlay/pages/EventStats(2f)HitCounts
+@dirrm %%DATADIR%%/underlay/pages/EventStats
+@dirrm %%DATADIR%%/underlay/pages/EditedSystemPages/revisions
+@dirrm %%DATADIR%%/underlay/pages/EditedSystemPages
+@dirrm %%DATADIR%%/underlay/pages/DesktopEdition/revisions
+@dirrm %%DATADIR%%/underlay/pages/DesktopEdition
+@dirrm %%DATADIR%%/underlay/pages/CategoryTemplate/revisions
+@dirrm %%DATADIR%%/underlay/pages/CategoryTemplate
+@dirrm %%DATADIR%%/underlay/pages/CategoryHomepage/revisions
+@dirrm %%DATADIR%%/underlay/pages/CategoryHomepage
+@dirrm %%DATADIR%%/underlay/pages/CategoryCategory/revisions
+@dirrm %%DATADIR%%/underlay/pages/CategoryCategory
+@dirrm %%DATADIR%%/underlay/pages/CamelCase/revisions
+@dirrm %%DATADIR%%/underlay/pages/CamelCase
+@dirrm %%DATADIR%%/underlay/pages/BadContent/revisions
+@dirrm %%DATADIR%%/underlay/pages/BadContent
+@dirrm %%DATADIR%%/underlay/pages/AutoAdminGroup/revisions
+@dirrm %%DATADIR%%/underlay/pages/AutoAdminGroup
+@dirrm %%DATADIR%%/underlay/pages/AbandonedPages/revisions
+@dirrm %%DATADIR%%/underlay/pages/AbandonedPages
+@dirrm %%DATADIR%%/underlay/pages
+@dirrm %%DATADIR%%/underlay
+@dirrm %%DATADIR%%/server
+@dirrm %%DATADIR%%/htdocs/rightsidebar/img
+@dirrm %%DATADIR%%/htdocs/rightsidebar/css
+@dirrm %%DATADIR%%/htdocs/rightsidebar
+@dirrm %%DATADIR%%/htdocs/modernized/img
+@dirrm %%DATADIR%%/htdocs/modernized/css
+@dirrm %%DATADIR%%/htdocs/modernized
+@dirrm %%DATADIR%%/htdocs/modern/img
+@dirrm %%DATADIR%%/htdocs/modern/css
+@dirrm %%DATADIR%%/htdocs/modern
+@dirrm %%DATADIR%%/htdocs/common/js
+@dirrm %%DATADIR%%/htdocs/common
+@dirrm %%DATADIR%%/htdocs/classic/img
+@dirrm %%DATADIR%%/htdocs/classic/css
+@dirrm %%DATADIR%%/htdocs/classic
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/smiley
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/selection
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/restrict_actions
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/placeholder/lang
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/placeholder
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/moinunlink
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/moinlink
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/moinimage
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/moinformat
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/moinbehaviour
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/moinattachment
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/macro/lang
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins/macro
+@dirrm %%DATADIR%%/htdocs/applets/moinFCKplugins
+@dirrm %%DATADIR%%/htdocs/applets/TWikiDrawPlugin
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/wsc
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver/images
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/silver
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003/images
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/office2003
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default/images
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins/default
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/skins
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/tablecommands
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/simplecommands
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/placeholder/lang
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/placeholder
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/dragresizetable
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/bbcode/_sample
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/bbcode
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins/autogrow
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/plugins
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/lang
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/js
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley/msn
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/images/smiley
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/images
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/py
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/php
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/perl
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/lasso
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/cfm
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/aspx
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors/asp
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/connectors
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/js
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons/32
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images/icons
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default/images
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser/default
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager/browser
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/filemanager
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dtd
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_template/images
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_template
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_select
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_link
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_image
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_flash
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_docprops
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_about/sponsors
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/fck_about
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/common/images
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog/common
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/dialog
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/css/images
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/css/behaviors
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/css
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/internals
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/commandclasses
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/_source/classes
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor/_source
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor/editor
+@dirrm %%DATADIR%%/htdocs/applets/FCKeditor
+@dirrm %%DATADIR%%/htdocs/applets
+@dirrm %%DATADIR%%/htdocs
+@dirrm %%DATADIR%%/data/user
+@dirrm %%DATADIR%%/data/plugin/xmlrpc
+@dirrm %%DATADIR%%/data/plugin/userprefs
+@dirrm %%DATADIR%%/data/plugin/theme
+@dirrm %%DATADIR%%/data/plugin/parser
+@dirrm %%DATADIR%%/data/plugin/macro
+@dirrm %%DATADIR%%/data/plugin/formatter
+@dirrm %%DATADIR%%/data/plugin/filter
+@dirrm %%DATADIR%%/data/plugin/events
+@dirrm %%DATADIR%%/data/plugin/converter
+@dirrm %%DATADIR%%/data/plugin/action
+@dirrm %%DATADIR%%/data/plugin
+@dirrm %%DATADIR%%/data/pages/BadContent/revisions
+@dirrm %%DATADIR%%/data/pages/BadContent
+@dirrm %%DATADIR%%/data/pages
+@dirrm %%DATADIR%%/data/dict
+@dirrm %%DATADIR%%/data/cache
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/config/wikifarm
+@dirrm %%DATADIR%%/config/more_samples
+@dirrm %%DATADIR%%/config/logging
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/jabberbot
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/wikixml
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/widget
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/util
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/userprefs
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/userform
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/theme
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/xapwrap
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/stats
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/server
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/security
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/search
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/server
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/maint
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/index
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/import
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/export
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/cli
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/account
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/request
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/parser
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/mail
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/macro
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/logfile
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/jabberbot
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/i18n
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/formatter
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/filter
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/events
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/converter
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/config
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/auth
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/action
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin

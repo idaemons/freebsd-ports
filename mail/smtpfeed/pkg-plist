@@ -1,0 +1,20 @@
+libexec/smtpfeed
+%%PORTDOCS%%share/doc/smtpfeed/COPYRIGHT
+%%PORTDOCS%%share/doc/smtpfeed/FEATURES
+%%PORTDOCS%%share/doc/smtpfeed/FEATURES.j
+%%PORTDOCS%%share/doc/smtpfeed/FYI
+%%PORTDOCS%%share/doc/smtpfeed/FYI.j
+%%PORTDOCS%%share/doc/smtpfeed/INSTALL
+%%PORTDOCS%%share/doc/smtpfeed/INSTALL.j
+%%PORTDOCS%%share/doc/smtpfeed/ML-ADMIN
+%%PORTDOCS%%share/doc/smtpfeed/ML-ADMIN.j
+%%PORTDOCS%%share/doc/smtpfeed/OPTIONS
+%%PORTDOCS%%share/doc/smtpfeed/OPTIONS.j
+%%PORTDOCS%%share/doc/smtpfeed/README
+%%PORTDOCS%%share/doc/smtpfeed/README.j
+%%PORTDOCS%%share/doc/smtpfeed/RELEASE.NOTE
+%%PORTDOCS%%share/doc/smtpfeed/SIGNAL
+%%PORTDOCS%%share/doc/smtpfeed/SIGNAL.j
+%%PORTDOCS%%share/doc/smtpfeed/TODO
+%%PORTDOCS%%share/doc/smtpfeed/smtpfeed.html
+%%PORTDOCS%%@dirrm share/doc/smtpfeed

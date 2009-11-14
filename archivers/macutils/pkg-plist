@@ -1,0 +1,18 @@
+bin/binhex
+bin/frommac
+bin/hexbin
+bin/macsave
+bin/macstream
+bin/macunpack
+bin/tomac
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.crc
+%%PORTDOCS%%%%DOCSDIR%%/README.crc.orig
+%%PORTDOCS%%%%DOCSDIR%%/README.hexbin
+%%PORTDOCS%%%%DOCSDIR%%/README.macget
+%%PORTDOCS%%%%DOCSDIR%%/README.macput
+%%PORTDOCS%%%%DOCSDIR%%/README.scan
+%%PORTDOCS%%%%DOCSDIR%%/README.unpit
+%%PORTDOCS%%%%DOCSDIR%%/README.unsit
+%%PORTDOCS%%%%DOCSDIR%%/README.zoom
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

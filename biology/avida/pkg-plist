@@ -1,0 +1,15 @@
+bin/avida
+bin/avida-viewer
+%%DATADIR%%/analyze.cfg
+%%DATADIR%%/avida.cfg
+%%DATADIR%%/default-classic.org
+%%DATADIR%%/default-sex-classic.org
+%%DATADIR%%/default-smt.org
+%%DATADIR%%/default-transsmt.org
+%%DATADIR%%/environment.cfg
+%%DATADIR%%/events.cfg
+%%DATADIR%%/instset-classic.cfg
+%%DATADIR%%/instset-sex-classic.cfg
+%%DATADIR%%/instset-smt.cfg
+%%DATADIR%%/instset-transsmt.cfg
+@dirrm %%DATADIR%%

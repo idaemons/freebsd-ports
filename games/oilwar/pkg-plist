@@ -1,0 +1,9 @@
+bin/oilwar
+%%DATADIR%%/background.png
+%%DATADIR%%/bitmaps.png
+%%DATADIR%%/bulletricochet.wav
+%%DATADIR%%/explode.wav
+%%DATADIR%%/gasp.wav
+%%DATADIR%%/oilwar.scores
+%%DATADIR%%/singlegunshot.wav
+@dirrm %%DATADIR%%

@@ -1,0 +1,11 @@
+--- compiler/utils/samplecfg	2009-02-28 17:54:01.000000000 -0500
++++ compiler/utils/samplecfg	2009-04-26 13:53:57.000000000 -0500
+@@ -55,7 +55,7 @@
+ # Detect if we have write permission in sysdir.
+ if [ -w "$sysdir" ] ; then
+   echo Write permission in $sysdir.
+-  fpccfgfile="$sysdir"/fpc.cfg
++  fpccfgfile="$sysdir"/fpc.cfg.sample
+ else
+   echo No write premission in $sysdir.
+   fpccfgfile="$HOME"/.fpc.cfg

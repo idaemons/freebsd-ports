@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- Makefile.rules
++++ Makefile.rules
+@@ -35,7 +35,9 @@
+     CMD_PREFIX=
+ endif
+ 
++ifneq ($(OSARCH),FreeBSD)
+ OPTIMIZE?=-O6
++endif
+ 
+ ifeq ($(findstring DONT_OPTIMIZE,$(MENUSELECT_CFLAGS)),)
+     # More GSM codec optimization

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2008-02-22 10:48:20.000000000 +0800
++++ Makefile.in	2008-02-22 10:48:24.000000000 +0800
+@@ -677,8 +677,6 @@
+ 
+ 
+ install-exec-local:
+-	$(mkinstalldirs) $(DESTDIR)/$(input_d_dir)
+-	sed 's|@OXIM_IM_MODULE_DIR@|$(IM_MODULES_DIR)|' oxim-start.sh.in > $(DESTDIR)/$(input_d_dir)/oxim
+ @ENABLE_SETUP_TOOL_TRUE@	$(mkinstalldirs) $(DESTDIR)/$(datadir)/applications
+ @ENABLE_SETUP_TOOL_TRUE@	$(INSTALL_DATA) oxim-setup.desktop $(DESTDIR)/$(datadir)/applications
+ @ENABLE_SETUP_TOOL_TRUE@	$(mkinstalldirs) $(DESTDIR)/$(datadir)/pixmaps

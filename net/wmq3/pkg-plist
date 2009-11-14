@@ -1,0 +1,3 @@
+bin/wmq3
+%%EXAMPLESDIR%%/wmq3rc
+@dirrm %%EXAMPLESDIR%%

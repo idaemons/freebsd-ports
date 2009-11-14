@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/Makefile.in.orig	2009-07-06 20:04:01.000000000 +0200
++++ doc/Makefile.in	2009-07-06 20:04:14.000000000 +0200
+@@ -168,7 +168,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

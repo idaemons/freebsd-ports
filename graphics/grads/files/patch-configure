@@ -1,0 +1,40 @@
+$FreeBSD$
+
+--- configure.orig	2005-05-23 08:04:40.000000000 -0700
++++ configure	2009-01-20 21:01:00.000000000 -0800
+@@ -6835,7 +6835,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
+-#include <freq.h>
++#include <X11/libsx/freq.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+ if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+@@ -9866,7 +9866,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldf  $LIBS"
++LIBS="-ldf -ljpeg -lsz -lz  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -9917,7 +9917,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lmfhdf  $LIBS"
++LIBS="-lmfhdf -ldf -ljpeg -lsz -lz $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -11916,7 +11916,7 @@
+      ga_lib_suffix='.a'
+   fi
+ 
+-  for ga_lib_name in mfhdf df jpeg udunits z ; do
++  for ga_lib_name in mfhdf df jpeg sz udunits z ; do
+       hdf_libs="$hdf_libs ${ga_lib_prefix}${ga_lib_name}${ga_lib_suffix}"
+   done
+ 
