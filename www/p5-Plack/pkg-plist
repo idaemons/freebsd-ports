@@ -1,0 +1,69 @@
+bin/plackup
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/.packlist
+%%SITE_PERL%%/HTTP/Message/PSGI.pm
+%%SITE_PERL%%/Plack.pm
+%%SITE_PERL%%/Plack/App/CGIBin.pm
+%%SITE_PERL%%/Plack/App/Cascade.pm
+%%SITE_PERL%%/Plack/App/Directory.pm
+%%SITE_PERL%%/Plack/App/FCGIDispatcher.pm
+%%SITE_PERL%%/Plack/App/File.pm
+%%SITE_PERL%%/Plack/App/PSGIBin.pm
+%%SITE_PERL%%/Plack/App/URLMap.pm
+%%SITE_PERL%%/Plack/Builder.pm
+%%SITE_PERL%%/Plack/Component.pm
+%%SITE_PERL%%/Plack/HTTPParser.pm
+%%SITE_PERL%%/Plack/HTTPParser/PP.pm
+%%SITE_PERL%%/Plack/Loader.pm
+%%SITE_PERL%%/Plack/Loader/Reloadable.pm
+%%SITE_PERL%%/Plack/MIME.pm
+%%SITE_PERL%%/Plack/Middleware.pm
+%%SITE_PERL%%/Plack/Middleware/AccessLog.pm
+%%SITE_PERL%%/Plack/Middleware/AccessLog/Timed.pm
+%%SITE_PERL%%/Plack/Middleware/Auth/Basic.pm
+%%SITE_PERL%%/Plack/Middleware/Chunked.pm
+%%SITE_PERL%%/Plack/Middleware/Conditional.pm
+%%SITE_PERL%%/Plack/Middleware/ConditionalGET.pm
+%%SITE_PERL%%/Plack/Middleware/ContentLength.pm
+%%SITE_PERL%%/Plack/Middleware/ContentMD5.pm
+%%SITE_PERL%%/Plack/Middleware/ErrorDocument.pm
+%%SITE_PERL%%/Plack/Middleware/JSONP.pm
+%%SITE_PERL%%/Plack/Middleware/Lint.pm
+%%SITE_PERL%%/Plack/Middleware/MethodOverride.pm
+%%SITE_PERL%%/Plack/Middleware/RearrangeHeaders.pm
+%%SITE_PERL%%/Plack/Middleware/Runtime.pm
+%%SITE_PERL%%/Plack/Middleware/SimpleContentFilter.pm
+%%SITE_PERL%%/Plack/Middleware/StackTrace.pm
+%%SITE_PERL%%/Plack/Middleware/Static.pm
+%%SITE_PERL%%/Plack/Middleware/Writer.pm
+%%SITE_PERL%%/Plack/Middleware/XFramework.pm
+%%SITE_PERL%%/Plack/Middleware/XSendfile.pm
+%%SITE_PERL%%/Plack/Runner.pm
+%%SITE_PERL%%/Plack/Server.pm
+%%SITE_PERL%%/Plack/Server/Apache1.pm
+%%SITE_PERL%%/Plack/Server/Apache2.pm
+%%SITE_PERL%%/Plack/Server/CGI.pm
+%%SITE_PERL%%/Plack/Server/FCGI.pm
+%%SITE_PERL%%/Plack/Server/Standalone.pm
+%%SITE_PERL%%/Plack/Server/Standalone/Prefork.pm
+%%SITE_PERL%%/Plack/Test.pm
+%%SITE_PERL%%/Plack/Test/MockHTTP.pm
+%%SITE_PERL%%/Plack/Test/Server.pm
+%%SITE_PERL%%/Plack/Test/Suite.pm
+%%SITE_PERL%%/Plack/Util.pm
+%%SITE_PERL%%/Plack/Util/Accessor.pm
+%%SITE_PERL%%/auto/share/dist/Plack/face.jpg
+%%SITE_PERL%%/auto/share/dist/Plack/kyoto.jpg
+@dirrm %%SITE_PERL%%/auto/share/dist/Plack
+@dirrm %%SITE_PERL%%/Plack/Util
+@dirrm %%SITE_PERL%%/Plack/Test
+@dirrm %%SITE_PERL%%/Plack/Server/Standalone
+@dirrm %%SITE_PERL%%/Plack/Server
+@dirrm %%SITE_PERL%%/Plack/Middleware/Auth
+@dirrm %%SITE_PERL%%/Plack/Middleware/AccessLog
+@dirrm %%SITE_PERL%%/Plack/Middleware
+@dirrm %%SITE_PERL%%/Plack/Loader
+@dirrm %%SITE_PERL%%/Plack/HTTPParser
+@dirrm %%SITE_PERL%%/Plack/App
+@dirrm %%SITE_PERL%%/Plack
+@dirrmtry %%SITE_PERL%%/HTTP/Message
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack

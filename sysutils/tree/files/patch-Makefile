@@ -1,0 +1,56 @@
+--- ./Makefile.orig	2010-01-14 14:04:12.000000000 +0100
++++ ./Makefile	2010-01-14 14:08:21.000000000 +0100
+@@ -6,27 +6,27 @@
+ # warranties, including, without limitation, the implied warranties
+ # of merchant-ability and fitness for a particular purpose.
+ 
+-prefix = /usr
++prefix = ${PREFIX}
+ 
+-CC=gcc
++CC?=gcc
+ 
+ VERSION=1.5.3
+ TREE_DEST=tree
+ BINDIR=${prefix}/bin
+-MAN=tree.1
++MAN=man/tree.1
+ MANDIR=${prefix}/man/man1
+ 
+ # Uncomment options below for your particular OS:
+ 
+ # Linux defaults:
+-CFLAGS=-ggdb -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
++#CFLAGS=-ggdb -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+ #CFLAGS=-O2 -Wall -fomit-frame-pointer -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+ #LDFLAGS=-s
+ 
+ # Uncomment for FreeBSD:
+-#CFLAGS=-O2 -Wall -fomit-frame-pointer
+-#LDFLAGS=-s
+-#XOBJS=strverscmp.o
++CFLAGS?=-O2 -Wall -fomit-frame-pointer
++LDFLAGS?=-s
++XOBJS?=strverscmp.o
+ 
+ # Uncomment for Solaris:
+ #CC=cc
+@@ -82,13 +82,11 @@
+ 	if [ -f tree.o ]; then rm *.o; fi
+ 	rm -f *~
+ 
+-install: tree
+-	install -d $(BINDIR)
+-	install -d $(MANDIR)
+-	if [ -e $(TREE_DEST) ]; then \
+-		install -s $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
+-	fi
+-	install man/$(MAN) $(MANDIR)/$(MAN)
++install: $(TREE_DEST)
++	@$(MKDIR) $(BINDIR)
++	@$(MKDIR) $(MANDIR)
++	${BSD_INSTALL_PROGRAM} $(TREE_DEST) $(BINDIR)
++	${BSD_INSTALL_MAN} $(MAN) $(MANDIR)
+ 
+ distclean:
+ 	if [ -f tree.o ]; then rm *.o; fi

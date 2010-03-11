@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	2009-12-27 16:19:06.000000000 +0900
++++ doc/Makefile.in	2010-01-03 00:15:19.879070557 +0900
+@@ -187,7 +187,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-man_MANS = fuser.1 killall.1 peekfd.1 prtstat.1 pstree.1
++man_MANS = killall.1 pstree.1
+ EXTRA_DIST = $(man_MANS)
+ all: all-am
+ 

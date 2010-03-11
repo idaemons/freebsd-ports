@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-08-02 19:57:40.000000000 -0700
++++ Makefile.in	2009-08-02 19:57:47.000000000 -0700
+@@ -1165,7 +1165,7 @@
+ build_vendor = @build_vendor@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(prefix)/share/doc/$(PACKAGE)-$(VERSION)
++docdir = $(prefix)/share/doc/$(PACKAGE)
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

@@ -1,0 +1,57 @@
+Add the ares_get_config() routine used by Unreal IRCd.
+
+--- ares.h.orig
++++ ares.h
+@@ -218,6 +218,14 @@
+   int nsort;
+ };
+ 
++/** Public available config (readonly) interface for ares_get_config(). */
++struct ares_config_info {
++	int timeout;
++	int tries;
++	int numservers;
++	char **servers;
++};
++
+ struct hostent;
+ struct timeval;
+ struct sockaddr;
+@@ -313,7 +321,7 @@
+ void ares_free_string(void *str);
+ void ares_free_hostent(struct hostent *host);
+ const char *ares_strerror(int code);
+-
++int ares_get_config(struct ares_config_info *d, ares_channel c);
+ #ifdef  __cplusplus
+ }
+ #endif
+--- ares_init.c.orig
++++ ares_init.c
+@@ -1478,6 +1478,26 @@
+     pat->mask.addr4.s_addr = htonl(IN_CLASSC_NET);
+ }
+ #endif
++
++int ares_get_config(struct ares_config_info *d, ares_channel c)
++{
++int i;
++char *p;
++
++	memset(d, 0, sizeof(struct ares_config_info));
++
++	d->timeout = c->timeout;
++	d->tries = c->tries;
++	d->numservers = c->nservers;
++	d->servers = calloc(sizeof(char *), c->nservers);
++	for (i = 0; i < c->nservers; i++)
++	{
++		p = inet_ntoa(c->servers[i].addr);
++		d->servers[i] = p ? strdup(p) : NULL;
++	}
++
++	return ARES_SUCCESS;
++}
+ /* initialize an rc4 key. If possible a cryptographically secure random key
+    is generated using a suitable function (for example win32's RtlGenRandom as
+    described in

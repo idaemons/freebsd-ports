@@ -1,14 +1,30 @@
-DISTNAME=	linpack
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
-MASTER_SITES=	ftp://netlib.att.com/netlib/linpack/
-.if defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/linpack/
-.undef MASTER_SITE_OVERRIDE
-.endif
-EXTRACT_CMD=scripts/uncomp
-EXTRACT_SUFX=.Z
-EXTRACT_ARGS= ${WRKDIR}
-WRKSRC=${WRKDIR}
+# New ports collection makefile for:	linpack
+# Date created:		31 October 1994
+# Whom:			ljo
+#
+# $FreeBSD$
+#
+
+PORTNAME=	linpack
+PORTVERSION=	1.0
+PORTREVISION=	3
+CATEGORIES=	math
+MASTER_SITES=	http://www.netlib.org/linpack/ \
+		http://netlib.amss.ac.cn/linpack/
+DISTFILES=	${SRCS}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Linear Algebra package
+
+LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
+
+.include <bsd.port.pre.mk>
+
+USE_FORTRAN=	yes
+
+USE_LDCONFIG=	yes
+DIST_SUBDIR=	${PORTNAME}
+NO_WRKSUBDIR=	yes
 
 SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 	cgeco.f cgedi.f cgefa.f cgesl.f cgtsl.f chico.f chidi.f chifa.f \
@@ -34,13 +50,16 @@ SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 	zsico.f zsidi.f zsifa.f zsisl.f zspco.f zspdi.f zspfa.f zspsl.f \
 	zsvdc.f ztrco.f ztrdi.f ztrsl.f
 
-DISTFILES=	${SRCS:.f=.f.Z}
+do-extract:
+	@${MKDIR} ${WRKDIR}
+.for file in ${SRCS}
+	@${CP} ${_DISTDIR}/${file} ${WRKSRC}/${file}
+.endfor
+
+do-build:
+	cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE}
 
 pre-build:
-	cp Makefile.lib ${WRKDIR}/Makefile
+	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
-pre-extract:
-	chmod +x scripts/uncomp
-
-.include <bsd.port.mk>
-
+.include <bsd.port.post.mk>

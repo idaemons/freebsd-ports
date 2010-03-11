@@ -1,0 +1,5 @@
+bin/easypr
+bin/lpr2
+bin/setcap
+%%PORTDOCS%%%%DOCSDIR%%/README.jp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

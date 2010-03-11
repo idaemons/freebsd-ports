@@ -1,0 +1,30 @@
+# New ports collection makefile for:	py-cheetah
+# Date created:		26 November 2003
+# Whom:	      		Hye-Shik Chang <perky@FreeBSD.org>
+#
+# $FreeBSD$
+
+PORTNAME=	cheetah
+PORTVERSION=	2.4.1
+PORTREVISION=	1
+CATEGORIES=	devel textproc www python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Cheetah-${DISTVERSION}
+
+MAINTAINER=	nivit@FreeBSD.org
+COMMENT=	HTML template engine for Python
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>=2.0.3:${PORTSDIR}/textproc/py-markdown
+
+CONFLICTS=	cheetah-[0-9]*
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=easy_install
+PYDISTUTILS_PKGNAME=	Cheetah
+PYEASYINSTALL_ARCHDEP=	yes
+PYEASYINSTALL_INSTALLARGS=	-N ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}
+PYEASYINSTALL_UNINSTALLARGS=	-q -m -N ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}
+MAKE_ENV=	CHEETAH_USE_SETUPTOOLS=yes
+
+.include <bsd.port.mk>

@@ -1,0 +1,31 @@
+--- Jamrules.orig	2008-03-12 00:48:21.000000000 +0900
++++ Jamrules	2009-05-08 23:57:05.000000000 +0900
+@@ -33,6 +33,10 @@
+       case CYGWIN :
+          LINKLIBS += -lstdc++ ;
+ 
++      case FREEBSD :
++         LINKLIBS += -lstdc++ ;
++         CCSHARE_FLAGS = -fPIC ;
++
+       case LINUX :
+          LINKLIBS += -lstdc++ ;
+          CCSHARE_FLAGS = -fPIC ;
+@@ -115,7 +119,7 @@
+ # compiler specific stuff - this is probably actually pretty clumsy
+ if ( $(CC) != gcc )
+ {
+-   NEED_GETOPT = true ;
++   #NEED_GETOPT = true ;
+ }
+ 
+ if $(PREFIX)
+@@ -215,7 +219,7 @@
+    if $(UNIX) && $(OS) != CYGWIN && $(OS) != MACOSX
+    {
+       soname = $(LIBPREFIX)$(<:S=$(SUFLIBSHR)).$(GPSTK_SO_VERSION) ;
+-      shlib = $(LIBPREFIX)$(<:S=$(SUFLIBSHR).$(GPSTK_SO_VERSION).0) ;
++      shlib = $(LIBPREFIX)$(<:S=$(SUFLIBSHR)).$(GPSTK_SO_VERSION) ;
+       shrobjs = $(>:S=$(SUFOBJ2)) ;
+       ObjectCcFlags $(shrobjs) : $(CCSHARE_FLAGS) ;
+       ObjectC++Flags $(shrobjs) : $(CCSHARE_FLAGS) ;

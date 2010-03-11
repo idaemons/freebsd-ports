@@ -1,0 +1,11 @@
+--- ./examples/Makefile.in.orig	2009-12-01 23:18:52.000000000 +0000
++++ ./examples/Makefile.in	2009-12-01 23:19:10.000000000 +0000
+@@ -352,7 +352,7 @@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = rrdcached
+ EXTRA_DIST = cgi-demo.cgi.in
+-examplesdir = $(pkgdatadir)/examples
++examplesdir = $(datadir)/examples/rrdtool
+ examples_SCRIPTS = cgi-demo.cgi piped-demo.pl shared-demo.pl \
+ 	stripes.pl bigtops.pl minmax.pl 4charts.pl perftest.pl
+ 

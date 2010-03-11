@@ -1,0 +1,3 @@
+bin/jfconv
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,6 @@
+bin/bsnes
+lib/libsnesfilter.so
+lib/libsnesreader.so
+share/applications/bsnes.desktop
+share/pixmaps/bsnes.png
+@dirrmtry share/applications

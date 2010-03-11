@@ -1,0 +1,62 @@
+--- Makefile.in	2009-09-24 11:03:09.000000000 -0400
++++ Makefile.in	2010-01-06 01:33:55.000000000 -0500
+@@ -51,5 +51,5 @@
+ endif
+ 
+-all:	$(TARGET) _snackmodule.so
++all:	$(TARGET)
+ 
+ test:	test.o $(LIBNEWT)
+@@ -68,11 +68,11 @@
+ 	$(CC) -g -o showkey showkey.o $(LIBNEWT) $(LIBS)
+ 
++ifdef PYTHONVERS
++install-sh:	_snackmodule.so
++all:	_snackmodule.so
+ _snackmodule.so:   snackmodule.c $(LIBNEWTSH)
+-	for ver in $(PYTHONVERS) ; do \
+-	    	mkdir -p $$ver ;\
+-	        $(CC) $(CFLAGS) -I/usr/include/$$ver $(SHCFLAGS) -c -o $$ver/snackmodule.o snackmodule.c ;\
+-		$(CC) --shared $(SHCFLAGS) -o $$ver/_snackmodule.so $$ver/snackmodule.o -L .  -lnewt ;\
+-	done
+-	touch $@
++	$(CC) $(CFLAGS) $(CPPFLAGS) -I${LOCALBASE}/include/python${PYTHONVERS} $(SHCFLAGS) -c -o snackmodule.o snackmodule.c
++	$(CC) --shared $(SHCFLAGS) -o _snackmodule.so snackmodule.o -L .  -lnewt
++endif
+ 
+ whiptail: $(NDIALOGOBJS) $(LIBNEWTSH)
+@@ -80,5 +80,5 @@
+ 
+ whiptcl.so: $(WHIPTCLOBJS) $(LIBNEWTSH)
+-	$(CC) -shared $(SHCFLAGS) -o whiptcl.so $(WHIPTCLOBJS) -L . -lnewt  $(LIBTCL) -lpopt
++	$(CC) -shared $(SHCFLAGS) -o whiptcl.so $(WHIPTCLOBJS) -L . -lnewt  $(LIBTCL) $(LIBS) -lpopt
+ 
+ $(LIBNEWT): $(LIBOBJS)
+@@ -119,18 +119,18 @@
+ 	install -m 755 whiptail $(instroot)/$(bindir)
+ 	install -m 644 whiptail.1 $(instroot)/$(man1dir)
+-	make -C po datadir=$(instroot)/$(datadir) install
+-	install -m 644 -D libnewt.pc $(instroot)/$(pkgconfigdir)/libnewt.pc
++	${MAKE} -C po datadir=$(instroot)/$(datadir) install
++	install -m 644 libnewt.pc $(instroot)/$(pkgconfigdir)/libnewt.pc
+ 
+-install-sh: sharedlib $(WHIPTCLSO) _snackmodule.so
++install-sh: sharedlib $(WHIPTCLSO)
+ 	[ -d $(instroot)/$(libdir) ] || install -m 755 -d $(instroot)/$(libdir)
+ 	install -m 755 $(LIBNEWTSH) $(instroot)/$(libdir)
+ 	ln -sf $(LIBNEWTSONAME) $(instroot)/$(libdir)/libnewt.so
+ 	ln -sf $(LIBNEWTSH) $(instroot)/$(libdir)/$(LIBNEWTSONAME)
+-	[ -n "$(WHIPTCLSO)" ] && install -m 755 whiptcl.so $(instroot)/$(libdir) || :
+-	for ver in $(PYTHONVERS) ; do \
+-	   [ -d $(instroot)/$(libdir)/$$ver/site-packages ] || install -m 755 -d $(instroot)/$(libdir)/$$ver/site-packages ;\
+-	   install -m 755 $$ver/_snackmodule.so $(instroot)/$(libdir)/$$ver/site-packages ;\
+-	   install -m 644 snack.py $(instroot)/$(libdir)/$$ver/site-packages ;\
+-	done
++	[ -n "$(WHIPTCLSO)" ] && install -m 755 whiptcl.so ${TCL_LIBDIR}/whip || :
++ifdef PYTHONVERS
++	[ -d $(instroot)/$(libdir)/python${PYTHONVERS}/site-packages ] || install -m 755 -d $(instroot)/$(libdir)/python${PYTHONVERS}/site-packages
++	install -m 755 _snackmodule.so $(instroot)/$(libdir)/python${PYTHONVERS}/site-packages
++	install -m 644 snack.py $(instroot)/$(libdir)/python${PYTHONVERS}/site-packages
++endif
+ 
+ Makefile: newt.spec

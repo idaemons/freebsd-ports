@@ -1,0 +1,10 @@
+include/hangul-1.0/hangul.h
+lib/libhangul.a
+lib/libhangul.la
+lib/libhangul.so
+lib/libhangul.so.1
+libdata/pkgconfig/libhangul.pc
+share/libhangul/hanja/hanja.txt
+@dirrm share/libhangul/hanja
+@dirrm share/libhangul
+@dirrm include/hangul-1.0

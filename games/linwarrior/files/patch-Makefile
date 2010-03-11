@@ -1,0 +1,42 @@
+--- Makefile.orig	2009-11-08 15:59:15.000000000 +0300
++++ Makefile	2009-12-01 15:07:51.000000000 +0300
+@@ -2,7 +2,7 @@
+ # Makefile with auto-dependency generation
+ 
+ # Add Include directories here.
+-INCLUDES = -I psi3d -I source -I .
++INCLUDES = -I psi3d -I source -I . `${SDL_CONFIG} --cflags`
+ 
+ # Automatic searching for source files.
+ # Objects to compile are all sources (cpp) and put the .o below build-dir.
+@@ -20,18 +20,18 @@
+ 	LIMITER=$(dir \file)
+ 	CFLAGS+= -static-libgcc
+ else
+-	LIBRARIES= -lGL -lGLU -lSDL -lopenal -lalut
++	LIBRARIES= -lGL -lGLU `${SDL_CONFIG} --libs` -lopenal -lalut
+ 	TARGET=dist/linwarrior
+ 	MKDIR=mkdir
+ 	RM=rm -f
+ 	RMREC=rm -f -r
+ 	CP=cp
+-	CPP=c++
++	CPP=${CXX}
+ 	LIMITER=/
+ endif
+ 
+ # Creation of dependency information when compiling.
+-CFLAGS += -Wp,-M,-MP,-MT,$@,-MF,dep/$(subst /,-,$@).d
++CFLAGS += 
+ 
+ # Print warnings when compiling.
+ CFLAGS += -Wall
+@@ -40,7 +40,7 @@
+ CFLAGS += $(INCLUDES)
+ 
+ # Optimizations.
+-CFLAGS += -O1 -funroll-loops
++CFLAGS += 
+ 
+ # Default makefile Target.
+ all: $(TARGET)

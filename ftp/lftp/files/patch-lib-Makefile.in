@@ -1,0 +1,43 @@
+--- lib/Makefile.in.orig	2009-12-21 16:27:02.000000000 +0000
++++ lib/Makefile.in	2009-12-28 07:11:54.582266810 +0000
+@@ -1063,8 +1063,6 @@
+ ARG_NONNULL_H = arg-nonnull.h
+ GPERF = gperf
+ LINK_WARNING_H = link-warning.h
+-charset_alias = $(DESTDIR)$(libdir)/charset.alias
+-charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
+ all: $(BUILT_SOURCES) config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+@@ -1877,31 +1875,10 @@
+ 	fi ; \
+ 	if $$need_charset_alias; then \
+ 	  $(mkinstalldirs) $(DESTDIR)$(libdir) ; \
+-	fi ; \
+-	if test -f $(charset_alias); then \
+-	  sed -f ref-add.sed $(charset_alias) > $(charset_tmp) ; \
+-	  $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
+-	  rm -f $(charset_tmp) ; \
+-	else \
+-	  if $$need_charset_alias; then \
+-	    sed -f ref-add.sed charset.alias > $(charset_tmp) ; \
+-	    $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
+-	    rm -f $(charset_tmp) ; \
+-	  fi ; \
+ 	fi
+ 
+ uninstall-local: uninstall-localcharset
+ uninstall-localcharset: all-local
+-	if test -f $(charset_alias); then \
+-	  sed -f ref-del.sed $(charset_alias) > $(charset_tmp); \
+-	  if grep '^# Packages using this file: $$' $(charset_tmp) \
+-	      > /dev/null; then \
+-	    rm -f $(charset_alias); \
+-	  else \
+-	    $(INSTALL_DATA) $(charset_tmp) $(charset_alias); \
+-	  fi; \
+-	  rm -f $(charset_tmp); \
+-	fi
+ 
+ charset.alias: config.charset
+ 	$(AM_V_GEN)rm -f t-$@ $@ && \

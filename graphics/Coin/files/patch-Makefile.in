@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-01-21 18:48:08.000000000 -0200
++++ Makefile.in	2009-01-21 18:48:34.000000000 -0200
+@@ -1302,7 +1302,7 @@
+ 	include/boost/visit_each.hpp
+ 
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(exec_prefix)/libdata/pkgconfig
+ pkgconfig_DATA = Coin.pc
+ 
+ BUILT_SOURCES = \

@@ -1,0 +1,21 @@
+lib/bpipe-fd.so
+lib/libbac.la
+lib/libbac.so
+lib/libbac.so.1
+lib/libbaccfg.la
+lib/libbaccfg.so
+lib/libbaccfg.so.1
+lib/libbacfind.la
+lib/libbacfind.so
+lib/libbacfind.so.1
+lib/libbacpy.la
+lib/libbacpy.so
+lib/libbacpy.so.1
+%%SFDAEMON%%sbin/static-bacula-fd
+sbin/bacula-fd
+sbin/bconsole
+%%WXCONS%%sbin/bwx-console
+@unexec /usr/bin/killall badula-fd > /dev/null 2>&1 || true
+@exec mkdir -p %%BACULA_DIR%%
+@dirrmtry %%BACULA_DIR%%
+@dirrm share/bacula

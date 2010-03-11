@@ -1,0 +1,52 @@
+--- contrib/Makefile.orig	2004-06-24 08:55:52.000000000 +0800
++++ contrib/Makefile	2009-09-06 05:35:24.000000000 +0800
+@@ -3,19 +3,44 @@
+ #CFLAGS	=	-g
+ 
+ # Endian: define either _LITTLE_ENDIAN or _BIG_ENDIAN
+-ENDIAN	=	-D_LITTLE_ENDIAN
++#ENDIAN	=	-D_LITTLE_ENDIAN
+ 
+-CFLAGS	=	-g -I.. -DPROJ4 $(ENDIAN) -DDEBUG -DDEBUG2 
++CFLAGS	+=	-g -I.. -DDEBUG -DDEBUG2 %%ENDIAN%% %%PROJ4%% -I%%PREFIX%%/include -L%%PREFIX%%/lib
+ 
+-SHPOBJ	=	../shpopen.o ../dbfopen.o 
++SHPOBJ	=	../shpopen.o ../dbfopen.o ../safileio.o
+ 
+-SHPGOBJ =	../shpopen.o ../dbfopen.o shpgeo.o
++SHPGOBJ =	../shpopen.o ../dbfopen.o ../safileio.o shpgeo.o
+ 
+ GEOOBJ	=	./shpgeo.o -lm -lproj
+ 
+ default:	all
+ 
+-all:	shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfinfo dbfcat shpinfo shpfix shpcat Shape_PointInPoly shpsort
++#all:	shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfinfo dbfcat shpinfo shpfix shpcat Shape_PointInPoly shpsort
++
++.if defined(PROJ4)
++all:		allprog allproj
++install:	allprog_install allproj_install
++.else
++all:		allprog
++install:	allprog_install
++.endif
++
++ALLPROG=	dbfcat dbfinfo shpcat shpdxf shpfix Shape_PointInPoly
++ALLPROJ=	shpcentrd shpdata shpinfo shpproj shpwkb shpsort
++
++allprog:	$(ALLPROG)
++
++allprog_install:	$(ALLPROG)
++.for _ALLPROG in $(ALLPROG)
++	%%INSTALL%% -c -m 755 ${_ALLPROG} %%PREFIX%%/bin/${_ALLPROG}
++.endfor
++
++allproj:	$(ALLPROJ)
++
++allproj_install:	$(ALLPROJ)
++.for _ALLPROJ in $(ALLPROJ)
++	%%INSTALL%% -c -m 755 ${_ALLPROJ} %%PREFIX%%/bin/${_ALLPROJ}
++.endfor
+ 
+ clean:  
+ 	rm -f shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfcat dbfinfo shpinfo shpfix shpcat *.o

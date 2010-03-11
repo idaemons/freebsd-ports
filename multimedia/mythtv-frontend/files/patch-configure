@@ -1,0 +1,36 @@
+--- configure.orig	2009-10-09 00:30:46.000000000 +0200
++++ configure	2009-11-22 23:33:55.000000000 +0100
+@@ -633,21 +633,21 @@
+     log check_cc "$@"
+     cat > $TMPC
+     log_file $TMPC
+-    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS "$@" -c -o $TMPO $TMPC
++    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPC
+ }
+ 
+ check_cpp(){
+     log check_cpp "$@"
+     cat > $TMPC
+     log_file $TMPC
+-    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS "$@" -E -o $TMPO $TMPC
++    check_cmd $cc $CFLAGS $ECFLAGS $OPTFLAGS -I${prefix}/include "$@" -E -o $TMPO $TMPC
+ }
+ 
+ check_cxx(){
+     log check_cxx "$@"
+     cat > $TMPCXX
+     log_file $TMPCXX
+-    check_cmd $cxx $ECXXFLAGS "$@" -c -o $TMPO $TMPCXX
++    check_cmd $cxx $ECXXFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPCXX
+ }
+ 
+ check_as(){
+@@ -4254,6 +4254,8 @@
+ #       directories, it cannot be modified.
+ QMAKE_LIBDIR_QT -= $libdir
+ LATE_LIBS            += -L$libdir
++CONFIG_INCLUDEPATH=
++FREETYPE_CFLAGS -= -I/usr/local/include
+ EOF
+ 
+ diff $TMPH $MYTH_CONFIG_H >/dev/null 2>&1

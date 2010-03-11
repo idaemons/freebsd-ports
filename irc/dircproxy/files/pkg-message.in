@@ -1,0 +1,4 @@
+
+A default dircproxy configuration file has been installed as
+%%DATADIR%%/dircproxyrc.
+Please read this and the dircproxy(1) manpage to set up dircproxy.

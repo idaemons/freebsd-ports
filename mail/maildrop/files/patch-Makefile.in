@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-06-28 04:13:40.000000000 +0900
++++ Makefile.in	2009-07-01 18:21:44.000000000 +0900
+@@ -259,7 +259,7 @@
+ host_cpu = @host_cpu@
+ host_os = @host_os@
+ host_vendor = @host_vendor@
+-htmldir = $(pkgdatadir)/html
++htmldir = $(datadir)/doc/@PACKAGE@
+ includedir = @includedir@
+ infodir = @infodir@
+ install_sh = @install_sh@

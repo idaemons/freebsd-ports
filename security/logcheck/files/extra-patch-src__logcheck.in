@@ -1,0 +1,181 @@
+--- src/logcheck.orig	2007-01-16 01:13:27.000000000 -0500
++++ src/logcheck	2009-12-17 19:33:34.000000000 -0500
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ #
+ # Copyright (C) 2004-2006 Debian Logcheck Team 
+ #                         <logcheck-devel@alioth.lists.debian.org>
+@@ -26,17 +26,10 @@
+ 
+ if [ $UID == 0 ]; then
+     echo "logcheck should not be run as root. Use su to invoke logcheck:"
+-    echo "su -s /bin/bash -c \"/usr/sbin/logcheck${@:+ $@}\" logcheck"
++    echo "su -m logcheck -c \"/usr/local/bin/bash %%PREFIX%%/sbin/logcheck${@:+ $@}\""
+     echo "Or use sudo: sudo -u logcheck logcheck${@:+ $@}."
+     # you may want to uncomment that hack to let logcheck invoke itself.
+-    # su -s /bin/bash -c "$0 $*" logcheck
+-    exit 1
+-fi
+-
+-if [ ! -f /usr/bin/lockfile-create -o \
+-     ! -f /usr/bin/lockfile-remove -o \
+-     ! -f /usr/bin/lockfile-touch ]; then
+-    echo "fatal: lockfile-progs is a prerequisite for logcheck, and was not found."
++    # su -s /usr/local/bin/bash -c "$0 $*" logcheck
+     exit 1
+ fi
+ 
+@@ -68,12 +61,12 @@
+ ADDTAG="no"
+ 
+ # Set the default paths
+-RULEDIR="/etc/logcheck"
+-CONFFILE="/etc/logcheck/logcheck.conf"
+-STATEDIR="/var/lib/logcheck"
+-LOGFILES_LIST="/etc/logcheck/logcheck.logfiles"
+-LOGFILE_FALLBACK="/var/log/syslog"
+-LOGTAIL="/usr/sbin/logtail2"
++RULEDIR="%%ETCDIR%%"
++CONFFILE="%%ETCDIR%%/logcheck.conf"
++STATEDIR="/var/db/logcheck"
++LOGFILES_LIST="%%ETCDIR%%/logcheck.logfiles"
++LOGFILE_FALLBACK="/var/log/messages"
++LOGTAIL="%%PREFIX%%/sbin/logtail2"
+ CAT="/bin/cat"
+ SYSLOG_SUMMARY="/usr/bin/syslog-summary"
+ 
+@@ -87,26 +80,21 @@
+ SORTUNIQ=0
+ SUPPORT_CRACKING_IGNORE=0
+ SYSLOGSUMMARY=0
+-LOCKDIR=/var/lock/logcheck
++LOCKDIR=/var/run/logcheck
+ LOCKFILE="$LOCKDIR/logcheck"
+ 
+ # Carry out the clean up tasks
+ cleanup() {
+ 
+-    if [ -n "$LOCK" ]; then
+-        debug "cleanup: Killing lockfile-touch - $LOCK"
+-	kill $LOCK && unset LOCK
+-    fi
+-
+-    if [ -f "$LOCKFILE.lock" ]; then
+-        debug "cleanup: Removing lockfile: $LOCKFILE.lock"
+-	lockfile-remove $LOCKFILE
++    if [ -f "$LOCKFILE" ]; then
++        debug "cleanup: Removing lockfile: $LOCKFILE"
++	rm -f $LOCKFILE
+     fi
+ 
+     if [ -d $TMPDIR ]; then
+         # Remove the tmp directory
+         if [ $NOCLEANUP -eq 0 ];then 
+-    	    cd /var/lib/logcheck
++    	    cd /var/db/logcheck
+     	    debug "cleanup: Removing - $TMPDIR" 
+     	    rm -r $TMPDIR
+         else
+@@ -142,14 +130,9 @@
+     if [ "$2" = "noclean" ]; then
+ 	debug "error: Not removing lockfile"
+     else
+-        if [ -n "$LOCK" ]; then
+-	    debug "error: Killing lockfile-touch - $LOCK"
+-	    kill $LOCK && unset LOCK
+-	fi
+-
+-       if [ -f "$LOCKFILE.lock" ]; then
+-           debug "error: Removing lockfile: $LOCKFILE.lock"
+-           lockfile-remove $LOCKFILE
++       if [ -f "$LOCKFILE" ]; then
++           debug "error: Removing lockfile: $LOCKFILE"
++           rm -f $LOCKFILE
+        fi
+ 	
+     fi
+@@ -168,7 +151,7 @@
+ ${TMPDIR:+Check temporary directory: $TMPDIR
+ }
+ Also verify that the logcheck user can read all files referenced in
+-/etc/logcheck/logcheck.logfiles!
++%%ETCDIR%%/logcheck.logfiles!
+ 
+ $(export)
+ EOF
+@@ -185,8 +168,8 @@
+ 
+ # Add an identification line at the beginning of the sent mail
+ setintro() {
+-    if [ -f /etc/logcheck/header.txt -a -r /etc/logcheck/header.txt ] ; then
+-       $CAT /etc/logcheck/header.txt >> $TMPDIR/report \
++    if [ -f %%ETCDIR%%/header.txt -a -r %%ETCDIR%%/header.txt ] ; then
++       $CAT %%ETCDIR%%/header.txt >> $TMPDIR/report \
+            || error "Could not append header to $TMPDIR/report."
+     fi
+ }
+@@ -194,8 +177,8 @@
+ 
+ # Add a footer to the report.
+ setfooter() {
+-    if [ -f /etc/logcheck/footer.txt -a -r /etc/logcheck/footer.txt ] ; then
+-       $CAT /etc/logcheck/footer.txt >> $TMPDIR/report \
++    if [ -f %%ETCDIR%%/footer.txt -a -r %%ETCDIR%%/footer.txt ] ; then
++       $CAT %%ETCDIR%%/footer.txt >> $TMPDIR/report \
+            || error "Could not append footer to $TMPDIR/report."
+     fi
+ }
+@@ -212,8 +195,7 @@
+ 	    mkdir $cleaned \
+ 	        || error "Could not make dir $cleaned for cleaned rulefiles."
+ 	fi
+-	for rulefile in $(run-parts --list $dir); do
+-	    rulefile=$(basename $rulefile)
++	for rulefile in $(ls -1R $dir); do
+ 	    if [ -f ${dir}/${rulefile} ]; then
+ 		debug "cleanrules: ${dir}/${rulefile}"
+ 		if [ -r ${dir}/${rulefile} ]; then
+@@ -544,9 +526,9 @@
+ 
+ # Hostname either fully qualified or not.
+ if [ $FQDN -eq 1 ]; then
+-        HOSTNAME="$(hostname --fqdn)" > /dev/null 2>&1
++        HOSTNAME="$(hostname -f)" > /dev/null 2>&1
+ else
+-        HOSTNAME="$(hostname --short)" > /dev/null 2>&1
++        HOSTNAME="$(hostname -s)" > /dev/null 2>&1
+ fi
+ 		
+ # Now check for the other options
+@@ -625,25 +607,21 @@
+ 
+ trap 'cleanup' 0
+ 
+-debug "Trying to get lockfile: $LOCKFILE.lock"
++debug "Trying to get lockfile: $LOCKFILE"
+ if [ ! -d $LOCKDIR ]; then 
+ 	mkdir -m 0755 $LOCKDIR
+ fi
+-lockfile-create --retry 1 $LOCKFILE > /dev/null 2>&1
++lockfile -r 1 $LOCKFILE > /dev/null 2>&1
+ 
+ 
+ if [ $? -eq 1 ]; then 
+     trap 0
+-    error "Failed to get lockfile: $LOCKFILE.lock" "noclean"
+-else 
+-    debug "Running lockfile-touch $LOCKFILE.lock"
+-    lockfile-touch $LOCKFILE &
+-    LOCK="$!"
++    error "Failed to get lockfile: $LOCKFILE" "noclean"
+ fi
+ 
+ # Create the secure temporary directory or exit
+-TMPDIR=$(mktemp -d -p ${TMP:-/tmp} logcheck.XXXXXX) \
+-    || TMPDIR=$(mktemp -d -p /var/tmp logcheck.XXXXXX) \
++TMPDIR=$(mktemp -d /tmp/logcheck.XXXXXX) \
++    || TMPDIR=$(mktemp -d /var/tmp/logcheck.XXXXXX) \
+     || error "Could not create temporary directory"
+ 
+ # Now clean the rulefiles in the directories

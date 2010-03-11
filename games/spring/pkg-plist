@@ -1,0 +1,268 @@
+bin/spring
+bin/spring-dedicated
+lib/libspringserver.so
+lib/libunitsync.so
+share/applications/spring.desktop
+share/mime/packages/spring.xml
+share/pixmaps/application-x-spring-demo.png
+share/pixmaps/spring.png
+%%DATADIR%%/AI/Interfaces/C/0.1/InterfaceInfo.lua
+%%DATADIR%%/AI/Interfaces/C/0.1/libAIInterface.so
+%%DATADIR%%/AI/Skirmish/AAI/0.9/AIInfo.lua
+%%DATADIR%%/AI/Skirmish/AAI/0.9/AIOptions.lua
+%%DATADIR%%/AI/Skirmish/AAI/0.9/FAQ.txt
+%%DATADIR%%/AI/Skirmish/AAI/0.9/ReadMe.txt
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/general.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/help/example_general.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/help/example_mod.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/2Lakes.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/AATA-RumblingForest.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/AavikkoV2.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Altored_Divide.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Aquatic_Divide_TNM05-V2.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Archers_Valley_v5.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Ashap_Plateau.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Battle_Holms_v4.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/BlackLake_Swamp_v_1.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Blue Planet.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Canyon_Wasteland-v02.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/CenterrockV11.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/CenterrockV12.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Cliff Run-v01.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Coast To Coast Remake.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Comet Catcher Redux.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Comet Catcher Remake-v02.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Comet Catcher Remake.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Cooper_Hill_TNM02-V1.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Core_Prime_Industrial_Area.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Craggy Hills v1.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Crimson_Paradise.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Crossing_4_final.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/DarkSide Remake.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Dead Reef v3.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/DeltaSiegeDry.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Deserted_Gully-v02.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Dueling_Bases-v01.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Evergreen_Haven-Redux-v02.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Evergreen_Haven-v03.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Expandation v01.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/ExpandedTropics.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/FF-AsteroidBattle.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/FF-Surrounded.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Flooded_Canyon-v2.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Flooded_Canyon-v3.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Foothill_Basin_Redux-v02.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Foothills-v08.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Four_Lakes_V2.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/FunTA-Battle_for_Aqua_Prime-v03.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Gods Of War 2 Remake V2.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Green Comet Basic.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Hells Pass.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Ice_Bergs_V2.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Iron_Craters_V1.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/IslandAlpha.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/IslandDivide.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Islands_In_War_1.0.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Long_Division-v01.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Moon Quartet Remake.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/MoonQ20.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/MoonQ20x.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Mountain Siege.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Mountain_Range-v07.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/No_Mans_Land-V03.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Painted Desert Remake V2.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Painted Desert Remake.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Plains_and_passes.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Raised_Divide_v1.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/River Dale-v01.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Road_To_Rome.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Rush_Hour-By_Wired.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/SailAway.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Shore2Shore_Remake-v01.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Small Supreme Battlefield.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Small Supreme Islands V2.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/SmallDivide.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Supreme Battlefield.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Surrounded_Grounds-v2.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Tabula-v2.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Tactical_Divide_v2.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Tangerine.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Tempest.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/The Oasis.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Tropical.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Twilight_Canyon-v01.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Vegan_Canyons-v01.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Verdant v3.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Whakamutunga_Riri-v01.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Winter_Wonderland.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/aftershock.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/cathralda.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/AA5.0project.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/AAIA10.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA695.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA696.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA701.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA704.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BOTA_14.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/CA-BETA1.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/Expand_and_Exterminate_v_0.171.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/FF 1.21 S.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/KuroTA-v047.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/PURE0.51.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/S44Lyuban_v106.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/StarWars01.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/XTAPEV958.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/XTAPEV9585.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/gundam_1.1_epic.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/gundam_1.1_tiny.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/libSkirmishAI.so
+%%DATADIR%%/AI/Skirmish/CppTestAI/0.1/AIInfo.lua
+%%DATADIR%%/AI/Skirmish/CppTestAI/0.1/AIOptions.lua
+%%DATADIR%%/AI/Skirmish/CppTestAI/0.1/libSkirmishAI.so
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/AIInfo.lua
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/AIOptions.lua
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/BA704-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/BA704-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/XTAPEV959-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/XTAPEV959-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/template-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/libSkirmishAI.so
+%%DATADIR%%/AI/Skirmish/KAIK/0.13/AIInfo.lua
+%%DATADIR%%/AI/Skirmish/KAIK/0.13/AIOptions.lua
+%%DATADIR%%/AI/Skirmish/KAIK/0.13/libSkirmishAI.so
+%%DATADIR%%/AI/Skirmish/NullAI/0.1/AIInfo.lua
+%%DATADIR%%/AI/Skirmish/NullAI/0.1/AIOptions.lua
+%%DATADIR%%/AI/Skirmish/NullAI/0.1/libSkirmishAI.so
+%%DATADIR%%/AI/Skirmish/RAI/0.601/AIInfo.lua
+%%DATADIR%%/AI/Skirmish/RAI/0.601/AIOptions.lua
+%%DATADIR%%/AI/Skirmish/RAI/0.601/libSkirmishAI.so
+%%DATADIR%%/LuaUI/CHANGELOG.txt
+%%DATADIR%%/LuaUI/Config/README.txt
+%%DATADIR%%/LuaUI/Fonts/FreeMonoBold_12.lua
+%%DATADIR%%/LuaUI/Fonts/FreeMonoBold_12.png
+%%DATADIR%%/LuaUI/Fonts/README
+%%DATADIR%%/LuaUI/Headers/colors.h.lua
+%%DATADIR%%/LuaUI/Headers/keysym.h.lua
+%%DATADIR%%/LuaUI/Icons/chi.png
+%%DATADIR%%/LuaUI/Icons/cross.png
+%%DATADIR%%/LuaUI/Icons/diamond.png
+%%DATADIR%%/LuaUI/Icons/e.png
+%%DATADIR%%/LuaUI/Icons/hemi-down.png
+%%DATADIR%%/LuaUI/Icons/hemi-up.png
+%%DATADIR%%/LuaUI/Icons/hemi.png
+%%DATADIR%%/LuaUI/Icons/hourglass-side.png
+%%DATADIR%%/LuaUI/Icons/hourglass.png
+%%DATADIR%%/LuaUI/Icons/m-down.png
+%%DATADIR%%/LuaUI/Icons/m-up.png
+%%DATADIR%%/LuaUI/Icons/m.png
+%%DATADIR%%/LuaUI/Icons/sphere.png
+%%DATADIR%%/LuaUI/Icons/square.png
+%%DATADIR%%/LuaUI/Icons/square_+.png
+%%DATADIR%%/LuaUI/Icons/square_x.png
+%%DATADIR%%/LuaUI/Icons/star-dark.png
+%%DATADIR%%/LuaUI/Icons/star.png
+%%DATADIR%%/LuaUI/Icons/tri-down.png
+%%DATADIR%%/LuaUI/Icons/tri-up.png
+%%DATADIR%%/LuaUI/Icons/triangle-down.png
+%%DATADIR%%/LuaUI/Icons/triangle-up.png
+%%DATADIR%%/LuaUI/Icons/x.png
+%%DATADIR%%/LuaUI/Images/flags25x15.png
+%%DATADIR%%/LuaUI/Images/highlight_strip.png
+%%DATADIR%%/LuaUI/Images/players.png
+%%DATADIR%%/LuaUI/Models/colors.lua
+%%DATADIR%%/LuaUI/Models/colors.mtl
+%%DATADIR%%/LuaUI/Models/colors.obj
+%%DATADIR%%/LuaUI/NEWS.txt
+%%DATADIR%%/LuaUI/README.txt
+%%DATADIR%%/LuaUI/Sounds/README.txt
+%%DATADIR%%/LuaUI/Sounds/bounce.wav
+%%DATADIR%%/LuaUI/Sounds/flag_grab.wav
+%%DATADIR%%/LuaUI/Sounds/land.wav
+%%DATADIR%%/LuaUI/Sounds/message_admin.wav
+%%DATADIR%%/LuaUI/Sounds/message_private.wav
+%%DATADIR%%/LuaUI/Sounds/message_team.wav
+%%DATADIR%%/LuaUI/Sounds/pop.wav
+%%DATADIR%%/LuaUI/Sounds/teamgrab.wav
+%%DATADIR%%/LuaUI/Widgets/camera_shake.lua
+%%DATADIR%%/LuaUI/Widgets/camera_smooth_move.lua
+%%DATADIR%%/LuaUI/Widgets/gui_comm_ends.lua
+%%DATADIR%%/LuaUI/Widgets/gui_hilight_unit.lua
+%%DATADIR%%/LuaUI/Widgets/gui_selbuttons.lua
+%%DATADIR%%/LuaUI/Widgets/gui_team_platter.lua
+%%DATADIR%%/LuaUI/Widgets/gui_xray_shader.lua
+%%DATADIR%%/LuaUI/Widgets/minimap_relative.lua
+%%DATADIR%%/LuaUI/Widgets/minimap_startbox.lua
+%%DATADIR%%/LuaUI/Widgets/unit_factory_guard.lua
+%%DATADIR%%/LuaUI/Widgets/unit_immobile_buider.lua
+%%DATADIR%%/LuaUI/Widgets/unit_metal_maker.lua
+%%DATADIR%%/LuaUI/Widgets/unit_stockpile.lua
+%%DATADIR%%/LuaUI/actions.lua
+%%DATADIR%%/LuaUI/callins.lua
+%%DATADIR%%/LuaUI/ctrlpanel.txt
+%%DATADIR%%/LuaUI/debug.lua
+%%DATADIR%%/LuaUI/flags.lua
+%%DATADIR%%/LuaUI/fonts.lua
+%%DATADIR%%/LuaUI/layout.lua
+%%DATADIR%%/LuaUI/loadmodel.lua
+%%DATADIR%%/LuaUI/main.lua
+%%DATADIR%%/LuaUI/savetable.lua
+%%DATADIR%%/LuaUI/selector.lua
+%%DATADIR%%/LuaUI/setupdefs.lua
+%%DATADIR%%/LuaUI/system.lua
+%%DATADIR%%/LuaUI/tweakmode.lua
+%%DATADIR%%/LuaUI/utils.lua
+%%DATADIR%%/LuaUI/widgets.lua
+%%DATADIR%%/PALETTE.PAL
+%%DATADIR%%/base/cursors.sdz
+%%DATADIR%%/base/maphelper.sdz
+%%DATADIR%%/base/spring/bitmaps.sdz
+%%DATADIR%%/base/springcontent.sdz
+%%DATADIR%%/cmdcolors.txt
+%%DATADIR%%/ctrlpanel.txt
+%%DATADIR%%/fonts/AUTHORS
+%%DATADIR%%/fonts/COPYING
+%%DATADIR%%/fonts/CREDITS
+%%DATADIR%%/fonts/FreeSansBold.otf
+%%DATADIR%%/fonts/README
+%%DATADIR%%/luaui.lua
+%%DATADIR%%/selectkeys.txt
+%%DATADIR%%/teamcolors.lua
+%%DATADIR%%/uikeys.txt
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/base/spring
+@dirrm %%DATADIR%%/base
+@dirrm %%DATADIR%%/LuaUI/Widgets
+@dirrm %%DATADIR%%/LuaUI/Sounds
+@dirrm %%DATADIR%%/LuaUI/Models
+@dirrm %%DATADIR%%/LuaUI/Images
+@dirrm %%DATADIR%%/LuaUI/Icons
+@dirrm %%DATADIR%%/LuaUI/Headers
+@dirrm %%DATADIR%%/LuaUI/Fonts
+@dirrm %%DATADIR%%/LuaUI/Config
+@dirrm %%DATADIR%%/LuaUI
+@dirrm %%DATADIR%%/AI/Skirmish/RAI/0.601
+@dirrm %%DATADIR%%/AI/Skirmish/RAI
+@dirrm %%DATADIR%%/AI/Skirmish/NullAI/0.1
+@dirrm %%DATADIR%%/AI/Skirmish/NullAI
+@dirrm %%DATADIR%%/AI/Skirmish/KAIK/0.13
+@dirrm %%DATADIR%%/AI/Skirmish/KAIK
+@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs
+@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.14.5
+@dirrm %%DATADIR%%/AI/Skirmish/E323AI
+@dirrm %%DATADIR%%/AI/Skirmish/CppTestAI/0.1
+@dirrm %%DATADIR%%/AI/Skirmish/CppTestAI
+@dirrm %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod
+@dirrm %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map
+@dirrm %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/help
+@dirrm %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg
+@dirrm %%DATADIR%%/AI/Skirmish/AAI/0.9
+@dirrm %%DATADIR%%/AI/Skirmish/AAI
+@dirrm %%DATADIR%%/AI/Skirmish
+@dirrm %%DATADIR%%/AI/Interfaces/C/0.1
+@dirrm %%DATADIR%%/AI/Interfaces/C
+@dirrm %%DATADIR%%/AI/Interfaces
+@dirrm %%DATADIR%%/AI
+@dirrm %%DATADIR%%
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/applications

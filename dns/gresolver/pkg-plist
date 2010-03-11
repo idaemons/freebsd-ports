@@ -1,0 +1,6 @@
+bin/gresolver
+share/applications/gresolver.desktop
+share/pixmaps/gresolver.png
+%%DATADIR%%/gresolver.glade
+@dirrm %%DATADIR%%
+@dirrmtry share/applications

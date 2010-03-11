@@ -1,0 +1,22 @@
+bin/makepp
+share/makepp/AutoloadComponent.pm
+share/makepp/FileInfo.pm
+share/makepp/FileInfo_makepp.pm
+share/makepp/Glob.pm
+share/makepp/MakeEvent.pm
+share/makepp/Makefile.pm
+share/makepp/Makesubs.pm
+share/makepp/Rule.pm
+share/makepp/Signature.pm
+share/makepp/TextSubs.pm
+share/makepp/c_compilation_md5.mk
+share/makepp/infer_objects.mk
+share/makepp/makepp_builtin_rules.mk
+share/makepp/makepp_default_makefile.mk
+share/makepp/recursive_makepp
+share/makepp/Signature/c_compilation_md5.pm
+share/makepp/Signature/exact_match.pm
+share/makepp/Signature/md5.pm
+share/makepp/Signature/target_newer.pm
+@dirrm share/makepp/Signature
+@dirrm share/makepp

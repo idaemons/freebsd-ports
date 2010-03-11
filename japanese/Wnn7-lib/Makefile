@@ -1,29 +1,44 @@
-# New ports collection makefile for:	Wnn
-# Version required:	4.2
-# Date created:		22 November 1994
-# Whom:			asami
+# New ports collection makefile for:	head files and libraries of Wnn7
+# Date created:		01/07/16
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1994/11/25 18:20:48 asami Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	Wnn4.2
-MASTER_SITES=	ftp://utsun.s.u-tokyo.ac.jp/fj/
-IS_INTERACTIVE=	yes
-WRKSRC=		${WRKDIR}/Xsi
-PKG_ARGS?=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
-			-r ${PKGDIR}/REQ -i ${PKGDIR}/INSTALL -p ${PREFIX}
+PORTNAME=	Wnn7-lib
+PORTVERSION=	2001.10.17
+PORTREVISION=	2
+CATEGORIES=	japanese
+MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn7/sdk_source/
+DISTNAME=	Wnn7SDK
+EXTRACT_SUFX=	.tgz
 
-# These are necesary because this package uses a different Makefile for
-#  building and installing etc.
-pre-build:
-	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} Makefile.inst World)
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	Wnn7 client library
 
-pre-install:
-	@PREFIX=${PREFIX} ${SCRIPTDIR}/pre-install
-# This package uses imake's "install.man" target to install man pages but
-#  I can't define USE_IMAKE because it doesn't involve xmkmf
-	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
+USE_IMAKE=	yes
+USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/src
+PORTDOCS=	README
 
-pre-reinstall: pre-install
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
+		${WRKSRC}/config/Project.tmpl \
+		${WRKSRC}/config/X11.tmpl \
+		${WRKSRC}/Makefile.ini
+
+# Warning: we cannot use USE_IMAKE.
+do-build:
+	cd ${WRKSRC} && make World -f Makefile.ini
+
+post-install:
+	${MKDIR} ${PREFIX}/include/wnn7/wnn
+	${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn7/wnn
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>

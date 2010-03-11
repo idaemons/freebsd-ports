@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# Update the master source trees that are used by package builds
+# and other consumers
+
+# head is handled specially
+HEAD_BRANCH="9"
+NON_HEAD_BRANCHES="6 7 8"
+
+base=/a/snap
+zbase=a/snap
+
+srepo=/r/ncvs
+
+stamp() {
+	fulldate=$1
+        date -j -f %+ "${fulldate}" +%Y%m%d%H%M%S
+}
+
+finish() {
+    err=$1
+
+    end=$(date +%s)
+    echo "Finished at $(date)"
+    len=$((end-begin))
+    echo "Duration = $(date -j -f %s +%H:%M:%S ${len})"
+    exit 1
+}
+
+begin=$(date +%s)
+echo "Started at $(date)"
+
+# We need to preserve group writability so portmgr group can write
+umask 002
+
+#cvsup -g /root/cvs-supfile || finish 1
+
+cd $base/src-${HEAD_BRANCH}
+fulldate=$(date)
+cvs -Rq -d ${srepo} update -PdA -D "${fulldate}"
+echo ${fulldate} > cvsdone
+snapdate=$(stamp ${fulldate})
+zfs snapshot ${zbase}/src-${HEAD_BRANCH}@${snapdate}
+
+for branch in $NON_HEAD_BRANCHES; do
+  cd $base/src-${branch}
+  fulldate=$(date)
+  cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_${branch}
+  echo ${fulldate} > cvsdone
+  snapdate=$(stamp ${fulldate})
+  zfs snapshot ${zbase}/src-${branch}@${snapdate}
+done
+
+finish 0

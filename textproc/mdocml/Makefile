@@ -1,0 +1,25 @@
+# New ports collection makefile for:	textproc/mdocml
+# Date created:				09.03.2009
+# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mdocml
+PORTVERSION=	1.9.15
+CATEGORIES=	textproc
+MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
+  		https://www.spoerlein.net/pub/mdocml/
+
+MAINTAINER=	uqs@FreeBSD.org
+COMMENT=	mdoc macro compiler
+
+MAN1=	mandoc.1
+MAN7=	man.7 mdoc.7
+
+PLIST_SUB+=	EXAMPLESDIR=share/examples/mandoc
+
+pre-install:
+	@${MKDIR} ${EXAMPLESDIR:S/mdocml/mandoc/}
+
+.include <bsd.port.mk>

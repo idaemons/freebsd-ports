@@ -1,0 +1,26 @@
+--- makefile.orig	2009-02-09 20:20:44.000000000 +0000
++++ makefile	2009-12-31 15:05:35.000000000 +0000
+@@ -22,19 +22,12 @@
+ # THIS SOFTWARE.
+ # ****************************************************************/
+ 
+-CFLAGS = -g
+-CFLAGS = -O2
+-CFLAGS =
+-
+-CC = gcc -Wall -g -Wwrite-strings
+-CC = gcc -fprofile-arcs -ftest-coverage # then gcov f1.c; cat f1.c.gcov
+-CC = gcc -Wall -g
+-CC = cc
+-CC = gcc -O4
++CFLAGS ?= -O2
+ 
++CC ?= cc
+ 
+-YACC = bison -y
+-YACC = yacc
++
++YACC ?= yacc
+ YFLAGS = -d
+ 
+ OFILES = b.o main.o parse.o proctab.o tran.o lib.o run.o lex.o

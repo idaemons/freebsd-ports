@@ -1,0 +1,3 @@
+@cwd %%QMAIL_PREFIX%%
+bin/simscanmk
+bin/simscan

@@ -1,0 +1,13 @@
+bin/hex-a-hop
+%%DATADIR%%/graphics/emi.dat
+%%DATADIR%%/graphics/font.dat
+%%DATADIR%%/graphics/gradient.dat
+%%DATADIR%%/graphics/icon.bmp
+%%DATADIR%%/graphics/map.dat
+%%DATADIR%%/graphics/map_top.dat
+%%DATADIR%%/graphics/tiles.dat
+%%DATADIR%%/graphics/tiles_reflect.dat
+%%DATADIR%%/graphics/title.dat
+%%DATADIR%%/levels.dat
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%

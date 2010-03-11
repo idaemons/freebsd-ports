@@ -1,0 +1,182 @@
+bin/exchange-connector-setup-%%VERSION%%
+lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.a
+lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.la
+lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.so
+lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.urls
+libdata/bonobo/servers/GNOME_Evolution_Exchange_Storage_%%VERSION%%.server
+libexec/evolution/%%EVO_VERSION%%/evolution-exchange-storage
+@comment %%DOCSDIR%%/E2kContext.html
+@comment %%DOCSDIR%%/E2kGlobalCatalog.html
+@comment %%DOCSDIR%%/E2kSecurityDescriptor.html
+@comment %%DOCSDIR%%/ch01.html
+@comment %%DOCSDIR%%/ch02.html
+@comment %%DOCSDIR%%/ch03.html
+@comment %%DOCSDIR%%/ch04.html
+@comment %%DOCSDIR%%/ch05.html
+@comment %%DOCSDIR%%/ch06.html
+@comment %%DOCSDIR%%/evolution-exchange-E2kAutoconfig.html
+@comment %%DOCSDIR%%/evolution-exchange-E2kContext-(private).html
+@comment %%DOCSDIR%%/evolution-exchange-E2kOperation-(private).html
+@comment %%DOCSDIR%%/evolution-exchange-E2kOperation.html
+@comment %%DOCSDIR%%/evolution-exchange-E2kProperties.html
+@comment %%DOCSDIR%%/evolution-exchange-E2kRestriction-(vaporware).html
+@comment %%DOCSDIR%%/evolution-exchange-E2kResult-(private).html
+@comment %%DOCSDIR%%/evolution-exchange-E2kSid.html
+@comment %%DOCSDIR%%/evolution-exchange-E2kUserDialog.html
+@comment %%DOCSDIR%%/evolution-exchange-MAPI.html
+@comment %%DOCSDIR%%/evolution-exchange-e2k-action.html
+@comment %%DOCSDIR%%/evolution-exchange-e2k-freebusy.html
+@comment %%DOCSDIR%%/evolution-exchange-e2k-http-utils.html
+@comment %%DOCSDIR%%/evolution-exchange-e2k-kerberos.html
+@comment %%DOCSDIR%%/evolution-exchange-e2k-restriction.html
+@comment %%DOCSDIR%%/evolution-exchange-e2k-result.html
+@comment %%DOCSDIR%%/evolution-exchange-e2k-rule.html
+@comment %%DOCSDIR%%/evolution-exchange-e2k-uri.html
+@comment %%DOCSDIR%%/evolution-exchange-e2k-utils.html
+@comment %%DOCSDIR%%/evolution-exchange-e2k-xml-utils.html
+@comment %%DOCSDIR%%/evolution-exchange-test-utils.html
+@comment %%DOCSDIR%%/evolution-exchange-xntlm-des.html
+@comment %%DOCSDIR%%/evolution-exchange-xntlm-md4.html
+@comment %%DOCSDIR%%/evolution-exchange-xntlm.html
+@comment %%DOCSDIR%%/evolution-exchange.devhelp
+@comment %%DOCSDIR%%/evolution-exchange.devhelp2
+@comment %%DOCSDIR%%/home.png
+@comment %%DOCSDIR%%/index.html
+@comment %%DOCSDIR%%/index.sgml
+@comment %%DOCSDIR%%/left.png
+@comment %%DOCSDIR%%/right.png
+@comment %%DOCSDIR%%/style.css
+@comment %%DOCSDIR%%/up.png
+@comment %%DOCSDIR%%/ximian-connector-autoconfig.html
+@comment %%DOCSDIR%%/ximian-connector-bug-private.html
+@comment %%DOCSDIR%%/ximian-connector-bug-xml.html
+@comment %%DOCSDIR%%/ximian-connector-calendar.html
+@comment %%DOCSDIR%%/ximian-connector-delegation.html
+@comment %%DOCSDIR%%/ximian-connector-favorites.html
+@comment %%DOCSDIR%%/ximian-connector-fba.html
+@comment %%DOCSDIR%%/ximian-connector-freebusy.html
+@comment %%DOCSDIR%%/ximian-connector-mail-threading.html
+@comment %%DOCSDIR%%/ximian-connector-mail.html
+@comment %%DOCSDIR%%/ximian-connector-ntlm.html
+@comment %%DOCSDIR%%/ximian-connector-oof.html
+@comment %%DOCSDIR%%/ximian-connector-other-users.html
+@comment %%DOCSDIR%%/ximian-connector-permissions.html
+@comment %%DOCSDIR%%/ximian-connnector-booking.html
+%%DATADIR%%/%%VERSION%%/glade/exchange-autoconfig-wizard.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-change-password.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-delegates.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-folder-tree.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-oof.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-passwd-expiry.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-permissions-dialog.glade
+%%DATADIR%%/%%VERSION%%/images/connector-mini.png
+%%DATADIR%%/%%VERSION%%/images/connector.png
+%%DATADIR%%/%%VERSION%%/images/exchange-delegates-48.png
+%%DATADIR%%/%%VERSION%%/images/exchange-oof-48.png
+%%DATADIR%%/%%VERSION%%/ui/ximian-connector.xml
+share/locale/ar/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/as/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/az/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/bg/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/bn/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/bn_IN/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ca/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ca@valencia/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/cs/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/cy/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/da/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/de/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/dz/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/el/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/en_CA/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/en_GB/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/es/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/et/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/eu/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/fa/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/fi/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/fr/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/gl/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/gu/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/he/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/hi/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/hu/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/id/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/it/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ja/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ka/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/kn/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ko/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ku/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/lt/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/lv/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/mai/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/mk/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ml/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/mn/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/mr/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ms/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/nb/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ne/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/nl/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/nn/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/oc/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/or/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/pa/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/pl/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/pt/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/pt_BR/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ro/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ru/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/rw/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/si/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/sk/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/sl/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/sq/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/sr/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/sr@latin/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/sv/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ta/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/te/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/th/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/tr/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/uk/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/vi/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/xh/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/zh_CN/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/zh_HK/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/zh_TW/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+@dirrm %%DATADIR%%/%%VERSION%%/ui
+@dirrm %%DATADIR%%/%%VERSION%%/images
+@dirrm %%DATADIR%%/%%VERSION%%/glade
+@dirrm %%DATADIR%%/%%VERSION%%
+@dirrm %%DATADIR%%
+@comment @dirrm %%DOCSDIR%%
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

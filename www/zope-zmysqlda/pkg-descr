@@ -1,0 +1,4 @@
+ZMySQLDA is a database adapter which allows the Zope web application
+development framework to interact with MySQL databases.
+
+WWW:    http://www.zope.org/Members/adustman/Products/ZMySQLDA/

@@ -1,0 +1,29 @@
+--- src/makefile.bsd.orig	Thu Apr 28 00:00:00 2005
++++ src/makefile.bsd	Wed Aug  3 18:50:24 2005
+@@ -20,7 +20,7 @@
+ mandir	= $(prefix)/share/man
+ rundir	= $(prefix)/share/mined
+ # FreeBSD:
+-#docdir	= $(lprefix)/share/doc/mined
++docdir	= $(lprefix)/share/doc/mined
+ # NetBSD (few packages), OpenBSD:
+ #docdir	= $(lprefix)/share/doc/html/mined
+ 
+@@ -30,7 +30,7 @@
+ lmandir	= $(lprefix)/man
+ lrundir	= $(lprefix)/share/mined
+ # FreeBSD, OpenBSD:
+-#ldocdir	= $(lprefix)/share/doc/mined
++ldocdir	= $(lprefix)/share/doc/mined
+ 
+ INSTALL = install
+ #INSTALL = /bin/cp -p
+@@ -108,7 +108,7 @@
+ # compiler selection and compiler-specific options
+ # (source warnings, optimisation and debug)
+ 
+-CC=gcc
++#CC=gcc
+ include mkinclud.$(CC)
+ 
+ 

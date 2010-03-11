@@ -1,0 +1,70 @@
+# $FreeBSD$
+#
+
+   COMMENT = Ports for managing, installing and developing FreeBSD ports and packages
+
+   SUBDIR += barry
+   SUBDIR += bpkg
+   SUBDIR += bpm
+   SUBDIR += fastest_sites
+   SUBDIR += genplist
+   SUBDIR += jailaudit
+   SUBDIR += kports
+   SUBDIR += kports-qt4
+   SUBDIR += lsknobs
+   SUBDIR += managepkg
+   SUBDIR += p5-App-Pm2Port
+   SUBDIR += p5-FreeBSD-Pkgs
+   SUBDIR += p5-FreeBSD-Pkgs-FindUpdates
+   SUBDIR += p5-FreeBSD-Portindex
+   SUBDIR += p5-FreeBSD-Ports
+   SUBDIR += p5-FreeBSD-Ports-INDEXhash
+   SUBDIR += pib
+   SUBDIR += pkg-orphan
+   SUBDIR += pkg_add_it
+   SUBDIR += pkg_cleanup
+   SUBDIR += pkg_cutleaves
+   SUBDIR += pkg_install
+   SUBDIR += pkg_remove
+   SUBDIR += pkg_replace
+   SUBDIR += pkg_rmleaves
+   SUBDIR += pkg_search
+   SUBDIR += pkg_trackinst
+   SUBDIR += pkg_tree
+   SUBDIR += pkgfe
+   SUBDIR += pkgsearch
+   SUBDIR += port-authoring-tools
+   SUBDIR += port-maintenance-tools
+   SUBDIR += portaudit
+   SUBDIR += portaudit-db
+   SUBDIR += portcheck
+   SUBDIR += portcheckout
+   SUBDIR += portconf
+   SUBDIR += portdowngrade
+   SUBDIR += porte
+   SUBDIR += porteasy
+   SUBDIR += portell
+   SUBDIR += portless
+   SUBDIR += portlint
+   SUBDIR += portmanager
+   SUBDIR += portmaster
+   SUBDIR += portmk
+   SUBDIR += portrac
+   SUBDIR += portscout
+   SUBDIR += portsearch
+   SUBDIR += portsman
+   SUBDIR += portsopt
+   SUBDIR += porttools
+   SUBDIR += portupdate-scan
+   SUBDIR += portupgrade
+   SUBDIR += portupgrade-devel
+   SUBDIR += psearch
+   SUBDIR += pver
+   SUBDIR += qtpkg
+   SUBDIR += symports
+   SUBDIR += tinderbox
+   SUBDIR += tinderbox-devel
+   SUBDIR += vulnerability-test-port
+   SUBDIR += xps
+
+.include <bsd.port.subdir.mk>

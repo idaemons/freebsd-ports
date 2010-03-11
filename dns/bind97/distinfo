@@ -1,0 +1,6 @@
+MD5 (bind-9.7.0.tar.gz) = c245b5d1aa0a4f53d9538faa1efe2c3f
+SHA256 (bind-9.7.0.tar.gz) = 35d0281b313b038600ea3a20d08e9d4736e5a69e950cc3aac14ae7433061dcb3
+SIZE (bind-9.7.0.tar.gz) = 7123585
+MD5 (bind-9.7.0.tar.gz.asc) = 572c67cf265189b4101a6e034977a785
+SHA256 (bind-9.7.0.tar.gz.asc) = cc6c10269a619693c10529fd0bda3c066b5ba4b4074180ac785d567550d7618b
+SIZE (bind-9.7.0.tar.gz.asc) = 480

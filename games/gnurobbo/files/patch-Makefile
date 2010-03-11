@@ -1,0 +1,37 @@
+--- Makefile.orig	2009-12-07 19:17:37.000000000 +0300
++++ Makefile	2009-12-28 23:14:47.000000000 +0300
+@@ -8,9 +8,9 @@
+ #BINDIR=$(HOME)/Games/$(TARGET)/
+ #DOCDIR=$(HOME)/Games/$(TARGET)/
+ # The current folder:
+-PACKAGE_DATA_DIR=./data/
+-BINDIR=./
+-DOCDIR=./
++PACKAGE_DATA_DIR=${DATADIR}
++BINDIR=${PREFIX}/bin
++DOCDIR=${DOCSDIR}
+ 
+ # Uncomment the line below if you want to have music support
+ #MUSIC=-DHAVE_MUSIC="yes"
+@@ -26,8 +26,8 @@
+ VERSION=$(shell cat VERSION)
+ 
+ # These should be ok for most
+-SDL_CONFIG=sdl-config
+-CFLAGS=-O3 -pipe -Wall -fomit-frame-pointer `$(SDL_CONFIG) --cflags` -DPLATFORM_PC -DVERSION=\"$(VERSION)\" -DPACKAGE_DATA_DIR=\"$(PACKAGE_DATA_DIR)/\" $(FONT_USE_PIXMAP) $(MUSIC)
++SDL_CONFIG?=sdl-config
++CFLAGS+=-Wall -fomit-frame-pointer `$(SDL_CONFIG) --cflags` -DPLATFORM_PC -DVERSION=\"$(VERSION)\" -DPACKAGE_DATA_DIR=\"$(PACKAGE_DATA_DIR)/\" $(FONT_USE_PIXMAP) $(MUSIC)
+ LINK=$(CC)
+ LDFLAGS=
+ LIBS=`$(SDL_CONFIG) --libs` -lSDL_image -lSDL_mixer $(FONT_USE_SDL_TTF)
+@@ -47,10 +47,6 @@
+ 	rm $(OBJECTS)
+ 
+ install:
+-	@if [[ "$(PACKAGE_DATA_DIR)" == ./* ]] ; then \
+-	echo "Installing into the current folder is not allowed."; \
+-	exit 2; \
+-	fi			
+ 	mkdir -p $(PACKAGE_DATA_DIR)/levels
+ 	mkdir -p $(PACKAGE_DATA_DIR)/sounds/default
+ 	mkdir -p $(PACKAGE_DATA_DIR)/sounds/oily

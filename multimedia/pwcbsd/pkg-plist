@@ -1,0 +1,5 @@
+%%PROGRAMS%%bin/pwcview
+@cwd /boot/modules
+pwc.ko
+@exec kldxref %D
+@unexec kldxref %D
