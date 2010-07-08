@@ -1,0 +1,12 @@
+--- cpp/Makefile.bak	2008-05-16 19:24:00.000000000 +0200
++++ cpp/Makefile	2008-07-31 13:37:25.000000000 +0200
+@@ -12,6 +12,9 @@
+ include $(top_srcdir)/config/Make.rules
+ 
+ SUBDIRS		= config src include test demo
++ifneq ($(NOPORTDOCS),yes)
++SUBDIRS		+= doc
++endif
+ 
+ INSTALL_SUBDIRS	= $(install_bindir) $(install_libdir) $(install_includedir) $(install_configdir)
+ 

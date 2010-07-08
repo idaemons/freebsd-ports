@@ -1,0 +1,42 @@
+bin/knutclient
+share/applications/kde4/knutclient.desktop
+share/apps/knutclient/knutclient.notifyrc
+share/apps/knutclient/knutclientui.rc
+share/apps/knutclient/pics/knc_analog.png
+share/apps/knutclient/pics/knc_batt.png
+share/apps/knutclient/pics/knc_conn.png
+share/apps/knutclient/pics/knc_dock.png
+share/apps/knutclient/pics/knc_error.png
+share/apps/knutclient/pics/knc_main.png
+share/apps/knutclient/pics/knc_mpref.png
+share/apps/knutclient/pics/knc_mset.png
+share/apps/knutclient/pics/knc_panel.png
+share/apps/knutclient/pics/knc_ups.png
+share/apps/knutclient/pics/knc_upses.png
+share/config.kcfg/knutclient.kcfg
+share/icons/hicolor/16x16/apps/knutclient.png
+share/icons/hicolor/16x16/apps/knutclientconn.png
+share/icons/hicolor/16x16/apps/knutclienterr.png
+share/icons/hicolor/22x22/apps/knutclient.png
+share/icons/hicolor/32x32/apps/knutclient.png
+share/icons/hicolor/48x48/apps/knutclient.png
+share/icons/locolor/16x16/apps/knutclient.png
+share/icons/locolor/16x16/apps/knutclientconn.png
+share/icons/locolor/16x16/apps/knutclienterr.png
+share/icons/locolor/32x32/apps/knutclient.png
+share/locale/cs/LC_MESSAGES/knutclient.mo
+share/locale/de/LC_MESSAGES/knutclient.mo
+share/locale/es/LC_MESSAGES/knutclient.mo
+share/locale/fr/LC_MESSAGES/knutclient.mo
+share/locale/it/LC_MESSAGES/knutclient.mo
+share/locale/pl/LC_MESSAGES/knutclient.mo
+share/locale/pt_BR/LC_MESSAGES/knutclient.mo
+share/locale/ru/LC_MESSAGES/knutclient.mo
+share/locale/uk/LC_MESSAGES/knutclient.mo
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
+@dirrm share/apps/knutclient/pics
+@dirrm share/apps/knutclient

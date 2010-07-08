@@ -1,0 +1,24 @@
+--- Documentation/Makefile.orig	2010-03-07 17:13:40.000000000 -0500
++++ Documentation/Makefile	2010-03-14 12:02:57.551179596 -0400
+@@ -30,10 +30,10 @@
+ DOC_MAN5=$(patsubst %.txt,%.5,$(MAN5_TXT))
+ DOC_MAN7=$(patsubst %.txt,%.7,$(MAN7_TXT))
+ 
+-prefix?=$(HOME)
++prefix?=$(PREFIX)
+ bindir?=$(prefix)/bin
+-htmldir?=$(prefix)/share/doc/git-doc
+-pdfdir?=$(prefix)/share/doc/git-doc
++htmldir?=$(prefix)/share/doc/git
++pdfdir?=$(prefix)/share/doc/git
+ mandir?=$(prefix)/share/man
+ man1dir=$(mandir)/man1
+ man5dir=$(mandir)/man5
+@@ -162,7 +162,7 @@
+ endif
+ endif
+ 
+-all: html man
++all: html
+ 
+ html: $(DOC_HTML)

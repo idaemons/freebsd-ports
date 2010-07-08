@@ -1,0 +1,2 @@
+Esmart contains "smart" pre-built evas objects.  It currently includes
+a thumbnail generator and a horizontal/vertical container.

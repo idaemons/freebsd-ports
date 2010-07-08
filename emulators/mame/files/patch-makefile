@@ -1,0 +1,22 @@
+--- makefile.orig	2010-05-18 09:19:49.000000000 +0200
++++ makefile	2010-05-18 09:21:03.000000000 +0200
+@@ -281,8 +281,8 @@
+ 
+ # compiler, linker and utilities
+ AR = @ar
+-CC = @gcc
+-LD = @g++
++CC:= @$(CC)
++LD:= @$(CXX)
+ MD = -mkdir$(EXE)
+ RM = @rm -f
+ 
+@@ -329,7 +329,7 @@
+ endif
+ 
+ # fullname is prefix+name+suffix+suffix64+suffixdebug
+-FULLNAME = $(PREFIX)$(PREFIXSDL)$(NAME)$(SUFFIX)$(SUFFIX64)$(SUFFIXDEBUG)$(SUFFIXGPROF)
++FULLNAME = $(NAME)
+ 
+ # add an EXE suffix to get the final emulator name
+ EMULATOR = $(FULLNAME)$(EXE)

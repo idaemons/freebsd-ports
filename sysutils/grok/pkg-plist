@@ -1,0 +1,9 @@
+bin/grok
+include/grok.h
+include/grok_capture.h
+include/grok_capture_xdr.h
+include/grok_logging.h
+include/grok_match.h
+include/grok_pattern.h
+include/grokre.h
+lib/libgrok.so

@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	Wed Jan 18 15:40:30 2006
++++ src/Makefile.in	Wed Jan 18 15:40:46 2006
+@@ -325,7 +325,6 @@
+ 
+ iruntime::
+ 		$(INSTALL_DATA) $(RUNTIME) $(DESTDIR)$(PLBASE)/lib/$(ARCH)
+-		$(RANLIB) $(DESTDIR)$(PLBASE)/lib/$(ARCH)/$(PLLIB)
+ ifeq ($(SOEXT),dylib)
+ 		if [ -f $(RUNTIMEDIR)/$(SHARED) ]; then \
+ 		  $(INSTALL_DATA) $(RUNTIMEDIR)/$(SHARED) $(DESTDIR)$(PLBASE)/lib/$(ARCH) ; \

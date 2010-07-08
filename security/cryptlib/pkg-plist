@@ -1,0 +1,5 @@
+include/cryptlib.h
+lib/libcl.a
+lib/libcl.so
+lib/libcl.so.3
+lib/libcl.so.3.3.0

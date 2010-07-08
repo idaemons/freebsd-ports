@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+libexec/psif
+libexec/lprps
+libexec/psof
+libexec/psif-text
+libexec/psif-ps
+%%DATADIR%%/banner.ps
+bin/textps
+bin/psrev
+@dirrm %%DATADIR%%

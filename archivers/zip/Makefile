@@ -1,21 +1,35 @@
 # New ports collection makefile for:    zip
-# Version required:     2.0.1
-# Date created:         22 Dec 1994
-# Whom:                 ache
+# Date created:		22 Dec 1994
+# Whom:			ache
 #
-# $Id: Makefile,v 1.4 1994/12/17 07:35:01 ache Exp $
+# $FreeBSD$
 #
-DISTNAME=       zip201
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
-ALL_TARGET=     freebsd
 
-pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/man/man1
+PORTNAME=	zip
+PORTVERSION=	3.0
+CATEGORIES=	archivers
+MASTER_SITES=	SF/info${PORTNAME}/Zip%203.x%20%28latest%29/${PORTVERSION}
+DISTFILES=	${PORTNAME}30${EXTRACT_SUFX}
+USE_ZIP=	yes
 
-install:
-	cd ${WRKSRC}; install -c -o bin -g bin zip.1 zipgrep.1 ${PREFIX}/man/man1
-	cd ${WRKSRC}; install -c -o bin -g bin zip zipnote zipsplit zipcloak zipgrep ${PREFIX}/bin
+MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Create/update ZIP files compatible with pkzip
+
+WRKSRC=		${WRKDIR}/${PORTNAME}30
+MAKEFILE=	unix/Makefile
+ALL_TARGET=	generic
+MAN1=		zip.1 zipcloak.1 zipnote.1 zipsplit.1
+
+PLIST_FILES=	\
+	bin/zip \
+	bin/zipcloak \
+	bin/zipnote \
+	bin/zipsplit
+
+do-install:
+.for file in zip zipcloak zipnote zipsplit
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/${file}.1 ${PREFIX}/man/man1
+.endfor
 
 .include <bsd.port.mk>

@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+include/dbh.h
+include/dbh_config.h
+include/dbh_functions.h
+lib/libdbh-4.5.so
+lib/libdbh-4.5.so.4
+lib/libdbh.a
+lib/libdbh.so
+libdata/pkgconfig/dbh.pc

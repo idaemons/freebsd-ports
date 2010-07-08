@@ -1,0 +1,16 @@
+--- makefile.orig	2009-06-23 11:49:24.000000000 +0400
++++ makefile	2009-06-23 11:50:10.000000000 +0400
+@@ -1,10 +1,10 @@
+ UNAME_S:=$(shell uname -s)
+ 
+ # defaults
+-CC = gcc
++CC ?= gcc
+ OPTIONS=-g -Wall
+-LDLIBS=-lc -lm
+-CFLAGS=
++LDLIBS+=-lc -lm
++CFLAGS?=
+ 
+ # FreeBSD
+ ifeq ("FreeBSD", "$(UNAME_S)")

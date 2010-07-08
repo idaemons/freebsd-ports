@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+bin/filebucket
+bin/pi
+bin/puppet
+bin/puppetdoc
+bin/ralsh
+sbin/puppetca
+sbin/puppetd
+sbin/puppetmasterd
+sbin/puppetqd
+sbin/puppetrun
+etc/puppet/puppet.conf-dist
+@exec mkdir -p %D/etc/puppet/ssl
+@exec mkdir -p %D/etc/puppet/manifests
+@dirrmtry etc/puppet/ssl
+@dirrmtry etc/puppet/manifests
+@dirrmtry etc/puppet

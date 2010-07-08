@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Getopt/Euclid.pm
+%%SITE_PERL%%/Getopt/Euclid/HierDemo.pm
+@dirrmtry %%SITE_PERL%%/Getopt/Euclid
+@dirrmtry %%SITE_PERL%%/Getopt

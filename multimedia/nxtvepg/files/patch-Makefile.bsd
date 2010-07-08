@@ -1,0 +1,38 @@
+--- Makefile.bsd.orig	2005-01-01 16:35:26.000000000 -0200
++++ Makefile.bsd	2009-10-21 22:28:33.000000000 -0200
+@@ -69,15 +69,10 @@
+ ECHO            ?= @echo
+ 
+ # Paths
+-ROOT    =
+ exec_prefix = ${prefix}
+-bindir  = $(ROOT)${exec_prefix}/bin
+-mandir  = $(ROOT)${prefix}/man/man1
+-ifeq ($(OS), FreeBSD)
+-resdir  = $(ROOT)/usr/X11R6/lib/X11
+-else
++bindir  = ${exec_prefix}/bin
++mandir  = ${prefix}/man/man1
+ resdir  = $(LOCALBASE)/lib/X11
+-endif
+ 
+ # other settings
+ OPTFLAGS = -O -pipe -g
+@@ -117,7 +112,7 @@
+ 
+ ifndef USER_DBDIR
+ DEFS        += -DEPG_DB_DIR=\"$(SYS_DBDIR)\"
+-INST_DB_DIR  = $(ROOT)$(SYS_DBDIR)
++INST_DB_DIR  = $(SYS_DBDIR)
+ INST_DB_PERM = 0777
+ endif
+ 
+@@ -128,7 +123,7 @@
+ CFLAGS += $(WARN) $(INCS) $(DEFS)
+ LDFLAGS += -lm
+ #LDFLAGS += -pg
+-
++BUILD_DIR=     ${WRKSRC}
+ 
+ all :: printconfig
+ 

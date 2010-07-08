@@ -1,0 +1,155 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# Set up the build variables which are used by a given build.  Some
+#    of the code here is common to both clients and server; some is
+#    particular to each.
+
+# get the major branch number.  only used on server side.
+get_branch_base() {
+    strippedbranch=${1%%[-\.]*}
+    branchbase=`echo $strippedbranch | grep ${SRC_BRANCHES_PATTERN}`
+    echo ${branchbase}
+}
+
+# only used on server side
+validate_env() {
+    arch=$1
+    branch=$2
+
+    valid_arch=0
+    for i in ${SUPPORTED_ARCHS}; do
+	if [ ${i} = ${arch} ]; then
+	    valid_arch=1
+	    break
+	fi
+    done
+    if [ $valid_arch = 0 ]; then
+	echo "Invalid arch: ${arch}"
+	return 1
+    fi
+
+    branchbase=$(get_branch_base ${branch})
+    if [ -z "${branchbase}" ]; then
+	echo "Invalid branch: ${branch}"
+	return 1
+    fi
+
+    return 0
+}
+
+# only used on server side
+resolve() {
+    pb=$1
+    arch=$2
+    branch=$3
+    buildid=$4
+
+    # Resolve a possibly symlinked buildid (e.g. "latest") to the
+    # underlying physical directory
+
+    pbab=${pb}/${arch}/${branch}
+    builddir=${pbab}/builds/${buildid}/
+
+    if [ ! -d ${builddir} ]; then
+	return 1
+    else
+	builddir=$(realpath ${builddir})
+    fi
+
+    buildid=${builddir%/}
+    buildid=${buildid##*/}
+    echo ${buildid}
+}
+
+#
+# establish commonly-used environment variables (server-side)
+#
+buildenv () {
+    pb=$1
+    arch=$2
+    branch=$3
+    builddir=$4
+
+    buildenv.common ${pb} ${arch} ${branch} ${builddir}
+
+    # override things destined for bsd.port.mk
+    export LOCALBASE=/usr/local
+    export DISTDIR=${builddir}/distfiles
+    export PACKAGES=${builddir}/packages
+    export PKGSUFFIX=.tbz
+
+    # now unused:
+    # export PKGZIPCMD=bzip2
+
+    branchbase=$(get_branch_base ${branch})
+    if [ -z "${branchbase}" ]; then
+	echo "buildenv: invalid branch ${branch}"
+	exit 1
+    else
+	export INDEXFILE=INDEX-${branchbase}
+    fi
+
+    # probably only used in mkbindist
+    export __MAKE_CONF=${pb}/${arch}/make.conf
+}
+
+#
+# establish commonly-used environment variables (client-side)
+#
+buildenv.client() {
+    pb=$1
+    arch=$2
+    branch=$3
+    builddir=$4
+
+    buildenv.common ${pb} ${arch} ${branch} ${builddir}
+
+    # Don't pick up host OPTIONS
+    export PORT_DBDIR=/nonexistent
+
+    # manually override results of uname(1)
+    export UNAME_m=${ARCH}
+    export UNAME_n=freebsd.org
+    export UNAME_p=${ARCH}
+    export UNAME_r=${OSREL}-${BRANCH}
+    export UNAME_s=FreeBSD
+    export UNAME_v="FreeBSD ${OSREL}-${BRANCH} #0: $(date)     portmgr@freebsd.org:/usr/src/sys/magic/kernel/path"
+}
+
+#
+# establish commonly-used environment variables (common to clients and server)
+#
+buildenv.common() {
+    pb=$1
+    arch=$2
+    branch=$3
+    builddir=$4
+
+    # Have to use realpath because 'make index' doesn't deal with
+    # symlinks in PORTSDIR - kk 020311
+    if [ -d ${builddir}/ports/ ]; then
+	export PORTSDIR=$(realpath ${builddir}/ports)
+    else
+	export PORTSDIR=/nonexistent
+    fi
+    if [ -d ${builddir}/src/ ]; then
+	export SRCBASE=$(realpath ${builddir}/src)
+    else
+	export SRCBASE=/nonexistent
+    fi
+
+    if [ -f ${SRCBASE}/sys/sys/param.h ]; then
+	export OSVERSION=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCBASE}/sys/sys/param.h)
+    fi
+    if [ -f ${SRCBASE}/sys/conf/newvers.sh ]; then
+	export OSREL=$(awk 'BEGIN {FS="\""}; /^REVISION/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
+	export BRANCH=$(awk 'BEGIN {FS="\""}; /^BRANCH/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
+    fi
+
+    export ARCH=${arch}
+    export MACHINE_ARCH=${arch}
+
+    export BATCH=1
+    export PACKAGE_BUILDING=1
+}

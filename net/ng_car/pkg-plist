@@ -1,0 +1,5 @@
+include/netgraph/ng_car.h
+@dirrmtry include/netgraph
+@cwd %%KMODDIR%%
+ng_car.ko
+@unexec kldxref %D

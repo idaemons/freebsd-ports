@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/alex
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%

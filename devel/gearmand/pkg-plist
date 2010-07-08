@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+bin/gearman
+include/libgearman/byteorder.h
+include/libgearman/client.h
+include/libgearman/command.h
+include/libgearman/configure.h
+include/libgearman/connection.h
+include/libgearman/constants.h
+include/libgearman/core.h
+include/libgearman/gearman.h
+include/libgearman/job.h
+include/libgearman/log.h
+include/libgearman/packet.h
+include/libgearman/strerror.h
+include/libgearman/task.h
+include/libgearman/universal.h
+include/libgearman/visibility.h
+include/libgearman/worker.h
+lib/libgearman.la
+lib/libgearman.so
+lib/libgearman.so.4
+libdata/pkgconfig/gearmand.pc
+sbin/gearmand
+@dirrmtry include/libgearman

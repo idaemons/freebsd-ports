@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%APACHEMODDIR%%/%%AP_MODULE%%
+%%APACHEMODDIR%%/mod_memcache_example.so
+@dirrmtry %%APACHEMODDIR%%

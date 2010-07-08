@@ -1,0 +1,15 @@
+
+***********************************************************************
+                            ** WARNING **                             *
+                                                                      *
+* Please read the README file before running "scamp.sh"               *
+* If updating from an earlier version, it is suggested                *
+* that you first run:                                                 *
+*                                                                     *
+* "scamp.sh -D" to delete all old configuration. Then, running        *
+* "scamp.sh" will cause the script to create a new configuration      *
+*                                                                     *
+* You will need to manually create any additional configuration files.*
+* Read the README or type "man scamp" for further assistance.         *
+*                                                                     *
+***********************************************************************

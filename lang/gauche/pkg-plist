@@ -1,0 +1,324 @@
+%%DOCSDIR%%/.keepme
+%%EXAMPLESDIR%%/.keepme
+bin/gauche-cesconv
+bin/gauche-config
+bin/gauche-install
+bin/gauche-package
+bin/gosh
+lib/gauche/%%VERSION%%/%%TARGET%%/binary--io.so
+lib/gauche/%%VERSION%%/%%TARGET%%/dbm--ndbm.so
+lib/gauche/%%VERSION%%/%%TARGET%%/file--util.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--auxsys.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--charconv.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--collection.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--fcntl.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--hook.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--net.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--parameter.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--sequence.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--syslog.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--termios.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--threads.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche--vport.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-cesconv
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-config
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-install
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-package
+lib/gauche/%%VERSION%%/%%TARGET%%/gosh
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-uvector.so
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.so
+lib/gauche/%%VERSION%%/%%TARGET%%/math--mt-random.so
+lib/gauche/%%VERSION%%/%%TARGET%%/rfc--md5.so
+lib/gauche/%%VERSION%%/%%TARGET%%/rfc--sha.so
+lib/gauche/%%VERSION%%/%%TARGET%%/rfc--zlib.so
+lib/gauche/%%VERSION%%/%%TARGET%%/srfi-1.so
+lib/gauche/%%VERSION%%/%%TARGET%%/srfi-13.so
+lib/gauche/%%VERSION%%/%%TARGET%%/srfi-19.so
+lib/gauche/%%VERSION%%/%%TARGET%%/srfi-43.so
+lib/gauche/%%VERSION%%/%%TARGET%%/sxml--serializer.so
+lib/gauche/%%VERSION%%/%%TARGET%%/sxml--ssax.so
+lib/gauche/%%VERSION%%/%%TARGET%%/sxml--sxpath.so
+lib/gauche/%%VERSION%%/%%TARGET%%/sxml--tools.so
+lib/gauche/%%VERSION%%/%%TARGET%%/text--gettext.so
+lib/gauche/%%VERSION%%/%%TARGET%%/text--tr.so
+lib/gauche/%%VERSION%%/%%TARGET%%/util--match.so
+lib/gauche/%%VERSION%%/%%TARGET%%/util--sparse.so
+lib/gauche/%%VERSION%%/include/gauche.h
+lib/gauche/%%VERSION%%/include/gauche/arch.h
+lib/gauche/%%VERSION%%/include/gauche/bignum.h
+lib/gauche/%%VERSION%%/include/gauche/bits.h
+lib/gauche/%%VERSION%%/include/gauche/bits_inline.h
+lib/gauche/%%VERSION%%/include/gauche/builtin-syms.h
+lib/gauche/%%VERSION%%/include/gauche/char_euc_jp.h
+lib/gauche/%%VERSION%%/include/gauche/char_none.h
+lib/gauche/%%VERSION%%/include/gauche/char_sjis.h
+lib/gauche/%%VERSION%%/include/gauche/char_utf_8.h
+lib/gauche/%%VERSION%%/include/gauche/charset.h
+lib/gauche/%%VERSION%%/include/gauche/class.h
+lib/gauche/%%VERSION%%/include/gauche/code.h
+lib/gauche/%%VERSION%%/include/gauche/collection.h
+lib/gauche/%%VERSION%%/include/gauche/config.h
+lib/gauche/%%VERSION%%/include/gauche/exception.h
+lib/gauche/%%VERSION%%/include/gauche/extend.h
+lib/gauche/%%VERSION%%/include/gauche/extern.h
+lib/gauche/%%VERSION%%/include/gauche/float.h
+lib/gauche/%%VERSION%%/include/gauche/gloc.h
+lib/gauche/%%VERSION%%/include/gauche/hash.h
+lib/gauche/%%VERSION%%/include/gauche/int64.h
+lib/gauche/%%VERSION%%/include/gauche/keyword.h
+lib/gauche/%%VERSION%%/include/gauche/load.h
+lib/gauche/%%VERSION%%/include/gauche/macro.h
+lib/gauche/%%VERSION%%/include/gauche/module.h
+lib/gauche/%%VERSION%%/include/gauche/number.h
+lib/gauche/%%VERSION%%/include/gauche/parameter.h
+lib/gauche/%%VERSION%%/include/gauche/paths.h
+lib/gauche/%%VERSION%%/include/gauche/port.h
+lib/gauche/%%VERSION%%/include/gauche/prof.h
+lib/gauche/%%VERSION%%/include/gauche/pthread.h
+lib/gauche/%%VERSION%%/include/gauche/reader.h
+lib/gauche/%%VERSION%%/include/gauche/regexp.h
+lib/gauche/%%VERSION%%/include/gauche/scmconst.h
+lib/gauche/%%VERSION%%/include/gauche/string.h
+lib/gauche/%%VERSION%%/include/gauche/symbol.h
+lib/gauche/%%VERSION%%/include/gauche/system.h
+lib/gauche/%%VERSION%%/include/gauche/treemap.h
+lib/gauche/%%VERSION%%/include/gauche/uthread.h
+lib/gauche/%%VERSION%%/include/gauche/uvector.h
+lib/gauche/%%VERSION%%/include/gauche/vector.h
+lib/gauche/%%VERSION%%/include/gauche/vm.h
+lib/gauche/%%VERSION%%/include/gauche/vminsn.h
+lib/gauche/%%VERSION%%/include/gauche/weak.h
+lib/gauche/%%VERSION%%/include/gauche/win-compat.h
+lib/gauche/%%VERSION%%/include/gc.h
+lib/gauche/%%VERSION%%/include/gc_allocator.h
+lib/gauche/%%VERSION%%/include/gc_config_macros.h
+lib/gauche/%%VERSION%%/include/gc_cpp.h
+lib/gauche/%%VERSION%%/include/gc_inline.h
+lib/gauche/%%VERSION%%/include/gc_mark.h
+lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
+lib/gauche/%%VERSION%%/include/gc_tiny_fl.h
+lib/gauche/%%VERSION%%/include/gc_typed.h
+lib/gauche/%%VERSION%%/include/gc_version.h
+lib/gauche/site/%%VERSION%%/%%TARGET%%/.keepme
+lib/libgauche.so
+lib/libgauche.so.0
+lib/libgauche.so.%%VERSION%%.0
+share/aclocal/gauche.m4
+%%DATADIR%%/%%VERSION%%/aclocal.m4
+%%DATADIR%%/%%VERSION%%/lib/.packages/.keepme
+%%DATADIR%%/%%VERSION%%/lib/binary/io.scm
+%%DATADIR%%/%%VERSION%%/lib/binary/pack.scm
+%%DATADIR%%/%%VERSION%%/lib/cesconv
+%%DATADIR%%/%%VERSION%%/lib/compat/jfilter.scm
+%%DATADIR%%/%%VERSION%%/lib/compat/norational.scm
+%%DATADIR%%/%%VERSION%%/lib/compat/stk.scm
+%%DATADIR%%/%%VERSION%%/lib/dbd/null.scm
+%%DATADIR%%/%%VERSION%%/lib/dbi.scm
+%%DATADIR%%/%%VERSION%%/lib/dbm.scm
+%%DATADIR%%/%%VERSION%%/lib/dbm/fsdbm.scm
+%%DATADIR%%/%%VERSION%%/lib/dbm/ndbm.scm
+%%DATADIR%%/%%VERSION%%/lib/file/filter.scm
+%%DATADIR%%/%%VERSION%%/lib/file/util.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche-init.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/array.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/auxsys.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/cise.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/literal-uv.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/literal.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/precomp.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/stub.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/type.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/cgen/unit.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/charconv.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/collection.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/common-macros.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/condutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/config.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/defvalues.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/dictionary.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/experimental/app.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/experimental/lamb.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/experimental/ref.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/fcntl.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/fileutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/hashutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/hook.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/interactive.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/interactive/info.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/interpolate.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/let-opt.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/libutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/listener.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/logger.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/logical.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/macroutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/matrix.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/modutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/mop/instance-pool.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/mop/propagate.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/mop/singleton.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/mop/validator.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/net.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/numerical.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/package.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/package/build.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/package/compile.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/package/fetch.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/package/util.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/parameter.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/parseopt.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/portutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/procedure.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/process.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/redefutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/regexp.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/reload.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/selector.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/sequence.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/serializer.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/serializer/aserializer.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/signal.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/singleton.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/sortutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/stringutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/syslog.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/termios.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/test.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/threads.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/time.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/treeutil.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/uvector.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/validator.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/version.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/vm/debugger.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/vm/insn-core.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/vm/insn.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/vm/profiler.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/vport.scm
+%%DATADIR%%/%%VERSION%%/lib/gencomp
+%%DATADIR%%/%%VERSION%%/lib/genstub
+%%DATADIR%%/%%VERSION%%/lib/math/const.scm
+%%DATADIR%%/%%VERSION%%/lib/math/mt-random.scm
+%%DATADIR%%/%%VERSION%%/lib/precomp
+%%DATADIR%%/%%VERSION%%/lib/rfc/822.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/base64.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/cookie.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/ftp.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/hmac.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/http.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/icmp.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/ip.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/md5.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/mime.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/quoted-printable.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/sha.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/sha1.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/uri.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/zlib.scm
+%%DATADIR%%/%%VERSION%%/lib/slib.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-0.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-1.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-11.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-13.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-14.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-14/query.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-14/set.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-19.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-26.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-27.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-29.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-29/bundle.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-29/format.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-31.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-37.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-4.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-42.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-43.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-5.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-55.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-7.scm
+%%DATADIR%%/%%VERSION%%/lib/srfi-9.scm
+%%DATADIR%%/%%VERSION%%/lib/sxml/adaptor.scm
+%%DATADIR%%/%%VERSION%%/lib/sxml/serializer.scm
+%%DATADIR%%/%%VERSION%%/lib/sxml/ssax.scm
+%%DATADIR%%/%%VERSION%%/lib/sxml/sxpath.scm
+%%DATADIR%%/%%VERSION%%/lib/sxml/to-html.scm
+%%DATADIR%%/%%VERSION%%/lib/sxml/tools.scm
+%%DATADIR%%/%%VERSION%%/lib/sxml/tree-trans.scm
+%%DATADIR%%/%%VERSION%%/lib/text/csv.scm
+%%DATADIR%%/%%VERSION%%/lib/text/diff.scm
+%%DATADIR%%/%%VERSION%%/lib/text/gettext.scm
+%%DATADIR%%/%%VERSION%%/lib/text/html-lite.scm
+%%DATADIR%%/%%VERSION%%/lib/text/info.scm
+%%DATADIR%%/%%VERSION%%/lib/text/parse.scm
+%%DATADIR%%/%%VERSION%%/lib/text/progress.scm
+%%DATADIR%%/%%VERSION%%/lib/text/sql.scm
+%%DATADIR%%/%%VERSION%%/lib/text/tr.scm
+%%DATADIR%%/%%VERSION%%/lib/text/tree.scm
+%%DATADIR%%/%%VERSION%%/lib/util/combinations.scm
+%%DATADIR%%/%%VERSION%%/lib/util/digest.scm
+%%DATADIR%%/%%VERSION%%/lib/util/isomorph.scm
+%%DATADIR%%/%%VERSION%%/lib/util/lcs.scm
+%%DATADIR%%/%%VERSION%%/lib/util/list.scm
+%%DATADIR%%/%%VERSION%%/lib/util/match.scm
+%%DATADIR%%/%%VERSION%%/lib/util/queue.scm
+%%DATADIR%%/%%VERSION%%/lib/util/rbtree.scm
+%%DATADIR%%/%%VERSION%%/lib/util/record.scm
+%%DATADIR%%/%%VERSION%%/lib/util/relation.scm
+%%DATADIR%%/%%VERSION%%/lib/util/sparse.scm
+%%DATADIR%%/%%VERSION%%/lib/util/stream.scm
+%%DATADIR%%/%%VERSION%%/lib/util/toposort.scm
+%%DATADIR%%/%%VERSION%%/lib/util/tree.scm
+%%DATADIR%%/%%VERSION%%/lib/util/trie.scm
+%%DATADIR%%/%%VERSION%%/lib/www/cgi-test.scm
+%%DATADIR%%/%%VERSION%%/lib/www/cgi.scm
+%%DATADIR%%/%%VERSION%%/lib/www/cgi/test.scm
+%%DATADIR%%/%%VERSION%%/template.DIST
+%%DATADIR%%/%%VERSION%%/template.Makefile.in
+%%DATADIR%%/%%VERSION%%/template.configure.ac
+%%DATADIR%%/%%VERSION%%/template.extension.c
+%%DATADIR%%/%%VERSION%%/template.extension.h
+%%DATADIR%%/%%VERSION%%/template.extensionlib.stub
+%%DATADIR%%/%%VERSION%%/template.module.scm
+%%DATADIR%%/%%VERSION%%/template.test.scm
+%%DATADIR%%/site/lib/.packages/.keepme
+@dirrm %%DATADIR%%/site/lib/.packages
+@dirrm %%DATADIR%%/site/lib
+@dirrm %%DATADIR%%/site
+@dirrm %%DATADIR%%/%%VERSION%%/lib/www/cgi
+@dirrm %%DATADIR%%/%%VERSION%%/lib/www
+@dirrm %%DATADIR%%/%%VERSION%%/lib/util
+@dirrm %%DATADIR%%/%%VERSION%%/lib/text
+@dirrm %%DATADIR%%/%%VERSION%%/lib/sxml
+@dirrm %%DATADIR%%/%%VERSION%%/lib/srfi-29
+@dirrm %%DATADIR%%/%%VERSION%%/lib/srfi-14
+@dirrm %%DATADIR%%/%%VERSION%%/lib/rfc
+@dirrm %%DATADIR%%/%%VERSION%%/lib/math
+@dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/vm
+@dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/serializer
+@dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/package
+@dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/mop
+@dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/interactive
+@dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/experimental
+@dirrm %%DATADIR%%/%%VERSION%%/lib/gauche/cgen
+@dirrm %%DATADIR%%/%%VERSION%%/lib/gauche
+@dirrm %%DATADIR%%/%%VERSION%%/lib/file
+@dirrm %%DATADIR%%/%%VERSION%%/lib/dbm
+@dirrm %%DATADIR%%/%%VERSION%%/lib/dbd
+@dirrm %%DATADIR%%/%%VERSION%%/lib/compat
+@dirrm %%DATADIR%%/%%VERSION%%/lib/binary
+@dirrm %%DATADIR%%/%%VERSION%%/lib/.packages
+@dirrm %%DATADIR%%/%%VERSION%%/lib
+@dirrm %%DATADIR%%/%%VERSION%%
+@dirrm %%DATADIR%%
+@dirrm lib/gauche/site/%%VERSION%%/%%TARGET%%
+@dirrm lib/gauche/site/%%VERSION%%
+@dirrm lib/gauche/site
+@dirrm lib/gauche/%%VERSION%%/include/gauche
+@dirrm lib/gauche/%%VERSION%%/include
+@dirrm lib/gauche/%%VERSION%%/%%TARGET%%
+@dirrm lib/gauche/%%VERSION%%
+@dirrm lib/gauche
+@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%

@@ -1,0 +1,5 @@
+bin/memgrep
+include/memgrep.h
+lib/heaplist.so
+lib/libmemgrep.so
+lib/libmemgrep.a

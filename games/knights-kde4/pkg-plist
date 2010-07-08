@@ -1,0 +1,15 @@
+bin/knights
+share/applications/kde4/knights.desktop
+share/apps/knights/knightsui.rc
+share/apps/knights/themes/default.desktop
+share/apps/knights/themes/knights.png
+share/apps/knights/themes/knights.svg
+share/apps/knights/themes/tux.desktop
+share/apps/knights/themes/tux.png
+share/apps/knights/themes/tux.svg
+share/config.kcfg/knights.kcfg
+share/icons/hicolor/16x16/apps/knights.png
+share/icons/hicolor/32x32/apps/knights.png
+share/icons/hicolor/48x48/apps/knights.png
+@dirrm share/apps/knights/themes/
+@dirrm share/apps/knights/

@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/lockdown
+bin/editfile
+bin/editfstab
+bin/editkernel
+bin/editlogin
+bin/editttys
+lib/libcppe.so

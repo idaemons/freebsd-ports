@@ -1,0 +1,7 @@
+libexec/rep/%%GNUHOST%%/gui/gtk-2/gtk.la
+libexec/rep/%%GNUHOST%%/gui/gtk-2/gtk.so
+libexec/rep/%%GNUHOST%%/gui/gtk-2/types.la
+libexec/rep/%%GNUHOST%%/gui/gtk-2/types.so
+libdata/pkgconfig/rep-gtk.pc
+@dirrm libexec/rep/%%GNUHOST%%/gui/gtk-2
+@dirrm libexec/rep/%%GNUHOST%%/gui

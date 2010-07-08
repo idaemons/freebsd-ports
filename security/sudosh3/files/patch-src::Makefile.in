@@ -1,0 +1,66 @@
+--- src/Makefile.in.orig	2008-02-22 13:11:02.000000000 -0800
++++ src/Makefile.in	2010-01-14 20:56:27.381892777 -0800
+@@ -55,7 +55,7 @@
+ 	string.$(OBJEXT) parse.$(OBJEXT) util.$(OBJEXT)
+ sudosh_replay_OBJECTS = $(am_sudosh_replay_OBJECTS)
+ sudosh_replay_LDADD = $(LDADD)
+-DEFAULT_INCLUDES = -I. -I$(top_builddir)@am__isrc@
++DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+@@ -165,6 +165,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
++top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ sudosh_SOURCES = sudosh.c rand.c parse.c string.c getopt.h  struct.h  super.h util.c
+@@ -268,8 +269,8 @@
+ 	unique=`for i in $$list; do \
+ 	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+ 	  done | \
+-	  $(AWK) '    { files[$$0] = 1; } \
+-	       END { for (i in files) print i; }'`; \
++	  $(AWK) '{ files[$$0] = 1; nonemtpy = 1; } \
++	      END { if (nonempty) { for (i in files) print i; }; }'`; \
+ 	mkid -fID $$unique
+ tags: TAGS
+ 
+@@ -281,8 +282,8 @@
+ 	unique=`for i in $$list; do \
+ 	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+ 	  done | \
+-	  $(AWK) '    { files[$$0] = 1; } \
+-	       END { for (i in files) print i; }'`; \
++	  $(AWK) '{ files[$$0] = 1; nonempty = 1; } \
++	      END { if (nonempty) { for (i in files) print i; }; }'`; \
+ 	if test -z "$(ETAGS_ARGS)$$tags$$unique"; then :; else \
+ 	  test -n "$$unique" || unique=$$empty_fix; \
+ 	  $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
+@@ -292,13 +293,12 @@
+ CTAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+ 		$(TAGS_FILES) $(LISP)
+ 	tags=; \
+-	here=`pwd`; \
+ 	list='$(SOURCES) $(HEADERS)  $(LISP) $(TAGS_FILES)'; \
+ 	unique=`for i in $$list; do \
+ 	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+ 	  done | \
+-	  $(AWK) '    { files[$$0] = 1; } \
+-	       END { for (i in files) print i; }'`; \
++	  $(AWK) '{ files[$$0] = 1; nonempty = 1; } \
++	      END { if (nonempty) { for (i in files) print i; }; }'`; \
+ 	test -z "$(CTAGS_ARGS)$$tags$$unique" \
+ 	  || $(CTAGS) $(CTAGSFLAGS) $(AM_CTAGSFLAGS) $(CTAGS_ARGS) \
+ 	     $$tags $$unique
+@@ -442,7 +442,7 @@
+ 
+ install-sudosh.conf:
+ 	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
+-	test -f $(sysconfdir)/sudosh.conf || $(INSTALL) -o 0 -g 0 -m 0444 '$(srcdir)/sudosh.conf' '$(sysconfdir)/sudosh.conf'
++	$(INSTALL) -o 0 -g 0 -m 0444 '$(srcdir)/sudosh.conf' '$(sysconfdir)/sudosh.conf.sample'
+ 
+ install: install-am install-sudosh.conf
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

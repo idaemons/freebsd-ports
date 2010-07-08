@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# rabbitmq for rc.d usage
+# $Id$
+
+# PROVIDE: rabbitmq
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable RabitMQ
+#
+#  rabbitmq_enable="YES"
+
+. /etc/rc.subr
+
+name=rabbitmq
+rcvar=`set_rcvar`
+
+# Set some defaults
+rabbitmq_enable=${rabbitmq_enable:-"NO"}
+rabbitmq_user=${rabbitmq_user:-"rabbitmq"}
+rabbitmq_nodes=${rabbitmq_nodes:-"1"}
+rabbitmq_multi="%%PREFIX%%/sbin/rabbitmq-multi"
+
+start_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_multi} start_all ${rabbitmq_nodes}\"'"
+stop_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_multi} stop_all\"'"
+rotate_logs_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_multi} rotate_logs\"'"
+status_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_multi} status\"'"
+extra_commands="rotate_logs status"
+
+load_rc_config $name
+run_rc_command "$1"

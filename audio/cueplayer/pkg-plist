@@ -1,0 +1,5 @@
+bin/cueplayer
+%%DATADIR%%/loc/cueplayer_pl.qm
+%%DATADIR%%/cueplayer.png
+@dirrm %%DATADIR%%/loc
+@dirrm %%DATADIR%%

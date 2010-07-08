@@ -1,0 +1,3 @@
+bin/portlint
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/portlintgrep
+@dirrm %%EXAMPLESDIR%%

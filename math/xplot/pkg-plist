@@ -1,0 +1,6 @@
+bin/xplot
+bin/tcpdump2xplot
+bin/tcpdump2xplot.pl
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.tcp_plots
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

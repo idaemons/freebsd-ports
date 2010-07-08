@@ -1,0 +1,26 @@
+--- Makefile.in.orig	2010-01-20 09:19:16.000000000 -0200
++++ Makefile.in	2010-02-08 09:58:51.000000000 -0200
+@@ -9,7 +9,7 @@
+ CC 		= @CC@
+ BINDIR   	= @bindir@
+ IBINDIR   	= -DBINDIR=\"@bindir@\"
+-MANDIR		= @mandir@
++MANDIR		= @mandir@/man1
+ SYSCONFDIR	= @sysconfdir@
+ SARGPHPDIR	= @SARGPHPDIR@
+ LANGDIR		= @LANGDIR@
+@@ -84,12 +84,11 @@
+ 	$(INSTALL_PROGRAM) sarg $(DESTDIR)$(BINDIR)/sarg
+ 	chmod 755 $(DESTDIR)$(BINDIR)/sarg
+ 	$(INSTALL_PROGRAM) sarg.1 $(DESTDIR)$(MANDIR)/sarg.1
+-	chmod 755 $(DESTDIR)$(MANDIR)/sarg.1
++	chmod 644 $(DESTDIR)$(MANDIR)/sarg.1
++	cp sarg.conf $(DESTDIR)$(SYSCONFDIR)/sarg.conf.default
+ 	@if test ! -f $(DESTDIR)$(SYSCONFDIR)/sarg.conf; then \
+ 		echo "cp $(DESTDIR)$(SYSCONFDIR)/sarg.conf"; \
+ 		cp sarg.conf $(DESTDIR)$(SYSCONFDIR)/sarg.conf; \
+-	else \
+-		cp sarg.conf $(DESTDIR)$(SYSCONFDIR)/sarg.conf.default; \
+ 	fi
+ 	cp -r ./languages/* $(DESTDIR)$(LANGDIR);
+ 	cp ./exclude_codes $(DESTDIR)$(SYSCONFDIR);

@@ -1,0 +1,5 @@
+%%SITE_PERL%%/WordNet/QueryData.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/QueryData/.packlist
+@dirrmtry %%SITE_PERL%%/WordNet
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/QueryData
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet

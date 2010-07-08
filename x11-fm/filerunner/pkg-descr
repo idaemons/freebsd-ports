@@ -1,0 +1,4 @@
+Filemanager with FTP capabilities. Uses Tcl/Tk.
+
+FileRunner is distributed under the GNU General Public License since
+FileRunner version 2.5.1

@@ -1,0 +1,2506 @@
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/404.php
+%%WWWDIR%%/TILE.css
+%%WWWDIR%%/about.php
+%%WWWDIR%%/acl.php
+%%WWWDIR%%/admin/admin_delete.php
+%%WWWDIR%%/admin/admin_deny.php
+%%WWWDIR%%/admin/admin_email.php
+%%WWWDIR%%/admin/admins/create.php
+%%WWWDIR%%/admin/admins/delete.php
+%%WWWDIR%%/admin/admins/detail_log.php
+%%WWWDIR%%/admin/admins/edit.php
+%%WWWDIR%%/admin/admins/index.php
+%%WWWDIR%%/admin/admins/log.php
+%%WWWDIR%%/admin/admins/my_edit.php
+%%WWWDIR%%/admin/admins/my_password.php
+%%WWWDIR%%/admin/admins/password.php
+%%WWWDIR%%/admin/admins/reset_log.php
+%%WWWDIR%%/admin/auto_enroll.php
+%%WWWDIR%%/admin/auto_enroll_delete.php
+%%WWWDIR%%/admin/auto_enroll_edit.php
+%%WWWDIR%%/admin/auto_enroll_filter_courses.php
+%%WWWDIR%%/admin/backup/create.php
+%%WWWDIR%%/admin/backup/delete.php
+%%WWWDIR%%/admin/backup/edit.php
+%%WWWDIR%%/admin/backup/index.php
+%%WWWDIR%%/admin/backup/restore.php
+%%WWWDIR%%/admin/config_edit.php
+%%WWWDIR%%/admin/config_template.php
+%%WWWDIR%%/admin/course_categories.php
+%%WWWDIR%%/admin/courses.php
+%%WWWDIR%%/admin/create_category.php
+%%WWWDIR%%/admin/create_course.php
+%%WWWDIR%%/admin/create_user.php
+%%WWWDIR%%/admin/cron.php
+%%WWWDIR%%/admin/cron_config.php
+%%WWWDIR%%/admin/default_preferences.php
+%%WWWDIR%%/admin/delete_category.php
+%%WWWDIR%%/admin/delete_course.php
+%%WWWDIR%%/admin/edit_category.php
+%%WWWDIR%%/admin/edit_course.php
+%%WWWDIR%%/admin/edit_user.php
+%%WWWDIR%%/admin/enrollment/enroll_edit.php
+%%WWWDIR%%/admin/enrollment/index.php
+%%WWWDIR%%/admin/enrollment/privileges.php
+%%WWWDIR%%/admin/error_logging.php
+%%WWWDIR%%/admin/error_logging_bundle.php
+%%WWWDIR%%/admin/error_logging_details.php
+%%WWWDIR%%/admin/error_logging_reset.php
+%%WWWDIR%%/admin/error_logging_view.php
+%%WWWDIR%%/admin/fix_content.php
+%%WWWDIR%%/admin/forum_add.php
+%%WWWDIR%%/admin/forum_delete.php
+%%WWWDIR%%/admin/forum_edit.php
+%%WWWDIR%%/admin/forums.php
+%%WWWDIR%%/admin/index.php
+%%WWWDIR%%/admin/instructor_login.php
+%%WWWDIR%%/admin/instructor_requests.php
+%%WWWDIR%%/admin/language.php
+%%WWWDIR%%/admin/language_add.php
+%%WWWDIR%%/admin/language_delete.php
+%%WWWDIR%%/admin/language_edit.php
+%%WWWDIR%%/admin/language_editor.php
+%%WWWDIR%%/admin/language_import.php
+%%WWWDIR%%/admin/language_term.php
+%%WWWDIR%%/admin/language_translate.php
+%%WWWDIR%%/admin/master_list.php
+%%WWWDIR%%/admin/master_list_delete.php
+%%WWWDIR%%/admin/master_list_edit.php
+%%WWWDIR%%/admin/missing_language.php
+%%WWWDIR%%/admin/modules/add_new.php
+%%WWWDIR%%/admin/modules/create.php
+%%WWWDIR%%/admin/modules/default_mods.php
+%%WWWDIR%%/admin/modules/default_side.php
+%%WWWDIR%%/admin/modules/details.php
+%%WWWDIR%%/admin/modules/index.php
+%%WWWDIR%%/admin/modules/install_modules.php
+%%WWWDIR%%/admin/modules/module.template.php
+%%WWWDIR%%/admin/modules/module_install_step_1.php
+%%WWWDIR%%/admin/modules/module_install_step_2.php
+%%WWWDIR%%/admin/modules/module_install_step_3.php
+%%WWWDIR%%/admin/modules/module_uninstall_step_1.php
+%%WWWDIR%%/admin/modules/module_uninstall_step_2.php
+%%WWWDIR%%/admin/modules/module_uninstall_step_3.php
+%%WWWDIR%%/admin/modules/version_history.php
+%%WWWDIR%%/admin/password_user.php
+%%WWWDIR%%/admin/profile_picture.php
+%%WWWDIR%%/admin/rss_feeds/add_feed.php
+%%WWWDIR%%/admin/rss_feeds/delete_feed.php
+%%WWWDIR%%/admin/rss_feeds/edit_feed.php
+%%WWWDIR%%/admin/rss_feeds/index.php
+%%WWWDIR%%/admin/rss_feeds/preview.php
+%%WWWDIR%%/admin/themes/delete.php
+%%WWWDIR%%/admin/themes/import.php
+%%WWWDIR%%/admin/themes/index.php
+%%WWWDIR%%/admin/themes/install_themes.php
+%%WWWDIR%%/admin/themes/theme_install_step_1.php
+%%WWWDIR%%/admin/themes/theme_install_step_2.php
+%%WWWDIR%%/admin/themes/theme_install_step_3.php
+%%WWWDIR%%/admin/themes/version_history.php
+%%WWWDIR%%/admin/translate.php
+%%WWWDIR%%/admin/translate_atutor.php
+%%WWWDIR%%/admin/translator.php
+%%WWWDIR%%/admin/user_enrollment.php
+%%WWWDIR%%/admin/user_status.php
+%%WWWDIR%%/admin/users.php
+%%WWWDIR%%/assignments/add_assignment.php
+%%WWWDIR%%/assignments/delete_assignment.php
+%%WWWDIR%%/assignments/edit_assignment.php
+%%WWWDIR%%/assignments/index.php
+%%WWWDIR%%/assignments/index_instructor.php
+%%WWWDIR%%/blogs/add_post.php
+%%WWWDIR%%/blogs/delete_comment.php
+%%WWWDIR%%/blogs/delete_post.php
+%%WWWDIR%%/blogs/edit_post.php
+%%WWWDIR%%/blogs/index.php
+%%WWWDIR%%/blogs/post.php
+%%WWWDIR%%/blogs/view.php
+%%WWWDIR%%/bounce.php
+%%WWWDIR%%/browse.php
+%%WWWDIR%%/chat/MachineThatGoesBing.class
+%%WWWDIR%%/chat/admin.settings.default
+%%WWWDIR%%/chat/atrc.gif
+%%WWWDIR%%/chat/bing.php
+%%WWWDIR%%/chat/bings/.html
+%%WWWDIR%%/chat/bings/chime.au
+%%WWWDIR%%/chat/bings/chime.wav
+%%WWWDIR%%/chat/bings/taras.html
+%%WWWDIR%%/chat/bings/taras.php
+%%WWWDIR%%/chat/chat.php
+%%WWWDIR%%/chat/display.php
+%%WWWDIR%%/chat/filterHistory.php
+%%WWWDIR%%/chat/help.php
+%%WWWDIR%%/chat/history.php
+%%WWWDIR%%/chat/include/html/chat_footer.inc.php
+%%WWWDIR%%/chat/include/html/chat_header.inc.php
+%%WWWDIR%%/chat/include/html/login_footer.inc.php
+%%WWWDIR%%/chat/include/html/login_header.inc.php
+%%WWWDIR%%/chat/index.php
+%%WWWDIR%%/chat/logout.php
+%%WWWDIR%%/chat/options.php
+%%WWWDIR%%/chat/poster.php
+%%WWWDIR%%/chat/prefs.php
+%%WWWDIR%%/chat/prefs2.php
+%%WWWDIR%%/chat/view_transcript.php
+%%WWWDIR%%/confirm.php
+%%WWWDIR%%/contact_instructor.php
+%%WWWDIR%%/content.php
+%%WWWDIR%%/directory.php
+%%WWWDIR%%/documentation/add_note.php
+%%WWWDIR%%/documentation/admin/administrators.php
+%%WWWDIR%%/documentation/admin/auto_enroll.php
+%%WWWDIR%%/documentation/admin/backups.php
+%%WWWDIR%%/documentation/admin/categories.php
+%%WWWDIR%%/documentation/admin/configuration.php
+%%WWWDIR%%/documentation/admin/courses.php
+%%WWWDIR%%/documentation/admin/create_patches.php
+%%WWWDIR%%/documentation/admin/creating_courses.php
+%%WWWDIR%%/documentation/admin/creating_themes.php
+%%WWWDIR%%/documentation/admin/cron_setup.php
+%%WWWDIR%%/documentation/admin/default_preferences.php
+%%WWWDIR%%/documentation/admin/default_side_menu.php
+%%WWWDIR%%/documentation/admin/default_student_tools.php
+%%WWWDIR%%/documentation/admin/email_users.php
+%%WWWDIR%%/documentation/admin/en/index.php
+%%WWWDIR%%/documentation/admin/enrollment.php
+%%WWWDIR%%/documentation/admin/enrollment_privileges.php
+%%WWWDIR%%/documentation/admin/error_logging.php
+%%WWWDIR%%/documentation/admin/feeds.php
+%%WWWDIR%%/documentation/admin/forums.php
+%%WWWDIR%%/documentation/admin/fr/index.php
+%%WWWDIR%%/documentation/admin/google_key.php
+%%WWWDIR%%/documentation/admin/importing_themes.php
+%%WWWDIR%%/documentation/admin/index.php
+%%WWWDIR%%/documentation/admin/installation.php
+%%WWWDIR%%/documentation/admin/instructor_requests.php
+%%WWWDIR%%/documentation/admin/introduction.php
+%%WWWDIR%%/documentation/admin/languages.php
+%%WWWDIR%%/documentation/admin/link-out.gif
+%%WWWDIR%%/documentation/admin/managing_existing_themes.php
+%%WWWDIR%%/documentation/admin/master_student_list.php
+%%WWWDIR%%/documentation/admin/modules.php
+%%WWWDIR%%/documentation/admin/my_account.php
+%%WWWDIR%%/documentation/admin/new_installation.php
+%%WWWDIR%%/documentation/admin/pages.inc.php
+%%WWWDIR%%/documentation/admin/patcher.php
+%%WWWDIR%%/documentation/admin/requirements_recommendations.php
+%%WWWDIR%%/documentation/admin/styles.css
+%%WWWDIR%%/documentation/admin/system_preferences.php
+%%WWWDIR%%/documentation/admin/themes.php
+%%WWWDIR%%/documentation/admin/troubleshooting.php
+%%WWWDIR%%/documentation/admin/upgrading.php
+%%WWWDIR%%/documentation/admin/users.php
+%%WWWDIR%%/documentation/approve_note.php
+%%WWWDIR%%/documentation/common/body_footer.inc.php
+%%WWWDIR%%/documentation/common/body_header.inc.php
+%%WWWDIR%%/documentation/common/folder.gif
+%%WWWDIR%%/documentation/common/fr/text.php
+%%WWWDIR%%/documentation/common/frame_header.php
+%%WWWDIR%%/documentation/common/frame_toc.php
+%%WWWDIR%%/documentation/common/link-out.gif
+%%WWWDIR%%/documentation/common/paper.gif
+%%WWWDIR%%/documentation/common/print.php
+%%WWWDIR%%/documentation/common/search.php
+%%WWWDIR%%/documentation/common/styles.css
+%%WWWDIR%%/documentation/common/text.php
+%%WWWDIR%%/documentation/common/vitals.inc.php
+%%WWWDIR%%/documentation/config.inc.php
+%%WWWDIR%%/documentation/delete_note.php
+%%WWWDIR%%/documentation/developer/database.gif
+%%WWWDIR%%/documentation/developer/guidelines.html
+%%WWWDIR%%/documentation/developer/modules.html
+%%WWWDIR%%/documentation/developer/styles.css
+%%WWWDIR%%/documentation/developer/themes.html
+%%WWWDIR%%/documentation/general/browse_courses.php
+%%WWWDIR%%/documentation/general/create_course.php
+%%WWWDIR%%/documentation/general/en/index.php
+%%WWWDIR%%/documentation/general/export_content.php
+%%WWWDIR%%/documentation/general/file_storage.php
+%%WWWDIR%%/documentation/general/fr/index.php
+%%WWWDIR%%/documentation/general/inbox.php
+%%WWWDIR%%/documentation/general/index.php
+%%WWWDIR%%/documentation/general/inside_course.php
+%%WWWDIR%%/documentation/general/introduction.php
+%%WWWDIR%%/documentation/general/login.php
+%%WWWDIR%%/documentation/general/my_contacts.php
+%%WWWDIR%%/documentation/general/my_courses.php
+%%WWWDIR%%/documentation/general/my_gadgets.php
+%%WWWDIR%%/documentation/general/my_groups.php
+%%WWWDIR%%/documentation/general/my_network.php
+%%WWWDIR%%/documentation/general/my_profile.php
+%%WWWDIR%%/documentation/general/my_settings.php
+%%WWWDIR%%/documentation/general/my_start_page.php
+%%WWWDIR%%/documentation/general/packages.php
+%%WWWDIR%%/documentation/general/pages.inc.php
+%%WWWDIR%%/documentation/general/password_reminder.php
+%%WWWDIR%%/documentation/general/preferences.php
+%%WWWDIR%%/documentation/general/profile.php
+%%WWWDIR%%/documentation/general/register.php
+%%WWWDIR%%/documentation/general/tile.php
+%%WWWDIR%%/documentation/index/en/index.php
+%%WWWDIR%%/documentation/index/fr/index.php
+%%WWWDIR%%/documentation/index/index.php
+%%WWWDIR%%/documentation/index.php
+%%WWWDIR%%/documentation/index_list.php
+%%WWWDIR%%/documentation/instructor/accessibility.php
+%%WWWDIR%%/documentation/instructor/add_questions.php
+%%WWWDIR%%/documentation/instructor/announcements.php
+%%WWWDIR%%/documentation/instructor/assignments.php
+%%WWWDIR%%/documentation/instructor/authenticated_access.php
+%%WWWDIR%%/documentation/instructor/backups.php
+%%WWWDIR%%/documentation/instructor/chat.php
+%%WWWDIR%%/documentation/instructor/content.html
+%%WWWDIR%%/documentation/instructor/content.php
+%%WWWDIR%%/documentation/instructor/content_alternatives.php
+%%WWWDIR%%/documentation/instructor/content_edit.php
+%%WWWDIR%%/documentation/instructor/content_packages.php
+%%WWWDIR%%/documentation/instructor/content_preview.php
+%%WWWDIR%%/documentation/instructor/content_properties.php
+%%WWWDIR%%/documentation/instructor/content_tests.php
+%%WWWDIR%%/documentation/instructor/content_usage.php
+%%WWWDIR%%/documentation/instructor/course_email.php
+%%WWWDIR%%/documentation/instructor/creating_courses.php
+%%WWWDIR%%/documentation/instructor/creating_editing_content.php
+%%WWWDIR%%/documentation/instructor/creating_questions.php
+%%WWWDIR%%/documentation/instructor/creating_restoring.php
+%%WWWDIR%%/documentation/instructor/creating_tests_surveys.php
+%%WWWDIR%%/documentation/instructor/delete_course.php
+%%WWWDIR%%/documentation/instructor/downloading_uploading.php
+%%WWWDIR%%/documentation/instructor/edit_delete_tests.php
+%%WWWDIR%%/documentation/instructor/editing_deleting.php
+%%WWWDIR%%/documentation/instructor/en/index.php
+%%WWWDIR%%/documentation/instructor/enrollment.php
+%%WWWDIR%%/documentation/instructor/enrollment_alumni.php
+%%WWWDIR%%/documentation/instructor/enrollment_course_list.php
+%%WWWDIR%%/documentation/instructor/enrollment_privileges.php
+%%WWWDIR%%/documentation/instructor/extracting_zip_archives.php
+%%WWWDIR%%/documentation/instructor/faq.php
+%%WWWDIR%%/documentation/instructor/feeds.php
+%%WWWDIR%%/documentation/instructor/fha_student_tools.php
+%%WWWDIR%%/documentation/instructor/file_manager.php
+%%WWWDIR%%/documentation/instructor/forum_export.php
+%%WWWDIR%%/documentation/instructor/forums.php
+%%WWWDIR%%/documentation/instructor/fr/index.php
+%%WWWDIR%%/documentation/instructor/glossary.php
+%%WWWDIR%%/documentation/instructor/glossary_terms.php
+%%WWWDIR%%/documentation/instructor/gradebook.php
+%%WWWDIR%%/documentation/instructor/gradebook_add.php
+%%WWWDIR%%/documentation/instructor/gradebook_edit_marks.php
+%%WWWDIR%%/documentation/instructor/gradebook_external_marks.php
+%%WWWDIR%%/documentation/instructor/gradebook_scales.php
+%%WWWDIR%%/documentation/instructor/gradebook_update.php
+%%WWWDIR%%/documentation/instructor/groups.php
+%%WWWDIR%%/documentation/instructor/index.php
+%%WWWDIR%%/documentation/instructor/introduction.php
+%%WWWDIR%%/documentation/instructor/links.php
+%%WWWDIR%%/documentation/instructor/managing_files_folders.php
+%%WWWDIR%%/documentation/instructor/managing_posts.php
+%%WWWDIR%%/documentation/instructor/managing_threads.php
+%%WWWDIR%%/documentation/instructor/pages.inc.php
+%%WWWDIR%%/documentation/instructor/polls.php
+%%WWWDIR%%/documentation/instructor/preview.php
+%%WWWDIR%%/documentation/instructor/properties.php
+%%WWWDIR%%/documentation/instructor/question_categories.php
+%%WWWDIR%%/documentation/instructor/question_database.php
+%%WWWDIR%%/documentation/instructor/reading_list.php
+%%WWWDIR%%/documentation/instructor/scorm_packages.php
+%%WWWDIR%%/documentation/instructor/side_menu.php
+%%WWWDIR%%/documentation/instructor/statistics.php
+%%WWWDIR%%/documentation/instructor/student_submissions.php
+%%WWWDIR%%/documentation/instructor/student_tools.php
+%%WWWDIR%%/documentation/instructor/test_statistics.php
+%%WWWDIR%%/documentation/instructor/tests_surveys.php
+%%WWWDIR%%/documentation/instructor/tile_repository.php
+%%WWWDIR%%/documentation/instructor/web_search.php
+%%WWWDIR%%/documentation/link-out.gif
+%%WWWDIR%%/documentation/styles.css
+%%WWWDIR%%/editor/add_content.php
+%%WWWDIR%%/editor/add_forum.php
+%%WWWDIR%%/editor/add_news.php
+%%WWWDIR%%/editor/delete_content.php
+%%WWWDIR%%/editor/delete_forum.php
+%%WWWDIR%%/editor/delete_news.php
+%%WWWDIR%%/editor/edit_content.php
+%%WWWDIR%%/editor/edit_forum.php
+%%WWWDIR%%/editor/edit_news.php
+%%WWWDIR%%/editor/edit_post.php
+%%WWWDIR%%/editor/index.php
+%%WWWDIR%%/editor/view_item.php
+%%WWWDIR%%/enroll.php
+%%WWWDIR%%/exestyles.css
+%%WWWDIR%%/export.php
+%%WWWDIR%%/faq/add_question.php
+%%WWWDIR%%/faq/add_topic.php
+%%WWWDIR%%/faq/delete_question.php
+%%WWWDIR%%/faq/delete_topic.php
+%%WWWDIR%%/faq/edit_question.php
+%%WWWDIR%%/faq/edit_topic.php
+%%WWWDIR%%/faq/icon.gif
+%%WWWDIR%%/faq/index.php
+%%WWWDIR%%/faq/index_instructor.php
+%%WWWDIR%%/favicon.ico
+%%WWWDIR%%/file_storage/assignment.php
+%%WWWDIR%%/file_storage/comments.php
+%%WWWDIR%%/file_storage/delete_comment.php
+%%WWWDIR%%/file_storage/delete_revision.php
+%%WWWDIR%%/file_storage/edit.php
+%%WWWDIR%%/file_storage/edit_folder.php
+%%WWWDIR%%/file_storage/index.php
+%%WWWDIR%%/file_storage/move.php
+%%WWWDIR%%/file_storage/new.php
+%%WWWDIR%%/file_storage/revisions.php
+%%WWWDIR%%/forum/delete_thread.php
+%%WWWDIR%%/forum/index.php
+%%WWWDIR%%/forum/list.php
+%%WWWDIR%%/forum/lock_thread.php
+%%WWWDIR%%/forum/move_thread.php
+%%WWWDIR%%/forum/new_thread.php
+%%WWWDIR%%/forum/stick.php
+%%WWWDIR%%/forum/subscribe.php
+%%WWWDIR%%/forum/subscribe_forum.php
+%%WWWDIR%%/forum/view.php
+%%WWWDIR%%/get.php
+%%WWWDIR%%/get_acheck.php
+%%WWWDIR%%/get_course_icon.php
+%%WWWDIR%%/get_noid.php
+%%WWWDIR%%/get_profile_img.php
+%%WWWDIR%%/get_rss.php
+%%WWWDIR%%/glossary/index.php
+%%WWWDIR%%/go.php
+%%WWWDIR%%/google_search/admin/module_prefs.php
+%%WWWDIR%%/google_search/google.gif
+%%WWWDIR%%/google_search/gsearch.php
+%%WWWDIR%%/google_search/index.php
+%%WWWDIR%%/groups.php
+%%WWWDIR%%/headstuff.php
+%%WWWDIR%%/help/accessibility.php
+%%WWWDIR%%/help/contact_support.php
+%%WWWDIR%%/help/index.php
+%%WWWDIR%%/images/after.gif
+%%WWWDIR%%/images/archive.gif
+%%WWWDIR%%/images/arrow-mini-down.png
+%%WWWDIR%%/images/arrow-mini-left.png
+%%WWWDIR%%/images/arrow-mini-right.png
+%%WWWDIR%%/images/arrow-mini-up.png
+%%WWWDIR%%/images/arrow_ltr.gif
+%%WWWDIR%%/images/arrowicon.gif
+%%WWWDIR%%/images/at-logo.gif
+%%WWWDIR%%/images/at-logo.v.3.gif
+%%WWWDIR%%/images/bad.gif
+%%WWWDIR%%/images/before.gif
+%%WWWDIR%%/images/blue.gif
+%%WWWDIR%%/images/box.png
+%%WWWDIR%%/images/calendar.gif
+%%WWWDIR%%/images/changes_bullet.gif
+%%WWWDIR%%/images/check.gif
+%%WWWDIR%%/images/checkbox_check.gif
+%%WWWDIR%%/images/checkbox_empty.gif
+%%WWWDIR%%/images/checkmark.gif
+%%WWWDIR%%/images/child_of.gif
+%%WWWDIR%%/images/clr.gif
+%%WWWDIR%%/images/content_pkg.gif
+%%WWWDIR%%/images/courses/3dgraph.jpg
+%%WWWDIR%%/images/courses/anotomy.jpg
+%%WWWDIR%%/images/courses/art_supplies.jpg
+%%WWWDIR%%/images/courses/astronaut.jpg
+%%WWWDIR%%/images/courses/bar_graph.jpg
+%%WWWDIR%%/images/courses/books.jpg
+%%WWWDIR%%/images/courses/botany.jpg
+%%WWWDIR%%/images/courses/brain2.jpg
+%%WWWDIR%%/images/courses/business.jpg
+%%WWWDIR%%/images/courses/business_service.jpg
+%%WWWDIR%%/images/courses/caduceus.jpg
+%%WWWDIR%%/images/courses/car_wireframe.jpg
+%%WWWDIR%%/images/courses/cell-anatomy.jpg
+%%WWWDIR%%/images/courses/chemistry.jpg
+%%WWWDIR%%/images/courses/columbus.jpg
+%%WWWDIR%%/images/courses/disabled_sign.gif
+%%WWWDIR%%/images/courses/drafting.jpg
+%%WWWDIR%%/images/courses/engine.jpg
+%%WWWDIR%%/images/courses/feather-pen.jpg
+%%WWWDIR%%/images/courses/fire_helmut.jpg
+%%WWWDIR%%/images/courses/fractal.jpg
+%%WWWDIR%%/images/courses/head_wireframe.jpg
+%%WWWDIR%%/images/courses/helix.jpg
+%%WWWDIR%%/images/courses/helmet.jpg
+%%WWWDIR%%/images/courses/light-bulb.jpg
+%%WWWDIR%%/images/courses/map.jpg
+%%WWWDIR%%/images/courses/microchip.jpg
+%%WWWDIR%%/images/courses/microscope.jpg
+%%WWWDIR%%/images/courses/molecule.jpg
+%%WWWDIR%%/images/courses/nav_wheel.jpg
+%%WWWDIR%%/images/courses/normal_surfaces.jpg
+%%WWWDIR%%/images/courses/pedal.jpg
+%%WWWDIR%%/images/courses/pharao.jpg
+%%WWWDIR%%/images/courses/pharmacy.jpg
+%%WWWDIR%%/images/courses/planet-earth.jpg
+%%WWWDIR%%/images/courses/police_hat.jpg
+%%WWWDIR%%/images/courses/recycling.jpg
+%%WWWDIR%%/images/courses/skull.jpg
+%%WWWDIR%%/images/courses/skull_wireframe.jpg
+%%WWWDIR%%/images/courses/sl_logo.gif
+%%WWWDIR%%/images/courses/snail.jpg
+%%WWWDIR%%/images/courses/sphere.jpg
+%%WWWDIR%%/images/courses/sphinx.jpg
+%%WWWDIR%%/images/courses/toolbox.jpg
+%%WWWDIR%%/images/courses/triangle.jpg
+%%WWWDIR%%/images/courses/two_roads.jpg
+%%WWWDIR%%/images/detail_view.png
+%%WWWDIR%%/images/details_il.png
+%%WWWDIR%%/images/details_ir.png
+%%WWWDIR%%/images/details_l.png
+%%WWWDIR%%/images/details_r.png
+%%WWWDIR%%/images/donate.gif
+%%WWWDIR%%/images/edit.gif
+%%WWWDIR%%/images/eye-mini-close.png
+%%WWWDIR%%/images/eye-mini-open.png
+%%WWWDIR%%/images/feedback.gif
+%%WWWDIR%%/images/file.gif
+%%WWWDIR%%/images/file_types/audio.gif
+%%WWWDIR%%/images/file_types/binary.gif
+%%WWWDIR%%/images/file_types/csv.gif
+%%WWWDIR%%/images/file_types/doc.gif
+%%WWWDIR%%/images/file_types/dvi.gif
+%%WWWDIR%%/images/file_types/generic.gif
+%%WWWDIR%%/images/file_types/image.gif
+%%WWWDIR%%/images/file_types/mdb.gif
+%%WWWDIR%%/images/file_types/mpp.gif
+%%WWWDIR%%/images/file_types/ood.gif
+%%WWWDIR%%/images/file_types/oop.gif
+%%WWWDIR%%/images/file_types/oos.gif
+%%WWWDIR%%/images/file_types/oot.gif
+%%WWWDIR%%/images/file_types/pdf.gif
+%%WWWDIR%%/images/file_types/ppt.gif
+%%WWWDIR%%/images/file_types/ps.gif
+%%WWWDIR%%/images/file_types/psd.gif
+%%WWWDIR%%/images/file_types/qt.gif
+%%WWWDIR%%/images/file_types/rtf.gif
+%%WWWDIR%%/images/file_types/sql.gif
+%%WWWDIR%%/images/file_types/sql2.gif
+%%WWWDIR%%/images/file_types/src.gif
+%%WWWDIR%%/images/file_types/swf.gif
+%%WWWDIR%%/images/file_types/treeview.gif
+%%WWWDIR%%/images/file_types/txt.gif
+%%WWWDIR%%/images/file_types/video.gif
+%%WWWDIR%%/images/file_types/viewlet.gif
+%%WWWDIR%%/images/file_types/vsd.gif
+%%WWWDIR%%/images/file_types/xls.gif
+%%WWWDIR%%/images/file_types/xml.gif
+%%WWWDIR%%/images/file_types/zip.gif
+%%WWWDIR%%/images/folder.gif
+%%WWWDIR%%/images/forum/19.gif
+%%WWWDIR%%/images/forum/27.gif
+%%WWWDIR%%/images/forum/3.gif
+%%WWWDIR%%/images/forum/30.gif
+%%WWWDIR%%/images/forum/51.gif
+%%WWWDIR%%/images/forum/52.gif
+%%WWWDIR%%/images/forum/54.gif
+%%WWWDIR%%/images/forum/55.gif
+%%WWWDIR%%/images/forum/56.gif
+%%WWWDIR%%/images/forum/57.gif
+%%WWWDIR%%/images/forum/58.gif
+%%WWWDIR%%/images/forum/frown.gif
+%%WWWDIR%%/images/forum/happy.gif
+%%WWWDIR%%/images/forum/index.html
+%%WWWDIR%%/images/forum/move.gif
+%%WWWDIR%%/images/forum/ohwell.gif
+%%WWWDIR%%/images/forum/smile.gif
+%%WWWDIR%%/images/forum/sticky.gif
+%%WWWDIR%%/images/forum/tongue.gif
+%%WWWDIR%%/images/forum/topic_stick.gif
+%%WWWDIR%%/images/forum/wink.gif
+%%WWWDIR%%/images/glossary.gif
+%%WWWDIR%%/images/glossary_small.gif
+%%WWWDIR%%/images/graph.gif
+%%WWWDIR%%/images/grey.gif
+%%WWWDIR%%/images/help3.gif
+%%WWWDIR%%/images/help4.gif
+%%WWWDIR%%/images/home-acollab.png
+%%WWWDIR%%/images/home-blogs.png
+%%WWWDIR%%/images/home-blogs_sm.png
+%%WWWDIR%%/images/home-chat.png
+%%WWWDIR%%/images/home-chat_sm.png
+%%WWWDIR%%/images/home-directory.png
+%%WWWDIR%%/images/home-directory_sm.png
+%%WWWDIR%%/images/home-export_content.png
+%%WWWDIR%%/images/home-faq.png
+%%WWWDIR%%/images/home-faq_sm.png
+%%WWWDIR%%/images/home-file_storage.png
+%%WWWDIR%%/images/home-file_storage_sm.png
+%%WWWDIR%%/images/home-forums.png
+%%WWWDIR%%/images/home-forums_sm.png
+%%WWWDIR%%/images/home-glossary.png
+%%WWWDIR%%/images/home-glossary_sm.png
+%%WWWDIR%%/images/home-gradebook_sm.png
+%%WWWDIR%%/images/home-links.png
+%%WWWDIR%%/images/home-links_sm.png
+%%WWWDIR%%/images/home-polls.png
+%%WWWDIR%%/images/home-polls_sm.png
+%%WWWDIR%%/images/home-reading_list.png
+%%WWWDIR%%/images/home-reading_list_sm.png
+%%WWWDIR%%/images/home-site_map.png
+%%WWWDIR%%/images/home-tests.png
+%%WWWDIR%%/images/home-tests_sm.png
+%%WWWDIR%%/images/home-tile_search.png
+%%WWWDIR%%/images/home-tracker.png
+%%WWWDIR%%/images/home-tracker_sm.png
+%%WWWDIR%%/images/icon-zip.gif
+%%WWWDIR%%/images/icon.png
+%%WWWDIR%%/images/icon_delete.gif
+%%WWWDIR%%/images/icon_minipost.gif
+%%WWWDIR%%/images/icon_view.png
+%%WWWDIR%%/images/index.html
+%%WWWDIR%%/images/lock.gif
+%%WWWDIR%%/images/logo.gif
+%%WWWDIR%%/images/move-down.gif
+%%WWWDIR%%/images/move-up.gif
+%%WWWDIR%%/images/new.gif
+%%WWWDIR%%/images/pen.gif
+%%WWWDIR%%/images/pen2.gif
+%%WWWDIR%%/images/pen3.gif
+%%WWWDIR%%/images/pub_default.jpg
+%%WWWDIR%%/images/question.gif
+%%WWWDIR%%/images/red.gif
+%%WWWDIR%%/images/rtl_tree/index.html
+%%WWWDIR%%/images/rtl_tree/tree_collapse.gif
+%%WWWDIR%%/images/rtl_tree/tree_end.gif
+%%WWWDIR%%/images/rtl_tree/tree_expand.gif
+%%WWWDIR%%/images/rtl_tree/tree_horizontal.gif
+%%WWWDIR%%/images/rtl_tree/tree_split.gif
+%%WWWDIR%%/images/rtl_tree/tree_vertline.gif
+%%WWWDIR%%/images/search.gif
+%%WWWDIR%%/images/star.gif
+%%WWWDIR%%/images/subscribe-envelope.png
+%%WWWDIR%%/images/toc.gif
+%%WWWDIR%%/images/topic_lock.gif
+%%WWWDIR%%/images/transfer.gif
+%%WWWDIR%%/images/tree/index.html
+%%WWWDIR%%/images/tree/tree_collapse.gif
+%%WWWDIR%%/images/tree/tree_disabled.gif
+%%WWWDIR%%/images/tree/tree_end.gif
+%%WWWDIR%%/images/tree/tree_expand.gif
+%%WWWDIR%%/images/tree/tree_horizontal.gif
+%%WWWDIR%%/images/tree/tree_space.gif
+%%WWWDIR%%/images/tree/tree_split.gif
+%%WWWDIR%%/images/tree/tree_vertline.gif
+%%WWWDIR%%/images/unlock.gif
+%%WWWDIR%%/images/unsubscribe-envelope.png
+%%WWWDIR%%/images/x.gif
+%%WWWDIR%%/inbox/export.php
+%%WWWDIR%%/inbox/index.php
+%%WWWDIR%%/inbox/send_message.php
+%%WWWDIR%%/inbox/sent_messages.php
+%%WWWDIR%%/include/classes/A4a/A4a.class.php
+%%WWWDIR%%/include/classes/A4a/A4a.tmpl.php
+%%WWWDIR%%/include/classes/A4a/A4aExport.class.php
+%%WWWDIR%%/include/classes/A4a/A4aImport.class.php
+%%WWWDIR%%/include/classes/Backup/Backup.class.php
+%%WWWDIR%%/include/classes/Backup/TableBackup.class.php
+%%WWWDIR%%/include/classes/CSVExport.class.php
+%%WWWDIR%%/include/classes/CSVImport.class.php
+%%WWWDIR%%/include/classes/ContentManager.class.php
+%%WWWDIR%%/include/classes/ErrorHandler/ErrorHandler.class.php
+%%WWWDIR%%/include/classes/FileManager.class.php
+%%WWWDIR%%/include/classes/Language/Language.class.php
+%%WWWDIR%%/include/classes/Language/LanguageEditor.class.php
+%%WWWDIR%%/include/classes/Language/LanguageManager.class.php
+%%WWWDIR%%/include/classes/Language/LanguageParser.class.php
+%%WWWDIR%%/include/classes/Language/LanguagesParser.class.php
+%%WWWDIR%%/include/classes/Language/RemoteLanguageManager.class.php
+%%WWWDIR%%/include/classes/Message/Message.class.php
+%%WWWDIR%%/include/classes/Module/Module.class.php
+%%WWWDIR%%/include/classes/Module/ModuleListParser.class.php
+%%WWWDIR%%/include/classes/Module/ModuleParser.class.php
+%%WWWDIR%%/include/classes/QTI/QTIImport.class.php
+%%WWWDIR%%/include/classes/QTI/QTIParser.class.php
+%%WWWDIR%%/include/classes/Savant2/Savant2/Compiler.php
+%%WWWDIR%%/include/classes/Savant2/Savant2/Error.php
+%%WWWDIR%%/include/classes/Savant2/Savant2/Filter.php
+%%WWWDIR%%/include/classes/Savant2/Savant2/Plugin.php
+%%WWWDIR%%/include/classes/Savant2/Savant2/Savant2_Error_exception.php
+%%WWWDIR%%/include/classes/Savant2/Savant2/Savant2_Error_pear.php
+%%WWWDIR%%/include/classes/Savant2/Savant2/Savant2_Error_stack.php
+%%WWWDIR%%/include/classes/Savant2/Savant2/Savant2_Plugin_cycle.php
+%%WWWDIR%%/include/classes/Savant2/Savant2.php
+%%WWWDIR%%/include/classes/Themes/ThemeListParser.class.php
+%%WWWDIR%%/include/classes/Themes/ThemeParser.class.php
+%%WWWDIR%%/include/classes/UrlRewrite/ContentUrl.class.php
+%%WWWDIR%%/include/classes/UrlRewrite/FileStorageUrl.class.php
+%%WWWDIR%%/include/classes/UrlRewrite/ForumsUrl.class.php
+%%WWWDIR%%/include/classes/UrlRewrite/GlossaryUrl.class.php
+%%WWWDIR%%/include/classes/UrlRewrite/TestsUrl.class.php
+%%WWWDIR%%/include/classes/UrlRewrite/UrlParser.class.php
+%%WWWDIR%%/include/classes/UrlRewrite/UrlRewrite.class.php
+%%WWWDIR%%/include/classes/XML/XML_HTMLSax/HTMLSax/XML_HTMLSax_Decorators.php
+%%WWWDIR%%/include/classes/XML/XML_HTMLSax/HTMLSax/XML_HTMLSax_States.php
+%%WWWDIR%%/include/classes/XML/XML_HTMLSax/OS/Guess.php
+%%WWWDIR%%/include/classes/XML/XML_HTMLSax/PEAR/Autoloader.php
+%%WWWDIR%%/include/classes/XML/XML_HTMLSax/PEAR/Common.php
+%%WWWDIR%%/include/classes/XML/XML_HTMLSax/PEAR/Config.php
+%%WWWDIR%%/include/classes/XML/XML_HTMLSax/PEAR/Remote.php
+%%WWWDIR%%/include/classes/XML/XML_HTMLSax/PEAR.php
+%%WWWDIR%%/include/classes/XML/XML_HTMLSax/System.php
+%%WWWDIR%%/include/classes/XML/XML_HTMLSax/XML_HTMLSax.php
+%%WWWDIR%%/include/classes/cssparser.php
+%%WWWDIR%%/include/classes/feedcreator.class.php
+%%WWWDIR%%/include/classes/lastRSS.php
+%%WWWDIR%%/include/classes/nusoap.php
+%%WWWDIR%%/include/classes/pclzip.lib.php
+%%WWWDIR%%/include/classes/phpmailer/atutormailer.class.php
+%%WWWDIR%%/include/classes/phpmailer/class.phpmailer.php
+%%WWWDIR%%/include/classes/phpmailer/class.smtp.php
+%%WWWDIR%%/include/classes/phpmailer/phpmailer.lang-en.php
+%%WWWDIR%%/include/classes/sqlutility.class.php
+%%WWWDIR%%/include/classes/subscribe.class.php
+%%WWWDIR%%/include/classes/testQuestions.class.php
+%%WWWDIR%%/include/classes/vcard.php
+%%WWWDIR%%/include/classes/zipfile.class.php
+%%WWWDIR%%/include/config.inc.php
+%%WWWDIR%%/include/footer.inc.php
+%%WWWDIR%%/include/header.inc.php
+%%WWWDIR%%/include/html/announcements.inc.php
+%%WWWDIR%%/include/html/auto_enroll_courses.inc.php
+%%WWWDIR%%/include/html/auto_enroll_list_courses.inc.php
+%%WWWDIR%%/include/html/browse.inc.php
+%%WWWDIR%%/include/html/code_picker.inc.php
+%%WWWDIR%%/include/html/copyright.inc.php
+%%WWWDIR%%/include/html/course_icon.inc.php
+%%WWWDIR%%/include/html/course_properties.inc.php
+%%WWWDIR%%/include/html/dropdowns/glossary.inc.php
+%%WWWDIR%%/include/html/dropdowns/menu_menu.inc.php
+%%WWWDIR%%/include/html/dropdowns/poll.inc.php
+%%WWWDIR%%/include/html/dropdowns/posts.inc.php
+%%WWWDIR%%/include/html/dropdowns/related_topics.inc.php
+%%WWWDIR%%/include/html/dropdowns/search.inc.php
+%%WWWDIR%%/include/html/dropdowns/users_online.inc.php
+%%WWWDIR%%/include/html/editor_tabs/accessibility.inc.php
+%%WWWDIR%%/include/html/editor_tabs/alternatives.inc.php
+%%WWWDIR%%/include/html/editor_tabs/content_code_picker.inc.php
+%%WWWDIR%%/include/html/editor_tabs/edit.inc.php
+%%WWWDIR%%/include/html/editor_tabs/glossary.inc.php
+%%WWWDIR%%/include/html/editor_tabs/preview.inc.php
+%%WWWDIR%%/include/html/editor_tabs/properties.inc.php
+%%WWWDIR%%/include/html/editor_tabs/tests.inc.php
+%%WWWDIR%%/include/html/enroll_edit.inc.php
+%%WWWDIR%%/include/html/enroll_tab_functions.inc.php
+%%WWWDIR%%/include/html/enrollment.inc.php
+%%WWWDIR%%/include/html/filemanager_display.inc.php
+%%WWWDIR%%/include/html/filemanager_display_alternatives.inc.php
+%%WWWDIR%%/include/html/forum.inc.php
+%%WWWDIR%%/include/html/frameset/footer.inc.php
+%%WWWDIR%%/include/html/frameset/header.inc.php
+%%WWWDIR%%/include/html/languages.inc.php
+%%WWWDIR%%/include/html/new_thread.inc.php
+%%WWWDIR%%/include/html/privileges.inc.php
+%%WWWDIR%%/include/html/profile_picture.inc.php
+%%WWWDIR%%/include/html/release_date.inc.php
+%%WWWDIR%%/include/html/resources_parser.inc.php
+%%WWWDIR%%/include/html/search.inc.php
+%%WWWDIR%%/include/html/tests_questions.inc.php
+%%WWWDIR%%/include/ims/adlcp_rootv1p2.xsd
+%%WWWDIR%%/include/ims/footer.html
+%%WWWDIR%%/include/ims/ims.css
+%%WWWDIR%%/include/ims/ims_template.inc.php
+%%WWWDIR%%/include/ims/ims_xml.xsd
+%%WWWDIR%%/include/ims/imscp_rootv1p1p2.xsd
+%%WWWDIR%%/include/ims/imsmd_rootv1p2p1.xsd
+%%WWWDIR%%/include/imscc/ims_template.inc.php
+%%WWWDIR%%/include/index.html
+%%WWWDIR%%/include/lib/admin_categories.inc.php
+%%WWWDIR%%/include/lib/alternatives_functions.inc.php
+%%WWWDIR%%/include/lib/chat.inc.php
+%%WWWDIR%%/include/lib/chat_defaults.inc.php
+%%WWWDIR%%/include/lib/constants.inc.php
+%%WWWDIR%%/include/lib/course.inc.php
+%%WWWDIR%%/include/lib/delete_course.inc.php
+%%WWWDIR%%/include/lib/editor_tab_functions.inc.php
+%%WWWDIR%%/include/lib/enroll.inc.php
+%%WWWDIR%%/include/lib/file_storage.inc.php
+%%WWWDIR%%/include/lib/filemanager.inc.php
+%%WWWDIR%%/include/lib/forums.inc.php
+%%WWWDIR%%/include/lib/html_resource_parser.inc.php
+%%WWWDIR%%/include/lib/likert_presets.inc.php
+%%WWWDIR%%/include/lib/links.inc.php
+%%WWWDIR%%/include/lib/menu_pages.php
+%%WWWDIR%%/include/lib/mime.inc.php
+%%WWWDIR%%/include/lib/mysql_connect.inc.php
+%%WWWDIR%%/include/lib/output.inc.php
+%%WWWDIR%%/include/lib/pref_functions.inc.php
+%%WWWDIR%%/include/lib/pref_tab_functions.inc.php
+%%WWWDIR%%/include/lib/qti.inc.php
+%%WWWDIR%%/include/lib/search.inc.php
+%%WWWDIR%%/include/lib/test_question_queries.inc.php
+%%WWWDIR%%/include/lib/test_result_functions.inc.php
+%%WWWDIR%%/include/lib/theme_template.inc.php
+%%WWWDIR%%/include/lib/themes.inc.php
+%%WWWDIR%%/include/lib/tinymce.inc.php
+%%WWWDIR%%/include/lib/tinymce_styles.css
+%%WWWDIR%%/include/lib/tracker.inc.php
+%%WWWDIR%%/include/lib/tracker2.inc.php
+%%WWWDIR%%/include/lib/tracker_stats.inc.php
+%%WWWDIR%%/include/lib/tracker_stats2.inc.php
+%%WWWDIR%%/include/lib/upload.php
+%%WWWDIR%%/include/lib/utf8.php
+%%WWWDIR%%/include/phpCache/ChangeLog
+%%WWWDIR%%/include/phpCache/LICENSE
+%%WWWDIR%%/include/phpCache/README
+%%WWWDIR%%/include/phpCache/gc.php
+%%WWWDIR%%/include/phpCache/phpCache.inc.php
+%%WWWDIR%%/include/player.swf
+%%WWWDIR%%/include/securimage/LICENSE.txt
+%%WWWDIR%%/include/securimage/README.txt
+%%WWWDIR%%/include/securimage/audio/0.wav
+%%WWWDIR%%/include/securimage/audio/1.wav
+%%WWWDIR%%/include/securimage/audio/2.wav
+%%WWWDIR%%/include/securimage/audio/3.wav
+%%WWWDIR%%/include/securimage/audio/4.wav
+%%WWWDIR%%/include/securimage/audio/5.wav
+%%WWWDIR%%/include/securimage/audio/6.wav
+%%WWWDIR%%/include/securimage/audio/7.wav
+%%WWWDIR%%/include/securimage/audio/8.wav
+%%WWWDIR%%/include/securimage/audio/9.wav
+%%WWWDIR%%/include/securimage/audio/A.wav
+%%WWWDIR%%/include/securimage/audio/B.wav
+%%WWWDIR%%/include/securimage/audio/C.wav
+%%WWWDIR%%/include/securimage/audio/D.wav
+%%WWWDIR%%/include/securimage/audio/E.wav
+%%WWWDIR%%/include/securimage/audio/F.wav
+%%WWWDIR%%/include/securimage/audio/G.wav
+%%WWWDIR%%/include/securimage/audio/H.wav
+%%WWWDIR%%/include/securimage/audio/I.wav
+%%WWWDIR%%/include/securimage/audio/J.wav
+%%WWWDIR%%/include/securimage/audio/K.wav
+%%WWWDIR%%/include/securimage/audio/L.wav
+%%WWWDIR%%/include/securimage/audio/M.wav
+%%WWWDIR%%/include/securimage/audio/N.wav
+%%WWWDIR%%/include/securimage/audio/O.wav
+%%WWWDIR%%/include/securimage/audio/P.wav
+%%WWWDIR%%/include/securimage/audio/Q.wav
+%%WWWDIR%%/include/securimage/audio/R.wav
+%%WWWDIR%%/include/securimage/audio/S.wav
+%%WWWDIR%%/include/securimage/audio/T.wav
+%%WWWDIR%%/include/securimage/audio/U.wav
+%%WWWDIR%%/include/securimage/audio/V.wav
+%%WWWDIR%%/include/securimage/audio/W.wav
+%%WWWDIR%%/include/securimage/audio/X.wav
+%%WWWDIR%%/include/securimage/audio/Y.wav
+%%WWWDIR%%/include/securimage/audio/Z.wav
+%%WWWDIR%%/include/securimage/elephant.ttf
+%%WWWDIR%%/include/securimage/gdfonts/automatic.gdf
+%%WWWDIR%%/include/securimage/gdfonts/bubblebath.gdf
+%%WWWDIR%%/include/securimage/gdfonts/caveman.gdf
+%%WWWDIR%%/include/securimage/gdfonts/crass.gdf
+%%WWWDIR%%/include/securimage/images/audio_icon.gif
+%%WWWDIR%%/include/securimage/images/refresh.gif
+%%WWWDIR%%/include/securimage/securimage.php
+%%WWWDIR%%/include/securimage/securimage_play.php
+%%WWWDIR%%/include/securimage/securimage_show.php
+%%WWWDIR%%/include/side_menu.inc.php
+%%WWWDIR%%/include/style_popup.css
+%%WWWDIR%%/include/vitals.inc.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/install/db/atutor_convert_db_to_utf8.sql
+%%WWWDIR%%/install/db/atutor_language_text.sql
+%%WWWDIR%%/install/db/atutor_schema.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.4.1_to_1.4.2.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.4.2_to_1.4.3.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.4.3_to_1.5.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.4_to_1.4.1.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.5.1_to_1.5.2.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.5.2_to_1.5.3.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.5.3.1_to_1.5.3.2.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.5.3.2_to_1.5.3.3.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.5.3.3_to_1.5.4.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.5.3_to_1.5.3.1.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.5.4_to_1.5.5.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.5.5_to_1.6.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.5_to_1.5.1.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.6.1_to_1.6.2.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.6.2_to_1.6.3.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.6_to_1.6.1.sql
+%%WWWDIR%%/install/images/bad.gif
+%%WWWDIR%%/install/images/feedback.gif
+%%WWWDIR%%/install/images/question.gif
+%%WWWDIR%%/install/include/classes/TableConversion.class.php
+%%WWWDIR%%/install/include/classes/sqlutility.php
+%%WWWDIR%%/install/include/common.inc.php
+%%WWWDIR%%/install/include/config_template.php
+%%WWWDIR%%/install/include/footer.php
+%%WWWDIR%%/install/include/header.php
+%%WWWDIR%%/install/include/step1.php
+%%WWWDIR%%/install/include/step2.php
+%%WWWDIR%%/install/include/step3.php
+%%WWWDIR%%/install/include/step4.php
+%%WWWDIR%%/install/include/step5.php
+%%WWWDIR%%/install/include/step6.php
+%%WWWDIR%%/install/include/step7.php
+%%WWWDIR%%/install/include/step8.php
+%%WWWDIR%%/install/include/upgrade_header.php
+%%WWWDIR%%/install/include/ustep1.php
+%%WWWDIR%%/install/include/ustep2.php
+%%WWWDIR%%/install/include/ustep3.php
+%%WWWDIR%%/install/include/ustep4.php
+%%WWWDIR%%/install/include/ustep5.php
+%%WWWDIR%%/install/include/ustep6.php
+%%WWWDIR%%/install/include/ustep7.php
+%%WWWDIR%%/install/include/ustep_pwd_encryt.php
+%%WWWDIR%%/install/index.php
+%%WWWDIR%%/install/install.php
+%%WWWDIR%%/install/not_installed.php
+%%WWWDIR%%/install/stylesheet.css
+%%WWWDIR%%/install/update_config.php
+%%WWWDIR%%/install/upgrade.php
+%%WWWDIR%%/jscripts/TILE.js
+%%WWWDIR%%/jscripts/calendar.js
+%%WWWDIR%%/jscripts/help.js
+%%WWWDIR%%/jscripts/infusion/InfusionAll.js
+%%WWWDIR%%/jscripts/infusion/README.txt
+%%WWWDIR%%/jscripts/infusion/components/inlineEdit/css/InlineEdit.css
+%%WWWDIR%%/jscripts/infusion/components/inlineEdit/js/InlineEdit.js
+%%WWWDIR%%/jscripts/infusion/components/inlineEdit/js/InlineEditIntegrations.js
+%%WWWDIR%%/jscripts/infusion/components/inlineEdit/js/jquery.tinymce.js
+%%WWWDIR%%/jscripts/infusion/components/pager/css/Pager.css
+%%WWWDIR%%/jscripts/infusion/components/pager/images/arrow-dn.png
+%%WWWDIR%%/jscripts/infusion/components/pager/images/arrow-up.png
+%%WWWDIR%%/jscripts/infusion/components/pager/js/Pager.js
+%%WWWDIR%%/jscripts/infusion/components/progress/js/Progress.js
+%%WWWDIR%%/jscripts/infusion/components/reorderer/css/ImageReorderer.css
+%%WWWDIR%%/jscripts/infusion/components/reorderer/css/Reorderer.css
+%%WWWDIR%%/jscripts/infusion/components/reorderer/html/ImageReordererRSF.html
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Banana.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Blackberry.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Cherry.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Dragonfruit.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Fig.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Grapes.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Kiwano.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Kiwi.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Kumquat.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Lemon.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Mangosteen.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Orange.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/RedApple.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/images/Tamarillo.jpg
+%%WWWDIR%%/jscripts/infusion/components/reorderer/js/GeometricManager.js
+%%WWWDIR%%/jscripts/infusion/components/reorderer/js/ImageReorderer.js
+%%WWWDIR%%/jscripts/infusion/components/reorderer/js/LayoutReorderer.js
+%%WWWDIR%%/jscripts/infusion/components/reorderer/js/ModuleLayout.js
+%%WWWDIR%%/jscripts/infusion/components/reorderer/js/Reorderer.js
+%%WWWDIR%%/jscripts/infusion/components/tableOfContents/html/TableOfContents.html
+%%WWWDIR%%/jscripts/infusion/components/tableOfContents/js/TableOfContents.js
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/Slider.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/UIOptions.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/css/UIOptionsPreview.css
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/html/UIOptions.html
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/html/UIOptionsPreview.html
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/500x327_mint_truffle.jpg
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/border_1.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/expand_collapse.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/h1.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/main_bg.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/images/mintleaf.png
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/js/UIEnhancer.js
+%%WWWDIR%%/jscripts/infusion/components/uiOptions/js/UIOptions.js
+%%WWWDIR%%/jscripts/infusion/components/undo/js/Undo.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/ReadMe.txt
+%%WWWDIR%%/jscripts/infusion/components/uploader/css/Uploader.css
+%%WWWDIR%%/jscripts/infusion/components/uploader/html/Uploader.html
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/add.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/browse.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/error.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/gradient-file-green.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/gradient-file-grey.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/gradient-total-green.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/gradient-total-grey.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/gradient-total-yellow.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/remove.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/images/tick.png
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/DemoUploadManager.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/FileQueue.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/SWFUploadManager.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/Scroller.js
+%%WWWDIR%%/jscripts/infusion/components/uploader/js/Uploader.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/DataBinding.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/Fluid.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/FluidDOMUtilities.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/ProgressiveEnhancement.js
+%%WWWDIR%%/jscripts/infusion/framework/core/js/jquery.keyboard-a11y.js
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-JSR168Bridge.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-layout.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-reset.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-text.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-coal.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-debug.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-hc.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-hci.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-mist.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-rust.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/css/fss-theme-slate.css
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/exclamation.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/_common/exclamation.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/_common/gloss_25_repeater.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/_common/gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/buttons-light-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/buttons-light-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/buttons-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/buttons-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/buttons-titlebar-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/buttons-titlebar-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/coal-icons.psd
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/icon-menu-Delete.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/icon-widget-Less.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/icon-widget-ShowSettings.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/icon-widget-gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-light-active-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-light-active-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-light-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-light-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-light-container-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-light-content-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-med-active-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-med-active-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-med-container-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/tabs-med-content-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal/widget-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/buttons-light-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/buttons-light-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/buttons-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/buttons-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/buttons-titlebar-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/buttons-titlebar-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/icon-menu-Delete.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/icon-options-ListOrGrid.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/icon-widget-Less.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/icon-widget-ShowSettings.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/icon-widget-gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/mist-icons.psd
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/tabs-light-active-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/tabs-light-active-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/tabs-light-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/tabs-light-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/tabs-light-container-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/tabs-med-active-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/tabs-med-active-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/tabs-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/tabs-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/tabs-med-container-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist/widget-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/rust/gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/rust/icon-menu-Delete.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/rust/icon-options-ListOrGrid.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/rust/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/rust/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/rust/icon-widget-Settings.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/rust/menu-hover.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/rust/widget-earmark.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/buttons-light-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/buttons-light-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/buttons-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/buttons-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/buttons-titlebar-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/buttons-titlebar-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/icon-widget-Close.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/icon-widget-Less.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/icon-widget-More.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/icon-widget-gripper.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/slate-icons.psd
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/sprites.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/tabs-light-active-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/tabs-light-active-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/tabs-light-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/tabs-light-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/tabs-light-container-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/tabs-med-active-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/tabs-med-active-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/tabs-med-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/tabs-med-cap.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/tabs-med-container-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/widget-bg.png
+%%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate/widget-earmark.png
+%%WWWDIR%%/jscripts/infusion/framework/renderer/js/fluidParser.js
+%%WWWDIR%%/jscripts/infusion/framework/renderer/js/fluidRenderer.js
+%%WWWDIR%%/jscripts/infusion/lib/fastXmlPull/js/fastXmlPull.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/core/js/jquery.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/bgiframe/js/jquery.bgiframe.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/delegate/js/jquery.delegate.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip/css/jquery.tooltip.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip/js/jquery.tooltip.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/coal.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-bg_flat_0_000000_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-bg_flat_75_cccccc_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-bg_highlight-soft_25_575757_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-bg_highlight-soft_55_cccccc_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-bg_highlight-soft_65_000000_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-bg_highlight-soft_75_333333_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-bg_highlight-soft_75_666666_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-bg_inset-soft_95_fef1ec_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-icons_333333_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-icons_a3a3a3_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-icons_cccccc_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hc/hc.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hc/images/ui-bg_flat_0_000000_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hc/images/ui-bg_flat_0_ffffff_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hc/images/ui-icons_000000_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hc/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hci/hci.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hci/images/ui-bg_flat_0_000000_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hci/images/ui-bg_flat_0_999999_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hci/images/ui-bg_flat_0_ffffff_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hci/images/ui-icons_000000_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hci/images/ui-icons_fffff_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hci/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-bg_flat_0_000000_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-bg_flat_0_2e83ff_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-bg_glass_75_9dcaf6_1x400.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-bg_glass_75_d9e8f7_1x400.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-bg_highlight-soft_55_9dcaf6_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-bg_inset-soft_95_fef1ec_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-icons_000000_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/mist.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-bg_flat_0_666666_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-bg_flat_0_999999_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-bg_flat_0_cccccc_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-bg_flat_0_ebebeb_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-bg_flat_0_ffffff_40x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-bg_glass_75_666666_1x400.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-bg_highlight-hard_100_ebebeb_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-bg_highlight-soft_75_999999_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-bg_inset-hard_100_ebebeb_1x100.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-icons_000000_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-icons_666666_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-icons_ebebeb_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/slate.css
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/ui-FLUID-readme.txt
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/ui.accordion.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/ui.core.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/ui.dialog.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/ui.draggable.js
+%%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js/ui.slider.js
+%%WWWDIR%%/jscripts/infusion/lib/json/js/json2.js
+%%WWWDIR%%/jscripts/infusion/lib/swfobject/js/swfobject.js
+%%WWWDIR%%/jscripts/infusion/lib/swfupload/flash/swfupload.swf
+%%WWWDIR%%/jscripts/infusion/lib/swfupload/js/swfupload.js
+%%WWWDIR%%/jscripts/infusion/licenses/Infusion-LICENSE.txt
+%%WWWDIR%%/jscripts/infusion/licenses/fastXmlPull-LICENSE.txt
+%%WWWDIR%%/jscripts/infusion/licenses/fckeditor-LICENSE.txt
+%%WWWDIR%%/jscripts/infusion/licenses/jQuery-LICENSE.txt
+%%WWWDIR%%/jscripts/infusion/licenses/swfobject-LICENSE.txt
+%%WWWDIR%%/jscripts/infusion/licenses/swfupload-LICENSE.txt
+%%WWWDIR%%/jscripts/interface.js
+%%WWWDIR%%/jscripts/jquery.js
+%%WWWDIR%%/jscripts/opensocial/activity.js
+%%WWWDIR%%/jscripts/opensocial/address.js
+%%WWWDIR%%/jscripts/opensocial/all_opensocial.php
+%%WWWDIR%%/jscripts/opensocial/bodyType.js
+%%WWWDIR%%/jscripts/opensocial/collection.js
+%%WWWDIR%%/jscripts/opensocial/datarequest.js
+%%WWWDIR%%/jscripts/opensocial/dataresponse.js
+%%WWWDIR%%/jscripts/opensocial/email.js
+%%WWWDIR%%/jscripts/opensocial/enum.js
+%%WWWDIR%%/jscripts/opensocial/environment.js
+%%WWWDIR%%/jscripts/opensocial/message.js
+%%WWWDIR%%/jscripts/opensocial/name.js
+%%WWWDIR%%/jscripts/opensocial/opensocial.js
+%%WWWDIR%%/jscripts/opensocial/organization.js
+%%WWWDIR%%/jscripts/opensocial/person.js
+%%WWWDIR%%/jscripts/opensocial/phone.js
+%%WWWDIR%%/jscripts/opensocial/responseitem.js
+%%WWWDIR%%/jscripts/opensocial/url.js
+%%WWWDIR%%/jscripts/tiny_mce/langs/en.js
+%%WWWDIR%%/jscripts/tiny_mce/license.txt
+%%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/img/acheck.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/js/dialog.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/langs/en.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/css/advhr.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/js/rule.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/rule.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/css/advimage.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/image.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/img/sample.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/js/image.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/css/advlink.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/js/advlink.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/link.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/compat2x/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/compat2x/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/directionality/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/emotions.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-cool.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-cry.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-embarassed.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-foot-in-mouth.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-frown.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-innocent.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-kiss.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-laughing.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-money-mouth.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-sealed.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-smile.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-surprised.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-tongue-out.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-undecided.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-wink.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img/smiley-yell.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/js/emotions.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/example/dialog.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/example/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/example/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/example/img/example.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/example/js/dialog.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/example/langs/en.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/example/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/fullpage.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/js/fullpage.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen/fullscreen.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/iespell/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/iespell/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/alert.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/button.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/buttons.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/confirm.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/corners.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/horizontal.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/template.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/layer/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/css/content.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/css/media.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/flash.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/flv_player.swf
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/quicktime.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/realmedia.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/shockwave.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/trans.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/img/windowsmedia.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/js/embed.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/js/media.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/media/media.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/css/content.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/img/pagebreak.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/img/trans.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/js/pastetext.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/js/pasteword.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/pastetext.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/paste/pasteword.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/example.html
+%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/jscripts/embed.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/preview/preview.html
+%%WWWDIR%%/jscripts/tiny_mce/plugins/print/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/print/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/safari/blank.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/safari/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/safari/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/save/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/save/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/js/searchreplace.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/searchreplace.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/css/content.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/img/wline.gif
+%%WWWDIR%%/jscripts/tiny_mce/plugins/style/css/props.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/style/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/style/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/style/js/props.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/style/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/style/props.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/tabfocus/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/tabfocus/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/cell.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/css/cell.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/css/row.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/css/table.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/js/cell.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/js/merge_cells.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/js/row.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/js/table.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/merge_cells.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/row.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/table/table.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/template/blank.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/template/css/template.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/template/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/template/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/template/js/template.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/template/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/template/template.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/abbr.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/acronym.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/attributes.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/cite.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/css/attributes.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/css/popup.css
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/del.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/ins.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/js/abbr.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/js/acronym.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/js/attributes.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/js/cite.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/js/del.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/js/element_common.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/js/ins.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/about.htm
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/anchor.htm
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/charmap.htm
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/color_picker.htm
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/editor_template.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/editor_template_src.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/image.htm
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/colorpicker.jpg
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img/icons.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/js/about.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/js/anchor.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/js/charmap.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/js/color_picker.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/js/image.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/js/link.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/js/source_editor.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/langs/en.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/link.htm
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/content.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/dialog.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/img/buttons.png
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/img/items.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_arrow.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_check.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/img/progress.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/img/tabs.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/ui.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/content.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/dialog.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg.png
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_black.png
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_silver.png
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_black.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_silver.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/advanced/source_editor.htm
+%%WWWDIR%%/jscripts/tiny_mce/themes/simple/editor_template.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/simple/editor_template_src.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/simple/img/icons.gif
+%%WWWDIR%%/jscripts/tiny_mce/themes/simple/langs/en.js
+%%WWWDIR%%/jscripts/tiny_mce/themes/simple/skins/default/content.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/simple/skins/default/ui.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/simple/skins/o2k7/content.css
+%%WWWDIR%%/jscripts/tiny_mce/themes/simple/skins/o2k7/img/button_bg.png
+%%WWWDIR%%/jscripts/tiny_mce/themes/simple/skins/o2k7/ui.css
+%%WWWDIR%%/jscripts/tiny_mce/tiny_mce.js
+%%WWWDIR%%/jscripts/tiny_mce/tiny_mce_popup.js
+%%WWWDIR%%/jscripts/tiny_mce/tiny_mce_src.js
+%%WWWDIR%%/jscripts/tiny_mce/utils/editable_selects.js
+%%WWWDIR%%/jscripts/tiny_mce/utils/form_utils.js
+%%WWWDIR%%/jscripts/tiny_mce/utils/mctabs.js
+%%WWWDIR%%/jscripts/tiny_mce/utils/validate.js
+%%WWWDIR%%/jscripts/wz_jsgraphics.js
+%%WWWDIR%%/license/gpl_licence.txt
+%%WWWDIR%%/links/add.php
+%%WWWDIR%%/links/index.php
+%%WWWDIR%%/login.php
+%%WWWDIR%%/logout.php
+%%WWWDIR%%/mods/_core/backups/module.php
+%%WWWDIR%%/mods/_core/backups/module.xml
+%%WWWDIR%%/mods/_core/backups/module_delete.php
+%%WWWDIR%%/mods/_core/cats_categories/module.php
+%%WWWDIR%%/mods/_core/cats_categories/module.xml
+%%WWWDIR%%/mods/_core/content/module.php
+%%WWWDIR%%/mods/_core/content/module.xml
+%%WWWDIR%%/mods/_core/content/module_backup.php
+%%WWWDIR%%/mods/_core/content/module_delete.php
+%%WWWDIR%%/mods/_core/content_packaging/module.php
+%%WWWDIR%%/mods/_core/content_packaging/module.xml
+%%WWWDIR%%/mods/_core/courses/module.php
+%%WWWDIR%%/mods/_core/courses/module.xml
+%%WWWDIR%%/mods/_core/enrolment/module.php
+%%WWWDIR%%/mods/_core/enrolment/module.xml
+%%WWWDIR%%/mods/_core/enrolment/module_delete.php
+%%WWWDIR%%/mods/_core/file_manager/module.php
+%%WWWDIR%%/mods/_core/file_manager/module.xml
+%%WWWDIR%%/mods/_core/file_manager/module_backup.php
+%%WWWDIR%%/mods/_core/file_manager/module_delete.php
+%%WWWDIR%%/mods/_core/glossary/module.php
+%%WWWDIR%%/mods/_core/glossary/module.xml
+%%WWWDIR%%/mods/_core/glossary/module_backup.php
+%%WWWDIR%%/mods/_core/glossary/module_delete.php
+%%WWWDIR%%/mods/_core/glossary/sublinks.php
+%%WWWDIR%%/mods/_core/groups/module.php
+%%WWWDIR%%/mods/_core/groups/module.xml
+%%WWWDIR%%/mods/_core/groups/module_backup.php
+%%WWWDIR%%/mods/_core/groups/module_delete.php
+%%WWWDIR%%/mods/_core/languages/module.php
+%%WWWDIR%%/mods/_core/languages/module.xml
+%%WWWDIR%%/mods/_core/languages/module_cron.php
+%%WWWDIR%%/mods/_core/properties/module.php
+%%WWWDIR%%/mods/_core/properties/module.xml
+%%WWWDIR%%/mods/_core/properties/module_delete.php
+%%WWWDIR%%/mods/_core/themes/module.php
+%%WWWDIR%%/mods/_core/themes/module.xml
+%%WWWDIR%%/mods/_core/users/module.php
+%%WWWDIR%%/mods/_core/users/module.xml
+%%WWWDIR%%/mods/_standard/announcements/module.php
+%%WWWDIR%%/mods/_standard/announcements/module.xml
+%%WWWDIR%%/mods/_standard/announcements/module_backup.php
+%%WWWDIR%%/mods/_standard/announcements/module_delete.php
+%%WWWDIR%%/mods/_standard/assignments/module.php
+%%WWWDIR%%/mods/_standard/assignments/module.sql
+%%WWWDIR%%/mods/_standard/assignments/module.xml
+%%WWWDIR%%/mods/_standard/assignments/module_backup.php
+%%WWWDIR%%/mods/_standard/assignments/module_delete.php
+%%WWWDIR%%/mods/_standard/assignments/module_groups.php
+%%WWWDIR%%/mods/_standard/blogs/module.php
+%%WWWDIR%%/mods/_standard/blogs/module.xml
+%%WWWDIR%%/mods/_standard/blogs/module_delete.php
+%%WWWDIR%%/mods/_standard/blogs/module_groups.php
+%%WWWDIR%%/mods/_standard/blogs/sublinks.php
+%%WWWDIR%%/mods/_standard/calendar/module.php
+%%WWWDIR%%/mods/_standard/calendar/module.xml
+%%WWWDIR%%/mods/_standard/calendar/module_backup.php
+%%WWWDIR%%/mods/_standard/calendar/module_delete.php
+%%WWWDIR%%/mods/_standard/calendar/module_groups.php
+%%WWWDIR%%/mods/_standard/chat/module.php
+%%WWWDIR%%/mods/_standard/chat/module.xml
+%%WWWDIR%%/mods/_standard/chat/module_delete.php
+%%WWWDIR%%/mods/_standard/chat/sublinks.php
+%%WWWDIR%%/mods/_standard/course_email/module.php
+%%WWWDIR%%/mods/_standard/course_email/module.xml
+%%WWWDIR%%/mods/_standard/course_tools/module.php
+%%WWWDIR%%/mods/_standard/course_tools/module.xml
+%%WWWDIR%%/mods/_standard/directory/module.php
+%%WWWDIR%%/mods/_standard/directory/module.xml
+%%WWWDIR%%/mods/_standard/directory/sublinks.php
+%%WWWDIR%%/mods/_standard/faq/module.php
+%%WWWDIR%%/mods/_standard/faq/module.xml
+%%WWWDIR%%/mods/_standard/faq/module_backup.php
+%%WWWDIR%%/mods/_standard/faq/module_delete.php
+%%WWWDIR%%/mods/_standard/faq/sublinks.php
+%%WWWDIR%%/mods/_standard/farchive/forum_post.php
+%%WWWDIR%%/mods/_standard/farchive/index.php
+%%WWWDIR%%/mods/_standard/farchive/index_instructor.php
+%%WWWDIR%%/mods/_standard/farchive/module.php
+%%WWWDIR%%/mods/_standard/farchive/module.xml
+%%WWWDIR%%/mods/_standard/farchive/send_zip_archive.php
+%%WWWDIR%%/mods/_standard/farchive/styles.css
+%%WWWDIR%%/mods/_standard/file_storage/module.php
+%%WWWDIR%%/mods/_standard/file_storage/module.xml
+%%WWWDIR%%/mods/_standard/file_storage/module_delete.php
+%%WWWDIR%%/mods/_standard/file_storage/module_groups.php
+%%WWWDIR%%/mods/_standard/file_storage/sublinks.php
+%%WWWDIR%%/mods/_standard/forums/module.php
+%%WWWDIR%%/mods/_standard/forums/module.xml
+%%WWWDIR%%/mods/_standard/forums/module_delete.php
+%%WWWDIR%%/mods/_standard/forums/module_groups.php
+%%WWWDIR%%/mods/_standard/forums/sublinks.php
+%%WWWDIR%%/mods/_standard/google_search/SOAP_Google.php
+%%WWWDIR%%/mods/_standard/google_search/module.css
+%%WWWDIR%%/mods/_standard/google_search/module.php
+%%WWWDIR%%/mods/_standard/google_search/module.xml
+%%WWWDIR%%/mods/_standard/google_search/side_menu.inc.php
+%%WWWDIR%%/mods/_standard/gradebook/README
+%%WWWDIR%%/mods/_standard/gradebook/edit_marks.php
+%%WWWDIR%%/mods/_standard/gradebook/grade_scale.php
+%%WWWDIR%%/mods/_standard/gradebook/grade_scale_add.php
+%%WWWDIR%%/mods/_standard/gradebook/grade_scale_delete.php
+%%WWWDIR%%/mods/_standard/gradebook/grade_scale_edit.php
+%%WWWDIR%%/mods/_standard/gradebook/gradebook.png
+%%WWWDIR%%/mods/_standard/gradebook/gradebook_add_tests.php
+%%WWWDIR%%/mods/_standard/gradebook/gradebook_delete_tests.php
+%%WWWDIR%%/mods/_standard/gradebook/gradebook_edit_tests.php
+%%WWWDIR%%/mods/_standard/gradebook/gradebook_tests.php
+%%WWWDIR%%/mods/_standard/gradebook/html/grade_scale_add_edit.inc.php
+%%WWWDIR%%/mods/_standard/gradebook/import_export_external_marks.php
+%%WWWDIR%%/mods/_standard/gradebook/lib/gradebook.inc.php
+%%WWWDIR%%/mods/_standard/gradebook/module.php
+%%WWWDIR%%/mods/_standard/gradebook/module.xml
+%%WWWDIR%%/mods/_standard/gradebook/my_gradebook.php
+%%WWWDIR%%/mods/_standard/gradebook/update_gradebook.php
+%%WWWDIR%%/mods/_standard/gradebook/verify_list.php
+%%WWWDIR%%/mods/_standard/gradebook/verify_tests.php
+%%WWWDIR%%/mods/_standard/links/module.php
+%%WWWDIR%%/mods/_standard/links/module.xml
+%%WWWDIR%%/mods/_standard/links/module_backup.php
+%%WWWDIR%%/mods/_standard/links/module_delete.php
+%%WWWDIR%%/mods/_standard/links/module_groups.php
+%%WWWDIR%%/mods/_standard/links/sublinks.php
+%%WWWDIR%%/mods/_standard/patcher/classes/Patch.class.php
+%%WWWDIR%%/mods/_standard/patcher/classes/PatchCreator.class.php
+%%WWWDIR%%/mods/_standard/patcher/classes/PatchListParser.class.php
+%%WWWDIR%%/mods/_standard/patcher/classes/PatchParser.class.php
+%%WWWDIR%%/mods/_standard/patcher/include/common.inc.php
+%%WWWDIR%%/mods/_standard/patcher/include/json.inc.php
+%%WWWDIR%%/mods/_standard/patcher/include/patch_xml_template.inc.php
+%%WWWDIR%%/mods/_standard/patcher/index_admin.php
+%%WWWDIR%%/mods/_standard/patcher/module.php
+%%WWWDIR%%/mods/_standard/patcher/module.xml
+%%WWWDIR%%/mods/_standard/patcher/myown_patches.php
+%%WWWDIR%%/mods/_standard/patcher/patch_create.php
+%%WWWDIR%%/mods/_standard/patcher/patch_creator.php
+%%WWWDIR%%/mods/_standard/patcher/patch_delete.php
+%%WWWDIR%%/mods/_standard/patcher/patch_edit.php
+%%WWWDIR%%/mods/_standard/patcher/patch_edit_interface.tmpl.php
+%%WWWDIR%%/mods/_standard/patcher/sample_patch.xml
+%%WWWDIR%%/mods/_standard/patcher/sample_patch_list.xml
+%%WWWDIR%%/mods/_standard/patcher/xml_special_chars.txt
+%%WWWDIR%%/mods/_standard/polls/module.php
+%%WWWDIR%%/mods/_standard/polls/module.xml
+%%WWWDIR%%/mods/_standard/polls/module_backup.php
+%%WWWDIR%%/mods/_standard/polls/module_delete.php
+%%WWWDIR%%/mods/_standard/polls/sublinks.php
+%%WWWDIR%%/mods/_standard/profile_pictures/module.php
+%%WWWDIR%%/mods/_standard/profile_pictures/module.xml
+%%WWWDIR%%/mods/_standard/reading_list/module.php
+%%WWWDIR%%/mods/_standard/reading_list/module.xml
+%%WWWDIR%%/mods/_standard/reading_list/module_backup.php
+%%WWWDIR%%/mods/_standard/reading_list/module_delete.php
+%%WWWDIR%%/mods/_standard/reading_list/sublinks.php
+%%WWWDIR%%/mods/_standard/rss_feeds/load_file.php
+%%WWWDIR%%/mods/_standard/rss_feeds/module.php
+%%WWWDIR%%/mods/_standard/rss_feeds/module.xml
+%%WWWDIR%%/mods/_standard/sitemap/module.php
+%%WWWDIR%%/mods/_standard/sitemap/module.xml
+%%WWWDIR%%/mods/_standard/social/README
+%%WWWDIR%%/mods/_standard/social/activities.php
+%%WWWDIR%%/mods/_standard/social/admin/delete_applications.php
+%%WWWDIR%%/mods/_standard/social/applications.php
+%%WWWDIR%%/mods/_standard/social/basic_profile.php
+%%WWWDIR%%/mods/_standard/social/connections.php
+%%WWWDIR%%/mods/_standard/social/edit_profile.php
+%%WWWDIR%%/mods/_standard/social/groups/create.php
+%%WWWDIR%%/mods/_standard/social/groups/delete.php
+%%WWWDIR%%/mods/_standard/social/groups/delete_message.php
+%%WWWDIR%%/mods/_standard/social/groups/edit.php
+%%WWWDIR%%/mods/_standard/social/groups/get_sgroup_logo.php
+%%WWWDIR%%/mods/_standard/social/groups/index.php
+%%WWWDIR%%/mods/_standard/social/groups/invitation_handler.php
+%%WWWDIR%%/mods/_standard/social/groups/invite.php
+%%WWWDIR%%/mods/_standard/social/groups/join.php
+%%WWWDIR%%/mods/_standard/social/groups/list.php
+%%WWWDIR%%/mods/_standard/social/groups/search.php
+%%WWWDIR%%/mods/_standard/social/groups/view.php
+%%WWWDIR%%/mods/_standard/social/html/activities.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/admin/delete_applications.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/application_settings.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/applications.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/basic_profile.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/connections.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/edit_profile/edit_additional.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/edit_profile/edit_education.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/edit_profile/edit_position.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/edit_profile/edit_websites.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/edit_profile.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/friend_list.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/index_public.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/individual_application.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/notifications.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/profile_picture.html.php
+%%WWWDIR%%/mods/_standard/social/html/pubmenu.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/settings/account_settings.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/settings/application_settings.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/settings/privacy_settings.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/settings/settings_menu.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/sgroup_create.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/sgroup_edit.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/sgroup_invite.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/sgroup_list.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/sgroup_search.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/sgroup_view.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/sgroups.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/sprofile.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/tiny_applications.tmpl.php
+%%WWWDIR%%/mods/_standard/social/html/tiny_sgroups.tmpl.php
+%%WWWDIR%%/mods/_standard/social/images/b_drop.png
+%%WWWDIR%%/mods/_standard/social/images/check_icon.gif
+%%WWWDIR%%/mods/_standard/social/images/check_icon.jpg
+%%WWWDIR%%/mods/_standard/social/images/check_icon.png
+%%WWWDIR%%/mods/_standard/social/images/edit_profile.gif
+%%WWWDIR%%/mods/_standard/social/images/icon-settings.png
+%%WWWDIR%%/mods/_standard/social/images/nophoto.gif
+%%WWWDIR%%/mods/_standard/social/images/placelogo.gif
+%%WWWDIR%%/mods/_standard/social/images/placelogo.png
+%%WWWDIR%%/mods/_standard/social/images/plus_icon.gif
+%%WWWDIR%%/mods/_standard/social/images/plus_icon.jpg
+%%WWWDIR%%/mods/_standard/social/images/social.gif
+%%WWWDIR%%/mods/_standard/social/index.php
+%%WWWDIR%%/mods/_standard/social/index_admin.php
+%%WWWDIR%%/mods/_standard/social/index_instructor.php
+%%WWWDIR%%/mods/_standard/social/index_mystart.php
+%%WWWDIR%%/mods/_standard/social/index_public.php
+%%WWWDIR%%/mods/_standard/social/lib/BasicBlobCrypter.php
+%%WWWDIR%%/mods/_standard/social/lib/BasicSecurityToken.php
+%%WWWDIR%%/mods/_standard/social/lib/BlobCrypter.php
+%%WWWDIR%%/mods/_standard/social/lib/Crypto.php
+%%WWWDIR%%/mods/_standard/social/lib/SecurityToken.php
+%%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorActivityService.php
+%%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorAppDataService.php
+%%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorDbFetcher.php
+%%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorMessagesService.php
+%%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorPersonService.php
+%%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorService.php
+%%WWWDIR%%/mods/_standard/social/lib/Shindig/README
+%%WWWDIR%%/mods/_standard/social/lib/classes/Activity.class.php
+%%WWWDIR%%/mods/_standard/social/lib/classes/Application.class.php
+%%WWWDIR%%/mods/_standard/social/lib/classes/Applications.class.php
+%%WWWDIR%%/mods/_standard/social/lib/classes/Member.class.php
+%%WWWDIR%%/mods/_standard/social/lib/classes/PrivacyControl/PrivacyController.class.php
+%%WWWDIR%%/mods/_standard/social/lib/classes/PrivacyControl/PrivacyObject.class.php
+%%WWWDIR%%/mods/_standard/social/lib/classes/PrivacyControl/SetPrivacyControl.php
+%%WWWDIR%%/mods/_standard/social/lib/classes/SocialGroups/SocialGroup.class.php
+%%WWWDIR%%/mods/_standard/social/lib/classes/SocialGroups/SocialGroups.class.php
+%%WWWDIR%%/mods/_standard/social/lib/constants.inc.php
+%%WWWDIR%%/mods/_standard/social/lib/friends.inc.php
+%%WWWDIR%%/mods/_standard/social/lib/js/container.js
+%%WWWDIR%%/mods/_standard/social/lib/js/livesearch.js
+%%WWWDIR%%/mods/_standard/social/lib/js/prototype.js
+%%WWWDIR%%/mods/_standard/social/lib/profile_menu.inc.php
+%%WWWDIR%%/mods/_standard/social/module.css
+%%WWWDIR%%/mods/_standard/social/module.php
+%%WWWDIR%%/mods/_standard/social/module.sql
+%%WWWDIR%%/mods/_standard/social/module.xml
+%%WWWDIR%%/mods/_standard/social/module_backup.php
+%%WWWDIR%%/mods/_standard/social/privacy_settings.php
+%%WWWDIR%%/mods/_standard/social/profile_picture.php
+%%WWWDIR%%/mods/_standard/social/set_prefs.php
+%%WWWDIR%%/mods/_standard/social/settings.php
+%%WWWDIR%%/mods/_standard/social/side_menu.inc.php
+%%WWWDIR%%/mods/_standard/social/sprofile.php
+%%WWWDIR%%/mods/_standard/social/sublinks.php
+%%WWWDIR%%/mods/_standard/statistics/module.php
+%%WWWDIR%%/mods/_standard/statistics/module.xml
+%%WWWDIR%%/mods/_standard/statistics/module_backup.php
+%%WWWDIR%%/mods/_standard/statistics/module_delete.php
+%%WWWDIR%%/mods/_standard/student_tools/icon.gif
+%%WWWDIR%%/mods/_standard/student_tools/index.php
+%%WWWDIR%%/mods/_standard/student_tools/instructor_index.php
+%%WWWDIR%%/mods/_standard/student_tools/module.php
+%%WWWDIR%%/mods/_standard/student_tools/module.xml
+%%WWWDIR%%/mods/_standard/student_tools/module_delete.php
+%%WWWDIR%%/mods/_standard/student_tools/module_install.php
+%%WWWDIR%%/mods/_standard/support_tools/module.php
+%%WWWDIR%%/mods/_standard/support_tools/module.xml
+%%WWWDIR%%/mods/_standard/support_tools/scaffolds.php
+%%WWWDIR%%/mods/_standard/support_tools/side_menu.inc.php
+%%WWWDIR%%/mods/_standard/tests/module.php
+%%WWWDIR%%/mods/_standard/tests/module.xml
+%%WWWDIR%%/mods/_standard/tests/module_backup.php
+%%WWWDIR%%/mods/_standard/tests/module_delete.php
+%%WWWDIR%%/mods/_standard/tests/module_groups.php
+%%WWWDIR%%/mods/_standard/tests/sublinks.php
+%%WWWDIR%%/mods/_standard/tile_search/module.php
+%%WWWDIR%%/mods/_standard/tile_search/module.xml
+%%WWWDIR%%/mods/_standard/tracker/module.php
+%%WWWDIR%%/mods/_standard/tracker/module.xml
+%%WWWDIR%%/mods/_standard/tracker/sublinks.php
+%%WWWDIR%%/mods/index.html
+%%WWWDIR%%/move_module.php
+%%WWWDIR%%/my_stats.php
+%%WWWDIR%%/packages/index.php
+%%WWWDIR%%/packages/preferences.php
+%%WWWDIR%%/password_reminder.php
+%%WWWDIR%%/polls/index.php
+%%WWWDIR%%/popuphelp.php
+%%WWWDIR%%/profile.php
+%%WWWDIR%%/reading_list/add_resource_av.php
+%%WWWDIR%%/reading_list/add_resource_book.php
+%%WWWDIR%%/reading_list/add_resource_file.php
+%%WWWDIR%%/reading_list/add_resource_handout.php
+%%WWWDIR%%/reading_list/add_resource_url.php
+%%WWWDIR%%/reading_list/delete_reading.php
+%%WWWDIR%%/reading_list/delete_resource.php
+%%WWWDIR%%/reading_list/display_resource.php
+%%WWWDIR%%/reading_list/display_resources.php
+%%WWWDIR%%/reading_list/edit_reading_av.php
+%%WWWDIR%%/reading_list/edit_reading_book.php
+%%WWWDIR%%/reading_list/edit_reading_file.php
+%%WWWDIR%%/reading_list/edit_reading_handout.php
+%%WWWDIR%%/reading_list/edit_reading_url.php
+%%WWWDIR%%/reading_list/index.php
+%%WWWDIR%%/reading_list/index_instructor.php
+%%WWWDIR%%/reading_list/new_reading_av.php
+%%WWWDIR%%/reading_list/new_reading_book.php
+%%WWWDIR%%/reading_list/new_reading_file.php
+%%WWWDIR%%/reading_list/new_reading_handout.php
+%%WWWDIR%%/reading_list/new_reading_url.php
+%%WWWDIR%%/reading_list/reading_details.php
+%%WWWDIR%%/readme
+%%WWWDIR%%/registration.php
+%%WWWDIR%%/search.php
+%%WWWDIR%%/sha-1factory.js
+%%WWWDIR%%/sitemap.php
+%%WWWDIR%%/svn.php
+%%WWWDIR%%/switch_view.php
+%%WWWDIR%%/themes/blumin/content.tmpl.php
+%%WWWDIR%%/themes/blumin/forms.css
+%%WWWDIR%%/themes/blumin/ie_styles.css
+%%WWWDIR%%/themes/blumin/images/arrow_ltr.gif
+%%WWWDIR%%/themes/blumin/images/back.gif
+%%WWWDIR%%/themes/blumin/images/continue.gif
+%%WWWDIR%%/themes/blumin/images/linkOpaque.gif
+%%WWWDIR%%/themes/blumin/images/linkTransparent.gif
+%%WWWDIR%%/themes/blumin/images/newsitem_icon.gif
+%%WWWDIR%%/themes/blumin/images/next.gif
+%%WWWDIR%%/themes/blumin/images/previous.gif
+%%WWWDIR%%/themes/blumin/images/resume.gif
+%%WWWDIR%%/themes/blumin/images/side_arrow.gif
+%%WWWDIR%%/themes/blumin/images/sort.gif
+%%WWWDIR%%/themes/blumin/images/user-star.gif
+%%WWWDIR%%/themes/blumin/images/user.gif
+%%WWWDIR%%/themes/blumin/include/box.tmpl.php
+%%WWWDIR%%/themes/blumin/include/footer.tmpl.php
+%%WWWDIR%%/themes/blumin/include/header.tmpl.php
+%%WWWDIR%%/themes/blumin/include/side_menu.tmpl.php
+%%WWWDIR%%/themes/blumin/print.css
+%%WWWDIR%%/themes/blumin/readme.txt
+%%WWWDIR%%/themes/blumin/screenshot.gif
+%%WWWDIR%%/themes/blumin/styles.css
+%%WWWDIR%%/themes/blumin/theme.cfg.php
+%%WWWDIR%%/themes/blumin/theme_info.xml
+%%WWWDIR%%/themes/default/confirmmessage.tmpl.php
+%%WWWDIR%%/themes/default/content.tmpl.php
+%%WWWDIR%%/themes/default/directory.tmpl.php
+%%WWWDIR%%/themes/default/errormessage.tmpl.php
+%%WWWDIR%%/themes/default/feedbackmessage.tmpl.php
+%%WWWDIR%%/themes/default/forms.css
+%%WWWDIR%%/themes/default/ie_styles.css
+%%WWWDIR%%/themes/default/images/Thumbs.db
+%%WWWDIR%%/themes/default/images/arrow_ltr.gif
+%%WWWDIR%%/themes/default/images/back.gif
+%%WWWDIR%%/themes/default/images/continue.gif
+%%WWWDIR%%/themes/default/images/details_il.png
+%%WWWDIR%%/themes/default/images/details_ir.png
+%%WWWDIR%%/themes/default/images/details_l.png
+%%WWWDIR%%/themes/default/images/details_r.png
+%%WWWDIR%%/themes/default/images/guide.gif
+%%WWWDIR%%/themes/default/images/linkOpaque.gif
+%%WWWDIR%%/themes/default/images/linkTransparent.gif
+%%WWWDIR%%/themes/default/images/newsitem_icon.gif
+%%WWWDIR%%/themes/default/images/next.gif
+%%WWWDIR%%/themes/default/images/pencil_bottom.gif
+%%WWWDIR%%/themes/default/images/pencil_top.gif
+%%WWWDIR%%/themes/default/images/pencils.gif
+%%WWWDIR%%/themes/default/images/previous.gif
+%%WWWDIR%%/themes/default/images/resume.gif
+%%WWWDIR%%/themes/default/images/side_arrow.gif
+%%WWWDIR%%/themes/default/images/sort.gif
+%%WWWDIR%%/themes/default/images/tl_corner.gif
+%%WWWDIR%%/themes/default/images/top.gif
+%%WWWDIR%%/themes/default/images/user-star.gif
+%%WWWDIR%%/themes/default/images/user.gif
+%%WWWDIR%%/themes/default/include/box.tmpl.php
+%%WWWDIR%%/themes/default/include/fm_footer.tmpl.php
+%%WWWDIR%%/themes/default/include/fm_header.tmpl.php
+%%WWWDIR%%/themes/default/include/footer.tmpl.php
+%%WWWDIR%%/themes/default/include/forms.css
+%%WWWDIR%%/themes/default/include/header.tmpl.php
+%%WWWDIR%%/themes/default/include/side_menu.tmpl.php
+%%WWWDIR%%/themes/default/index.tmpl.php
+%%WWWDIR%%/themes/default/infomessage.tmpl.php
+%%WWWDIR%%/themes/default/login.tmpl.php
+%%WWWDIR%%/themes/default/password_change.tmpl.php
+%%WWWDIR%%/themes/default/password_reminder.tmpl.php
+%%WWWDIR%%/themes/default/password_reminder_feedback.tmpl.php
+%%WWWDIR%%/themes/default/print.css
+%%WWWDIR%%/themes/default/profile.tmpl.php
+%%WWWDIR%%/themes/default/readme.txt
+%%WWWDIR%%/themes/default/registration.tmpl.php
+%%WWWDIR%%/themes/default/rtl.css
+%%WWWDIR%%/themes/default/screenshot.gif
+%%WWWDIR%%/themes/default/styles.css
+%%WWWDIR%%/themes/default/test_questions/footer.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/header.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/likert.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/likert_qti_1p2.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/likert_qti_2p1.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/likert_result.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/likert_stats.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/long.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/long_qti_1p2.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/long_qti_2p1.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/long_result.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/long_stats.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/manifest_qti_1p2.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/manifest_qti_2p1.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matching.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matching_qti_1p2.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matching_qti_2p1.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matching_result.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matching_stats.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matchingdd.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matchingdd_qti_1p2.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matchingdd_qti_2p1.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matchingdd_result.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matchingdd_stats.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multianswer.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multianswer_qti_1p2.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multianswer_qti_2p1.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multianswer_result.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multianswer_stats.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multichoice.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multichoice_qti_1p2.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multichoice_qti_2p1.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multichoice_result.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multichoice_stats.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/ordering.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/ordering_qti_1p2.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/ordering_qti_2p1.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/ordering_result.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/ordering_stats.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/truefalse.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/truefalse_qti_1p2.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/truefalse_qti_2p1.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/truefalse_result.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/truefalse_stats.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/wrapper.tmpl.php
+%%WWWDIR%%/themes/default/theme.cfg.php
+%%WWWDIR%%/themes/default/theme_info.xml
+%%WWWDIR%%/themes/default/users/browse.tmpl.php
+%%WWWDIR%%/themes/default/users/email_change.tmpl.php
+%%WWWDIR%%/themes/default/users/index.tmpl.php
+%%WWWDIR%%/themes/default/users/password_change.tmpl.php
+%%WWWDIR%%/themes/default/users/preferences.tmpl.php
+%%WWWDIR%%/themes/default/users/profile.tmpl.php
+%%WWWDIR%%/themes/default/warningmessage.tmpl.php
+%%WWWDIR%%/themes/default15/confirmmessage.tmpl.php
+%%WWWDIR%%/themes/default15/content.tmpl.php
+%%WWWDIR%%/themes/default15/errormessage.tmpl.php
+%%WWWDIR%%/themes/default15/feedbackmessage.tmpl.php
+%%WWWDIR%%/themes/default15/forms.css
+%%WWWDIR%%/themes/default15/ie_styles.css
+%%WWWDIR%%/themes/default15/images/arrow_ltr.gif
+%%WWWDIR%%/themes/default15/images/back.gif
+%%WWWDIR%%/themes/default15/images/error-large.gif
+%%WWWDIR%%/themes/default15/images/guide.gif
+%%WWWDIR%%/themes/default15/images/home-acollab.png
+%%WWWDIR%%/themes/default15/images/home-blogs.png
+%%WWWDIR%%/themes/default15/images/home-chat.png
+%%WWWDIR%%/themes/default15/images/home-directory.png
+%%WWWDIR%%/themes/default15/images/home-export_content.png
+%%WWWDIR%%/themes/default15/images/home-faq.png
+%%WWWDIR%%/themes/default15/images/home-file_storage.png
+%%WWWDIR%%/themes/default15/images/home-forums.png
+%%WWWDIR%%/themes/default15/images/home-glossary.png
+%%WWWDIR%%/themes/default15/images/home-links.png
+%%WWWDIR%%/themes/default15/images/home-polls.png
+%%WWWDIR%%/themes/default15/images/home-reading_list.png
+%%WWWDIR%%/themes/default15/images/home-site_map.png
+%%WWWDIR%%/themes/default15/images/home-tests.png
+%%WWWDIR%%/themes/default15/images/home-tile_search.png
+%%WWWDIR%%/themes/default15/images/home-tracker.png
+%%WWWDIR%%/themes/default15/images/instructor.gif
+%%WWWDIR%%/themes/default15/images/next.gif
+%%WWWDIR%%/themes/default15/images/pen.gif
+%%WWWDIR%%/themes/default15/images/pen2.gif
+%%WWWDIR%%/themes/default15/images/pencils.jpg
+%%WWWDIR%%/themes/default15/images/previous.gif
+%%WWWDIR%%/themes/default15/images/resume.gif
+%%WWWDIR%%/themes/default15/images/side_arrow.gif
+%%WWWDIR%%/themes/default15/images/sort.gif
+%%WWWDIR%%/themes/default15/images/user-star.gif
+%%WWWDIR%%/themes/default15/images/user.gif
+%%WWWDIR%%/themes/default15/include/box.tmpl.php
+%%WWWDIR%%/themes/default15/include/fm_footer.tmpl.php
+%%WWWDIR%%/themes/default15/include/fm_header.tmpl.php
+%%WWWDIR%%/themes/default15/include/footer.tmpl.php
+%%WWWDIR%%/themes/default15/include/header.tmpl.php
+%%WWWDIR%%/themes/default15/index.tmpl.php
+%%WWWDIR%%/themes/default15/infomessage.tmpl.php
+%%WWWDIR%%/themes/default15/password_change.tmpl.php
+%%WWWDIR%%/themes/default15/password_reminder_feedback.tmpl.php
+%%WWWDIR%%/themes/default15/print.css
+%%WWWDIR%%/themes/default15/profile.tmpl.php
+%%WWWDIR%%/themes/default15/readme.txt
+%%WWWDIR%%/themes/default15/rtl.css
+%%WWWDIR%%/themes/default15/screenshot.gif
+%%WWWDIR%%/themes/default15/styles.css
+%%WWWDIR%%/themes/default15/theme.cfg.php
+%%WWWDIR%%/themes/default15/warningmessage.tmpl.php
+%%WWWDIR%%/themes/default_classic/ie_styles.css
+%%WWWDIR%%/themes/default_classic/images/guide.gif
+%%WWWDIR%%/themes/default_classic/images/user-star.gif
+%%WWWDIR%%/themes/default_classic/include/footer.tmpl.php
+%%WWWDIR%%/themes/default_classic/include/header.tmpl.php
+%%WWWDIR%%/themes/default_classic/print.css
+%%WWWDIR%%/themes/default_classic/rtl.css
+%%WWWDIR%%/themes/default_classic/screenshot.gif
+%%WWWDIR%%/themes/default_classic/styles.css
+%%WWWDIR%%/themes/default_classic/theme.cfg.php
+%%WWWDIR%%/themes/fluid/forms.css
+%%WWWDIR%%/themes/fluid/ie_styles.css
+%%WWWDIR%%/themes/fluid/images/arrow_left.png
+%%WWWDIR%%/themes/fluid/images/continue.gif
+%%WWWDIR%%/themes/fluid/images/layers.png
+%%WWWDIR%%/themes/fluid/images/next.gif
+%%WWWDIR%%/themes/fluid/images/previous.gif
+%%WWWDIR%%/themes/fluid/images/resume.gif
+%%WWWDIR%%/themes/fluid/images/top.gif
+%%WWWDIR%%/themes/fluid/include/footer.tmpl.php
+%%WWWDIR%%/themes/fluid/include/header.tmpl.php
+%%WWWDIR%%/themes/fluid/print.css
+%%WWWDIR%%/themes/fluid/save_state.php
+%%WWWDIR%%/themes/fluid/screenshot.gif
+%%WWWDIR%%/themes/fluid/styles.css
+%%WWWDIR%%/themes/fluid/theme.cfg.php
+%%WWWDIR%%/themes/fluid/theme_info.xml
+%%WWWDIR%%/themes/greenmin/content.tmpl.php
+%%WWWDIR%%/themes/greenmin/forms.css
+%%WWWDIR%%/themes/greenmin/ie_styles.css
+%%WWWDIR%%/themes/greenmin/images/Thumbs.db
+%%WWWDIR%%/themes/greenmin/images/arrow_ltr.gif
+%%WWWDIR%%/themes/greenmin/images/back.gif
+%%WWWDIR%%/themes/greenmin/images/continue.gif
+%%WWWDIR%%/themes/greenmin/images/linkOpaque.gif
+%%WWWDIR%%/themes/greenmin/images/linkTransparent.gif
+%%WWWDIR%%/themes/greenmin/images/newsitem_icon.gif
+%%WWWDIR%%/themes/greenmin/images/next.gif
+%%WWWDIR%%/themes/greenmin/images/previous.gif
+%%WWWDIR%%/themes/greenmin/images/resume.gif
+%%WWWDIR%%/themes/greenmin/images/side_arrow.gif
+%%WWWDIR%%/themes/greenmin/images/sort.gif
+%%WWWDIR%%/themes/greenmin/images/user-star.gif
+%%WWWDIR%%/themes/greenmin/images/user.gif
+%%WWWDIR%%/themes/greenmin/include/box.tmpl.php
+%%WWWDIR%%/themes/greenmin/include/footer.tmpl.php
+%%WWWDIR%%/themes/greenmin/include/header.tmpl.php
+%%WWWDIR%%/themes/greenmin/include/side_menu.tmpl.php
+%%WWWDIR%%/themes/greenmin/print.css
+%%WWWDIR%%/themes/greenmin/readme.txt
+%%WWWDIR%%/themes/greenmin/screenshot.gif
+%%WWWDIR%%/themes/greenmin/styles.css
+%%WWWDIR%%/themes/greenmin/theme.cfg.php
+%%WWWDIR%%/themes/greenmin/theme_info.xml
+%%WWWDIR%%/themes/themes_readme.txt
+%%WWWDIR%%/tile.php
+%%WWWDIR%%/tools/access.php
+%%WWWDIR%%/tools/backup/create.php
+%%WWWDIR%%/tools/backup/delete.php
+%%WWWDIR%%/tools/backup/edit.php
+%%WWWDIR%%/tools/backup/index.php
+%%WWWDIR%%/tools/backup/restore.php
+%%WWWDIR%%/tools/backup/upload.php
+%%WWWDIR%%/tools/chat/delete_transcript.php
+%%WWWDIR%%/tools/chat/index.php
+%%WWWDIR%%/tools/chat/start_transcript.php
+%%WWWDIR%%/tools/chat/view_transcript.php
+%%WWWDIR%%/tools/content/index.php
+%%WWWDIR%%/tools/course_email.php
+%%WWWDIR%%/tools/course_properties.php
+%%WWWDIR%%/tools/course_stats.php
+%%WWWDIR%%/tools/course_tracker.php
+%%WWWDIR%%/tools/delete_course.php
+%%WWWDIR%%/tools/edit_styles.php
+%%WWWDIR%%/tools/enrollment/create_course_list.php
+%%WWWDIR%%/tools/enrollment/enroll_edit.php
+%%WWWDIR%%/tools/enrollment/export_course_list.php
+%%WWWDIR%%/tools/enrollment/import_course_list.php
+%%WWWDIR%%/tools/enrollment/index.php
+%%WWWDIR%%/tools/enrollment/privileges.php
+%%WWWDIR%%/tools/enrollment/verify_list.php
+%%WWWDIR%%/tools/filemanager/delete.php
+%%WWWDIR%%/tools/filemanager/edit.php
+%%WWWDIR%%/tools/filemanager/index.php
+%%WWWDIR%%/tools/filemanager/move.php
+%%WWWDIR%%/tools/filemanager/new.php
+%%WWWDIR%%/tools/filemanager/preview.php
+%%WWWDIR%%/tools/filemanager/preview_top.php
+%%WWWDIR%%/tools/filemanager/rename.php
+%%WWWDIR%%/tools/filemanager/top.php
+%%WWWDIR%%/tools/filemanager/upload.php
+%%WWWDIR%%/tools/filemanager/zip.php
+%%WWWDIR%%/tools/forums/index.php
+%%WWWDIR%%/tools/glossary/add.php
+%%WWWDIR%%/tools/glossary/delete.php
+%%WWWDIR%%/tools/glossary/edit.php
+%%WWWDIR%%/tools/glossary/index.php
+%%WWWDIR%%/tools/groups/create.php
+%%WWWDIR%%/tools/groups/create_automatic.php
+%%WWWDIR%%/tools/groups/create_manual.php
+%%WWWDIR%%/tools/groups/delete_group.php
+%%WWWDIR%%/tools/groups/delete_type.php
+%%WWWDIR%%/tools/groups/edit_group.php
+%%WWWDIR%%/tools/groups/edit_type.php
+%%WWWDIR%%/tools/groups/index.php
+%%WWWDIR%%/tools/groups/members.php
+%%WWWDIR%%/tools/ims/ims_export.php
+%%WWWDIR%%/tools/ims/ims_import.php
+%%WWWDIR%%/tools/ims/index.php
+%%WWWDIR%%/tools/imscc/ims_export.php
+%%WWWDIR%%/tools/imscc/ims_import.php
+%%WWWDIR%%/tools/index.php
+%%WWWDIR%%/tools/links/add.php
+%%WWWDIR%%/tools/links/categories.php
+%%WWWDIR%%/tools/links/categories_create.php
+%%WWWDIR%%/tools/links/categories_delete.php
+%%WWWDIR%%/tools/links/categories_edit.php
+%%WWWDIR%%/tools/links/delete.php
+%%WWWDIR%%/tools/links/edit.php
+%%WWWDIR%%/tools/links/index.php
+%%WWWDIR%%/tools/modules.php
+%%WWWDIR%%/tools/my_tests.php
+%%WWWDIR%%/tools/news/index.php
+%%WWWDIR%%/tools/packages/delete.php
+%%WWWDIR%%/tools/packages/import.php
+%%WWWDIR%%/tools/packages/index.php
+%%WWWDIR%%/tools/packages/lib.inc.php
+%%WWWDIR%%/tools/packages/scorm-1.2/images/active.png
+%%WWWDIR%%/tools/packages/scorm-1.2/images/asset.png
+%%WWWDIR%%/tools/packages/scorm-1.2/images/browsed.png
+%%WWWDIR%%/tools/packages/scorm-1.2/images/busy.png
+%%WWWDIR%%/tools/packages/scorm-1.2/images/completed.png
+%%WWWDIR%%/tools/packages/scorm-1.2/images/failed.png
+%%WWWDIR%%/tools/packages/scorm-1.2/images/incomplete.png
+%%WWWDIR%%/tools/packages/scorm-1.2/images/not-attempted.png
+%%WWWDIR%%/tools/packages/scorm-1.2/images/passed.png
+%%WWWDIR%%/tools/packages/scorm-1.2/import.php
+%%WWWDIR%%/tools/packages/scorm-1.2/java/ATutorApiAdapterApplet.jar
+%%WWWDIR%%/tools/packages/scorm-1.2/java/ATutorApiAdapterApplet.java
+%%WWWDIR%%/tools/packages/scorm-1.2/java/PfPLMS-API-adapter-core.jar
+%%WWWDIR%%/tools/packages/scorm-1.2/java/gnu.jar
+%%WWWDIR%%/tools/packages/scorm-1.2/learner_view.php
+%%WWWDIR%%/tools/packages/scorm-1.2/lib.inc.php
+%%WWWDIR%%/tools/packages/scorm-1.2/read.php
+%%WWWDIR%%/tools/packages/scorm-1.2/settings.php
+%%WWWDIR%%/tools/packages/scorm-1.2/view.inc.php
+%%WWWDIR%%/tools/packages/scorm-1.2/view.php
+%%WWWDIR%%/tools/packages/scorm-1.2/write.php
+%%WWWDIR%%/tools/packages/settings.php
+%%WWWDIR%%/tools/polls/add.php
+%%WWWDIR%%/tools/polls/delete.php
+%%WWWDIR%%/tools/polls/edit.php
+%%WWWDIR%%/tools/polls/index.php
+%%WWWDIR%%/tools/prog.php
+%%WWWDIR%%/tools/side_menu.php
+%%WWWDIR%%/tools/take_test.php
+%%WWWDIR%%/tools/take_test_q.php
+%%WWWDIR%%/tools/test_intro.php
+%%WWWDIR%%/tools/tests/add_test_questions.php
+%%WWWDIR%%/tools/tests/add_test_questions_confirm.php
+%%WWWDIR%%/tools/tests/create_question_likert.php
+%%WWWDIR%%/tools/tests/create_question_long.php
+%%WWWDIR%%/tools/tests/create_question_matching.php
+%%WWWDIR%%/tools/tests/create_question_matchingdd.php
+%%WWWDIR%%/tools/tests/create_question_multi.php
+%%WWWDIR%%/tools/tests/create_question_multianswer.php
+%%WWWDIR%%/tools/tests/create_question_multichoice.php
+%%WWWDIR%%/tools/tests/create_question_ordering.php
+%%WWWDIR%%/tools/tests/create_question_tf.php
+%%WWWDIR%%/tools/tests/create_question_truefalse.php
+%%WWWDIR%%/tools/tests/create_test.php
+%%WWWDIR%%/tools/tests/dd.php
+%%WWWDIR%%/tools/tests/delete_question.php
+%%WWWDIR%%/tools/tests/delete_result.php
+%%WWWDIR%%/tools/tests/delete_test.php
+%%WWWDIR%%/tools/tests/edit_question_likert.php
+%%WWWDIR%%/tools/tests/edit_question_long.php
+%%WWWDIR%%/tools/tests/edit_question_matching.php
+%%WWWDIR%%/tools/tests/edit_question_matchingdd.php
+%%WWWDIR%%/tools/tests/edit_question_multi.php
+%%WWWDIR%%/tools/tests/edit_question_multianswer.php
+%%WWWDIR%%/tools/tests/edit_question_multichoice.php
+%%WWWDIR%%/tools/tests/edit_question_ordering.php
+%%WWWDIR%%/tools/tests/edit_question_tf.php
+%%WWWDIR%%/tools/tests/edit_question_truefalse.php
+%%WWWDIR%%/tools/tests/edit_test.php
+%%WWWDIR%%/tools/tests/export_test.php
+%%WWWDIR%%/tools/tests/form_editor.php
+%%WWWDIR%%/tools/tests/import_test.php
+%%WWWDIR%%/tools/tests/index.php
+%%WWWDIR%%/tools/tests/preview.php
+%%WWWDIR%%/tools/tests/preview_question.php
+%%WWWDIR%%/tools/tests/question_cats.php
+%%WWWDIR%%/tools/tests/question_cats_delete.php
+%%WWWDIR%%/tools/tests/question_cats_manage.php
+%%WWWDIR%%/tools/tests/question_db.php
+%%WWWDIR%%/tools/tests/question_import.php
+%%WWWDIR%%/tools/tests/question_remove.php
+%%WWWDIR%%/tools/tests/questions.php
+%%WWWDIR%%/tools/tests/results.php
+%%WWWDIR%%/tools/tests/results_all.php
+%%WWWDIR%%/tools/tests/results_all_quest.php
+%%WWWDIR%%/tools/tests/results_quest_long.php
+%%WWWDIR%%/tools/tests/view_results.php
+%%WWWDIR%%/tools/tile/import.php
+%%WWWDIR%%/tools/tile/index.php
+%%WWWDIR%%/tools/tracker/export.php
+%%WWWDIR%%/tools/tracker/index.php
+%%WWWDIR%%/tools/tracker/page_student_stats.php
+%%WWWDIR%%/tools/tracker/reset.php
+%%WWWDIR%%/tools/tracker/student_usage.php
+%%WWWDIR%%/tools/tracker.php
+%%WWWDIR%%/tools/view_results.php
+%%WWWDIR%%/users/atutor_settings.inc.php
+%%WWWDIR%%/users/browse.php
+%%WWWDIR%%/users/contact_instructor.php
+%%WWWDIR%%/users/content_settings.inc.php
+%%WWWDIR%%/users/control_settings.inc.php
+%%WWWDIR%%/users/course_stats.php
+%%WWWDIR%%/users/create_course.php
+%%WWWDIR%%/users/display_settings.inc.php
+%%WWWDIR%%/users/email_change.php
+%%WWWDIR%%/users/index.php
+%%WWWDIR%%/users/password_change.php
+%%WWWDIR%%/users/preferences.php
+%%WWWDIR%%/users/private_enroll.php
+%%WWWDIR%%/users/profile.php
+%%WWWDIR%%/users/profile_picture.php
+%%WWWDIR%%/users/prog.php
+%%WWWDIR%%/users/remove_course.php
+%%WWWDIR%%/users/request_instructor.php
+%%WWWDIR%%/users/search.php
+%%WWWDIR%%/users/tool_settings.inc.php
+@dirrm %%WWWDIR%%/admin/admins
+@dirrm %%WWWDIR%%/admin/backup
+@dirrm %%WWWDIR%%/admin/enrollment
+@dirrm %%WWWDIR%%/admin/modules
+@dirrm %%WWWDIR%%/admin/rss_feeds
+@dirrm %%WWWDIR%%/admin/themes
+@dirrm %%WWWDIR%%/admin
+@dirrm %%WWWDIR%%/assignments
+@dirrm %%WWWDIR%%/blogs
+@dirrm %%WWWDIR%%/chat/bings
+@dirrm %%WWWDIR%%/chat/include/html
+@dirrm %%WWWDIR%%/chat/include
+@dirrm %%WWWDIR%%/chat
+@dirrm %%WWWDIR%%/content
+@dirrm %%WWWDIR%%/documentation/admin/en
+@dirrm %%WWWDIR%%/documentation/admin/fr
+@dirrm %%WWWDIR%%/documentation/admin
+@dirrm %%WWWDIR%%/documentation/common/fr
+@dirrm %%WWWDIR%%/documentation/common
+@dirrm %%WWWDIR%%/documentation/developer
+@dirrm %%WWWDIR%%/documentation/general/en
+@dirrm %%WWWDIR%%/documentation/general/fr
+@dirrm %%WWWDIR%%/documentation/general
+@dirrm %%WWWDIR%%/documentation/index/en
+@dirrm %%WWWDIR%%/documentation/index/fr
+@dirrm %%WWWDIR%%/documentation/index
+@dirrm %%WWWDIR%%/documentation/instructor/en
+@dirrm %%WWWDIR%%/documentation/instructor/fr
+@dirrm %%WWWDIR%%/documentation/instructor
+@dirrm %%WWWDIR%%/documentation
+@dirrm %%WWWDIR%%/editor
+@dirrm %%WWWDIR%%/faq
+@dirrm %%WWWDIR%%/file_storage
+@dirrm %%WWWDIR%%/forum
+@dirrm %%WWWDIR%%/glossary
+@dirrm %%WWWDIR%%/google_search/admin
+@dirrm %%WWWDIR%%/google_search
+@dirrm %%WWWDIR%%/help
+@dirrm %%WWWDIR%%/images/courses
+@dirrm %%WWWDIR%%/images/file_types
+@dirrm %%WWWDIR%%/images/forum
+@dirrm %%WWWDIR%%/images/rtl_tree
+@dirrm %%WWWDIR%%/images/tree
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/inbox
+@dirrm %%WWWDIR%%/include/classes/A4a
+@dirrm %%WWWDIR%%/include/classes/Backup
+@dirrm %%WWWDIR%%/include/classes/ErrorHandler
+@dirrm %%WWWDIR%%/include/classes/Language
+@dirrm %%WWWDIR%%/include/classes/Message
+@dirrm %%WWWDIR%%/include/classes/Module
+@dirrm %%WWWDIR%%/include/classes/QTI
+@dirrm %%WWWDIR%%/include/classes/Savant2/Savant2
+@dirrm %%WWWDIR%%/include/classes/Savant2
+@dirrm %%WWWDIR%%/include/classes/Themes
+@dirrm %%WWWDIR%%/include/classes/UrlRewrite
+@dirrm %%WWWDIR%%/include/classes/XML/XML_HTMLSax/HTMLSax
+@dirrm %%WWWDIR%%/include/classes/XML/XML_HTMLSax/OS
+@dirrm %%WWWDIR%%/include/classes/XML/XML_HTMLSax/PEAR
+@dirrm %%WWWDIR%%/include/classes/XML/XML_HTMLSax
+@dirrm %%WWWDIR%%/include/classes/XML
+@dirrm %%WWWDIR%%/include/classes/phpmailer
+@dirrm %%WWWDIR%%/include/classes
+@dirrm %%WWWDIR%%/include/html/dropdowns
+@dirrm %%WWWDIR%%/include/html/editor_tabs
+@dirrm %%WWWDIR%%/include/html/frameset
+@dirrm %%WWWDIR%%/include/html
+@dirrm %%WWWDIR%%/include/ims
+@dirrm %%WWWDIR%%/include/imscc
+@dirrm %%WWWDIR%%/include/lib
+@dirrm %%WWWDIR%%/include/phpCache
+@dirrm %%WWWDIR%%/include/securimage/audio
+@dirrm %%WWWDIR%%/include/securimage/gdfonts
+@dirrm %%WWWDIR%%/include/securimage/images
+@dirrm %%WWWDIR%%/include/securimage
+@dirrm %%WWWDIR%%/include
+@dirrm %%WWWDIR%%/install/db
+@dirrm %%WWWDIR%%/install/images
+@dirrm %%WWWDIR%%/install/include/classes
+@dirrm %%WWWDIR%%/install/include
+@dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/jscripts/infusion/components/inlineEdit/css
+@dirrm %%WWWDIR%%/jscripts/infusion/components/inlineEdit/js
+@dirrm %%WWWDIR%%/jscripts/infusion/components/inlineEdit
+@dirrm %%WWWDIR%%/jscripts/infusion/components/pager/css
+@dirrm %%WWWDIR%%/jscripts/infusion/components/pager/images
+@dirrm %%WWWDIR%%/jscripts/infusion/components/pager/js
+@dirrm %%WWWDIR%%/jscripts/infusion/components/pager
+@dirrm %%WWWDIR%%/jscripts/infusion/components/progress/js
+@dirrm %%WWWDIR%%/jscripts/infusion/components/progress
+@dirrm %%WWWDIR%%/jscripts/infusion/components/reorderer/css
+@dirrm %%WWWDIR%%/jscripts/infusion/components/reorderer/html
+@dirrm %%WWWDIR%%/jscripts/infusion/components/reorderer/images
+@dirrm %%WWWDIR%%/jscripts/infusion/components/reorderer/js
+@dirrm %%WWWDIR%%/jscripts/infusion/components/reorderer
+@dirrm %%WWWDIR%%/jscripts/infusion/components/tableOfContents/html
+@dirrm %%WWWDIR%%/jscripts/infusion/components/tableOfContents/js
+@dirrm %%WWWDIR%%/jscripts/infusion/components/tableOfContents
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/css
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/html
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/images
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions/js
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uiOptions
+@dirrm %%WWWDIR%%/jscripts/infusion/components/undo/js
+@dirrm %%WWWDIR%%/jscripts/infusion/components/undo
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uploader/css
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uploader/html
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uploader/images
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uploader/js
+@dirrm %%WWWDIR%%/jscripts/infusion/components/uploader
+@dirrm %%WWWDIR%%/jscripts/infusion/components
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/core/js
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/core
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/css
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/_common
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/coal
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/high_contrast_bw
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/mist
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/rust
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes/slate
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images/themes
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss/images
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/fss
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/renderer/js
+@dirrm %%WWWDIR%%/jscripts/infusion/framework/renderer
+@dirrm %%WWWDIR%%/jscripts/infusion/framework
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/fastXmlPull/js
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/fastXmlPull
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/core/js
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/core
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/bgiframe/js
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/bgiframe
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/delegate/js
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/delegate
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip/css
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip/js
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins/tooltip
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/plugins
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-coal
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hc/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hc
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hci/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-hci
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-mist
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate/images
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css/fl-theme-slate
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/css
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui/js
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery/ui
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/jquery
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/json/js
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/json
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/swfobject/js
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/swfobject
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/swfupload/flash
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/swfupload/js
+@dirrm %%WWWDIR%%/jscripts/infusion/lib/swfupload
+@dirrm %%WWWDIR%%/jscripts/infusion/lib
+@dirrm %%WWWDIR%%/jscripts/infusion/licenses
+@dirrm %%WWWDIR%%/jscripts/infusion
+@dirrm %%WWWDIR%%/jscripts/opensocial
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/acheck
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advhr/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advhr
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advimage/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advimage
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/compat2x
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/directionality
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/emotions/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/emotions
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullscreen
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/iespell
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/layer
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/nonbreaking
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/noneditable
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/pagebreak
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/paste
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/preview/jscripts
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/preview
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/print
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/safari
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/save
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/spellchecker
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/style
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/tabfocus
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/table
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/template
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/visualchars
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/css
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/xhtmlxtras
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/js
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/default
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins/o2k7
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced/skins
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/advanced
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple/skins/default
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple/skins/o2k7/img
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple/skins/o2k7
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple/skins
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/themes
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/utils
+@dirrm %%WWWDIR%%/jscripts/tiny_mce
+@dirrm %%WWWDIR%%/jscripts
+@dirrm %%WWWDIR%%/license
+@dirrm %%WWWDIR%%/links
+@dirrm %%WWWDIR%%/mods/_core/backups
+@dirrm %%WWWDIR%%/mods/_core/cats_categories
+@dirrm %%WWWDIR%%/mods/_core/content
+@dirrm %%WWWDIR%%/mods/_core/content_packaging
+@dirrm %%WWWDIR%%/mods/_core/courses
+@dirrm %%WWWDIR%%/mods/_core/enrolment
+@dirrm %%WWWDIR%%/mods/_core/file_manager
+@dirrm %%WWWDIR%%/mods/_core/glossary
+@dirrm %%WWWDIR%%/mods/_core/groups
+@dirrm %%WWWDIR%%/mods/_core/languages
+@dirrm %%WWWDIR%%/mods/_core/properties
+@dirrm %%WWWDIR%%/mods/_core/themes
+@dirrm %%WWWDIR%%/mods/_core/users
+@dirrm %%WWWDIR%%/mods/_core
+@dirrm %%WWWDIR%%/mods/_standard/announcements
+@dirrm %%WWWDIR%%/mods/_standard/assignments
+@dirrm %%WWWDIR%%/mods/_standard/blogs
+@dirrm %%WWWDIR%%/mods/_standard/calendar
+@dirrm %%WWWDIR%%/mods/_standard/chat
+@dirrm %%WWWDIR%%/mods/_standard/course_email
+@dirrm %%WWWDIR%%/mods/_standard/course_tools
+@dirrm %%WWWDIR%%/mods/_standard/directory
+@dirrm %%WWWDIR%%/mods/_standard/faq
+@dirrm %%WWWDIR%%/mods/_standard/farchive
+@dirrm %%WWWDIR%%/mods/_standard/file_storage
+@dirrm %%WWWDIR%%/mods/_standard/forums
+@dirrm %%WWWDIR%%/mods/_standard/google_search
+@dirrm %%WWWDIR%%/mods/_standard/gradebook/html
+@dirrm %%WWWDIR%%/mods/_standard/gradebook/lib
+@dirrm %%WWWDIR%%/mods/_standard/gradebook
+@dirrm %%WWWDIR%%/mods/_standard/links
+@dirrm %%WWWDIR%%/mods/_standard/patcher/classes
+@dirrm %%WWWDIR%%/mods/_standard/patcher/include
+@dirrm %%WWWDIR%%/mods/_standard/patcher
+@dirrm %%WWWDIR%%/mods/_standard/polls
+@dirrm %%WWWDIR%%/mods/_standard/profile_pictures
+@dirrm %%WWWDIR%%/mods/_standard/reading_list
+@dirrm %%WWWDIR%%/mods/_standard/rss_feeds
+@dirrm %%WWWDIR%%/mods/_standard/sitemap
+@dirrm %%WWWDIR%%/mods/_standard/social/admin
+@dirrm %%WWWDIR%%/mods/_standard/social/groups
+@dirrm %%WWWDIR%%/mods/_standard/social/html/admin
+@dirrm %%WWWDIR%%/mods/_standard/social/html/edit_profile
+@dirrm %%WWWDIR%%/mods/_standard/social/html/settings
+@dirrm %%WWWDIR%%/mods/_standard/social/html
+@dirrm %%WWWDIR%%/mods/_standard/social/images
+@dirrm %%WWWDIR%%/mods/_standard/social/lib/Shindig
+@dirrm %%WWWDIR%%/mods/_standard/social/lib/classes/PrivacyControl
+@dirrm %%WWWDIR%%/mods/_standard/social/lib/classes/SocialGroups
+@dirrm %%WWWDIR%%/mods/_standard/social/lib/classes
+@dirrm %%WWWDIR%%/mods/_standard/social/lib/js
+@dirrm %%WWWDIR%%/mods/_standard/social/lib
+@dirrm %%WWWDIR%%/mods/_standard/social
+@dirrm %%WWWDIR%%/mods/_standard/statistics
+@dirrm %%WWWDIR%%/mods/_standard/student_tools
+@dirrm %%WWWDIR%%/mods/_standard/support_tools
+@dirrm %%WWWDIR%%/mods/_standard/tests
+@dirrm %%WWWDIR%%/mods/_standard/tile_search
+@dirrm %%WWWDIR%%/mods/_standard/tracker
+@dirrm %%WWWDIR%%/mods/_standard
+@dirrm %%WWWDIR%%/mods
+@dirrm %%WWWDIR%%/packages
+@dirrm %%WWWDIR%%/polls
+@dirrm %%WWWDIR%%/reading_list
+@dirrm %%WWWDIR%%/themes/blumin/images
+@dirrm %%WWWDIR%%/themes/blumin/include
+@dirrm %%WWWDIR%%/themes/blumin
+@dirrm %%WWWDIR%%/themes/default/images
+@dirrm %%WWWDIR%%/themes/default/include
+@dirrm %%WWWDIR%%/themes/default/test_questions
+@dirrm %%WWWDIR%%/themes/default/users
+@dirrm %%WWWDIR%%/themes/default
+@dirrm %%WWWDIR%%/themes/default15/images
+@dirrm %%WWWDIR%%/themes/default15/include
+@dirrm %%WWWDIR%%/themes/default15
+@dirrm %%WWWDIR%%/themes/default_classic/images
+@dirrm %%WWWDIR%%/themes/default_classic/include
+@dirrm %%WWWDIR%%/themes/default_classic
+@dirrm %%WWWDIR%%/themes/fluid/images
+@dirrm %%WWWDIR%%/themes/fluid/include
+@dirrm %%WWWDIR%%/themes/fluid
+@dirrm %%WWWDIR%%/themes/greenmin/images
+@dirrm %%WWWDIR%%/themes/greenmin/include
+@dirrm %%WWWDIR%%/themes/greenmin
+@dirrm %%WWWDIR%%/themes
+@dirrm %%WWWDIR%%/tools/backup
+@dirrm %%WWWDIR%%/tools/chat
+@dirrm %%WWWDIR%%/tools/content
+@dirrm %%WWWDIR%%/tools/enrollment
+@dirrm %%WWWDIR%%/tools/filemanager
+@dirrm %%WWWDIR%%/tools/forums
+@dirrm %%WWWDIR%%/tools/glossary
+@dirrm %%WWWDIR%%/tools/groups
+@dirrm %%WWWDIR%%/tools/ims
+@dirrm %%WWWDIR%%/tools/imscc
+@dirrm %%WWWDIR%%/tools/links
+@dirrm %%WWWDIR%%/tools/news
+@dirrm %%WWWDIR%%/tools/packages/scorm-1.2/images
+@dirrm %%WWWDIR%%/tools/packages/scorm-1.2/java
+@dirrm %%WWWDIR%%/tools/packages/scorm-1.2
+@dirrm %%WWWDIR%%/tools/packages
+@dirrm %%WWWDIR%%/tools/polls
+@dirrm %%WWWDIR%%/tools/tests
+@dirrm %%WWWDIR%%/tools/tile
+@dirrm %%WWWDIR%%/tools/tracker
+@dirrm %%WWWDIR%%/tools
+@dirrm %%WWWDIR%%/users
+@dirrm %%WWWDIR%%
