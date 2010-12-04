@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/net/freeswitch-core/files/pkg-install.in,v 1.2 2010-07-16 14:57:42 jpaetzel Exp $
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+PRE-INSTALL)
+  echo "---> Starting pre-install script:"
+
+  if pw showgroup "freeswitch" 2>/dev/null; then
+    echo "---> Using existing group \"freeswitch\""
+  else
+    echo "---> Adding group \"freeswitch\""
+    pw addgroup freeswitch -h - || exit 1
+  fi
+
+
+  # Create user if required
+  if pw showuser "freeswitch" 2>/dev/null; then
+    echo "---> Using existing user \"freeswitch\""
+  else
+    echo "---> Adding user \"freeswitch\""
+    pw adduser freeswitch -g freeswitch -h - \
+      -d "/nonexistent" -s "/sbin/nologin" -c "freeswitch User" || exit 1
+  fi
+
+  ;;
+
+esac

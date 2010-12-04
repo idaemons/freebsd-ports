@@ -1,0 +1,14 @@
+bin/ffmpegthumbnailer
+include/libffmpegthumbnailer/filmstripfilter.h
+include/libffmpegthumbnailer/histogram.h
+include/libffmpegthumbnailer/ifilter.h
+include/libffmpegthumbnailer/videoframe.h
+include/libffmpegthumbnailer/videothumbnailer.h
+include/libffmpegthumbnailer/videothumbnailerc.h
+include/libffmpegthumbnailer/imagetypes.h
+lib/libffmpegthumbnailer.so.4
+lib/libffmpegthumbnailer.so
+lib/libffmpegthumbnailer.la
+lib/libffmpegthumbnailer.a
+libdata/pkgconfig/libffmpegthumbnailer.pc
+@dirrm include/libffmpegthumbnailer

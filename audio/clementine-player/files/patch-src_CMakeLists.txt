@@ -1,0 +1,10 @@
+--- src/CMakeLists.txt.orig	2010-06-30 16:09:59.000000000 +0800
++++ src/CMakeLists.txt	2010-06-30 16:13:10.000000000 +0800
+@@ -509,6 +509,7 @@ add_executable(clementine
+   ${CLEMENTINE-WIN32-RESOURCES}
+   main.cpp
+ )
++set_target_properties(clementine PROPERTIES OUTPUT_NAME clementine-player)
+ target_link_libraries(clementine
+   clementine_lib
+ )

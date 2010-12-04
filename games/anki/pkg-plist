@@ -1,0 +1,299 @@
+bin/anki
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/anki
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/about.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/about.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/about.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/activetags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/activetags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/activetags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcardmodels.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcardmodels.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcardmodels.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcards.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcards.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addcards.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addmodel.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addmodel.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/addmodel.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/cardlist.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/cardlist.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/cardlist.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemap.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemap.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemap.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemodel.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemodel.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/changemodel.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/deckproperties.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/deckproperties.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/deckproperties.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/displayproperties.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/displayproperties.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/displayproperties.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/editfont.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/editfont.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/editfont.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/edithtml.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/edithtml.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/edithtml.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/exporting.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/exporting.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/exporting.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/findreplace.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/findreplace.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/findreplace.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/getshared.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/getshared.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/getshared.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/importing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/importing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/importing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/infodialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/infodialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/infodialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/main.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/main.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/main.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/modelproperties.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/modelproperties.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/modelproperties.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/preferences.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/preferences.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/preferences.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/previewcards.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/previewcards.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/previewcards.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/reschedule.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/reschedule.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/reschedule.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/share.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/share.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/share.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/sort.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/sort.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/sort.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/syncdeck.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/syncdeck.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms/syncdeck.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/icons_rc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/icons_rc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/icons_rc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ar/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/az/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/bg/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/cs/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/da/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/de/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/el/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_GB/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/eo/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/es/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/et/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fa/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fi/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fr/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/gu/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/he/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/hu/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/it/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ja/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ko/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lt/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/mn/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ms/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nb/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nl/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/oc/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pl/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt_BR/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ro/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ru/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sl/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sv/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tlh/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tr/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/uk/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/vi/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_CN/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_HK/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_TW/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/about.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/about.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/about.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/activetags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/activetags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/activetags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/addcards.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/addcards.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/addcards.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/cardlist.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/cardlist.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/cardlist.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/deckproperties.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/deckproperties.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/deckproperties.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/displayproperties.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/displayproperties.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/displayproperties.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/exporting.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/exporting.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/exporting.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/facteditor.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/facteditor.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/facteditor.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/getshared.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/getshared.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/getshared.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/graphs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/graphs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/graphs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/help.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/help.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/help.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/importing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/importing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/importing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/main.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/main.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/main.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelchooser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelchooser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelchooser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelproperties.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelproperties.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/modelproperties.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/preferences.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/preferences.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/preferences.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sound.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sound.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sound.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/status.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/status.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/status.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sync.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sync.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/sync.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tagedit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tagedit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tagedit.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tray.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tray.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/tray.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/unsaved.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/unsaved.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/unsaved.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/update.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/update.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/update.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/view.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/view.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/view.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_HK/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_HK
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/vi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/vi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/uk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/uk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tlh/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tlh
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ro/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ro
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/oc/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/oc
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nb/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nb
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ms/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/mn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/mn
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ko/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ko
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/hu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/he
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/gu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/gu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fa/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fa
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/et/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/et
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/eo/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/eo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_GB/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_GB
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/el
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/da
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/bg/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/bg
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/az/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/az
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ar/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ar
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/forms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

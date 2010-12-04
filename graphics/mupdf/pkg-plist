@@ -1,0 +1,9 @@
+bin/mupdf
+bin/mu_pdfclean
+bin/mu_pdfdraw
+bin/mu_pdfextract
+bin/mu_pdfinfo
+bin/mu_pdfshow
+include/fitz.h
+include/mupdf.h
+lib/libmupdf.a

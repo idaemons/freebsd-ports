@@ -1,0 +1,129 @@
+%%PYTHON_SITELIBDIR%%/Pyro/__init__.py
+%%PYTHON_SITELIBDIR%%/Pyro/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/config.py
+%%PYTHON_SITELIBDIR%%/Pyro/config.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/config.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/constants.py
+%%PYTHON_SITELIBDIR%%/Pyro/constants.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/constants.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/core.py
+%%PYTHON_SITELIBDIR%%/Pyro/core.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/core.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/errors.py
+%%PYTHON_SITELIBDIR%%/Pyro/errors.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/errors.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/naming.py
+%%PYTHON_SITELIBDIR%%/Pyro/naming.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/naming.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/nsc.py
+%%PYTHON_SITELIBDIR%%/Pyro/nsc.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/nsc.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/socketserver/__init__.py
+%%PYTHON_SITELIBDIR%%/Pyro/socketserver/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/socketserver/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/socketserver/selectserver.py
+%%PYTHON_SITELIBDIR%%/Pyro/socketserver/selectserver.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/socketserver/selectserver.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/socketserver/threadpoolserver.py
+%%PYTHON_SITELIBDIR%%/Pyro/socketserver/threadpoolserver.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/socketserver/threadpoolserver.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/socketutil.py
+%%PYTHON_SITELIBDIR%%/Pyro/socketutil.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/socketutil.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/threadutil.py
+%%PYTHON_SITELIBDIR%%/Pyro/threadutil.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/threadutil.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/util.py
+%%PYTHON_SITELIBDIR%%/Pyro/util.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro/socketserver
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro/
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoreconnect/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoreconnect/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoreconnect/clientNS.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoreconnect/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoreconnect/serverNS.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/banks/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/banks/banks.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/banks/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/banks/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark/bench.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark/connections.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chatbox/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chatbox/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chatbox/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/circular/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/circular/chain.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/circular/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/circular/servA.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/circular/servB.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/circular/servC.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/dispatcher.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/worker.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/workitem.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eventloop/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eventloop/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eventloop/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions/excep.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hugetransfer/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hugetransfer/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hugetransfer/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nameserverstress/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nameserverstress/stress.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nonameserver/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nonameserver/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nonameserver/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneway/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneway/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneway/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proxysharing/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proxysharing/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proxysharing/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/robots/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/robots/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/robots/gameserver.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/robots/remote.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/robots/robot.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servertypes/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servertypes/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servertypes/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shoppingcart/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shoppingcart/clients.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shoppingcart/shoppingcart.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shoppingcart/shopserver.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout/server.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autoreconnect
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/banks
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/benchmark
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/callback
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/chatbox
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/circular
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/distributed-computing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eventloop
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/exceptions
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hugetransfer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nameserverstress
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nonameserver
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oneway
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proxysharing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/robots
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/servertypes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/shoppingcart
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/timeout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

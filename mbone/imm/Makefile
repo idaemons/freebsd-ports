@@ -1,15 +1,47 @@
 # New ports collection makefile for:	imm
-# Version required:	3.3
 # Date created:		13 October 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/14 01:37:11 wollman Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	imm-3.3
-DISTFILES=	imm-3.3-src.tar.Z
-MASTER_SITES=	ftp://ftp.ucs.ed.ac.uk/pub/videoconference/imm/
-WRKSRC=		${WRKDIR}/src
-LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
+PORTNAME=	imm
+PORTVERSION=	3.5a1
+PORTREVISION=	3
+CATEGORIES=	mbone tk
+MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
+DISTNAME=	imm.source
+EXTRACT_SUFX=	.tar.Z
 
-.include <bsd.port.mk>
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Internet Image(or other data) Multicaster (and receiver)
+
+USE_TK=		84
+WRKSRC=		${WRKDIR}/mnm
+
+PORTDOCS=	README imm_readme.txt
+
+.include <bsd.port.pre.mk>
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/freebsd
+	@${CP} ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile
+	@${CP} ${FILESDIR}/Makefile.freebsd ${WRKSRC}/src
+
+# The included makefile doesn't have an "install" target.
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/freebsd/imm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/freebsd/immserv ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/freebsd/lscomp ${PREFIX}/bin
+# and no man pages at all yet.
+# But include the very limited documentation
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/imm_readme.txt ${DOCSDIR}
+.endif
+# The sdr plugin is pretty much required.
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sdr2.plugin.S53.image.imm ${DATADIR}
+
+.include <bsd.port.post.mk>

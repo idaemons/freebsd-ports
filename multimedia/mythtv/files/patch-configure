@@ -1,0 +1,44 @@
+--- configure.orig	2010-03-30 00:09:16.000000000 +0200
++++ configure	2010-04-06 19:10:20.000000000 +0200
+@@ -666,21 +666,21 @@
+     log check_cc "$@"
+     cat > $TMPC
+     log_file $TMPC
+-    check_cmd $cc $CPPFLAGS $CFLAGS $OPTFLAGS "$@" -c -o $TMPO $TMPC
++    check_cmd $cc $CPPFLAGS $CFLAGS $OPTFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPC
+ }
+ 
+ check_cpp(){
+     log check_cpp "$@"
+     cat > $TMPC
+     log_file $TMPC
+-    check_cmd $cc $CPPFLAGS $CFLAGS $OPTFLAGS "$@" -E -o $TMPO $TMPC
++    check_cmd $cc $CPPFLAGS $CFLAGS $OPTFLAGS -I${prefix}/include "$@" -E -o $TMPO $TMPC
+ }
+ 
+ check_cxx(){
+     log check_cxx "$@"
+     cat > $TMPCXX
+     log_file $TMPCXX
+-    check_cmd $cxx $ECXXFLAGS "$@" -c -o $TMPO $TMPCXX
++    check_cmd $cxx $ECXXFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPCXX
+ }
+ 
+ check_as(){
+@@ -2841,7 +2841,6 @@
+         enable malloc_aligned
+         # Workaround compile errors from missing u_int/uint def
+         CPPFLAGS=`echo $CPPFLAGS | sed 's/-D_POSIX_C_SOURCE=200112//'`
+-        disable ivtv
+         enable backend
+         ;;
+     bsd/os)
+@@ -4581,6 +4580,8 @@
+ #       directories, it cannot be modified.
+ QMAKE_LIBDIR_QT -= $libdir
+ LATE_LIBS            += -L$libdir
++CONFIG_INCLUDEPATH=
++FREETYPE_CFLAGS -= -I/usr/local/include
+ EOF
+ 
+ diff $TMPH $MYTH_CONFIG_H >/dev/null 2>&1

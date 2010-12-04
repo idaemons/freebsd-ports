@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+include/fixbuf/autoinc.h
+include/fixbuf/public.h
+include/fixbuf/private.h
+lib/libfixbuf-0.9.0.so.8
+lib/libfixbuf-0.9.0.so
+lib/libfixbuf.so
+lib/libfixbuf.la
+lib/libfixbuf.a
+libdata/pkgconfig/libfixbuf.pc
+@dirrmtry include/fixbuf

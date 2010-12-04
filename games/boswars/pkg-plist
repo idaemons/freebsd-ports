@@ -1,0 +1,769 @@
+bin/boswars
+%%DATADIR%%/campaigns/elites/campaign.lua
+%%DATADIR%%/campaigns/elites/level01.smp
+%%DATADIR%%/campaigns/elites/level01.sms
+%%DATADIR%%/campaigns/elites/level01.txt
+%%DATADIR%%/campaigns/elites/level02.smp
+%%DATADIR%%/campaigns/elites/level02.sms
+%%DATADIR%%/campaigns/elites/level02.txt
+%%DATADIR%%/campaigns/elites/level03.smp
+%%DATADIR%%/campaigns/elites/level03.sms
+%%DATADIR%%/campaigns/elites/level03.txt
+%%DATADIR%%/campaigns/elites/level04.smp
+%%DATADIR%%/campaigns/elites/level04.sms
+%%DATADIR%%/campaigns/elites/level04.txt
+%%DATADIR%%/campaigns/elites/level05.smp
+%%DATADIR%%/campaigns/elites/level05.sms
+%%DATADIR%%/campaigns/elites/level05.txt
+%%DATADIR%%/campaigns/elites/level06.smp
+%%DATADIR%%/campaigns/elites/level06.sms
+%%DATADIR%%/campaigns/elites/level06.txt
+%%DATADIR%%/campaigns/elites/level07.smp
+%%DATADIR%%/campaigns/elites/level07.sms
+%%DATADIR%%/campaigns/elites/level07.txt
+%%DATADIR%%/campaigns/elites/level08.smp
+%%DATADIR%%/campaigns/elites/level08.sms
+%%DATADIR%%/campaigns/elites/level08.txt
+%%DATADIR%%/campaigns/elites/level09.smp
+%%DATADIR%%/campaigns/elites/level09.sms
+%%DATADIR%%/campaigns/elites/level09.txt
+%%DATADIR%%/campaigns/elites/level10.smp
+%%DATADIR%%/campaigns/elites/level10.sms
+%%DATADIR%%/campaigns/elites/level10.txt
+%%DATADIR%%/campaigns/tutorial/campaign.lua
+%%DATADIR%%/campaigns/tutorial/level01-01.wav
+%%DATADIR%%/campaigns/tutorial/level01-03.wav
+%%DATADIR%%/campaigns/tutorial/level01-04.wav
+%%DATADIR%%/campaigns/tutorial/level01-05.wav
+%%DATADIR%%/campaigns/tutorial/level01.smp
+%%DATADIR%%/campaigns/tutorial/level01.sms
+%%DATADIR%%/campaigns/tutorial/level01.wav
+%%DATADIR%%/campaigns/tutorial/level02.smp
+%%DATADIR%%/campaigns/tutorial/level02.sms
+%%DATADIR%%/campaigns/tutorial/level03.smp
+%%DATADIR%%/campaigns/tutorial/level03.sms
+%%DATADIR%%/graphics/explosions/expl_160x128x1.png
+%%DATADIR%%/graphics/explosions/expl_288x288x1.png
+%%DATADIR%%/graphics/explosions/expl_64x64x1.png
+%%DATADIR%%/graphics/explosions/explosion.png
+%%DATADIR%%/graphics/explosions/flash.png
+%%DATADIR%%/graphics/explosions/large01.png
+%%DATADIR%%/graphics/explosions/large02.png
+%%DATADIR%%/graphics/explosions/large03.png
+%%DATADIR%%/graphics/explosions/large04.png
+%%DATADIR%%/graphics/explosions/large05.png
+%%DATADIR%%/graphics/explosions/large06.png
+%%DATADIR%%/graphics/explosions/large07.png
+%%DATADIR%%/graphics/explosions/large08.png
+%%DATADIR%%/graphics/explosions/large09.png
+%%DATADIR%%/graphics/explosions/medium01.png
+%%DATADIR%%/graphics/explosions/medium02.png
+%%DATADIR%%/graphics/explosions/medium03.png
+%%DATADIR%%/graphics/explosions/medium04.png
+%%DATADIR%%/graphics/explosions/medium05.png
+%%DATADIR%%/graphics/explosions/medium06.png
+%%DATADIR%%/graphics/explosions/medium07.png
+%%DATADIR%%/graphics/explosions/medium08.png
+%%DATADIR%%/graphics/explosions/medium09.png
+%%DATADIR%%/graphics/explosions/small01.png
+%%DATADIR%%/graphics/explosions/small02.png
+%%DATADIR%%/graphics/explosions/small03.png
+%%DATADIR%%/graphics/explosions/small04.png
+%%DATADIR%%/graphics/explosions/small05.png
+%%DATADIR%%/graphics/explosions/small06.png
+%%DATADIR%%/graphics/explosions/small07.png
+%%DATADIR%%/graphics/explosions/small08.png
+%%DATADIR%%/graphics/explosions/small09.png
+%%DATADIR%%/graphics/explosions/smokedark04.png
+%%DATADIR%%/graphics/explosions/smokedark08.png
+%%DATADIR%%/graphics/explosions/smokedark12.png
+%%DATADIR%%/graphics/explosions/smokedark16.png
+%%DATADIR%%/graphics/explosions/smokedark20.png
+%%DATADIR%%/graphics/explosions/smokedark24.png
+%%DATADIR%%/graphics/explosions/smokedark28.png
+%%DATADIR%%/graphics/explosions/smokedark32.png
+%%DATADIR%%/graphics/explosions/smokedark36.png
+%%DATADIR%%/graphics/explosions/smokedark40.png
+%%DATADIR%%/graphics/explosions/smokedark44.png
+%%DATADIR%%/graphics/explosions/smokedark48.png
+%%DATADIR%%/graphics/explosions/smokelight04.png
+%%DATADIR%%/graphics/explosions/smokelight08.png
+%%DATADIR%%/graphics/explosions/smokelight12.png
+%%DATADIR%%/graphics/explosions/smokelight16.png
+%%DATADIR%%/graphics/explosions/smokelight20.png
+%%DATADIR%%/graphics/explosions/smokelight24.png
+%%DATADIR%%/graphics/explosions/smokelight28.png
+%%DATADIR%%/graphics/explosions/smokelight32.png
+%%DATADIR%%/graphics/explosions/smokelight36.png
+%%DATADIR%%/graphics/explosions/smokelight40.png
+%%DATADIR%%/graphics/explosions/smokelight44.png
+%%DATADIR%%/graphics/explosions/smokelight48.png
+%%DATADIR%%/graphics/general/commands.png
+%%DATADIR%%/graphics/general/dejavusans10.png
+%%DATADIR%%/graphics/general/dejavusans12.png
+%%DATADIR%%/graphics/general/dejavusans14.png
+%%DATADIR%%/graphics/general/dejavusansbold10.png
+%%DATADIR%%/graphics/general/dejavusansbold12.png
+%%DATADIR%%/graphics/general/dejavusansbold14.png
+%%DATADIR%%/graphics/general/fog.png
+%%DATADIR%%/graphics/general/freesansbold14.png
+%%DATADIR%%/graphics/general/health2.png
+%%DATADIR%%/graphics/general/mana2.png
+%%DATADIR%%/graphics/missiles/big_fire.png
+%%DATADIR%%/graphics/missiles/green_cross.png
+%%DATADIR%%/graphics/missiles/grenade.png
+%%DATADIR%%/graphics/missiles/nuke.png
+%%DATADIR%%/graphics/missiles/rocket.png
+%%DATADIR%%/graphics/missiles/small_fire.png
+%%DATADIR%%/graphics/neutral/destroyed_site.png
+%%DATADIR%%/graphics/neutral/small_destroyed_site.png
+%%DATADIR%%/graphics/neutral/units/corpses.png
+%%DATADIR%%/graphics/screens/defeat.png
+%%DATADIR%%/graphics/screens/menu.png
+%%DATADIR%%/graphics/screens/victory.png
+%%DATADIR%%/graphics/tiles/desert.png
+%%DATADIR%%/graphics/ui/cursor-info.png
+%%DATADIR%%/graphics/ui/cursors/arrow_E.png
+%%DATADIR%%/graphics/ui/cursors/arrow_N.png
+%%DATADIR%%/graphics/ui/cursors/arrow_NE.png
+%%DATADIR%%/graphics/ui/cursors/arrow_NW.png
+%%DATADIR%%/graphics/ui/cursors/arrow_S.png
+%%DATADIR%%/graphics/ui/cursors/arrow_SE.png
+%%DATADIR%%/graphics/ui/cursors/arrow_SW.png
+%%DATADIR%%/graphics/ui/cursors/arrow_W.png
+%%DATADIR%%/graphics/ui/cursors/cross.png
+%%DATADIR%%/graphics/ui/cursors/green.png
+%%DATADIR%%/graphics/ui/cursors/red.png
+%%DATADIR%%/graphics/ui/cursors/small_green_cross.png
+%%DATADIR%%/graphics/ui/cursors/yellow.png
+%%DATADIR%%/graphics/ui/elites_claw.png
+%%DATADIR%%/graphics/ui/rosace1.png
+%%DATADIR%%/graphics/ui/ui_1024_bpanel.png
+%%DATADIR%%/graphics/ui/ui_1280_bpanel.png
+%%DATADIR%%/graphics/ui/ui_1600_bpanel.png
+%%DATADIR%%/graphics/ui/ui_640_bpanel.png
+%%DATADIR%%/graphics/ui/ui_800_bpanel.png
+%%DATADIR%%/graphics/ui/ui_info.png
+%%DATADIR%%/graphics/ui/ui_minimap.png
+%%DATADIR%%/graphics/ui/ui_res_icons.png
+%%DATADIR%%/graphics/ui/x_startpoint.png
+%%DATADIR%%/intro/boswars_intro.ogg
+%%DATADIR%%/intro/logo_boswars.png
+%%DATADIR%%/languages/bg.po
+%%DATADIR%%/languages/bos-cs.po
+%%DATADIR%%/languages/bos-da.po
+%%DATADIR%%/languages/bos-de.po
+%%DATADIR%%/languages/bos-es.po
+%%DATADIR%%/languages/bos-fi.po
+%%DATADIR%%/languages/bos-fr.po
+%%DATADIR%%/languages/bos-nl.po
+%%DATADIR%%/languages/bos-pt.po
+%%DATADIR%%/languages/bos-sv.po
+%%DATADIR%%/languages/bos-tr.po
+%%DATADIR%%/languages/bos.pot
+%%DATADIR%%/languages/cs.po
+%%DATADIR%%/languages/da.po
+%%DATADIR%%/languages/de.po
+%%DATADIR%%/languages/engine.pot
+%%DATADIR%%/languages/es.po
+%%DATADIR%%/languages/fi.po
+%%DATADIR%%/languages/fr.po
+%%DATADIR%%/languages/genpot.sh
+%%DATADIR%%/languages/makesame.py
+%%DATADIR%%/languages/nl.po
+%%DATADIR%%/languages/pl.po
+%%DATADIR%%/languages/pt.po
+%%DATADIR%%/languages/sv.po
+%%DATADIR%%/languages/tr.po
+%%DATADIR%%/languages/updatepo.sh
+%%DATADIR%%/maps/antarticum.map/presentation.smp
+%%DATADIR%%/maps/antarticum.map/setup.sms
+%%DATADIR%%/maps/antarticum.map/terrain.lua
+%%DATADIR%%/maps/antarticum.map/terrain.png
+%%DATADIR%%/maps/battlefield.map/presentation.smp
+%%DATADIR%%/maps/battlefield.map/setup.sms
+%%DATADIR%%/maps/battlefield.map/terrain.lua
+%%DATADIR%%/maps/battlefield.map/terrain.png
+%%DATADIR%%/maps/braza.map/presentation.smp
+%%DATADIR%%/maps/braza.map/setup.sms
+%%DATADIR%%/maps/bridge.map/access-fast.lua
+%%DATADIR%%/maps/bridge.map/access-water.lua
+%%DATADIR%%/maps/bridge.map/presentation.smp
+%%DATADIR%%/maps/bridge.map/setup.sms
+%%DATADIR%%/maps/bridge.map/terrain.lua
+%%DATADIR%%/maps/bridge.map/terrain.png
+%%DATADIR%%/maps/bridge2far.map/access-unpassable.lua
+%%DATADIR%%/maps/bridge2far.map/class-no-pass.png
+%%DATADIR%%/maps/bridge2far.map/presentation.smp
+%%DATADIR%%/maps/bridge2far.map/setup.sms
+%%DATADIR%%/maps/bridge2far.map/terrain.lua
+%%DATADIR%%/maps/bridge2far.map/terrain.png
+%%DATADIR%%/maps/campaigns/elites/Aiglier.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Aiglier.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Bellegarde.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Bellegarde.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Buffy_Forest.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Buffy_Forest.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Fort_Savoy.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Fort_Savoy.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Green_Valley.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Green_Valley.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Rochebrune.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Rochebrune.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Savoy_Lake.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Savoy_Lake.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Savoy_Steps.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Savoy_Steps.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Shield_of_Wasteland.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Shield_of_Wasteland.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/The_River.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/The_River.map/setup.sms
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/access-unpassable.lua
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/presentation.smp
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/setup.sms
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/terrain.lua
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/terrain.png
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/unpassable.png
+%%DATADIR%%/maps/canyon.map/access-unpassable.lua
+%%DATADIR%%/maps/canyon.map/class-no-pass.png
+%%DATADIR%%/maps/canyon.map/presentation.smp
+%%DATADIR%%/maps/canyon.map/setup.sms
+%%DATADIR%%/maps/canyon.map/terrain.lua
+%%DATADIR%%/maps/canyon.map/terrain.png
+%%DATADIR%%/maps/cross.map/presentation.smp
+%%DATADIR%%/maps/cross.map/setup.sms
+%%DATADIR%%/maps/forest.map/presentation.smp
+%%DATADIR%%/maps/forest.map/setup.sms
+%%DATADIR%%/maps/guerillawarfare.map/access-unpassable.lua
+%%DATADIR%%/maps/guerillawarfare.map/presentation.smp
+%%DATADIR%%/maps/guerillawarfare.map/setup.sms
+%%DATADIR%%/maps/guerillawarfare.map/terrain-no-access.png
+%%DATADIR%%/maps/guerillawarfare.map/terrain.lua
+%%DATADIR%%/maps/guerillawarfare.map/terrain.png
+%%DATADIR%%/maps/highlands.map/presentation.smp
+%%DATADIR%%/maps/highlands.map/setup.sms
+%%DATADIR%%/maps/islandwar.map/access-fast.lua
+%%DATADIR%%/maps/islandwar.map/access-water.lua
+%%DATADIR%%/maps/islandwar.map/presentation.smp
+%%DATADIR%%/maps/islandwar.map/setup.sms
+%%DATADIR%%/maps/islandwar.map/terrain.lua
+%%DATADIR%%/maps/islandwar.map/terrain.png
+%%DATADIR%%/maps/labyrinth.map/presentation.smp
+%%DATADIR%%/maps/labyrinth.map/setup.sms
+%%DATADIR%%/maps/lake.map/presentation.smp
+%%DATADIR%%/maps/lake.map/setup.sms
+%%DATADIR%%/maps/multiplayer.map/presentation.smp
+%%DATADIR%%/maps/multiplayer.map/setup.sms
+%%DATADIR%%/maps/patches.map/128x.png
+%%DATADIR%%/maps/patches.map/256x.png
+%%DATADIR%%/maps/patches.map/32x.png
+%%DATADIR%%/maps/patches.map/512-hill-01x.png
+%%DATADIR%%/maps/patches.map/512-hill-02x.png
+%%DATADIR%%/maps/patches.map/512-hill-03x.png
+%%DATADIR%%/maps/patches.map/512-hill-04x.png
+%%DATADIR%%/maps/patches.map/512-lake-01x.png
+%%DATADIR%%/maps/patches.map/512x.png
+%%DATADIR%%/maps/patches.map/64x.png
+%%DATADIR%%/maps/patches.map/access-unpassable.lua
+%%DATADIR%%/maps/patches.map/presentation.smp
+%%DATADIR%%/maps/patches.map/setup.sms
+%%DATADIR%%/maps/patches.map/terrain.lua
+%%DATADIR%%/maps/patches.map/terrain.png
+%%DATADIR%%/maps/patches.map/unpassable.png
+%%DATADIR%%/maps/river.map/presentation.smp
+%%DATADIR%%/maps/river.map/setup.sms
+%%DATADIR%%/maps/river.map/terrain.lua
+%%DATADIR%%/maps/river.map/terrain.png
+%%DATADIR%%/maps/wetlands01.map/access-unpassable.lua
+%%DATADIR%%/maps/wetlands01.map/presentation.smp
+%%DATADIR%%/maps/wetlands01.map/terrain.lua
+%%DATADIR%%/maps/wetlands01.map/wetlands01-nopass.png
+%%DATADIR%%/maps/wetlands01.map/wetlands01.png
+%%DATADIR%%/maps/wetlands01.map/wetlands01.sms
+%%DATADIR%%/maps/wetlands02.map/access-water.lua
+%%DATADIR%%/maps/wetlands02.map/presentation.smp
+%%DATADIR%%/maps/wetlands02.map/setup.sms
+%%DATADIR%%/maps/wetlands02.map/terrain.png
+%%DATADIR%%/maps/wetlands02.map/wetlands02-access-water.png
+%%DATADIR%%/scripts/ai.lua
+%%DATADIR%%/scripts/ais/blitz.lua
+%%DATADIR%%/scripts/ais/passive.lua
+%%DATADIR%%/scripts/ais/rush.lua
+%%DATADIR%%/scripts/ais/tankrush.lua
+%%DATADIR%%/scripts/anim.lua
+%%DATADIR%%/scripts/boswars.lua
+%%DATADIR%%/scripts/buttons.lua
+%%DATADIR%%/scripts/buttonstyles.lua
+%%DATADIR%%/scripts/cheats.lua
+%%DATADIR%%/scripts/commands.lua
+%%DATADIR%%/scripts/cursors.lua
+%%DATADIR%%/scripts/editor.lua
+%%DATADIR%%/scripts/explosions.lua
+%%DATADIR%%/scripts/fonts.lua
+%%DATADIR%%/scripts/guichan.lua
+%%DATADIR%%/scripts/helpers.lua
+%%DATADIR%%/scripts/icons.lua
+%%DATADIR%%/scripts/maps.lua
+%%DATADIR%%/scripts/menus/campaigns.lua
+%%DATADIR%%/scripts/menus/credits.lua
+%%DATADIR%%/scripts/menus/ingame/editor.lua
+%%DATADIR%%/scripts/menus/ingame/game.lua
+%%DATADIR%%/scripts/menus/network.lua
+%%DATADIR%%/scripts/menus/options.lua
+%%DATADIR%%/scripts/missiles.lua
+%%DATADIR%%/scripts/sound.lua
+%%DATADIR%%/scripts/spells.lua
+%%DATADIR%%/scripts/tilesets/desert.lua
+%%DATADIR%%/scripts/ui.lua
+%%DATADIR%%/scripts/uilayout.lua
+%%DATADIR%%/scripts/units.lua
+%%DATADIR%%/sounds/bazoo_g_hit.wav
+%%DATADIR%%/sounds/grenadier_g_hit.wav
+%%DATADIR%%/sounds/ui/chatmessage.wav
+%%DATADIR%%/sounds/ui/click.wav.gz
+%%DATADIR%%/units/aircraftfactory/aircraftfactory.completed.wav
+%%DATADIR%%/units/aircraftfactory/aircraftfactory.png
+%%DATADIR%%/units/aircraftfactory/aircraftfactory.underattack.wav
+%%DATADIR%%/units/aircraftfactory/aircraftfactory_c.png
+%%DATADIR%%/units/aircraftfactory/aircraftfactory_i.png
+%%DATADIR%%/units/aircraftfactory/aircraftfactory_s.png
+%%DATADIR%%/units/aircraftfactory/unit-aircraftfactory.lua
+%%DATADIR%%/units/antharus/antharus.png
+%%DATADIR%%/units/antharus/icon.png
+%%DATADIR%%/units/antharus/unit-antharus.lua
+%%DATADIR%%/units/apcs/ico_apcs.png
+%%DATADIR%%/units/apcs/smolder.completed.wav
+%%DATADIR%%/units/apcs/smolder.underattack.wav
+%%DATADIR%%/units/apcs/smolder_action.wav
+%%DATADIR%%/units/apcs/smolder_attack.wav
+%%DATADIR%%/units/apcs/smolder_die.wav
+%%DATADIR%%/units/apcs/smolder_select.wav
+%%DATADIR%%/units/apcs/unit-apcs.lua
+%%DATADIR%%/units/apcs/unit_apcs.png
+%%DATADIR%%/units/apcs/unit_apcs_s.png
+%%DATADIR%%/units/artil/artil.ready.wav
+%%DATADIR%%/units/artil/artil.underattack.wav
+%%DATADIR%%/units/artil/ico_artil.png
+%%DATADIR%%/units/artil/unit-artil.lua
+%%DATADIR%%/units/artil/unit_artil.png
+%%DATADIR%%/units/artil/unit_artil_s.png
+%%DATADIR%%/units/assault/assault.unit.ready.wav
+%%DATADIR%%/units/assault/assault.unit.underattack.wav
+%%DATADIR%%/units/assault/assault_action.wav
+%%DATADIR%%/units/assault/assault_attack.wav
+%%DATADIR%%/units/assault/assault_die.wav
+%%DATADIR%%/units/assault/assault_select.wav
+%%DATADIR%%/units/assault/ico_assault.png
+%%DATADIR%%/units/assault/unit-assault.lua
+%%DATADIR%%/units/assault/unit_assault.png
+%%DATADIR%%/units/assault/unit_assault_c.png
+%%DATADIR%%/units/assault/unit_assault_s.png
+%%DATADIR%%/units/bazoo/bazoo.ready.wav
+%%DATADIR%%/units/bazoo/bazoo.underattack.wav
+%%DATADIR%%/units/bazoo/bazoo_action.wav
+%%DATADIR%%/units/bazoo/bazoo_attack.wav
+%%DATADIR%%/units/bazoo/bazoo_die.wav
+%%DATADIR%%/units/bazoo/bazoo_select.wav
+%%DATADIR%%/units/bazoo/ico_bazoo.png
+%%DATADIR%%/units/bazoo/unit-bazoo.lua
+%%DATADIR%%/units/bazoo/unit_bazoo.png
+%%DATADIR%%/units/bazoo/unit_bazoo_c.png
+%%DATADIR%%/units/bazoo/unit_bazoo_s.png
+%%DATADIR%%/units/bomber/bomber.ready.wav
+%%DATADIR%%/units/bomber/bomber.underattack.wav
+%%DATADIR%%/units/bomber/ico_bomber.png
+%%DATADIR%%/units/bomber/missile.png
+%%DATADIR%%/units/bomber/unit-bomber.lua
+%%DATADIR%%/units/bomber/unit_bomber.png
+%%DATADIR%%/units/bomber/unit_bomber_s.png
+%%DATADIR%%/units/buggy/buggy_action.wav
+%%DATADIR%%/units/buggy/buggy_attacked.wav
+%%DATADIR%%/units/buggy/buggy_die.wav
+%%DATADIR%%/units/buggy/buggy_ready.wav
+%%DATADIR%%/units/buggy/buggy_select.wav
+%%DATADIR%%/units/buggy/ico_buggy.png
+%%DATADIR%%/units/buggy/unit-buggy.lua
+%%DATADIR%%/units/buggy/unit_buggy.png
+%%DATADIR%%/units/buggy/unit_buggy_s.png
+%%DATADIR%%/units/camera/camera.completed.wav
+%%DATADIR%%/units/camera/camera.png
+%%DATADIR%%/units/camera/camera.underattack.wav
+%%DATADIR%%/units/camera/camera_c.png
+%%DATADIR%%/units/camera/camera_i.png
+%%DATADIR%%/units/camera/camera_s.png
+%%DATADIR%%/units/camera/sfx_camera.select.wav
+%%DATADIR%%/units/camera/unit-camera.lua
+%%DATADIR%%/units/camp/sfx_camp.die.wav
+%%DATADIR%%/units/camp/sfx_camp.select.wav
+%%DATADIR%%/units/camp/training.camp.completed.wav
+%%DATADIR%%/units/camp/training.camp.underattack.wav
+%%DATADIR%%/units/camp/training_camp.png
+%%DATADIR%%/units/camp/training_camp_c.png
+%%DATADIR%%/units/camp/training_camp_i.png
+%%DATADIR%%/units/camp/training_camp_s.png
+%%DATADIR%%/units/camp/unit-camp.lua
+%%DATADIR%%/units/cannon/cannon.completed.wav
+%%DATADIR%%/units/cannon/cannon.png
+%%DATADIR%%/units/cannon/cannon.underattack.wav
+%%DATADIR%%/units/cannon/cannon_c.png
+%%DATADIR%%/units/cannon/cannon_i.png
+%%DATADIR%%/units/cannon/cannon_s.png
+%%DATADIR%%/units/cannon/cannon_selected.wav
+%%DATADIR%%/units/cannon/unit-cannon.lua
+%%DATADIR%%/units/cannon/weapon.png
+%%DATADIR%%/units/cannon/weapon_s.png
+%%DATADIR%%/units/chopper/chopper.ready.wav
+%%DATADIR%%/units/chopper/chopper.underattack.wav
+%%DATADIR%%/units/chopper/ico_chopper.png
+%%DATADIR%%/units/chopper/unit-chopper.lua
+%%DATADIR%%/units/chopper/unit_chopper.png
+%%DATADIR%%/units/chopper/unit_chopper_s.png
+%%DATADIR%%/units/corpses/build-dead-2.png
+%%DATADIR%%/units/corpses/unit-corpses.lua
+%%DATADIR%%/units/dorcoz/ico_dorcoz.png
+%%DATADIR%%/units/dorcoz/mis_plasma_sml.png
+%%DATADIR%%/units/dorcoz/unit-dorcoz.lua
+%%DATADIR%%/units/dorcoz/unit_dorcoz.png
+%%DATADIR%%/units/engineer/engineer.lua
+%%DATADIR%%/units/engineer/engineer.ready.wav
+%%DATADIR%%/units/engineer/engineer.underattack.wav
+%%DATADIR%%/units/engineer/engineer_action.wav
+%%DATADIR%%/units/engineer/engineer_attack.wav
+%%DATADIR%%/units/engineer/engineer_die.wav
+%%DATADIR%%/units/engineer/engineer_icons.png
+%%DATADIR%%/units/engineer/engineer_select.wav
+%%DATADIR%%/units/engineer/ico_engineer.png
+%%DATADIR%%/units/engineer/unit_engineer.png
+%%DATADIR%%/units/engineer/unit_engineer_c.png
+%%DATADIR%%/units/engineer/unit_engineer_s.png
+%%DATADIR%%/units/grenadier/grenadier.ready.wav
+%%DATADIR%%/units/grenadier/grenadier.underattack.wav
+%%DATADIR%%/units/grenadier/grenadier_action.wav
+%%DATADIR%%/units/grenadier/grenadier_attack.wav
+%%DATADIR%%/units/grenadier/grenadier_die.wav
+%%DATADIR%%/units/grenadier/grenadier_select.wav
+%%DATADIR%%/units/grenadier/ico_grenadier.png
+%%DATADIR%%/units/grenadier/unit-grenadier.lua
+%%DATADIR%%/units/grenadier/unit_grenadier.png
+%%DATADIR%%/units/grenadier/unit_grenadier_c.png
+%%DATADIR%%/units/grenadier/unit_grenadier_s.png
+%%DATADIR%%/units/gturret/gturret.completed.wav
+%%DATADIR%%/units/gturret/gturret.png
+%%DATADIR%%/units/gturret/gturret.underattack.wav
+%%DATADIR%%/units/gturret/gturret_attack.wav
+%%DATADIR%%/units/gturret/gturret_c.png
+%%DATADIR%%/units/gturret/gturret_i.png
+%%DATADIR%%/units/gturret/gturret_s.png
+%%DATADIR%%/units/gturret/gturret_select.wav
+%%DATADIR%%/units/gturret/unit-gturret.lua
+%%DATADIR%%/units/harvester/harvester.completed.wav
+%%DATADIR%%/units/harvester/harvester.underattack.wav
+%%DATADIR%%/units/harvester/harvester_action.wav
+%%DATADIR%%/units/harvester/harvester_attack.wav
+%%DATADIR%%/units/harvester/harvester_die.wav
+%%DATADIR%%/units/harvester/harvester_select.wav
+%%DATADIR%%/units/harvester/ico_harv.png
+%%DATADIR%%/units/harvester/unit-harvester.lua
+%%DATADIR%%/units/harvester/unit_harv.png
+%%DATADIR%%/units/harvester/unit_harv_s.png
+%%DATADIR%%/units/hospital/hospital.completed.wav
+%%DATADIR%%/units/hospital/hospital.png
+%%DATADIR%%/units/hospital/hospital.underattack.wav
+%%DATADIR%%/units/hospital/hospital_c.png
+%%DATADIR%%/units/hospital/hospital_i.png
+%%DATADIR%%/units/hospital/hospital_s.png
+%%DATADIR%%/units/hospital/sfx_hosp.die.wav
+%%DATADIR%%/units/hospital/sfx_hosp.select.wav
+%%DATADIR%%/units/hospital/unit-hospital.lua
+%%DATADIR%%/units/hotspot/hotspot.png
+%%DATADIR%%/units/hotspot/hotspot_i.png
+%%DATADIR%%/units/hotspot/unit-hotspot.lua
+%%DATADIR%%/units/jet/ico_jet.png
+%%DATADIR%%/units/jet/jet.ready.wav
+%%DATADIR%%/units/jet/jet.underattack.wav
+%%DATADIR%%/units/jet/missile.png
+%%DATADIR%%/units/jet/unit-jet.lua
+%%DATADIR%%/units/jet/unit_jet.png
+%%DATADIR%%/units/jet/unit_jet_s.png
+%%DATADIR%%/units/magmapump/magmapump.completed.wav
+%%DATADIR%%/units/magmapump/magmapump.png
+%%DATADIR%%/units/magmapump/magmapump.select.wav
+%%DATADIR%%/units/magmapump/magmapump.underattack.wav
+%%DATADIR%%/units/magmapump/magmapump_c.png
+%%DATADIR%%/units/magmapump/magmapump_i.png
+%%DATADIR%%/units/magmapump/magmapump_s.png
+%%DATADIR%%/units/magmapump/sfx_pplnt.die.wav
+%%DATADIR%%/units/magmapump/unit-magmapump.lua
+%%DATADIR%%/units/medic/heal.png
+%%DATADIR%%/units/medic/ico_heal.png
+%%DATADIR%%/units/medic/ico_medic.png
+%%DATADIR%%/units/medic/medic.ready.wav
+%%DATADIR%%/units/medic/medic.underattack.wav
+%%DATADIR%%/units/medic/medic_action.wav
+%%DATADIR%%/units/medic/medic_attack.wav
+%%DATADIR%%/units/medic/medic_die.wav
+%%DATADIR%%/units/medic/medic_select.wav
+%%DATADIR%%/units/medic/unit-medic.lua
+%%DATADIR%%/units/medic/unit_medic.png
+%%DATADIR%%/units/medic/unit_medic_c.png
+%%DATADIR%%/units/medic/unit_medic_s.png
+%%DATADIR%%/units/missilesilo/missile_silo.png
+%%DATADIR%%/units/missilesilo/missile_silo_c.png
+%%DATADIR%%/units/missilesilo/missile_silo_i.png
+%%DATADIR%%/units/missilesilo/missile_silo_s.png
+%%DATADIR%%/units/missilesilo/unit-missilesilo.lua
+%%DATADIR%%/units/morels/morel_1.png
+%%DATADIR%%/units/morels/morel_1i.png
+%%DATADIR%%/units/morels/morel_1s.png
+%%DATADIR%%/units/morels/morel_2.png
+%%DATADIR%%/units/morels/morel_2i.png
+%%DATADIR%%/units/morels/morel_2s.png
+%%DATADIR%%/units/morels/morel_3.png
+%%DATADIR%%/units/morels/morel_3i.png
+%%DATADIR%%/units/morels/morel_3s.png
+%%DATADIR%%/units/morels/morel_4.png
+%%DATADIR%%/units/morels/morel_4i.png
+%%DATADIR%%/units/morels/morel_4s.png
+%%DATADIR%%/units/morels/morel_5.png
+%%DATADIR%%/units/morels/morel_5i.png
+%%DATADIR%%/units/morels/morel_5s.png
+%%DATADIR%%/units/morels/morel_6.png
+%%DATADIR%%/units/morels/morel_6i.png
+%%DATADIR%%/units/morels/morel_6s.png
+%%DATADIR%%/units/morels/morel_7.png
+%%DATADIR%%/units/morels/morel_7i.png
+%%DATADIR%%/units/morels/morel_7s.png
+%%DATADIR%%/units/morels/unit-morels.lua
+%%DATADIR%%/units/nukeplant/nukeplant.png
+%%DATADIR%%/units/nukeplant/nukeplant_c.png
+%%DATADIR%%/units/nukeplant/nukeplant_i.png
+%%DATADIR%%/units/nukeplant/nukeplant_s.png
+%%DATADIR%%/units/nukeplant/power.plant.completed.wav
+%%DATADIR%%/units/nukeplant/power.plant.underattack.wav
+%%DATADIR%%/units/nukeplant/sfx_pplnt.die.wav
+%%DATADIR%%/units/nukeplant/sfx_pplnt.select.wav
+%%DATADIR%%/units/nukeplant/unit-nukeplant.lua
+%%DATADIR%%/units/plants/pitcher.png
+%%DATADIR%%/units/plants/pitcher_icon.png
+%%DATADIR%%/units/plants/pitcher_shadow.png
+%%DATADIR%%/units/plants/rafflesia.png
+%%DATADIR%%/units/plants/rafflesia_icon.png
+%%DATADIR%%/units/plants/rafflesia_shadow.png
+%%DATADIR%%/units/plants/unit-plant.lua
+%%DATADIR%%/units/powerplant/power.plant.completed.wav
+%%DATADIR%%/units/powerplant/power.plant.underattack.wav
+%%DATADIR%%/units/powerplant/powerplant.png
+%%DATADIR%%/units/powerplant/powerplant_c.png
+%%DATADIR%%/units/powerplant/powerplant_i.png
+%%DATADIR%%/units/powerplant/powerplant_s.png
+%%DATADIR%%/units/powerplant/sfx_pplnt.die.wav
+%%DATADIR%%/units/powerplant/sfx_pplnt.select.wav
+%%DATADIR%%/units/powerplant/unit-powerplant.lua
+%%DATADIR%%/units/radar/radar.completed.wav
+%%DATADIR%%/units/radar/radar.png
+%%DATADIR%%/units/radar/radar.underattack.wav
+%%DATADIR%%/units/radar/radar_i.png
+%%DATADIR%%/units/radar/radar_s.png
+%%DATADIR%%/units/radar/sfx_rdar.select.wav
+%%DATADIR%%/units/radar/unit-radar.lua
+%%DATADIR%%/units/rocks/rock_1.png
+%%DATADIR%%/units/rocks/rock_1i.png
+%%DATADIR%%/units/rocks/rock_1s.png
+%%DATADIR%%/units/rocks/rock_2.png
+%%DATADIR%%/units/rocks/rock_2i.png
+%%DATADIR%%/units/rocks/rock_2s.png
+%%DATADIR%%/units/rocks/rock_3.png
+%%DATADIR%%/units/rocks/rock_3i.png
+%%DATADIR%%/units/rocks/rock_3s.png
+%%DATADIR%%/units/rocks/rock_4.png
+%%DATADIR%%/units/rocks/rock_4i.png
+%%DATADIR%%/units/rocks/rock_4s.png
+%%DATADIR%%/units/rocks/rock_5.png
+%%DATADIR%%/units/rocks/rock_5i.png
+%%DATADIR%%/units/rocks/rock_5s.png
+%%DATADIR%%/units/rocks/rock_6.png
+%%DATADIR%%/units/rocks/rock_6i.png
+%%DATADIR%%/units/rocks/rock_6s.png
+%%DATADIR%%/units/rocks/unit-rocks.lua
+%%DATADIR%%/units/rocksfield/ico_rocks_field.png
+%%DATADIR%%/units/rocksfield/rocks_field.png
+%%DATADIR%%/units/rocksfield/rocks_field_s.png
+%%DATADIR%%/units/rocksfield/unit-rocksfield.lua
+%%DATADIR%%/units/rtank/ico_rtank.png
+%%DATADIR%%/units/rtank/rtank.ready.wav
+%%DATADIR%%/units/rtank/rtank.underattack.wav
+%%DATADIR%%/units/rtank/unit-rtank.lua
+%%DATADIR%%/units/rtank/unit_rtank.png
+%%DATADIR%%/units/rtank/unit_rtank_s.png
+%%DATADIR%%/units/tank/ico_tank.png
+%%DATADIR%%/units/tank/tank.ready.wav
+%%DATADIR%%/units/tank/tank.underattack.wav
+%%DATADIR%%/units/tank/unit-tank.lua
+%%DATADIR%%/units/tank/unit_tank.png
+%%DATADIR%%/units/tank/unit_tank_s.png
+%%DATADIR%%/units/tree/tree01.png
+%%DATADIR%%/units/tree/tree01_i.png
+%%DATADIR%%/units/tree/tree01_s.png
+%%DATADIR%%/units/tree/unit-tree.lua
+%%DATADIR%%/units/tree02/tree02.png
+%%DATADIR%%/units/tree02/tree02_s.png
+%%DATADIR%%/units/tree02/unit-tree02.lua
+%%DATADIR%%/units/tree03/tree03.png
+%%DATADIR%%/units/tree03/tree03_s.png
+%%DATADIR%%/units/tree03/unit-tree03.lua
+%%DATADIR%%/units/tree04/tree04.png
+%%DATADIR%%/units/tree04/tree04_s.png
+%%DATADIR%%/units/tree04/unit-tree04.lua
+%%DATADIR%%/units/vault/sfx_fort.die.wav
+%%DATADIR%%/units/vault/sfx_fort.select.wav
+%%DATADIR%%/units/vault/vault-i.png
+%%DATADIR%%/units/vault/vault.completed.wav
+%%DATADIR%%/units/vault/vault.lua
+%%DATADIR%%/units/vault/vault.png
+%%DATADIR%%/units/vault/vault.underattack.wav
+%%DATADIR%%/units/vault/vault_c.png
+%%DATADIR%%/units/vault/vault_s.png
+%%DATADIR%%/units/vehiclefactory/sfx_vfac.die.wav
+%%DATADIR%%/units/vehiclefactory/sfx_vfac.select.wav
+%%DATADIR%%/units/vehiclefactory/vehicle.factory.completed.wav
+%%DATADIR%%/units/vehiclefactory/vehicle.factory.underattack.wav
+%%DATADIR%%/units/vehiclefactory/vehicle_c.png
+%%DATADIR%%/units/vehiclefactory/vehicle_factory.png
+%%DATADIR%%/units/vehiclefactory/vehicle_factory_i.png
+%%DATADIR%%/units/vehiclefactory/vehicle_factory_s.png
+%%DATADIR%%/units/vehiclefactory/vehiclefactory.lua
+%%DATADIR%%/units/weakhotspot/hotspot.png
+%%DATADIR%%/units/weakhotspot/hotspot_i.png
+%%DATADIR%%/units/weakhotspot/unit-weakhotspot.lua
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/README-SDL.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/development.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/gcclibs-copyright.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/gpl.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/guichan-copyright.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/install.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/lua5-copyright.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/media.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/ai.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/config.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/findlua.py
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/game.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/magic.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/makeindex.py
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/mappresentation.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/mapsetup.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/research.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/savegame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/showindex.py
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/sound.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/tileset.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/triggers.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/ui.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/unittype.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/stratagus-changelog.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tolua-copyright.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/xiph-copyright.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/scripts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/units/weakhotspot
+@dirrm %%DATADIR%%/units/vehiclefactory
+@dirrm %%DATADIR%%/units/vault
+@dirrm %%DATADIR%%/units/tree04
+@dirrm %%DATADIR%%/units/tree03
+@dirrm %%DATADIR%%/units/tree02
+@dirrm %%DATADIR%%/units/tree
+@dirrm %%DATADIR%%/units/tank
+@dirrm %%DATADIR%%/units/rtank
+@dirrm %%DATADIR%%/units/rocksfield
+@dirrm %%DATADIR%%/units/rocks
+@dirrm %%DATADIR%%/units/radar
+@dirrm %%DATADIR%%/units/powerplant
+@dirrm %%DATADIR%%/units/plants
+@dirrm %%DATADIR%%/units/nukeplant
+@dirrm %%DATADIR%%/units/morels
+@dirrm %%DATADIR%%/units/missilesilo
+@dirrm %%DATADIR%%/units/medic
+@dirrm %%DATADIR%%/units/magmapump
+@dirrm %%DATADIR%%/units/jet
+@dirrm %%DATADIR%%/units/hotspot
+@dirrm %%DATADIR%%/units/hospital
+@dirrm %%DATADIR%%/units/harvester
+@dirrm %%DATADIR%%/units/gturret
+@dirrm %%DATADIR%%/units/grenadier
+@dirrm %%DATADIR%%/units/engineer
+@dirrm %%DATADIR%%/units/dorcoz
+@dirrm %%DATADIR%%/units/corpses
+@dirrm %%DATADIR%%/units/chopper
+@dirrm %%DATADIR%%/units/cannon
+@dirrm %%DATADIR%%/units/camp
+@dirrm %%DATADIR%%/units/camera
+@dirrm %%DATADIR%%/units/buggy
+@dirrm %%DATADIR%%/units/bomber
+@dirrm %%DATADIR%%/units/bazoo
+@dirrm %%DATADIR%%/units/assault
+@dirrm %%DATADIR%%/units/artil
+@dirrm %%DATADIR%%/units/apcs
+@dirrm %%DATADIR%%/units/antharus
+@dirrm %%DATADIR%%/units/aircraftfactory
+@dirrm %%DATADIR%%/units
+@dirrm %%DATADIR%%/sounds/ui
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/scripts/tilesets
+@dirrm %%DATADIR%%/scripts/menus/ingame
+@dirrm %%DATADIR%%/scripts/menus
+@dirrm %%DATADIR%%/scripts/ais
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/maps/wetlands02.map
+@dirrm %%DATADIR%%/maps/wetlands01.map
+@dirrm %%DATADIR%%/maps/river.map
+@dirrm %%DATADIR%%/maps/patches.map
+@dirrm %%DATADIR%%/maps/multiplayer.map
+@dirrm %%DATADIR%%/maps/lake.map
+@dirrm %%DATADIR%%/maps/labyrinth.map
+@dirrm %%DATADIR%%/maps/islandwar.map
+@dirrm %%DATADIR%%/maps/highlands.map
+@dirrm %%DATADIR%%/maps/guerillawarfare.map
+@dirrm %%DATADIR%%/maps/forest.map
+@dirrm %%DATADIR%%/maps/cross.map
+@dirrm %%DATADIR%%/maps/canyon.map
+@dirrm %%DATADIR%%/maps/campaigns/tutorial/tutorial.map
+@dirrm %%DATADIR%%/maps/campaigns/tutorial
+@dirrm %%DATADIR%%/maps/campaigns/elites/The_River.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Shield_of_Wasteland.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Savoy_Steps.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Savoy_Lake.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Rochebrune.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Green_Valley.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Fort_Savoy.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Buffy_Forest.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Bellegarde.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Aiglier.map
+@dirrm %%DATADIR%%/maps/campaigns/elites
+@dirrm %%DATADIR%%/maps/campaigns
+@dirrm %%DATADIR%%/maps/bridge2far.map
+@dirrm %%DATADIR%%/maps/bridge.map
+@dirrm %%DATADIR%%/maps/braza.map
+@dirrm %%DATADIR%%/maps/battlefield.map
+@dirrm %%DATADIR%%/maps/antarticum.map
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/languages
+@dirrm %%DATADIR%%/intro
+@dirrm %%DATADIR%%/graphics/ui/cursors
+@dirrm %%DATADIR%%/graphics/ui
+@dirrm %%DATADIR%%/graphics/tiles
+@dirrm %%DATADIR%%/graphics/screens
+@dirrm %%DATADIR%%/graphics/neutral/units
+@dirrm %%DATADIR%%/graphics/neutral
+@dirrm %%DATADIR%%/graphics/missiles
+@dirrm %%DATADIR%%/graphics/general
+@dirrm %%DATADIR%%/graphics/explosions
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%/campaigns/tutorial
+@dirrm %%DATADIR%%/campaigns/elites
+@dirrm %%DATADIR%%/campaigns
+@dirrm %%DATADIR%%

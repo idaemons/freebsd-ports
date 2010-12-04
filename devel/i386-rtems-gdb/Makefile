@@ -1,0 +1,16 @@
+# New ports collection makefile for:	i386-rtems-gdb
+# Date created:		9 June 2000
+# Whom:			James Housley <jim@thehousleys.net>
+#
+# $FreeBSD$
+#
+
+MAINTAINER=	stas@FreeBSD.org
+
+TGTARCH=	i386
+TGTABI=		rtems
+
+WITH_RTEMS_PATCHES=	yes
+
+MASTERDIR=	${.CURDIR}/../cross-gdb
+.include "${MASTERDIR}/Makefile"

@@ -1,0 +1,31 @@
+# New ports collection makefile for:	webserver
+# Date created:         29 Oct 2006
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	webserver
+PORTVERSION=	1.3.0
+CATEGORIES=	www gnustep
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
+MASTER_SITE_SUBDIR=	libs
+DISTNAME=	WebServer-${PORTVERSION}
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Framework for a GNUstep to act as HTTP or HTTPS server
+
+LICENSE=	LGPL3
+
+USE_GNUSTEP=	yes
+USE_GNUSTEP_BASE=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
+
+DEFAULT_LIBVERSION=	1.3
+DEFAULT_LIBVERSION2=	1.3.0
+PLIST_SUB+=	LIBVERSION2=${DEFAULT_LIBVERSION2}
+PLIST_SUB+=	MAJORLIBVERSION2=${DEFAULT_LIBVERSION2:C/([0-9]).*/\1/1}
+
+.include <bsd.port.mk>

@@ -1,0 +1,9 @@
+bin/dmtxquery
+bin/dmtxread
+bin/dmtxwrite
+include/dmtx.h
+lib/libdmtx.so
+lib/libdmtx.so.0
+lib/libdmtx.la
+lib/libdmtx.a
+libdata/pkgconfig/libdmtx.pc

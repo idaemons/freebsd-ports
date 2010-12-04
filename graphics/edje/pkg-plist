@@ -1,0 +1,12 @@
+bin/edje_cc
+bin/edje_decc
+bin/edje_recc
+include/Edje.h
+lib/libedje.a
+lib/libedje.la
+lib/libedje.so
+lib/libedje.so.5
+libdata/pkgconfig/edje.pc
+%%DATADIR%%/include/edje.inc
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%

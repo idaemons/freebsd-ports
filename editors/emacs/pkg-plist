@@ -1,79 +1,41 @@
-@cwd /usr/local
-bin/ctags
 bin/b2m
-bin/rcs-checkin
-bin/emacs-19.28
-@exec ln -s %D/%F %B/emacs
-@unexec rm %B/emacs
-bin/etags
+bin/ctags
+bin/ebrowse
+bin/emacs
+bin/emacs-%%EMACS_VER%%
 bin/emacsclient
-lib/emacs/site-lisp
-lib/emacs/19.28
-man/man1/emacs.1
-man/man1/etags.1
-man/man1/ctags.1
-@unexec cp %D/info/dir %D/info/dir.bak
-info/dir
-@unexec cp %D/info/dir.bak %D/info/dir
-info/cl
-info/cl-1
-info/cl-2
-info/cl-3
-info/cl-4
-info/cl-5
-info/cl-6
-info/dired-x
-info/emacs
-info/emacs-1
-info/emacs-10
-info/emacs-11
-info/emacs-12
-info/emacs-13
-info/emacs-14
-info/emacs-15
-info/emacs-16
-info/emacs-17
-info/emacs-18
-info/emacs-19
-info/emacs-2
-info/emacs-20
-info/emacs-21
-info/emacs-22
-info/emacs-23
-info/emacs-24
-info/emacs-3
-info/emacs-4
-info/emacs-5
-info/emacs-6
-info/emacs-7
-info/emacs-8
-info/emacs-9
-info/forms
-info/gnus
-info/gnus-1
-info/gnus-2
-info/gnus-3
-info/info
-info/info-1
-info/info-2
-info/info-stnd.info
-info/info.info
-info/sc
-info/sc-1
-info/sc-2
-info/sc-3
-info/texi.info
-info/texi.info-1
-info/texi.info-10
-info/texi.info-11
-info/texi.info-2
-info/texi.info-3
-info/texi.info-4
-info/texi.info-5
-info/texi.info-6
-info/texi.info-7
-info/texi.info-8
-info/texi.info-9
-info/vip
-info/vip-1
-info/vip-2
+bin/etags
+bin/grep-changelog
+bin/rcs-checkin
+share/applications/emacs.desktop
+%%DATADIR%%/site-lisp/subdirs.el
+share/icons/hicolor/128x128/apps/emacs.png
+share/icons/hicolor/16x16/apps/emacs.png
+share/icons/hicolor/16x16/apps/emacs22.png
+share/icons/hicolor/24x24/apps/emacs.png
+share/icons/hicolor/24x24/apps/emacs22.png
+share/icons/hicolor/32x32/apps/emacs.png
+share/icons/hicolor/32x32/apps/emacs22.png
+share/icons/hicolor/48x48/apps/emacs.png
+share/icons/hicolor/48x48/apps/emacs22.png
+share/icons/hicolor/scalable/apps/emacs.svg
+share/icons/hicolor/scalable/mimetypes/emacs-document.svg
+@dirrmtry share/icons/hicolor/scalable/mimetypes
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
+@unexec if [ ! -s /var/games/emacs/snake-scores ]; then rm -f /var/games/emacs/snake-scores; fi
+@unexec if [ ! -s /var/games/emacs/tetris-scores ]; then rm -f /var/games/emacs/tetris-scores; fi
+@unexec rmdir /var/games/emacs 2>/dev/null || true

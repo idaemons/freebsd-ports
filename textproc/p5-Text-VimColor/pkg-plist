@@ -1,0 +1,10 @@
+bin/text-vimcolor
+%%SITE_PERL%%/Text/VimColor.pm
+%%SITE_PERL%%/Text/VimColor/light.css
+%%SITE_PERL%%/Text/VimColor/light.xsl
+%%SITE_PERL%%/Text/VimColor/mark.vim
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/VimColor/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/VimColor
+@dirrm %%SITE_PERL%%/Text/VimColor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text

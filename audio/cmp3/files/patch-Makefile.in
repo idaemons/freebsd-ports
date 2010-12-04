@@ -1,0 +1,43 @@
+--- Makefile.in.orig	2001-07-29 02:43:49.000000000 -0300
++++ Makefile.in	2009-09-20 11:17:07.000000000 -0300
+@@ -5,19 +5,19 @@
+ #  initial_directory is now set in the config file
+ mpg123_location   := "mpg123"
+ ogg123_location   := "ogg123"
+-install_directory := "$(HOME)/bin"
++install_directory := "$(PREFIX)/bin"
+ 
+ #
+ #  Location of config file - Please edit this file before installing
+ #
+-config_file       := "$(HOME)/.cmp3rc"
++#config_file       := "$(HOME)/.cmp3rc"
+ 
+ #
+ #  Uncomment and set if desired
+ #
+ 
+ ## An ass repository is a nice thing to have. See README
+-ass_repository := "$(HOME)/.cmp3ass"
++#ass_repository := "$(HOME)/.cmp3ass"
+ 
+ ## Define this for bufferring or add other parameters to mpg123 and ogg123
+ mpg123_params := -b 320
+@@ -42,7 +42,7 @@
+ # stands. Change the code to do something else you want it to do...
+ #PARAMS +=-DMY_CD
+ LIBS= -lform -lncurses
+-CFLAGS= -g -O -Inevlib
++CFLAGS= @CFLAGS@ -Inevlib
+ CC= @CC@
+ OBJS= cmp3common.o cmp3fileio.o cmp3manager.o cmp3curses.o \
+       cmp3llist.o cmp3main.o cmp3listfiles.o cmp3playlist.o cmp3volume.o \
+@@ -103,7 +103,7 @@
+ install: rnmp3 cmp3
+ 	install -c -s cmp3 $(install_directory)/cmp3
+ 	install -c -s rnmp3 $(install_directory)/rnmp3
+-	cp -i cmp3rc $(config_file)
++	cp -i cmp3rc sample.cmp3rc
+ ifdef ass_repository
+ 	@if [ ! -x $(ass_repository) ]; then mkdir $(ass_repository); \
+ 	    echo mkdir $(ass_repository); fi;

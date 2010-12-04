@@ -1,0 +1,61 @@
+$FreeBSD$
+
+--- src/Makefile.orig	2010-07-31 06:24:45.000000000 -0700
++++ src/Makefile	2010-10-02 10:50:17.000000000 -0700
+@@ -16,16 +16,15 @@
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ #
+ HOST=	DARWIN
+-DEFINES=-D$(HOST) #-DNETWORK_EXTENSIONS #-DLPC_EXTENSION #-DDUMP_FUNCS
+-DEBUG=	-O -g
+-CCFLAGS=$(DEFINES) $(DEBUG)
++DEFINES=-D$(HOST) $(EXTRA_DEFINES) #-DNETWORK_EXTENSIONS #-DLPC_EXTENSION #-DDUMP_FUNCS
++CCFLAGS=$(DEFINES)
+ CFLAGS=	-I. -Icomp -Ilex -Ied -Iparser -Ikfun $(CCFLAGS)
+ LDFLAGS=
+ LIBS=	#-ldl
+ LINTFLAGS=-abcehpruz
+-CC=	gcc
++CC?=	gcc
+ LD=	$(CC)
+-DMAKE=	make
++DMAKE=	$(MAKE)
+ YACC=	yacc
+ BIN=	../bin
+ 
+@@ -36,6 +35,8 @@
+ COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o sdata.o data.o \
+ 	interpret.o config.o ext.o
+ 
++all: a.out comp/a.out
++
+ a.out:	$(OBJ) always
+ 	cd comp; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' 'YACC=$(YACC)' dgd
+ 	cd lex; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+@@ -53,10 +54,15 @@
+ 	@rm -f a.out
+ 
+ $(BIN)/driver: a.out
++	-mkdir $(BIN)
+ 	-mv $(BIN)/driver $(BIN)/driver.old
+ 	cp a.out $(BIN)/driver
+ 
+-install: $(BIN)/driver
++$(BIN)/precomp: comp/a.out
++	-mv $(BIN)/precomp $(BIN)/precomp.old
++	cp comp/a.out $(BIN)/precomp
++
++install: $(BIN)/driver $(BIN)/precomp
+ 
+ lint:
+ 	lint $(LINTFLAGS) $(CFLAGS) $(SRC)
+@@ -82,7 +88,8 @@
+ 
+ comp/a.out:
+ 	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
+-			  'YACC=$(YACC)' 'LIBS=$(LIBS)' a.out
++			  'LDFLAGS=$(LDFLAGS)' 'YACC=$(YACC)' 'LIBS=$(LIBS)' \
++			  a.out
+ 
+ clean:
+ 	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub

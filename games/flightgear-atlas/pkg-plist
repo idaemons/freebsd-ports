@@ -1,0 +1,6 @@
+bin/Atlas
+bin/GetMap
+bin/Map
+bin/MapPS
+bin/buildmaps.sh
+share/FlightGear/AtlasPalette

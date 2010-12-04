@@ -1,0 +1,269 @@
+Index: bgpd/bgpd.conf.5
+===================================================================
+RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.conf.5,v
+retrieving revision 1.1.1.7
+retrieving revision 1.7
+diff -u -p -r1.1.1.7 -r1.7
+--- bgpd/bgpd.conf.5	14 Feb 2010 20:19:57 -0000	1.1.1.7
++++ bgpd/bgpd.conf.5	10 Apr 2010 12:16:23 -0000	1.7
+@@ -1,4 +1,4 @@
+-.\" $OpenBSD: bgpd.conf.5,v 1.94 2009/06/07 00:31:22 claudio Exp $
++.\" $OpenBSD: bgpd.conf.5,v 1.104 2010/03/05 15:25:00 claudio Exp $
+ .\"
+ .\" Copyright (c) 2004 Claudio Jeker <claudio@openbsd.org>
+ .\" Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
+@@ -16,7 +16,7 @@
+ .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .\"
+-.Dd $Mdocdate: June 7 2009 $
++.Dd $Mdocdate: December 16 2009 $
+ .Dt BGPD.CONF 5
+ .Os
+ .Sh NAME
+@@ -93,7 +93,7 @@ Set the local
+ .Em autonomous system
+ number to
+ .Ar as-number .
+-If the first AS number is a 4-byte AS it is possible to specifiy a secondary
++If the first AS number is a 4-byte AS it is possible to specify a secondary
+ 2-byte AS number which is used for neighbors which do not support 4-byte AS
+ numbers.
+ The default for the secondary AS is 23456.
+@@ -313,7 +313,7 @@ is only compared between peers belonging
+ .Ic rib Ar name
+ .Op Ic no Ic evaluate
+ .Xc
+-Creat an additional RIB named
++Create an additional RIB named
+ .Ar name .
+ It is possible to disable the decision process per RIB with the
+ .Ic no Ic evaluate
+@@ -321,7 +321,7 @@ flag.
+ .Ic Adj-RIB-In
+ and
+ .Ic Loc-RIB
+-are created automaticaly and used as default.
++are created automatically and used as default.
+ .Pp
+ .It Xo
+ .Ic rde
+@@ -483,6 +483,17 @@ Only routes for that address family and 
+ announced and processed.
+ .Pp
+ .It Xo
++.Ic announce as-4byte
++.Pq Ic yes Ns \&| Ns Ic no
++.Xc
++If set to
++.Ic no ,
++the 4-byte AS capability is not announced and so native 4-byte AS support is
++disabled.
++The default is
++.Ic yes .
++.Pp
++.It Xo
+ .Ic announce capabilities
+ .Pq Ic yes Ns \&| Ns Ic no
+ .Xc
+@@ -493,6 +504,29 @@ This can be helpful to connect to old or
+ The default is
+ .Ic yes .
+ .Pp
++.It Xo
++.Ic announce refresh
++.Pq Ic yes Ns \&| Ns Ic no
++.Xc
++If set to
++.Ic no ,
++the route refresh capability is not announced.
++The default is
++.Ic yes .
++.Pp
++.It Xo
++.Ic announce restart
++.Pq Ic yes Ns \&| Ns Ic no
++.Xc
++If set to
++.Ic yes ,
++the graceful restart capability is announced.
++Currently only the End-of-RIB marker is supported and announced by the
++.Ic restart
++capability.
++The default is
++.Ic no .
++.Pp
+ .It Ic demote Ar group
+ Increase the
+ .Xr carp 4
+@@ -504,7 +538,7 @@ The demotion counter will be increased a
+ .Xr bgpd 8
+ starts and decreased
+ 60 seconds after the session went to state
+-.Em ESTABLISHED.
++.Em ESTABLISHED .
+ For neighbors added at runtime, the demotion counter is only increased after
+ the session has been
+ .Em ESTABLISHED
+@@ -589,6 +623,12 @@ Inherited from the global configuration 
+ Set the minimal acceptable holdtime.
+ Inherited from the global configuration if not given.
+ .Pp
++.It Ic interface Ar interface
++Set an interface used for a nexthop with a link-local IPv6 address.
++Note that if this is not specified and a link-local IPv6 address is
++received as nexthop of the peer, it will be marked as invalid and
++ignored.
++.Pp
+ .It Xo
+ .Ic ipsec
+ .Pq Ic ah Ns \&| Ns Ic esp
+@@ -639,11 +679,11 @@ is responsible for managing the session 
+ With
+ .Xr isakmpd 8 ,
+ it is sufficient to copy the peer's public key, found in
+-.Pa /etc/isakmpd/local.pub ,
++.Pa %%PREFIX%%/etc/isakmpd/private/local.pub ,
+ to the local machine.
+ It must be stored in a file
+ named after the peer's IP address and must be stored in
+-.Pa /etc/isakmpd/pubkeys/ipv4/ .
++.Pa %%PREFIX%%/etc/isakmpd/pubkeys/ipv4/ .
+ The local public key must be copied to the peer in the same way.
+ As
+ .Xr bgpd 8
+@@ -698,7 +738,7 @@ Do not attempt to actively open a TCP co
+ .It Ic remote-as Ar as-number
+ Set the AS number of the remote system.
+ .Pp
+-.It rib .Ar name
++.It Ic rib Ar name
+ Bind the neighbor to the specified RIB.
+ .Pp
+ .It Ic route-reflector Op Ar address
+@@ -917,6 +957,31 @@ may be set to
+ which is expanded to the current neighbor remote AS number.
+ .Pp
+ .It Xo
++.Ic ext-community
++.Ar subtype Ar as-number Ns Li : Ns Ar local
++.Xc
++.It Xo
++.Ic ext-community
++.Ar subtype Ar IP Ns Li : Ns Ar local
++.Xc
++.It Xo
++.Ic ext-community
++.Ar subtype Ar numvalue
++.Xc
++This rule applies only to
++.Em UPDATES
++where the
++.Em extended community
++path attribute is present and matches.
++Extended Communities are specified by a
++.Ar subtype
++and normally two values, a globally unique part (e.g. the AS number) and a
++local part.
++See also the
++.Sx ATTRIBUTE SET
++section for further information about the encoding.
++.Pp
++.It Xo
+ .Pq Ic from Ns \&| Ns Ic to
+ .Ar peer
+ .Xc
+@@ -1028,6 +1093,12 @@ matches a rule which has the
+ option set, this rule is considered the last matching rule, and evaluation
+ of subsequent rules is skipped.
+ .Pp
++.It Ic rib Ar name
++Apply rule only to the specified RIB.
++This only applies for received updates, so not for rules using the
++.Ar to peer
++parameter.
++.Pp
+ .It Ic set Ar attribute ...
+ All matching rules can set the
+ .Em AS path attributes
+@@ -1079,6 +1150,48 @@ Alternately, well-known communities may 
+ or
+ .Ic NO_PEER .
+ .Pp
++.It Xo
++.Ic ext-community Op Ar delete
++.Ar subtype Ar as-number Ns Li : Ns Ar local
++.Xc
++.It Xo
++.Ic ext-community Op Ar delete
++.Ar subtype Ar IP Ns Li : Ns Ar local
++.Xc
++.It Xo
++.Ic ext-community Op Ar delete
++.Ar subtype Ar numvalue
++.Xc
++Set or delete the
++.Em Extended Community
++AS path attribute.
++Extended Communities are specified by a
++.Ar subtype
++and normally two values, a globally unique part (e.g. the AS number) and a
++local part.
++The type is selected depending on the encoding of the global part.
++Two-octet AS Specific Extended Communities and Four-octet AS Specific Extended
++Communities are encoded as
++.Ar as-number Ns Li : Ns Ar local .
++Four-octet encoding is used if the
++.Ar as-number
++is bigger then 65535 or if the AS_DOT encoding is used.
++IPv4 Address Specific Extended Communities are encoded as
++.Ar IP Ns Li : Ns Ar local .
++Opaque Extended Communities are encoded with a single numeric value.
++Currently the following subtypes are supported:
++.Bd -literal -offset indent
++rt       Route Target
++soo      Source of Origin
++odi      OSPF Domain Identifier
++ort      OSPF Route Type
++ori      OSPF Router ID
++bdc      BGP Data Collection
++.Ed
++.Pp
++Not all type and subtype value pairs are allowed by IANA and the parser
++will ensure that no invalid combination is created.
++.Pp
+ .It Ic localpref Ar number
+ Set the
+ .Em LOCAL_PREF
+@@ -1108,6 +1221,20 @@ otherwise it will be set to
+ .Ar number .
+ .Pp
+ .It Xo
++.Ic origin
++.Sm off
++.Po Ic igp \*(Ba
++.Ic egp \*(Ba
++.Ic incomplete Pc
++.Sm on
++.Xc
++Set the
++.Em ORIGIN
++AS path attribute to mark the source of this
++route as being injected from an igp protocol, an egp protocol
++or being an aggregated route.
++.Pp
++.It Xo
+ .Ic nexthop
+ .Sm off
+ .Po Ar address \*(Ba
+@@ -1181,8 +1308,8 @@ For prefixes with equally long paths, th
+ is selected.
+ .El
+ .Sh FILES
+-.Bl -tag -width "/etc/bgpd.conf" -compact
+-.It Pa /etc/bgpd.conf
++.Bl -tag -width "%%PREFIX%%/etc/bgpd.conf" -compact
++.It Pa %%PREFIX%%/etc/bgpd.conf
+ .Xr bgpd 8
+ configuration file
+ .El

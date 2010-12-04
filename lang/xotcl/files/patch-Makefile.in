@@ -1,0 +1,67 @@
+--- Makefile.in.orig	2009-03-04 16:11:13.000000000 +0100
++++ Makefile.in	2010-05-11 10:36:59.435600858 +0200
+@@ -264,11 +264,11 @@
+ #========================================================================
+ # This rule installs platform-independent files, such as header files.
+ #========================================================================
+-install-libraries: libraries $(DESTDIR)$(includedir) $(DESTDIR)$(pkglibdir)
+-	@echo "Installing header files in $(DESTDIR)$(includedir)"
++install-libraries: libraries $(DESTDIR)$(pkgincludedir) $(DESTDIR)$(pkglibdir)
++	@echo "Installing header files in $(DESTDIR)$(pkgincludedir)"
+ 	@for i in $(PKG_HEADERS) ; do \
+ 	    echo "    Installing $$i" ; \
+-	    $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(includedir) ; \
++	    $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(pkgincludedir) ; \
+ 	done;
+ 	@echo "Installing Libraries to $(DESTDIR)$(pkglibdir)/"
+ 	@for i in $(libdirs) ; do \
+@@ -286,7 +286,7 @@
+ 	    $(INSTALL_DATA) $(src_lib_dir)/$$i $(DESTDIR)$(pkglibdir)/$$i ; \
+ 	done;
+ 	cat unix/pkgIndex.unix >> $(DESTDIR)$(pkglibdir)/pkgIndex.tcl
+-	$(INSTALL_DATA) xotclConfig.sh $(DESTDIR)$(libdir)/
++	$(INSTALL_DATA) xotclConfig.sh $(DESTDIR)$(pkglibdir)/
+ 	@echo "Installing Applications to $(DESTDIR)$(pkglibdir)/apps/"
+ 	@for i in $(appdirs) ; do \
+ 	    echo "    Installing $$i/" ; \
+@@ -430,13 +430,15 @@
+ 	$(CC) -rdynamic -o $@ tclAppInit.o \
+ 		$(PKG_OBJECTS) \
+ 		$(CFLAGS)  $(TCL_LIB_SPEC) \
+-		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS)
++		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS) \
++		$(LDFLAGS_DEFAULT)
+ 
+ xowish: tkAppInit.o $(PKG_OBJECTS) $(CONDITIONAL_STUB_OBJECTS)
+ 	$(CC) -rdynamic -o $@ tkAppInit.o \
+ 		$(PKG_OBJECTS) \
+ 		$(CFLAGS)  $(TCL_LIB_SPEC) $(TK_LIB_SPEC) \
+-		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS)
++		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS) \
++		$(LDFLAGS_DEFAULT)
+ 
+ install-shells:
+ 	@if test -f xotclsh; then \
+@@ -550,7 +552,6 @@
+ 	    else \
+ 		echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
+ 		$(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
+-		ln -s $(DESTDIR)$(pkglibdir)/$$p $(DESTDIR)$(libdir)/$$p; \
+ 	    fi; \
+ 	    ext=`echo $$p|sed -e "s/.*\.//"`; \
+ 	    if test "x$$ext" = "xdll"; then \
+@@ -607,12 +608,12 @@
+ 	  rm -f $(DESTDIR)$(bindir)/$$p; \
+ 	done
+ 
+-$(DESTDIR)$(includedir):
+-	$(mkinstalldirs) $@
+ $(DESTDIR)$(bindir):
+ 	$(mkinstalldirs)  $@
+ $(DESTDIR)$(libdir):
+ 	$(mkinstalldirs)  $@
++$(DESTDIR)$(pkgincludedir):
++	$(mkinstalldirs) $@
+ $(DESTDIR)$(pkglibdir):
+ 	$(mkinstalldirs)  $@
+ $(DESTDIR)$(pkglibdir)/apps: $(DESTDIR)$(pkglibdir)

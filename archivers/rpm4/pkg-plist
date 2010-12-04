@@ -1,0 +1,162 @@
+bin/gendiff
+bin/rpm
+bin/rpm2cpio
+bin/rpmbuild
+bin/rpmdb
+bin/rpmgraph
+bin/rpmquery
+bin/rpmsign
+bin/rpmverify
+include/rpm/argv.h
+include/rpm/header.h
+include/rpm/rpmbuild.h
+include/rpm/rpmcallback.h
+include/rpm/rpmcli.h
+include/rpm/rpmdb.h
+include/rpm/rpmds.h
+include/rpm/rpmfc.h
+include/rpm/rpmfi.h
+include/rpm/rpmfileutil.h
+include/rpm/rpmgi.h
+include/rpm/rpmio.h
+include/rpm/rpmkeyring.h
+include/rpm/rpmlegacy.h
+include/rpm/rpmlib.h
+include/rpm/rpmlog.h
+include/rpm/rpmmacro.h
+include/rpm/rpmpgp.h
+include/rpm/rpmps.h
+include/rpm/rpmspec.h
+include/rpm/rpmsq.h
+include/rpm/rpmstring.h
+include/rpm/rpmsw.h
+include/rpm/rpmtag.h
+include/rpm/rpmtd.h
+include/rpm/rpmte.h
+include/rpm/rpmts.h
+include/rpm/rpmtypes.h
+include/rpm/rpmurl.h
+include/rpm/rpmutil.h
+include/rpm/rpmvf.h
+lib/librpm.a
+lib/librpm.la
+lib/librpm.so
+lib/librpm.so.1
+lib/librpmbuild.a
+lib/librpmbuild.la
+lib/librpmbuild.so
+lib/librpmbuild.so.1
+lib/librpmio.a
+lib/librpmio.la
+lib/librpmio.so
+lib/librpmio.so.1
+lib/rpm/brp-compress
+lib/rpm/brp-java-gcjcompile
+lib/rpm/brp-python-bytecompile
+lib/rpm/brp-strip
+lib/rpm/brp-strip-comment-note
+lib/rpm/brp-strip-shared
+lib/rpm/brp-strip-static-archive
+lib/rpm/check-buildroot
+lib/rpm/check-files
+lib/rpm/check-prereqs
+lib/rpm/check-rpaths
+lib/rpm/check-rpaths-worker
+lib/rpm/config.guess
+lib/rpm/config.sub
+lib/rpm/desktop-file.prov
+lib/rpm/find-lang.sh
+lib/rpm/find-provides
+lib/rpm/find-requires
+lib/rpm/fontconfig.prov
+lib/rpm/javadeps
+lib/rpm/libtooldeps.sh
+lib/rpm/macros
+lib/rpm/macros.perl
+lib/rpm/macros.php
+lib/rpm/macros.python
+lib/rpm/mkinstalldirs
+lib/rpm/mono-find-provides
+lib/rpm/mono-find-requires
+lib/rpm/ocaml-find-provides.sh
+lib/rpm/ocaml-find-requires.sh
+lib/rpm/osgideps.pl
+lib/rpm/perl.prov
+lib/rpm/perl.req
+lib/rpm/perldeps.pl
+lib/rpm/pkgconfigdeps.sh
+lib/rpm/pythondeps.sh
+lib/rpm/rpm.daily
+lib/rpm/rpm.log
+lib/rpm/rpm.xinetd
+lib/rpm/rpm2cpio.sh
+lib/rpm/rpmdb_loadcvt
+lib/rpm/rpmdeps
+lib/rpm/rpmdiff
+lib/rpm/rpmdiff.cgi
+lib/rpm/rpmpopt-4.8.1
+lib/rpm/rpmrc
+lib/rpm/tcl.req
+lib/rpm/tgpg
+%%NLS%%share/locale/ca/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/da/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/de/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/es/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/is/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/it/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/rpm.mo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmmodule.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmmodule.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmmodule.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmbmodule.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmbmodule.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmbmodule.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/transaction.py
+libdata/pkgconfig/rpm.pc
+@dirrm lib/rpm
+@dirrm include/rpm
+@dirrmtry src/portbld/SRPMS
+@dirrmtry src/portbld/SPECS
+@dirrmtry src/portbld/SOURCES
+@dirrmtry src/portbld/RPMS/x86_64
+@dirrmtry src/portbld/RPMS/sparcv9
+@dirrmtry src/portbld/RPMS/sparc64
+@dirrmtry src/portbld/RPMS/sparc
+@dirrmtry src/portbld/RPMS/ppc64
+@dirrmtry src/portbld/RPMS/ppc
+@dirrmtry src/portbld/RPMS/noarch
+@dirrmtry src/portbld/RPMS/ia64
+@dirrmtry src/portbld/RPMS/i686
+@dirrmtry src/portbld/RPMS/i586
+@dirrmtry src/portbld/RPMS/i486
+@dirrmtry src/portbld/RPMS/i386
+@dirrmtry src/portbld/RPMS/athlon
+@dirrmtry src/portbld/RPMS/amd64
+@dirrmtry src/portbld/RPMS/alphaev6
+@dirrmtry src/portbld/RPMS/alpha
+@dirrmtry src/portbld/RPMS
+@dirrmtry src/portbld/BUILD
+@dirrmtry src/portbld
+@dirrmtry src
+%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@latin
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/rpm

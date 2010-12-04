@@ -1,0 +1,30 @@
+# New ports collection makefile for:	kde3-i18n-be
+# Date created:		2008-08-27
+# Whom:			Max Brazhnikov <makc@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	kde-i18n
+PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	4
+CATEGORIES?=	misc kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src/kde-i18n
+PKGNAMEPREFIX=	be-
+DIST_SUBDIR=	KDE
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Belarusian messages and documentation for KDE3
+
+USE_KDELIBS_VER=3
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GETTEXT=	build
+GNU_CONFIGURE=	yes
+KDE_I18N=	yes
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+
+.include <bsd.port.mk>
+

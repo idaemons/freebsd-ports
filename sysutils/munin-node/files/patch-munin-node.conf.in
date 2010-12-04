@@ -1,0 +1,11 @@
+--- node/munin-node.conf.in.orig	2010-01-30 12:07:52.000000000 -0700
++++ node/munin-node.conf.in	2010-01-30 12:07:59.000000000 -0700
+@@ -10,7 +10,7 @@
+ setsid 1
+ 
+ user root
+-group root
++group wheel
+ 
+ # Regexps for files to ignore
+ 

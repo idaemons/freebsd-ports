@@ -1,0 +1,46 @@
+--- SConstruct.orig	2008-07-07 01:07:36.000000000 -0500
++++ SConstruct	2008-07-07 01:09:49.000000000 -0500
+@@ -74,20 +74,23 @@
+ 	conf_dir = 'build/sconf',
+ 	log_file = 'build/sconf/config.log')
+ 
++if os.environ.has_key('CC'):
++	env['CC'] = os.environ['CC']
++
+ if os.environ.has_key('CXX'):
+-	conf.env['CXX'] = os.environ['CXX']
++	env['CXX'] = os.environ['CXX']
+ 
+-if os.environ.has_key('CC'):
+-	conf.env['CC'] = os.environ['CC']
++if os.environ.has_key('CCFLAGS'):
++	env['CCFLAGS'] = os.environ['CCFLAGS'].split()
+ 
+ if os.environ.has_key('CXXFLAGS'):
+-	conf.env['CPPFLAGS'] = conf.env['CXXFLAGS'] = os.environ['CXXFLAGS'].split()
++	env['CXXFLAGS'] = os.environ['CXXFLAGS'].split()
+ 
+-if os.environ.has_key('LDFLAGS'):
+-	conf.env['LINKFLAGS'] = os.environ['LDFLAGS'].split()
++if os.environ.has_key('CPPPATH'):
++	env['CPPPATH'] = os.environ['CPPPATH'].split()
+ 
+-if os.environ.has_key('CFLAGS'):
+-	conf.env['CFLAGS'] = os.environ['CFLAGS'].split()
++if os.environ.has_key('LIBPATH'):
++	env['LIBPATH'] = os.environ['LIBPATH'].split()
+ 
+ env.SConsignFile('build/sconf/.sconsign')
+ opts.Save('build/sconf/scache.conf', env)
+@@ -135,11 +138,6 @@
+ 	if not conf.CheckHeader('unistd.h'):
+ 		Exit(1)
+ 
+-	if not conf.CheckLibWithHeader('pthread', 'pthread.h', 'c'):
+-		print '\tpthread library not found'
+-		print '\tNote: You might have the lib but not the headers'
+-		Exit(1)
+-
+ 	if not conf.CheckLibWithHeader('z', 'zlib.h', 'c'):
+ 		print '\tz library (gzip/z compression) not found'
+ 		print '\tNote: You might have the lib but not the headers'

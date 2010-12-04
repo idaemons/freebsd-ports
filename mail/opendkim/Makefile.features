@@ -1,0 +1,103 @@
+# Makefile.features
+# Author:			Hirohisa Yamaguchi <umq@ueo.co.jp>
+#
+# This file is used to tune build time options.
+# Please refer FEATURES file distributed with the source for details.
+#
+# $FreeBSD$
+#
+
+.if defined(WITH_ADSP_LISTS) && !defined(WITHOUT_ADSP_LISTS)
+CONFIGURE_ARGS+=	--enable-adsp_lists
+.endif
+
+.if defined(WITH_ALLSYMBOLS) && !defined(WITHOUT_ALLSYMBOLS)
+CONFIGURE_ARGS+=	--enable-allsymbols
+.endif
+
+.if defined(WITH_BODYLENGTH_DB) && !defined(WITHOUT_BODYLENGTH_DB)
+CONFIGURE_ARGS+=	--enable-bodylength_db
+.endif
+
+.if defined(WITH_CAPTURE_UNKNOWN_ERRORS) && !defined(WITHOUT_CAPTURE_UNKNOWN_ERRORS)
+CONFIGURE_ARGS+=	--enable-capture_unknown_errors
+.endif
+
+.if defined(WITH_CODECOVERAGE) && !defined(WITHOUT_CODECOVERAGE)
+CONFIGURE_ARGS+=	--enable-codecoverage
+.endif
+
+.if defined(WITH_DEFAULT_SENDER) && !defined(WITHOUT_DEFAULT_SENDER)
+CONFIGURE_ARGS+=	--enable-default_sender
+.endif
+
+.if defined(WITH_DIFFHEADERS) && !defined(WITHOUT_DIFFHEADERS)
+CONFIGURE_ARGS+=	--enable-diffheaders
+LIB_DEPENDS+=		tre:${PORTSDIR}/textproc/libtre
+.endif
+
+.if defined(WITH_DKIM_REPUTATION) && !defined(WITHOUT_DKIM_REPUTATION)
+CONFIGURE_ARGS+=	--enable-dkim_reputation
+.endif
+
+.if defined(WITH_IDENTITY_HEADER) && !defined(WITHOUT_IDENTITY_HEADER)
+CONFIGURE_ARGS+=	--enable-identity_header
+.endif
+
+.if defined(WITH_LDAP_CACHING) && !defined(WITHOUT_LDAP_CACHING)
+WITH_OPENLDAP=		yes
+CONFIGURE_ARGS+=	--enable-ldap_caching
+.endif
+
+.if defined(WITH_PARSE_TIME) && !defined(WITHOUT_PARSE_TIME)
+BROKEN=		The feature ``_FFR_PARSE_TIME'' is incomplete, does not work
+CONFIGURE_ARGS+=	--enable-parsetime
+.endif
+
+.if defined(WITH_REDIRECT) && !defined(WITHOUT_REDIRECT)
+CONFIGURE_ARGS+=	--enable-redirect
+.endif
+
+.if defined(WITH_REPLACE_RULES) && !defined(WITHOUT_REPLACE_RULES)
+CONFIGURE_ARGS+=	--enable-replace_rules
+.endif
+
+.if defined(WITH_REPORT_INTERVALS) && !defined(WITHOUT_REPORT_INTERVALS)
+CONFIGURE_ARGS+=	--enable-report_intervals
+.endif
+
+.if defined(WITH_RESIGN) && !defined(WITHOUT_RESIGN)
+CONFIGURE_ARGS+=	--enable-resign
+.endif
+
+.if defined(WITH_SELECT_CANONICALIZATION) && !defined(WITHOUT_SELECT_CANONICALIZATION)
+CONFIGURE_ARGS+=	--enable-select_canonicalization
+.endif
+
+.if defined(WITH_SELECTOR_HEADER) && !defined(WITHOUT_SELECTOR_HEADER)
+CONFIGURE_ARGS+=	--enable-selector_header
+.endif
+
+.if defined(WITH_SENDER_MACRO) && !defined(WITHOUT_SENDER_MACRO)
+CONFIGURE_ARGS+=	--enable-sender_macro
+.endif
+
+.if defined(WITH_STATS) || defined(WITH_STATS_I) || defined(WITH_STATSEXT)
+CONFIGURE_ARGS+=	--enable-stats
+MAN8+=			opendkim-stats.8
+PLIST_SUB+=		STATS=""
+.else
+PLIST_SUB+=		STATS="@comment "
+.endif
+
+.if defined(WITH_STATS_I) && !defined(WITHOUT_STATS_I)
+CONFIGURE_ARGS+=	--enable-stats_i
+.endif
+
+.if defined(WITH_STATSEXT) && !defined(WITHOUT_STATSEXT)
+CONFIGURE_ARGS+=	--enable-statsext
+.endif
+
+.if defined(WITH_VBR) && !defined(WITHOUT_VBR)
+CONFIGURE_ARGS+=	--enable-vbr
+.endif

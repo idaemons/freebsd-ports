@@ -1,18 +1,71 @@
 # New ports collection makefile for:	expect
-# Version required:	5.12
 # Date created:		20 November 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.2 1995/01/05 03:13:03 jkh Exp $
-#
+# $FreeBSD$
 
-DISTNAME=	expect-5.13
-MASTER_SITES=	ftp://ftp.cme.nist.gov/pub/expect/
-DISTFILES=	expect.tar.gz
-HAS_CONFIGURE=	yes
+PORTNAME=	expect
+PORTVERSION=	5.43.0
+PORTREVISION=	3
+CATEGORIES=	lang tcl tk
+MASTER_SITES=	http://expect.nist.gov/src/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A sophisticated scripter based on tcl/tk
+
+CONFLICTS=	expect-5.44*
+
+PORTSCOUT=	skipv:5.44.0,5.44.1	# These were recalled by NIST
+
+EXPECT_VER=	5.43
+LIBEXPECT_VER=	543
+
+WRKSRC=		${WRKDIR}/expect-${EXPECT_VER}
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-LIB_DEPENDS=	tcl\\.7\\.:${PORTSDIR}/lang/tcl \
-		tk\\.3\\.:${PORTSDIR}/x11/tk
+PLIST_SUB+=	EXPECT_VER="${EXPECT_VER}"
+PLIST_SUB+=	LIBEXPECT_VER="${LIBEXPECT_VER}"
+
+OPTIONS=	X11 "Enable X11 support" on
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_X11)
+LIB_DEPENDS?=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+.else
+LIB_DEPENDS?=	tcl84.1:${PORTSDIR}/lang/tcl84
+.endif
+
+.if defined(WITHOUT_X11)
+TK_CONFIG_ARGS=
+PLIST_SUB+=	XFILES="@comment "
+.else
+TK_CONFIG_ARGS=	--with-tkconfig=${LOCALBASE}/lib/tk8.4 \
+		--with-tkinclude=${LOCALBASE}/include/tk8.4
+PLIST_SUB+=	XFILES=""
+.endif
+
+CONFIGURE_ARGS?=--enable-shared \
+		--with-tclconfig=${LOCALBASE}/lib/tcl8.4 \
+		--with-tclinclude=${LOCALBASE}/include/tcl8.4 \
+		${TK_CONFIG_ARGS}
+
+.if !defined(NO_MAN_INSTALL)
+MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
+		expect.1 kibitz.1 mkpasswd.1 multixterm.1 passmass.1 \
+		tknewsbiff.1 unbuffer.1 xkibitz.1
+.if !defined(WITHOUT_X11)
+MAN1+=		expectk.1
+.endif
+MAN3=		libexpect.3
+.endif
+
+post-patch:
+	${TOUCH} ${WRKSRC}/configure
+
+post-install:
+	${LN} -sf libexpect${LIBEXPECT_VER}.so.1 \
+		${PREFIX}/lib/libexpect${LIBEXPECT_VER}.so
 
 .include <bsd.port.mk>

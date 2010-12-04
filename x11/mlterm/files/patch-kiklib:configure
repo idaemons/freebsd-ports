@@ -1,0 +1,15 @@
+--- kiklib/configure.orig	2010-07-17 17:06:50.000000000 +0900
++++ kiklib/configure	2010-07-17 17:13:09.000000000 +0900
+@@ -23814,6 +23814,12 @@
+ 	fi
+ fi
+ 
++case $host_os in
++    freebsd*)
++       kik_cv_pty=bsd
++       ;;
++esac
++
+ { $as_echo "$as_me:$LINENO: result: $kik_cv_pty" >&5
+ $as_echo "$kik_cv_pty" >&6; }
+ PTY_NAME="${kik_cv_pty}"

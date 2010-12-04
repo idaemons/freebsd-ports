@@ -1,0 +1,7 @@
+%%PL_RC5WATCH%%bin/rc5watch
+@cwd %%KMODDIR%%
+%%PL_NOVA%%novab0_dvbbda.ko
+%%PL_STELLAR%%stellar_dvbt.ko
+sms1xxx.ko
+@exec kldxref %D
+@unexec kldxref %D

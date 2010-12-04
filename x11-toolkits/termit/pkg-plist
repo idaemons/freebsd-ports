@@ -1,0 +1,13 @@
+bin/termit
+share/applications/termit.desktop
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/lua_api.txt
+%%PORTDOCS%%%%DOCSDIR%%/rc.lua.example
+share/locale/fr/LC_MESSAGES/termit.mo
+share/locale/hu/LC_MESSAGES/termit.mo
+share/locale/ko/LC_MESSAGES/termit.mo
+share/locale/ru/LC_MESSAGES/termit.mo
+share/locale/zh_TW/LC_MESSAGES/termit.mo
+share/pixmaps/termit.svg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications

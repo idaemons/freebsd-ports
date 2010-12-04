@@ -1,0 +1,8 @@
+bin/ibus-daemon_restart
+bin/ibus-daemon_start
+bin/ibus-daemon_stop
+bin/mozc_server_restart
+bin/mozc_server_start
+bin/mozc_server_stop
+bin/mozc_tool_config
+bin/mozc_tool_dictionary

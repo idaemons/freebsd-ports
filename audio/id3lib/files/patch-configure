@@ -1,0 +1,11 @@
+# $FreeBSD$
+--- configure.orig	Sun Aug 14 11:21:37 2005
++++ configure	Sun Aug 14 11:29:43 2005
+@@ -9134,6 +9134,7 @@
+ else
+   ID3_NEEDZLIB_TRUE='#'
+   ID3_NEEDZLIB_FALSE=
++  LIBS="-lz $LIBS"
+ fi
+ 
+ 

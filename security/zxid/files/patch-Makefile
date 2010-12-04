@@ -1,0 +1,58 @@
+--- Makefile.orig	2009-10-16 19:37:47.000000000 +0400
++++ Makefile	2009-10-30 00:02:20.000000000 +0300
+@@ -31,13 +31,13 @@
+ 
+ default: seehelp precheck zxid zxidhlo zxididp zxidhlowsf zxidsimple zxidwsctool zxlogview zxidhrxmlwsc zxidhrxmlwsp zxdecode zxcot
+ 
+-all: seehelp precheck precheck_apache zxid zxidhlo zxididp zxidsimple zxlogview samlmod phpzxid javazxid apachezxid zxdecode zxcot smime
++all: seehelp precheck zxid zxidhlo zxididp zxidsimple zxlogview zxdecode zxcot smime
+ 
+ ZXIDREL=0.38
+ ZXIDVERSION=0x000038
+ 
+ ### Where package is installed (use `make PREFIX=/your/path' to change)
+-PREFIX=/usr/local/zxid/$(ZXIDREL)
++PREFIX?=/usr/local/zxid/$(ZXIDREL)
+ 
+ ### Where runtime configuration and temporary data is kept.
+ ### If you change the following, be sure to edit zxidconf.h as
+@@ -64,8 +64,8 @@
+ ###
+ 
+ TOP=$(shell pwd)
+-CURL_ROOT=/usr/local
+-OPENSSL_ROOT=/usr/local/ssl
++CURL_ROOT?=/usr/local
++OPENSSL_ROOT?=/usr/local/ssl
+ PHP_CONFIG=php-config
+ CSHARP_CONFIG=true
+ PY_CONFIG=true
+@@ -82,11 +82,11 @@
+ SWIG=swig
+ AR=ar -crs
+ ARX=ar -x
+-CC=gcc
+-LD=gcc
+-SHARED_FLAGS=-shared --export-all-symbols -Wl,-whole-archive -Wl,--allow-multiple-definition
+-SHARED_CLOSE=-Wl,-no-whole-archive
+-CFLAGS=-g -fpic -fmessage-length=0 -Wno-unused-label -Wno-unknown-pragmas -fno-strict-aliasing
++CC?=gcc
++LD?=gcc
++SHARED_FLAGS+=-shared --export-all-symbols -Wl,-whole-archive -Wl,--allow-multiple-definition
++SHARED_CLOSE+=-Wl,-no-whole-archive
++CFLAGS+=-g -fpic -fmessage-length=0 -Wno-unused-label -Wno-unknown-pragmas -fno-strict-aliasing
+ #CFLAGS += -Os    # gcc-3.4.6 miscompiles with -Os on ix86
+ CFLAGS += -Wall -Wno-parentheses -DMAYBE_UNUSED='__attribute__ ((unused))'
+ CFLAGS += -ffunction-sections -fdata-sections
+@@ -1090,11 +1090,6 @@
+ 
+ install: zxid libzxid.a libzxid.so.0.0 dir
+ 	@$(ECHO) "===== Installing in $(PREFIX) (to change do make install PREFIX=/your/path)"
+-	-mkdir -p $(PREFIX) $(PREFIX)/bin $(PREFIX)/lib $(PREFIX)/include/zxid
+-	cp zxidhlo zxididp $(PREFIX)/bin
+-	cp libzxid.a libzxid.so* $(PREFIX)/lib
+-	cp libzxid.so.0.0 $(PREFIX)/lib
+-	cp *.h c/*.h $(PREFIX)/include/zxid
+ 	@$(ECHO) "You will need to copy zxidhlo binary where your web server can find it and"
+ 	@$(ECHO) "make sure your web server is configured to recognize zxidhlo as a CGI script."
+ 	@$(ECHO)

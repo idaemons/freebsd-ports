@@ -1,0 +1,20 @@
+--- configure.orig	Mon Apr 16 18:08:01 2007
++++ configure	Tue Apr 17 12:42:31 2007
+@@ -37538,7 +37538,7 @@
+   for l in $a52_ll ; do
+     case $l in
+       -L*) lpaths="$lpaths $l" ;;
+-      -l*) test x"$l" != x"-la52" && xlibs="$xlibs $l" ;;
++      -l*) test x"$l" != x"-la52  -L%%LOCALBASE%%/lib -lm" && xlibs="$xlibs $l" ;;
+         *) xlf="$xlf $l" ;;
+     esac
+   done
+@@ -37616,7 +37616,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_a52_a52_init" >&5
+ echo "${ECHO_T}$ac_cv_lib_a52_a52_init" >&6; }
+ if test $ac_cv_lib_a52_a52_init = yes; then
+-  A52_LIBS="$a52_ll -la52 $A52_EXTRA_LIBS"
++  A52_LIBS="$a52_ll -la52  -L%%LOCALBASE%%/lib -lm $A52_EXTRA_LIBS"
+ else
+ 
+ tc_pkg_err="yes"

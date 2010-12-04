@@ -1,0 +1,39 @@
+# New ports collection makefile for:	p5-DateTime
+# Date created:	   4 mai 2003
+# Whom:		   Mathieu Arnold <m@absolight.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	DateTime
+PORTVERSION=	0.66
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	A date and time object
+
+RUN_DEPENDS=	p5-DateTime-Locale>=0.41:${PORTSDIR}/devel/p5-DateTime-Locale \
+		p5-DateTime-TimeZone>=1.09:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate
+BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>=0.89:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+
+PERL_MODBUILD=	yes
+
+MAN3=		DateTime.3 DateTime::Duration.3 \
+		DateTime::Infinite.3 \
+		DateTime::LeapSecond.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	CREDITS Changes TODO
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
+
+.include <bsd.port.mk>

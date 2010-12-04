@@ -1,0 +1,87 @@
+################################################################################
+NOTE:
+
+An auto-changer manipulation script based on FreeBSDs
+chio command is included and installed at
+
+  %%PREFIX%%/sbin/chio-bacula
+
+Please have a look at it if you want to use an
+autochanger. You have to configure the usage in
+
+  %%PREFIX%%/etc/bacula-dir.conf
+
+Take care of correct permissions for changer and
+tape device (e.g. /dev/ch0 and /dev/n[r]sa0) i.e.
+they must be accessible by user bacula.
+
+Due to lack of some features in the FreeBSD tape driver
+implementation you MUST add some OS dependent options to
+the bacula-sd.conf file:
+
+  Hardware End of Medium = no;
+  Backward Space Record  = no;
+  Backward Space File    = no;
+
+With 2 filemarks at EOT (see man mt):
+  Fast Forward Space File = no;
+  BSF at EOM = yes;
+  TWO EOF    = yes;
+
+With 1 filemarks at EOT (see man mt):
+  Fast Forward Space File = yes;
+  BSF at EOM = no;
+  TWO EOF   = no;
+
+NOTE: YOU CAN SWITCH EOT model ONLY when starting
+      from scratch with EMPTY tapes.
+
+It is also important that all the scripts accessed
+by RunBeforeJob and RunAfterJob will be executed by
+the user bacula.  Check your permissions.
+
+For USB support read the bacula manual. It could be necessary
+to configure/compile a new kernel.
+
+Look at %%PREFIX%%/share/bacula/update_bacula_tables for
+database update procedure. Details can be found in the
+ReleaseNotes
+
+  Please read this file:
+
+	%%DOCSDIR%%/ReleaseNotes
+
+  as installed by docs port for the upgrade procedure.
+
+IMPORTANT UPGRADE NOTES FOR THIS RELEASE:
+
+As always, both the Director and Storage daemon must be upgraded at
+the same time, and on any given machine, you must run only one version
+of Bacula. This means that on the Director and Storage daemon machines,
+you *must* upgrade your File daemon as well.
+
+New database Catalog format in version 5.0.2 (3.1.9 or later).
+
+If upgrading to 5.x from < 5.x, you must run the update_bacula_tables
+script.  Afterwards, check the ownership on any new tables
+and make sure they are consisten with existing tables.
+
+!!!!!!!!!!!!!!! NOTE FOR 5.0.0 USERS !!!!!!!!!!!!!!!!!!!!
+The Allow Duplicate Jobs directive has been significantly-
+reworked, and the default value has changed. See below.
+
+Truncate On Purge has been totally rewritten. See the new
+features section of the manual.
+
+When Volume Poll Interval is set in the SD DEVICE configuration,
+(default 5 mins), after a certain number of polling tries (approx
+10) polling will stop and the operator will be asked to
+resolve the problem.  Previously there was no limit, and an
+error message could be produced at each poll attempt.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Read the ReleaseNotes for further information.
+
+If you are using sqlite you need to run the make_sqlite_tables script as
+the bacula user. Do this using 'sudo su -m bacula'.
+################################################################################

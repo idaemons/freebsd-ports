@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Business/ISBN/Data.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISBN/Data/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISBN/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISBN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
+@dirrm %%SITE_PERL%%/Business/ISBN
+@dirrmtry %%SITE_PERL%%/Business

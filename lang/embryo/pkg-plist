@@ -1,0 +1,10 @@
+bin/embryo_cc
+include/Embryo.h
+lib/libembryo.a
+lib/libembryo.la
+lib/libembryo.so
+lib/libembryo.so.9
+libdata/pkgconfig/embryo.pc
+%%DATADIR%%/include/default.inc
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%

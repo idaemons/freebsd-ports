@@ -1,0 +1,30 @@
+--- configure.orig	Thu Oct 13 19:03:54 2005
++++ configure	Tue Nov 29 12:41:17 2005
+@@ -45,7 +45,7 @@
+ 
+ 
+ # Directories to search in
+-dirs='/usr/local/bin/ /usr/bin/ /usr/ccs/bin/ /bin/ /usr/ucb/bin/ /sbin/ /usr/sbin/ /usr/local/sbin/'
++dirs="${LOCALBASE}/bin/ /usr/bin/ /usr/ccs/bin/ /bin/ /usr/ucb/bin/ /sbin/ /usr/sbin/ ${LOCALBASE}/sbin/"
+ 
+ 
+ echo ""
+@@ -96,7 +96,7 @@
+ # INSTALLATION DIRECTORY
+ #############################################################################
+ echo '' >> $conf;
+-echo \$INSTALLDIR = \'$PWD/\'\; >> $conf; 
++echo \$INSTALLDIR = \'${PREFIX}/bin/\'\; >> $conf; 
+ 
+ 
+ # Now add the variables that need user interaction
+@@ -438,8 +438,7 @@
+ fi;
+ 
+ # Get current working directory for lib
+-echo "use lib '$PWD/';" >> ./config.tmp
+-echo "use lib '$PWD/lib/';" >> ./config.tmp
++echo "use lib '${PREFIX}/lib/autopsy/';" >> ./config.tmp
+ 
+ if (test -f ./autopsy) then
+   echo "autopsy already exists, overwrite? (y/n):";

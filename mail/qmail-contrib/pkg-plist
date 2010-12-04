@@ -1,0 +1,8 @@
+bin/dot-forward
+bin/fastforward
+bin/newaliases
+bin/newinclude
+bin/printforward
+bin/printmaillist
+bin/setforward
+bin/setmaillist

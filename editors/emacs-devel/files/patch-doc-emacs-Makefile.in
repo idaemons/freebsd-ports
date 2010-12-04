@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/emacs/Makefile.in.orig
++++ doc/emacs/Makefile.in
+@@ -39,7 +39,7 @@
+ 
+ # The makeinfo program is part of the Texinfo distribution.
+ # Use --force so that it generates output even if there are errors.
+-MAKEINFO = makeinfo --force -I $(srcdir)
++MAKEINFO = makeinfo --force --no-split -I $(srcdir)
+ 
+ TEXI2DVI = texi2dvi
+ TEXI2PDF = texi2pdf

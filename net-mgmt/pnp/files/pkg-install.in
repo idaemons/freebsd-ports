@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+SPOOL_DIRS=%%SPOOL_DIRS%%
+NAGIOSUSER=%%NAGIOSUSER%%
+NAGIOSGROUP=%%NAGIOSGROUP%%
+
+# Create directories with mode and ownership specified in SPOOL_DIRS
+# as strings separated by '%' of format DIR:OWNER:GROUP:MODE
+dirs () {
+	IFS=%
+	for i in $SPOOL_DIRS; do
+		d="${i%%:*}"
+		if ! [ -d "$d" ]; then
+			go=`echo "$i" | cut -f 2-3 -d :`
+			m="${i##*:}"
+			mkdir -p "$d"
+			chown "$go" "$d"
+			chmod "$m" "$d"
+		fi
+	done
+}
+
+check_sanity () {
+	if ! pw group show "$NAGIOSGROUP" 2>&1 > /dev/null; then
+		echo "No group '$NAGIOSGROUP'.  Create it and try again."
+		exit 1
+	fi
+	if ! pw user show "$NAGIOSUSER" 2>&1 > /dev/null; then
+		echo "No user '$NAGIOSUSER'.  Create it and try again."
+		exit 1
+	fi
+}
+
+if [ "x$2" = "xPRE-INSTALL" ]; then
+	check_sanity
+	dirs
+fi

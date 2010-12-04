@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/xmobar
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%

@@ -1,0 +1,5 @@
+bin/ggiterm
+%%DATADIR%%/ggiterm.png
+%%DATADIR%%/ggiterm.svg
+%%DATADIR%%/ggiterm.termcap
+@dirrm %%DATADIR%%

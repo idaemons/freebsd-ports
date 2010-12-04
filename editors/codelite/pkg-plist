@@ -1,0 +1,201 @@
+bin/codelite
+bin/codelite_cppcheck
+bin/codelite_exec
+bin/codelite_fix_files
+bin/codelite_indexer
+bin/codelite_kill_children
+bin/codelite_xterm
+%%DATADIR%%/astyle.sample
+%%DATADIR%%/codelite-icons.zip
+%%DATADIR%%/config/accelerators.conf.default
+%%DATADIR%%/config/build_settings.xml.default
+%%DATADIR%%/config/codelite.xml.default
+%%DATADIR%%/config/debuggers.xml.default
+%%DATADIR%%/config/plugins.xml.default
+%%DATADIR%%/images/common_tasks.png
+%%DATADIR%%/images/cubes.png
+%%DATADIR%%/images/help_earth.png
+%%DATADIR%%/images/plugin_not_ok.png
+%%DATADIR%%/images/plugin_ok.png
+%%DATADIR%%/images/recent_files.png
+%%DATADIR%%/images/recent_workspaces.png
+%%DATADIR%%/images/splashscreen.png
+%%DATADIR%%/index.html
+%%DATADIR%%/lexers/lexers_black.xml
+%%DATADIR%%/lexers/lexers_default.xml
+%%DATADIR%%/plugins/CodeFormatter.so
+%%DATADIR%%/plugins/ContinuousBuild.so
+%%DATADIR%%/plugins/Copyright.so
+%%DATADIR%%/plugins/CppCheck.so
+%%DATADIR%%/plugins/ExternalTools.so
+%%DATADIR%%/plugins/Gizmos.so
+%%DATADIR%%/plugins/QmakePlugin.so
+%%DATADIR%%/plugins/SnipWiz.so
+%%DATADIR%%/plugins/Subversion2.so
+%%DATADIR%%/plugins/SymbolView.so
+%%DATADIR%%/plugins/UnitTestCPP.so
+%%DATADIR%%/plugins/abbreviation.so
+%%DATADIR%%/plugins/cscope.so
+%%DATADIR%%/plugins/debuggers/Debugger.so
+%%DATADIR%%/plugins/libcodeliteu.so
+%%DATADIR%%/plugins/libpluginu.so
+%%DATADIR%%/plugins/libwxscintillau.so
+%%DATADIR%%/plugins/libwxsqlite3u.so
+%%DATADIR%%/plugins/resources/abbrev.png
+%%DATADIR%%/plugins/resources/abbreviation.accelerators
+%%DATADIR%%/plugins/resources/compfile.png
+%%DATADIR%%/plugins/resources/connect_no.png
+%%DATADIR%%/plugins/resources/cppcheck.png
+%%DATADIR%%/plugins/resources/cscope.accelerators
+%%DATADIR%%/plugins/resources/external_tools.accelerators
+%%DATADIR%%/plugins/resources/qt16_new.png
+%%DATADIR%%/plugins/resources/qt16_preferences.png
+%%DATADIR%%/plugins/resources/qt24_new.png
+%%DATADIR%%/plugins/resources/qt24_preferences.png
+%%DATADIR%%/plugins/resources/svn_diff.png
+%%DATADIR%%/plugins/resources/svn_settings.png
+%%DATADIR%%/plugins/resources/svn_ssh.png
+%%DATADIR%%/plugins/resources/wxfb_conflict.png
+%%DATADIR%%/plugins/resources/wxfb_modified.png
+%%DATADIR%%/plugins/resources/wxfb_ok.png
+%%DATADIR%%/plugins/wxformbuilder.so
+%%DATADIR%%/rc/menu.xrc
+%%DATADIR%%/src/unittest++1.3.tar.gz
+%%DATADIR%%/svnreport.html
+%%DATADIR%%/templates/formbuilder/DialogTemplate.fbp
+%%DATADIR%%/templates/formbuilder/DialogTemplateWithButtons.fbp
+%%DATADIR%%/templates/formbuilder/FrameTemplate.fbp
+%%DATADIR%%/templates/formbuilder/PanelTemplate.fbp
+%%DATADIR%%/templates/gizmos/app.cpp.wizard
+%%DATADIR%%/templates/gizmos/app.h.wizard
+%%DATADIR%%/templates/gizmos/gui-dialog.cpp.wizard
+%%DATADIR%%/templates/gizmos/gui-dialog.fbp.wizard
+%%DATADIR%%/templates/gizmos/gui-dialog.h.wizard
+%%DATADIR%%/templates/gizmos/gui-frame.cpp.wizard
+%%DATADIR%%/templates/gizmos/gui-frame.fbp.wizard
+%%DATADIR%%/templates/gizmos/gui-frame.h.wizard
+%%DATADIR%%/templates/gizmos/liteeditor-plugin.project.wizard
+%%DATADIR%%/templates/gizmos/main-dialog.cpp.wizard
+%%DATADIR%%/templates/gizmos/main-dialog.h.wizard
+%%DATADIR%%/templates/gizmos/main-frame.cpp.wizard
+%%DATADIR%%/templates/gizmos/main-frame.h.wizard
+%%DATADIR%%/templates/gizmos/main.cpp.wizard
+%%DATADIR%%/templates/gizmos/mainframe.cpp.wizard
+%%DATADIR%%/templates/gizmos/mainframe.h.wizard
+%%DATADIR%%/templates/gizmos/plugin.cpp.wizard
+%%DATADIR%%/templates/gizmos/plugin.h.wizard
+%%DATADIR%%/templates/gizmos/resources.rc.wizard
+%%DATADIR%%/templates/gizmos/wx_pch.h.wizard
+%%DATADIR%%/templates/gizmos/wxmain.project.wizard
+%%DATADIR%%/templates/gizmos/wxproject-fb.project.wizard
+%%DATADIR%%/templates/gizmos/wxproject.project.wizard
+%%DATADIR%%/templates/projects/UnitTest++/UnitTest++.project
+%%DATADIR%%/templates/projects/UnitTest++/icon.png
+%%DATADIR%%/templates/projects/UnitTest++/main.cpp
+%%DATADIR%%/templates/projects/cobra-executableU/build-file
+%%DATADIR%%/templates/projects/cobra-executableU/cobra-executableU.project
+%%DATADIR%%/templates/projects/cobra-libraryU/cobra-library.project
+%%DATADIR%%/templates/projects/cobra-libraryU/lib-build-files
+%%DATADIR%%/templates/projects/cobra-staticU/build-file
+%%DATADIR%%/templates/projects/cobra-staticU/cobra-staticU.project
+%%DATADIR%%/templates/projects/custom-makefile/custom-makefile.project
+%%DATADIR%%/templates/projects/custom-makefile/icon.png
+%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/defs.h
+%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/dynamic-library-wx-enabled.project
+%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/dynamic-library-wx-enabled.project~
+%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/icon.png
+%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/main.cpp
+%%DATADIR%%/templates/projects/dynamic-library/dynamic-library.project
+%%DATADIR%%/templates/projects/dynamic-library/icon.png
+%%DATADIR%%/templates/projects/executable-cobra/executable-cobra.project
+%%DATADIR%%/templates/projects/executable-cobra/main.cobra
+%%DATADIR%%/templates/projects/executable-console-wx-enabled/executable-console-wx-enabled.project
+%%DATADIR%%/templates/projects/executable-console-wx-enabled/icon.png
+%%DATADIR%%/templates/projects/executable-console-wx-enabled/main.cpp
+%%DATADIR%%/templates/projects/executable-gcc/executable-gcc.project
+%%DATADIR%%/templates/projects/executable-gcc/icon.png
+%%DATADIR%%/templates/projects/executable-gcc/main.c
+%%DATADIR%%/templates/projects/executable-qt-enabled/executable-qt-enabled.project
+%%DATADIR%%/templates/projects/executable-qt-enabled/icon.png
+%%DATADIR%%/templates/projects/executable-qt-enabled/main.cpp
+%%DATADIR%%/templates/projects/executable-qt-qmake-enabled/executable-qt-qmake-enabled.project
+%%DATADIR%%/templates/projects/executable-qt-qmake-enabled/icon.png
+%%DATADIR%%/templates/projects/executable-qt-qmake-enabled/main.cpp
+%%DATADIR%%/templates/projects/executable-wx-dialog/executable-wx-dialog.project
+%%DATADIR%%/templates/projects/executable-wx-dialog/gui.cpp
+%%DATADIR%%/templates/projects/executable-wx-dialog/gui.fbp
+%%DATADIR%%/templates/projects/executable-wx-dialog/gui.h
+%%DATADIR%%/templates/projects/executable-wx-dialog/icon.png
+%%DATADIR%%/templates/projects/executable-wx-dialog/main.cpp
+%%DATADIR%%/templates/projects/executable-wx-dialog/main.h
+%%DATADIR%%/templates/projects/executable-wx-enabled/executable-wx-enabled.project
+%%DATADIR%%/templates/projects/executable-wx-enabled/icon.png
+%%DATADIR%%/templates/projects/executable-wx-enabled/main.cpp
+%%DATADIR%%/templates/projects/executable-wx-frame/executable-wx-frame.project
+%%DATADIR%%/templates/projects/executable-wx-frame/gui.cpp
+%%DATADIR%%/templates/projects/executable-wx-frame/gui.fbp
+%%DATADIR%%/templates/projects/executable-wx-frame/gui.h
+%%DATADIR%%/templates/projects/executable-wx-frame/icon.png
+%%DATADIR%%/templates/projects/executable-wx-frame/main.cpp
+%%DATADIR%%/templates/projects/executable-wx-frame/main.h
+%%DATADIR%%/templates/projects/executable/executable.project
+%%DATADIR%%/templates/projects/executable/icon.png
+%%DATADIR%%/templates/projects/executable/main.cpp
+%%DATADIR%%/templates/projects/non-code-project/icon.png
+%%DATADIR%%/templates/projects/non-code-project/non-code.project
+%%DATADIR%%/templates/projects/static-library-wx-enabled/defs.h
+%%DATADIR%%/templates/projects/static-library-wx-enabled/icon.png
+%%DATADIR%%/templates/projects/static-library-wx-enabled/main.cpp
+%%DATADIR%%/templates/projects/static-library-wx-enabled/static-library-wx-enabled.project
+%%DATADIR%%/templates/projects/static-library/icon.png
+%%DATADIR%%/templates/projects/static-library/static-library.project
+%%DATADIR%%/templates/projects/vc-dynamic-library/icon.png
+%%DATADIR%%/templates/projects/vc-dynamic-library/vc-dynamic-library.project
+%%DATADIR%%/templates/projects/vc-executable/icon.png
+%%DATADIR%%/templates/projects/vc-executable/vc-executable.project
+%%DATADIR%%/templates/projects/vc-static-lib/icon.png
+%%DATADIR%%/templates/projects/vc-static-lib/vc-static-lib.project
+%%DATADIR%%/templates/qmake/qmake.project
+share/applications/codelite.desktop
+@dirrmtry share/applications
+@dirrm %%DATADIR%%/templates/qmake
+@dirrm %%DATADIR%%/templates/projects/vc-static-lib
+@dirrm %%DATADIR%%/templates/projects/vc-executable
+@dirrm %%DATADIR%%/templates/projects/vc-dynamic-library
+@dirrm %%DATADIR%%/templates/projects/static-library-wx-enabled
+@dirrm %%DATADIR%%/templates/projects/static-library
+@dirrm %%DATADIR%%/templates/projects/qmake-gui
+@dirrm %%DATADIR%%/templates/projects/qmake-console
+@dirrm %%DATADIR%%/templates/projects/non-code-project
+@dirrm %%DATADIR%%/templates/projects/executable-wx-frame
+@dirrm %%DATADIR%%/templates/projects/executable-wx-enabled
+@dirrm %%DATADIR%%/templates/projects/executable-wx-dialog
+@dirrm %%DATADIR%%/templates/projects/executable-qt-qmake-enabled
+@dirrm %%DATADIR%%/templates/projects/executable-qt-enabled
+@dirrm %%DATADIR%%/templates/projects/executable-gcc
+@dirrm %%DATADIR%%/templates/projects/executable-console-wx-enabled
+@dirrm %%DATADIR%%/templates/projects/executable-cobra
+@dirrm %%DATADIR%%/templates/projects/executable
+@dirrm %%DATADIR%%/templates/projects/dynamic-library-wx-enabled-win
+@dirrm %%DATADIR%%/templates/projects/dynamic-library-wx-enabled
+@dirrm %%DATADIR%%/templates/projects/dynamic-library
+@dirrm %%DATADIR%%/templates/projects/custom-makefile
+@dirrm %%DATADIR%%/templates/projects/cobra-staticU
+@dirrm %%DATADIR%%/templates/projects/cobra-libraryU
+@dirrm %%DATADIR%%/templates/projects/cobra-executableU
+@dirrm %%DATADIR%%/templates/projects/UnitTest++
+@dirrm %%DATADIR%%/templates/projects/QtConsole
+@dirrm %%DATADIR%%/templates/projects/QmakeTestTmpl
+@dirrm %%DATADIR%%/templates/projects
+@dirrm %%DATADIR%%/templates/gizmos
+@dirrm %%DATADIR%%/templates/formbuilder
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/src
+@dirrm %%DATADIR%%/rc
+@dirrm %%DATADIR%%/plugins/resources
+@dirrm %%DATADIR%%/plugins/debuggers
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/lexers
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%

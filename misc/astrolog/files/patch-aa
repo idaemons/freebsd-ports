@@ -1,0 +1,18 @@
+--- Makefile.orig	Wed Dec 23 23:29:57 1998
++++ Makefile	Thu Jan 26 06:18:04 2006
+@@ -23,8 +23,13 @@
+  charts0.o charts1.o charts2.o charts3.o intrpret.o\
+  xdata.o xgeneral.o xdevice.o xcharts0.o xcharts1.o xcharts2.o xscreen.o
+ # If you don't have X windows, delete the "-lX11" part from the line below:
+-LIBS = -lm -lX11
+-CFLAGS = -O
++.if defined(X11)
++LIBS = -L${LOCALBASE}/lib -lX11 -lm
++CFLAGS += -DX11 -I${LOCALBASE}/include -DDEFAULT_DIR=\"${PREFIX}/lib/astrolog\"
++.else
++LIBS = -lm
++CFLAGS += -DDEFAULT_DIR=\"${PREFIX}/lib/astrolog\"
++.endif
+ 
+ astrolog:: $(OBJ)
+ 	cc -o $(NAME) $(OBJ) $(LIBS)

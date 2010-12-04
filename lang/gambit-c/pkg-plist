@@ -1,0 +1,45 @@
+bin/gambc-cc.bat
+bin/gambc-doc.bat
+bin/gsc-gambit
+bin/gsc-script
+bin/gsi-gambit
+bin/gsi-script
+bin/scheme-ieee-1178-1990
+bin/scheme-r4rs
+bin/scheme-r5rs
+bin/scheme-srfi-0
+bin/six
+bin/six-script
+include/gambit-c/gambit-not406000.h
+include/gambit-c/gambit.h
+lib/gambit-c/_eval#.scm
+lib/gambit-c/_gambc.c
+lib/gambit-c/_gambcgsc.c
+lib/gambit-c/_gambcgsi.c
+lib/gambit-c/_gambit#.scm
+lib/gambit-c/_io#.scm
+lib/gambit-c/_kernel#.scm
+lib/gambit-c/_nonstd#.scm
+lib/gambit-c/_num#.scm
+lib/gambit-c/_repl#.scm
+lib/gambit-c/_std#.scm
+lib/gambit-c/_system#.scm
+lib/gambit-c/_thread#.scm
+lib/gambit-c/digest#.scm
+lib/gambit-c/digest.scm
+lib/gambit-c/gambit#.scm
+lib/gambit-c/libgambc.a
+lib/gambit-c/libgambcgsc.a
+lib/gambit-c/libgambcgsi.a
+lib/gambit-c/r4rs#.scm
+lib/gambit-c/r5rs#.scm
+lib/gambit-c/syntax-case.scm
+%%DOCSDIR%%/gambit-c.html
+%%DOCSDIR%%/gambit-c.pdf
+%%DOCSDIR%%/gambit-c.txt
+share/emacs/site-lisp/gambit.el
+@dirrmtry share/emacs/site-lisp
+@dirrmtry share/emacs
+@dirrm %%DOCSDIR%%
+@dirrm lib/gambit-c
+@dirrm include/gambit-c

@@ -1,0 +1,75 @@
+@comment $FreeBSD$
+bin/traffic_cop
+bin/traffic_line
+bin/traffic_logcat
+bin/traffic_logstats
+bin/traffic_manager
+bin/traffic_sac
+bin/traffic_server
+bin/traffic_shell
+bin/tsxs
+%%ETCDIR%%/admin_access.config
+%%ETCDIR%%/ae_ua.config
+%%ETCDIR%%/body_factory/default/.body_factory_info
+%%ETCDIR%%/body_factory/default/README
+%%ETCDIR%%/body_factory/default/access#denied
+%%ETCDIR%%/body_factory/default/access#proxy_auth_required
+%%ETCDIR%%/body_factory/default/access#redirect_url
+%%ETCDIR%%/body_factory/default/access#ssl_forbidden
+%%ETCDIR%%/body_factory/default/cache#not_in_cache
+%%ETCDIR%%/body_factory/default/cache#read_error
+%%ETCDIR%%/body_factory/default/congestion#retryAfter
+%%ETCDIR%%/body_factory/default/connect#dns_failed
+%%ETCDIR%%/body_factory/default/connect#failed_connect
+%%ETCDIR%%/body_factory/default/connect#hangup
+%%ETCDIR%%/body_factory/default/default
+%%ETCDIR%%/body_factory/default/interception#no_host
+%%ETCDIR%%/body_factory/default/redirect#moved_temporarily
+%%ETCDIR%%/body_factory/default/request#cycle_detected
+%%ETCDIR%%/body_factory/default/request#no_content_length
+%%ETCDIR%%/body_factory/default/request#no_host
+%%ETCDIR%%/body_factory/default/request#scheme_unsupported
+%%ETCDIR%%/body_factory/default/request#syntax_error
+%%ETCDIR%%/body_factory/default/response#bad_response
+%%ETCDIR%%/body_factory/default/response#bad_version
+%%ETCDIR%%/body_factory/default/timeout#activity
+%%ETCDIR%%/body_factory/default/timeout#inactivity
+%%ETCDIR%%/body_factory/default/transcoding#unsupported
+%%ETCDIR%%/body_factory/default/urlrouting#no_mapping
+%%ETCDIR%%/cache.config
+%%ETCDIR%%/cluster.config
+%%ETCDIR%%/congestion.config
+%%ETCDIR%%/hosting.config
+%%ETCDIR%%/icp.config
+%%ETCDIR%%/ip_allow.config
+%%ETCDIR%%/log_hosts.config
+%%ETCDIR%%/logs.config
+%%ETCDIR%%/logs_xml.config
+%%ETCDIR%%/mgmt_allow.config
+%%ETCDIR%%/mgr.cnf
+%%ETCDIR%%/parent.config
+%%ETCDIR%%/partition.config
+%%ETCDIR%%/plugin.config
+%%ETCDIR%%/plugin.db
+%%ETCDIR%%/records.config
+%%ETCDIR%%/remap.config
+%%ETCDIR%%/socks.config
+%%ETCDIR%%/splitdns.config
+%%ETCDIR%%/ssl_multicert.config
+%%ETCDIR%%/stats.config.xml
+%%ETCDIR%%/storage.config
+%%ETCDIR%%/trafficserver-release
+%%ETCDIR%%/update.config
+%%ETCDIR%%/vaddrs.config
+include/ts/experimental.h
+include/ts/remap.h
+include/ts/ts.h
+include/ts/ts_private.h
+include/ts/ts_private_frozen.h
+@dirrm %%DATADIR%%
+@dirrm libexec/trafficserver
+@dirrm include/ts
+@dirrm %%ETCDIR%%/internal
+@dirrm %%ETCDIR%%/body_factory/default
+@dirrm %%ETCDIR%%/body_factory
+@dirrmtry %%ETCDIR%%

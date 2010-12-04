@@ -1,0 +1,18 @@
+# New ports collection makefile for: hs-testpack
+# Date created:        December 20 2009
+# Whom:                Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	testpack
+PORTVERSION=	1.0.2
+CATEGORIES=	devel haskell
+
+MAINTAINER=	haskell@FreeBSD.org
+COMMENT=	Haskell Test Utility Pack for HUnit and QuickCheck
+
+CABAL_SETUP=	Setup.hs
+
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
+.include <bsd.port.mk>

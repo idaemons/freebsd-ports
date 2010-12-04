@@ -1,0 +1,37 @@
+# New ports collection makefile for:	py-cherrypy-devel
+# Date created:		2010-07-15
+# Whom:			David Brooks <dab@rj45.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cherrypy-devel
+PORTVERSION=	3.2.0.r1
+CATEGORIES=	www python
+MASTER_SITES=	http://rj45.org/freebsd/distfiles/${PORTNAME}/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	CherryPy-${PORTVERSION}
+
+MAINTAINER=	dab@rj45.org
+COMMENT=	A pythonic, object-oriented web development framework
+
+.if !defined(NOPORTEXAMPLES)
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.1:${PORTSDIR}/devel/py-cheetah
+
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+.endif
+
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	CherryPy
+
+post-install:
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/cherrypy/tutorial/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+.endif
+	${RM} -R ${PYTHONPREFIX_SITELIBDIR}/${DISTNAME}*egg/cherrypy/tutorial
+
+CONFLICTS=	py26-cherrypy-3.[0-1]*
+
+.include <bsd.port.mk>

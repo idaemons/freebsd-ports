@@ -1,0 +1,16 @@
+bin/mservdetect
+etc/masqmail/masqmail.conf-dist
+etc/masqmail/masqmail.get-dist
+etc/masqmail/masqmail.route-dist
+sbin/masqmail
+share/masqmail/tpl/failmsg.tpl
+share/masqmail/tpl/failmsg.tpl.de
+share/masqmail/tpl/failmsg.tpl.fr
+share/masqmail/tpl/failmsg.tpl.it
+share/masqmail/tpl/warnmsg.tpl
+share/masqmail/tpl/warnmsg.tpl.de
+share/masqmail/tpl/warnmsg.tpl.fr
+@dirrm share/masqmail/tpl
+@dirrm share/masqmail
+@dirrm etc/masqmail
+@dirrmtry /var/log/masqmail

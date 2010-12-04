@@ -1,0 +1,31 @@
+--- Makefile.system	2010-01-15 12:24:42.000000000 +0900
++++ Makefile.system	2010-02-01 15:16:00.000000000 +0900
+@@ -93,6 +93,10 @@
+ EXTRALIB	+= -lm
+ endif
+ 
++ifeq ($(OSNAME), FreeBSD)
++EXTRALIB	+= -lm
++endif
++
+ ifeq ($(OSNAME), AIX)
+ EXTRALIB	+= -lm
+ endif
+@@ -604,7 +608,7 @@
+ GREP	= grep
+ endif
+ 
+-MD5SUM	= md5sum
++MD5SUM	= md5
+ AWK	= awk
+ 
+ REVISION = -r$(VERSION)
+@@ -657,7 +661,7 @@
+ LIBS_P		= $(TOPDIR)/$(LIBNAME_P)
+ 
+ export OSNAME
+-export ARCH
++export ARCH_
+ export CORE
+ export LIBCORE
+ export PGCPATH
