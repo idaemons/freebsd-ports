@@ -1,0 +1,41 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: smokeping
+# REQUIRE: sshd
+# KEYWORD: shutdown
+
+# Define these smokeping_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/smokeping
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# smokeping_flags="<set as needed>"
+
+smokeping_enable=${smokeping_enable-"NO"}
+smokeping_pidfile=${smokeping_pidfile-"%%PREFIX%%/var/smokeping/smokeping.pid"}
+smokeping_logfile=${smokeping_logfile-"/var/log/smokeping.log"}
+smokeping_user=${smokeping_user-"%%USERS%%"}
+smokeping_group=${smokeping_group-"%%GROUPS%%"}
+
+. /etc/rc.subr
+
+name="smokeping"
+rcvar=`set_rcvar`
+load_rc_config $name
+command="/usr/local/bin/smokeping"
+command_args="--logfile=${smokeping_logfile}"
+pidfile="${smokeping_pidfile}"
+
+extra_commands="reload"
+reload_cmd="smokeping_reloadcmd"
+
+smokeping_reloadcmd()
+{
+	$command --reload
+}
+
+run_rc_command "$1"
+

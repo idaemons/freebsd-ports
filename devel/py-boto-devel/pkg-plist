@@ -1,0 +1,14 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+bin/bundle_image
+bin/cfadmin
+bin/cq
+bin/elbadmin
+bin/fetch_file
+bin/kill_instance
+bin/launch_instance
+bin/list_instances
+bin/lss3
+bin/pyami_sendmail
+bin/s3put
+bin/sdbadmin
+bin/taskadmin

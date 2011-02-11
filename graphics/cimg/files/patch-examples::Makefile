@@ -1,0 +1,172 @@
+--- examples/Makefile.orig	2011-01-21 15:58:40.000000000 +0100
++++ examples/Makefile	2011-01-24 22:24:41.000000000 +0100
+@@ -85,8 +85,8 @@
+ # Set correct variables and paths
+ #---------------------------------
+ CIMG_VERSION = 1.4.7
+-X11PATH      = /usr/X11R6
+-CC           = g++
++#X11PATH      = /usr/X11R6
++CC           = $(CXX)
+ CCVER        = `$(CC) -v 2>&1 | tail -n 1`
+ EXEPFX       =
+ 
+@@ -120,7 +120,7 @@
+ ifeq ($(CC),icc)
+ CIMG_OPT_CFLAGS = -O3 -ipo -no-prec-div
+ else
+-CIMG_OPT_CFLAGS = -O3 -fno-tree-pre
++CIMG_OPT_CFLAGS = -fno-tree-pre
+ endif
+ 
+ # Flags to enable OpenMP support.
+@@ -131,7 +131,7 @@
+ endif
+ 
+ # Flags to enable OpenCV support.
+-CIMG_OPENCV_CFLAGS = -Dcimg_use_opencv -I/usr/include/opencv
++CIMG_OPENCV_CFLAGS = -Dcimg_use_opencv -I$(LOCALBASE)/include/opencv
+ CIMG_OPENCV_LDFLAGS = -lcv -lhighgui
+ 
+ # Flags used to disable display capablities of CImg
+@@ -141,7 +141,7 @@
+ # (X11 is used by CImg to handle display windows)
+ # !!! For 64bits systems : replace -L$(X11PATH)/lib by -L$(X11PATH)/lib64 !!!
+ CIMG_X11_CFLAGS = -I$(X11PATH)/include
+-CIMG_X11_LDFLAGS = -L$(X11PATH)/lib -lpthread -lX11
++CIMG_X11_LDFLAGS = -L$(X11PATH)/lib -lX11 $(PTHREAD_LIBS)
+ 
+ # Flags to enable fast image display, using the XSHM library (when using X11).
+ # !!! Seems to randomly crash when used on MacOSX, so do not use it on MacOSX !!!
+@@ -175,12 +175,12 @@
+ 
+ # Flags to enable native support for EXR image files, using the OpenEXR library.
+ # ( http://www.openexr.com/ )
+-CIMG_EXR_CFLAGS = -Dcimg_use_openexr -I/usr/include/OpenEXR
++CIMG_EXR_CFLAGS = -Dcimg_use_openexr -I/$(LOCALBASE)/include/OpenEXR
+ CIMG_EXR_LDFLAGS = -lIlmImf
+ 
+ # Flags to enable native support for various video files, using the FFMPEG library.
+ # ( http://www.ffmpeg.org/ )
+-CIMG_FFMPEG_CFLAGS = -Dcimg_use_ffmpeg -D__STDC_CONSTANT_MACROS -I/usr/include/libavcodec -I/usr/include/libavformat -I/usr/include/libswscale -I/usr/include/ffmpeg
++CIMG_FFMPEG_CFLAGS = -Dcimg_use_ffmpeg -D__STDC_CONSTANT_MACROS -I/$(LOCALBASE)/include/libavcodec -I/$(LOCALBASE)/include/libavformat -I/$(LOCALBASE)/include/libswscale -I/$(LOCALBASE)/include/ffmpeg
+ CIMG_FFMPEG_LDFLAGS = -lavcodec -lavformat -lswscale
+ 
+ # Flags to enable native support for compressed .cimgz files, using the Zlib library.
+@@ -190,8 +190,8 @@
+ 
+ # Flags to enable native support of most classical image file formats, using the Magick++ library.
+ # ( http://www.imagemagick.org/Magick++/ )
+-CIMG_MAGICK_CFLAGS = -Dcimg_use_magick `Magick++-config --cppflags` `Magick++-config --cxxflags`
+-CIMG_MAGICK_LDFLAGS = `Magick++-config --ldflags` `Magick++-config --libs`
++CIMG_MAGICK_CFLAGS = -Dcimg_use_magick `GraphicsMagick++-config --cppflags` `GraphicsMagick++-config --cxxflags`
++CIMG_MAGICK_LDFLAGS = `GraphicsMagick++-config --ldflags` `GraphicsMagick++-config --libs`
+ 
+ # Flags to enable faster Discrete Fourier Transform computation, using the FFTW3 library
+ # ( http://www.fftw.org/ )
+@@ -204,14 +204,17 @@
+ 
+ # Flags to enable the use of LAPACK routines for matrix computation
+ # ( http://www.netlib.org/lapack/ )
+-CIMG_LAPACK_CFLAGS = -Dcimg_use_lapack
+-CIMG_LAPACK_LDFLAGS = -lblas -lg2c -llapack
++#CIMG_LAPACK_CFLAGS = -Dcimg_use_lapack
++#CIMG_LAPACK_LDFLAGS = -lblas -llapack
+ 
+ # Flags to enable the use of the Board library
+ # ( http://libboard.sourceforge.net/ )
+-CIMG_BOARD_CFLAGS = -Dcimg_use_board -I/usr/include/board
++CIMG_BOARD_CFLAGS = -Dcimg_use_board -I$(LOCALBASE)/include/board
+ CIMG_BOARD_LDFLAGS = -lboard
+ 
++# Flags to compile on FreeBSD
++CIMG_FREEBSD_LDFLAGS = -ansi -ffast-math  -I$(X11PATH)/include $(EXTRA_FLAGS) -lX11 -L$(X11PATH)/lib
++
+ # Flags to compile on Sun Solaris
+ CIMG_SOLARIS_LDFLAGS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
+ 
+@@ -245,6 +248,9 @@
+ 	@echo "  > mlinux   : Linus/BSD target, no display, minimal features, optimizations enabled."
+ 	@echo "  > Mlinux   : Linux/BSD target, X11 display, maximal features, optimizations enabled."
+ 	@echo
++	@echo "  > dFreeBSD   : FreeBSD, X11 display, debug mode."
++	@echo "  > oFreeBSD   : FreeBSD target, X11 display, maximal features for packages."
++	@echo
+ 	@echo "  > solaris  : Sun Solaris target, X11 display, optimizations disabled."
+ 	@echo "  > dsolaris : Sun Solaris target, X11 display, debug mode."
+ 	@echo "  > osolaris : Sun Solaris target, X11 display, optimizations enabled."
+@@ -288,7 +294,7 @@
+ 	$(CC) -o gmic_gimp.o -c gmic.cpp -Dcimg_build -Dgmic_gimp -Dgmic_minimal $(CIMG_OPT_CFLAGS) $(CIMG_FFTW3_CFLAGS) $(CIMG_PNG_CFLAGS)
+ 
+ gmic_gimp: gmic_gimp.o gmic_gimp.cpp
+-	$(CC) -o $(EXEPFX)gmic_gimp gmic_gimp.cpp gmic_gimp.o -Dcimg_build `gimptool-2.0 --cflags` `gimptool-2.0 --libs` -lpthread $(CIMG_OPT_FLAGS) $(CIMG_FFTW3_LDFLAGS) $(CIMG_PNG_LDFLAGS) $(CIMG_GIMP_CFLAGS)
++	$(CC) -o $(EXEPFX)gmic_gimp gmic_gimp.cpp gmic_gimp.o -Dcimg_build `gimptool-2.0 --cflags` `gimptool-2.0 --libs` $(CIMG_OPT_FLAGS) $(CIMG_FFTW3_LDFLAGS) $(CIMG_PNG_LDFLAGS) $(CIMG_GIMP_CFLAGS) $(PTHREAD_LIBS)
+ 
+ # Specific targets for 'gmic'.
+ gmic_def: gmic_def.gmic
+@@ -328,7 +334,7 @@
+ 		 gmic_uint.o gmic_int.o gmic_float.o gmic_double.o $(CFLAGS) $(LDFLAGS) $(CONF_CFLAGS) $(CONF_LDFLAGS)
+ 
+ gmic_minimal:
+-	$(CC) -o $(EXEPFX)gmic gmic.cpp -I.. -Dcimg_build -Dgmic_minimal -Dgmic_main -Dcimg_use_fftw3 -Dcimg_use_png -Dcimg_display=1 -I/usr/X11R6/include -g -W -Wall -ansi -pedantic -L/usr/X11R6/lib -lX11 -lpthread -lfftw3 -lpng -lz
++	$(CC) -o $(EXEPFX)gmic gmic.cpp -I.. -Dcimg_build -Dgmic_minimal -Dgmic_main -Dcimg_use_fftw3 -Dcimg_use_png -Dcimg_display=1 -I$(LOCALBASE)/X11R6/include -g -W -Wall -ansi -pedantic -L$(LOCALBASE)/X11R6/lib -lX11 -lfftw3 -lpng -lz $(PTHREAD_LIBS)
+ 
+ ifeq ($(STRIP_EXE),true)
+ 	strip $(EXEPFX)gmic
+@@ -414,6 +420,56 @@
+ "STRIP_EXE=true" \
+ all $(CIMG_EXTRA_FILES)
+ 
++# FreeBSD targets
++dFreeBSD:
++	make \
++"CONF_CFLAGS = \
++$(CIMG_DEBUG_CFLAGS) \
++$(CIMG_VT100_CFLAGS) \
++$(CIMG_X11_CFLAGS) \
++$(CIMG_XSHM_CFLAGS) \
++$(CIMG_XRANDR_CFLAGS) \
++$(CIMG_ZLIB_CFLAGS)" \
++"CONF_LDFLAGS = \
++$(CIMG_FREEBSD_LDFLAGS) \
++$(CIMG_ZLIB_LDFLAGS) \
++$(CIMG_X11_LDFLAGS) \
++$(CIMG_XSHM_LDFLAGS) \
++$(CIMG_XRANDR_LDFLAGS)" \
++all
++
++oFreeBSD:
++	make \
++"CONF_CFLAGS = \
++$(CIMG_OPT_CFLAGS) \
++$(CIMG_VT100_CFLAGS) \
++$(CIMG_X11_CFLAGS) \
++$(CIMG_XSHM_CFLAGS) \
++$(CIMG_XRANDR_CFLAGS) \
++$(CIMG_TIFF_CFLAGS) \
++$(CIMG_PNG_CFLAGS) \
++$(CIMG_JPEG_CFLAGS) \
++$(CIMG_ZLIB_CFLAGS) \
++$(CIMG_MAGICK_CFLAGS) \
++$(CIMG_FFMPEG_CFLAGS) \
++$(CIMG_LAPACK_CFLAGS) \
++$(CIMG_FFTW3_CFLAGS)" \
++"CONF_LDFLAGS = \
++$(CIMG_FREEBSD_LDFLAGS) \
++$(CIMG_X11_LDFLAGS) \
++$(CIMG_XSHM_LDFLAGS) \
++$(CIMG_XRANDR_LDFLAGS) \
++$(CIMG_TIFF_LDFLAGS) \
++$(CIMG_PNG_LDFLAGS) \
++$(CIMG_JPEG_LDFLAGS) \
++$(CIMG_ZLIB_LDFLAGS) \
++$(CIMG_MAGICK_LDFLAGS) \
++$(CIMG_FFMPEG_LDFLAGS) \
++$(CIMG_LAPACK_LDFLAGS) \
++$(CIMG_FFTW3_LDFLAGS)" \
++"STRIP_EXE=true" \
++all use_jpeg_buffer gmic
++
+ # Sun Solaris targets, with X11 display.
+ solaris:
+ 	@$(MAKE) \

@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash/.packlist
+%%SITE_PERL%%/Package/Stash.pm
+@dirrmtry %%SITE_PERL%%/Package
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package

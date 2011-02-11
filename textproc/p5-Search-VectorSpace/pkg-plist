@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Search/VectorSpace.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/VectorSpace/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/VectorSpace
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search
+@dirrmtry %%SITE_PERL%%/Search

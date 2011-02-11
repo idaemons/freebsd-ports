@@ -1,0 +1,14 @@
+--- ./src/CMakeLists.txt.orig	2010-12-08 10:29:39.000000000 +0100
++++ ./src/CMakeLists.txt	2010-12-20 12:18:44.673410726 +0100
+@@ -74,7 +74,10 @@
+     )
+ 
+ install(TARGETS dbusmenu-qt
+-    LIBRARY DESTINATION lib${LIB_SUFFIX})
++    LIBRARY DESTINATION lib${LIB_SUFFIX}
++    ARCHIVE DESTINATION lib
++    RUNTIME DESTINATION bin
++)
+ 
+ install(DIRECTORY .
+     DESTINATION include/dbusmenu-qt

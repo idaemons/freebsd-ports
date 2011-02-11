@@ -1,0 +1,128 @@
+bin/bp_papplmaker.pl
+bin/bp_panalysis.pl
+bin/bp_run_neighbor.pl
+bin/bp_multi_hmmsearch.pl
+bin/bp_bioperl_application_installer.pl
+bin/bp_run_protdist.pl
+%%DATADIR%%/scripts/bioperl_application_installer.PLS
+%%DATADIR%%/scripts/multi_hmmsearch.PLS
+%%DATADIR%%/scripts/panalysis.PLS
+%%DATADIR%%/scripts/papplmaker.PLS
+%%DATADIR%%/scripts/run_neighbor.PLS
+%%DATADIR%%/scripts/run_protdist.PLS
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.PROGRAMS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/
+%%SITE_PERL%%/Bio/Factory/EMBOSS.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/DBA.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Sim4.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Probalign.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/StandAloneFasta.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Amap.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Blat.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Muscle.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Pal2Nal.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Probcons.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Clustalw.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Kalign.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/MAFFT.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/TCoffee.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Lagan.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Proda.pm
+%%SITE_PERL%%/Bio/Tools/Run/Alignment/Exonerate.pm
+%%SITE_PERL%%/Bio/Tools/Run/Analysis/soap.pm
+%%SITE_PERL%%/Bio/Tools/Run/AnalysisFactory/soap.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Hyphy/REL.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Hyphy/Base.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Hyphy/Modeltest.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Hyphy/FEL.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Hyphy/SLAC.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Molphy/ProtML.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Njtree/Best.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/PAML/Codeml.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/PAML/Baseml.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/PAML/Evolver.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/PAML/Yn00.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phast/PhastCons.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phast/PhyloFit.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phylip/SeqBoot.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phylip/PhylipConf.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phylip/ProtPars.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phylip/DrawTree.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phylip/Neighbor.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phylip/Consense.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phylip/ProtDist.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phylip/DrawGram.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phylip/Base.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/PhyloBase.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Phyml.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/SLR.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/LVB.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Semphy.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Gerp.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/Gumby.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phylo/QuickTree.pm
+%%SITE_PERL%%/Bio/Tools/Run/EMBOSSacd.pm
+%%SITE_PERL%%/Bio/Tools/Run/ERPIN.pm
+%%SITE_PERL%%/Bio/Tools/Run/Phrap.pm
+%%SITE_PERL%%/Bio/Tools/Run/FootPrinter.pm
+%%SITE_PERL%%/Bio/Tools/Run/Match.pm
+%%SITE_PERL%%/Bio/Tools/Run/Primate.pm
+%%SITE_PERL%%/Bio/Tools/Run/Pseudowise.pm
+%%SITE_PERL%%/Bio/Tools/Run/AnalysisFactory.pm
+%%SITE_PERL%%/Bio/Tools/Run/Genscan.pm
+%%SITE_PERL%%/Bio/Tools/Run/Infernal.pm
+%%SITE_PERL%%/Bio/Tools/Run/Simprot.pm
+%%SITE_PERL%%/Bio/Tools/Run/MCS.pm
+%%SITE_PERL%%/Bio/Tools/Run/Coil.pm
+%%SITE_PERL%%/Bio/Tools/Run/Analysis.pm
+%%SITE_PERL%%/Bio/Tools/Run/Prints.pm
+%%SITE_PERL%%/Bio/Tools/Run/Hmmer.pm
+%%SITE_PERL%%/Bio/Tools/Run/Vista.pm
+%%SITE_PERL%%/Bio/Tools/Run/TigrAssembler.pm
+%%SITE_PERL%%/Bio/Tools/Run/Eponine.pm
+%%SITE_PERL%%/Bio/Tools/Run/TribeMCL.pm
+%%SITE_PERL%%/Bio/Tools/Run/Promoterwise.pm
+%%SITE_PERL%%/Bio/Tools/Run/tRNAscanSE.pm
+%%SITE_PERL%%/Bio/Tools/Run/Cap3.pm
+%%SITE_PERL%%/Bio/Tools/Run/Glimmer.pm
+%%SITE_PERL%%/Bio/Tools/Run/EMBOSSApplication.pm
+%%SITE_PERL%%/Bio/Tools/Run/Signalp.pm
+%%SITE_PERL%%/Bio/Tools/Run/Meme.pm
+%%SITE_PERL%%/Bio/Tools/Run/RNAMotif.pm
+%%SITE_PERL%%/Bio/Tools/Run/Seg.pm
+%%SITE_PERL%%/Bio/Tools/Run/Genemark.pm
+%%SITE_PERL%%/Bio/Tools/Run/Mdust.pm
+%%SITE_PERL%%/Bio/Tools/Run/RepeatMasker.pm
+%%SITE_PERL%%/Bio/Tools/Run/Genewise.pm
+%%SITE_PERL%%/Bio/Tools/Run/Profile.pm
+%%SITE_PERL%%/Bio/Tools/Run/Tmhmm.pm
+%%SITE_PERL%%/Bio/Tools/Run/Ensembl.pm
+%%SITE_PERL%%/Bio/Tools/Run/Primer3.pm
+%%SITE_PERL%%/Bio/Installer/EMBOSS.pm
+%%SITE_PERL%%/Bio/Installer/Muscle.pm
+%%SITE_PERL%%/Bio/Installer/Clustalw.pm
+%%SITE_PERL%%/Bio/Installer/SLR.pm
+%%SITE_PERL%%/Bio/Installer/Probcons.pm
+%%SITE_PERL%%/Bio/Installer/TCoffee.pm
+%%SITE_PERL%%/Bio/Installer/Hyphy.pm
+%%SITE_PERL%%/Bio/Installer/Generic.pm
+%%SITE_PERL%%/Bio/Installer/PAML.pm
+@dirrm %%SITE_PERL%%/Bio/Installer
+@dirrm %%SITE_PERL%%/Bio/Tools/Run/Analysis
+@dirrm %%SITE_PERL%%/Bio/Tools/Run/Alignment
+@dirrm %%SITE_PERL%%/Bio/Tools/Run/AnalysisFactory
+@dirrm %%SITE_PERL%%/Bio/Tools/Run/Phylo/Hyphy
+@dirrm %%SITE_PERL%%/Bio/Tools/Run/Phylo/Molphy
+@dirrm %%SITE_PERL%%/Bio/Tools/Run/Phylo/Njtree
+@dirrm %%SITE_PERL%%/Bio/Tools/Run/Phylo/PAML
+@dirrm %%SITE_PERL%%/Bio/Tools/Run/Phylo/Phast
+@dirrm %%SITE_PERL%%/Bio/Tools/Run/Phylo/Phylip
+@dirrm %%SITE_PERL%%/Bio/Tools/Run/Phylo
+@dirrmtry %%SITE_PERL%%/Bio/Tools/Run
+@dirrmtry %%SITE_PERL%%/Bio/Tools
+@dirrmtry %%SITE_PERL%%/Bio

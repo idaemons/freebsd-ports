@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/lispref/Makefile.in.orig
++++ doc/lispref/Makefile.in
+@@ -32,7 +32,7 @@
+ # Directory with emacsver.texi.
+ emacsdir =  $(srcdir)/../emacs
+ 
+-MAKEINFO = makeinfo --force -I $(emacsdir) -I $(srcdir)
++MAKEINFO = makeinfo --no-split --force -I $(emacsdir) -I $(srcdir)
+ TEXI2DVI = texi2dvi
+ TEXI2PDF = texi2pdf
+ DVIPS = dvips

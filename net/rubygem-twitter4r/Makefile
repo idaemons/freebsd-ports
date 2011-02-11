@@ -1,0 +1,23 @@
+# ex:ts=8
+# Ports collection makefile for:	rubygem-twitter4r
+# Date created:			Jul 9, 2007
+# Whom:				Cheng-Lung Sung <clsung@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	twitter4r
+PORTVERSION=	0.3.2
+CATEGORIES=	net rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Twitter client API in pure Ruby
+
+RUN_DEPENDS=	rubygem-json>=1.1.1:${PORTSDIR}/devel/rubygem-json
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+.include <bsd.port.mk>

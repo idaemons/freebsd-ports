@@ -1,41 +1,59 @@
-DISTNAME=	blas
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
-MASTER_SITES=	ftp://netlib.att.com/netlib/blas/
-.if defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/blas/
-.undef MASTER_SITE_OVERRIDE
+# New ports collection makefile for:    blas
+# Date created:         27 October 1994
+# Whom:                 ljo
+#
+# $FreeBSD$
+#
+
+PORTNAME=	blas
+PORTVERSION=	1.0
+PORTREVISION=	6
+CATEGORIES=	math
+MASTER_SITES=	http://www.netlib.org/blas/ \
+		http://www.mirrorservice.org/sites/netlib.bell-labs.com/netlib/blas/ \
+		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/blas/ \
+		http://netlib.sandia.gov/blas/ \
+		http://www.netlib.no/netlib/blas/
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	maho@FreeBSD.org
+COMMENT=	Basic Linear Algebra, level 1, 2, and 3
+
+USE_LDCONFIG=	yes
+USE_FORTRAN=	yes
+WRKSRC=		${WRKDIR}/BLAS
+SHLIB_MAJOR=	2
+
+PLIST_FILES=	lib/libblas.a lib/libblas.so lib/libblas.so.${SHLIB_MAJOR}
+
+LDFLAGS+=	${FFLAGS}
+LDADD ?=	-lgfortran -lm
+SRCCONF=	${NONEXISTENT}
+MAKE_ENV+=	LDADD="${LDADD}" LDFLAGS="${LDFLAGS}" \
+		SHLIB_MAJOR="${SHLIB_MAJOR}" SRCCONF="${SRCCONF}"
+.for _u in AR NM RANLIB
+MAKE_ENV+=	${_u}="${LOCALBASE}/bin/${_u:L}"
+.endfor
+
+OPTIONS=	PROFILE "Build and install a profiling library" Off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PROFILE)
+.if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
+IGNORE =	you have defined WITH_PROFILE, but have also defined\
+WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
+.elif !exists(/usr/lib/libc_p.a)
+IGNORE	=	you have chosen WITH_PROFILE, but have not installed the\
+base system profiling libraries
 .endif
-EXTRACT_CMD=scripts/uncomp
-EXTRACT_SUFX=.Z
-EXTRACT_ARGS= ${WRKDIR}
-WRKSRC=${WRKDIR}
+PLIST_FILES+=	lib/libblas_p.a
+.else
+MAKE_ENV+=	NO_PROFILE=
+.endif
 
-SRCS =	caxpy.f cblas1.f cblas2.f ccopy.f cdotc.f cdotu.f cgbmv.f cgemv.f \
-	cgerc.f cgeru.f chbmv.f chemv.f cher.f cher2.f chpmv.f chpr.f \
-	chpr2.f cmach.f crotg.f cscal.f csrot.f csscal.f cswap.f ctbmv.f \
-	ctbsv.f ctpmv.f ctpsv.f ctrmv.f ctrsv.f d1mach.f dasum.f daxpy.f \
-	dblas1.f dblas2.f dcopy.f ddot.f dgbmv.f dgemv.f dger.f dmach.f \
-	dnrm2.f drot.f drotg.f dsbmv.f dscal.f dspmv.f dspr.f dspr2.f \
-	dswap.f dsymv.f dsyr.f dsyr2.f dtbmv.f dtbsv.f dtpmv.f dtpsv.f \
-	dtrmv.f dtrsv.f esblas2.f esgbmv.f esgemv.f esger.f essbmv.f \
-	esspmv.f esspr.f esspr2.f essymv.f essyr.f essyr2.f estbmv.f \
-	estbsv.f estpmv.f estpsv.f estrmv.f estrsv.f \
-	i1mach.f \
-	icamax.f idamax.f isamax.f lsame.f r1mach.f sasum.f saxpy.f \
-	sblas1.f sblas2.f scasum.f scnrm2.f scopy.f sdot.f sgbmv.f sgemv.f \
-	sger.f smach.f snrm2.f srot.f srotg.f ssbmv.f sscal.f sspmv.f \
-	sspr.f sspr2.f sswap.f ssymv.f ssyr.f ssyr2.f stbmv.f stbsv.f \
-	stpmv.f stpsv.f strmv.f strsv.f xerbla.f
-
-# fdump.f
-
-DISTFILES=	${SRCS:.f=.f.Z}
-
-pre-build:
-	cp Makefile.lib ${WRKDIR}/Makefile
-
-pre-extract:
-	chmod +x scripts/uncomp
+post-patch:
+	@${CP} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
-

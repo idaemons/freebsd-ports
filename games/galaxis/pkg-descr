@@ -1,0 +1,7 @@
+			GALAXIS for UNIX
+	   by Eric S. Raymond <esr@snark.thyrsus.com>
+
+This directory contains curses-based clone of the nifty little Macintosh
+freeware game Galaxis.
+
+WWW: http://www.catb.org/~esr/galaxis/

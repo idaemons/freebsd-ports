@@ -1,0 +1,101 @@
+--- platform/lib/nbexec.orig	2010-10-08 19:29:48.000000000 +0300
++++ platform/lib/nbexec	2010-10-08 19:40:15.000000000 +0300
+@@ -153,15 +153,15 @@
+         Darwin*)
+         jdkhome="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home"
+         java_bin=`which java 2>&1`
+-        if [ $? -ne 0 ] || [ -n "`echo \"$java_bin\" | grep \"no java in\"`" ] ; then
++        if [ $? -ne 0 ] || [ -n "`echo \"$java_bin\" | %%GREP%% \"no java in\"`" ] ; then
+             # no java in path... strange
+             java_bin=/usr/bin/java
+         fi
+         if [ -f "$java_bin" ] ; then
+             java_version=`"$java_bin" -fullversion 2>&1`
+-            if [ $? -eq 0 ] && [ -n "`echo \"$java_version\" | grep 1.6.0`" ] ; then
++            if [ $? -eq 0 ] && [ -n "`echo \"$java_version\" | %%GREP%% 1.6.0`" ] ; then
+                 # don`t use Developer Preview versions
+-                if [ -z "`echo \"$java_version\" | grep \"1.6.0_b\|1.6.0-b\|1.6.0_01\|1.6.0_04\|-dp\"`" ] ; then
++                if [ -z "`echo \"$java_version\" | %%GREP%% \"1.6.0_b\|1.6.0-b\|1.6.0_01\|1.6.0_04\|-dp\"`" ] ; then
+                     if [ -f "/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home/bin/java" ] ; then
+                         jdkhome="/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home"
+                     elif [ -f "/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/bin/java" ] ; then
+@@ -194,7 +194,7 @@
+ # if heap dump on OOME is supported enable it
+ if "${jdkhome}/bin/java" -XX:+HeapDumpOnOutOfMemoryError > /dev/null 2>&1 ; then
+    jargs="$jargs -XX:+HeapDumpOnOutOfMemoryError"
+-   if echo $jargs | grep -v -- "-XX:HeapDumpPath=" > /dev/null ; then
++   if echo $jargs | %%GREP%% -v -- "-XX:HeapDumpPath=" > /dev/null ; then
+       jargs="$jargs -XX:HeapDumpPath=\"${userdir}/var/log/heapdump.hprof\""
+    fi
+ fi
+@@ -213,7 +213,7 @@
+         if [ "`echo "${dir}"/*.$ex`" != "${dir}/*.$ex" ] ; then
+             for x in "${dir}"/*.$ex ; do
+                 subx=`basename "$x"`
+-                if echo "$paths" | fgrep -v "$subpath$subx" > /dev/null ; then
++                if echo "$paths" | %%FGREP%% -v "$subpath$subx" > /dev/null ; then
+                     if [ ! -z "$cp" ] ; then cp="$cp:" ; fi
+                     cp="$cp$x"
+                     if [ ! -z "$paths" ] ; then paths="$paths:" ; fi
+@@ -357,7 +357,7 @@
+ }
+ 
+ detect_gnome_proxy () {
+-    gconftool=/usr/bin/gconftool-2
++    gconftool=%%GCONFTOOL2%%
+     if [ -x  $gconftool ] ; then
+         proxy_mode=`$gconftool --get /system/proxy/mode 2>/dev/null`
+         if [ "$proxy_mode" = "manual" ] ; then
+@@ -366,7 +366,7 @@
+             http_proxy_tmp=$http_proxy_host:$http_proxy_port
+             http_non_proxy_hosts=`$gconftool --get /system/http_proxy/ignore_hosts 2>/dev/null`
+             if [ $? ] ; then
+-                http_non_proxy_hosts=`echo $http_non_proxy_hosts | /bin/sed 's/\]//'`
++                http_non_proxy_hosts=`echo $http_non_proxy_hosts | %%SED%% 's/\]//'`
+             fi
+             socks_proxy_host=`$gconftool --get /system/proxy/socks_host 2>/dev/null`
+             socks_proxy_port=`$gconftool --get /system/proxy/socks_port 2>/dev/null`
+@@ -389,18 +389,18 @@
+ detect_kde_proxy () {
+     kioslaverc="${HOME}/.kde/share/config/kioslaverc"
+     if [ -f $kioslaverc ] ; then
+-        if /bin/grep 'ProxyType=1' "$kioslaverc" >/dev/null 2>&1; then
+-            http_proxy_tmp=`/bin/grep 'httpProxy=http://' "$kioslaverc"`
++        if %%GREP%% 'ProxyType=1' "$kioslaverc" >/dev/null 2>&1; then
++            http_proxy_tmp=`%%GREP%% 'httpProxy=http://' "$kioslaverc"`
+             if [ $? ] ; then
+-                http_proxy_tmp=`echo $http_proxy_tmp | /bin/sed 's/httpProxy=http:\/\///'`
++                http_proxy_tmp=`echo $http_proxy_tmp | %%SED%% 's/httpProxy=http:\/\///'`
+                 return 0
+             fi
+-            http_non_proxy_hosts=`/bin/grep 'NoProxyFor=' "$kioslaverc"`
++            http_non_proxy_hosts=`%%GREP%% 'NoProxyFor=' "$kioslaverc"`
+             if [ $? ] ; then
+-                http_non_proxy_hosts=`echo $http_non_proxy_hosts | /bin/sed 's/NoProxyFor=//'`
++                http_non_proxy_hosts=`echo $http_non_proxy_hosts | %%SED%% 's/NoProxyFor=//'`
+             fi
+         else
+-            if /bin/grep 'ProxyType=0' "$kioslaverc" >/dev/null 2>&1; then
++            if %%GREP%% 'ProxyType=0' "$kioslaverc" >/dev/null 2>&1; then
+                 detect_system_proxy
+                 if [ -z "$http_proxy_tmp" ]; then
+                     http_proxy_tmp="DIRECT"
+@@ -424,14 +424,14 @@
+ close
+ EOF
+ 
+-    if /usr/bin/grep "ProxyAuto.*: *1" ${scutil_out} >/dev/null 2>&1; then
++    if %%GREP%% "ProxyAuto.*: *1" ${scutil_out} >/dev/null 2>&1; then
+         rm ${scutil_out}
+         return 1
+     fi
+ 
+-    if /usr/bin/grep "HTTPEnable *: *1" ${scutil_out} >/dev/null 2>&1; then
+-	http_proxy_host=`/usr/bin/grep HTTPProxy ${scutil_out} | /usr/bin/awk '{print $3}'`
+-	http_proxy_port=`/usr/bin/grep HTTPPort ${scutil_out} | /usr/bin/awk '{print $3} '`
++    if %%GREP%% "HTTPEnable *: *1" ${scutil_out} >/dev/null 2>&1; then
++	http_proxy_host=`%%GREP%% HTTPProxy ${scutil_out} | %%AWK%% '{print $3}'`
++	http_proxy_port=`%%GREP%% HTTPPort ${scutil_out} | %%AWK%% '{print $3} '`
+         http_proxy_tmp=$http_proxy_host:$http_proxy_port
+         rm ${scutil_out}
+         return 0

@@ -1,0 +1,134 @@
+--- mytop.orig	2007-02-17 05:57:46.000000000 +0100
++++ mytop	2009-10-15 00:19:14.000000000 +0200
+@@ -153,7 +153,7 @@
+     "idle|i"              => \$config{idle},
+     "resolve|r"           => \$config{resolve},
+     "prompt!"             => \$config{prompt},
+-    "long|!"              => \$config{long_nums},
++    "long!"               => \$config{long_nums},
+     "mode|m=s"            => \$config{mode},
+     "sort=s"              => \$config{sort},
+ );
+@@ -193,6 +193,7 @@
+     *BLUE   = sub { };
+     *WHITE  = sub { };
+     *BOLD   = sub { };
++    *MAGENTA = sub { };
+ }
+ 
+ my $RESET  = RESET()   || '';
+@@ -202,6 +203,7 @@
+ my $BLUE   = BLUE()    || '';
+ my $WHITE  = WHITE()   || '';
+ my $BOLD   = BOLD()    || '';
++my $MAGENTA= MAGENTA() || '';
+ 
+ ## Connect
+ 
+@@ -369,6 +371,10 @@
+         require Data::Dumper;
+         print Data::Dumper::Dumper([\%config]);
+         ReadKey(0);
++
++		if (-M $0) { # restart application, if it was modified - for debugging
++			exec('perl', $0, @ARGV);
++		}
+     }
+ 
+     ## m - mode swtich to qps
+@@ -377,7 +383,7 @@
+     {
+         $config{mode} = 'qps';
+         Clear() unless $config{batchmode};
+-        print "Queries Per Second [hit q to exit this mode]\n";
++        print "Queries Per Second [hit q to exit, hit t for top mode]\n";
+         next;
+     }
+ 
+@@ -710,7 +716,7 @@
+     ##
+     if ($config{header})
+     {
+-        my @recs = Hashes("show status");
++        my @recs = Hashes("SHOW /*!50002 GLOBAL */ STATUS");
+ 
+         ## if the server died or we lost connectivity
+         if (not @recs)
+@@ -819,7 +825,7 @@
+         $lines_left--;
+ 
+ 
+-        printf " Queries: %-5s  qps: %4.0f Slow: %7s         Se/In/Up/De(%%):    %02.0f/%02.0f/%02.0f/%02.0f \n",
++        printf " Queries: %-6s qps: %4.0f Slow: %7s         Se/In/Up/De(%%):    %02.0f/%02.0f/%02.0f/%02.0f \n",
+                make_short( $STATUS{Questions} ),  # q total
+                $STATUS{Questions} / $STATUS{Uptime},  # qps, average
+                make_short( $STATUS{Slow_queries} ),    # slow
+@@ -889,8 +895,42 @@
+                make_short(($STATUS{Bytes_received} - $OLD_STATUS{Bytes_received}) / $t_delta ),
+                make_short(($STATUS{Bytes_sent} - $OLD_STATUS{Bytes_sent}) / $t_delta ))
+           if ($t_delta);
+-        print "\n\n";
++        print "\n";
++
++        my @master_status = Hashes("show master status");
++        if (@master_status)
++        {
++			foreach my $m (@master_status) {
++				print " Master: $m->{File}/$m->{Position} ",
++					"do: ", GREEN(), "$m->{Binlog_Do_DB} ", RESET(),
++					 "ign: ", MAGENTA(), $m->{Binlog_Ignore_DB}, RESET(), "\n";
++				#$line_prefix = ' ' x length($line_prefix);
++				$lines_left--;
++			}
++		}
++
++        my @slave_status = Hashes("show slave status");
++        if (@slave_status)
++        {
++			my $line_prefix = "  Slave: ";
++			foreach my $s (@slave_status) {
++				print $line_prefix, BOLD(),
++					($s->{Slave_IO_Running} eq 'Yes'
++						&& $s->{Slave_SQL_Running} eq 'Yes'
++						&& $s->{Last_Errno} == 0
++						? ($s->{Seconds_Behind_Master} > 60 ? BOLD('WARN') : GREEN('OK  ')) : RED('ERR ')
++					), RESET(),
++					" Delay: ",
++					defined($s->{Seconds_Behind_Master}) ? sprintf('%03d:%02d', int($s->{Seconds_Behind_Master} / 60), $s->{Seconds_Behind_Master} % 60) : '---:--',
++					" $s->{Master_User}\@$s->{Master_Host}: ",
++					"$s->{Master_Log_File}/$s->{Read_Master_Log_Pos} ",
++					"\n";
++				#$line_prefix = ' ' x length($line_prefix);
++				$lines_left--;
++			}
++		}
+ 
++        print "\n";
+         $lines_left--;
+     }
+ 
+@@ -952,8 +992,11 @@
+         {
+             $thread->{Host} =~ s/:\d+$//;
+             my $host = gethostbyaddr(inet_aton($thread->{Host}), AF_INET);
+-            $host =~ s/^([^.]+).*/$1/;
+-            $thread->{Host} = $host;
++            if ($host)
++            {
++              $host =~ s/^([^.]+).*/$1/;
++              $thread->{Host} = $host;
++            }
+         }
+ 
+         ## Fix possible undefs
+@@ -1099,8 +1142,8 @@
+     my @data = Hashes("SHOW INNODB STATUS");
+ 
+     open P, "|$config{pager}" or die "$!";
+-    print keys %{$data[0]};
+-    print $data[0]->{Status},"\n";
++    print P keys %{$data[0]};
++    print P $data[0]->{Status},"\n";
+     close P;
+ }
+ 

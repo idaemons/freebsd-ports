@@ -1,0 +1,97 @@
+# ex:ts=8
+# New ports collection makefile for:	darkice
+# Date created:			Dec 28, 2001
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	darkice
+PORTVERSION=	1.0
+PORTREVISION=	3
+CATEGORIES=	audio net
+MASTER_SITES=	GOOGLE_CODE
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An IceCast, IceCast2 and ShoutCast live audio streamer
+
+LICENSE=	GPLv3
+
+OPTIONS=	VORBIS "Ogg Vorbis support" on \
+		LAME "LAME support for MP3" off \
+		TWOLAME "TwoLAME support for MP2" off \
+		FAAC "FAAC support for AAC" off \
+		JACK "Jack support" off \
+		AACPLUS "AAC HEv2 and libsamplerate support" off
+
+USE_AUTOTOOLS=	aclocal autoconf
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}" \
+		ac_cv_prog_acx_pthread_config=no
+CONFIGURE_ARGS=	--without-alsa
+
+SUB_FILES=	pkg-message
+USE_RC_SUBR=	${PORTNAME}
+
+MAN1=		darkice.1
+MAN5=		darkice.cfg.5
+PLIST_FILES=	bin/darkice etc/darkice.cfg.dist
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_VORBIS)
+CONFIGURE_ARGS+=	--without-vorbis
+.else
+CONFIGURE_ARGS+=	--with-vorbis-prefix=${LOCALBASE}
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.endif
+
+.if defined(WITH_LAME)
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+CONFIGURE_ARGS+=	--with-lame-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-lame
+.endif
+
+.if defined(WITH_TWOLAME)
+LIB_DEPENDS+=	twolame.0:${PORTSDIR}/audio/twolame
+CONFIGURE_ARGS+=	--with-twolame-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-twolame
+.endif
+
+.if defined(WITH_FAAC)
+LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
+CONFIGURE_ARGS+=	--with-faac-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-faac
+.endif
+
+.if defined(WITH_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+CONFIGURE_ARGS+=	--with-jack-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-jack
+.endif
+
+.if defined(WITH_AACPLUS)
+LIB_DEPENDS+=	aacplus.2:${PORTSDIR}/audio/libaacplus \
+		samplerate.1:${PORTSDIR}/audio/libsamplerate
+CONFIGURE_ARGS+=	--with-aacplus-prefix=${LOCALBASE} --with-samplerate-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-aacplus --without-samplerate
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/test/s|==|=|g'\
+	 -e 's/sbr_main.h/libaacplus\/sbr_main.h/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O2 -pedantic||g' ${WRKSRC}/src/Makefile.in
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg ${PREFIX}/etc/${PORTNAME}.cfg.dist
+	@${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.cfg.5 ${MAN5PREFIX}/man/man5
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

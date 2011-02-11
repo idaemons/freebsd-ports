@@ -1,0 +1,11 @@
+--- ./GNUmakefile.in.orig	2010-04-04 13:23:22.000000000 -0700
++++ ./GNUmakefile.in	2010-04-08 20:21:36.000000000 -0700
+@@ -19,7 +19,7 @@
+ sbindir=@sbindir@
+ mandir=@mandir@
+ sysconfdir=@sysconfdir@
+-datadir=@datadir@/rdup
++datadir=@datadir@
+ 
+ ARCHIVE_L=@ARCHIVE_L@
+ NETTLE_L=@NETTLE_L@

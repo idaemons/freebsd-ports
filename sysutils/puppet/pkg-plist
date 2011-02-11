@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+bin/filebucket
+bin/pi
+bin/puppet
+bin/puppetdoc
+bin/ralsh
+sbin/puppetca
+sbin/puppetd
+sbin/puppetmasterd
+sbin/puppetqd
+sbin/puppetrun
+%%ETCDIR%%/puppet.conf-dist
+@dirrmtry %%ETCDIR%%

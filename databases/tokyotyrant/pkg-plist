@@ -1,0 +1,35 @@
+@comment $FreeBSD$
+%%DATADIR%%/COPYING
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/THANKS
+%%DATADIR%%/doc/common.css
+%%DATADIR%%/doc/index.html
+%%DATADIR%%/doc/spex.html
+%%DATADIR%%/ext/mapreduce.lua
+%%DATADIR%%/ext/queue.lua
+%%DATADIR%%/ext/senatus.lua
+%%DATADIR%%/ext/usherette.lua
+%%DATADIR%%/tokyotyrant.idl
+bin/tcrmgr
+bin/tcrmttest
+bin/tcrtest
+bin/ttserver
+bin/ttulmgr
+bin/ttultest
+include/tcrdb.h
+include/tculog.h
+include/ttutil.h
+lib/libtokyotyrant.a
+lib/libtokyotyrant.so
+lib/libtokyotyrant.so.3
+lib/libtokyotyrant.so.3.24.0
+lib/ttskeldir.so
+lib/ttskelmock.so
+lib/ttskelnull.so
+lib/ttskelproxy.so
+libdata/pkgconfig/tokyotyrant.pc
+sbin/ttservctl
+@dirrmtry libdata/pkgconfig
+@dirrmtry %%DATADIR%%/ext
+@dirrmtry %%DATADIR%%/doc
+@dirrmtry %%DATADIR%%

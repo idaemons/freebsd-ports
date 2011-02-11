@@ -1,0 +1,11 @@
+--- xmlconfig/Makefile.in.orig	2010-10-28 18:19:45.000000000 +0000
++++ xmlconfig/Makefile.in	2010-10-28 18:20:38.000000000 +0000
+@@ -534,6 +534,8 @@
+ 	  $(INSTALL_DATA) site-global.xml \
+ 		$(DESTDIR)$(sitexmldir)/site-global.xml; \
+ 	fi
++	$(INSTALL_DATA) site-global.xml \
++		$(DESTDIR)$(sitexmldir)/site-global.xml.sample;
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

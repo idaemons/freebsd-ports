@@ -1,0 +1,36 @@
+# New ports collection makefile for:	xmms-volnorm
+# Date created:				Fri Aug 17 12:17:23 EDT 2001
+# Whom:					Patrick Li <pat@databits.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	volnorm
+PORTVERSION=	0.8.3
+PORTREVISION=	5
+CATEGORIES=	audio
+MASTER_SITES=	SF
+PKGNAMEPREFIX=	xmms-
+
+MAINTAINER=	ehaupt@FreeBSD.org
+COMMENT=	Volume Normalizer plugin for XMMS
+
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+
+USE_GNOME=	gnometarget gtk12
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+LICENSE=	GPLv2
+PLIST_FILES=	lib/xmms/Effect/libnormvol.so
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|tests||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^COMMON/s|-O2|@CFLAGS@|g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/libnormvol.so ${PREFIX}/lib/xmms/Effect
+
+.include <bsd.port.mk>

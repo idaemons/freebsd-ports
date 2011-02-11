@@ -1,0 +1,11 @@
+--- omnithread/Makefile.in.orig	2008-08-23 20:37:43.000000000 -0400
++++ omnithread/Makefile.in	2008-08-24 07:04:18.000000000 -0400
+@@ -605,7 +605,7 @@
+ libgromnithread_la_LIBADD = \
+ 	$(PTHREAD_LIBS)
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = %%LIBDATA%%/pkgconfig
+ pkgconfig_DATA = gnuradio-omnithread.pc
+ 
+ # ... but this code also came with the package

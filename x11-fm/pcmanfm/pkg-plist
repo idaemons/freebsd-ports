@@ -1,0 +1,53 @@
+bin/pcmanfm
+share/applications/pcmanfm.desktop
+%%NLS%%share/locale/bg/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/da/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/el/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/fo/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/he/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/th/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanfm.mo
+%%DATADIR%%/ui/pref.ui
+%%DATADIR%%/ui/autorun.ui
+%%DATADIR%%/ui/about.ui
+%%DATADIR%%/ui/desktop-pref.ui
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/th/LC_MESSAGES
+@dirrmtry share/locale/th
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
+@dirrmtry include/libfm/libfm
+@dirrmtry include/libfm

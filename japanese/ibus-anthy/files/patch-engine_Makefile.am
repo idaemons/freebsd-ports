@@ -1,0 +1,11 @@
+--- engine/Makefile.am.org	2010-10-26 21:45:32.256341895 +0900
++++ engine/Makefile.am	2010-10-26 21:46:30.290338394 +0900
+@@ -62,7 +62,7 @@
+ enginedir = $(datadir)/ibus/component
+ 
+ anthy.py anthy_wrap.c: anthy.i
+-	$(SWIG) -python $(ANTHY_CFLAGS) -I/usr/include -o anthy_wrap.c $(srcdir)/anthy.i
++	$(SWIG) -python -I/usr/include ${ANTHY_CFLAGS} -o anthy_wrap.c $(srcdir)/anthy.i
+ 
+ anthy.xml: anthy.xml.in
+ 	( \

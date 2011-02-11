@@ -1,0 +1,36 @@
+# New ports collection makefile for:	rxtx
+# Whom:					Jean-Baptiste Quenot <jb.quenot@caraldi.com>
+# Date Created:				2004-04-10 00:15:35
+#
+# $FreeBSD$
+#
+
+PORTNAME=	rxtx
+PORTVERSION=	2.1.7r2
+PORTREVISION=	7
+CATEGORIES=	comms java
+MASTER_SITES=	ftp://jarvi.dsl.frii.com/pub/rxtx/
+PKGNAMESUFFIX=	-${JAVA_PORT:S/java\///}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/-\1/:S/p/pre/}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Native interface to serial ports in Java
+
+USE_ZIP=	yes
+USE_GMAKE=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
+JAVA_OS=	native
+GNU_CONFIGURE=	yes
+
+USE_LDCONFIG=	yes
+CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
+PREFIX=		${JAVA_HOME}/jre
+NO_MTREE=	yes
+
+PLIST_SUB=	ARCH=${ARCH}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure ${WRKSRC}/ltconfig
+
+.include <bsd.port.mk>

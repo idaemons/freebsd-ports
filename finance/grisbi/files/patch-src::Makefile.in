@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2010-05-04 20:15:57.000000000 +0200
++++ src/Makefile.in	2010-06-07 19:00:24.000000000 +0200
+@@ -483,7 +483,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-AM_CPPFLAGS = -I$(top_srcdir) -I$(includedir) -I../intl -DLOCALEDIR=\"$(localedir)\" -DPIXMAPS_DIR="\"$(datadir)/pixmaps/@PACKAGE@\"" -DPLUGINS_DIR="\"$(libdir)/@PACKAGE@\"" -DLOGO_PATH="\"$(datadir)/pixmaps/@PACKAGE@/grisbi-logo.png\"" -DDATA_PATH="\"$(datadir)/@PACKAGE@\"" -DHELP_PATH="\"$(datadir)/doc/@PACKAGE@\"" -Wall
++AM_CPPFLAGS = -I$(top_srcdir) -I$(includedir) -I../intl -DLOCALEDIR=\"$(localedir)\" -DPIXMAPS_DIR="\"$(pkgdatadir)/pixmaps\"" -DPLUGINS_DIR="\"$(libdir)/@PACKAGE@\"" -DLOGO_PATH="\"$(pkgdatadir)/pixmaps/grisbi-logo.png\"" -DDATA_PATH="\"$(pkgdatadir)\"" -DHELP_PATH="\"$(datadir)/doc/@PACKAGE@\"" -Wall
+ 
+ # TODO: This manual setting of -Wl is a hack, I cannot get it from
+ # configure right now because of no doc.

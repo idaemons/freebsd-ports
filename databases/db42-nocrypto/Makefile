@@ -1,0 +1,16 @@
+# Ports collection makefile for:	db42-nocrypto
+# Date created:				2004-01-04
+# Whom:					matthias.andree@gmx.de
+#
+# $FreeBSD$
+#
+
+PKGNAMESUFFIX=	-nocrypto
+DISTNAME=	db-${PORTVERSION}.NC
+
+MAINTAINER=	mandree@FreeBSD.org
+
+MASTERDIR=	${.CURDIR}/../db42
+DISTINFO_FILE=	${.CURDIR}/distinfo
+
+.include "${MASTERDIR}/Makefile"

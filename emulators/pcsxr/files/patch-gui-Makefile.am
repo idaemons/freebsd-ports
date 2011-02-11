@@ -1,0 +1,23 @@
+--- gui/Makefile.am.orig	2011-01-25 07:07:29.144904305 +0100
++++ gui/Makefile.am	2011-01-25 07:15:13.989942292 +0100
+@@ -1,10 +1,10 @@
+-AM_CPPFLAGS = -DPACKAGE_DATA_DIR=\"${datadir}/pcsx/\" \
++AM_CPPFLAGS = -DPACKAGE_DATA_DIR=\"${datadir}/pcsxr/\" \
+ 	-DPIXMAPDIR=\"${datadir}/pixmaps/\" \
+ 	-DLOCALE_DIR=\"${datadir}/locale/\" \
+ 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) \
+ 	-I$(top_srcdir)/libpcsxcore -I$(top_srcdir)/include \
+-	-DPSEMU_DATA_DIR=\"${datadir}/psemu\" \
+-	-DDEF_PLUGIN_DIR=\"${libdir}/games/psemu\"
++	-DPSEMU_DATA_DIR=\"${datadir}/pcsxr\" \
++	-DDEF_PLUGIN_DIR=\"${libdir}/pcsxr\"
+ 
+ bin_PROGRAMS = pcsx
+ 
+@@ -21,4 +21,5 @@
+ 
+ pcsx_LDADD = \
+ 	../libpcsxcore/libpcsxcore.a \
+-	$(GTK2_LIBS) $(GLADE2_LIBS) -lpthread -lz -lm -lXext -lXtst
++	$(GTK2_LIBS) $(GLADE2_LIBS) -lz -lm -lXext -lXtst -lGL
++pcsx_LDFLAGS = -pthread

@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/cvscan
+bin/cvsup2cvsync
+bin/cvsync
+bin/cvsync2cvsup
+bin/cvsyncd
+bin/rcscan
+bin/rcscmp

@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: gearmand
+# REQUIRE: DAEMON
+
+. /etc/rc.subr
+
+name="gearmand"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/gearmand"
+
+load_rc_config "$name"
+: ${gearmand_enable="NO"}
+: ${gearmand_flags="-d -v"}
+: ${gearmand_group="daemon"}
+: ${gearmand_user="daemon"}
+
+run_rc_command "$1"
+

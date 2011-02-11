@@ -1,0 +1,215 @@
+# New ports collection makefile for:	ncurses-devel
+# Date created:				Jan 28 2006
+# Whom:					Rong-En Fan <rafan@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ncurses
+PORTVERSION=	${RELEASE}.${PATCHDATE}
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${RELEASE}
+DIST_SUBDIR=	${PORTNAME}
+
+PATCH_SITES=	ftp://invisible-island.net/ncurses/${RELEASE}/ \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+PATCH_SITE_SUBDIR=	rafan/ncurses/:local
+
+MAINTAINER=	rafan@FreeBSD.org
+COMMENT=	Library for terminal-independent, full-screen output (development version)
+
+CONFLICTS=	ncurses-[0-9]*
+
+PATCHES=	20081115 20081122 20081129 20081206 20081213 20081220 20081227 \
+		20090103 20090104 20090105 20090110 20090117 20090124 20090207 \
+		20090214 20090221 20090228 20090314 20090321 20090328 20090404 \
+		20090411 20090418 20090419 20090425 20090502 20090510 20090516 \
+		20090523 20090530 20090606 20090607 20090613 20090627 20090704 \
+		20090711 20090718 20090725 20090728 20090801 20090803 20090808 \
+		20090815 20090822 20090829 20090905 20090906 20090912 20090919 \
+		20090927 20091003 20091010 20091017 20091024 20091031 20091107 \
+		20091114 20091121 20091128 20091205 20091212 20091219 20091226 \
+		20091227 20100102 20100109 20100116 20100123 20100130 20100206 \
+		20100213 20100220 20100227 20100306 20100313 20100320 20100327 \
+		20100403 20100410 20100417 20100424 20100501 20100515 20100522 \
+		20100529 20100605 20100612 20100619 20100626 20100703 20100717 \
+		20100724 20100731 20100807 20100814 20100828 20100904 20100911 \
+		20100918 20100925 20101002 20101009 20101023 20101106 20101113 \
+		20101120 20101127 20101128 20101204 20101211 20101225
+
+RELEASE=	5.7
+
+.for i in ${PATCHES}
+PATCHFILES+=	${PORTNAME}-${RELEASE}-${i}.patch.gz:DEFAULT,local
+PATCHDATE=	${i}
+.endfor
+
+GNU_CONFIGURE=	yes
+CONFIGURE_SCRIPT=../configure
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
+		--enable-termcap --enable-bsdpad --enable-getcap \
+		--enable-colorfgbg --disable-home-terminfo \
+		--with-pkg-config=no \
+		--includedir=${PREFIX}/include/ncurses \
+		--with-shared \
+		--without-curses-h --with-termlib --program-prefix= \
+		--enable-rpath --disable-root-environ \
+		--with-manpage-format=gzip --srcdir=../
+MAKE_JOBS_UNSAFE=	yes
+
+OPTIONS=	EXTCOLORS "Enable 256-color support (only for ncursesw)" off
+
+CONFIGURE_ENV=	gnat_exists="no"
+
+USE_LDCONFIG=	yes
+
+WIDEC_WRKSRC=	${WRKSRC}/build.widec
+NOWIDEC_WRKSRC=	${WRKSRC}/build.nowidec
+WIDEC_EXAMPLESDIR=	${EXAMPLESDIR}/widec
+NOWIDEC_EXAMPLESDIR=	${EXAMPLESDIR}/nowidec
+EXAMPLES_TARGETS=	NOWIDEC
+
+CONFIGURE_WRKSRC=	${NOWIDEC_WRKSRC}
+BUILD_WRKSRC=	${NOWIDEC_WRKSRC}
+INSTALL_WRKSRC=	${NOWIDEC_WRKSRC}
+
+NCURSES_ABI_VER=	5
+NCURSES_REL_VER=	${RELEASE}
+NCURSESW_ABI_VER=	${NCURSES_ABI_VER}
+NCURSESW_REL_VER=	${NCURSES_REL_VER}
+
+PLIST_SUB+=	ABI_VER=${NCURSES_ABI_VER} \
+		REL_VER=${NCURSES_REL_VER} \
+		ABI_VER_WIDEC=${NCURSESW_ABI_VER} \
+		REL_VER_WIDEC=${NCURSESW_REL_VER} \
+		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${PREFIX}/,,} \
+		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${PREFIX}/,,}
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+DOCS=	ANNOUNCE INSTALL NEWS README TO-DO doc/html/announce.html \
+	doc/hackguide.doc doc/html/hackguide.html \
+	doc/html/index.html doc/ncurses-intro.doc \
+	doc/html/ncurses-intro.html
+EXAMPLES=	Makefile README blue.c bs.6 bs.c cardfile.c cardfile.dat \
+		ditto.c dots.c filter.c firework.c firstlast.c gdc.6 \
+		gdc.c hanoi.c hashtest.c knight.c lrtest.c ncurses.c \
+		newdemo.c railroad.c rain.c tclock.c test.priv.h \
+		testaddch.c testcurs.c testscanw.c view.c worm.c \
+		xmas.c
+EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
+		cursesapp.h cursesf.cc cursesf.h cursesm.cc cursesm.h \
+		cursesmain.cc cursesp.cc cursesp.h cursesw.cc \
+		cursesw.h cursslk.cc cursslk.h demo.cc etip.h \
+		internal.h
+
+.include <bsd.port.pre.mk>
+
+.include "${.CURDIR}/Makefile.man"
+
+CONFIGURE_ARGS_WIDEC=--enable-widec
+.if defined(WITH_EXTCOLORS)
+CONFIGURE_ARGS_WIDEC+=--enable-ext-colors
+NCURSESW_ABI_VER=	6
+NCURSESW_REL_VER=	6.0
+.endif
+
+# needed by devel/py-ncurses port
+.if defined(WITH_TRACE)
+CONFIGURE_ARGS+=	--with-trace
+.endif
+
+.if !defined(WITHOUT_PROFILE) && !defined(NO_PROFILE) && !defined(NOPROFILE)
+CONFIGURE_ARGS+=--with-profile
+PLIST_SUB+=	PROFILE=""
+.else
+CONFIGURE_ARGS+=--without-profile
+PLIST_SUB+=	PROFILE="@comment "
+.endif
+
+.if !defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--without-debug
+PLIST_SUB+=	DEBUG="@comment "
+.else
+CONFIGURE_ARGS+=--with-debug
+PLIST_SUB+=	DEBUG=""
+.endif
+
+.if !defined(WITHOUT_TERMINFO)
+CONFIGURE_ARGS+=--with-hashed-db
+PLIST_SUB+=	TERMINFO=""
+.else # termcap only, easier for updating ncurses in base
+CONFIGURE_ARGS+=--disable-database
+PLIST_SUB+=	TERMINFO="@comment "
+.endif
+
+.if !defined(WITHOUT_WIDEC)
+PLIST_SUB+=	WIDEC=""
+EXAMPLES_TARGETS+=	WIDEC
+.else
+PLIST_SUB+=	WIDEC="@comment "
+.endif
+
+post-extract:
+	@${MKDIR} ${WIDEC_WRKSRC}
+	@${MKDIR} ${NOWIDEC_WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,$$(INSTALL_PROG) ncurses-config,@INSTALL_SCRIPT@ ncurses-config,' ${WRKSRC}/misc/Makefile.in
+
+post-configure:
+.if !defined(WITHOUT_WIDEC)
+	cd ${.CURDIR} && \
+	    ${MAKE} ${.MAKEFLAGS} CONFIGURE_WRKSRC=${WIDEC_WRKSRC} \
+	    CONFIGURE_ARGS="${CONFIGURE_ARGS} ${CONFIGURE_ARGS_WIDEC}" \
+	    do-configure
+.endif
+.for d in test c++
+.if !defined(WITHOUT_WIDEC)
+	${CP} ${WRKSRC}/${d}/* ${WIDEC_WRKSRC}/${d}/
+.endif
+	${CP} ${WRKSRC}/${d}/* ${NOWIDEC_WRKSRC}/${d}/
+.endfor
+
+post-build:
+.if !defined(WITHOUT_WIDEC)
+	cd ${.CURDIR} && \
+	    ${MAKE} ${.MAKEFLAGS} BUILD_WRKSRC=${WIDEC_WRKSRC} do-build
+.endif
+
+post-install:
+.if !defined(WITHOUT_WIDEC)
+	cd ${.CURDIR} && \
+	    ${MAKE} ${.MAKEFLAGS} INSTALL_WRKSRC=${WIDEC_WRKSRC} do-install
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+. for i in ${EXAMPLES_TARGETS}
+	${MKDIR} ${${i}_EXAMPLESDIR}/c++
+.  for f in ${EXAMPLES}
+	${INSTALL_DATA} ${${i}_WRKSRC}/test/${f} ${${i}_EXAMPLESDIR}/
+.  endfor
+	${INSTALL_SCRIPT} ${${i}_WRKSRC}/test/tracemunch ${${i}_EXAMPLESDIR}/
+.  for f in ${EXAMPLES_CPP}
+	${INSTALL_DATA} ${${i}_WRKSRC}/c++/${f} ${${i}_EXAMPLESDIR}/c++/
+.  endfor
+. endfor
+.endif
+
+.if !defined(WITHOUT_TERMINFO)
+	${FIND} ${PREFIX}/share/misc -name "*.terminfo" -print0	|	\
+		${XARGS} -0 ${PREFIX}/bin/tic
+.endif
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+. for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+. endfor
+.endif
+
+.include <bsd.port.post.mk>

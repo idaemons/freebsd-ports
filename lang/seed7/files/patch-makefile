@@ -1,0 +1,25 @@
+--- makefile.orig	2011-02-04 10:52:21.000000000 +0000
++++ makefile	2011-02-04 10:53:10.000000000 +0000
+@@ -12,12 +12,12 @@
+ # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wextra -Wswitch-default -Wcast-qual -Waggregate-return -Wwrite-strings -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
+ # CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -ftrapv
+ # CFLAGS = -O2 -g -x c++ -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
+-CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
++CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -I%%LOCALBASE%%/include
+ # CFLAGS = -O2 -g -Wall
+ # CFLAGS = -O2 -g -pg -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
+ # CFLAGS = -O2 -fomit-frame-pointer -funroll-loops -Wall
+ # CFLAGS = -O2 -funroll-loops -Wall -pg
+-LDFLAGS =
++LDFLAGS = -L%%LOCALBASE%%/lib
+ # LDFLAGS = -pg
+ # LDFLAGS = -pg -lc_p
+ # LIBS = /usr/Xlib/libX11.so -lncurses -lm
+@@ -106,6 +106,7 @@
+ 	$(MAKE) ../prg/hi
+ 	../bin/hi level
+ 
++.PHONY: hi
+ hi: ../bin/hi
+ 
+ ../prg/hi:

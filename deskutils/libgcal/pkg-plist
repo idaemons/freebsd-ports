@@ -1,0 +1,17 @@
+include/atom_parser.h
+include/curl_debug_gcal.h
+include/gcal.h
+include/gcal_parser.h
+include/gcal_status.h
+include/gcalendar.h
+include/gcont.h
+include/gcontact.h
+include/internal_gcal.h
+include/xml_aux.h
+lib/libgcal.so
+lib/libgcal.so.0
+lib/libgcal.so.0.9.5
+lib/LibGCal/cmake/LibGCalConfig.cmake
+libdata/pkgconfig/libgcal.pc
+@dirrm lib/LibGCal/cmake
+@dirrm lib/LibGCal

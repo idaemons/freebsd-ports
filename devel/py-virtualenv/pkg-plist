@@ -1,0 +1,22 @@
+@comment $FreeBSD$
+bin/virtualenv
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/distribute-0.6.14.tar.gz
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/pip-0.8.1.tar.gz
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/setuptools-0.6c11-py%%PYVER%%.egg
+%%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

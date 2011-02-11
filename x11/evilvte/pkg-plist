@@ -1,0 +1,7 @@
+bin/evilvte
+bin/showvte
+share/applications/evilvte.desktop
+share/pixmaps/evilvte.png
+share/gnome-control-center/default-apps/evilvte.xml
+@dirrmtry share/applications
+@dirrmtry share/gnome-control-center/default-apps

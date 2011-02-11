@@ -1,14 +1,26 @@
 # New ports collection makefile for:    pgpsendmail
-# Version required:     1.4
 # Date created:         20 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/23 01:19:50 torstenb Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       PGPsendmail-v1.4
-MASTER_SITES=   ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
-WRKSRC=         ${WRKDIR}/pgpsendmail
-INSTALL_TARGET= all_install
+PORTNAME=	pgpsendmail
+PORTVERSION=	1.4
+CATEGORIES=	mail
+MASTER_SITES=	ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
+DISTNAME=	PGPsendmail-v${PORTVERSION}
 
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	PGP sign/encrypt/decrypt messages automatically
+
+BUILD_DEPENDS+=	pgp:${PORTSDIR}/security/pgp
+
+WRKSRC=		${WRKDIR}/pgpsendmail
+INSTALL_TARGET=	all_install
+MAN1=		pgppipe.1 sendpgppass.1
+MAN8=		pgpsendmail.8 pgpdaemon.8
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,PREFIX = /usr/local,PREFIX=${PREFIX},g' ${WRKSRC}/Makefile
 .include <bsd.port.mk>

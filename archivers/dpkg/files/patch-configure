@@ -1,0 +1,11 @@
+--- configure.orig	2009-11-19 19:45:27.000000000 +0800
++++ configure	2009-11-19 19:45:35.000000000 +0800
+@@ -7172,8 +7172,6 @@
+ echo "${ECHO_T}no" >&6; }
+ fi
+ 
+-PERL_LIBDIR=`$PERL -MConfig -e 'my $r=$Config{vendorlibexp};$r=~s/$Config{vendorprefixexp}/\\$(prefix)/; print $r'`
+-
+ # Checks for operating system services and capabilities.
+ # Check whether --enable-largefile was given.
+ if test "${enable_largefile+set}" = set; then

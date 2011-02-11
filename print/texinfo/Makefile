@@ -1,39 +1,56 @@
-DISTFILES=	texinfo.tex lcircle10.tfm
-DISTNAME=	texinfo
-#other equivalent sites: ftp.shsu.edu ftp.dante.de
-MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/eplain/doc/ \
-		ftp://ftp.tex.ac.uk/tex-archive/fonts/latex/tfm/
-EXTRACT_ONLY=
-NO_WRKSUBDIR=	yes
+# New ports collection makefile for:	latest texinfo
+# Date created:		Sun May 29 17:32:08 UTC 2005
+# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+#
+# $FreeBSD$
+#
 
-PREFIX=/usr/local
+PORTNAME=	texinfo
+PORTVERSION=	4.13
+CATEGORIES=	print
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-pre-fetch:
-	@if [ ! -x ${PREFIX}/bin/tex ]; then \
-	  echo "You must have TeX installed";\
-	  exit 1; \
-	 fi;
-	 @if [ ! -x ${PREFIX}/bin/initex ]; then \
-	  echo "I can't find initex. Your TeX installation is incomplete";\
-	  exit 1;\
-	 fi
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A typeset documentation system with multiple format output
 
-pre-configure:
-	@cp ${DISTDIR}/texinfo.tex ${DISTDIR}/lcircle10.tfm ${WRKDIR}
-	@chmod +w ${WRKDIR}/*
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+INSTALL_TARGET=	install install-tex
+PKGDEINSTALL=	${PKGINSTALL}
+MAKE_JOBS_SAFE=	yes
 
-build: configure
-	@echo "===>  Building for ${DISTNAME}"
-	@(cd ${WRKDIR}; initex '&tex texinfo @dump')
+MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMFLOCAL}
+CONFIGURE_ARGS=	\
+		--without-included-gettext
+CONFIGURE_ENV=	\
+		CPPFLAGS="-I${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
-install:
-	@echo "===>  Installing for ${DISTNAME}"
-	@/usr/bin/install -c -m 644 ${WRKDIR}/texinfo.fmt \
-				${PREFIX}/lib/texmf/ini/
-	@if [ ! -f ${PREFIX}/lib/texmf/fonts/tfm/lcircle10.tfm ]; then \
-	  /usr/bin/install -c -m 644 ${WRKDIR}/lcircle10.tfm \
-				${PREFIX}/lib/texmf/fonts/tfm/;\
-	 fi
-	@(cd ${PREFIX}/bin/; rm -f texinfo; ln -s virtex texinfo)
+INFO=		${PORTNAME} info-stnd info
+MAN1=		info.1 infokey.1 install-info.1 makeinfo.1 texi2dvi.1 \
+		texi2pdf.1 pdftexi2dvi.1 texindex.1
+MAN5=		info.5 texinfo.5
 
-.include <bsd.port.mk>
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL}
+
+TEXMFLOCAL=	share/texmf-local
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
+post-patch:
+	${CHMOD} 755 ${WRKSRC}/build-aux/install-sh
+
+post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} ${SH} \
+		${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.include <bsd.port.post.mk>
