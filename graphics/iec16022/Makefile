@@ -1,0 +1,38 @@
+# New ports collection makefile for:    iec16022
+# Date created:                         Thu Jul  3 14:13:08 CEST 2008
+# Whom:                                 Emanuel Haupt <ehaupt@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	iec16022
+PORTVERSION=	0.2.4
+CATEGORIES=	graphics
+MASTER_SITES=	http://datenfreihafen.org/~stefan/iec16022/ \
+		CRITICAL
+
+MAINTAINER=	ehaupt@FreeBSD.org
+COMMENT=	Create 2D barcodes, also known as DataMatrix
+
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USE_GNOME=	pkgconfig
+
+MAKE_JOBS_SAFE=	yes
+
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
+LICENSE=	GPLv2
+
+MAN1=		iec16022.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/iec16022.c \
+		${WRKSRC}/iec16022ecc200.c ${WRKSRC}/reedsol.c ${WRKSRC}/image.c
+	@${REINPLACE_CMD} -e \
+		"s|^\(pkgconfigdir\).*|\1 = ${PREFIX}/libdata/pkgconfig|" \
+			${WRKSRC}/Makefile.in
+
+.include <bsd.port.mk>

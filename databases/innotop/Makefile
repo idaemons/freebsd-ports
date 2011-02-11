@@ -1,0 +1,30 @@
+# New ports collection makefile for:	innotop
+# Date created:				23 October 2006
+# Whom:	      				Steven Kreuzer <skreuzer@f2o.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	innotop
+PORTVERSION=	1.8.0
+CATEGORIES=	databases
+MASTER_SITES=	GOOGLE_CODE
+
+MAINTAINER=	skreuzer@FreeBSD.org
+COMMENT=	A MySQL and InnoDB monitoring program
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
+		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper
+
+PERL_CONFIGURE=	yes
+
+MAN1=		innotop.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc/innotop|${PREFIX}/etc|g' ${WRKSRC}/innotop
+
+.include <bsd.port.mk>

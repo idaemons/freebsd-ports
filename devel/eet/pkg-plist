@@ -1,0 +1,6 @@
+bin/eet
+include/eet-1/Eet.h
+lib/libeet.so
+lib/libeet.so.5
+libdata/pkgconfig/eet.pc
+@dirrm include/eet-1

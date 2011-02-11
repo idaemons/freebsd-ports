@@ -1,0 +1,66 @@
+bin/mkvextract
+bin/mkvinfo
+bin/mkvmerge
+bin/mkvpropedit
+%%GUI%%bin/mmg
+%%GUI%%share/applications/mkvinfo.desktop
+%%GUI%%share/applications/mkvmergeGUI.desktop
+%%GUI%%share/icons/hicolor/32x32/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/32x32/apps/mkvmergeGUI.png
+%%GUI%%share/icons/hicolor/64x64/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/64x64/apps/mkvmergeGUI.png
+share/locale/de/LC_MESSAGES/mkvtoolnix.mo
+share/locale/es/LC_MESSAGES/mkvtoolnix.mo
+share/locale/fr/LC_MESSAGES/mkvtoolnix.mo
+share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
+share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
+share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
+share/locale/uk/LC_MESSAGES/mkvtoolnix.mo
+share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo
+share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
+%%GUI%%share/mime/packages/mkvtoolnix.xml
+%%DATADIR%%/guide/en/images/addingremovingattachments.gif
+%%DATADIR%%/guide/en/images/addremovefiles.gif
+%%DATADIR%%/guide/en/images/attachmentoptions.gif
+%%DATADIR%%/guide/en/images/audiotrackoptions.gif
+%%DATADIR%%/guide/en/images/chaptereditor.gif
+%%DATADIR%%/guide/en/images/generaltrackoptions.gif
+%%DATADIR%%/guide/en/images/jobmanager.gif
+%%DATADIR%%/guide/en/images/movietitle.gif
+%%DATADIR%%/guide/en/images/muxingwindow.gif
+%%DATADIR%%/guide/en/images/selectmkvmergeexecutable.gif
+%%DATADIR%%/guide/en/images/splitting.gif
+%%DATADIR%%/guide/en/images/textsubtitlestrackoptions.gif
+%%DATADIR%%/guide/en/images/trackselection.gif
+%%DATADIR%%/guide/en/images/videotrackoptions.gif
+%%DATADIR%%/guide/en/mkvmerge-gui.hhc
+%%DATADIR%%/guide/en/mkvmerge-gui.hhk
+%%DATADIR%%/guide/en/mkvmerge-gui.hhp
+%%DATADIR%%/guide/en/mkvmerge-gui.html
+%%DATADIR%%/guide/zh_CN/images/addingremovingattachments.gif
+%%DATADIR%%/guide/zh_CN/images/addremovefiles.gif
+%%DATADIR%%/guide/zh_CN/images/attachmentoptions.gif
+%%DATADIR%%/guide/zh_CN/images/audiotrackoptions.gif
+%%DATADIR%%/guide/zh_CN/images/chaptereditor.gif
+%%DATADIR%%/guide/zh_CN/images/generaltrackoptions.gif
+%%DATADIR%%/guide/zh_CN/images/jobmanager.gif
+%%DATADIR%%/guide/zh_CN/images/movietitle.gif
+%%DATADIR%%/guide/zh_CN/images/muxingwindow.gif
+%%DATADIR%%/guide/zh_CN/images/selectmkvmergeexecutable.gif
+%%DATADIR%%/guide/zh_CN/images/splitting.gif
+%%DATADIR%%/guide/zh_CN/images/textsubtitlestrackoptions.gif
+%%DATADIR%%/guide/zh_CN/images/trackselection.gif
+%%DATADIR%%/guide/zh_CN/images/videotrackoptions.gif
+%%DATADIR%%/guide/zh_CN/mkvmerge-gui.hhc
+%%DATADIR%%/guide/zh_CN/mkvmerge-gui.hhk
+%%DATADIR%%/guide/zh_CN/mkvmerge-gui.hhp
+%%DATADIR%%/guide/zh_CN/mkvmerge-gui.html
+@dirrmtry man/zh_CN/man1
+@dirrmtry man/zh_CN
+@dirrm %%DATADIR%%/guide/zh_CN/images
+@dirrm %%DATADIR%%/guide/zh_CN
+@dirrm %%DATADIR%%/guide/en/images
+@dirrm %%DATADIR%%/guide/en
+@dirrm %%DATADIR%%/guide
+@dirrm %%DATADIR%%
+%%GUI%%@dirrmtry share/applications

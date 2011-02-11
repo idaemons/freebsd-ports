@@ -1,0 +1,10 @@
+@unexec if cmp -s %D/etc/iked.conf %D/etc/iked.conf.sample; then rm -f %D/etc/iked.conf; fi
+etc/iked.conf.sample
+@exec [ -f %D/etc/iked.conf ] || cp %D/etc/iked.conf.sample %D/etc/iked.conf
+sbin/iked
+bin/ikea
+bin/ikec
+lib/libike.so
+lib/libike.so.2.1.7
+lib/libpfk.so
+lib/libpfk.so.2.1.7

@@ -1,20 +1,63 @@
 # New ports collection makefile for:	PCB
-# Version required:	0.91
 # Date created:		19 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.3 1994/12/12 03:58:06 gpalmer Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	pcb-1.2.patch_02
-MASTER_SITES=	ftp://pluto.medizin.uni-ulm.de/pub/pcb-1.2/
-EXTRACT_SUFX=.tar.gz
-DEPENDS=        ${PORTSDIR}/devel/m4
-MAKE_FLAGS=	-f
-MAKEFILE=	makefile
-USE_IMAKE=
-NO_INSTALL_MANPAGES=	yes
-PREFIX=/usr/X11R6
-PKG_CMD=	pkg_create
+PORTNAME=	pcb
+PORTVERSION=	20100929
+PORTREVISION=	2
+CATEGORIES=	cad
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.mk>
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	X11 interactive printed circuit board layout system
+
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+RUN_DEPENDS=	m4>=1.4.11:${PORTSDIR}/devel/m4 \
+		${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf
+USE_GMAKE=	yes
+USE_TK_RUN=	83
+INSTALLS_ICONS=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
+		INSTALL_DATA="/usr/bin/install ${COPY} ${_SHROWNGRP} -m ${SHAREMODE}"
+CONFIGURE_ARGS=	--docdir=${DOCSDIR} --disable-nls
+PORTDOCS= pcb.html pcb.ps refcard.ps pcb.pdf refcard.pdf pad.gif	\
+	puller.gif thermal.gif pad.png puller.png thermal.png examples	\
+	tutorial
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	--without-gui
+CONFIGURE_ENV+=		WISH=${TRUE}
+.elif defined(WITH_MOTIF_GUI)
+USE_MOTIF=	yes
+USE_TK_RUN=	yes
+CONFIGURE_ARGS+=	--with-gui=lesstif
+CONFIGURE_ENV+=		WISH=${WISH}
+.else
+USE_GNOME=	gtk20 desktopfileutils
+USE_TK_RUN=	yes
+CONFIGURE_ARGS+=	--with-gui=gtk
+CONFIGURE_ENV+=		WISH=${WISH}
+.endif
+
+.if !defined(NOPORTDOCS)
+INFO=		pcb
+MAN1=		pcb.1
+.else
+CONFIGURE_ARGS+=	--disable-doc
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+.include <bsd.port.post.mk>

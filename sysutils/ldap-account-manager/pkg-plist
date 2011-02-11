@@ -1,0 +1,432 @@
+%%WWWDIR%%/VERSION
+%%WWWDIR%%/config/.htaccess
+@unexec if cmp -s %D/%%WWWDIR%%/config/config.cfg %D/%%WWWDIR%%/config/config.cfg_sample; then rm -f %D/%%WWWDIR%%/config/config.cfg; fi
+%%WWWDIR%%/config/config.cfg_sample
+@exec if [ ! -f %D/www/lam/config/config.cfg ] ; then cp -p %D/%F %B/config.cfg; fi
+@unexec if cmp -s %D/%%WWWDIR%%/config/lam.conf %D/%%WWWDIR%%/config/lam.conf_sample; then rm -f %D/%%WWWDIR%%/config/lam.conf; fi
+%%WWWDIR%%/config/lam.conf_sample
+@exec if [ ! -f %D/www/lam/lam.conf ] ; then cp -p %D/%F %B/lam.conf; fi
+%%WWWDIR%%/config/language
+%%WWWDIR%%/config/passwordMailTemplate.txt
+%%WWWDIR%%/config/pdf/.htaccess
+%%WWWDIR%%/config/pdf/default.asteriskExt.xml
+%%WWWDIR%%/config/pdf/default.dhcp.xml
+%%WWWDIR%%/config/pdf/default.group.xml
+%%WWWDIR%%/config/pdf/default.host.xml
+%%WWWDIR%%/config/pdf/default.mailAlias.xml
+%%WWWDIR%%/config/pdf/default.netgroup.xml
+%%WWWDIR%%/config/pdf/default.smbDomain.xml
+%%WWWDIR%%/config/pdf/default.user.xml
+%%WWWDIR%%/config/pdf/logos/.htaccess
+%%WWWDIR%%/config/pdf/logos/printLogo.jpg
+%%WWWDIR%%/config/profiles/.htaccess
+%%WWWDIR%%/config/profiles/default.asteriskExt
+%%WWWDIR%%/config/profiles/default.dhcp
+%%WWWDIR%%/config/profiles/default.group
+%%WWWDIR%%/config/profiles/default.host
+%%WWWDIR%%/config/profiles/default.mailAlias
+%%WWWDIR%%/config/profiles/default.netgroup
+%%WWWDIR%%/config/profiles/default.smbDomain
+%%WWWDIR%%/config/profiles/default.user
+%%WWWDIR%%/config/selfService/.htaccess
+%%WWWDIR%%/config/selfService/default.user
+%%WWWDIR%%/config/shells
+%%WWWDIR%%/graphics/.htaccess
+%%WWWDIR%%/graphics/add.png
+%%WWWDIR%%/graphics/asterisk.png
+%%WWWDIR%%/graphics/asteriskExt.png
+%%WWWDIR%%/graphics/back.gif
+%%WWWDIR%%/graphics/bigPeople.png
+%%WWWDIR%%/graphics/bigTools.png
+%%WWWDIR%%/graphics/catalog.png
+%%WWWDIR%%/graphics/computer.png
+%%WWWDIR%%/graphics/dc.png
+%%WWWDIR%%/graphics/del.png
+%%WWWDIR%%/graphics/delete.gif
+%%WWWDIR%%/graphics/delete.png
+%%WWWDIR%%/graphics/device.png
+%%WWWDIR%%/graphics/dhcp.png
+%%WWWDIR%%/graphics/dhcpBig.png
+%%WWWDIR%%/graphics/document.png
+%%WWWDIR%%/graphics/door.png
+%%WWWDIR%%/graphics/down.gif
+%%WWWDIR%%/graphics/edit.png
+%%WWWDIR%%/graphics/eduPerson.png
+%%WWWDIR%%/graphics/error.png
+%%WWWDIR%%/graphics/exit.png
+%%WWWDIR%%/graphics/exitBig.png
+%%WWWDIR%%/graphics/fail.png
+%%WWWDIR%%/graphics/favicon.ico
+%%WWWDIR%%/graphics/files.png
+%%WWWDIR%%/graphics/find.png
+%%WWWDIR%%/graphics/folder.png
+%%WWWDIR%%/graphics/forward.gif
+%%WWWDIR%%/graphics/go-previous.png
+%%WWWDIR%%/graphics/go-next.png
+%%WWWDIR%%/graphics/go-first.png
+%%WWWDIR%%/graphics/go-last.png
+%%WWWDIR%%/graphics/gear.png
+%%WWWDIR%%/graphics/go.png
+%%WWWDIR%%/graphics/group.png
+%%WWWDIR%%/graphics/groupBig.png
+%%WWWDIR%%/graphics/hard-drive.png
+%%WWWDIR%%/graphics/hard-driveBig.png
+%%WWWDIR%%/graphics/help.png
+%%WWWDIR%%/graphics/host.png
+%%WWWDIR%%/graphics/info.png
+%%WWWDIR%%/graphics/ipRange.png
+%%WWWDIR%%/graphics/key.png
+%%WWWDIR%%/graphics/keyBig.png
+%%WWWDIR%%/graphics/kolab.png
+%%WWWDIR%%/graphics/lam.png
+%%WWWDIR%%/graphics/lamdaemon.png
+%%WWWDIR%%/graphics/language.png
+%%WWWDIR%%/graphics/ldap-server.png
+%%WWWDIR%%/graphics/light.png
+%%WWWDIR%%/graphics/loadProfile.png
+%%WWWDIR%%/graphics/logo32.png
+%%WWWDIR%%/graphics/locality.png
+%%WWWDIR%%/graphics/lock.png
+%%WWWDIR%%/graphics/mail.png
+%%WWWDIR%%/graphics/mailAlias.png
+%%WWWDIR%%/graphics/mailBig.png
+%%WWWDIR%%/graphics/minus.png
+%%WWWDIR%%/graphics/modules.png
+%%WWWDIR%%/graphics/n.png
+%%WWWDIR%%/graphics/netgroup.png
+%%WWWDIR%%/graphics/network-wired.png
+%%WWWDIR%%/graphics/network.png
+%%WWWDIR%%/graphics/nt_machine.png
+%%WWWDIR%%/graphics/nt_user.png
+%%WWWDIR%%/graphics/o.png
+%%WWWDIR%%/graphics/object.png
+%%WWWDIR%%/graphics/ou.png
+%%WWWDIR%%/graphics/pass.png
+%%WWWDIR%%/graphics/pdf.png
+%%WWWDIR%%/graphics/phpGroupware.png
+%%WWWDIR%%/graphics/plus.png
+%%WWWDIR%%/graphics/process.png
+%%WWWDIR%%/graphics/profiles.png
+%%WWWDIR%%/graphics/refresh.png
+%%WWWDIR%%/graphics/samba.png
+%%WWWDIR%%/graphics/save.png
+%%WWWDIR%%/graphics/saveBig.png
+%%WWWDIR%%/graphics/schemaBrowser.png
+%%WWWDIR%%/graphics/script.png
+%%WWWDIR%%/graphics/security.png
+%%WWWDIR%%/graphics/select.png
+%%WWWDIR%%/graphics/server-settings.png
+%%WWWDIR%%/graphics/server-small.png
+%%WWWDIR%%/graphics/smbDomain.png
+%%WWWDIR%%/graphics/sort_asc.png
+%%WWWDIR%%/graphics/sort_desc.png
+%%WWWDIR%%/graphics/star.png
+%%WWWDIR%%/graphics/tests.png
+%%WWWDIR%%/graphics/tools-no.png
+%%WWWDIR%%/graphics/tools.png
+%%WWWDIR%%/graphics/tree_info.png
+%%WWWDIR%%/graphics/tux.png
+%%WWWDIR%%/graphics/uid.png
+%%WWWDIR%%/graphics/uniquegroup.png
+%%WWWDIR%%/graphics/undo.png
+%%WWWDIR%%/graphics/up.gif
+%%WWWDIR%%/graphics/user.png
+%%WWWDIR%%/graphics/userDefault.png
+%%WWWDIR%%/graphics/warn.png
+%%WWWDIR%%/help/help.inc
+%%WWWDIR%%/help/.htaccess
+%%WWWDIR%%/index.html
+%%WWWDIR%%/lib/html.inc
+%%WWWDIR%%/lib/modules/asteriskVoicemail.inc
+%%WWWDIR%%/lib/modules/hostObject.inc
+%%WWWDIR%%/lib/3rdParty/phpseclib/PHP/Compat/Function/str_split.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/PHP/Compat/Function/bcpowmod.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/PHP/Compat/Function/array_fill.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Net/SSH1.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Net/SSH2.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Net/SFTP.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Math/BigInteger.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/RSA.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/Hash.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/TripleDES.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/AES.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/RC4.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/DES.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/Random.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/Rijndael.php
+%%WWWDIR%%/lib/.htaccess
+%%WWWDIR%%/lib/tools.inc
+%%WWWDIR%%/lib/account.inc
+%%WWWDIR%%/lib/baseModule.inc
+%%WWWDIR%%/lib/baseType.inc
+%%WWWDIR%%/lib/cache.inc
+%%WWWDIR%%/lib/config.inc
+%%WWWDIR%%/lib/checkEnvironment.inc
+%%WWWDIR%%/lib/createntlm.inc
+%%WWWDIR%%/lib/export.inc
+%%WWWDIR%%/lib/font/vera.ctg.z
+%%WWWDIR%%/lib/font/vera.php
+%%WWWDIR%%/lib/font/vera.z
+%%WWWDIR%%/lib/font/verab.ctg.z
+%%WWWDIR%%/lib/font/verab.php
+%%WWWDIR%%/lib/font/verab.z
+%%WWWDIR%%/lib/font/verabi.ctg.z
+%%WWWDIR%%/lib/font/verabi.php
+%%WWWDIR%%/lib/font/verabi.z
+%%WWWDIR%%/lib/font/verai.ctg.z
+%%WWWDIR%%/lib/font/verai.php
+%%WWWDIR%%/lib/font/verai.z
+%%WWWDIR%%/lib/fpdf.php
+%%WWWDIR%%/lib/lamPDF.inc
+%%WWWDIR%%/lib/lamdaemon.inc
+%%WWWDIR%%/lib/lamdaemon.pl
+%%WWWDIR%%/lib/ldap.inc
+%%WWWDIR%%/lib/lists.inc
+%%WWWDIR%%/lib/modules.inc
+%%WWWDIR%%/lib/modules/asteriskAccount.inc
+%%WWWDIR%%/lib/modules/asteriskExtension.inc
+%%WWWDIR%%/lib/modules/ddns.inc
+%%WWWDIR%%/lib/modules/dhcp_settings.inc
+%%WWWDIR%%/lib/modules/fixed_ip.inc
+%%WWWDIR%%/lib/modules/range.inc
+%%WWWDIR%%/lib/modules/account.inc
+%%WWWDIR%%/lib/modules/eduPerson.inc
+%%WWWDIR%%/lib/modules/ieee802device.inc
+%%WWWDIR%%/lib/modules/inetLocalMailRecipient.inc
+%%WWWDIR%%/lib/modules/inetOrgPerson.inc
+%%WWWDIR%%/lib/modules/kolabUser.inc
+%%WWWDIR%%/lib/modules/ldapPublicKey.inc
+%%WWWDIR%%/lib/modules/nisMailAlias.inc
+%%WWWDIR%%/lib/modules/nisnetgroup.inc
+%%WWWDIR%%/lib/modules/phpGroupwareGroup.inc
+%%WWWDIR%%/lib/modules/phpGroupwareUser.inc
+%%WWWDIR%%/lib/modules/posixAccount.inc
+%%WWWDIR%%/lib/modules/posixGroup.inc
+%%WWWDIR%%/lib/modules/quota.inc
+%%WWWDIR%%/lib/modules/sambaDomain.inc
+%%WWWDIR%%/lib/modules/sambaGroupMapping.inc
+%%WWWDIR%%/lib/modules/sambaSamAccount.inc
+%%WWWDIR%%/lib/modules/sambaSamAccount/sambaMungedDial.inc
+%%WWWDIR%%/lib/modules/shadowAccount.inc
+%%WWWDIR%%/lib/pdf.inc
+%%WWWDIR%%/lib/pdfstruct.inc
+%%WWWDIR%%/lib/profiles.inc
+%%WWWDIR%%/lib/schema.inc
+%%WWWDIR%%/lib/security.inc
+%%WWWDIR%%/lib/selfService.inc
+%%WWWDIR%%/lib/status.inc
+%%WWWDIR%%/lib/types.inc
+%%WWWDIR%%/lib/tree.inc
+%%WWWDIR%%/lib/tools/fileUpload.inc
+%%WWWDIR%%/lib/tools/ouEditor.inc
+%%WWWDIR%%/lib/tools/pdfEdit.inc
+%%WWWDIR%%/lib/tools/profileEditor.inc
+%%WWWDIR%%/lib/tools/schemaBrowser.inc
+%%WWWDIR%%/lib/tools/serverInfo.inc
+%%WWWDIR%%/lib/tools/tests.inc
+%%WWWDIR%%/lib/types/asteriskExt.inc
+%%WWWDIR%%/lib/types/dhcp.inc
+%%WWWDIR%%/lib/types/group.inc
+%%WWWDIR%%/lib/types/host.inc
+%%WWWDIR%%/lib/types/mailAlias.inc
+%%WWWDIR%%/lib/types/netgroup.inc
+%%WWWDIR%%/lib/types/smbDomain.inc
+%%WWWDIR%%/lib/types/user.inc
+%%WWWDIR%%/lib/ufpdf.php
+%%WWWDIR%%/lib/xml_parser.inc
+%%WWWDIR%%/locale/.htaccess
+%%WWWDIR%%/locale/ca_ES/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ca_ES/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/cs_CZ/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/cs_CZ/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/hu_HU/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/hu_HU/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/nl_NL/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/nl_NL/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pl_PL/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pl_PL/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.po
+%%WWWDIR%%/sess/.htaccess
+%%WWWDIR%%/style/.htaccess
+%%WWWDIR%%/style/jquery-ui-1.8.2.custom.css
+%%WWWDIR%%/style/type_asteriskExt.css
+%%WWWDIR%%/style/type_dhcp.css
+%%WWWDIR%%/style/layout.css
+%%WWWDIR%%/style/type_group.css
+%%WWWDIR%%/style/type_host.css
+%%WWWDIR%%/style/type_mailAlias.css
+%%WWWDIR%%/style/type_netgroup.css
+%%WWWDIR%%/style/type_smbDomain.css
+%%WWWDIR%%/style/type_user.css
+%%WWWDIR%%/style/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/style/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/style/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/style/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/style/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/style/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/style/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/style/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/style/images/ui-anim_basic_16x16.gif
+%%WWWDIR%%/style/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/style/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/style/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/style/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/style/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/style/lam-images/headerLine.png
+%%WWWDIR%%/templates/main_footer.php
+%%WWWDIR%%/templates/lib/jquery-1.4.2.min.js
+%%WWWDIR%%/templates/lib/jquery-ui-1.8.2.custom.min.js
+%%WWWDIR%%/templates/lib/lam.js
+%%WWWDIR%%/templates/.htaccess
+%%WWWDIR%%/templates/account/edit.php
+%%WWWDIR%%/templates/config/conflogin.php
+%%WWWDIR%%/templates/config/confmain.php
+%%WWWDIR%%/templates/config/confmodules.php
+%%WWWDIR%%/templates/config/confsave.php
+%%WWWDIR%%/templates/config/conftypes.php
+%%WWWDIR%%/templates/config/index.php
+%%WWWDIR%%/templates/config/mainlogin.php
+%%WWWDIR%%/templates/config/mainmanage.php
+%%WWWDIR%%/templates/config/profmanage.php
+%%WWWDIR%%/templates/config/moduleSettings.php
+%%WWWDIR%%/templates/delete.php
+%%WWWDIR%%/templates/help.php
+%%WWWDIR%%/templates/initsuff.php
+%%WWWDIR%%/templates/lib/wz_tooltip.js
+%%WWWDIR%%/templates/lists/deletelink.php
+%%WWWDIR%%/templates/lists/list.php
+%%WWWDIR%%/templates/lists/userlink.php
+%%WWWDIR%%/templates/login.php
+%%WWWDIR%%/templates/logout.php
+%%WWWDIR%%/templates/main.php
+%%WWWDIR%%/templates/main_header.php
+%%WWWDIR%%/templates/massBuildAccounts.php
+%%WWWDIR%%/templates/massDoUpload.php
+%%WWWDIR%%/templates/masscreate.php
+%%WWWDIR%%/templates/ou_edit.php
+%%WWWDIR%%/templates/serverInfo.php
+%%WWWDIR%%/templates/pdfedit/pdfdelete.php
+%%WWWDIR%%/templates/pdfedit/pdfmain.php
+%%WWWDIR%%/templates/pdfedit/pdfpage.php
+%%WWWDIR%%/templates/profedit/profiledelete.php
+%%WWWDIR%%/templates/profedit/profilemain.php
+%%WWWDIR%%/templates/profedit/profilepage.php
+%%WWWDIR%%/templates/schema/schema.php
+%%WWWDIR%%/templates/tests/index.php
+%%WWWDIR%%/templates/tests/lamdaemonTest.php
+%%WWWDIR%%/templates/tests/schemaTest.php
+%%WWWDIR%%/templates/tools.php
+%%WWWDIR%%/templates/tree/add_attr.php
+%%WWWDIR%%/templates/tree/add_attr_form.php
+%%WWWDIR%%/templates/tree/add_oclass.php
+%%WWWDIR%%/templates/tree/add_oclass_form.php
+%%WWWDIR%%/templates/tree/add_value.php
+%%WWWDIR%%/templates/tree/add_value_form.php
+%%WWWDIR%%/templates/tree/collapse.php
+%%WWWDIR%%/templates/tree/create.php
+%%WWWDIR%%/templates/tree/create_form.php
+%%WWWDIR%%/templates/tree/creation_template.php
+%%WWWDIR%%/templates/tree/delete.php
+%%WWWDIR%%/templates/tree/delete_attr.php
+%%WWWDIR%%/templates/tree/delete_form.php
+%%WWWDIR%%/templates/tree/download_binary_attr.php
+%%WWWDIR%%/templates/tree/edit.php
+%%WWWDIR%%/templates/tree/expand.php
+%%WWWDIR%%/templates/tree/export.php
+%%WWWDIR%%/templates/tree/export_form.php
+%%WWWDIR%%/templates/tree/rdelete.php
+%%WWWDIR%%/templates/tree/refresh.php
+%%WWWDIR%%/templates/tree/templates/creation/custom.php
+%%WWWDIR%%/templates/tree/templates/creation/new_ou_template.php
+%%WWWDIR%%/templates/tree/templates/templates.inc
+%%WWWDIR%%/templates/tree/tree.php
+%%WWWDIR%%/templates/tree/tree_view.php
+%%WWWDIR%%/templates/tree/treeViewContainer.php
+%%WWWDIR%%/templates/tree/update.php
+%%WWWDIR%%/templates/tree/update_confirm.php
+%%WWWDIR%%/tmp/.htaccess
+@dirrm %%WWWDIR%%/tmp
+@dirrm %%WWWDIR%%/templates/tree/templates/creation
+@dirrm %%WWWDIR%%/templates/tree/templates
+@dirrm %%WWWDIR%%/templates/tree
+@dirrm %%WWWDIR%%/templates/tests
+@dirrm %%WWWDIR%%/templates/schema
+@dirrm %%WWWDIR%%/templates/profedit
+@dirrm %%WWWDIR%%/templates/pdfedit
+@dirrm %%WWWDIR%%/templates/lists
+@dirrm %%WWWDIR%%/templates/lib
+@dirrm %%WWWDIR%%/templates/config
+@dirrm %%WWWDIR%%/templates/account
+@dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/style/images
+@dirrm %%WWWDIR%%/style/lam-images
+@dirrm %%WWWDIR%%/style
+@dirrm %%WWWDIR%%/sess
+@dirrm %%WWWDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/zh_TW
+@dirrm %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/zh_CN
+@dirrm %%WWWDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ru_RU
+@dirrm %%WWWDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pt_BR
+@dirrm %%WWWDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pl_PL
+@dirrm %%WWWDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/nl_NL
+@dirrm %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ja_JP
+@dirrm %%WWWDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/it_IT
+@dirrm %%WWWDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/hu_HU
+@dirrm %%WWWDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/fr_FR
+@dirrm %%WWWDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/es_ES
+@dirrm %%WWWDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/de_DE
+@dirrm %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/cs_CZ
+@dirrm %%WWWDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ca_ES
+@dirrm %%WWWDIR%%/locale
+@dirrm %%WWWDIR%%/lib/tools/
+@dirrm %%WWWDIR%%/lib/types
+@dirrm %%WWWDIR%%/lib/modules/sambaSamAccount
+@dirrm %%WWWDIR%%/lib/modules
+@dirrm %%WWWDIR%%/lib/font
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/Crypt
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/Math
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/Net
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/PHP/Compat/Function
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/PHP/Compat
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/PHP
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib
+@dirrm %%WWWDIR%%/lib/3rdParty
+@dirrm %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/help
+@dirrm %%WWWDIR%%/graphics
+@dirrm %%WWWDIR%%/config/selfService
+@dirrm %%WWWDIR%%/config/profiles
+@dirrm %%WWWDIR%%/config/pdf/logos
+@dirrm %%WWWDIR%%/config/pdf
+@dirrmtry %%WWWDIR%%/config
+@dirrmtry %%WWWDIR%%

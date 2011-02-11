@@ -1,0 +1,22 @@
+--- Makefile.orig	2010-03-04 19:18:39.000000000 +0100
++++ Makefile	2010-03-04 19:19:42.000000000 +0100
+@@ -228,7 +228,7 @@
+ 
+ #setup linking
+ # -lrt needed for clock_gettime()
+-lLIBS = $(shell pkg-config --libs gtk+-2.0 gthread-2.0 gmodule-2.0) -lrt
++lLIBS = $(shell pkg-config --libs gtk+-2.0 gthread-2.0 gmodule-2.0)
+ ifeq ($(USE_FAM),1)
+ lLIBS += -lfam
+ endif
+@@ -266,10 +266,6 @@
+ 	@for file in `ls $(ICONS)/ |grep -v svn`; do \
+ 		install -m 644 $(ICONS)/$$file $(ICON_DIR); \
+ 	done
+-	@install -d $(DOC_DIR)
+-	@for file in `ls $(DOCS)/ |grep -v svn |grep -v desktop_environment |grep -v api |grep -v $(TARGET).1`; do \
+-		install -m 644 $(DOCS)/$$file $(DOC_DIR); \
+-	done
+ 	@install -d $(MAN_DIR)
+ 	@install -m 644 $(DOCS)/$(TARGET).1 $(MAN_DIR);
+ #	@bzip2 -f $(MAN_DIR)/$(TARGET).1;

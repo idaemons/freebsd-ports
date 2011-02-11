@@ -1,0 +1,8 @@
+==============================================================================
+
+Note, that the port was switched over to use the original ioquake project
+source code instead of code provided by the UrbanTerror project. The
+UrbanTerror project is switching to a closed source licensing model:
+	http://www.urbanterror.info/news/texts/285/
+
+==============================================================================

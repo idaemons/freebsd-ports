@@ -1,0 +1,25 @@
+@comment $FreeBSD$
+%%LUA%%bin/miltertest
+bin/opendkim-genkey
+bin/opendkim-genzone
+%%STATS%%bin/opendkim-stats
+bin/opendkim-testadsp
+bin/opendkim-testkey
+etc/mail/opendkim.conf.sample
+%%ARLIB%%include/ar/ar.h
+%%ARLIB%%include/ar/manual.h
+include/opendkim/dkim.h
+%%ARLIB%%lib/libar.a
+%%ARLIB%%lib/libar.la
+%%ARLIB%%lib/libar.so
+%%ARLIB%%lib/libar.so.2
+lib/libopendkim.a
+lib/libopendkim.la
+lib/libopendkim.so
+lib/libopendkim.so.3
+%%ARLIB%%libdata/pkgconfig/ar.pc
+libdata/pkgconfig/opendkim.pc
+sbin/opendkim
+@dirrm include/opendkim
+%%ARLIB%%@dirrm include/ar
+@dirrmtry etc/mail

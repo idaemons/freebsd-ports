@@ -1,0 +1,25 @@
+bin/wpd2html
+bin/wpd2raw
+bin/wpd2text
+include/libwpd-0.9/libwpd/WPDocument.h
+include/libwpd-0.9/libwpd/WPXBinaryData.h
+include/libwpd-0.9/libwpd/WPXDocumentInterface.h
+include/libwpd-0.9/libwpd/WPXProperty.h
+include/libwpd-0.9/libwpd/WPXPropertyList.h
+include/libwpd-0.9/libwpd/WPXPropertyListVector.h
+include/libwpd-0.9/libwpd/WPXString.h
+include/libwpd-0.9/libwpd/libwpd.h
+include/libwpd-0.9/libwpd-stream/WPXStream.h
+include/libwpd-0.9/libwpd-stream/WPXStreamImplementation.h
+include/libwpd-0.9/libwpd-stream/libwpd-stream.h
+lib/libwpd-0.9.la
+lib/libwpd-0.9.so
+lib/libwpd-0.9.so.9
+lib/libwpd-stream-0.9.la
+lib/libwpd-stream-0.9.so
+lib/libwpd-stream-0.9.so.9
+libdata/pkgconfig/libwpd-0.9.pc
+libdata/pkgconfig/libwpd-stream-0.9.pc
+@dirrm include/libwpd-0.9/libwpd-stream
+@dirrm include/libwpd-0.9/libwpd
+@dirrm include/libwpd-0.9

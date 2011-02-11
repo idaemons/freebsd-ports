@@ -1,0 +1,9 @@
+lib/libtkgeomap.so
+lib/libtkgeomap.so.0
+%%INC%%/tkgeomap.h
+%%INC%%/tkgeomapInt.h
+%%LIB%%/pkgIndex.tcl
+%%LIB%%/tkgeomap_procs.tcl
+%%LIB%%/wdgeomap.tcl
+@dirrm %%INC%%
+@dirrm %%LIB%%

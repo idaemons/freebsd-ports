@@ -1,0 +1,136 @@
+bin/angband
+etc/angband/edit/artifact.txt
+etc/angband/edit/ego_item.txt
+etc/angband/edit/flavor.txt
+etc/angband/edit/limits.txt
+etc/angband/edit/monster.txt
+etc/angband/edit/names.txt
+etc/angband/edit/object.txt
+etc/angband/edit/p_class.txt
+etc/angband/edit/p_hist.txt
+etc/angband/edit/p_race.txt
+etc/angband/edit/shop_own.txt
+etc/angband/edit/spell.txt
+etc/angband/edit/store.txt
+etc/angband/edit/terrain.txt
+etc/angband/edit/vault.txt
+etc/angband/pref/flvr-dvg.prf
+etc/angband/pref/flvr-new.prf
+etc/angband/pref/flvr-xxx.prf
+etc/angband/pref/font.prf
+etc/angband/pref/font-gcu.prf
+etc/angband/pref/font-gtk.prf
+etc/angband/pref/font-mac.prf
+etc/angband/pref/font-sdl.prf
+etc/angband/pref/font-win.prf
+etc/angband/pref/font-xxx.prf
+etc/angband/pref/font-x11.prf
+etc/angband/pref/graf.prf
+etc/angband/pref/graf-dvg.prf
+etc/angband/pref/graf-gtk.prf
+etc/angband/pref/graf-mac.prf
+etc/angband/pref/graf-new.prf
+etc/angband/pref/graf-sdl.prf
+etc/angband/pref/graf-win.prf
+etc/angband/pref/graf-xxx.prf
+etc/angband/pref/graf-x11.prf
+etc/angband/pref/message.prf
+etc/angband/pref/pref.prf
+etc/angband/pref/pref-acn.prf
+etc/angband/pref/pref-gcu.prf
+etc/angband/pref/pref-mac.prf
+etc/angband/pref/pref-sdl.prf
+etc/angband/pref/pref-win.prf
+etc/angband/pref/pref-x11.prf
+etc/angband/pref/user.prf
+etc/angband/pref/user-mac.prf
+etc/angband/pref/xtra-dvg.prf
+etc/angband/pref/xtra-new.prf
+etc/angband/pref/xtra-xxx.prf
+share/angband/file/crown.txt
+share/angband/file/dead.txt
+share/angband/file/news.txt
+share/angband/help/attack.txt
+share/angband/help/birth.txt
+share/angband/help/command.txt
+share/angband/help/debug.txt
+share/angband/help/dungeon.txt
+share/angband/help/general.txt
+share/angband/help/help.hlp
+share/angband/help/option.txt
+share/angband/help/playing.txt
+share/angband/help/version.txt
+share/angband/help/308.txt
+share/angband/info/readme.txt
+share/angband/xtra/angband.glade
+share/angband/xtra/font/copying.txt
+share/angband/xtra/font/10x17b.fon
+share/angband/xtra/font/10x17.fon
+share/angband/xtra/font/10x20.fon
+share/angband/xtra/font/12x20b.fon
+share/angband/xtra/font/12x20.fon
+share/angband/xtra/font/12x24.fon
+share/angband/xtra/font/16x25b.fon
+share/angband/xtra/font/16x25.fon
+share/angband/xtra/font/5x8.fon
+share/angband/xtra/font/6x10.fon
+share/angband/xtra/font/6x12.fon
+share/angband/xtra/font/6x13b.fon
+share/angband/xtra/font/6x13.fon
+share/angband/xtra/font/7x13b.fon
+share/angband/xtra/font/7x13.fon
+share/angband/xtra/font/8x13b.fon
+share/angband/xtra/font/8x13c.fon
+share/angband/xtra/font/8x13.fon
+share/angband/xtra/font/8x16b.fon
+share/angband/xtra/font/8x16.fon
+share/angband/xtra/font/9x15b.fon
+share/angband/xtra/font/9x15.fon
+share/angband/xtra/graf/backgrnd.bmp
+share/angband/xtra/graf/mask.bmp
+share/angband/xtra/graf/16x16.bmp
+share/angband/xtra/graf/16x16.png
+share/angband/xtra/graf/32x32.png
+share/angband/xtra/graf/8x13.bmp
+share/angband/xtra/graf/8x8.bmp
+share/angband/xtra/graf/8x8.png
+share/angband/xtra/icon/att-16.png
+share/angband/xtra/icon/att-32.png
+share/angband/xtra/icon/att-128.png
+share/angband/xtra/icon/att-256.png
+share/angband/xtra/icon/att-512.png
+share/angband/xtra/sound/breath.wav
+share/angband/xtra/sound/clunk.wav
+share/angband/xtra/sound/death.wav
+share/angband/xtra/sound/destroy.wav
+share/angband/xtra/sound/drop.wav
+share/angband/xtra/sound/eat.wav
+share/angband/xtra/sound/flee.wav
+share/angband/xtra/sound/hallu.wav
+share/angband/xtra/sound/hit1.wav
+share/angband/xtra/sound/hit.wav
+share/angband/xtra/sound/kill1.wav
+share/angband/xtra/sound/kill.wav
+share/angband/xtra/sound/level.wav
+share/angband/xtra/sound/miss1.wav
+share/angband/xtra/sound/miss.wav
+share/angband/xtra/sound/money.wav
+share/angband/xtra/sound/opendoor.wav
+share/angband/xtra/sound/shutdoor.wav
+share/angband/xtra/sound/sound.cfg
+share/angband/xtra/sound/thump.wav
+share/angband/xtra/sound/vomit.wav
+@exec chmod g+w %D/share/angband/apex %D/share/angband/bone %D/share/angband/data %D/share/angband/save
+@exec chgrp games %D/share/angband/apex %D/share/angband/bone %D/share/angband/data %D/share/angband/save
+@dirrm share/angband/file
+@dirrm share/angband/help
+@dirrm share/angband/info
+@dirrm share/angband/xtra/sound
+@dirrm share/angband/xtra/icon
+@dirrm share/angband/xtra/graf
+@dirrm share/angband/xtra/font
+@dirrm share/angband/xtra
+@dirrm share/angband
+@dirrm etc/angband/pref
+@dirrm etc/angband/edit
+@dirrm etc/angband

@@ -1,0 +1,26 @@
+bin/evcd2vcd
+bin/fst2vcd
+bin/ghwdump
+bin/gtkwave
+bin/lxt2miner
+bin/lxt2vcd
+bin/rtlbrowse
+bin/shmidcat
+bin/twinwave
+bin/vcd2fst
+bin/vcd2lxt
+bin/vcd2lxt2
+bin/vcd2vzt
+bin/vermin
+bin/vzt2vcd
+bin/vztminer
+%%DOCSDIR%%/gtkwave.odt
+%%EXAMPLESDIR%%/des.sav
+%%EXAMPLESDIR%%/des.tcl
+%%EXAMPLESDIR%%/des.v
+%%EXAMPLESDIR%%/des.vzt
+%%EXAMPLESDIR%%/transaction.fst
+%%EXAMPLESDIR%%/transaction.sav
+%%EXAMPLESDIR%%/transaction.c
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%

@@ -1,11 +1,5 @@
-@srcdir /usr/ports/net/dgd/work
-@owner mud
-@group mud
-@cwd /usr/local
-dgd/Copyright
-dgd/Credits
-dgd/README
-dgd/README.FreeBSD
-dgd/README.sites
-dgd/bin
-dgd/doc
+bin/precomp
+etc/dgd/mud.dgd.sample
+etc/rc.d/dgd.sh.sample
+sbin/dgd
+@dirrm etc/dgd

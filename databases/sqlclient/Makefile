@@ -1,0 +1,40 @@
+# New ports collection makefile for:	sqlclient
+# Date created:         28 Oct 2006
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sqlclient
+PORTVERSION=	1.3.0
+PORTREVISION=	1
+CATEGORIES=	databases gnustep
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
+MASTER_SITE_SUBDIR=	libs
+DISTNAME=	SQLClient-${PORTVERSION}
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Lightweight database abstraction layer
+
+LICENSE=	LGPL21
+
+USE_GNUSTEP=	yes
+USE_GNUSTEP_BASE=	yes
+USE_GNUSTEP_CONFIGURE=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+USE_GNUSTEP_LOCAL_LIBS+=	Performance:${PERFORMANCE_PORT}
+USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
+
+PERFORMANCE_PORT?=	devel/performance
+
+USE_PGSQL=yes
+
+USE_MYSQL=yes
+USE_SQLITE=yes
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
+DEFAULT_LIBVERSION=	1.3
+
+.include <bsd.port.mk>

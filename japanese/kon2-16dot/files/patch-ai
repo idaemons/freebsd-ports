@@ -1,0 +1,12 @@
+--- doc/CHANGES.orig	Sat Aug  7 05:03:30 1999
++++ doc/CHANGES	Sat Aug  7 05:03:34 1999
+@@ -128,3 +128,9 @@
+ 	FreeBSD での kon.cfg, kon のインストール時のパーミッション修正
+ KON2 0.3(97/2/06) manabe@dsl.ics.tut.ac.jp
+ 	FreeBSD 版 kon.cfg での VGA レジスタ値を Linux でも利用
++KON2 0.3(98/1/23) nabe@nabechan.org
++	FreeBSD でのビープがなるようにした
++KON2 0.3(98/10/31) nabe@nabechan.org
++	FreeBSD でカーソルキーが正常に使えるようにした
++KON2 0.3(98/1/23) nabe@nabechan.org
++	FreeBSD でのビープがなるようにした

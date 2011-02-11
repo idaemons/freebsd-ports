@@ -1,15 +1,30 @@
-# New ports collection makefile for:    fspclient
-# Version required:     0.0-h+
-# Date created:         7 Nov 1994
-# Whom:                 ache
+# New ports collection makefile for:	fspclient
+# Date created:		7 Nov 1994
+# Whom:			ache
 #
-# $Id: Makefile,v 1.2 1994/11/06 16:26:30 ache Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       fspclient.0.0-h+
-EXTRACT_SUFX=   .tar.z
-MASTER_SITES=   ftp://ftp.robots.ox.ac.uk/pub/ox.src/fspclient/
-WRKSRC=		${WRKDIR}/fspclient
-GNU_CONFIGURE=	YES
+PORTNAME=	fspclient
+PORTVERSION=	0.93.0
+CATEGORIES=	net
+MASTER_SITES=	SF
 
-.include <bsd.port.mk>
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A ftp-like client for the FSP service
+
+USE_BZIP2=	yes
+USE_SCONS=	yes
+SCONS_ARGS=	prefix=${PREFIX}
+
+MAN1=		fsp.1
+MANCOMPRESSED=	yes
+PLIST_FILES=	bin/fsp
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
+.include <bsd.port.post.mk>

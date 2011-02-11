@@ -1,0 +1,11 @@
+--- Makefile.orig	2011-02-06 06:14:09.000000000 -0500
++++ Makefile	2011-02-07 15:35:58.000000000 -0500
+@@ -15,7 +15,7 @@
+ BIN=$(DESTDIR)$(PREFIX)/bin
+ 
+ # For 'make man': sudo apt-get install xsltproc docbook-xsl docbook-xml on Linux
+-DB2MAN=/usr/share/sgml/docbook/stylesheet/xsl/nwalsh/manpages/docbook.xsl
++DB2MAN=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
+ XP=xsltproc -''-nonet -''-param man.charmap.use.subset "0"
+ MAN_SOURCE=man/cppcheck.1.xml
+ 

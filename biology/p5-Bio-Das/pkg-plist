@@ -1,0 +1,35 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Das/.packlist
+%%SITE_PERL%%/Bio/Das.pm
+%%SITE_PERL%%/Bio/Das/DSN.pm
+%%SITE_PERL%%/Bio/Das/Request.pm
+%%SITE_PERL%%/Bio/Das/Stylesheet.pm
+%%SITE_PERL%%/Bio/Das/Map.pm
+%%SITE_PERL%%/Bio/Das/FeatureIterator.pm
+%%SITE_PERL%%/Bio/Das/Segment.pm
+%%SITE_PERL%%/Bio/Das/Type.pm
+%%SITE_PERL%%/Bio/Das/Feature.pm
+%%SITE_PERL%%/Bio/Das/TypeHandler.pm
+%%SITE_PERL%%/Bio/Das/Util.pm
+%%SITE_PERL%%/Bio/Das/Request/Sequences.pm
+%%SITE_PERL%%/Bio/Das/Request/Dnas.pm
+%%SITE_PERL%%/Bio/Das/Request/Types.pm
+%%SITE_PERL%%/Bio/Das/Request/Feature2Segments.pm
+%%SITE_PERL%%/Bio/Das/Request/Features.pm
+%%SITE_PERL%%/Bio/Das/Request/Dsn.pm
+%%SITE_PERL%%/Bio/Das/Request/Entry_points.pm
+%%SITE_PERL%%/Bio/Das/Request/Stylesheet.pm
+%%SITE_PERL%%/Bio/Das/AGPServer/SQLStorage.pm
+%%SITE_PERL%%/Bio/Das/AGPServer/Proxy.pm
+%%SITE_PERL%%/Bio/Das/AGPServer/Parser.pm
+%%SITE_PERL%%/Bio/Das/AGPServer/Daemon.pm
+%%SITE_PERL%%/Bio/Das/AGPServer/Config.pm
+%%SITE_PERL%%/Bio/Das/AGPServer/SQLStorage/CSV/DB.pm
+%%SITE_PERL%%/Bio/Das/AGPServer/SQLStorage/MySQL/DB.pm
+%%SITE_PERL%%/Bio/Das/HTTP/Fetch.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Das
+@dirrmtry %%SITE_PERL%%/Bio/Das/Request
+@dirrmtry %%SITE_PERL%%/Bio/Das/HTTP
+@dirrmtry %%SITE_PERL%%/Bio/Das/AGPServer/SQLStorage/MySQL
+@dirrmtry %%SITE_PERL%%/Bio/Das/AGPServer/SQLStorage/CSV
+@dirrmtry %%SITE_PERL%%/Bio/Das/AGPServer/SQLStorage
+@dirrmtry %%SITE_PERL%%/Bio/Das/AGPServer

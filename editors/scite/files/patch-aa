@@ -1,0 +1,60 @@
+--- makefile.orig	2010-07-20 19:03:41.000000000 -0400
++++ makefile	2010-07-31 09:20:16.000000000 -0400
+@@ -5,20 +5,20 @@
+ # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
+ 
+ .SUFFIXES: .cxx .o .h .a .c
+-ifdef CLANG
+-CC = clang
+-CCOMP = clang
+-else
+-CC = g++
+-CCOMP = gcc
+-endif
++#ifdef CLANG
++#CC = clang
++#CCOMP = clang
++#else
++#CC = g++
++#CCOMP = gcc
++#endif
+ AR = ar
+ 
+ # For the Gnome desktop stuff to work, prefix must point to where Gnome thinks it is.
+ CONFIGFLAGS:=$(shell pkg-config --cflags gtk+-2.0)
+ CONFIGLIB:=$(shell pkg-config --libs gtk+-2.0 gthread-2.0)
+ CONFIGTHREADS:=
+-gnomeprefix:=$(shell pkg-config --variable=prefix gtk+-2.0 2>/dev/null)
++gnomeprefix:=$(PREFIX)
+ ifndef prefix
+ ifdef gnomeprefix
+   prefix=$(gnomeprefix)
+@@ -61,12 +61,12 @@
+ 
+ INCLUDEDIRS=-I ../../scintilla/include -I ../src -I../lua/include
+ $(LUA_CORE_OBJS): ../lua/src/*.c
+-	$(CCOMP) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/*.c
++	$(CCOMP) $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/*.c
+ $(LUA_LIB_OBJS): ../lua/src/lib/*.c
+-	$(CCOMP) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/lib/*.c
+-CXXFLAGS=$(CXXTFLAGS)
++	$(CCOMP) $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/lib/*.c
++CXXFLAGS+=$(CXXTFLAGS)
+ else
+-CXXFLAGS=$(CXXTFLAGS) -DNO_LUA
++CXXFLAGS+=$(CXXTFLAGS) -DNO_LUA
+ endif
+ 
+ ifeq ($(shell uname), Darwin)
+@@ -87,8 +87,9 @@
+ 
+ $(PROG): SciTEGTK.o GUIGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o \
+ PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleWriter.o Utf8_16.o \
+-	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
+-	$(CC) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) -ldl -lstdc++
++	JobQueue.o GTKMutex.o IFaceTable.o $(LUA_OBJS)
++	$(CC) $(CONFIGLIB) -lscintilla -lscintilla_lexers -lstdc++ \
++	-rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@
+ 
+ # Automatically generate header dependencies with "make deps"
+ include deps.mak

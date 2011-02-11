@@ -1,13 +1,30 @@
 # New ports collection makefile for:    arc
-# Version required:     5.21e
 # Date created:         31 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/26 09:10:32 ache Exp $
+# $FreeBSD$
 #
-DISTNAME=       arc521e.pl8
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=   ftp://ftp.kiae.su/unix/arcers/
-NO_WRKSUBDIR=	yes
+
+PORTNAME=	arc
+PORTVERSION=	5.21o
+PORTREVISION=	1
+CATEGORIES=	archivers
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Create & extract files from DOS .ARC files
+
+PLIST_FILES=	bin/arc bin/marc
+PORTDOCS=	Arc521.doc
+MAN1=		arc.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/arc ${WRKSRC}/marc ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/arc.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Arc521.doc ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

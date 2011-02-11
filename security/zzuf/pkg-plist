@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+bin/zzcat
+bin/zzuf
+lib/zzuf/libzzuf.so
+lib/zzuf/libzzuf.a
+@dirrm lib/zzuf

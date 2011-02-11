@@ -1,18 +1,51 @@
 # New ports collection makefile for:	xfig
-# Version required:	3.1.3
 # Date created:		4 January 1995
-# Whom:			asami
-# Original by:		roberto
+# Whom:			roberto
 #
-# $Id: Makefile,v 1.4 1995/01/28 18:29:14 asami Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	xfig.3.1.3
-PKGNAME=	xfig-3.1.3
-WRKSRC=		${WRKDIR}/xfig
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/drawing_tools/xfig/ \
-	ftp://crl.dec.com/pub/X11/contrib/applications/drawing_tools/xfig/
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+PORTNAME=	xfig
+PORTVERSION=	3.2.5.a5
+PORTREVISION=	7
+CATEGORIES=	graphics
+MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION:R}-alpha/
+DISTNAME=	${PORTNAME}.${PORTVERSION:S,.a,-alpha,}.full
+
+MAINTAINER=	lesi@FreeBSD.org
+COMMENT=	A drawing program for X11 (Alpha version)
+
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+		png.6:${PORTSDIR}/graphics/png \
+		Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
+
+CONFLICTS=	xfig-[12].* xfig-3.1* xfig-3.2.[1234]*
+
+WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION:S,.a,-alpha,}
+
+LATEST_LINK=	xfig-devel
 USE_IMAKE=	yes
+USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
+MAN1=		xfig.1
 
-.include <bsd.port.mk>
+MAKE_ENV+=	DOCSDIR=${DOCSDIR}
+
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET=	install install.all
+.endif
+
+OPTIONS=	GHOSTSCRIPT "Ghostscript support" on
+
+.include <bsd.port.pre.mk>
+
+post-extract:
+	@${CP} ${WRKSRC}/Doc/xfig.man ${WRKSRC}
+
+post-patch:
+.if defined(WITHOUT_GHOSTSCRIPT)
+	@${REINPLACE_CMD} -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
+.endif
+	echo "NOPORTDOCS=${NOPORTDOCS}"
+
+.include <bsd.port.post.mk>

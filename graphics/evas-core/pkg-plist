@@ -1,0 +1,14 @@
+include/evas-1/Evas.h
+lib/libevas.so
+lib/libevas.so.1
+lib/evas/modules/engines/software_generic/%%E17_ARCH%%/module.so
+libdata/pkgconfig/evas.pc
+%%DATADIR%%/examples/evas-buffer-simple.c
+@dirrm include/evas-1
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%
+@dirrm lib/evas/modules/engines/software_generic/%%E17_ARCH%%
+@dirrm lib/evas/modules/engines/software_generic
+@dirrmtry lib/evas/modules/engines
+@dirrmtry lib/evas/modules
+@dirrmtry lib/evas

@@ -1,14 +1,47 @@
 # New ports collection makefile for:	m4
-# Version required:     1.4
 # Date created:		25 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/25 00:10:39 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=       m4-1.4
-MASTER_SITES=   ftp://gatekeeper.dec.com/pub/GNU/ ftp://prep.ai.mit.edu/pub/gnu/
-CONFIGURE_ARGS= --program-prefix=g --prefix=${PREFIX}
-GNU_CONFIGURE=yes
+PORTNAME=	m4
+PORTVERSION=	1.4.15
+PORTEPOCH=	1
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	m4
 
-.include <bsd.port.mk>
+MAINTAINER=	johans@FreeBSD.org
+COMMENT=	GNU m4
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--program-prefix=g
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+
+.if defined(WITH_CHANGEWORD)
+CONFIGURE_ARGS+=	--enable-changeword
+.endif
+
+INFO=	m4
+MAN1=	gm4.1
+
+EXAMPLESDIR=	share/examples/gm4
+
+OPTIONS=	LIBSIGSEGV "Use libsigsegv for better diagnostics" Off
+
+post-install:
+	@${MKDIR} ${PREFIX}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/${EXAMPLESDIR}
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_LIBSIGSEGV)
+LIB_DEPENDS+=	sigsegv:${PORTSDIR}/devel/libsigsegv
+CONFIGURE_ARGS+=	--with-libsigsegv-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-libsigsegv-prefix
+.endif
+
+.include <bsd.port.post.mk>

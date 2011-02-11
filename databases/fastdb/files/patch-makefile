@@ -1,0 +1,73 @@
+--- makefile.orig	2009-12-15 00:07:00.000000000 +0800
++++ makefile	2010-08-16 13:53:31.000000000 +0800
+@@ -38,8 +38,8 @@
+ THRLIBS=
+ SUFF=
+ else
+-TFLAGS=-pthread
+-THRLIBS=-pthread
++TFLAGS=-D_REENTRANT ${PTHREAD_CFLAGS}
++THRLIBS=${PTHREAD_LIBS}
+ SUFF=_r
+ endif
+ 
+@@ -65,23 +65,23 @@
+ 
+ WEB_EXAMPLES = cgistub bugdb clidb
+ 
+-CC = g++
++CC = ${CXX}
+ 
+ # DEFS macro is deprecatred, edit config.h file instead
+ DEFS = -Wno-invalid-offsetof
+ 
+ ifeq ($(DEBUG), 1)
+-CFLAGS = -c -Iinc -Wall -O0 -g -fPIC $(DEFS) $(TFLAGS)
++CFLAGS = -c -Iinc ${CXXFLAGS} -fPIC $(DEFS) $(TFLAGS)
+ else
+ CFLAGS = -c -Iinc -Wall -O5 -g -fPIC $(DEFS) $(TFLAGS)
+ endif
+ 
+-#SHFLAGS=-shared -Wl,-soname,$@
+-SHFLAGS=-shared
++SHFLAGS=-shared -Wl,-soname,$@
++#SHFLAGS=-shared
+ 
+ 
+ LD = $(CC)
+-LDFLAGS = -g $(TFLAGS)
++LDFLAGS = $(TFLAGS)
+ 
+ AR = ar
+ ARFLAGS = -cru
+@@ -433,16 +433,15 @@
+ 
+ install: subsql cleanupsem inspectsem installlib
+ 	mkdir -p $(BINSPATH)
+-	cp subsql $(BINSPATH)
+-	strip $(BINSPATH)/subsql
+-	cp cleanupsem $(BINSPATH)
+-	cp inspectsem $(BINSPATH)
++	${BSD_INSTALL_PROGRAM} subsql $(BINSPATH)
++	${BSD_INSTALL_PROGRAM} cleanupsem $(BINSPATH)
++	${BSD_INSTALL_PROGRAM} inspectsem $(BINSPATH)
+ 
+ installlib: $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED)
+ 	mkdir -p $(INCSPATH)
+-	cp $(INCS) $(INCSPATH)
++	${BSD_INSTALL_DATA} $(INCS) $(INCSPATH)
+ 	mkdir -p $(LIBSPATH)
+-	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
++	${BSD_INSTALL_PROGRAM} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
+ 	(cd $(LIBSPATH) && ln -f -s $(FASTDB_SHARED) libfastdb$(SUFF).so \
+ 	 && ln -f -s $(CLI_SHARED) libcli$(SUFF).so)
+ 	if [ -f $(JNI_LIB) ]; then cp $(JNI_LIB) $(LIBSPATH); \
+@@ -450,7 +449,7 @@
+ 
+ uninstall:
+ 	rm -fr $(INCSPATH)
+-	cd $(LIBSPATH); rm -f $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(JNI_LIB) libfastdb$(SUFF).so libjnicli.so libcli$(SUFF).so
++	cd $(LIBSPATH); rm -f $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) libfastdb$(SUFF).so libcli$(SUFF).so
+ 	rm $(BINSPATH)/subsql
+ 
+ cleanobj:

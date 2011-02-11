@@ -1,0 +1,20 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream/.packlist
+%%SITE_PERL%%/XML/Stream.pm
+%%SITE_PERL%%/XML/Stream/Namespace.pm
+%%SITE_PERL%%/XML/Stream/Node.pm
+%%SITE_PERL%%/XML/Stream/Parser.pm
+%%SITE_PERL%%/XML/Stream/Parser/DTD.pm
+%%SITE_PERL%%/XML/Stream/Tree.pm
+%%SITE_PERL%%/XML/Stream/IO/Select/Win32.pm
+%%SITE_PERL%%/XML/Stream/XPath.pm
+%%SITE_PERL%%/XML/Stream/XPath/Value.pm
+%%SITE_PERL%%/XML/Stream/XPath/Op.pm
+%%SITE_PERL%%/XML/Stream/XPath/Query.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Stream/Parser
+@dirrmtry %%SITE_PERL%%/XML/Stream/XPath
+@dirrmtry %%SITE_PERL%%/XML/Stream/IO/Select
+@dirrmtry %%SITE_PERL%%/XML/Stream/IO
+@dirrmtry %%SITE_PERL%%/XML/Stream
+@dirrmtry %%SITE_PERL%%/XML

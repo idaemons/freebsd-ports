@@ -1,0 +1,42 @@
+--- astrolog.h.orig	Thu Jan 26 06:19:59 2006
++++ astrolog.h	Thu Jan 26 06:24:50 2006
+@@ -52,7 +52,7 @@
+ 
+ /*#define MAC /* Comment out this #define if you're not compiling for a Mac. */
+ 
+-#define X11 /* Comment out this #define if you don't have X windows, or */
++/*#define X11 /* Comment out this #define if you don't have X windows, or */
+             /* else have them and don't wish to compile in X graphics.  */
+ 
+ /*#define WIN /* Comment out this #define if you don't have MS Windows, or */
+@@ -69,9 +69,11 @@
+ /*#define MACG /* Comment out this #define if you don't have a Mac, or else  */
+              /* have one and don't wish to compile in Mac screen graphics. */
+ 
++#if defined(X11) || defined(WIN) || defined(MSG) || defined(BGI) || defined(MACG)
+ #define MOUSE /* Comment out this #define if you don't have a mouse, or    */
+               /* don't wish to compile in mouse tracking features. This is */
+               /* only valid if X11, WIN, MSG, BGI, or MACG above are set.  */
++#endif
+ 
+ #define TIME /* Comment out this #define if your compiler can't take the  */
+              /* calls to the 'time' or 'localtime' functions as in time.h */
+@@ -86,7 +88,7 @@
+              /* 'atof' and related functions aren't defined in stdio.h, */
+              /* such as most PC's, Linux, VMS compilers, and NeXT's.    */
+ 
+-/*#define PROTO /* Comment out this #define if you have an older compiler   */
++#define PROTO /* Comment out this #define if you have an older compiler   */
+               /* which doesn't allow full Ansi function prototypes. This  */
+               /* is for programmers only and has no effect on executable. */
+ 
+@@ -131,7 +133,9 @@
+ */
+ 
+ #ifndef PC
++#ifndef DEFAULT_DIR
+ #define DEFAULT_DIR "~/astrolog"
++#endif
+ #else
+ #define DEFAULT_DIR "C:\\ASTROLOG"
+ #endif

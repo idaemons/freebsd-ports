@@ -1,0 +1,84 @@
+bin/pinot
+bin/pinot-dbus-daemon
+bin/pinot-index
+bin/pinot-label
+bin/pinot-prefs
+bin/pinot-search
+etc/pinot/external-filters.xml
+etc/pinot/globalconfig.xml
+etc/pinot/textcat3_conf.txt
+etc/pinot/textcat_conf.txt
+etc/xdg/autostart/pinot-dbus-daemon.desktop
+%%DESKBAR_MOD%%/pinot-module.py
+%%DESKBAR_MOD%%/pinot-module.pyc
+%%DESKBAR_MOD%%/pinot-module.pyo
+lib/deskbar-applet/handlers/pinot-live.py
+lib/deskbar-applet/handlers/pinot-live.pyc
+lib/deskbar-applet/handlers/pinot-live.pyo
+lib/pinot/backends/libxapianbackend.so
+lib/pinot/filters/libarchivefilter.so
+lib/pinot/filters/libexifimagefilter.so
+lib/pinot/filters/libexternalfilter.so
+lib/pinot/filters/libmboxfilter.so
+lib/pinot/filters/libtaglibfilter.so
+share/applications/pinot.desktop
+share/applications/pinot-prefs.desktop
+share/dbus-1/services/de.berlios.Pinot.service
+share/icons/hicolor/16x16/apps/pinot.png
+share/icons/hicolor/22x22/apps/pinot.png
+share/icons/hicolor/24x24/apps/pinot.png
+share/icons/hicolor/32x32/apps/pinot.png
+share/icons/hicolor/48x48/apps/pinot.png
+share/locale/de/LC_MESSAGES/pinot.mo
+share/locale/es/LC_MESSAGES/pinot.mo
+share/locale/fr/LC_MESSAGES/pinot.mo
+share/locale/he/LC_MESSAGES/pinot.mo
+share/locale/it/LC_MESSAGES/pinot.mo
+share/locale/ja/LC_MESSAGES/pinot.mo
+share/locale/nl/LC_MESSAGES/pinot.mo
+share/locale/pt/LC_MESSAGES/pinot.mo
+share/locale/pt_BR/LC_MESSAGES/pinot.mo
+share/locale/ru/LC_MESSAGES/pinot.mo
+share/locale/sv/LC_MESSAGES/pinot.mo
+share/locale/zh_CN/LC_MESSAGES/pinot.mo
+share/locale/zh_TW/LC_MESSAGES/pinot.mo
+%%DATADIR%%/YahooBOSS.src
+%%DATADIR%%/engines/AmazonAPI.src
+%%DATADIR%%/engines/Bing.src
+%%DATADIR%%/engines/Clusty.src
+%%DATADIR%%/engines/Freshmeat.src
+%%DATADIR%%/engines/Google.src
+%%DATADIR%%/engines/GoogleCodeSearch.src
+%%DATADIR%%/engines/KodersDescription.xml
+%%DATADIR%%/engines/OmegaDescription.xml
+%%DATADIR%%/engines/RollYOTopNews.src
+%%DATADIR%%/engines/Topix.src
+%%DATADIR%%/engines/UNData.src
+%%DATADIR%%/engines/Wikipedia.src
+%%DATADIR%%/engines/Yahoo.src
+%%DATADIR%%/metase-gtk2.glade
+%%DATADIR%%/metase-gtk2.gladep
+%%DATADIR%%/pinot-cd.sh
+%%DATADIR%%/pinot-check-file.sh
+%%DATADIR%%/pinot-dbus-daemon.xml
+%%DATADIR%%/pinot-enum-index.sh
+%%DATADIR%%/stopwords/.empty_file
+%%DATADIR%%/xapian-powered.png
+@dirrm %%DATADIR%%/stopwords
+@dirrm %%DATADIR%%/engines
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
+@dirrm lib/pinot/filters
+@dirrm lib/pinot/backends
+@dirrm lib/pinot
+@dirrmtry libexec/deskbar-applet/modules-2.20-compatible
+@dirrmtry libexec/deskbar-applet
+@dirrmtry lib/deskbar-applet/handlers
+@dirrmtry lib/deskbar-applet
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
+@dirrm etc/pinot
