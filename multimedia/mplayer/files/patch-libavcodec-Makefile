@@ -1,0 +1,11 @@
+--- ffmpeg/libavcodec/Makefile.orig	2010-11-02 09:32:04.000000000 +0100
++++ ffmpeg/libavcodec/Makefile	2010-11-04 21:14:51.158501798 +0100
+@@ -623,7 +623,7 @@
+ # well.
+ OBJS-$(!CONFIG_SMALL)                  += inverse.o
+ 
+--include $(SUBDIR)$(ARCH)/Makefile
++-include $(SUBDIR)$(MPLAYER_ARCH)/Makefile
+ 
+ SKIPHEADERS                             = %_tablegen.h
+ SKIPHEADERS-$(CONFIG_DXVA2)            += dxva2.h dxva2_internal.h

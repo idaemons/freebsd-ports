@@ -1,0 +1,36 @@
+--- configure.in.orig	2011-10-09 06:17:20.000000000 -0700
++++ configure.in	2011-11-04 00:52:17.000000000 -0700
+@@ -1112,11 +1112,11 @@
+ [superux*], [	ac_cv_func_setitimer=no
+ 		],
+ [	LIBS="-lm $LIBS"])
+-AC_CHECK_LIB(crypt, crypt)
+-AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/Solaris and SYSV
+-AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
+-AC_CHECK_LIB(socket, socketpair)	# SunOS/Solaris
+-AC_CHECK_LIB(rt, clock_gettime)	# GNU/Linux
++AC_SEARCH_LIBS(crypt, crypt)
++AC_SEARCH_LIBS(dlopen, dl)	# Dynamic linking for SunOS/Solaris and SYSV
++AC_SEARCH_LIBS(shl_load, dld)	# Dynamic linking for HP-UX
++AC_SEARCH_LIBS(socketpair, socket)	# SunOS/Solaris
++AC_SEARCH_LIBS(clock_gettime, rt) # GNU/Linux
+ if test "${enable_win95}" = maybe; then
+     AC_HAVE_LIBRARY(unicows, [enable_win95=yes], [enable_win95=no])
+ fi
+@@ -1808,7 +1808,7 @@
+ fi
+ 
+ if test x"$enable_pthread" = xyes; then
+-    for pthread_lib in thr pthread pthreads c c_r root; do
++    for pthread_lib in pthread thr pthreads c c_r root; do
+ 	AC_CHECK_LIB($pthread_lib, pthread_kill,
+ 		     rb_with_pthread=yes, rb_with_pthread=no)
+ 	if test "$rb_with_pthread" = "yes"; then break; fi
+@@ -1822,6 +1822,7 @@
+ 	[c],    [],
+ 	[root], [],
+ 	[c_r],  [MAINLIBS="-pthread $MAINLIBS"],
++	[pthread],  [MAINLIBS="-pthread $MAINLIBS"],
+ 	        [LIBS="-l$pthread_lib $LIBS"])
+     else
+ 	AC_MSG_WARN("Don't know how to find pthread library on your system -- thread support disabled")

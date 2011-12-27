@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: nslcd
+# REQUIRE: ldconfig resolv
+# BEFORE: syslogd
+#
+# Add the following line to /etc/rc.conf to enable the nslcd daemon:
+#
+# nslcd_enable="YES"
+#
+
+nslcd_enable=${nslcd_enable-"NO"}
+
+. /etc/rc.subr
+
+name=nslcd
+rcvar=$(set_rcvar)
+
+start_postcmd="nslcd_poststart"
+
+nslcd_poststart () {
+       until $(%%PREFIX%%/sbin/${name} -c); do
+               echo " Waiting for nslcd to start"
+               sleep 1
+       done
+}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config ${name}
+run_rc_command "$1"

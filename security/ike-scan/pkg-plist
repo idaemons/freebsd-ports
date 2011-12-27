@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+bin/ike-scan
+bin/psk-crack
+%%DATADIR%%/ike-backoff-patterns
+%%DATADIR%%/ike-vendor-ids
+%%DATADIR%%/psk-crack-dictionary
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/udp-backoff-fingerprinting-paper.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/ike-scan

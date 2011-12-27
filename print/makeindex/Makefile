@@ -1,23 +1,40 @@
-DISTFILES=	makeindex-3.0.8.tar.Z
-DISTNAME=	makeindex
+# New ports collection makefile for:    makeindex
+# Date created:         12 October 1994
+# Whom:                 jmz
+#
+# $FreeBSD$
+#
 
-MASTER_SITES=	ftp://achilles.doc.ic.ac.uk/tex/contrib/Schrod/
+PORTNAME=	makeindex
+PORTVERSION=	3.0.8
+PORTREVISION=	1
+CATEGORIES=	print
+MASTER_SITES=	http://ftp.linux.cz/pub/tex/local/indexing/makeindex3/ \
+		http://ftp.cstug.cz/pub/tex/local/indexing/makeindex3/
+EXTRACT_SUFX=	.tar.Z
 
-build: configure pre-build
-	@echo "===>  Building for ${DISTNAME}"
-	@(cd ${WRKSRC}/src-3.0/regexp; make)
-	@(cd ${WRKSRC}/src-3.0; make)
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A general purpose, formatter-independent index processor
 
-install:
-	@echo "===>  Installing for ${DISTNAME}"
-	@mkdir -p ${PREFIX}/lib/texmf/makeindx
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/man/man1
-	@(cd ${WRKSRC}/src-3.0/regexp; make)
-	@(cd ${WRKSRC}/src-3.0; make install)
+CONFLICTS=	teTeX-base-[0-9]*
+
+WRKSRC=		${WRKDIR}/makeindex
+MAN1=		makeindex.1
+
+post-patch:
 	@(cd ${WRKSRC}/doc; \
-	  sed -e s:/usr/local/lib/tex/macros/:${PREFIX}/lib/texmf/makeindx/: \
-	      <makeindex.l >makeindex.1; \
-	  install -c -m 644 makeindex.1 ${PREFIX}/man/man1/)
+	  ${SED} -e s:/usr/local/lib/tex/macros/:${PREFIX}/share/texmf/makeindx/: \
+	      <makeindex.l >makeindex.1)
+
+do-build:
+	@(cd ${WRKSRC}/src-3.0/regexp; ${MAKE} OPT="${CFLAGS}")
+	@(cd ${WRKSRC}/src-3.0; ${MAKE} OPT="${CFLAGS}")
+
+do-install:
+	@${MKDIR} ${PREFIX}/share/texmf/makeindx
+	@(cd ${WRKSRC}/src-3.0/regexp; ${MAKE})
+	@(cd ${WRKSRC}/src-3.0; ${MAKE} install)
+	@(cd ${WRKSRC}/doc; \
+	  ${INSTALL_DATA} makeindex.1 ${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>

@@ -1,0 +1,20 @@
+--- ./configure.orig	2010-04-04 11:02:40.000000000 +0200
++++ ./configure	2010-11-22 19:41:52.000000000 +0100
+@@ -92,7 +92,7 @@
+ {
+     local var val A
+ 
+-    [ "$(sed -e 's/--[^=]\+=[^=]*/AA/' <<< $1)" != AA ] && return 1
++    [ "$(sed -E -e 's/--[^=]+=[^=]*/AA/' <<< $1)" != AA ] && return 1
+ 
+     A=${1:2}
+     var=${A%%=*}
+@@ -167,7 +167,7 @@
+ 
+ function check_feature ()
+ {
+-    [ "$(sed  -e 's/--\(enable\|disable\)-.\+/AA/' <<< $1)" != AA ] && return 1
++    [ "$(sed -E -e 's/--(enable|disable)-.+/AA/' <<< $1)" != AA ] && return 1
+     A=${1:2}
+     var=${A#*-}
+     val=${A%%-*}

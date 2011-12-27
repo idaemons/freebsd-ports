@@ -1,18 +1,37 @@
 # New ports collection makefile for:	Irc Server
-# Version required:	2.8.20
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.2 1994/09/13 06:34:53 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	irc2.8.21
-MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/servers/
+PORTNAME=	irc
+PORTVERSION=	2.11.2p3
+CATEGORIES=	irc ipv6
+MASTER_SITES=	http://ftp.irc.org/ftp/irc/server/ \
+		ftp://ftp.archive.de.uu.net/pub/mirrors/ftp.irc.org/server/ \
+		ftp://ftp.nl.uu.net/pub/mirrors/ftp.irc.org/server/
+DISTNAME=	${PORTNAME}${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
-pre-install:
-	mkdir -p ${PREFIX}/bin
-	mkdir -p ${PREFIX}/lib/ircd
-	mkdir -p ${PREFIX}/man/man1
-	mkdir -p ${PREFIX}/man/man8
+MAINTAINER=	johans@FreeBSD.org
+COMMENT=	The "Internet Relay Chat" Server
 
-.include <bsd.port.mk>
+USE_RC_SUBR=	ircd.sh
+MAN5=		iauth.conf.5
+MAN8=		ircd.8 iauth.8 ircdwatch.8
+
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd
+BUILD_WRKSRC=	${WRKSRC}/${MACHINE_ARCH}-unknown-freebsd${OSREL}
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
+
+OPTIONS=	IPV6	"Enable IPv6 support"	on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+.include <bsd.port.post.mk>

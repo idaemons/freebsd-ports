@@ -1,0 +1,27 @@
+--- monitorix.orig	2011-05-04 18:19:58.792045586 +0100
++++ monitorix	2011-05-04 18:46:51.729913889 +0100
+@@ -1654,10 +1654,8 @@
+ 		alarm $TIMEOUT;
+ 		open(IN, "df -P / |");
+ 		while(<IN>) {
+-			if(/dev/ && /\//) {
+-				($root_disk) = split(' ', $_);
+-				last;
+-			}
++			next if /Filesystem/;
++			($root_disk) = split;
+ 		}
+ 		close(IN);
+ 		alarm 0;
+@@ -1734,9 +1732,8 @@
+ 			}
+ 		}
+ 	} elsif($os eq "FreeBSD") {
+-		$root_disk =~ s/^.*dev\///;	# remove the /dev/ prefix
+-#		$root_disk =~ s/.*\///;		# removes /dev/
+-		$root_disk =~ s/...$//;		# removes part number
++		$root_disk =~ s/^.dev.//;	# remove the /dev/ prefix
++		$root_disk =~ s/[sp][0-9][a-z]?$//;	# removes part number
+ 	}
+ 
+ 	# do exists in /proc/diskstats?

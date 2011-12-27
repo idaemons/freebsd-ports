@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -23,6 +23,10 @@
+ SRCS+=	main.c
+ 
+ WARNS?=	4
++NO_WERROR=1
++ 
++BINDIR=$(PREFIX)/libexec
++MANDIR=$(PREFIX)/man/man
+ 
+ check:
+ 	cd $(.CURDIR)/testsuite && $(MAKE) check

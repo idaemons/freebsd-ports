@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+%%DATADIR%%/%%DISTNAME%%
+@dirrmtry %%DATADIR%%

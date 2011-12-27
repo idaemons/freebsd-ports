@@ -1,0 +1,20 @@
+--- examples/Makefile.in.orig	2011-10-20 08:19:36.000000000 +0200
++++ examples/Makefile.in	2011-10-28 09:59:56.000000000 +0200
+@@ -16,7 +16,7 @@
+ @SET_MAKE@
+ 
+ VPATH = @srcdir@
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)
+ pkgincludedir = $(includedir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkglibexecdir = $(libexecdir)/@PACKAGE@
+@@ -194,7 +194,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ dist_examples_DATA = des.sav des.tcl des.v des.vzt transaction.fst transaction.sav transaction.c
+-examplesdir = $(pkgdatadir)/examples
++examplesdir = $(pkgdatadir)/examples/@PACKAGE@
+ all: all-am
+ 
+ .SUFFIXES:

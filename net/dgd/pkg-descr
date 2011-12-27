@@ -1,11 +1,13 @@
-DGD 1.0.8
-----------
+DGD is a rewrite from scratch of the LPMud server.  It runs on Windows, MacOS,
+BeOS and many versions of Unix.
 
-This is Dworkin's Game Driver, a versatile general purpose MUD server.
-The language implementation is an improved and simplified dialect of LPC,
-it is suitable for simulating existing Gamedriver models, or inventing new
-ones. Its usefulness is not limited to the world of MUDs and MUDding.
+This is the core distribution of DGD, providing all the tools needed
+to implement interactive servers, for instance MUD, IRC, WWW, etc.
+A reference implementation of a kernel library is provided, which can
+be further built on. Normally with DGD, there is a kernel library to
+define the programming environment and a database library to define the
+interaction environment.
 
-Please send all reports, comments and suggestions to:
+Please report bugs to <felix@dworkin.nl>.
 
-        dworkin@cd.chalmers.se
+WWW: http://www.dworkin.nl/dgd/

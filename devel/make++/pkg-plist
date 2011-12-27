@@ -1,0 +1,57 @@
+bin/makepp
+bin/makeppclient
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_build_algorithm.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_builtin.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_command.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_cookbook.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_extending.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_functions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_incompatibilities.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_release_notes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_repositories.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_rules.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_scanning.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_signatures.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_statements.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_tutorial_compilation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makepp_variables.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makeppclient.html
+%%DATADIR%%/ActionParser/Legacy.pm
+%%DATADIR%%/ActionParser/Specific.pm
+%%DATADIR%%/ActionParser.pm
+%%DATADIR%%/CommandParser/Basic.pm
+%%DATADIR%%/CommandParser/Gcc.pm
+%%DATADIR%%/CommandParser/Vcs.pm
+%%DATADIR%%/CommandParser.pm
+%%DATADIR%%/FileInfo.pm
+%%DATADIR%%/FileInfo_makepp.pm
+%%DATADIR%%/Glob.pm
+%%DATADIR%%/MakeEvent.pm
+%%DATADIR%%/Makefile.pm
+%%DATADIR%%/Makesubs.pm
+%%DATADIR%%/Rule.pm
+%%DATADIR%%/Scanner/C.pm
+%%DATADIR%%/Scanner/Vera.pm
+%%DATADIR%%/Scanner/Verilog.pm
+%%DATADIR%%/Scanner.pm
+%%DATADIR%%/Signature/c_compilation_md5.pm
+%%DATADIR%%/Signature/exact_match.pm
+%%DATADIR%%/Signature/md5.pm
+%%DATADIR%%/Signature/target_newer.pm
+%%DATADIR%%/Signature/verilog_simulation_md5.pm
+%%DATADIR%%/Signature/verilog_synthesis_md5.pm
+%%DATADIR%%/Signature.pm
+%%DATADIR%%/TextSubs.pm
+%%DATADIR%%/makepp_builtin_rules.mk
+%%DATADIR%%/makepp_default_makefile.mk
+%%DATADIR%%/recursive_makepp
+@dirrm %%DATADIR%%/Signature
+@dirrm %%DATADIR%%/Scanner
+@dirrm %%DATADIR%%/CommandParser
+@dirrm %%DATADIR%%/ActionParser
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

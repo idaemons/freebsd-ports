@@ -1,0 +1,67 @@
+%%TOOLBOXDIR%%/demos/cowt1d.sce
+%%TOOLBOXDIR%%/demos/cowt2d.sce
+%%TOOLBOXDIR%%/demos/cwt.sce
+%%TOOLBOXDIR%%/demos/dwtmode.dem.sce
+%%TOOLBOXDIR%%/demos/image.sce
+%%TOOLBOXDIR%%/demos/image/woman.bmp
+%%TOOLBOXDIR%%/demos/rwt.sce
+%%TOOLBOXDIR%%/demos/scale2freq.dem.sce
+%%TOOLBOXDIR%%/demos/swt.dem.gateway.sce
+%%TOOLBOXDIR%%/demos/swt1d.sce
+%%TOOLBOXDIR%%/demos/swt2d.sce
+%%TOOLBOXDIR%%/demos/swt3d.sce
+%%TOOLBOXDIR%%/demos/swtswt.sce
+%%TOOLBOXDIR%%/demos/wavedec.dem.sce
+%%TOOLBOXDIR%%/demos/wden.dem.sce
+%%TOOLBOXDIR%%/etc/swt.quit
+%%TOOLBOXDIR%%/etc/swt.start
+%%TOOLBOXDIR%%/loader.sce
+%%TOOLBOXDIR%%/macros/ShapeAsRow.bin
+%%TOOLBOXDIR%%/macros/ShapeAsRow.sci
+%%TOOLBOXDIR%%/macros/buildmacros.sce
+%%TOOLBOXDIR%%/macros/centfrq.bin
+%%TOOLBOXDIR%%/macros/centfrq.sci
+%%TOOLBOXDIR%%/macros/cwt_wavelab.bin
+%%TOOLBOXDIR%%/macros/cwt_wavelab.sci
+%%TOOLBOXDIR%%/macros/cwtplot.bin
+%%TOOLBOXDIR%%/macros/cwtplot.sci
+%%TOOLBOXDIR%%/macros/ddencmp.bin
+%%TOOLBOXDIR%%/macros/ddencmp.sci
+%%TOOLBOXDIR%%/macros/lib
+%%TOOLBOXDIR%%/macros/lshift.bin
+%%TOOLBOXDIR%%/macros/lshift.sci
+%%TOOLBOXDIR%%/macros/mm_rwt.bin
+%%TOOLBOXDIR%%/macros/mm_rwt.sci
+%%TOOLBOXDIR%%/macros/names
+%%TOOLBOXDIR%%/macros/rshift.bin
+%%TOOLBOXDIR%%/macros/rshift.sci
+%%TOOLBOXDIR%%/macros/rwt.bin
+%%TOOLBOXDIR%%/macros/rwt.sci
+%%TOOLBOXDIR%%/macros/scal2frq.bin
+%%TOOLBOXDIR%%/macros/scal2frq.sci
+%%TOOLBOXDIR%%/macros/thselect.bin
+%%TOOLBOXDIR%%/macros/thselect.sci
+%%TOOLBOXDIR%%/macros/wavedecplot.bin
+%%TOOLBOXDIR%%/macros/wavedecplot.sci
+%%TOOLBOXDIR%%/macros/wden.bin
+%%TOOLBOXDIR%%/macros/wden.sci
+%%TOOLBOXDIR%%/macros/wentropy.bin
+%%TOOLBOXDIR%%/macros/wentropy.sci
+%%TOOLBOXDIR%%/macros/wnoise.bin
+%%TOOLBOXDIR%%/macros/wnoise.sci
+%%TOOLBOXDIR%%/macros/wnoisest.bin
+%%TOOLBOXDIR%%/macros/wnoisest.sci
+%%TOOLBOXDIR%%/macros/wthresh.bin
+%%TOOLBOXDIR%%/macros/wthresh.sci
+%%TOOLBOXDIR%%/macros/wtmm.bin
+%%TOOLBOXDIR%%/macros/wtmm.sci
+%%TOOLBOXDIR%%/sci_gateway/c/libswt_c.so
+%%TOOLBOXDIR%%/sci_gateway/c/loader.sce
+%%TOOLBOXDIR%%/sci_gateway/loader_gateway.sce
+@dirrm %%TOOLBOXDIR%%/sci_gateway/c
+@dirrm %%TOOLBOXDIR%%/sci_gateway
+@dirrm %%TOOLBOXDIR%%/macros
+@dirrm %%TOOLBOXDIR%%/etc
+@dirrm %%TOOLBOXDIR%%/demos/image
+@dirrm %%TOOLBOXDIR%%/demos
+@dirrm %%TOOLBOXDIR%%

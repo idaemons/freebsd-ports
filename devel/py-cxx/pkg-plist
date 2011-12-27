@@ -1,0 +1,24 @@
+include/%%PYTHON_VERSION%%/CXX/Config.hxx
+include/%%PYTHON_VERSION%%/CXX/CxxDebug.hxx
+include/%%PYTHON_VERSION%%/CXX/Exception.hxx
+include/%%PYTHON_VERSION%%/CXX/ExtensionModule.hxx
+include/%%PYTHON_VERSION%%/CXX/ExtensionOldType.hxx
+include/%%PYTHON_VERSION%%/CXX/ExtensionType.hxx
+include/%%PYTHON_VERSION%%/CXX/ExtensionTypeBase.hxx
+include/%%PYTHON_VERSION%%/CXX/Extensions.hxx
+include/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.hxx
+include/%%PYTHON_VERSION%%/CXX/Objects.hxx
+include/%%PYTHON_VERSION%%/CXX/PythonType.hxx
+include/%%PYTHON_VERSION%%/CXX/Version.hxx
+include/%%PYTHON_VERSION%%/CXX/WrapPython.h
+@dirrm include/%%PYTHON_VERSION%%/CXX
+%%PYTHON_SITELIBDIR%%/CXX/__init__.py
+%%PYTHON_SITELIBDIR%%/CXX/__init__.pyc
+%%PYTHON_SITELIBDIR%%/CXX/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/CXX
+share/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.cxx
+share/%%PYTHON_VERSION%%/CXX/cxx_extensions.cxx
+share/%%PYTHON_VERSION%%/CXX/cxxextensions.c
+share/%%PYTHON_VERSION%%/CXX/cxxsupport.cxx
+@dirrm share/%%PYTHON_VERSION%%/CXX
+@dirrmtry share/%%PYTHON_VERSION%%

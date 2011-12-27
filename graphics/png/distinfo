@@ -1,0 +1,4 @@
+SHA256 (libpng-1.4.8.tar.xz) = ad246b0d9df56bb0807d0e59e91d79c17ed78567a985d540956eb3d51ab76c46
+SIZE (libpng-1.4.8.tar.xz) = 548124
+SHA256 (libpng-1.4.8-apng.patch.gz) = 0d8cef7886863aebe412ba8f121347e6b4d886cf32677201d7294ae0e797b399
+SIZE (libpng-1.4.8-apng.patch.gz) = 10437

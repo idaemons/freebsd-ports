@@ -1,0 +1,45 @@
+# $FreeBSD$
+
+# common bits for verlihub plugins
+
+# this controls DISTNAME
+PLUGIN_NAME?=	${PORTNAME}
+
+PKGNAMEPREFIX=	verlihub-plugins-
+DISTNAME=	${PLUGIN_NAME}-${PORTVERSION}
+WRKSRC?=	${WRKDIR}/${PLUGIN_NAME}
+
+COMMENT?=	${PLUGIN_DESC} plugin for the VerliHub - a Direct Connect protocol server
+
+BUILD_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
+RUN_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
+
+USE_GCC=	4.2+
+GNU_CONFIGURE=	yes
+CFLAGS+=	-fPIC
+
+PLIST_FILES+=	lib/lib${PLUGIN_NAME}_pi.a \
+		lib/lib${PLUGIN_NAME}_pi.la \
+		lib/lib${PLUGIN_NAME}_pi.so \
+		lib/lib${PLUGIN_NAME}_pi.so.0 \
+		etc/verlihub/plugins/lib${PLUGIN_NAME}_pi.so
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGMESSAGE_TEMPLATE=	${PORTSDIR}/net-p2p/verlihub-plugins/pkg-message.plugins
+
+post-patch::
+	@${REINPLACE_CMD} -e 's,echo aout,echo elf,' ${WRKSRC}/configure
+
+post-build::
+	@${SED} -e 's,%%PLUGIN_DESC%%,${PLUGIN_DESC},' < ${PKGMESSAGE_TEMPLATE} \
+		> ${PKGMESSAGE}
+
+post-install::
+	@${MKDIR} ${PREFIX}/etc/verlihub/plugins
+	@${LN} -sf ${PREFIX}/lib/lib${PLUGIN_NAME}_pi.so \
+		${PREFIX}/etc/verlihub/plugins/lib${PLUGIN_NAME}_pi.so
+	@if [ -f ${PKGMESSAGE} ]; then \
+	   ${CAT} ${PKGMESSAGE}; \
+	 fi
+	@${ECHO_CMD} '@unexec rmdir %D/etc/verlihub/plugins 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO_CMD} '@unexec rmdir %D/etc/verlihub 2>/dev/null || true' >> ${TMPPLIST}

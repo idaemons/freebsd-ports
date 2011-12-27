@@ -1,49 +1,43 @@
---- ./main.c.org	Sat Jun  4 08:44:11 1994
-+++ ./main.c	Tue Nov 15 20:59:40 1994
-@@ -284,22 +284,34 @@
- #ifdef UTMP_FILE
- #define UTMP_FILENAME UTMP_FILE
- #else
-+#ifdef _PATH_UTMP
-+#define UTMP_FILENAME _PATH_UTMP
-+#else
- #define UTMP_FILENAME "/etc/utmp"
+--- Imakefile.orig	2010-01-25 00:56:38.287976000 +0900
++++ Imakefile	2010-01-25 00:59:31.955886193 +0900
+@@ -13,6 +13,17 @@
+       XPOLL_DEF = -DNO_XPOLL_H
  #endif
- #endif
-+#endif
  
- #ifndef LASTLOG_FILENAME
-+#ifdef _PATH_LASTLOG
-+#define LASTLOG_FILENAME _PATH_LASTLOG
-+#else
- #define LASTLOG_FILENAME "/usr/adm/lastlog"  /* only on BSD systems */
- #endif
++#ifdef USE_XAW3DLIB
++#undef XawClientLibs
++#define XawClientLibs	-lXaw3d $(XMULIB) $(XTOOLLIB) $(XLIB)
 +#endif
++
++#ifdef USE_NEXTAWLIB
++#undef XawClientLibs
++#define XawClientLibs	-lneXtaw $(XMULIB) $(XTOOLLIB) $(XLIB)
++#endif
++
++
+ /*
+  * add -DWTMP and -DLASTLOG if you want them.
+  */
+@@ -27,9 +38,12 @@
+  OSMAJORVERSION = OSMajorVersion
+  OSMINORVERSION = OSMinorVersion
  
- #ifndef WTMP_FILENAME
- #ifdef WTMP_FILE
- #define WTMP_FILENAME WTMP_FILE
- #else
-+#ifdef _PATH_WTMP
-+#define WTMP_FILENAME _PATH_WTMP
-+#else
- #ifdef SYSV
- #define WTMP_FILENAME "/etc/wtmp"
- #else
- #define WTMP_FILENAME "/usr/adm/wtmp"
+-   MAIN_DEFINES = -DUTMP $(TTYGROUPDEF) $(PUCCPTYDDEF) \
++   MAIN_DEFINES = $(TTYGROUPDEF) $(PUCCPTYDDEF) \
+ 		  -DOSMAJORVERSION=$(OSMAJORVERSION) \
+ 		  -DOSMINORVERSION=$(OSMINORVERSION)
++#if defined(OSRelVersion) && OSRelVersion < 900007
++   MAIN_DEFINES+= -DUTMP
 +#endif
+    MISC_DEFINES = /* -DALLOWLOGFILEEXEC */ 
+     XKB_DEFINES = XkbClientDefines
+         DEFINES = $(XKB_DEFINES) $(XPOLL_DEF) -DKTERM -DSTATUSLINE -DKEEPALIVE -DWALLPAPER
+@@ -72,7 +86,7 @@
  #endif
  #endif
- #endif
---- ./misc.c.org	Mon Mar 28 15:27:03 1994
-+++ ./misc.c	Tue Nov 15 21:06:54 1994
-@@ -765,7 +765,9 @@
- char *SysErrorMsg (n)
-     int n;
- {
-+#ifndef __FreeBSD__
-     extern char *sys_errlist[];
-+#endif
-     extern int sys_nerr;
  
-     return ((n >= 0 && n < sys_nerr) ? sys_errlist[n] : "unknown error");
+-     TERMCAPLIB = TermcapLibrary
++     TERMCAPLIB = TermcapLibrary -lutil
+ 
+ AllTarget($(PROGRAMS))
+ 

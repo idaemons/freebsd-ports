@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: opendnssec
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable opendnssec:
+#
+# opendnssec_enable="YES"
+
+. /etc/rc.subr
+
+name=opendnssec
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+opendnssec_enable=${opendnssec_enable:-"NO"}
+
+start_cmd="${name}_run $1"
+stop_cmd="${name}_run $1"
+extra_commands="reload ksm hsm signer enforcer"
+
+procname=${opendnssec_procname}
+
+opendnssec_run()
+{
+    %%PREFIX%%/sbin/ods-control $1
+}
+
+run_rc_command "$1"

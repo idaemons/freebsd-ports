@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+bin/auth-relaytest
+bin/formmailtest
+bin/getcookie
+bin/httptest
+bin/relaytest
+bin/socks4test
+bin/socks5test
+bin/spamtrap
+etc/dsbl.conf

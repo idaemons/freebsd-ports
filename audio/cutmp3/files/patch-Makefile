@@ -1,0 +1,32 @@
+--- ./Makefile.orig	2010-05-16 10:59:44.000000000 +0200
++++ ./Makefile	2010-06-01 20:18:57.000000000 +0200
+@@ -1,13 +1,12 @@
+ NAME=cutmp3
+ VERSION=2.0.2
+-PREFIX=/usr
++PREFIX?=/usr/local
+ BINDIR=${PREFIX}/bin
+ DATADIR=${PREFIX}/share
+-MANDIR=${PREFIX}/share/man/man1
+-DOCDIR=${DATADIR}/doc/${NAME}-${VERSION}
++MANDIR=${PREFIX}/man/man1
++DOCDIR=${DATADIR}/doc/${NAME}
+ 
+ all:
+-	@echo -e "\n\n*** You need readline-devel, ncurses-devel or similar to compile ${NAME} ***\n*** Maybe you want to try the binary on compile failures? ***\n\n"
+ 	gcc -O ${CFLAGS} -c mpglib.c
+ 	gcc -O ${CFLAGS} -c main.c
+ 	gcc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
+@@ -25,12 +24,8 @@
+ 	install -d ${BINDIR}
+ 	install ${NAME} ${BINDIR}
+ 	if [ ! -z "${KDEDIR}" ]; then install -m 644 ${NAME}.desktop ${KDEDIR}/share/apps/konqueror/servicemenus; elif [ -d /usr/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /usr/share/apps/konqueror/servicemenus; elif [ -d /opt/kde/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde/share/apps/konqueror/servicemenus; elif [ -d /opt/kde3/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde3/share/apps/konqueror/servicemenus; fi
+-	install -d ${DOCDIR}/${NAME}
+-	install -m 644 README* USAGE ${DOCDIR}/${NAME}
+-	install -d ${MANDIR}
+ 	gzip ${NAME}.1
+ 	install -m 644 ${NAME}.1.gz ${MANDIR}
+-	gunzip ${NAME}.1.gz
+ 
+ uninstall:
+ 	rm -f ${BINDIR}/${NAME}

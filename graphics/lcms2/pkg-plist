@@ -1,0 +1,12 @@
+bin/linkicc
+bin/psicc
+bin/transicc
+include/lcms2.h
+include/lcms2_plugin.h
+lib/liblcms2.so
+lib/liblcms2.so.2
+libdata/pkgconfig/lcms2.pc
+%%PORTDOCS%%%%DOCSDIR%%/LittleCMS2.2 API.pdf
+%%PORTDOCS%%%%DOCSDIR%%/LittleCMS2.2 Plugin API.pdf
+%%PORTDOCS%%%%DOCSDIR%%/LittleCMS2.2 tutorial.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

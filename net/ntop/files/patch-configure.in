@@ -1,0 +1,40 @@
+--- ./configure.in.orig	2011-02-02 10:41:10.000000000 +0100
++++ ./configure.in	2011-02-02 10:49:06.000000000 +0100
+@@ -582,8 +582,8 @@
+ else
+ if test ".${PCAP_ROOT}" != .; then
+   if test -d $PCAP_ROOT &&
+-     test -r $PCAP_ROOT/libpcap.a &&
+-     test -r $PCAP_ROOT/pcap.h; then
++     test -r $PCAP_ROOT/lib/libpcap.a &&
++     test -r $PCAP_ROOT/include/pcap.h; then
+        PCAP_ROOT=`cd ${PCAP_ROOT} && pwd`
+        CORELIBS="${CORELIBS} -L$PCAP_ROOT -lpcap"
+        INCS="${INCS} -I$PCAP_ROOT"
+@@ -1480,7 +1480,7 @@
+ 
+     dnl remove unecessary path
+     dnl line below workaround for OSX 10.6 (Snow Leopard)/10.7 (Lion)
+-    PYTHON_INCS=`$PYTHON_CONFIG --cflags | sed -e "s/-arch i386// | sed -e "s/-arch ppc// | sed -e "s/-arch x86_64//"`
++    PYTHON_INCS=`$PYTHON_CONFIG --cflags | sed -e "s/-arch i386//" | sed -e "s/-arch ppc//" | sed -e "s/-arch x86_64//"`
+     INCS="${INCS} ${PYTHON_INCS}"
+ 
+ OLD_CFLAGS=$CFLAGS
+@@ -1815,8 +1815,6 @@
+ else
+    if test -f "3rd_party/GeoLiteCity.dat.gz"; then
+      cp 3rd_party/GeoLiteCity.dat.gz .
+-   else
+-     wget http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+    fi
+ 
+    gunzip GeoLiteCity.dat.gz
+@@ -1829,8 +1827,6 @@
+ else
+    if test -f "3rd_party/GeoIPASNum.dat.gz"; then
+      cp 3rd_party/GeoIPASNum.dat.gz .
+-   else
+-     wget http://www.maxmind.com/download/geoip/database/asnum/GeoIPASNum.dat.gz
+    fi
+ 
+    gunzip GeoIPASNum.dat.gz

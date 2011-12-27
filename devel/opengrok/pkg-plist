@@ -1,0 +1,17 @@
+bin/opengrok
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/EXAMPLE.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%DATADIR%%/lib/ant.jar
+%%DATADIR%%/lib/bcel-5.2.jar
+%%DATADIR%%/lib/jakarta-oro-2.0.8.jar
+%%DATADIR%%/lib/jmxremote_optional.jar
+%%DATADIR%%/lib/lucene-core-3.0.1.jar
+%%DATADIR%%/lib/lucene-spellchecker-3.0.1.jar
+%%DATADIR%%/opengrok.jar
+%%DATADIR%%/lib/org.apache.commons.jrcs.diff.jar
+%%DATADIR%%/lib/org.apache.commons.jrcs.rcs.jar
+%%DATADIR%%/lib/swing-layout-0.9.jar
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

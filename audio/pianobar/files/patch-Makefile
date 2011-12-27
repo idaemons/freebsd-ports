@@ -1,0 +1,35 @@
+--- Makefile.orig	2011-09-22 03:34:19.000000000 -0700
++++ Makefile	2011-09-22 22:58:18.000000000 -0700
+@@ -4,12 +4,12 @@
+ BINDIR:=${PREFIX}/bin
+ LIBDIR:=${PREFIX}/lib
+ INCDIR:=${PREFIX}/include
+-MANDIR:=${PREFIX}/share/man
++MANDIR:=${PREFIX}/man
+ DYNLINK:=0
+ 
+ # Respect environment variables set by user; does not work with :=
+ ifeq (${CFLAGS},)
+-	CFLAGS=-O2 -DNDEBUG
++	CFLAGS=-O2 -DNDEBUG -I/usr/local/include
+ endif
+ ifeq (${CC},cc)
+ 	CC=c99
+@@ -74,7 +74,7 @@
+ 	LIBFAAD_LDFLAGS=
+ else
+ 	LIBFAAD_CFLAGS=-DENABLE_FAAD
+-	LIBFAAD_LDFLAGS=-lfaad
++	LIBFAAD_LDFLAGS=-L/usr/local/lib -lfaad
+ endif
+ 
+ ifeq (${DISABLE_MAD}, 1)
+@@ -82,7 +82,7 @@
+ 	LIBMAD_LDFLAGS=
+ else
+ 	LIBMAD_CFLAGS=-DENABLE_MAD
+-	LIBMAD_LDFLAGS=-lmad
++	LIBMAD_LDFLAGS=-L/usr/local/lib -lmad
+ endif
+ 
+ # build pianobar

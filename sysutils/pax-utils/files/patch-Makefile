@@ -1,0 +1,30 @@
+--- ./Makefile.orig	2010-02-14 19:14:16.000000000 +0100
++++ ./Makefile	2010-11-12 00:49:47.000000000 +0100
+@@ -21,7 +21,7 @@
+ LDFLAGS   +=
+ LIBS      :=
+ DESTDIR    =
+-PREFIX    := $(DESTDIR)/usr
++#PREFIX    := $(DESTDIR)/usr
+ STRIP     := strip
+ MKDIR     := mkdir -p
+ CP        := cp
+@@ -97,15 +97,15 @@
+ 	$(STRIP) --strip-unneeded $(TARGETS)
+ 
+ install: all
+-	$(MKDIR) $(PREFIX)/bin/ $(PREFIX)/share/man/man1/
++	$(MKDIR) $(PREFIX)/bin/ $(MANPREFIX)/share/man/man1/
+ 	for sh in *.sh ; do $(INS_EXE) $$sh $(PREFIX)/bin/$${sh%.sh} || exit $$? ; done
+ 	$(INS_EXE) $(TARGETS) $(PREFIX)/bin/
+ ifeq ($(S),)
+ 	$(MKDIR) $(PREFIX)/share/doc/pax-utils/
+ 	$(CP) README BUGS TODO $(PREFIX)/share/doc/pax-utils/
+-	-$(INS_DATA) $(MPAGES) $(PREFIX)/share/man/man1/
++	-$(INS_DATA) $(MPAGES) $(MANPREFIX)/share/man/man1/
+ else
+-	$(INS_DATA) $(MPAGES) $(PREFIX)/share/man/man1/
++	$(INS_DATA) $(MPAGES) $(MANPREFIX)/share/man/man1/
+ endif
+ 
+ dist:

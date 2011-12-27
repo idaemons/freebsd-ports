@@ -1,0 +1,23 @@
+--- SConstruct.orig	2011-04-06 04:40:13.000000000 +0000
++++ SConstruct	2011-10-04 19:16:33.000000000 +0000
+@@ -679,7 +679,10 @@
+ 
+     #make scons colorgcc friendly
+     env['ENV']['HOME'] = os.environ['HOME']
+-    env['ENV']['TERM'] = os.environ['TERM']
++    try:
++        env['ENV']['TERM'] = os.environ['TERM']
++    except KeyError:
++        env['ENV']['TERM'] = 'dumb'
+ 
+     if linux and has_option( "sharedclient" ):
+         env.Append( LINKFLAGS=" -Wl,--as-needed -Wl,-zdefs " )
+@@ -1473,7 +1476,7 @@
+     fullInstallName = installDir + "/bin/" + name
+ 
+     allBinaries += [ name ]
+-    if (solaris or linux) and (not has_option("nostrip")):
++    if (solaris or linux or freebsd) and (not has_option("nostrip")):
+         e.AddPostAction( inst, e.Action( 'strip ' + fullInstallName ) )
+ 
+     if linux and len( COMMAND_LINE_TARGETS ) == 1 and str( COMMAND_LINE_TARGETS[0] ) == "s3dist":

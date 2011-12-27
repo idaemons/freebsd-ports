@@ -1,0 +1,14 @@
+#
+# $FreeBSD$
+#
+
+DIST_SUBDIR=	${PORTNAME}
+
+CONFLICTS=	bugzilla-4.*
+
+PORTSCOUT=	limitw:1,even
+
+WWWDIR=	${PREFIX}/www/bugzilla
+
+NO_BUILD=	yes
+

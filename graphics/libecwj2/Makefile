@@ -1,0 +1,40 @@
+# New ports collection makefile for:	libecwj2
+# Date created:		3 August 2010
+# Whom:			glebius@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libecwj2
+PORTVERSION=	3.3
+PORTREVISION=	1
+CATEGORIES=	graphics
+MASTER_SITES=	http://glebius.int.ru/tmp/403/
+DISTFILES=	ecw_jpeg_2000_sdk_3_3_source.zip
+
+MAINTAINER=	glebius@FreeBSD.org
+COMMENT=	Erdas ECW and JPEG2000 support library
+
+RESTRICTED=	Registration required to download sources, \
+		but sources no longer available on ERDAS website
+
+USE_ZIP=	yes
+USE_AUTOTOOLS=	libtool autoconf
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not build on 7.X
+.endif
+
+post-extract:
+	cd ${WRKDIR} && \
+		${EXTRACT_CMD} ImageCompressionSDKSourceCode3.3Setup_20070509.zip
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure.in
+
+.include <bsd.port.post.mk>

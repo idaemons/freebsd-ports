@@ -1,20 +1,33 @@
 # New ports collection makefile for:	trn
-# Version required:	3.6
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $id: Makefile,v 1.0 1994/10/21 00:00:00 smace Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	trn-3.6
-MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
-EXTRACT_SUFX=	.tar.gz
-DISTFILES=	trn-3.6.tar.gz
+PORTNAME=	trn
+PORTVERSION=	4.0.b77
+CATEGORIES=	news
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}4
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-test/}
 
-IS_INTERACTIVE=	yes
+MAINTAINER=	johans@FreeBSD.org
+COMMENT=	Version 4.0 of the threaded readnews newsreader
+
+NO_LATEST_LINK=	yes
+MAN1=		trn.1 Pnews.1 Rnmail.1
+
+.include <bsd.port.pre.mk>
 
 pre-configure:
-	@echo "===> Running pre-configure target for ${DISTNAME}"
-	@sh ${SCRIPTDIR}/preconf ${PORTSDIR} ${.CURDIR} ${WRKSRC}
+	@${ECHO_MSG} "===>  Running pre-configure target for ${DISTNAME}"
+	@${SED} -e "s:__CC__:$(CC):" -e "s:__CFLAGS__:$(CFLAGS):" \
+		-e "s:/PREFIX:$(PREFIX):"  ${SCRIPTDIR}/preconf > \
+		${WRKDIR}/preconf.new
+.ifdef BATCH
+	@echo 3 | sh ${WRKDIR}/preconf.new ${PORTSDIR} ${.CURDIR} ${WRKSRC}
+.else
+	@sh ${WRKDIR}/preconf.new ${PORTSDIR} ${.CURDIR} ${WRKSRC}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

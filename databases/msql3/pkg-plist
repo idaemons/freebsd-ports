@@ -1,21 +1,43 @@
-@cd /usr/local/Minerva
-@mode 755
-@owner root
-@group bin
+bin/cpi_stat
 bin/msql
-@mode 4750
-bin/msqld
+bin/msql3_broker
 bin/msqladmin
-@mode 4755
-bin/relshow
 bin/msqldump
-@mode 644
+bin/msqlexplain
+bin/msqlexport
+bin/msqlimport
+bin/relshow
+bin/run_daemon
+sbin/msql3d
+etc/msql3/msql.conf
+etc/rc.d/msql3.sh
 include/msql.h
-@mode 644
+include/regexp.h
 lib/libmsql.a
-@mode 644
-doc/mSQL-1.0.ps
-doc/License.mSQL
-@mode 600
-msql.acl.sample
-@exec mkdir -p %D/msqldb/.tmp
+lib/libregexp.a
+%%DATADIR%%/makegen/directory.mm
+%%DATADIR%%/makegen/dll_os2.mm
+%%DATADIR%%/makegen/install.mm
+%%DATADIR%%/makegen/lex.mm
+%%DATADIR%%/makegen/libinstall.mm
+%%DATADIR%%/makegen/library_os2.mm
+%%DATADIR%%/makegen/library_unix.mm
+%%DATADIR%%/makegen/makegen
+%%DATADIR%%/makegen/makegen.cf
+%%DATADIR%%/makegen/object.mm
+%%DATADIR%%/makegen/program.mm
+%%DATADIR%%/makegen/site.mm
+%%DATADIR%%/makegen/touch.mm
+%%DATADIR%%/makegen/yacc.mm
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/License
+%%PORTDOCS%%%%DOCSDIR%%/Manual
+%%PORTDOCS%%%%DOCSDIR%%/Perl
+%%PORTDOCS%%%%DOCSDIR%%/acl.txt
+@dirrm etc/msql3
+@dirrm include/common
+@dirrm %%DATADIR%%/makegen
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,36 @@
+bin/gnat
+bin/gnatbind
+bin/gnatchop
+bin/gnatclean
+%%CXX%%bin/gnatc++
+bin/gnatcpp
+bin/gnatfind
+%%CXX%%bin/gnatg++
+bin/gnatgcc
+bin/gnatgcov
+bin/gnatkr
+bin/gnatlink
+bin/gnatls
+bin/gnatmake
+bin/gnatname
+bin/gnatprep
+bin/gnatxref
+bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
+%%CXX%%bin/%%GNU_HOST%%-gnatc++
+%%CXX%%bin/%%GNU_HOST%%-gnatg++
+bin/%%GNU_HOST%%-gnatgcc
+lib/libgcc_s.so
+lib/libgcc_s.so.1
+lib/libiberty.a
+%%CXX%%lib/libstdc++.a
+%%CXX%%lib/libstdc++.la
+%%CXX%%lib/libstdc++.so
+%%CXX%%lib/libstdc++.so.6
+%%CXX%%lib/libstdc++.so.6-gdb.py
+%%CXX%%lib/libsupc++.a
+%%CXX%%lib/libsupc++.la
+@dirrmtry share/info
+@dirrmtry share/man/man1
+@dirrmtry share/man/man7
+@dirrmtry share/man
+@comment PLIST.lib attached below

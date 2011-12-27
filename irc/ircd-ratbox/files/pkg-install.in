@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# Adapted from irc/ircd-hybrid's script
+#
+
+#-----------------------------------------------------------------------
+if [ "x$2" = "xPRE-INSTALL" ]; then
+#-----------------------------------------------------------------------
+#
+# ${DO_NADA}
+#
+#-----------------------------------------------------------------------
+elif [ "x$2" = "xPOST-INSTALL" ]; then
+#-----------------------------------------------------------------------
+
+mkdir -p %%LOGDIR%%           \
+&& chown ircd:ircd %%LOGDIR%% \
+&& chmod 750 %%LOGDIR%% 
+
+mkdir -p %%RUNDIR%%           \
+&& chown ircd:ircd %%RUNDIR%% \
+&& chmod 750 %%RUNDIR%%
+
+# Secure permissions if we think this is a fresh install
+
+if [ ! -f ${PKG_PREFIX}/etc/ircd-ratbox/ircd.conf ]; then
+	chown -R ircd:ircd ${PKG_PREFIX}/etc/ircd-ratbox/
+	chmod 750 ${PKG_PREFIX}/etc/ircd-ratbox/
+	chmod 640 ${PKG_PREFIX}/etc/ircd-ratbox/*
+fi
+
+#-----------------------------------------------------------------------
+fi
+#-----------------------------------------------------------------------
+
+exit 0

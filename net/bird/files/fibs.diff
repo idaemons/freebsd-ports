@@ -1,0 +1,352 @@
+Index: sysdep/unix/krt.h
+===================================================================
+--- sysdep/unix/krt.h	(revision 4963)
++++ sysdep/unix/krt.h	(revision 4965)
+@@ -67,6 +67,7 @@ struct krt_proto {
+ #ifdef CONFIG_ALL_TABLES_AT_ONCE
+   node instance_node;		/* Node in krt instance list */
+ #endif
++  int rt_sock;			/* Routing socket descriptor */
+   int initialized;		/* First scan has already been finished */
+ };
+ 
+Index: sysdep/bsd/krt-sock.h
+===================================================================
+--- sysdep/bsd/krt-sock.h	(revision 4963)
++++ sysdep/bsd/krt-sock.h	(revision 4965)
+@@ -42,5 +42,8 @@ struct krt_if_status {
+ 
+ static inline int krt_set_params_same(struct krt_set_params *o UNUSED, struct krt_set_params *n UNUSED) { return 1; }
+ void krt_read_msg(struct proto *p, struct ks_msg *msg, int scan);
++int max_fib_num(void);
++int my_fib_get(void);
++int my_fib_set(int fib);
+ 
+ #endif
+Index: sysdep/bsd/fib.Y
+===================================================================
+--- sysdep/bsd/fib.Y	(revision 0)
++++ sysdep/bsd/fib.Y	(revision 4965)
+@@ -0,0 +1,29 @@
++/*
++ *	BIRD -- FreeBSD rtsock configuration
++ *
++ *	(c) 2011 Alexander V. Chernikov
++ *
++ *	Can be freely distributed and used under the terms of the GNU GPL.
++ */
++
++CF_HDR
++
++CF_DECLS
++
++CF_KEYWORDS(ASYNC, KERNEL, TABLE, KRT_PREFSRC, KRT_REALM)
++
++CF_GRAMMAR
++
++CF_ADDTO(kern_proto, kern_proto rtsock_item ';')
++
++rtsock_item:
++   KERNEL TABLE expr {
++	if ($3 < 0 || $3 >= max_fib_num())
++	  cf_error("Kernel routing table number out of range");
++	THIS_KRT->scan.table_id = $3;
++   }
++ ;
++
++CF_CODE
++
++CF_END
+Index: sysdep/bsd/Modules
+===================================================================
+--- sysdep/bsd/Modules	(revision 4963)
++++ sysdep/bsd/Modules	(revision 4965)
+@@ -4,3 +4,4 @@ sysio.h
+ krt-set.h
+ krt-sock.c
+ krt-sock.h
++fib.Y
+Index: sysdep/bsd/krt-scan.h
+===================================================================
+--- sysdep/bsd/krt-scan.h	(revision 4963)
++++ sysdep/bsd/krt-scan.h	(revision 4965)
+@@ -10,6 +10,7 @@
+ #define _BIRD_KRT_SCAN_H_
+ 
+ struct krt_scan_params {
++  int table_id;				/* Kernel table ID we sync with */
+ };
+ 
+ struct krt_scan_status {
+Index: sysdep/bsd/krt-sock.c
+===================================================================
+--- sysdep/bsd/krt-sock.c	(revision 4963)
++++ sysdep/bsd/krt-sock.c	(revision 4965)
+@@ -33,8 +33,6 @@
+ #include "lib/string.h"
+ #include "lib/socket.h"
+ 
+-int rt_sock = 0;
+-
+ int
+ krt_capable(rte *e)
+ {
+@@ -53,6 +51,49 @@
+      );
+ }
+ 
++int
++max_fib_num()
++{
++  int fibs = 1;
++  size_t fibs_len = sizeof(fibs);
++  if (sysctlbyname("net.fibs", &fibs, &fibs_len, NULL, 0) == -1)
++  {
++    log(L_ERR "KRT: unable to get fib number, assuming 1. error: %s", strerror(errno));
++    return 1;
++  }
++
++  log(L_TRACE "Max fibs: %d", fibs);
++  return fibs;
++}
++
++int
++my_fib_get()
++{
++  int fib = 0;
++  size_t fib_len = sizeof(fib);
++  if (sysctlbyname("net.my_fibnum", &fib, &fib_len, NULL, 0) == -1)
++  {
++    log(L_ERR "KRT: unable to get fib number, assuming 0. error: %s", strerror(errno));
++    return 0;
++  }
++
++  return fib;
++}
++
++int
++my_fib_set(int fib)
++{
++  int old_fib = my_fib_get();
++
++  if ((fib != old_fib) && (setfib(fib) == -1))
++  {
++    log(L_ERR "KRT: setfib(%d) failed: %s", fib, strerror(errno));
++    die("Cannot set fib for kernel socket");
++  }
++
++  return old_fib;
++}
++
+ #define ROUNDUP(a) \
+         ((a) > 0 ? (1 + (((a) - 1) | (sizeof(long) - 1))) : sizeof(long))
+ 
+@@ -69,7 +110,7 @@
+     body += l;}
+ 
+ static int
+-krt_sock_send(int cmd, rte *e)
++krt_sock_send(struct krt_proto *p, int cmd, rte *e)
+ {
+   net *net = e->net;
+   rta *a = e->attrs;
+@@ -180,7 +221,7 @@
+   l = body - (char *)&msg;
+   msg.rtm.rtm_msglen = l;
+ 
+-  if ((l = write(rt_sock, (char *)&msg, l)) < 0) {
++  if ((l = write(p->rt_sock, (char *)&msg, l)) < 0) {
+     log(L_ERR "KRT: Error sending route %I/%d to kernel: %m", net->n.prefix, net->n.pxlen);
+     return -1;
+   }
+@@ -189,15 +230,15 @@
+ }
+ 
+ void
+-krt_set_notify(struct krt_proto *p UNUSED, net *n, rte *new, rte *old)
++krt_set_notify(struct krt_proto *p, net *n, rte *new, rte *old)
+ {
+   int err = 0;
+ 
+   if (old)
+-    krt_sock_send(RTM_DELETE, old);
++    krt_sock_send(p, RTM_DELETE, old);
+ 
+   if (new)
+-    err = krt_sock_send(RTM_ADD, new);
++    err = krt_sock_send(p, RTM_ADD, new);
+ 
+   if (err < 0)
+     n->n.flags |= KRF_SYNC_ERROR;
+@@ -223,25 +264,34 @@
+ krt_set_start(struct krt_proto *x, int first UNUSED)
+ {
+   sock *sk_rt;
+-  static int ks_open_tried = 0;
++  struct krt_config *c;
++  int fib = 0, old_fib = 0;
+ 
+-  if (ks_open_tried)
+-    return;
+-
+-  ks_open_tried = 1;
++  if (!strcmp(x->p.proto->name, "Kernel"))
++  {
++    c = (struct krt_config *)x->p.cf;
++    fib = c->scan.table_id;
+ 
+-  DBG("KRT: Opening kernel socket\n");
++    DBG("KRT: Opening kernel route socket to fib %d\n", fib);
++    if (x->p.debug & D_ROUTES)
++      log(L_TRACE "Opening route socket to fib %d", fib);
+ 
+-  if( (rt_sock = socket(PF_ROUTE, SOCK_RAW, AF_UNSPEC)) < 0)
++    old_fib = my_fib_set(fib);
++  }
++  
++  if( (x->rt_sock = socket(PF_ROUTE, SOCK_RAW, AF_UNSPEC)) < 0)
+     die("Cannot open kernel socket for routes");
+ 
+   sk_rt = sk_new(krt_pool);
+   sk_rt->type = SK_MAGIC;
+   sk_rt->rx_hook = krt_set_hook;
+-  sk_rt->fd = rt_sock;
++  sk_rt->fd = x->rt_sock;
+   sk_rt->data = x;
+   if (sk_open(sk_rt))
+     bug("krt-sock: sk_open failed");
++
++  /* Rollback fib */
++  my_fib_set(old_fib);
+ }
+ 
+ #define SKIP(ARG...) do { DBG("KRT: Ignoring route - " ARG); return; } while(0)
+@@ -629,6 +679,8 @@
+   size_t obl, needed;
+   struct ks_msg *m;
+   int retries = 3;
++  struct krt_config *c;
++  int fib = 0, old_fib = 0;
+ 
+   mib[0] = CTL_NET;
+   mib[1] = PF_ROUTE;
+@@ -637,6 +689,17 @@
+   mib[4] = cmd;
+   mib[5] = 0;
+ 
++  if (!strcmp(p->proto->name, "Kernel"))
++  {
++    c = (struct krt_config *)p->cf;
++    fib = c->scan.table_id;
++
++    DBG("KRT: Setting fib to %d for route dump\n", fib);
++    if (p->debug & D_ROUTES)
++      log(L_TRACE "Setting fib to %d for route dump", fib);
++
++    old_fib = my_fib_set(fib);
++  }
+  try:
+   if (sysctl(mib, 6 , NULL , &needed, NULL, 0) < 0)
+     die("krt_sysctl_scan 1: %m");
+@@ -661,6 +724,7 @@
+ 	goto try;
+ 
+       log(L_ERR "KRT: Route scan failed");
++      my_fib_set(old_fib);
+       return;
+     }
+     die("krt_sysctl_scan 2: %m");
+@@ -671,6 +735,8 @@
+     m = (struct ks_msg *)next;
+     krt_read_msg(p, m, 1);
+   }
++
++  my_fib_set(old_fib);
+ }
+ 
+ static byte *krt_buffer = NULL;
+@@ -700,13 +766,16 @@
+ }
+ 
+ void
+-krt_set_shutdown(struct krt_proto *x UNUSED, int last UNUSED)
++krt_set_shutdown(struct krt_proto *x UNUSED, int last)
+ {
+   if (!krt_buffer)
+     return;
+ 
+-  mb_free(krt_buffer);
+-  krt_buffer = NULL;
++  if (last)
++  {
++    mb_free(krt_buffer);
++    krt_buffer = NULL;
++  }
+ }
+ 
+ void
+Index: sysdep/cf/bsd-v6.h
+===================================================================
+--- sysdep/cf/bsd-v6.h	(revision 4963)
++++ sysdep/cf/bsd-v6.h	(revision 4965)
+@@ -10,7 +10,7 @@
+ 
+ #define CONFIG_AUTO_ROUTES
+ #define CONFIG_SELF_CONSCIOUS
+-#undef CONFIG_MULTIPLE_TABLES
++#define CONFIG_MULTIPLE_TABLES
+ 
+ #undef CONFIG_UNIX_IFACE
+ #undef CONFIG_UNIX_SET
+Index: sysdep/cf/bsd.h
+===================================================================
+--- sysdep/cf/bsd.h	(revision 4963)
++++ sysdep/cf/bsd.h	(revision 4965)
+@@ -8,7 +8,7 @@
+ 
+ #define CONFIG_AUTO_ROUTES
+ #define CONFIG_SELF_CONSCIOUS
+-#undef CONFIG_MULTIPLE_TABLES
++#define CONFIG_MULTIPLE_TABLES
+ 
+ #undef CONFIG_UNIX_IFACE
+ #undef CONFIG_UNIX_SET
+Index: sysdep/unix/krt.c
+===================================================================
+--- sysdep/unix/krt.c	(revision 4966)
++++ sysdep/unix/krt.c	(revision 4967)
+@@ -492,9 +492,9 @@
+ 
+ #ifdef CONFIG_ALL_TABLES_AT_ONCE
+ static timer *krt_scan_timer;
+-static int krt_instance_count;
+ static list krt_instance_list;
+ #endif
++static int krt_instance_count;
+ 
+ static void
+ krt_flush_routes(struct krt_proto *p)
+@@ -830,6 +830,7 @@
+   add_tail(&krt_instance_list, &p->instance_node);
+ #else
+   p->krt_pool = P->pool;
++  krt_instance_count++;
+ #endif
+ 
+ #ifdef KRT_ALLOW_LEARN
+@@ -859,11 +860,12 @@
+   struct krt_proto *p = (struct krt_proto *) P;
+   int last = 1;
+ 
++  if (--krt_instance_count)
++    last = 0;
++
+ #ifdef CONFIG_ALL_TABLES_AT_ONCE
+   rem_node(&p->instance_node);
+-  if (--krt_instance_count)
+-    last = 0;
+-  else
++  if (!krt_instance_count)
+ #endif
+     tm_stop(p->scan_timer);
+ 
