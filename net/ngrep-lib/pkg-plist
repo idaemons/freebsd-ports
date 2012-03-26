@@ -1,0 +1,3 @@
+include/ngrep-lib.h
+lib/libngrep.so
+lib/libngrep.so.1

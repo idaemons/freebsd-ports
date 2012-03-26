@@ -1,0 +1,67 @@
+include/dotconf.h
+lib/libdotconf.a
+lib/libdotconf.la
+lib/libdotconf.so
+lib/libdotconf.so.0
+libdata/pkgconfig/dotconf.pc
+%%DOCSDIR%%/dotconf-api.txt
+%%DOCSDIR%%/dotconf-features.txt
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/argdouble/Makefile
+%%EXAMPLESDIR%%/argdouble/argdouble.c
+%%EXAMPLESDIR%%/argdouble/argdouble.conf
+%%EXAMPLESDIR%%/argdouble/output
+%%EXAMPLESDIR%%/caseinsensitive/Makefile
+%%EXAMPLESDIR%%/caseinsensitive/caseinsensitive.c
+%%EXAMPLESDIR%%/caseinsensitive/caseinsensitive.conf
+%%EXAMPLESDIR%%/caseinsensitive/output
+%%EXAMPLESDIR%%/context/Makefile
+%%EXAMPLESDIR%%/context/context.c
+%%EXAMPLESDIR%%/context/context.conf
+%%EXAMPLESDIR%%/context/output
+%%EXAMPLESDIR%%/duplicates/Makefile
+%%EXAMPLESDIR%%/duplicates/duplicate.c
+%%EXAMPLESDIR%%/duplicates/first_module.c
+%%EXAMPLESDIR%%/duplicates/output
+%%EXAMPLESDIR%%/duplicates/sample.conf
+%%EXAMPLESDIR%%/duplicates/second_module.c
+%%EXAMPLESDIR%%/errorhandler/Makefile
+%%EXAMPLESDIR%%/errorhandler/errorhandler.c
+%%EXAMPLESDIR%%/errorhandler/errorhandler.conf
+%%EXAMPLESDIR%%/errorhandler/output
+%%EXAMPLESDIR%%/fallback/Makefile
+%%EXAMPLESDIR%%/fallback/fallback.c
+%%EXAMPLESDIR%%/fallback/fallback.conf
+%%EXAMPLESDIR%%/fallback/output
+%%EXAMPLESDIR%%/libpool/Makefile
+%%EXAMPLESDIR%%/libpool/libpool.h
+%%EXAMPLESDIR%%/libpool/pool.c
+%%EXAMPLESDIR%%/maketest.sh
+%%EXAMPLESDIR%%/modules/Makefile
+%%EXAMPLESDIR%%/modules/include.conf
+%%EXAMPLESDIR%%/modules/module.c
+%%EXAMPLESDIR%%/modules/my_module.c
+%%EXAMPLESDIR%%/modules/output
+%%EXAMPLESDIR%%/modules/sample.conf
+%%EXAMPLESDIR%%/noinline/Makefile
+%%EXAMPLESDIR%%/noinline/noinline.c
+%%EXAMPLESDIR%%/noinline/noinline.conf
+%%EXAMPLESDIR%%/noinline/output
+%%EXAMPLESDIR%%/simple/Makefile
+%%EXAMPLESDIR%%/simple/included.conf
+%%EXAMPLESDIR%%/simple/linecat.conf
+%%EXAMPLESDIR%%/simple/output
+%%EXAMPLESDIR%%/simple/simple.c
+%%EXAMPLESDIR%%/simple/simple.conf
+@dirrm %%EXAMPLESDIR%%/argdouble
+@dirrm %%EXAMPLESDIR%%/caseinsensitive
+@dirrm %%EXAMPLESDIR%%/context
+@dirrm %%EXAMPLESDIR%%/duplicates
+@dirrm %%EXAMPLESDIR%%/errorhandler
+@dirrm %%EXAMPLESDIR%%/fallback
+@dirrm %%EXAMPLESDIR%%/libpool
+@dirrm %%EXAMPLESDIR%%/modules
+@dirrm %%EXAMPLESDIR%%/noinline
+@dirrm %%EXAMPLESDIR%%/simple
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

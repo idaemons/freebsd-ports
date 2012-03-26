@@ -1,0 +1,6 @@
+bin/audiotool
+bin/tonetool
+include/ccaudio2.h
+lib/libccaudio.so
+lib/libccaudio.so.2
+lib/libccaudio.so.2.0.5

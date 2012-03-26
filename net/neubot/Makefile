@@ -1,0 +1,51 @@
+# New ports collection makefile for:	neubot
+# Date created:		Wed 18 oct 2011
+# Whom:			thierry@pompo.net
+#
+# $FreeBSD$
+#
+
+PORTNAME=	neubot
+PORTVERSION=	0.4.10
+CATEGORIES=	net
+MASTER_SITES=	http://releases.neubot.org/_packages/
+
+MAINTAINER=	thierry@FreeBSD.org
+COMMENT=	Measures neutrality of your network connection in the background
+
+LICENSE=	GPLv3
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+
+USE_PYTHON=	2.5-2.9
+
+NO_BUILD=	yes
+
+USERS=		_neubot
+GROUPS=		_neubot
+STATEDIR=	/var/${PORTNAME} # Not yet ready to use /var/db/${PORTNAME}
+
+USE_RC_SUBR=	neubotd
+INSTALLS_ICONS=	yes
+
+MAN1=		neubot.1
+MANCOMPRESSED=	yes
+PORTDOCS=	AUTHORS BUGS ChangeLog PRIVACY README.rst TODO
+
+SUB_FILES=	pkg_message
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD} STATEDIR=${STATEDIR}
+PLIST_SUB+=	STATEDIR=${STATEDIR}
+PKGMESSAGE=	${WRKDIR}/pkg_message
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|;s|/var/neubot|${STATEDIR}|' \
+		${WRKSRC}/${MAKEFILE}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${CAT} ${PKGMESSAGE}
+.endif
+
+.include <bsd.port.mk>

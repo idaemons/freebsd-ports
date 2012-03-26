@@ -1,0 +1,15 @@
+--- configure.orig	2009-03-15 21:10:10.000000000 +0600
++++ configure	2009-03-15 21:10:54.000000000 +0600
+@@ -2888,9 +2888,9 @@
+ 	docdir=$datadir/virtuoso/doc
+ 	htmldocdir=$datadir/virtuoso/doc/html
+ 	pdfdocdir=$datadir/virtuoso/doc/pdf
+-	demodir=$localstatedir/lib/virtuoso/demo
+-	dbdir=$localstatedir/lib/virtuoso/db
+-	httprootdir=$localstatedir/lib/virtuoso/vsp
++	demodir=$localstatedir/virtuoso/demo
++	dbdir=$localstatedir/virtuoso/db
++	httprootdir=$localstatedir/virtuoso/vsp
+ 	hostingdir=$libdir/virtuoso/hosting
+ 	;;
+ 

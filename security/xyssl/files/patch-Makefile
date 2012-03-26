@@ -1,0 +1,35 @@
+--- Makefile.orig	2008-03-16 14:23:22.000000000 +0000
++++ Makefile	2009-01-02 23:45:48.380520000 +0000
+@@ -1,6 +1,6 @@
+ 
+-DESTDIR=/usr/local
+-PREFIX=xyssl_
++PREFIX?=/usr/local
++DESTDIR=${PREFIX}
+ 
+ .SILENT:
+ 
+@@ -10,17 +10,17 @@
+ 
+ install:
+ 	mkdir -p $(DESTDIR)/include/xyssl
+-	cp -r include/xyssl $(DESTDIR)/include
+-	
++	${BSD_INSTALL_DATA} include/xyssl/*.h $(DESTDIR)/include/xyssl
++
+ 	mkdir -p $(DESTDIR)/lib
+-	cp library/libxyssl.* $(DESTDIR)/lib
+-	
++	${BSD_INSTALL_DATA} library/libxyssl.* $(DESTDIR)/lib
++
+ 	mkdir -p $(DESTDIR)/bin
+ 	for p in programs/*/* ; do              \
+ 	    if [ -x $$p ] && [ ! -d $$p ] ;     \
+ 	    then                                \
+-	        f=$(PREFIX)`basename $$p` ;     \
+-	        cp $$p $(DESTDIR)/bin/$$f ;     \
++	        f=xyssl_`basename $$p` ;     \
++	        ${BSD_INSTALL_PROGRAM} $$p $(DESTDIR)/bin/$$f ;     \
+ 	    fi                                  \
+ 	done
+ 

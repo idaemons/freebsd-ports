@@ -1,0 +1,11 @@
+--- cairo-dock-package-theme.orig	2010-12-11 01:37:14.000000000 +0200
++++ cairo-dock-package-theme	2010-12-11 01:37:33.000000000 +0200
+@@ -125,7 +125,7 @@
+ 	if test "x${theme}" != "x"; then
+ 		#\__________ On cherche si ce theme est un theme officiel ou non.
+ 		echo "un theme est present ($theme)"
+-		wget "$THEME_SERVER/$3/list.conf" -O "liste.tmp" -t 3 -T 30
++		fetch -o "liste.tmp" -T 30 "$THEME_SERVER/$3/list.conf"
+ 		if test -f "liste.tmp" ; then
+ 			grep "^\[${theme}\]" "liste.tmp"
+ 			if test "$?" != "0" -a  "$theme" != "Classic" -a "$theme" != "default"; then  # pas un theme officiel

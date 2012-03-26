@@ -1,0 +1,32 @@
+# New ports collection makefile for:	mdds
+# Date created:		2011-07-22
+# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mdds
+PORTVERSION=	0.5.4
+PORTREVISION=	1
+CATEGORIES=	devel
+MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+
+MAINTAINER=	office@FreeBSD.org
+COMMENT=	Multi-dimensional data index algorithm
+
+LICENSE=	MIT
+
+PROJECTHOST=	multidimalgorithm
+
+USE_BZIP2=	yes
+NO_BUILD=	yes
+
+do-install:
+	@${MKDIR} ${PREFIX}/include/mdds
+	@${MKDIR} ${PREFIX}/include//mdds/hash_container
+	@${INSTALL_DATA} ${WRKSRC}/include/mdds/*.hpp ${PREFIX}/include/mdds
+	@${INSTALL_DATA} ${WRKSRC}/include/mdds/*.inl ${PREFIX}/include/mdds
+	@${INSTALL_DATA} ${WRKSRC}/include/mdds/hash_container/*.hpp ${PREFIX}/include/mdds/hash_container
+
+.include <bsd.port.mk>

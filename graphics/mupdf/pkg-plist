@@ -1,0 +1,13 @@
+bin/mupdf
+bin/mu_pdfclean
+bin/mu_pdfdraw
+bin/mu_pdfextract
+bin/mu_pdfinfo
+bin/mu_pdfshow
+bin/mu_xpsdraw
+include/fitz.h
+include/mupdf.h
+include/muxps.h
+lib/libfitz.a
+lib/libmupdf.a
+lib/libmuxps.a

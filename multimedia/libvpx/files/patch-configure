@@ -1,0 +1,10 @@
+--- configure.orig
++++ configure
+@@ -125,6 +125,7 @@
+ all_platforms="${all_platforms} x86_64-win64-vs9"
+ all_platforms="${all_platforms} universal-darwin8-gcc"
+ all_platforms="${all_platforms} universal-darwin9-gcc"
++all_platforms="${all_platforms} ia64-linux-gcc"
+ all_platforms="${all_platforms} generic-gnu"
+
+ # all_targets is a list of all targets that can be configured

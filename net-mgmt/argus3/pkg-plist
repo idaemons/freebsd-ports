@@ -1,0 +1,18 @@
+bin/argusbug
+sbin/argus
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/Archive/argusarchive
+%%EXAMPLESDIR%%/Config/argus.conf
+%%EXAMPLESDIR%%/Deployment/sample
+%%EXAMPLESDIR%%/Startup/argus
+%%EXAMPLESDIR%%/Startup/README
+%%EXAMPLESDIR%%/System/crontab
+%%EXAMPLESDIR%%/System/magic
+%%EXAMPLESDIR%%/README
+@dirrmtry %%EXAMPLESDIR%%/Archive
+@dirrmtry %%EXAMPLESDIR%%/Config
+@dirrmtry %%EXAMPLESDIR%%/Deployment
+@dirrmtry %%EXAMPLESDIR%%/Startup
+@dirrmtry %%EXAMPLESDIR%%/System
+@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

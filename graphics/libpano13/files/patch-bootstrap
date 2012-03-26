@@ -1,0 +1,39 @@
+--- bootstrap.orig	2009-02-01 19:35:46.000000000 +0200
++++ bootstrap	2011-02-27 08:26:52.000000000 +0200
+@@ -23,7 +23,7 @@
+ 	libtool_version=`$LIBTOOLIZE --version | sed 's/.*) \([0-9.][0-9.]*\).*/\1/'`
+ #	echo libtool version: $libtool_version
+ 	case $libtool_version in
+-	    1.4*|1.5*|2.0*|2.2*|2.4*)
++	    1.4*|1.5*|[2-9]*)
+ 		have_libtool=true
+ 		;;
+ 	esac
+@@ -96,27 +96,3 @@
+ $AUTOMAKE --add-missing --copy || exit $?
+ 
+ $AUTOCONF || exit $?
+-
+-cd $ORIGDIR || exit $?
+-
+-echo
+-echo "I am going to run ./configure with the following arguments:"
+-echo
+-echo "  --enable-maintainer-mode $AUTOGEN_CONFIGURE_ARGS $@"
+-echo
+-
+-if test -z "$*"; then
+-  echo "If you wish to pass additional arguments, please specify them "
+-  echo "on the $0 command line or set the AUTOGEN_CONFIGURE_ARGS "
+-  echo "environment variable."
+-  echo
+-fi
+-				
+-$srcdir/configure --enable-maintainer-mode $AUTOGEN_CONFIGURE_ARGS "$@"
+-RC=$?
+-if test $RC -ne 0; then
+-  echo
+-  echo "Configure failed or did not finish!"
+-  exit $RC
+-fi
+-	  

@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%CLASSDIR%%/bytefield.dtx
+%%CLASSDIR%%/bytefield.sty
+%%CLASSDIR%%/bytefield.ins
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%

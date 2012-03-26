@@ -1,0 +1,20 @@
+--- bindings/Makefile.in.orig	2012-02-02 21:46:59.000000000 -0500
++++ bindings/Makefile.in	2012-02-03 15:13:04.000000000 -0500
+@@ -329,7 +329,7 @@
+ program_transform_name = @program_transform_name@
+ psdir = @psdir@
+ pyexecdir = @pyexecdir@
+-pythondir = @pythondir@
++pythondir = %%PYTHON_SITELIBDIR%%
+ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ srcdir = @srcdir@
+@@ -349,7 +349,7 @@
+ 	hamlibperl_wrap.c Hamlib.pm Hamlib.bs
+ AM_CFLAGS = -fno-strict-aliasing
+ @ENABLE_TCL_TRUE@tcl_ltlib = hamlibtcl.la
+-@ENABLE_TCL_TRUE@tcldir = $(prefix)/lib/tcl
++@ENABLE_TCL_TRUE@tcldir = %%TCL_LIBDIR%%
+ @ENABLE_TCL_TRUE@PKG_VER = 1.0
+ @ENABLE_TCL_TRUE@DLL = hamlibtcl-$(PKG_VER)@TCL_SHLIB_SUFFIX@
+ @ENABLE_TCL_TRUE@nodist_hamlibtcl_la_SOURCES = hamlibtcl_wrap.c

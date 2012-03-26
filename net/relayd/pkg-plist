@@ -1,0 +1,4 @@
+@unexec if cmp -s %D/etc/relayd.conf %D/etc/relayd.conf.sample; then rm -f %D/etc/relayd.conf; fi
+etc/relayd.conf.sample
+sbin/relayctl
+sbin/relayd

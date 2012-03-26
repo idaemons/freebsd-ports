@@ -1,0 +1,20 @@
+# $FreeBSD$
+#
+
+    COMMENT = Ukrainian support
+
+    SUBDIR += aspell
+    SUBDIR += emacs-koi8u
+    SUBDIR += gd
+    SUBDIR += hunspell
+    SUBDIR += hyphen
+    SUBDIR += ispell
+    SUBDIR += kde3-i18n
+    SUBDIR += kde4-l10n
+    SUBDIR += koffice-i18n
+    SUBDIR += koffice-kde4-l10n
+    SUBDIR += monacofonts
+    SUBDIR += mythes
+    SUBDIR += webalizer
+
+.include <bsd.port.subdir.mk>

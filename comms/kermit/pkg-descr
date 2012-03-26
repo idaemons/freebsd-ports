@@ -1,8 +1,8 @@
-KERMIT file transfer protocol 5A edit 189
------------------------------------------
+C-Kermit is a combined network and serial communication software package
+offering a consistent, transport-independent, cross-platform approach to
+connection establishment, terminal sessions, file transfer, file management,
+character-set translation, numeric and alphanumeric paging, and automation
+of file transfer, dialogs, and communication tasks through its built-in
+scripting language.
 
-This is a release of C-Kermit 5A edit 189 file transfer protocol utility.
-This version supports transfer of un-escaped control characters for
-very fast file transfers with high reliability.
-
-(binaries)
+WWW: http://www.columbia.edu/kermit/

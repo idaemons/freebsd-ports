@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/drjava
+%%DATADIR%%/%%DRJAVAJAR%%
+@dirrm %%DATADIR%%

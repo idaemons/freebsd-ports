@@ -1,0 +1,51 @@
+--- Makefile.orig	2009-01-05 23:55:59.000000000 +0300
++++ Makefile	2011-04-13 20:07:51.559534154 +0400
+@@ -10,9 +10,9 @@
+ # one executable, xephem.
+ 
+ # These -I and -L flags point to the supporting XEphem libraries
+-LIBINC = -I../../libastro -I../../libip -I../../liblilxml -I../../libjpegd -I../../libpng -I../../libz
+-LIBLNK = -L../../libastro -L../../libip -L../../liblilxml -L../../libjpegd -L../../libpng -L../../libz
+-LIBLIB = -lastro -lip -llilxml -ljpegd -lpng -lz
++LIBINC = -I../../libastro -I../../libip -I../../liblilxml -I%%LOCALBASE%%/include
++LIBLNK = -L../../libastro -L../../libip -L../../liblilxml -L%%LOCALBASE%%/lib
++LIBLIB = -lastro -lip -llilxml -ljpeg -lpng -lz
+ 
+ # MOTIFI is the directory containing the Xm directory of include files.
+ # MOTIFL is the directory containing the libXm.a library.
+@@ -24,18 +24,18 @@
+ MOTIFL = $(MOTIF)
+ endif
+ ifndef MOTIFI
+-MOTIFI = /usr/X11R6/include
++MOTIFI = %%LOCALBASE%%/include
+ endif
+ ifndef MOTIFL
+-MOTIFL = /usr/X11R6/lib
++MOTIFL = %%LOCALBASE%%/lib
+ endif
+ 
+ # for linux and Apple OS X
+ # some systems now use just /usr/X11 (not /usr/X11R6)
+ CC = gcc
+ CLDFLAGS = -g
+-CFLAGS = $(LIBINC) $(CLDFLAGS) -O2 -Wall -I$(MOTIFI) -I/usr/X11R6/include
+-LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L/usr/X11R6/lib
+-XLIBS = $(MOTIFL)/libXm.a -lXp -lXt -lXext -lXmu -lX11
+-LIBS = $(XLIBS) $(LIBLIB) -lm
++CFLAGS = $(LIBINC) $(CLDFLAGS) -Wall -I$(MOTIFI) -I%%LOCALBASE%%/include
++LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L%%LOCALBASE%%/lib
++XLIBS = $(MOTIFL)/libXm.a -lXp -lXt -lXext -lXmu -lX11 -lXft
++LIBS = $(XLIBS) $(LIBLIB) -lm -liconv
+
+@@ -189,10 +189,7 @@
+ libs:
+ 	cd ../../libastro; make
+ 	cd ../../libip; make
+-	cd ../../libjpegd; make
+ 	cd ../../liblilxml; make
+-	cd ../../libpng; make
+-	cd ../../libz; make
+ 
+ clean:
+ 	rm -fr *.o ../../lib*/*.[ao]

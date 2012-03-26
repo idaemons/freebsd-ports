@@ -1,0 +1,11 @@
+*****************************************************
+*               Please read                         *
+*****************************************************
+
+to install the config files do the following .....
+
+cp -r %%EXAMPLESDIR%%/conf %%ETCDIR%%/conf
+
+then edit /etc/rc.conf and add
+
+freeswitch_enable="YES"
