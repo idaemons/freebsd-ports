@@ -1,0 +1,28 @@
+# ex:ts=8
+# Ports collection makefile for:	p5-VCG
+# Date created:			Mar 30, 2003
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	VCG
+PORTVERSION=	0.5
+PORTREVISION=	1
+CATEGORIES=	graphics perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:TEEJAY
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Interface to the VCG graphing tool
+
+BUILD_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		xvcg:${PORTSDIR}/graphics/vcg
+
+PERL_CONFIGURE=	yes
+
+MAN3=	VCG.3
+
+.include <bsd.port.mk>

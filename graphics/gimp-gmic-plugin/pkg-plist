@@ -1,0 +1,4 @@
+bin/gmic
+%%BASH%%etc/bash_completion.d/gmic_bashcompletion.sh
+%%PLUGIN_DIR%%/gmic_gimp
+@dirrmtry %%PLUGIN_DIR%%

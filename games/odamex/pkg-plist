@@ -1,0 +1,7 @@
+%%LAUNCHER%%bin/odalaunch
+bin/odamex
+bin/odasrv
+%%DATADIR%%/odamex.wad
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

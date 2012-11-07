@@ -1,0 +1,66 @@
+# Created by: Matt Lancereau <ports@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	xfce4-media
+PORTVERSION=	0.9.2
+PORTREVISION=	25
+CATEGORIES=	multimedia xfce
+MASTER_SITES=	http://spuriousinterrupt.org/files/xfmedia/
+DISTNAME=	xfmedia-${PORTVERSION}
+DIST_SUBDIR=	xfce4
+
+MAINTAINER=	xfce@FreeBSD.org
+COMMENT=	Lightweight media player for Xfce4 based on the xine engine
+
+LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine
+
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack pkgconfig
+USE_XFCE=	configenv libexo libgui libutil panel
+USE_XORG=	x11 sm
+
+OPTIONS_DEFINE=	TAGLIB DBUS STARTUP
+OPTIONS_DEFAULT=	DBUS STARTUP
+
+TAGLIB_DESC=	metadata editing support
+STARTUP_DESC=	startup notification support
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MTABLIB}
+LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
+CONFIGURE_ARGS+=--with-taglib
+.else
+CONFIGURE_ARGS+=--without-taglib
+.endif
+
+.if ${PORT_OPTIONS:MDBUS}
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CONFIGURE_ARGS+=--enable-dbus
+.else
+CONFIGURE_ARGS+=--disable-dbus
+.endif
+
+.if ${PORT_OPTIONS:MSTARTUP}
+LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+CONFIGURE_ARGS+=--enable-startup-notification
+.else
+CONFIGURE_ARGS+=--disable-startup-notification
+.endif
+
+CFLAGS+=	-I${LOCALBASE}/include
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|xfmedia_remote_LDADD = |&@LIBXFCEGUI4_LIBS@|" \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e "s|exo-0.3|exo-1|" ${WRKSRC}/configure
+.for file in mediamarks.c playlist.c settings-dialog.c xfmedia-playlist-queue.c
+	@${REINPLACE_CMD} -e "s|EXO_PANGO_ELLIPSIZE_END|PANGO_ELLIPSIZE_END|" \
+		${WRKSRC}/src/${file}
+.endfor
+
+.include <bsd.port.post.mk>

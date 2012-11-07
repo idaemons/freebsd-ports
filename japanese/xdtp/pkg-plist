@@ -1,0 +1,70 @@
+bin/xdtp
+bin/banbun2html
+bin/banbun2text
+bin/banbun2xhtml
+bin/glsd-doc2html
+bin/glsd-doc2text
+lib/libxdtp.so
+lib/libxdtp.so.3
+lib/libxdtp.a
+libdata/pkgconfig/libxdtp.pc
+%%DOCSDIR%%/banbun-0001.html
+%%DOCSDIR%%/banbun-0002.html
+%%DOCSDIR%%/banbun-0003.html
+%%DOCSDIR%%/banbun-0004.html
+@dirrm %%DOCSDIR%%
+%%DATADIR%%/emacs/hanbun.el
+%%DATADIR%%/toHTML/BanBun.xsl
+%%DATADIR%%/toHTML/BanBunModule.xsl
+%%DATADIR%%/toHTML/DocumentModule.xsl
+%%DATADIR%%/toHTML/GLSD.xsl
+%%DATADIR%%/toHTML/GLSDocumentModule.xsl
+%%DATADIR%%/toTEXT/BanBun.xsl
+%%DATADIR%%/toTEXT/BanBunModule.xsl
+%%DATADIR%%/toTEXT/DocumentModule.xsl
+%%DATADIR%%/toTEXT/GLSD.xsl
+%%DATADIR%%/toTEXT/GLSDocumentModule.xsl
+%%DATADIR%%/toXHTML/BanBun.xsl
+%%DATADIR%%/toXHTML/BanBunModule.xsl
+%%DATADIR%%/toXHTML/DocumentModule.xsl
+%%DATADIR%%/toXHTML/GLSD.xsl
+%%DATADIR%%/toXHTML/GLSDocumentModule.xsl
+@dirrm %%DATADIR%%/emacs
+@dirrm %%DATADIR%%/toHTML
+@dirrm %%DATADIR%%/toTEXT
+@dirrm %%DATADIR%%/toXHTML
+@dirrmtry %%DATADIR%%
+%%XDTP_INC%%include/xdtp/CSVAnalyzer.h
+%%XDTP_INC%%include/xdtp/Exception.h
+%%XDTP_INC%%include/xdtp/RefPtr.h
+%%XDTP_INC%%include/xdtp/URI.h
+%%XDTP_INC%%include/xdtp/URLTool.h
+%%XDTP_INC%%include/xdtp/Utilities.h
+%%XDTP_INC%%include/xdtp/XDTPObjectWrapper.h
+%%XDTP_INC%%include/xdtp/XDTPTransform.h
+%%XDTP_INC%%include/xdtp/XMLTool.h
+%%XDTP_INC%%include/xdtp/xdtptypes.h
+%%XDTP_INC%%include/xdtp/xmlloader.h
+%%XDTP_INC%%include/xdtp/xmlsaver.h
+%%XDTP_INC%%include/xdtp/modules/GLSDBanBunModule.h
+%%XDTP_INC%%include/xdtp/modules/GLSDBanBunModuleChecker.h
+%%XDTP_INC%%include/xdtp/modules/GLSDDocumentModule.h
+%%XDTP_INC%%include/xdtp/modules/GLSDDocumentModuleChecker.h
+%%XDTP_INC%%include/xdtp/modules/GLSDModule.h
+%%XDTP_INC%%include/xdtp/modules/GLSDModuleChecker.h
+%%XDTP_INC%%include/xdtp/modules/XDTPChecker.h
+%%XDTP_INC%%include/xdtp/modules/XDTPModule.h
+%%XDTP_INC%%include/xdtp/modules/XDTPModuleAdapter.h
+%%XDTP_INC%%include/xdtp/modules/XDTPModuleLoader.h
+%%XDTP_INC%%include/xdtp/modules/imports/GLSDImportModule.h
+%%XDTP_INC%%include/xdtp/modules/imports/GLSDImportModuleAdapter.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportImage.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextCSV.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextCommandPrompt.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextGLSD.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextPlain.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextSourcecode.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextXML.h
+%%XDTP_INC%%@dirrm include/xdtp/modules/imports
+%%XDTP_INC%%@dirrm include/xdtp/modules
+%%XDTP_INC%%@dirrm include/xdtp

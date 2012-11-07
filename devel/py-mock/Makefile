@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+PORTNAME=	mock
+PORTVERSION=	0.8.0
+PORTREVISION=	1
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	jessekempf@gmail.com
+COMMENT=	Mock unit tests for Python
+
+LICENSE=	BSD
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+
+# Python3 ready
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	easy_install
+
+.include <bsd.port.mk>

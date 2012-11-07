@@ -1,0 +1,29 @@
+bin/svnweb-install
+%%SITE_PERL%%/SVN/CHANGES.pod
+%%SITE_PERL%%/SVN/CONTRIBUTING.pod
+%%SITE_PERL%%/SVN/UPDATING.pod
+%%SITE_PERL%%/SVN/Web.pm
+%%SITE_PERL%%/SVN/Web/Blame.pm
+%%SITE_PERL%%/SVN/Web/Browse.pm
+%%SITE_PERL%%/SVN/Web/Checkout.pm
+%%SITE_PERL%%/SVN/Web/Diff.pm
+%%SITE_PERL%%/SVN/Web/DiffParser.pm
+%%SITE_PERL%%/SVN/Web/I18N.pm
+%%SITE_PERL%%/SVN/Web/I18N/en.po
+%%SITE_PERL%%/SVN/Web/I18N/fr.po
+%%SITE_PERL%%/SVN/Web/I18N/zh_cn.po
+%%SITE_PERL%%/SVN/Web/I18N/zh_tw.po
+%%SITE_PERL%%/SVN/Web/List.pm
+%%SITE_PERL%%/SVN/Web/Log.pm
+%%SITE_PERL%%/SVN/Web/RSS.pm
+%%SITE_PERL%%/SVN/Web/Revision.pm
+%%SITE_PERL%%/SVN/Web/Test.pm
+%%SITE_PERL%%/SVN/Web/View.pm
+%%SITE_PERL%%/SVN/Web/X.pm
+%%SITE_PERL%%/SVN/Web/action.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web/.packlist
+@dirrm %%SITE_PERL%%/SVN/Web/I18N
+@dirrm %%SITE_PERL%%/SVN/Web
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
+@dirrmtry %%SITE_PERL%%/SVN

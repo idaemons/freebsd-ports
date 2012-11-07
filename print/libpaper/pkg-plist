@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+bin/paperconf
+etc/papersize.a4
+etc/papersize.letter
+include/paper.h
+lib/libpaper.a
+lib/libpaper.la
+lib/libpaper.so
+lib/libpaper.so.2
+sbin/paperconfig

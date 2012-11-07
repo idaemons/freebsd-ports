@@ -1,0 +1,4 @@
+%%RUBY_SITEARCHLIBDIR%%/numru/dcl_raw.so
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%/numru
+%%RUBY_SITELIBDIR%%/numru/dcl.rb
+@dirrmtry %%RUBY_SITELIBDIR%%/numru

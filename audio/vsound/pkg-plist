@@ -1,0 +1,7 @@
+bin/vsound
+lib/vsound/libvsound.a
+lib/vsound/libvsound.la
+lib/vsound/libvsound.so
+@dirrm lib/vsound
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

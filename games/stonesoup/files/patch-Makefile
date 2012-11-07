@@ -1,0 +1,47 @@
+--- ./Makefile.orig	2012-04-10 21:47:14.000000000 +0200
++++ ./Makefile	2012-04-14 18:50:22.291961515 +0200
+@@ -63,7 +63,7 @@
+ #    ask for a package with convenience libraries instead -- we'll try to provide
+ #    them somewhere in the near future.
+ 
+-GAME = crawl
++GAME = stonesoup
+ 
+ ASSERTS = yes
+ 
+@@ -111,7 +111,7 @@
+ 
+ else
+ 
+-CFOPTIMIZE := -O2
++CFOPTIMIZE :=
+ 
+ endif # USE_ICC
+ 
+@@ -119,7 +119,7 @@
+ CFOPTIMIZE += -flto=jobserver -fwhole-program
+ endif
+ 
+-CFOTHERS := -pipe $(EXTERNAL_FLAGS)
++CFOTHERS := $(CFLAGS)
+ CFWARN := -Wall -Wformat-security
+ CFWARN_L := -Wundef
+ 
+@@ -688,7 +688,7 @@
+ DEFINES += -DWIZARD
+ endif
+ ifdef NO_OPTIMIZE
+-CFOPTIMIZE  := -O0
++CFOPTIMIZE  :=
+ endif
+ 
+ ifdef PCH
+@@ -953,7 +953,7 @@
+ 
+ GAME_DEPENDS  := $(OBJECTS) $(EXTRA_OBJECTS) $(CONTRIB_LIBS) dat/dlua/tags.lua
+ SRC_PKG_BASE  := stone_soup
+-SRC_VERSION   := $(shell git describe --tags $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
++SRC_VERSION   := $(shell cat util/release_ver)
+ MAJOR_VERSION = $(shell echo "$(SRC_VERSION)"|sed -r 's/-.*//;s/^([^.]+\.[^.]+).*/\1/')
+ 
+ export SRC_VERSION

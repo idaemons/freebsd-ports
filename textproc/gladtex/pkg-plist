@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+bin/eqn2img
+bin/gladtex

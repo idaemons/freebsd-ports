@@ -1,0 +1,7 @@
+%%PORTDOCS%%%%DOCSDIR%%/tkhonyaku-readme
+share/tkhonyaku/tkhonyaku.gif
+share/tkhonyaku/tkhonyaku.xpm
+share/tkhonyaku/colors.gif
+bin/tkhonyaku
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/tkhonyaku

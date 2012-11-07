@@ -1,7 +1,6 @@
-This package contains the binary release of BLT version 1.7, an add-on
-library for programs using Tk 3.6.  It includes widgets to implement
-drag and drop, barcharts and X-Y plots, and including generic Tk
-widgets inside a text object.
+The BLT Toolkit is an extension to Tcl and Tk. It adds new commands
+and widgets to the Tcl interpreter. Included widgets are 2D graph,
+barchart, stripchart, tab notebook, and tree viewer.
 
 NOTE: This kit requires as a pre-requisite the Tcl and Tk binary kits.
 This version uses FreeBSD shared libraries.

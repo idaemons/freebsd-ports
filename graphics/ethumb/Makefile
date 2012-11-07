@@ -1,0 +1,50 @@
+# Created by: Grzegorz Blach <gblach@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	ethumb
+PORTVERSION=	0.1.1.65643
+CATEGORIES=	graphics enlightenment
+MASTER_SITES=	http://download.enlightenment.org/snapshots/2011-11-28/ \
+		http://files.roorback.net/e17/base/
+
+MAINTAINER=	gblach@FreeBSD.org
+COMMENT=	Thumbnail generator library
+
+LICENSE=	LGPL21
+
+LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
+
+DIST_SUBDIR=	e17
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_EFL=	eina evas ecore edje libtool_hack
+USE_EFL_ECORE=	evas file x11 input_evas
+USE_GNOME=	gnomehack pkgconfig
+USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS=	--disable-epdf
+
+OPTIONS=	EMOTION "Build with Emotion module" on \
+		ETHUMBD "Build ethumbd daemon (requires dbus)" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_EMOTION)
+USE_EFL+=	emotion
+CONFIGURE_ARGS+=	--enable-emotion
+PLIST_SUB+=	EMOTION=""
+.else
+CONFIGURE_ARGS+=	--disable-emotion
+PLIST_SUB+=	EMOTION="@comment "
+.endif
+
+.if !defined(WITHOUT_ETHUMBD)
+USE_EFL+=	edbus
+PLIST_SUB+=	ETHUMBD=""
+CONFIGURE_ARGS+=	--enable-ethumbd
+.else
+PLIST_SUB+=	ETHUMBD="@comment "
+CONFIGURE_ARGS+=	--disable-ethumbd
+.endif
+
+.include <bsd.port.post.mk>

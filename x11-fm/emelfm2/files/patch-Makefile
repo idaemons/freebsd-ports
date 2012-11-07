@@ -1,0 +1,22 @@
+--- Makefile.orig	2012-03-16 09:11:47.000000000 +0100
++++ Makefile	2012-04-23 08:12:55.000000000 +0200
+@@ -274,7 +274,7 @@
+  lLIBS += $(shell pkg-config --libs gmodule-2.0)
+ endif
+ # -lrt needed for clock_gettime(), explicit -lm, -ldl needed for some arch-linux distros
+-lLIBS += -lrt -lm -ldl
++lLIBS += -lrt -lm
+ ifeq ($(USE_GAMIN), 1)
+ #gamin code is a superset of FAM code, so gamin needs fam as well
+ lLIBS += -lfam
+@@ -319,10 +319,6 @@
+ 	@for file in `ls $(ICONS)/ |grep -v svn`; do \
+ 		install -m 644 $(ICONS)/$$file $(ICON_DIR); \
+ 	done
+-	@install -d $(DOC_DIR)
+-	@for file in `ls $(DOCS)/ |grep -v svn |grep -v desktop_environment |grep -v api |grep -v $(TARGET).1`; do \
+-		install -m 644 $(DOCS)/$$file $(DOC_DIR); \
+-	done
+ 	@install -d $(MAN_DIR)
+ 	@install -m 644 $(DOCS)/$(TARGET).1 $(MAN_DIR);
+ 

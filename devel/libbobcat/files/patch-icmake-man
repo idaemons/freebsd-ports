@@ -1,0 +1,36 @@
+--- icmake/man.orig	2011-05-25 13:00:10.000000000 +0200
++++ icmake/man	2011-11-14 20:36:27.000000000 +0100
+@@ -9,7 +9,10 @@
+ 
+     special(0, 0);
+ 
+-    md("tmp/man/man1 tmp/man/man3 tmp/man/man7 tmp/manhtml");
++    md("tmp/man/man1 tmp/man/man3 tmp/man/man7");
++#ifdef MANHTML
++    md("tmp/manhtml");
++#endif
+ 
+     chdir("documentation/man");
+ 
+@@ -35,8 +38,10 @@
+     
+             run("yodl2man  --no-warnings -r 15000 -o ../../tmp/man/man3/" + 
+                                                     base + ".3bobcat " + yodl);
++#ifdef MANHTML
+             run("yodl2html --no-warnings -r 15000 -o ../../tmp/manhtml/" + 
+                                                     base + ".3.html " + yodl);
++#endif
+         }
+     }
+ 
+@@ -44,8 +49,10 @@
+     {
+         run("yodl2man  --no-warnings  -r 15000 -o ../../tmp/man/man7/bobcat.7 "
+                                                                 "bobcat.yo");
++#ifdef MANHTML
+         run("yodl2html --no-warnings  -r 15000 "
+                         "-o ../../tmp/manhtml/bobcat.7.html bobcat.yo");
++#endif
+     }
+ 
+     run("touch man-stamp");

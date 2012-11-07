@@ -1,0 +1,49 @@
+--- configure.orig	Wed Aug 18 17:48:30 2004
++++ configure	Wed Aug 18 20:20:36 2004
+@@ -5710,7 +5710,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lzvbi $LIBPTHREAD $LIBS"
++LIBS="-lunicode -lzvbi $LIBPTHREAD $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -5772,7 +5772,7 @@
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_ZVBI 1
+ _ACEOF
+- FOUND_ZVBI="yes"; LIBZVBI="-lzvbi -lpthread -lm -lpng -lz"
++ FOUND_ZVBI="yes"; LIBZVBI="-lzvbi -L/usr/X11R6/lib -lunicode -lpthread -lm -lpng -lz"
+ fi
+ 
+ else
+@@ -5930,7 +5930,7 @@
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_DV 1
+ _ACEOF
+- FOUND_DV="yes"; LIBDV="-ldv -lm"
++ FOUND_DV="yes"; LIBDV="-ldv -lm $LIBPTHREAD $LIBS"
+ fi
+ 
+ else
+@@ -6768,9 +6768,6 @@
+ echo "$as_me:$LINENO: checking for X11 config directory" >&5
+ echo $ECHO_N "checking for X11 config directory... $ECHO_C" >&6
+ x11conf=/usr/X11R6/lib/X11
+-if test -d /etc/X11; then
+-	x11conf=/etc/X11
+-fi
+ echo "$as_me:$LINENO: result: $x11conf" >&5
+ echo "${ECHO_T}$x11conf" >&6
+ 
+@@ -6778,9 +6775,6 @@
+ echo "$as_me:$LINENO: checking for X11 app-defaults directory" >&5
+ echo $ECHO_N "checking for X11 app-defaults directory... $ECHO_C" >&6
+ resdir=/usr/X11R6/lib/X11
+-if test -d /etc/X11/app-defaults; then
+-	resdir=/etc/X11
+-fi
+ echo "$as_me:$LINENO: result: $resdir/app-defaults" >&5
+ echo "${ECHO_T}$resdir/app-defaults" >&6
+ 

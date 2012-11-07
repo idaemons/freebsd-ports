@@ -1,0 +1,8 @@
+*************************************************************************
+
+    Make sure you have the following two lines in your kernel config:
+
+	options SC_PIXEL_MODE
+	options VESA	# or set vesa_load="YES" in /boot/loader.conf
+
+*************************************************************************

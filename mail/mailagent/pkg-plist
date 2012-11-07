@@ -1,0 +1,88 @@
+bin/mailpatch
+bin/mailhelp
+bin/maillist
+bin/maildist
+bin/package
+bin/edusers
+bin/mailagent
+lib/mailagent/filter
+lib/mailagent/agenthelp
+lib/mailagent/commands
+lib/mailagent/distribs
+lib/mailagent/filter.sh
+lib/mailagent/mailagent.cf
+lib/mailagent/proglist
+lib/mailagent/chkagent.sh
+lib/mailagent/setup.cf
+lib/mailagent/compressors
+lib/mailagent/help/addauth
+lib/mailagent/help/approve
+lib/mailagent/help/delpower
+lib/mailagent/help/end
+lib/mailagent/help/getauth
+lib/mailagent/help/help
+lib/mailagent/help/newpower
+lib/mailagent/help/passwd
+lib/mailagent/help/password
+lib/mailagent/help/power
+lib/mailagent/help/release
+lib/mailagent/help/remauth
+lib/mailagent/help/set
+lib/mailagent/help/setauth
+lib/mailagent/help/user
+lib/mailagent/examples/README
+lib/mailagent/examples/daemon
+lib/mailagent/examples/mailfolders
+lib/mailagent/examples/mchk
+lib/mailagent/examples/mhinc
+lib/mailagent/examples/nocmds
+lib/mailagent/examples/profile
+lib/mailagent/examples/rules
+lib/mailagent/examples/vacation
+%%EXAMPLESDIR%%/misc/README
+%%EXAMPLESDIR%%/misc/fakesend/README
+%%EXAMPLESDIR%%/misc/fakesend/fakesend.pl
+%%EXAMPLESDIR%%/misc/fakesend/freplcomps
+%%EXAMPLESDIR%%/misc/fakesend/mh_profile
+%%EXAMPLESDIR%%/misc/getcost/README
+%%EXAMPLESDIR%%/misc/getcost/getcost
+%%EXAMPLESDIR%%/misc/getcost/getcost.bak
+%%EXAMPLESDIR%%/misc/getcost/rules
+%%EXAMPLESDIR%%/misc/getcost/spamconfig
+%%EXAMPLESDIR%%/misc/mime/README
+%%EXAMPLESDIR%%/misc/mime/rules
+%%EXAMPLESDIR%%/misc/mime/unmime
+%%EXAMPLESDIR%%/misc/mime/unmime.bak
+%%EXAMPLESDIR%%/misc/news/README
+%%EXAMPLESDIR%%/misc/news/ml.map
+%%EXAMPLESDIR%%/misc/news/newsgate
+%%EXAMPLESDIR%%/misc/news/newsgate.bak
+%%EXAMPLESDIR%%/misc/news/rules
+%%EXAMPLESDIR%%/misc/pbounce/README
+%%EXAMPLESDIR%%/misc/pbounce/mailagent.cf
+%%EXAMPLESDIR%%/misc/pbounce/newcmd.cf
+%%EXAMPLESDIR%%/misc/pbounce/patbounce.pl
+%%EXAMPLESDIR%%/misc/pbounce/rules
+%%EXAMPLESDIR%%/misc/shell/README
+%%EXAMPLESDIR%%/misc/shell/server.cf
+%%EXAMPLESDIR%%/misc/shell/shell
+%%EXAMPLESDIR%%/misc/unkit/README
+%%EXAMPLESDIR%%/misc/unkit/kitok.msg
+%%EXAMPLESDIR%%/misc/unkit/mailagent.cf
+%%EXAMPLESDIR%%/misc/unkit/newcmd.cf
+%%EXAMPLESDIR%%/misc/unkit/rules
+%%EXAMPLESDIR%%/misc/unkit/unkit.pl
+@exec /bin/ln -sf %D/lib/mailagent/examples %D/%%EXAMPLESDIR%%/agent
+@unexec /bin/rm -f %D/%%EXAMPLESDIR%%/agent
+@dirrm %%EXAMPLESDIR%%/misc/unkit
+@dirrm %%EXAMPLESDIR%%/misc/shell
+@dirrm %%EXAMPLESDIR%%/misc/pbounce
+@dirrm %%EXAMPLESDIR%%/misc/news
+@dirrm %%EXAMPLESDIR%%/misc/mime
+@dirrm %%EXAMPLESDIR%%/misc/getcost
+@dirrm %%EXAMPLESDIR%%/misc/fakesend
+@dirrm %%EXAMPLESDIR%%/misc
+@dirrm %%EXAMPLESDIR%%
+@dirrm lib/mailagent/examples
+@dirrm lib/mailagent/help
+@dirrm lib/mailagent

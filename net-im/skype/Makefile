@@ -1,0 +1,101 @@
+# New ports collection makefile for:	skype
+# Date created:         Jun 21. 2004
+# Whom:                 netchild@FreeBSD.org
+#
+# Maintainers:		Ion-Mihai Tetcu <itetcu@FreeBSD.org>
+#			Martin Wilke <miwi@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	skype
+PORTVERSION=	2.1.0.81
+PORTREVISION=	1
+PORTEPOCH=	1
+CATEGORIES=	net-im
+MASTER_SITES=	http://download.skype.com/linux/
+DISTNAME=	skype_static-${DISTVERSION}
+
+MAINTAINER=	itetcu@FreeBSD.org
+COMMENT=	P2P VoIP software
+
+CONFLICTS=	skype-devel-[0-9]*
+OPTIONS=	VIDEO	"Video sending support via multimedia/webcamd"	on \
+		NVIDIA_GL "Use libGL provided by NVidia binary drivers" off
+
+NO_BUILD=	yes
+
+USE_BZIP2=	yes
+USE_LINUX=	yes
+USE_LINUX_APPS+=alsalib alsa-plugins-oss expat fontconfig libasyncns \
+		libsigcpp20
+RESTRICTED=	Redistribution prohibited.
+
+WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}
+SKYPEDIR=	share/skype
+PORTDOCS=	LICENSE README
+PLIST_SUB+=	SKYPEDIR=${SKYPEDIR}
+SUB_FILES=	skype.sh
+SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
+
+.include <bsd.port.pre.mk>
+
+.ifdef WITH_NVIDIA_GL
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+USE_LINUX_APPS+=xorglibs
+.else
+USE_LINUX_APPS+=dri
+.endif
+
+.ifdef WITH_VIDEO
+. include "${PORTSDIR}/multimedia/linux_v4l2wrapper-kmod/Makefile.sub"
+RUN_DEPENDS+=	webcamd>0:${PORTSDIR}/multimedia/webcamd
+USE_LINUX_APPS+=libv4l
+SUB_LIST+=	VIDEO="LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so "
+. if ${LINUX_V4L2_AVAILABLE} != "1"
+RUN_DEPENDS+=	linux_v4l2wrapper-kmod>=1.0:${PORTSDIR}/multimedia/linux_v4l2wrapper-kmod
+. endif
+.else
+SUB_LIST+=	VIDEO=""
+.endif
+
+### FIX ME, once they get bumped:
+# for 7: 704102
+# for 8: 802504
+# for HEAD: 900037
+# we need src/sys/dev/sound/pcm/dsp.c r221388
+IGNORE_MSG=	needs sys/dev/sound/pcm/dsp.c r221388 (and other changes).\
+		Please update your system post 
+.if ${OSVERSION} < 704102
+OUTDATED=	true
+IGNORE_MSG+=	r221584 / Sat May 7 09:33:37 2011 UTC
+.elif (${OSVERSION} > 800000 && ${OSVERSION} < 802503)
+OUTDATED=	true
+IGNORE_MSG+=	r221583 / Sat May 7 09:26:11 2011 UTC
+.elif (${OSVERSION} > 900000 && ${OSVERSION} < 900036)
+OUTDATED=	true
+IGNORE_MSG+=	r221388 / Tue May 3 15:50:22 2011 UTC
+.endif
+.ifdef OUTDATED
+IGNORE=	${IGNORE_MSG}
+.endif
+
+do-install:
+	@${INSTALL} -d ${PREFIX}/share/applications
+	@${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
+	@${INSTALL_DATA} ${WRKSRC}/icons/SkypeBlue_48x48.png ${PREFIX}/share/pixmaps/skype.png
+	@cd ${WRKSRC}/ && ${MKDIR} ${PREFIX}/${SKYPEDIR} && ${COPYTREE_SHARE} "avatars icons sounds lang" ${PREFIX}/${SKYPEDIR}/
+
+# The binary main program
+	@${INSTALL_PROGRAM} ${WRKSRC}/skype ${PREFIX}/${SKYPEDIR}/
+
+# The wrapper for main program
+	@${INSTALL_SCRIPT} ${WRKDIR}/skype.sh ${PREFIX}/bin/skype
+
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

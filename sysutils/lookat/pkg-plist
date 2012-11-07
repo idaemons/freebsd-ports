@@ -1,0 +1,4 @@
+bin/lookat
+etc/lookat.conf.default
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

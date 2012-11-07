@@ -1,0 +1,31 @@
+--- a/Makefile
++++ b/Makefile
+@@ -155,12 +155,16 @@ $(SUBDIRS):
+ PAGES:
+ 	@$(MAKE) -C pages PLUGINFEATURES="$(PLUGINFEATURES)" .dependencies
+ 
+-$(VERSIONSUFFIX): FORCE
+-	./buildutil/version-util $(VERSIONSUFFIX) || ./buildutil/version-util -F $(VERSIONSUFFIX)
++#$(VERSIONSUFFIX): FORCE
++#	./buildutil/version-util $(VERSIONSUFFIX) || ./buildutil/version-util -F $(VERSIONSUFFIX)
+ 
+ libvdr-$(PLUGIN).so: $(VERSIONSUFFIX) $(SUBDIRS) $(PLUGINOBJS)
+ 	$(CXX) $(LDFLAGS) -shared -o $@	 $(PLUGINOBJS) -Wl,--whole-archive $(WEBLIBS) -Wl,--no-whole-archive $(LIBS)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
+ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ ifneq ($(TNTVERS7),yes)
+ 	@echo ""
+@@ -198,6 +202,9 @@ clean: $(SUBDIRS)
+ 	@-rm -f $(PLUGINOBJS) $(DEPFILE) *.so *.tgz core* *~
+ 	@-rm -f $(VERSIONSUFFIX)
+ 
++install:
++	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
++
+ .PRECIOUS: $(I18Npo)
+ 
+ FORCE:

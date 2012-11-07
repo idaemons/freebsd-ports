@@ -1,0 +1,219 @@
+%%WWWDIR%%/bookerrata.html
+%%WWWDIR%%/control_wrapper.tt
+%%WWWDIR%%/data.tt
+%%WWWDIR%%/default.tt
+%%WWWDIR%%/delete.tt
+%%WWWDIR%%/editor_init.ttc
+%%WWWDIR%%/form.tt
+%%WWWDIR%%/form_ajax.tt
+%%WWWDIR%%/gantry_site.html
+%%WWWDIR%%/gantrybookcode.tar.gz
+%%WWWDIR%%/login.tt
+%%WWWDIR%%/main.tt
+%%WWWDIR%%/paging.ttc
+%%WWWDIR%%/pod.tt
+%%WWWDIR%%/pod_wrapper.tt
+%%WWWDIR%%/results.tt
+%%WWWDIR%%/sample_wrapper.tt
+%%WWWDIR%%/search.tt
+%%WWWDIR%%/threeway.tt
+%%WWWDIR%%/wrapper.tt
+%%WWWDIR%%/wsdl.tt
+%%WWWDIR%%/wsdldoc.tt
+%%WWWDIR%%/yapcna2007.pdf
+%%WWWDIR%%/css/default.css
+%%WWWDIR%%/css/gantry_datepicker.css
+%%WWWDIR%%/css/gantry_forms.css
+%%WWWDIR%%/css/gantry_layout.css
+%%WWWDIR%%/css/gantry_site.css
+%%WWWDIR%%/css/my.css
+%%WWWDIR%%/css/pod_style.css
+%%WWWDIR%%/images/bar.a-center-gray.png
+%%WWWDIR%%/images/bar.a-left-gray.png
+%%WWWDIR%%/images/bar.a-right-gray.png
+%%WWWDIR%%/images/bar2-center-gray.png
+%%WWWDIR%%/images/bar2-left-gray.png
+%%WWWDIR%%/images/bar2-right-gray.png
+%%WWWDIR%%/images/blc-gray-block.gif
+%%WWWDIR%%/images/bookcover.gif
+%%WWWDIR%%/images/brc-gray-block.gif
+%%WWWDIR%%/images/building240.jpg
+%%WWWDIR%%/images/form.png
+%%WWWDIR%%/images/gantry_gears.jpg
+%%WWWDIR%%/images/gantry_logo.png
+%%WWWDIR%%/images/mainlist.png
+%%WWWDIR%%/images/pdf.gif
+%%WWWDIR%%/images/tlc-gray-block.gif
+%%WWWDIR%%/images/trc-gray-block.gif
+%%WWWDIR%%/images/tenttut/appbody.png
+%%WWWDIR%%/images/tenttut/appconfig.png
+%%WWWDIR%%/images/tenttut/appstat.png
+%%WWWDIR%%/images/tenttut/backends.png
+%%WWWDIR%%/images/tenttut/controledit.png
+%%WWWDIR%%/images/tenttut/dataedit.png
+%%WWWDIR%%/images/tenttut/fieldedit.png
+%%WWWDIR%%/images/tenttut/fieldedit2.png
+%%WWWDIR%%/images/tenttut/formedit.png
+%%WWWDIR%%/images/tenttut/joiner.png
+%%WWWDIR%%/images/tenttut/main_listingout.png
+%%WWWDIR%%/images/tenttut/mainlistedit.png
+%%WWWDIR%%/images/tenttut/optionsedit.png
+%%WWWDIR%%/images/tenttut/quickedit.png
+%%WWWDIR%%/images/tenttut/stubmethedit.png
+%%WWWDIR%%/images/tenttut/tableedit.png
+%%WWWDIR%%/images/tenttut/tentopening.png
+%%WWWDIR%%/js/datePicker.js
+%%WWWDIR%%/js/gantry-yui-calendar.js
+%%WWWDIR%%/js/gantry.js
+%%WWWDIR%%/js/jquery.js
+%%WWWDIR%%/moxie/delete.tt
+%%WWWDIR%%/moxie/form.tt
+%%WWWDIR%%/moxie/form_onetomany.tt
+%%WWWDIR%%/moxie/gantry_wrapper.tt
+%%WWWDIR%%/moxie/results.tt
+%%WWWDIR%%/moxie/threeway.tt
+%%WWWDIR%%/sfbb/form.tt
+%%SITE_PERL%%/Gantry.pm
+%%SITE_PERL%%/Gantry/Build.pm
+%%SITE_PERL%%/Gantry/Conf.pm
+%%SITE_PERL%%/Gantry/Conf/FAQ.pod
+%%SITE_PERL%%/Gantry/Conf/Provider.pm
+%%SITE_PERL%%/Gantry/Conf/Provider/FlatFile/Config/General.pm
+%%SITE_PERL%%/Gantry/Conf/Provider/FlatFile/Config/Tiny.pm
+%%SITE_PERL%%/Gantry/Conf/Provider/HTTP.pm
+%%SITE_PERL%%/Gantry/Conf/Provider/HTTP/Config/General.pm
+%%SITE_PERL%%/Gantry/Conf/Provider/ParamBuilder.pm
+%%SITE_PERL%%/Gantry/Conf/Provider/PerlSetVar.pm
+%%SITE_PERL%%/Gantry/Conf/Provider/SQL/PostgreSQL.pm
+%%SITE_PERL%%/Gantry/Conf/Tutorial.pod
+%%SITE_PERL%%/Gantry/Control.pm
+%%SITE_PERL%%/Gantry/Control/C/Access.pm
+%%SITE_PERL%%/Gantry/Control/C/AuthenBase.pm
+%%SITE_PERL%%/Gantry/Control/C/AuthenCDBI.pm
+%%SITE_PERL%%/Gantry/Control/C/AuthenRegular.pm
+%%SITE_PERL%%/Gantry/Control/C/Authz/PageBasedBase.pm
+%%SITE_PERL%%/Gantry/Control/C/Authz/PageBasedCDBI.pm
+%%SITE_PERL%%/Gantry/Control/C/Authz/PageBasedRegular.pm
+%%SITE_PERL%%/Gantry/Control/C/AuthzBase.pm
+%%SITE_PERL%%/Gantry/Control/C/AuthzCDBI.pm
+%%SITE_PERL%%/Gantry/Control/C/AuthzRegular.pm
+%%SITE_PERL%%/Gantry/Control/C/Groups.pm
+%%SITE_PERL%%/Gantry/Control/C/Pages.pm
+%%SITE_PERL%%/Gantry/Control/C/Users.pm
+%%SITE_PERL%%/Gantry/Control/Model/GEN/auth_group_members.pm
+%%SITE_PERL%%/Gantry/Control/Model/GEN/auth_groups.pm
+%%SITE_PERL%%/Gantry/Control/Model/GEN/auth_pages.pm
+%%SITE_PERL%%/Gantry/Control/Model/GEN/auth_users.pm
+%%SITE_PERL%%/Gantry/Control/Model/auth_group_members.pm
+%%SITE_PERL%%/Gantry/Control/Model/auth_group_members_cdbi.pm
+%%SITE_PERL%%/Gantry/Control/Model/auth_groups.pm
+%%SITE_PERL%%/Gantry/Control/Model/auth_groups_cdbi.pm
+%%SITE_PERL%%/Gantry/Control/Model/auth_pages.pm
+%%SITE_PERL%%/Gantry/Control/Model/auth_pages_cdbi.pm
+%%SITE_PERL%%/Gantry/Control/Model/auth_users.pm
+%%SITE_PERL%%/Gantry/Control/Model/auth_users_cdbi.pm
+%%SITE_PERL%%/Gantry/Docs.pod
+%%SITE_PERL%%/Gantry/Docs/About.pod
+%%SITE_PERL%%/Gantry/Docs/Cookbook.pod
+%%SITE_PERL%%/Gantry/Docs/DBConn.pod
+%%SITE_PERL%%/Gantry/Docs/FAQ.pod
+%%SITE_PERL%%/Gantry/Docs/QuickStart.pod
+%%SITE_PERL%%/Gantry/Docs/Tutorial.pod
+%%SITE_PERL%%/Gantry/Docs/Why.pod
+%%SITE_PERL%%/Gantry/Engine/CGI.pm
+%%SITE_PERL%%/Gantry/Engine/MP13.pm
+%%SITE_PERL%%/Gantry/Engine/MP20.pm
+%%SITE_PERL%%/Gantry/Exception.pm
+%%SITE_PERL%%/Gantry/Init.pm
+%%SITE_PERL%%/Gantry/Plugins/AjaxCRUD.pm
+%%SITE_PERL%%/Gantry/Plugins/AjaxFORM.pm
+%%SITE_PERL%%/Gantry/Plugins/AuthCookie.pm
+%%SITE_PERL%%/Gantry/Plugins/AutoCRUD.pm
+%%SITE_PERL%%/Gantry/Plugins/AutoCRUDHelper/CDBI.pm
+%%SITE_PERL%%/Gantry/Plugins/AutoCRUDHelper/DBIxClass.pm
+%%SITE_PERL%%/Gantry/Plugins/CRUD.pm
+%%SITE_PERL%%/Gantry/Plugins/Cache.pm
+%%SITE_PERL%%/Gantry/Plugins/Cache/FastMmap.pm
+%%SITE_PERL%%/Gantry/Plugins/Cache/Memcached.pm
+%%SITE_PERL%%/Gantry/Plugins/Cache/Storable.pm
+%%SITE_PERL%%/Gantry/Plugins/Calendar.pm
+%%SITE_PERL%%/Gantry/Plugins/DBIxClassConn.pm
+%%SITE_PERL%%/Gantry/Plugins/PageCache.pm
+%%SITE_PERL%%/Gantry/Plugins/Shibboleth.pm
+%%SITE_PERL%%/Gantry/Plugins/SOAP/Doc.pm
+%%SITE_PERL%%/Gantry/Plugins/SOAP/RPC.pm
+%%SITE_PERL%%/Gantry/Plugins/Static.pm
+%%SITE_PERL%%/Gantry/Plugins/Validate.pm
+%%SITE_PERL%%/Gantry/Server.pm
+%%SITE_PERL%%/Gantry/Stash.pm
+%%SITE_PERL%%/Gantry/Stash/Controller.pm
+%%SITE_PERL%%/Gantry/Stash/View.pm
+%%SITE_PERL%%/Gantry/Stash/View/Form.pm
+%%SITE_PERL%%/Gantry/State/Constants.pm
+%%SITE_PERL%%/Gantry/State/Default.pm
+%%SITE_PERL%%/Gantry/State/Exceptions.pm
+%%SITE_PERL%%/Gantry/State/Simple.pm
+%%SITE_PERL%%/Gantry/Template/Default.pm
+%%SITE_PERL%%/Gantry/Template/Framing.pm
+%%SITE_PERL%%/Gantry/Template/TT.pm
+%%SITE_PERL%%/Gantry/Utils/AuthCDBI.pm
+%%SITE_PERL%%/Gantry/Utils/CDBI.pm
+%%SITE_PERL%%/Gantry/Utils/CRON.pm
+%%SITE_PERL%%/Gantry/Utils/CRUDHelp.pm
+%%SITE_PERL%%/Gantry/Utils/Captcha.pm
+%%SITE_PERL%%/Gantry/Utils/Crypt.pm
+%%SITE_PERL%%/Gantry/Utils/DB.pm
+%%SITE_PERL%%/Gantry/Utils/DBConnHelper.pm
+%%SITE_PERL%%/Gantry/Utils/DBConnHelper/MP13.pm
+%%SITE_PERL%%/Gantry/Utils/DBConnHelper/MP20.pm
+%%SITE_PERL%%/Gantry/Utils/DBConnHelper/Script.pm
+%%SITE_PERL%%/Gantry/Utils/DBIxClass.pm
+%%SITE_PERL%%/Gantry/Utils/FormErrors.pm
+%%SITE_PERL%%/Gantry/Utils/FormMunger.pm
+%%SITE_PERL%%/Gantry/Utils/HTML.pm
+%%SITE_PERL%%/Gantry/Utils/Model.pm
+%%SITE_PERL%%/Gantry/Utils/Model/Auth.pm
+%%SITE_PERL%%/Gantry/Utils/Model/Regular.pm
+%%SITE_PERL%%/Gantry/Utils/ModelHelper.pm
+%%SITE_PERL%%/Gantry/Utils/PODViewer.pm
+%%SITE_PERL%%/Gantry/Utils/PerlbalFixup.pm
+%%SITE_PERL%%/Gantry/Utils/SQL.pm
+%%SITE_PERL%%/Gantry/Utils/TablePerms.pm
+%%SITE_PERL%%/Gantry/Utils/Threeway.pm
+%%SITE_PERL%%/Gantry/Utils/Validate.pm
+%%SITE_PERL%%/Template/Plugin/GantryAuthCookie.pm
+@dirrmtry %%WWWDIR%%/sfbb
+@dirrmtry %%WWWDIR%%/moxie
+@dirrmtry %%WWWDIR%%/js
+@dirrmtry %%WWWDIR%%/images/tenttut
+@dirrmtry %%WWWDIR%%/images
+@dirrmtry %%WWWDIR%%/css
+@dirrmtry %%WWWDIR%%
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template
+@dirrmtry %%SITE_PERL%%/Gantry/Utils/Model
+@dirrmtry %%SITE_PERL%%/Gantry/Utils/DBConnHelper
+@dirrmtry %%SITE_PERL%%/Gantry/Utils
+@dirrmtry %%SITE_PERL%%/Gantry/Template
+@dirrmtry %%SITE_PERL%%/Gantry/State
+@dirrmtry %%SITE_PERL%%/Gantry/Stash/View
+@dirrmtry %%SITE_PERL%%/Gantry/Stash
+@dirrmtry %%SITE_PERL%%/Gantry/Plugins/SOAP
+@dirrmtry %%SITE_PERL%%/Gantry/Plugins/Cache
+@dirrmtry %%SITE_PERL%%/Gantry/Plugins/AutoCRUDHelper
+@dirrmtry %%SITE_PERL%%/Gantry/Plugins
+@dirrmtry %%SITE_PERL%%/Gantry/Engine
+@dirrmtry %%SITE_PERL%%/Gantry/Docs
+@dirrmtry %%SITE_PERL%%/Gantry/Control/Model/GEN
+@dirrmtry %%SITE_PERL%%/Gantry/Control/Model
+@dirrmtry %%SITE_PERL%%/Gantry/Control/C/Authz
+@dirrmtry %%SITE_PERL%%/Gantry/Control/C
+@dirrmtry %%SITE_PERL%%/Gantry/Control
+@dirrmtry %%SITE_PERL%%/Gantry/Conf/Provider/SQL
+@dirrmtry %%SITE_PERL%%/Gantry/Conf/Provider/HTTP/Config
+@dirrmtry %%SITE_PERL%%/Gantry/Conf/Provider/HTTP
+@dirrmtry %%SITE_PERL%%/Gantry/Conf/Provider/FlatFile/Config
+@dirrmtry %%SITE_PERL%%/Gantry/Conf/Provider/FlatFile
+@dirrmtry %%SITE_PERL%%/Gantry/Conf/Provider
+@dirrmtry %%SITE_PERL%%/Gantry/Conf
+@dirrmtry %%SITE_PERL%%/Gantry

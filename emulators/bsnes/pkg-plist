@@ -1,0 +1,5 @@
+bin/bsnes
+bin/snespurify
+share/applications/bsnes.desktop
+share/pixmaps/bsnes.png
+@dirrmtry share/applications
