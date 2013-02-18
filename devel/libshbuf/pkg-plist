@@ -1,0 +1,8 @@
+include/libshbuf/shbuf.h
+include/libshbuf/shbuferr.h
+libdata/pkgconfig/shbuf.pc
+lib/libshbuf.a
+lib/libshbuf.la
+lib/libshbuf.so
+lib/libshbuf.so.1
+@dirrm include/libshbuf

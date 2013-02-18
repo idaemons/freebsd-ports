@@ -1,0 +1,74 @@
+# Created by: ijliao
+# $FreeBSD$
+
+PORTNAME=	maverik
+PORTVERSION=	6.2
+PORTREVISION=	3
+CATEGORIES=	graphics
+MASTER_SITES=	http://aig.cs.man.ac.uk/maverik/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A publicly available virtual reality (VR) system
+
+USE_SUBMAKE=	yes
+USE_GL=		yes
+WANT_GNOME=	yes
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		REALCURDIR="${.CURDIR}" \
+		DISTNAME="${DISTNAME}"
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	setup
+CONFIGURE_ARGS=	--MESAPATH=${LOCALBASE}
+USE_LDCONFIG=	yes
+MANCOMPRESSED=	no
+MAKE_JOBS_UNSAFE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PNG)
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+
+CONFIGURE_ARGS+=	--PNGLIBS="-L${LOCALBASE}/lib -lpng" \
+			--PNGINCL="-I${LOCALBASE}/include"
+.endif
+
+post-extract:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genman3list.sh
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
+		s,%%CC%%,${CC},g ; \
+		s,%%CXX%%,${CXX},g ; \
+		s,%%CFLAGS%%,${CFLAGS},g ; \
+		s,%%CXXFLAGS%%,${CXXFLAGS},g ; \
+		s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g ; \
+		s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g" ${WRKSRC}/setup
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/lib/*.* ${PREFIX}/lib
+	@${MKDIR} ${PREFIX}/include/maverik
+	${INSTALL_DATA} ${WRKSRC}/incl/*.* ${PREFIX}/include/maverik
+	${FIND} ${WRKSRC}/doc/MFS/man3 -name '*.3' -exec \
+		${INSTALL_MAN} \{} ${MAN3PREFIX}/man/man3 \;
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/MFS/html
+	${FIND} ${WRKSRC}/doc/MFS/html -name '*.html' -exec \
+		${INSTALL_DATA} \{} ${DOCSDIR}/MFS/html \;
+	@${MKDIR} ${DOCSDIR}/MFS/pdf
+	${INSTALL_DATA} ${WRKSRC}/doc/MFS/pdf/*.* ${DOCSDIR}/MFS/pdf
+	@${MKDIR} ${DOCSDIR}/MFS/ps
+	${INSTALL_DATA} ${WRKSRC}/doc/MFS/ps/*.* ${DOCSDIR}/MFS/ps
+	@${MKDIR} ${DOCSDIR}/MPG/pdf
+	${INSTALL_DATA} ${WRKSRC}/doc/MPG/pdf/*.* ${DOCSDIR}/MPG/pdf
+	@${MKDIR} ${DOCSDIR}/MPG/ps
+	${INSTALL_DATA} ${WRKSRC}/doc/MPG/ps/*.* ${DOCSDIR}/MPG/ps
+.endif
+
+post-clean:
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
+.include <bsd.port.post.mk>

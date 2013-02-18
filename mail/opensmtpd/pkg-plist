@@ -1,0 +1,11 @@
+bin/mailq
+bin/newaliases
+bin/smtpscript
+etc/mail/smtpd.conf.sample
+libexec/mail.local
+libexec/opensmtpd/makemap
+sbin/makemap
+sbin/smtpctl
+sbin/smtpd
+@dirrm libexec/opensmtpd
+@dirrmtry etc/mail

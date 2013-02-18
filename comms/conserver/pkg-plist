@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+bin/console
+etc/conserver.cf.eg
+sbin/autologin
+sbin/conserver

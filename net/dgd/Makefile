@@ -1,61 +1,77 @@
 # New ports collection makefile for:	dgd
-# Version required:	1.0.8
 # Date created:		23 August 1994
-# Whom:			adam
+# Whom:			adam@veda.is
+#
+# $FreeBSD$
 #
 
-DISTNAME=	dgd-1.0.8
-DISTFILES=	${DISTNAME}.tar.gz
+PORTNAME=	dgd
+PORTVERSION=	1.4.18
+CATEGORIES=	net lang games
+MASTER_SITES=	http://cloud.github.com/downloads/dworkin/${PORTNAME}/
 
-PATCHFILES=	1.0.8-1.0.8.1.gz 1.0.8.1-1.0.8.2.gz 1.0.8.2-1.0.8.3.gz \
-		1.0.8.3-1.0.8.4.gz 1.0.8.4-1.0.8.5.gz 1.0.8.5-1.0.8.6.gz \
-		1.0.8.6-1.0.8.7.gz 1.0.8.7-1.0.8.8.gz
-PATCHSITE=	epsilon.me.chalmers.se
-NCFTPFLAGS=	-P
-_PATCH_COOKIE=	${.CURDIR}/work/._patch_done
-PATCHLIST=	${.CURDIR}/work/.patchlist
-PATCHLEVEL=	`tail -1 ${PATCHLIST} | sed 's/^.*\.\(.*\)\.gz$$/\1/'`
+MAINTAINER=	glewis@FreeBSD.org
+COMMENT=	Dworkin\'s Game Driver
+
+LICENSE=	GPLv3
+
+OPTIONS_DEFINE=	NETWORKING CLOSURES CPLUSPLUS_COMMENTS
+NETWORKING_DESC=Enable networking kfuns
+CLOSURES_DESC=	Enable function pointer support
+CPLUSPLUS_COMMENTS_DESC=	Allow C++ style comments in LPC
+OPTIONS_DEFAULT=CPLUSPLUS_COMMENTS
+
+USE_GMAKE=	yes
+
+DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
-PKG_ARGS=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
-		-r ${PKGDIR}/REQ
+PATCH_WRKSRC=	${WRKDIR}/dgd
+ALL_TARGET=	install
+MAKE_JOBS_UNSAFE=	yes
+MAKE_ENV+=	EXTRA_DEFINES="$(EXTRA_DEFINES)"
 
-pre-fetch:
-	@if [ ! -d ${DISTDIR}/${DISTNAME} ]; then mkdir -p ${DISTDIR}/${DISTNAME}; fi
-	@if [ ! -f ${DISTDIR}/${DISTNAME}.tar.gz ]; then \
-		echo ">> Fetching distribution file from remote site..."; \
-		${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}:${DISTNAME}.tar.gz \
-        		&& mv ${DISTNAME}.tar.gz ${DISTDIR}; \
-	fi
-	@for file in ${PATCHFILES}; do \
-		if [ ! -f ${DISTDIR}/${DISTNAME}/$$file ]; then \
-			echo ">> Fetching patch $$file from remote site...";  \
-			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}:patches/$$file \
-				&& mv patches/$$file ${DISTDIR}/${DISTNAME}; \
-	    	fi \
-	 done
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
-# Need to determine whether all author-supplied patches are correctly applied
-### not yet implemented
+USERS=		mud
+GROUPS=		mud
 
-pre-patch: extract ${_PATCH_COOKIE}
-	@find -X ${WRKDIR}/dgd -name '*.orig' -print | xargs rm -f
+.include <bsd.port.options.mk>
 
-${PATCHLIST}:
-	@cd ${DISTDIR}/${DISTNAME}; \
-		ls *.[0-9].gz *.[0-9][0-9].gz \
-		2>/dev/null >${PATCHLIST}
+EXTRA_DEFINES=
 
-${_PATCH_COOKIE}: ${PATCHLIST}
-	@if [ -s ${PATCHLIST} ]; then \
-		echo "===>  Updating to ${DISTNAME}.${PATCHLEVEL}"; \
-		cd ${DISTDIR}/${DISTNAME}; \
-		gzcat `cat ${PATCHLIST}` | patch -d ${WRKDIR} --quiet -E -p0; \
-	fi
-	@touch -f ${_PATCH_COOKIE};
+.if ${PORT_OPTIONS:MCLOSURES}
+EXTRA_DEFINES+=	-DCLOSURES
+.endif
 
-install: all
-	@chown -R mud.mud ${WRKDIR}/dgd
-	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
-		| tar -C /usr/local -xpf -
+.if ${PORT_OPTIONS:MCPLUSPLUS_COMMENTS}
+EXTRA_DEFINES+=	-DSLASHSLASH
+.endif
+
+.if ${PORT_OPTIONS:MNETWORKING}
+EXTRA_DEFINES+=	-DNETWORK_EXTENSIONS
+.endif
+
+post-patch:
+	@cd ${WRKDIR}/dgd/ && ${FIND} . -name '*.orig' -delete
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/dgd/bin/driver ${PREFIX}/sbin/dgd
+	${INSTALL_PROGRAM} ${WRKDIR}/dgd/bin/precomp ${PREFIX}/bin/precomp
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/dgd/mud.dgd \
+		${PREFIX}/etc/${PORTNAME}/mud.dgd.sample
+	@# Install an RC script for DGD
+	${CAT} ${FILESDIR}/dgd.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
+		-e "s:%%DATADIR%%:${DATADIR}:" > \
+			${PREFIX}/etc/rc.d/dgd.sh.sample
+	${CHMOD} a+x ${PREFIX}/etc/rc.d/dgd.sh.sample
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/dgd/COPYING ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/dgd/README ${DOCSDIR}
+	cd ${WRKDIR}/dgd/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

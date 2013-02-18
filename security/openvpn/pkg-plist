@@ -1,0 +1,8 @@
+include/openvpn-plugin.h
+lib/openvpn/plugins/openvpn-plugin-auth-pam.la
+lib/openvpn/plugins/openvpn-plugin-auth-pam.so
+lib/openvpn/plugins/openvpn-plugin-down-root.la
+lib/openvpn/plugins/openvpn-plugin-down-root.so
+sbin/openvpn
+@dirrm lib/openvpn/plugins
+@dirrm lib/openvpn

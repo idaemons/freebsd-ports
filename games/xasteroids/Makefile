@@ -1,16 +1,40 @@
-# New ports collection makefile for:    xasteroids
-# Date created:         3 Jan 1995
-# Whom:                 swallace
-#
-# $Id: Makefile,v 1.2 1995/01/29 22:00:24 ats Exp $
-#
+# Created by: swallace
+# $FreeBSD$
 
-DISTNAME=       xasteroids
-MASTER_SITES=	ftp://calypso-2.oit.unc.edu/pub/X11/contrib/
+PORTNAME=	xasteroids
+PORTVERSION=	5.0
+PORTREVISION=	2
+CATEGORIES=	games
+MASTER_SITES=	XCONTRIB/../R5contrib
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.sh.Z
-EXTRACT_CMD=	( cd ${WRKDIR}; zcat | sh -s )
-EXTRACT_ARGS= <
-USE_IMAKE=	yes
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X11 based asteroids style arcade game
+
+EXTRACT_CMD=	( cd ${WRKDIR}; zcat | ${SH} -s )
+EXTRACT_BEFORE_ARGS=	<
+EXTRACT_AFTER_ARGS=	# empty
+
 NO_WRKSUBDIR=	yes
+
+USE_XORG=	x11 xext
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lXext -lX11 -lm
+
+MAN6=		xasteroids.6
+PLIST_FILES=	bin/xasteroids
+
+post-extract:
+	@${LN} -sf xast.man ${WRKSRC}/xasteroids.6
+
+do-build:
+	(cd ${WRKSRC} && ${CC} ${CPPFLAGS} ${CFLAGS} -o xasteroids xast.c \
+		${LDFLAGS})
+
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xasteroids ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} xasteroids.6 ${MAN6PREFIX}/man/man6)
 
 .include <bsd.port.mk>

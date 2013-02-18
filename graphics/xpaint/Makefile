@@ -1,17 +1,46 @@
-# New ports collection makefile for:    xpaint
-# Version required:     2.1.1
-# Date created:         2 Jan 1995
-# Whom:                 swallace
-#
-# $Id: Makefile,v 1.3 1995/01/13 13:14:24 jkh Exp $
-#
+# Created by: swallace
+# $FreeBSD$
 
-DISTNAME=       xpaint-2.1.1
-MASTER_SITES=	ftp://romulus.ucs.uoknor.edu/X/R5contrib/
-LIB_DEPENDS=	jpeg\\.5\\.:${PORTSDIR}/graphics/jpeg \
-		tiff\\.3\\.:${PORTSDIR}/graphics/tiff \
-		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-USE_IMAKE=      yes
-WRKSRC=		${.CURDIR}/work/xpaint
+PORTNAME=	xpaint
+PORTVERSION=	2.9.9.4
+CATEGORIES=	graphics
+MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
+
+MAINTAINER=	johans@FreeBSD.org
+COMMENT=	A simple paint program
+
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		openjpeg:${PORTSDIR}/graphics/openjpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
+		freetype:${PORTSDIR}/print/freetype2 \
+		jbig:${PORTSDIR}/graphics/jbigkit \
+		Xaw3dxft:${PORTSDIR}/x11-toolkits/libxaw3dxft
+
+USE_BZIP2=	yes
+USE_XORG=	xft xmu xpm
+USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
+LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV+=	RM="${RM} -f"
+
+MAN1=		xpaint.1 pdfconcat.1 imgmerge.1
+
+post-extract:
+	@${RM} -f ${WRKSRC}/XPaint.ad
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/-ldl //' \
+		${WRKSRC}/configure ${WRKSRC}/rw/configure
+	@${REINPLACE_CMD} -Ee 's:/etc(/X11/app-defaults):${PREFIX}/lib\1:' \
+		-e '/xaw_incdir/s,/usr/include,${LOCALBASE}/include,' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^LIBTOOL/d' \
+		-e '/^install-exec-am:/s/install-libLTLIBRARIES//' \
+		${WRKSRC}/rw/Makefile.in
+	@${REINPLACE_CMD} -e '/if (!image)/s/return;/return -1;/' \
+		${WRKSRC}/rw/readWriteTGA.c
 
 .include <bsd.port.mk>

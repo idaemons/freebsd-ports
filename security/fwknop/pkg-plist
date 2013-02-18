@@ -1,0 +1,10 @@
+bin/fwknop
+%%ETCDIR%%/access.conf
+%%ETCDIR%%/fwknopd.conf
+include/fko.h
+lib/libfko.a
+lib/libfko.la
+lib/libfko.so
+lib/libfko.so.0
+sbin/fwknopd
+@dirrm %%ETCDIR%%

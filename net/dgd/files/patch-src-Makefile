@@ -1,0 +1,59 @@
+$FreeBSD$
+
+--- src/Makefile.orig	2012-11-01 05:57:43.000000000 -0700
++++ src/Makefile	2012-11-17 20:33:47.000000000 -0800
+@@ -39,14 +39,14 @@
+   $(error HOST is undefined)
+ endif
+ 
+-DEFINES=-D$(HOST)	# -DSLASHSLASH -DNETWORK_EXTENSIONS -DCLOSURES -DCO_THROTTLE=50
++DEFINES=-D$(HOST) $(EXTRA_DEFINES)	# -DSLASHSLASH -DNETWORK_EXTENSIONS -DCLOSURES -DCO_THROTTLE=50
+ DEBUG=	-O -g
+-CCFLAGS=$(DEFINES) $(DEBUG)
++CCFLAGS=$(DEFINES)
+ CFLAGS=	-I. -Icomp -Ilex -Ied -Iparser -Ikfun $(CCFLAGS)
+ LDFLAGS=
+-LIBS=	-ldl
++LIBS=
+ LINTFLAGS=-abcehpruz
+-CC=	gcc
++CC?=	gcc
+ LD=	$(CC)
+ YACC=	yacc
+ BIN=	../bin
+@@ -65,6 +65,8 @@
+ COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o sdata.o data.o \
+ 	interpret.o config.o ext.o
+ 
++all: a.out comp/a.out
++
+ a.out:	$(OBJ) always
+ 	cd comp; $(MAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' 'YACC=$(YACC)' dgd
+ 	cd lex; $(MAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+@@ -84,10 +86,15 @@
+ all:	a.out
+ 
+ $(BIN)/driver: a.out
++	-mkdir $(BIN)
+ 	-mv $(BIN)/driver $(BIN)/driver.old
+ 	cp a.out $(BIN)/driver
+ 
+-install: $(BIN)/driver
++$(BIN)/precomp: comp/a.out
++	-mv $(BIN)/precomp $(BIN)/precomp.old
++	cp comp/a.out $(BIN)/precomp
++
++install: $(BIN)/driver $(BIN)/precomp
+ 
+ lint:
+ 	lint $(LINTFLAGS) $(CFLAGS) $(SRC)
+@@ -113,7 +120,8 @@
+ 
+ comp/a.out:
+ 	cd comp; $(MAKE) 'CC=$(CC)' 'HOST=$(HOST)' 'CCFLAGS=$(CCFLAGS)' \
+-			 'YACC=$(YACC)' 'LIBS=$(LIBS)' a.out
++			 'LDFLAGS=$(LDFLAGS)' 'YACC=$(YACC)' 'LIBS=$(LIBS)' \
++			 a.out
+ 
+ clean:
+ 	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub

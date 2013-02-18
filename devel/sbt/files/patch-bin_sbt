@@ -1,0 +1,20 @@
+--- bin/sbt.orig	2013-01-18 19:54:47.000000000 +0100
++++ bin/sbt	2013-02-14 21:48:47.000000000 +0100
+@@ -25,7 +25,7 @@ realpath () {
+ 
+ declare -r noshare_opts="-Dsbt.global.base=project/.sbtboot -Dsbt.boot.directory=project/.boot -Dsbt.ivy.home=project/.ivy"
+ declare -r sbt_opts_file=".sbtopts"
+-declare -r etc_sbt_opts_file="/etc/sbt/sbtopts"
++declare -r etc_sbt_opts_file="%%PREFIX%%/etc/sbt/sbtopts"
+ 
+ usage() {
+  cat <<EOM
+@@ -59,7 +59,7 @@ Usage: $script_name [options]
+   SBT_OPTS           environment variable, if unset uses "$default_sbt_opts"
+   .sbtopts           if this file exists in the current directory, it is
+                      prepended to the runner args
+-  /etc/sbt/sbtopts   if this file exists, it is prepended to the runner args
++  %%PREFIX%%/etc/sbt/sbtopts   if this file exists, it is prepended to the runner args
+   -Dkey=val          pass -Dkey=val directly to the java runtime
+   -J-X               pass option -X directly to the java runtime 
+                      (-J is stripped)

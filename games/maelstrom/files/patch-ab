@@ -1,0 +1,12 @@
+--- configure.orig	Mon Mar 13 20:58:01 2000
++++ configure	Mon Mar 13 20:58:05 2000
+@@ -1633,6 +1633,9 @@
+         ac_default_prefix=/boot/beos
+         GAME_INSTALLDIR="\$(prefix)/games/$PACKAGE"
+         ;;
++    *-*-freebsd*)
++	GAME_INSTALLDIR="\$(prefix)/share/$PACKAGE"
++	;;
+     *)
+         GAME_INSTALLDIR="\$(prefix)/games/$PACKAGE"
+         ;;

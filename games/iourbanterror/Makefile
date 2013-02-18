@@ -1,0 +1,53 @@
+# New ports collection makefile for:	ioquake3
+# Date created:				3 Jun 2006
+# Whom:					alepulver
+#
+# $FreeBSD$
+#
+
+PORTNAME=	iourbanterror
+PORTVERSION=	${GAMEVERSION}.s${SVNREVISION}
+PORTEPOCH=	1
+CATEGORIES=	games
+DISTNAME=	ioquake3-devel-1.36_SVN${SVNREVISION}
+
+MAINTAINER=	kamikaze@bsdforen.de
+COMMENT=	Quake 3 engine modified for Urban Terror (based on ioquake3)
+
+RUN_DEPENDS=	${Q3DIR}/q3ut4:${PORTSDIR}/games/urbanterror-data
+
+MASTERDIR=	${.CURDIR}/../ioquake3-devel
+DISTINFO_FILE=	${.CURDIR}/../ioquake3-devel/distinfo
+PLIST=		${.CURDIR}/../${PORTNAME}/pkg-plist
+
+NO_GAMELIBS=	yes
+NO_TOOLS=	yes
+# The docs belong to ioquake3
+NOPORTDOCS=	yes
+GAMEVERSION=	4.1.1
+Q3ENGINEVER=	1.36_SVN${SVNREVISION}+${GAMEVERSION}
+Q3TOTALCONV=	yes
+Q3DIR=		${PREFIX}/share/quake3
+Q3ICON=		${PREFIX}/share/quake3/q3ut4/q3ut.ico
+Q3CLIENT=	ioUrbanTerror
+Q3SERVER=	ioUrTded
+Q3BASE=		q3ut4
+BINSUFFIX=
+HOMEPATH=	/.ioUrbanTerror
+
+MAKE_ARGS+=	BUILD_MISSIONPACK=0 \
+		BUILD_STANDALONE=1
+
+UTPATCHES=	${.CURDIR}/../${PORTNAME}/files/*
+
+post-patch:
+	@for utpatch in ${UTPATCHES}; do \
+		${PATCH} -sd "${WRKSRC}" < $$utpatch; \
+	done
+	@${REINPLACE_CMD} \
+		-e 's/ioquake3/${Q3CLIENT}/g' \
+		-e 's/ioq3ded/${Q3SERVER}/g' \
+		-e 's/baseq3/${Q3BASE}/g' \
+		"${WRKSRC}/Makefile"
+
+.include "${MASTERDIR}/Makefile"

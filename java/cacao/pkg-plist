@@ -1,0 +1,4 @@
+bin/cacao
+lib/libjvm.so
+%%DATADIR%%/vm.zip
+@dirrm %%DATADIR%%

@@ -1,0 +1,29 @@
+--- ./Makefile.orig	2012-06-13 14:10:52.160359057 +0200
++++ ./Makefile	2012-06-13 14:13:01.635359504 +0200
+@@ -16,11 +16,11 @@
+ ASTERISK_SRC_DIR =
+ 
+ # asterisk release or subversion working copy
+-ASTERISK_SRC_VERSION = $(shell if [ -e $(ASTERISK_SRC_DIR)/.version ] ; then echo release; elif [ -e $(ASTERISK_SRC_DIR)/.svn ] ; then echo subversion; else echo unknown; fi)
++ASTERISK_SRC_VERSION = release
+ 
+ # asterisk release version or subversion branch
+ ifeq ($(ASTERISK_SRC_VERSION),release)
+- ASTERISK = $(shell cat $(ASTERISK_SRC_DIR)/.version | cut -d "." -f1,2 | sed -e 's/\.//')
++ ASTERISK = 18
+ else
+  ifeq ($(ASTERISK_SRC_VERSION),subversion)
+   ASTERISK = $(shell svn info $(ASTERISK_SRC_DIR) | grep URL | sed -e 's:^.*/::' | cut -d "." -f 1,2 | sed -e 's/\.//')
+@@ -31,10 +31,10 @@
+ endif
+ 
+ # asterisk include directory
+-ASTERISK_INCLUDE_DIR = $(ASTERISK_SRC_DIR)/include
++ASTERISK_INCLUDE_DIR = ${LOCALBASE}/include
+ 
+ # asterisk module directory
+-INSTALL_MODULES_DIR = /usr/lib/asterisk/modules
++INSTALL_MODULES_DIR = ${LOCALBASE}/lib/asterisk/modules
+ 
+ # module release
+ RELEASE = 2.1

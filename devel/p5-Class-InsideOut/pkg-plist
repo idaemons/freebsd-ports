@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/InsideOut/.packlist
+%%SITE_PERL%%/Class/InsideOut.pm
+%%SITE_PERL%%/Class/InsideOut/Manual/About.pod
+%%SITE_PERL%%/Class/InsideOut/Manual/Advanced.pod
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/InsideOut
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class/InsideOut/Manual
+@dirrmtry %%SITE_PERL%%/Class/InsideOut
+@dirrmtry %%SITE_PERL%%/Class

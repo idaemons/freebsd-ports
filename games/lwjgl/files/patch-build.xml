@@ -1,0 +1,30 @@
+--- build.xml.orig
++++ build.xml
+@@ -7,7 +7,6 @@
+ 	<import file="platform_build/build-applet.xml"/>
+ 	<import file="platform_build/build-webstart.xml"/>
+ 	<import file="platform_build/build-maven.xml"/>
+-	<import file="eclipse-update/org.lwjgl.build/build-updatesite.xml"/>
+ 
+ 	<!-- ================================================================== -->
+ 	<!-- Everything below this line is targets.								-->
+@@ -463,7 +462,10 @@
+ 		<antcall target="-compile_native_win32" />
+ 
+ 		<condition property="lwjgl.platform.linux">
+-			<os name="Linux" />
++			<or>
++				<os name="Linux" />
++				<os name="FreeBSD" />
++			</or>
+ 		</condition>
+ 		<antcall target="-compile_native_linux" />
+ 
+@@ -604,6 +606,7 @@
+ 		<condition property="native_path" value="libs/linux">
+ 			<or>
+ 				<os name="Linux" />
++				<os name="FreeBSD" />
+ 				<os name="SunOS" />
+ 			</or>
+ 		</condition>

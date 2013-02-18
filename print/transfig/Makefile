@@ -1,17 +1,36 @@
 # New ports collection makefile for:	transfig
-# Version required:	3.1.1
-# Date created:		?
-# Whom:			mr (original)
+# Date created:		9 August 1996
+# Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.4 1995/01/28 18:36:35 asami Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	transfig.3.1.1
-PKGNAME=	transfig-3.1.1
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/drawing_tools/transfig/ \
-	ftp://crl.dec.com/pub/X11/contrib/applications/drawing_tools/transfig/
+PORTNAME=	transfig
+PORTVERSION=	3.2.5d
+PORTREVISION=	1
+CATEGORIES=	print
+MASTER_SITES=	SF/mcj/mcj-source/
+DISTNAME=	${PORTNAME}.${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tools to convert Xfig's .fig files
+
+RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+
+MAKE_JOBS_SAFE=	yes
+
+USE_GCC=	any
+USE_GHOSTSCRIPT_RUN=	yes
 USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/transfig
+USE_XORG=	xpm
+MAN1=		fig2dev.1 fig2ps2tex.1 pic2tpic.1 transfig.1
+
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
+MAKE_ARGS+=	INSTALLFLAGS="${COPY}" \
+		INSTPGMFLAGS="${STRIP} ${_BINOWNGRP} -m ${BINMODE}" \
+		INSTBINFLAGS="${_BINOWNGRP} -m ${BINMODE}" \
+		INSTDATFLAGS="${_SHROWNGRP} -m ${SHAREMODE}" \
+		INSTMANFLAGS="${_MANOWNGRP} -m ${MANMODE}"
 
 .include <bsd.port.mk>
-

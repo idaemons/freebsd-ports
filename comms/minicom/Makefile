@@ -1,0 +1,74 @@
+# Created by: obrien@cs.ucdavis.edu
+# $FreeBSD$
+
+PORTNAME=	minicom
+PORTVERSION=	2.6.2
+PORTREVISION=	1
+CATEGORIES=	comms
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3869/
+
+MAINTAINER=	johans@FreeBSD.org
+COMMENT=	An MS-DOS Telix serial communication program "workalike"
+
+OPTIONS_DEFINE=	LRZSZ
+OPTIONS_DEFAULT=LRZSZ
+LRZSZ_DESC=	Install X/Y/ZMODEM protocol handlers
+
+USE_ICONV=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
+			--sysconfdir=${PREFIX}/etc/minicom \
+			--enable-lock-dir=/var/spool/lock \
+			--enable-dfl-port=${MINICOM_DEFAULT_PORT} \
+			LDFLAGS="${LDFLAGS}"
+MAKE_ARGS+=	LIBS+="-liconv -lcurses"
+
+MAN1=		minicom.1 runscript.1 ascii-xfr.1 xminicom.1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLRZSZ}
+RUN_DEPENDS+=	lrz:${PORTSDIR}/comms/lrzsz
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800045
+MINICOM_DEFAULT_PORT?=	/dev/cuad0
+.else
+MINICOM_DEFAULT_PORT?=	/dev/cuau0
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s@/usr/local/bin/@${LOCALBASE}/bin/@; \
+		s@/sz@/lsz@;s@/sb@/lsb@;s@/sx@/lsx@;s@/rz@/lrz@; \
+		s@/rb@/lrb@;s@/rx@/lrx@" ${WRKSRC}/src/rwconf.c
+	${REINPLACE_CMD} -E -e "s@^(SUBDIRS = .*) intl@\1@" \
+		${WRKSRC}/Makefile.in
+
+post-install:
+	${CHOWN} uucp:dialer ${PREFIX}/bin/minicom
+	${CHMOD} 4511 ${PREFIX}/bin/minicom
+	${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/etc/minicom
+	${CHOWN} uucp ${PREFIX}/etc/minicom
+.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}/
+	(umask 022 && cd ${WRKSRC} && ${TAR} --exclude '*/Makefile*' \
+		 --exclude '*.orig' -chf - extras doc | ${TAR}  -xf - -C \
+		${DOCSDIR})
+.endif
+
+.include <bsd.port.post.mk>

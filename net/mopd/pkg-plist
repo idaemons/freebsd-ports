@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+sbin/mopd
+sbin/mopprobe
+sbin/moptrace
+sbin/mopchk
+sbin/mopa.out
+%%PORTDOCS%%%%DOCSDIR%%/VAX-netboot-HOWTO
+%%PORTDOCS%%%%DOCSDIR%%/VS3100-console-cmds.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

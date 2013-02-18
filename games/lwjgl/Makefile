@@ -1,0 +1,75 @@
+# Created by: loader <loader@freebsdmall.com>
+# $FreeBSD$
+
+PORTNAME=	lwjgl
+DISTVERSION=	2.8.5
+CATEGORIES=	games java
+MASTER_SITES=	SF/java-game-lib/Official%20Releases/${PORTNAME:U}%20${PORTVERSION}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-source-${DISTVERSION}${EXTRACT_SUFX}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Lightweight Java Game Library
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/${DISTNAME}/doc/LICENSE
+
+BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils \
+		${JAVALIBDIR}/jinput/jinput.jar:${PORTSDIR}/games/jinput
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+ONLY_FOR_ARCHS=	i386 amd64
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+
+USE_ZIP=	yes
+USE_JAVA=	yes
+USE_LDCONFIG=	yes
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*.[^j][^a][^r]$
+JAVA_VERSION=	1.6+
+JAVA_OS=	native
+JAVA_VENDOR=	openjdk
+USE_ANT=	yes
+USE_XORG=	xcursor xrandr xxf86vm
+MAKE_ENV+=	CLASSPATH=${JAVALIBDIR}/jutils/jutils.jar:${JAVALIBDIR}/jinput/jinput.jar:${WRKSRC}/${DISTNAME}/jar/
+ALL_TARGET=	jars compile_native
+
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}.jar \
+		%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}_test.jar \
+		%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}_util.jar \
+		%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}_util_applet.jar
+PLIST_DIRS=	%%JAVAJARDIR%%/${PORTNAME} \
+		lib/${PORTNAME}${PORTVERSION}
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+PLIST_FILES+=	lib/${PORTNAME}${PORTVERSION}/lib${PORTNAME}.so
+.endif
+
+.if ${ARCH} == amd64
+PLIST_FILES+=	lib/${PORTNAME}${PORTVERSION}/lib${PORTNAME}64.so
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,PREFIX,${PREFIX},g' \
+		-e '/executable/s/gcc/${CC}/g' \
+		${WRKSRC}/platform_build/linux_ant/build.xml
+
+do-install:
+	@${ECHO_MSG} -n ">> Install JAR files in ${JAVAJARDIR}/${PORTNAME}/ ..."
+	@${MKDIR} ${JAVAJARDIR}/${PORTNAME}
+.for _jar in ${PLIST_FILES:M*.jar}
+	@${INSTALL_DATA} ${WRKSRC}/libs/${_jar:T} ${JAVAJARDIR}/${PORTNAME}
+.endfor
+	@${ECHO_MSG} " [ DONE ]"
+	@${MKDIR} ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+.if ${ARCH} == i386
+	@${INSTALL_DATA} ${WRKSRC}/libs/linux/lib${PORTNAME}.so ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+.endif
+.if ${ARCH} == amd64
+	@${INSTALL_DATA} ${WRKSRC}/libs/linux/lib${PORTNAME}64.so ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+.endif
+
+.include <bsd.port.post.mk>

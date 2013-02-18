@@ -1,0 +1,29 @@
+Submitted to vendor:
+
+	http://issues.apache.org/bugzilla/show_bug.cgi?id=41523
+
+	-mi
+
+--- ../generic/request_ap.c	2009-05-22 06:13:35.000000000 -0400
++++ ../generic/request_ap.c	2010-02-24 22:24:36.000000000 -0500
+@@ -14,4 +14,5 @@
+  */
+ 
++#include <ctype.h>
+ #include "tcl.h"
+ #include "hashutl.h"
+@@ -100,5 +101,4 @@
+     if (!remote_user) {
+ 
+-      int ret = 0;
+       const char *pw = NULL;
+       const char *user = NULL;
+--- ../generic/logutl.c	2009-09-14 11:11:40.000000000 -0400
++++ ../generic/logutl.c	2010-02-24 22:53:36.000000000 -0500
+@@ -87,5 +87,5 @@
+ 
+     LogLevel *logLevel = NULL;
+-    int res;
++    int res = TCL_ERROR;
+ 
+     if ((logData == NULL) || (levelStr == NULL) || (msg == NULL))

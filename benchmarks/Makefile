@@ -1,0 +1,77 @@
+# $FreeBSD$
+#
+
+    COMMENT = Benchmarking tools
+
+    SUBDIR += autobench
+    SUBDIR += blogbench
+    SUBDIR += bonnie
+    SUBDIR += bonnie++
+    SUBDIR += cpipe
+    SUBDIR += dbench
+    SUBDIR += dbs
+    SUBDIR += dkftpbench
+    SUBDIR += expedite
+    SUBDIR += fhourstones
+    SUBDIR += filebench
+    SUBDIR += flops
+    SUBDIR += forkbomb
+    SUBDIR += geekbench
+    SUBDIR += gtkperf
+    SUBDIR += himenobench
+    SUBDIR += hpl
+    SUBDIR += hs-criterion
+    SUBDIR += httperf
+    SUBDIR += imb
+    SUBDIR += iozone
+    SUBDIR += iozone21
+    SUBDIR += iperf
+    SUBDIR += libmicro
+    SUBDIR += lmbench
+    SUBDIR += mdtest
+    SUBDIR += nbench
+    SUBDIR += netio
+    SUBDIR += netperf
+    SUBDIR += netperfmeter
+    SUBDIR += netpipe
+    SUBDIR += nosqlbench
+    SUBDIR += nqueens
+    SUBDIR += nttcp
+    SUBDIR += nuttcp
+    SUBDIR += octave-forge-benchmark
+    SUBDIR += p5-Benchmark-Forking
+    SUBDIR += p5-Benchmark-Stopwatch
+    SUBDIR += pathchirp
+    SUBDIR += pathload
+    SUBDIR += pathrate
+    SUBDIR += pear-Benchmark
+    SUBDIR += phoronix-test-suite
+    SUBDIR += pipebench
+    SUBDIR += pnetmark
+    SUBDIR += polygraph
+    SUBDIR += polygraph31
+    SUBDIR += postal
+    SUBDIR += postmark
+    SUBDIR += pybench
+    SUBDIR += raidtest
+    SUBDIR += randomio
+    SUBDIR += rubygem-railsbench
+    SUBDIR += scimark2
+    SUBDIR += scimark2c
+    SUBDIR += siege
+    SUBDIR += sipp
+    SUBDIR += slowloris
+    SUBDIR += stream
+    SUBDIR += super-smack
+    SUBDIR += sysbench
+    SUBDIR += tcpblast
+    SUBDIR += thrulay
+    SUBDIR += tsung
+    SUBDIR += ttcp
+    SUBDIR += ubench
+    SUBDIR += unixbench
+    SUBDIR += webbench
+    SUBDIR += wrk
+    SUBDIR += xdd
+
+.include <bsd.port.subdir.mk>

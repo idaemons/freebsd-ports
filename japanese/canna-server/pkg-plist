@@ -1,0 +1,57 @@
+@comment $FreeBSD$
+bin/addwords
+bin/canlisp
+bin/cannacheck
+bin/cannastat
+bin/catdic
+bin/chkconc
+bin/chmoddic
+bin/cpdic
+bin/crfreq
+bin/crxdic
+bin/crxgram
+bin/cshost
+bin/ctow
+bin/delwords
+bin/dicar
+bin/dpbindic
+bin/dpromdic
+bin/dpxdic
+bin/forcpp
+bin/forsort
+bin/kpdic
+bin/lsdic
+bin/mergeword
+bin/mkbindic
+bin/mkdic
+bin/mkromdic
+bin/mvdic
+bin/rmdic
+bin/splitword
+bin/syncdic
+bin/wtoc
+%%DATADIR%%/dic/canna/bushu.cld
+%%DATADIR%%/dic/canna/chimei.ctd
+%%DATADIR%%/dic/canna/dics.dir
+%%DATADIR%%/dic/canna/fuzokugo.cbd
+%%DATADIR%%/dic/canna/hojomwd.ctd
+%%DATADIR%%/dic/canna/hojoswd.ctd
+%%DATADIR%%/dic/canna/iroha.cbd
+%%DATADIR%%/dic/canna/iroha.cld
+%%DATADIR%%/dic/canna/kanasmpl.ctd
+%%DATADIR%%/dic/canna/katakana.ctd
+%%DATADIR%%/dic/canna/keishiki.ctd
+%%DATADIR%%/dic/canna/necgaiji.ctd
+%%DATADIR%%/dic/canna/number.ctd
+%%DATADIR%%/dic/canna/software.ctd
+%%DATADIR%%/dic/canna/suffix.ctd
+sbin/cannaserver
+sbin/cannakill
+%%METAFILE%%
+@exec %%MTREE_CMD%% -qU -f %D/%%METAFILE%% -p %D/%%DATADIR%%/dic > /dev/null 2>&1
+@dirrmtry %%DATADIR%%/dic/canna
+@dirrmtry %%DATADIR%%/dic/user/user
+@dirrmtry %%DATADIR%%/dic/user
+@dirrmtry %%DATADIR%%/dic/group
+@dirrmtry %%DATADIR%%/dic
+@dirrmtry %%DATADIR%%

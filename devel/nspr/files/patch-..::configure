@@ -1,0 +1,11 @@
+--- ../configure.orig	2012-02-14 20:06:00.000000000 +0100
++++ ../configure	2012-02-17 17:14:27.862323726 +0100
+@@ -4062,7 +4062,7 @@
+     CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
+     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+     if test "$MOZ_OBJFORMAT" = "elf"; then
+-        DLL_SUFFIX=so
++        DLL_SUFFIX=so.1
+     else
+         DLL_SUFFIX=so.1.0
+     fi

@@ -1,14 +1,33 @@
 # New ports collection makefile for:	ghostview
-# Version required:	1.5
 # Date created:		21 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/22 05:42:22 jkh Exp $
+# $FreeBSD$
 #
 
-DISTNAME=	ghostview-1.5
+PORTNAME=	ghostview
+PORTVERSION=	1.5
+PORTREVISION=	3
+CATEGORIES=	print
+MASTER_SITES=	http://ftp.gnu.org/old-gnu/ghostview/ \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/ghostview/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An X11 front-end for ghostscript, the GNU postscript previewer
+
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_IMAKE=	yes
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
-EXEC_DEPENDS=	gs:${PORTSDIR}/print/ghostscript
+USE_XORG=	xbitmaps xaw
+USE_GHOSTSCRIPT_RUN=	yes
+MAKE_JOBS_SAFE=	yes
+
+MAN1=		ghostview.1
+
+CFLAGS+=	-DUSG
+
+post-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

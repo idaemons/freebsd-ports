@@ -1,25 +1,63 @@
-# New ports collection makefile for:    magic
-# Version required:     6.4.4
-# Date created:         18 Dec 1994
-# Whom:                 swallace
-#
-# $Id: Makefile,v 1.2 1994/10/06 07:52:04 swallace Exp $
-#
+# Created by: swallace
+# $FreeBSD$
 
-DISTNAME=       magic-6.4.4
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/magic/6.4/
+PORTNAME=	magic
+PORTVERSION=	7.5.229
+CATEGORIES=	cad
+MASTER_SITES=	http://opencircuitdesign.com/magic/archive/ \
+		http://fossies.org/linux/misc/
+EXTRACT_SUFX=	.tgz
 
-install:
-	@echo "===>  Installing for ${DISTNAME}"
-	@${MAKE} ${.MAKEFLAGS} pre-install
-	@(cd ${WRKSRC}; ${MAKE} PREFIX=${PREFIX} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-	@(cd ${PREFIX}; chmod 555 bin/magic bin/ext2dlys bin/ext2sim bin/fsleeper bin/magicusage bin/net2ir bin/extcheck bin/X11Helper)
-	@(cd ${PREFIX}; chmod 444 man/man8/prleak.8 man/man8/prleak.8 man/man1/ext2dlys.1 man/man1/ext2spice.1 man/man1/extcheck.1 man/man1/magic.1 man/man1/magicusage.1 man/man1/grsunprog.1 man/man1/ext2sim.1 man/man1/net2ir.1 man/man1/rsleeper.1 man/man1/sim2spice.1 man/man1/sleeper.1 man/man1/fsleeper.1 man/man5/cmap.5 man/man5/displays.5 man/man5/dlys.5 man/man5/sim.5 man/man5/dstyle.5 man/man5/ext.5 man/man5/glyphs.5 man/man5/magic.5 man/man5/net.5 man/man3/mpack.3 man/man3/dqueue.3 man/man3/extflat.3 man/man3/geometry.3 man/man3/hash.3 man/man3/heap.3 man/man3/libmalloc.3 man/man3/list.3 man/man3/magicutils.3 man/man3/malloc.3 man/man3/path.3 man/man3/runstats.3 man/man3/set.3 man/man3/show.3 man/man3/stack.3 man/man3/string.3 lib/mpack.h lib/libmpack.a)
-	@(cd ${PREFIX}; chmod -R a+rX,go-w lib/magic)
-	@(cd ${PREFIX}; strip bin/magic bin/ext2dlys bin/ext2sim bin/fsleeper bin/magicusage bin/net2ir bin/extcheck bin/X11Helper)
-	@(cd ${PREFIX}; chown bin.bin bin/magic bin/ext2dlys bin/ext2sim bin/fsleeper bin/magicusage bin/net2ir bin/extcheck bin/X11Helper)
-	@(cd ${PREFIX}; chown bin.bin man/man8/prleak.8 man/man8/prleak.8 man/man1/ext2dlys.1 man/man1/ext2spice.1 man/man1/extcheck.1 man/man1/magic.1 man/man1/magicusage.1 man/man1/grsunprog.1 man/man1/ext2sim.1 man/man1/net2ir.1 man/man1/rsleeper.1 man/man1/sim2spice.1 man/man1/sleeper.1 man/man1/fsleeper.1 man/man5/cmap.5 man/man5/displays.5 man/man5/dlys.5 man/man5/sim.5 man/man5/dstyle.5 man/man5/ext.5 man/man5/glyphs.5 man/man5/magic.5 man/man5/net.5 man/man3/mpack.3 man/man3/dqueue.3 man/man3/extflat.3 man/man3/geometry.3 man/man3/hash.3 man/man3/heap.3 man/man3/libmalloc.3 man/man3/list.3 man/man3/magicutils.3 man/man3/malloc.3 man/man3/path.3 man/man3/runstats.3 man/man3/set.3 man/man3/show.3 man/man3/stack.3 man/man3/string.3 lib/mpack.h lib/libmpack.a)
-	@(cd ${PREFIX}; chown -R bin.bin lib/magic)
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An interactive editor for VLSI layouts
 
-.include <bsd.port.mk>
+LICENSE=	BSD
+
+LIB_DEPENDS=	BLT24:${PORTSDIR}/x11-toolkits/blt
+
+CONFIGURE_WRKSRC=	${WRKSRC}/scripts
+
+USE_XORG=	ice xext xi xmu
+USE_GL=		gl
+USE_TCL_BUILD=	yes
+USE_TK_BUILD=	yes
+USE_TCL=	yes
+USE_TK=		yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR}
+ALL_TARGET=	tcllibrary
+MAKE_JOBS_SAFE=yes
+
+MAN1=		ext2sim.1 ext2spice.1 extcheck.1 magic.1
+MAN5=		cmap.5 displays.5 dlys.5 dstyle.5 ext.5 glyphs.5 mag.5 \
+		net.5 sim.5
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PORTSCOUT=	limit:^7\.
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^#!.*|#!${AWK} -f|' ${WRKSRC}/ext2spice/spice2sim
+	@${REINPLACE_CMD} -e \
+		's|TCL_LIB_NAME=.*|TCL_LIB_NAME="tcl${TCL_VER:S/.//}"|g ; \
+		 s|TK_LIB_NAME=.*|TK_LIB_NAME="tk${TK_VER:S/.//}"|g ; \
+		 s|wish$${TK_VERSION}|${WISH:T}|g ; \
+		 s|tclsh$${TK_VERSION}|${TCLSH:T}|g ; \
+		 s|-l/usr/X11R6/include|-I${LOCALBASE}/include|g' ${CONFIGURE_WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/CFLAGS/s| -pg | |' ${WRKSRC}/tcltk/Makefile
+	@${REINPLACE_CMD} -e \
+		's|^#!.*|#!${TCLSH}|' ${WRKSRC}/tcltk/strip_reflibs.tcl
+	@${REINPLACE_CMD} -e \
+		's|^#!.*|#!${WISH}|' ${WRKSRC}/tcltk/tkshell.tcl
+
+pre-build:
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} database/database.h)
+
+.include <bsd.port.post.mk>

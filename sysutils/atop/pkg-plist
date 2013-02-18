@@ -1,0 +1,3 @@
+bin/atop
+bin/atopsar
+@dirrmtry %%LOGDIR%%

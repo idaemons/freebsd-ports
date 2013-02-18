@@ -1,0 +1,19 @@
+--- pdns/Makefile.in.orig	2011-07-22 13:26:07.000000000 +0200
++++ pdns/Makefile.in	2013-01-17 13:23:49.892508749 +0100
+@@ -55,14 +55,14 @@
+ @BOTAN110_TRUE@am__append_3 = botan110signers.cc botansigners.cc
+ @BOTAN110_TRUE@am__append_4 = $(BOTAN110_LIBS) -lgmp -lrt
+ @BOTAN18_TRUE@am__append_5 = botan18signers.cc botansigners.cc
+-@BOTAN18_TRUE@am__append_6 = $(BOTAN18_LIBS) -lgmp
++@BOTAN18_TRUE@am__append_6 = $(BOTAN18_LIBS)
+ @CRYPTOPP_TRUE@am__append_7 = cryptoppsigners.cc
+ @CRYPTOPP_TRUE@am__append_8 = -lcryptopp
+ @SQLITE3_TRUE@am__append_9 = ssqlite3.cc ssqlite3.hh
+ @BOTAN110_TRUE@am__append_10 = botan110signers.cc botansigners.cc
+ @BOTAN110_TRUE@am__append_11 = $(BOTAN110_LIBS) -lgmp -lrt
+ @BOTAN18_TRUE@am__append_12 = botan18signers.cc botansigners.cc
+-@BOTAN18_TRUE@am__append_13 = $(BOTAN18_LIBS) -lgmp
++@BOTAN18_TRUE@am__append_13 = $(BOTAN18_LIBS)
+ @CRYPTOPP_TRUE@am__append_14 = cryptoppsigners.cc
+ @CRYPTOPP_TRUE@am__append_15 = -lcryptopp
+ @SQLITE3_TRUE@am__append_16 = ssqlite3.cc ssqlite3.hh

@@ -1,0 +1,39 @@
+--- configure.orig	2009-08-01 03:19:34.000000000 -0400
++++ configure	2010-01-08 22:01:38.000000000 -0500
+@@ -13,10 +13,10 @@
+ $install_name = "vmd";
+ 
+ # Directory where VMD startup script is installed, should be in users' paths.
+-$install_bin_dir="/usr/local/bin";
++$install_bin_dir="%%PREFIX%%/bin";
+ 
+ # Directory where VMD files and executables are installed
+-$install_library_dir="/usr/local/lib/$install_name";
++$install_library_dir="%%PREFIX%%/lib/$install_name";
+ 
+ 
+ # optionally override hard-coded defaults above with environment variables
+@@ -788,8 +788,8 @@
+ # This may be commented out if not required.
+ $libtachyon_defines     = "-DVMDLIBTACHYON";
+ $libtachyon_dir         = "$vmd_library_dir/tachyon";
+-$libtachyon_include     = "-I$libtachyon_dir/include";
+-$libtachyon_library     = "-L$libtachyon_dir/lib_$config_arch";
++$libtachyon_include     = "-I$libtachyon_dir/src";
++$libtachyon_library     = "-L$libtachyon_dir/compile/bsd";
+ $libtachyon_libs        = "-ltachyon";
+ @libtachyon_cc          = ();
+ @libtachyon_cu          = ();
+@@ -2942,10 +2942,10 @@
+ 
+ # compiler and compiler directives 
+ CC          = $arch_cc
+-CFLAGS      = $arch_copts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS) $rpm_optflags
++CFLAGS      += $arch_copts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
+ 
+ CCPP	    = $arch_ccpp
+-CPPFLAGS    = $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS) $rpm_optflags
++CPPFLAGS    = \${CXXFLAGS} $arch_opt_flag $arch_cppopts -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)
+ 
+ NVCC        = $arch_nvcc
+ NVCCFLAGS   = $arch_nvccflags -DARCH_$config_arch \$(DEFINES) \$(INCDIRS)

@@ -1,0 +1,60 @@
+# Created by: Andrey Zakhvatov
+# $FreeBSD$
+
+PORTNAME=	gtksql
+PORTVERSION=	0.3
+PORTREVISION=	6
+CATEGORIES=	databases
+MASTER_SITES=	http://membres.lycos.fr/bbrox/GtkSQL/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Graphical query tool for PostgreSQL and/or MySQL
+
+.if defined(PACKAGE_BUILDING) && !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
+BROKEN=		Needs modification to work with newer MySQL
+EXPIRATION_DATE=	2011-11-30
+WITH_MYSQL=	yes
+.endif
+
+USE_GNOME=	gtk12
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MYSQL) || (exists(${LOCALBASE}/lib/mysql/libmysqlclient.a) \
+	&& !defined(WITHOUT_MYSQL))
+USE_MYSQL=	yes
+.endif
+.if defined(WITH_PGSQL) || (exists(${LOCALBASE}/lib/libpq.a) \
+	&& !defined(WITHOUT_PGSQL))
+HAVE_PGSQL=	yes
+USE_PGSQL=	yes
+.endif
+
+pre-patch:
+.if !defined(USE_MYSQL) && !defined(HAVE_PGSQL)
+	@${ECHO} "You must specify which database to use, possible are:"
+	@${ECHO}
+	@${ECHO} "make WITH_MYSQL=yes (for MySQL support)"
+	@${ECHO} "make WITH_PGSQL=yes (for PostgreSQL support)"
+	@${ECHO} "make WITH_MYSQL=yes WITH_PGSQL=yes (for both MySQL and PostgreSQL support)"
+	@${FALSE}
+.endif
+
+do-configure:
+.if defined(USE_MYSQL)
+	@${REINPLACE_CMD} -e "s/^#MYSQL/MYSQL/g" ${WRKSRC}/Makefile
+.endif
+.if defined(HAVE_PGSQL)
+	@${REINPLACE_CMD} -e "s/^#PGSQL/PGSQL/g" ${WRKSRC}/Makefile
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/gtksql ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/gtksql
+.for file in Changelog README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gtksql
+.endfor
+.endif
+
+.include <bsd.port.post.mk>

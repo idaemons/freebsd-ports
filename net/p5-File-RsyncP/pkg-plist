@@ -1,0 +1,17 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP/Digest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP/FileIO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP/FileList.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest/Digest.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest/Digest.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList/FileList.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList/FileList.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File
