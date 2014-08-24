@@ -1,5 +1,0 @@
-Turbogears Scheduler is based on the TurboGears 1 built-in scheduler
-which is based on Kronos by Irmen de Jong. The scheduler makes it easy
-to have one-time or recurring tasks run as needed.
-
-WWW: http://tgscheduler.googlecode.com/

@@ -1,5 +1,0 @@
-%%DATADIR%%/fonts/DejaVuSans.ttf
-%%DATADIR%%/fonts/DejaVuSansCondensed-Bold.ttf
-%%DATADIR%%/fonts/DejaVuSansCondensed.ttf
-@dirrm %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%

@@ -1,5 +1,0 @@
-bin/cwmm
-bin/cwpcm
-bin/cwtext
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

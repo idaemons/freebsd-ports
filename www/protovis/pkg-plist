@@ -1,7 +1,0 @@
-@owner www
-@group www
-%%WWWDIR%%/protovis-d3.2.js
-%%WWWDIR%%/protovis-r3.2.js
-@dirrm %%WWWDIR%%
-@owner
-@group

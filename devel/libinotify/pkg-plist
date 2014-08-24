@@ -1,4 +1,0 @@
-include/sys/inotify.h
-lib/libinotify.so
-lib/libinotify.so.0
-@dirrmtry include/sys

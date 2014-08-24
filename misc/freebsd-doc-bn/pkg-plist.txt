@@ -1,2 +1,0 @@
-%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.txt

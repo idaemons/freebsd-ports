@@ -1,3 +1,0 @@
-libexec/milter-regex
-man/man8/milter-regex.8.gz
-@unexec rmdir %%SPOOLDIR%% 2>/dev/null || true

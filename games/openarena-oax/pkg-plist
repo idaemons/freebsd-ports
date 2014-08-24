@@ -1,4 +1,0 @@
-%%DATADIR%%/%%PORTNAME%%.pk3
-%%DATADIR%%/readme.txt
-@dirrm %%DATADIR%%
-@dirrmtry %%OADIR%%

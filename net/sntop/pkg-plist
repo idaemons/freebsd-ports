@@ -1,6 +1,0 @@
-bin/sntop
-@sample etc/sntoprc.sample
-man/man1/sntop.1.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/alarm.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sntoprc.EXAMPLE
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

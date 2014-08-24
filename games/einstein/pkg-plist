@@ -1,4 +1,0 @@
-bin/einstein
-share/einstein/res/einstein.res
-@dirrm share/einstein/res
-@dirrm share/einstein

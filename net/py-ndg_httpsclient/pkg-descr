@@ -1,4 +1,0 @@
-This is a HTTPS client implementation for httplib and urllib2 based on 
-PyOpenSSL.
-
-WWW: http://ndg-security.ceda.ac.uk/wiki/ndg_httpsclient

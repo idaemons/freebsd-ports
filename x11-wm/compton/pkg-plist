@@ -1,5 +1,0 @@
-bin/compton
-bin/compton-trans
-etc/xdg/compton.sample.conf
-share/applications/compton.desktop
-@dirrmtry etc/xdg

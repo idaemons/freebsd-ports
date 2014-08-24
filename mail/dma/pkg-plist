@@ -1,9 +1,0 @@
-libexec/dma
-libexec/dma-mbox-create
-@sample etc/dma/dma.conf.sample
-@sample etc/dma/auth.conf.sample
-man/man8/dma.8.gz
-@dirrmtry etc/dma
-@cwd /
-@dirrmtry var/spool/dma
-@cwd %%RESETPREFIX%%

@@ -1,4 +1,0 @@
-bin/xglobe
-%%DATADIR%%/map.bmp
-%%DATADIR%%/xglobe-markers
-@dirrm %%DATADIR%%

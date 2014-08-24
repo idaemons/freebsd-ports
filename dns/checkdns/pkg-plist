@@ -1,8 +1,0 @@
-bin/checkdns
-etc/checkdns.conf-dist
-%%DATADIR%%/checkdns.css
-%%DATADIR%%/lang/english
-%%DATADIR%%/lang/spanish
-%%DATADIR%%/lang/turkish
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%

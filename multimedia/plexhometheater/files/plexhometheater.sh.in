@@ -1,4 +1,0 @@
-#!/bin/sh
-
-export XBMC_HOME=%%PREFIX%%/share/plexhometheater
-exec %%PREFIX%%/bin/plexhometheater

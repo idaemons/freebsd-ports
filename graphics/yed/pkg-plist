@@ -1,5 +1,0 @@
-bin/yed
-%%DATADIR%%/license.html
-%%DATADIR%%/vectorgraphics.jar
-%%DATADIR%%/yed.jar
-@dirrm %%DATADIR%%

@@ -1,5 +1,0 @@
-Monomorphic variants of the Functor, Foldable, and Traversable
-typeclasses.  Contains even more experimental code for abstracting
-containers and sequences.
-
-WWW: https://github.com/snoyberg/mono-traversable

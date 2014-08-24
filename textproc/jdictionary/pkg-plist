@@ -1,3 +1,0 @@
-bin/jdictionary
-%%DATADIR%%/jdictionary.jar
-@dirrm %%DATADIR%%

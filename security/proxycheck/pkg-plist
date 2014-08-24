@@ -1,4 +1,0 @@
-sbin/proxycheck
-man/man1/proxycheck.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

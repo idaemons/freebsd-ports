@@ -1,4 +1,0 @@
-man/man1/op.1.gz
-@sample etc/op.conf.sample
-bin/op
-@dirrmtry etc/op.d

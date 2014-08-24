@@ -1,5 +1,0 @@
-@mode 640
-@group %%PMA_GRP%%
-@sample %%WWWDIR%%/config.inc.php.sample
-@mode
-@group

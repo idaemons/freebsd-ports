@@ -1,3 +1,0 @@
-etc/rc.d/scprotect
-@cwd /
-%%KMODDIR%%/scprotect.ko

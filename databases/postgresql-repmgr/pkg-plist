@@ -1,5 +1,0 @@
-bin/repmgr
-sbin/repmgrd
-%%DATADIR%%/repmgr.conf.sample
-%%DATADIR%%/repmgr.sql
-@dirrm %%DATADIR%%

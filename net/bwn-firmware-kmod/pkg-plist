@@ -1,3 +1,0 @@
-@cwd /%%KMODDIR%%
-%%KMODNAME%%.ko
-%%KMODNAME_LP%%.ko
